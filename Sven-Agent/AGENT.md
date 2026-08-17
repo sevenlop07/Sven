@@ -212,15 +212,16 @@ Receive free-form input from user (can be 1 sentence, a paragraph, or a rough sc
 
 | Variable | Default when user does not specify |
 |---|---|
-| **Scene count** | **7 Scenes (Default Scale 2: Standard Cinematic 7 Scenes / 70s — Show, Don't Tell)** |
+| **Scene count** | **7 Scenes (Default Scale 2: Standard Cinematic 7 Scenes / 70s)** |
 | Karma type | AI selects most fitting for the idea |
 | Story track | AI selects from tracks in story-rules.md |
 | Era / setting | AI selects fitting era for tone |
-| **Cinematic depth** | **MANDATORY HOLLYWOOD DEPTH**: Declare `Backstory Trauma` for protagonist in Character Profile Section II. Karma executes via `Self-fulfilling Causality` (psychological collapse / physical paralysis), not one-directional violence. Describe scenes using Subject-Centric Micro-Biomechanics syntax. |
+| **Cinematic depth** | **MANDATORY HOLLYWOOD DEPTH**: Declare `Backstory Trauma` for protagonist in Character Profile Section II. Karma executes via `Self-fulfilling Causality` (psychological collapse / physical paralysis), not one-directional violence. |
+| **Narrative style** | **Drama with dialogue** — every scene includes spoken lines following §D rules. Micro-biomechanics and subtext always accompany dialogue. |
 | Narrative structure | AI selects from A–G (story-rules.md § NARRATIVE STRUCTURE), prioritize non-repeats |
 | Twist complexity | Standard (1 twist) |
 | Symbolic prop | AI selects from a different group than recently used (anti-repetition axis 14) |
-| **Hook technique** | **System-wide default: #4 "Frozen Frame" (Suspended Frame / Motion Freeze)** |
+| **Hook technique** | **Dynamic — AI selects from 12-Hook Library** based on plot features (karma type, escalation behavior, target emotion). Use selection process in Step 1.1b and story-rules.md § HOOK TECHNIQUES. No fixed default hook. |
 
 If user has already specified some variables → keep them, only self-select for blank variables.
 
@@ -229,12 +230,12 @@ If user has already specified some variables → keep them, only self-select for
 If input is a rough idea with no scene breakdown: auto-divide into 7 scenes per Scale 2 model (Scenes 1–7 each EXACTLY 10 seconds, including Hook Scene 1).
 If user has already defined scene count and content: preserve that structure.
 
-### Step 1.1b — Hook Technique Selection (internal, MANDATORY — DEFAULT HOOK #4)
+### Step 1.1b — Hook Technique Selection (internal, MANDATORY — DYNAMIC SELECTION)
 
-**SYSTEM-WIDE TOP DIRECTIVE:**
-- All scripts MUST use **Hook #4 — "Frozen Frame" (Suspended Frame / Motion Freeze)** as the default hook technique.
-- Only change hook (#1–3, #5–8) when user **explicitly requests** a different hook.
-- Metadata output line: `HOOK TECHNIQUE: #4 — "Frozen Frame" (System default)`
+**SELECTION RULE: No fixed default hook. Select based on plot.**
+- Evaluate the 12-Hook Library (story-rules.md § HOOK TECHNIQUES) against THIS story's specific features.
+- NEVER lock to any single hook across all scripts — doing so kills creative variety.
+- Metadata output line: `HOOK TECHNIQUE: #[N] — [Technique name] | Reason: [1 sentence tied to this plot]`
 
 Selection process:
 1. **Identify key features** of this plot: karma type (retribution/reward), main escalation behavior, narrative structure (A–G), role of symbolic prop, target emotional tone

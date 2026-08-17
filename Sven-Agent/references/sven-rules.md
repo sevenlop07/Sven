@@ -446,7 +446,7 @@ All dialogue MUST be output in **2 formats**:
 
 | Dramatic Stage | Duration % | Allocation Rule when N > 7 Scenes | Example N = 10 Scenes | Example N = 14 Scenes |
 |---|---|---|---|---|
-| **1. HOOK** | **~10%** | Always keep exactly **1 Scene 10s** (Hook #4 Motion Freeze) | Scene 1 (10s) | Scene 1 (10s) |
+| **1. HOOK** | **~10%** | Always keep exactly **1 Scene 10s** — Hook technique selected dynamically from 12-Hook Library per story features | Scene 1 (10s) | Scene 1 (10s) |
 | **2. SETUP / PLOT** | **25 – 30%** | Open Visual Anchor from Hook, plant symbolic prop, establish setting & conflict seed | Scenes 2, 3, 4 | Scenes 2, 3, 4, 5 |
 | **3. ESCALATION** | **25 – 30%** | Multi-level emotional compression (Level 1 ➔ Level 2 ➔ Level 3 Peak Tension), push bad karma/challenge to peak | Scenes 5, 6, 7 | Scenes 6, 7, 8, 9 |
 | **4. TWIST / REVEAL** | **15 – 20%** | Symbolic prop insert-shot + reveal of true identity / Bodhisattva / Witness | Scene 8 | Scenes 10, 11 |

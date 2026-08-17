@@ -217,7 +217,7 @@ Act 4 (Resolution) = N − (A1 + A2 + A3) episodes, minimum 1
 
 ## § HOOK TECHNIQUES — 12 TYPES & SELECTION TABLE BY PLOT
 
-> 📌 **SYSTEM DEFAULT**: Use **Hook #4 — "Frozen Frame" (Suspended Frame / Motion Freeze)** for 100% of scripts, unless user directly requests a change.
+> 📌 **HOOK SELECTION**: Dynamic — AI selects from the 12-Hook Library based on this story's plot features (karma type, escalation behavior, target emotion, narrative structure). No fixed default. Follow the 3-Step selection process below.
 
 ### 4 Life-or-Death Elements of the Hook Scene (First 3 Seconds)
 1. **Cognitive Gap**: Immediately create a visual question in the audience's brain (*"Why is it like that?"*, *"What's about to happen?"*). DO NOT explain context or cause.
@@ -236,7 +236,7 @@ Act 4 (Resolution) = N − (A1 + A2 + A3) episodes, minimum 1
 | 1 | **Visual Paradox** | 2 logically contradictory images placed side by side | Expensive suit placed next to a meager meal | Wide: 2 worlds in same frame → ECU intersection point |
 | 2 | **In medias res** | Opens mid-action/climax, cause not yet clear | A hand snatching something, unclear who is right | Close-up ongoing action → gentle pull back → ECU expression |
 | 3 | **Strange object/sign** | ECU of an unusual object, no immediate explanation | A crumpled letter lying at a doorstep | ECU static object → push-in/tilt for more context → object + hand |
-| **⭐ 4** | **"Frozen Frame" (DEFAULT)** | Freeze at a suspended action moment | A glass falling mid-air, not yet hitting the ground | Medium suspended action → ultra-slow static → ECU motion point |
+| **4** | **"Frozen Frame"** | Freeze at a suspended action moment | A glass falling mid-air, not yet hitting the ground | Medium suspended action → ultra-slow static → ECU motion point |
 | 5 | **Atmospheric Contrast** | Setting evokes feeling opposite to what's about to happen | In a festive space, one figure stands completely still | Wide festive scene → rack focus/pull back → Close-up discordant detail |
 | 6 | **Body/Expression Detail** | ECU of unusual eyes/hands/gaze, reason not yet clear | A trembling hand gripping something tight | ECU unusual eyes/hand → push-in hold → ECU another body part confirming |
 | 7 | **Out of Place / Disrupted Order** | Image that belongs elsewhere appears in the wrong context | An expensive object lying among garbage | Medium/Wide object out of place → tilt/pan hints more → ECU wrong contact point |
