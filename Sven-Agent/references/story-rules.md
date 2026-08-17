@@ -369,6 +369,74 @@ Act 4 (Resolution) = N − (A1 + A2 + A3) episodes, minimum 1
 | **Former Lovers** | Feelings remain, trust is lost | Reunited under special circumstances |
 | **Enemies Forced into Alliance** | Shared larger threat, but never fully trust each other | Rivals face common danger |
 
+---
+
+### Power Dynamic — Who Holds Control at Each Beat
+
+> **MANDATORY**: Declare power balance between Line A ↔ Line B at the START of each episode/script. Power is not fixed — it MUST shift at least once (at Twist/Climax).
+
+```
+POWER DYNAMIC:
+  Opening   : [A dominant / B dominant / Equal]
+  Shift at  : [Beat number] — Triggered by: [specific action/reveal]
+  Closing   : [A dominant / B dominant / Equal / Mutual loss]
+```
+
+**Power is expressed through SPACE and BODY — never stated:**
+
+| Who holds power | Physical signals (use these in scene description) |
+|---|---|
+| **Dominant character** | Occupies more space (wider stance, elbows out), moves TOWARD the other person, holds the prop, initiates eye contact, speaks first |
+| **Subordinate character** | Compresses into themselves (arms crossed, shoulders in), steps BACK or stays still, releases the prop, breaks eye contact first, responds rather than initiates |
+| **Power shifting** | Dominant character's hand releases the prop → subordinate picks it up → camera cuts to dominant character's face re-evaluating |
+| **Equal standoff** | Both characters hold their ground, neither moves toward or away, prop sits between them unclaimed |
+
+---
+
+### Address Forms — How Characters Refer to Each Other
+
+> **Purpose**: Address forms in dialogue encode the social power relationship MORE EFFICIENTLY than any action. A single word of address carries the entire relationship history.
+>
+> **Rule**: Declare address forms in metadata at Step 1B Character Profile — lock them for the entire script. Address forms may CHANGE at a Twist beat to signal power shift.
+
+```
+ADDRESS FORMS:
+  A → B : [how A addresses B in dialogue]
+  B → A : [how B addresses A in dialogue]
+  Shift : [Beat N — A changes from X to Y, signaling: power shift / intimacy / contempt]
+```
+
+#### Address Form Library — by Relationship Type
+
+| Relationship Type | A → B (Dominant/Older) | B → A (Subordinate/Younger) | Tension signal |
+|---|---|---|---|
+| **Employer ↔ Worker** | First name only (`"Lok."`) or no address | `"Sir"` / `"Ma'am"` / `"Boss"` | Worker drops title → direct confrontation |
+| **Mentor ↔ Apprentice** | `"Boy"` / `"Kid"` / first name | `"Master"` / `"Teacher"` / `"Sir"` | Apprentice uses name only → betrayal signal |
+| **Parent ↔ Adult Child** | First name (familiarity) or nickname | `"Mom"` / `"Dad"` / `"Father"` | Child uses full title coldly → emotional distance |
+| **Siblings (elder ↔ younger)** | Nickname / first name | `"Brother"` / `"Sister"` / elder's name | Younger drops title → resentment surfacing |
+| **Former Lovers** | First name (careful, neutral) | First name (same) | One adds a title → creating distance deliberately |
+| **Rivals / Enemies** | Last name only / no address | Same | One uses first name → unexpected intimacy, unsettles the other |
+| **Creditor ↔ Debtor** | No address / commands only | Honorific title | Debtor uses name only → declaration of refusal |
+| **Stranger ↔ Stranger** | `"You"` / descriptive title (`"the merchant"`) | Same | One uses a name → reveals they know more than admitted |
+
+#### Address Form as Dialogue Weapon (§D integration)
+
+Address form shifts are **the most efficient subtext tool** in cinematic dialogue:
+
+| Address form change | What it signals to the audience |
+|---|---|
+| `"Master Lok"` → `"Lok"` | The apprentice no longer accepts the hierarchy — break is coming |
+| `"Sir"` → silence (no address) | Worker has mentally already left — body hasn't moved yet |
+| Enemy uses protagonist's first name for the first time | Enemy knows something — or wants something — dangerous intimacy |
+| Parent calls child by full name (not nickname) | Emotional shutdown — serious accusation or deep disappointment |
+| Former lover switches from name to `"you"` | Erasing the intimacy — treating them as a stranger deliberately |
+
+**Hard rules for address forms in Code Block 1 (Omni Flash):**
+- Address forms appear inside the dialogue bracket: `Vin : "Lok. Enough." (voice flat, no honorific — the dropped title deliberate)`
+- NEVER use Vietnamese honorifics (`anh`, `chị`, `em`, `thầy`) in Code Block 1 — translate the POWER DYNAMIC, not the word
+- The physical mechanic in the bracket MUST acknowledge the address form shift when it happens
+- `[CODE BLOCK 2 — Internal]`: Vietnamese address form preserved in translation column for voice actor reference
+
 ### Emotion Physics — ZERO abstract emotion words
 
 | Emotion (DO NOT USE) | Replacement Mechanics (USE THIS) |
