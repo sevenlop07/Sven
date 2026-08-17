@@ -629,6 +629,7 @@ Do not generate subtitles, text overlays, dialogue boxes, on-screen captions, or
 | Prop durability | STABLE props → reference + Mode B; DESTRUCTIBLE → description only |
 | Grid layout | 4-panel row (1x4) for all reference image generation |
 | Skip `workflow.md` | **FORBIDDEN under any reason** |
+| **System file updates** | **All edits to `workflow.md`, `story-rules.md`, `sven-rules.md`, `AGENT.md` MUST be written in English — Vietnamese or mixed-language content is FORBIDDEN in these files** |
 
 ---
 

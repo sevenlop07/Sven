@@ -801,6 +801,7 @@ After completion, **MANDATORY** update `d:\Project\Sven\history-registry.json`:
 | **Stop after Clip A — wait for user confirmation** | **Auto-output Clip B immediately after Clip A** |
 | **Stop after Clip B — wait for user confirmation** | **Auto-output next Beat** |
 | Output multiple Beats when user says "output all" | Dump all 16 clips without permission |
+| **Write system file updates in English** | **Edit `workflow.md`, `story-rules.md`, `sven-rules.md`, `AGENT.md` in Vietnamese or mixed language** |
 
 ---
 
