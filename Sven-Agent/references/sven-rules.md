@@ -505,6 +505,12 @@ All dialogue MUST be output in **2 formats**:
 
 ```
 Master-level cinematography and composition, fast-paced shot variation, atmospheric sound design. Hyper-realistic, ultra-high-definition masterwork. Cinematic 9:16 vertical, {style reference}. Shot on {lens}mm prime lens, f/{aperture}, film grain. {time of day — standard phrase from §[1.E]: e.g. "golden hour, low warm sun before sunset" / "nighttime, artificial light only" / "midday harsh sunlight, overhead sun"}.
+```
+
+> [!CAUTION]
+> **TIME OF DAY is MANDATORY in the Quality line above — do NOT omit or move it to the Context block.**
+> Always use a standard phrase from `§[1.E] TIME OF DAY` table (e.g. `"nighttime, artificial light only"` / `"golden hour, low warm sun before sunset"` / `"overcast, flat diffused daylight"`).
+> Missing time of day = AI guesses arbitrarily → inconsistent lighting across clips.
 
 ▼ CONTEXT (choose Mode):
 [MODE A — no ref] {Full setting description, camera-VISIBLE} — {key practical light source} {direction & height} casts {color temperature} light {across/over area} while {atmosphere}; {shadow behavior}; {light transition}.
