@@ -300,6 +300,21 @@ TROPE         : [Pick from Trope Library above — can stack 2 max]
 CHARACTER: [Code name, 1 syllable]
 CHARACTER LINE / ARC: [A/B/C] | [Arc type: Opening state → Closing state]
 BACKSTORY TRAUMA: [Core wound that shapes behavior]
+
+RELATIONSHIP (with the other Line A/B character):
+  TYPE        : [Mentor/Apprentice | Family/Blood | Former Lovers | Rivals | Employer/Worker | Creditor/Debtor | Strangers | Enemies in Alliance]
+  DESCRIPTION : [1 sentence — who are they to each other and what is the unresolved wound between them]
+
+POWER DYNAMIC:
+  Opening     : [A dominant / B dominant / Equal]
+  Shift at    : [Beat N] — Triggered by: [specific action or reveal]
+  Closing     : [A dominant / B dominant / Equal / Mutual loss]
+
+ADDRESS FORMS (for dialogue scenes — lock for entire script):
+  A → B       : [how A calls B: first name / nickname / "Sir" / "Boy" / no address / etc.]
+  B → A       : [how B calls A]
+  Shift       : [Beat N — who changes, from what to what, and what it signals]
+  VN voice actor ref: [Vietnamese honorific equivalents: anh/em / ông/tôi / thầy/con / etc.]
 ━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━
 
 APPEARANCE PROFILE (English, ~80 words — LOCK for entire series):

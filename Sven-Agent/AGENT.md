@@ -274,6 +274,11 @@ Internal log: `Anti-repetition check: [list of axes checked — OK/CHANGED]`
    - **100% of Character Profiles (Section II), Prop Profiles (Section III), and Scene Content (Section IV) MUST use 1-syllable English names from Stage 1 output onward.**
    - **STRICTLY FORBIDDEN**: Vietnamese names or multi-syllable names (like `Helen`, `Luong`, `Tran`) in character profiles & scene descriptions.
 
+2. At the same time, declare **RELATIONSHIP + POWER DYNAMIC + ADDRESS FORMS** for each Line A ↔ Line B pair (per workflow.md § 1B template). These are locked for the entire script and govern all dialogue bracket mechanics (§D sven-rules.md):
+   - `RELATIONSHIP TYPE` — who they are to each other
+   - `POWER DYNAMIC` — who is dominant at opening, which Beat triggers the shift
+   - `ADDRESS FORMS` — how A calls B and B calls A in Code Block 1 (English power signal, not Vietnamese honorifics) + VN voice actor reference
+
 ### Step 1.2b — Spacetime Rules & Pure Cinematic Prose Spec
 
 - **1 Clip 10s = 1 Unbroken Continuous Physics System**: 1 Clip must be a mathematically-physically continuous flow. No forced cuts or position jumps.
