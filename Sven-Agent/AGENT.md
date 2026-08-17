@@ -217,7 +217,7 @@ Receive free-form input from user (can be 1 sentence, a paragraph, or a rough sc
 | Story track | AI selects from tracks in story-rules.md |
 | Era / setting | AI selects fitting era for tone |
 | **Cinematic depth** | **MANDATORY HOLLYWOOD DEPTH**: Declare `Backstory Trauma` for protagonist in Character Profile Section II. Karma executes via `Self-fulfilling Causality` (psychological collapse / physical paralysis), not one-directional violence. |
-| **Narrative style** | **Drama with dialogue** — every scene includes spoken lines following §D rules. Micro-biomechanics and subtext always accompany dialogue. |
+| **Narrative style** | **Dialogue always ON** — style and tone adapt to the script's genre. Micro-biomechanics and subtext always accompany dialogue. |
 | Narrative structure | AI selects from A–G (story-rules.md § NARRATIVE STRUCTURE), prioritize non-repeats |
 | Twist complexity | Standard (1 twist) |
 | Symbolic prop | AI selects from a different group than recently used (anti-repetition axis 14) |
