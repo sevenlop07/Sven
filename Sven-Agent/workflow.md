@@ -1,14 +1,14 @@
-# WORKFLOW — Short Video Agent (Quy Trình Làm Việc Bắt Buộc)
+# WORKFLOW — Short Video Agent (Mandatory Working Process)
 
-> ⚠️ **ĐÂY LÀ FILE ĐỌC ĐẦU TIÊN — BẮT BUỘC TUYỆT ĐỐI**  
-> Agent PHẢI đọc xong toàn bộ file này TRƯỚC KHI xử lý bất kỳ yêu cầu nào từ user.
+> ⚠️ **THIS IS THE FIRST FILE TO READ — ABSOLUTELY MANDATORY**
+> Agent MUST read this entire file BEFORE processing any user request.
 
 ---
 
-## 📋 THỨ TỰ ĐỌC FILE — BẮT BUỘC KHI BẮT ĐẦU PHIÊN
+## 📋 FILE READING ORDER — MANDATORY AT SESSION START
 
 ```
-[1] workflow.md              ← File này — đọc trước nhất
+[1] workflow.md              ← This file — read first
 [2] history-registry.json   ← d:\Project\Sven\history-registry.json
 [3] story-rules.md          ← references/story-rules.md
 [4] sven-rules.md           ← references/sven-rules.md
@@ -16,86 +16,86 @@
 
 ---
 
-## 🔍 BƯỚC KHỞI ĐỘNG
+## 🔍 STARTUP STEPS
 
-### K1 — Đọc History Registry
+### K1 — Read History Registry
 
 ```
 ANTI-REPETITION CHECK:
 ━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━
-Tên nhân vật đã dùng   : [used_character_names]
-Đạo cụ đã dùng        : [used_props]
-Địa điểm đã dùng      : [used_locations]
-Hook đã dùng          : [used_hook_techniques]
-Visual style đã dùng  : [used_visual_styles]
-Archetype đã dùng     : [used_archetypes]
+Character names used   : [used_character_names]
+Props used             : [used_props]
+Locations used         : [used_locations]
+Hooks used             : [used_hook_techniques]
+Visual styles used     : [used_visual_styles]
+Archetypes used        : [used_archetypes]
 ```
 
-### K2 — Nhận diện loại yêu cầu
+### K2 — Identify Request Type
 
-| Loại yêu cầu | Dấu hiệu | Hành động |
+| Request type | Signal | Action |
 |---|---|---|
-| Chung chung | Không có ý tưởng cụ thể | → **Bước 0** |
-| Có ý tưởng | Mô tả nhân vật/bối cảnh/xung đột | → Bỏ Bước 0, thẳng **Bước 1** |
-| Chỉnh sửa | Feedback về kịch bản/prompt | → Chỉnh trực tiếp |
-| Chỉ prompt | "tạo prompt cảnh N" | → **Giai đoạn 4** cảnh đó |
-| Có thoại | "thoại", "dialogue", "lồng tiếng" | → Kích hoạt §D trong sven-rules.md |
+| Vague / general | No specific idea | → **Step 0** |
+| Has idea | Character/setting/conflict described | → Skip Step 0, go to **Step 1** |
+| Revision | Feedback on script/prompt | → Edit directly |
+| Prompt only | "create prompt for scene N" | → **Stage 4** for that scene |
+| Has dialogue | "dialogue", "voiceover", "lip-sync" | → Activate §D in sven-rules.md |
 
 ---
 
-## 🗺️ TỔNG QUAN QUY TRÌNH
+## 🗺️ PROCESS OVERVIEW
 
 ```
-[INPUT] User nhập yêu cầu
+[INPUT] User request
           ↓
-[K1] Đọc history-registry.json
-[K2] Nhận diện loại yêu cầu
+[K1] Read history-registry.json
+[K2] Identify request type
           ↓
 ╔══════════════════════════════════════════════╗
-║  BƯỚC 0 — IDEA GENERATION                   ║
-║  5 Idea (nhân vật + bối cảnh + cốt truyện   ║
-║  + kết quả TÍch CựC có hậu)                 ║
-║  ✋ CHECKPOINT 0: User chọn 1 Idea           ║
+║  STEP 0 — IDEA GENERATION                   ║
+║  5 Ideas (character + setting + story        ║
+║  + positive / hopeful ending)                ║
+║  ✋ CHECKPOINT 0: User selects 1 Idea        ║
 ╚══════════════════════════════════════════════╝
           ↓
 ╔══════════════════════════════════════════════╗
-║  BƯỚC 1 — PRE-PRODUCTION                    ║
+║  STEP 1 — PRE-PRODUCTION                    ║
 ║  Visual Style + Character/Prop/Env Setup     ║
-║  + Prompt ảnh tham chiếu 4 góc              ║
+║  + Reference image prompts (4 angles)        ║
 ║  + Initial Setting Declaration               ║
-║  ✋ CHECKPOINT 1: User xác nhận              ║
+║  ✋ CHECKPOINT 1: User confirms              ║
 ╚══════════════════════════════════════════════╝
           ↓
 ╔══════════════════════════════════════════════╗
-║  GIAI ĐOẠN 2 — SERIES BLUEPRINT             ║
-║  (Chỉ với Phim Dài Tập)                     ║
-║  Phân bổ tập theo 4 Hồi + vai trò mỗi tập  ║
-║  ✋ CHECKPOINT 2: User xác nhận              ║
+║  STAGE 2 — SERIES BLUEPRINT                 ║
+║  (Multi-Episode Series only)                 ║
+║  4-Act episode distribution + each ep role  ║
+║  ✋ CHECKPOINT 2: User confirms              ║
 ╚══════════════════════════════════════════════╝
           ↓
 ╔══════════════════════════════════════════════╗
-║  GIAI ĐOẠN 3 — KỊCH BẢN CHI TIẾT           ║
-║  Từng tập: 8 Beat × 15s + Emotion Score     ║
-║  + Cliffhanger (nếu dài tập)                ║
-║  ✋ CHECKPOINT 3: User xác nhận từng tập     ║
+║  STAGE 3 — DETAILED SCRIPT                  ║
+║  Per episode: 8 Beat × 15s + Emotion Score  ║
+║  + Cliffhanger (if series)                   ║
+║  ✋ CHECKPOINT 3: User confirms each episode ║
 ╚══════════════════════════════════════════════╝
           ↓
 ╔══════════════════════════════════════════════╗
-║  GIAI ĐOẠN 4 — SVEN PROMPT                 ║
-║  sven-rules.md → 2 AI Clip × 8 Beat/tập    ║
-║  ✋ CHECKPOINT 4: Từng Beat                  ║
+║  STAGE 4 — SVEN PROMPT                      ║
+║  sven-rules.md → 2 AI Clips × 8 Beats/ep   ║
+║  ✋ CHECKPOINT 4: Per Beat                   ║
 ╚══════════════════════════════════════════════╝
           ↓
-[POST] Cập nhật history-registry.json
+[POST] Update history-registry.json
 ```
 
 ---
 
-## 💡 BƯỚC 0 — IDEA GENERATION
+## 💡 STEP 0 — IDEA GENERATION
 
-> Xuất **5 Idea khác biệt** → đợi user chọn.
+> Output **5 distinct Ideas** → wait for user to select one.
 
-**Quy tắc cứng:**
+**Hard rules:**
 - **Ending ALWAYS positive / hopeful** — character grows / reconciles / is saved / inspires. NEVER a dead-end tragedy with no redemption.
 - 5 Ideas must differ: genre / conflict type / character arc / target emotion
 
@@ -157,7 +157,7 @@ EMOTION      : [What audience feels after watching]
 
 ---
 
-## 🎨 BƯỚC 1 — PRE-PRODUCTION
+## 🎨 STEP 1 — PRE-PRODUCTION
 
 ### 1A — VISUAL STYLE & BASIC SETTINGS
 
@@ -271,17 +271,15 @@ TROPE         : [Pick from Trope Library above — can stack 2 max]
 > | Setting | Affects what? | Applied where? |
 > |---|---|---|
 > | **Visual Style** | Render look of ALL images & clips | ① Appended to every reference grid prompt<br>② Quality block of every Clip A + B |
-> | **Genre** | Story tone, conflict type, character dynamics | ① BƯỚC 0 — filters which Idea types to generate<br>② Giai đoạn 2S — influences Hook, Conflict, Emotion Arc |
+> | **Genre** | Story tone, conflict type, character dynamics | ① Step 0 — filters which Idea types to generate<br>② Stage 2S — influences Hook, Conflict, Emotion Arc |
 > | **Background** | Primary environment for the film | ① 1D — Environment Profile is built around this<br>② Initial Setting Declaration uses this as anchor |
-> | **Trope** | Narrative structure, twist type, character relationships | ① BƯỚC 0 — steers Idea generation<br>② Giai đoạn 2S — sets Twist Type and Beat rhythm<br>③ Anti-Repetition check in history-registry.json |
+> | **Trope** | Narrative structure, twist type, character relationships | ① Step 0 — steers Idea generation<br>② Stage 2S — sets Twist Type and Beat rhythm<br>③ Anti-Repetition check in history-registry.json |
 >
 > **Example — Pixar 3D + SEA Family Drama + Small Town + Redemption Arc:**
 > - Every grid image → rendered in Pixar 3D style
 > - Idea generation → focused on family conflict, warm emotional arc, village setting
 > - Environment → small Vietnamese town, warm afternoon light, weathered shop fronts
 > - Beat structure → builds toward redemption moment, cathartic ending
-
-
 
 
 
@@ -475,283 +473,210 @@ Environment concept art. [Full environment profile]. Medium shot focused on
 [key focal point: altar/door/throne/workbench/etc.], dramatic lighting,
 atmosphere and texture emphasis, no characters, [visual style].
 ```
-ing highlighting texture and material,
-pure white background, photorealistic, sharp surface detail,
-the only [prop name] in frame, [visual style].
-
-[SHOT 2 — FRONT ORTHOGRAPHIC]
-Product concept art. [Hồ sơ đạo cụ]. Strict front-view orthographic,
-no perspective distortion, centered, even flat studio lighting,
-white background, all front details visible, the only [prop name] in frame.
-
-[SHOT 3 — SIDE ORTHOGRAPHIC — 90°]
-Product concept art. [Hồ sơ đạo cụ]. Strict 90-degree side-view orthographic,
-no perspective distortion, centered, even flat lighting,
-white background, all side details visible, the only [prop name] in frame.
-
-[SHOT 4 — BACK ORTHOGRAPHIC]
-Product concept art. [Hồ sơ đạo cụ]. Strict back-view orthographic,
-no perspective distortion, centered, even flat lighting,
-white background, all back details visible, the only [prop name] in frame.
-```
-
-### 1D — HỒ SƠ MÔI TRƯỜNG + PROMPT ẢNH THAM CHIẾU
-
-> Mỗi địa điểm cần: **1 ảnh lưới (grid)** trước — sau đó mới là 4 shot riêng lẻ nếu cần chi tiết hơn.
-
-```
-━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━
-MÔI TRƯỜNG: [Tên bối cảnh]
-THỜI ĐIỂM: [Thời gian + thời tiết]
-ATMOSPHERE: [Tone cảm xúc]
-━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━
-
-HỒ SƠ MÔI TRƯỜNG (tiếng Anh, LOCK toàn series):
-[Location]: [architectural style], [size/scale], [key structural elements],
-[floor material], [lighting source], [color palette], [atmospheric condition],
-[time of day], [distinctive environmental details].
-
-━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━
-PROMPT ẢNH THAM CHIẾU
-━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━
-
-[BƯỚC 1 — GRID ẢNH LƯỚI — TẠO TRƯỚC — BẮT BUỘC]
-Environment reference sheet — single image, 2x2 grid layout.
-Header text printed at top center of image:
-"ENVIRONMENT: [Tên địa điểm] | FILM: [Tên phim] | TIME: [thời điểm] | ATMOS: [tone]"
-Grid layout:
-  Top-left     : wide establishing shot, low angle, full scope of location
-  Top-right    : alternate wide from opposite or elevated angle
-  Bottom-left  : aerial top-down view, floor plan layout fully visible
-  Bottom-right : medium close on key focal point (altar/door/workbench/etc.)
-All views: no characters, [hồ sơ môi trường], [visual style], cinematic composition.
-Negative: people, animals, written text overlays other than header.
-
-[BƯỚC 2 — 4 SHOT RIÊNG LẺ — tạo sau nếu cần chi tiết cao hơn]
-
-[SHOT 1 — ESTABLISHING WIDE — Góc thấp/ngang]
-Environment concept art. [Hồ sơ MT]. Wide establishing shot, low angle,
-full scope of [location], [lighting], dramatic atmosphere,
-no characters, [visual style], cinematic composition.
-
-[SHOT 2 — ALTERNATE WIDE — Góc thứ 2]
-Environment concept art. [Hồ sơ MT]. Wide from [opposite/elevated] angle,
-[different spatial relationship], [lighting], no characters, [visual style].
-
-[SHOT 3 — TOP-DOWN / BIRD'S EYE]
-Environment concept art. [Hồ sơ MT]. Aerial top-down view,
-complete floor plan layout visible, spatial relationships clear,
-lighting from above, no characters, [visual style].
-
-[SHOT 4 — KEY DETAIL FOCUS — Điểm focal]
-Environment concept art. [Hồ sơ MT]. Medium shot focused on
-[key focal point: altar/door/throne/etc.], dramatic lighting,
-atmosphere and texture emphasis, no characters, [visual style].
-```
 
 ### 1E — INITIAL SETTING DECLARATION
 
 ```
 ━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━
-INITIAL SETTING — TRẠNG THÁI KHỞI ĐẦU (Single Source of Truth)
+INITIAL SETTING — STARTING STATE (Single Source of Truth)
 ━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━
-THỜI GIAN    : [Thời đại + thời điểm ngày]
-ĐỊA ĐIỂM    : [Tên bối cảnh + vị trí cụ thể]
-ÁNH SÁNG   : [Key source + direction + color temp + atmosphere]
-THỜI TIẾT   : [Clear / foggy / rain / overcast]
-SÀN         : [Floor surface — LOCK toàn series]
+TIME         : [Era + time of day]
+LOCATION     : [Setting name + specific position]
+LIGHTING     : [Key source + direction + color temp + atmosphere]
+WEATHER      : [Clear / foggy / rain / overcast]
+FLOOR        : [Floor surface — LOCK for entire series]
 
-NHÂN VẬT KHỞI ĐẦU:
-• [Code A]: [vị trí frame / tư thế / biểu cảm / cầm gì]
-• [Code B]: [vị trí frame / tư thế / biểu cảm / cầm gì]
+CHARACTERS AT START:
+• [Code A]: [frame position / pose / expression / holding what]
+• [Code B]: [frame position / pose / expression / holding what]
 
-ĐẠO CỤ KHỞI ĐẦU:
-• [Prop]: [vị trí / trạng thái / holder]
+PROPS AT START:
+• [Prop]: [position / state / holder]
 
-GHI CHÚ NHẤT QUÁN (giữ xuyên suốt series):
-• [Quy tắc ánh sáng / màu sắc / camera style ổn định]
+CONSISTENCY NOTES (maintained throughout series):
+• [Lighting / color / camera style rules to hold constant]
 ━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━
 ```
 
-**✋ CHECKPOINT 1:** User xác nhận concept art + setting → sang Giai đoạn 2S (Short Film) hoặc Giai đoạn 2 (Dài Tập)
+**✋ CHECKPOINT 1:** User confirms concept art + setting → proceed to Stage 2S (Short Film) or Stage 2 (Series)
 
 ---
 
-## 🎬 GIAI ĐOẠN 2S — SHORT FILM BLUEPRINT
+## 🎬 STAGE 2S — SHORT FILM BLUEPRINT
 
-> **Chỉ chạy với Short Film.** Phim Dài Tập bỏ qua, thẳng sang Giai đoạn 2.
+> **Run for Short Film only.** Multi-Episode Series skips this, goes directly to Stage 2.
 
-### Nội dung cần xác định
+### What to determine
 
 ```
-1. Xác nhận: 1 tập duy nhất — 8 Beat × 15s = 2 phút tổng
-2. Chọn Hook Technique (§ KỸ THUẬT HOOK — kiểm tra registry)
-3. Chọn Conflict Type (§ NGÂN HÀNG XUNG ĐỘT)
-4. Chọn Twist type cho Beat 6 (§ NGÂN HÀNG TWIST)
-5. Beat 8 = Catharsis tĩnh — KHÔNG cliffhanger
-6. Lập Emotion Arc 8 beat
-7. 1 câu tóm tắt mỗi beat
+1. Confirm: 1 single episode — 8 Beats × 15s = 2 minutes total
+2. Select Hook Technique (§ HOOK TECHNIQUES — check registry)
+3. Select Conflict Type (§ ESCALATION BANK)
+4. Select Twist type for Beat 6 (§ TWIST BANK)
+5. Beat 8 = still Catharsis — NO cliffhanger
+6. Build Emotion Arc for 8 beats
+7. 1-sentence summary per beat
 ```
 
-### Output Giai đoạn 2S
+### Stage 2S Output
 
 ```
 ━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━
-SHORT FILM BLUEPRINT — [Tên phim]
+SHORT FILM BLUEPRINT — [Film title]
 ━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━
-FORMAT        : Short Film — 1 tập — 8 Beat × 15s = 2 phút
-HOOK          : #N — [tên kỹ thuật]
-CONFLICT TYPE : [Loại xung đột]
-TWIST TYPE    : [Loại twist]
+FORMAT        : Short Film — 1 episode — 8 Beats × 15s = 2 minutes
+HOOK          : #N — [technique name]
+CONFLICT TYPE : [Conflict type]
+TWIST TYPE    : [Twist type]
 EMOTION ARC   : B1:[N]→B2:[N]→B3:[N]→B4:[N]→B5:[N]→B6:[N]→B7:[N]→B8:[N]
 
-VẬT BIỂU TƯỢNG : [Prop — State Chain: Gieo ở Beat X → Lật ở Beat 6 → Gương chiếu Beat 8]
-VISUAL ANCHOR  : [Chi tiết thị giác từ Beat 1 tái xuất ở Beat 2 và Beat 8]
+SYMBOLIC OBJECT : [Prop — State Chain: Planted at Beat X → Flipped at Beat 6 → Mirror at Beat 8]
+VISUAL ANCHOR   : [Visual detail from Beat 1 reappears at Beat 2 and Beat 8]
 
 BEAT OUTLINE:
-  B1 HOOK        : [1 câu — hình ảnh mở, cognitive gap]
-  B2 SETUP 1     : [1 câu — mở visual anchor, giới thiệu nhân vật]
-  B3 SETUP 2     : [1 câu — gieo prop biểu tượng, mầm mống mâu thuẫn]
-  B4 ESCALATION 1: [1 câu — xung đột bùng phát mức 1]
-  B5 ESCALATION 2: [1 câu — leo thang, áp lực cực đại]
-  B6 CLIMAX/TWIST: [1 câu — điểm vỡ, twist lật ngược]
-  B7 RESOLUTION  : [1 câu — hệ quả tự nhiên, nhân vật thay đổi]
-  B8 AFTERMATH   : [1 câu — gương chiếu Beat 1, catharsis tĩnh, kết có hậu]
+  B1 HOOK        : [1 sentence — opening image, cognitive gap]
+  B2 SETUP 1     : [1 sentence — open visual anchor, introduce character]
+  B3 SETUP 2     : [1 sentence — plant symbolic prop, seed of conflict]
+  B4 ESCALATION 1: [1 sentence — conflict erupts level 1]
+  B5 ESCALATION 2: [1 sentence — escalates, maximum pressure]
+  B6 CLIMAX/TWIST: [1 sentence — breaking point, twist reverses]
+  B7 RESOLUTION  : [1 sentence — natural consequences, character changes]
+  B8 AFTERMATH   : [1 sentence — mirrors Beat 1, still catharsis, positive ending]
 ━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━
 ```
 
-**✋ CHECKPOINT 2S:** User xác nhận Short Film Blueprint → sang Giai đoạn 3 (viết 8 Beat chi tiết)
+**✋ CHECKPOINT 2S:** User confirms Short Film Blueprint → proceed to Stage 3 (write 8 Beats in detail)
 
 ---
 
-## 📺 GIAI ĐOẠN 2 — SERIES BLUEPRINT (Phim Dài Tập)
+## 📺 STAGE 2 — SERIES BLUEPRINT (Multi-Episode Series)
 
-> **Chỉ chạy với Phim Dài Tập.** Short Film đã qua Giai đoạn 2S, bỏ qua mục này.
+> **Run for Multi-Episode Series only.** Short Film already went through Stage 2S, skip this section.
 
 
-### Kiến trúc 4 Hồi — Phân bổ theo số tập
+### 4-Act Architecture — Allocation by Episode Count
 
 ```
-Tổng số tập (N) do user quyết định.
-Phân bổ tự động theo công thức:
+Total episodes (N) decided by user.
+Automatic allocation formula:
 
-Hồi 1 (Thiết Lập) = floor(N × 0.25) tập, tối thiểu 1
-Hồi 2 (Leo Thang) = floor(N × 0.25) tập, tối thiểu 1
-Hồi 3 (Cao Trào)  = floor(N × 0.25) tập, tối thiểu 1
-Hồi 4 (Giải Quyết)= N − (Hồi1 + Hồi2 + Hồi3) tập, tối thiểu 1
+Act 1 (Setup)      = floor(N × 0.25) episodes, minimum 1
+Act 2 (Escalation) = floor(N × 0.25) episodes, minimum 1
+Act 3 (Climax)     = floor(N × 0.25) episodes, minimum 1
+Act 4 (Resolution) = N − (Act1 + Act2 + Act3) episodes, minimum 1
 ```
 
-### Vai trò 4 Hồi
+### Roles of 4 Acts
 
-| Hồi | Tên | Nhiệm vụ kịch bản | Cliffhanger Intensity | Kiểu Cliffhanger |
+| Act | Name | Script Duty | Cliffhanger Intensity | Cliffhanger Type |
 |---|---|---|---|---|
-| **1** | **Thiết Lập** | Giới thiệu thế giới, nhân vật, xung đột hạt nhân, gieo vật biểu tượng | 6–7 / 10 | Mystery / Threat |
-| **2** | **Leo Thang** | Stakes tăng dần, thất bại đầu tiên, Midpoint Twist lật ngược mọi thứ | 7–8 / 10 | Betrayal / Revelation |
-| **3** | **Cao Trào** | Điểm tối nhất, nhân vật ở đáy, bí mật được lộ hết, quyết định hình thành | 9–10 / 10 | Loss / Decision |
-| **4** | **Giải Quyết** | Đối đầu cuối cùng, catharsis, kết **có hậu tích cực** | 0 (tập cuối) | — |
+| **1** | **Setup** | Introduce world, characters, core conflict, plant symbolic prop | 6–7 / 10 | Mystery / Threat |
+| **2** | **Escalation** | Stakes increase, first failure, Midpoint Twist reverses everything | 7–8 / 10 | Betrayal / Revelation |
+| **3** | **Climax** | Darkest point, character at rock bottom, all secrets exposed, decision forms | 9–10 / 10 | Loss / Decision |
+| **4** | **Resolution** | Final confrontation, catharsis, **positive ending** | 0 (finale) | — |
 
-### Kiểu Cliffhanger (dùng cho tất cả các tập ngoài tập cuối)
+### Cliffhanger Types (for all episodes except the finale)
 
-| # | Kiểu | Mô tả | Hồi phù hợp |
+| # | Type | Description | Suitable Act |
 |---|---|---|---|
-| C1 | **Mystery** | Câu hỏi chưa có lời giải lơ lửng đến tập sau | Hồi 1 |
-| C2 | **Threat** | Mối nguy mới xuất hiện cuối tập | Hồi 1 |
-| C3 | **Betrayal** | Người tin tưởng bị lộ là phản bội | Hồi 2 |
-| C4 | **Revelation** | Sự thật bất ngờ lộ ra đổi toàn bộ bức tranh | Hồi 2 |
-| C5 | **Loss** | Nhân vật mất đi điều quan trọng nhất | Hồi 3 |
-| C6 | **Decision** | Cut ngay trước khoảnh khắc quyết định không thể đảo ngược | Hồi 3 |
-| C7 | **Return** | Nhân vật từ quá khứ bất ngờ xuất hiện lại | Hồi 2–3 |
+| C1 | **Mystery** | Unanswered question hanging until next episode | Act 1 |
+| C2 | **Threat** | New unexpected danger appears at episode end | Act 1 |
+| C3 | **Betrayal** | Trusted person revealed as traitor | Act 2 |
+| C4 | **Revelation** | Surprising truth reverses the entire picture | Act 2 |
+| C5 | **Loss** | Character loses what matters most | Act 3 |
+| C6 | **Decision** | Cut right before an irreversible decision moment | Act 3 |
+| C7 | **Return** | Character from the past unexpectedly reappears | Act 2–3 |
 
-### Output Giai đoạn 2
+### Stage 2 Output
 
 ```
 ━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━
-SERIES BLUEPRINT — [Tên series]
+SERIES BLUEPRINT — [Series title]
 ━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━
-TỔNG SỐ TẬP : [N tập × 2 phút/tập = ~Xh Ym]
-SERIES ARC  : [Mô tả hành trình nhân vật chính xuyên suốt toàn series — 2-3 câu]
-OVERARCHING TWIST: [Bí mật lớn nhất được lộ ra ở Hồi 3/4]
+TOTAL EPISODES   : [N episodes × 2 min/ep = ~Xh Ym]
+SERIES ARC       : [Protagonist's journey across the full series — 2-3 sentences]
+OVERARCHING TWIST: [The biggest secret revealed in Act 3/4]
 
-HỒI 1 — THIẾT LẬP (Tập 1 đến [N×0.25])
-  [Tập 1]: [Nhiệm vụ chính tập 1] | Cliffhanger: [C1/C2] — [mô tả 1 câu]
-  [Tập 2]: [Nhiệm vụ chính tập 2] | Cliffhanger: [Cx] — [mô tả 1 câu]
+ACT 1 — SETUP (Episodes 1 to [N×0.25])
+  [Ep 1]: [Main duty of ep 1] | Cliffhanger: [C1/C2] — [1-sentence description]
+  [Ep 2]: [Main duty of ep 2] | Cliffhanger: [Cx] — [1-sentence description]
   ...
 
-HỒI 2 — LEO THANG (Tập [X] đến [Y])
-  [Tập X]: [Nhiệm vụ] | Cliffhanger: [C3/C4/C7] — [mô tả]
+ACT 2 — ESCALATION (Episodes [X] to [Y])
+  [Ep X]: [Duty] | Cliffhanger: [C3/C4/C7] — [description]
   ...
 
-HỒI 3 — CAO TRÀO (Tập [Y] đến [Z])
-  [Tập Y]: [Nhiệm vụ] | Cliffhanger: [C5/C6] — [mô tả]
+ACT 3 — CLIMAX (Episodes [Y] to [Z])
+  [Ep Y]: [Duty] | Cliffhanger: [C5/C6] — [description]
   ...
 
-HỒI 4 — GIẢI QUYẾT (Tập [Z] đến [N])
-  [Tập N-1]: [Nhiệm vụ] | Cliffhanger: [Victory hook] — [mô tả]
-  [Tập N]: [Tập cuối — kết có hậu, catharsis] | Cliffhanger: KHÔNG CÓ
+ACT 4 — RESOLUTION (Episodes [Z] to [N])
+  [Ep N-1]: [Duty] | Cliffhanger: [Victory hook] — [description]
+  [Ep N]: [Finale — positive ending, catharsis] | Cliffhanger: NONE
 ━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━
 ```
 
-**✋ CHECKPOINT 2:** User xác nhận Series Blueprint → sang Giai đoạn 3 (viết từng tập)
+**✋ CHECKPOINT 2:** User confirms Series Blueprint → proceed to Stage 3 (write each episode)
 
 ---
 
-## 📝 GIAI ĐOẠN 3 — KỊCH BẢN CHI TIẾT (Từng Tập)
+## 📝 STAGE 3 — DETAILED SCRIPT (Per Episode)
 
-> Dựa trên `references/story-rules.md`. Viết từng tập một — xác nhận xong tập N mới sang tập N+1.
+> Based on `references/story-rules.md`. Write one episode at a time — confirm Episode N before proceeding to Episode N+1.
 
-### Cấu trúc 8 Beat × 15s = 2 phút / tập
+### Structure: 8 Beats × 15s = 2 minutes / episode
 
-**Công thức:** Mỗi tập = 8 Beat cố định. Mỗi Beat = 15s = 2 AI Clip (7s + 8s).
+**Formula:** Each episode = 8 fixed Beats. Each Beat = 15s = 2 AI Clips (7s + 8s).
 
-| Beat | Pha | Chức năng | Emotion Score | Thời lượng |
+| Beat | Phase | Function | Emotion Score | Duration |
 |---|---|---|---|---|
-| **Beat 1** | HOOK | Cognitive Gap / Visual Anchor — không giải thích | 6–7 / 10 | 15s |
-| **Beat 2** | SETUP 1 | Mở Visual Anchor, thiết lập nhân vật, bối cảnh | 6–7 / 10 | 15s |
-| **Beat 3** | SETUP 2 | Gieo vật biểu tượng, mầm mống mâu thuẫn, backstory hint | 6–7 / 10 | 15s |
-| **Beat 4** | ESCALATION 1 | Xung đột bùng phát mức 1, stake được đặt ra | 7–8 / 10 | 15s |
-| **Beat 5** | ESCALATION 2 | Xung đột leo thang mức 2, áp lực cực đại | 8–9 / 10 | 15s |
-| **Beat 6** | CLIMAX / TWIST | Điểm vỡ — Twist lật ngược hoặc đỉnh cảm xúc | 9–10 / 10 | 15s |
-| **Beat 7** | RESOLUTION | Hệ quả tự nhiên từ Twist, nhân vật thay đổi | 8–9 / 10 | 15s |
-| **Beat 8** | AFTERMATH + CLIFFHANGER | Tĩnh lặng — gương chiếu — cliffhanger cuối tập | 6–7 / 10 | 15s |
+| **Beat 1** | HOOK | Cognitive Gap / Visual Anchor — no explanation | 6–7 / 10 | 15s |
+| **Beat 2** | SETUP 1 | Open Visual Anchor, establish character, setting | 6–7 / 10 | 15s |
+| **Beat 3** | SETUP 2 | Plant symbolic prop, conflict seed, backstory hint | 6–7 / 10 | 15s |
+| **Beat 4** | ESCALATION 1 | Conflict erupts level 1, stake established | 7–8 / 10 | 15s |
+| **Beat 5** | ESCALATION 2 | Conflict escalates level 2, maximum pressure | 8–9 / 10 | 15s |
+| **Beat 6** | CLIMAX / TWIST | Breaking point — Twist reverses or peak emotion | 9–10 / 10 | 15s |
+| **Beat 7** | RESOLUTION | Natural consequences from Twist, character changes | 8–9 / 10 | 15s |
+| **Beat 8** | AFTERMATH + CLIFFHANGER | Still — mirror shot — cliffhanger end of episode | 6–7 / 10 | 15s |
 
-> **Quy tắc Emotion Score:**
-> - Phải có **ít nhất 1 beat đạt 9–10** (peak) — thường là Beat 6
-> - Beat 8 (Aftermath) LUÔN thấp hơn Beat 6 — tạo "hạ nhiệt" trước cliffhanger
-> - Short Film: Beat 8 không có cliffhanger — thay bằng Catharsis tĩnh
+> **Emotion Score rules:**
+> - Must have **at least 1 beat reaching 9–10** (peak) — usually Beat 6
+> - Beat 8 (Aftermath) ALWAYS lower than Beat 6 — creates "cool-down" before cliffhanger
+> - Short Film: Beat 8 has no cliffhanger — replaced by still Catharsis
 
-### Quy trình viết từng tập
+### Per-Episode Writing Process
 
 ```
-1. Xác nhận vai trò tập này trong Series Blueprint (Hồi mấy? Nhiệm vụ gì?)
-2. Chọn Hook Technique (§ KỸ THUẬT HOOK trong story-rules.md — kiểm tra registry)
-3. Chọn Twist type cho Beat 6 (§ NGÂN HÀNG TWIST)
-4. Xác định Cliffhanger type cho Beat 8 (§ KIỂU CLIFFHANGER)
-5. Viết 8 Beat theo format bên dưới
-6. Kiểm tra: Emotion arc có đúng hình sóng (lên→đỉnh→xuống)? TRẠNG THÁI BÀN GIAO đủ chưa?
+1. Confirm this episode's role in Series Blueprint (Which Act? What duty?)
+2. Select Hook Technique (§ HOOK TECHNIQUES in story-rules.md — check registry)
+3. Select Twist type for Beat 6 (§ TWIST BANK)
+4. Determine Cliffhanger type for Beat 8 (§ CLIFFHANGER TYPES)
+5. Write 8 Beats using the format below
+6. Check: Does emotion arc have the correct wave shape (rise→peak→fall)? Is HANDOFF STATE complete?
 ```
 
-### Output Giai đoạn 3 (từng tập)
+### Stage 3 Output (per episode)
 
 ```
 ━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━
-TẬP [N] — [Tiêu đề tập] | HỒI [X] — [Thiết Lập/Leo Thang/Cao Trào/Giải Quyết]
-NHIỆM VỤ TẬP: [1 câu — tập này cần thực hiện gì trong series arc]
+EPISODE [N] — [Episode title] | ACT [X] — [Setup/Escalation/Climax/Resolution]
+EPISODE DUTY: [1 sentence — what this episode must accomplish in the series arc]
 ━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━
-HOOK TECHNIQUE : #N — [tên]
-TWIST TYPE     : #N — [tên]
-CLIFFHANGER    : [C1–C7 / KHÔNG CÓ (tập cuối)]
+HOOK TECHNIQUE : #N — [name]
+TWIST TYPE     : #N — [name]
+CLIFFHANGER    : [C1–C7 / NONE (finale)]
 EMOTION ARC    : [B1/N]→[B2/N]→[B3/N]→[B4/N]→[B5/N]→[B6/N]→[B7/N]→[B8/N]
 
 BEAT 1 — HOOK (15s) | Emotion: [X/10]
-  Hành động: [tiếng Việt, Show-Don't-Tell, visual cụ thể]
-  Camera: [cỡ cảnh + chuyển động]
-  Sound: [âm thanh diegetic cụ thể]
-  [TRẠNG THÁI BÀN GIAO: Nhân vật / Đạo cụ / Bối cảnh]
+  Action: [English prose, Show-Don't-Tell, specific visual]
+  Camera: [shot scale + movement]
+  Sound: [specific diegetic sound]
+  [HANDOFF STATE: Character / Prop / Setting]
 
 BEAT 2 — SETUP 1 (15s) | Emotion: [X/10]
-  [Tiếp nối từ Beat 1 — copy trạng thái bàn giao]
-  Hành động: ...
-  [TRẠNG THÁI BÀN GIAO: ...]
+  [Continuing from Beat 1 — copy handoff state]
+  Action: ...
+  [HANDOFF STATE: ...]
 
 BEAT 3 — SETUP 2 (15s) | Emotion: [X/10]
   ...
@@ -769,83 +694,83 @@ BEAT 7 — RESOLUTION (15s) | Emotion: [X/10]
   ...
 
 BEAT 8 — AFTERMATH (15s) | Emotion: [X/10]
-  [Gương chiếu — hình ảnh từ Beat 1 xuất hiện lại]
-  CLIFFHANGER: [Mô tả cliffhanger cuối tập — 1-2 câu]
+  [Mirror shot — image from Beat 1 reappears]
+  CLIFFHANGER: [1-2 sentence cliffhanger description for episode end]
 ━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━
-✋ Xác nhận tập [N]? Hoặc chỉnh Beat [X]: ...
+✋ Confirm Episode [N]? Or revise Beat [X]: ...
 ━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━
 ```
 
 ---
 
-## 🎬 GIAI ĐOẠN 4 — SVEN PROMPT (sven-rules.md)
+## 🎬 STAGE 4 — SVEN PROMPT (sven-rules.md)
 
-> Mỗi Beat = 2 AI Clip. Viết từng Beat → chờ xác nhận → Beat tiếp theo.
+> Each Beat = 2 AI Clips. Write Beat by Beat → wait for confirmation → next Beat.
 
-### Split 15s Beat thành 2 Clip
+### Split 15s Beat into 2 Clips
 
 ```
 Beat [N] (15s) = Clip [N]A (7s) + Clip [N]B (8s)
 
-Clip A: Action/Rising — đầu beat, thiết lập state change
-Clip B: Reaction/Peak — cuối beat, hoàn thành state change + TRẠNG THÁI BÀN GIAO
+Clip A: Action/Rising — start of beat, establishes state change
+Clip B: Reaction/Peak — end of beat, completes state change + HANDOFF STATE
 ```
 
-### Output từng Beat
+### Per-Beat Output
 
 ```
 ━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━
-BEAT [N] / 8 — [Tên pha] — Tập [X] | Emotion: [Y/10]
+BEAT [N] / 8 — [Phase name] — Episode [X] | Emotion: [Y/10]
 ━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━
 
 — CLIP [N]A (7s) —
 [CODE BLOCK 1 — OMNI FLASH PROMPT]
-[Tiếng Anh, ~100-130 words]
-[Nếu thoại: Scripting Bracket ≤160 ký tự]
+[English, ~100-130 words]
+[If dialogue: Scripting Bracket ≤ 160 characters]
 
-[CODE BLOCK 2 — KỊCH BẢN / LỒNG TIẾNG]
-Shot 1 (Xs): [tiếng Việt, Show-Don't-Tell]
+[CODE BLOCK 2 — SCRIPT / VOICEOVER]
+Shot 1 (Xs): [English prose, Show-Don't-Tell]
 Shot 2 (Xs): [...]
-END STATE: [Trạng thái kết thúc Clip A]
+END STATE: [Ending state of Clip A]
 
-✋ Generate Clip A xong → OK thì nhắn "tiếp" để nhận Clip B.
+✋ Clip A generated → type "next" to receive Clip B.
 ━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━
 ```
 
-> ⚠️ **BẮT BUỘC STEP BY STEP:**
-> - **DỪNG sau Clip A** — KHÔNG tự xuất Clip B ngay
-> - Chờ user xác nhận ("tiếp" / "ok" / "fix lại") → mới xuất Clip B
-> - **DỪNG sau Clip B** (hết Beat N) — KHÔNG tự xuất Beat N+1
-> - Chờ user xác nhận → mới xuất Beat tiếp theo
-> - **KHÔNG DUMP**: Cấm xuất 2 Beat trở lên trong 1 lần trả lời, trừ khi user chỉ định rõ "xuất hết"
+> ⚠️ **MANDATORY STEP BY STEP:**
+> - **STOP after Clip A** — DO NOT automatically output Clip B
+> - Wait for user confirmation ("next" / "ok" / "fix it") → only then output Clip B
+> - **STOP after Clip B** (Beat N complete) — DO NOT automatically output Beat N+1
+> - Wait for user confirmation → only then output next Beat
+> - **NO DUMP**: Forbidden to output 2+ Beats in one response, unless user explicitly says "output all"
 
-**Sau khi user xác nhận Clip A → xuất Clip B:**
+**After user confirms Clip A → output Clip B:**
 
 ```
 — CLIP [N]B (8s) —
 [CODE BLOCK 1 — OMNI FLASH PROMPT]
-[Bắt đầu từ END STATE của Clip A]
+[Starting from END STATE of Clip A]
 
-[CODE BLOCK 2 — KỊCH BẢN / LỒNG TIẾNG]
+[CODE BLOCK 2 — SCRIPT / VOICEOVER]
 Shot 1 (Xs): [...]
-[TRẠNG THÁI BÀN GIAO BEAT N: Nhân vật / Đạo cụ / Bối cảnh]
+[HANDOFF STATE BEAT N: Character / Prop / Setting]
 
-✋ Generate Clip B xong → OK thì nhắn "tiếp" để nhận Beat [N+1].
+✋ Clip B generated → type "next" to receive Beat [N+1].
 ━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━
 ```
 
 ---
 
-## 📝 POST-SESSION — CẬP NHẬT HISTORY REGISTRY
+## 📝 POST-SESSION — UPDATE HISTORY REGISTRY
 
-Sau khi hoàn tất, **BẮT BUỘC** cập nhật `d:\Project\Sven\history-registry.json`:
+After completion, **MANDATORY** update `d:\Project\Sven\history-registry.json`:
 
 ```json
 {
-  "used_character_names": [...+tên Tuyến A & B],
-  "used_props": [...+vật biểu tượng],
-  "used_locations": [...+bối cảnh đã dùng],
-  "used_hook_techniques": [...+hook đã chọn],
+  "used_character_names": [...+Line A & B names],
+  "used_props": [...+symbolic prop],
+  "used_locations": [...+locations used],
+  "used_hook_techniques": [...+hook selected],
   "used_visual_styles": [...+visual style],
   "used_archetypes": [...+archetype],
   "total_stories_produced": "+1",
@@ -864,47 +789,47 @@ Sau khi hoàn tất, **BẮT BUỘC** cập nhật `d:\Project\Sven\history-regi
 
 ---
 
-## 🚫 NGUYÊN TẮC TUYỆT ĐỐI
+## 🚫 ABSOLUTE RULES
 
-| ✅ Được | ❌ Không được |
+| ✅ Allowed | ❌ Not allowed |
 |---|---|
-| Tự suy luận và ghi rõ giả định | Hỏi lại những thứ đã rõ |
-| Chuyển giai đoạn khi có xác nhận | Tự nhảy giai đoạn |
-| Viết từng Beat/tập một | Xuất hết tất cả cùng lúc |
-| Kết thúc tích cực / có hậu | Bi kịch không lối thoát |
-| Cập nhật registry sau khi xong | Bỏ qua registry |
-| **Dừng sau Clip A — chờ user xác nhận** | **Tự xuất Clip B ngay sau Clip A** |
-| **Dừng sau Clip B — chờ user xác nhận** | **Tự xuất Beat tiếp theo** |
-| Xuất nhiều Beat khi user nói "xuất hết" | Dump hết 16 clip mà không được phép |
+| Infer and state assumptions clearly | Ask about things already clear |
+| Move to next stage only when confirmed | Jump stages without confirmation |
+| Write one Beat/episode at a time | Output everything at once |
+| Positive / hopeful ending | Tragedy with no redemption |
+| Update registry after completion | Skip the registry |
+| **Stop after Clip A — wait for user confirmation** | **Auto-output Clip B immediately after Clip A** |
+| **Stop after Clip B — wait for user confirmation** | **Auto-output next Beat** |
+| Output multiple Beats when user says "output all" | Dump all 16 clips without permission |
 
 ---
 
-## 🔗 MAP FILE TOÀN HỆ THỐNG
+## 🔗 SYSTEM FILE MAP
 
 ```
 d:\Project\Sven\
 ├── history-registry.json          ← Anti-repetition registry
 └── Sven-Agent\
     ├── AGENT.md                   ← Trigger + routing + resource paths
-    ├── workflow.md                ← File này — đọc ĐẦU TIÊN mỗi phiên
+    ├── workflow.md                ← This file — read FIRST every session
     └── references\
-        ├── story-rules.md         ← Kịch bản: Beat, Hook, Tuyến C, Genre/Background/Trope
-        └── sven-rules.md          ← Prompt Omni Flash: Code Block 1, Mode A/B, PRE-FLIGHT
+        ├── story-rules.md         ← Script: Beat, Hook, Line C, Genre/Background/Trope
+        └── sven-rules.md          ← Omni Flash Prompt: Code Block 1, Mode A/B, PRE-FLIGHT
 ```
 
-**Nhiệm vụ từng file:**
+**Each file's duty:**
 
-| File | Nhiệm vụ |
+| File | Duty |
 |---|---|
-| `workflow.md` | Pipeline điều phối — đọc đầu tiên mỗi phiên |
-| `story-rules.md` | Kịch bản: Beat 8×15s, Hook 12 loại, Tuyến ABC, Genre/BG/Trope |
-| `sven-rules.md` | Prompt Omni Flash: Code Block 1 template, PRE-FLIGHT, Mode A/B |
-| `history-registry.json` | Anti-repetition: tên/đạo cụ/style đã dùng |
+| `workflow.md` | Pipeline coordinator — read first every session |
+| `story-rules.md` | Script: Beat 8×15s, 12 Hook types, Lines ABC, Genre/BG/Trope |
+| `sven-rules.md` | Omni Flash Prompt: Code Block 1 template, PRE-FLIGHT, Mode A/B |
+| `history-registry.json` | Anti-repetition: names/props/styles used |
 
-**Thứ tự đọc BẮT BUỘC khi bắt đầu phiên:**
+**Mandatory reading order at session start:**
 ```
-[1] workflow.md              ← Pipeline + thư viện Style/Genre/BG/Trope
-[2] story-rules.md           ← Kịch bản rules
+[1] workflow.md              ← Pipeline + Style/Genre/BG/Trope library
+[2] story-rules.md           ← Script rules
 [3] sven-rules.md            ← Prompt rules
 [4] history-registry.json   ← Anti-repetition check
 ```
