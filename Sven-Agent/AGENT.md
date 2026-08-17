@@ -22,15 +22,19 @@ description: >
 
 ---
 
-## 🎭 DIALOGUE & VISUAL STORYTELLING ROUTING (SHOW, DON'T TELL)
+## 🎭 DIALOGUE & VISUAL STORYTELLING ROUTING
 
-1. **DEFAULT MODE — SHOW, DON'T TELL**:
-   - All scripts and AI Video prompts default to **100% VISUAL STORYTELLING via PHYSICAL ACTION** (Pure Physical Action, Micro-Biomechanics, Ambient Diegetic Sound). **ABSOLUTELY NO DIALOGUE** unless user explicitly requests it.
+1. **DEFAULT MODE — DIALOGUE ALWAYS ON**:
+   - All scripts default to **DIALOGUE MODE** — every scene that has spoken interaction MUST include dialogue brackets in Code Block 1.
+   - Dialogue follows §D rules in sven-rules.md: Hard-Cap ≤ 160 English characters / 10s clip, Scripting Bracket syntax, Camera-Speaker Binding.
+   - **Code Block 1 (Omni Flash Prompt)**: 100% English dialogue.
+   - **Code Block 2 & Stage 3 Script**: Vietnamese dialogue table with correct honorifics for voice actor + full inner emotion + physical mechanics.
 
-2. **DIALOGUE TRIGGER MODE**:
-   - When user explicitly requests dialogue (keywords: "dialogue", "lines", "voiceover", "monologue", or calls `@dialogue-agent`):
-     - **Code Block 1 (Omni Flash Prompt)**: 100% English dialogue (Hard-Cap ≤ 160 English characters, Scripting Bracket syntax: `Subject : "English Line" (...)`).
-     - **Code Block 2 & Stage 1**: Vietnamese dialogue table with full inner emotion + physical mechanics.
+2. **SILENT MODE** (opt-out):
+   - Only switch to zero-dialogue / pure visual mode when user **explicitly requests**: `"no dialogue"`, `"silent"`, `"visual only"`, `"no voiceover"`.
+   - Confirm mode with 1 line before Scene 1 output:
+     - `» Dialogue mode — ON (default).`
+     - `» Silent mode — visual only (user requested).`
 
 ---
 
@@ -443,12 +447,12 @@ Determine before writing any shot:
 3. This tone governs ALL camera/lighting/body-state/sound choices for the scene
 4. **DO NOT output to Omni Flash**
 
-**⚠️ DEFAULT MODE: Show, don't tell — NO dialogue**
-- Default for all scenes: convey emotion/content purely through image, expression, body language, prop — **no spoken words**
-- Only enable dialogue mode when: user **explicitly states** dialogue is needed, or provided sample lines in the script
+**⚠️ DEFAULT MODE: Dialogue always ON**
+- Default for all scenes: include dialogue in Code Block 1 following §D rules (sven-rules.md)
+- Only switch to silent mode when: user **explicitly states** no dialogue is needed
 - Confirm mode with 1 line before Scene 1 output:
-  - `» Show, don't tell — no dialogue.` (default)
-  - `» Dialogue mode — following screenplay.` (when user requests)
+  - `» Dialogue mode — ON (default).` (default)
+  - `» Silent mode — visual only (user requested).` (when user opts out)
 - Mode chosen at Scene 1 applies throughout unless user explicitly switches mid-run
 
 #### Step 2.1 — Pre-flight Safety Check (internal)

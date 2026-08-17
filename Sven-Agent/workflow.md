@@ -39,7 +39,8 @@ Archetypes used        : [used_archetypes]
 | Has idea | Character/setting/conflict described | → Skip Step 0, go to **Step 1** |
 | Revision | Feedback on script/prompt | → Edit directly |
 | Prompt only | "create prompt for scene N" | → **Stage 4** for that scene |
-| Has dialogue | "dialogue", "voiceover", "lip-sync" | → Activate §D in sven-rules.md **+ MANDATORY: verify RELATIONSHIP / POWER DYNAMIC / ADDRESS FORMS declared in 1B before writing any line** |
+| **Dialogue** | **System default — always ON** | **§D in sven-rules.md always active. MANDATORY: declare RELATIONSHIP / POWER DYNAMIC / ADDRESS FORMS in 1B** |
+| Silent mode | User says "no dialogue" / "silent" / "visual only" | → Disable dialogue brackets, revert to visual-only |
 
 ---
 

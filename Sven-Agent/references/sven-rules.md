@@ -580,17 +580,17 @@ Examples — fear, chaos:
 [MODE A — no ref / DESTRUCTIBLE state] {Prop name}, {size}, {material}, {color}, {current condition at opening frame}, resting {camera-anchored position — ZERO hand assignment — "the only [prop] in frame"}.
 [MODE B — STABLE, has ref]             {Prop name} [Prop Reference attached], currently {drawn/worn/resting — current state + position} — the only {prop} in frame.
 
-▼ ACOUSTIC (if applicable):
+▼ ACOUSTIC (ALWAYS INCLUDE when scene has spoken dialogue — system default):
 Diegetic room acoustics: {continuous background ambient sound}.
 
 [{beat 1 timestamp}] Shot {scale: Wide/Medium/Close-up} | {lens}mm f/{aperture} | {camera movement & angle} on {Subject}
 {1-2 prose sentences — PROPER NAME + Action Verb + Object — Pure Cinematic Spec — NO FILLER CONNECTORS.}
-{If Beat has dialogue (Scripting Bracket Format): [Subject] : "{dialogue ≤ 160 chars}" (voice tone & acoustics, lips parting in precise lip-sync, physical micro-biomechanics — mechanics MUST reflect subtext, not just repeat the dialogue)}
+{DIALOGUE (default ON — Scripting Bracket): [Subject] : "{dialogue ≤ 160 chars}" (voice tone & acoustics, lips parting in precise lip-sync, physical micro-biomechanics — mechanics MUST reflect subtext, not just repeat the dialogue)}
 
 [— MIDDLE BEAT IF 3-4 FLEXIBLE BEATS —]
 [{middle beat timestamp}] Shot {scale} | {lens}mm f/{aperture} | {camera movement & angle} on {Subject}
 {Direct physical action — prop state persistent — costume damage unchanged/progressed — PROPER NAME no pronouns.}
-{If Beat has dialogue: [Subject] : "{dialogue ≤ 160 chars}" (voice tone, lips parting in precise lip-sync, physical action — mechanics redirect or reinforce subtext)}
+{DIALOGUE (default ON): [Subject] : "{dialogue ≤ 160 chars}" (voice tone, lips parting in precise lip-sync, physical action — mechanics redirect or reinforce subtext)}
 
 [{final beat timestamp}] Shot {scale: Medium/Close-up} | {lens}mm f/{aperture} | {static / gentle push-in — NO crane/orbit/arc} on {Subject}
 {Final sentence: frozen pose + prop rests in final condition — 0.5s zero-velocity freeze hold — PROPER NAME.}
