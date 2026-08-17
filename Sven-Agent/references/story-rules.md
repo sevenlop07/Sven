@@ -358,6 +358,16 @@ Act 4 (Resolution) = N − (A1 + A2 + A3) episodes, minimum 1
 
 ### Relationship Dynamic
 
+> [!CAUTION]
+> **DIALOGUE CRITICAL — MANDATORY PRE-FLIGHT BEFORE WRITING ANY DIALOGUE SCENE**
+> Before writing a single line of dialogue in Code Block 1, the agent MUST have declared:
+> 1. `RELATIONSHIP TYPE` — what is their real-world bond
+> 2. `POWER DYNAMIC` — who is dominant RIGHT NOW at this Beat, has the shift happened yet?
+> 3. `ADDRESS FORMS` — exactly how A calls B and B calls A in this Beat
+>
+> **A dialogue line written without knowing the address form is incomplete.** The word a character uses to address the other person IS the subtext — it tells the audience everything about the power relationship without stating it.
+> Cross-reference: `workflow.md § 1B — ADDRESS FORMS template` | `sven-rules.md § D.3 — Subtext-to-Physics Table`
+
 > Declare Line A ↔ Line B relationship in metadata: `RELATIONSHIP: [Type] — [1-sentence description]`
 
 | Relationship Type | Conflict Dynamic | Example |

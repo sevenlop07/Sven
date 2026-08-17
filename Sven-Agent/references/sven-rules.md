@@ -88,7 +88,7 @@ Each Shot carries **exactly ONE camera intention**: one movement, one speed, one
 
 ```
 [MODE B — Character format with reference image]
-Lok, 38-year-old male, tall broad-shouldered build. [Character Reference attached]
+ 
 Initial pose: {camera-anchored pose}.
 ```
 
@@ -279,6 +279,17 @@ Before finalizing `[Subject]`, check:
 ## § [D] DIALOGUE ARCHITECTURE — Cinematic Dialogue Architecture (v3 Integrated)
 
 > Apply when a Scene has dialogue. Dialogue is not an explanation tool — dialogue is a **psychological weapon** and the **physical surface of emotion**.
+
+> [!CAUTION]
+> **PRE-FLIGHT BEFORE WRITING ANY DIALOGUE — CHECK THESE 3 FIELDS FROM CHARACTER PROFILE (workflow.md § 1B):**
+> 1. **RELATIONSHIP TYPE** — what is the real-world bond between A and B?
+> 2. **POWER DYNAMIC** — who holds power at THIS specific Beat? Has the shift happened yet?
+> 3. **ADDRESS FORMS** — how does A call B and B call A RIGHT NOW at this Beat?
+>
+> **Write the address form into the dialogue bracket FIRST, then build the line around it.**
+> The wrong address form (or a missing one) breaks the entire subtext layer.
+> A character suddenly calling their master by first name — without ADDRESS FORMS shift declared at this Beat — is a continuity error, not a power moment.
+> Reference: `story-rules.md § Relationship Dynamic` | `workflow.md § 1B — ADDRESS FORMS template`
 
 ### 🔑 §D.0 FOUNDATIONAL PHILOSOPHY — SHOW DON'T TELL THROUGH DIALOGUE
 
