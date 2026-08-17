@@ -39,7 +39,7 @@ Archetypes used        : [used_archetypes]
 | Has idea | Character/setting/conflict described | → Skip Step 0, go to **Step 1** |
 | Revision | Feedback on script/prompt | → Edit directly |
 | Prompt only | "create prompt for scene N" | → **Stage 4** for that scene |
-| Has dialogue | "dialogue", "voiceover", "lip-sync" | → Activate §D in sven-rules.md |
+| Has dialogue | "dialogue", "voiceover", "lip-sync" | → Activate §D in sven-rules.md **+ MANDATORY: verify RELATIONSHIP / POWER DYNAMIC / ADDRESS FORMS declared in 1B before writing any line** |
 
 ---
 
@@ -738,14 +738,24 @@ Clip B: Reaction/Peak — end of beat, completes state change + HANDOFF STATE
 BEAT [N] / 8 — [Phase name] — Episode [X] | Emotion: [Y/10]
 ━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━
 
+[⚠️ IF THIS BEAT HAS DIALOGUE — MANDATORY PRE-FLIGHT BEFORE CODE BLOCK 1]
+DIALOGUE PRE-FLIGHT:
+  RELATIONSHIP    : [Type from 1B — e.g. Creditor/Debtor]
+  POWER DYNAMIC   : [Who holds power AT THIS BEAT — has shift happened yet? Y/N]
+  ADDRESS FORM A→B: [How A addresses B in this Beat — first name / title / none]
+  ADDRESS FORM B→A: [How B addresses A in this Beat]
+  SHIFT THIS BEAT : [Y — A drops title / N — no change]
+  VN VOICE REF    : [anh/em / ông/tôi / thầy/con / etc. for voice actor]
+
 — CLIP [N]A (7s) —
 [CODE BLOCK 1 — OMNI FLASH PROMPT]
 [English, ~100-130 words]
-[If dialogue: Scripting Bracket ≤ 160 characters]
+[If dialogue: Scripting Bracket ≤ 160 characters — address form embedded in bracket]
 
 [CODE BLOCK 2 — SCRIPT / VOICEOVER]
 Shot 1 (Xs): [English prose, Show-Don't-Tell]
 Shot 2 (Xs): [...]
+💬 Dialogue VN: "[Vietnamese line with correct honorifics for voice actor]"
 END STATE: [Ending state of Clip A]
 
 ✋ Clip A generated → type "next" to receive Clip B.
@@ -817,6 +827,8 @@ After completion, **MANDATORY** update `d:\Project\Sven\history-registry.json`:
 | **Stop after Clip B — wait for user confirmation** | **Auto-output next Beat** |
 | Output multiple Beats when user says "output all" | Dump all 16 clips without permission |
 | **Write system file updates in English** | **Edit `workflow.md`, `story-rules.md`, `sven-rules.md`, `AGENT.md` in Vietnamese or mixed language** |
+| **Run DIALOGUE PRE-FLIGHT before any Beat with dialogue** | **Write dialogue without declaring RELATIONSHIP / POWER DYNAMIC / ADDRESS FORMS for that Beat** |
+| **Address form in Code Block 1 bracket reflects current Beat's power state** | **Use an address form that hasn't been declared as a shift at this Beat** |
 
 ---
 
