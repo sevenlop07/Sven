@@ -1,0 +1,22 @@
+{
+  "version": "2.0",
+  "last_updated": "",
+  "total_stories_produced": 0,
+
+  "anti_repetition": {
+    "used_character_names": [],
+    "used_props": [],
+    "used_locations": [],
+    "used_archetypes": [],
+    "used_hook_techniques": [],
+    "used_visual_styles": [],
+    "used_cliffhanger_types": [],
+    "used_conflict_types": [],
+    "used_twist_types": [],
+    "used_genres": [],
+    "used_tropes": [],
+    "used_time_of_day": []
+  },
+
+  "story_history": []
+}
