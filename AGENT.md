@@ -14,7 +14,7 @@ description: >
 
 > **⚠️ REQUIRED FIRST ACTION: Use the file-read tool to load this file immediately:**
 > ```
-> d:\Project\Sven\Sven-Agent\workflow.md
+> d:\Project\Sven\workflow.md
 > ```
 > **DO NOT execute any task before finishing `workflow.md`.**
 
@@ -22,33 +22,52 @@ description: >
 
 ---
 
-## 🎭 DIALOGUE & VISUAL STORYTELLING ROUTING
+## 🎭 SYSTEM-WIDE PRODUCTION MANDATE: DIALOGUE-DRIVEN DRAMA & SUBTEXT
 
-1. **DEFAULT MODE — DIALOGUE ALWAYS ON**:
-   - All scripts default to **DIALOGUE MODE** — every scene that has spoken interaction MUST include dialogue brackets in Code Block 1.
-   - Dialogue follows §D rules in sven-rules.md: Hard-Cap ≤ 160 English characters / 10s clip, Scripting Bracket syntax, Camera-Speaker Binding.
-   - **Code Block 1 (Omni Flash Prompt)**: 100% English dialogue embedded in brackets.
-   - **Code Block 2 & Stage 3 Script**: Vietnamese dialogue table with correct honorifics for voice actor + full inner emotion + physical mechanics.
+> **CORE OPERATIONAL DIRECTIVE (SYSTEM-WIDE DEFAULT)**:
+> Generative AI video models are optimized for static close-up fidelity, micro-biomechanics, and crisp lip-sync rather than fast-paced complex acrobatics or violent fighting. 
+> Therefore, **ALL scripts across all formats (Short Films, Multi-Episode Series, Karma, Spiritual, Urban, Crime, Family Drama) DEFAULT TO DIALOGUE-DRIVEN PSYCHOLOGICAL DRAMA**.
+> 
+> **THE 4 CORE DRAMATIC PILLARS**:
+> 1. **Intense Psychological Dialogue (Đấu kiếm tư tưởng)**: Beat 3 dedicates ≥ 70% runtime to adversarial spoken conflict, weaponized address forms, and ideological sparring.
+> 2. **3-Wave Shocking Twists (Cú lật bất ngờ)**: Climax (Beat 4) executes 3-Wave Truth Bombs (Trap ➔ Loss ➔ Ego Death) instead of physical beatings.
+> 3. **Emotional Micro-Biomechanics (Cơ sinh học cảm xúc)**: Pupil dilation, temple veins pulsing, clenched masseter muscles, tears, choked breathing.
+> 4. **Simple Tactile Physical Actions (Vật lý vi mô đơn giản)**: Setting down a teacup, opening a sealed letter, dropping a prop, kneeling in remorse, eye locks.
+> 🚫 **ABSOLUTE BAN ON COMPLEX COMBAT & HIGH-VELOCITY CHASES**: Zero martial arts choreography, zero vehicle pursuits, zero multi-person brawls (which cause AI limb morphing and motion artifacts).
+>
+> *(Reference: Advanced combat & action framework is preserved in `d:\Project\Sven\Sven-Agent\references\action-dialogue-synergy.md` for dormant/on-demand use only).*
 
-2. **SILENT MODE (SHOW DON'T TELL — OPT-OUT / EXPLICIT SELECTION)**:
-   - Activated when user chooses Mode A / "silent" / "show dont tell" / "visual only" / "không thoại".
-   - **CRITICAL PROMPT SYNTAX RULES**:
-     - ❌ **100% PURGE OF DIALOGUE**: Absolutely ZERO dialogue brackets `[Subject] : "..."`, quotes, or lip-sync speech commands in Code Block 1.
-     - ⚡ **400% AMPLIFIED MICRO-BIOMECHANICS**: Every emotion must be rendered via observable physical reactions (pupil dilation, masseter muscle twitching, rapid chest heaving, cold sweat, involuntary recoil, step-by-step kinetic causality).
-     - 🔊 **PURE DIEGETIC FOLEY & ACOUSTICS**: Only environmental sounds in `Diegetic acoustics: ...` (heavy wind, dripping water, cracking wood, metallic scrapes, ragged breath).
-     - 🚫 **MANDATORY SILENT NEGATIVE CLAUSE**: `Do not generate spoken dialogue, lip movement matching speech, voiceover, subtitles, speech captions, or on-screen text overlaid on video.`
-   - Confirm mode with 1 line before output:
-     - `» Dialogue mode — ON (default).`
-     - `» Silent mode (Show Don't Tell) — ON (100% visual micro-biomechanics & diegetic Foley).`
+---
+
+### 🌐 THE 3 SYSTEM PRODUCTION TRACKS & EXCEPTIONS:
+
+1. **⭐ TRACK 1: DIALOGUE-DRIVEN DRAMA (DEFAULT — ALL SHORT FILMS & SERIES)**:
+   - Dialogue always active in Code Block 1 (English, ≤ 160 chars / clip, lip-sync bound).
+   - Code Block 2 & Stage 3: Full nuanced Vietnamese dialogue table with exact honorifics.
+   - Primary conflict is verbal, emotional, and ideological.
+
+2. **🎵 EXCEPTION 1: MUSIC VIDEO NARRATIVE (MV MODE)**:
+   - Activated when user inputs lyrics / song duration / "MV mode".
+   - Follows `music-video-narrative.md` ($100M+ Hollywood VFX, mythic/cosmic/dark fantasy scale, lyrics-to-visual metaphor, no domestic mundane dialogue).
+
+3. **🤫 EXCEPTION 2: SHORT FILM "SHOW, DON'T TELL" (SILENT MODE)**:
+   - Activated ONLY when user explicitly chooses Option A / "silent" / "show dont tell" / "không thoại".
+   - 100% purge of dialogue brackets; 400% amplified physical biomechanics; pure diegetic Foley acoustics.
+
+Confirm active track with 1 line before output:
+- `» Dialogue-Driven Drama Mode — ON (System Default: Intense dialogue, 3-wave twists, tactile physics).`
+- `» Music Video Narrative Mode — ON ($100M+ VFX scale).`
+- `» Silent Mode (Show Don't Tell) — ON (100% visual micro-biomechanics & diegetic Foley).`
 
 ---
 
 ## Reference Files
 
 **Read every session (PRIMARY — sufficient for all tasks):**
-- **workflow.md**: `d:\Project\Sven\Sven-Agent\workflow.md` — **READ FIRST**
+- **workflow.md**: `d:\Project\Sven\workflow.md` — **READ FIRST**
 - **story-rules.md**: `d:\Project\Sven\Sven-Agent\references\story-rules.md` — full script rules (self-contained summary)
 - **sven-rules.md**: `d:\Project\Sven\Sven-Agent\references\sven-rules.md` — full Omni Flash prompt rules (self-contained summary)
+- **music-video-narrative.md**: `d:\Project\Sven\Sven-Agent\references\music-video-narrative.md` — music video screenplay & prompt architecture ($100M+ VFX scale)
 - **history-registry.json**: `d:\Project\Sven\history-registry.json` — anti-repetition registry
 
 > ⚠️ **Principle**: `story-rules.md` and `sven-rules.md` are designed to be **self-sufficient** for 95%+ of situations. Only reference the original source files when a rule is missing from the `.md` files — and then update the `.md` so you never need to look it up again.
@@ -133,7 +152,7 @@ Activate Step 0 when user input is **missing at least 2 of these 4 elements**:
 
 **Trigger:** User provides song lyrics, asks to create an MV story, or mentions *"MV ca nhạc"*, *"lời bài hát"*, *"kịch bản MV"*, *"music video"*
 
-**Activate:** Load and execute the `music-video-narrative` skill (`.agents/skills/music-video-narrative/SKILL.md`):
+**Activate:** Load and execute `music-video-narrative.md` (`d:\Project\Sven\Sven-Agent\references\music-video-narrative.md`):
 1. **Input Parameters**: Song Lyrics, Musical Genre, Track Duration (Total seconds $T$), MV Mode (Mode A: Pure Story / Mode B: Hybrid Performance / Mode C: Visual Metaphor).
 2. **6-Beat & Musical Mapping**:
    - `Beat 1: Hook (3% of T)` ➔ Intro / First Bars (Visual paradox / Cognitive gap).
@@ -176,24 +195,30 @@ Output directly in markdown (NOT wrapped in a code block):
 
 **CONCEPT 1 — [Memorable Title]** `[Retribution / Reward | Genre]`
 - 🎭 **Premise & Logline:** [High-concept dramatic premise & core moral stakes in 2-3 sentences]
-- 👥 **Character Dynamics:**
-  • Tier A (Protagonist): [Vietnamese name — defining role + Backstory Trauma / Hamartia]
-  • Tier B1 (Antagonist/Nemesis): [Vietnamese name — opposing ideology / pressure]
-  • Tier B2 (Companion/Grace): [Vietnamese name — unconditional grace / catalyst for redemption]
+- 🏛️ **4-Pillar Character & Cast Dynamics:**
+  • **Tier A (Protagonist):** [Vietnamese name — Trade/Occupation + Backstory Trauma + Want vs Need]
+  • **Tier B1 (Antagonist/Nemesis):** [Vietnamese name — Opposing Ideology + "Where They Are Right" + Pressure]
+  • **Tier B2 (Companion/Mirror):** [Vietnamese name — Independent Wound + Safe Harbor Mirror]
+  • **Tier B3 ⭐ (Emotional Origin Anchor):** [Vietnamese name — Biological Mother/Father/Sacred Bond + Sacrificial Origin Wound + Sacred Echo Prop]
+  • **Tier C (Witness Cast / Crowd):** [Specific collective community / atmospheric witness group]
+- 🔗 **3-Layer Relationship Subtext & Wound Chain:**
+  • *Origin Wound:* Tier B3's past sacrifice birthed Tier A's fear of poverty/weakness.
+  • *Friction:* Tier B1 reinforces Tier A's toxic worldly armor (B1 is right that the world is brutal).
+  • *Mirror:* Tier B2 offers safe harbor; presents Tier B3's sacred relic triggering total ego collapse.
 - 📦 **Dual-Prop System:** [Wound Prop at Beat 2] ➔ [180° Physical Echo Prop at Beat 6]
-- 🗺️ **6-Beat Arc & 4-Stage Plot Breakdown:**
-  • Beat 1 (Hook - 3%): [Visual paradox / 3s scroll stopper cognitive gap]
-  • Beat 2 (Setup - 12%): [Old world equilibrium & Hamartia origin + Wound Prop planted]
-  • Beat 3 (Drama - 35%): [Escalating ideological clash / ≥60% spoken conflict + Exits sealed]
-  • Beat 4 (Climax - 30%): [3-Wave Climax ➔ All Hope Is Lost / Ego Death at 5600K Cold Monochrome]
-  • Beat 5 (Release - 12%): [Thermal Polarity Shock to 2700K Warmth + Reverse rescue from Tier B2]
-  • Beat 6 (Echo - 8%): [Transformed world + 180° Echo Prop Payoff + Moral Maxim <15 words]
+- 🗺️ **6-Beat Arc & Character Rotation Breakdown:**
+  • **Beat 1 (Hook - 3%):** Solo / Gilded isolation or Paradox haunted by Tier B3's unread letters / memory.
+  • **Beat 2 (Setup - 12%):** Flashback to Tier B3 / Generational Trauma (Hamartia) + Wound Prop planted.
+  • **Beat 3 (Drama - 35%):** High-stakes ideological clash with Tier B1 (≥60% spoken conflict) + Exits sealed.
+  • **Beat 4 (Climax - 30%):** 3-Wave Climax ➔ All Hope Is Lost / Ego Death at 5600K Cold Monochrome; Tier B2 presents Sacred Echo Prop.
+  • **Beat 5 (Release - 12%):** Thermal Polarity Shock to 2700K Warmth + Reverse rescue from Tier B2 + Tangible act of generosity with Tier C.
+  • **Beat 6 (Echo - 8%):** Transformed world + 180° Echo Prop Payoff + Harmonious legacy with Tier C + Moral Maxim <15 words.
 - 🎣 **Suggested Hook:** #[N] [Technique name] — [1-sentence reason matching plot]
 - 🔥 **Emotion & Catharsis:** [Target feeling & psychological resonance left with audience]
 
 ---
 
-[... repeat exact full structure for CONCEPTS 2, 3, 4, 5 — each must have complete 6-Beat breakdowns ...]
+[... repeat exact full structure for CONCEPTS 2, 3, 4, 5 — each must have complete 4-Pillar binding and 6-Beat breakdowns ...]
 
 ---
 
@@ -229,11 +254,20 @@ After outputting 5 ideas, **MANDATORY STOP**. Do not auto-generate a script.
 
 ## 🖼️ THE MASTER 4-PILLAR VISUAL REFERENCE PIPELINE (STEP 1 PRE-PRODUCTION)
 
-Before generating any video clip prompts, the pipeline generates 3 Master Reference Sheets:
+Before generating any video clip prompts, the pipeline generates Master Reference Sheets according to strict Character Tier Allocations:
 
 1. **Pillar 1 — Character Reference Sheet (16:9 Landscape, 4-Panel)**:
-   - Left 40%: Chest-up extreme close-up portrait (8K UHD, 85mm f/1.4, iris texture, skin pores, lip luster, hair volume).
-   - Right 60% (3 panels 20% each): Front (0°), 3/4 Side, and Back (180°) in static A-pose stance.
+   - **Mandatory Allocation**:
+     • **Tier A (Protagonist)**: MANDATORY 16:9 4-Panel Model Sheet.
+     • **Tier B1 (Antagonist)**: MANDATORY 16:9 4-Panel Model Sheet ($\ge 2$ scenes).
+     • **Tier B2 (Companion/Mirror)**: MANDATORY 16:9 4-Panel Model Sheet ($\ge 2$ scenes).
+     • **Tier B3 ⭐ (Emotional Origin Anchor)**: MANDATORY 16:9 4-Panel Model Sheet ($\ge 2$ scenes in flashbacks/climax).
+     • **Tier B4+ (Allies / Factor)**: MANDATORY 16:9 4-Panel Model Sheet ($\ge 2$ scenes).
+     • **Tier C (Witness Cast / Crowd)**: ❌ **STRICTLY EXCLUDED (0 Sheets)** — described collectively in scene prompts.
+   - **4-Panel Layout**:
+     • Left 40%: Chest-up extreme close-up portrait (8K UHD, 85mm f/1.4, iris texture, skin pores, lip luster, hair volume).
+     • Right 60% (3 panels 20% each): Front (0°), 3/4 Side, and Back (180°) in static A-pose stance.
+   - **7 Standardized Design Fields**: Height, Head-to-body ratio, Ethnicity, Build, Hair, Facial features + UNIQUE MARK, Costume (clean baseline with bare hands, zero props held).
    - **Exact Age Lock Mandate**: `aged [exact integer, e.g. 34]`. Strictly FORBIDDEN to use age ranges (`32–38`).
    - **Empty Hands Rule**: Hands completely empty. Uncropped head-to-toe with shoes fully visible. Pure white `#FFFFFF` background.
 
@@ -324,17 +358,22 @@ Review SESSION LOG across 14 axes (story-rules.md § ANTI-REPETITION). Priority 
 
 Internal log: `Anti-repetition check: [list of axes checked — OK/CHANGED]`
 
-### Step 1.2 — Name Mapping Table (1-syllable English rule)
+### Step 1.2 — The 4-Pillar Character-to-Plot Binding Matrix & 3-Layer Subtext
 
-1. Create **Name Mapping Table**: Vietnamese name → 1-syllable English name with no English meaning (`Lok`, `Keth`, `Vin`, `Ren`, `Tor`).
-   - **MANDATORY**: Vietnamese names only appear in user-facing communication and top-level metadata.
-   - **100% of Character Profiles (Section II), Prop Profiles (Section III), and Scene Content (Section IV) MUST use 1-syllable English names from Stage 1 output onward.**
-   - **STRICTLY FORBIDDEN**: Vietnamese names or multi-syllable names (like `Helen`, `Luong`, `Tran`) in character profiles & scene descriptions.
+1. **4-Pillar Binding Matrix**: Construct the binding table linking every character tier to the story's core moral stakes:
+   - **Pillar 1 (Occupation & World Anchor):** Physical arena and economic friction.
+   - **Pillar 2 (Relationship & Emotional Stakes):** Bloodline, sacred debt, or commercial survival.
+   - **Pillar 3 (Personality & Moral Foil):** Opposing answers to the core philosophical question.
+   - **Pillar 4 (6-Beat Through-Line Engine):** How character friction drives the plot from Beat 1 to Beat 6.
 
-2. At the same time, declare **RELATIONSHIP + POWER DYNAMIC + ADDRESS FORMS** for each Line A ↔ Line B pair (per workflow.md § 1B template). These are locked for the entire script and govern all dialogue bracket mechanics (§D sven-rules.md):
-   - `RELATIONSHIP TYPE` — who they are to each other
-   - `POWER DYNAMIC` — who is dominant at opening, which Beat triggers the shift
-   - `ADDRESS FORMS` — how A calls B and B calls A in Code Block 1 (English power signal, not Vietnamese honorifics) + VN voice actor reference
+2. **3-Layer Relationship Subtext**: Define all 3 layers for every character pair:
+   - `Layer 1 (Surface Label)`: What they call each other (mother/son, merchant/factor, abbot/traveler).
+   - `Layer 2 (Real Dynamic)`: The behavioral truth beneath the label.
+   - `Layer 3 (Wound Connection)`: The unspoken trauma or unpaid debt linking them.
+
+3. **Name Mapping Table (1-Syllable English Rule)**:
+   - Vietnamese names appear only in top-level brief and metadata.
+   - 100% of Character Profiles (Section II), Prop Profiles (Section III), and Screenplay Scenes (Section IV) MUST use **1-syllable English proper nouns with no vocabulary meaning** (`Lok`, `Keth`, `Vin`, `Ren`, `Tor`, `Mael`).
 
 ### Step 1.2b — Spacetime Rules & Pure Cinematic Prose Spec
 
@@ -349,18 +388,28 @@ Internal log: `Anti-repetition check: [list of axes checked — OK/CHANGED]`
 
 ```
 ━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━
-📋 CREATIVE BRIEF
+📋 CREATIVE BRIEF & CHARACTER BINDING MATRIX
 ━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━
 🎣 Hook           : #[N] [Technique name] — [1-sentence reason: which story feature this matches]
 🎭 Karma          : [Retribution / Reward] | Track: [A-H] | Structure: [A-G]
 📦 Wound ➔ Echo   : [Wound Prop at B2] ➔ [180° Echo Prop at B6]
 🔥 Thermal Shock  : 5600K Cold (B4.3) ➔ 2700K Warmth (B5.1)
-👥 Cast Dynamic   : B1: Solo | B2: A vs Past | B3: A vs B1 (60% dialogue) | B4: A Solo | B5: A + B2 | B6: A + C
-🔗 Hook→Setup     : [Bridge type] — [specific element from Hook] → [how it reappears in Beat 2]
-[🔄 Hook adjusted: Step 0 suggested #[K] → changed to #[N] because [specific reason] — SHOW THIS LINE ONLY if hook changed]
-━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━
+👥 Cast Dynamic   : B1: Solo / B3 Memory | B2: A vs B3 Flashback | B3: A vs B1 (60% dialogue) | B4: A Solo Ego Death | B5: A + B2 Grace | B6: A + C Transformed
 
-> If you want to change the hook or any variable → say so before reading the script.
+4-PILLAR CHARACTER-TO-PLOT BINDING:
+| Tier & Name | Story Role | Occupation | Relationship to A | Moral Stance | Wound / Want vs Need | Unique Mark |
+|---|---|---|---|---|---|---|
+| **Tier A** [Name] | Protagonist | [Trade] | Central Subject | [Exterior Armor vs Fear] | Want: [Armor] / Need: [Awakening] | [Mark] |
+| **Tier B1** [Name] | Antagonist | [Trade] | Commercial Rival/Partner | [Where Right: World is Brutal] | Pressure: [Forces crisis] | [Mark] |
+| **Tier B2** [Name] | Mirror/Grace | [Role] | Safe Harbor / Catalyst | [Serene Stillness / Forgiveness] | Independent Wound: [Wound] | [Mark] |
+| **Tier B3 ⭐** [Name] | Origin Anchor | [Trade] | Biological Mother/Father/Bond | [Unconditional Past Sacrifice] | Sacred Prop: [Echo Object] | [Mark] |
+| **Tier C** [Groups] | Witness Cast | [Trade] | Community / Society | [Reflects Social Reality] | Receives transformation | [Attire] |
+
+ORGANIC 3-LAYER RELATIONSHIPS:
+• [Tier A] ↔ [Tier B3 ⭐ Origin]: Surface: [Mother/Son] | Real: [Guilt & Pride] | Wound: [Poverty sacrifice]
+• [Tier A] ↔ [Tier B1 Rival]   : Surface: [Partners] | Real: [Exploitative] | Wound: [Fear of weakness]
+• [Tier A] ↔ [Tier B2 Mirror]  : Surface: [Abbot/Friend] | Real: [Safe Harbor] | Wound: [Witness to B3's blessing]
+━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━
 ```
 
 ### Screenplay Format (6 Beats & 18 Sub-Beats)
@@ -368,42 +417,42 @@ Internal log: `Anti-repetition check: [list of axes checked — OK/CHANGED]`
 ```
 --- BEAT 1: HOOK (3% - [s]s) — Emotion: [6-7/10] ---
 [Sub-beats 1.1 Cognitive Gap, 1.2 Frozen Potential, 1.3 Anchor Bridge]
-Cast: Solo / Prop Focus
-* Character: [name]
+Cast: Solo / Tier B3 Sacred Memory / Prop Focus
+* Character: [1-syllable name]
 * Action: [English prose, Show-Don't-Tell, cognitive gap]
 [HANDOFF STATE: Character / Prop / Setting]
 
 --- BEAT 2: SETUP (12% - [s]s) — Emotion: [6-7/10] ---
 [Sub-beats 2.1 Old World, 2.2 Generational Trauma / Hamartia, 2.3 Wound Prop Plant]
-Cast: Tier A vs. Ghosts of the Past (Flashback/Wound)
-Wound Prop: [Name & Initial Traumatic State]
-* Action: ...
+Cast: Tier A vs. Tier B3 Memory (Origin Flashback)
+Wound Prop: [Name & Initial Traumatic State tied to Tier B3]
+* Action: [Trauma origin revealed; false armor adopted]
 [HANDOFF STATE: ...]
 
 --- BEAT 3: DRAMA (35% - [s]s) — Emotion: [7-9/10] ---
 [Sub-beats 3.1 Flawed Tactics, 3.2 Ideological Clash 60% Spoken, 3.3 Exits Sealed]
 Cast: Tier A vs. Tier B1 (Antagonist) — 60% Spoken Conflict
-* Action & Spoken Conflict: ...
+* Action & Spoken Conflict: [Tier B1 applies crushing pressure; exits sealed]
 [HANDOFF STATE: ...]
 
 --- BEAT 4: CLIMAX (30% - [s]s) — Emotion: [10/10 PEAK] ---
 [Sub-beats 4.1 Wave 1 Identity/Trap, 4.2 Wave 2 Loss/Physical, 4.3 Wave 3 Karma & Ego Death]
-Cast: Tier A Solo in Tragedy (5600K Cold Monochrome)
-* Action: [Anagnorisis & Total Collapse of False Ego]
+Cast: Tier A Solo in Tragedy (5600K Cold Monochrome) + Tier B2 Safe Harbor
+* Action: [Tier A reaches threshold; B2 reveals Tier B3's sacred Echo Prop ➔ Total Ego Death]
 [HANDOFF STATE: ...]
 
 --- BEAT 5: RELEASE (12% - [s]s) — Emotion: [7-8/10] ---
 [Sub-beats 5.1 Thermal Shock 2700K Warm, 5.2 Reverse Rescue from Tier B2, 5.3 Concrete Proof of Change]
-Cast: Tier A + Tier B2 (Companion / Grace)
+Cast: Tier A + Tier B2 (Companion / Grace) + Tier C (Receiving Grace)
 * Lighting/Audio: 2700K soft golden warmth, [pause: 1.5s], warm whisper
-* Action: [Unconditional compassion & tangible transformation]
+* Action: [Unconditional forgiveness; Tier A performs unthinkable act of generosity for Tier C]
 [HANDOFF STATE: ...]
 
 --- BEAT 6: ECHO & END (8% - [s]s) — Emotion: [6-7/10] ---
 [Sub-beats 6.1 Transformed World, 6.2 180° Echo Prop Transformation, 6.3 Moral Maxim]
-Cast: Tier A + Tier C New World
-180° Echo Prop: [Physical reversal of Wound Prop into vessel of grace]
-* Action: [Harmonious life continues under open sky]
+Cast: Tier A + Tier C Harmonious Community
+180° Echo Prop: [Physical reversal of Wound Prop into vessel of enduring grace]
+* Action: [Harmonious life continues under open sky; peaceful legacy]
 CLOSING MORAL MAXIM: "[Independent truth < 15 words]"
 ```
 
@@ -680,11 +729,13 @@ Do not generate subtitles, text overlays, dialogue boxes, on-screen captions, or
 
 ```
 d:\Project\Sven\
-├── history-registry.json          <- Anti-repetition registry
+├── AGENT.md                   <- This file — routing + full pipeline
+├── workflow.md                <- Pipeline + Style/Genre/BG/Trope library (READ FIRST)
+├── history-registry.json      <- Anti-repetition registry
 └── Sven-Agent\
-    ├── AGENT.md                   <- This file — routing + full pipeline
-    ├── workflow.md                <- Pipeline + Style/Genre/BG/Trope library (READ FIRST)
     └── references\
-        ├── story-rules.md         <- Beats, Hook, Line ABC, Genre/BG/Trope, Anti-repetition
-        └── sven-rules.md          <- Omni Flash Code Block 1, Mode A/B, PRE-FLIGHT
+        ├── story-rules.md             <- Beats, Hook, Line ABC, Genre/BG/Trope, Anti-repetition
+        ├── sven-rules.md              <- Omni Flash Code Block 1, Mode A/B, PRE-FLIGHT
+        ├── music-video-narrative.md   <- Music Video screenplay & prompt architecture ($100M+ VFX)
+        └── clip-continuity-theory.md  <- Spatial continuity & camera physics
 ```

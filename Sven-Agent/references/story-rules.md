@@ -95,10 +95,13 @@ Trope defines **dramatic structure and twist rhythm**:
 
 ## § ROLE & OBJECTIVES
 
-- AI Screenwriter + Art Director for **all video genres**: Drama, Action, Romance, Comedy, Light Horror, Psychological, Inspirational...
+- AI Screenwriter + Art Director for **all video genres**: Drama, Psychological, Family, Karma, Spiritual, Romance, Mystery, Inspirational...
 - Platform: TikTok/Reels/Shorts (vertical, AI-generated video per 10-second scene) or Multi-Episode Series
-- **Default: DIALOGUE ALWAYS ON** — every scene with spoken interaction MUST include dialogue following §D rules (sven-rules.md). Silent / visual-only mode only when user explicitly requests it.
-- **MANDATORY DEPTH**: Leverage Backstory Trauma, Subtext, Self-Fulfilling Causality & Physical Micro-Biomechanics
+- **SYSTEM-WIDE MANDATE: DIALOGUE-DRIVEN DRAMA & SUBTEXT (DEFAULT)**:
+  - 100% of standard scripts prioritize **Intense Psychological Dialogue, 3-Wave Truth Bomb Twists, Emotional Micro-Biomechanics, and Simple Tactile Physical Actions** (setting a teacup, opening a letter, kneeling in remorse, dropping a prop).
+  - **ABSOLUTE BAN ON COMPLEX ACTION & CHASES**: Zero martial arts choreography, zero vehicle pursuits, zero multi-person combat (to eliminate AI diffusion model physical morphing/artifacts).
+  - **Exceptions**: Music Video Narrative (`music-video-narrative.md`) & Silent Short Film (Show Don't Tell).
+- **MANDATORY DEPTH**: Leverage Backstory Trauma, Subtext, Self-Fulfilling Causality & Physical Micro-Biomechanics.
 
 ---
 
@@ -159,11 +162,11 @@ Trope defines **dramatic structure and twist rhythm**:
 
 ### 👥 Nâng cấp 2: Cast Dynamic Rotation Law (Luật Xoay Vòng Trọng Tâm Nhân Vật)
 To eliminate dialogue clutter and avoid monotonous soliloquies, each Beat is assigned an explicit dramatic counterweight:
-- **Beat 1 (Hook)**: **Solo / Prop Focus** (Centers on the paradoxical object/gesture).
-- **Beat 2 (Setup)**: **Tier A (Protagonist) vs. Ghosts of the Past** (Internal wound / flashback to the childhood origin).
+- **Beat 1 (Hook)**: **Solo / Tier B3 Sacred Memory** (Centers on the paradoxical object/gesture or haunted by unread memories).
+- **Beat 2 (Setup)**: **Tier A (Protagonist) vs. Tier B3 Memory** (Childhood root wound / generational trauma origin).
 - **Beat 3 (Drama)**: **Tier A vs. Tier B1 (Antagonist)** — Fierce ideological collision; **60% of runtime dedicated to spoken conflict**.
-- **Beat 4 (Climax)**: **Tier A Solo in Tragedy** — Facing the total collapse of the ego, isolated in consequences.
-- **Beat 5 (Release)**: **Tier A + Tier B2 (Companion / Grace)** — Unconditional compassion and reverse rescue.
+- **Beat 4 (Climax)**: **Tier A Solo Ego Death** — Facing the total collapse of the false self, with Tier B2 presenting Tier B3's Sacred Echo Prop.
+- **Beat 5 (Release)**: **Tier A + Tier B2 (Companion / Grace)** — Unconditional compassion, reverse rescue, and tangible charity shared with Tier C.
 - **Beat 6 (Echo)**: **Tier A + Tier C New World** — Harmonious integration with the broader community and expansive horizon.
 
 ---
@@ -175,6 +178,47 @@ Every masterwork anchors emotional truth into a tangible object with a living ar
   - *Rusty padlock* ➔ Opened wide, resting face-up on a weathered wooden table, catching morning sun as sparrows feed on grain beside it.
   - *Chipped dagger* ➔ Reforged into a humble plowshare tilling fresh soil.
   - *Debt ledger* ➔ Consumed in hearth fire, charred ashes floating out onto the river breeze.
+
+---
+
+## 👥 § THE 4-PILLAR CHARACTER-TO-PLOT BINDING SYSTEM
+
+> **CHARACTERS ARE THE PLOT**: In cinematic storytelling, characters are never randomly placed. Every character tier exists because of a specific psychological friction, moral foil, or emotional debt tied directly to the protagonist.
+
+### 🏛️ The 4 Pillars of Character Architecture
+
+1. **Pillar 1: Occupation & World Anchor (Nghề nghiệp & Vị thế)**:
+   - Defines physical arena, daily habits, sensory tools, and material stakes (e.g. Master Silk Merchant vs Senior Factor vs Village Handloom Weaver).
+
+2. **Pillar 2: Relationship & Emotional Stakes (Mối quan hệ & Ràng buộc)**:
+   - The unbreakable bond (bloodline, debt of gratitude, mutual survival) preventing characters from simply walking away when conflict explodes.
+
+3. **Pillar 3: Personality & Moral Foil (Tính cách & Đối trọng đạo đức)**:
+   - Every character represents a conflicting answer to the core philosophical question. **Tier B1 Antagonist MUST be right about something** (e.g., that the world is harsh and fortunes vanish).
+
+4. **Pillar 4: 6-Beat Through-Line Engine (Bộ máy tiến hóa qua 6 Beat)**:
+   - Drives narrative progression: Gilded Isolation (Beat 1) ➔ Trauma Origin (Beat 2) ➔ Ideological Clash (Beat 3) ➔ Loss & Ego Death (Beat 4) ➔ Reverse Rescue & Charity (Beat 5) ➔ Transformed Community (Beat 6).
+
+---
+
+### 🌐 Complete Character Tier Allocations & Visual References
+
+| Tier | Character Role | Psychological Function | 4-View Reference Model Sheet (16:9) |
+|---|---|---|:---:|
+| **Tier A** | Protagonist | Bears core wound; Want $\neq$ Need; 1 UNIQUE MARK; 2 habits; internal contradiction. | **MANDATORY** |
+| **Tier B1** | Antagonist / Pressure | Forces wound to surface; **Where They Are Right**; cooler/harsher lighting. | **MANDATORY** ($\ge 2$ scenes) |
+| **Tier B2** | Companion / Mirror | Safe harbor; independent wound; creates space for realization. | **MANDATORY** ($\ge 2$ scenes) |
+| **Tier B3 ⭐** | Emotional Origin Anchor | Biological parent/late spouse; origin of trauma; owner of Sacred Echo Prop. | **MANDATORY** ($\ge 2$ scenes) |
+| **Tier B4+** | Recurring Allies / Factor | Second-in-command / Apprentice ($\ge 2$ scenes). | **MANDATORY** |
+| **Tier C** | Witness Cast / Quần chúng | Collective community; atmospheric crowds; grounds reality. | ❌ **FORBIDDEN (0 Sheet)** |
+
+---
+
+### 🔗 Organic 3-Layer Relationship Subtext Model
+Every character interaction MUST be constructed across 3 distinct psychological layers:
+- **Layer 1 (Surface Label)**: What society/characters call the bond (Mother & Son, Business Partners, Abbot & Pilgrim).
+- **Layer 2 (Real Dynamic)**: The behavioral truth beneath (Pride masking guilt, exploitative commercial pressure, safe harbor holding space).
+- **Layer 3 (Wound Connection)**: The shared unspoken trauma or unpaid debt linking them (Childhood poverty sacrifice, fear of weakness).
 
 ---
 

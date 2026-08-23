@@ -42,16 +42,17 @@ Axis 14 (Narrative Mode)    : [axis_14_narrative_mode] — Dialogue Mode vs Show
 ━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━
 ```
 
-### K2 — Identify Request Type & Storytelling Mode
+### K2 — Identify Request Type & Storytelling Track
 
-| Request type | Signal | Action |
+| Request type / Track | Signal | Action & Dramatic Constraints |
 |---|---|---|
-| Vague / general | No specific idea | → **Step 0** (Generate 5 detailed 6-Beat concepts) |
+| Vague / general | No specific idea | → **Step 0** (Generate 5 detailed 6-Beat concepts with 4-Pillar Binding) |
 | Has idea | Character/setting/conflict described | → Skip Step 0, go to **Step 1** |
 | Revision | Feedback on script/prompt | → Edit directly |
 | Prompt only | "create prompt for scene N" | → **Stage 4** for that scene |
-| **Dialogue Mode** | **System default — always ON** | **§D in sven-rules.md active. Declare RELATIONSHIP / POWER DYNAMIC / ADDRESS FORMS in 1B. Include Code Block 1 Lip-sync Brackets + Code Block 2 VN Dialogue Table.** |
-| **Silent Mode (Show Don't Tell)** | User says "no dialogue" / "silent" / "show dont tell" / "visual only" | **100% PURGE OF SPOKEN DIALOGUE. Zero dialogue brackets in Code Block 1. 400% amplified micro-biomechanics. Pure diegetic Foley & atmospheric acoustics. Mandatory Silent Negative Clause.** |
+| **⭐ Track 1: Dialogue-Driven Drama (DEFAULT)** | **System Default — ALWAYS ON for all films & series** | **Intense Psychological Dialogue, 3-Wave Twists, Emotional Micro-Biomechanics, Simple Tactile Actions. Zero complex fighting/chases. §D in sven-rules.md active. Code Block 1 Lip-sync brackets + Code Block 2 VN Dialogue Table.** |
+| **🎵 Exception 1: Music Video Narrative (MV Mode)** | Lyrics provided / Song duration / "MV mode" | **Follows `music-video-narrative.md`. $100M+ Hollywood VFX, mythic/cosmic/dark fantasy scale, lyrics-to-visual metaphor, no domestic mundane realism.** |
+| **🤫 Exception 2: Silent Mode (Show Don't Tell)** | User explicitly chooses "silent" / "show dont tell" / "visual only" / "không thoại" | **100% PURGE OF SPOKEN DIALOGUE. Zero dialogue brackets in Code Block 1. 400% amplified micro-biomechanics. Pure diegetic Foley & atmospheric acoustics. Mandatory Silent Negative Clause.** |
 
 ---
 
@@ -119,22 +120,29 @@ Axis 14 (Narrative Mode)    : [axis_14_narrative_mode] — Dialogue Mode vs Show
 🎭 PREMISE & LOGLINE:
    [High-concept dramatic premise & core moral stakes in 2-3 sentences]
 
-👥 CHARACTER DYNAMICS:
-   • Tier A (Protagonist): [Vietnamese name — defining role + Backstory Trauma / Hamartia]
-   • Tier B1 (Antagonist/Nemesis): [Vietnamese name — opposing ideology / pressure]
-   • Tier B2 (Companion/Grace): [Vietnamese name — unconditional grace / catalyst for redemption]
+🏛️ 4-PILLAR CHARACTER & CAST DYNAMICS:
+   • **Tier A (Protagonist):** [Vietnamese name — Trade/Occupation + Backstory Trauma + Want vs Need]
+   • **Tier B1 (Antagonist/Nemesis):** [Vietnamese name — Opposing Ideology + "Where They Are Right" + Pressure]
+   • **Tier B2 (Companion/Mirror):** [Vietnamese name — Independent Wound + Safe Harbor Mirror]
+   • **Tier B3 ⭐ (Emotional Origin Anchor):** [Vietnamese name — Biological Mother/Father/Sacred Bond + Sacrificial Origin Wound + Sacred Echo Prop]
+   • **Tier C (Witness Cast / Crowd):** [Specific collective community / atmospheric witness group]
+
+🔗 3-LAYER RELATIONSHIP SUBTEXT & WOUND CHAIN:
+   • *Origin Wound:* Tier B3's past sacrifice birthed Tier A's fear of poverty/weakness.
+   • *Friction:* Tier B1 reinforces Tier A's toxic worldly armor (B1 is right that the world is brutal).
+   • *Mirror:* Tier B2 offers safe harbor; presents Tier B3's sacred relic triggering total ego collapse.
 
 📦 DUAL-PROP SYSTEM:
-   • Wound Prop (Beat 2): [Tangible symbol of entrapment / trauma]
+   • Wound Prop (Beat 2): [Tangible symbol of entrapment / trauma tied to Tier B3]
    • Echo Prop (Beat 6): [180° Physical reversal into symbol of liberation & peace]
 
-🗺️ 6-BEAT NARRATIVE ARC & 4-STAGE PLOT SUMMARY:
-   • Beat 1 (Hook - 3%): [Visual paradox / 3s scroll stopper cognitive gap]
-   • Beat 2 (Setup - 12%): [Old world equilibrium & Hamartia origin + Wound Prop planted]
-   • Beat 3 (Drama - 35%): [Escalating ideological clash / ≥60% spoken conflict + Exits sealed]
-   • Beat 4 (Climax - 30%): [3-Wave Climax ➔ All Hope Is Lost / Ego Death at 5600K Cold Monochrome]
-   • Beat 5 (Release - 12%): [Thermal Polarity Shock to 2700K Warmth + Reverse rescue from Tier B2]
-   • Beat 6 (Echo - 8%): [Transformed world + 180° Echo Prop Payoff + Moral Maxim <15 words]
+🗺️ 6-BEAT NARRATIVE ARC & CHARACTER ROTATION BREAKDOWN:
+   • **Beat 1 (Hook - 3%):** Solo / Gilded isolation or Paradox haunted by Tier B3's unread letters / memory.
+   • **Beat 2 (Setup - 12%):** Flashback to Tier B3 / Generational Trauma (Hamartia) + Wound Prop planted.
+   • **Beat 3 (Drama - 35%):** High-stakes ideological clash with Tier B1 (≥60% spoken conflict) + Exits sealed.
+   • **Beat 4 (Climax - 30%):** 3-Wave Climax ➔ All Hope Is Lost / Ego Death at 5600K Cold Monochrome; Tier B2 presents Sacred Echo Prop.
+   • **Beat 5 (Release - 12%):** Thermal Polarity Shock to 2700K Warmth + Reverse rescue from Tier B2 + Tangible act of generosity with Tier C.
+   • **Beat 6 (Echo - 8%):** Transformed world + 180° Echo Prop Payoff + Harmonious legacy with Tier C + Moral Maxim <15 words.
 
 🎣 HOOK TECHNIQUE: #[N] [Technique Name] — [1-sentence reason matching plot]
 🔥 EMOTION & CATHARSIS: [Target feeling & psychological resonance left with audience]
@@ -321,38 +329,57 @@ TROPE         : [Pick from Trope Library above — can stack 2 max]
 
 
 
-### 1B — CHARACTER PROFILE + 16:9 FOUR-PANEL MASTER REFERENCE SHEET PROMPT
+### 1B — CHARACTER ARCHITECTURE & 16:9 MASTER MODEL SHEETS
 
-> Each Line A and B character receives an **Ultra-Detailed Master Character Reference Sheet Prompt** following the professional 16:9 four-panel studio specification.
+> **MANDATORY TIER ALLOCATION MATRIX**:
+> - **Tier A (Protagonist)**: MANDATORY 16:9 4-Panel Reference Model Sheet.
+> - **Tier B1 (Antagonist/Foil)**: MANDATORY 16:9 4-Panel Model Sheet ($\ge 2$ scenes) — "Where They Are Right" required.
+> - **Tier B2 (Companion/Mirror)**: MANDATORY 16:9 4-Panel Model Sheet ($\ge 2$ scenes) — Independent wound required.
+> - **Tier B3 ⭐ (Emotional Origin Anchor)**: MANDATORY 16:9 4-Panel Model Sheet ($\ge 2$ scenes) — Biological parent/late spouse + Sacred Echo Prop.
+> - **Tier B4+ (Allies / Factor)**: MANDATORY 16:9 4-Panel Model Sheet ($\ge 2$ scenes).
+> - **Tier C (Witness Cast / Collective Crowd)**: ❌ **STRICTLY EXCLUDED (0 Sheets)** — described collectively in scene prompts.
 
 ```
 ━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━
-CHARACTER PROFILE: [Code Name, 1 syllable — e.g., Lok, Keth, Vin, Ren, Tor]
+THE 4-PILLAR CHARACTER-TO-PLOT BINDING MATRIX
 ━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━
-CHARACTER LINE / ARC: [Tier A (Protagonist) / Tier B1 (Antagonist) / Tier B2 (Companion)]
-ROLE                : [Role in story — e.g., The Traumatized Blacksmith / The Cursed Sovereign / The Predator]
-BACKSTORY TRAUMA    : [Root trauma / Hamartia shaping character behavior]
+| Tier & Name | Story Role | Occupation & Arena | Relationship to A | Moral Stance | Wound / Want vs Need | Unique Mark |
+|---|---|---|---|---|---|---|
+| **Tier A** [Code Name] | Protagonist / Arc Bearer | [Specific trade] | Central Subject | [Exterior Pride vs Interior Fear] | Want: [Material Armor]<br>Need: [Awakening] | [Physical Mark] |
+| **Tier B1** [Code Name] | Antagonist / Direct Friction | [Specific trade] | Commercial Partner / Rival | [Hard Pragmatism: "World is Brutal"] | Pressure: [Forces Crisis] | [Physical Mark] |
+| **Tier B2** [Code Name] | Companion / Safe Harbor | [Specific role] | Spiritual Guide / Mirror | [Serene Stillness & Forgiveness] | Independent Wound: [Wound] | [Physical Mark] |
+| **Tier B3 ⭐** [Code Name] | Emotional Origin Anchor | [Specific trade] | Biological Mother/Father/Bond | [Unconditional Past Sacrifice] | Sacred Prop: [Echo Object] | [Physical Mark] |
+| **Tier C** [Groups] | Witness Cast & Quần Chúng | [Caravan drivers, villagers] | Society / Community | [Reflects Social Reality] | Receives transformation | [Sensory Attire] |
 
-RELATIONSHIP (with other main character):
-  TYPE        : [Mentor/Apprentice | Family/Blood | Former Lovers | Rivals | Employer/Worker | Enemies in Alliance]
-  DESCRIPTION : [1 sentence — who they are to each other and what is the unresolved wound]
+━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━
+ORGANIC 3-LAYER RELATIONSHIP WEB
+━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━
+[Tier A] ↔ [Tier B3 ⭐ — Emotional Origin Anchor]:
+  • Layer 1 (Surface Label):    [Biological Mother & Son / Unopened Letters]
+  • Layer 2 (Real Dynamic):     [Bodhi fled poverty to provide for her, but his pride created 20 years of abandonment]
+  • Layer 3 (Wound Connection): [The childhood frostbite and her blind eyes are the origin of Bodhi's terror of poverty]
 
-POWER DYNAMIC:
-  Opening     : [A dominant / B dominant / Equal]
-  Shift at    : [Beat N] — Triggered by: [specific action or reveal]
-  Closing     : [A dominant / B dominant / Equal / Mutual loss]
+[Tier A] ↔ [Tier B1 — Antagonist / Friction]:
+  • Layer 1 (Surface Label):    [Trusted Senior Factor / Business Manager]
+  • Layer 2 (Real Dynamic):     [Tarik reinforces Bodhi's worst impulses, weaponizing commercial logic against emotional return]
+  • Layer 3 (Wound Connection): [Tarik survived the desert through ruthlessness; he sees Bodhi's nostalgia as dangerous weakness]
+  • Where B1 is Right:          [The trade route is indeed unforgiving and fortunes vanish overnight]
 
-ADDRESS FORMS (for dialogue scenes — lock for entire script):
-  A → B       : [how A calls B: first name / nickname / "Sir" / "Boy" / no address / etc.]
-  B → A       : [how B calls A]
-  Shift       : [Beat N — who changes, from what to what, and what it signals]
-  VN voice ref: [Vietnamese honorific equivalents: anh/em / ông/tôi / thầy/con / etc.]
+[Tier A] ↔ [Tier B2 — Companion / Mirror]:
+  • Layer 1 (Surface Label):    [Abbot of Mountain Mist Sanctuary]
+  • Layer 2 (Real Dynamic):     [Holds space without judgment during Bodhi's total ego death; presents the cedar chest]
+  • Layer 3 (Wound Connection): [Gautam cared for Meili in her final years; carries her final unspoken blessing]
 ━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━
 
-APPEARANCE PROFILE (English — LOCK for entire series):
-[Name], [exact age, e.g. 34]-year-old [gender], [height in cm], [ethnicity/skin tone], [build],
-[hair color/style/texture], [facial bone structure & observable gaze],
-wearing [costume & footwear: premium materials, colors, tailored fit — NO detached props].
+CHARACTER DESIGN SPECIFICATIONS (7 Standardized Fields):
+• Height:             [##]cm
+• Head-to-body ratio: [##] heads
+• Ethnicity:          [Specific ethnicity/demographic]
+• Build:              [Specific body build and posture]
+• Hair:               [Color + hex if applicable, length, texture, style]
+• Facial features:    [Facial structure, eyes, lips, skin texture & pores, UNIQUE MARK]
+• Clothing & props:   [Pristine baseline outfit in explicit fabrics, bare hands, ZERO props held]
+━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━
 
 ━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━
 🎨 MASTER 16:9 FOUR-PANEL CHARACTER REFERENCE SHEET PROMPT (COPY TO GENERATE)
@@ -516,19 +543,19 @@ TWIST TYPE       : [3-Wave Climax for Beat 4: Identity ➔ Loss ➔ Karma/Ego De
 WOUND PROP (B2)  : [Name & Initial Traumatic / Entrapment State]
 ECHO PROP (B6)   : [180° Physical Transformed State of Enlightenment / Grace]
 THERMAL POLARITY : Cold 5600K (Beat 4.3) ➔ Warm 2700K (Beat 5.1) | [Lighting/Audio pause cues]
-CAST DYNAMICS    : B1: Solo | B2: A vs Past | B3: A vs B1 | B4: A Solo | B5: A + B2 | B6: A + C
+CAST DYNAMICS    : B1: Solo / B3 Memory | B2: A vs B3 Flashback | B3: A vs B1 (60% dialogue) | B4: A Solo Ego Death | B5: A + B2 Grace | B6: A + C Transformed
 EMOTION ARC      : B1:[6-7] ➔ B2:[6-7] ➔ B3:[7-9] ➔ B4:[10 PEAK] ➔ B5:[7-8] ➔ B6:[6-7]
 
 18 SUB-BEATS OUTLINE:
   [BEAT 1: HOOK — 3%]
     1.1 Cognitive Gap     : [Visual paradox / cognitive question without explanation]
-    1.2 Frozen Potential  : [High tension before physical causality unfolds]
+    1.2 Frozen Potential  : [High tension before physical causality unfolds; haunted by Tier B3 memory]
     1.3 Anchor Bridge     : [Visual anchor element bridging into Beat 2]
 
   [BEAT 2: SETUP — 12%]
     2.1 Old Equilibrium  : [Status quo & entrenched flawed belief]
-    2.2 Backstory Wound   : [Generational trauma / Hamartia origin]
-    2.3 Wound Prop Plant  : [Planting physical wound symbol + cracked contract]
+    2.2 Backstory Wound   : [Generational trauma origin revealed via Tier B3 flashback]
+    2.3 Wound Prop Plant  : [Planting physical wound symbol tied to Tier B3]
 
   [BEAT 3: DRAMA — 35%]
     3.1 Flawed Tactics    : [Using toxic habits to solve crisis]
@@ -538,16 +565,16 @@ EMOTION ARC      : B1:[6-7] ➔ B2:[6-7] ➔ B3:[7-9] ➔ B4:[10 PEAK] ➔ B5:[7
   [BEAT 4: CLIMAX — 30% — PEAK (10/10)]
     4.1 Wave 1 (Trap)     : [Identity reveal or trap springs shut]
     4.2 Wave 2 (Loss)     : [Physical / material destruction]
-    4.3 Wave 3 (Ego Death): [Karma recognized, All Hope Is Lost, 5600K Cold Monochrome]
+    4.3 Wave 3 (Ego Death): [Tier B2 reveals Tier B3's Sacred Echo Prop ➔ All Hope Is Lost, 5600K Cold Monochrome]
 
   [BEAT 5: RELEASE — 12%]
     5.1 Thermal Shock     : [Abrupt shift to 2700K warmth, [pause: 1.5s], warm whisper]
     5.2 Reverse Rescue    : [Unconditional grace from Tier B2]
-    5.3 Concrete Proof    : [Tangible action of rebirth / doing the unthinkable from Beat 2]
+    5.3 Concrete Proof    : [Tangible act of generosity / doing the unthinkable from Beat 2 with Tier C]
 
   [BEAT 6: ECHO & END — 8%]
     6.1 Transformed World : [Tier A integrates with Tier C community under open sky]
-    6.2 180° Echo Prop    : [Physical reversal of Wound Prop into vessel of grace]
+    6.2 180° Echo Prop    : [Physical reversal of Wound Prop into vessel of enduring grace]
     6.3 Closing Maxim     : "[Independent moral maxim < 15 words]"
 ━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━
 ```
@@ -887,13 +914,15 @@ After completion, **MANDATORY** update `d:\Project\Sven\history-registry.json` a
 
 ```
 d:\Project\Sven\
-├── history-registry.json          ← Anti-repetition registry
+├── AGENT.md                   ← Trigger + routing + resource paths
+├── workflow.md                ← This file — read FIRST every session
+├── history-registry.json      ← Anti-repetition registry
 └── Sven-Agent\
-    ├── AGENT.md                   ← Trigger + routing + resource paths
-    ├── workflow.md                ← This file — read FIRST every session
     └── references\
-        ├── story-rules.md         ← Script: Beat, Hook, Line C, Genre/Background/Trope
-        └── sven-rules.md          ← Omni Flash Prompt: Code Block 1, Mode A/B, PRE-FLIGHT
+        ├── story-rules.md             ← Script: Beat, Hook, Line C, Genre/Background/Trope
+        ├── sven-rules.md              ← Omni Flash Prompt: Code Block 1, Mode A/B, PRE-FLIGHT
+        ├── music-video-narrative.md   ← Music Video screenplay & prompt architecture ($100M+ VFX)
+        └── clip-continuity-theory.md  ← Spatial continuity & camera physics
 ```
 
 **Each file's duty:**
@@ -903,12 +932,14 @@ d:\Project\Sven\
 | `workflow.md` | Pipeline coordinator — read first every session |
 | `story-rules.md` | Script: Beat 8×15s, 12 Hook types, Lines ABC, Genre/BG/Trope |
 | `sven-rules.md` | Omni Flash Prompt: Code Block 1 template, PRE-FLIGHT, Mode A/B |
+| `music-video-narrative.md` | Music Video Architecture: $100M+ VFX scale, lyric subtext translation, 6-Beat MV sync |
 | `history-registry.json` | Anti-repetition: names/props/styles used |
 
 **Mandatory reading order at session start:**
 ```
-[1] workflow.md              ← Pipeline + Style/Genre/BG/Trope library
-[2] story-rules.md           ← Script rules
-[3] sven-rules.md            ← Prompt rules
-[4] history-registry.json   ← Anti-repetition check
+[1] workflow.md                ← Pipeline + Style/Genre/BG/Trope library
+[2] story-rules.md             ← Script rules
+[3] sven-rules.md              ← Prompt rules
+[4] music-video-narrative.md   ← Music Video rules (when MV mode triggered)
+[5] history-registry.json      ← Anti-repetition check
 ```
