@@ -94,32 +94,54 @@ Initial pose: {camera-anchored pose}.
 
 ### [Prop Profile] — §3.4
 
-**MODE A — No reference image:**
+**MASTER 4:3 FOUR-VIEW PROP DESIGN SHEET PROMPT STRUCTURE (Step 1C):**
+```
+Style: [Visual Style Name — e.g. mature western animation / Theatrical film reference, live-action style, DaVinci grading...].
+
+Name: [Prop Name]. Category: [Weapon / Relic / Tool / Artifact / Document / Symbolic Object]. Description: [A cross-shaped blade forged in aged silver with a cool metallic patina. The ornate handguard is intricately carved with ancient runes and vampire-hunting inscriptions. The handle is wrapped in dark leather and engraved with a vampire hunter emblem. Stored in a waist leather sheath. The blade emits a sharp, cold glint under porch night light. Upon piercing a vampire, it reduces the target to fine ash — a symbol of faith-driven ultimate judgment].
+
+Format: Prop design sheet, 4:3 landscape. Show only four views of the same prop: one main view that best presents its visual features, plus front, side, and back views. The main view must be the largest and clearest; the three orthographic views must fully show the prop shape and structure. Pure white background.
+
+Rules: Do not include any text, letters, numbers, annotations, captions, material swatches, dimension lines, arrows, close-up detail panels, or exploded views. The prop must remain completely consistent across all views. No environmental elements, no characters, no watermark.
+```
+
+**MODE A — No reference image (full description in clip):**
 - Layer 1: short identifying name (Bamboo Basket, Ledger, Bowl...)
 - Layer 2: material → shape/size → color/texture → weight/how held → **CURRENT state at opening frame of this Scene**
 - Add `"the only [name] in frame"` to prevent duplication
 
-**MODE B — Reference image exists from Step 1:**
-- Only needed: **Prop name** + **CURRENT state** (drawn / sheathed / broken / held / resting) + camera-anchored position + `[Prop Reference attached]`
-- Remove material, color, shape description — reference image already locks those
+**MODE B — Reference image exists from Step 1C (image-anchored — DEFAULT):**
+- Only needed: **Prop name** + `[Prop Reference attached]` + **CURRENT state** (drawn / sheathed / broken / held / resting) + camera-anchored position + `"the only [prop] in frame"`.
+- Remove material, color, shape description — reference image already locks those.
 
 ```
 [MODE B — Prop format with reference image]
-The Dagger [Prop Reference attached], currently {drawn/sheathed/resting on floor beside Lok's right foot — ZERO hand contact}.
+The Silver Cross Dagger [Prop Reference attached], currently sheathed in waist leather scabbard — the only dagger in frame.
 ```
 
 ### [Environment / Context] — §3.6
 
-**MODE A — No reference image:**
-- Full description of architecture, floor surface, colors, light source, atmosphere
+**MASTER LOCATION / ENVIRONMENT REFERENCE PROMPT STRUCTURE (Step 1D):**
+```
+Style: [Visual Style Name — e.g. Pixar\Disney 3D animation style / Theatrical film reference, live-action style, DaVinci grading...].
 
-**MODE B — Reference image exists from Step 1:**
-- Only needed: **Location name** + **time of day** + **brief lighting condition** + `[Environment Reference X attached]`
-- User adds reference image to tool before sending prompt
+Name: [Location Name]. Description: [A broad, detailed multi-sensory environmental description: architectural structure, exterior/interior materials, structural frame, wall coverings, smoldering light sources casting deep shadows and colored illumination, crude totems or functional artifacts hanging from overhead, floor textures, weather elements, light bleed through entrances, and overall emotional atmosphere and ritualistic/cinematic tone].
+
+Format: Location concept design sheet, 16:9 landscape, multi-angle layout. At least 4 panels showing the same location from different camera angles or directions: wide establishing shot, reverse angle, overhead/bird-eye view, and low-angle or detail close-up. Panels may vary lighting or time of day if needed by the story. Focus entirely on full location views, with no written descriptions, detail labels, or floor plans.
+
+Rules: No characters or people - environment only. The location must look consistent and recognizable across all panels, with the same buildings, props, and layout. Do not include any text, letters, numbers, annotations, captions, dimension lines, arrows, labels, legends, zoning notes, or watermarks.
+```
+
+**MODE A — No reference image (full description in clip):**
+- Full description of architecture, floor surface, colors, light source, atmosphere (~50-70 words).
+
+**MODE B — Reference image exists from Step 1D (image-anchored — DEFAULT):**
+- Only needed: **Location name** + `[Environment Reference attached]` + **time of day phrase** + **key light source & color temperature (5600K / 2700K)** (1 line only).
+- Remove all architectural and material descriptions — reference image already locks the environment.
 
 ```
 [MODE B — Setting format with reference image]
-Athena Abandoned Forest [Environment Reference 1 attached], golden hour, low warm side-light from west.
+The Obsidian Blacksmith Forge [Environment Reference attached], twilight before storm — key light from roaring forge hearth casting 2700K amber glow across wet stone floor.
 ```
 
 ### Anti-Duplication — §3.5
@@ -569,22 +591,27 @@ Examples — fear, chaos:
   [3 frightened villagers] : "Run — just run!" (scattered panic, no one looking at each other)
 
 
-── LINE C APPEARANCE RHYTHM BY BEAT ───────────────────────────────────
-  Tense beats (conflict, reveal)   : ABSENT or silent — give space to A+B
-  Normal beats (setup, daily life) : Present, unintentional, not looking directly
-  Twist/reveal beat                : WITHDRAWS — quiet space for the most important moment
-  Catharsis beat                   : Distant, blurred, continuing — the world doesn't care, only A knows
+── LINE C APPEARANCE RHYTHM BY BEAT (6-Beat Master Arc) ────────────────────────
+  B1 Hook (3%)    : ABSENT or 1 distant blurred silhouette — atmospheric texture only
+  B2 Setup (12%)  : Present unintentionally — unknowing witnesses to flawed old world
+  B3 Drama (35%)  : Sparse background whispers — full stage for Tier A vs B1 ideological clash (60% dialogue)
+  B4 Climax (30%) : Stunned frozen observers or COMPLETELY ABSENT — tragic vacuum for Ego Death
+  B5 Release (12%): 1-2 passing figures or safe haven — Tier B2 companion gives unconditional grace
+  B6 Echo (8%)    : VIBRANT LIVING COMMUNITY — Tier A harmoniously integrates with Tier C society
 
 ▼ HARD LIMITS PER CLIP:
   Line A+B characters              : max 2 (if 3 characters with arc needed → split into 2 separate clips)
   Line C characters                : max 1 group description + max 2 dialogue lines/clip
   STABLE props with ref            : max 2 props/clip (3+ → use wide shot, don't close-up each)
-  DESTRUCTIBLE props               : describe current state in text, no ref needed
+  DESTRUCTIBLE / DUAL PROPS        : describe current state in text (Wound state at B2 ➔ Echo state at B6)
 
-
-▼ PROP (choose Mode — STABLE props with reference only):
-[MODE A — no ref / DESTRUCTIBLE state] {Prop name}, {size}, {material}, {color}, {current condition at opening frame}, resting {camera-anchored position — ZERO hand assignment — "the only [prop] in frame"}.
+▼ DUAL-PROP SYSTEM (Wound Prop at Beat 2 ➔ 180° Echo Prop at Beat 6):
+[MODE A — no ref / TRANSFORMED state] {Prop name}, {size}, {material}, {color}, {current condition at opening frame: Wound State at B2 / Transformed Echo State at B6}, resting {camera-anchored position — ZERO hand assignment — "the only [prop] in frame"}.
 [MODE B — STABLE, has ref]             {Prop name} [Prop Reference attached], currently {drawn/worn/resting — current state + position} — the only {prop} in frame.
+
+▼ THERMAL POLARITY LIGHTING & ACOUSTIC SPEC (Beat 4.3 ➔ Beat 5.1):
+- Beat 4.3 (All Hope Is Lost): 5600K harsh monochrome cold (blizzard, pitch darkness, rain, ash) + ragged gasping breath.
+- Beat 5.1 (Safe Harbor): 2700K soft golden warmth (crackling fireplace, rising dawn, steaming bowl) + `[pause: 1.5s]` silence + `[whispers, warm]`.
 
 ▼ ACOUSTIC (ALWAYS INCLUDE when scene has spoken dialogue — system default):
 Diegetic room acoustics: {continuous background ambient sound}.
@@ -606,30 +633,60 @@ Continuous fluid motion, realistic physics, zero morphing. Sharp optical focus l
 Do not generate subtitles, dialogue text, titles, timestamps, or any written text anywhere in the video. Do not render duplicate characters, extra background characters, or duplicate props.
 ```
 
+---
 
-> ⚠️ **DO NOT use `NEGATIVE PROMPT:`** — that is Stable Diffusion syntax, not valid for Omni Flash (model reads the entire prompt as positive text).
-> ⚠️ **DO NOT use positive audio commands** (`Audio must be fully generated as native spoken dialogue...`) — AI will interpret that as a command to generate dialogue even if the script has none. All final clauses **must be `Do not...`**.
+## 🔇 § SILENT MODE (SHOW DON'T TELL) PROMPT SYNTAX ENGINE
 
+> **Trigger:** User chooses Mode A / Silent Mode / "Show Don't Tell" / "Không thoại" / "Visual only".
+> **Core Principle:** In Silent Mode, speech is 100% PURGED. Storytelling is powered entirely by **Kinetic Micro-Biomechanics**, **Prop Causality**, and **Atmospheric Diegetic Foley**.
 
-### After Code Block 1 — 🔒 Internal (DO NOT copy):
+### 🚫 Strict Prohibitions in Silent Mode Prompts:
+1. ❌ **ZERO Dialogue Brackets**: Absolutely NO `[Subject] : "..."` anywhere in Code Block 1.
+2. ❌ **ZERO Speech Quotes or Lip-sync Commands**: Never instruct the character to mouth words or speak.
+3. ❌ **ZERO Narration / Voiceover Prompts**: No voiceover lines or abstract internal monologues.
+
+### ✅ Mandatory Visual & Acoustic Replacements in Silent Mode:
+1. **Micro-Biomechanics Amplified (400% Physicality)**:
+   - *Fear/Panic*: `Lok's pupils dilate violently; cold perspiration beads along his hairline as his throat muscles seize in a dry, audible swallow`.
+   - *Rage/Restraint*: `Lok's jaw clenches until the masseter muscle bulges; his fingernails dig into his calloused palm, blood vessels swelling along his forearm`.
+   - *Grief/Shock*: `Lok's trembling fingers recoil from the broken relic, his chest seizing in a silent ragged gasp as his knees strike the stone floor`.
+2. **Pure Diegetic Foley & Environmental Acoustic Architecture**:
+   - `Diegetic acoustics: heavy torrential rain pounding rusted tin roofs, rhythmic ticking of a brass pocket watch, echoing iron footsteps on wet flagstones, low resonant sub-bass drone`.
+3. **Mandatory Silent Negative Clause (End of Code Block 1)**:
+   `Do not generate spoken dialogue, lip movement matching speech, voiceover, subtitles, speech captions, or on-screen text overlaid on video. Do not render duplicate characters or extra props.`
+
+### Master Silent Mode Code Block 1 Template:
+
 ```
-[Final State — 5 groups:
-  names in use: {current Name Mapping Table}
-  characters: {pose/position/expression of each character A/B}
-  costume: {condition of each character}
-  props: {name — shape/position/orientation}
-  setting & space-time: {current Location/Time}
-  → this is the frame [Global Shot] of the next Scene must anchor to]
+Master-level cinematography and composition, fast-paced shot variation, atmospheric sound design. Hyper-realistic, ultra-high-definition masterwork. Cinematic 9:16 vertical, {style reference}. Shot on {lens}mm prime lens, f/{aperture}, film grain. {time of day phrase}.
 
-🗣️ DIALOGUE SCRIPT TABLE (if Scene has dialogue):
-- Beat [N] [{timestamp}] | [Vietnamese Name] ([English Name])
-  💬 Vietnamese: "[...]"  🔤 English AI: "[...]"
-  ❤️ Subtext: [...]  💥 Mechanics: [...]
+▼ CONTEXT:
+{Location name}, {time of day phrase} — {key light source + color temp, 5600K cold / 2700K warm}.
 
-📋 Scene [X] Resources:
-Character: {Name — new/reused}
-Setting: {Location name — new/reused}
-Prop: {Name — current Roadmap milestone}
+▼ LINE A — PROTAGONIST:
+{Name A}, {height}cm, {build}. [Character Reference attached]. Initial pose: {camera-anchored pose, empty hands}.
+
+▼ LINE B — ANTAGONIST / COMPANION (if present):
+{Name B}, {height}cm, {build}. [Character Reference attached]. {Camera-relative position}.
+
+▼ PROP:
+{Prop name}, {current physical state: Wound state / Transformed Echo state} — the only {prop} in frame.
+
+▼ DIEGETIC ACOUSTICS (Foley & Environment only):
+Diegetic acoustics: {heavy wind howling through cracked glass, crunch of gravel under boots, ragged gasping breath, metallic scrape}.
+
+[{beat 1 timestamp}] Shot {scale} | {lens}mm f/{aperture} | {camera movement & angle} on {Subject}
+{Subject A} {kinetic action verb} {object/position} on the same floor plane. {Micro-biomechanic: pupils dilating, chest heaving in rapid panic, veins throbbing along neck}.
+
+[{middle beat timestamp}] Shot {scale} | {lens}mm f/{aperture} | {camera movement & angle} on {Subject}
+{Subject A} {physical interaction with Prop} while {Subject B} {opposing body reaction: step forward, hand gripping hilt}. {Zero spoken dialogue — pure visual tension}.
+
+[{final beat timestamp}] Shot {scale} | {lens}mm f/{aperture} | {gentle push-in} on {Subject}
+{Subject A} reaches {terminal zero-velocity freeze hold pose}, {prop rests in final state}. 0.5s static freeze.
+
+Continuous fluid motion, realistic physics, zero morphing. Sharp optical focus locked on subject action and physical micro-expressions throughout shot.
+
+Do not generate spoken dialogue, lip movement matching speech, voiceover, subtitles, speech captions, or on-screen text overlaid on video. Do not render duplicate characters or extra props.
 ```
 
 ---

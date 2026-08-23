@@ -27,14 +27,19 @@ description: >
 1. **DEFAULT MODE — DIALOGUE ALWAYS ON**:
    - All scripts default to **DIALOGUE MODE** — every scene that has spoken interaction MUST include dialogue brackets in Code Block 1.
    - Dialogue follows §D rules in sven-rules.md: Hard-Cap ≤ 160 English characters / 10s clip, Scripting Bracket syntax, Camera-Speaker Binding.
-   - **Code Block 1 (Omni Flash Prompt)**: 100% English dialogue.
+   - **Code Block 1 (Omni Flash Prompt)**: 100% English dialogue embedded in brackets.
    - **Code Block 2 & Stage 3 Script**: Vietnamese dialogue table with correct honorifics for voice actor + full inner emotion + physical mechanics.
 
-2. **SILENT MODE** (opt-out):
-   - Only switch to zero-dialogue / pure visual mode when user **explicitly requests**: `"no dialogue"`, `"silent"`, `"visual only"`, `"no voiceover"`.
-   - Confirm mode with 1 line before Scene 1 output:
+2. **SILENT MODE (SHOW DON'T TELL — OPT-OUT / EXPLICIT SELECTION)**:
+   - Activated when user chooses Mode A / "silent" / "show dont tell" / "visual only" / "không thoại".
+   - **CRITICAL PROMPT SYNTAX RULES**:
+     - ❌ **100% PURGE OF DIALOGUE**: Absolutely ZERO dialogue brackets `[Subject] : "..."`, quotes, or lip-sync speech commands in Code Block 1.
+     - ⚡ **400% AMPLIFIED MICRO-BIOMECHANICS**: Every emotion must be rendered via observable physical reactions (pupil dilation, masseter muscle twitching, rapid chest heaving, cold sweat, involuntary recoil, step-by-step kinetic causality).
+     - 🔊 **PURE DIEGETIC FOLEY & ACOUSTICS**: Only environmental sounds in `Diegetic acoustics: ...` (heavy wind, dripping water, cracking wood, metallic scrapes, ragged breath).
+     - 🚫 **MANDATORY SILENT NEGATIVE CLAUSE**: `Do not generate spoken dialogue, lip movement matching speech, voiceover, subtitles, speech captions, or on-screen text overlaid on video.`
+   - Confirm mode with 1 line before output:
      - `» Dialogue mode — ON (default).`
-     - `» Silent mode — visual only (user requested).`
+     - `» Silent mode (Show Don't Tell) — ON (100% visual micro-biomechanics & diegetic Foley).`
 
 ---
 
@@ -124,6 +129,23 @@ Activate Step 0 when user input is **missing at least 2 of these 4 elements**:
 
 ---
 
+### 🎵 SPECIAL MODE: MUSIC VIDEO NARRATIVE (MV MODE)
+
+**Trigger:** User provides song lyrics, asks to create an MV story, or mentions *"MV ca nhạc"*, *"lời bài hát"*, *"kịch bản MV"*, *"music video"*
+
+**Activate:** Load and execute the `music-video-narrative` skill (`.agents/skills/music-video-narrative/SKILL.md`):
+1. **Input Parameters**: Song Lyrics, Musical Genre, Track Duration (Total seconds $T$), MV Mode (Mode A: Pure Story / Mode B: Hybrid Performance / Mode C: Visual Metaphor).
+2. **6-Beat & Musical Mapping**:
+   - `Beat 1: Hook (3% of T)` ➔ Intro / First Bars (Visual paradox / Cognitive gap).
+   - `Beat 2: Setup (12% of T)` ➔ Verse 1 (Root trauma & Hamartia + Wound Prop).
+   - `Beat 3: Drama (35% of T)` ➔ Pre-Chorus 1 ➔ Chorus 1 ➔ Verse 2 (Ideological clash & escalating friction).
+   - `Beat 4: Climax (30% of T)` ➔ Chorus 2 ➔ Bridge ➔ Climax Drop (3-Wave Ego Death in 5600K Cold Monochrome).
+   - `Beat 5: Release (12% of T)` ➔ Post-Bridge Acoustic Drop (Thermal Shock to 2700K Warmth + Reverse Rescue).
+   - `Beat 6: Echo (8% of T)` ➔ Outro / Final Fade (180° Echo Prop Payoff + Moral Maxim <15 words).
+3. **Lyrical Subtext Translation**: Transform poetic lyrics into observable physical biomechanics and causal props.
+
+---
+
 ### Step 0 Process
 
 #### Step 0.1 — Internal Brainstorm (DO NOT OUTPUT)
@@ -148,29 +170,30 @@ Output directly in markdown (NOT wrapped in a code block):
 
 ---
 
-🎬 **5 VIDEO IDEAS — CHOOSE 1 TO CONTINUE**
+🎬 **5 DETAILED VIDEO CONCEPTS — CHOOSE 1 TO CONTINUE**
 
 ---
 
-**IDEA 1 — [Memorable title]** `[Retribution / Reward]`
-- 👤 **Character:** [Name + occupation/status + 1 defining personality trait]
-- 🌍 **Setting:** [Era + location + atmosphere]
-- 📖 **Plot:** [initial behavior → turning event → karmic outcome]
-- ⚖️ **Lesson:** [1 concise sentence, tied to specific action in the story]
-- 🎣 **Suggested Hook:** #[N] [Technique name] — [1-sentence reason based on tone/karma type of this idea]
+**CONCEPT 1 — [Memorable Title]** `[Retribution / Reward | Genre]`
+- 🎭 **Premise & Logline:** [High-concept dramatic premise & core moral stakes in 2-3 sentences]
+- 👥 **Character Dynamics:**
+  • Tier A (Protagonist): [Vietnamese name — defining role + Backstory Trauma / Hamartia]
+  • Tier B1 (Antagonist/Nemesis): [Vietnamese name — opposing ideology / pressure]
+  • Tier B2 (Companion/Grace): [Vietnamese name — unconditional grace / catalyst for redemption]
+- 📦 **Dual-Prop System:** [Wound Prop at Beat 2] ➔ [180° Physical Echo Prop at Beat 6]
+- 🗺️ **6-Beat Arc & 4-Stage Plot Breakdown:**
+  • Beat 1 (Hook - 3%): [Visual paradox / 3s scroll stopper cognitive gap]
+  • Beat 2 (Setup - 12%): [Old world equilibrium & Hamartia origin + Wound Prop planted]
+  • Beat 3 (Drama - 35%): [Escalating ideological clash / ≥60% spoken conflict + Exits sealed]
+  • Beat 4 (Climax - 30%): [3-Wave Climax ➔ All Hope Is Lost / Ego Death at 5600K Cold Monochrome]
+  • Beat 5 (Release - 12%): [Thermal Polarity Shock to 2700K Warmth + Reverse rescue from Tier B2]
+  • Beat 6 (Echo - 8%): [Transformed world + 180° Echo Prop Payoff + Moral Maxim <15 words]
+- 🎣 **Suggested Hook:** #[N] [Technique name] — [1-sentence reason matching plot]
+- 🔥 **Emotion & Catharsis:** [Target feeling & psychological resonance left with audience]
 
 ---
 
-**IDEA 2 — [Memorable title]** `[Retribution / Reward]`
-- 👤 **Character:** ...
-- 🌍 **Setting:** ...
-- 📖 **Plot:** ...
-- ⚖️ **Lesson:** ...
-- 🎣 **Suggested Hook:** #[N] [Technique name] — [short reason]
-
----
-
-[... repeat structure for IDEA 3, 4, 5 — each must have a Suggested Hook line ...]
+[... repeat exact full structure for CONCEPTS 2, 3, 4, 5 — each must have complete 6-Beat breakdowns ...]
 
 ---
 
@@ -204,6 +227,29 @@ After outputting 5 ideas, **MANDATORY STOP**. Do not auto-generate a script.
 
 ---
 
+## 🖼️ THE MASTER 4-PILLAR VISUAL REFERENCE PIPELINE (STEP 1 PRE-PRODUCTION)
+
+Before generating any video clip prompts, the pipeline generates 3 Master Reference Sheets:
+
+1. **Pillar 1 — Character Reference Sheet (16:9 Landscape, 4-Panel)**:
+   - Left 40%: Chest-up extreme close-up portrait (8K UHD, 85mm f/1.4, iris texture, skin pores, lip luster, hair volume).
+   - Right 60% (3 panels 20% each): Front (0°), 3/4 Side, and Back (180°) in static A-pose stance.
+   - **Exact Age Lock Mandate**: `aged [exact integer, e.g. 34]`. Strictly FORBIDDEN to use age ranges (`32–38`).
+   - **Empty Hands Rule**: Hands completely empty. Uncropped head-to-toe with shoes fully visible. Pure white `#FFFFFF` background.
+
+2. **Pillar 2 — Prop Design Sheet (4:3 Landscape, 4-View)**:
+   - 1 Main Hero View (largest and clearest) + 3 Orthographic Views (Front, Side, Back).
+   - Pure white `#FFFFFF` background. Zero hands holding prop, zero text, swatches, dimension lines, or watermarks.
+
+3. **Pillar 3 — Location Concept Design Sheet (16:9 Landscape, Multi-Angle)**:
+   - At least 4 panels: Wide establishing shot, Reverse angle, Overhead/bird's-eye view, and Low-angle or detail close-up.
+   - `No characters or people - environment only`. Consistent recognizable architecture. Zero text, annotations, or watermarks.
+
+4. **Pillar 4 — Mode B Image-Anchored Prompt Injection (Stage 4)**:
+   - Stage 4 video prompts **MANDATORILY** inject 1-line image anchors (`[Character Reference attached]`, `[Prop Reference attached]`, `[Environment Reference attached]`), completely eliminating repetitive text descriptions that induce AI hallucination.
+
+---
+
 ## STAGE 1 — SCREENPLAY GENERATION
 
 ### Step 1.0 — Input Analysis
@@ -212,23 +258,29 @@ Receive free-form input from user (can be 1 sentence, a paragraph, or a rough sc
 
 | Variable | Default when user does not specify |
 |---|---|
-| **Scene count** | **7 Scenes (Default Scale 2: Standard Cinematic 7 Scenes / 70s)** |
+| **Architecture** | **Hollywood 6-Beat Architecture (3% / 12% / 35% / 30% / 12% / 8%) with 18 Micro Sub-Beats** |
 | Karma type | AI selects most fitting for the idea |
 | Story track | AI selects from tracks in story-rules.md |
 | Era / setting | AI selects fitting era for tone |
-| **Cinematic depth** | **MANDATORY HOLLYWOOD DEPTH**: Declare `Backstory Trauma` for protagonist in Character Profile Section II. Karma executes via `Self-fulfilling Causality` (psychological collapse / physical paralysis), not one-directional violence. |
-| **Narrative style** | **Dialogue always ON** — style and tone adapt to the script's genre. Micro-biomechanics and subtext always accompany dialogue. |
+| **Cinematic depth** | **MANDATORY HOLLYWOOD DEPTH**: Declare `Backstory Trauma` for protagonist. Karma executes via `Self-fulfilling Causality` & `Ego Death` at Beat 4. |
+| **Dynamic Upgrades** | **1. Thermal Polarity Law** (5600K cold ➔ 2700K warm at B4.3 ➔ B5.1)<br>**2. Cast Dynamic Rotation Law** (Solo ➔ A vs Past ➔ A vs B1 [60% spoken] ➔ A Solo ➔ A + B2 ➔ A + C)<br>**3. Dual-Prop System** (Wound Prop at B2 ➔ 180° Echo Prop at B6) |
+| **Narrative style** | **Dialogue always ON** (≥60% spoken conflict in Beat 3). Micro-biomechanics and subtext accompany dialogue. |
 | Narrative structure | AI selects from A–G (story-rules.md § NARRATIVE STRUCTURE), prioritize non-repeats |
-| Twist complexity | Standard (1 twist) |
-| Symbolic prop | AI selects from a different group than recently used (anti-repetition axis 14) |
-| **Hook technique** | **Dynamic — AI selects from 12-Hook Library** based on plot features (karma type, escalation behavior, target emotion). Use selection process in Step 1.1b and story-rules.md § HOOK TECHNIQUES. No fixed default hook. |
+| Twist complexity | 4-Stage Plot & Twist Progression with 3-Wave Climax at Beat 4 |
+| Symbolic prop | Wound Prop (B2) ➔ 180° Physical Transformation into Echo Prop (B6) |
+| **Hook technique** | **Dynamic — AI selects from 12-Hook Library** based on plot features. No fixed default hook. |
 
 If user has already specified some variables → keep them, only self-select for blank variables.
 
-### Step 1.1 — Phase Mapping (Default Scale 2 — 7 Scenes x 10s = 70s)
+### Step 1.1 — Phase Mapping (Hollywood 6 Beats: 3% / 12% / 35% / 30% / 12% / 8%)
 
-If input is a rough idea with no scene breakdown: auto-divide into 7 scenes per Scale 2 model (Scenes 1–7 each EXACTLY 10 seconds, including Hook Scene 1).
-If user has already defined scene count and content: preserve that structure.
+Auto-divide into 6 Beats & 18 Micro Sub-Beats matching the exact percentage runtime:
+- **Beat 1 (Hook - 3%)**: Visual Paradox & Frozen Potential (Sub-beats 1.1, 1.2, 1.3)
+- **Beat 2 (Setup - 12%)**: Old World & Generational Trauma (Hamartia) + Wound Prop (Sub-beats 2.1, 2.2, 2.3)
+- **Beat 3 (Drama - 35%)**: Flawed Tactics & Ideological Clash — 60% Spoken Conflict (Sub-beats 3.1, 3.2, 3.3)
+- **Beat 4 (Climax - 30%)**: 3-Wave Climax ➔ All Hope Is Lost ➔ Ego Death — 5600K Cold (Sub-beats 4.1, 4.2, 4.3)
+- **Beat 5 (Release - 12%)**: Thermal Shock ➔ 2700K Warmth + Reverse Rescue from Tier B2 (Sub-beats 5.1, 5.2, 5.3)
+- **Beat 6 (Echo - 8%)**: Transformed World + 180° Echo Prop + Closing Maxim <15 words (Sub-beats 6.1, 6.2, 6.3)
 
 ### Step 1.1b — Hook Technique Selection (internal, MANDATORY — DYNAMIC SELECTION)
 
@@ -286,12 +338,12 @@ Internal log: `Anti-repetition check: [list of axes checked — OK/CHANGED]`
 
 ### Step 1.2b — Spacetime Rules & Pure Cinematic Prose Spec
 
-- **1 Clip 10s = 1 Unbroken Continuous Physics System**: 1 Clip must be a mathematically-physically continuous flow. No forced cuts or position jumps.
+- **1 Clip = 1 Unbroken Continuous Physics System**: Mathematically-physically continuous flow. No forced cuts or position jumps.
 - **Single Floor Plane & Positional Lock**: All interacting characters MUST be on the same floor plane (`on the same timber floor/dirt ground`), 1.5m–3m apart. Anchor immediately with camera-relative coords: `Subject A at frame-left; Subject B at frame-right on the same timber floor, 2 meters apart`.
 - **Target Distance Lock & Temporal Continuity**: A may step at most 1 short step (0.5m) in Beat 1. Beat 2 continues EXACTLY from where Beat 1 stopped. NO rewinding position.
-- **Pure Cinematic Shot Prose**: Write directly `[Subject Name] + [Active Verb] + [Object] + [Coordinates]`. NO filler connectors (`Driven by the stillness...`, `As X halts...`).
-- **Single Primary Prop & Explicit Hand Assignment**: Only 1 primary prop in `[Prop Profile]` with `"the only [prop] in frame"`. Specify which hand (`right hand / left hand`) or `ZERO hand contact`.
-- **Terminal Deceleration Protocol**: Last 0.5s of clip (seconds 09–10) MUST decelerate to zero velocity (`zero-velocity freeze hold`), locking into a static pose.
+- **Pure Cinematic Shot Prose**: Write directly `[Subject Name] + [Active Verb] + [Object] + [Coordinates]`. NO filler connectors.
+- **Dual-Prop Transformation**: Wound Prop introduced in Beat 2 ➔ 180° Physical Transformation to Echo Prop in Beat 6. Specify which hand (`right hand / left hand`) or `ZERO hand contact`.
+- **Terminal Deceleration Protocol**: Last 0.5s of beat MUST decelerate to zero velocity (`zero-velocity freeze hold`), locking into a static pose.
 
 ### Creative Brief Output
 
@@ -299,112 +351,92 @@ Internal log: `Anti-repetition check: [list of axes checked — OK/CHANGED]`
 ━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━
 📋 CREATIVE BRIEF
 ━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━
-🎣 Hook: #[N] [Technique name] — [1-sentence reason: which story feature this matches]
-🎭 Karma: [Retribution / Reward] | Track: [A-H] | Structure: [A-G]
-📦 Symbolic prop: [prop name] — [short role]
-🔗 Hook→Setup Bridge: [Bridge type] — [specific element from Hook] → [how it reappears in Scene 2]
+🎣 Hook           : #[N] [Technique name] — [1-sentence reason: which story feature this matches]
+🎭 Karma          : [Retribution / Reward] | Track: [A-H] | Structure: [A-G]
+📦 Wound ➔ Echo   : [Wound Prop at B2] ➔ [180° Echo Prop at B6]
+🔥 Thermal Shock  : 5600K Cold (B4.3) ➔ 2700K Warmth (B5.1)
+👥 Cast Dynamic   : B1: Solo | B2: A vs Past | B3: A vs B1 (60% dialogue) | B4: A Solo | B5: A + B2 | B6: A + C
+🔗 Hook→Setup     : [Bridge type] — [specific element from Hook] → [how it reappears in Beat 2]
 [🔄 Hook adjusted: Step 0 suggested #[K] → changed to #[N] because [specific reason] — SHOW THIS LINE ONLY if hook changed]
 ━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━
 
 > If you want to change the hook or any variable → say so before reading the script.
 ```
 
-### Screenplay Format
+### Screenplay Format (6 Beats & 18 Sub-Beats)
 
 ```
---- PHASE 1: HOOK (X% - Ys - 1 scene) ---
-
-SCENE 1: [Scene name] (10s) — Phase: HOOK
+--- BEAT 1: HOOK (3% - [s]s) — Emotion: [6-7/10] ---
+[Sub-beats 1.1 Cognitive Gap, 1.2 Frozen Potential, 1.3 Anchor Bridge]
+Cast: Solo / Prop Focus
 * Character: [name]
-* Action: [1-3 Vietnamese sentences, Show-Don't-Tell, English character names]
+* Action: [English prose, Show-Don't-Tell, cognitive gap]
+[HANDOFF STATE: Character / Prop / Setting]
 
-[HANDOFF STATE — End of Scene 1]
-• Character: ...
-• Prop: ...
-• Setting: ...
-
-* Sound/Emotion: [...]
-* Negative Prompt (Scene, Group D — ONLY if Mục 13.1 applies): [...]
-
---- PHASE 2: SETUP/PLOT (X% - Ys - N scenes) ---
-
-SCENE 2: [Scene name] (10s) — Phase: SETUP/PLOT
-[Continuing from Scene 1 — this scene's opening action STARTS HERE]
-• Character: [copy exactly from Scene 1 Handoff]
-• Prop: [copy]
-• Setting: [copy]
-
-* Character: ...
+--- BEAT 2: SETUP (12% - [s]s) — Emotion: [6-7/10] ---
+[Sub-beats 2.1 Old World, 2.2 Generational Trauma / Hamartia, 2.3 Wound Prop Plant]
+Cast: Tier A vs. Ghosts of the Past (Flashback/Wound)
+Wound Prop: [Name & Initial Traumatic State]
 * Action: ...
+[HANDOFF STATE: ...]
 
-[HANDOFF STATE — End of Scene 2] ...
-* Sound/Emotion: [...]
+--- BEAT 3: DRAMA (35% - [s]s) — Emotion: [7-9/10] ---
+[Sub-beats 3.1 Flawed Tactics, 3.2 Ideological Clash 60% Spoken, 3.3 Exits Sealed]
+Cast: Tier A vs. Tier B1 (Antagonist) — 60% Spoken Conflict
+* Action & Spoken Conflict: ...
+[HANDOFF STATE: ...]
 
-[... repeat structure for PHASES 3, 4, 5 ...]
+--- BEAT 4: CLIMAX (30% - [s]s) — Emotion: [10/10 PEAK] ---
+[Sub-beats 4.1 Wave 1 Identity/Trap, 4.2 Wave 2 Loss/Physical, 4.3 Wave 3 Karma & Ego Death]
+Cast: Tier A Solo in Tragedy (5600K Cold Monochrome)
+* Action: [Anagnorisis & Total Collapse of False Ego]
+[HANDOFF STATE: ...]
 
-HOOK TECHNIQUE: #[N] — [Technique name] | Reason: [1 short sentence tied to karma type + escalation behavior]
-HOOK→SETUP BRIDGE: [Bridge type] — [specific element from Hook] → [how it reappears in Scene 2]
+--- BEAT 5: RELEASE (12% - [s]s) — Emotion: [7-8/10] ---
+[Sub-beats 5.1 Thermal Shock 2700K Warm, 5.2 Reverse Rescue from Tier B2, 5.3 Concrete Proof of Change]
+Cast: Tier A + Tier B2 (Companion / Grace)
+* Lighting/Audio: 2700K soft golden warmth, [pause: 1.5s], warm whisper
+* Action: [Unconditional compassion & tangible transformation]
+[HANDOFF STATE: ...]
 
-LESSON VISUALIZED THROUGH: [specific image/moment in Karma+Aftermath]
-
-NEGATIVE PROMPT: [Group A + Group B mandatory] + [Group C fitting this script]
+--- BEAT 6: ECHO & END (8% - [s]s) — Emotion: [6-7/10] ---
+[Sub-beats 6.1 Transformed World, 6.2 180° Echo Prop Transformation, 6.3 Moral Maxim]
+Cast: Tier A + Tier C New World
+180° Echo Prop: [Physical reversal of Wound Prop into vessel of grace]
+* Action: [Harmonious life continues under open sky]
+CLOSING MORAL MAXIM: "[Independent truth < 15 words]"
 ```
 
-### Step 1.3b — Micro-Check Per Phase (MANDATORY — run immediately after each phase)
+### Step 1.3b — Micro-Check Per Beat (MANDATORY)
 
-> Do not check all at the end. Check immediately after writing each phase — agent cannot hold all rules at once.
+**After BEAT 1 (HOOK):**
+- [ ] 3-second scroll stopper with visual paradox / cognitive gap; no preamble.
+- [ ] Visual Anchor present and described with physical precision to bridge into Beat 2.
 
-**After HOOK:**
-- [ ] Only 1 visual piece of information — no setting explanation, no full name/identity
-- [ ] No storytelling opener ("one day", "long ago")
-- [ ] Hook matches selected technique #N (per Hook table)
-- [ ] **Visual Anchor present**: Hook scene contains ≥1 specific visual element (symbolic prop / costume detail / spatial angle) that will reappear in Scene 2
-- [ ] **Visual Anchor described with enough physical detail** (size, material, color, condition) to render consistently
+**After BEAT 2 (SETUP):**
+- [ ] Old world equilibrium & generational trauma (Hamartia) revealed.
+- [ ] Wound Prop planted as physical embodiment of trauma/entrapment.
+- [ ] Visual anchor from Hook reappears in first 3s.
 
-**After SETUP:**
-- [ ] Symbolic prop appears for the first time — name, initial state clearly noted
-- [ ] **HOOK-SETUP BRIDGE**: Visual anchor from Hook **reappears in the first 3 seconds** (opening action of Scene 2) — same element, re-described with full physical detail, placed in wider context
-- [ ] HANDOFF STATE has all 3 groups: Character / Prop / Setting
-- [ ] Action contains at least 1 observable behavior (not just emotional state)
+**After BEAT 3 (DRAMA):**
+- [ ] Tier A vs. Tier B1 adversarial clash.
+- [ ] ≥60% runtime dedicated to spoken ideological conflict.
+- [ ] Exits sealed; false confidence shattered.
 
-**After ESCALATION:**
-- [ ] Exactly 1 vulnerable target (Retribution) / 1 person in need (Reward)
-- [ ] No direct depiction of violence/blood — check Content Safety rules
-- [ ] Escalation matches selected variant (Escalation Bank in story-rules.md)
+**After BEAT 4 (CLIMAX):**
+- [ ] 3-Wave Climax executed (Identity/Trap ➔ Physical/Loss ➔ Karma & Ego Death).
+- [ ] Absolute emotional peak (10/10) with complete Anagnorisis.
+- [ ] 5600K cold monochrome palette and ragged breathing at Beat 4.3.
 
-**After TWIST:**
-- [ ] Insert-shot MANDATORY — verify it's present
-- [ ] Insert-shot connects specific visual (not abstract emotion)
-- [ ] Twist/Reveal matches selected variant (Twist Bank in story-rules.md)
+**After BEAT 5 (RELEASE):**
+- [ ] Immediate Thermal Polarity Shock: 2700K golden warmth + `[pause: 1.5s]` silence + warm whisper.
+- [ ] Reverse rescue / unconditional grace from Tier B2.
+- [ ] Concrete tangible action doing what was unthinkable in Beat 2.
 
-**After KARMA + AFTERMATH:**
-- [ ] Karma handles via exactly 1 of the 4 directions (Retribution) — no direct depiction
-- [ ] Symbolic prop appears at Karma — matches State Chain from Setup
-- [ ] Mirror shot (story-rules.md): at least 1 image mirroring something from Setup/Escalation
-- [ ] Aftermath: still, slow — no exaggerated action
-
-**Quick 18-error check (run before checkpoint — mark each ✓):**
-```
-1[  ] All characters with actions have 1-syllable English names
-2[  ] No generic pronouns used after character is named
-3[  ] No latinized Vietnamese names in output
-4[  ] Symbolic prop appears in ≥ 2 phases
-5[  ] Prop State Chain consistent throughout
-6[  ] No changes to scene structure without motivation
-7[  ] Character traits from profile copied verbatim
-8[  ] HANDOFF STATE has all 3 groups every scene
-9[  ] Each scene opens from previous scene's Handoff
-10[ ] No unmotivated reversal of action within 10s
-11[ ] Mirror shot Phase 5 ↔ Phase 1/2 achieved
-12[ ] KARMA uses the object/thing character was proud of
-13[ ] AFTERMATH is still, no exaggerated action
-14[ ] Insert-shot present in TWIST phase
-15[ ] No Line C character name duplicating Line A/B
-16[ ] Clear motivation for all reversal actions
-17[ ] Starting position clear when ≥ 2 characters in scene
-18[ ] No Motion-in-Static Conflict error
-```
-> If any item fails → fix directly in the screenplay BEFORE printing checkpoint.
+**After BEAT 6 (ECHO):**
+- [ ] Tier A harmoniously integrated with Tier C new world under open sky.
+- [ ] 180° Physical Transformation from Wound Prop to Echo Prop.
+- [ ] Concise, independent closing moral maxim (<15 words).
 
 ### Step 1.4 — CHECKPOINT 1
 
@@ -415,20 +447,21 @@ After outputting the full screenplay, **MANDATORY** print this checkpoint block 
 ⏸  SCREENPLAY COMPLETE — WAITING FOR YOUR CONFIRMATION
 ━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━
 📋 Summary:
-   • [N] scenes | [Karma type] | [Hook technique]
-   • Track: [track name] | Symbolic prop: [prop name]
-   • Structure: [A–G] | Escalation #[N] | Twist #[N]
+   • 6 Beats (3%/12%/35%/30%/12%/8%) | [Karma type] | [Hook technique]
+   • Wound ➔ Echo Prop: [Wound Prop] ➔ [Echo Prop]
+   • Thermal Shock: 5600K Cold (B4.3) ➔ 2700K Warmth (B5.1)
+   • Cast Dynamics: B1: Solo | B2: A vs Past | B3: A vs B1 (60% dialogue) | B4: A Solo | B5: A + B2 | B6: A + C
 
-To continue to Stage 2 (generate Omni Flash prompt per scene):
-  → Type "ok" or "continue" — start from Scene 1
+To continue to Stage 2 (generate SVEN prompt per Beat):
+  → Type "ok" or "continue" — start from Beat 1
   → Type "edit [content]" — revise screenplay before continuing
-  → Type "scene [N]" — start from a specific scene (screenplay already confirmed)
+  → Type "beat [N]" — start from a specific beat
 ━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━
 ```
 
 ---
 
-## STAGE 2 — SVEN PROMPT PER SCENE (DEFAULT SCALE 2: SCENE 1 → SCENE 7)
+## STAGE 2 — SVEN PROMPT PER BEAT (BEAT 1 → BEAT 6)
 
 ### Activation Conditions
 

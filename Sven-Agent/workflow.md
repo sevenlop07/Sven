@@ -18,29 +18,40 @@
 
 ## 🔍 STARTUP STEPS
 
-### K1 — Read History Registry
+## 🔍 STARTUP STEPS
+
+### K1 — Read History Registry (14-Axis Anti-Repetition Check)
 
 ```
-ANTI-REPETITION CHECK:
+ANTI-REPETITION 14-AXES SCAN:
 ━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━
-Character names used   : [used_character_names]
-Props used             : [used_props]
-Locations used         : [used_locations]
-Hooks used             : [used_hook_techniques]
-Visual styles used     : [used_visual_styles]
-Archetypes used        : [used_archetypes]
+Axis 1 (Character Names EN) : [axis_1_character_names_en]
+Axis 2 (Character Names VN) : [axis_2_character_names_vn]
+Axis 3 (Karma Direction)    : [axis_3_karma_direction] — alternate Retribution vs Reward
+Axis 4 (Story Tracks)       : [axis_4_story_tracks] — no consecutive repeats of Track A–H
+Axis 5 (Props & Groups)     : [axis_5_symbolic_props_and_groups] — no repeat of same prop group
+Axis 6 (Hook Techniques)    : [axis_6_hook_techniques] — scan ENTIRE session (no repeats)
+Axis 7 (Visual Styles)      : [axis_7_visual_styles] — no repeat of same style
+Axis 8 (Genres & Background): [axis_8_genres_and_backgrounds]
+Axis 9 (Escalation Variants): [axis_9_escalation_variants]
+Axis 10 (Twist Types)       : [axis_10_twist_and_revelation_types]
+Axis 11 (Cliffhanger Types) : [axis_11_cliffhanger_types] — cycle C1 to C7
+Axis 12 (Tropes Stacked)    : [axis_12_tropes_stacked]
+Axis 13 (Time & Lighting)   : [axis_13_time_of_day_and_lighting]
+Axis 14 (Narrative Mode)    : [axis_14_narrative_mode] — Dialogue Mode vs Show Don't Tell Silent Mode
+━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━
 ```
 
-### K2 — Identify Request Type
+### K2 — Identify Request Type & Storytelling Mode
 
 | Request type | Signal | Action |
 |---|---|---|
-| Vague / general | No specific idea | → **Step 0** |
+| Vague / general | No specific idea | → **Step 0** (Generate 5 detailed 6-Beat concepts) |
 | Has idea | Character/setting/conflict described | → Skip Step 0, go to **Step 1** |
 | Revision | Feedback on script/prompt | → Edit directly |
 | Prompt only | "create prompt for scene N" | → **Stage 4** for that scene |
-| **Dialogue** | **System default — always ON** | **§D in sven-rules.md always active. MANDATORY: declare RELATIONSHIP / POWER DYNAMIC / ADDRESS FORMS in 1B** |
-| Silent mode | User says "no dialogue" / "silent" / "visual only" | → Disable dialogue brackets, revert to visual-only |
+| **Dialogue Mode** | **System default — always ON** | **§D in sven-rules.md active. Declare RELATIONSHIP / POWER DYNAMIC / ADDRESS FORMS in 1B. Include Code Block 1 Lip-sync Brackets + Code Block 2 VN Dialogue Table.** |
+| **Silent Mode (Show Don't Tell)** | User says "no dialogue" / "silent" / "show dont tell" / "visual only" | **100% PURGE OF SPOKEN DIALOGUE. Zero dialogue brackets in Code Block 1. 400% amplified micro-biomechanics. Pure diegetic Foley & atmospheric acoustics. Mandatory Silent Negative Clause.** |
 
 ---
 
@@ -76,14 +87,15 @@ Archetypes used        : [used_archetypes]
           ↓
 ╔══════════════════════════════════════════════╗
 ║  STAGE 3 — DETAILED SCRIPT                  ║
-║  Per episode: 8 Beat × 15s + Emotion Score  ║
-║  + Cliffhanger (if series)                   ║
+║  Per episode: 6 Beats (3%/12%/35%/30%/12%/8%)║
+║  + 18 Sub-Beats + Emotion Score             ║
+║  + Cliffhanger (if series) / Echo Maxim     ║
 ║  ✋ CHECKPOINT 3: User confirms each episode ║
 ╚══════════════════════════════════════════════╝
           ↓
 ╔══════════════════════════════════════════════╗
 ║  STAGE 4 — SVEN PROMPT                      ║
-║  sven-rules.md → 2 AI Clips × 8 Beats/ep   ║
+║  sven-rules.md → Omni Flash Prompts / 6 Beats║
 ║  ✋ CHECKPOINT 4: Per Beat                   ║
 ╚══════════════════════════════════════════════╝
           ↓
@@ -94,26 +106,39 @@ Archetypes used        : [used_archetypes]
 
 ## 💡 STEP 0 — IDEA GENERATION
 
-> Output **5 distinct Ideas** → wait for user to select one.
+> Output **5 distinct, fully detailed Ideas** → wait for user to select one.
 
 **Hard rules:**
 - **Ending ALWAYS positive / hopeful** — character grows / reconciles / is saved / inspires. NEVER a dead-end tragedy with no redemption.
-- 5 Ideas must differ: genre / conflict type / character arc / target emotion
+- 5 Ideas must differ: genre / conflict type / character arc / target emotion / hook technique (from 12-Hook library)
 
 ```
-━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━
-IDEA #[N] — [Suggested title]
-━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━
-GENRE        : [Drama / Action / Thriller / ...]
-FORMAT       : [Short Film 2 min / Multi-Episode Series X eps]
-SETTING      : [Location + era + atmosphere — 1 sentence]
-CHARACTER A  : [Protagonist — defining trait + core weakness]
-CHARACTER B  : [Catalyst/antagonist — role]
-PLOT         : [Core conflict — 2-3 sentences]
-TWIST HINT   : [Direction hint — do not fully reveal]
-OUTCOME      : [Positive / hopeful ending — what character/audience gains]
-EMOTION      : [What audience feels after watching]
-━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━
+━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━
+💡 IDEA #[N] — [Concept Title]
+━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━
+🎭 PREMISE & LOGLINE:
+   [High-concept dramatic premise & core moral stakes in 2-3 sentences]
+
+👥 CHARACTER DYNAMICS:
+   • Tier A (Protagonist): [Vietnamese name — defining role + Backstory Trauma / Hamartia]
+   • Tier B1 (Antagonist/Nemesis): [Vietnamese name — opposing ideology / pressure]
+   • Tier B2 (Companion/Grace): [Vietnamese name — unconditional grace / catalyst for redemption]
+
+📦 DUAL-PROP SYSTEM:
+   • Wound Prop (Beat 2): [Tangible symbol of entrapment / trauma]
+   • Echo Prop (Beat 6): [180° Physical reversal into symbol of liberation & peace]
+
+🗺️ 6-BEAT NARRATIVE ARC & 4-STAGE PLOT SUMMARY:
+   • Beat 1 (Hook - 3%): [Visual paradox / 3s scroll stopper cognitive gap]
+   • Beat 2 (Setup - 12%): [Old world equilibrium & Hamartia origin + Wound Prop planted]
+   • Beat 3 (Drama - 35%): [Escalating ideological clash / ≥60% spoken conflict + Exits sealed]
+   • Beat 4 (Climax - 30%): [3-Wave Climax ➔ All Hope Is Lost / Ego Death at 5600K Cold Monochrome]
+   • Beat 5 (Release - 12%): [Thermal Polarity Shock to 2700K Warmth + Reverse rescue from Tier B2]
+   • Beat 6 (Echo - 8%): [Transformed world + 180° Echo Prop Payoff + Moral Maxim <15 words]
+
+🎣 HOOK TECHNIQUE: #[N] [Technique Name] — [1-sentence reason matching plot]
+🔥 EMOTION & CATHARSIS: [Target feeling & psychological resonance left with audience]
+━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━
 ```
 
 ---
@@ -151,6 +176,17 @@ EMOTION      : [What audience feels after watching]
 | **4** | Offer food when hungry | Surrender greed → abundance forever, meeting a benefactor |
 
 **Rules:** All 5 ideas built around one or more of the 4 pillars. Buddha statue is the symbolic prop with its own State Chain.
+
+---
+
+### 🎵 SPECIAL MODE: MUSIC VIDEO NARRATIVE (MV MODE)
+
+**Trigger:** User provides song lyrics, asks to create an MV story, or mentions *"MV ca nhạc"*, *"lời bài hát"*, *"kịch bản MV"*, *"music video"*
+
+**Activate:** Load and execute `.agents/skills/music-video-narrative/SKILL.md`:
+1. Ingest Song Lyrics, Musical Genre, Track Duration (Total Seconds $T$), and MV Mode (Mode A: Pure Story / Mode B: Hybrid Performance / Mode C: Visual Metaphor).
+2. Mathematically synchronize the 6 Beats (`3%/12%/35%/30%/12%/8%`) with musical sections (Intro ➔ Verse 1 ➔ Pre-Chorus/Chorus ➔ Bridge/Drop ➔ Acoustic Release ➔ Outro).
+3. Translate lyrical metaphors into observable physical micro-biomechanics and causal props.
 
 ---
 
@@ -260,7 +296,7 @@ TROPE LIBRARY
 VISUAL STYLE  : Pixar 3D  ← DEFAULT — override only if user requests
 EPISODE MODE  : [Single (Short Film) / Multi-Episode Series]
 RATIO         : [9:16 vertical / 16:9 horizontal]
-DURATION      : [2 min/ep — standard 8 beats × 15s]
+DURATION      : [60s–120s/ep — standard Hollywood 6-Beat ratio (3% / 12% / 35% / 30% / 12% / 8%)]
 EPISODE COUNT : [N episodes (if series)]
 GENRE         : [Pick from Genre Library above]
 BACKGROUND    : [Pick from Background Library above]
@@ -285,26 +321,21 @@ TROPE         : [Pick from Trope Library above — can stack 2 max]
 
 
 
-### 1B — CHARACTER PROFILE + REFERENCE IMAGE PROMPTS
+### 1B — CHARACTER PROFILE + 16:9 FOUR-PANEL MASTER REFERENCE SHEET PROMPT
 
-> Each Line A and B character needs: **1 reference grid image** first — then 4 individual shots if higher detail needed.
-
-> **CHARACTER COSTUME RULES — MANDATORY:**
-> - 🔴 Hands are **always empty** — no detached props (no bags, weapons, tools, objects held)
-> - 🔴 Only clothing **fixed to body** — shirts, trousers, shoes, belts, hats worn on head
-> - 🔴 No flowing cloaks, no draped robes, no held accessories in reference sheets
-> - ✅ Fixed accessories are allowed: wristwatch, glasses ON face, earrings, necklace worn flat
-> - Props the character interacts with — described in **Clip prompts only**, never in reference grid
+> Each Line A and B character receives an **Ultra-Detailed Master Character Reference Sheet Prompt** following the professional 16:9 four-panel studio specification.
 
 ```
-━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━
-CHARACTER: [Code name, 1 syllable]
-CHARACTER LINE / ARC: [A/B/C] | [Arc type: Opening state → Closing state]
-BACKSTORY TRAUMA: [Core wound that shapes behavior]
+━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━
+CHARACTER PROFILE: [Code Name, 1 syllable — e.g., Lok, Keth, Vin, Ren, Tor]
+━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━
+CHARACTER LINE / ARC: [Tier A (Protagonist) / Tier B1 (Antagonist) / Tier B2 (Companion)]
+ROLE                : [Role in story — e.g., The Traumatized Blacksmith / The Cursed Sovereign / The Predator]
+BACKSTORY TRAUMA    : [Root trauma / Hamartia shaping character behavior]
 
-RELATIONSHIP (with the other Line A/B character):
-  TYPE        : [Mentor/Apprentice | Family/Blood | Former Lovers | Rivals | Employer/Worker | Creditor/Debtor | Strangers | Enemies in Alliance]
-  DESCRIPTION : [1 sentence — who are they to each other and what is the unresolved wound between them]
+RELATIONSHIP (with other main character):
+  TYPE        : [Mentor/Apprentice | Family/Blood | Former Lovers | Rivals | Employer/Worker | Enemies in Alliance]
+  DESCRIPTION : [1 sentence — who they are to each other and what is the unresolved wound]
 
 POWER DYNAMIC:
   Opening     : [A dominant / B dominant / Equal]
@@ -315,59 +346,47 @@ ADDRESS FORMS (for dialogue scenes — lock for entire script):
   A → B       : [how A calls B: first name / nickname / "Sir" / "Boy" / no address / etc.]
   B → A       : [how B calls A]
   Shift       : [Beat N — who changes, from what to what, and what it signals]
-  VN voice actor ref: [Vietnamese honorific equivalents: anh/em / ông/tôi / thầy/con / etc.]
-━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━
+  VN voice ref: [Vietnamese honorific equivalents: anh/em / ông/tôi / thầy/con / etc.]
+━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━
 
-APPEARANCE PROFILE (English, ~80 words — LOCK for entire series):
-[Name], [age]-year-old [gender], [height], [skin/ethnicity], [build],
-[hair color/style/length], [defining facial features as observable behavior],
-wearing [clothing only: material, color, key details — NO props].
+APPEARANCE PROFILE (English — LOCK for entire series):
+[Name], [exact age, e.g. 34]-year-old [gender], [height in cm], [ethnicity/skin tone], [build],
+[hair color/style/texture], [facial bone structure & observable gaze],
+wearing [costume & footwear: premium materials, colors, tailored fit — NO detached props].
 
-━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━
-REFERENCE IMAGE PROMPT
-━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━
+━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━
+🎨 MASTER 16:9 FOUR-PANEL CHARACTER REFERENCE SHEET PROMPT (COPY TO GENERATE)
+━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━
 
-[STEP 1 — REFERENCE GRID — CREATE FIRST — MANDATORY]
-Character reference sheet — single image, 4-panel row layout (1 row × 4 columns).
-Header text printed at top center of image:
-"CHARACTER: [Code name] | FILM: [Film title] | AGE: [age] | [gender]"
-Panel layout (left to right):
-  Panel 1 : medium close-up face portrait, neutral expression, chin slightly down
-  Panel 2 : full body front view (0°), arms relaxed at sides, feet shoulder-width
-  Panel 3 : full body strict 90-degree left profile, arms relaxed
-  Panel 4 : full body viewed from directly behind (180°), arms relaxed
-All four panels: same costume, same pure white background, even studio lighting.
-[Full appearance profile], [visual style], hyperrealistic, sharp detail.
-Negative: dynamic poses, heavy shadows, background elements, cropped limbs,
-  any object held in hands, bags, weapons, detached accessories, flowing cloaks.
+Style: [Visual Style Name — e.g., mature western animation, detailed semi-realistic character design, dark violent atmosphere, rich painted backgrounds, cinematic staging, dramatic shadows, anime-western hybrid aesthetic, premium adult animated series quality OR Theatrical film reference, live-action style, DaVinci grading, masterful composition & cinematic color].
 
-[STEP 2 — 4 INDIVIDUAL SHOTS — create after if higher detail needed]
+Name: [Name] — [Character Epithet / Title]. Role: [protagonist / antagonist / companion]. Appearance: Ultra-realistic human photography portrait, 8K ultra HD, photorealistic authentic texture, ultimate intricate details, cinematic portrait photography, professional in-studio shooting effect, shot with 85mm f/1.4 portrait lens, soft shallow depth of field, focus precisely locked on the character's eyes and facial features, high-fashion portrait style.
 
-[SHOT 1 — FACE REFERENCE — Medium Close-up]
-Character concept art. [Full appearance profile].
-Medium close-up portrait, face looking directly at camera, neutral expression,
-chin slightly down, soft front-left studio lighting, pure white background,
-hyperrealistic, sharp focus on facial features, [visual style].
-Negative: smile, strong expression, body below chest, heavy shadows on face.
+One [gender], aged [exact integer age — e.g. aged 34 / aged 24 — STRICTLY FORBIDDEN TO USE AN AGE RANGE LIKE 32-38], [core aesthetic presence and demographic description]. [Facial bone structure, soft/defined contours, jawline, cheekbones, nose profile, lip shape]. Overall look is [aesthetic adjectives], presenting the stunning charm of a top-tier [archetype] in high-end cinematography.
 
-[SHOT 2 — FULL BODY FRONT — 0°]
-Character concept art. [Full appearance profile].
-Full body standing straight, facing camera directly (0° angle),
-arms relaxed at sides, feet shoulder-width apart,
-pure white background, even studio lighting, no shadows, [visual style].
-Negative: cropped limbs, dynamic/action pose, background elements.
+[Skin tone description — e.g., Cool-toned fair natural skin tone / Sun-baked weathered bronze] with delicate, translucent skin texture. Preserve natural skin pores, subtle tonal variations and authentic skin texture. No plastic fake skin, no heavy over-smoothing, no obvious artificial blur. Clean and clear facial condition with authentic micro-details and soft natural luster, highlighting the unique texture of [archetype] skin.
 
-[SHOT 3 — FULL BODY SIDE — 90°]
-Character concept art. [Full appearance profile].
-Full body standing, strict 90-degree left profile view,
-arms relaxed, pure white background, even studio lighting, [visual style].
-Negative: front-facing, three-quarter angle, cropped.
+Large, deep-set eyes with iris tones including [layered iris color palette — e.g., light brown, honey brown, amber brown and warm taupe gray], with highly detailed and clear iris texture. Gaze is [gaze expression — e.g., sharp and vigilant / soft, clear and lazy / haunted with quiet resolve] with strong camera appeal. Thick, slender eyelashes paired with delicate natural eye makeup, emphasizing authentic temperament without being exaggerated or heavy.
 
-[SHOT 4 — FULL BODY BACK — 180°]
-Character concept art. [Full appearance profile].
-Full body standing, viewed from directly behind (180°),
-arms relaxed, pure white background, even studio lighting, [visual style].
-Negative: front-facing, face visible, cropped.
+Soft, full lips with defined lip lines. Lip colors include [natural lip palette — e.g., natural nude pink, peach pink, pale rose pink and subtle glossy red] with moist luster. Expression is natural, [calm / guarded / intense / alluring], matching the character's psychological depth.
+
+[Hair description — e.g., Long silky hair in shades of golden, champagne gold and pale flaxen / Thick dark raven hair in textured layered cut]. Thick, soft and smooth hair with natural airy volume and fluffy texture. Styled in [hair style], falling naturally over the shoulders and collarbones.
+
+Minimalist and exquisite accessories, including [thin silver earrings, delicate fine necklaces, tiny dainty rings, or subtle character emblems worn flat]. The overall accessory style is lightweight, fashionable, and character-authentic without exaggeration.
+
+[Height and figure description — e.g., Tall and slender figure with perfect body proportions, graceful shoulder and neck lines, defined collarbones, slender waist, and elongated legs]. Posture is [posture description], embodying the temperament of [character archetype].
+
+[Costume styling selection]: [Form-fitting tailored garments matching genre, e.g., form-fitting dark gothic robes, tailored leather vests, silky bodycon dresses, military trench coats, high-slit long skirts]. Color palette includes [color palette — e.g., black, burgundy, dark berry, charcoal, off-white]. Premium fabric textures include [silk, satin, leather, wool, velvet, lace, heavy cotton], closely fitting the body to highlight high-end cinematic quality.
+
+Subtle detailed embellishments: [slender gloves, bespoke footwear/boots, dark pendants, symbolic insignias], strengthening character identity and dramatic stakes.
+
+Studio background with faint atmospheric mist, blurred bokeh lights. Cinematic soft diffused light combined with professional back side lighting, accurately outlining facial contours, collarbone lines, body physique, and hair texture. Gentle and natural facial fill light restores the real physical texture of skin, hair, fabric, and metal accessories. The overall lighting is delicate and restrained.
+
+The whole image presents a realistic, gorgeous, cinematic, and mesmerizing vibe, fully showcasing the charm of a high-value [character role]. Official character styling stills for high-budget films.
+
+Format: Character design sheet, 16:9 landscape, four-panel layout. Left panel (largest, about 40% width): chest-up close-up portrait with high detail, clearly showing face, hairstyle, accessories, and upper outfit. Right side (3 panels, about 20% width each): three full-body views - front, three-quarter, and back. Full-body panels use an A-pose stance. All full-body views must show the complete figure from head to toe, with shoes fully visible and uncropped. Pure white (#FFFFFF) background, no environmental elements, no background shadows.
+
+Rules: The character must look completely consistent across all four panels - same face, hairstyle, outfit, and accessories. Static A-pose stance, no action pose, shoes clearly visible and unobstructed. No watermark, no extra text. The close-up portrait must reach high-resolution quality, with visible skin texture, eye details, and accessory details.
 ```
 
 ### 1C — PROP PROFILE + REFERENCE IMAGE PROMPTS
@@ -388,106 +407,53 @@ STATE CHAIN: [Initial] → [Setup] → [Twist] → [Resolution]
 TRANSFORMED STATE: [If DESTRUCTIBLE — describe exact physical form after change]
   e.g. — ceramic bowl → "3 large curved shards, white glazed interior face-up,
            edge fractures showing gray clay cross-section, scattered 30cm radius"
-━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━
+━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━
+PROP PROFILE: [Prop Name — e.g., Silver Cross Dagger / The Broken Ledger / Forged Iron Torque]
+CATEGORY    : [Weapon / Relic / Tool / Artifact / Document / Symbolic Vessel]
+━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━
+MATERIAL & PATINA   : [Aged silver with cool patina / charred oak / forged iron / weathered parchment]
+ENGRAVINGS & DETAILS: [Ancient runes, hunter inscriptions, cracked seals, leather wrap]
+INITIAL STATE (B2)  : [Wound Prop state: pristine / sheathed / sharp / heavy]
+TRANSFORMED (B6)    : [Echo Prop state: 180° reversed physical state / vessel of grace]
+━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━
 
-PROP PROFILE (English, LOCK for entire series):
-[Prop name]: [material], [shape/dimensions], [color/texture/pattern],
-[weight/feel], [distinctive marks/wear/damage], [current condition].
-(Do NOT describe how it is held — hands always in Clip prompts only)
+🎨 MASTER 4:3 FOUR-VIEW PROP DESIGN SHEET PROMPT (COPY TO GENERATE)
+━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━
 
-━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━
-REFERENCE IMAGE PROMPT
-━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━
+Style: [Visual Style Name — e.g., mature western animation, detailed semi-realistic character design, dark violent atmosphere, rich painted backgrounds, cinematic staging, dramatic shadows, anime-western hybrid aesthetic, premium adult animated series quality OR Theatrical film reference, live-action style, DaVinci grading, masterful composition & cinematic color].
 
-[STEP 1 — REFERENCE GRID — CREATE FIRST — MANDATORY]
-Prop reference sheet — single image, 2x2 grid layout.
-Header text printed at top center of image:
-"PROP: [Code name] | FILM: [Film title] | ROLE: [role]"
-Grid layout:
-  Top-left     : three-quarter hero perspective, dramatic soft lighting
-  Top-right    : strict front-view orthographic, flat even lighting
-  Bottom-left  : strict 90-degree side-view orthographic
-  Bottom-right : strict back-view orthographic
-All views: pure white background, [full prop profile], the only [prop name] in frame.
-[visual style], photorealistic, sharp surface detail.
-Negative: hands holding prop, background elements, duplicate props.
+Name: [Prop Name]. Category: [Weapon / Relic / Tool / Artifact / Document / Symbolic Object]. Description: [A cross-shaped blade forged in aged silver with a cool metallic patina. The ornate handguard is intricately carved with ancient runes and vampire-hunting inscriptions. The handle is wrapped in dark leather and engraved with a vampire hunter emblem. Stored in a waist leather sheath. The blade emits a sharp, cold glint under porch night light. Upon piercing a vampire, it reduces the target to fine ash — a symbol of faith-driven ultimate judgment].
 
-[STEP 2 — 4 INDIVIDUAL SHOTS — create after if higher detail needed]
+Format: Prop design sheet, 4:3 landscape. Show only four views of the same prop: one main view that best presents its visual features, plus front, side, and back views. The main view must be the largest and clearest; the three orthographic views must fully show the prop shape and structure. Pure white background.
 
-[SHOT 1 — HERO PERSPECTIVE — 3/4 angle]
-Product concept art. [Full prop profile]. Three-quarter perspective,
-dramatic soft lighting highlighting texture and material,
-pure white background, photorealistic, sharp surface detail,
-the only [prop name] in frame, [visual style].
-
-[SHOT 2 — FRONT ORTHOGRAPHIC]
-Product concept art. [Full prop profile]. Strict front-view orthographic,
-no perspective distortion, centered, even flat studio lighting,
-white background, all front details visible, the only [prop name] in frame.
-
-[SHOT 3 — SIDE ORTHOGRAPHIC — 90°]
-Product concept art. [Full prop profile]. Strict 90-degree side-view orthographic,
-no perspective distortion, centered, even flat lighting,
-white background, all side details visible, the only [prop name] in frame.
-
-[SHOT 4 — BACK ORTHOGRAPHIC]
-Product concept art. [Full prop profile]. Strict back-view orthographic,
-no perspective distortion, centered, even flat lighting,
-white background, all back details visible, the only [prop name] in frame.
+Rules: Do not include any text, letters, numbers, annotations, captions, material swatches, dimension lines, arrows, close-up detail panels, or exploded views. The prop must remain completely consistent across all views. No environmental elements, no characters, no watermark.
 ```
 
-### 1D — ENVIRONMENT PROFILE + REFERENCE IMAGE PROMPTS
+### 1D — ENVIRONMENT / LOCATION PROFILE + 16:9 MULTI-ANGLE MASTER REFERENCE SHEET PROMPT
 
-> Each location needs: **1 reference grid image** first — then 4 individual shots if higher detail needed.
+> Each primary location receives an **Ultra-Detailed Location Concept Design Sheet Prompt** following the 16:9 landscape multi-angle layout specification.
 
 ```
-━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━
-ENVIRONMENT: [Location name]
-TIME OF DAY: [Time + weather]
-ATMOSPHERE: [Emotional tone]
-━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━
+━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━
+ENVIRONMENT PROFILE: [Location Name — e.g., Orcish Bone Lodge / The Ash Forge / Residential Porch]
+━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━
+PRIMARY ERA / SETTING : [Era + specific geographical/spatial setting]
+TIME OF DAY & WEATHER : [Harsh dusk / Night / Golden Hour / Dawn / Blizzard]
+COLOR PALETTE & TONE  : [Smoldering ember red / Cold blue low-key / 2700K golden amber]
+ARCHITECTURAL TEXTURES: [Massive animal bones lashed with leather, thick hides, snowdrifts, stone, wood]
+ATMOSPHERIC MEDIUM    : [Drafting smoke, dying coals, cool breeze, floating ash particles]
+━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━
 
-ENVIRONMENT PROFILE (English, LOCK for entire series):
-[Location]: [architectural style], [size/scale], [key structural elements],
-[floor material], [lighting source], [color palette], [atmospheric condition],
-[time of day], [distinctive environmental details].
+🎨 MASTER 16:9 MULTI-ANGLE LOCATION REFERENCE SHEET PROMPT (COPY TO GENERATE)
+━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━
 
-━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━
-REFERENCE IMAGE PROMPT
-━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━
+Style: [Visual Style Name — e.g., Pixar\Disney 3D animation style OR Theatrical film reference, live-action style, DaVinci grading, masterful composition & cinematic color OR mature western animation, detailed semi-realistic character design, dark violent atmosphere, rich painted backgrounds, cinematic staging, dramatic shadows, anime-western hybrid aesthetic, premium adult animated series quality].
 
-[STEP 1 — REFERENCE GRID — CREATE FIRST — MANDATORY]
-Environment reference sheet — single image, 2x2 grid layout.
-Header text printed at top center of image:
-"ENVIRONMENT: [Location name] | FILM: [Film title] | TIME: [time of day] | ATMOS: [tone]"
-Grid layout:
-  Top-left     : wide establishing shot, low angle, full scope of location
-  Top-right    : alternate wide from opposite or elevated angle
-  Bottom-left  : aerial top-down view, floor plan layout fully visible
-  Bottom-right : medium close on key focal point (altar/door/workbench/etc.)
-All views: no characters, [full environment profile], [visual style], cinematic composition.
-Negative: people, animals, written text overlays other than header.
+Name: [Location Name]. Description: [A broad, detailed multi-sensory environmental description: architectural structure, exterior/interior materials, structural frame, wall coverings, smoldering light sources casting deep shadows and colored illumination, crude totems or functional artifacts hanging from overhead, floor textures, weather elements, light bleed through entrances, and overall emotional atmosphere and ritualistic/cinematic tone].
 
-[STEP 2 — 4 INDIVIDUAL SHOTS — create after if higher detail needed]
+Format: Location concept design sheet, 16:9 landscape, multi-angle layout. At least 4 panels showing the same location from different camera angles or directions: wide establishing shot, reverse angle, overhead/bird-eye view, and low-angle or detail close-up. Panels may vary lighting or time of day if needed by the story. Focus entirely on full location views, with no written descriptions, detail labels, or floor plans.
 
-[SHOT 1 — ESTABLISHING WIDE — Low angle]
-Environment concept art. [Full environment profile]. Wide establishing shot, low angle,
-full scope of [location], [lighting], dramatic atmosphere,
-no characters, [visual style], cinematic composition.
-
-[SHOT 2 — ALTERNATE WIDE — Second angle]
-Environment concept art. [Full environment profile]. Wide from [opposite/elevated] angle,
-[different spatial relationship], [lighting], no characters, [visual style].
-
-[SHOT 3 — TOP-DOWN / BIRD'S EYE]
-Environment concept art. [Full environment profile]. Aerial top-down view,
-complete floor plan layout visible, spatial relationships clear,
-lighting from above, no characters, [visual style].
-
-[SHOT 4 — KEY DETAIL FOCUS]
-Environment concept art. [Full environment profile]. Medium shot focused on
-[key focal point: altar/door/throne/workbench/etc.], dramatic lighting,
-atmosphere and texture emphasis, no characters, [visual style].
+Rules: No characters or people - environment only. The location must look consistent and recognizable across all panels, with the same buildings, props, and layout. Do not include any text, letters, numbers, annotations, captions, dimension lines, arrows, labels, legends, zoning notes, or watermarks.
 ```
 
 ### 1E — INITIAL SETTING DECLARATION
@@ -525,13 +491,15 @@ CONSISTENCY NOTES (maintained throughout series):
 ### What to determine
 
 ```
-1. Confirm: 1 single episode — 8 Beats × 15s = 2 minutes total
+1. Confirm: 1 single episode — 6 Beats (3% / 12% / 35% / 30% / 12% / 8%) = 60s to 120s
 2. Select Hook Technique (§ HOOK TECHNIQUES — check registry)
-3. Select Conflict Type (§ ESCALATION BANK)
-4. Select Twist type for Beat 6 (§ TWIST BANK)
-5. Beat 8 = still Catharsis — NO cliffhanger
-6. Build Emotion Arc for 8 beats
-7. 1-sentence summary per beat
+3. Plant Wound Prop at Beat 2 ➔ 180° Physical Transformation into Echo Prop at Beat 6
+4. Select Conflict Type for Beat 3 Drama (≥60% runtime dedicated to spoken conflict)
+5. Select 3-Wave Climax for Beat 4 (Wave 1 Trap/Identity ➔ Wave 2 Loss ➔ Wave 3 Karma & Ego Death)
+6. Enforce Thermal Polarity Shock between Beat 4.3 (5600K Cold) and Beat 5.1 (2700K Warm)
+7. Beat 6 = Harmonious Community + Echo Prop + Standalone Moral Maxim (<15 words), NO cliffhanger
+8. Build Emotion Arc for 6 beats (6–7 ➔ 6–7 ➔ 7–9 ➔ 10 [PEAK] ➔ 7–8 ➔ 6–7)
+9. Summary across all 18 Micro Sub-Beats
 ```
 
 ### Stage 2S Output
@@ -540,28 +508,51 @@ CONSISTENCY NOTES (maintained throughout series):
 ━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━
 SHORT FILM BLUEPRINT — [Film title]
 ━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━
-FORMAT        : Short Film — 1 episode — 8 Beats × 15s = 2 minutes
-HOOK          : #N — [technique name]
-CONFLICT TYPE : [Conflict type]
-TWIST TYPE    : [Twist type]
-EMOTION ARC   : B1:[N]→B2:[N]→B3:[N]→B4:[N]→B5:[N]→B6:[N]→B7:[N]→B8:[N]
+FORMAT           : Short Film — 1 episode — 6 Beats (3% / 12% / 35% / 30% / 12% / 8%)
+TOTAL DURATION   : [X seconds / minutes]
+HOOK TECHNIQUE   : #N — [technique name]
+CONFLICT TYPE    : [Conflict type for Beat 3 — 60% Spoken Conflict]
+TWIST TYPE       : [3-Wave Climax for Beat 4: Identity ➔ Loss ➔ Karma/Ego Death]
+WOUND PROP (B2)  : [Name & Initial Traumatic / Entrapment State]
+ECHO PROP (B6)   : [180° Physical Transformed State of Enlightenment / Grace]
+THERMAL POLARITY : Cold 5600K (Beat 4.3) ➔ Warm 2700K (Beat 5.1) | [Lighting/Audio pause cues]
+CAST DYNAMICS    : B1: Solo | B2: A vs Past | B3: A vs B1 | B4: A Solo | B5: A + B2 | B6: A + C
+EMOTION ARC      : B1:[6-7] ➔ B2:[6-7] ➔ B3:[7-9] ➔ B4:[10 PEAK] ➔ B5:[7-8] ➔ B6:[6-7]
 
-SYMBOLIC OBJECT : [Prop — State Chain: Planted at Beat X → Flipped at Beat 6 → Mirror at Beat 8]
-VISUAL ANCHOR   : [Visual detail from Beat 1 reappears at Beat 2 and Beat 8]
+18 SUB-BEATS OUTLINE:
+  [BEAT 1: HOOK — 3%]
+    1.1 Cognitive Gap     : [Visual paradox / cognitive question without explanation]
+    1.2 Frozen Potential  : [High tension before physical causality unfolds]
+    1.3 Anchor Bridge     : [Visual anchor element bridging into Beat 2]
 
-BEAT OUTLINE:
-  B1 HOOK        : [1 sentence — opening image, cognitive gap]
-  B2 SETUP 1     : [1 sentence — open visual anchor, introduce character]
-  B3 SETUP 2     : [1 sentence — plant symbolic prop, seed of conflict]
-  B4 ESCALATION 1: [1 sentence — conflict erupts level 1]
-  B5 ESCALATION 2: [1 sentence — escalates, maximum pressure]
-  B6 CLIMAX/TWIST: [1 sentence — breaking point, twist reverses]
-  B7 RESOLUTION  : [1 sentence — natural consequences, character changes]
-  B8 AFTERMATH   : [1 sentence — mirrors Beat 1, still catharsis, positive ending]
+  [BEAT 2: SETUP — 12%]
+    2.1 Old Equilibrium  : [Status quo & entrenched flawed belief]
+    2.2 Backstory Wound   : [Generational trauma / Hamartia origin]
+    2.3 Wound Prop Plant  : [Planting physical wound symbol + cracked contract]
+
+  [BEAT 3: DRAMA — 35%]
+    3.1 Flawed Tactics    : [Using toxic habits to solve crisis]
+    3.2 Ideological Clash : [Fierce battle of worldviews with Tier B1 — 60% Spoken Dialogue]
+    3.3 Exits Sealed      : [False confidence shattered, trapped pre-climax cliffhanger]
+
+  [BEAT 4: CLIMAX — 30% — PEAK (10/10)]
+    4.1 Wave 1 (Trap)     : [Identity reveal or trap springs shut]
+    4.2 Wave 2 (Loss)     : [Physical / material destruction]
+    4.3 Wave 3 (Ego Death): [Karma recognized, All Hope Is Lost, 5600K Cold Monochrome]
+
+  [BEAT 5: RELEASE — 12%]
+    5.1 Thermal Shock     : [Abrupt shift to 2700K warmth, [pause: 1.5s], warm whisper]
+    5.2 Reverse Rescue    : [Unconditional grace from Tier B2]
+    5.3 Concrete Proof    : [Tangible action of rebirth / doing the unthinkable from Beat 2]
+
+  [BEAT 6: ECHO & END — 8%]
+    6.1 Transformed World : [Tier A integrates with Tier C community under open sky]
+    6.2 180° Echo Prop    : [Physical reversal of Wound Prop into vessel of grace]
+    6.3 Closing Maxim     : "[Independent moral maxim < 15 words]"
 ━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━
 ```
 
-**✋ CHECKPOINT 2S:** User confirms Short Film Blueprint → proceed to Stage 3 (write 8 Beats in detail)
+**✋ CHECKPOINT 2S:** User confirms Short Film Blueprint → proceed to Stage 3 (write detailed 6-Beat script)
 
 ---
 
@@ -586,10 +577,10 @@ Act 4 (Resolution) = N − (Act1 + Act2 + Act3) episodes, minimum 1
 
 | Act | Name | Script Duty | Cliffhanger Intensity | Cliffhanger Type |
 |---|---|---|---|---|
-| **1** | **Setup** | Introduce world, characters, core conflict, plant symbolic prop | 6–7 / 10 | Mystery / Threat |
+| **1** | **Setup** | Introduce world, characters, core conflict, plant Wound Prop | 6–7 / 10 | Mystery / Threat |
 | **2** | **Escalation** | Stakes increase, first failure, Midpoint Twist reverses everything | 7–8 / 10 | Betrayal / Revelation |
-| **3** | **Climax** | Darkest point, character at rock bottom, all secrets exposed, decision forms | 9–10 / 10 | Loss / Decision |
-| **4** | **Resolution** | Final confrontation, catharsis, **positive ending** | 0 (finale) | — |
+| **3** | **Climax** | Darkest point, character at rock bottom, 3-Wave Ego Death, decision forms | 9–10 / 10 | Loss / Decision |
+| **4** | **Resolution** | Final confrontation, 180° Echo Prop payoff, catharsis, **positive ending** | 0 (finale) | — |
 
 ### Cliffhanger Types (for all episodes except the finale)
 
@@ -609,9 +600,10 @@ Act 4 (Resolution) = N − (Act1 + Act2 + Act3) episodes, minimum 1
 ━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━
 SERIES BLUEPRINT — [Series title]
 ━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━
-TOTAL EPISODES   : [N episodes × 2 min/ep = ~Xh Ym]
+TOTAL EPISODES   : [N episodes × 6 Beats/ep = ~Xh Ym]
 SERIES ARC       : [Protagonist's journey across the full series — 2-3 sentences]
 OVERARCHING TWIST: [The biggest secret revealed in Act 3/4]
+WOUND ➔ ECHO PROP: [Name: Traumatic origin at Act 1 ➔ Reforged / liberated state at Act 4 Finale]
 
 ACT 1 — SETUP (Episodes 1 to [N×0.25])
   [Ep 1]: [Main duty of ep 1] | Cliffhanger: [C1/C2] — [1-sentence description]
@@ -628,7 +620,7 @@ ACT 3 — CLIMAX (Episodes [Y] to [Z])
 
 ACT 4 — RESOLUTION (Episodes [Z] to [N])
   [Ep N-1]: [Duty] | Cliffhanger: [Victory hook] — [description]
-  [Ep N]: [Finale — positive ending, catharsis] | Cliffhanger: NONE
+  [Ep N]: [Finale — 180° Echo Prop Payoff, positive ending, catharsis, closing maxim] | Cliffhanger: NONE
 ━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━
 ```
 
@@ -640,35 +632,36 @@ ACT 4 — RESOLUTION (Episodes [Z] to [N])
 
 > Based on `references/story-rules.md`. Write one episode at a time — confirm Episode N before proceeding to Episode N+1.
 
-### Structure: 8 Beats × 15s = 2 minutes / episode
+### Structure: Hollywood 6 Beats (3% / 12% / 35% / 30% / 12% / 8%) & 18 Micro Sub-Beats
 
-**Formula:** Each episode = 8 fixed Beats. Each Beat = 15s = 2 AI Clips (7s + 8s).
+| Beat | % | Phase | Function | Emotion Score | Cast Dynamic |
+|---|---|---|---|---|---|
+| **Beat 1** | **3%** | **HOOK** | Visual Paradox & Frozen Potential (3s scroll-stopper) | 6–7 / 10 | Solo / Prop Focus |
+| **Beat 2** | **12%** | **SETUP** | Old World & Generational Trauma (Hamartia) + Wound Prop | 6–7 / 10 | Tier A vs. Ghosts of the Past |
+| **Beat 3** | **35%** | **DRAMA** | Flawed Tactics & Ideological Clash (60% Spoken Conflict) | 7–9 / 10 | Tier A vs. Tier B1 (Antagonist) |
+| **Beat 4** | **30%** | **CLIMAX** | 3-Wave Climax ➔ All Hope Is Lost ➔ Total Ego Death | **10 / 10** (PEAK) | Tier A Solo in Tragedy (5600K Cold) |
+| **Beat 5** | **12%** | **RELEASE** | Thermal Shock (2700K Warm) + Reverse Rescue + Tangible Proof | 7–8 / 10 | Tier A + Tier B2 (Companion) |
+| **Beat 6** | **8%** | **ECHO** | Transformed World + 180° Echo Prop Payoff + Moral Maxim | 6–7 / 10 | Tier A + Tier C New World |
 
-| Beat | Phase | Function | Emotion Score | Duration |
-|---|---|---|---|---|
-| **Beat 1** | HOOK | Cognitive Gap / Visual Anchor — no explanation | 6–7 / 10 | 15s |
-| **Beat 2** | SETUP 1 | Open Visual Anchor, establish character, setting | 6–7 / 10 | 15s |
-| **Beat 3** | SETUP 2 | Plant symbolic prop, conflict seed, backstory hint | 6–7 / 10 | 15s |
-| **Beat 4** | ESCALATION 1 | Conflict erupts level 1, stake established | 7–8 / 10 | 15s |
-| **Beat 5** | ESCALATION 2 | Conflict escalates level 2, maximum pressure | 8–9 / 10 | 15s |
-| **Beat 6** | CLIMAX / TWIST | Breaking point — Twist reverses or peak emotion | 9–10 / 10 | 15s |
-| **Beat 7** | RESOLUTION | Natural consequences from Twist, character changes | 8–9 / 10 | 15s |
-| **Beat 8** | AFTERMATH + CLIFFHANGER | Still — mirror shot — cliffhanger end of episode | 6–7 / 10 | 15s |
-
-> **Emotion Score rules:**
-> - Must have **at least 1 beat reaching 9–10** (peak) — usually Beat 6
-> - Beat 8 (Aftermath) ALWAYS lower than Beat 6 — creates "cool-down" before cliffhanger
-> - Short Film: Beat 8 has no cliffhanger — replaced by still Catharsis
+> **Hard dynamic rules:**
+> - **Beat 3**: MUST dedicate ≥60% runtime to adversarial spoken dialogue between Tier A and Tier B1.
+> - **Beat 4**: MUST execute 3-Wave structure reaching emotional peak (10/10) with complete Ego Death.
+> - **Thermal Polarity Shock**: Transition from Beat 4.3 (5600K Cold Monochrome) to Beat 5.1 (2700K Soft Warmth) with `[pause: 1.5s]` silence.
+> - **Dual-Prop Transformation**: Wound Prop (Beat 2) reverses 180° into Echo Prop (Beat 6).
+> - **Short Film**: Beat 6 concludes with Still Catharsis + Echo Image + Moral Maxim (<15 words). NO cliffhanger.
+> - **Mid-Series Episode**: Beat 6 concludes with Cliffhanger (C1–C7).
 
 ### Per-Episode Writing Process
 
 ```
 1. Confirm this episode's role in Series Blueprint (Which Act? What duty?)
 2. Select Hook Technique (§ HOOK TECHNIQUES in story-rules.md — check registry)
-3. Select Twist type for Beat 6 (§ TWIST BANK)
-4. Determine Cliffhanger type for Beat 8 (§ CLIFFHANGER TYPES)
-5. Write 8 Beats using the format below
-6. Check: Does emotion arc have the correct wave shape (rise→peak→fall)? Is HANDOFF STATE complete?
+3. Select Conflict Type for Beat 3 (≥60% spoken dialogue)
+4. Architect 3-Wave Climax for Beat 4 (Identity ➔ Loss ➔ Karma & Ego Death)
+5. Enforce Thermal Polarity Shock between Beat 4.3 and Beat 5.1 (5600K ➔ 2700K, [pause: 1.5s])
+6. Execute 180° Physical Transformation from Wound Prop (B2) to Echo Prop (B6)
+7. Determine Cliffhanger (mid-series) or Moral Maxim (Short Film / Finale)
+8. Write 6 Beats & 18 Sub-Beats using the format below
 ```
 
 ### Stage 3 Output (per episode)
@@ -676,42 +669,58 @@ ACT 4 — RESOLUTION (Episodes [Z] to [N])
 ```
 ━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━
 EPISODE [N] — [Episode title] | ACT [X] — [Setup/Escalation/Climax/Resolution]
-EPISODE DUTY: [1 sentence — what this episode must accomplish in the series arc]
+EPISODE DUTY     : [1 sentence — what this episode accomplishes]
 ━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━
-HOOK TECHNIQUE : #N — [name]
-TWIST TYPE     : #N — [name]
-CLIFFHANGER    : [C1–C7 / NONE (finale)]
-EMOTION ARC    : [B1/N]→[B2/N]→[B3/N]→[B4/N]→[B5/N]→[B6/N]→[B7/N]→[B8/N]
+HOOK TECHNIQUE   : #N — [name]
+CONFLICT TYPE    : [Conflict type — 60% Spoken Conflict in Beat 3]
+TWIST TYPE       : [3-Wave Climax for Beat 4]
+WOUND PROP (B2)  : [Initial Traumatic State]
+ECHO PROP (B6)   : [180° Transformed State]
+THERMAL POLARITY : Cold 5600K (B4.3) ➔ Warm 2700K (B5.1) | [pause: 1.5s]
+CLIFFHANGER      : [C1–C7 / NONE (Short Film / finale)]
+EMOTION ARC      : B1:[6-7] ➔ B2:[6-7] ➔ B3:[7-9] ➔ B4:[10 PEAK] ➔ B5:[7-8] ➔ B6:[6-7]
 
-BEAT 1 — HOOK (15s) | Emotion: [X/10]
-  Action: [English prose, Show-Don't-Tell, specific visual]
-  Camera: [shot scale + movement]
-  Sound: [specific diegetic sound]
-  [HANDOFF STATE: Character / Prop / Setting]
+--- BEAT 1 — HOOK (3% - [s]s) | Emotion: [6-7/10] ---
+[Sub-beats 1.1 Cognitive Gap, 1.2 Frozen Potential, 1.3 Anchor Bridge]
+Cast: Solo / Prop Focus
+Action: [English prose, Show-Don't-Tell, cognitive paradox]
+Camera: [shot scale + single camera intention]
+Sound: [specific diegetic sound]
+[HANDOFF STATE: Character / Prop / Setting]
 
-BEAT 2 — SETUP 1 (15s) | Emotion: [X/10]
-  [Continuing from Beat 1 — copy handoff state]
-  Action: ...
-  [HANDOFF STATE: ...]
+--- BEAT 2 — SETUP (12% - [s]s) | Emotion: [6-7/10] ---
+[Sub-beats 2.1 Old World, 2.2 Generational Trauma / Hamartia, 2.3 Wound Prop Plant]
+Cast: Tier A vs. Ghosts of the Past (Flashback/Wound)
+Wound Prop: [Planted physical symbol of fear/entrapment]
+Action: ...
+[HANDOFF STATE: ...]
 
-BEAT 3 — SETUP 2 (15s) | Emotion: [X/10]
-  ...
+--- BEAT 3 — DRAMA (35% - [s]s) | Emotion: [7-9/10] ---
+[Sub-beats 3.1 Flawed Tactics, 3.2 Ideological Clash 60% Spoken, 3.3 Exits Sealed / Misdirection Peak]
+Cast: Tier A vs. Tier B1 (Antagonist) — 60% Spoken Conflict
+Action & Adversarial Dialogue: ...
+[HANDOFF STATE: ...]
 
-BEAT 4 — ESCALATION 1 (15s) | Emotion: [X/10]
-  ...
+--- BEAT 4 — CLIMAX (30% - [s]s) | Emotion: [10/10 PEAK] ---
+[Sub-beats 4.1 Wave 1 Identity/Trap, 4.2 Wave 2 Loss/Physical, 4.3 Wave 3 Karma & Ego Death]
+Cast: Tier A Solo in Tragedy (5600K Cold Monochrome)
+Action: [Citadel of pride collapses; Anagnorisis; All Hope Is Lost]
+[HANDOFF STATE: ...]
 
-BEAT 5 — ESCALATION 2 (15s) | Emotion: [X/10]
-  ...
+--- BEAT 5 — RELEASE (12% - [s]s) | Emotion: [7-8/10] ---
+[Sub-beats 5.1 Thermal Shock 2700K Warm, 5.2 Reverse Rescue from Tier B2, 5.3 Concrete Proof of Change]
+Cast: Tier A + Tier B2 (Companion / Grace)
+Lighting/Acoustic: 2700K soft golden warmth, [pause: 1.5s], warm whisper
+Action: [Unconditional compassion; doing the unthinkable from Beat 2]
+[HANDOFF STATE: ...]
 
-BEAT 6 — CLIMAX / TWIST (15s) | Emotion: [X/10] ← PEAK
-  ...
-
-BEAT 7 — RESOLUTION (15s) | Emotion: [X/10]
-  ...
-
-BEAT 8 — AFTERMATH (15s) | Emotion: [X/10]
-  [Mirror shot — image from Beat 1 reappears]
-  CLIFFHANGER: [1-2 sentence cliffhanger description for episode end]
+--- BEAT 6 — ECHO & END (8% - [s]s) | Emotion: [6-7/10] ---
+[Sub-beats 6.1 Transformed World, 6.2 180° Echo Prop Transformation, 6.3 Closing Maxim]
+Cast: Tier A + Tier C New World
+180° Echo Prop: [Physical reversal of Wound Prop into vessel of grace]
+Action: [Harmonious life continues under open sky]
+CLIFFHANGER (if series): [Cliffhanger description]
+CLOSING MORAL MAXIM (Short Film / finale): "[Independent truth < 15 words]"
 ━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━
 ✋ Confirm Episode [N]? Or revise Beat [X]: ...
 ━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━
@@ -719,94 +728,135 @@ BEAT 8 — AFTERMATH (15s) | Emotion: [X/10]
 
 ---
 
-## 🎬 STAGE 4 — SVEN PROMPT (sven-rules.md)
+## 🎬 STAGE 4 — SVEN PROMPT SUITE (Omni Flash / Sora Prompt Engine)
 
-> Each Beat = 2 AI Clips. Write Beat by Beat → wait for confirmation → next Beat.
+> Prompts are structured per Beat across the 6-Beat Arc. Write Beat by Beat → wait for confirmation → next Beat.
 
-### Split 15s Beat into 2 Clips
+### 🎛️ Branch Selection based on Storytelling Mode:
 
-```
-Beat [N] (15s) = Clip [N]A (7s) + Clip [N]B (8s)
+---
 
-Clip A: Action/Rising — start of beat, establishes state change
-Clip B: Reaction/Peak — end of beat, completes state change + HANDOFF STATE
-```
-
-### Per-Beat Output
+### 🅰️ BRANCH 4A — DIALOGUE MODE (System Default)
 
 ```
-━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━
-BEAT [N] / 8 — [Phase name] — Episode [X] | Emotion: [Y/10]
-━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━
+━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━
+BEAT [N] / 6 — [Phase Name] — Episode [X] | Emotion: [Y/10]
+CAST DYNAMIC : [Solo / A vs Past / A vs B1 / A Solo / A + B2 / A + C]
+THERMAL STATE: [5600K Cold Monochrome (if B4.3) / 2700K Warm Firelight (if B5.1) / Standard]
+━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━
 
-[⚠️ IF THIS BEAT HAS DIALOGUE — MANDATORY PRE-FLIGHT BEFORE CODE BLOCK 1]
+[⚠️ DIALOGUE PRE-FLIGHT — MANDATORY BEFORE CODE BLOCK 1]
 DIALOGUE PRE-FLIGHT:
-  RELATIONSHIP    : [Type from 1B — e.g. Creditor/Debtor]
+  RELATIONSHIP    : [Type from 1B — e.g., Creditor/Debtor]
   POWER DYNAMIC   : [Who holds power AT THIS BEAT — has shift happened yet? Y/N]
   ADDRESS FORM A→B: [How A addresses B in this Beat — first name / title / none]
   ADDRESS FORM B→A: [How B addresses A in this Beat]
   SHIFT THIS BEAT : [Y — A drops title / N — no change]
   VN VOICE REF    : [anh/em / ông/tôi / thầy/con / etc. for voice actor]
 
-— CLIP [N]A (7s) —
+— PROMPT BEAT [N] (DIALOGUE MODE) —
 [CODE BLOCK 1 — OMNI FLASH PROMPT]
 [English, ~100-130 words]
-[If dialogue: Scripting Bracket ≤ 160 characters — address form embedded in bracket]
+[Lighting: exact Kelvin temperature & atmospheric medium]
+[Dialogue: Scripting Bracket ≤ 160 characters — address form embedded in bracket]
+[If Beat 5.1: [pause: 1.5s], [whispers, warm] explicitly tagged]
+[Negative Output Clause: Do not generate subtitles, dialogue text, titles, timestamps...]
 
-[CODE BLOCK 2 — SCRIPT / VOICEOVER]
-Shot 1 (Xs): [English prose, Show-Don't-Tell]
-Shot 2 (Xs): [...]
+[CODE BLOCK 2 — SCRIPT & VOICE ACTOR TABLE]
+Action: [English prose, Show-Don't-Tell]
 💬 Dialogue VN: "[Vietnamese line with correct honorifics for voice actor]"
-END STATE: [Ending state of Clip A]
+❤️ Subtext: [...]  💥 Physical Mechanics: [...]
+[HANDOFF STATE BEAT [N]: Character / Prop / Setting]
 
-✋ Clip A generated → type "next" to receive Clip B.
-━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━
-```
-
-> ⚠️ **MANDATORY STEP BY STEP:**
-> - **STOP after Clip A** — DO NOT automatically output Clip B
-> - Wait for user confirmation ("next" / "ok" / "fix it") → only then output Clip B
-> - **STOP after Clip B** (Beat N complete) — DO NOT automatically output Beat N+1
-> - Wait for user confirmation → only then output next Beat
-> - **NO DUMP**: Forbidden to output 2+ Beats in one response, unless user explicitly says "output all"
-
-**After user confirms Clip A → output Clip B:**
-
-```
-— CLIP [N]B (8s) —
-[CODE BLOCK 1 — OMNI FLASH PROMPT]
-[Starting from END STATE of Clip A]
-
-[CODE BLOCK 2 — SCRIPT / VOICEOVER]
-Shot 1 (Xs): [...]
-[HANDOFF STATE BEAT N: Character / Prop / Setting]
-
-✋ Clip B generated → type "next" to receive Beat [N+1].
-━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━
+✋ Beat [N] generated → type "next" to receive Beat [N+1].
+━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━
 ```
 
 ---
 
-## 📝 POST-SESSION — UPDATE HISTORY REGISTRY
+### 🔇 BRANCH 4B — SILENT MODE / SHOW DON'T TELL (Zero Dialogue)
 
-After completion, **MANDATORY** update `d:\Project\Sven\history-registry.json`:
+> [!CRITICAL]
+> **SILENT MODE SHOW DON'T TELL PROMPT RULES**:
+> 1. ❌ **100% PURGE OF DIALOGUE**: Absolutely NO dialogue brackets `[Subject] : "..."`, NO speech quotes, NO lip-sync audio text anywhere.
+> 2. ⚡ **400% AMPLIFIED MICRO-BIOMECHANICS**: Translate all emotions into observable physical reactions (pupil dilation, masseter muscle twitching, rapid chest heaving, cold perspiration, involuntary recoil, step-by-step kinetic causality).
+> 3. 🔊 **PURE DIEGETIC FOLEY & ATMOSPHERIC SOUND**: Only physical environmental sound effects in `Diegetic acoustics: ...` (roaring blizzard, crackling fire, dripping water, crushing gravel, metallic scrapes, ticking clocks).
+> 4. 🚫 **MANDATORY SILENT NEGATIVE CLAUSE**:
+>    `Do not generate spoken dialogue, lip movement matching speech, voiceover, subtitles, speech captions, or on-screen text overlaid on video. Do not render duplicate characters or extra props.`
+
+```
+━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━
+BEAT [N] / 6 — [Phase Name] — Episode [X] | Emotion: [Y/10] — [🔇 SILENT MODE]
+CAST DYNAMIC : [Solo / A vs Past / A vs B1 / A Solo / A + B2 / A + C]
+THERMAL STATE: [5600K Cold Monochrome (if B4.3) / 2700K Warm Firelight (if B5.1) / Standard]
+━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━
+
+— PROMPT BEAT [N] (SHOW DON'T TELL SILENT MODE) —
+[CODE BLOCK 1 — OMNI FLASH SILENT PROMPT]
+[Master-level cinematography header...]
+▼ CONTEXT: {Location name}, {time of day} — {key light source + color temp, 5600K cold / 2700K warm}.
+▼ LINE A: {Name A}, {height}cm, {build}. [Character Reference attached]. Initial pose: {camera-anchored pose, empty hands}.
+▼ LINE B: {Name B}, {height}cm, {build}. [Character Reference attached]. {Camera-relative position}.
+▼ PROP: {Prop name}, {current physical state: Wound state / Transformed Echo state} — the only {prop} in frame.
+▼ DIEGETIC ACOUSTICS (Foley only): Diegetic acoustics: {pure environmental sounds & physical biomechanics: heavy wind, ragged breathing, cracking wood, metallic scrape}.
+
+[{beat 1 timestamp}] Shot {scale} | {lens}mm f/{aperture} | {camera movement & angle} on {Subject}
+{Subject A} {kinetic action verb} {object/position}. {Amplified Micro-biomechanic: pupils dilating, veins throbbing along neck, fingers trembling as they release the relic}.
+
+[{middle beat timestamp}] Shot {scale} | {lens}mm f/{aperture} | {camera movement & angle} on {Subject}
+{Physical interaction with Prop} while {Subject B} {opposing body reaction: step forward, hand gripping hilt}. {Zero spoken dialogue — pure visual tension}.
+
+[{final beat timestamp}] Shot {scale} | {lens}mm f/{aperture} | {gentle push-in} on {Subject}
+{Subject A} reaches {terminal zero-velocity freeze hold pose}, {prop rests in final state}. 0.5s static freeze.
+
+Continuous fluid motion, realistic physics, zero morphing. Sharp optical focus locked on subject action and physical micro-expressions throughout shot.
+
+Do not generate spoken dialogue, lip movement matching speech, voiceover, subtitles, speech captions, or on-screen text overlaid on video. Do not render duplicate characters or extra props.
+
+[CODE BLOCK 2 — VISUAL CINEMATIC SCRIPT]
+Action: [English prose, pure Show-Don't-Tell micro-biomechanics]
+Foley Sound: [Detailed diegetic sound cues for sound design]
+[HANDOFF STATE BEAT [N]: Character / Prop / Setting]
+
+✋ Beat [N] generated → type "next" to receive Beat [N+1].
+━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━
+```
+
+---
+
+## 📝 POST-SESSION — UPDATE HISTORY REGISTRY (14 AXES)
+
+After completion, **MANDATORY** update `d:\Project\Sven\history-registry.json` across all 14 axes:
 
 ```json
 {
-  "used_character_names": [...+Line A & B names],
-  "used_props": [...+symbolic prop],
-  "used_locations": [...+locations used],
-  "used_hook_techniques": [...+hook selected],
-  "used_visual_styles": [...+visual style],
-  "used_archetypes": [...+archetype],
-  "total_stories_produced": "+1",
+  "version": "3.0",
   "last_updated": "YYYY-MM-DD",
+  "total_stories_produced": "+1",
+  "active_series_id": null,
+  "anti_repetition_14_axes": {
+    "axis_1_character_names_en": [...+Line A & B EN names],
+    "axis_2_character_names_vn": [...+Line A & B VN names],
+    "axis_3_karma_direction": [...+retribution/reward],
+    "axis_4_story_tracks": [...+track A-H],
+    "axis_5_symbolic_props_and_groups": [...+Wound/Echo prop],
+    "axis_6_hook_techniques": [...+hook #N],
+    "axis_7_visual_styles": [...+visual style],
+    "axis_8_genres_and_backgrounds": [...+genre & bg],
+    "axis_9_escalation_variants": [...+variant],
+    "axis_10_twist_and_revelation_types": [...+twist type],
+    "axis_11_cliffhanger_types": [...+C1-C7],
+    "axis_12_tropes_stacked": [...+tropes],
+    "axis_13_time_of_day_and_lighting": [...+lighting],
+    "axis_14_narrative_mode": [...+Dialogue / Show Don't Tell]
+  },
   "story_history": [{
-    "slug": "kebab-case",
+    "slug": "kebab-case-title",
     "title": "...",
+    "format": "Short Film / Multi-Episode Series / Music Video",
     "theme": "...",
     "lesson": "...",
-    "episodes": N,
+    "episodes": 1,
     "date": "YYYY-MM-DD",
     "visual_style": "..."
   }]

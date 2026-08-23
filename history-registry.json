@@ -1,21 +1,33 @@
 {
-  "version": "2.0",
-  "last_updated": "",
+  "version": "3.0",
+  "last_updated": "2026-08-23T19:20:00+07:00",
   "total_stories_produced": 0,
+  "active_series_id": null,
 
-  "anti_repetition": {
-    "used_character_names": [],
-    "used_props": [],
-    "used_locations": [],
-    "used_archetypes": [],
-    "used_hook_techniques": [],
-    "used_visual_styles": [],
-    "used_cliffhanger_types": [],
-    "used_conflict_types": [],
-    "used_twist_types": [],
-    "used_genres": [],
-    "used_tropes": [],
-    "used_time_of_day": []
+  "anti_repetition_14_axes": {
+    "axis_1_character_names_en": [],
+    "axis_2_character_names_vn": [],
+    "axis_3_karma_direction": [],
+    "axis_4_story_tracks": [],
+    "axis_5_symbolic_props_and_groups": [],
+    "axis_6_hook_techniques": [],
+    "axis_7_visual_styles": [],
+    "axis_8_genres_and_backgrounds": [],
+    "axis_9_escalation_variants": [],
+    "axis_10_twist_and_revelation_types": [],
+    "axis_11_cliffhanger_types": [],
+    "axis_12_tropes_stacked": [],
+    "axis_13_time_of_day_and_lighting": [],
+    "axis_14_narrative_mode": []
+  },
+
+  "session_log": {
+    "recent_hooks": [],
+    "recent_character_names": [],
+    "recent_props": [],
+    "recent_locations": [],
+    "recent_visual_styles": [],
+    "recent_cliffhangers": []
   },
 
   "story_history": []

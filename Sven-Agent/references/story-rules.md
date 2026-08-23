@@ -44,7 +44,7 @@ Genre defines the **emotional framework and conflict** of the entire narrative:
 | Revenge Drama | Character arc must have a turning point — from revenge → realizing the cost |
 | SEA Family Drama | Conflict from within the family — duty, expectations, sacrifice |
 | Thriller Mystery | Every Beat must raise tension — no "neutral" Beat |
-| J-Drama Healing | Slow burn — emotion arc builds slowly, catharsis at Beat 7-8 |
+| J-Drama Healing | Slow burn — emotion arc builds slowly, catharsis at Beat 5-6 |
 | Survival Adventure | High physical stakes — environment is the third character |
 | Light Comedy | Subtext must still exist — funny but not empty |
 
@@ -75,11 +75,11 @@ Trope defines **dramatic structure and twist rhythm**:
 
 | Trope | Beat Impact |
 |---|---|
-| Hidden Identity | Twist at Beat 5-6 — character is exposed. Next beat: fallout |
-| Enemies to Lovers | Slow escalation — tension builds gradually to Beat 6 |
-| Revenge Comeback | Beat 1-4: disadvantage / Beat 5-7: rise / Beat 8: reckoning |
-| Second Chance | Flashback allowed at Beat 2-3 to anchor emotion |
-| Redemption Arc | Beat 8 MUST be catharsis — no ambiguous ending |
+| Hidden Identity | Twist at Beat 4 — character is exposed. Next beat: Release & Echo |
+| Enemies to Lovers | Slow escalation in Beat 3 — collision & truth at Beat 4 |
+| Revenge Comeback | Beat 1-3: disadvantage / Beat 4: reckoning & twist / Beat 5-6: rise & rebirth |
+| Second Chance | Flashback anchored at Beat 2 to reveal root wound |
+| Redemption Arc | Beat 6 MUST be catharsis + echo image — no ambiguous ending |
 | Found Family | Supporting character carries equal emotional weight to Character A |
 | Fake Relationship | Subtext must be clearer than dialogue — audience must see truth before character does |
 | Time Travel / Rebirth | Must establish "rules" of the trope at Beat 1 — no mid-story explanation |
@@ -102,117 +102,135 @@ Trope defines **dramatic structure and twist rhythm**:
 
 ---
 
-## § BEAT MATRIX — STANDARD 8 BEAT × 15s ARCHITECTURE
+## § BEAT MATRIX — HOLLYWOOD 6-BEAT NARRATIVE ARCHITECTURE & 18 SUB-BEATS
 
-> **Core principle:**
-> - 1 episode = **8 fixed Beats × 15s** = **2 minutes**
-> - 1 Beat = **2 AI Clips** (Clip A: 7s + Clip B: 8s) = **1 complete state change**
-> - Emotion Score (1–10) tracks emotional rhythm — MUST have at least 1 beat reaching 9–10
-
----
-
-### 🎬 FORMAT 1 — SHORT FILM (1 self-contained episode = 2 minutes)
-
-**Characteristic**: 1 complete story arc within 8 Beats × 15s. No cliffhanger — Beat 8 is a still Catharsis.
-
-#### 8-Beat Table — Short Film
-
-| Beat | Phase | Function | Emotion Score | Mandatory Rules |
-|---|---|---|---|---|
-| **1** | **HOOK** | Cognitive Gap + Visual Anchor. NO explanation. | 6–7 / 10 | Visual Anchor must reappear in Beat 2 within first 3s |
-| **2** | **SETUP 1** | Open Visual Anchor, introduce character, setting | 6–7 / 10 | Copy HANDOFF STATE from Beat 1 |
-| **3** | **SETUP 2** | Plant symbolic prop, Backstory Trauma hint, seed of conflict | 6–7 / 10 | Symbolic prop must appear for the first time |
-| **4** | **ESCALATION 1** | Conflict erupts level 1 — stake clearly established | 7–8 / 10 | Chosen conflict type begins to escalate |
-| **5** | **ESCALATION 2** | Conflict escalates level 2 — maximum pressure | 8–9 / 10 | No clear way out remains |
-| **6** | **TWIST / CLIMAX** | Breaking point — Twist reverses or absolute emotional peak | **9–10 / 10** | Insert-shot MANDATORY. PEAK of entire episode. |
-| **7** | **RESOLUTION** | Natural consequences from Twist — character faces outcome | 8–9 / 10 | Use the exact symbolic prop planted in Beat 3 |
-| **8** | **AFTERMATH** | Still. Mirrors Beat 1. Catharsis. NO cliffhanger. | 6–7 / 10 | Image from Beat 1 reappears. Positive ending. |
-
-**Standard Short Film Emotion Arc:** `6→6→7→8→9→10→8→7`
-
-> Beat merge rules when needed (short < 2 minutes):
-> 1. NEVER cut Beat 1 (Hook) or Beat 6 (Twist/Climax)
-> 2. Merge priority: Beat 2↔3 first, then Beat 7↔8
-> 3. Symbolic prop is NEVER cut even when merging
+> **Core Mathematical Allocation:**
+> 
+> ```
+> [BEAT 1: HOOK] ──► [BEAT 2: SETUP] ──► [BEAT 3: DRAMA] ──► [BEAT 4: CLIMAX] ──► [BEAT 5: RELEASE] ──► [BEAT 6: ECHO]
+>      (3%)               (12%)               (35%)               (30%)               (12%)               (8%)
+>   Visual Paradox      Old Wound /         Opposing Clash      Collapse of Ego     New Action /        Eternal Truth /
+>   & Frozen Potential  Hamartia & Contract (60% Dialogue)      & All Hope Lost     Redeeming Warmth    Echo Image
+> ```
+> 
+> - **Total Arc Ratio**: `3% / 12% / 35% / 30% / 12% / 8% = 100%`
+> - **Micro-Architecture**: Exactly **18 Sub-Beats** (3 micro-beats per beat × 6 beats)
+> - **Dynamic Peaks**: Beat 4 is the absolute peak (Emotion Score: 10/10), followed by an immediate thermal polarity release in Beat 5.
 
 ---
 
-### 🎞️ FORMAT 2 — MULTI-EPISODE SERIES (N episodes × 2 minutes)
+### 🏛️ THE 6-BEAT NARRATIVE ARC & 18 MICRO SUB-BEATS
 
-**Characteristic**: Each episode = 8 Beats × 15s = 2 minutes. N episodes form 1 Series Arc divided into 4 Acts. Beat 8 of each episode (except the finale) ends with a **Cliffhanger** instead of Catharsis.
+| Beat | % | Phase Name | Dramatic Function & Sub-Beats | Emotion | Cast Dynamic |
+|---|---|---|---|---|---|
+| **Beat 1** | **3%** | **HOOK** | **Visual Paradox & Frozen Potential (3s scroll-stopper)**<br>• `1.1 Cognitive Gap`: Visual paradox / cognitive question without explanation<br>• `1.2 Frozen Potential`: High tension before physical causality unfolds<br>• `1.3 Visual Anchor Bridge`: Physical element bridging directly into Beat 2 | 6–7 / 10 | **Solo / Prop Focus** (Centering on paradoxical object/gesture) |
+| **Beat 2** | **12%** | **SETUP** | **Old World & Generational Trauma (Hamartia / The Wound)**<br>• `2.1 Old World Equilibrium`: Flawed status quo & entrenched belief system<br>• `2.2 Generational Trauma / Hamartia`: Childhood root wound explaining toxic defense mechanism<br>• `2.3 Wound Prop Introduction`: Planting the physical symbol of entrapment + Cracked Contract | 6–7 / 10 | **Tier A vs. Ghosts of the Past** (Flashback / internal wound trigger) |
+| **Beat 3** | **35%** | **DRAMA** | **Flawed Tactics & Ideological Clash (60% Spoken Conflict)**<br>• `3.1 Flawed Defense Tactics`: Using toxic habits to solve the crisis<br>• `3.2 Ideological Collision`: Fierce battle of worldviews with Tier B1 (60% dialogue)<br>• `3.3 Sealed Exits & Misdirection`: Entrapment confirmed, false confidence shattered, pre-climax cliffhanger | 7–9 / 10 | **Tier A vs. Tier B1 (Antagonist)** (High-voltage adversarial collision) |
+| **Beat 4** | **30%** | **CLIMAX** | **3-Wave Climax ➔ All Hope Is Lost ➔ Ego Death**<br>• `4.1 Wave 1 (Identity/Trap Twist)`: The mask tears off, trap springs shut<br>• `4.2 Wave 2 (Loss/Physical Twist)`: Irreversible physical/material destruction<br>• `4.3 Wave 3 (Karma Twist & Ego Death)`: Anagnorisis (realizing self-destruction), All Hope Is Lost (5600K cold) | **10 / 10**<br>(PEAK) | **Tier A Solo in Tragedy** (Facing the complete collapse of the false self) |
+| **Beat 5** | **12%** | **RELEASE** | **Redeeming Warmth & Tangible Transformation**<br>• `5.1 Safe Harbor & Thermal Shock`: Abrupt 5600K ➔ 2700K shift, audio pause `[pause: 1.5s]`<br>• `5.2 Reverse Rescue / Grace`: Unconditional compassion from Tier B2<br>• `5.3 Concrete Proof of Change`: Doing what was unthinkable in Beat 2 | 7–8 / 10 | **Tier A + Tier B2 (Companion)** (Healing, acceptance, selfless act) |
+| **Beat 6** | **8%** | **ECHO** | **Transformed World & Eternal Truth**<br>• `6.1 Harmonized Community`: Tier A integrates with Tier C society under open skies<br>• `6.2 180° Echo Prop Transformation`: Physical wound prop reverses into vessel of grace<br>• `6.3 Closing Maxim`: Standalone universal truth (<15 words) | 6–7 / 10 | **Tier A + Tier C New World** (Universal harmony, transcendent peace) |
 
-#### 4-Act Distribution by Total Episode Count
+**Standard 6-Beat Emotion Arc:** `6–7` ➔ `6–7` ➔ `7–9` ➔ `10 [PEAK]` ➔ `7–8` ➔ `6–7`
+
+---
+
+## 💡 § 3 ELITE DYNAMIC UPGRADES FOR 6-BEAT ARCHITECTURE
 
 ```
-Total episodes = N (user decides, default: ask)
+┌─────────────────────────────────────────────────────────────────────────────────┐
+│                    3 NÂNG CẤP ĐIỆN ẢNH BỔ TRỢ CHO 6 BEAT                        │
+├─────────────────────────────────────────────────────────────────────────────────┤
+│ 1. THE THERMAL POLARITY LAW ➔ Abrupt shift between Beat 4.3 and Beat 5.1        │
+│ 2. CAST DYNAMIC ROTATION LAW ➔ Clear dramatic pairings per Beat                │
+│ 3. DUAL-PROP TRANSFORMATION SYSTEM ➔ Wound Prop (Beat 2) ➔ Echo Prop (Beat 6)  │
+└─────────────────────────────────────────────────────────────────────────────────┘
+```
+
+---
+
+### 🔥 Nâng cấp 1: The Thermal Polarity Law (Luật Đảo Cực Nhiệt Độ Cảm Xúc)
+- **Problem**: Monotonously dark or evenly sad narratives fail to trigger intense catharsis.
+- **Rule**: At the exact boundary between **Beat 4.3 (All Hope Is Lost)** and **Beat 5.1 (Safe Harbor)**, enforce a **thermal polarity shock**:
+  - **Visual & Lighting**: Snap transition from harsh monochromatic cold **5600K** (blizzard, pitch darkness, wet slate, ash) ➔ Soft golden warmth **2700K** (crackling fireplace, rising dawn, steaming bowl of soup).
+  - **Acoustic & Dialogue Rhythm**: Snap transition from rapid, ragged gasping breaths ➔ Extended silence `[pause: 1.5s]` followed by warm, intimate whispers `[whispers, warm]`.
+  - **Dramatic Impact**: This abrupt sensory and psychological contrast triggers involuntary catharsis (*Cathartic Release*), unlocking authentic emotional tears in the audience.
+
+---
+
+### 👥 Nâng cấp 2: Cast Dynamic Rotation Law (Luật Xoay Vòng Trọng Tâm Nhân Vật)
+To eliminate dialogue clutter and avoid monotonous soliloquies, each Beat is assigned an explicit dramatic counterweight:
+- **Beat 1 (Hook)**: **Solo / Prop Focus** (Centers on the paradoxical object/gesture).
+- **Beat 2 (Setup)**: **Tier A (Protagonist) vs. Ghosts of the Past** (Internal wound / flashback to the childhood origin).
+- **Beat 3 (Drama)**: **Tier A vs. Tier B1 (Antagonist)** — Fierce ideological collision; **60% of runtime dedicated to spoken conflict**.
+- **Beat 4 (Climax)**: **Tier A Solo in Tragedy** — Facing the total collapse of the ego, isolated in consequences.
+- **Beat 5 (Release)**: **Tier A + Tier B2 (Companion / Grace)** — Unconditional compassion and reverse rescue.
+- **Beat 6 (Echo)**: **Tier A + Tier C New World** — Harmonious integration with the broader community and expansive horizon.
+
+---
+
+### 🪞 Nâng cấp 3: The Dual-Prop Transformation System (Hệ Thống Đạo Cụ Chuyển Hóa Kép)
+Every masterwork anchors emotional truth into a tangible object with a living arc:
+- **Beat 2 (Setup)**: Introduce the **Wound Prop (Đạo cụ Vết thương)** — symbolizing entrapment, defensive greed, or existential fear (e.g., rusty heavy padlock, chipped dagger, red-ink debt ledger, sealed unsent letter).
+- **Beat 6 (Echo)**: The exact same prop MUST undergo a **180° Physical State Transformation into an Echo Prop (Đạo cụ Giác ngộ)**:
+  - *Rusty padlock* ➔ Opened wide, resting face-up on a weathered wooden table, catching morning sun as sparrows feed on grain beside it.
+  - *Chipped dagger* ➔ Reforged into a humble plowshare tilling fresh soil.
+  - *Debt ledger* ➔ Consumed in hearth fire, charred ashes floating out onto the river breeze.
+
+---
+
+## 🗺️ § 4-STAGE PLOT & TWIST POSITIONING MATRIX ACROSS 6 BEATS
+
+A transcendent plot twist never drops randomly; it is a **4-stage dynamic progression** orchestrated across the 6 Beats:
+
+$$\text{Beat 1-2 (Planting Setup)} \longrightarrow \text{Beat 3 (Misdirection)} \longrightarrow \mathbf{\text{Beat 4 (3-Wave Twist \& Ego Death)}} \longrightarrow \text{Beat 5-6 (Emotional Payoff \& Rebirth)}$$
+
+```
+┌─────────────────────────────────────────────────────────────────────────────────────────────────┐
+│                    TIẾN TRÌNH 4 GIAI ĐOẠN CỦA PLOT & TWIST TRÊN TRỤC 6 BEAT                     │
+├───────────────────┬───────────────────┬───────────────────────────┬─────────────────────────────┤
+│ 1. GIEO SETUP     │ 2. DẪN LẠC HƯỚNG  │ 3. NỔ TWIST CHÍNH         │ 4. CHUYỂN HÓA CẢM XÚC       │
+│ (Beat 1 & Beat 2) │ (Beat 3)          │ (Beat 4: Wave 1, 2, 3)    │ (Beat 5 & Beat 6)           │
+├───────────────────┼───────────────────┼───────────────────────────┼─────────────────────────────┤
+│ • Gieo mâu thuẫn  │ • Nhân vật tự tin │ • Cú lật 1: Bẫy sập       │ • Cú bẻ lái cảm xúc         │
+│ • Cài cắm đạo cụ  │   vào bẫy         │ • Cú lật 2: Mất mát thật  │   (Reverse Rescue)          │
+│ • Gieo vết thương │ • Kẻ thù hành động│ • Cú lật 3: THỨC TỈNH     │ • Đạo cụ hoàn nguyên        │
+│   và niềm tin sai │   trong bóng tối  │   (Anagnorisis & Karma)   │   (Echo Payoff)             │
+└───────────────────┴───────────────────┴───────────────────────────┴─────────────────────────────┘
+```
+
+### Plot & Twist Distribution Across 6 Beats
+
+| Beat | Beat Name | Role in Plot & Twist Dynamics |
+|---|---|---|
+| **Beat 1** (3%) | **Hook** | **Micro-Twist Initiation**: Visual paradox snaps cognitive attention at second 0. |
+| **Beat 2** (12%) | **Setup** | **Planting the Setup**: Gieo mầm Vết thương + Niềm tin sai lầm + Wound Prop + Khế ước rạn nứt. |
+| **Beat 3** (35%) | **Drama** | **The Misdirection**: Misleading momentum; Tier A uses old tactics; Tier B1 moves in shadows; exits sealed. |
+| **Beat 4** (30%) | **Climax** | **3-WAVE CLIMAX & EGO DEATH**:<br>• *Wave 1 (Identity/Trap)*: The perceived victim/ally reveals the true trap.<br>• *Wave 2 (Physical/Loss)*: Concrete irreversible collapse of status/wealth/health.<br>• *Wave 3 (Karma & Anagnorisis)*: Protagonist realizes they forged their own destruction. Total Ego Death. |
+| **Beat 5** (12%) | **Release** | **Emotional Twist (Reverse Rescue)**: Grace offered by the unexpected companion (Tier B2); physical evidence of change. |
+| **Beat 6** (8%) | **Echo** | **Symbolic Payoff Twist**: 180° Echo Prop transformation + Universal Truth maxim (<15 words). |
+
+---
+
+### 🎬 FORMAT 1 — SHORT FILM (1 Self-Contained Episode = 60s to 120s)
+- Complete self-contained story arc following the 6-Beat master framework (3% / 12% / 35% / 30% / 12% / 8%).
+- Beat 6 concludes with Still Catharsis + Echo Image + Moral Maxim (<15 words). NO cliffhangers.
+
+### 🎞️ FORMAT 2 — MULTI-EPISODE SERIES (N Episodes × 6 Beats)
+- Each episode executes the 6-Beat dynamic rhythm.
+- Episodes 1 to N-1 terminate Beat 6 with a **Cliffhanger** (Types C1–C7).
+- Episode N (Series Finale) terminates Beat 6 with **Full Catharsis + Echo Prop Payoff + Transcendent Truth**.
+
+#### 4-Act Series Distribution
+```
+Total episodes = N (user decides, default: 4-8)
 
 Act 1 (Setup)      = floor(N × 0.25) episodes, minimum 1
 Act 2 (Escalation) = floor(N × 0.25) episodes, minimum 1
 Act 3 (Climax)     = floor(N × 0.25) episodes, minimum 1
-Act 4 (Resolution) = N − (A1 + A2 + A3) episodes, minimum 1
+Act 4 (Resolution) = N − (Act1 + Act2 + Act3) episodes, minimum 1
 ```
 
-#### Roles of 4 Acts
-
-| Act | Name | Script Duty | Cliffhanger Intensity | Cliffhanger Type |
-|---|---|---|---|---|
-| **1** | **Setup** | Introduce world, characters, core conflict, plant symbolic prop | 6–7 / 10 | Mystery / Threat |
-| **2** | **Escalation** | Raise stakes, test relationships, Midpoint Twist reverses everything | 7–8 / 10 | Betrayal / Revelation |
-| **3** | **Climax** | Darkest point, character at rock bottom, all secrets exposed, decision formed | 9–10 / 10 | Loss / Decision |
-| **4** | **Resolution** | Final confrontation, catharsis, **positive ending** | — (finale) | NONE |
-
-#### Example — 8-Episode Series
-
-| Episode | Act | Duty | Cliffhanger |
-|---|---|---|---|
-| 1 | Setup | Introduce protagonist + core conflict | Mystery — C1 |
-| 2 | Setup | First stake, situation becomes clearer, catalyst character appears | Threat — C2 |
-| 3 | Escalation | First failure, first secret discovered | Betrayal — C3 |
-| 4 | Escalation | Midpoint Twist — everything is reversed | Revelation — C4 |
-| 5 | Climax | Darkest point, character loses what matters most | Loss — C5 |
-| 6 | Climax | All secrets exposed — final decision forms | Decision — C6 |
-| 7 | Resolution | Final confrontation, character executes decision | Victory hook — C2 |
-| 8 | Resolution | Full Resolution + Catharsis, positive ending | NONE |
-
-#### Beat 8 of Each Episode — 2 Versions
-
-| Episode | Beat 8 Role | Content |
-|---|---|---|
-| **Mid-series episodes** | **CLIFFHANGER** | Still 10s → Hanging question or action cut right before breaking point |
-| **Series finale** | **CATHARSIS + AFTERMATH** | Completely still → Mirrors Beat 1 of Episode 1 → Lesson absorbed through image |
-
-#### 7 Cliffhanger Types
-
-| # | Type | Description | Suitable Act |
-|---|---|---|---|
-| C1 | **Mystery** | Unanswered visual question hanging in the air | Act 1 |
-| C2 | **Threat** | New unexpected danger appears at episode end | Act 1, 4 |
-| C3 | **Betrayal** | Trusted person revealed as traitor | Act 2 |
-| C4 | **Revelation** | Truth reverses the entire picture | Act 2 |
-| C5 | **Loss** | Character loses what matters most | Act 3 |
-| C6 | **Decision** | Cut right before an irreversible decision moment | Act 3 |
-| C7 | **Return** | Character from the past unexpectedly reappears | Act 2–3 |
-
 ---
-
-### ⚙️ STANDARD EMOTION ARC TABLE
-
-| Beat | Short Film | Act 1–2 (Series) | Act 3 (Climax) | Act 4 Finale |
-|---|---|---|---|---|
-| B1 HOOK | 6 | 6 | 7 | 6 |
-| B2 SETUP 1 | 6 | 6 | 7 | 6 |
-| B3 SETUP 2 | 7 | 7 | 8 | 7 |
-| B4 ESCALATION 1 | 8 | 7 | 8 | 8 |
-| B5 ESCALATION 2 | 9 | 8 | 9 | 9 |
-| B6 TWIST/CLIMAX | **10** | **8–9** | **10** | **9** |
-| B7 RESOLUTION | 8 | 8 | 9 | 8 |
-| B8 AFTERMATH | 7 | **7 + CLIFF** | **8 + CLIFF** | 7 (Catharsis) |
-
-> **Hard rule**: Beat 6 MUST be the highest emotional point of the episode. Beat 8 MUST be at least 1 step below Beat 6.
-
----
-
-> **Core principle**: Scene count is not fixed. Every script calculates backwards from **user-requested duration (minutes/seconds)** → scene count → phase % allocation. Supports 2 formats: **Short Film** & **Multi-Episode Series**.
 
 
 ## § HOOK TECHNIQUES — 12 TYPES & SELECTION TABLE BY PLOT
@@ -321,12 +339,39 @@ Act 4 (Resolution) = N − (A1 + A2 + A3) episodes, minimum 1
 
 ---
 
-## § CHARACTERS
+## § CHARACTERS — THE 3-TIER CAST SYSTEM & PRODUCTION STANDARDS
 
-### Character Building Principles
-- **Line A (Protagonist)**: Continuous English paragraph, max ~120 words, order: Name → Age → Gender → Height/Size → Skin/Ethnicity → Build → Hair → Facial features (observable behaviors) → Clothing & original props + **Backstory Trauma** (internal note)
-- **Line B (Catalyst/Antagonist)**: Same template as Line A
-- **Line C (Supporting/Environment)**: 30–40 words, 1–2 sentences [Role] + [1 distinctive appearance] + [1 repeated action]
+### 👥 The 3-Tier Character Dynamic Architecture
+
+Every script strictly organizes its cast into 3 dramatic tiers + Line C:
+
+| Character Tier | Role in 6-Beat Narrative Arc | Backstory & Psychological Depth | Prompt Reference Injection |
+|---|---|---|---|
+| **Tier A (Protagonist)** | Center of the emotional arc; drives action in B1-B3; suffers Ego Death in B4; transformed in B5-B6. | **MANDATORY**: Declared `Backstory Trauma / Hamartia` in Step 1B profile. | Full 16:9 4-Panel Reference Sheet created at Step 1B. Mode B injected in Clip prompts. |
+| **Tier B1 (Antagonist / Nemesis)** | Ideological mirror; forces protagonist into confrontation in B3 (≥60% spoken dialogue); exposes flaw in B4. | Opposing worldview rooted in real social/philosophical conflict. | Full 16:9 4-Panel Reference Sheet created at Step 1B. Mode B injected in Clip prompts. |
+| **Tier B2 (Companion / Grace)** | Catalyst for redemption; offers unconditional grace & reverse rescue in B5. | Empathy & quiet strength without judgment. | Full 16:9 4-Panel Reference Sheet (if recurring) or concise Profile. |
+| **Line C (Greek Chorus / Society)** | Voice of external society; misjudges protagonist in B1-B3; harmoniously integrated in B6. | Surface observers with dramatic irony. | **NO reference sheets**. Group description only (max 1 group description per clip). |
+
+### 🎨 Master 16:9 Four-Panel Reference Sheet Standard (Step 1B)
+- **Format**: 16:9 landscape, four-panel layout.
+  - **Left Panel (40% width)**: Chest-up close-up portrait with extreme detail (8K, 85mm f/1.4 lens, iris texture, natural skin pores, zero plastic smoothing, lip luster, hair volume, minimalist accessories).
+  - **Right 3 Panels (20% width each)**: Three full-body views (Front 0°, 3/4 Side, Back 180°) in static A-pose stance.
+  - **Uncropped Requirement**: All full-body panels MUST show head-to-toe with shoes completely visible and unobstructed.
+  - **Pure White Background**: `#FFFFFF` background with zero environment or shadows.
+- **Exact Age Lock (CRITICAL)**: Age MUST be specified as a single exact integer (e.g. `aged 34`, `26-year-old`). **STRICTLY FORBIDDEN to use an age range (e.g. `32–38`, `20–25`)** — age ranges cause the AI diffusion/video model to sample across variable maturity levels, inducing facial feature drift and morphing across panels and video clips.
+- **Costume Hard Rule**: **HANDS MUST BE COMPLETELY EMPTY** in reference sheets (no bags, weapons, tools, detached objects). Only clothing fixed to the body.
+
+### 🎭 Mode A vs Mode B Prompt Injection Rules (Stage 4)
+- **Mode A (No Reference Image)**: Full ~100-word paragraph describing physical traits in every clip prompt.
+- **Mode B (With Step 1B Reference Image Attached — DEFAULT)**:
+  `{Name}, {height}cm, {build}. [Character Reference attached]. Initial pose: {camera-anchored pose, empty hands / right hand in contact with prop}.`
+  *(CRITICAL: DO NOT re-describe face, hair, or costume in Mode B — doing so conflicts with the attached image and causes AI morphing).*
+
+### 📐 Spacetime & Floor Plane Lock
+- **Single Floor Plane**: Interacting characters MUST be anchored on the same floor plane (`on the same timber floor/dirt ground`), 1.5m–3m apart.
+- **Positional Lock**: Declare camera-relative coordinates: `Subject A at frame-left; Subject B at frame-right on the same timber floor, 2 meters apart`.
+- **Target Distance Lock**: Step at most 1 short step (0.5m) per 10s clip.
+- **Terminal Deceleration**: Last 0.5s of clip decelerates to static freeze (`zero-velocity freeze hold`).
 
 ### Naming Convention
 
@@ -495,15 +540,16 @@ Address form shifts are **the most efficient subtext tool** in cinematic dialogu
 
 ### Appearance Rhythm by Beat
 
+### Appearance Rhythm by Beat (6-Beat Master Arc)
+
 | Beat | How Line C appears |
 |---|---|
-| **B1 — HOOK** | Absent / or 1 distant blurred silhouette — texture only |
-| **B2 — SETUP 1** | Present unintentionally — unknowing witnesses |
-| **B3–4 — ESCALATION** | Sparse — giving space to A↔B conflict |
-| **B5 — ESCALATION 2** | Surges if there's a crowd / market / public event |
-| **B6 — TWIST/CLIMAX** | **COMPLETELY ABSENT** — quiet space for the most important moment |
-| **B7 — RESOLUTION** | 1-2 people passing by, not looking — life continues |
-| **B8 — CATHARSIS** | Distant, blurred, bustling — life goes on, only A/B know what just happened |
+| **B1 — HOOK (3%)** | Absent / or 1 distant blurred silhouette — atmosphere texture only |
+| **B2 — SETUP (12%)** | Present unintentionally — unknowing witnesses to the old world and flawed status quo |
+| **B3 — DRAMA (35%)** | Sparse background / whispers — giving central stage to Tier A vs. Tier B1 ideological clash (60% dialogue) |
+| **B4 — CLIMAX (30%)** | Stunned frozen observers or **COMPLETELY ABSENT** — solitary tragic vacuum for Tier A's Ego Death |
+| **B5 — RELEASE (12%)** | 1-2 people passing by or safe haven space — Tier B2 companion provides unconditional grace |
+| **B6 — ECHO (8%)** | **VIBRANT LIVING COMMUNITY** — Tier A harmoniously integrates into Tier C society under open sky |
 
 ### Line C with Dialogue — Greek Chorus Dialogue
 
@@ -526,20 +572,25 @@ Address form shifts are **the most efficient subtext tool** in cinematic dialogu
 
 ---
 
-## § PROPS & SYMBOLIC OBJECTS
+## § PROPS & DUAL-PROP TRANSFORMATION SYSTEM
 
-- **Through-line symbolic object**: MANDATORY 1 object, appears ≥ 2 times, with State Chain per Phase
-- Prop name: short English noun (Basket, Letter, Key, Photo, Watch...) — DO NOT embed description into the name
-- Prop profile: material → shape/size → color/texture → weight/how held → Initial State → State Chain per Phase
-- **"the only [prop name] in frame"** — always add to prevent duplication
+- **The Dual-Prop Dynamic**: MANDATORY 1 core symbolic object that undergoes an observable **180° Physical State Transformation**:
+  1. **Wound Prop (Planted at Beat 2 — Setup)**: Represents psychological trauma, defensive ego, fear, or entrapment (e.g., rusted padlock locking a granary, chipped executioner dagger, red-ink sealed debt ledger, unmailed letter).
+  2. **Echo Prop (Transformed at Beat 6 — Echo)**: Represents spiritual enlightenment, liberation, and grace through complete physical reversal (e.g., padlock unlocked and face-up welcoming sparrows, dagger reforged into a plow, debt ledger burned to river ashes).
+- **Prop Naming**: Short English noun (`Padlock`, `Dagger`, `Ledger`, `Bowl`, `Key`) — DO NOT embed adjectives or descriptions into the prop name.
+- **Prop Profile**: Material → Shape/Size → Color/Texture → Weight/How held → Initial Wound State (Beat 2) → Conflict State (Beat 3-4) → Echo Transformed State (Beat 6).
+- **"the only [prop name] in frame"**: Mandatory anti-duplication suffix.
 
 ---
 
-## § SHOW, DON'T TELL
+## § SHOW, DON'T TELL & THERMAL POLARITY
 
-- Emotions, motivations, lessons ALL must be **encoded into specific actions / objects / light**
-- NO captions, explanatory text overlaid on image
-- **"Mirror shot" technique**: AFTERMATH phase reverses images from HOOK/SETUP — audience recognizes the story's full circle through image, without words
+- Emotions, motivations, lessons ALL must be **encoded into specific actions / objects / lighting / biomechanics**.
+- NO subtitles, captions, or explanatory voiceover describing abstract emotions.
+- **The Thermal Polarity Law**:
+  - Cold Phase (Beat 4.3): Monochrome cold **5600K** (slate grey, snow, rain, shadow) + ragged breathing.
+  - Warm Phase (Beat 5.1): Soft golden warmth **2700K** (amber firelight, morning sun, steam) + `[pause: 1.5s]` silence + warm whisper.
+- **Echo Mirror Technique**: Beat 6 reverses opening compositions from Beat 1/Beat 2 — delivering visual closure and organic recognition of change.
 
 ---
 
@@ -564,7 +615,7 @@ Address form shifts are **the most efficient subtext tool** in cinematic dialogu
 
 ## § ESCALATION BANK — CONFLICT TYPES
 
-> Agent MUST choose 1 main conflict type for the ESCALATION phase. Add to metadata: `CONFLICT TYPE: [#N] — [name]`. Anti-repetition: don't repeat the same type twice consecutively in a session.
+> Agent MUST choose 1 main conflict type for the DRAMA phase (Beat 3). Add to metadata: `CONFLICT TYPE: [#N] — [name]`. Anti-repetition: don't repeat the same type twice consecutively in a session.
 
 ### Group A — Interpersonal Conflict
 
@@ -598,7 +649,7 @@ Address form shifts are **the most efficient subtext tool** in cinematic dialogu
 
 ## § RESOLUTION BANK — ENDING TYPES
 
-> Resolution is the **natural consequence** from the character arc + chosen conflict — NOT a random event from outside. Add to metadata: `RESOLUTION TYPE: [#N] — [name]`.
+> Resolution (Beat 5–6) is the **natural consequence** from the character arc + chosen conflict — NOT a random event from outside. Add to metadata: `RESOLUTION TYPE: [#N] — [name]`.
 
 | # | Resolution Type | Application Condition | Target Emotion |
 |---|---|---|---|
@@ -607,14 +658,14 @@ Address form shifts are **the most efficient subtext tool** in cinematic dialogu
 | R3 | **Tragic Downfall** | Complete Negative Arc — character doesn't change and faces full consequences | Haunting, heavy |
 | R4 | **Redemption** | Character who did wrong now does right — even if late — to repair | Moved, hopeful |
 | R5 | **Open Ending** | Conflict not fully resolved, but character has changed enough to continue | Curious, wanting more |
-| R6 | **Ironic Reversal** | Character gets what they wanted but in a completely unexpected way — usually a consequence of their own choices | Shocked + reflective |
+| R6 | **Ironic Reversal** | Character gets what they wanted but in a completely unexpected way — consequence of own choices | Shocked + reflective |
 | R7 | **Sacrifice (Meaningful)** | Character gives up what matters most to protect others / a greater value | Deeply moved, respectful |
 | R8 | **Status Quo Restored + Changed** | World returns to normal but character has changed irreversibly | Matured, quietly profound |
 
 **Resolution Rules:**
-- Use **the exact symbolic prop planted in SETUP** to visualize the resolution — do not introduce a new object
-- Resolution is the natural consequence of the character's own choices/actions — not divine intervention or random luck
-- After Resolution: Aftermath is STILL, slow, with mirror shot — NO shouting/exaggeration
+- Visualized through the **180° Transformed Echo Prop** planted in Beat 2 (Setup).
+- Natural causality from the character's own choices — not divine deus ex machina.
+- Beat 6 (Echo) must conclude with an **independent moral maxim (<15 words)**.
 
 ---
 
@@ -650,27 +701,26 @@ TARGET EMOTION: [Emotion audience will feel after watching]
 
 | # | Structure | Arrangement | When it works |
 |---|---|---|---|
-| **A** | Standard Linear | Hook → Setup → Escalation → Twist → Resolution+Aftermath | Safe, clear, works for all genres |
-| **B** | Mirror Loop | Opens with image of character in initial state → Setup → Escalation → Twist → Resolution, then CLOSES with exact same opening image but position/state reversed | Character transforms deeply, complete circle |
-| **C** | Consequence First | Opens with the actual Resolution/consequence moment (reason still unclear) → flashes back to Setup/Escalation → Twist is the "decoder" → Aftermath closes | Strong "reverse curiosity", works for very short video (3-4 scenes) |
-| **D** | Dual Parallel | Intercuts between Character A and Character B both moving toward a convergence point, meeting exactly at the Twist | Heightens drama (intercut), 2 equally important characters |
-| **E** | Witness Narrator | Supporting character at Hook as observer, main storyline through this person's viewpoint/memory, Resolution+Aftermath returns to the witness's frame | Creates natural "framing device" layer |
-| **F** | Cause Across Time | Compress Setup+Escalation at "earlier phase" very briefly, Twist is the transition to "later phase", Resolution+Aftermath in later phase repeats the motif | Story with temporal depth, multiple generations |
-| **G** | Single Moment Compression | Hook and Setup merge into one extremely short scene, entire story within one time/space unit, leads directly to Twist then Resolution | Works for extremely short video (3 scenes, ~30s) |
-
-**Mandatory rules when using B-G:**
-- Twist must still have an insert-shot regardless of where it's positioned
-- Resolution is still the natural consequence of the character's action/choice
-- Clearly state in output: `NARRATIVE STRUCTURE: [A-G] + 1 explanatory sentence`
+| **A** | Standard Linear | Hook (3%) → Setup (12%) → Drama (35%) → Climax (30%) → Release (12%) → Echo (8%) | Safe, clear, universal |
+| **B** | Mirror Loop | Opens with image of character in initial state → 6 Beats execute → Closes with exact opening frame inverted | Character transforms deeply |
+| **C** | Consequence First | Opens with Climax/Resolution moment (reason unclear) → flashes back to Setup/Drama → Climax decodes → Echo closes | Strong curiosity, mystery |
+| **D** | Dual Parallel | Intercuts between Character A and Character B moving toward convergence at Beat 4 Climax | High tension, dual protagonist |
+| **E** | Witness Narrator | Supporting Tier C character at Hook as observer → story unfolds → returns to witness in Echo | Framing device layer |
+| **F** | Cause Across Time | Compress generational cause in Setup → Climax across decades → Echo shows modern harmony | Multi-generational depth |
+| **G** | Single Moment Compression | Hook and Setup merge into single condensed space-time unit → rapid escalation → Climax & Echo | High-intensity short format |
 
 ---
 
-## § TWIST BANK — 12 CINEMATIC TYPES
+## § TWIST BANK — 12 CINEMATIC TYPES & 3-WAVE CLIMAX ANATOMY
 
-#### 🎬 UNIVERSAL TWIST DESIGN FORMULA (3 STEPS)
-1. **Step 1: Setup (Plant Belief)** [Phase 1-2]: Plant the situation causing misunderstanding or create a visual question in the first 3s (*Cognitive Gap*).
-2. **Step 2: Misdirect (Lead Astray)** [Phase 3]: Reinforce the misunderstanding through action/detail, hide the real motive/secret.
-3. **Step 3: Payoff (Reveal & Emotional Impact)** [Phase 4]: Unveil the truth through **symbolic prop insert-shot** + reveal of true identity/motive.
+#### 🎬 4-STAGE DYNAMIC TWIST PROGRESSION
+1. **Stage 1: Setup (Planting Belief & Wound Prop)** [Beats 1–2]: Plant the cognitive gap, flawed premise, and physical Wound Prop.
+2. **Stage 2: Misdirect (False Confidence & Shadow Maneuvers)** [Beat 3]: Reinforce protagonist's false control; Antagonist seals exits.
+3. **Stage 3: 3-Wave Climax Explosion (Ego Death & Anagnorisis)** [Beat 4]:
+   - *Wave 1 (Identity / Trap)*: The supposed victim or ally executes the real trap.
+   - *Wave 2 (Physical / Loss)*: Material, bodily, or structural devastation.
+   - *Wave 3 (Karma & Ego Death)*: Protagonist recognizes they created their own doom. Total collapse.
+4. **Stage 4: Payoff & Transformation (Reverse Rescue & Echo Prop)** [Beats 5–6]: Unexpected grace + 180° prop transformation + closing maxim.
 
 | # | Twist Type | Description & Reversal Mechanism |
 |---|---|---|
@@ -695,29 +745,36 @@ TARGET EMOTION: [Emotion audience will feel after watching]
 
 | Priority | Condition | Action |
 |---|---|---|
-| 1 | User specifies scene count + format | Use exact number, confirm format |
-| 2 | User specifies duration (minutes/seconds) | Calculate `N = seconds ÷ 10`, ask format if unclear |
-| 3 | User specifies format but not duration | Short Film → default 5 scenes. Series → ask episode count & minutes/episode |
-| 4 | Nothing specified | Default **Short Film 5 scenes (~50s)** |
+| 1 | User specifies duration (minutes/seconds) | Calculate total duration $T$; allocate 6 Beats per % table |
+| 2 | User specifies format but not duration | Short Film → default 60s–120s (6 Beats). Series → ask episode count & duration/episode |
+| 3 | Nothing specified | Default **Short Film 6 Beats (~60s to 120s)** |
 
-### Step 2 — Apply % Table (see § BEAT MATRIX)
+### Step 2 — Apply 6-Beat % Allocation Table
 
-**Short Film**: Apply FORMAT 1 % table directly.
-**Multi-Episode Series**: Calculate N scenes/episode → apply FORMAT 2 % table per episode, simultaneously track Series Arc table.
+```
+Beat 1 (Hook)     = 3% of total runtime (~3s)
+Beat 2 (Setup)    = 12% of total runtime (~12s)
+Beat 3 (Drama)    = 35% of total runtime (~35s) — 60% Spoken Conflict
+Beat 4 (Climax)   = 30% of total runtime (~30s) — 3-Wave Ego Death
+Beat 5 (Release)  = 12% of total runtime (~12s) — Thermal Shock 5600K ➔ 2700K
+Beat 6 (Echo)     = 8% of total runtime (~8s) — Echo Prop + Maxim <15 words
+```
 
 ### Step 3 — Mandatory Metadata Output
 
 ```
-FORMAT: [Short Film / Multi-Episode Series]
-GENRE: [Drama / Action / Romance / Psychological / ...]
-TOTAL DURATION: [X minutes Y seconds = Z seconds]
-EPISODE COUNT (if Series): [N episodes × M minutes/episode]
-SCENES PER EPISODE: [N]
-NARRATIVE STRUCTURE: [A-G + 1 explanatory sentence]
-HOOK TECHNIQUE: #N — [name] | Reason: [1 sentence]
+FORMAT           : [Short Film / Multi-Episode Series]
+GENRE            : [Drama / Action / Romance / Psychological / ...]
+TOTAL DURATION   : [X minutes Y seconds = Z seconds]
+EPISODE COUNT    : [1 (Short Film) / N episodes (Series)]
+NARRATIVE STRUCT : [A–G + 1 explanatory sentence]
+HOOK TECHNIQUE   : #N — [name] | Reason: [1 sentence]
 HOOK→SETUP BRIDGE: [Bridge type — specific element]
-SYMBOLIC OBJECT: [name] — appears: Setup(...) → Escalation/Twist(...) → Resolution(...)
-PHASE ALLOCATION: HOOK=[n] | SETUP=[n] | ESCALATION=[n] | TWIST=[n] | RESOLUTION=[n] | AFTERMATH=[n]
+WOUND PROP (B2)  : [Name & Initial Traumatic State]
+ECHO PROP (B6)   : [180° Physical Transformed State]
+THERMAL POLARITY : Cold 5600K (Beat 4.3) ➔ Warm 2700K (Beat 5.1) | [Specific visual cues]
+CAST DYNAMICS    : B1: Solo | B2: A vs Past | B3: A vs B1 | B4: A Solo | B5: A + B2 | B6: A + C
+BEAT ALLOCATION  : B1(3%)=[s] | B2(12%)=[s] | B3(35%)=[s] | B4(30%)=[s] | B5(12%)=[s] | B6(8%)=[s]
 ```
 
 ---
@@ -729,49 +786,75 @@ SCRIPT TITLE: [name]
 GENRE: [Drama / Action / Romance / Psychological / Comedy / ...]
 FORMAT: [Short Film / Multi-Episode Series]
 TOTAL DURATION: [seconds / minutes]
-TOTAL SCENES: [N]
 NARRATIVE STRUCTURE: [A–G + 1 explanatory sentence]
 HOOK TECHNIQUE: #N — [technique name]
-THROUGH-LINE SYMBOLIC OBJECT: [name] — appears: Setup(...) → Escalation/Twist(...) → Resolution(...)
-PHASE ALLOCATION: HOOK=[n] | SETUP=[n] | ESCALATION=[n] | TWIST=[n] | RESOLUTION=[n] | AFTERMATH=[n]
+WOUND PROP ➔ ECHO PROP: [Name: Initial state at B2 ➔ 180° transformed state at B6]
+CAST DYNAMIC ROTATION: B1: Solo | B2: A vs Past | B3: A vs B1 | B4: A Solo | B5: A + B2 | B6: A + C
+THERMAL POLARITY SHOCK: Beat 4.3 (5600K Cold) ➔ Beat 5.1 (2700K Warm)
+BEAT ALLOCATION: B1(3%)=[s] | B2(12%)=[s] | B3(35%)=[s] | B4(30%)=[s] | B5(12%)=[s] | B6(8%)=[s]
 
 I. SETTING: Time | Location | Atmosphere
 II. CHARACTER PROFILES (continuous English paragraph, labeled Line A/B/C + Backstory Trauma internal note)
-III. PROP PROFILES (continuous English paragraph, State Chain per Phase)
-IV. DETAILED SCRIPT ([N] SCENES)
-    --- PHASE X: [NAME] (X% - Ys - N scenes) ---
-    SCENE N: [Scene name] (10s) — Phase: [NAME]
-    [Continuing from Scene N-1 if ≥2] • Character/Prop/Setting copied from Handoff
-    * Character: ...
-    * Action: [English prose, 1-3 sentences, Show-Don't-Tell]
-    [HANDOFF STATE — End of Scene N] • Character/Prop/Setting
-    * Sound/Emotion: [...]
+III. PROP PROFILES (Wound Prop initial state → State Chain → Echo Prop transformed state)
+IV. DETAILED SCRIPT (6 BEATS & 18 SUB-BEATS)
+    --- BEAT 1: HOOK (3% - [s]s) — Emotion: [6-7/10] ---
+    [Sub-beats 1.1, 1.2, 1.3]
+    * Cast: Solo / Prop Focus
+    * Action: [English prose, Show-Don't-Tell, cognitive gap]
+    [HANDOFF STATE: Character / Prop / Setting]
 
-LESSON VISUALIZED THROUGH: [specific image/moment]
+    --- BEAT 2: SETUP (12% - [s]s) — Emotion: [6-7/10] ---
+    [Sub-beats 2.1, 2.2, 2.3]
+    * Cast: Tier A vs. Ghosts of the Past (Flashback/Wound)
+    * Wound Prop: [Planted physical symbol]
+    * Action: ...
+    [HANDOFF STATE: ...]
+
+    --- BEAT 3: DRAMA (35% - [s]s) — Emotion: [7-9/10] ---
+    [Sub-beats 3.1, 3.2, 3.3]
+    * Cast: Tier A vs. Tier B1 (Antagonist) — 60% Spoken Conflict
+    * Action & Spoken Dialogue: ...
+    [HANDOFF STATE: ...]
+
+    --- BEAT 4: CLIMAX (30% - [s]s) — Emotion: [10/10 PEAK] ---
+    [Sub-beats 4.1 Wave 1, 4.2 Wave 2, 4.3 Wave 3 Ego Death & All Hope Is Lost]
+    * Cast: Tier A Solo in Tragedy (5600K Cold Monochrome)
+    * Action: ...
+    [HANDOFF STATE: ...]
+
+    --- BEAT 5: RELEASE (12% - [s]s) — Emotion: [7-8/10] ---
+    [Sub-beats 5.1 Thermal Shock 2700K Warm, 5.2 Reverse Rescue from Tier B2, 5.3 Concrete Transformation]
+    * Cast: Tier A + Tier B2 (Companion / Grace)
+    * Action: ...
+    [HANDOFF STATE: ...]
+
+    --- BEAT 6: ECHO & END (8% - [s]s) — Emotion: [6-7/10] ---
+    [Sub-beats 6.1 Transformed World, 6.2 180° Echo Prop Transformation, 6.3 Moral Maxim]
+    * Cast: Tier A + Tier C New World
+    * 180° Echo Prop Payoff: ...
+    * Action: ...
+
+CLOSING MORAL MAXIM: "[Independent truth < 15 words]"
 ```
 
 ---
 
 ## § CHECKLIST — REVIEW BEFORE OUTPUT
 
-1. ☑ All characters with actions have 1-syllable English names
-2. ☑ No generic pronouns after character has been named
-3. ☑ No latinized Vietnamese names in Code Block 1
-4. ☑ Symbolic object appears in ≥ 2 Phases
-5. ☑ Prop State Chain consistent throughout
-6. ☑ HANDOFF STATE has all 3 groups (character/prop/setting)
-7. ☑ Each scene opens from the previous scene's Handoff
-8. ☑ No unmotivated reversal of action within 1 Scene of 10s
-9. ☑ Mirror shot AFTERMATH ↔ HOOK/SETUP achieved
-10. ☑ AFTERMATH is still, no exaggerated action
-11. ☑ Insert-shot present in TWIST phase
-12. ☑ No Line C character name duplicating Line A/B
-13. ☑ Clear motivation for all reversal/change-of-mind actions
-14. ☑ Starting position clear when ≥ 2 characters in same Scene
-15. ☑ All scene descriptions 100% focused on SUBJECT (Primary movement ➔ Interactions ➔ Emotional expressions)
-16. ☑ FORBIDDEN for props to jump position (must have explicit pickup/place bridge action)
-17. ☑ Phase % allocation matches calculation table (§ BEAT MATRIX)
-18. ☑ Visual Anchor from Hook reappears within first 3s of Scene 2
+1. ☑ Mathematical 6-Beat ratio strictly verified: `3% / 12% / 35% / 30% / 12% / 8% = 100%`.
+2. ☑ 18 Micro Sub-Beats (1.1 to 6.3) fully articulated with physical causality.
+3. ☑ **The Thermal Polarity Law** executed at Beat 4.3 ➔ 5.1 (5600K cold ➔ 2700K warm, `[pause: 1.5s]`, `[whispers, warm]`).
+4. ☑ **Cast Dynamic Rotation Law** respected: Solo ➔ A vs Past ➔ A vs B1 (60% dialogue) ➔ A Solo ➔ A + B2 ➔ A + C.
+5. ☑ **Dual-Prop Transformation System**: Wound Prop (Beat 2) undergoes an observable 180° physical change into Echo Prop (Beat 6).
+6. ☑ **4-Stage Plot & Twist Progression** followed: Setup ➔ Misdirection ➔ 3-Wave Climax (Identity ➔ Physical ➔ Karma/Ego Death) ➔ Emotional Payoff.
+7. ☑ Visual Anchor from Beat 1 reappears within first 3 seconds of Beat 2.
+8. ☑ Beat 3 dedicates ≥60% runtime to adversarial spoken dialogue.
+9. ☑ Beat 4 reaches the emotional peak (10/10) with complete Ego Death / Anagnorisis.
+10. ☑ Beat 6 terminates with a concise, independent moral maxim (<15 words).
+11. ☑ All active characters have 1-syllable English names; no Latinized Vietnamese names in Code Block 1.
+12. ☑ Complete HANDOFF STATE gates at the end of every beat (Character / Prop / Setting).
+13. ☑ 100% subject-centric micro-biomechanics; zero abstract emotion adjectives.
+14. ☑ Anti-duplication clauses (`the only [prop] in frame`) included.
 
 ---
 
@@ -808,3 +891,4 @@ LESSON VISUALIZED THROUGH: [specific image/moment]
 | 8 | Protagonist name | Do not reuse a name already assigned in the same session |
 | 9 | Character appearance combination | Do not repeat ≥ 3 appearance axes identical to the most recent script |
 | 10 | Prop object group | Do not repeat the same OBJECT GROUP, not just a different object name |
+
