@@ -272,26 +272,28 @@ Before finalizing `[Subject]`, check:
 - **Head/eyes**: do not describe 2 gaze directions simultaneously without a transition
 - Always explicitly state **LEFT HAND or RIGHT HAND** when holding/handling a prop (e.g.: `held in Dax's right hand with Dax's right thumb pressed along the upper edge`). If prop is not being held, MANDATORY state `resting on the floor beside Vin's right foot — ZERO hand contact — the only [prop] in frame`.
 
-### 📌 SHOT HEADER STRUCTURE & PURE CINEMATIC ACTION PROSE (PURE CINEMATIC SHOT SPEC)
-1. **Standard Shot Header Format — Lens & Camera:**
-   ```
-   [{timestamp}] Shot {scale} | {lens}mm f/{aperture} | {camera movement & angle} on {Subject}
-   ```
+### 📌 SHOT HEADER STRUCTURE & PURE CINEMATIC ACTION PROSE (△ BEAT OPTICAL LOCKDOWN)
+1. **Master Optical Lockdown per Beat `△`:**
+   $$\mathbf{\bigtriangleup\ [Timestamp]\ Shot\ [Shot\ Scale]\ |\ [Focal\ Length\ +\ Camera\ Angle]\ |\ [Trajectory\ \&\ Focus\ Target]}$$
+   Every beat MUST declare the 3 optical components clearly.
 2. **Eliminate All Filler Connector Words THAT STIFFEN THE PROMPT**: ABSOLUTELY FORBIDDEN awkward connectors like `Driven by the stillness...`, `As Dax halts...`, `Continuing the reach...`. A 10s Scene is a continuous visual flow — describe **DIRECTLY THE OBSERVABLE PHYSICAL ACTION**.
-3. **Standard Description Across Timeline:**
-   - `[00:00-00:03]`: Describe character's opening movement + lens position.
-   - `[00:03-00:07]`: Describe continuation of the action + direct counter-reaction from the other party.
-   - `[00:07-00:10]`: Describe the static freeze at scene end (`holds motionless`) + gentle camera push-in.
+3. **Standard Description Across Timeline (Continuous Co-Presence & Dual-Action):**
+   - `△ [00:00-00:03] Shot [Scale] | [Lens + Angle] | [Camera Trajectory]:`
+     Across the space, Subject A at frame-right executes micro-action <--> Subject B at frame-left maintains defensive posture, unblinking glare.
+   - `△ [00:03-00:07] Shot [Scale] | [Lens] | [Continuing Trajectory / Kinetic Tracking]:`
+     Subject A heavy kinetic action / sliding prop <--> Subject B reactive block / clamping hand on prop as surface scratches.
+   - `△ [00:07-00:10] Shot [Scale] | [Lens] | [Static Lock]:`
+     Both subjects lean in suffocating face-to-face standoff + 0.5s zero-velocity freeze hold.
 
-* **✅ CORRECT (Natural, decisive, proper camera & lens, NO filler connectors):**
-  `[00:00-00:03] Shot Medium | 50mm f/1.4 | static eye-level on Dax and Vin`
-  `Dax steps forward on the wet granite floor and extends Dax's right hand holding the Debt Scroll toward Vin.`
+* **✅ CORRECT (Natural, decisive, proper camera & lens, continuous co-presence):**
+  `△ [00:00–00:03] Shot Medium Two-Shot | 50mm f/1.4 | Slow forward push-in along table plane:`
+  `Dax at frame-right steps forward on the wet granite floor, extending his right hand holding the Debt Scroll toward Vin; directly opposite at frame-left, Vin stands rigid in unblinking defiance.`
 
-  `[00:03-00:07] Shot Medium Close-up | 50mm f/1.4 | low-angle tilt-up on Vin`
-  `Dax thrusts the Debt Scroll downward, causing Vin to recoil and press Vin's palms flat against the stone.`
+  `△ [00:03–00:07] Shot Medium Close-Up | 50mm f/1.4 | Lateral tracking reframe:`
+  `Dax forcefully thrusts the Debt Scroll downward, gouging a white scratch across the stone; Vin clamps his palm down over the parchment as it strikes his cuffs.`
 
-  `[00:07-00:10] Shot Close-up | 50mm f/1.4 | slow optical push-in on the Debt Scroll`
-  `Dax holds the Debt Scroll motionless above Vin's head while Vin stays prostrated on the granite floor.`
+  `△ [00:07–00:10] Shot Choker Standoff | 85mm f/1.4 | Static lock with 0.5s freeze hold:`
+  `Both men lean inches apart in suffocating face-to-face deadlock — holding the physical standoff frozen for the final 0.5 seconds.`
 
 * **❌ WRONG (Uses awkward connectors, missing camera specs):**
   `Driven by the stillness...` / `As Dax halts...` (redundant, stiff, hazes the prompt).
@@ -328,16 +330,56 @@ Great cinematic dialogue **NEVER** states emotion directly. Dialogue is just the
 
 ---
 
-### 🚨 §D.1 HARD-CAP 160 CHARACTERS / 10s CLIP
+### 🎭 §D.0b 4 DYNAMIC NARRATIVE CASTING MODELS
 
-In every 10-second AI Video Clip, **total duration of all dialogue MUST NOT EXCEED 160 ENGLISH CHARACTERS** (including punctuation and spaces, equivalent to 25–30 words / 3–4 seconds of speech).
+Who speaks in a scene is governed by **dramatic tension and narrative context**, not an artificial rule forcing the protagonist to speak in every clip:
 
-> **PHYSICAL AI REASON**: Speech exceeding 160 characters in 10s causes AI facial distortion artifact, lip-sync lag, and steals time budget from dramatic body movement.
+1. **The Silent Titan (Nhân vật chính im lặng như pho tượng)**:
+   - The protagonist performs monumental physical actions (unblinking stare, unsheathing blade, leaning into light); two terrified witnesses in the background whisper legends about their ruthless past.
+2. **The Oppressive Monologue (Kẻ phản diện độc thoại áp bức)**:
+   - The dominant antagonist delivers a cold, measured ultimatum; the bound or cornered victim remains unyielding and silent, speaking only through jaw tension and defiant glare.
+3. **Sub-stakeholder Plotting (Nhân vật phụ toan tính mưu đồ)**:
+   - Two conspirators, sentries, or lieutenants whisper a scheme in the shadows, revealing exposition and looming peril through dialogue while main characters move in the background.
+4. **The Rivalry Clash (Đối đầu 1-1 sinh tử)**:
+   - Two direct rivals collide head-on, trading lethal truths and ultimatums across a table or battlefield.
 
-**Recommended allocation within 10s:**
-- **1 dialogue turn**: ≤ 160 characters — invest all weight into 1 single line
-- **2 dialogue turns**: ≤ 80 characters/line — each line must pick up a keyword from the previous
-- **3 dialogue turns**: ≤ 50 characters/line — rapid-fire style, each line is 1 psychological cut
+---
+
+### 🎙️ §D.0c 4 MASTER DIALOGUE DELIVERY METHODS & 7 GENERAL APPLICATION USE CASES
+
+```
+┌────────────────────────────────────────────────────────────────────────────────────────────────────┐
+│                             4 MASTER DIALOGUE DELIVERY METHODS (10s TAKE)                          │
+├────────────────────────────────────────────────────────────────────────────────────────────────────┤
+│ 1. SINGLE-SPEAKER MASTER LINE (~140–160 chars) : 1 character delivers a complete 3-layer statement.│
+│ 2. OFF-SCREEN THREAT / VOICEOVER (~140–160 chars): Voice echoes into a sealed room from darkness.  │
+│ 3. GREEK CHORUS / MOB WITNESS (~140–160 chars)  : 1 foreground representative delivers mob bias.   │
+│ 4. ACTION-INTERROGATIVE SYNERGY (~140–160 chars): Spoken truth delivered at the static pause point. │
+└────────────────────────────────────────────────────────────────────────────────────────────────────┘
+```
+
+#### The 7 General Application Use Cases:
+1. **Oppressive Interrogation / Debt Extraction**: Use Method 1 (Single-Speaker Master Line $\sim 140–160$ chars: Contextual Bite $\to$ Moral Trap $\to$ Death Warrant).
+2. **Ideological Confrontation / Tabletop Sparring**: Use Method 1 (Single-Speaker Master Line $\sim 140–160$ chars: False Worldview Exposed $\to$ Unspoken Truth $\to$ Lethal Retort).
+3. **Stealth / Enclosed Space Dread**: Use Method 2 (Off-Screen Threat $\sim 140–160$ chars: Approaching Footsteps $\to$ Cold Countdown $\to$ Unescapable Trap).
+4. **Public Accusation / Mob Isolation**: Use Method 3 (Greek Chorus $\sim 140–160$ chars: Superficial Observation $\to$ Mob Prejudice $\to$ Public Condemnation).
+5. **Mortal Combat Standoff**: Use Method 4 (Action-Interrogative Synergy $\sim 140–160$ chars: Blade Lock $\to$ Unmasking Cowardice $\to$ Decisive Blow).
+6. **All Hope Is Lost / Ego Death (Beat 4.3)**: Use Method 1 (Single-Speaker Master Line $\sim 135–155$ chars: Shattered Defenses $\to$ Root Guilt Unveiled $\to$ Weeping Surrender).
+7. **Karmic Release & Closing Maxim (Beats 5 & 6)**: Use Method 1 (Single-Speaker Master Line $\sim 135–155$ chars: Generational Curse Broken $\to$ Grace Granted $\to$ Universal Eternal Law).
+
+---
+
+### 🚨 §D.1 MAXIMUM DIALOGUE DENSITY & HARD-CAP 160 CHARACTERS / 10s CLIP
+
+In every 10-second AI Video Clip, dialogue MUST strive to maximize narrative richness and vividness, targeting the **Optimal Sweet Spot of ~140–160 English characters (~20–25 words / 3.5–4.0s of continuous speech)**.
+
+> [!IMPORTANT]
+> **MAXIMUM DRAMATIC DENSITY & ANTI-FRAGMENTATION MANDATE**:
+> - **BAN ON SHORT / MEANINGLESS LINES**: Strictly FORBIDDEN to write overly brief, shallow, or fragmented dialogue (e.g., "Ten years", "Yes", "No", "Stop it", < 50 chars). Choppy monosyllabic lines kill dramatic tension and waste the 10-second storytelling capacity.
+> - **The 140–160 Character Master Line Architecture**: Every dialogue line must be a complete, multi-layered dramatic statement composed of 3 structural beats:
+>   $$\mathbf{Line\ Architecture} = \mathbf{[Contextual\ Bite\ /\ Premise]} + \mathbf{[Ideological\ Contrast]} + \mathbf{[Devastating\ Ultimatum\ /\ Consequence]}$$
+> - **Maximum Vividness**: Investing the full ~140–160 character budget delivers profound world-building, philosophical resonance, and unforgettable psychological weight in every single clip.
+> - **Hard-Cap Ceiling**: Total dialogue MUST NOT exceed 160 English characters (including spaces and punctuation) to protect lip-sync from facial warping and preserve the 0.5s terminal freeze hold.
 
 ---
 
@@ -387,18 +429,16 @@ Cinematic dialogue **NEVER stands still**. Every line of dialogue MUST be season
 
 ---
 
-### 📌 §D.4 SCRIPTING BRACKET SYNTAX (Standard Code Block 1 Syntax)
+### 📌 §D.4 4-IN-1 PARENTHETICAL DIALOGUE DIRECTING SYNTAX
 
-Every dialogue line in Code Block 1 MUST apply the following syntax — **100% English**:
+Every dialogue line in Screenplays and Code Block 1 MUST apply the **4-in-1 Hollywood Directing Parenthetical** — **100% English, Zero Redundant Meta-Tags** (no `Spoken dialogue:`, no `[Subject 1]`):
 
-```text
-[Subject English Name] : "[English Dialogue Line ≤ 160 chars]" ([Voice tone & acoustics], [Lips parting in lip-sync], [Physical micro-biomechanics matching subtext])
-```
+$$\mathbf{Character\ Name：" Spoken\ Line\ "\ （\ 1.\ Vocal\ Timbre\ \&\ Breath\ Power\ ,\ 2.\ Somatic\ Action\ ,\ 3.\ Lighting\ on\ Anatomy\ ,\ 4.\ Psychological\ Subtext\ ）}$$
 
-**Standard examples — subtext contrasting with surface dialogue:**
-- `Dax : "Ten years... how much do you owe me?" (voice low and arrogant as if explaining arithmetic, eyes narrowing into a cold sneer, lips parting dynamically in precise lip-sync, right hand thrusting the Debt Scroll downward)`
-- `Keth : "I owe you... with my very life!" (voice raw and booming, pupils dilating in burning rage, lips parting dynamically in precise lip-sync, fists white-knuckling on thighs — knuckles visibly pale)`
-- `Vin : "Of course." (voice flat and unhurried, lips parting in minimal precise lip-sync, left hand folding the document closed with deliberate slowness — not looking at Dax)`
+**Standard canonical examples:**
+- `Commander Ethan Ross："The legion burned. I survived."（voice dropping to a cold razor-sharp rasp, rising at frame-left ground level, unblinking dark eyes catching the dying amber brazier light — no hesitation, only hunger）`
+- `Dax："Ten years... how much do you owe me?"（voice low and arrogant, eyes narrowing into a cold sneer, lips parting dynamically in precise lip-sync, right hand thrusting the Debt Scroll downward catching 2700K sidelight）`
+- `Vin："Of course."（voice flat and unhurried, lips parting in minimal precise lip-sync, left hand folding the document closed with deliberate slowness — not looking at Dax）`
 
 **⚠️ Camera FORBIDDEN when dialogue is present:** `Crane`, `Orbit`, `Arc`, `Whip pan`, `Strong Handheld` — only use `Static`, `Slow Push-in`, `Slow Pull-out` to protect lip-sync.
 
@@ -616,17 +656,18 @@ Examples — fear, chaos:
 ▼ ACOUSTIC (ALWAYS INCLUDE when scene has spoken dialogue — system default):
 Diegetic room acoustics: {continuous background ambient sound}.
 
-[{beat 1 timestamp}] Shot {scale: Wide/Medium/Close-up} | {lens}mm f/{aperture} | {camera movement & angle} on {Subject}
-{1-2 prose sentences — PROPER NAME + Action Verb + Object — Pure Cinematic Spec — NO FILLER CONNECTORS.}
-{DIALOGUE (default ON — Scripting Bracket): [Subject] : "{dialogue ≤ 160 chars}" (voice tone & acoustics, lips parting in precise lip-sync, physical micro-biomechanics — mechanics MUST reflect subtext, not just repeat the dialogue)}
+△ [{beat 1 timestamp}] Shot {Scale} | {lens}mm f/{aperture} | {Camera Trajectory}:
+{Continuous spatial interaction between Subject A at frame-right and Subject B at frame-left — proper names, observable physical action.}
+{Speaker 1 Full Name}：" {dialogue ≤ 160 chars in English} "（{vocal timbre & breath}, {somatic micro-action}, {lighting cast on facial anatomy}, {psychological subtext}）
 
-[— MIDDLE BEAT IF 3-4 FLEXIBLE BEATS —]
-[{middle beat timestamp}] Shot {scale} | {lens}mm f/{aperture} | {camera movement & angle} on {Subject}
-{Direct physical action — prop state persistent — costume damage unchanged/progressed — PROPER NAME no pronouns.}
-{DIALOGUE (default ON): [Subject] : "{dialogue ≤ 160 chars}" (voice tone, lips parting in precise lip-sync, physical action — mechanics redirect or reinforce subtext)}
+△ [{middle beat timestamp}] Shot {Scale} | {lens}mm | {Continuing Trajectory / Kinetic Tracking}:
+{Heavy kinetic prop friction, physical resistance, tangible surface marks — proper names, continuous co-presence.}
+{Speaker 2 Full Name}：" {dialogue ≤ 160 chars in English} "（{vocal timbre & breath}, {somatic micro-action}, {lighting cast on facial anatomy}, {psychological subtext}）
 
-[{final beat timestamp}] Shot {scale: Medium/Close-up} | {lens}mm f/{aperture} | {static / gentle push-in — NO crane/orbit/arc} on {Subject}
-{Final sentence: frozen pose + prop rests in final condition — 0.5s zero-velocity freeze hold — PROPER NAME.}
+△ [{final beat timestamp}] Shot {Scale} | {lens}mm | {Static lock / slow push-in}:
+{Intimate suffocating confrontation — terminal 0.5s zero-velocity freeze hold — proper names.}
+
+Continuous fluid motion, realistic physics, zero morphing. All characters remain anchored in their spatial positions throughout the shot. Sharp optical focus locked on active subjects.
 
 Continuous fluid motion, realistic physics, zero morphing. Sharp optical focus locked on active speaker throughout shot.
 
@@ -760,49 +801,101 @@ When all N Scenes are done:
 
 ---
 
-## § [1] CAMERA / LENS / MOVEMENT — Quick Reference Table
+## § [1] OPTICS, FRAMING & DIRECTORIAL CAMERA MATRIX
 
-### A. Camera Angles
-| Name | Description | Use when |
-|---|---|---|
-| ECU (Extreme Close-up) | Only 1 detail: eye, hand, lip | Suppressed emotion, key symbolic object |
-| CU (Close-up) | Face from shoulders up | Identity reveal, clear emotion |
-| MCU (Medium Close-up) | Chest up | Dialogue, character interaction |
-| MS (Medium Shot) | Waist up | Hand action + face reaction |
-| MLS (Medium Long) | Thigh up | 2-character interaction |
-| LS (Long Shot) | Full body + setting | Establishing space, loneliness/isolation |
-| ELS (Extreme Long) | Wide panoramic | Natural setting, human smallness |
-| OTS (Over-the-shoulder) | Over A's shoulder looking at B | Power dynamic dialogue |
-| POV | Character's viewpoint | Immersion, high tension |
-| Dutch Angle | Tilted | Psychological unease, impending event |
-| Bird's-eye / Top-down | Looking down from above | Character powerless, being observed |
-| Worm's-eye | Looking up from below | Power, threat |
+### 📸 A. 8 Psychological Shot Scales & Lenses (Cỡ Cảnh & Chức Năng Tâm Lý Học)
 
-### B. Lens
-| mm | Characteristic | Use when |
-|---|---|---|
-| 14-24mm | Extreme wide, slight distortion | Architecture, vast spaces |
-| 35mm | Slightly wide, natural | Establishing scenes, environment |
-| 50mm | Closest to human eye | Neutral, realistic |
-| 85mm | Beautiful portrait, gentle compression | Characters, emotion |
-| 135mm | Space compression, background separation | Drama, character standing out on blurred background |
-| 200mm+ | Strong compression, deep bokeh | Surveillance, psychological distance |
+| Shot Scale | Lens & Framing | Psychological & Directorial Function | Application in 6-Beat Arc |
+|---|---|---|---|
+| **1. Extreme Close-Up (ECU)** | `100mm Macro` · Pupil dilation, scar ridge, trembling finger | **Peak Visceral Truth / Lie Exposure:** Magnifies involuntary micro-reactions that cannot be faked. | **Beat 4 (Ego Death)** or **Beat 1 (Cliffhanger Freeze)**. |
+| **2. Close-Up (CU)** | `85mm Portrait` · Full face from chin to hair top | **Direct Emotional Vulnerability:** Raw exposure of grief, fury, tears, or predatory intent. | **Beat 4 (Climax Peak)**, sudden revelation of mortal stakes. |
+| **3. Choker Shot** | `85mm` · Tight cut from chin to upper forehead | **Claustrophobic Deadlock:** Traps characters in psychological corner with zero escape. | Severe psychological ultimatums, breathless confessions. |
+| **4. Medium Close-Up (MCU)** | `50mm–85mm` · Chest up | **Workhorse of Cinematic Dialogue (60% coverage):** Nuanced facial micro-expressions and chest heaving. | **Beat 1 (Disruptive Hook)** & **Beat 3 (Escalating Drama)**. |
+| **5. Medium Shot (MS)** | `50mm Standard` · Waist up | **Physical Interaction & Prop Manipulation:** Table slamming, weapon unsheathing, deed signing. | Conversational bargaining, inspecting ledgers or seals. |
+| **6. Cowboy Shot (MLS)** | `35mm–50mm` · Mid-thigh up | **Combat Readiness (Western Standoff):** Hands hovering near weapons/holsters/pockets. | Pre-combat standoff, tense boardroom/courtroom confrontation. |
+| **7. Two-Shot / Wide (WS)** | `35mm–50mm` · Both subjects & spatial void | **Power Balance & Spatial Geography:** Establishes spatial gap (3–5m) and 1-on-1 tension. | **Beat 1 & Beat 3**: Direct dialogue setup, spatial rivalry. |
+| **8. Extreme Wide (EWS/ELS)** | `16mm–24mm Wide` · Vast terrain, tiny human figure | **Cosmic / Karmic Judgment:** Human solitude, fate, helplessness before overarching destiny. | **Beat 2 (World Setup)** or **Beat 6 (Cosmic Echo)**. |
 
-### C. Camera Movements
-| Name | How to use | Use when |
-|---|---|---|
-| Static | Camera fixed | Stillness, cold observation |
-| Push-in (Dolly in) | Slowly advance toward subject | Escalating tension, emotion reveal |
-| Pull-out (Dolly out) | Slowly withdraw from subject | Loneliness, loss, being left behind |
-| Pan | Horizontal rotation | Track movement, reveal space |
-| Tilt up/down | Vertical rotation | Reveal from detail to wide |
-| Tracking (Follow) | Keep pace with character | Continuous movement |
-| Crane up/down | Rise/descend vertically | Grand opening/closing |
-| Orbit/Arc | Circle around subject | Emphasis, glorification |
-| Handheld | Light natural shake | Chaos, urgency, raw reality |
-| Zoom (Push-in optical) | Zoom lens in | Surprise, shock moment |
+---
 
-**⚠️ Camera FORBIDDEN when dialogue is present:** `Crane`, `Orbit`, `Arc`, `Whip pan`, `Strong Handheld` — only use `Static`, `Slow Push-in`, `Slow Pull-out` to protect lip-sync.
+### ⚖️ B. 6 Power Hierarchy Camera Angles (Góc Máy & Trọng Lượng Quyền Lực)
+
+| Camera Angle | Technical Definition | Power Dynamics & Psychological Impact | Dramatic Application |
+|---|---|---|---|
+| **1. Low-Angle** | Camera positioned below eye-line looking upward (15°–45°). | **Dominance, Intimidation & Grandeur:** Imparts colossal authority, tyranny, ruthless strength. | Antagonist oppressive pressure, Sovereign on throne, Protagonist rising. |
+| **2. High-Angle** | Camera positioned above eye-line looking downward (15°–45°). | **Vulnerability, Defeat & Guilt:** Shrinks the subject into a powerless, judged, or cornered victim. | Interrogation victim, defeated commander on knees, cornered target. |
+| **3. Eye-Level** | Camera placed at subject's exact eye height. | **Neutral Balance & Parity:** Impartial observation, equal 1-on-1 clash of matching wills. | Direct negotiation, honest confession, moral stalemate. |
+| **4. Dutch Angle (Canted)** | Camera tilted 15°–25° along roll axis. | **Psychological Instability & Chaos:** World slipping off its axis, madness, sudden betrayal. | Mental collapse, sudden betrayal revelation, panic breakdown. |
+| **5. Over-the-Shoulder (OTS)**| Framed behind Subject A's shoulder looking at B. | **Conversational Depth & Witness Stance:** Turns viewer into immediate witness behind character. | Core dialogue ping-pong, interrogation pressure. |
+| **6. Overhead / Bird's-Eye** | Camera mounted 90° straight down from ceiling/sky. | **Cosmic Omniscience & Fate:** God-like detachment, viewing mortal struggles like chess pieces. | Tactical planning maps, aftermath crime scenes, macro destiny. |
+
+---
+
+### 🎥 C. Camera Movements & Directorial Prohibitions
+
+| Movement Type | Technical Definition | Narrative Purpose | Key Prompt Syntax |
+|---|---|---|---|
+| **Static Shot** | Locked-off camera, zero movement on all axes. | Solemn gravity, unblinking witness to aftermath. | `Locked-off static camera, zero movement, holding unwavering gaze on...` |
+| **Push In (Dolly In)** | Deliberate physical movement forward toward subject. | Tightening intimacy, escalating psychological tension. | `Slow deliberate push-in tightening focus on [Subject]'s clenched jaw...` |
+| **Pull Out (Dolly Out)** | Physical movement backward away from subject. | Abandonment, loneliness, expanding dread. | `Slow pull-out retreating away from [Subject] leaving them isolated in darkness...` |
+| **Pan Shot** | Horizontal rotation on fixed axis (left $\leftrightarrow$ right). | Scanning environment, revealing hidden threat in room. | `Smooth horizontal pan sweeping left-to-right across the room to reveal...` |
+| **Tilt Shot** | Vertical rotation on fixed axis (up $\leftrightarrow$ down). | Scanning subject from boots to eyes, revealing height. | `Vertical tilt shot rising slowly from mud-caked boots up to the cold glare...` |
+| **Tracking Shot** | Camera travels alongside, in front of, or behind subject. | Kinetic momentum, active pursuit, matching urgency. | `Lateral tracking shot moving parallel to [Subject] sprinting through...` |
+
+**⚠️ Camera FORBIDDEN when dialogue is present:** `Crane`, `Orbit`, `Arc`, `Whip pan`, `Strong Handheld` — only use `Static`, `Slow Push-in`, `Slow Pull-out` to protect lip-sync. (Exception: 360° Orbit allowed ONLY if dialogue is placed during the final 3s static lock phase).
+
+---
+
+### 🔄 C.1. The 360-Degree Orbit Directorial & Prompt Protocol
+When executing a 360-degree continuous orbital take in a 10s AI video prompt:
+1. **Rotational Velocity Formula**: $\text{Angular Velocity} = 360^\circ / 10\text{s} = \mathbf{36^\circ / \text{second}}$.
+   - `[00:00–00:03]`: Arc $0^\circ \to 90^\circ$ (Front face $\to$ Right shoulder).
+   - `[00:03–00:07]`: Arc $90^\circ \to 270^\circ$ (Right shoulder $\to$ Full back $\to$ Left shoulder, revealing background threat).
+   - `[00:07–00:10]`: Arc $270^\circ \to 360^\circ$ (Left shoulder $\to$ Front face complete lock + 0.5s freeze hold).
+2. **Subject Central Axis Lock**: The subject MUST remain anchored at center frame $(X:50\%, Y:50\%)$ as the rotational axis (`[Subject Name] remains anchored at center frame throughout the entire 360-degree rotation`).
+3. **Lip-Sync Delivery Rule**: Spoken dialogue lines MUST NEVER be placed during the fast-rotating phase ($00:00–00:07$). Spoken lines are strictly synchronized to the **final static lock phase `[00:07–00:10]`**.
+
+---
+
+### ⚡ D. In-Camera Transitions vs. Timeline Editing Cuts
+
+```
++----------------------------------------------------------------------------------------------------+
+| GROUP 1: IN-CAMERA TRANSITIONS (Unbroken 1-Take 10s — Zero Cut)                                    |
+| • 1. The Kinetic Prop Bridge: Camera tracks moving prop (thrown scepter/sliding coin) from A to B. |
+| • 2. Steadicam Arc Pivot: Sweeps semi-circular arc (90°–180°) from behind A to frame B directly.   |
+| • 3. Optical Rack Focus: Static camera shifts focus from foreground A to background B.             |
+| • 4. Vertical Elevation Tilt: Sweeps vertically from elevated dais (A) down to floor level (B).     |
+| • 5. Continuous Lateral Reframe: Glides horizontally across table, dropping A and centering B.     |
++----------------------------------------------------------------------------------------------------+
+| GROUP 2: TIMELINE EDITING CUTS (Post-Production Multi-Cue Assembly)                                |
+| • 1. Shot-Reverse-Shot: Alternates between opposing angles/OTS for ping-pong dialogue battles.     |
+| • 2. Reaction Shot: Cuts away from speaker to capture the silent, visceral reaction of listener.   |
+| • 3. Graphic & Kinetic Match Cut: Connects two cues via identical geometry or velocity vectors.    |
+| • 4. Cutaway (Insert Cut): Brief 1s insert of critical physical detail (clock, poison, dripping blood)
+| • 5. Smash Cut: Violent jarring cut from high-decibel chaos to dead silence (or vice versa).       |
+| • 6. J-Cut & L-Cut: Sound leads image (J-Cut) or sound lingers across cut into next scene (L-Cut). |
++----------------------------------------------------------------------------------------------------+
+```
+
+#### 📐 Graphic & Kinetic Match Cut 4-Point Contract
+1. **Coordinate Parity**: Terminal frame of Cue A and Opening frame of Cue B lock the focal object at the exact same screen coordinates $(X:50\%, Y:50\%)$.
+2. **Geometry Alignment**: Matching geometric silhouettes (Circle $\to$ Circle / Triangle $\to$ Triangle).
+3. **Kinetic Velocity**: Velocity vectors maintain directional continuity (Down $\to$ Down / Left $\to$ Left).
+4. **Chromatic Harmony**: Shared color temperature bridge (2200K Red Iron $\to$ Crimson Wax Seal).
+
+---
+
+### ⏱️ E. The 10-Second Clip Capacity & Scene Slicing Law
+
+> [!IMPORTANT]
+> **THE 10-SECOND SLICING MANDATE**:
+> - **1 Single 10-Second Clip Capacity**: A single 10s take must accomplish **ONE dedicated cinematic objective** (e.g. a tight 1-person monologue, an intimate 2-person tabletop standoff, or a simple A-to-B kinetic tracking pan).
+> - **Mandatory Scene Slicing Threshold**: Whenever a scene features **$\ge 3$ characters at different spatial elevations/locations** OR **$\ge 3$ distinct dialogue lines**, attempting to force them into a single 10s prompt causes severe temporal compression, frantic camera movement, and AI morphing.
+> - **The 3-Cue Slicing Standard (30s Total)**:
+>   - `CUE-01` (10s): Focus on Initiator (e.g. Sovereign on dais delivering judgment & initiating physical kinetic action).
+>   - `CUE-02` (10s): Focus on Witness / Middle Ground (e.g. Terrified prelate reacting on middle steps as prop clatters past).
+>   - `CUE-03` (10s): Focus on Receiver / Resister (e.g. Defiant commander pinning prop on floor and delivering lethal retort).
 
 ---
 
@@ -889,7 +982,23 @@ In each Beat (2-4s), **ONLY 1 character** performs the Primary Action (Active). 
 - ✅ CORRECT: `Lok snatches the cloth pouch from Ren's trembling palms — the pouch the only contact point`
 - ❌ WRONG: `Lok grabs Ren's hands and pulls.`
 
-### b) Emotion Physics — ZERO abstract emotion words
+### b) Continuous Co-Presence & Dual-Action Somatics (Eliminating Subject Amnesia)
+Generative video models suffer from **Subject Amnesia** if characters are described in isolation. Both characters MUST remain anchored in space (Frame-Left vs Frame-Right) with bidirectional actions in every second:
+
+$$\mathbf{Subject\ A\ Initiates\ Physical\ Action}\ \longleftrightarrow\ \mathbf{Subject\ B\ Somatic\ Reaction\ Simultaneously}$$
+
+* Example: `△ [00:03–00:07]: Dax at frame-right forcefully slides the Debt Scroll across the wood, gouging a white scratch; directly opposite at frame-left, Vin clamps his gauntleted palm over the parchment as it strikes his cuffs, chest heaving in defiance.`
+
+### c) Domain-Specific Tactile Physics Catalog
+
+| Genre Domain | Tactile Physics & Material Friction Details | Atmospheric & Prop Somatics |
+|---|---|---|
+| **⚔️ Wuxia / War / Martial Epic** | Iron armor creaking against wet ship gunwales; steel blade scraping frost off frozen stone; shattered bronze fragments crushed flat beneath iron boots; snow melting on scarred brow ridge. | Heavy wool cloaks sodden with sleet, breath freezing into thick white clouds, weapon hilts wrapped in fraying leather cords. |
+| **🏛️ Aristocracy / Family / Boardroom** | Brittle red sealing wax cracking under thumb pressure; lukewarm porcelain teacup rattling on saucer; heavy brass seal chipping mahogany varnish; heavy chair legs scraping dry hardwood. | Crisp starched collars choking neck veins, signet rings catching crystal chandelier reflections, trembling inkwell quills. |
+| **🕵️ Noir / Detective / Crime** | Zippo lighter metallic flint click and sharp flare of amber flame; rusted iron handcuffs clinking taut against pipe; scorch marks on magnetic tape reels; cigarette smoke swirling in streetlamp beam. | Wet asphalt reflecting sodium vapor glow, sodden trench coat shoulders, water droplets condensing on revolver cylinder. |
+| **👑 Gothic / Imperial Court / Religious** | Gold royal scepter rebounding with a sharp spark off polished white marble steps; scarlet velvet cape embroidered with heavy gold bullion thread; ivory crucifix trembling against collar. | Choking incense clouds catching stained-glass sunlight, heavy bronze cathedral doors groaning shut, candelabra wax dripping onto flagstones. |
+
+### d) Emotion Physics — ZERO abstract emotion words
 
 | Emotion (DO NOT USE) | Replacement Mechanics (USE THIS) |
 |---|---|
@@ -900,12 +1009,12 @@ In each Beat (2-4s), **ONLY 1 character** performs the Primary Action (Active). 
 | `shocked` / `stunned` | Step frozen mid-stride, held object released, mouth falling open without sound |
 | `relieved` | Shoulders dropping slowly, a long breath out through the nose, jaw muscles releasing |
 
-### c) Crowd "1 + Blurred Background"
+### e) Crowd "1 + Blurred Background"
 - **1 sharply-focused lead character** in foreground (`sharp optical focus`)
 - Crowd behind: `out-of-focus background blurred silhouettes moving as a unified mass`
 - DO NOT describe multiple faces in sharp detail — AI cannot render evenly, produces artifacts
 
-### d) Witness Reaction Shot
+### f) Witness Reaction Shot
 - **Separate Shot** — don't cram perpetrator + witness into the same 3s Shot
 - **Choose 1 representative** and use a freeze reaction: `steps frozen mid-stride, hands releasing the carried object, eyes wide in shock`
 

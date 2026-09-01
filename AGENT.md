@@ -42,7 +42,7 @@ description: >
 ### 🌐 THE 3 SYSTEM PRODUCTION TRACKS & EXCEPTIONS:
 
 1. **⭐ TRACK 1: DIALOGUE-DRIVEN DRAMA (DEFAULT — ALL SHORT FILMS & SERIES)**:
-   - Dialogue always active in Code Block 1 (English, ≤ 160 chars / clip, lip-sync bound).
+   - Dialogue always active in Code Block 1 (English, optimal density ~140–160 chars / clip, lip-sync bound, 4-in-1 directing parenthetical).
    - Code Block 2 & Stage 3: Full nuanced Vietnamese dialogue table with exact honorifics.
    - Primary conflict is verbal, emotional, and ideological.
 
@@ -67,6 +67,9 @@ Confirm active track with 1 line before output:
 - **workflow.md**: `d:\Project\Sven\workflow.md` — **READ FIRST**
 - **story-rules.md**: `d:\Project\Sven\Sven-Agent\references\story-rules.md` — full script rules (self-contained summary)
 - **sven-rules.md**: `d:\Project\Sven\Sven-Agent\references\sven-rules.md` — full Omni Flash prompt rules (self-contained summary)
+- **cinematic-camera-catalog.md**: `d:\Project\Sven\Sven-Agent\references\cinematic-camera-catalog.md` — 8 shot scales, 6 power angles, transitions & cuts
+- **cinematic-emotion-physicality.md**: `d:\Project\Sven\Sven-Agent\references\cinematic-emotion-physicality.md` — 6 emotional archetypes, tactile physics, 4-in-1 dialogue
+- **cinematic-script-architecture.md**: `d:\Project\Sven\Sven-Agent\references\cinematic-script-architecture.md` — master screenplay & prompt templates, 4 casting models
 - **music-video-narrative.md**: `d:\Project\Sven\Sven-Agent\references\music-video-narrative.md` — music video screenplay & prompt architecture ($100M+ VFX scale)
 - **history-registry.json**: `d:\Project\Sven\history-registry.json` — anti-repetition registry
 
@@ -224,7 +227,7 @@ Output directly in markdown (NOT wrapped in a code block):
 
 > 👉 **CHOOSE STORYTELLING MODE (DIALOGUE OR SILENT):**
 >   🅰️ **SILENT (Default — Show, Don't Tell):** 100% visual storytelling via physical action, micro-biomechanics, camera angles & ambient sound.
->   🅱️ **WITH DIALOGUE (Activate dialogue rules):** Script includes 1-2 sharp lines (≤ 160 English characters in Code Block 1 + Vietnamese emotional/physical dialogue table in Code Block 2).
+>   🅱️ **WITH DIALOGUE (Activate dialogue rules):** Script includes 1 rich multi-layered master line (~140–160 English characters in Code Block 1 + Vietnamese emotional/physical dialogue table in Code Block 2).
 >
 > 💬 Type **idea number + mode (e.g. "1A" or "1B")** to choose idea and dialogue mode
 > Type **"edit idea N: [request]"** to adjust an idea before choosing
@@ -627,9 +630,9 @@ Follow ALL rules in `sven-rules.md § [10]`. **7 mandatory fields:**
 **[6] Beat timestamps**: natural prose, **1-SYLLABLE NAME** (no `he/she/it`, no accented Vietnamese names)
 - **Action sound syntax**: `{Action verb} + producing/emitting a {specific sound description}`
   - E.g.: `his palm strikes the table, emitting a heavy wooden thud echoing across the room`
-- **Native dialogue syntax** *(if scene has dialogue)*:
-  - `{Name} speaks the lines: "{dialogue line}", {lip movement description}, voice reverberating {space type}`
-  - E.g.: `Lok points at the shrine and speaks in a harsh raspy Vietnamese voice: "Ta khong so!", his lips parting in precise lip-sync, voice echoing off stone walls`
+- **4-in-1 Dialogue Directing Syntax** *(optimal density ~140–160 chars, no short/fragmented lines)*:
+  - `Character Name：" {Spoken Line ~140–160 Chars} "（ {1. Vocal Timbre} , {2. Somatic Action} , {3. Lighting on Anatomy} , {4. Psychological Subtext} ）`
+  - E.g.: `Lok Thorne："A seal stamped in blood is not a confession, Vance; sign your own death warrant, because my legion will never kneel to a usurper."（voice dropping to a cold razor-sharp rasp, right hand slamming the iron ledger flat, unblinking dark eyes catching 5600K spotlight — lethal defiance）`
 - **Final beat**: frozen pose + prop rests in final condition — 0.5s freeze
 - **Kinetic bridge**: each beat opens with a temporal connector linking from previous beat
 
@@ -668,40 +671,51 @@ Output exactly this structure:
 
 **Code Block 1 (copy to Omni Flash):**
 ```
-Master-level cinematography and composition, fast-paced shot variation, atmospheric sound design. Hyper-realistic, ultra-high-definition masterwork. Cinematic 9:16 vertical, {visual style reference}. Shot on {lens}mm prime lens, f/{aperture}, film grain.
+3D Animation Masterwork in iconic Pixar and DreamWorks studio style, Octane Render, Cinema 4D, Ray-traced global illumination, 24fps smooth motion. Cinematic 16:9 widescreen, dark rich cinematic realism. Subsurface scattering skin shading, micro-texture fabrics, tailored armor/clothing.
 
-{Scene context described sufficiently to render correctly in one pass} — {key practical light source} {direction & height} casts {color temperature} light {across/over area} while {atmosphere: dust motes / smoke tendrils / river mist / etc.}; {shadow behavior: hard-edged chiaroscuro / soft gradient / dappled}; {light transition: stable / flickers irregularly / extinguishes at [beat]}.
+{Scene Context & Architectural Setting}, {Time of Day} — {Key Practical Light Source} {direction & height} casts {Color Temp, e.g. 5600K cold / 2700K warm} light across {Area/Plane} while {Atmospheric Medium: floating dust motes / chimney smoke / rain mist}; {Shadow Behavior: sharp chiaroscuro / soft gradient}; {Light Transition}.
 
-{Name A — 1 syllable, no English meaning, e.g.: Lok / Vin / Ren}, {age ≥20}-year-old {gender}, {height}cm, {skin tone/ethnicity}, {build: lean/stocky/wiry/etc.}, wearing {costume description + current damage state}. Initial pose: {neutral pose, camera-anchored position, weight-bearing side}.
+{Name A — 1 syllable, e.g.: Lok / Vin / Ren}, {height}cm, {build} build in {costume + damage state}, standing at {frame-left facing frame-right} — the only {Name A} in frame.
+{Name B if present — 1 syllable, e.g.: Mael / Keth / Tor}, {height}cm, {build} build in {costume}, standing at {frame-right facing frame-left} — the only {Name B} in frame.
+{Hero Prop}, {size cm/mm}, {surface material: weathered bronze / cracked pine}, {color}, {condition}, resting {camera-anchored position — ZERO hand assignment}.
 
-{Name B if present — 1 syllable, no English meaning, e.g.: Mael / Keth / Tor}, {age ≥20}-year-old {gender}, {height}cm, wearing {costume}. {Camera-relative position: Subject A at frame-left facing frame-right; Subject B at frame-right facing frame-left.}
+Diegetic room acoustics: {ambient sound: cracking hearth coals / distant rain / grandfather clock ticking}.
 
-{Prop name}, {size cm/mm}, {surface material: weathered pine / tarnished brass / cracked porcelain / etc.}, {color}, {condition: intact / cracked along rim / wet / scorched at base}, resting {camera-anchored position — ZERO hand assignment: on the ground to frame-left / propped against the post / lying face-down at center}.
+△ [00:00–00:03] Shot {Scale: Medium Two-Shot / MCU} | {Lens: 50mm f/1.4} + {Angle: Eye-Level / Low-Angle} | {Camera Trajectory}:
+{Subject A at frame-left performs primary physical action; Subject B at frame-right reacts simultaneously in dual-action somatic synchronization.}
 
-[Acoustic field — ONLY IF DIALOGUE MODE. Remove entirely if Show, Don't Tell mode.]
-Diegetic room acoustics: {ambient sound: heavy rain pounding thatch roof / distant temple bells / marketplace crowd murmur / etc.}. spoken in a {deep raspy / clear emotional / aged wavering} {male/female} Vietnamese voice with natural {room echo / stone-wall resonance / open-air reverb}.
+△ [00:03–00:07] Shot {Scale: Medium Close-Up} | {Lens: 85mm f/1.8} + {Angle} | {Camera Trajectory}:
+{Escalating dramatic tension, prop interaction or physical stride maintaining unbroken continuous spacetime physics.}
 
-[00:00-00:04] Shot {scale: Wide/Medium/Close-up} | {camera movement: static / slow push-in / handheld drift — 1 movement only} | {angle: eye-level / low angle / high angle}
-{1-2 prose sentences — 1-SYLLABLE NAME + Subject-Centric Action (1. Primary movement / 2. Environment/other-subject interaction / 3. Emotional expression & subtle gesture) — action sound syntax: "producing/emitting a {specific sound}" embedded in sentence. Default: no dialogue.}
+△ [00:07–00:10] Shot {Scale: Close-Up / Choker} | {Lens: 85mm f/1.4} + {Angle} | {Static lock / slow push-in}:
+{Climax physical stance or evidence reveal, concluding with an absolute 0.5s zero-velocity freeze hold at 00:10.}
 
-[00:04-00:07] Shot {scale} | {camera movement: continuing momentum from previous beat} | {angle}
-{Subject-Centric Action continued — prop state persistent — costume damage unchanged/progressed — 1-SYLLABLE NAME, no pronouns.}
-{DIALOGUE SCENE (only when user explicitly requested): "{Name} speaks the lines: '{dialogue line}', {Name}'s lips parting dynamically in precise lip-sync, voice reverberating off {reverb surface}." — If Show, don't tell: remove this line entirely}
+Scene: {Dramatic Scene Title}
+{Character Name}：" {Spoken Dialogue Line ≤ 160 English Chars} "（ {1. Vocal Timbre} , {2. Somatic Micro-Biomechanics} , {3. Lighting on Anatomy} , {4. Psychological Subtext} ）
 
-[00:07-00:10] Shot {scale: Medium/Close-up} | {static / gentle push-in — NO crane/orbit/arc} | {angle}
-{Final sentence ending with frozen pose + prop rests in final condition — 0.5s freeze hold, zero-velocity.}
-
-Do not generate subtitles, text overlays, dialogue boxes, on-screen captions, or chapter titles.
+Continuous fluid motion, realistic physics, zero morphing. All characters remain anchored in their spatial positions throughout the shot.
+Do not generate subtitles, dialogue text, titles, timestamps, or any written text anywhere in the video.
 ```
 
 **Code Block 2 (internal notes — DO NOT copy to Omni Flash):**
 ```
-[Final State — 5 groups]
-(a) Character: {name} — {posture/position} | {emotional body state}
-(b) Costume: {accumulated damage at end of this scene}
-(c) Prop: {name} — {shape/condition/position at end of scene}
-(d) Setting: {marks/changes left by this scene}
-(e) Space-time: {time of day unchanged / or explicit time jump to: ...}
+━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━
+📋 PRODUCTION HANDOVER & AUDIT MANIFEST
+━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━
+[Final State at 00:10]:
+(a) Character: {name} — {posture/coordinates at 00:10} | {emotional body state}
+(b) Costume: {accumulated damage state}
+(c) Prop: {name} — {shape/condition/coordinates at 00:10}
+(d) Setting: {marks/changes left in environment}
+(e) Space-time: {lighting & time continuity / explicit time jump}
+
+🎙️ DIALOGUE AUDIT:
+- Spoken Dialogue: "{Spoken line}" ({character count} English chars — PASS hard-cap ≤ 160 chars)
+- 4-in-1 Parenthetical Directing Breakdown:
+  • Vocal Timbre: {timbre}
+  • Somatics: {biomechanics}
+  • Lighting: {lighting reflection}
+  • Subtext: {unspoken psychological motive}
 ```
 
 ---
@@ -734,8 +748,11 @@ d:\Project\Sven\
 ├── history-registry.json      <- Anti-repetition registry
 └── Sven-Agent\
     └── references\
-        ├── story-rules.md             <- Beats, Hook, Line ABC, Genre/BG/Trope, Anti-repetition
-        ├── sven-rules.md              <- Omni Flash Code Block 1, Mode A/B, PRE-FLIGHT
-        ├── music-video-narrative.md   <- Music Video screenplay & prompt architecture ($100M+ VFX)
-        └── clip-continuity-theory.md  <- Spatial continuity & camera physics
+        ├── story-rules.md                    <- Beats, Hook, Line ABC, Genre/BG/Trope, Anti-repetition
+        ├── sven-rules.md                     <- Omni Flash Code Block 1/2, Mode A/B, PRE-FLIGHT
+        ├── cinematic-camera-catalog.md       <- 8 Shot Scales, 6 Power Angles, 360° Orbit, Match Cut
+        ├── cinematic-emotion-physicality.md  <- 6 Emotional Archetypes, Tactile Physics, 4-in-1 Dialogue
+        ├── cinematic-script-architecture.md  <- Master Screenplay & Prompt Templates, 4 Casting Models
+        ├── music-video-narrative.md          <- Music Video screenplay & prompt architecture ($100M+ VFX)
+        └── clip-continuity-theory.md         <- Spatial continuity & camera physics
 ```

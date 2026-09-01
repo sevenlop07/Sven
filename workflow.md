@@ -8,10 +8,14 @@
 ## 📋 FILE READING ORDER — MANDATORY AT SESSION START
 
 ```
-[1] workflow.md              ← This file — read first
-[2] history-registry.json   ← d:\Project\Sven\history-registry.json
-[3] story-rules.md          ← references/story-rules.md
-[4] sven-rules.md           ← references/sven-rules.md
+[1] workflow.md                        ← This file — read first
+[2] history-registry.json             ← d:\Project\Sven\history-registry.json
+[3] story-rules.md                    ← references/story-rules.md
+[4] sven-rules.md                     ← references/sven-rules.md
+[5] cinematic-camera-catalog.md       ← references/cinematic-camera-catalog.md
+[6] cinematic-emotion-physicality.md  ← references/cinematic-emotion-physicality.md
+[7] cinematic-script-architecture.md  ← references/cinematic-script-architecture.md
+[8] action-dialogue-synergy.md        ← references/action-dialogue-synergy.md
 ```
 
 ---
@@ -50,7 +54,7 @@ Axis 14 (Narrative Mode)    : [axis_14_narrative_mode] — Dialogue Mode vs Show
 | Has idea | Character/setting/conflict described | → Skip Step 0, go to **Step 1** |
 | Revision | Feedback on script/prompt | → Edit directly |
 | Prompt only | "create prompt for scene N" | → **Stage 4** for that scene |
-| **⭐ Track 1: Dialogue-Driven Drama (DEFAULT)** | **System Default — ALWAYS ON for all films & series** | **Intense Psychological Dialogue, 3-Wave Twists, Emotional Micro-Biomechanics, Simple Tactile Actions. Zero complex fighting/chases. §D in sven-rules.md active. Code Block 1 Lip-sync brackets + Code Block 2 VN Dialogue Table.** |
+| **⭐ Track 1: Dialogue-Driven Drama (DEFAULT)** | **System Default — ALWAYS ON for all films & series** | **Intense Psychological Dialogue (~140–160 chars/clip optimal density), 3-Wave Twists, Emotional Micro-Biomechanics, Simple Tactile Actions. Zero complex fighting/chases. §D in sven-rules.md active. Code Block 1 4-in-1 parenthetical directing syntax + Code Block 2 VN Dialogue Table.** |
 | **🎵 Exception 1: Music Video Narrative (MV Mode)** | Lyrics provided / Song duration / "MV mode" | **Follows `music-video-narrative.md`. $100M+ Hollywood VFX, mythic/cosmic/dark fantasy scale, lyrics-to-visual metaphor, no domestic mundane realism.** |
 | **🤫 Exception 2: Silent Mode (Show Don't Tell)** | User explicitly chooses "silent" / "show dont tell" / "visual only" / "không thoại" | **100% PURGE OF SPOKEN DIALOGUE. Zero dialogue brackets in Code Block 1. 400% amplified micro-biomechanics. Pure diegetic Foley & atmospheric acoustics. Mandatory Silent Negative Clause.** |
 
@@ -783,17 +787,39 @@ DIALOGUE PRE-FLIGHT:
 
 — PROMPT BEAT [N] (DIALOGUE MODE) —
 [CODE BLOCK 1 — OMNI FLASH PROMPT]
-[English, ~100-130 words]
-[Lighting: exact Kelvin temperature & atmospheric medium]
-[Dialogue: Scripting Bracket ≤ 160 characters — address form embedded in bracket]
-[If Beat 5.1: [pause: 1.5s], [whispers, warm] explicitly tagged]
-[Negative Output Clause: Do not generate subtitles, dialogue text, titles, timestamps...]
+3D Animation Masterwork in iconic Pixar and DreamWorks studio style, Octane Render, Cinema 4D, Ray-traced global illumination, 24fps smooth motion. Cinematic 16:9 widescreen, dark rich cinematic realism. Subsurface scattering skin shading, micro-texture fabrics, tailored armor/clothing.
 
-[CODE BLOCK 2 — SCRIPT & VOICE ACTOR TABLE]
-Action: [English prose, Show-Don't-Tell]
+{Scene Setting, Time of Day} — {Key Light Source} {direction & height} casts {5600K cool / 2700K warm} light across {Area} while {Atmospheric medium: floating dust / chimney smoke / mist}; {Shadow behavior}; {Light transition}.
+
+{Name A — 1 syllable}, {height}cm, {build} build in {costume + damage state}, standing at {frame-left facing frame-right} — the only {Name A} in frame.
+{Name B if present — 1 syllable}, {height}cm, {build} build in {costume}, standing at {frame-right facing frame-left} — the only {Name B} in frame.
+{Hero Prop}, {size cm/mm}, {surface material: weathered bronze / cracked pine}, {color}, {condition}, resting {camera-anchored position — ZERO hand assignment}.
+
+Diegetic room acoustics: {ambient sound: cracking hearth coals / distant rain / grandfather clock ticking}.
+
+△ [00:00–00:03] Shot {Scale} | {Lens + Angle} | {Camera Trajectory}:
+{Subject A at frame-left performs primary physical action; Subject B at frame-right reacts simultaneously in dual-action somatic synchronization.}
+
+△ [00:03–00:07] Shot {Scale} | {Lens} | {Continuing Trajectory / Kinetic Tracking}:
+{Escalating dramatic tension, prop interaction or physical stride maintaining unbroken continuous spacetime physics.}
+
+△ [00:07–00:10] Shot {Scale} | {Lens} | {Static Lock}:
+{Climax physical stance or evidence reveal, concluding with an absolute 0.5s zero-velocity freeze hold at 00:10.}
+
+Scene: {Dramatic Scene Title}
+{Character Name}：" {Spoken Dialogue Line ~140–160 English Chars} "（ {1. Vocal Timbre} , {2. Somatic Action} , {3. Lighting on Anatomy} , {4. Psychological Subtext} ）
+
+Continuous fluid motion, realistic physics, zero morphing. All characters remain anchored in their spatial positions throughout the shot.
+Do not generate subtitles, dialogue text, titles, timestamps, or any written text anywhere in the video.
+
+[CODE BLOCK 2 — SCRIPT & AUDIT MANIFEST]
+[Final State — Global State Snapshot Handover to Next Cue]:
+  - Characters State at 00:10: [Coordinates, posture, gaze, frozen emotion]
+  - Props State: [Coordinates, damage/integrity]
+  - Setting & Atmosphere: [Lighting, Kelvin, atmospheric medium]
 💬 Dialogue VN: "[Vietnamese line with correct honorifics for voice actor]"
 ❤️ Subtext: [...]  💥 Physical Mechanics: [...]
-[HANDOFF STATE BEAT [N]: Character / Prop / Setting]
+🎙️ Dialogue & Camera Audit: Total chars: [X] chars (Passed ~140–160 chars optimal density limit) | 100% Optical-kinetic alignment.
 
 ✋ Beat [N] generated → type "next" to receive Beat [N+1].
 ━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━
@@ -914,15 +940,19 @@ After completion, **MANDATORY** update `d:\Project\Sven\history-registry.json` a
 
 ```
 d:\Project\Sven\
-├── AGENT.md                   ← Trigger + routing + resource paths
-├── workflow.md                ← This file — read FIRST every session
-├── history-registry.json      ← Anti-repetition registry
+├── AGENT.md                               ← Trigger + routing + resource paths
+├── workflow.md                            ← This file — read FIRST every session
+├── history-registry.json                  ← Anti-repetition registry
 └── Sven-Agent\
     └── references\
-        ├── story-rules.md             ← Script: Beat, Hook, Line C, Genre/Background/Trope
-        ├── sven-rules.md              ← Omni Flash Prompt: Code Block 1, Mode A/B, PRE-FLIGHT
-        ├── music-video-narrative.md   ← Music Video screenplay & prompt architecture ($100M+ VFX)
-        └── clip-continuity-theory.md  ← Spatial continuity & camera physics
+        ├── story-rules.md                 ← Script: Beat, Hook, Line C, Genre/Background/Trope
+        ├── sven-rules.md                  ← Omni Flash Prompt: Code Block 1, Mode A/B, PRE-FLIGHT
+        ├── cinematic-camera-catalog.md    ← 8 Shot Scales, 6 Power Angles, 360° Orbit, Match Cut
+        ├── cinematic-emotion-physicality.md ← 6 Emotional Archetypes, Tactile Physics, 4-in-1 Dialogue
+        ├── cinematic-script-architecture.md ← Master Timeline Templates, 4 Casting Models, 140–160 Chars
+        ├── action-dialogue-synergy.md     ← 4 Delivery Methods, 7 General Cases, 3-Shot Kinetic Pipeline
+        ├── music-video-narrative.md       ← Music Video screenplay & prompt architecture ($100M+ VFX)
+        └── clip-continuity-theory.md      ← Spatial continuity & camera physics
 ```
 
 **Each file's duty:**
@@ -932,14 +962,22 @@ d:\Project\Sven\
 | `workflow.md` | Pipeline coordinator — read first every session |
 | `story-rules.md` | Script: Beat 8×15s, 12 Hook types, Lines ABC, Genre/BG/Trope |
 | `sven-rules.md` | Omni Flash Prompt: Code Block 1 template, PRE-FLIGHT, Mode A/B |
+| `cinematic-camera-catalog.md` | Complete optics encyclopedia: 8 shot scales, 6 power angles, 360° orbit, match cut |
+| `cinematic-emotion-physicality.md` | 6 Emotional archetypes, domain-specific tactile physics, continuous co-presence |
+| `cinematic-script-architecture.md` | Master screenplay & prompt templates, 4 casting models, 140–160 chars density |
+| `action-dialogue-synergy.md` | 4 Delivery methods, 7 general cases, action-dialogue synergy, 3-shot kinetic pipeline |
 | `music-video-narrative.md` | Music Video Architecture: $100M+ VFX scale, lyric subtext translation, 6-Beat MV sync |
 | `history-registry.json` | Anti-repetition: names/props/styles used |
 
 **Mandatory reading order at session start:**
 ```
-[1] workflow.md                ← Pipeline + Style/Genre/BG/Trope library
-[2] story-rules.md             ← Script rules
-[3] sven-rules.md              ← Prompt rules
-[4] music-video-narrative.md   ← Music Video rules (when MV mode triggered)
-[5] history-registry.json      ← Anti-repetition check
+[1] workflow.md                        ← Pipeline + Style/Genre/BG/Trope library
+[2] history-registry.json             ← Anti-repetition check
+[3] story-rules.md                    ← Script rules
+[4] sven-rules.md                     ← Prompt rules
+[5] cinematic-camera-catalog.md       ← Camera optics & power angles
+[6] cinematic-emotion-physicality.md  ← Micro-biomechanics & tactile physics
+[7] cinematic-script-architecture.md  ← Screenplay & Prompt templates
+[8] action-dialogue-synergy.md        ← 4 Delivery methods & action-dialogue synergy
+[9] music-video-narrative.md          ← Music Video rules (when MV mode triggered)
 ```
