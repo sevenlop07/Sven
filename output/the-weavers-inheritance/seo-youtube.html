@@ -1,0 +1,783 @@
+<!DOCTYPE html>
+<html lang="vi">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>The Weaver's Inheritance — YouTube Master SEO Blueprint & Multi-Episode Marketing Architecture</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Cinzel:wght@600;700;800;900&family=Playfair+Display:ital,wght@0,600;0,700;0,800;0,900;1,600;1,700&family=Inter:wght@400;500;600;700;800&family=JetBrains+Mono:wght@400;500;600&display=swap" rel="stylesheet">
+  <style>
+    :root {
+      --bg: #0A0E17;
+      --card-bg: #111827;
+      --card-alt: #162032;
+      --border: #1E293B;
+      --gold: #F59E0B;
+      --cyan: #38BDF8;
+      --purple: #8B5CF6;
+      --emerald: #10B981;
+      --rose: #F43F5E;
+      --text: #F3F4F6;
+      --muted: #9CA3AF;
+      --accent: #EAB308;
+    }
+    * { box-sizing: border-box; margin: 0; padding: 0; }
+    body {
+      background: var(--bg);
+      color: var(--text);
+      font-family: 'Inter', -apple-system, BlinkMacSystemFont, sans-serif;
+      padding: 30px 20px 80px 20px;
+      line-height: 1.65;
+    }
+    .container { max-width: 1160px; margin: 0 auto; }
+
+    header {
+      background: linear-gradient(135deg, rgba(17, 24, 39, 0.95), rgba(22, 32, 50, 0.9));
+      border: 1px solid var(--border);
+      border-radius: 16px;
+      padding: 28px;
+      margin-bottom: 24px;
+      box-shadow: 0 10px 30px rgba(0,0,0,0.5);
+      position: relative;
+      overflow: hidden;
+    }
+    header::before {
+      content: '';
+      position: absolute; top: 0; left: 0; right: 0; height: 3px;
+      background: linear-gradient(90deg, var(--rose), var(--gold), var(--cyan), var(--emerald));
+    }
+    .badge {
+      display: inline-flex; align-items: center; gap: 6px;
+      padding: 4px 12px; border-radius: 9999px;
+      font-size: 11.5px; font-weight: 800; text-transform: uppercase; letter-spacing: 0.5px;
+      margin-bottom: 12px;
+    }
+    .badge-gold { background: rgba(245, 158, 11, 0.15); color: var(--gold); border: 1px solid rgba(245, 158, 11, 0.4); }
+    .badge-cyan { background: rgba(56, 189, 248, 0.15); color: var(--cyan); border: 1px solid rgba(56, 189, 248, 0.4); }
+    .badge-purple { background: rgba(139, 92, 246, 0.15); color: var(--purple); border: 1px solid rgba(139, 92, 246, 0.4); }
+    .badge-emerald { background: rgba(16, 185, 129, 0.15); color: var(--emerald); border: 1px solid rgba(16, 185, 129, 0.4); }
+
+    h1 {
+      font-family: 'Playfair Display', 'Cinzel', serif;
+      font-size: 27px;
+      font-weight: 800;
+      color: #FFFFFF;
+      margin-bottom: 8px;
+      letter-spacing: 0.5px;
+    }
+    .subtitle { font-size: 14px; color: var(--muted); margin-bottom: 16px; }
+
+    /* Sticky Navigation */
+    .nav-strip {
+      display: flex; gap: 8px; flex-wrap: wrap; margin-bottom: 26px;
+      position: sticky; top: 12px; z-index: 100;
+      background: rgba(10, 14, 23, 0.95); backdrop-filter: blur(10px);
+      padding: 10px 14px; border-radius: 12px; border: 1px solid var(--border);
+      box-shadow: 0 4px 20px rgba(0,0,0,0.4);
+    }
+    .nav-btn {
+      background: #1F2937; color: #D1D5DB; text-decoration: none; padding: 6px 13px;
+      border-radius: 6px; font-size: 12px; font-weight: 700; transition: all 0.2s; border: 1px solid transparent;
+    }
+    .nav-btn:hover { background: var(--card-bg); color: #FFF; border-color: var(--cyan); transform: translateY(-1px); }
+    .nav-btn.active { background: var(--gold); color: #000; font-weight: 800; }
+
+    /* Section & Cards */
+    .zone-card {
+      background: var(--card-bg);
+      border: 1px solid var(--border);
+      border-radius: 16px;
+      padding: 24px;
+      margin-bottom: 28px;
+      box-shadow: 0 4px 20px rgba(0,0,0,0.3);
+    }
+    .zone-title {
+      font-size: 18px; font-weight: 800; color: #FFFFFF; border-left: 4px solid var(--gold);
+      padding-left: 12px; margin-bottom: 18px; display: flex; justify-content: space-between; align-items: center;
+      flex-wrap: wrap; gap: 10px;
+    }
+    .zone-title-sub { font-size: 13px; color: var(--muted); font-weight: 500; }
+
+    /* Title Items */
+    .title-item {
+      background: rgba(11, 15, 23, 0.65); border: 1px solid var(--border); border-radius: 10px;
+      padding: 16px; margin-bottom: 14px; transition: border-color 0.2s;
+    }
+    .title-item:hover { border-color: rgba(245, 158, 11, 0.4); }
+    .title-top { display: flex; justify-content: space-between; align-items: center; margin-bottom: 6px; flex-wrap: wrap; gap: 8px; }
+    .title-formula { font-size: 11.5px; font-weight: 800; color: var(--cyan); text-transform: uppercase; letter-spacing: 0.5px; }
+    .title-text { font-size: 15.5px; font-weight: 700; color: #FFFFFF; line-height: 1.5; }
+
+    /* Buttons */
+    .copy-btn {
+      background: #1F2937; color: #D1D5DB; border: 1px solid var(--border); border-radius: 6px;
+      padding: 6px 12px; font-size: 11.5px; font-weight: 700; cursor: pointer;
+      display: inline-flex; align-items: center; gap: 5px; transition: all 0.2s;
+    }
+    .copy-btn:hover { background: var(--purple); border-color: var(--purple); color: #FFF; }
+    .copy-btn.copied { background: var(--emerald) !important; border-color: var(--emerald) !important; color: #FFF !important; }
+
+    pre.code-block {
+      background: #090D15; border: 1px solid var(--border); border-radius: 10px;
+      padding: 16px; color: #E5E7EB; font-family: 'JetBrains Mono', Consolas, monospace;
+      font-size: 12.5px; line-height: 1.65; white-space: pre-wrap; word-break: break-word; margin: 12px 0;
+    }
+
+    /* Thumbnails */
+    .thumb-card {
+      background: rgba(11, 15, 23, 0.65); border: 1px solid var(--border); border-radius: 10px;
+      padding: 18px; margin-bottom: 18px;
+    }
+    .thumb-top {
+      display: flex; justify-content: space-between; align-items: center; margin-bottom: 10px;
+      flex-wrap: wrap; gap: 8px;
+    }
+    .thumb-title { font-size: 14px; font-weight: 700; color: var(--gold); }
+    .thumb-prompt {
+      font-size: 12px; color: #D1D5DB; line-height: 1.6; font-family: 'JetBrains Mono', monospace;
+      background: #090D15; padding: 14px; border-radius: 8px; border: 1px solid #1E293B;
+    }
+
+    /* Ep Card Container */
+    .ep-seo-block {
+      background: rgba(17, 24, 39, 0.7);
+      border: 1px solid var(--border);
+      border-radius: 14px;
+      padding: 22px;
+      margin-bottom: 24px;
+      position: relative;
+    }
+    .ep-seo-header {
+      display: flex; justify-content: space-between; align-items: center; margin-bottom: 16px;
+      padding-bottom: 12px; border-bottom: 1px solid rgba(255,255,255,0.06); flex-wrap: wrap; gap: 10px;
+    }
+    .ep-title { font-size: 16.5px; font-weight: 800; color: #FFFFFF; }
+
+    .tag-bubble {
+      display: inline-block; background: rgba(56, 189, 248, 0.1); color: var(--cyan);
+      border: 1px solid rgba(56, 189, 248, 0.25); padding: 2px 8px; border-radius: 4px;
+      font-size: 11px; margin: 2px; font-family: 'JetBrains Mono', monospace;
+    }
+
+    /* Strategy Grid */
+    .grid-3 {
+      display: grid; grid-template-columns: repeat(auto-fit, minmax(300px, 1fr)); gap: 16px; margin-top: 14px;
+    }
+    .grid-box {
+      background: rgba(10,14,23,0.7); border: 1px solid var(--border); border-radius: 10px; padding: 16px;
+    }
+
+    /* Toast */
+    #toast {
+      visibility: hidden; min-width: 250px; background-color: var(--emerald); color: #fff;
+      text-align: center; border-radius: 8px; padding: 12px 20px; position: fixed;
+      z-index: 1000; right: 30px; bottom: 30px; font-weight: 700; font-size: 14px;
+      box-shadow: 0 6px 24px rgba(0,0,0,0.6); opacity: 0; transition: opacity 0.3s, visibility 0.3s;
+    }
+    #toast.show { visibility: visible; opacity: 1; }
+  </style>
+  <script>
+    function showToast(msg) {
+      const toast = document.getElementById('toast');
+      toast.innerText = msg;
+      toast.classList.add('show');
+      setTimeout(() => { toast.classList.remove('show'); }, 2200);
+    }
+
+    function copySnippet(id, btn, label) {
+      const el = document.getElementById(id);
+      if (!el) return;
+      const text = (el.innerText || el.textContent).trim();
+      navigator.clipboard.writeText(text).then(() => {
+        const orig = btn.innerHTML;
+        btn.innerHTML = '✓ Copied!';
+        btn.classList.add('copied');
+        showToast('✓ ' + label + ' copied!');
+        setTimeout(() => {
+          btn.innerHTML = orig;
+          btn.classList.remove('copied');
+        }, 2000);
+      });
+    }
+  </script>
+</head>
+<body>
+  <div class="container">
+    <header>
+      <div style="display:flex; justify-content:space-between; align-items:center; flex-wrap:wrap; gap:10px;">
+        <span class="badge badge-gold">🚀 YOUTUBE MASTER SEO & MULTI-EPISODE MARKETING ARCHITECTURE</span>
+        <span style="font-size:12px; color:var(--emerald); font-weight:800;">AGENCY-GRADE RETENTION & VIRAL BINGE FUNNEL</span>
+      </div>
+      <h1>Hệ Thống Phân Phối & SEO Video YouTube: Phim Tổng & Từng Tập</h1>
+      <p class="subtitle">Bản thiết kế toàn diện hai tầng (Two-Tier Distribution Blueprint) cho dự án <em>"The Weaver's Inheritance: The Stolen Loom of Shiloh"</em> — Tối ưu hóa lượt nhấp chuột (CTR), giữ chân đề xuất (AVD) và kích hoạt phễu xem nối tiếp (Binge-Watching Retention Chain).</p>
+    </header>
+
+    <nav class="nav-strip">
+      <a class="nav-btn" href="setting.html" style="color:var(--gold); border-color:var(--gold);">📖 Setting.html</a>
+      <a class="nav-btn" href="tap-1.html" style="color:var(--cyan); border-color:var(--cyan);">🎬 Tap-1.html</a>
+      <a class="nav-btn" href="#tier-full-movie" style="color:#FFF; background:rgba(245, 158, 11, 0.2); border-color:var(--gold);">🌟 PHIM TỔNG (Full Movie)</a>
+      <a class="nav-btn" href="#ep-1">🎬 Tập 1 (2:00)</a>
+      <a class="nav-btn" href="#ep-2">🎬 Tập 2 (2:00)</a>
+      <a class="nav-btn" href="#ep-3">🎬 Tập 3 (2:20)</a>
+      <a class="nav-btn" href="#ep-4">🎬 Tập 4 (2:20)</a>
+      <a class="nav-btn" href="#ep-5">🎬 Tập 5 (2:00)</a>
+      <a class="nav-btn" href="#funnel-strategy">📈 Phễu Đề Xuất Thuật Toán</a>
+    </nav>
+
+    <!-- ==================================================================== -->
+    <!-- TẦNG 1: SEO & MARKETING BỘ PHIM TỔNG (FULL MOVIE COMPILATION 10:40) -->
+    <!-- ==================================================================== -->
+    <section class="zone-card" id="tier-full-movie" style="border: 2px solid rgba(245, 158, 11, 0.5); background: linear-gradient(180deg, #111827 0%, rgba(17,24,39,0.9) 100%);">
+      <div class="zone-title" style="border-left: 5px solid var(--gold);">
+        <div>
+          <span style="font-size:20px; color:var(--gold);">🌟 TẦNG 1: SEO & MARKETING BỘ PHIM TỔNG (FULL MOVIE OMNIBUS)</span>
+          <div class="zone-title-sub">Thời lượng: 10 phút 40 giây (Trọn bộ 5 tập / 64 Cảnh) | Mục tiêu: Video trên 8 phút ăn đề xuất YouTube Browse Features, tối ưu hoá quảng cáo Mid-Roll & Binge Watchers</div>
+        </div>
+        <span class="badge badge-gold">COMPILATION / FULL FILM</span>
+      </div>
+
+      <!-- 1.1 Titles Full Movie -->
+      <div style="margin-bottom: 22px;">
+        <h3 style="font-size:15px; color:#FFFFFF; margin-bottom:12px; display:flex; align-items:center; gap:8px;">
+          <span>🎯 Bộ Tiêu Đề High-CTR Phim Tổng (5 Công Thức Hollywood A/B Testing)</span>
+        </h3>
+
+        <!-- Title A -->
+        <div class="title-item" style="border: 1px solid rgba(245, 158, 11, 0.4); background: rgba(245, 158, 11, 0.05);">
+          <div class="title-top">
+            <span class="title-formula">Công Thức 1: Moral Dilemma Paradox & Sacrifice (KHUYÊN DÙNG TEST 1)</span>
+            <button class="copy-btn" onclick="copySnippet('title-full-1', this, 'Tiêu đề Tổng 1')">📋 Copy Tiêu Đề</button>
+          </div>
+          <div class="title-text" id="title-full-1">The Corrupt Elder Stole Her Loom... Until The Chief Magistrate Found His Own Seal (Full Movie)</div>
+        </div>
+
+        <!-- Title B -->
+        <div class="title-item">
+          <div class="title-top">
+            <span class="title-formula">Công Thức 2: Dramatic Reversal & Retribution (KHUYÊN DÙNG TEST 2)</span>
+            <button class="copy-btn" onclick="copySnippet('title-full-2', this, 'Tiêu đề Tổng 2')">📋 Copy Tiêu Đề</button>
+          </div>
+          <div class="title-text" id="title-full-2">He Tried to Ruin an Orphan Weaver, But Her Cedar Loom Belonged to the Judge | Full 3D Animated Film</div>
+        </div>
+
+        <!-- Title C -->
+        <div class="title-item">
+          <div class="title-top">
+            <span class="title-formula">Công Thức 3: Click-Magnet Curiosity Gap</span>
+            <button class="copy-btn" onclick="copySnippet('title-full-3', this, 'Tiêu đề Tổng 3')">📋 Copy Tiêu Đề</button>
+          </div>
+          <div class="title-text" id="title-full-3">He Forged Her Debt in Red Clay—Then The Judge Checked The Bottom Timber (Full Animated Drama)</div>
+        </div>
+
+        <!-- Title D -->
+        <div class="title-item">
+          <div class="title-top">
+            <span class="title-formula">Công Thức 4: Search-Intent & Faith Inspiring</span>
+            <button class="copy-btn" onclick="copySnippet('title-full-4', this, 'Tiêu đề Tổng 4')">📋 Copy Tiêu Đề</button>
+          </div>
+          <div class="title-text" id="title-full-4">The Stolen Loom of Shiloh: An Inspiring Story of Unbroken Faith & Redemption | Complete Animation</div>
+        </div>
+
+        <!-- Title E (VN) -->
+        <div class="title-item">
+          <div class="title-top">
+            <span class="title-formula">Công Thức 5: Vietnamese Viral Localization (Thị Trường Việt Nam)</span>
+            <button class="copy-btn" onclick="copySnippet('title-full-vn', this, 'Tiêu đề Tiếng Việt')">📋 Copy Tiêu Đề</button>
+          </div>
+          <div class="title-text" id="title-full-vn">Quan Giám Kho Cướp Khung Cửi Của Nàng Thợ Dệt Mồ Côi... Cho Đến Khi Quan Tòa Lật Tẩy Vết Khắc Cổ (Trọn Bộ 5 Tập)</div>
+        </div>
+      </div>
+
+      <!-- 1.2 Thumbnails Full Movie -->
+      <div style="margin-bottom: 22px;">
+        <h3 style="font-size:15px; color:#FFFFFF; margin-bottom:12px;">🖼️ 4 Concept Prompt Thumbnail 16:9 Phim Tổng (Visual Tension & High-CTR 0.5s)</h3>
+        
+        <div class="thumb-card">
+          <div class="thumb-top">
+            <span class="thumb-title">Thumbnail A: Tương Phản Đối Lập Cực Độ (Split-Screen Moral Confrontation) — CTR Khuyên Dùng Số 1</span>
+            <button class="copy-btn" onclick="copySnippet('thumb-full-a', this, 'Prompt Thumbnail A')">📋 Copy Prompt</button>
+          </div>
+          <p style="font-size:12px; color:var(--muted); margin-bottom:8px;">Bố cục chia đôi: Bên trái cận cảnh Eleazar cười nham hiểm giơ bản nợ đất sét sáp đỏ dưới ánh sáng lạnh; bên phải Noa rưng rưng nước mắt ôm chặt khung cửi gỗ tuyết tùng tỏa ánh hoàng kim 2700K.</p>
+          <div class="thumb-prompt" id="thumb-full-a">3D Animation YouTube Thumbnail masterwork, 16:9 aspect ratio, Pixar and DreamWorks animation style. Ultra-high visual contrast split composition: On the left, an intense close-up of a corrupt Hebrew temple overseer with an arrogant cunning smirk holding up an ancient cracked red-wax clay debt tablet under harsh dramatic cool cyan rim lighting. On the right, a brave twenty-six-year-old female Hebrew weaver with glistening tears on her honey-olive cheeks, hands fiercely clutching her ancient upright cedar loom bathed in radiant warm golden 2700K divine glow. Extreme micro facial expressions, edge illumination, hyper-clean saturated cinematic textures, Octane Render, ray-tracing, zero text, zero blur, maximum click-through appeal.</div>
+        </div>
+
+        <div class="thumb-card">
+          <div class="thumb-top">
+            <span class="thumb-title">Thumbnail B: Đỉnh Điểm Đối Chứng Pháp Y (The Shocked Magistrate Forensic Match)</span>
+            <button class="copy-btn" onclick="copySnippet('thumb-full-b', this, 'Prompt Thumbnail B')">📋 Copy Prompt</button>
+          </div>
+          <p style="font-size:12px; color:var(--muted); margin-bottom:8px;">Chánh án Kenan râu bạc đứng sững sờ ấn chiếc nhẫn đồng sứt góc vào vết sáp nợ đỏ; Eleazar lùi lại hoảng hốt; Noa thở phào trong nắng trưa 5500K.</p>
+          <div class="thumb-prompt" id="thumb-full-b">3D Animation YouTube Thumbnail, 16:9 landscape, cinematic Pixar style. Dramatic low-angle medium shot at an ancient stone city gate under brilliant 5500K noon sunlight. A dignified silver-bearded elderly judge in flowing grey robes holds up a heavy bronze signet ring, pressing its chipped broken-wing edge directly against the cracked red beeswax seal on a terracotta tablet—revealing an unmistakable perfect match. On the left, a corrupt robed official stumbles backward in absolute panic with beads of cold sweat flying off his face. In the background, a brave young weaver watches with relieved tears. Dramatic chiaroscuro lighting, floating golden dust motes, vivid saturated colors, expressive theatrical acting, zero text.</div>
+        </div>
+      </div>
+
+      <!-- 1.3 Full Movie Description & 64-Scene Chapters -->
+      <div style="margin-bottom: 22px;">
+        <div style="display:flex; justify-content:space-between; align-items:center; margin-bottom:8px;">
+          <h3 style="font-size:15px; color:#FFFFFF;">📝 Mô Tả 4 Tầng Semantic SEO & Full Timecode Chapters 64 Cảnh (10:40)</h3>
+          <button class="copy-btn" onclick="copySnippet('desc-full-movie', this, 'Mô Tả Phim Tổng')">📋 Copy Toàn Bộ Mô Tả</button>
+        </div>
+        <pre class="code-block" id="desc-full-movie">When corrupt temple overseer Eleazar forged a debt to seize an orphan's sacred cedar loom, he never expected the Chief Magistrate to inspect the bottom timber at high noon. What was hidden in the wood dismantled twenty years of greed in one unforgettable moment...
+
+Watch the complete full animated movie "The Weaver's Inheritance: The Stolen Loom of Shiloh", a powerful story of courage, justice, and restorative forgiveness in ancient Israel. Follow Noa Gilead as she defies an unjust legal trap to save her dying mother and protect her father's sacred legacy.
+
+⏳ TIMESTAMPS & CHAPTERS (TRỌN BỘ 5 TẬP — 64 CẢNH / 10 PHÚT 40 GIÂY):
+━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━
+[TẬP 1: LỜI HỨA BÊN KHUNG CỬI (00:00 - 02:00)]
+00:00 - The Empty Grain Jar & The Mother's Fever
+00:10 - The Sacred Vow Beside Mother's Bed
+00:20 - The Ancient Cedar Loom Heritage
+00:30 - Whispering Elders in Shiloh Alleyway
+00:40 - The Gate Guard's Challenge & Permission
+00:50 - Facing the Corrupt Overseer in Shadows
+01:00 - Ideological Clash: Compassion vs. Silver
+01:10 - The Transactional Trap of Six Linen Veils
+01:20 - Carrying the Grain Sack into Midnight
+01:30 - Hot Porridge & A Mother's Tearful Blessing
+01:40 - The Flying Olive Shuttle & Midnight Masterpiece
+01:50 - The Forged Clay Seal & Midnight Plot
+
+[TẬP 2: BẢN KẾ GIẢ & CUỘC ĐỘT KÍCH ĐÊM (02:00 - 04:00)]
+02:00 - Dawn Over Shiloh: Six Veils Delivered
+02:10 - The Scribe's Terracotta Ledger Trap
+02:20 - Burning the Receipt in the Temple Crucible
+02:30 - Cold Night in the Weaver's Cottage
+02:40 - Torches in the Alley: Midnight Footsteps
+02:50 - The Sanctuary Guards' Violent Intrusion
+03:00 - Eleazar's Ruthless Foreclosure Decree
+03:10 - Noa Shields Her Sick Mother from the Cold
+03:20 - Uprooting the Sacred Cedar Loom
+03:30 - Dragging the Relic Through Desert Stones
+03:40 - Malchus's Subtle Guilt & Lingering Hesitation
+03:50 - Weeping by the Hearth: A Silent Vow of Justice
+
+[TẬP 3: CỔNG PHÁN XÉT & DƯ LUẬN BẦY ĐÀN (04:00 - 06:20)]
+04:00 - Morning Sun on the Great Gate of Shiloh
+04:10 - The Ancient Loom Exhibited as Collateral
+04:20 - Crowds Gather: The Buzz of the Bazaar
+04:30 - The Shofar Call: Court is Convened
+04:40 - Noa Arrives with Bleeding Hands
+04:50 - Eleazar Presents the Forged Debt Tablet
+05:00 - The Mob's Harsh Condemnation & Mockery
+05:10 - Noa's Desperate Cry for True Testimony
+05:20 - Mother Milcah Collapses on the Limestone
+05:30 - Chief Magistrate Kenan ben-Hur Arrives
+05:40 - The Silent Gaze of Forensic Scrutiny
+05:50 - Eleazar Demands Immediate Seizure
+06:00 - Noa Clings Fiercely to the Cedar Timber
+06:10 - Kenan's Staff Strikes: High Noon Adjournment
+
+[TẬP 4: DẤU ẤN LẬP NGƯỢC & LƯƠNG TRI THỨC TỈNH (06:20 - 08:40)]
+06:20 - Scorching Noon Sun: The Heat of Truth
+06:30 - Kenan Drinks Deeply & Steps Down
+06:40 - Noa's Silent Prayer Beside the Cedar
+06:50 - Kenan's Weathered Hand Touches the Wood
+07:00 - The 5500K Ray Pierces the Bottom Crossbeam
+07:10 - Uncovering the Hidden House of ben-Hur Seal
+07:20 - Twenty Summers Remembered: A Debt of Life
+07:30 - The Indictment: Kenan Confronts Eleazar
+07:40 - Scribe Nathan's Conscience Awakens
+07:50 - Captain Malchus Sheathes His Sword
+08:00 - Forensic Proof: The Chipped Bronze Ring Matches
+08:10 - The Fall of the Wicked: Eleazar's Collapse
+08:20 - The Mob Falls Silent in Collective Shame
+08:30 - The Almond Staff Raised: The Sentence of Exile
+
+[TẬP 5: KHÚC CA THA THỨ & HÒA BÌNH KHÔI PHỤC (08:40 - 10:40)]
+08:40 - Noa's Hand Stays the Staff of Judgment
+08:50 - Restorative Justice: The Decree of Restitution
+09:00 - Tears of Remorse: Surrendering the Vault Keys
+09:10 - The Transformation of the Shiloh Multitude
+09:20 - Breaking Bread Beneath the Ancient Archway
+09:30 - Smiles of Relief: Nathan & Malchus Restored
+09:40 - Procession of Honor: Carrying the Loom Home
+09:50 - Walking in Peace Across the Olive Hillside
+10:00 - The Cedar Loom Returned to Its Sacred Hearth
+10:10 - Warm Hearth Fire & The Bowl of Healing Soup
+10:20 - The Rhythmic Shuttle Awakens in Joy
+10:30 - Crane Shot Over Shiloh: Peace Under Full Moon
+
+✨ CREDITS & MASTER SPECIFICATIONS:
+• Visual Direction: Pixar & DreamWorks 3D Biblical Realism (Octane Render, Cinema 4D, 24fps)
+• Runtime: 10:40 Minutes (64 Continuous 10s Cinematic Shots)
+• Soundscape: Ancient Middle Eastern Oud, Ney, Duduk & Orchestral String Symphony
+• Core Philosophy: "A thread breaks when stretched in pride, but holds forever when woven in mercy."
+
+💬 PINNED COMMENT FOR ENGAGEMENT:
+"When Eleazar fell to his knees, did Noa do the right thing by pardoning him instead of allowing him to be exiled? What would you have done at the judgment gate? Let us know in the comments below! 👇"
+
+#TheWeaversInheritance #BiblicalAnimation #PixarStyle #MoralStories #KarmaStories #ChristianShortFilm #AncientIsrael #3DAnimatedMovie #EmotionalCinema</pre>
+      </div>
+
+      <!-- 1.4 Full Movie Tags -->
+      <div>
+        <div style="display:flex; justify-content:space-between; align-items:center; margin-bottom:8px;">
+          <h3 style="font-size:14px; color:var(--cyan);">🏷️ Chuỗi Tags Dán Thẳng YouTube Studio (Phim Tổng)</h3>
+          <button class="copy-btn" onclick="copySnippet('tags-full-movie', this, 'Tags Phim Tổng')">📋 Copy Tags</button>
+        </div>
+        <div id="tags-full-movie" style="font-family:'JetBrains Mono', monospace; font-size:12px; color:#D1D5DB; background:#090D15; padding:14px; border-radius:8px; border:1px solid var(--border); line-height:1.6;">the weavers inheritance, the weavers inheritance full movie, biblical animated movie, 3d animation pixar style, christian animated short film, full animated movie 2026, moral stories in english, karma retribution stories, ancient shiloh bible story, noa gilead, inspirational animated stories, restorative justice drama, biblical realism octane render, stories of faith and integrity, high retention animation</div>
+      </div>
+    </section>
+
+    <!-- ==================================================================== -->
+    <!-- TẦNG 2: SEO & MARKETING CHI TIẾT CHO TỪNG TẬP (EPISODIC BREAKDOWN)  -->
+    <!-- ==================================================================== -->
+    <section class="zone-card" id="tier-episodic">
+      <div class="zone-title" style="border-left: 5px solid var(--cyan);">
+        <div>
+          <span style="font-size:20px; color:var(--cyan);">🎬 TẦNG 2: SEO & MARKETING CHI TIẾT TỪNG TẬP (EPISODIC FUNNEL)</span>
+          <div class="zone-title-sub">Thiết kế cho chiến lược phát hành tuần tự (Episodic Serialization) | Kích thích tính năng xem tiếp (Next Video Suggestion & End-Screen Retention Loop)</div>
+        </div>
+        <span class="badge badge-cyan">EPISODE 1 TO 5</span>
+      </div>
+
+      <!-- ==================== EPISODE 1 ==================== -->
+      <div class="ep-seo-block" id="ep-1">
+        <div class="ep-seo-header">
+          <div>
+            <span class="badge badge-gold" style="margin-bottom:4px;">TẬP 1 / 5</span>
+            <div class="ep-title">Tập 1: Lời Hứa Bên Khung Cửi (The Sacred Vow at Midnight)</div>
+            <div style="font-size:12px; color:var(--muted);">12 Cảnh × 10s = 120s (02:00) | Trọng tâm: Xung đột sinh tồn, hũ bột cạn đáy, lời thề với mẹ già</div>
+          </div>
+          <button class="copy-btn" onclick="copySnippet('ep1-package', this, 'Toàn Bộ SEO Tập 1')">📋 Copy Gói SEO Tập 1</button>
+        </div>
+
+        <div id="ep1-package">
+          <!-- Title Ep 1 -->
+          <div style="margin-bottom:12px;">
+            <strong style="color:var(--gold); font-size:12px; text-transform:uppercase;">Tiêu Đề High-CTR Tập 1 (Chọn 1 Trong 2):</strong>
+            <div style="background:#090D15; padding:10px; border-radius:6px; margin-top:4px; font-weight:700; color:#FFF; font-size:14px;">
+              Option 1: She Risked Everything to Save Her Dying Mother | The Weaver's Inheritance [Ep 1/5]<br>
+              Option 2: The Midnight Weaver & The Empty Jar: A Mother's Last Hope (3D Animation)
+            </div>
+          </div>
+
+          <!-- Thumbnail Ep 1 -->
+          <div style="margin-bottom:12px;">
+            <strong style="color:var(--cyan); font-size:12px; text-transform:uppercase;">Prompt Tạo Thumbnail Tập 1 (16:9 Pixar Style):</strong>
+            <div class="thumb-prompt" style="margin-top:4px;">3D Animation YouTube Thumbnail, 16:9 ratio, Pixar/DreamWorks style. Intimate emotional close-up: A brave twenty-six-year-old Hebrew weaver girl with tears on her cheeks gently placing her warm hands over an empty cracked clay grain jar beside her frail feverish mother resting on a woven straw mat. In the background, an ancient tall cedar loom glows under warm 2200K flickering oil lamp light. Extreme emotional facial acting, soft volumetric golden glow, cinematic textures, zero text.</div>
+          </div>
+
+          <!-- Description Ep 1 -->
+          <div style="margin-bottom:12px;">
+            <strong style="color:var(--emerald); font-size:12px; text-transform:uppercase;">Mô Tả & Chapters 10s Tập 1:</strong>
+            <pre class="code-block" style="margin-top:4px;">With the last handful of grain gone and her mother burning with fever, young weaver Noa faces an impossible choice. To secure flour, she makes a sacred midnight vow to weave six sacred veils on her father's ancient cedar loom before dawn. But inside the temple shadows, a trap is already being laid...
+
+Watch Episode 1 of "The Weaver's Inheritance: The Stolen Loom of Shiloh".
+
+⏳ TIMESTAMPS (TẬP 1):
+00:00 - The Empty Grain Jar & The Mother's Fever
+00:10 - The Sacred Vow Beside Mother's Bed
+00:20 - The Ancient Cedar Loom Heritage
+00:30 - Whispering Elders in Shiloh Alleyway
+00:40 - The Gate Guard's Challenge & Permission
+00:50 - Facing the Corrupt Overseer in Shadows
+01:00 - Ideological Clash: Compassion vs. Silver
+01:10 - The Transactional Trap of Six Linen Veils
+01:20 - Carrying the Grain Sack into Midnight
+01:30 - Hot Porridge & A Mother's Tearful Blessing
+01:40 - The Flying Olive Shuttle & Midnight Masterpiece
+01:50 - The Forged Clay Seal & Midnight Plot (Cliffhanger)
+
+👉 WATCH NEXT: Episode 2 releases tomorrow! Subscribe and turn on bell notifications!
+Full Series Playlist: [INSERT_PLAYLIST_LINK]
+
+#TheWeaversInheritance #Episode1 #AnimatedShortFilm #PixarStyle #MoralStories</pre>
+          </div>
+
+          <!-- Pinned Comment Ep 1 -->
+          <div>
+            <strong style="color:var(--purple); font-size:12px; text-transform:uppercase;">Ghim Bình Luận Kích Hoạt Tập 2:</strong>
+            <div style="background:rgba(139, 92, 246, 0.1); border:1px solid rgba(139, 92, 246, 0.3); padding:10px; border-radius:6px; margin-top:4px; font-size:13px; color:#E5E7EB;">
+              "Noa worked through the night with bleeding hands... but did Eleazar ever intend to honor his word? Watch Episode 2 right here to see what happens when the temple guards arrive: [LINK_TAP_2] 👇"
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <!-- ==================== EPISODE 2 ==================== -->
+      <div class="ep-seo-block" id="ep-2">
+        <div class="ep-seo-header">
+          <div>
+            <span class="badge badge-rose" style="margin-bottom:4px;">TẬP 2 / 5</span>
+            <div class="ep-title">Tập 2: Bản Kế Giả & Cuộc Đột Kích Đêm (The Midnight Foreclosure)</div>
+            <div style="font-size:12px; color:var(--muted);">12 Cảnh × 10s = 120s (02:00) | Trọng tâm: Sự phản bội, đốt biên nhận, đuốc đỏ nửa đêm cướp cửi</div>
+          </div>
+          <button class="copy-btn" onclick="copySnippet('ep2-package', this, 'Toàn Bộ SEO Tập 2')">📋 Copy Gói SEO Tập 2</button>
+        </div>
+
+        <div id="ep2-package">
+          <div style="margin-bottom:12px;">
+            <strong style="color:var(--gold); font-size:12px; text-transform:uppercase;">Tiêu Đề High-CTR Tập 2:</strong>
+            <div style="background:#090D15; padding:10px; border-radius:6px; margin-top:4px; font-weight:700; color:#FFF; font-size:14px;">
+              Option 1: They Burned Her Receipt and Came for Her Loom at Midnight [Ep 2/5]<br>
+              Option 2: The Corrupt Overseer's Midnight Raid: Noa's Darkest Hour (3D Animated Drama)
+            </div>
+          </div>
+
+          <div style="margin-bottom:12px;">
+            <strong style="color:var(--cyan); font-size:12px; text-transform:uppercase;">Prompt Tạo Thumbnail Tập 2 (16:9):</strong>
+            <div class="thumb-prompt" style="margin-top:4px;">3D Animation YouTube Thumbnail, 16:9 aspect ratio, Pixar/DreamWorks dramatic lighting. High tension action moment: Torches casting fiery 2000K red-orange glow across a narrow ancient stone alley at midnight. Armored guards violently hauling an ancient tall wooden loom out of a rustic doorway into the gravel while a tearful young woman desperately clings to the wooden frame, being restrained by spear shafts. Extreme dynamic camera angle, dramatic shadows, sparks flying from torches, hyper-detailed rendering, zero text.</div>
+          </div>
+
+          <div style="margin-bottom:12px;">
+            <strong style="color:var(--emerald); font-size:12px; text-transform:uppercase;">Mô Tả & Chapters 10s Tập 2:</strong>
+            <pre class="code-block" style="margin-top:4px;">Noa delivered all six sacred linen veils at dawn, but corrupt overseer Eleazar burned the temple receipt in secret! In the dead of night, armed guards burst into her home with burning torches, violently dragging away her father's sacred cedar loom under a forged debt claim...
+
+Watch Episode 2 of "The Weaver's Inheritance: The Stolen Loom of Shiloh".
+
+⏳ TIMESTAMPS (TẬP 2):
+00:00 - Dawn Over Shiloh: Six Veils Delivered
+00:10 - The Scribe's Terracotta Ledger Trap
+00:20 - Burning the Receipt in the Temple Crucible
+00:30 - Cold Night in the Weaver's Cottage
+00:40 - Torches in the Alley: Midnight Footsteps
+00:50 - The Sanctuary Guards' Violent Intrusion
+01:00 - Eleazar's Ruthless Foreclosure Decree
+01:10 - Noa Shields Her Sick Mother from the Cold
+01:20 - Uprooting the Sacred Cedar Loom
+01:30 - Dragging the Relic Through Desert Stones
+01:40 - Malchus's Subtle Guilt & Lingering Hesitation
+01:50 - Weeping by the Hearth: A Silent Vow of Justice
+
+👉 WATCH NEXT: Episode 3 at the Judgment Gate: [LINK_TAP_3]
+Full Series Playlist: [INSERT_PLAYLIST_LINK]
+
+#TheWeaversInheritance #Episode2 #Betrayal #AnimatedShortFilm #PixarStyle</pre>
+          </div>
+
+          <div>
+            <strong style="color:var(--purple); font-size:12px; text-transform:uppercase;">Ghim Bình Luận Kích Hoạt Tập 3:</strong>
+            <div style="background:rgba(139, 92, 246, 0.1); border:1px solid rgba(139, 92, 246, 0.3); padding:10px; border-radius:6px; margin-top:4px; font-size:13px; color:#E5E7EB;">
+              "Captain Malchus paused when he saw Noa weeping over the cedar... Is there still honor left in him? Click here to watch Episode 3 at the Judgment Gate: [LINK_TAP_3] 👇"
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <!-- ==================== EPISODE 3 ==================== -->
+      <div class="ep-seo-block" id="ep-3">
+        <div class="ep-seo-header">
+          <div>
+            <span class="badge badge-purple" style="margin-bottom:4px;">TẬP 3 / 5</span>
+            <div class="ep-title">Tập 3: Cổng Phán Xét & Dư Luận Bầy Đàn (The Gate of Judgment)</div>
+            <div style="font-size:12px; color:var(--muted);">14 Cảnh × 10s = 140s (02:20) | Trọng tâm: Dư luận bầy đàn sỉ vả, Noa bám cửi kêu oan, Kenan xuất hiện</div>
+          </div>
+          <button class="copy-btn" onclick="copySnippet('ep3-package', this, 'Toàn Bộ SEO Tập 3')">📋 Copy Gói SEO Tập 3</button>
+        </div>
+
+        <div id="ep3-package">
+          <div style="margin-bottom:12px;">
+            <strong style="color:var(--gold); font-size:12px; text-transform:uppercase;">Tiêu Đề High-CTR Tập 3:</strong>
+            <div style="background:#090D15; padding:10px; border-radius:6px; margin-top:4px; font-weight:700; color:#FFF; font-size:14px;">
+              Option 1: The Whole Village Condemned Her... Until The Elder Struck His Staff [Ep 3/5]<br>
+              Option 2: Standing Alone Against The Mob: The Trial of the Orphan Weaver (Animation)
+            </div>
+          </div>
+
+          <div style="margin-bottom:12px;">
+            <strong style="color:var(--cyan); font-size:12px; text-transform:uppercase;">Prompt Tạo Thumbnail Tập 3 (16:9):</strong>
+            <div class="thumb-prompt" style="margin-top:4px;">3D Animation YouTube Thumbnail, 16:9 landscape, Pixar style Octane Render. Wide dramatic angle at an ancient limestone city gate filled with morning sunbeams. A lone young Hebrew woman in dust-covered blue-grey tunic kneels defiantly embracing the base of a massive cedar loom, surrounded by an angry pointing crowd. On an elevated stone podium, an imposing silver-haired elder in formal robes slams a carved wooden staff onto the stone floor, demanding absolute silence. Hyper-expressive faces, volumetric dust, intense moral confrontation, zero text.</div>
+          </div>
+
+          <div style="margin-bottom:12px;">
+            <strong style="color:var(--emerald); font-size:12px; text-transform:uppercase;">Mô Tả & Chapters 10s Tập 3:</strong>
+            <pre class="code-block" style="margin-top:4px;">At the Great Gate of Shiloh, Eleazar displays the sacred cedar loom to the public, accusing Noa of unpaid debts. Blinded by prejudice, the mob turns against the young weaver. But when all seems lost, Chief Magistrate Kenan ben-Hur arrives and makes an unprecedented decree...
+
+Watch Episode 3 of "The Weaver's Inheritance: The Stolen Loom of Shiloh".
+
+⏳ TIMESTAMPS (TẬP 3):
+00:00 - Morning Sun on the Great Gate of Shiloh
+00:10 - The Ancient Loom Exhibited as Collateral
+00:20 - Crowds Gather: The Buzz of the Bazaar
+00:30 - The Shofar Call: Court is Convened
+00:40 - Noa Arrives with Bleeding Hands
+00:50 - Eleazar Presents the Forged Debt Tablet
+01:00 - The Mob's Harsh Condemnation & Mockery
+01:10 - Noa's Desperate Cry for True Testimony
+01:20 - Mother Milcah Collapses on the Limestone
+01:30 - Chief Magistrate Kenan ben-Hur Arrives
+01:40 - The Silent Gaze of Forensic Scrutiny
+01:50 - Eleazar Demands Immediate Seizure
+02:00 - Noa Clings Fiercely to the Cedar Timber
+02:10 - Kenan's Staff Strikes: High Noon Adjournment (Cliffhanger)
+
+👉 WATCH NEXT: Episode 4 The Secret Seal Revealed: [LINK_TAP_4]
+Full Series Playlist: [INSERT_PLAYLIST_LINK]
+
+#TheWeaversInheritance #Episode3 #CourtDrama #BiblicalJustice #PixarStyle</pre>
+          </div>
+
+          <div>
+            <strong style="color:var(--purple); font-size:12px; text-transform:uppercase;">Ghim Bình Luận Kích Hoạt Tập 4:</strong>
+            <div style="background:rgba(139, 92, 246, 0.1); border:1px solid rgba(139, 92, 246, 0.3); padding:10px; border-radius:6px; margin-top:4px; font-size:13px; color:#E5E7EB;">
+              "Why did the Chief Magistrate adjourn court until high noon instead of condemning Noa immediately? The secret carved beneath the wood will blow your mind in Episode 4: [LINK_TAP_4] 👇"
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <!-- ==================== EPISODE 4 ==================== -->
+      <div class="ep-seo-block" id="ep-4">
+        <div class="ep-seo-header">
+          <div>
+            <span class="badge badge-emerald" style="margin-bottom:4px;">TẬP 4 / 5</span>
+            <div class="ep-title">Tập 4: Dấu Ấn Lật Ngược & Lương Tri Thức Tỉnh (The Secret in the Cedar)</div>
+            <div style="font-size:12px; color:var(--muted);">14 Cảnh × 10s = 140s (02:20) | Trọng tâm: Nắng 5500K soi vết khắc, Nathan tố giác, nhẫn mẻ khớp sáp</div>
+          </div>
+          <button class="copy-btn" onclick="copySnippet('ep4-package', this, 'Toàn Bộ SEO Tập 4')">📋 Copy Gói SEO Tập 4</button>
+        </div>
+
+        <div id="ep4-package">
+          <div style="margin-bottom:12px;">
+            <strong style="color:var(--gold); font-size:12px; text-transform:uppercase;">Tiêu Đề High-CTR Tập 4:</strong>
+            <div style="background:#090D15; padding:10px; border-radius:6px; margin-top:4px; font-weight:700; color:#FFF; font-size:14px;">
+              Option 1: The Judge Checked The Bottom Beam... And Exposed The Liar [Ep 4/5]<br>
+              Option 2: Caught in 5500K Sun: The Chipped Bronze Ring Forensic Revelation (Drama)
+            </div>
+          </div>
+
+          <div style="margin-bottom:12px;">
+            <strong style="color:var(--cyan); font-size:12px; text-transform:uppercase;">Prompt Tạo Thumbnail Tập 4 (16:9):</strong>
+            <div class="thumb-prompt" style="margin-top:4px;">3D Animation YouTube Thumbnail, 16:9 landscape, Cinema 4D Octane Render. The grand climax of truth: Under blazing 5500K midday sun, an ancient carved lion-and-palm crest glowing on weathered Lebanese cedar timber. A venerable judge points his staff directly at a trembling, pale-faced overseer whose knees have buckled onto the scorching stones. A nervous scribe holds up a burnt parchment receipt. Extreme expressions of shock, guilt, and divine revelation, saturated vibrant cinematic colors, zero text.</div>
+          </div>
+
+          <div style="margin-bottom:12px;">
+            <strong style="color:var(--emerald); font-size:12px; text-transform:uppercase;">Mô Tả & Chapters 10s Tập 4:</strong>
+            <pre class="code-block" style="margin-top:4px;">Under the scorching noon sun, Chief Magistrate Kenan inspects the bottom timber of Manoah's loom. What he uncovers shocks the entire city: his own household signet from twenty years ago! Trapped by his own ring and confronted by a repentant scribe, Eleazar collapses as justice is served...
+
+Watch Episode 4 of "The Weaver's Inheritance: The Stolen Loom of Shiloh".
+
+⏳ TIMESTAMPS (TẬP 4):
+00:00 - Scorching Noon Sun: The Heat of Truth
+00:10 - Kenan Drinks Deeply & Steps Down
+00:20 - Noa's Silent Prayer Beside the Cedar
+00:30 - Kenan's Weathered Hand Touches the Wood
+00:40 - The 5500K Ray Pierces the Bottom Crossbeam
+00:50 - Uncovering the Hidden House of ben-Hur Seal
+01:00 - Twenty Summers Remembered: A Debt of Life
+01:10 - The Indictment: Kenan Confronts Eleazar
+01:20 - Scribe Nathan's Conscience Awakens
+01:30 - Captain Malchus Sheathes His Sword
+01:40 - Forensic Proof: The Chipped Bronze Ring Matches
+01:50 - The Fall of the Wicked: Eleazar's Collapse
+02:00 - The Mob Falls Silent in Collective Shame
+02:10 - The Almond Staff Raised: The Sentence of Exile (Cliffhanger)
+
+👉 WATCH THE FINALE: Episode 5 The Song of Forgiveness: [LINK_TAP_5]
+Full Series Playlist: [INSERT_PLAYLIST_LINK]
+
+#TheWeaversInheritance #Episode4 #TwistEnding #KarmaReversal #PixarStyle</pre>
+          </div>
+
+          <div>
+            <strong style="color:var(--purple); font-size:12px; text-transform:uppercase;">Ghim Bình Luận Kích Hoạt Tập 5:</strong>
+            <div style="background:rgba(139, 92, 246, 0.1); border:1px solid rgba(139, 92, 246, 0.3); padding:10px; border-radius:6px; margin-top:4px; font-size:13px; color:#E5E7EB;">
+              "Kenan's staff was raised to exile Eleazar forever into the barren desert... but who stepped forward to stop the execution? Watch the grand emotional finale in Episode 5: [LINK_TAP_5] 👇"
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <!-- ==================== EPISODE 5 ==================== -->
+      <div class="ep-seo-block" id="ep-5">
+        <div class="ep-seo-header">
+          <div>
+            <span class="badge badge-gold" style="margin-bottom:4px;">TẬP 5 / 5 (GRAND FINALE)</span>
+            <div class="ep-title">Tập 5: Khúc Ca Tha Thứ & Hòa Bình Khôi Phục (The Bread of Mercy)</div>
+            <div style="font-size:12px; color:var(--muted);">12 Cảnh × 10s = 120s (02:00) | Trọng tâm: Tha thứ phục thiện, bẻ bánh hòa giải, rước cửi về nhà trong trăng rằm</div>
+          </div>
+          <button class="copy-btn" onclick="copySnippet('ep5-package', this, 'Toàn Bộ SEO Tập 5')">📋 Copy Gói SEO Tập 5</button>
+        </div>
+
+        <div id="ep5-package">
+          <div style="margin-bottom:12px;">
+            <strong style="color:var(--gold); font-size:12px; text-transform:uppercase;">Tiêu Đề High-CTR Tập 5:</strong>
+            <div style="background:#090D15; padding:10px; border-radius:6px; margin-top:4px; font-weight:700; color:#FFF; font-size:14px;">
+              Option 1: She Forgave The Man Who Tried to Ruin Her | Emotional Grand Finale [Ep 5/5]<br>
+              Option 2: The Song of Forgiveness: How Mercy Restored An Ancient City (Final Episode)
+            </div>
+          </div>
+
+          <div style="margin-bottom:12px;">
+            <strong style="color:var(--cyan); font-size:12px; text-transform:uppercase;">Prompt Tạo Thumbnail Tập 5 (16:9):</strong>
+            <div class="thumb-prompt" style="margin-top:4px;">3D Animation YouTube Thumbnail, 16:9 aspect ratio, Pixar/DreamWorks style. Heartwarming emotional climax: Bathed in warm golden 2700K sunset light beneath the ancient stone arch of Shiloh, a courageous young weaver gently breaks a warm crusty loaf of wheat bread in half, offering one half to her weeping, humbled former accuser kneeling on the ground. Townspeople smiling warmly with baskets of bread and olive oil in the background. Uplifting emotional facial acting, rim golden lighting, saturated warm tones, zero text.</div>
+          </div>
+
+          <div style="margin-bottom:12px;">
+            <strong style="color:var(--emerald); font-size:12px; text-transform:uppercase;">Mô Tả & Chapters 10s Tập 5:</strong>
+            <pre class="code-block" style="margin-top:4px;">Instead of revenge, Noa chooses restorative grace. Stopping the sentence of exile, she offers Eleazar the chance to work in repentance and breaks bread with the man who sought her ruin. The ancient cedar loom is carried home in triumph, and peace returns to the valley of Shiloh.
+
+Watch the grand emotional finale of "The Weaver's Inheritance: The Stolen Loom of Shiloh".
+
+⏳ TIMESTAMPS (TẬP 5):
+00:00 - Noa's Hand Stays the Staff of Judgment
+00:10 - Restorative Justice: The Decree of Restitution
+00:20 - Tears of Remorse: Surrendering the Vault Keys
+00:30 - The Transformation of the Shiloh Multitude
+00:40 - Breaking Bread Beneath the Ancient Archway
+00:50 - Smiles of Relief: Nathan & Malchus Restored
+01:00 - Procession of Honor: Carrying the Loom Home
+01:10 - Walking in Peace Across the Olive Hillside
+01:20 - The Cedar Loom Returned to Its Sacred Hearth
+01:30 - Warm Hearth Fire & The Bowl of Healing Soup
+01:40 - The Rhythmic Shuttle Awakens in Joy
+01:50 - Crane Shot Over Shiloh: Peace Under Full Moon (End)
+
+🌟 WATCH THE COMPLETE UNINTERRUPTED MOVIE (10:40): [LINK_FULL_MOVIE]
+Leave a comment with your favorite character and subscribe for our next biblical animation series!
+
+#TheWeaversInheritance #GrandFinale #Forgiveness #InspirationalStories #PixarStyle</pre>
+          </div>
+
+          <div>
+            <strong style="color:var(--purple); font-size:12px; text-transform:uppercase;">Ghim Bình Luận Kêu Gọi Xem Phim Tổng:</strong>
+            <div style="background:rgba(139, 92, 246, 0.1); border:1px solid rgba(139, 92, 246, 0.3); padding:10px; border-radius:6px; margin-top:4px; font-size:13px; color:#E5E7EB;">
+              "Thank you for following Noa's 48-hour journey! You can now watch the entire story uninterrupted in our Full Movie compilation here: [LINK_FULL_MOVIE] 🍿 Which moment made you cry the most?"
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- ==================================================================== -->
+    <!-- PHẦN D: CHIẾN LƯỢC PHỄU THUẬT TOÁN & GIỮ CHÂN (BINGE RETENTION)     -->
+    <!-- ==================================================================== -->
+    <section class="zone-card" id="funnel-strategy">
+      <div class="zone-title" style="border-left: 5px solid var(--emerald);">
+        <span>📈 CHIẾN LƯỢC PHỄU ĐỀ XUẤT THUẬT TOÁN (ALGORITHM BINGE FUNNEL)</span>
+      </div>
+
+      <div class="grid-3">
+        <div class="grid-box">
+          <strong style="color:var(--gold); font-size:13.5px; display:block; margin-bottom:6px;">1. Lịch Phát Hành Tuần Tự (Release Cadence)</strong>
+          <p style="font-size:12.5px; color:var(--muted); line-height:1.6;">
+            • <strong>Ngày 1-5</strong>: Công chiếu mỗi ngày 1 tập ngắn (2:00 - 2:20) vào khung giờ vàng 19:30.<br>
+            • <strong>Ngày 6</strong>: Phát hành <strong>Bản Phim Tổng (Full Movie 10:40)</strong> gộp toàn bộ 5 tập, giúp thuật toán gom cụm đề xuất sang khán giả thích xem phim dài.
+          </p>
+        </div>
+
+        <div class="grid-box">
+          <strong style="color:var(--cyan); font-size:13.5px; display:block; margin-bottom:6px;">2. Vòng Lặp Binge-Loop (End-Screen & Card)</strong>
+          <p style="font-size:12.5px; color:var(--muted); line-height:1.6;">
+            • 15 giây cuối mỗi tập cài đặt thẻ màn hình kết thúc trỏ thẳng sang tập kế tiếp.<br>
+            • Bình luận ghim (Pinned Comment) luôn dẫn link tập tiếp theo kèm câu hỏi gây tò mò (Open Curiosity Loop).
+          </p>
+        </div>
+
+        <div class="grid-box">
+          <strong style="color:var(--emerald); font-size:13.5px; display:block; margin-bottom:6px;">3. Tối Ưu Hóa Tỷ Lệ Nhấp (A/B Test 24h)</strong>
+          <p style="font-size:12.5px; color:var(--muted); line-height:1.6;">
+            • Nếu CTR 3 giờ đầu &lt; 6.5%: Lập tức đổi sang Tiêu đề Option 2 và Thumbnail B.<br>
+            • Target KPIs: CTR &gt; 8.2%, Thời gian xem trung bình (AVD) &gt; 70% (đối với video 2 phút) và &gt; 50% (đối với phim tổng 10:40).
+          </p>
+        </div>
+      </div>
+    </section>
+
+  </div>
+
+  <div id="toast">Thông báo</div>
+</body>
+</html>

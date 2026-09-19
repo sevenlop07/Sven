@@ -7,20 +7,83 @@
 
 ## 📋 FILE READING ORDER — MANDATORY AT SESSION START
 
+Before processing any user request or generating any production artifact, the Agent MUST consult the relevant specification file. Never guess or write from raw memory.
+
 ```
-[1] workflow.md                        ← This file — read first
-[2] history-registry.json             ← d:\Project\Sven\history-registry.json
-[3] story-rules.md                    ← references/story-rules.md
-[4] sven-rules.md                     ← references/sven-rules.md
-[5] cinematic-camera-catalog.md       ← references/cinematic-camera-catalog.md
-[6] cinematic-emotion-physicality.md  ← references/cinematic-emotion-physicality.md
-[7] cinematic-script-architecture.md  ← references/cinematic-script-architecture.md
-[8] action-dialogue-synergy.md        ← references/action-dialogue-synergy.md
+[1] workflow.md                              ← d:\Project\Sven\workflow.md (Master production operating pipeline)
+[2] AGENT.md                                 ← d:\Project\Sven\AGENT.md (Level 1: Executive Producer & Showrunner)
+[3] SCREENWRITER.md                          ← d:\Project\Sven\.agents\SCREENWRITER.md (Level 2: Master Screenwriter)
+[4] DIRECTOR.md                              ← d:\Project\Sven\.agents\DIRECTOR.md (Level 2: Film Director & Prompt Architect)
+[5] youtube-growth-architect (Skill)         ← d:\Project\Sven\.agents\skills\youtube-growth-architect\SKILL.md (Master SEO & packaging)
+[6] history-registry.json                    ← d:\Project\Sven\history-registry.json (14-Axis anti-repetition memory bank)
+─── THE 4 MASTER PILLARS ────────────────────────────────────────────────────────────────────────────────
+[7] 1-narrative-screenplay-architecture.md   ← d:\Project\Sven\engine\references\1-narrative-screenplay-architecture.md (Pillar 1 SSOT)
+[8] 2-casting-worldbuilding-specification.md ← d:\Project\Sven\engine\references\2-casting-worldbuilding-specification.md (Pillar 2 SSOT)
+[9] 3-cinematography-3d-staging.md           ← d:\Project\Sven\engine\references\3-cinematography-3d-staging.md (Pillar 3 SSOT)
+[10] 4-ai-video-prompt-compiler.md           ← d:\Project\Sven\engine\references\4-ai-video-prompt-compiler.md (Pillar 4 SSOT)
 ```
 
 ---
 
-## 🔍 STARTUP STEPS
+## 🏛️ MASTER FILE RESPONSIBILITY & DELEGATION MATRIX (BẢN ĐỒ 4 TRỤ CỘT SSOT TOÀN BỘ HỆ THỐNG)
+
+> **THE GOLDEN RULE OF PRE-FLIGHT VERIFICATION**:  
+> Every file in the Sven Production Engine owns a specific, non-overlapping domain of authority.  
+> **The Agent is STRICTLY FORBIDDEN from guessing, improvising, or drafting outputs without first reading the governing Master Pillar via `view_file`.**
+
+| File Category | File Path | Core Specialty & Responsibility (Nhiệm vụ cốt lõi) | Governing Stage | Hard Prohibitions & Enforced Gates |
+|---|---|---|---|---|
+| **Pipeline Master** | [`workflow.md`](file:///d:/Project/Sven/workflow.md) | Master orchestrator of the 5-stage production pipeline, human checkpoints, and role handshakes. | All Stages (0–5) | ❌ Skipping checkpoints<br>❌ Jumping stages without user approval |
+| **Registry Vault** | [`history-registry.json`](file:///d:/Project/Sven/history-registry.json) | 14-Axis anti-repetition memory bank (names, themes, props, styles, twist archetypes). | Startup & Post-Session | ❌ Re-using names/styles from recent sessions |
+| **Pillar 1: Screenplay SSOT** | [`1-narrative-screenplay-architecture.md`](file:///d:/Project/Sven/engine/references/1-narrative-screenplay-architecture.md) | Single Source of Truth for Hollywood 6-beat architecture (18 sub-beats), 12 hook types, 20 twists (TW-01 to TW-20), 3-wave climax (Trap➔Loss➔Ego Death), 8 dialogue models, WPS cadence (1.1–2.4), 14–18 word ceiling, 4-in-1 parentheticals, and the Positive & Zero-Fatality Mandate. | Stages 0, 1C, 1D | ❌ Fatalities / gore<br>❌ Dialogue >18 words/clip<br>❌ Skipping 3-wave climax structure |
+| **Pillar 2: Pre-Production SSOT** | [`2-casting-worldbuilding-specification.md`](file:///d:/Project/Sven/engine/references/2-casting-worldbuilding-specification.md) | Single Source of Truth for Cast Topology (A1/A2/B/C), 20 archetypes, Living Continuum, 16:9 Model Sheets (Dual-Value Optical Contrast Inversion Law: Dark suit = White backdrop / Light attire = Dark backdrop; Zero Scenery), `setting.html` 10 mandatory sections, 24h diurnal timeline (AM/PM), and 39 visual styles. | Stages 1A, 1B, 1E | ❌ Background scenery in model sheets<br>❌ Incomplete setting bibles<br>❌ Generic character or prop names |
+| **Pillar 3: Cinematography SSOT** | [`3-cinematography-3d-staging.md`](file:///d:/Project/Sven/engine/references/3-cinematography-3d-staging.md) | Single Source of Truth for 4D visual architecture, 14 shot scales, 6 power angles, 7 master combos, 3D Cartesian coordinates (X-Y-Z), 5-Step Elastic Mechanical Deformation, 3 descent setups, 180° Action Axis, and Multi-Scene Continuity Ledgers. | Stages 2, 3, 4 | ❌ Camera hardware jargon (`24fps`, `18mm`, `f/1.4`)<br>❌ 2D vertical webs catching vertical drops<br>❌ Axis jumping cuts |
+| **Pillar 4: Prompt Compiler SSOT** | [`4-ai-video-prompt-compiler.md`](file:///d:/Project/Sven/engine/references/4-ai-video-prompt-compiler.md) | Single Source of Truth for 10s kinetic units (3-phase breath cycle), Living Organic Settle Gate (zero freeze holds), Mode B Zero-Costume & Zero-Age laws at `[00:00]`, Two-Tier delivery (Code Block 1 Video Prompt + Code Block 2 Handover State at 00:10), `tap-X.html` specs, and 5-Point Pre-Flight Linter. | Stages 2, 4 | ❌ Freeze holds (`freeze frame`, `hold stillness`)<br>❌ Clothing/age descriptions in video prompts<br>❌ Pronouns in prompt prose |
+| **Growth Architect** | [`SKILL.md`](file:///d:/Project/Sven/.agents/skills/youtube-growth-architect/SKILL.md) | Master YouTube Growth Engine, keyword-driven niche discovery, entity clusters, high-CTR packaging & multi-modal SEO (`seo-youtube.html`). | Stage 0 & Stage 5 | ❌ Truncated mobile titles (>65 chars)<br>❌ Text in drama thumbnails |
+
+---
+## 🏛️ HIERARCHICAL TWO-TIER PRODUCTION COMMAND & RACI DIVISION
+
+To eliminate cognitive fragmentation and prevent operational overlap, the Sven Production Engine is organized into a **Two-Tier Command Structure**:
+
+```
+┌────────────────────────────────────────────────────────────────────────────────────────────────────────┐
+│                                   SVEN PRODUCTION ARCHITECTURE                                         │
+├────────────────────────────────────────────────────────────────────────────────────────────────────────┤
+│                                                                                                        │
+│  👑 LEVEL 1: EXECUTIVE PRODUCER & SHOWRUNNER                                                           │
+│  Identity: Sven-Agent (`AGENT.md` at Project Root)                                                     │
+│  Domain: Macro-Pipeline Management (`workflow.md`), Project Stages (0 to 5), User Interface &         │
+│          Checkpoints, Concept Greenlighting, Setting Approval (`setting.html`), and Final Delivery.   │
+│                                                                                                        │
+│                         │                                              │                               │
+│                         ▼ (Creative Authority)                         ▼ (Technical Authority)         │
+│                                                                                                        │
+│  🖋️ LEVEL 2: MASTER SCREENWRITER             🎬 LEVEL 2: FILM DIRECTOR                                 │
+│  Identity: Screenwriter (`.agents/SCREENWRITER.md`)   Identity: Director (`.agents/DIRECTOR.md`)       │
+│  Domain: Pillar 1 (Narrative) & Pillar 2 (World)      Domain: Pillar 3 (Camera) & Pillar 4 (Prompts)   │
+│  Stages: Stage 0 (Ideas), Stage 1B (Casting),         Stages: Stage 2 (10s Breakdown), Stage 3 (3D),   │
+│          Stage 1C (Screenplay), Stage 1E (setting.html)        Stage 4 (tap-X.html & 5-Point Linter)   │
+│                                                                                                        │
+│                         │                                                                              │
+│                         ▼ (Commercial Growth Authority)                                                │
+│  📈 LEVEL 2 SPECIALIST: YOUTUBE GROWTH ARCHITECT                                                      │
+│  Identity: Growth Architect (`.agents/skills/youtube-growth-architect/SKILL.md`)                        │
+│  Domain: Stage 0 (Niche Validation) & Stage 5 (High-CTR Packaging & Master SEO `seo-youtube.html`)    │
+│                                                                                                        │
+└────────────────────────────────────────────────────────────────────────────────────────────────────────┘
+```
+
+### Production RACI Matrix across Pipeline Stages
+
+| Agent / Role | Core Specialty & File Reference | Stage Ownership | Primary Inputs | Mandatory Deliverables & Checkpoints |
+|---|---|---|---|---|
+| **Level 1: Sven-Agent**<br>*(Executive Producer)* | Master Pipeline Governor<br>([`AGENT.md`](file:///d:/Project/Sven/AGENT.md) & [`workflow.md`](file:///d:/Project/Sven/workflow.md)) | **Stage 0, Stage 1A/1B, Checkpoints 0–5** | User prompt, project scope, budget/format choice | 1. 5 Distinct Story Ideas (Stage 0)<br>2. Project Master Setting (`setting.html`)<br>3. Checkpoint gatekeeping & user approvals |
+| **Level 2: Screenwriter**<br>*(Master Screenwriter)* | Master Narrative & Worldbuilding Authority<br>([`SCREENWRITER.md`](file:///d:/Project/Sven/.agents/SCREENWRITER.md) & Pillars 1 & 2) | **Stage 0 (Story Brief), Stage 1B (Casting), Stage 1C (Screenplay), Stage 1E (setting.html)** | User prompt, project scope, world genre | 1. 5 Story Concepts & Hook Scoring<br>2. Cast Topology & 16:9 Model Sheets (Dual-Value Contrast Law)<br>3. Hollywood 6-Beat Screenplay with 4-in-1 Dialogue & Twists<br>4. Master Pre-Production Bible (`setting.html`) |
+| **Level 2: Director**<br>*(Film Director & Prompt Architect)* | Master Cinematography & Prompt Authority<br>([`DIRECTOR.md`](file:///d:/Project/Sven/.agents/DIRECTOR.md) & Pillars 3 & 4) | **Stage 2 (10s Breakdown), Stage 3 (3D Blocking), Stage 4 (tap-X.html Execution)** | Screenplay, Setting specs, Roadmap | 1. 14 Scales, 6 Angles, 7 Combos (Anti-Hardware Jargon)<br>2. 3D Spatial Blocking & Elastic Collision<br>3. Two-Tier Delivery (Tier 1 Audit Card + Tier 2 Prompts & Handover)<br>4. 5-Point Pre-Flight Linter Audit & `tap-X.html` |
+| **Elite Specialist: YouTube Growth Architect**<br>*(CMO & Head of Distribution)* | Keyword Niche Discovery & YouTube SEO<br>([`SKILL.md`](file:///d:/Project/Sven/.agents/skills/youtube-growth-architect/SKILL.md)) | **Stage 0 (Niche Validation) & Stage 5 (Marketing)** | Project genre, Seed keywords, Story transcripts | 1. 5-Point Niche Viability Scorecard<br>2. 10-Video Entity Cluster & Knowledge Graph<br>3. Two-Tier SEO Package (`seo-youtube.html`)<br>4. High-CTR Titles & Visual Tension Thumbnails |
+
+---
 
 ## 🔍 STARTUP STEPS
 
@@ -54,58 +117,76 @@ Axis 14 (Narrative Mode)    : [axis_14_narrative_mode] — Dialogue Mode vs Show
 | Has idea | Character/setting/conflict described | → Skip Step 0, go to **Step 1** |
 | Revision | Feedback on script/prompt | → Edit directly |
 | Prompt only | "create prompt for scene N" | → **Stage 4** for that scene |
-| **⭐ Track 1: Dialogue-Driven Drama (DEFAULT)** | **System Default — ALWAYS ON for all films & series** | **Intense Psychological Dialogue (~140–160 chars/clip optimal density), 3-Wave Twists, Emotional Micro-Biomechanics, Simple Tactile Actions. Zero complex fighting/chases. §D in sven-rules.md active. Code Block 1 4-in-1 parenthetical directing syntax + Code Block 2 VN Dialogue Table.** |
-| **🎵 Exception 1: Music Video Narrative (MV Mode)** | Lyrics provided / Song duration / "MV mode" | **Follows `music-video-narrative.md`. $100M+ Hollywood VFX, mythic/cosmic/dark fantasy scale, lyrics-to-visual metaphor, no domestic mundane realism.** |
+| **⭐ Track 1: Dialogue-Driven Drama (DEFAULT)** | **System Default — ALWAYS ON for all films & series** | **Intense Psychological Dialogue (14–18 words/clip optimal density across 10s), 3-Wave Twists, Emotional Micro-Biomechanics, Simple Tactile Actions. Zero complex fighting/chases. §D in 4-ai-video-prompt-compiler.md active. Code Block 1 4-in-1 parenthetical directing syntax (in-line shot binding) + Code Block 2 VN Dialogue Table.** |
+| **🎵 Exception 1: Music Video Narrative (MV Mode)** | Lyrics provided / Song duration / "MV mode" | **Follows `3-cinematography-3d-staging.md`. $100M+ Hollywood VFX, mythic/cosmic/dark fantasy scale, lyrics-to-visual metaphor, no domestic mundane realism.** |
 | **🤫 Exception 2: Silent Mode (Show Don't Tell)** | User explicitly chooses "silent" / "show dont tell" / "visual only" / "không thoại" | **100% PURGE OF SPOKEN DIALOGUE. Zero dialogue brackets in Code Block 1. 400% amplified micro-biomechanics. Pure diegetic Foley & atmospheric acoustics. Mandatory Silent Negative Clause.** |
 
 ---
 
-## 🗺️ PROCESS OVERVIEW
+## 🗺️ MASTER PRODUCTION PIPELINE & RACI FLOW (QUY TRÌNH SẢN XUẤT 6 CHẶNG)
 
 ```
-[INPUT] User request
+[INPUT] User Request / Seed Premise
           ↓
-[K1] Read history-registry.json
-[K2] Identify request type
+[K1] Read history-registry.json (14-Axis Anti-Repetition Scan)
+[K2] Identify Request Type & Track (Default: Dialogue-Driven Drama)
           ↓
-╔══════════════════════════════════════════════╗
-║  STEP 0 — IDEA GENERATION                   ║
-║  5 Ideas (character + setting + story        ║
-║  + positive / hopeful ending)                ║
-║  ✋ CHECKPOINT 0: User selects 1 Idea        ║
-╚══════════════════════════════════════════════╝
+╔═══════════════════════════════════════════════════════════════════════════════════════╗
+║  STEP 0 — NICHE DISCOVERY & 5-IDEA CONCEPT GENERATION                                 ║
+║  • Level 1 Lead: Sven-Agent (Executive Producer)                                      ║
+║  • Supporting Engines: youtube-growth-architect (SEO) + 2-casting-worldbuilding-specification.md ║
+║            + 1-narrative-screenplay-architecture.md (3s Hook & Expected Subversion)               ║
+║  • Output: 5 Distinct High-Concept Ideas (Logline, 3s Hook, 6-Beat Arc, Twist Seed)   ║
+║  ✋ CHECKPOINT 0: User selects 1 Idea                                                 ║
+╚═══════════════════════════════════════════════════════════════════════════════════════╝
           ↓
-╔══════════════════════════════════════════════╗
-║  STEP 1 — PRE-PRODUCTION                    ║
-║  Visual Style + Character/Prop/Env Setup     ║
-║  + Reference image prompts (4 angles)        ║
-║  + Initial Setting Declaration               ║
-║  ✋ CHECKPOINT 1: User confirms              ║
-╚══════════════════════════════════════════════╝
+╔═══════════════════════════════════════════════════════════════════════════════════════╗
+║  STEP 1 — MASTER PRE-PRODUCTION BIBLE (setting.html)                                  ║
+║  • Level 1 Lead: Sven-Agent (Producer compiles & publishes setting.html)              ║
+║  • Level 2 Lead: Screenwriter (Model Sheets & Roadmap) + Director (Spatial Staging)  ║
+║  • SSOT References: 2-casting-worldbuilding-specification.md + 2-casting-worldbuilding-specification.md   ║
+║            + 3-cinematography-3d-staging.md + Minimalist Prop Law (≤5-10% focus)  ║
+║  • Output: output/<project-name>/setting.html (10 Sections, Diurnal Clock, 48 Scenes) ║
+║  ✋ CHECKPOINT 1: User confirms setting.html                                          ║
+╚═══════════════════════════════════════════════════════════════════════════════════════╝
           ↓
-╔══════════════════════════════════════════════╗
-║  STAGE 2 — SERIES BLUEPRINT                 ║
-║  (Multi-Episode Series only)                 ║
-║  4-Act episode distribution + each ep role  ║
-║  ✋ CHECKPOINT 2: User confirms              ║
-╚══════════════════════════════════════════════╝
+╔═══════════════════════════════════════════════════════════════════════════════════════╗
+║  STAGE 2 / 2S — NARRATIVE STRUCTURE & 5 EMOTIONAL STAGES BLUEPRINT                    ║
+║  • Level 2 Execution: Screenwriter (Authors dramatic structure & twist payload)       ║
+║  • SSOT References: 1-narrative-screenplay-architecture.md (5 Emotional Phases: Despair ➔ False  ║
+║            Dawn ➔ Crucible ➔ Truth Detonation & Ego Death ➔ Restorative Grace)        ║
+║  • Output: 4-Act Series Blueprint or 6-Beat Short Film Spine Table                    ║
+║  ✋ CHECKPOINT 2: Producer presents to User for confirmation                          ║
+╚═══════════════════════════════════════════════════════════════════════════════════════╝
           ↓
-╔══════════════════════════════════════════════╗
-║  STAGE 3 — DETAILED SCRIPT                  ║
-║  Per episode: 6 Beats (3%/12%/35%/30%/12%/8%)║
-║  + 18 Sub-Beats + Emotion Score             ║
-║  + Cliffhanger (if series) / Echo Maxim     ║
-║  ✋ CHECKPOINT 3: User confirms each episode ║
-╚══════════════════════════════════════════════╝
+╔═══════════════════════════════════════════════════════════════════════════════════════╗
+║  STAGE 3 — SCENE-BY-SCENE DETAILED SCREENPLAY & DIALOGUE                              ║
+║  • Level 2 Execution: Screenwriter (Authors 6-Beat Script, 4-in-1 Dialogue & Somatics)║
+║  • SSOT References: 1-narrative-screenplay-architecture.md + 1-narrative-screenplay-architecture.md + emotion-physicality ║
+║  • Output: 10s Screenplay Cards (The 8-Model Master Suite) + Vietnamese Subtext Table ║
+║  ✋ CHECKPOINT 3: Producer presents to User for script confirmation                   ║
+╚═══════════════════════════════════════════════════════════════════════════════════════╝
           ↓
-╔══════════════════════════════════════════════╗
-║  STAGE 4 — SVEN PROMPT                      ║
-║  sven-rules.md → Omni Flash Prompts / 6 Beats║
-║  ✋ CHECKPOINT 4: Per Beat                   ║
-╚══════════════════════════════════════════════╝
+╔═══════════════════════════════════════════════════════════════════════════════════════╗
+║  STAGE 4 — AI VIDEO PROMPT ENGINEERING (tap-X.html / Two-Tier Delivery)               ║
+║  • Level 2 Execution: Director (Synthesizes Tier 1 Audit Card + Tier 2 Execution)     ║
+║  • SSOT References: 4-ai-video-prompt-compiler.md + spatial-geometry + camera-catalog    ║
+║            + 4-ai-video-prompt-compiler.md (Mode B Zero-Costume) + 5-Point Pre-Flight Linter          ║
+║  • Sacred Rule: Shot 3 = Biological Respiration & Living Settle (Zero living organic settles)   ║
+║  • Output: output/<project-name>/tap-X.html (12 Scenes, 120s, Two-Tier Delivery)      ║
+║  ✋ CHECKPOINT 4: Producer audits & User confirms prompt suite                        ║
+╚═══════════════════════════════════════════════════════════════════════════════════════╝
           ↓
-[POST] Update history-registry.json
-```
+╔═══════════════════════════════════════════════════════════════════════════════════════╗
+║  STAGE 5 — PACKAGING VELOCITY & TWO-TIER YOUTUBE SEO (seo-youtube.html)               ║
+║  • Level 1 Lead: Sven-Agent (Directs Distribution Strategy)                           ║
+║  • Elite Specialist: youtube-growth-architect (Canonical Root Entity, 50-65 char     ║
+║            Titles, 4-Point Visual Tension Thumbnails, 4-Tier NLP, 7-Cluster Tags)     ║
+║  • Output: output/<project-name>/seo-youtube.html (Omnibus + Episodic Assets)         ║
+║  ✋ CHECKPOINT 5: User confirms distribution package                                  ║
+╚═══════════════════════════════════════════════════════════════════════════════════════╝
+          ↓
+[POST-SESSION] Update history-registry.json (Append 14 Anti-Repetition Axes)
 
 ---
 
@@ -119,37 +200,41 @@ Axis 14 (Narrative Mode)    : [axis_14_narrative_mode] — Dialogue Mode vs Show
 
 ```
 ━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━
-💡 IDEA #[N] — [Concept Title]
+💡 IDEA #[N] — [Concept Title / Tên Ý Tưởng]
 ━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━
-🎭 PREMISE & LOGLINE:
+🎭 1. LOGLINE & HIGH-CONCEPT PREMISE:
    [High-concept dramatic premise & core moral stakes in 2-3 sentences]
 
-🏛️ 4-PILLAR CHARACTER & CAST DYNAMICS:
-   • **Tier A (Protagonist):** [Vietnamese name — Trade/Occupation + Backstory Trauma + Want vs Need]
-   • **Tier B1 (Antagonist/Nemesis):** [Vietnamese name — Opposing Ideology + "Where They Are Right" + Pressure]
-   • **Tier B2 (Companion/Mirror):** [Vietnamese name — Independent Wound + Safe Harbor Mirror]
-   • **Tier B3 ⭐ (Emotional Origin Anchor):** [Vietnamese name — Biological Mother/Father/Sacred Bond + Sacrificial Origin Wound + Sacred Echo Prop]
-   • **Tier C (Witness Cast / Crowd):** [Specific collective community / atmospheric witness group]
+🧲 2. CẢNH MỞ ĐẦU GÂY TÒ MÒ CỰC ĐỘ (3-SECOND CURIOSITY HOOK):
+   • **Visual Paradox (Nghịch lý thị giác 3s đầu):** [Hành động/Hình ảnh gây sốc, trái khoáy trong 3 giây đầu]
+   • **Cognitive Gap (Câu hỏi nhức nhối của khán giả):** ["Ủa tại sao nhân vật lại làm vậy?", "Chuyện quái gì sắp xảy ra?"]
+   • **Visual Anchor Bridge:** [Vật thể/chi tiết cụ thể nối từ cảnh Hook sang cảnh Setup]
 
-🔗 3-LAYER RELATIONSHIP SUBTEXT & WOUND CHAIN:
-   • *Origin Wound:* Tier B3's past sacrifice birthed Tier A's fear of poverty/weakness.
-   • *Friction:* Tier B1 reinforces Tier A's toxic worldly armor (B1 is right that the world is brutal).
-   • *Mirror:* Tier B2 offers safe harbor; presents Tier B3's sacred relic triggering total ego collapse.
+🎲 3. MA TRẬN BẺ GÃY DỰ ĐOÁN (THE EXPECTATION SUBVERSION MATRIX):
+   • **Lối mòn Khán giả tưởng là (Audience Assumption):** [Khán giả tin chắc câu chuyện sẽ đi theo hướng A...]
+   • **Cú Bẻ lái Thực tế (Narrative Reality):** [Nhưng thực chất sự thật lại là B, hoàn toàn trái ngược]
 
-📦 DUAL-PROP SYSTEM:
-   • Wound Prop (Beat 2): [Tangible symbol of entrapment / trauma tied to Tier B3]
-   • Echo Prop (Beat 6): [180° Physical reversal into symbol of liberation & peace]
+⚡ 4. CHUỖI TWIST LIÊN HOÀN QUA 6 BEAT (MULTI-TWIST CHAIN):
+   • **Twist 1 (Beat 1 ➔ 2 - Hook Reveal):** [Mã TW: e.g. TW-10 Hidden Kindness / TW-08 Misunderstanding]
+   • **Twist 2 (Beat 3 - Midpoint Pivot):** [Mã TW: e.g. TW-05 Identity / TW-02 Decoy Prop — Lật ngược mục tiêu]
+   • **Twist 3 (Beat 4 - Climax 3-Wave Truth Bomb):** [Mã TW: e.g. TW-02 Karma + TW-15 Moral Awakening — Bẫy sập, Ego Death]
+   • **Twist 4 (Beat 5-6 - Emotional Payoff / Cliffhanger):** [Mã TW: e.g. TW-09 Reverse Rescue / TW-11 Full Circle]
 
-🗺️ 6-BEAT NARRATIVE ARC & CHARACTER ROTATION BREAKDOWN:
-   • **Beat 1 (Hook - 3%):** Solo / Gilded isolation or Paradox haunted by Tier B3's unread letters / memory.
-   • **Beat 2 (Setup - 12%):** Flashback to Tier B3 / Generational Trauma (Hamartia) + Wound Prop planted.
-   • **Beat 3 (Drama - 35%):** High-stakes ideological clash with Tier B1 (≥60% spoken conflict) + Exits sealed.
-   • **Beat 4 (Climax - 30%):** 3-Wave Climax ➔ All Hope Is Lost / Ego Death at 5600K Cold Monochrome; Tier B2 presents Sacred Echo Prop.
-   • **Beat 5 (Release - 12%):** Thermal Polarity Shock to 2700K Warmth + Reverse rescue from Tier B2 + Tangible act of generosity with Tier C.
-   • **Beat 6 (Echo - 8%):** Transformed world + 180° Echo Prop Payoff + Harmonious legacy with Tier C + Moral Maxim <15 words.
+🏛️ 5. PHÂN TUYẾN NHÂN VẬT CHUẨN MỰC (A1, A2, TUYẾN B, TUYẾN C):
+   • **A1 (Nhân vật chính):** [Tên — Nghề nghiệp/Vị thế + Vết thương Hamartia + Muốn vs Cần]
+   • **A2 (Phản diện chính):** [Tên — Cốt truyện riêng & Tham vọng độc lập + "Điểm đúng của A2"]
+   • **Tuyến B (Vệ tinh — B1, B2, B3...):**
+     - **B1:** [Tên — Quan hệ với A1? Quan hệ với A2? Vai trò kịch tính / Kích nổ Twist?]
+     - **B2:** [Tên — Quan hệ với A1? Quan hệ với A2? Vai trò kịch tính / Kích nổ Twist?]
+     - *(Mở rộng B3, B4... tùy theo số tập phim)*
+   • **Tuyến C (Quần chúng & Dư luận xã hội):** [Cộng đồng bối cảnh + Thoại đời thường + Thoại hùa theo mỉa mai khi A1 bị vu oan]
 
-🎣 HOOK TECHNIQUE: #[N] [Technique Name] — [1-sentence reason matching plot]
-🔥 EMOTION & CATHARSIS: [Target feeling & psychological resonance left with audience]
+📦 6. ĐẠO CỤ LÀ NGÒI NỔ TWIST (PROP AS TWIST DETONATOR):
+   • **Đạo cụ & Archetype:** [Tên đạo cụ — 1 trong 7 Archetypes, ví dụ: Transactional / Weapon / Keepsake]
+   • **Thao tác vật lý kích nổ Twist:** [Mở hộp tráo đổi / Vết máu trên chuôi dao / Quét thẻ nhớ...]
+
+🔗 7. MỒI CÂU GIỮ CHÂN (RETENTION LEVER / BINGE HOOK):
+   • **Open Loop / Ticking Clock:** [Bí mật lơ lửng hoặc thời gian cạn dần khiến khán giả BUỘC PHẢI XEM TIẾP]
 ━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━
 ```
 
@@ -228,6 +313,7 @@ DEFAULT (system-wide): Pixar 3D
 
 ━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━
 VISUAL STYLE LIBRARY
+> 📖 Full detailed encyclopedia with exact technical prompt headers: `2-casting-worldbuilding-specification.md`
 ━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━
 
 ── LIVE ACTION ────────────────────────────
@@ -335,13 +421,35 @@ TROPE         : [Pick from Trope Library above — can stack 2 max]
 
 ### 1B — CHARACTER ARCHITECTURE & 16:9 MASTER MODEL SHEETS
 
+> 🤖 **SPECIFICATION DIRECTIVE (`2-casting-worldbuilding-specification.md`)**:
+> The Agent MUST load and execute `d:\Project\Sven\engine\references\2-casting-worldbuilding-specification.md` to design the interdependent human cast, Triadic Cross-Axis relationships, and 16:9 4-Panel Reference Sheets.
+>
 > **MANDATORY TIER ALLOCATION MATRIX**:
 > - **Tier A (Protagonist)**: MANDATORY 16:9 4-Panel Reference Model Sheet.
 > - **Tier B1 (Antagonist/Foil)**: MANDATORY 16:9 4-Panel Model Sheet ($\ge 2$ scenes) — "Where They Are Right" required.
 > - **Tier B2 (Companion/Mirror)**: MANDATORY 16:9 4-Panel Model Sheet ($\ge 2$ scenes) — Independent wound required.
 > - **Tier B3 ⭐ (Emotional Origin Anchor)**: MANDATORY 16:9 4-Panel Model Sheet ($\ge 2$ scenes) — Biological parent/late spouse + Sacred Echo Prop.
 > - **Tier B4+ (Allies / Factor)**: MANDATORY 16:9 4-Panel Model Sheet ($\ge 2$ scenes).
-> - **Tier C (Witness Cast / Collective Crowd)**: ❌ **STRICTLY EXCLUDED (0 Sheets)** — described collectively in scene prompts.
+>
+> **MASTER 16:9 FOUR-VIEW MODEL SHEET PROMPT STRUCTURE (STEP 1B)**:
+> - **Bố cục chuẩn 16:9**: Cận mặt/bán thân bên trái + 3 dáng toàn thân song song bên phải (Front, Side, Back).
+> - **Luật Tương Phản Đối Ứng Độ Sáng (Optical Contrast Inversion Law)**: Bắt buộc nghịch đảo màu nền với màu trang phục: **Trang phục tối màu (vest đen, áo sẫm)** ➔ BẮT BUỘC dùng **nền trắng sáng studio (solid pure white)**; **Trang phục sáng màu (trắng, kem, be)** ➔ BẮT BUỘC dùng **nền tối trung tính studio (solid dark neutral grey)**. TUYỆT ĐỐI KHÔNG ĐỂ BỐI CẢNH NGOẠI CẢNH/NỘI THẤT để nhân vật nổi bật 100% và triệt tiêu lỗi lem bối cảnh sang video.
+> - **7 Đặc tính bắt buộc**: Height (cm), Head-to-body ratio (heads), Ethnicity & Skin, Build, Hair (strands), Facial Features (3D bones, eye sockets, irises, nose, lips), Clothing & Props (chất vải, đường may, cấm khuyên tai, cấm hình xăm, bare hands).
+> - **Cấu trúc 5 tầng**: 1. Style Header -> 2. Optical Spec -> 3. 3D Facial Bones & Skin -> 4. Hair & Tailored Wardrobe -> 5. Lighting, Solid Studio Backdrop & 4-View Layout.
+> **THE INITIAL OPENING STATE PROTOCOL (ZERO AGE & ZERO CLOTHING IN VIDEO PROMPTS — §3.2)**:
+> - **CRITICAL LAW 1: NEVER WRITE WHAT THEY ARE WEARING IN THE VIDEO PROMPT!** (TUYỆT ĐỐI KHÔNG ĐƯỢC VIẾT MẶC CÁI GÌ VÀO CÂU LỆNH).
+>   The 16:9 Character Reference Model Sheet already defines 100% of the character's clothing, silhouette, cut, and colors. Describing garments in text creates an anchor conflict between text and image, causing AI clothing mutations and facial morphing!
+> - **CRITICAL LAW 2: NEVER WRITE CHARACTER AGE IN THE VIDEO PROMPT!** (TUYỆT ĐỐI KHÔNG GHI ĐỘ TUỔI VÀO CÂU LỆNH SINH VIDEO).
+>   Age, facial bone structure, skin maturity, eye depth, and wrinkles are ALREADY 100% established and locked by the 16:9 Character Reference Model Sheet. Injecting age numbers into the video prompt forces the text encoder to compete with the visual reference image, causing facial distortion, de-aging, or unwanted morphing!
+> - **CRITICAL LAW 3: ZERO BRACKETED REFERENCE TAGS IN PROMPTS!** (KHÔNG GHI THẺ THAM CHIẾU).
+>   User manually attaches reference images in the AI platform UI (Kling, Runway, Sora, etc.). Never write `[Character Reference attached]` into prompt text.
+> - **MANDATORY INITIAL OPENING STATE PROTOCOL AT [00:00]**:
+>   1. **Name**: `[Character Name]` (Reference image attached out-of-band by user in UI; zero bracketed tags).
+>   2. **Initial Spatial Staging & Posture at 00:00 (Vị trí & Tư thế không gian lúc bắt đầu)**: e.g., `standing rigid at frame-left beside the cedar loom`, `kneeling upright at frame-center on dusty stone floor`.
+>   3. **Initial Somatic & Biomechanical State (Trạng thái cơ sinh học, hơi thở, áp lực lúc bắt đầu)**: e.g., `chest rising in shallow guarded breaths, shoulders squared with rigid spine, right hand clenched tightly at side`.
+>   4. **Initial Gaze & Facial Tension State (Điểm nhìn & Trạng thái khuôn mặt lúc bắt đầu)**: e.g., `taut clenched jaw, dark unblinking eyes locked on the doorway with fierce resolve`.
+>   5. **Surface State if any (Trạng thái bề mặt da/mồ hôi — TUYỆT ĐỐI KHÔNG tả quần áo)**: e.g., `cold sweat beading on temples, knuckles caked with limestone dust`.
+>   6. **Singularity Lock**: `— the only [Name] in frame.`
 
 ```
 ━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━
@@ -391,7 +499,7 @@ CHARACTER DESIGN SPECIFICATIONS (7 Standardized Fields):
 
 Style: [Visual Style Name — e.g., mature western animation, detailed semi-realistic character design, dark violent atmosphere, rich painted backgrounds, cinematic staging, dramatic shadows, anime-western hybrid aesthetic, premium adult animated series quality OR Theatrical film reference, live-action style, DaVinci grading, masterful composition & cinematic color].
 
-Name: [Name] — [Character Epithet / Title]. Role: [protagonist / antagonist / companion]. Appearance: Ultra-realistic human photography portrait, 8K ultra HD, photorealistic authentic texture, ultimate intricate details, cinematic portrait photography, professional in-studio shooting effect, shot with 85mm f/1.4 portrait lens, soft shallow depth of field, focus precisely locked on the character's eyes and facial features, high-fashion portrait style.
+Name: [Name] — [Character Epithet / Title]. Role: [protagonist / antagonist / companion]. Appearance: Ultra-realistic human photography portrait, 8K ultra HD, photorealistic authentic texture, ultimate intricate details, cinematic portrait photography, professional in-studio shooting effect, master cinematic portrait photography, soft shallow depth of field, creamy background blur, focus precisely locked on the character's eyes and facial features, high-fashion portrait style.
 
 One [gender], aged [exact integer age — e.g. aged 34 / aged 24 — STRICTLY FORBIDDEN TO USE AN AGE RANGE LIKE 32-38], [core aesthetic presence and demographic description]. [Facial bone structure, soft/defined contours, jawline, cheekbones, nose profile, lip shape]. Overall look is [aesthetic adjectives], presenting the stunning charm of a top-tier [archetype] in high-end cinematography.
 
@@ -420,49 +528,64 @@ Format: Character design sheet, 16:9 landscape, four-panel layout. Left panel (l
 Rules: The character must look completely consistent across all four panels - same face, hairstyle, outfit, and accessories. Static A-pose stance, no action pose, shoes clearly visible and unobstructed. No watermark, no extra text. The close-up portrait must reach high-resolution quality, with visible skin texture, eye details, and accessory details.
 ```
 
-### 1C — PROP PROFILE + REFERENCE IMAGE PROMPTS
+### 1C — PROP PROFILE + REFERENCE IMAGE PROMPTS (THE MINIMALIST TWIST-CATALYST STANDARD)
 
-> **PROP DURABILITY RULES — MANDATORY:**
-> - **STABLE prop**: physical form stays the same throughout film (apron, watch, key) — needs Reference Grid + optional 4 shots
-> - **DESTRUCTIBLE prop**: changes physical state during film (bowl → shards, glass → broken pieces, rope → frayed strands)
->   - Original state → needs Reference Grid (to establish baseline appearance)
->   - Transformed/destroyed state → **description only in Clip prompt** — no new reference image needed
->   - Transformed state description must be precise: material, size of fragments, scatter pattern, surface texture
+> ⚖️ **THE MINIMALIST TWIST-CATALYST PROP LAW (QUY CHUẨN ĐẠO CỤ TỐI GIẢN):**
+> - **Proportion Cap**: Props strictly occupy **≤ 5% to 10%** of narrative attention. The story belongs 90–95% to human characters, moral dilemmas, and emotional transformations across stages.
+> - **Strict Quota**: Maximum **1 to 2 Master Twist-Catalyst Props** across an entire series arc (e.g. `PROP-01`, and at most `PROP-02`).
+> - **Anti-Localization Ban**: STRICTLY FORBIDDEN to create bloated catalogs of 5–6 props or title scenes after objects. Everyday items (bread, cups, stools) are ordinary background texture and NEVER receive prop design sheets or dedicated narrative weight.
+> - **Twist-Only Foregrounding**: The Master Catalyst Prop enters foreground focus **strictly at the Twist Point** as the undeniable physical lever/proof.
+>
+> **PROP DURABILITY & BIFURCATION RULES — MANDATORY (§3.4d):**
+> - **STABLE prop**: Physical form stays identical throughout the film (loom, judicial staff, signet ring, key) — requires 16:9 4-View Reference Grid + Mode B prompt.
+> - **DESTRUCTIBLE prop**: Permanently changes physical form or structure (bowl ➔ shards, parchment ➔ singed scrap, tablet ➔ fractured slab).
+>   - **THE PROP BIFURCATION LAW**: When an object breaks, shatters, or burns, it **CEASES TO BE THE ORIGINAL PROP** and permanently bifurcates into a **NEW DERIVED PROP ENTITY**.
+>   - **NEVER attach an intact prop reference image in UI on broken states!** Uploading an intact bowl reference to a shard prompt causes generative AI models to hallucinate intact bowls or distorted floating artifacts.
+>   - **State 0 (Intact Entity)**: Full baseline profile + 16:9 Reference Sheet + Mode B anchor (`The Glazed Porcelain Bowl`).
+>   - **State 1 (Kinetic Break Moment)**: Dynamic transition shot described via causal participles (§3.4c): `the bowl strikes the limestone floor, fracturing mid-impact as ceramic shards disperse`.
+>   - **State 2 (Transformed / Derived Fragment Entity)**: Must use an **INDEPENDENT NOUN** with exact dimensions, exposed core fracture textures, and Singularity Lock (`A sharp triangular porcelain shard with jagged unglazed white fracture edges — no intact bowl in frame, the only porcelain shard in frame`). Zero bracketed tags in prompt.
+> 
+> **THE 4-POINT PROP OPTIMIZATION PROTOCOL (§3.4)**:
+> 1. **Grip Mechanics & Contact Surface Contract**: Explicit hand, fingers, and contact point (e.g., `held firmly in Noa's right hand with thumb and index finger gripping the cedar crossbar`, `worn securely on Eleazar's left thumb with chipped bronze signet facing outwards`). FORBIDDEN: vague "holding prop" (which causes AI finger-prop morphing & fused limbs).
+> 2. **Causal Physics & Ripple Effect**: Every physical interaction MUST produce an observable environmental reaction (e.g., pressing signet displaces soft wax with faint smoke; pulling comb swings forty limestone weights).
+> 3. **Destructible Prop Bifurcation Tracking**: Track the newly derived fragment noun rather than the intact prop (`two triangular porcelain shards on stone floor — no intact bowl in frame`).
+> 4. **Anti-Teleportation Handoff Bridge**: 3-step kinetic bridge across cuts for prop transfers (place on surface ➔ receiver's fingers close ➔ receiver lifts).
 
 ```
 ━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━
-PROP: [Code name EN]
-ROLE: [Symbolic prop / Supporting prop]
-DURABILITY: [STABLE / DESTRUCTIBLE]
-STATE CHAIN: [Initial] → [Setup] → [Twist] → [Resolution]
-TRANSFORMED STATE: [If DESTRUCTIBLE — describe exact physical form after change]
-  e.g. — ceramic bowl → "3 large curved shards, white glazed interior face-up,
-           edge fractures showing gray clay cross-section, scattered 30cm radius"
+PROP ID: [e.g., PROP-01 (Stable) or PROP-02A / PROP-02B (Bifurcated Pair)]
+ROLE: [Symbolic prop / Narrative catalyst / Forensic evidence]
+DURABILITY: [STABLE / DESTRUCTIBLE (Bifurcating)]
+STATE 0 (INTACT ENTITY): [Prop name EN — pristine/wear baseline, e.g., The Glazed Cobalt Porcelain Bowl]
+STATE 1 (KINETIC BREAK): [Transition scene & causal destruction action — e.g., strikes stone floor mid-shatter]
+STATE 2 (DERIVED ENTITY): [NEW INDEPENDENT NOUN — e.g., The Sharp Triangular Porcelain Shard]
+  - Fragment Morphology: [Shape, size in cm/inches, exposed core material vs surface glaze]
+  - Fracture Pattern   : [Jagged unglazed white edge, 30cm scatter radius, no intact parent object in frame]
 ━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━
-PROP PROFILE: [Prop Name — e.g., Silver Cross Dagger / The Broken Ledger / Forged Iron Torque]
-CATEGORY    : [Weapon / Relic / Tool / Artifact / Document / Symbolic Vessel]
+PROP PROFILE: [Prop Name — e.g., The Ancient Cedar Loom / The Triangular Porcelain Shard]
+CATEGORY    : [Weapon / Relic / Tool / Artifact / Forensic Shard / Symbolic Vessel]
 ━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━
-MATERIAL & PATINA   : [Aged silver with cool patina / charred oak / forged iron / weathered parchment]
-ENGRAVINGS & DETAILS: [Ancient runes, hunter inscriptions, cracked seals, leather wrap]
-INITIAL STATE (B2)  : [Wound Prop state: pristine / sheathed / sharp / heavy]
-TRANSFORMED (B6)    : [Echo Prop state: 180° reversed physical state / vessel of grace]
+MATERIAL & PATINA   : [Polished Lebanese cedar / red baked earthenware / glazed porcelain with raw chalk fracture]
+ENGRAVINGS & DETAILS: [Paleo-Hebrew debt incising, chipped dove wing seal, cobalt glazed exterior]
+INITIAL STATE (B2)  : [Wound Prop state: pristine / whole / functional / hairline fracture]
+TRANSFORMED (B6)    : [Echo Prop state: bifurcated fragment entity / restored sacred tool]
 ━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━
 
-🎨 MASTER 4:3 FOUR-VIEW PROP DESIGN SHEET PROMPT (COPY TO GENERATE)
+🎨 MASTER 16:9 FOUR-VIEW PROP DESIGN SHEET PROMPT (COPY TO GENERATE)
 ━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━
 
 Style: [Visual Style Name — e.g., mature western animation, detailed semi-realistic character design, dark violent atmosphere, rich painted backgrounds, cinematic staging, dramatic shadows, anime-western hybrid aesthetic, premium adult animated series quality OR Theatrical film reference, live-action style, DaVinci grading, masterful composition & cinematic color].
 
 Name: [Prop Name]. Category: [Weapon / Relic / Tool / Artifact / Document / Symbolic Object]. Description: [A cross-shaped blade forged in aged silver with a cool metallic patina. The ornate handguard is intricately carved with ancient runes and vampire-hunting inscriptions. The handle is wrapped in dark leather and engraved with a vampire hunter emblem. Stored in a waist leather sheath. The blade emits a sharp, cold glint under porch night light. Upon piercing a vampire, it reduces the target to fine ash — a symbol of faith-driven ultimate judgment].
 
-Format: Prop design sheet, 4:3 landscape. Show only four views of the same prop: one main view that best presents its visual features, plus front, side, and back views. The main view must be the largest and clearest; the three orthographic views must fully show the prop shape and structure. Pure white background.
+Format: Prop design sheet, 16:9 landscape. Strictly four views of the same prop only: one primary hero perspective view on the left, plus exactly three parallel orthographic views (front view, side profile view, back view) on the right. Exactly four views in total, zero extra panels or fifth view. Pure white background.
 
-Rules: Do not include any text, letters, numbers, annotations, captions, material swatches, dimension lines, arrows, close-up detail panels, or exploded views. The prop must remain completely consistent across all views. No environmental elements, no characters, no watermark.
+Rules: Strictly four views only. Do not include any fifth view, extra detail insets, text, letters, numbers, annotations, captions, material swatches, dimension lines, arrows, close-up detail panels, or exploded views. The prop must remain completely consistent across all four views. No environmental elements, no characters, no watermark.
 ```
 
-### 1D — ENVIRONMENT / LOCATION PROFILE + 16:9 MULTI-ANGLE MASTER REFERENCE SHEET PROMPT
+### 1D — ENVIRONMENT / LOCATION PROFILE + 16:9 4-PANEL GRID MASTER REFERENCE SHEET PROMPT
 
-> Each primary location receives an **Ultra-Detailed Location Concept Design Sheet Prompt** following the 16:9 landscape multi-angle layout specification.
+> Each primary location receives an **Ultra-Detailed Location Concept Design Sheet Prompt** following the 16:9 landscape 4-panel grid layout specification.
 
 ```
 ━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━
@@ -470,21 +593,21 @@ ENVIRONMENT PROFILE: [Location Name — e.g., Orcish Bone Lodge / The Ash Forge 
 ━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━
 PRIMARY ERA / SETTING : [Era + specific geographical/spatial setting]
 TIME OF DAY & WEATHER : [Harsh dusk / Night / Golden Hour / Dawn / Blizzard]
-COLOR PALETTE & TONE  : [Smoldering ember red / Cold blue low-key / 2700K golden amber]
+COLOR PALETTE & TONE  : [Smoldering ember red / Cold slate-blue low-key / Warm golden amber]
 ARCHITECTURAL TEXTURES: [Massive animal bones lashed with leather, thick hides, snowdrifts, stone, wood]
 ATMOSPHERIC MEDIUM    : [Drafting smoke, dying coals, cool breeze, floating ash particles]
 ━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━
 
-🎨 MASTER 16:9 MULTI-ANGLE LOCATION REFERENCE SHEET PROMPT (COPY TO GENERATE)
+🎨 MASTER 16:9 4-PANEL GRID LOCATION REFERENCE SHEET PROMPT (COPY TO GENERATE)
 ━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━
 
 Style: [Visual Style Name — e.g., Pixar\Disney 3D animation style OR Theatrical film reference, live-action style, DaVinci grading, masterful composition & cinematic color OR mature western animation, detailed semi-realistic character design, dark violent atmosphere, rich painted backgrounds, cinematic staging, dramatic shadows, anime-western hybrid aesthetic, premium adult animated series quality].
 
 Name: [Location Name]. Description: [A broad, detailed multi-sensory environmental description: architectural structure, exterior/interior materials, structural frame, wall coverings, smoldering light sources casting deep shadows and colored illumination, crude totems or functional artifacts hanging from overhead, floor textures, weather elements, light bleed through entrances, and overall emotional atmosphere and ritualistic/cinematic tone].
 
-Format: Location concept design sheet, 16:9 landscape, multi-angle layout. At least 4 panels showing the same location from different camera angles or directions: wide establishing shot, reverse angle, overhead/bird-eye view, and low-angle or detail close-up. Panels may vary lighting or time of day if needed by the story. Focus entirely on full location views, with no written descriptions, detail labels, or floor plans.
+Format: Location concept design sheet, 16:9 landscape, 4-panel grid layout. Exactly four panels showing the same location from four distinct camera angles: top-left wide establishing shot, top-right reverse angle shot, bottom-left overhead bird-eye view, and bottom-right ground-level low-angle perspective. Strictly four views only, zero extra sub-panels, no fifth angle. Focus entirely on full location views, with no written descriptions, detail labels, or floor plans.
 
-Rules: No characters or people - environment only. The location must look consistent and recognizable across all panels, with the same buildings, props, and layout. Do not include any text, letters, numbers, annotations, captions, dimension lines, arrows, labels, legends, zoning notes, or watermarks.
+Rules: Strictly four panels only (2x2 grid with exactly 4 camera angles). No characters or people - environment only. The location must look consistent and recognizable across all 4 panels, with the same buildings, props, and layout. Do not include any fifth panel, extra insets, text, letters, numbers, annotations, captions, dimension lines, arrows, labels, legends, zoning notes, or watermarks.
 ```
 
 ### 1E — INITIAL SETTING DECLARATION
@@ -511,13 +634,36 @@ CONSISTENCY NOTES (maintained throughout series):
 ━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━
 ```
 
-**✋ CHECKPOINT 1:** User confirms concept art + setting → proceed to Stage 2S (Short Film) or Stage 2 (Series)
+### 🏛️ 1E — THE MASTER SETTING BIBLE MANDATE (`setting.html`)
+
+> ⚠️ **GOVERNING SPECIFICATION (SSOT)**:
+> The Agent MUST strictly ingest and follow [2-casting-worldbuilding-specification.md](file:///d:/Project/Sven/engine/references/2-casting-worldbuilding-specification.md) as the Single Source of Truth for creating `setting.html`.
+>
+> **MANDATORY PRODUCTION ARTIFACT (SERIES & MULTI-EPISODE PROJECTS)**:
+> Before generating any individual episode files (`tap-1.html`, `tap-2.html`, etc.), the Agent MUST compile and output a comprehensive, interactive **Master Production Bible** at:
+> `output/<project-name>/setting.html`
+>
+> **THE 10 MANDATORY ARCHITECTURAL SECTIONS IN `setting.html`:**
+> 1. **Section 1 — Master Story Arc & Thematic Core**: 6-Beat narrative architecture, moral stakes, and Zero-Fatality Restorative Justice resolution.
+> 2. **Section 1B — Diurnal Timeline & Living Realism**: Explicit tracking of the continuous 24h–48h clock (Morning ➔ Midday ➔ Dusk ➔ Night ➔ Dawn), meal & nourishment details (authentic era food, water/thirst), sleep deprivation, physical exhaustion, wounds, sweat, and natural lighting progression.
+> 3. **Section 1C — Inter-Episode Causality Matrix & Kinetic Bridges**: Strict continuity hand-offs from Episode N final frame directly into Episode N+1 opening frame. 100% preservation of held props, torn clothing, dust/blood marks, and bodily fatigue across episode borders.
+> 4. **Section 1D — Master Scene Typology & Dual-Narrative Dialogue Matrix**: Strict enforcement of the 8-Model Master Dialogue Suite (`1-narrative-screenplay-architecture.md`: Model 0 Silent, Model 1 Golden Ratio, Model 1B Staccato, Model 2 Council, Model 3 Solo, Model 4 V.O., Model 5 O.S., Model 6 Whisper, Model 7 Interrupted, Model 8 P.O.V.) and Two-Tier Dialogue Anchoring (Micro Episodic Tactic ↔ Macro Series Thematic DNA).
+> 5. **Section 2 — Canonical Character Cast**: A1, A2 (with objective rightness & blindspot), Tier B Satellites (Dual-Relationship mandate), and Tier C Greek Chorus (strictly text-only — zero image generation) + pre-formatted Mode B Prompt Anchors.
+> 6. **Section 3 — 16:9 Four-View Character Model Sheets**: Strictly four views only (1 close-up left + 3 parallel full-body right: front, profile, back) inheriting unified visual style.
+> 7. **Section 4A — Master Prop Universe**: Prop profiles with multi-episode State Chains, Mode B video snippets, and 16:9 4-view design sheets on pure white background.
+> 8. **Section 4B — Master Location Universe**: Locations with Lighting Atmosphere Contracts, Mode B video snippets, and 16:9 4-panel grid layout prompts (strictly 4 camera angles).
+> 9. **Section 5 — Complete Scene-by-Scene Production Roadmap**: Detailed 10-second breakdown for EVERY scene of EVERY episode (all 12–14 scenes per episode) specifying camera shots, characters, props, natural lighting tone, scene typology pills, dialogue density, and bodily/food realism notes.
+> 10. **Section 6 — Standard Operating Procedure (SOP)**: Step-by-step technical implementation rules for downstream episode scripting.
+
+**✋ CHECKPOINT 1:** User confirms concept art + Setting Bible (`setting.html`) → proceed to Stage 2S (Short Film) or Stage 2 (Series)
 
 ---
 
 ## 🎬 STAGE 2S — SHORT FILM BLUEPRINT
 
-> **Run for Short Film only.** Multi-Episode Series skips this, goes directly to Stage 2.
+> **Run for Short Film only.** Multi-Episode Series skips this, goes directly to Stage 2.  
+> 🖋️ **SCREENWRITING EXECUTION DIRECTIVE (Level 2: Screenwriter — `1-narrative-screenplay-architecture.md`)**:  
+> The Agent MUST load and execute `d:\Project\Sven\engine\references\1-narrative-screenplay-architecture.md` to evaluate and apply the 20 Twist Archetypes, Universal 3-Step Formula, Prop as Twist Detonator, and 3-Wave Climax at Beat 4 (Trap ➔ Loss ➔ Ego Death).
 
 ### What to determine
 
@@ -527,7 +673,7 @@ CONSISTENCY NOTES (maintained throughout series):
 3. Plant Wound Prop at Beat 2 ➔ 180° Physical Transformation into Echo Prop at Beat 6
 4. Select Conflict Type for Beat 3 Drama (≥60% runtime dedicated to spoken conflict)
 5. Select 3-Wave Climax for Beat 4 (Wave 1 Trap/Identity ➔ Wave 2 Loss ➔ Wave 3 Karma & Ego Death)
-6. Enforce Thermal Polarity Shock between Beat 4.3 (5600K Cold) and Beat 5.1 (2700K Warm)
+6. Enforce Thermal Polarity Shock between Beat 4.3 (Chilly Slate-Blue Cold) and Beat 5.1 (Warm Golden Hearthlight)
 7. Beat 6 = Harmonious Community + Echo Prop + Standalone Moral Maxim (<15 words), NO cliffhanger
 8. Build Emotion Arc for 6 beats (6–7 ➔ 6–7 ➔ 7–9 ➔ 10 [PEAK] ➔ 7–8 ➔ 6–7)
 9. Summary across all 18 Micro Sub-Beats
@@ -546,7 +692,7 @@ CONFLICT TYPE    : [Conflict type for Beat 3 — 60% Spoken Conflict]
 TWIST TYPE       : [3-Wave Climax for Beat 4: Identity ➔ Loss ➔ Karma/Ego Death]
 WOUND PROP (B2)  : [Name & Initial Traumatic / Entrapment State]
 ECHO PROP (B6)   : [180° Physical Transformed State of Enlightenment / Grace]
-THERMAL POLARITY : Cold 5600K (Beat 4.3) ➔ Warm 2700K (Beat 5.1) | [Lighting/Audio pause cues]
+THERMAL POLARITY : Chilly Slate-Blue Cold (Beat 4.3) ➔ Warm Golden Hearthlight (Beat 5.1) | [Lighting/Audio pause cues]
 CAST DYNAMICS    : B1: Solo / B3 Memory | B2: A vs B3 Flashback | B3: A vs B1 (60% dialogue) | B4: A Solo Ego Death | B5: A + B2 Grace | B6: A + C Transformed
 EMOTION ARC      : B1:[6-7] ➔ B2:[6-7] ➔ B3:[7-9] ➔ B4:[10 PEAK] ➔ B5:[7-8] ➔ B6:[6-7]
 
@@ -569,10 +715,10 @@ EMOTION ARC      : B1:[6-7] ➔ B2:[6-7] ➔ B3:[7-9] ➔ B4:[10 PEAK] ➔ B5:[7
   [BEAT 4: CLIMAX — 30% — PEAK (10/10)]
     4.1 Wave 1 (Trap)     : [Identity reveal or trap springs shut]
     4.2 Wave 2 (Loss)     : [Physical / material destruction]
-    4.3 Wave 3 (Ego Death): [Tier B2 reveals Tier B3's Sacred Echo Prop ➔ All Hope Is Lost, 5600K Cold Monochrome]
+    4.3 Wave 3 (Ego Death): [Tier B2 reveals Tier B3's Sacred Echo Prop ➔ All Hope Is Lost, Chilly Slate-Blue Cold Monochrome]
 
   [BEAT 5: RELEASE — 12%]
-    5.1 Thermal Shock     : [Abrupt shift to 2700K warmth, [pause: 1.5s], warm whisper]
+    5.1 Thermal Shock     : [Abrupt shift to warm golden hearthlight, [pause: 1.5s], warm whisper]
     5.2 Reverse Rescue    : [Unconditional grace from Tier B2]
     5.3 Concrete Proof    : [Tangible act of generosity / doing the unthinkable from Beat 2 with Tier C]
 
@@ -589,7 +735,9 @@ EMOTION ARC      : B1:[6-7] ➔ B2:[6-7] ➔ B3:[7-9] ➔ B4:[10 PEAK] ➔ B5:[7
 
 ## 📺 STAGE 2 — SERIES BLUEPRINT (Multi-Episode Series)
 
-> **Run for Multi-Episode Series only.** Short Film already went through Stage 2S, skip this section.
+> **Run for Multi-Episode Series only.** Short Film already went through Stage 2S, skip this section.  
+> 🖋️ **SCREENWRITING EXECUTION DIRECTIVE (Level 2: Screenwriter — `1-narrative-screenplay-architecture.md`)**:  
+> The Agent MUST load and execute `d:\Project\Sven\engine\references\1-narrative-screenplay-architecture.md` to map Overarching Twists, Episodic Dynamic Arcs, and Binge Cliffhangers (C1–C7) across the 4-Act Architecture.
 
 
 ### 4-Act Architecture — Allocation by Episode Count
@@ -612,6 +760,18 @@ Act 4 (Resolution) = N − (Act1 + Act2 + Act3) episodes, minimum 1
 | **2** | **Escalation** | Stakes increase, first failure, Midpoint Twist reverses everything | 7–8 / 10 | Betrayal / Revelation |
 | **3** | **Climax** | Darkest point, character at rock bottom, 3-Wave Ego Death, decision forms | 9–10 / 10 | Loss / Decision |
 | **4** | **Resolution** | Final confrontation, 180° Echo Prop payoff, catharsis, **positive ending** | 0 (finale) | — |
+
+### 🎭 EPISODIC DYNAMIC ARC RULE (STRICT BAN ON TEMPLATE MONOTONY)
+
+> **MANDATORY HOLLYWOOD ARCHITECTURE RULE**:
+> DO NOT recycle a single generic 8-beat emotional template (e.g. Hook ➔ Escalation ➔ Climax ➔ Resolution) across every episode of a series! Doing so creates viewer emotional fatigue and breaks episodic binge momentum.
+>
+> **EPISODE ARCHITECTURAL ROLES**:
+> 1. **Inception / The Trap (Act 1)**: Focuses on establishing the wound, hunger, and entangling contractual trap. Ends on an unresolved Threat/Mystery cliffhanger — ZERO early resolution.
+> 2. **Complication / Night Raid (Act 2 Early)**: Focuses on covert betrayal, forgery, and devastating material loss. Ends on Desperate Loss / Rock Bottom.
+> 3. **Siege / Public Trial (Act 2 Late)**: Focuses on ideological clash, courtroom drama, and mob pressure. Ends on a frozen Standoff / Suspended Judgment.
+> 4. **The Grand Climax & Anagnorisis (Act 3)**: The TRUE 8-Beat explosive showdown (Cold Hatred ➔ Rising Dread ➔ Explosive Fury ➔ Forensic Reveal ➔ Villain's Ego Death & Shattered Certainty).
+> 5. **Restorative Grace & Catharsis (Act 4 Finale)**: Focuses on unexpected mercy, restorative restitution, communal feast, and quiet spiritual elevation (Quiet Catharsis 7/10).
 
 ### Cliffhanger Types (for all episodes except the finale)
 
@@ -661,7 +821,7 @@ ACT 4 — RESOLUTION (Episodes [Z] to [N])
 
 ## 📝 STAGE 3 — DETAILED SCRIPT (Per Episode)
 
-> Based on `references/story-rules.md`. Write one episode at a time — confirm Episode N before proceeding to Episode N+1.
+> Based on `references/1-narrative-screenplay-architecture.md`. Write one episode at a time — confirm Episode N before proceeding to Episode N+1.
 
 ### Structure: Hollywood 6 Beats (3% / 12% / 35% / 30% / 12% / 8%) & 18 Micro Sub-Beats
 
@@ -670,14 +830,14 @@ ACT 4 — RESOLUTION (Episodes [Z] to [N])
 | **Beat 1** | **3%** | **HOOK** | Visual Paradox & Frozen Potential (3s scroll-stopper) | 6–7 / 10 | Solo / Prop Focus |
 | **Beat 2** | **12%** | **SETUP** | Old World & Generational Trauma (Hamartia) + Wound Prop | 6–7 / 10 | Tier A vs. Ghosts of the Past |
 | **Beat 3** | **35%** | **DRAMA** | Flawed Tactics & Ideological Clash (60% Spoken Conflict) | 7–9 / 10 | Tier A vs. Tier B1 (Antagonist) |
-| **Beat 4** | **30%** | **CLIMAX** | 3-Wave Climax ➔ All Hope Is Lost ➔ Total Ego Death | **10 / 10** (PEAK) | Tier A Solo in Tragedy (5600K Cold) |
-| **Beat 5** | **12%** | **RELEASE** | Thermal Shock (2700K Warm) + Reverse Rescue + Tangible Proof | 7–8 / 10 | Tier A + Tier B2 (Companion) |
+| **Beat 4** | **30%** | **CLIMAX** | 3-Wave Climax ➔ All Hope Is Lost ➔ Total Ego Death | **10 / 10** (PEAK) | Tier A Solo in Tragedy (Chilly Slate-Blue Cold) |
+| **Beat 5** | **12%** | **RELEASE** | Thermal Shock (Warm Golden Hearthlight) + Reverse Rescue + Tangible Proof | 7–8 / 10 | Tier A + Tier B2 (Companion) |
 | **Beat 6** | **8%** | **ECHO** | Transformed World + 180° Echo Prop Payoff + Moral Maxim | 6–7 / 10 | Tier A + Tier C New World |
 
 > **Hard dynamic rules:**
 > - **Beat 3**: MUST dedicate ≥60% runtime to adversarial spoken dialogue between Tier A and Tier B1.
 > - **Beat 4**: MUST execute 3-Wave structure reaching emotional peak (10/10) with complete Ego Death.
-> - **Thermal Polarity Shock**: Transition from Beat 4.3 (5600K Cold Monochrome) to Beat 5.1 (2700K Soft Warmth) with `[pause: 1.5s]` silence.
+> - **Thermal Polarity Shock**: Transition from Beat 4.3 (Chilly Slate-Blue Cold Monochrome) to Beat 5.1 (Soft Golden Hearth Warmth) with `[pause: 1.5s]` silence.
 > - **Dual-Prop Transformation**: Wound Prop (Beat 2) reverses 180° into Echo Prop (Beat 6).
 > - **Short Film**: Beat 6 concludes with Still Catharsis + Echo Image + Moral Maxim (<15 words). NO cliffhanger.
 > - **Mid-Series Episode**: Beat 6 concludes with Cliffhanger (C1–C7).
@@ -686,10 +846,10 @@ ACT 4 — RESOLUTION (Episodes [Z] to [N])
 
 ```
 1. Confirm this episode's role in Series Blueprint (Which Act? What duty?)
-2. Select Hook Technique (§ HOOK TECHNIQUES in story-rules.md — check registry)
+2. Select Hook Technique (§ HOOK TECHNIQUES in 1-narrative-screenplay-architecture.md — check registry)
 3. Select Conflict Type for Beat 3 (≥60% spoken dialogue)
 4. Architect 3-Wave Climax for Beat 4 (Identity ➔ Loss ➔ Karma & Ego Death)
-5. Enforce Thermal Polarity Shock between Beat 4.3 and Beat 5.1 (5600K ➔ 2700K, [pause: 1.5s])
+5. Enforce Thermal Polarity Shock between Beat 4.3 and Beat 5.1 (Cold Blue ➔ Warm Gold, [pause: 1.5s])
 6. Execute 180° Physical Transformation from Wound Prop (B2) to Echo Prop (B6)
 7. Determine Cliffhanger (mid-series) or Moral Maxim (Short Film / Finale)
 8. Write 6 Beats & 18 Sub-Beats using the format below
@@ -707,7 +867,7 @@ CONFLICT TYPE    : [Conflict type — 60% Spoken Conflict in Beat 3]
 TWIST TYPE       : [3-Wave Climax for Beat 4]
 WOUND PROP (B2)  : [Initial Traumatic State]
 ECHO PROP (B6)   : [180° Transformed State]
-THERMAL POLARITY : Cold 5600K (B4.3) ➔ Warm 2700K (B5.1) | [pause: 1.5s]
+THERMAL POLARITY : Cold Blue (B4.3) ➔ Warm Gold (B5.1) | [pause: 1.5s]
 CLIFFHANGER      : [C1–C7 / NONE (Short Film / finale)]
 EMOTION ARC      : B1:[6-7] ➔ B2:[6-7] ➔ B3:[7-9] ➔ B4:[10 PEAK] ➔ B5:[7-8] ➔ B6:[6-7]
 
@@ -734,14 +894,14 @@ Action & Adversarial Dialogue: ...
 
 --- BEAT 4 — CLIMAX (30% - [s]s) | Emotion: [10/10 PEAK] ---
 [Sub-beats 4.1 Wave 1 Identity/Trap, 4.2 Wave 2 Loss/Physical, 4.3 Wave 3 Karma & Ego Death]
-Cast: Tier A Solo in Tragedy (5600K Cold Monochrome)
+Cast: Tier A Solo in Tragedy (Cold Blue)
 Action: [Citadel of pride collapses; Anagnorisis; All Hope Is Lost]
 [HANDOFF STATE: ...]
 
 --- BEAT 5 — RELEASE (12% - [s]s) | Emotion: [7-8/10] ---
-[Sub-beats 5.1 Thermal Shock 2700K Warm, 5.2 Reverse Rescue from Tier B2, 5.3 Concrete Proof of Change]
+[Sub-beats 5.1 Thermal Shock (Warm Golden Hearthlight), 5.2 Reverse Rescue from Tier B2, 5.3 Concrete Proof of Change]
 Cast: Tier A + Tier B2 (Companion / Grace)
-Lighting/Acoustic: 2700K soft golden warmth, [pause: 1.5s], warm whisper
+Lighting/Acoustic: Soft golden hearth warmth, [pause: 1.5s], warm whisper
 Action: [Unconditional compassion; doing the unthinkable from Beat 2]
 [HANDOFF STATE: ...]
 
@@ -761,6 +921,33 @@ CLOSING MORAL MAXIM (Short Film / finale): "[Independent truth < 15 words]"
 
 ## 🎬 STAGE 4 — SVEN PROMPT SUITE (Omni Flash / Sora Prompt Engine)
 
+> ⚠️ **MANDATORY PER-EPISODE SPECIFICATION & INHERITANCE LAW**:
+> When generating per-episode execution files (`tap-X.html`), the agent MUST strictly comply with:
+> `d:\Project\Sven\engine\references\4-ai-video-prompt-compiler.md`.
+>
+> **The 100% Roadmap Inheritance Mandate**:
+> 1. `setting.html` Section 5 (Roadmap) is the **Single Source of Truth (SSOT)**. Every scene title, AM/PM time, natural lighting tone, cast, env, props, story beat, dramatic intent, and kinetic bridge must match verbatim.
+> 2. **Multi-Turn Dialogue Parity**: 100% 1:1 Roadmap-to-Execution Parity between `setting.html` Section 5 and `tap-X.html`. Whichever model is assigned from the 8-Model Master Suite (Models 1, 1B, 2, 3, 4, 5, 6, 7, 8, or Model 0), all dialogue turns, speaker identities, timestamps, and lines must be fully rendered in both the dialogue breakdown box and the 10s video prompt, concluding in a 0-word living organic settle, zero frozen frames.
+> 3. **The 5-Gate Pre-Delivery Audit**: Run the automated 5-Gate Audit script (`episode_audit_suite.py`) before delivering any episode file. Delivery is blocked if any gate fails.
+> 4. **3D Spatial Geometry & Vector Blocking Mandate (Level 2: Director — `3-cinematography-3d-staging.md`)**: For any scene involving physical movement, falling, collisions, leaping, or complex camera tracking, the Director applies `d:\Project\Sven\engine\references\3-cinematography-3d-staging.md`:
+>    - **Vector-to-Plane Law**: Motion along vertical $-Y$ strictly requires a Horizontal Receiving Plane ($X-Z$).
+>    - **5-Step Mechanical Deformation**: Declare Contact, Funnel Sag (e.g. 1.5m), Radial Harmonic Vibration, Viscous Bonding, and Rebound Tension.
+>    - **Camera Descent Setups**: Declare Setup A (Worm's-Eye Under-Mesh), Setup B (God's-Eye Nadir Plunge), or Setup C (Synchronized Velocity Tracking $V_{cam}=V_{subj}$) to eliminate 2D latent hallucinations and mesh clipping.
+> 5. **The 10-Second Kinetic Unit Directorial Mandate**: Every 10-second prompt is **A SINGLE KINETIC AND EMOTIONAL BREATH UNIT** operating on the organic breath cycle (Inhale ➔ Hold & Strike ➔ Exhale & Arrest), governed by `d:\Project\Sven\engine\references\4-ai-video-prompt-compiler.md`:
+>    - **The Emotional & Kinetic Breath Cycle**: Shot 1 [00:00–00:04.0] (Tension Ignition / Inhale) ➔ Shot 2 [00:04.0–00:08.5] (Climax Collision / Hold & Strike) ➔ Shot 3 [00:08.5–00:10.0] (Psychological Arrest & Emotional Landing / living organic settle with subtle biological respiration and ambient drift at 00:10, zero frozen frames).
+>    - **Emotional Supremacy**: Shot 3 focuses on **HUMAN EMOTION & PSYCHOLOGICAL ARREST** (Tier A1 eyes/tears, Tier A2 broken ego, Tier B witness heartbreak, Tier C collective silence), NEVER defaulting mechanically to broken props.
+>    - **The 4 Continuity Bridges**: Spatial Vector & 180° Axis Lock, Kinetic Momentum Handoff (STRICT ZERO ACTION REPETITION), Chekhov Prop State Machine, and Cinematic Scale Progression.
+>    - **Zero-Mechanical-Metrics Law**: ABSOLUTELY ZERO optical lens focal length millimeter numbers, ZERO aperture f-stops, ZERO numerical Kelvin color temperatures, ZERO camera hardware model brand names, ZERO numerical framerate labels. ALL replaced by pure Cinematic Natural Prose.
+> 6. **The Universal Minor-Safety & Policy Immunity Mandate**: To guarantee 100% immunity against automated AI video safety classifiers (Sora, Kling, Veo, Runway, Luma) flagging prompts for "harmful content related to minors":
+>    - **Zero-Minor Lexicon Ban**: STRICTLY FORBIDDEN in both prose and dialogue: `girl`, `boy`, `kid`, `child`, `children`, `teen`, `teenager`, `little`, `beggar girl`, `maid`.
+>    - **Mandatory Adult Age Anchor**: ALWAYS declare explicit adult status in Mode B subject definitions: `young woman`, `adult female`, `adult craftsman`, `a 22-year-old artisan`.
+>    - **Anatomical & Vulnerability Sanitization**: BANNED phrases suggesting child distress or exposure (`soaked against chest/ribs`, `frayed tunic in mud`). Replace with functional, dignified descriptions: `holding fabric securely with both hands`, `dignified grounded posture`, `kneeling firmly on the stone pavement`.
+>    - **Dialogue Sanitization**: Spoken lines must never use derogatory minor terms (e.g., replace `"A beggar girl..."` with `"An unproven apprentice..."`).
+> 7. **The Mode B Zero-Costume Directing Law (§3.2 of `4-ai-video-prompt-compiler.md`)**:
+>    - In Mode B (where 16:9 Model Sheet references exist), **NEVER DESCRIBE WHAT CHARACTERS ARE WEARING IN PROMPT TEXT**.
+>    - 100% of garments, fabric textures, colors, and silhouettes are locked by the reference sheet. Writing clothing in text forces the text encoder to compete with the image anchor, triggering severe garment drift and facial morphing.
+>    - Describe **ONLY**: Proper Name, Adult Age Anchor, Anatomical Build/Physique, Spatial Frame Coordinates, and Skin Surface State (sweat, rain, dust on brow — NEVER garment names).
+
 > Prompts are structured per Beat across the 6-Beat Arc. Write Beat by Beat → wait for confirmation → next Beat.
 
 ### 🎛️ Branch Selection based on Storytelling Mode:
@@ -772,12 +959,15 @@ CLOSING MORAL MAXIM (Short Film / finale): "[Independent truth < 15 words]"
 ```
 ━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━
 BEAT [N] / 6 — [Phase Name] — Episode [X] | Emotion: [Y/10]
-CAST DYNAMIC : [Solo / A vs Past / A vs B1 / A Solo / A + B2 / A + C]
-THERMAL STATE: [5600K Cold Monochrome (if B4.3) / 2700K Warm Firelight (if B5.1) / Standard]
+SCENE TYPE    : [[ENV] Environmental / [SOLO] Internal Monologue / [DUO] 2-Person Clash / [TRIO] 3-Person / [MOB] Tier C Mob]
+THEMATIC LINK : [Episodic Immediate Tactic ↔ Series Macro Master Plot Anchor (§D.8)]
+CAST DYNAMIC  : [Solo / A vs Past / A vs B1 / A Solo / A + B2 / A + C]
+THERMAL STATE : [Chilly Slate-Blue Cold (if B4.3) / Warm Amber Hearthlight (if B5.1) / Standard]
 ━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━
 
 [⚠️ DIALOGUE PRE-FLIGHT — MANDATORY BEFORE CODE BLOCK 1]
 DIALOGUE PRE-FLIGHT:
+  SCENE TYPOLOGY  : [The 8-Model Suite: Model 0 Silent / Model 1 Golden Ratio / Model 1B Staccato / Model 2 Council / Model 3 Solo / Model 4 V.O. / Model 5 O.S. / Model 6 Whisper / Model 7 Interrupted / Model 8 P.O.V.]
   RELATIONSHIP    : [Type from 1B — e.g., Creditor/Debtor]
   POWER DYNAMIC   : [Who holds power AT THIS BEAT — has shift happened yet? Y/N]
   ADDRESS FORM A→B: [How A addresses B in this Beat — first name / title / none]
@@ -787,39 +977,39 @@ DIALOGUE PRE-FLIGHT:
 
 — PROMPT BEAT [N] (DIALOGUE MODE) —
 [CODE BLOCK 1 — OMNI FLASH PROMPT]
-3D Animation Masterwork in iconic Pixar and DreamWorks studio style, Octane Render, Cinema 4D, Ray-traced global illumination, 24fps smooth motion. Cinematic 16:9 widescreen, dark rich cinematic realism. Subsurface scattering skin shading, micro-texture fabrics, tailored armor/clothing.
+3D Animation Masterwork in iconic Pixar and DreamWorks studio style, Octane Render, Cinema 4D, Ray-traced global illumination, smooth cinematic motion, rich cinematic realism. Subsurface scattering skin shading, micro-texture fabrics, tailored armor/clothing.
 
-{Scene Setting, Time of Day} — {Key Light Source} {direction & height} casts {5600K cool / 2700K warm} light across {Area} while {Atmospheric medium: floating dust / chimney smoke / mist}; {Shadow behavior}; {Light transition}.
+Subject: {Name A}, {age}-year-old {gender/ethnicity}, {beauty/facial aesthetic features}, {physique/body build}, standing at {specific spatial coordinates in environment} — the only {demographic} in frame.
+{Name B if present}: {Name B}, {age}-year-old {gender/ethnicity}, {beauty/facial aesthetic features}, {physique/body build}, standing at {specific spatial coordinates in environment} — the only {demographic} in frame.
 
-{Name A — 1 syllable}, {height}cm, {build} build in {costume + damage state}, standing at {frame-left facing frame-right} — the only {Name A} in frame.
-{Name B if present — 1 syllable}, {height}cm, {build} build in {costume}, standing at {frame-right facing frame-left} — the only {Name B} in frame.
-{Hero Prop}, {size cm/mm}, {surface material: weathered bronze / cracked pine}, {color}, {condition}, resting {camera-anchored position — ZERO hand assignment}.
+Prop: {PROP-ID: Unique Proper Noun}, {Physical State: pristine / broken fragment / singed scrap}, {Spatial Location: resting in setting OR which character is holding/wearing it} — the only {prop noun} in frame.
+
+Environment: {ENV-ID: Unique Proper Noun}, {Time of Day}, {Atmosphere / Mood} — {Key light source & natural sensory color tone (STRICTLY NO KELVIN NUMBERS)}.
 
 Diegetic room acoustics: {ambient sound: cracking hearth coals / distant rain / grandfather clock ticking}.
 
-△ [00:00–00:03] Shot {Scale} | {Lens + Angle} | {Camera Trajectory}:
-{Subject A at frame-left performs primary physical action; Subject B at frame-right reacts simultaneously in dual-action somatic synchronization.}
+△ [00:00–00:04.0] Shot {Scale} | {Lens + Angle} | {Camera Trajectory}:
+{Subject A at frame-left performs primary physical action; Subject B at frame-right reacts simultaneously in dual-action somatic synchronization. Optical focus locked on Subject A.}
+{Name A}：" {Line 1 ~7–9 words in English} "（ {1. Vocal Timbre} , lips parting dynamically in precise lip-sync, {3. Lighting on Anatomy} , {4. Psychological Subtext} ）
 
-△ [00:03–00:07] Shot {Scale} | {Lens} | {Continuing Trajectory / Kinetic Tracking}:
-{Escalating dramatic tension, prop interaction or physical stride maintaining unbroken continuous spacetime physics.}
+△ [00:04.0–00:08.5] Shot {Scale} | {Lens} | {Continuing Trajectory / Kinetic Tracking}:
+{Seamless continuation with zero dead pause: Subject B fires back instantly in defiance while Subject A stiffens in surprise. Optical focus locked on Subject B.}
+{Name B}：" {Line 2 Retort ~7–9 words in English} "（ {1. Vocal Timbre} , lips parting in sharp counter lip-sync, {3. Lighting on Anatomy} , {4. Psychological Subtext} ）
 
-△ [00:07–00:10] Shot {Scale} | {Lens} | {Static Lock}:
-{Climax physical stance or evidence reveal, concluding with an absolute 0.5s zero-velocity freeze hold at 00:10.}
-
-Scene: {Dramatic Scene Title}
-{Character Name}：" {Spoken Dialogue Line ~140–160 English Chars} "（ {1. Vocal Timbre} , {2. Somatic Action} , {3. Lighting on Anatomy} , {4. Psychological Subtext} ）
+△ [00:08.5–00:10.0] Shot {Scale} | {Lens} | {Static Lock}:
+{Suffocating face-to-face deadlock. STRICTLY ZERO SPOKEN DIALOGUE. Lips remain firmly closed, breathing in diegetic silence, concluding with smooth deceleration into a stable resting frame, maintaining subtle chest respiration and ambient drift, zero frozen frames.}
 
 Continuous fluid motion, realistic physics, zero morphing. All characters remain anchored in their spatial positions throughout the shot.
-Do not generate subtitles, dialogue text, titles, timestamps, or any written text anywhere in the video.
+Do not generate subtitles, dialogue text, titles, timestamps, or any written text anywhere in the video. Do not render duplicate characters or extra props.
 
 [CODE BLOCK 2 — SCRIPT & AUDIT MANIFEST]
 [Final State — Global State Snapshot Handover to Next Cue]:
   - Characters State at 00:10: [Coordinates, posture, gaze, frozen emotion]
   - Props State: [Coordinates, damage/integrity]
-  - Setting & Atmosphere: [Lighting, Kelvin, atmospheric medium]
+  - Setting & Atmosphere: [Lighting, natural sensory color tone (NO KELVIN), atmospheric medium]
 💬 Dialogue VN: "[Vietnamese line with correct honorifics for voice actor]"
 ❤️ Subtext: [...]  💥 Physical Mechanics: [...]
-🎙️ Dialogue & Camera Audit: Total chars: [X] chars (Passed ~140–160 chars optimal density limit) | 100% Optical-kinetic alignment.
+🎙️ Dialogue & Camera Audit: Total words: [X] words (Passed 14–18 words maximum density limit across 10s) | Silent buffer verified | 100% Optical-kinetic alignment.
 
 ✋ Beat [N] generated → type "next" to receive Beat [N+1].
 ━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━
@@ -841,26 +1031,26 @@ Do not generate subtitles, dialogue text, titles, timestamps, or any written tex
 ━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━
 BEAT [N] / 6 — [Phase Name] — Episode [X] | Emotion: [Y/10] — [🔇 SILENT MODE]
 CAST DYNAMIC : [Solo / A vs Past / A vs B1 / A Solo / A + B2 / A + C]
-THERMAL STATE: [5600K Cold Monochrome (if B4.3) / 2700K Warm Firelight (if B5.1) / Standard]
+THERMAL STATE: [Chilly Slate-Blue Cold Monochrome (if B4.3) / Warm Amber Hearthlight (if B5.1) / Standard]
 ━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━
 
 — PROMPT BEAT [N] (SHOW DON'T TELL SILENT MODE) —
 [CODE BLOCK 1 — OMNI FLASH SILENT PROMPT]
 [Master-level cinematography header...]
-▼ CONTEXT: {Location name}, {time of day} — {key light source + color temp, 5600K cold / 2700K warm}.
-▼ LINE A: {Name A}, {height}cm, {build}. [Character Reference attached]. Initial pose: {camera-anchored pose, empty hands}.
-▼ LINE B: {Name B}, {height}cm, {build}. [Character Reference attached]. {Camera-relative position}.
+▼ CONTEXT: {Location name}, {time of day} — {key light source + natural color tone: chilly slate-blue cold / warm golden hearthlight}.
+▼ LINE A: {Name A}, {visual relative scale & build}. Initial pose: {camera-anchored pose, empty hands}.
+▼ LINE B: {Name B}, {visual relative scale & build}. {Camera-relative position}.
 ▼ PROP: {Prop name}, {current physical state: Wound state / Transformed Echo state} — the only {prop} in frame.
 ▼ DIEGETIC ACOUSTICS (Foley only): Diegetic acoustics: {pure environmental sounds & physical biomechanics: heavy wind, ragged breathing, cracking wood, metallic scrape}.
 
-[{beat 1 timestamp}] Shot {scale} | {lens}mm f/{aperture} | {camera movement & angle} on {Subject}
-{Subject A} {kinetic action verb} {object/position}. {Amplified Micro-biomechanic: pupils dilating, veins throbbing along neck, fingers trembling as they release the relic}.
+△ [00:00–00:04.0] Shot {Scale: Medium Tracking / Wide} | {Optics: Deep cinematic staging, sharp subject focus} | {Kinetic camera push-in} on {Subject}:
+Momentum Build-up: {Subject A initiates explosive motion, accelerating across floor plane, drawing weapon or breaking through threshold with escalating kinetic velocity}. {Micro-biomechanic: pupils dilating, chest heaving in rapid surge, veins throbbing along neck}.
 
-[{middle beat timestamp}] Shot {scale} | {lens}mm f/{aperture} | {camera movement & angle} on {Subject}
-{Physical interaction with Prop} while {Subject B} {opposing body reaction: step forward, hand gripping hilt}. {Zero spoken dialogue — pure visual tension}.
+△ [00:04.0–00:08.5] Shot {Scale: Low-Angle Close-Up} | {Optics: Shallow depth of field, creamy background blur} | {Dynamic whip tracking} on {Subject}:
+Climactic Collision: {Subject A impacts target or prop with explosive physical force; shattering debris or weapon collision governed by true physics, while Subject B counters with opposing body momentum}. {Zero spoken dialogue — pure visual tension and physical causality}.
 
-[{final beat timestamp}] Shot {scale} | {lens}mm f/{aperture} | {gentle push-in} on {Subject}
-{Subject A} reaches {terminal zero-velocity freeze hold pose}, {prop rests in final state}. 0.5s static freeze.
+△ [00:08.5–00:10.0] Shot {Scale: Macro Choker Lock} | {Optics: Razor-sharp macro focus on eyes and micro-biomechanics} | {Absolute static lock}:
+Impact Landing (1-Second Living Settle): {Subject A and Subject B lock into an exact 1.0-second impact deceleration into a living settle, maintaining subtle biological respiration and drifting particles, zero frozen frames}.
 
 Continuous fluid motion, realistic physics, zero morphing. Sharp optical focus locked on subject action and physical micro-expressions throughout shot.
 
@@ -918,6 +1108,42 @@ After completion, **MANDATORY** update `d:\Project\Sven\history-registry.json` a
 
 ---
 
+## 🚀 STAGE 5 — TWO-TIER YOUTUBE SEO & MARKETING ARCHITECTURE (`seo-youtube.html`)
+
+> **MANDATORY POST-PRODUCTION DELIVERABLE (FOR EVERY FILM & SERIES)**:
+> Before any project is marked production-ready, the Agent MUST generate the dedicated interactive SEO & Distribution Blueprint at:
+> `output/<project-name>/seo-youtube.html`
+>
+> The Marketing Blueprint MUST ALWAYS encompass a **Two-Tier Architecture**:
+> 
+> ### 🌟 TIER 1: SEO & MARKETING CHO BỘ PHIM TỔNG (FULL MOVIE OMNIBUS)
+> Designed for long-form binge viewers (>8 mins) to maximize YouTube Browse Features, Mid-Roll ad revenue, and organic high-retention suggested video placement:
+> 1. **5 High-CTR Title Formulas (A/B Testing)**:
+>    - Formula 1: Moral Dilemma Paradox & Sacrifice.
+>    - Formula 2: Dramatic Reversal & Retribution.
+>    - Formula 3: Click-Magnet Curiosity Gap.
+>    - Formula 4: Search-Intent & Inspiring Faith.
+>    - Formula 5: Vietnamese Viral Localization.
+> 2. **4 Cinematic 16:9 Thumbnail Prompts (Pixar/DreamWorks Style)**: High visual tension, 0.5s click triggers, split-screen moral clash, or forensic reveal.
+> 3. **4-Tier Semantic Description**: 2-line search hook + emotional synopsis + **Full 10s Timecode Chapters for ALL scenes of ALL episodes** + production credits + master tags.
+> 4. **Master Tag String**: Clean comma-separated keywords ready to paste directly into YouTube Studio.
+> 5. **Engagement Pinned Comment**: High-polarization question prompting moral debate in the comment section.
+>
+> ### 🎬 TIER 2: SEO & MARKETING CHI TIẾT TỪNG TẬP (EPISODIC SERIAL FUNNEL)
+> Designed for serialized daily/weekly release to create an unbreakable binge-watching loop (`Next Video Recommendation Chain`):
+> For **EACH individual episode (Episode 1 through Episode N)**:
+> 1. **Episodic Titles**: Distinct titles with episode numbering e.g., `[Ep 1/5]` and episode-specific cliffhanger hooks.
+> 2. **Episodic 16:9 Thumbnail Prompt**: Dedicated prompt illustrating the unique climax of THAT specific episode (never duplicate thumbnails).
+> 3. **Episodic Description & 10s Chapters**: Exact timestamps for the 10-second scenes belonging exclusively to that episode.
+> 4. **Episodic Pinned Comment with Next-Episode Link**: Open Curiosity Hook directing viewers immediately to the next episode or playlist.
+>
+> ### 📈 ALGORITHM BINGE FUNNEL STRATEGY
+> - **Release Cadence**: Sequential episodic daily premieres at 19:30 ➔ Full Movie Compilation released 24h after finale.
+> - **Card & End-Screen Retention Loop**: Final 15s of Episode N cards directly to Episode N+1.
+> - **A/B Testing Threshold**: If CTR < 6.5% after 3h, switch title and thumbnail variant immediately.
+
+---
+
 ## 🚫 ABSOLUTE RULES
 
 | ✅ Allowed | ❌ Not allowed |
@@ -930,7 +1156,7 @@ After completion, **MANDATORY** update `d:\Project\Sven\history-registry.json` a
 | **Stop after Clip A — wait for user confirmation** | **Auto-output Clip B immediately after Clip A** |
 | **Stop after Clip B — wait for user confirmation** | **Auto-output next Beat** |
 | Output multiple Beats when user says "output all" | Dump all 16 clips without permission |
-| **Write system file updates in English** | **Edit `workflow.md`, `story-rules.md`, `sven-rules.md`, `AGENT.md` in Vietnamese or mixed language** |
+| **Write system file updates in English** | **Edit `workflow.md`, `1-narrative-screenplay-architecture.md`, `4-ai-video-prompt-compiler.md`, `AGENT.md` in Vietnamese or mixed language** |
 | **Run DIALOGUE PRE-FLIGHT before any Beat with dialogue** | **Write dialogue without declaring RELATIONSHIP / POWER DYNAMIC / ADDRESS FORMS for that Beat** |
 | **Address form in Code Block 1 bracket reflects current Beat's power state** | **Use an address form that hasn't been declared as a shift at this Beat** |
 
@@ -940,19 +1166,34 @@ After completion, **MANDATORY** update `d:\Project\Sven\history-registry.json` a
 
 ```
 d:\Project\Sven\
-├── AGENT.md                               ← Trigger + routing + resource paths
-├── workflow.md                            ← This file — read FIRST every session
-├── history-registry.json                  ← Anti-repetition registry
-└── Sven-Agent\
-    └── references\
-        ├── story-rules.md                 ← Script: Beat, Hook, Line C, Genre/Background/Trope
-        ├── sven-rules.md                  ← Omni Flash Prompt: Code Block 1, Mode A/B, PRE-FLIGHT
-        ├── cinematic-camera-catalog.md    ← 8 Shot Scales, 6 Power Angles, 360° Orbit, Match Cut
-        ├── cinematic-emotion-physicality.md ← 6 Emotional Archetypes, Tactile Physics, 4-in-1 Dialogue
-        ├── cinematic-script-architecture.md ← Master Timeline Templates, 4 Casting Models, 140–160 Chars
-        ├── action-dialogue-synergy.md     ← 4 Delivery Methods, 7 General Cases, 3-Shot Kinetic Pipeline
-        ├── music-video-narrative.md       ← Music Video screenplay & prompt architecture ($100M+ VFX)
-        └── clip-continuity-theory.md      ← Spatial continuity & camera physics
+├── .agents\
+│   └── skills\
+│       └── youtube-growth-architect\         ← Unified YouTube niche discovery, entity clusters & master SEO
+├── engine\
+│   └── references\
+│       ├── 1-narrative-screenplay-architecture.md        ← Physical action & subtext synergy system
+│       ├── 3-cinematography-3d-staging.md       ← Master SSOT: 4D Visual System, 14 Shot scales, 6 Angles, 7 Combos, POV/Vlog
+│       ├── 1-narrative-screenplay-architecture.md  ← 6 Emotional archetypes, tactile physics, 4-in-1 dialogue
+│       ├── 1-narrative-screenplay-architecture.md  <- Master screenplay & prompt templates, casting models
+│       ├── 3-cinematography-3d-staging.md         ← Spatial continuity & camera physics
+│       ├── 4-ai-video-prompt-compiler.md   ← Master episode production standard & verification laws
+│       ├── 2-casting-worldbuilding-specification.md   ← Master setting production standard & 10-section architecture
+│       ├── 3-cinematography-3d-staging.md          ← Music video screenplay & prompt architecture ($100M+ VFX)
+│       ├── 1-narrative-screenplay-architecture.md        ← 20 Twist archetypes, universal 3-step formula, narrative devices
+│       ├── 3-cinematography-3d-staging.md ← 3D vector geometry, plane intersection & tracking
+│       ├── 1-narrative-screenplay-architecture.md                    ← Script: Beat 8×15s, 12 Hook types, Lines ABC, anti-repetition
+│       ├── 4-ai-video-prompt-compiler.md                     ← Omni Flash Two-Block system, Mode A/B, PRE-FLIGHT
+│       └── 2-casting-worldbuilding-specification.md           ← 39 Visual styles (19 live action + 20 animation), genres, tropes
+├── AGENT.md                                  ← Master routing & execution orchestrator
+├── workflow.md                               ← Pipeline coordinator — read FIRST every session
+├── history-registry.json                     ← Anti-repetition registry
+├── README.md                                 ← Workspace architecture & operational guide
+├── .gitignore                                ← System & temporary files exclusion rules
+└── output\                                   ← FINAL PRODUCTION DELIVERABLES DIRECTORY
+    └── {project-slug}\                       ← Standardized Project Production Deliverables
+        ├── setting.html                      ← Master Production Bible (10 Mandatory Sections)
+        ├── tap-1.html ... tap-N.html         ← Production-ready 10s Video Prompts (Two-Block System)
+        └── seo-youtube.html                  ← Two-Tier YouTube SEO & Growth Architecture
 ```
 
 **Each file's duty:**
@@ -960,24 +1201,28 @@ d:\Project\Sven\
 | File | Duty |
 |---|---|
 | `workflow.md` | Pipeline coordinator — read first every session |
-| `story-rules.md` | Script: Beat 8×15s, 12 Hook types, Lines ABC, Genre/BG/Trope |
-| `sven-rules.md` | Omni Flash Prompt: Code Block 1 template, PRE-FLIGHT, Mode A/B |
-| `cinematic-camera-catalog.md` | Complete optics encyclopedia: 8 shot scales, 6 power angles, 360° orbit, match cut |
-| `cinematic-emotion-physicality.md` | 6 Emotional archetypes, domain-specific tactile physics, continuous co-presence |
-| `cinematic-script-architecture.md` | Master screenplay & prompt templates, 4 casting models, 140–160 chars density |
-| `action-dialogue-synergy.md` | 4 Delivery methods, 7 general cases, action-dialogue synergy, 3-shot kinetic pipeline |
-| `music-video-narrative.md` | Music Video Architecture: $100M+ VFX scale, lyric subtext translation, 6-Beat MV sync |
+| `1-narrative-screenplay-architecture.md` | Script: Beat 8×15s, 12 Hook types, Lines ABC, Genre/BG/Trope |
+| `4-ai-video-prompt-compiler.md` | Omni Flash Prompt: Code Block 1 template, PRE-FLIGHT, Mode A/B |
+| `3-cinematography-3d-staging.md` | Master SSOT: 4D Visual Architecture, 14 shot scales, 6 power angles, 7 Master Combos, 360° orbit, match cut |
+| `1-narrative-screenplay-architecture.md` | 6 Emotional archetypes, domain-specific tactile physics, continuous co-presence |
+| `1-narrative-screenplay-architecture.md` | Master screenplay & prompt templates, 4 casting models, 14–18 words density |
+| `1-narrative-screenplay-architecture.md` | Master 20 Twist Archetypes (TW-01 to TW-20), Universal 3-Step Formula, 5 Narrative Pillars |
+| `2-casting-worldbuilding-specification.md` | Comprehensive 39 Visual Styles (Live Action & Animation), 22 Genres, 13 Arenas, 18 Tropes |
+| `1-narrative-screenplay-architecture.md` | 3 Master templates (1A, 1B, 2), 7 general cases, action-dialogue synergy, 3-shot kinetic pipeline |
+| `3-cinematography-3d-staging.md` | Music Video Architecture: $100M+ VFX scale, lyric subtext translation, 6-Beat MV sync |
+| `3-cinematography-3d-staging.md` | 3D Vector Geometry, Plane-to-Trajectory Intersection, Camera descent setups |
 | `history-registry.json` | Anti-repetition: names/props/styles used |
 
 **Mandatory reading order at session start:**
 ```
 [1] workflow.md                        ← Pipeline + Style/Genre/BG/Trope library
 [2] history-registry.json             ← Anti-repetition check
-[3] story-rules.md                    ← Script rules
-[4] sven-rules.md                     ← Prompt rules
-[5] cinematic-camera-catalog.md       ← Camera optics & power angles
-[6] cinematic-emotion-physicality.md  ← Micro-biomechanics & tactile physics
-[7] cinematic-script-architecture.md  ← Screenplay & Prompt templates
-[8] action-dialogue-synergy.md        ← 4 Delivery methods & action-dialogue synergy
-[9] music-video-narrative.md          ← Music Video rules (when MV mode triggered)
+[3] 1-narrative-screenplay-architecture.md                    ← Script rules
+[4] 4-ai-video-prompt-compiler.md                     ← Prompt rules
+[5] 3-cinematography-3d-staging.md       ← Camera optics & power angles
+[6] 1-narrative-screenplay-architecture.md  ← Micro-biomechanics & tactile physics
+[7] 1-narrative-screenplay-architecture.md  ← Screenplay & Prompt templates
+[8] 1-narrative-screenplay-architecture.md        ← 4 Delivery methods & action-dialogue synergy
+[9] 3-cinematography-3d-staging.md ← 3D Vector Geometry & Plane Intersection
+[10] 3-cinematography-3d-staging.md         ← Music Video rules (when MV mode triggered)
 ```
