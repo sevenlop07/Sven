@@ -1,0 +1,1592 @@
+<!DOCTYPE html>
+<html lang="vi">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>GẠO HOUSE · MASTER SERIES BIBLE — SERIES HỌC ĐƯỜNG 11A1 (LỚP MÌNH CÓ CHUYỆN)</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:ital,wght@0,600;0,700;0,800;0,900;1,600;1,700&family=Inter:wght@400;500;600;700;800&family=JetBrains+Mono:wght@400;500;600&display=swap" rel="stylesheet">
+  <style>
+    :root {
+      --bg: #0B0F19;
+      --card-bg: #111827;
+      --card-alt: #162032;
+      --border: #1F2937;
+      --border-highlight: #374151;
+      --gold: #F59E0B;
+      --orange: #EA580C;
+      --cyan: #0EA5E9;
+      --emerald: #10B981;
+      --rose: #F43F5E;
+      --indigo: #6366F1;
+      --purple: #A855F7;
+      --text: #F3F4F6;
+      --muted: #9CA3AF;
+      --code-bg: #050811;
+      --green-dark: #215C47;
+      --mint-light: #E6F1E9;
+    }
+    * { box-sizing: border-box; margin: 0; padding: 0; }
+    body {
+      background: var(--bg);
+      color: var(--text);
+      font-family: 'Inter', -apple-system, BlinkMacSystemFont, sans-serif;
+      padding: 30px 20px 80px 20px;
+      line-height: 1.65;
+    }
+    .container { max-width: 1420px; margin: 0 auto; }
+
+    header {
+      background: linear-gradient(135deg, rgba(17, 24, 39, 0.98), rgba(22, 32, 50, 0.95));
+      border: 1px solid var(--border);
+      border-radius: 20px;
+      padding: 40px;
+      margin-bottom: 36px;
+      box-shadow: 0 20px 50px rgba(0,0,0,0.6);
+      position: relative;
+      overflow: hidden;
+    }
+    header::before {
+      content: '';
+      position: absolute; top: 0; left: 0; right: 0; height: 5px;
+      background: linear-gradient(90deg, var(--gold), var(--orange), var(--emerald), var(--cyan), var(--rose));
+    }
+    .badge {
+      display: inline-flex; align-items: center; gap: 6px;
+      padding: 6px 14px; border-radius: 9999px;
+      font-size: 12px; font-weight: 800; text-transform: uppercase; letter-spacing: 0.6px;
+      margin-bottom: 14px;
+    }
+    .badge-gold { background: rgba(245, 158, 11, 0.15); color: var(--gold); border: 1px solid rgba(245, 158, 11, 0.4); }
+    .badge-orange { background: rgba(234, 88, 12, 0.15); color: var(--orange); border: 1px solid rgba(234, 88, 12, 0.4); }
+    .badge-cyan { background: rgba(14, 165, 233, 0.15); color: var(--cyan); border: 1px solid rgba(14, 165, 233, 0.4); }
+    .badge-emerald { background: rgba(16, 185, 129, 0.15); color: var(--emerald); border: 1px solid rgba(16, 185, 129, 0.4); }
+    .badge-rose { background: rgba(244, 63, 94, 0.15); color: var(--rose); border: 1px solid rgba(244, 63, 94, 0.4); }
+    .badge-purple { background: rgba(168, 85, 247, 0.15); color: var(--purple); border: 1px solid rgba(168, 85, 247, 0.4); }
+
+    h1 {
+      font-family: 'Playfair Display', serif;
+      font-size: 38px;
+      font-weight: 800;
+      color: #FFFFFF;
+      margin-bottom: 12px;
+      letter-spacing: 0.5px;
+      line-height: 1.25;
+    }
+    .subtitle {
+      font-size: 15.5px;
+      color: var(--muted);
+      margin-bottom: 28px;
+      max-width: 1200px;
+    }
+
+    .meta-grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
+      gap: 16px;
+      padding-top: 20px;
+      border-top: 1px solid var(--border);
+    }
+    .meta-item {
+      background: rgba(11, 15, 25, 0.6);
+      padding: 14px 18px;
+      border-radius: 12px;
+      border: 1px solid var(--border);
+    }
+    .meta-label { font-size: 11px; text-transform: uppercase; letter-spacing: 0.8px; color: var(--muted); margin-bottom: 4px; }
+    .meta-value { font-size: 14px; font-weight: 700; color: #FFFFFF; }
+
+    .nav-bar {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 8px;
+      margin-bottom: 36px;
+      position: sticky;
+      top: 16px;
+      z-index: 100;
+      background: rgba(11, 15, 25, 0.94);
+      backdrop-filter: blur(12px);
+      padding: 12px 16px;
+      border-radius: 14px;
+      border: 1px solid var(--border);
+      box-shadow: 0 10px 30px rgba(0,0,0,0.5);
+    }
+    .nav-link {
+      color: var(--text);
+      text-decoration: none;
+      font-size: 12px;
+      font-weight: 600;
+      padding: 8px 12px;
+      border-radius: 8px;
+      transition: all 0.2s;
+      background: var(--card-bg);
+      border: 1px solid var(--border);
+      white-space: nowrap;
+    }
+    .nav-link:hover {
+      background: var(--gold);
+      color: #000;
+      border-color: var(--gold);
+    }
+
+    section {
+      background: var(--card-bg);
+      border: 1px solid var(--border);
+      border-radius: 18px;
+      padding: 36px;
+      margin-bottom: 36px;
+      box-shadow: 0 12px 36px rgba(0,0,0,0.4);
+    }
+    .section-header {
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      margin-bottom: 26px;
+      padding-bottom: 16px;
+      border-bottom: 1px solid var(--border);
+    }
+    .section-title {
+      font-family: 'Playfair Display', serif;
+      font-size: 26px;
+      font-weight: 700;
+      color: #FFFFFF;
+      display: flex;
+      align-items: center;
+      gap: 12px;
+    }
+
+    .notice-box {
+      border-radius: 12px;
+      padding: 20px;
+      margin-bottom: 24px;
+      line-height: 1.7;
+    }
+    .notice-gold {
+      background: linear-gradient(135deg, rgba(245, 158, 11, 0.08), rgba(17, 24, 39, 0.95));
+      border: 1px solid rgba(245, 158, 11, 0.4);
+      border-left: 5px solid var(--gold);
+    }
+    .notice-cyan {
+      background: linear-gradient(135deg, rgba(14, 165, 233, 0.08), rgba(17, 24, 39, 0.95));
+      border: 1px solid rgba(14, 165, 233, 0.4);
+      border-left: 5px solid var(--cyan);
+    }
+    .notice-emerald {
+      background: linear-gradient(135deg, rgba(16, 185, 129, 0.08), rgba(17, 24, 39, 0.95));
+      border: 1px solid rgba(16, 185, 129, 0.4);
+      border-left: 5px solid var(--emerald);
+    }
+    .notice-rose {
+      background: linear-gradient(135deg, rgba(244, 63, 94, 0.08), rgba(17, 24, 39, 0.95));
+      border: 1px solid rgba(244, 63, 94, 0.4);
+      border-left: 5px solid var(--rose);
+    }
+    .notice-purple {
+      background: linear-gradient(135deg, rgba(168, 85, 247, 0.08), rgba(17, 24, 39, 0.95));
+      border: 1px solid rgba(168, 85, 247, 0.4);
+      border-left: 5px solid var(--purple);
+    }
+    .notice-title {
+      font-weight: 800;
+      font-size: 13.5px;
+      text-transform: uppercase;
+      letter-spacing: 0.5px;
+      margin-bottom: 8px;
+    }
+
+    .grid-2 {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(420px, 1fr));
+      gap: 20px;
+    }
+    .grid-3 {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(320px, 1fr));
+      gap: 20px;
+    }
+
+    .card {
+      background: var(--card-alt);
+      border: 1px solid var(--border);
+      border-radius: 14px;
+      padding: 22px;
+      display: flex;
+      flex-direction: column;
+      gap: 12px;
+    }
+    .card-title {
+      font-size: 16px;
+      font-weight: 700;
+      color: #FFF;
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+    }
+
+    .prompt-box-header {
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      margin-bottom: 6px;
+    }
+    .prompt-display {
+      background: var(--code-bg);
+      border: 1px solid var(--border);
+      border-radius: 8px;
+      padding: 12px;
+      font-family: 'JetBrains Mono', monospace;
+      font-size: 11.5px;
+      color: #E2E8F0;
+      line-height: 1.55;
+      white-space: pre-wrap;
+      word-break: break-word;
+    }
+
+    .copy-btn {
+      background: rgba(255,255,255,0.08);
+      border: 1px solid var(--border-highlight);
+      color: var(--text);
+      padding: 4px 10px;
+      border-radius: 6px;
+      font-size: 11px;
+      font-weight: 600;
+      cursor: pointer;
+      transition: all 0.2s;
+    }
+    .copy-btn:hover {
+      background: var(--gold);
+      color: #000;
+      border-color: var(--gold);
+    }
+
+    .data-table {
+      width: 100%;
+      border-collapse: collapse;
+      margin-top: 14px;
+      font-size: 13px;
+    }
+    .data-table th, .data-table td {
+      padding: 12px 14px;
+      text-align: left;
+      border-bottom: 1px solid var(--border);
+      vertical-align: top;
+    }
+    .data-table th {
+      background: rgba(255, 255, 255, 0.03);
+      font-weight: 700;
+      color: var(--gold);
+      font-size: 11.5px;
+      text-transform: uppercase;
+      letter-spacing: 0.6px;
+    }
+    .data-table tr:hover td {
+      background: rgba(255, 255, 255, 0.02);
+    }
+
+    .episode-card {
+      background: var(--card-alt);
+      border: 1px solid var(--border);
+      border-radius: 14px;
+      padding: 20px;
+      display: flex;
+      flex-direction: column;
+      gap: 10px;
+      transition: transform 0.2s, border-color 0.2s;
+    }
+    .episode-card:hover {
+      transform: translateY(-3px);
+      border-color: var(--border-highlight);
+    }
+    .ep-meta {
+      display: flex;
+      align-items: center;
+      gap: 10px;
+      font-size: 11px;
+      font-weight: 700;
+      text-transform: uppercase;
+    }
+    .ep-badge {
+      background: rgba(245, 158, 11, 0.15);
+      color: var(--gold);
+      padding: 3px 8px;
+      border-radius: 4px;
+      border: 1px solid rgba(245, 158, 11, 0.3);
+    }
+
+    .tag {
+      font-size: 11px;
+      font-weight: 700;
+      padding: 2px 7px;
+      border-radius: 4px;
+      display: inline-block;
+    }
+    .tag-fixed { background: rgba(16, 185, 129, 0.15); color: var(--emerald); border: 1px solid rgba(16, 185, 129, 0.3); }
+    .tag-open { background: rgba(245, 158, 11, 0.15); color: var(--gold); border: 1px solid rgba(245, 158, 11, 0.3); }
+    .tag-brand { background: rgba(234, 88, 12, 0.15); color: var(--orange); border: 1px solid rgba(234, 88, 12, 0.3); }
+    .tag-sến { background: rgba(244, 63, 94, 0.15); color: var(--rose); border: 1px solid rgba(244, 63, 94, 0.3); }
+  </style>
+</head>
+<body>
+  <div class="container">
+
+    <!-- HEADER / BRAND VISION -->
+    <header>
+      <div style="display:flex; justify-content:space-between; align-items:flex-start; flex-wrap:wrap; gap:16px;">
+        <div>
+          <span class="badge badge-gold">Gạo House · Sitcom Creative OS V3.0</span>
+          <span class="badge badge-emerald">Master Series Bible</span>
+          <span class="badge badge-cyan">AI Video School Series (Lớp 11A1)</span>
+        </div>
+        <div style="font-size:12px; color:var(--muted); text-align:right;">
+          Khởi tạo &amp; Chuẩn hóa mới: 24.10.2026<br>
+          <strong style="color:var(--gold);">Dự án: Series Học Đường 11A1 (15 Tập)</strong>
+        </div>
+      </div>
+      <h1>LỚP MÌNH CÓ CHUYỆN (GẠO HOUSE)</h1>
+      <p class="subtitle">
+        Hồ sơ thiết lập toàn diện (Master Series Bible) cho sitcom học đường tuổi 17 — Lớp 11A1 trước thềm lớp 12 sinh tử. Hợp nhất cấu trúc Sitcom chuẩn mực, 6 nhân vật đa chiều giàu khiếm khuyết gây cười, độ "sến" tình cảm tuổi thanh xuân, hệ thống 2 outfit linh hoạt, chuỗi domino nhân quả 15 tập liên hoàn và kỹ thuật diễn hoạt AI Video 10s không khoảng chết (Zero Dead Air).
+      </p>
+      <div class="meta-grid">
+        <div class="meta-item">
+          <div class="meta-label">Người xem chính</div>
+          <div class="meta-value">THCS &amp; THPT (Khối 6–12, 12–18 Tuổi)</div>
+        </div>
+        <div class="meta-item">
+          <div class="meta-label">Khối lớp bối cảnh</div>
+          <div class="meta-value">Lớp 11A1 (Cuối cấp 11, 17 Tuổi)</div>
+        </div>
+        <div class="meta-item">
+          <div class="meta-label">Thời lượng tập</div>
+          <div class="meta-value">60.0s (6 Cảnh x 10.0s Chuẩn AI Video)</div>
+        </div>
+        <div class="meta-item">
+          <div class="meta-label">Dàn nhân vật</div>
+          <div class="meta-value">6 Nhân Vật (3 Nữ · 3 Nam · 15 Cặp Quan Hệ)</div>
+        </div>
+        <div class="meta-item">
+          <div class="meta-label">Chuẩn xưng hô</div>
+          <div class="meta-value">Tên + Ông - Bà (Cấm tuyệt đối Mày - Tao)</div>
+        </div>
+        <div class="meta-item">
+          <div class="meta-label">Nhận diện thương hiệu</div>
+          <div class="meta-value">Áo lớp Gạo House (Mã: AO_CHU_DAO_01)</div>
+        </div>
+      </div>
+    </header>
+
+    <!-- STICKY NAV -->
+    <nav class="nav-bar" aria-label="Mục lục Series Bible">
+      <a href="#vision" class="nav-link">01. Master Vision &amp; Sitcom Engine</a>
+      <a href="#characters" class="nav-link">02. Canonical Cast (6 Nhân Vật &amp; 15 Cặp)</a>
+      <a href="#char-model-sheets" class="nav-link">03. 16:9 Model Sheets &amp; 2 Outfits (Mode B)</a>
+      <a href="#prop-universe" class="nav-link">04A. Vũ Trụ Đạo Cụ &amp; Áo Lớp Gạo House</a>
+      <a href="#location-universe" class="nav-link">04B. Vũ Trụ Bối Cảnh Lớp Học 11A1</a>
+      <a href="#roadmap" class="nav-link">05. Lộ Trình 15 Tập Phim Domino</a>
+      <a href="#cinematography" class="nav-link">06. Visual &amp; 9:16 Camera Grammar</a>
+      <a href="#audio" class="nav-link">07. Chuẩn Thoại, Độ Sến &amp; Tiết Tấu 10s</a>
+      <a href="#operations" class="nav-link">08. Vận Hành AI &amp; Đo Lường Pilot</a>
+      <a href="#open-decisions" class="nav-link">09. Các Điểm Khóa Bất Khả Xâm Phạm</a>
+    </nav>
+
+    <!-- SECTION 1: MASTER NARRATIVE ARC & SITCOM CREATIVE OS -->
+    <section id="vision">
+      <div class="section-header">
+        <h2 class="section-title"><span>🎯</span> 1. Chiến Lược Nội Dung, 4 Nguồn Cảm Xúc &amp; Sitcom Engine</h2>
+        <span class="tag tag-fixed">Đã Khóa Định Hướng</span>
+      </div>
+
+      <div class="notice-box notice-gold">
+        <div class="notice-title" style="color:var(--gold);">💡 Định Vị &amp; Lời Hứa Khán Giả: “Xem Chuyện Của Một Lớp, Nhận Ra Chuyện Của Lớp Mình”</div>
+        <p style="font-size:13.5px; color:#E5E7EB;">
+          Series học đường AI của Gạo House không xây dựng drama giật gân xa vời hay các hình mẫu siêu thực. Mục tiêu tối thượng là tái hiện những va chạm đời thường, tình bạn chân thật, sự ngây ngô và gắn kết tập thể của lứa tuổi học sinh lớp 11 cuối cấp (17 tuổi). Người xem sau khi xem sẽ có phản xạ tự nhiên: <em>“Lớp mình cũng thế”, “Bạn này giống hệt đứa bàn bên”, “Phải share ngay vào nhóm lớp”.</em>
+        </p>
+      </div>
+
+      <div class="notice-box notice-cyan">
+        <div class="notice-title" style="color:var(--cyan);">⚙️ CÔNG THỨC SITCOM HỌC ĐƯỜNG 11A1 (SITCOM ENGINE SPECIFICATION)</div>
+        <p style="font-size:13.5px; color:#E5E7EB; line-height:1.7;">
+          $$\text{Sitcom Engine} = \text{Bẫy Hoàn Cảnh} + \text{Xung Đột Nhỏ Phóng Đại} + \text{Va Chạm Khiếm Khuyết Tính Cách}$$
+          • <strong>1. Bẫy Hoàn Cảnh (The Inescapable Trap):</strong> Cả nhóm 6 bạn bị nhốt chung trong phòng học 11A1 và áp lực vô hình của thời điểm cuối năm lớp 11 — chỉ còn vài tuần nữa là bước sang lớp 12 sinh tử (chia ban, ôn thi tốt nghiệp, áp lực trưởng thành). Họ không thể tách rời nhau vì tình cảm bạn bè, sự gắn bó và sứ mệnh chung: hoàn thành <em>"Dự Án Kỷ Niệm 11A1"</em> trước khi chia tay thời áo trắng.<br>
+          • <strong>2. Xung Đột Nhỏ Phóng Đại Thành Đại Họa (Amplified Petty Stakes):</strong> Không có thảm họa tận thế hay mâu thuẫn xã hội đen. Xung đột nổ ra từ những việc cỏn con nhất trường học: một bức ảnh dìm bị Nam chụp lén, Linh lập phiếu vote rồi lật kèo, quỹ lớp hụt 15.000 đồng, tin nhắn trả lời cụt lủn đúng một chữ "Ừ" của Khoa, hay mượn bút xóa không trả. Sự hài hước đến từ việc các nhân vật đối xử với rắc rối hạt cát bằng sự nghiêm trọng như ngày tận thế.<br>
+          • <strong>3. Hài Từ Khiếm Khuyết Tính Cách (Character-Flaw Collisions):</strong> Tiếng cười không đến từ câu đố vui vô nghĩa, mà đến từ sự va chạm giữa các tính cách đối lập: sự cầu toàn lật kèo của Linh, sự hấp tấp đùa dai sợ người ta buồn của Nam, sự tỉ mỉ chỉnh ảnh cho cả lớp nhưng tự ti về mình của Vy, sự nghĩa hiệp hiểu sai ngữ cảnh của An, sự chi li săn sale khó hiểu của Minh, và vẻ hổ báo ngoài sân nhưng cứng như tượng gỗ trước máy quay của Khoa.<br>
+          • <strong>4. Trạng Thái Cân Bằng Động &amp; Cửa Sổ Ấm Áp (The 30-Second Warmth Window):</strong> Cuối mỗi tập, sau khi mớ bòng bong hài hước vỡ lở, nhóm bạn luôn có 30 giây lắng đọng, bộc lộ sự quan tâm chân thành và ngọt ngào (độ "sến" tuổi 17) trước khi bị chốt hạ bằng một cú punchline hài hước (*Scene Button*) và mở ra mắt xích nhân quả cho tập tiếp theo.
+        </p>
+      </div>
+
+      <div style="margin:20px 0 10px 0; font-weight:800; text-transform:uppercase; font-size:13px; color:var(--cyan); letter-spacing:0.8px;">
+        4 Nhóm Insight Tâm Lý Cốt Lõi Của Học Sinh 17 Tuổi (Cuối Lớp 11)
+      </div>
+      <div class="grid-2">
+        <div class="card">
+          <div class="card-title">
+            <span style="color:var(--gold);">Insight 01: Cảm giác bị bỏ quên</span>
+            <span class="tag tag-open">Tâm Lý</span>
+          </div>
+          <p style="font-size:13px; color:var(--muted);">
+            • <strong>Mâu thuẫn đời thường:</strong> Im lặng bị hiểu nhầm thành đồng ý; những đóng góp thầm lặng của người ít nói chưa được nhìn thấy kịp thời.<br>
+            • <strong>Ví dụ tình huống:</strong> Cả nhóm bàn bạc sôi nổi chốt ý tưởng rồi mới phát hiện An ít nói nhất lớp đã chuẩn bị sẵn phương án chu đáo từ hôm trước.<br>
+            • <strong>Điểm chạm cảm xúc:</strong> Mọi cá nhân trong lớp đều có tiếng nói và giá trị riêng biệt.
+          </p>
+        </div>
+
+        <div class="card">
+          <div class="card-title">
+            <span style="color:var(--cyan);">Insight 02: Áp lực phải hoàn hảo</span>
+            <span class="tag tag-open">Trách Nhiệm</span>
+          </div>
+          <p style="font-size:13px; color:var(--muted);">
+            • <strong>Mâu thuẫn đời thường:</strong> Người có trách nhiệm (lớp trưởng Linh, nhóm trưởng) muốn kiểm soát mọi thứ vì sợ sai sót; các bạn khác làm lệch kế hoạch.<br>
+            • <strong>Ví dụ tình huống:</strong> Lớp trưởng Linh viết kịch bản chụp ảnh lớp chi tiết từng giây, nhưng đến lúc chụp lại quên mất chỗ đứng của chính mình.<br>
+            • <strong>Điểm chạm cảm xúc:</strong> Người giỏi nhất cũng có lúc bối rối và cần bạn bè đỡ lưng.
+          </p>
+        </div>
+
+        <div class="card">
+          <div class="card-title">
+            <span style="color:var(--rose);">Insight 03: Tự ti ngoại hình</span>
+            <span class="tag tag-open">Hình Ảnh Cá Nhân</span>
+          </div>
+          <p style="font-size:13px; color:var(--muted);">
+            • <strong>Mâu thuẫn đời thường:</strong> Rất muốn tham gia hoạt động chung nhưng e ngại bị chú ý, sợ lên hình không đẹp, sợ bị đem ra trêu chọc.<br>
+            • <strong>Ví dụ tình huống:</strong> Vy chỉnh ảnh cho 39 bạn trong lớp đẹp như bìa tạp chí, nhưng đến ảnh của mình thì ngắm đi soi lại cả đêm không dám đăng vì tự ti nét mặt.<br>
+            • <strong>Điểm chạm cảm xúc:</strong> Chiếc áo lớp xóa nhòa sự tự ti, giúp mọi người thoải mái xuất hiện cạnh nhau.
+          </p>
+        </div>
+
+        <div class="card">
+          <div class="card-title">
+            <span style="color:var(--emerald);">Insight 04: Khác biệt điều kiện sống</span>
+            <span class="tag tag-open">Thấu Cảm</span>
+          </div>
+          <p style="font-size:13px; color:var(--muted);">
+            • <strong>Mâu thuẫn đời thường:</strong> Mỗi bạn có hoàn cảnh gia đình khác nhau; mặc định chi tiêu hay đồ dùng của mình là bình thường với người khác.<br>
+            • <strong>Ví dụ tình huống:</strong> Cả nhóm lên danh sách đạo cụ đắt tiền; Minh thủ quỹ tính từng đồng và An âm thầm biến những đồ vật tái chế sẵn có thành phương án cả lớp ưng ý.<br>
+            • <strong>Điểm chạm cảm xúc:</strong> Tôn trọng sự khác biệt, tìm giải pháp để ai cũng có thể đồng hành mà không cảm thấy tủi thân.
+          </p>
+        </div>
+      </div>
+
+      <div class="notice-box notice-emerald" style="margin-top:24px;">
+        <div class="notice-title" style="color:var(--emerald);">👕 Vai Trò Thương Hiệu Gạo House (Brand Integration Law)</div>
+        <p style="font-size:13.5px; color:#E5E7EB;">
+          1. <strong>Hiện diện tự nhiên:</strong> Áo lớp Gạo House xuất hiện như trang phục nhận diện đồng nhất của tập thể học sinh. Không ép nhân vật đọc kịch bản bán hàng hoặc giới thiệu chất liệu khiên cưỡng.<br>
+          2. <strong>Liên tưởng cốt lõi:</strong> Gạo House gắn liền với khái niệm <em>“Áo lớp mang bản sắc lớp mình”</em> — biểu tượng của sự đoàn kết, kỷ niệm đẹp thời học sinh và tinh thần đồng đội.<br>
+          3. <strong>Hài văn minh:</strong> Tiếng cười xuất phát từ va chạm tính cách và hiểu lầm đáng yêu. Tuyệt đối nghiêm cấm: miệt thị ngoại hình (body shaming), phân biệt giàu nghèo hay làm nhục nhân vật để câu view.
+        </p>
+      </div>
+
+      <div style="margin-top:20px;">
+        <div style="font-weight:700; font-size:14px; color:#FFF; margin-bottom:8px;">Cấu Trúc Nhịp Kể Sitcom 5 Bước (5-Beat Comedy Arc) Trong Tập 60s (6 Cảnh x 10s):</div>
+        <table class="data-table">
+          <thead>
+            <tr>
+              <th style="width:18%;">Nhịp Kể</th>
+              <th style="width:25%;">Mục Tiêu Điện Ảnh</th>
+              <th>Triển Khai Cụ Thể Trong Series 11A1</th>
+            </tr>
+          </thead>
+          <tbody>
+            <tr>
+              <td><strong>Beat 1 (Cảnh 1: 0–10s)</strong></td>
+              <td>Disruptive Hook (00:00.4)</td>
+              <td>Thoại và hành động bùng nổ ngay giây đầu tiên, làm lộ ra xung đột hạt cát: “Không ai được chạm vào bảng này!”, “Bà Linh lật kèo rồi bà con ơi!”</td>
+            </tr>
+            <tr>
+              <td><strong>Beat 2 (Cảnh 2: 10–20s)</strong></td>
+              <td>Thiết lập mâu thuẫn &amp; Phe phái</td>
+              <td>Xác định rõ Straight Man vs Chaos Agent. Nam pha trò làm Vy xụ mặt; Minh đòi tiền quỹ; Khoa đơ mặt trước ống kính.</td>
+            </tr>
+            <tr>
+              <td><strong>Beat 3 (Cảnh 3–4: 20–40s)</strong></td>
+              <td>Xung đột leo thang (Escalation)</td>
+              <td>Các khiếm khuyết va chạm dữ dội: lời nói dối vụng về leo thang, An mang nhầm đạo cụ gây họa, Vy phát hiện ảnh dìm, tình thế rối như tơ vò.</td>
+            </tr>
+            <tr>
+              <td><strong>Beat 4 (Cảnh 5: 40–50s)</strong></td>
+              <td>Cửa sổ ấm áp 30s (Độ Sến Tuổi 17)</td>
+              <td>Nhịp hài chùng xuống, nhường chỗ cho sự chân thành ngọt ngào: Nam cuống cuồng xin lỗi và khen Vy thật lòng, bạn bè đỡ lưng nhau vượt qua bế tắc.</td>
+            </tr>
+            <tr>
+              <td><strong>Beat 5 (Cảnh 6: 50–60s)</strong></td>
+              <td>Scene Button &amp; Mắt Xích Kế Tiếp</td>
+              <td>Một cú punchline hài hước chốt hạ cảnh phim, đồng thời một tình tiết bất ngờ nổ ra châm ngòi trực tiếp cho tập sau (Domino Catalyst).</td>
+            </tr>
+          </tbody>
+        </table>
+      </div>
+    </section>
+
+    <!-- SECTION 2: CANONICAL CAST & 15-PAIR RELATIONSHIP NETWORK -->
+    <section id="characters">
+      <div class="section-header">
+        <h2 class="section-title"><span>👥</span> 2. Dàn 6 Nhân Vật Chính Thức (Canonical Cast) &amp; Mạng Quan Hệ 15 Cặp</h2>
+        <span class="tag tag-fixed">Đã Chốt: 6 Nhân Vật (3 Nữ · 3 Nam · Lớp 11A1 · 17 Tuổi)</span>
+      </div>
+
+      <div class="notice-box notice-cyan">
+        <div class="notice-title" style="color:var(--cyan);">🌟 Cơ Cấu 6 Nhân Vật Đa Chiều — Hội Tụ Trọn Vẹn 6 Khiếm Khuyết Hài Hước &amp; Rung Cảm Tuổi 17</div>
+        <p style="font-size:13.5px; color:#E5E7EB; line-height:1.7;">
+          • <strong>6 Mảnh Ghép Lớp 11A1 (17 Tuổi, Chuẩn Bị Lên 12 Sinh Tử):</strong><br>
+          &nbsp;&nbsp;1. <strong>Linh (<code>@linh</code> · Nữ 1):</strong> Lớp trưởng nguyên tắc. Nhắc mọi người bình chọn dân chủ nhưng phút 89 lại tự lật kèo đổi ý vì lo sợ phương án không hoàn hảo.<br>
+          &nbsp;&nbsp;2. <strong>Nam (<code>@nam</code> · Nam 1):</strong> Lớp phó văn thể. Pha trò cực nhanh, miệng nhanh hơn não nhưng lại len lén để ý thái độ sợ câu đùa khiến người khác buồn (nhất là Vy), vội bù đắp sến rện.<br>
+          &nbsp;&nbsp;3. <strong>Vy (<code>@vy</code> · Nữ 2):</strong> Bí thư &amp; Visual. Làm việc lớp rất kỹ nhưng việc mình thì chịu thua (chỉnh ảnh lớp rất kỹ, đẹp lung linh như poster phim Hàn; nhưng chỉnh ảnh mình thì ngắm cả đêm không dám đăng vì tự ti).<br>
+          &nbsp;&nbsp;4. <strong>An (<code>@an</code> · Nam 2):</strong> Tổ trưởng trầm tính. Hay giúp bạn bằng hành động âm thầm nhưng thỉnh thoảng hiểu sai ngữ cảnh gây ra tình huống dở khóc dở cười.<br>
+          &nbsp;&nbsp;5. <strong>Minh (<code>@minh</code> · Nữ 1 / Nữ 2):</strong> Thủ quỹ lớp. Kiểm soát chi tiêu gắt gao từng 500 đồng, công bằng tuyệt đối nhưng nhiều khi tiêu tiền vào những thứ "cần nghĩ" (mua đồ giảm giá 50% vô dụng).<br>
+          &nbsp;&nbsp;6. <strong>Khoa (<code>@khoa</code> · Nam 1 / Nam 2):</strong> Vận động viên bóng rổ. Xông xáo, dũng mãnh ngoài sân bóng nhưng lúng túng trước máy quay và bạn nữ, nhắn tin cộc lốc cụt lủn ("Ừ", "K", ".").
+        </p>
+      </div>
+
+      <!-- 6 Character Detail Cards Grid -->
+      <div class="grid-3" style="margin-bottom:24px;">
+        <!-- Linh Card -->
+        <div class="card" style="border-top:4px solid var(--gold);">
+          <div class="card-title">
+            <span style="color:var(--gold);">1. Linh (Lớp Trưởng)</span>
+            <span class="tag tag-open">17 Tuổi · Nữ</span>
+          </div>
+          <div style="font-size:12.5px; color:var(--muted); line-height:1.65;">
+            • <strong>Vai trò:</strong> Lớp trưởng trách nhiệm, cầu toàn, chỗ dựa của tập thể.<br>
+            • <strong>Khiếm khuyết gây cười:</strong> Tổ chức khảo sát, hô hào bình chọn biểu quyết dân chủ rầm rộ, nhưng đến phút 89 thấy bất an lại tự tay lật kèo đổi sang ý mình làm cả lớp ngã ngửa.<br>
+            • <strong>Nét sến &amp; Dễ thương:</strong> Hay gồng mình mạnh mẽ, nhưng khi mệt mỏi nhận được hộp sữa bạn để lén trong hộc bàn là rơm rớm nước mắt.<br>
+            • <strong>Câu cửa miệng:</strong> <em>“Mọi người vote công bằng nghen... mà thôi, tui thấy theo cách tui an toàn hơn!”</em>
+          </div>
+        </div>
+
+        <!-- Nam Card -->
+        <div class="card" style="border-top:4px solid var(--orange);">
+          <div class="card-title">
+            <span style="color:var(--orange);">2. Nam (Cây Hài Nhát Gái)</span>
+            <span class="tag tag-open">17 Tuổi · Nam</span>
+          </div>
+          <div style="font-size:12.5px; color:var(--muted); line-height:1.65;">
+            • <strong>Vai trò:</strong> Lớp phó văn thể, khuấy động phong trào, hoạt ngôn.<br>
+            • <strong>Khiếm khuyết gây cười:</strong> Bắn trò đùa cực nhanh, thích trêu chọc nhưng vừa nói xong là liếc trộm nét mặt xem người ta có giận không. Thấy Vy xụ mặt là cuống cuồng làm trò hề để tạ lỗi.<br>
+            • <strong>Nét sến &amp; Dễ thương:</strong> Cực kỳ thích Vy. Hay mượn cớ chọc ghẹo để được nói chuyện; hễ Vy nhìn thẳng vào mắt là tai đỏ bừng, lắp bắp lảng đi chỗ khác.<br>
+            • <strong>Câu cửa miệng:</strong> <em>“Tui nói giỡn thôi đó... bà đừng có giận tui thiệt nha bà Vy!”</em>
+          </div>
+        </div>
+
+        <!-- Vy Card -->
+        <div class="card" style="border-top:4px solid var(--rose);">
+          <div class="card-title">
+            <span style="color:var(--rose);">3. Vy (Nàng Thơ Tự Ti)</span>
+            <span class="tag tag-open">17 Tuổi · Nữ</span>
+          </div>
+          <div style="font-size:12.5px; color:var(--muted); line-height:1.65;">
+            • <strong>Vai trò:</strong> Bí thư chi đoàn, phụ trách hình ảnh &amp; thẩm mỹ của lớp.<br>
+            • <strong>Khiếm khuyết gây cười:</strong> Chỉnh ảnh cho 39 bạn trong lớp đẹp như tiên nữ Hàn Quốc; nhưng ảnh chính mình thì ngắm cả đêm, zoom từng milimet rồi không dám đăng vì tự ti.<br>
+            • <strong>Nét sến &amp; Dễ thương:</strong> Rất nhạy cảm với lời nói của Nam. Thích được Nam khen nhưng giả vờ giận dỗi để che đi nụ cười mỉm ngượng ngùng.<br>
+            • <strong>Câu cửa miệng:</strong> <em>“Mọi người lên hình đẹp xuất sắc luôn á... còn hình tui nhìn kỳ cục quá hà!”</em>
+          </div>
+        </div>
+
+        <!-- An Card -->
+        <div class="card" style="border-top:4px solid var(--cyan);">
+          <div class="card-title">
+            <span style="color:var(--cyan);">4. An (Hiệp Sĩ Hiểu Nhầm)</span>
+            <span class="tag tag-open">17 Tuổi · Nam</span>
+          </div>
+          <div style="font-size:12.5px; color:var(--muted); line-height:1.65;">
+            • <strong>Vai trò:</strong> Tổ trưởng, học sinh giỏi ít nói, chỗ dựa thầm lặng.<br>
+            • <strong>Khiếm khuyết gây cười:</strong> Tốt bụng nghĩa hiệp nhưng hiểu sai ngữ cảnh: bạn khóc vì cay mắt thì mang dầu gió; bạn cần thước kẻ thì đi vác cái bảng gỗ to đùng.<br>
+            • <strong>Nét sến &amp; Dễ thương:</strong> Quan tâm không lời: lặng lẽ dùng cặp che nắng cho bạn, bí mật gọt sẵn bút chì, mua sẵn nước mát để ở ngăn bàn.<br>
+            • <strong>Câu cửa miệng:</strong> <em>“Tui... chuẩn bị sẵn cho bà rồi nè.”</em>
+          </div>
+        </div>
+
+        <!-- Minh Card -->
+        <div class="card" style="border-top:4px solid var(--emerald);">
+          <div class="card-title">
+            <span style="color:var(--emerald);">5. Minh (Thủ Quỹ Săn Sale)</span>
+            <span class="tag tag-open">17 Tuổi · Nữ</span>
+          </div>
+          <div style="font-size:12.5px; color:var(--muted); line-height:1.65;">
+            • <strong>Vai trò:</strong> Thủ quỹ lớp, quản lý tài chính, người thực tế.<br>
+            • <strong>Khiếm khuyết gây cười:</strong> Đòi nợ từng 500 đồng quỹ lớp rất gắt gao; nhưng lại hay tự ý vung tiền mua những món đồ giảm giá 50% vô dụng về cho lớp ("cần nghĩ").<br>
+            • <strong>Nét sến &amp; Dễ thương:</strong> Miệng cằn nhằn nhưng luôn lo chu đáo bánh ngọt, nước chanh cho cả lớp trong những buổi tập văn nghệ mệt lử.<br>
+            • <strong>Câu cửa miệng:</strong> <em>“Thiếu một ngàn cũng là thiếu quỹ nghen... Ủa cái này giảm giá nửa giá nè!”</em>
+          </div>
+        </div>
+
+        <!-- Khoa Card -->
+        <div class="card" style="border-top:4px solid var(--purple);">
+          <div class="card-title">
+            <span style="color:var(--purple);">6. Khoa (Tượng Gỗ Sân Bóng)</span>
+            <span class="tag tag-open">17 Tuổi · Nam</span>
+          </div>
+          <div style="font-size:12.5px; color:var(--muted); line-height:1.65;">
+            • <strong>Vai trò:</strong> Đội trưởng thể thao, trụ cột sức mạnh của lớp.<br>
+            • <strong>Khiếm khuyết gây cười:</strong> Ngoài sân bóng rổ dũng mãnh ngầu đét; nhưng đứng trước máy quay hay bạn nữ là cứng đờ như khúc gỗ; nhắn tin cộc lốc ("Ừ", "K", ".").<br>
+            • <strong>Nét sến &amp; Dễ thương:</strong> Chân thành, vụng về. Ai nhờ việc nặng cũng làm ngay không nề hà; lúng túng gãi đầu khi được các bạn nữ cảm ơn.<br>
+            • <strong>Câu cửa miệng:</strong> <em>“Ừ.” / “Để tui xách cho.”</em>
+          </div>
+        </div>
+      </div>
+
+      <!-- Relationship Matrix: 15 Pairs -->
+      <div style="margin-top:20px;">
+        <div style="font-weight:700; font-size:14px; color:#FFF; margin-bottom:8px;">Mạng Lưới Quan Hệ 15 Cặp Đời Thường (Dynamics &amp; Sitcom Friction):</div>
+        <table class="data-table">
+          <thead>
+            <tr>
+              <th style="width:20%;">Cặp Nhân Vật</th>
+              <th style="width:25%;">Bản Chất Quan Hệ</th>
+              <th>Xung Đột Hài Hước &amp; Điểm Chạm "Sến" Tuổi 17</th>
+            </tr>
+          </thead>
+          <tbody>
+            <tr>
+              <td><strong>1. Nam &amp; Vy</strong></td>
+              <td>Tình cảm học trò / Oan gia thả thính</td>
+              <td>Nam trêu chọc làm Vy dỗi, Nam cuống cuồng xin lỗi sến rện. Vy làm đẹp cho lớp nhưng tự ti bản thân, chỉ mong nhận được lời khen chân thành từ Nam.</td>
+            </tr>
+            <tr>
+              <td><strong>2. Linh &amp; Nam</strong></td>
+              <td>Thanh mai trúc mã / Khẩu chiến</td>
+              <td>Linh nguyên tắc đốc thúc việc; Nam tìm cách lươn lẹo né việc. Nhưng hễ Linh bị người ngoài bắt nạt, Nam là người đầu tiên nhảy ra bênh vực.</td>
+            </tr>
+            <tr>
+              <td><strong>3. Linh &amp; Vy</strong></td>
+              <td>Kế hoạch vs. Thẩm mỹ</td>
+              <td>Linh đòi làm cho nhanh và đúng hạn; Vy đòi tỉ mỉ từng chi tiết thẩm mỹ. Cuối cùng Linh luôn xiêu lòng trước những thiết kế quá đẹp của Vy.</td>
+            </tr>
+            <tr>
+              <td><strong>4. Linh &amp; Minh</strong></td>
+              <td>Quyền lực lớp trưởng vs. Két sắt thủ quỹ</td>
+              <td>Linh đòi chi tiền làm dự án; Minh đập sổ quỹ từ chối từng đồng. Nhưng khi Linh kiệt sức, Minh âm thầm trích tiền túi mua đồ ăn tẩm bổ cho bạn.</td>
+            </tr>
+            <tr>
+              <td><strong>5. Linh &amp; An</strong></td>
+              <td>Chỉ huy kế hoạch vs. Thực thi âm thầm</td>
+              <td>Linh sốt ruột nhắc nhở; An đã âm thầm hoàn thành từ sớm. Đôi khi An hiểu sai ý Linh tạo nên những pha dở khóc dở cười.</td>
+            </tr>
+            <tr>
+              <td><strong>6. Linh &amp; Khoa</strong></td>
+              <td>Bộ não điều hành vs. Sức mạnh cơ bắp</td>
+              <td>Linh giao việc dàn dựng; Khoa làm ẩu gãy đạo cụ. Linh mắng té tát nhưng Khoa chỉ biết gãi đầu cười trừ rồi còng lưng khiêng vác đền bù.</td>
+            </tr>
+            <tr>
+              <td><strong>7. Vy &amp; An</strong></td>
+              <td>Nàng thơ thẩm mỹ &amp; Hiệp sĩ che chở</td>
+              <td>Vy loay hoay bê vác hay nắng chói, An lập tức xuất hiện che cặp chắn nắng hoặc bê đỡ, nhưng miệng không nói một lời làm Vy ngượng ngùng.</td>
+            </tr>
+            <tr>
+              <td><strong>8. Vy &amp; Minh</strong></td>
+              <td>Nghệ thuật bay bổng vs. Thực tế cơm áo</td>
+              <td>Vy muốn mua giấy mỹ thuật đắt tiền; Minh chỉ duyệt mua giấy bãi bằng giá rẻ. Hai cô bạn thương lượng như trên sàn chứng khoán.</td>
+            </tr>
+            <tr>
+              <td><strong>9. Vy &amp; Khoa</strong></td>
+              <td>Đạo diễn hình ảnh vs. Tượng sáp trước ống kính</td>
+              <td>Vy cầm máy cố chụp Khoa cho ngầu; Khoa mặt đơ như tượng gỗ làm hỏng 50 tấm ảnh. Vy vừa bực vừa phì cười vì độ ngố của bạn.</td>
+            </tr>
+            <tr>
+              <td><strong>10. Nam &amp; An</strong></td>
+              <td>Cây hài mồm mép vs. Kẻ ít nói hành động</td>
+              <td>Nam rủ rê An tham gia các trò nghịch ngợm; An thật thà làm theo khiến kế hoạch đổ bể thành tai nạn hài hước của cả hai.</td>
+            </tr>
+            <tr>
+              <td><strong>11. Nam &amp; Minh</strong></td>
+              <td>Con nợ chuyên trốn vs. Chủ nợ đanh đá</td>
+              <td>Minh dí Nam đòi nợ quỹ lớp khắp hành lang; Nam giả vờ diễn kịch bi thương để xin khất nhưng không thoát khỏi máy tính Casio của Minh.</td>
+            </tr>
+            <tr>
+              <td><strong>12. Nam &amp; Khoa</strong></td>
+              <td>Bộ đôi quậy phá &amp; Thể thao</td>
+              <td>Nam bày trò trêu bạn; Khoa túm cổ áo Nam nhấc bổng như bao cát. Nhưng trên sân bóng, Nam là người hò hét cổ vũ Khoa to nhất lớp.</td>
+            </tr>
+            <tr>
+              <td><strong>13. An &amp; Minh</strong></td>
+              <td>Chàng trai tiết kiệm thầm lặng vs. Thủ quỹ chi li</td>
+              <td>An hay tự chế đồ tái chế giúp lớp đỡ tốn tiền; Minh nhìn thấy vừa mừng vừa cảm động, bí mật cộng điểm chuyên cần cho An.</td>
+            </tr>
+            <tr>
+              <td><strong>14. An &amp; Khoa</strong></td>
+              <td>Cặp bài trùng nói ít làm nhiều</td>
+              <td>Hai chàng trai giao tiếp với nhau bằng ánh mắt và những câu cộc lốc ("Ừ", "Đi"), nhưng phối hợp dọn bàn ghế, khiêng đồ cực kỳ ăn ý.</td>
+            </tr>
+            <tr>
+              <td><strong>15. Minh &amp; Khoa</strong></td>
+              <td>Thủ quỹ phạt tiền vs. Kẻ phá hoại đạo cụ</td>
+              <td>Khoa lỡ tay làm hỏng thước kẻ hay rách giấy; Minh ghi nợ vào sổ bắt Khoa làm trực nhật cả tuần để trừ nợ, tạo ra những màn đối đáp đanh đá.</td>
+            </tr>
+          </tbody>
+        </table>
+      </div>
+
+      <!-- Kinship Ladder Standard -->
+      <div class="notice-box notice-rose" style="margin-top:24px;">
+        <div class="notice-title" style="color:var(--rose);">🗣️ Nấc Xưng Hô Học Trò Bắt Buộc (Kinship Ladder Standard)</div>
+        <p style="font-size:13.5px; color:#E5E7EB; line-height:1.7;">
+          • <strong>Quy chuẩn độc tôn:</strong> Gọi bằng <strong>TÊN</strong> hoặc <strong>"ÔNG - BÀ" / "TUI - ÔNG" / "TUI - BÀ"</strong> (<em>"Ông Nam", "Bà Vy", "Bà Linh", "Ông An", "Bà Minh", "Ông Khoa"</em>).<br>
+          • <strong>Cấm tuyệt đối:</strong> <code>mày - tao</code> (để giữ gìn sự trong sáng, đáng yêu, sến rện của thanh xuân), cấm các từ ngữ công sở xa lạ và liên từ sách vở (<code>bởi vì</code>, <code>cho nên</code>, <code>tuy nhiên</code>).
+        </p>
+      </div>
+    </section>
+
+    <!-- SECTION 3: 16:9 MODEL SHEETS & 2 OUTFITS (MODE B) -->
+    <section id="char-model-sheets">
+      <div class="section-header">
+        <h2 class="section-title"><span>📐</span> 3. Bảng Tạo Hình Nhân Vật 16:9 (Model Sheets) &amp; Quy Chuẩn 2 Outfit (Mode B)</h2>
+        <span class="tag tag-gold">Chuẩn Chỉ Số &amp; Mode B Khóa Cứng</span>
+      </div>
+
+      <div class="notice-box notice-gold">
+        <div class="notice-title" style="color:var(--gold);">📏 NGUYÊN TẮC MODE B &amp; QUY CHUẨN 2 OUTFIT LINH HOẠT THEO TẬP</div>
+        <p style="font-size:13.5px; color:#E5E7EB; line-height:1.7;">
+          • <strong>Chế độ tham chiếu Mode B (100% Ảnh Đính Kèm):</strong> Tuyệt đối không mô tả lại ngũ quan hay màu áo trong câu lệnh video của mô hình (Sora/Kling/Runway/Hailuo). Thay vào đó, sử dụng câu lệnh neo Mode B trỏ trực tiếp vào ảnh tham chiếu <code>@character</code> và áo lớp <code>@AO_CHU_DAO_01</code>.<br>
+          • <strong>Quy chuẩn 2 Outfit thay đổi linh hoạt cho từng tập:</strong><br>
+          &nbsp;&nbsp;👗 <strong>Nữ sinh (Linh, Vy, Minh):</strong><br>
+          &nbsp;&nbsp;&nbsp;&nbsp;• <em>Outfit Nữ 1 (Năng động / Hoạt động tập thể):</em> Áo polo đồng phục Gạo House + Quần âu trắng dáng suông + Giày sneaker + Tóc buộc đuôi ngựa cao.<br>
+          &nbsp;&nbsp;&nbsp;&nbsp;• <em>Outfit Nữ 2 (Dịu dàng / Lên hình sến):</em> Áo polo đồng phục Gạo House + Chân váy xếp ly kaki học sinh + Giày trắng + Tất cao cổ trắng + Tóc xõa tự nhiên kẹp nơ nhỏ.<br>
+          &nbsp;&nbsp;👖 <strong>Nam sinh (Nam, An, Khoa):</strong><br>
+          &nbsp;&nbsp;&nbsp;&nbsp;• <em>Outfit Nam 1 (Trẻ trung / Ngoại cảnh / Phong trào):</em> Áo polo đồng phục Gạo House + Quần jean xanh đậm ống đứng + Giày sneaker.<br>
+          &nbsp;&nbsp;&nbsp;&nbsp;• <em>Outfit Nam 2 (Chỉn chu / Học sinh gương mẫu trong lớp):</em> Áo polo đồng phục Gạo House + Quần kaki dáng suông (màu be/đen) + Giày sneaker.
+        </p>
+      </div>
+
+      <div class="grid-2">
+        <!-- Linh Model Sheet & Mode B -->
+        <div class="card">
+          <div class="card-title">
+            <span style="color:var(--gold);">1. Linh (Lớp Trưởng · Nữ 17t)</span>
+            <span class="badge badge-gold">Model Sheet &amp; Mode B</span>
+          </div>
+          <div style="font-size:12.5px; color:var(--muted); line-height:1.6;">
+            • Thực thể video: <code>linh_student</code><br>
+            • Tham chiếu: Ảnh đính kèm <code>@linh</code> và áo <code>@AO_CHU_DAO_01</code>.<br>
+            • Outfit 1: Áo đp + Quần trắng + Sneaker + Buộc tóc cao.<br>
+            • Outfit 2: Áo đp + Chân váy xếp ly kaki + Giày trắng + Tất cao cổ trắng + Xõa tóc kẹp nơ.
+          </div>
+          <div>
+            <div class="prompt-box-header">
+              <span style="font-size:11px; color:var(--gold); font-weight:700;">1. CÂU LỆNH MODE B TRONG PROMPT VIDEO (100% THAM CHIẾU ẢNH):</span>
+              <button class="copy-btn" onclick="copySnippet('p-modeb-linh', this, 'Mode B Linh')">📋 Copy Mode B</button>
+            </div>
+            <div id="p-modeb-linh" class="prompt-display" style="color:var(--cyan);">linh_student [100% Appearance, attire, and facial features Refer to image @linh], clutching her class schedule notebook, looking around with urgent perfectionist expression — the only linh_student in frame.</div>
+          </div>
+          <div>
+            <div class="prompt-box-header">
+              <span style="font-size:11px; color:var(--emerald); font-weight:700;">2. CÂU LỆNH 4-VIEW MODEL SHEET 16:9 (MIDJOURNEY / FLUX):</span>
+              <button class="copy-btn" onclick="copySnippet('p-modelsheet-linh', this, 'Model Sheet Linh')">📋 Copy Model Sheet</button>
+            </div>
+            <pre id="p-modelsheet-linh" class="prompt-display">Style: Cinematic modern school drama, natural daylight photography, realistic Vietnamese 11th grade student aesthetic.
+
+Format: Character reference model sheet, 16:9 aspect ratio. Strictly four views only: one high-definition upper body close-up portrait on the left side of frame, plus exactly three parallel full-body views (front view, side profile view, and back view) on the right side. Exactly four-view layout, zero extra sub-panels.
+
+Character: Vietnamese female high school student Linh, 17 years old. Facial features, neat hairstyle (high ponytail for Outfit 1 or gentle loose hair with hairclip for Outfit 2), and custom school class uniform polo shirt are strictly referenced from attached character reference image @linh and uniform image @AO_CHU_DAO_01 with zero alteration. Wearing crisp white straight school trousers or pleated kaki school skirt, paired with clean white sneakers.
+
+Rules: Natural standing neutral pose against solid neutral grey studio background with soft natural window daylight illumination. Strictly four-view model sheet uncropped head-to-toe with footwear fully visible. Zero text, subtitles, extra logos, or background artifacts.</pre>
+          </div>
+        </div>
+
+        <!-- Nam Model Sheet & Mode B -->
+        <div class="card">
+          <div class="card-title">
+            <span style="color:var(--orange);">2. Nam (Cây Hài Nhát Gái · Nam 17t)</span>
+            <span class="badge badge-orange">Model Sheet &amp; Mode B</span>
+          </div>
+          <div style="font-size:12.5px; color:var(--muted); line-height:1.6;">
+            • Thực thể video: <code>nam_student</code><br>
+            • Tham chiếu: Ảnh đính kèm <code>@nam</code> và áo <code>@AO_CHU_DAO_01</code>.<br>
+            • Outfit 1: Áo đp + Quần jean xanh đậm + Sneaker.<br>
+            • Outfit 2: Áo đp + Quần kaki màu be dáng suông + Sneaker.
+          </div>
+          <div>
+            <div class="prompt-box-header">
+              <span style="font-size:11px; color:var(--gold); font-weight:700;">1. CÂU LỆNH MODE B TRONG PROMPT VIDEO (100% THAM CHIẾU ẢNH):</span>
+              <button class="copy-btn" onclick="copySnippet('p-modeb-nam', this, 'Mode B Nam')">📋 Copy Mode B</button>
+            </div>
+            <div id="p-modeb-nam" class="prompt-display" style="color:var(--cyan);">nam_student [100% Appearance, attire, and facial features Refer to image @nam], mischievous grin turning into bashful hesitation, peeking sideways to check reaction with sheepish warmth — the only nam_student in frame.</div>
+          </div>
+          <div>
+            <div class="prompt-box-header">
+              <span style="font-size:11px; color:var(--emerald); font-weight:700;">2. CÂU LỆNH 4-VIEW MODEL SHEET 16:9 (MIDJOURNEY / FLUX):</span>
+              <button class="copy-btn" onclick="copySnippet('p-modelsheet-nam', this, 'Model Sheet Nam')">📋 Copy Model Sheet</button>
+            </div>
+            <pre id="p-modelsheet-nam" class="prompt-display">Style: Cinematic modern school drama, natural daylight photography, realistic Vietnamese 11th grade student aesthetic.
+
+Format: Character reference model sheet, 16:9 aspect ratio. Strictly four views only: one high-definition upper body close-up portrait on the left side of frame, plus exactly three parallel full-body views (front view, side profile view, and back view) on the right side. Exactly four-view layout, zero extra sub-panels.
+
+Character: Vietnamese male high school student Nam, 17 years old. Facial features, messy stylish schoolboy haircut, and custom school class uniform polo shirt are strictly referenced from attached character reference image @nam and uniform image @AO_CHU_DAO_01 with zero alteration. Wearing dark blue denim jeans (Outfit 1) or beige kaki trousers (Outfit 2), paired with everyday canvas sneakers.
+
+Rules: Natural standing neutral pose against solid neutral grey studio background with soft natural window daylight illumination. Strictly four-view model sheet uncropped head-to-toe with footwear fully visible. Zero text, subtitles, extra logos, or background artifacts.</pre>
+          </div>
+        </div>
+
+        <!-- Vy Model Sheet & Mode B -->
+        <div class="card">
+          <div class="card-title">
+            <span style="color:var(--rose);">3. Vy (Nàng Thơ Tự Ti · Nữ 17t)</span>
+            <span class="badge badge-rose">Model Sheet &amp; Mode B</span>
+          </div>
+          <div style="font-size:12.5px; color:var(--muted); line-height:1.6;">
+            • Thực thể video: <code>vy_student</code><br>
+            • Tham chiếu: Ảnh đính kèm <code>@vy</code> và áo <code>@AO_CHU_DAO_01</code>.<br>
+            • Outfit 1: Áo đp + Quần trắng suông + Giày sneaker + Buộc tóc cao.<br>
+            • Outfit 2: Áo đp + Chân váy xếp ly kaki + Giày trắng + Tất cao cổ trắng + Xõa tóc kẹp nơ.
+          </div>
+          <div>
+            <div class="prompt-box-header">
+              <span style="font-size:11px; color:var(--gold); font-weight:700;">1. CÂU LỆNH MODE B TRONG PROMPT VIDEO (100% THAM CHIẾU ẢNH):</span>
+              <button class="copy-btn" onclick="copySnippet('p-modeb-vy', this, 'Mode B Vy')">📋 Copy Mode B</button>
+            </div>
+            <div id="p-modeb-vy" class="prompt-display" style="color:var(--cyan);">vy_student [100% Appearance, attire, and facial features Refer to image @vy], tilting head slightly while scrutinizing smartphone photo, tucking loose hair behind ear with shy self-conscious gaze — the only vy_student in frame.</div>
+          </div>
+          <div>
+            <div class="prompt-box-header">
+              <span style="font-size:11px; color:var(--emerald); font-weight:700;">2. CÂU LỆNH 4-VIEW MODEL SHEET 16:9 (MIDJOURNEY / FLUX):</span>
+              <button class="copy-btn" onclick="copySnippet('p-modelsheet-vy', this, 'Model Sheet Vy')">📋 Copy Model Sheet</button>
+            </div>
+            <pre id="p-modelsheet-vy" class="prompt-display">Style: Cinematic modern school drama, natural daylight photography, realistic Vietnamese 11th grade student aesthetic.
+
+Format: Character reference model sheet, 16:9 aspect ratio. Strictly four views only: one high-definition upper body close-up portrait on the left side of frame, plus exactly three parallel full-body views (front view, side profile view, and back view) on the right side. Exactly four-view layout, zero extra sub-panels.
+
+Character: Vietnamese female high school student Vy, 17 years old. Facial features, gentle shoulder-length hair with small aesthetic hairclip, and custom school class uniform polo shirt are strictly referenced from attached character reference image @vy and uniform image @AO_CHU_DAO_01 with zero alteration. Wearing white school trousers (Outfit 1) or pleated kaki school skirt with white crew socks (Outfit 2), clean white sneakers.
+
+Rules: Natural standing neutral pose against solid neutral grey studio background with soft natural window daylight illumination. Strictly four-view model sheet uncropped head-to-toe with footwear fully visible. Zero text, subtitles, extra logos, or background artifacts.</pre>
+          </div>
+        </div>
+
+        <!-- An Model Sheet & Mode B -->
+        <div class="card">
+          <div class="card-title">
+            <span style="color:var(--cyan);">4. An (Hiệp Sĩ Hiểu Nhầm · Nam 17t)</span>
+            <span class="badge badge-cyan">Model Sheet &amp; Mode B</span>
+          </div>
+          <div style="font-size:12.5px; color:var(--muted); line-height:1.6;">
+            • Thực thể video: <code>an_student</code><br>
+            • Tham chiếu: Ảnh đính kèm <code>@an</code> và áo <code>@AO_CHU_DAO_01</code>.<br>
+            • Outfit 1: Áo đp + Quần jean xanh đậm + Sneaker.<br>
+            • Outfit 2: Áo đp + Quần kaki sẫm màu + Sneaker tối giản.
+          </div>
+          <div>
+            <div class="prompt-box-header">
+              <span style="font-size:11px; color:var(--gold); font-weight:700;">1. CÂU LỆNH MODE B TRONG PROMPT VIDEO (100% THAM CHIẾU ẢNH):</span>
+              <button class="copy-btn" onclick="copySnippet('p-modeb-an', this, 'Mode B An')">📋 Copy Mode B</button>
+            </div>
+            <div id="p-modeb-an" class="prompt-display" style="color:var(--cyan);">an_student [100% Appearance, attire, and facial features Refer to image @an], calm quiet demeanor, extending a notebook or prop across desk with sincere literal earnestness — the only an_student in frame.</div>
+          </div>
+          <div>
+            <div class="prompt-box-header">
+              <span style="font-size:11px; color:var(--emerald); font-weight:700;">2. CÂU LỆNH 4-VIEW MODEL SHEET 16:9 (MIDJOURNEY / FLUX):</span>
+              <button class="copy-btn" onclick="copySnippet('p-modelsheet-an', this, 'Model Sheet An')">📋 Copy Model Sheet</button>
+            </div>
+            <pre id="p-modelsheet-an" class="prompt-display">Style: Cinematic modern school drama, natural daylight photography, realistic Vietnamese 11th grade student aesthetic.
+
+Format: Character reference model sheet, 16:9 aspect ratio. Strictly four views only: one high-definition upper body close-up portrait on the left side of frame, plus exactly three parallel full-body views (front view, side profile view, and back view) on the right side. Exactly four-view layout, zero extra sub-panels.
+
+Character: Vietnamese male high school student An, 17 years old. Facial features, tidy neat black hair, gentle observant eyes, and custom school class uniform polo shirt are strictly referenced from attached character reference image @an and uniform image @AO_CHU_DAO_01 with zero alteration. Wearing dark blue denim jeans (Outfit 1) or neat dark kaki trousers (Outfit 2), minimalist clean sneakers.
+
+Rules: Natural standing neutral pose against solid neutral grey studio background with soft natural window daylight illumination. Strictly four-view model sheet uncropped head-to-toe with footwear fully visible. Zero text, subtitles, extra logos, or background artifacts.</pre>
+          </div>
+        </div>
+
+        <!-- Minh Model Sheet & Mode B -->
+        <div class="card">
+          <div class="card-title">
+            <span style="color:var(--emerald);">5. Minh (Thủ Quỹ Săn Sale · Nữ 17t)</span>
+            <span class="badge badge-emerald">Model Sheet &amp; Mode B</span>
+          </div>
+          <div style="font-size:12.5px; color:var(--muted); line-height:1.6;">
+            • Thực thể video: <code>minh_student</code><br>
+            • Tham chiếu: Ảnh đính kèm <code>@minh</code> và áo <code>@AO_CHU_DAO_01</code>.<br>
+            • Outfit 1: Áo đp + Quần trắng suông + Giày sneaker + Buộc tóc đuôi ngựa.<br>
+            • Outfit 2: Áo đp + Chân váy xếp ly kaki + Giày trắng + Tất cao cổ trắng + Xõa tóc.
+          </div>
+          <div>
+            <div class="prompt-box-header">
+              <span style="font-size:11px; color:var(--gold); font-weight:700;">1. CÂU LỆNH MODE B TRONG PROMPT VIDEO (100% THAM CHIẾU ẢNH):</span>
+              <button class="copy-btn" onclick="copySnippet('p-modeb-minh', this, 'Mode B Minh')">📋 Copy Mode B</button>
+            </div>
+            <div id="p-modeb-minh" class="prompt-display" style="color:var(--cyan);">minh_student [100% Appearance, attire, and facial features Refer to image @minh], tapping a pen rhythmically against class fund ledger, raising eyebrows with sharp practical clarity — the only minh_student in frame.</div>
+          </div>
+          <div>
+            <div class="prompt-box-header">
+              <span style="font-size:11px; color:var(--emerald); font-weight:700;">2. CÂU LỆNH 4-VIEW MODEL SHEET 16:9 (MIDJOURNEY / FLUX):</span>
+              <button class="copy-btn" onclick="copySnippet('p-modelsheet-minh', this, 'Model Sheet Minh')">📋 Copy Model Sheet</button>
+            </div>
+            <pre id="p-modelsheet-minh" class="prompt-display">Style: Cinematic modern school drama, natural daylight photography, realistic Vietnamese 11th grade student aesthetic.
+
+Format: Character reference model sheet, 16:9 aspect ratio. Strictly four views only: one high-definition upper body close-up portrait on the left side of frame, plus exactly three parallel full-body views (front view, side profile view, and back view) on the right side. Exactly four-view layout, zero extra sub-panels.
+
+Character: Vietnamese female high school student Minh, 17 years old. Facial features, practical clean hairstyle (high ponytail or bob cut), sharp expressive eyes, and custom school class uniform polo shirt are strictly referenced from attached character reference image @minh and uniform image @AO_CHU_DAO_01 with zero alteration. Wearing white school trousers (Outfit 1) or pleated kaki school skirt (Outfit 2), durable student sneakers.
+
+Rules: Natural standing neutral pose against solid neutral grey studio background with soft natural window daylight illumination. Strictly four-view model sheet uncropped head-to-toe with footwear fully visible. Zero text, subtitles, extra logos, or background artifacts.</pre>
+          </div>
+        </div>
+
+        <!-- Khoa Model Sheet & Mode B -->
+        <div class="card">
+          <div class="card-title">
+            <span style="color:var(--purple);">6. Khoa (Tượng Gỗ Sân Bóng · Nam 17t)</span>
+            <span class="badge badge-purple">Model Sheet &amp; Mode B</span>
+          </div>
+          <div style="font-size:12.5px; color:var(--muted); line-height:1.6;">
+            • Thực thể video: <code>khoa_student</code><br>
+            • Tham chiếu: Ảnh đính kèm <code>@khoa</code> và áo <code>@AO_CHU_DAO_01</code>.<br>
+            • Outfit 1: Áo đp + Quần jean xanh đậm + Giày sneaker thể thao.<br>
+            • Outfit 2: Áo đp + Quần kaki suông màu be/đen + Sneaker.
+          </div>
+          <div>
+            <div class="prompt-box-header">
+              <span style="font-size:11px; color:var(--gold); font-weight:700;">1. CÂU LỆNH MODE B TRONG PROMPT VIDEO (100% THAM CHIẾU ẢNH):</span>
+              <button class="copy-btn" onclick="copySnippet('p-modeb-khoa', this, 'Mode B Khoa')">📋 Copy Mode B</button>
+            </div>
+            <div id="p-modeb-khoa" class="prompt-display" style="color:var(--cyan);">khoa_student [100% Appearance, attire, and facial features Refer to image @khoa], athletic tall build, stiffening uncomfortably before camera lens with wide blinkless eyes and awkward frozen posture — the only khoa_student in frame.</div>
+          </div>
+          <div>
+            <div class="prompt-box-header">
+              <span style="font-size:11px; color:var(--emerald); font-weight:700;">2. CÂU LỆNH 4-VIEW MODEL SHEET 16:9 (MIDJOURNEY / FLUX):</span>
+              <button class="copy-btn" onclick="copySnippet('p-modelsheet-khoa', this, 'Model Sheet Khoa')">📋 Copy Model Sheet</button>
+            </div>
+            <pre id="p-modelsheet-khoa" class="prompt-display">Style: Cinematic modern school drama, natural daylight photography, realistic Vietnamese 11th grade student aesthetic.
+
+Format: Character reference model sheet, 16:9 aspect ratio. Strictly four views only: one high-definition upper body close-up portrait on the left side of frame, plus exactly three parallel full-body views (front view, side profile view, and back view) on the right side. Exactly four-view layout, zero extra sub-panels.
+
+Character: Vietnamese male high school student Khoa, 17 years old. Tall athletic athletic build, sporty short crew cut hair, honest rugged features, and custom school class uniform polo shirt are strictly referenced from attached character reference image @khoa and uniform image @AO_CHU_DAO_01 with zero alteration. Wearing dark blue denim jeans (Outfit 1) or durable kaki trousers (Outfit 2), athletic basketball sneakers.
+
+Rules: Natural standing neutral pose against solid neutral grey studio background with soft natural window daylight illumination. Strictly four-view model sheet uncropped head-to-toe with footwear fully visible. Zero text, subtitles, extra logos, or background artifacts.</pre>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- SECTION 4A: MASTER PROP UNIVERSE & BRAND ARTIFACT -->
+    <section id="prop-universe">
+      <div class="section-header">
+        <h2 class="section-title"><span>🎒</span> 4A. Vũ Trụ Đạo Cụ &amp; Áo Lớp Gạo House (Prop Universe)</h2>
+        <span class="tag tag-brand">Mã Tài Nguyên: AO_CHU_DAO_01</span>
+      </div>
+
+      <div class="notice-box notice-gold">
+        <div class="notice-title" style="color:var(--gold);">👕 QUY CHUẨN THAM CHIẾU ÁO LỚP GẠO HOUSE (AO_CHU_DAO_01)</div>
+        <p style="font-size:13.5px; color:#E5E7EB; line-height:1.7;">
+          • Mẫu áo lớp Gạo House được chỉ định mã tài nguyên dự án là <strong>AO_CHU_DAO_01</strong>.<br>
+          • <strong>Tham chiếu tuyệt đối:</strong> Màu sắc, chất vải, cổ áo, đường may, bo tay và hình in mặt trước/mặt sau được đồng bộ 100% từ ảnh chụp sản phẩm thật hoặc bản thiết kế chính thức do Gạo House cung cấp.<br>
+          • Cả 6 bạn học sinh (Linh, Nam, Vy, An, Minh, Khoa) đều mặc chung một mẫu áo lớp đồng nhất, tạo nên tính gắn kết tập thể vững chắc cho toàn bộ series.
+        </p>
+      </div>
+
+      <div class="grid-2">
+        <!-- Master Wardrobe Prop Card -->
+        <div class="card" style="border-left:4px solid var(--orange);">
+          <div class="card-title">
+            <span style="color:var(--orange);">Áo Lớp Gạo House (AO_CHU_DAO_01)</span>
+            <span class="tag tag-brand">Master Wardrobe Prop</span>
+          </div>
+          <p style="font-size:13px; color:var(--muted);">
+            • Thực thể video: <code>ao_lop_gao_house</code> / <code>AO_CHU_DAO_01</code><br>
+            • Lưu ý prompt: Không tự mô tả thêm màu hay slogan, chỉ neo trực tiếp vào ảnh đính kèm <code>@AO_CHU_DAO_01</code>.
+          </p>
+          <div>
+            <div class="prompt-box-header">
+              <span style="font-size:11px; color:var(--gold); font-weight:700;">LỆNH MODE B ĐẠO CỤ TRONG PROMPT VIDEO:</span>
+              <button class="copy-btn" onclick="copySnippet('p-modeb-prop-ao', this, 'Mode B Áo Lớp')">📋 Copy Mode B Prop</button>
+            </div>
+            <div id="p-modeb-prop-ao" class="prompt-display" style="color:var(--cyan);">ao_lop_gao_house [100% Refer to image @AO_CHU_DAO_01], custom class uniform shirt, crisp clean fabric collar, neat shoulder seams, iconic class identity print visible across chest without deformation — the only ao_lop_gao_house in frame.</div>
+          </div>
+          <div>
+            <div class="prompt-box-header">
+              <span style="font-size:11px; color:var(--emerald); font-weight:700;">LỆNH TẠO ẢNH THAM CHIẾU THIẾT KẾ ÁO (PROP SHEET):</span>
+              <button class="copy-btn" onclick="copySnippet('p-propsheet-ao', this, 'Prop Sheet Áo Lớp')">📋 Copy Prop Sheet</button>
+            </div>
+            <pre id="p-propsheet-ao" class="prompt-display">Style: Commercial product photography, crisp studio lighting, high fabric texture fidelity.
+
+Format: Prop reference sheet, 16:9 aspect ratio. Front view, back view, and detail close-up of collar and sleeve stitching.
+
+Subject: Vietnamese high school custom class polo t-shirt ao_lop_gao_house. Design, graphic typography, and color palette strictly referenced from attached design asset @AO_CHU_DAO_01 with zero alteration. Premium breathable cotton fabric, flat seamless presentation.
+
+Rules: Displayed on neutral mannequin against clean neutral studio background. Zero watermarks, zero background clutter.</pre>
+          </div>
+        </div>
+
+        <!-- School Props Grid -->
+        <div class="card">
+          <div class="card-title">
+            <span style="color:#FFF;">Hệ Thống Đạo Cụ Học Đường Phụ Trợ</span>
+            <span class="tag tag-open">5 Đạo Cụ Cốt Lõi</span>
+          </div>
+          <div style="font-size:12.5px; color:var(--muted); line-height:1.65;">
+            1. <code>so_tay_ke_hoach</code>: Sổ tay ghi chú bìa cứng kẻ dòng của Linh, bút bi xanh gài mép sổ.<br>
+            2. <code>so_thu_quy</code>: Sổ thu chi kẻ bảng của Minh kèm máy tính bỏ túi Casio quen thuộc.<br>
+            3. <code>dien_thoai_chup_anh</code>: Điện thoại thông minh ốp lưng tối giản của Vy dùng để căn góc ảnh lớp và chỉnh sửa filter.<br>
+            4. <code>so_phac_thao</code>: Sổ vẽ phác thảo bìa kraft của An, bút chì bấm và gôm tẩy gọn gàng.<br>
+            5. <code>dao_cu_hoat_dong</code>: Bìa carton, kéo, thước kẻ gỗ dài 1m và cuộn băng keo của Khoa.
+          </div>
+          <div style="margin-top:8px;">
+            <div class="prompt-box-header">
+              <span style="font-size:11px; color:var(--gold); font-weight:700;">LỆNH MODE B ĐẠO CỤ HỌC TẬP (VIDEO PROMPT SNIPPET):</span>
+              <button class="copy-btn" onclick="copySnippet('p-modeb-prop-school', this, 'Mode B Đạo Cụ')">📋 Copy Mode B Prop</button>
+            </div>
+            <div id="p-modeb-prop-school" class="prompt-display" style="color:var(--cyan);">so_tay_ke_hoach [100% Refer to image @so_tay_ke_hoach], resting open on the wooden desk beside a neatly placed ballpoint pen, crisp grid-lined paper filled with tidy handwritten notes and checkboxes — the only so_tay_ke_hoach in frame.</div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- SECTION 4B: MASTER LOCATION UNIVERSE -->
+    <section id="location-universe">
+      <div class="section-header">
+        <h2 class="section-title"><span>🏫</span> 4B. Vũ Trụ Bối Cảnh Lớp Học 11A1 Đô Thị Việt Nam (Location Universe)</h2>
+        <span class="tag tag-fixed">Đã Khóa: THPT Đô Thị Sáng Sủa</span>
+      </div>
+
+      <div class="notice-box notice-cyan">
+        <div class="notice-title" style="color:var(--cyan);">🏛️ Không Gian Trường Học Chuẩn Mực: Gần Gũi, Thân Thuộc &amp; Đầy Ánh Nắng</div>
+        <p style="font-size:13.5px; color:#E5E7EB;">
+          Bối cảnh được định vị tại một trường Trung học Phổ thông (THPT) đô thị Việt Nam hiện đại, khang trang nhưng giữ trọn hồn cốt học đường: bảng xanh kẻ ô, bàn ghế gỗ hai chỗ ngồi khung sắt sơn tĩnh điện, cửa sổ kính khung nhôm đón ánh nắng mai dịu dàng, quạt trần quay đều, cây bàng và bằng lăng xanh mát ngoài hành lang.
+        </p>
+      </div>
+
+      <div class="grid-2">
+        <!-- Main Classroom -->
+        <div class="card" style="border-left:4px solid var(--cyan);">
+          <div class="card-title">
+            <span style="color:var(--cyan);">Phòng Học Lớp 11A1 (phong_hoc_11a1)</span>
+            <span class="tag tag-fixed">Bối Cảnh Trọng Tâm</span>
+          </div>
+          <p style="font-size:13px; color:var(--muted);">
+            • Thực thể video: <code>phong_hoc_11a1</code><br>
+            • Thiết lập 4 góc máy cố định: Hướng nhìn bảng xanh; Hướng nhìn cụm bàn nhóm; Hướng ngang cửa sổ đón nắng; Hướng ngược từ bục giảng xuống lớp.
+          </p>
+          <div>
+            <div class="prompt-box-header">
+              <span style="font-size:11px; color:var(--gold); font-weight:700;">LỆNH MODE B BỐI CẢNH TRONG PROMPT VIDEO:</span>
+              <button class="copy-btn" onclick="copySnippet('p-modeb-loc-class', this, 'Mode B Bối Cảnh')">📋 Copy Mode B Loc</button>
+            </div>
+            <div id="p-modeb-loc-class" class="prompt-display" style="color:var(--cyan);">phong_hoc_11a1 [100% Refer to image @phong_hoc_11a1], morning. Inside modern sunlit Vietnamese high school classroom, rows of neat wooden desks, green chalkboard at front, soft daylight streaming through large open glass windows.</div>
+          </div>
+          <div>
+            <div class="prompt-box-header">
+              <span style="font-size:11px; color:var(--emerald); font-weight:700;">LỆNH TẠO ẢNH THAM CHIẾU BỐI CẢNH (LOCATION MODEL SHEET):</span>
+              <button class="copy-btn" onclick="copySnippet('p-locsheet-class', this, 'Loc Sheet Phòng Học')">📋 Copy Loc Sheet</button>
+            </div>
+            <pre id="p-locsheet-class" class="prompt-display">Style: Cinematic architectural photography, realistic modern Vietnamese high school interior, warm soft morning daylight illumination.
+
+Format: Location reference sheet, 16:9 aspect ratio. Wide establishing shot of classroom phong_hoc_11a1.
+
+Environment: A bright and clean Vietnamese high school classroom for 11th grade (17-year-old students). Rows of light wooden double-desks with grey iron frames, green chalkboard with chalk tray at the front, white tiled walls with a light blue wainscot line, wooden teacher's podium, large rectangular windows along the left wall with sheer cream curtains, ceiling fans, warm soft sunlight casting soft diagonal shadows across wooden tabletops.
+
+Rules: Empty of students for spatial reference. Clean composition, zero blur, zero surreal distortions, zero watermarks.</pre>
+          </div>
+        </div>
+
+        <!-- Auxiliary Locations -->
+        <div class="card">
+          <div class="card-title">
+            <span style="color:#FFF;">3 Bối Cảnh Bổ Trợ Xuyên Suốt</span>
+            <span class="tag tag-open">Mở Rộng Series</span>
+          </div>
+          <div style="font-size:12.5px; color:var(--muted); line-height:1.65;">
+            1. <code>hanh_lang_lop</code>: Hành lang rộng rãi lát gạch sáng, lan can sắt hoa văn sơn xanh, nhìn xuống sân trường rợp bóng cây; nơi diễn ra các cuộc đối đáp ngẫu hứng giữa giờ chơi.<br>
+            2. <code>san_truong_thpt</code>: Sân trường rợp bóng cây bàng và hoa phượng vĩ đỏ thắm, ghế đá hoa cương xám, vạch kẻ sân bóng rổ và cột cờ; bối cảnh chụp ảnh tập thể và sinh hoạt chung.<br>
+            3. <code>cang_tin_truong</code>: Căng tin trường sáng sủa, quầy bán đồ ăn nhẹ, dãy bàn gỗ dài, tủ mát nước ngọt; không gian chia sẻ đồ ăn vặt và những cuộc trò chuyện gần gũi.
+          </div>
+          <div style="margin-top:8px;">
+            <div class="prompt-box-header">
+              <span style="font-size:11px; color:var(--gold); font-weight:700;">LỆNH MODE B HÀNH LANG (VIDEO PROMPT SNIPPET):</span>
+              <button class="copy-btn" onclick="copySnippet('p-modeb-loc-corridor', this, 'Mode B Hành Lang')">📋 Copy Mode B Loc</button>
+            </div>
+            <div id="p-modeb-loc-corridor" class="prompt-display" style="color:var(--cyan);">along hanh_lang_lop, bright breezy Vietnamese school corridor overlooking leafy courtyard trees, gentle sunlight filtering through balustrade railings.</div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- SECTION 5: SCENE / EPISODE ROADMAP -->
+    <section id="roadmap">
+      <div class="section-header">
+        <h2 class="section-title"><span>🎬</span> 5. Lộ Trình 15 Tập Phim Mẫu — Vòng Cung Mùa 1: “Dự Án Kỷ Niệm 11A1 — Trước Khi Lên 12”</h2>
+        <span class="tag tag-gold">Chuỗi Mắt Xích Nhân Quả Liền Mạch (Cause &amp; Effect Domino Arc)</span>
+      </div>
+
+      <div class="notice-box notice-gold">
+        <div class="notice-title" style="color:var(--gold);">🌟 NGUYÊN TẮC DOMINO NHÂN QUẢ: KHÔNG MỘT TẬP PHIM NÀO RỜI RẠC</div>
+        <p style="font-size:13.5px; color:#E5E7EB; line-height:1.7;">
+          Toàn bộ 15 tập phim vận hành như một chuỗi Domino nhân quả (Cause &amp; Effect): <strong>Hậu quả hoặc cú Button của tập trước lập tức châm ngòi cho mâu thuẫn mở đầu của tập sau</strong>. 6 nhân vật lớp 11 (17 tuổi) cùng nhau vượt qua những va chạm đời thường, bảo vệ tình bạn và chuẩn bị bước vào kỳ thi đại học lớp 12 khốc liệt. Mọi tập phim đều cân bằng giữa tiếng cười Sitcom giòn giã và những khoảng lặng ngọt ngào ("sến") của tuổi thanh xuân.
+        </p>
+      </div>
+
+      <div class="grid-3">
+
+        <!-- Episode 1 Card -->
+        <div class="episode-card" style="border-left:4px solid var(--gold);">
+          <div class="ep-meta">
+            <span class="ep-badge">Tập 01</span>
+            <span style="color:var(--muted); font-size:10.5px;">60.0s (6 Cảnh x 10s)</span>
+          </div>
+          <div style="font-weight:800; font-size:15px; color:#FFF; line-height:1.4;">
+            Phát Động Dự Án & Vụ Lật Kèo Cuối Giờ
+          </div>
+          <div style="font-size:11px; color:var(--gold); font-weight:700;">Mở Màn · Sitcom Lật Kèo</div>
+          <div style="font-size:12px; color:var(--text); line-height:1.55; margin-top:4px;">
+            • <strong>Disruptive Hook (0–3s):</strong> <em>Linh đập mạnh tập phiếu khảo sát xuống bục giảng: “Hôm nay lớp mình phải biểu quyết công bằng!”</em><br>
+            • <strong>Mâu thuẫn hạt cát:</strong> Linh tổ chức vote concept kỷ yếu suốt 3 tiết học, nhưng phút 89 lại tự lật kèo chọn theo ý mình vì sợ phương án lớp chọn không hoàn hảo.<br>
+            • <strong>Tuyến A (60%):</strong> Linh đốc thúc lớp làm hồ sơ kỷ niệm 11A1 trước khi lên lớp 12; Nam trêu chọc làm cả lớp cười ầm.<br>
+            • <strong>Tuyến B (30%):</strong> Vy loay hoay căn góc chụp thử đầu tiên nhưng tự ti không dám để ai chụp mình.<br>
+            • <strong>Runner C (10%):</strong> Khoa mỗi lần bị lia máy quay tới là đứng hình như ma-nơ-canh, mắt trợn trừng.<br>
+            • <strong>Độ Sến (Warmth 30s):</strong> <span style="color:var(--rose);">Cuối giờ, An âm thầm để lại một hộp sữa mát trên bàn Linh khi thấy bạn kiệt sức vì điều hành.</span><br>
+            • <strong>Scene Button:</strong> <span style="color:var(--cyan);">Cả lớp hò reo chốt concept thì phát hiện không ai chịu nhận làm chân chụp ảnh chính!</span><br>
+            • <strong>Mắt xích tập sau (Domino):</strong> <em style="color:var(--gold);">Chính việc thiếu phó nháy dẫn tới việc ép Vy và Nam phải cầm máy ở Tập 2.</em>
+          </div>
+        </div>
+
+        <!-- Episode 2 Card -->
+        <div class="episode-card" style="border-left:4px solid var(--gold);">
+          <div class="ep-meta">
+            <span class="ep-badge">Tập 02</span>
+            <span style="color:var(--muted); font-size:10.5px;">60.0s (6 Cảnh x 10s)</span>
+          </div>
+          <div style="font-weight:800; font-size:15px; color:#FFF; line-height:1.4;">
+            Thảm Họa Góc Máy & Bức Ảnh Dìm Hàng Của Vy
+          </div>
+          <div style="font-size:11px; color:var(--gold); font-weight:700;">Xung Đột Nở Nồi · Sến Chuộc Lỗi</div>
+          <div style="font-size:12px; color:var(--text); line-height:1.55; margin-top:4px;">
+            • <strong>Disruptive Hook (0–3s):</strong> <em>Vy hét toáng lên giữa lớp: “Ông Nam! Ai cho ông đăng tấm hình này lên nhóm lớp hả?!”</em><br>
+            • <strong>Mâu thuẫn hạt cát:</strong> Nam cầm máy chụp lén bắt trúng khoảnh khắc Vy đang ngáp rồi gửi vào nhóm trêu; Vy tủi thân vì vốn tự ti ngoại hình.<br>
+            • <strong>Tuyến A (60%):</strong> Vy giận dỗi không thèm chỉnh ảnh tập thể; Nam hoảng hốt nhận ra trò đùa của mình quá đà và cuống cuồng tìm cách tạ lỗi.<br>
+            • <strong>Tuyến B (30%):</strong> Minh truy tìm kẻ làm mất nắp ống kính máy ảnh của trường mượn.<br>
+            • <strong>Runner C (10%):</strong> An hiểu lầm Vy khóc vì đau mắt nên chạy đi xin khắp lớp... 3 lọ thuốc nhỏ mắt và dầu gió.<br>
+            • <strong>Độ Sến (Warmth 30s):</strong> <span style="color:var(--rose);">Nam lén nán lại sau giờ học, tự tay cắt dán một tấm bookmark hình vẽ Vy chibi cực xinh kèm lời xin lỗi nắn nót.</span><br>
+            • <strong>Scene Button:</strong> <span style="color:var(--cyan);">Vy mỉm cười giấu tờ giấy vào cặp, nhưng Minh xuất hiện đòi 10.000đ tiền phạt vì chụp ảnh trong giờ!</span><br>
+            • <strong>Mắt xích tập sau (Domino):</strong> <em style="color:var(--gold);">Tiền phạt hụt quỹ dẫn thẳng đến cuộc tổng kiểm kê tài chính khốc liệt ở Tập 3.</em>
+          </div>
+        </div>
+
+        <!-- Episode 3 Card -->
+        <div class="episode-card" style="border-left:4px solid var(--gold);">
+          <div class="ep-meta">
+            <span class="ep-badge">Tập 03</span>
+            <span style="color:var(--muted); font-size:10.5px;">60.0s (6 Cảnh x 10s)</span>
+          </div>
+          <div style="font-weight:800; font-size:15px; color:#FFF; line-height:1.4;">
+            Cuộc Kiểm Kê Của Minh & 15 Nghìn Bị Ẩn Số
+          </div>
+          <div style="font-size:11px; color:var(--gold); font-weight:700;">Tài Chính Hài Hước · Oan Gia Đòi Nợ</div>
+          <div style="font-size:12px; color:var(--text); line-height:1.55; margin-top:4px;">
+            • <strong>Disruptive Hook (0–3s):</strong> <em>Minh gõ cọc cọc máy tính Casio: “Quỹ lớp hụt đúng mười lăm ngàn! Không ai được ra về!”</em><br>
+            • <strong>Mâu thuẫn hạt cát:</strong> Minh rà soát sổ quỹ phát hiện thiếu 15k mua màu vẽ; nghi ngờ Nam lươn lẹo trốn đóng quỹ.<br>
+            • <strong>Tuyến A (60%):</strong> Nam phân bua mình đã đưa tiền rồi nhưng không có biên lai; hai bên đối đáp như phiên tòa xử án.<br>
+            • <strong>Tuyến B (30%):</strong> Linh cố gắng giảng hòa nhưng bị cuốn vào tranh cãi nguyên tắc ghi chép sổ sách.<br>
+            • <strong>Runner C (10%):</strong> Khoa nhắn tin cho Minh giải thích nhưng gửi đúng một dấu chấm hỏi “?” làm Minh càng tức điên.<br>
+            • <strong>Độ Sến (Warmth 30s):</strong> <span style="color:var(--rose);">Hóa ra An đã cầm 15k đó đi photo thêm tài liệu ôn tập môn Toán cho cả nhóm mà quên báo.</span><br>
+            • <strong>Scene Button:</strong> <span style="color:var(--cyan);">Minh vừa thở phào thì thông báo: “Để phạt sự cẩu thả, cả bọn phải tự tay làm đồ thủ công handmade!”</span><br>
+            • <strong>Mắt xích tập sau (Domino):</strong> <em style="color:var(--gold);">Nhiệm vụ làm đồ thủ công kích hoạt thảm họa cắt dán ở Tập 4.</em>
+          </div>
+        </div>
+
+        <!-- Episode 4 Card -->
+        <div class="episode-card" style="border-left:4px solid var(--gold);">
+          <div class="ep-meta">
+            <span class="ep-badge">Tập 04</span>
+            <span style="color:var(--muted); font-size:10.5px;">60.0s (6 Cảnh x 10s)</span>
+          </div>
+          <div style="font-weight:800; font-size:15px; color:#FFF; line-height:1.4;">
+            Cơn Ác Mộng Cắt Dán & Chiếc Thước Kẻ Của Khoa
+          </div>
+          <div style="font-size:11px; color:var(--gold); font-weight:700;">Hỗn Loạn Đạo Cụ · Hiệp Sĩ Vụng Về</div>
+          <div style="font-size:12px; color:var(--text); line-height:1.55; margin-top:4px;">
+            • <strong>Disruptive Hook (0–3s):</strong> <em>Tiếng *RẮC* vang dội, chiếc bảng carton backdrop kỷ niệm gãy đôi trước ánh mắt kinh hoàng của cả lớp.</em><br>
+            • <strong>Mâu thuẫn hạt cát:</strong> Khoa dùng lực quá tay làm gãy đôi khung backdrop kỷ niệm vừa dựng xong; An lao vào cứu nguy nhưng dán băng keo ngược mặt.<br>
+            • <strong>Tuyến A (60%):</strong> Cả nhóm nháo nhào tìm cách gia cố chiếc khung trước khi giáo viên chủ nhiệm vào lớp kiểm tra.<br>
+            • <strong>Tuyến B (30%):</strong> Vy ngồi tỉ mẩn cắt từng cánh hoa giấy để che vết nứt, Nam đứng cạnh quạt mát và khen lấy khen để.<br>
+            • <strong>Runner C (10%):</strong> Minh tiếc tiền cuộn băng keo xịn, vừa đưa băng keo vừa cằn nhằn xót ruột.<br>
+            • <strong>Độ Sến (Warmth 30s):</strong> <span style="color:var(--rose);">Khoa tự nhận lỗi và ở lại dọn sạch toàn bộ rác vụn, không để các bạn nữ phải động tay.</span><br>
+            • <strong>Scene Button:</strong> <span style="color:var(--cyan);">Chiếc backdrop đứng vững nhưng dính chặt luôn vạt áo của Nam vào tường!</span><br>
+            • <strong>Mắt xích tập sau (Domino):</strong> <em style="color:var(--gold);">Vạt áo Nam bị rách nhẹ tạo cớ cho sự cố đổi áo và giặt áo ở các tập sau.</em>
+          </div>
+        </div>
+
+        <!-- Episode 5 Card -->
+        <div class="episode-card" style="border-left:4px solid var(--gold);">
+          <div class="ep-meta">
+            <span class="ep-badge">Tập 05</span>
+            <span style="color:var(--muted); font-size:10.5px;">60.0s (6 Cảnh x 10s)</span>
+          </div>
+          <div style="font-weight:800; font-size:15px; color:#FFF; line-height:1.4;">
+            Người Hùng Hiểu Sai & Hộp Cơm Bí Mật Lúc Hoàng Hôn
+          </div>
+          <div style="font-size:11px; color:var(--gold); font-weight:700;">Đỉnh Điểm Độ Sến · Hiểu Nhầm Dễ Thương</div>
+          <div style="font-size:12px; color:var(--text); line-height:1.55; margin-top:4px;">
+            • <strong>Disruptive Hook (0–3s):</strong> <em>An trịnh trọng đặt lên bàn Vy một... bó rau má tươi rói: “Bà uống cho mát, hạ hỏa!”</em><br>
+            • <strong>Mâu thuẫn hạt cát:</strong> Thấy Vy than thở mệt mỏi vì bài vở, An tưởng Vy bị nhiệt miệng nên mang cả bó rau má đến lớp giúp bạn.<br>
+            • <strong>Tuyến A (60%):</strong> Nam ghen ngầm khi thấy An quan tâm Vy, quyết tâm thể hiện sự ga-lăng bằng một ly trà sữa đúng vị Vy thích.<br>
+            • <strong>Tuyến B (30%):</strong> Linh và Minh căng thẳng phân chia lịch trực nhật và lịch chụp ảnh ngoại cảnh.<br>
+            • <strong>Runner C (10%):</strong> Khoa đi ngang qua tưởng rau má ăn được, bốc một nắm nhai thử rồi nhăn mặt đắng ngắt.<br>
+            • <strong>Độ Sến (Warmth 30s):</strong> <span style="color:var(--rose);">Dưới ánh hoàng hôn hành lang, Nam ngập ngừng đưa ly trà sữa cho Vy, lí nhí: “Tui giảm ngọt rồi đó... bà đừng giận nữa nha.”</span><br>
+            • <strong>Scene Button:</strong> <span style="color:var(--cyan);">Vy vừa cầm ly trà sữa thì Minh nhảy ra đòi tiền ship 5.000đ của Nam!</span><br>
+            • <strong>Mắt xích tập sau (Domino):</strong> <em style="color:var(--gold);">Tình cảm Nam - Vy nhen nhóm mở đường cho buổi chiếu thử video kỷ niệm ở Tập 6.</em>
+          </div>
+        </div>
+
+        <!-- Episode 6 Card -->
+        <div class="episode-card" style="border-left:4px solid var(--gold);">
+          <div class="ep-meta">
+            <span class="ep-badge">Tập 06</span>
+            <span style="color:var(--muted); font-size:10.5px;">60.0s (6 Cảnh x 10s)</span>
+          </div>
+          <div style="font-weight:800; font-size:15px; color:#FFF; line-height:1.4;">
+            Lời Xin Lỗi Của Kẻ Pha Trò & Buổi Chiếu Thử Đầu Tiên
+          </div>
+          <div style="font-size:11px; color:var(--gold); font-weight:700;">Chiếu Phim Bí Mật · Nguy Cơ Bại Lộ</div>
+          <div style="font-size:12px; color:var(--text); line-height:1.55; margin-top:4px;">
+            • <strong>Disruptive Hook (0–3s):</strong> <em>Cả phòng học tối om, tiếng cười khúc khích vang lên khi màn chiếu mini phát cảnh hậu trường ngố tàu của lớp.</em><br>
+            • <strong>Mâu thuẫn hạt cát:</strong> Cả nhóm lén dùng máy chiếu lớp để xem thử bản dựng clip kỷ niệm đầu tiên; bất ngờ tiếng bước chân thầy giám thị vang ngoài hành lang.<br>
+            • <strong>Tuyến A (60%):</strong> Cuộc giải cứu máy tính và giấu dây điện khẩn cấp trong vòng 30 giây.<br>
+            • <strong>Tuyến B (30%):</strong> Nam che người chắn cho Vy lúc cả nhóm chen chúc trốn dưới gầm bục giảng.<br>
+            • <strong>Runner C (10%):</strong> Khoa đứng canh cửa nhưng hồi hộp quá, thầy hỏi thì chỉ gật đầu lia lịa không nói nên lời.<br>
+            • <strong>Độ Sến (Warmth 30s):</strong> <span style="color:var(--rose);">Khoảnh khắc nép sát nhau trong bóng tối, Nam nhìn thấy đôi mắt lấp lánh của Vy và tim đập thình thịch.</span><br>
+            • <strong>Scene Button:</strong> <span style="color:var(--cyan);">Thầy giám thị bước vào chỉ để... trả lại chiếc thẻ nhớ bị rơi ngoài sân bóng!</span><br>
+            • <strong>Mắt xích tập sau (Domino):</strong> <em style="color:var(--gold);">Thẻ nhớ an toàn nhưng lại chứa đoạn video bí mật của Khoa, kích hoạt Tập 7.</em>
+          </div>
+        </div>
+
+        <!-- Episode 7 Card -->
+        <div class="episode-card" style="border-left:4px solid var(--gold);">
+          <div class="ep-meta">
+            <span class="ep-badge">Tập 07</span>
+            <span style="color:var(--muted); font-size:10.5px;">60.0s (6 Cảnh x 10s)</span>
+          </div>
+          <div style="font-weight:800; font-size:15px; color:#FFF; line-height:1.4;">
+            Chiến Dịch Giải Cứu Thẻ Nhớ & Cuộc Rượt Đuổi Hành Lang
+          </div>
+          <div style="font-size:11px; color:var(--gold); font-weight:700;">Hành Động Sitcom · Tình Bạn Sát Cánh</div>
+          <div style="font-size:12px; color:var(--text); line-height:1.55; margin-top:4px;">
+            • <strong>Disruptive Hook (0–3s):</strong> <em>Linh hét thất thanh: “Chiếc thẻ nhớ có clip nhảy dìm hàng của cả lớp đang nằm trong tay đội bóng rổ trường bạn!”</em><br>
+            • <strong>Mâu thuẫn hạt cát:</strong> Chiếc thẻ nhớ vô tình bị rơi vào túi đồ thể thao của trường đối thủ; nguy cơ clip dìm bị phát tán khắp trường.<br>
+            • <strong>Tuyến A (60%):</strong> Kế hoạch đánh lạc hướng và đột nhập phòng thay đồ để lấy lại thẻ nhớ.<br>
+            • <strong>Tuyến B (30%):</strong> Vy lo lắng nếu clip lọt ra ngoài thì sẽ không dám nhìn mặt ai; Nam thề danh dự sẽ lấy lại bằng được.<br>
+            • <strong>Runner C (10%):</strong> An đóng giả làm người đưa thư nhưng đi đứng nghiêm trang như vệ sĩ tổng thống làm ai cũng nghi ngờ.<br>
+            • <strong>Độ Sến (Warmth 30s):</strong> <span style="color:var(--rose);">Khoa dũng cảm chạy hết tốc lực lấy lại chiếc thẻ nhớ nhưng bị trẹo cổ chân nhẹ trước ngày thi đấu.</span><br>
+            • <strong>Scene Button:</strong> <span style="color:var(--cyan);">Lấy được thẻ nhớ về thì phát hiện... đó là thẻ nhớ trắng tinh chưa quay gì!</span><br>
+            • <strong>Mắt xích tập sau (Domino):</strong> <em style="color:var(--gold);">Cái chân trẹo của Khoa khiến cả lớp lo sốt vó cho trận chung kết bóng rổ ở Tập 8.</em>
+          </div>
+        </div>
+
+        <!-- Episode 8 Card -->
+        <div class="episode-card" style="border-left:4px solid var(--gold);">
+          <div class="ep-meta">
+            <span class="ep-badge">Tập 08</span>
+            <span style="color:var(--muted); font-size:10.5px;">60.0s (6 Cảnh x 10s)</span>
+          </div>
+          <div style="font-weight:800; font-size:15px; color:#FFF; line-height:1.4;">
+            Cổ Động Viên Bất Đắc Dĩ & Áo Lớp Trên Khán Đài
+          </div>
+          <div style="font-size:11px; color:var(--gold); font-weight:700;">Nhiệt Huyết Sân Trường · Tinh Thần Đồng Đội</div>
+          <div style="font-size:12px; color:var(--text); line-height:1.55; margin-top:4px;">
+            • <strong>Disruptive Hook (0–3s):</strong> <em>Tiếng còi mãn cuộc vang lên, cả khán đài áo lớp Gạo House nổ tung trong tiếng reo hò chiến thắng!</em><br>
+            • <strong>Mâu thuẫn hạt cát:</strong> Khoa nén đau vào sân thi đấu; cả nhóm 11A1 lập dàn cổ động viên bất đắc dĩ hò hét khản cả cổ.<br>
+            • <strong>Tuyến A (60%):</strong> Nam dẫn đầu đội hình cổ vũ với những khẩu hiệu hài hước có một không hai.<br>
+            • <strong>Tuyến B (30%):</strong> Vy đứng sát đường biên vẽ vội tấm băng-rôn tiếp sức cho Khoa.<br>
+            • <strong>Runner C (10%):</strong> Linh vừa hò hét vừa lo ghi chép xem có bạn nào trốn buổi cổ vũ không.<br>
+            • <strong>Độ Sến (Warmth 30s):</strong> <span style="color:var(--rose);">Khoa ném quả bóng quyết định ghi điểm, ánh mắt đầu tiên cậu hướng về là nụ cười rạng rỡ của cả lớp trên khán đài.</span><br>
+            • <strong>Scene Button:</strong> <span style="color:var(--cyan);">Lúc ăn mừng ôm nhau, bút vẽ màu nước của Vy vô tình quẹt một vệt dài lên lưng áo Nam!</span><br>
+            • <strong>Mắt xích tập sau (Domino):</strong> <em style="color:var(--gold);">Chiếc áo dính vết màu nước tạo ra tình huống hoán đổi áo lãng mạn ở Tập 9.</em>
+          </div>
+        </div>
+
+        <!-- Episode 9 Card -->
+        <div class="episode-card" style="border-left:4px solid var(--gold);">
+          <div class="ep-meta">
+            <span class="ep-badge">Tập 09</span>
+            <span style="color:var(--muted); font-size:10.5px;">60.0s (6 Cảnh x 10s)</span>
+          </div>
+          <div style="font-weight:800; font-size:15px; color:#FFF; line-height:1.4;">
+            Bí Kíp Tẩy Vết Bẩn & Chiếc Áo Đổi Cho Người Bàn Bên
+          </div>
+          <div style="font-size:11px; color:var(--gold); font-weight:700;">Lãng Mạn Học Trò · Ngượng Ngùng Đổi Áo</div>
+          <div style="font-size:12px; color:var(--text); line-height:1.55; margin-top:4px;">
+            • <strong>Disruptive Hook (0–3s):</strong> <em>Nam cởi vội chiếc áo khoác ngoài: “Bà mặc áo tui đỡ đi, áo bà dính màu nước ướt hết rồi kìa!”</em><br>
+            • <strong>Mâu thuẫn hạt cát:</strong> Vy bị đổ nước màu vẽ lên áo lớp; Nam không ngần ngại nhường chiếc áo sơ mi đồng phục dự phòng của mình cho Vy mặc.<br>
+            • <strong>Tuyến A (60%):</strong> Vy mặc chiếc áo rộng thùng thình của Nam, ngượng ngùng không dám ngẩng đầu suốt buổi học.<br>
+            • <strong>Tuyến B (30%):</strong> Minh chỉ cho Nam mẹo tẩy mực bằng chanh và muối nhưng Nam làm nhầm thành nước mắm.<br>
+            • <strong>Runner C (10%):</strong> An lẳng lặng đem chiếc áo dính mực đi giặt sạch bong và phơi khô ngay ngắn bên cửa sổ.<br>
+            • <strong>Độ Sến (Warmth 30s):</strong> <span style="color:var(--rose);">Nam nhìn Vy mặc áo của mình, vụng về gãi đầu: “Nhìn bà mặc... cũng hợp phết á.”</span><br>
+            • <strong>Scene Button:</strong> <span style="color:var(--cyan);">Cả lớp ồ lên trêu chọc khiến hai đứa đỏ bừng mặt trốn sau quyển sách giáo khoa!</span><br>
+            • <strong>Mắt xích tập sau (Domino):</strong> <em style="color:var(--gold);">Tin đồn tình cảm râm ran khiến nhóm quyết định tổ chức buổi học nhóm tại nhà ở Tập 10.</em>
+          </div>
+        </div>
+
+        <!-- Episode 10 Card -->
+        <div class="episode-card" style="border-left:4px solid var(--gold);">
+          <div class="ep-meta">
+            <span class="ep-badge">Tập 10</span>
+            <span style="color:var(--muted); font-size:10.5px;">60.0s (6 Cảnh x 10s)</span>
+          </div>
+          <div style="font-weight:800; font-size:15px; color:#FFF; line-height:1.4;">
+            Buổi Học Nhóm Chủ Nhật & Cuộc Đột Kích Bất Ngờ
+          </div>
+          <div style="font-size:11px; color:var(--gold); font-weight:700;">Bối Cảnh Mới · Thấu Hiểu Gia Cảnh</div>
+          <div style="font-size:12px; color:var(--text); line-height:1.55; margin-top:4px;">
+            • <strong>Disruptive Hook (0–3s):</strong> <em>Tiếng chuông cửa reo vang, 5 đứa bạn bất ngờ ập vào nhà An mang theo cơ man đồ ăn vặt và sách vở!</em><br>
+            • <strong>Mâu thuẫn hạt cát:</strong> An xin nghỉ học nhóm vì phải phụ mẹ bán hàng tạp hóa; cả nhóm quyết định chuyển địa điểm học nhóm đến tiệm tạp hóa nhà An.<br>
+            • <strong>Tuyến A (60%):</strong> Vừa giải đề thi Toán vừa phụ bán hàng tạp hóa tạo nên cảnh tượng náo loạn dở khóc dở cười.<br>
+            • <strong>Tuyến B (30%):</strong> Nam trổ tài bán hàng dẻo miệng nhưng tính nhầm tiền làm Minh phải nhảy vào cứu nguy.<br>
+            • <strong>Runner C (10%):</strong> Khoa ngồi xếp từng thùng nước ngọt thẳng tắp như đội hình duyệt binh.<br>
+            • <strong>Độ Sến (Warmth 30s):</strong> <span style="color:var(--rose);">Mẹ An mang đĩa khoai luộc thơm lừng ra đãi, cả nhóm quây quần vừa ăn vừa cười đùa ấm áp như một gia đình.</span><br>
+            • <strong>Scene Button:</strong> <span style="color:var(--cyan);">Linh phát hiện tập đề cương thi học kỳ bị Nam làm đổ tương ớt dính đầy lên trang bìa!</span><br>
+            • <strong>Mắt xích tập sau (Domino):</strong> <em style="color:var(--gold);">Kỳ thi học kỳ cận kề đặt gánh nặng khổng lồ lên vai lớp trưởng Linh ở Tập 11.</em>
+          </div>
+        </div>
+
+        <!-- Episode 11 Card -->
+        <div class="episode-card" style="border-left:4px solid var(--gold);">
+          <div class="ep-meta">
+            <span class="ep-badge">Tập 11</span>
+            <span style="color:var(--muted); font-size:10.5px;">60.0s (6 Cảnh x 10s)</span>
+          </div>
+          <div style="font-weight:800; font-size:15px; color:#FFF; line-height:1.4;">
+            Sự Đồng Lòng Vô Điều Kiện & Gánh Nặng Của Lớp Trưởng
+          </div>
+          <div style="font-size:11px; color:var(--gold); font-weight:700;">Lắng Đọng Cảm Xúc · Đoàn Kết 11A1</div>
+          <div style="font-size:12px; color:var(--text); line-height:1.55; margin-top:4px;">
+            • <strong>Disruptive Hook (0–3s):</strong> <em>Linh gục đầu xuống bàn học vắng ngắt, những giọt nước mắt lặng lẽ rơi vì quá áp lực điểm số và việc lớp.</em><br>
+            • <strong>Mâu thuẫn hạt cát:</strong> Linh bị giáo viên nhắc nhở về thành tích thi đua của lớp; áp lực dồn nén khiến cô bạn mạnh mẽ suy sụp.<br>
+            • <strong>Tuyến A (60%):</strong> Lần đầu tiên cả 5 thành viên còn lại tự giác phân chia công việc mà không cần Linh phải quát mắng hay lập phiếu vote.<br>
+            • <strong>Tuyến B (30%):</strong> Minh hoàn thiện toàn bộ sổ sách; Nam và Khoa đi gom đủ chữ ký các thành viên.<br>
+            • <strong>Runner C (10%):</strong> An pha cho Linh một ly trà hoa cúc ấm đặt sẵn cùng mảnh giấy nhắn: “Bà làm tốt lắm rồi.”<br>
+            • <strong>Độ Sến (Warmth 30s):</strong> <span style="color:var(--rose);">Linh ngẩng lên nhìn cả lớp đồng thanh: “Từ nay việc lớp để tụi tui gánh bớt cho bà, lớp trưởng yên tâm ôn thi đi!”</span><br>
+            • <strong>Scene Button:</strong> <span style="color:var(--cyan);">Linh vừa cảm động định khóc thì Nam chen vào: “Nhưng mà mai bà cho tui mượn vở Văn chép phạt nha!”</span><br>
+            • <strong>Mắt xích tập sau (Domino):</strong> <em style="color:var(--gold);">Sau kỳ thi căng thẳng, cả lớp tổ chức buổi đi dã ngoại ngoại khóa ở Tập 12.</em>
+          </div>
+        </div>
+
+        <!-- Episode 12 Card -->
+        <div class="episode-card" style="border-left:4px solid var(--gold);">
+          <div class="ep-meta">
+            <span class="ep-badge">Tập 12</span>
+            <span style="color:var(--muted); font-size:10.5px;">60.0s (6 Cảnh x 10s)</span>
+          </div>
+          <div style="font-weight:800; font-size:15px; color:#FFF; line-height:1.4;">
+            Buổi Quay Ngoại Khóa & Sự Cố Máy Ảnh Bị Đơ
+          </div>
+          <div style="font-size:11px; color:var(--gold); font-weight:700;">Ngoại Cảnh Rực Nắng · Tai Họa Công Nghệ</div>
+          <div style="font-size:12px; color:var(--text); line-height:1.55; margin-top:4px;">
+            • <strong>Disruptive Hook (0–3s):</strong> <em>Màn hình máy ảnh chớp tắt liên hồi rồi hiện dòng chữ đỏ quạch: “CARD ERROR — ALL DATA LOST!”</em><br>
+            • <strong>Mâu thuẫn hạt cát:</strong> Buổi quay ngoại cảnh hoàng hôn công phu tại công viên bị mất sạch dữ liệu do thẻ nhớ bị lỗi nhiệt độ.<br>
+            • <strong>Tuyến A (60%):</strong> Vy chết lặng nhìn chiếc máy ảnh, công sức cả buổi chiều chuẩn bị concept tan tành mây khói.<br>
+            • <strong>Tuyến B (30%):</strong> Nam cố gắng đùa giỡn để không khí đỡ căng thẳng nhưng bị Linh quát ngừng lại.<br>
+            • <strong>Runner C (10%):</strong> Khoa giơ chiếc điện thoại 'cục gạch' ra bảo: “Tui có chụp được mấy tấm bằng máy tui nè!”<br>
+            • <strong>Độ Sến (Warmth 30s):</strong> <span style="color:var(--rose);">Ngồi bên bờ cỏ lúc chập tối, cả nhóm cùng ngắm hoàng hôn, nhận ra khoảnh khắc ở bên nhau quý giá hơn bất kỳ bức ảnh hoàn hảo nào.</span><br>
+            • <strong>Scene Button:</strong> <span style="color:var(--cyan);">An bất ngờ lôi từ balo ra chiếc máy quay mini cũ kỹ của bố mà cậu đã âm thầm bật quay suốt cả buổi chiều!</span><br>
+            • <strong>Mắt xích tập sau (Domino):</strong> <em style="color:var(--gold);">Những thước phim quay lén của An trở thành linh hồn cho tập dựng kỷ yếu ở Tập 13.</em>
+          </div>
+        </div>
+
+        <!-- Episode 13 Card -->
+        <div class="episode-card" style="border-left:4px solid var(--gold);">
+          <div class="ep-meta">
+            <span class="ep-badge">Tập 13</span>
+            <span style="color:var(--muted); font-size:10.5px;">60.0s (6 Cảnh x 10s)</span>
+          </div>
+          <div style="font-weight:800; font-size:15px; color:#FFF; line-height:1.4;">
+            Thước Phim Hậu Trường & Vẻ Đẹp Của Sự Không Hoàn Hảo
+          </div>
+          <div style="font-size:11px; color:var(--gold); font-weight:700;">Nghệ Thuật Kỷ Niệm · Phá Bỏ Tự Ti</div>
+          <div style="font-size:12px; color:var(--text); line-height:1.55; margin-top:4px;">
+            • <strong>Disruptive Hook (0–3s):</strong> <em>Trên màn hình laptop của Vy hiện lên hàng trăm bức ảnh chụp lén: mặt dính mực, ngủ gật, cười hở lợi nhưng đẹp lạ lùng!</em><br>
+            • <strong>Mâu thuẫn hạt cát:</strong> Vy phân vân giữa việc chọn những bức ảnh tạo dáng chỉn chu cứng nhắc hay những khoảnh khắc hậu trường ngố tàu chân thật.<br>
+            • <strong>Tuyến A (60%):</strong> Vy nhận ra sự hoàn hảo giả tạo không thể so sánh với những kỷ niệm chân thật của 11A1.<br>
+            • <strong>Tuyến B (30%):</strong> Nam ngồi cạnh bên Vy cùng chọn ảnh, nhẹ nhàng chỉ vào bức ảnh Vy đang mỉm cười tự nhiên: “Tấm này bà đẹp nhất nè.”<br>
+            • <strong>Runner C (10%):</strong> Minh và Khoa tranh cãi nảy lửa xem ai ngủ gật há hốc mồm xấu hơn trong ảnh dìm.<br>
+            • <strong>Độ Sến (Warmth 30s):</strong> <span style="color:var(--rose);">Vy lần đầu tiên tự tin chọn một bức ảnh chụp chính mình mỉm cười rạng rỡ để đưa vào trang bìa kỷ yếu.</span><br>
+            • <strong>Scene Button:</strong> <span style="color:var(--cyan);">Bức ảnh đẹp nhất vừa xong thì máy tính báo pin còn đúng 1% và sập nguồn trong tích tắc!</span><br>
+            • <strong>Mắt xích tập sau (Domino):</strong> <em style="color:var(--gold);">Nỗi lo chưa kịp lưu bài dẫn tới đêm thức trắng trước ngày bế giảng ở Tập 14.</em>
+          </div>
+        </div>
+
+        <!-- Episode 14 Card -->
+        <div class="episode-card" style="border-left:4px solid var(--gold);">
+          <div class="ep-meta">
+            <span class="ep-badge">Tập 14</span>
+            <span style="color:var(--muted); font-size:10.5px;">60.0s (6 Cảnh x 10s)</span>
+          </div>
+          <div style="font-weight:800; font-size:15px; color:#FFF; line-height:1.4;">
+            Đêm Trước Lễ Bế Giảng & Bức Thư Chưa Kịp Gửi
+          </div>
+          <div style="font-size:11px; color:var(--gold); font-weight:700;">Đỉnh Cao Melodrama · Thổ Lộ Vụng Về</div>
+          <div style="font-size:12px; color:var(--text); line-height:1.55; margin-top:4px;">
+            • <strong>Disruptive Hook (0–3s):</strong> <em>Tiếng ve kêu râm ran ngoài cửa sổ hành lang vắng lặng, chỉ còn lại hai chiếc bóng đổ dài dưới ánh đèn vàng.</em><br>
+            • <strong>Mâu thuẫn hạt cát:</strong> Đêm cuối cùng trước lễ tổng kết năm lớp 11, ngày mai bước sang lớp 12 với bao ngã rẽ chia ban và áp lực.<br>
+            • <strong>Tuyến A (60%):</strong> Nam muốn đưa cho Vy lá thư gấp hình trái tim nhưng tay run bần bật giấu sau lưng mãi không dám rút ra.<br>
+            • <strong>Tuyến B (30%):</strong> Linh và Minh đi dán lại từng góc bảng tin lớp học lần cuối trước kỳ nghỉ hè.<br>
+            • <strong>Runner C (10%):</strong> Khoa và An ngồi ở bậc thềm sân bóng rổ chia nhau gói xôi cuối cùng trong sự im lặng thân thương.<br>
+            • <strong>Độ Sến (Warmth 30s):</strong> <span style="color:var(--rose);">Dưới gốc cây phượng vĩ, Nam đưa chiếc áo đồng phục có chữ ký nắn nót của mình cho Vy: “Lên 12... vẫn ngồi cùng bàn với tui nha Vy.”</span><br>
+            • <strong>Scene Button:</strong> <span style="color:var(--cyan);">Vy vừa gật đầu e thẹn thì tiếng bác bảo vệ gõ kẻng đuổi về làm cả hai giật bắn mình bỏ chạy tán loạn!</span><br>
+            • <strong>Mắt xích tập sau (Domino):</strong> <em style="color:var(--gold);">Sự gắn kết trọn vẹn dẫn đến đại kết cục hoàn mỹ của cả mùa ở Tập 15.</em>
+          </div>
+        </div>
+
+        <!-- Episode 15 Card -->
+        <div class="episode-card" style="border-left:4px solid var(--gold);">
+          <div class="ep-meta">
+            <span class="ep-badge">Tập 15</span>
+            <span style="color:var(--muted); font-size:10.5px;">60.0s (6 Cảnh x 10s)</span>
+          </div>
+          <div style="font-weight:800; font-size:15px; color:#FFF; line-height:1.4;">
+            Đại Kết Cục: Tấm Ảnh Tập Thể Đủ 40 Thành Viên & Lời Hứa Lớp 12
+          </div>
+          <div style="font-size:11px; color:var(--gold); font-weight:700;">Đại Kết Cục · Thanh Xuân Bất Diệt</div>
+          <div style="font-size:12px; color:var(--text); line-height:1.55; margin-top:4px;">
+            • <strong>Disruptive Hook (0–3s):</strong> <em>Tiếng đếm vang dội của cả lớp 11A1: “BA... HAI... MỘT... GẠO HOUSE 11A1 VÔ ĐỊCH!”</em><br>
+            • <strong>Mâu thuẫn hạt cát:</strong> Đến giờ chụp ảnh bế giảng tập thể toàn trường thì một bạn học sinh bị hỏng xe giữa đường chưa tới kịp.<br>
+            • <strong>Tuyến A (60%):</strong> Cả nhóm 6 bạn quyết định hoãn buổi chụp, phân công nhau người đón bạn, người giữ chỗ dưới ánh nắng trưa.<br>
+            • <strong>Tuyến B (30%):</strong> Khoa cõng bạn chạy thục mạng vào sân trường đúng giây cuối cùng.<br>
+            • <strong>Runner C (10%):</strong> Minh vừa xếp hàng vừa giục: “Cười tươi lên, không ai được nhắm mắt nghe chưa!”<br>
+            • <strong>Độ Sến (Warmth 30s):</strong> <span style="color:var(--rose);">Khoảnh khắc ống kính bấm tách, cả 40 thành viên đồng loạt khoác chung chiếc áo lớp Gạo House, rạng rỡ nụ cười thanh xuân.</span><br>
+            • <strong>Scene Button:</strong> <span style="color:var(--cyan);">Ảnh chụp xong xuôi xem lại: Tất cả đều đẹp lung linh, duy nhất chỉ có Nam bị Khoa vô tình huých tay che đúng nửa mặt!</span><br>
+            • <strong>Mắt xích tập sau (Domino):</strong> <em style="color:var(--gold);">Lời hứa bước vào lớp 12 cùng nhau vượt qua kỳ thi đại học khép lại Mùa 1 hoàn hảo và mở ra Mùa 2.</em>
+          </div>
+        </div>
+
+      </div>
+    </section>
+
+    <!-- SECTION 6: VISUAL & 9:16 CAMERA GRAMMAR -->
+    <section id="cinematography">
+      <div class="section-header">
+        <h2 class="section-title"><span>🎥</span> 6. Ngữ Pháp Điện Ảnh 9:16 &amp; Chuyển Động Camera 10s (Visual Grammar)</h2>
+        <span class="tag tag-fixed">Chuẩn Mobile 9:16</span>
+      </div>
+
+      <div class="notice-box notice-cyan">
+        <div class="notice-title" style="color:var(--cyan);">📱 NGUYÊN TẮC BỐ CỤC KHUNG HÌNH DỌC 9:16 &amp; HEADROOM LAW</div>
+        <p style="font-size:13.5px; color:#E5E7EB; line-height:1.7;">
+          • <strong>Tỷ lệ khung hình dọc 9:16:</strong> Toàn bộ cảnh quay tối ưu tuyệt đối cho màn hình smartphone (TikTok, Shorts, Reels). Trục dọc yêu cầu kiểm soát chặt chẽ 3 tầng không gian: Tầng trên (Headroom), Tầng giữa (Ngực, biểu cảm &amp; logo áo Gạo House), Tầng dưới (Tay, đạo cụ và động tác cơ thể).<br>
+          • <strong>Quy luật Headroom Law:</strong> Khoảng cách từ đỉnh đầu nhân vật đến mép trên khung hình luôn duy trì từ 8% đến 12% chiều cao khung hình. Tuyệt đối không cắt cụt trán hoặc để khoảng trống trên đầu quá mênh mông.<br>
+          • <strong>14 Cỡ cảnh &amp; 6 Góc máy cơ bản:</strong> Kết hợp linh hoạt từ Cận cảnh (CU, MCU) để bắt trọn ánh mắt lúng túng, bẽn lẽn; Trung cảnh (MS, MWS) để thể hiện sự tương tác đối kháng 2 người; và Toàn cảnh (WS) để bao quát không khí lớp học 11A1 rộn ràng.
+        </p>
+      </div>
+
+      <div class="grid-2">
+        <div class="card">
+          <div class="card-title">
+            <span style="color:var(--gold);">Ánh Sáng &amp; Bảng Màu Học Đường</span>
+            <span class="tag tag-open">Tone &amp; Mood</span>
+          </div>
+          <p style="font-size:13px; color:var(--muted); line-height:1.65;">
+            • <strong>Ánh sáng chủ đạo:</strong> Ánh nắng ban mai tự nhiên xuyên qua cửa sổ kính lớp học, nhiệt độ màu ấm áp 4500K–5200K, tạo viền sáng dịu nhẹ trên bờ vai và mái tóc (rim lighting).<br>
+            • <strong>Color Grading:</strong> Phong cách điện ảnh tươi sáng, màu xanh lục bảng đen, màu gỗ ấm bàn ghế và sắc áo đồng phục Gạo House nổi bật hài hòa, gợi cảm giác hoài niệm thanh xuân ngọt ngào.
+          </p>
+        </div>
+
+        <div class="card">
+          <div class="card-title">
+            <span style="color:var(--emerald);">Quy Tắc Động Học Camera 10s (Kinetic Pacing)</span>
+            <span class="tag tag-open">Pillar 3 Compliant</span>
+          </div>
+          <p style="font-size:13px; color:var(--muted); line-height:1.65;">
+            • <strong>Chuyển động có chủ đích:</strong> Mỗi clip 10s chỉ thực hiện đúng 1 chuyển động camera mạch lạc (slow push-in nhấn mạnh cảm xúc, pan ngang kết nối 2 nhân vật cãi vã, hoặc static tripod giữ sự ổn định cho biểu cảm gương mặt).<br>
+            • <strong>Không rung lắc vô nghĩa:</strong> Loại bỏ hoàn toàn hiệu ứng camera cầm tay hỗn loạn làm người xem chóng mặt.
+          </p>
+        </div>
+      </div>
+    </section>
+
+    <!-- SECTION 7: AUDIO & DIALOGUE STANDARDS -->
+    <section id="audio">
+      <div class="section-header">
+        <h2 class="section-title"><span>🎙️</span> 7. Chuẩn Âm Thanh, Thoại Sitcom &amp; Tiết Tấu Diễn Hoạt 10s (Audio &amp; Voice)</h2>
+        <span class="tag tag-fixed">Zero Dead Air Standard</span>
+      </div>
+
+      <div class="notice-box notice-rose">
+        <div class="notice-title" style="color:var(--rose);">⚡ 3 ĐIỀU LUẬT TỐI ƯU HÓA DIỄN HOẠT 10 GIÂY AI (ZERO DEAD AIR)</div>
+        <p style="font-size:13.5px; color:#E5E7EB; line-height:1.7;">
+          • <strong>1. Kích hoạt thoại sớm (00:00.4 Kickoff):</strong> Tuyệt đối không để nhân vật đứng đờ nhìn nhau 2–3 giây đầu rồi mới nói. Lời thoại hoặc hành động gây cười phải nổ ra ngay từ giây <code>00:00.4</code> đến <code>00:01.0</code>.<br>
+          • <strong>2. Nghe chủ động (Active Kinetic Listening):</strong> Khi Nhân vật A nói, Nhân vật B trong khung hình không đứng làm ma-nơ-canh tĩnh, mà phải có phản ứng hình thể ngay lập tức: trợn tròn mắt, giật thót, che miệng cười, vỗ trán, hoặc lén liếc nhìn đỏ mặt.<br>
+          • <strong>3. Điểm rơi chữ cuối (Late-Hit Punchline Law):</strong> Từ mang tính gây cười nhất, châm biếm nhất hoặc bất ngờ nhất luôn được đặt ở <strong>từ cuối cùng</strong> của câu thoại. Câu thoại ngắn gọn dưới 18 từ, dứt khoát như đánh bóng bàn.
+        </p>
+      </div>
+
+      <div class="grid-2">
+        <div class="card">
+          <div class="card-title">
+            <span style="color:var(--cyan);">Từ Ngữ Cảm Thán &amp; Ngắt Nhịp Học Trò</span>
+            <span class="tag tag-open">Teen Dialect</span>
+          </div>
+          <p style="font-size:13px; color:var(--muted); line-height:1.65;">
+            • <strong>Thán từ tự nhiên:</strong> Tận dụng triệt để các trợ từ ngữ khí tự nhiên của học sinh: <em>"Ủa", "Trời đất ơi", "Gì dợ", "Nè", "Chèn ơi", "Thiệt luôn á"</em>.<br>
+            • <strong>Cấm tiệt từ sách vở:</strong> Tuyệt đối loại bỏ các liên từ cứng nhắc (<code>bởi vì</code>, <code>cho nên</code>, <code>tuy nhiên</code>, <code>mặc dù</code>). Thay bằng văn nói đời thường: <em>"Tại... nên là", "Vậy mà", "Tự nhiên"</em>.
+          </p>
+        </div>
+
+        <div class="card">
+          <div class="card-title">
+            <span style="color:var(--gold);">Foley &amp; Không Gian Âm Thanh Học Đường</span>
+            <span class="tag tag-open">Sound Design</span>
+          </div>
+          <p style="font-size:13px; color:var(--muted); line-height:1.65;">
+            • <strong>Âm thanh nền (Ambience):</strong> Tiếng ve râm ran ngoài cửa sổ, tiếng quạt trần quay nhè nhẹ, tiếng bước chân vội vã ngoài hành lang, tiếng kẻng báo giờ ra chơi xa xa.<br>
+            • <strong>Foley chi tiết:</strong> Tiếng lật xoành xoạch cuốn sổ tay của Linh, tiếng gõ cọc cọc máy tính Casio của Minh, tiếng phấn gõ bảng, tiếng xé băng keo rồn rột của Khoa.
+          </p>
+        </div>
+      </div>
+    </section>
+
+    <!-- SECTION 8: OPERATIONS & MEASUREMENT -->
+    <section id="operations">
+      <div class="section-header">
+        <h2 class="section-title"><span>📊</span> 8. Vận Hành Sản Xuất AI &amp; Đo Lường Hiệu Quả Pilot (Operations)</h2>
+        <span class="tag tag-fixed">Quy Trình 15 Tập/Tháng</span>
+      </div>
+
+      <div class="notice-box notice-emerald">
+        <div class="notice-title" style="color:var(--emerald);">📈 PIPELINE SẢN XUẤT 4 BƯỚC KHÉP KÍN &amp; CHỈ SỐ GIỮ CHÂN KHÁN GIẢ (AVD)</div>
+        <p style="font-size:13.5px; color:#E5E7EB; line-height:1.7;">
+          • <strong>Bước 1 (Pre-Production):</strong> Khóa kịch bản phân cảnh 6 cảnh x 10s, kiểm tra nấc xưng hô và điểm rơi punchline bằng <code>episode_audit_suite.py</code>.<br>
+          • <strong>Bước 2 (Image Generation):</strong> Tạo Model Sheet 16:9 4-view và keyframe chuẩn bằng Midjourney / Flux tham chiếu ảnh gốc.<br>
+          • <strong>Bước 3 (Video Generation):</strong> Biên dịch prompt Mode B sang Runway Gen-3 / Kling 1.5 / Sora / Hailuo với Track A (Prompt gốc) &amp; Track B (Prompt lồng thoại).<br>
+          • <strong>Bước 4 (Post-Production):</strong> Lồng tiếng tự nhiên bằng ElevenLabs / Minimax, ghép nhạc nền lofi học đường nhẹ nhàng và dựng hoàn thiện trên CapCut / Premiere.<br>
+          • <strong>Chỉ số thành công cốt lõi:</strong> Giữ chân người xem (Average View Duration - AVD) &gt; 50% trong 60s, tỷ lệ xem lại (Loop rate) &gt; 15% và tỷ lệ chia sẻ nhóm lớp cao.
+        </p>
+      </div>
+    </section>
+
+    <!-- SECTION 9: OPEN DECISIONS & UNBREAKABLE RULES -->
+    <section id="open-decisions">
+      <div class="section-header">
+        <h2 class="section-title"><span>🔒</span> 9. Các Điểm Khóa Bất Khả Xâm Phạm Trước Tập 01 (Golden Rules)</h2>
+        <span class="tag tag-rose">Bất Khả Xâm Phạm</span>
+      </div>
+
+      <div class="notice-box notice-purple">
+        <div class="notice-title" style="color:var(--purple);">🛡️ 7 ĐIỀU LUẬT BẤT BIẾN CỦA SERIES "LỚP MÌNH CÓ CHUYỆN"</div>
+        <p style="font-size:13.5px; color:#E5E7EB; line-height:1.7;">
+          1. <strong>Độ tuổi &amp; Lớp học:</strong> Tất cả 6 nhân vật đều 17 tuổi, học sinh lớp 11A1 cuối cấp chuẩn bị lên lớp 12.<br>
+          2. <strong>Xưng hô:</strong> Chỉ dùng TÊN và "ÔNG - BÀ" / "TUI - ÔNG" / "TUI - BÀ". Tuyệt đối cấm "mày - tao".<br>
+          3. <strong>Khiếm khuyết tính cách:</strong> Linh lật kèo phút 89; Nam đùa dai sợ Vy buồn; Vy sửa ảnh cả lớp nhưng tự ti ảnh mình; An nghĩa hiệp hiểu sai ngữ cảnh; Minh thủ quỹ săn sale vô dụng; Khoa hổ báo ngoài sân nhưng cứng đơ trước máy quay.<br>
+          4. <strong>Trang phục:</strong> Cả lớp mặc chung áo polo đồng phục Gạo House (<code>AO_CHU_DAO_01</code>); luân phiên 2 phương án trang phục theo tập.<br>
+          5. <strong>Không quảng cáo thô thiển:</strong> Không có thoại giới thiệu sản phẩm hay kịch bản bán hàng.<br>
+          6. <strong>Diễn hoạt 10s:</strong> Thoại bắt đầu từ 00:00.4, nghe chủ động (Active Kinetic Listening), từ đắt nhất nằm ở cuối câu.<br>
+          7. <strong>Mắt xích nhân quả:</strong> 15 tập liên kết chuỗi Domino, tập trước châm ngòi cho tập sau.
+        </p>
+      </div>
+    </section>
+
+  </div><!-- /container -->
+
+  <!-- TOAST NOTIFICATION -->
+  <div id="toast" style="position:fixed; bottom:24px; right:24px; background:var(--gold); color:#000; padding:10px 18px; border-radius:8px; font-weight:700; font-size:12px; display:none; z-index:9999; box-shadow:0 10px 25px rgba(0,0,0,0.5);">
+    Đã sao chép vào bộ nhớ tạm!
+  </div>
+
+  <script>
+    function copySnippet(elementId, btn, label) {
+      const el = document.getElementById(elementId);
+      if (!el) return;
+      const text = el.innerText || el.textContent;
+      navigator.clipboard.writeText(text).then(() => {
+        const toast = document.getElementById('toast');
+        toast.innerText = 'Đã chép: ' + label;
+        toast.style.display = 'block';
+        setTimeout(() => { toast.style.display = 'none'; }, 2000);
+      }).catch(err => {
+        console.error('Không thể sao chép: ', err);
+      });
+    }
+  </script>
+</body>
+</html>

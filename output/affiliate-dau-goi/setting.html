@@ -1,0 +1,441 @@
+<!DOCTYPE html>
+<html lang="vi">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>BẢNG TIỀN KỲ SẢN XUẤT AFFILIATE 60S — DẦU GỘI DƯỢC LIỆU BIO-GINGER TEA TREE</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:ital,wght@0,600;0,700;0,800;1,600&family=Inter:wght@400;500;600;700;800&family=JetBrains+Mono:wght@400;500;600&display=swap" rel="stylesheet">
+  <style>
+    :root {
+      --bg: #090D16;
+      --card-bg: #101726;
+      --card-alt: #162035;
+      --border: #1E293B;
+      --border-highlight: #334155;
+      --gold: #F59E0B;
+      --cyan: #38BDF8;
+      --emerald: #10B981;
+      --rose: #F43F5E;
+      --purple: #A855F7;
+      --text: #F1F5F9;
+      --muted: #94A3B8;
+      --code-bg: #050811;
+    }
+    * { box-sizing: border-box; margin: 0; padding: 0; }
+    body {
+      background: var(--bg);
+      color: var(--text);
+      font-family: 'Inter', -apple-system, BlinkMacSystemFont, sans-serif;
+      padding: 30px 20px 80px 20px;
+      line-height: 1.65;
+    }
+    .container { max-width: 1360px; margin: 0 auto; }
+
+    header {
+      background: linear-gradient(135deg, rgba(16, 23, 38, 0.98), rgba(22, 32, 53, 0.95));
+      border: 1px solid var(--border);
+      border-radius: 20px;
+      padding: 40px;
+      margin-bottom: 36px;
+      box-shadow: 0 20px 50px rgba(0,0,0,0.6);
+      position: relative;
+      overflow: hidden;
+    }
+    header::before {
+      content: '';
+      position: absolute; top: 0; left: 0; right: 0; height: 5px;
+      background: linear-gradient(90deg, var(--emerald), var(--gold), var(--cyan), var(--rose));
+    }
+    .badge-bar { display: flex; flex-wrap: wrap; gap: 8px; margin-bottom: 14px; }
+    .badge {
+      display: inline-flex; align-items: center; gap: 6px;
+      padding: 6px 14px; border-radius: 9999px;
+      font-size: 11.5px; font-weight: 800; text-transform: uppercase; letter-spacing: 0.6px;
+    }
+    .badge-emerald { background: rgba(16, 185, 129, 0.15); color: var(--emerald); border: 1px solid rgba(16, 185, 129, 0.4); }
+    .badge-gold { background: rgba(245, 158, 11, 0.15); color: var(--gold); border: 1px solid rgba(245, 158, 11, 0.4); }
+    .badge-cyan { background: rgba(56, 189, 248, 0.15); color: var(--cyan); border: 1px solid rgba(56, 189, 248, 0.4); }
+    .badge-rose { background: rgba(244, 63, 94, 0.15); color: var(--rose); border: 1px solid rgba(244, 63, 94, 0.4); }
+
+    h1 {
+      font-family: 'Playfair Display', serif;
+      font-size: 34px;
+      font-weight: 800;
+      color: #FFFFFF;
+      margin-bottom: 10px;
+      letter-spacing: 0.5px;
+    }
+    .subtitle {
+      font-size: 15px;
+      color: var(--muted);
+      margin-bottom: 26px;
+      max-width: 1050px;
+    }
+
+    .meta-grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
+      gap: 14px;
+      padding-top: 18px;
+      border-top: 1px solid var(--border);
+    }
+    .meta-item {
+      background: rgba(9, 13, 22, 0.6);
+      padding: 12px 16px;
+      border-radius: 12px;
+      border: 1px solid var(--border);
+    }
+    .meta-label { font-size: 11px; text-transform: uppercase; letter-spacing: 0.8px; color: var(--muted); margin-bottom: 3px; }
+    .meta-value { font-size: 13.5px; font-weight: 700; color: #FFFFFF; }
+
+    .nav-bar {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 10px;
+      margin-bottom: 36px;
+      position: sticky;
+      top: 16px;
+      z-index: 100;
+      background: rgba(9, 13, 22, 0.92);
+      backdrop-filter: blur(12px);
+      padding: 12px 16px;
+      border-radius: 14px;
+      border: 1px solid var(--border);
+      box-shadow: 0 10px 30px rgba(0,0,0,0.5);
+    }
+    .nav-link {
+      color: var(--text);
+      text-decoration: none;
+      font-size: 13px;
+      font-weight: 600;
+      padding: 8px 14px;
+      border-radius: 8px;
+      transition: all 0.2s;
+      background: var(--card-bg);
+      border: 1px solid var(--border);
+    }
+    .nav-link:hover {
+      background: var(--card-alt);
+      border-color: var(--emerald);
+      color: var(--emerald);
+    }
+
+    section {
+      background: var(--card-bg);
+      border: 1px solid var(--border);
+      border-radius: 18px;
+      padding: 32px;
+      margin-bottom: 36px;
+      box-shadow: 0 12px 36px rgba(0,0,0,0.4);
+    }
+    .section-header {
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      margin-bottom: 24px;
+      border-bottom: 1px solid var(--border);
+      padding-bottom: 16px;
+    }
+    .section-title {
+      font-family: 'Playfair Display', serif;
+      font-size: 24px;
+      font-weight: 700;
+      color: #FFFFFF;
+      display: flex;
+      align-items: center;
+      gap: 10px;
+    }
+    .grid-2 {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(420px, 1fr));
+      gap: 20px;
+    }
+    .info-card {
+      background: var(--card-alt);
+      border: 1px solid var(--border);
+      border-radius: 14px;
+      padding: 22px;
+    }
+    .card-title {
+      font-size: 16px;
+      font-weight: 700;
+      color: var(--emerald);
+      margin-bottom: 12px;
+      display: flex;
+      align-items: center;
+      gap: 8px;
+    }
+    p, li { font-size: 14px; color: var(--text); line-height: 1.6; }
+    ul { list-style: none; }
+    ul li { margin-bottom: 8px; position: relative; padding-left: 20px; }
+    ul li::before {
+      content: '▹';
+      position: absolute;
+      left: 0;
+      color: var(--emerald);
+    }
+
+    pre {
+      background: var(--code-bg);
+      border: 1px solid var(--border-highlight);
+      border-radius: 10px;
+      padding: 16px;
+      font-family: 'JetBrains Mono', monospace;
+      font-size: 12.5px;
+      color: #E2E8F0;
+      white-space: pre-wrap;
+      word-break: break-word;
+      line-height: 1.5;
+      margin-top: 12px;
+    }
+    .code-label {
+      font-size: 11px;
+      font-weight: 700;
+      text-transform: uppercase;
+      letter-spacing: 0.8px;
+      color: var(--gold);
+      margin-bottom: 6px;
+    }
+    .copy-btn {
+      background: rgba(16, 185, 129, 0.15);
+      border: 1px solid rgba(16, 185, 129, 0.4);
+      color: var(--emerald);
+      padding: 6px 12px;
+      border-radius: 6px;
+      font-size: 12px;
+      font-weight: 600;
+      cursor: pointer;
+      transition: all 0.2s;
+      margin-top: 8px;
+    }
+    .copy-btn:hover { background: var(--emerald); color: #000; }
+  </style>
+</head>
+<body>
+  <div class="container">
+    <header>
+      <div class="badge-bar">
+        <span class="badge badge-emerald">Affiliate Commerce Engine</span>
+        <span class="badge badge-gold">60s Short-Form Vertical</span>
+        <span class="badge badge-cyan">Sven Universe Standard</span>
+        <span class="badge badge-rose">High Conversion AIDA</span>
+      </div>
+      <h1>BẢNG TIỀN KỲ SẢN XUẤT AFFILIATE 60S — DẦU GỘI DƯỢC LIỆU BIO-GINGER TEA TREE</h1>
+      <p class="subtitle">Tài liệu quy chuẩn tiền kỳ, hồ sơ nhân vật (Model Sheet), phụ kiện sản phẩm (Prop Sheet), bối cảnh (Location Staging) và ma trận prompt chuẩn AI video thương mại cho chiến dịch Affiliate Dầu Gội Trị Gàu Nấm Ngứa & Phục Hồi Nang Tóc.</p>
+      
+      <div class="meta-grid">
+        <div class="meta-item">
+          <div class="meta-label">Sản phẩm chính</div>
+          <div class="meta-value">Bio-Ginger Tea Tree Shampoo 500ml</div>
+        </div>
+        <div class="meta-item">
+          <div class="meta-label">Thời lượng & Định dạng</div>
+          <div class="meta-value">60 Giây (6 Cảnh x 10s) — Khung dọc 9:16</div>
+        </div>
+        <div class="meta-item">
+          <div class="meta-label">Tệp khách hàng mục tiêu</div>
+          <div class="meta-value">Nam & Nữ văn phòng 18–35 tuổi (gàu, ngứa, bết dầu)</div>
+        </div>
+        <div class="meta-item">
+          <div class="meta-label">Đòn bẩy tâm lý</div>
+          <div class="meta-value">Xấu hổ vì gàu áo tối màu ➔ Tự tin tỏa sáng</div>
+        </div>
+      </div>
+    </header>
+
+    <nav class="nav-bar">
+      <a href="#story" class="nav-link">Section 1: Định vị & Phễu</a>
+      <a href="#cast" class="nav-link">Section 2: Nhân vật</a>
+      <a href="#modelsheets" class="nav-link">Section 3: Model Sheets</a>
+      <a href="#props" class="nav-link">Section 4A: Phụ kiện & Sản phẩm</a>
+      <a href="#locations" class="nav-link">Section 4B: Bối cảnh</a>
+      <a href="#episodes" class="nav-link">Section 5: Phân cảnh 60s</a>
+      <a href="#matrix" class="nav-link">Section 6: Visual & Lighting Guide</a>
+    </nav>
+
+    <!-- SECTION 1 -->
+    <section id="story">
+      <div class="section-header">
+        <h2 class="section-title">Section 1: Master Narrative Arc & Marketing Conversion Funnel</h2>
+        <span class="badge badge-gold">AIDA ARCHITECTURE</span>
+      </div>
+      <div class="grid-2">
+        <div class="info-card">
+          <h3 class="card-title">1.1 Nỗi đau & Điểm kích hoạt tâm lý (Psychological Pain Points)</h3>
+          <ul>
+            <li><strong>Nỗi xấu hổ cộng đồng (Social Shame)</strong>: Gàu trắng rơi lả tả trên áo vest, áo thun tối màu khi ngồi họp, đi sự kiện hoặc tiếp xúc cự ly gần với người khác phái.</li>
+            <li><strong>Vòng luẩn quẩn khó chịu (Vicious Agitation)</strong>: Da đầu ngứa ngáy dữ dội, cào gãi làm xước da đầu ửng đỏ, càng gội dầu công nghiệp nhiều hoá chất tẩy rửa thì da đầu càng khô rát và gàu bong nhiều hơn.</li>
+            <li><strong>Mất tự tin giao tiếp</strong>: Luôn phải cẩn trọng nhìn lại vai áo, không dám xõa tóc hoặc lắc đầu tự nhiên.</li>
+          </ul>
+        </div>
+        <div class="info-card">
+          <h3 class="card-title">1.2 Cơ chế sinh học độc quyền (Plausible Biological USP)</h3>
+          <ul>
+            <li><strong>Gừng đen lên men sinh học (Fermented Black Ginger)</strong>: Làm ấm chân tóc, tăng cường vi tuần hoàn máu nuôi nang tóc, ức chế nấm Malassezia tận gốc.</li>
+            <li><strong>Tinh dầu Tràm Trà Melaleuca</strong>: Sát khuẩn tự nhiên, kháng viêm, cắt cơn ngứa ngáy chỉ sau 3 phút tiếp xúc bọt tuyết.</li>
+            <li><strong>Biotin & Phức hợp Keratin thực vật</strong>: Phục hồi biểu bì tóc hư tổn do hoá chất, tạo độ phồng tơi bồng bềnh suốt 48 giờ mà không bị khô xơ rơm rạ.</li>
+          </ul>
+        </div>
+      </div>
+    </section>
+
+    <!-- SECTION 2 -->
+    <section id="cast">
+      <div class="section-header">
+        <h2 class="section-title">Section 2: Canonical Cast (Dàn diễn viên & Nhân vật)</h2>
+        <span class="badge badge-cyan">LIVING CONTINUUM</span>
+      </div>
+      <div class="grid-2">
+        <div class="info-card">
+          <h3 class="card-title">Mai Linh (Tuyến chính A1 — Nhân viên văn phòng năng động)</h3>
+          <ul>
+            <li><strong>Tuổi & Ngoại hình</strong>: 24 tuổi, gương mặt thanh tú, đôi mắt biểu cảm sâu sắc, làn da sáng tự nhiên, mái tóc đen dài ngang lưng.</li>
+            <li><strong>Trang phục chuẩn hóa (Model Sheet SSOT)</strong>: Áo blazer dạ đen tuyền ôm dáng bên ngoài áo lụa trắng ngà cổ chữ V thanh lịch.</li>
+            <li><strong>Hành trình biến chuyển (Transformation Arc)</strong>: Từ sự tự ti, ngượng ngùng né tránh ánh nhìn vì gàu ngứa ➔ lột xác trở nên kiêu hãnh, tự tin lắc mái tóc bồng bềnh bóng mượt giữa văn phòng.</li>
+          </ul>
+        </div>
+        <div class="info-card">
+          <h3 class="card-title">Hải Đăng (Tuyến hỗ trợ B — Đồng nghiệp nam tinh tế)</h3>
+          <ul>
+            <li><strong>Tuổi & Ngoại hình</strong>: 26 tuổi, ngoại hình cao ráo, gương mặt sáng sủa, tóc cắt ngắn gọn gàng lịch sự.</li>
+            <li><strong>Trang phục chuẩn hóa</strong>: Áo sơ mi xanh nhạt xắn tay áo nhẹ nhàng, phong thái làm việc chuyên nghiệp.</li>
+            <li><strong>Chức năng kịch bản</strong>: Xúc tác kích hoạt nỗi sợ bị phát hiện gàu của Mai Linh trong Cảnh 01, tạo lực đẩy kịch tính cho 3 giây đầu giữ chân khán giả.</li>
+          </ul>
+        </div>
+      </div>
+    </section>
+
+    <!-- SECTION 3 -->
+    <section id="modelsheets">
+      <div class="section-header">
+        <h2 class="section-title">Section 3: 16:9 Model Sheets & Multi-Angle Prompts</h2>
+        <span class="badge badge-emerald">FLUX / MIDJOURNEY SPEC</span>
+      </div>
+      <div class="info-card">
+        <div class="code-label">PROMPT 16:9 MODEL SHEET NHÂN VẬT MAI LINH (RENDER ẢNH GỐC IMAGE 1)</div>
+        <pre id="ms-mai-linh">photorealistic 16:9 full character turnaround model sheet of a young Vietnamese woman in her early twenties named Mai Linh, four distinct perspectives side-by-side: front view, three-quarter view, profile side view, and back view. Elegant oval face, expressive almond eyes, natural warm honey-toned skin texture with visible fine pores. Long jet-black silky hair falling past shoulders. Wearing a tailored charcoal-black wool blazer over an ivory silk inner blouse. Neutral soft studio lighting, crisp cinematic focus, clean grey studio backdrop, zero watermark, high definition editorial photography.</pre>
+        <button class="copy-btn" onclick="copySnippet('ms-mai-linh')">📋 Copy Mai Linh Model Sheet Prompt</button>
+      </div>
+    </section>
+
+    <!-- SECTION 4A -->
+    <section id="props">
+      <div class="section-header">
+        <h2 class="section-title">Section 4A: Prop Universe & Product Asset Spec</h2>
+        <span class="badge badge-gold">PRODUCT HERO ASSETS</span>
+      </div>
+      <div class="grid-2">
+        <div class="info-card">
+          <h3 class="card-title">Chai Dầu Gội Bio-Ginger Tea Tree (Hero Prop)</h3>
+          <ul>
+            <li><strong>Hình dáng</strong>: Chai hình trụ tròn 500ml màu thủy tinh hổ phách nhám (frosted amber glass), phản chiếu ánh sáng hổ phách ấm áp sang trọng.</li>
+            <li><strong>Nắp & Vòi nhấn</strong>: Vòi bơm áp lực màu đen mờ kết hợp vòng cổ gỗ sồi tự nhiên tinh xảo.</li>
+            <li><strong>Nhãn dán</strong>: Nhãn giấy màu be nhám chống thấm nước, in chữ đen tối giản "BIO-GINGER & TEA TREE - SCALP PURIFYING SHAMPOO", có biểu tượng lá tràm trà và củ gừng non dập nổi màu vàng kim.</li>
+          </ul>
+          <pre id="prop-shampoo">photorealistic 16:9 product hero sheet of a luxury 500ml organic shampoo bottle named chai_dau_goi, four angles: front product view, 45-degree angle, close-up texture shot, and downward pump view. Frosted amber cylinder bottle with wooden collar accents and a matte black pump dispenser. Elegant beige textured label with minimalist typography 'BIO-GINGER & TEA TREE'. Beside it are fresh sliced golden ginger roots and wet tea tree leaves with water droplets. Luxury commercial studio lighting, soft reflections, high resolution packshot.</pre>
+          <button class="copy-btn" onclick="copySnippet('prop-shampoo')">📋 Copy Shampoo Prop Prompt</button>
+        </div>
+        <div class="info-card">
+          <h3 class="card-title">Lược Silicon Massage Da Đầu (Quà Tặng Affiliate)</h3>
+          <ul>
+            <li><strong>Hình dáng</strong>: Thiết kế hình tròn công thái học vừa vặn lòng bàn tay, màu xanh sage pastel dịu mát.</li>
+            <li><strong>Gai lược</strong>: 19 gai silicon nguyên sinh hình chóp nón mềm dẻo, đàn hồi cao, thiết kế không làm tổn thương chân tóc.</li>
+            <li><strong>Tác dụng trực quan</strong>: Tạo bọt siêu dày mịn, hỗ trợ loại bỏ tế bào sừng gàu và bã nhờn sâu trong lỗ chân lông.</li>
+          </ul>
+          <pre id="prop-brush">photorealistic commercial product shot of a pastel sage-green ergonomic silicone scalp massage brush, showing flexible tapered cone bristles, smooth matte grip handle, resting on a wet white marble surface with delicate shampoo foam suds, bright spa lighting, macro focus.</pre>
+          <button class="copy-btn" onclick="copySnippet('prop-brush')">📋 Copy Scalp Brush Prompt</button>
+        </div>
+      </div>
+    </section>
+
+    <!-- SECTION 4B -->
+    <section id="locations">
+      <div class="section-header">
+        <h2 class="section-title">Section 4B: Location Universe & Architectural Staging</h2>
+        <span class="badge badge-cyan">SPATIAL CONTINUITY</span>
+      </div>
+      <div class="grid-2">
+        <div class="info-card">
+          <h3 class="card-title">Bối cảnh A: Phòng Tắm Spa Luxury (phong_tam_luxury)</h3>
+          <p>Phòng tắm phong cách tối giản hiện đại với vách kính cường lực trong suốt, sen tắm đứng mạ chrome bóng loáng, bệ đá lavabo marble xám vân mây trắng. Bệ kính decor một bình hoa tràm trà nhỏ và khay gỗ sồi đựng đồ chăm sóc cá nhân. Hơi nước ấm bốc lên tạo không gian thư giãn như spa 5 sao.</p>
+        </div>
+        <div class="info-card">
+          <h3 class="card-title">Bối cảnh B: Sảnh Văn Phòng Hiện Đại (sanh_van_phong)</h3>
+          <p>Không gian văn phòng sáng sủa với sàn đá cẩm thạch sáng bóng, cửa kính sát trần nhìn ra skyline thành phố, ánh sáng ban mai tự nhiên dịu nhẹ chiếu qua rèm sáo, phản chiếu phong cách sống năng động của giới văn phòng thành đạt.</p>
+        </div>
+      </div>
+    </section>
+
+    <!-- SECTION 5 -->
+    <section id="episodes">
+      <div class="section-header">
+        <h2 class="section-title">Section 5: Scene-by-Scene 60s Roadmap (6 Scenes x 10s)</h2>
+        <span class="badge badge-emerald">60S COMMERCIAL MASTER ROADMAP</span>
+      </div>
+      <div class="grid-2">
+        <div class="info-card">
+          <h3 class="card-title">Cảnh 01 (00:00 – 00:10): Nỗi Nhục Áo Đen</h3>
+          <p><strong>Bối cảnh</strong>: Sảnh văn phòng. <strong>Beat</strong>: Hook 0-3s. Gàu rơi trên áo blazer đen, đồng nghiệp lướt qua khiến Mai Linh giật thót xấu hổ phủi vội.</p>
+        </div>
+        <div class="info-card">
+          <h3 class="card-title">Cảnh 02 (00:10 – 00:20): Vòng Lặp Tra Tấn</h3>
+          <p><strong>Bối cảnh</strong>: Trước gương phòng tắm. <strong>Beat</strong>: Agitation. Cào gãi da đầu đỏ rát, gạt bỏ những chai dầu gội hoá chất làm khô xơ tóc.</p>
+        </div>
+        <div class="info-card">
+          <h3 class="card-title">Cảnh 03 (00:20 – 00:30): Khám Phá Giải Pháp</h3>
+          <p><strong>Bối cảnh</strong>: Bàn decor phòng tắm. <strong>Beat</strong>: Epiphany & USP. Mở hộp chai dầu gội Gừng Tràm Trà hổ phách nắp gỗ, chất gel óng ả thơm ngát.</p>
+        </div>
+        <div class="info-card">
+          <h3 class="card-title">Cảnh 04 (00:30 – 00:40): Trải Nghiệm Giác Quan</h3>
+          <p><strong>Bối cảnh</strong>: Buồng sen tắm. <strong>Beat</strong>: Sensory Cleanse. Bọt tuyết bồng bềnh, dùng lược silicon massage dịu êm, nước xối sạch bong chân tóc.</p>
+        </div>
+        <div class="info-card">
+          <h3 class="card-title">Cảnh 05 (00:40 – 00:50): Lột Xác 180 Độ</h3>
+          <p><strong>Bối cảnh</strong>: Sảnh văn phòng ngập nắng. <strong>Beat</strong>: Somatic Delta. Tóc đen bồng bềnh óng mượt, diện áo vest đen vuốt tóc tự tin không vảy gàu.</p>
+        </div>
+        <div class="info-card">
+          <h3 class="card-title">Cảnh 06 (00:50 – 01:00): Chốt Sale Giỏ Hàng</h3>
+          <p><strong>Bối cảnh</strong>: Studio ấm cúng. <strong>Beat</strong>: Irresistible Affiliate CTA. Cầm chai dầu gội + lược quà tặng, chỉ tay góc trái nhận voucher giảm 50k.</p>
+        </div>
+      </div>
+    </section>
+
+    <!-- SECTION 6 -->
+    <section id="matrix">
+      <div class="section-header">
+        <h2 class="section-title">Section 6: Visual Palette & Lighting Direction</h2>
+        <span class="badge badge-gold">COLOR & ATMOSPHERE</span>
+      </div>
+      <div class="grid-2">
+        <div class="info-card">
+          <h3 class="card-title">Hệ Màu Điện Ảnh (Commercial Palette)</h3>
+          <ul>
+            <li><strong>Tone chủ đạo (60%)</strong>: Màu hổ phách ấm (Warm Amber) và xanh lá tràm trà hữu cơ (Sage Herb Green) tạo cảm giác an tâm từ thiên nhiên.</li>
+            <li><strong>Tone tương phản (30%)</strong>: Sắc đen tuyền sâu (Charcoal Obsidian) từ áo vest để làm nổi bật sự sạch sẽ không còn vảy gàu trắng.</li>
+            <li><strong>Tone điểm nhấn (10%)</strong>: Bọt tuyết trắng muốt tinh khiết (Snow White Foam) và ánh vàng mật ong óng ả từ chất gel.</li>
+          </ul>
+        </div>
+        <div class="info-card">
+          <h3 class="card-title">Chiến Lược Ánh Sáng (Lighting Contract)</h3>
+          <ul>
+            <li><strong>Cảnh 1-2 (Tâm lý u ám/khó chịu)</strong>: Ánh sáng lạnh nhẹ, độ tương phản vừa phải, nhấn mạnh vào vệt gàu trắng và da đầu đỏ ửng.</li>
+            <li><strong>Cảnh 3-4 (Trải nghiệm làm sạch)</strong>: Ánh sáng khuếch tán mềm mại như spa, tia nước lấp lánh phản chiếu bọt kem mượt mà.</li>
+            <li><strong>Cảnh 5-6 (Hân hoan/Tự tin)</strong>: Ánh sáng vàng ấm rạng rỡ của nắng sớm, tóc óng ánh highlight chuẩn quảng cáo dầu gội cao cấp.</li>
+          </ul>
+        </div>
+      </div>
+    </section>
+  </div>
+
+  <script>
+    function copySnippet(id) {
+      const text = document.getElementById(id).innerText;
+      navigator.clipboard.writeText(text).then(() => {
+        alert("Đã sao chép prompt vào bộ nhớ tạm!");
+      });
+    }
+  </script>
+</body>
+</html>

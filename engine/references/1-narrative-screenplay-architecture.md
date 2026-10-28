@@ -1,6 +1,8 @@
 # PILLAR 1: NARRATIVE, SCREENPLAY & DIALOGUE ARCHITECTURE (SSOT)
 # (ĐẠO TRÌNH BIÊN KỊCH, CẤU TRÚC KỊCH BẢN, 20 TWIST & HỆ THỐNG THOẠI TOÀN NĂNG)
 
+> 📚 **CATALOG NOTICE** — This Pillar is a catalog of tools, patterns, and examples. Timings, word budgets, shot counts, and combos are illustrative Craft Defaults unless listed as Hard Constraints in `workflow.md` §2.10. Choose among them through [`0-creative-doctrine.md`](file:///d:/Project/Sven/engine/references/0-creative-doctrine.md): intent first, tool second, reason always.
+
 > **SINGLE SOURCE OF TRUTH (SSOT) FOR NARRATIVE & SCREENWRITING**  
 > **Master Authority**: Level-2 Master Screenwriter (`.agents/skills/screenwriter/`)  
 > **Direct Stakeholders**: Level-1 Executive Producer (`AGENT.md`), Level-2 Film Director (`.agents/skills/director/`)  
@@ -13,13 +15,21 @@
 - **PART I: THE NARRATIVE CONSTITUTION & 5 PILLARS OF CINEMATIC DEPTH**
   - § 1. The Strict Positive Ending & Zero-Fatality Mandate (Humanitarian Law)
   - § 2. The 5 Pillars of Cinematic Depth (Hollywood Emotional Protocol)
+  - § 2.1 The Primacy of Human Emotion & Psychological Stakes (Props as Subordinate Catalysts)
   - § 3. Creative Positioning System (Genre, Background Arena, Trope)
   - § 4. Minimalist Prop Catalyst Standard (The 3 Anti-Clutter Laws)
-- **PART II: THE HOLLYWOOD 6-BEAT NARRATIVE ARCHITECTURE & 18 SUB-BEATS**
-  - § 1. Mathematical Pacing & Beat Allocation (3% / 12% / 35% / 30% / 12% / 8%)
-  - § 2. Deep Dive: The 18 Narrative Sub-Beats
-  - § 3. 4-Stage Dynamic Twist Progression Across 6 Beats
-  - § 4. Format Adaptations: Short Film (60s–120s) vs. Multi-Episode Series (N Episodes)
+- **PART II: CINEMATIC STRUCTURAL HIERARCHY, NARRATIVE FUNCTIONS & THE MASTER BEAT ARCS**
+  - § 0. The 6-Level Cinematic Structural Hierarchy & Universal Narrative Glossary
+    - § 0.1 The 6-Level Cinematic Structural Hierarchy (From Feature to Shot)
+    - § 0.2 Universal Narrative Functions Glossary (Hook, Escalation, Climax, Trigger, Resolution)
+    - § 0.3 The Emotional Calibration & Intensity Scoring Protocol (1/10 to 10/10)
+    - § 0.4 The 8-Beat High-Intensity Showdown & Climax Architecture (The Sine-Wave Master Curve)
+    - § 0.5 The Universal Psychological Transformation Arc (Beyond Rigid Formulas)
+  - § 1. The Standard Hollywood 6-Beat Narrative Architecture & 18 Sub-Beats
+  - § 2. Mathematical Pacing & Beat Allocation (3% / 12% / 35% / 30% / 12% / 8%)
+  - § 3. Deep Dive: The 18 Narrative Sub-Beats
+  - § 4. 4-Stage Dynamic Twist Progression Across 6 Beats
+  - § 5. Format Adaptations: Short Film (60s–120s) vs. Multi-Episode Series (N Episodes)
 - **PART III: HOOK ARCHITECTURE (THE FIRST 3 SECONDS & RETENTION ENGINE)**
   - § 1. The 4 Life-or-Death Hook Elements
   - § 2. The 12 Cinematic Hook Archetypes & Selection Scoring Matrix
@@ -29,11 +39,17 @@
   - § 2. The 20 Master Twist Archetypes Directory
   - § 3. The 3-Wave Climax Anatomy (Wave 1: Psychological Trap ➔ Wave 2: Crushing Loss ➔ Wave 3: Ego Death & Moral Rebirth)
   - § 4. Minimalist Prop-to-Twist Mechanical Coupling & Cross-Faction Infiltration
+  - § 5. The False Dawn & Double-Bind Reversal Architecture (The Cold Water Technique & The Noble Lie)
+  - § 6. The Near-Miss Mechanism & The Tantalus Torment (Cơ Chế Cú Suýt Soát & Sự Cản Trở Của Phản Diện)
+  - § 7. The 5 Jaw-Dropping Reversal Mechanisms (Bộ 5 Liệu Pháp Khiến Khán Giả Há Hốc Mồm)
 - **PART V: THE UNIVERSAL MULTI-GENRE SCREENPLAY & DIALOGUE ECOSYSTEM**
   - § 1. The 4 Universal Interaction Energy Vectors
   - § 2. The Words-Per-Second (WPS) Physics Law & Cadence Calibration (1.1–2.4 WPS)
-  - § 3. The Invariant 10-Second Word Ceiling (14–18 Words) & Dedicated Timestamp Allocation
-  - § 4. The Invariant Terminal Living Settle Safety Buffer (`00:09.0–00:10.0`)
+  - § 2.5 The 5 Invariant Laws of Dialogue Continuity & Conversational Causality (Gates 4A-4F)
+  - § 2.6 The Dramatic Spine & 4-Way Cross-Scene Dialogue Relay (Eradicating Bubble Dialogue)
+  - § 2.7 The 3-Layer Organic Dialogue Anatomy & Anti-Curtness Standard (No Robotic Commands)
+  - § 3. 4 Dynamic Narrative Casting Models (Across All Genres)
+  - § 4. Dedicated Timestamp Allocation & Word Ceiling (14–18 Words)
 - **PART VI: THE UNIVERSAL 8-MODEL INTERACTION SUITE (MULTI-GENRE GEOMETRIES)**
   - § 1. Complete Architecture: Model 1 to Model 8 + Model 0
   - § 2. Adversarial Dialogue Fencing & Prop-Speech Tactile Locking Law
@@ -103,6 +119,42 @@
 
 ---
 
+### 🧠 § 2.1 THE PRIMACY OF HUMAN EMOTION & PSYCHOLOGICAL STAKES (PROPS AS SUBORDINATE CATALYSTS)
+# (ĐỊNH LUẬT TỐI THƯỢNG: CẢM XÚC NHÂN VẬT LÀ LINH HỒN — ĐẠO CỤ CHỈ LÀ XÚC TÁC PHỤ TRỢ)
+
+> [!IMPORTANT]
+> **ANTI-MECHANICAL & ANTI-DOGMA MANDATE: PEOPLE OVER OBJECTS**:
+> A common flaw in amateur scriptwriting is **dogmatic fetishization of props**—forcing the story to revolve unnaturally around a box, a pendant, or a knife. 
+> **PROPS NEVER CREATE THE DRAMA; HUMAN CONFLICT CREATES THE PROP'S MEANING.**
+> If an audience watches a scene, they do not cry because of an antique teacup; they cry because an estranged father's arthritic hands tremble as he sets it down, terrified that his daughter will refuse to speak to him.
+
+#### 1. The 3-Tier Cinematic Primacy Hierarchy (Tháp Thứ Bậc Giá Trị Điện Ảnh)
+
+```text
+┌────────────────────────────────────────────────────────────────────────────────────────────────────────┐
+│                                 THE CINEMATIC VALUE PYRAMID (THÁP GIÁ TRỊ TỰ SỰ)                       │
+├────────────────────────────────────────────────────────────────────────────────────────────────────────┤
+│ TIER 1 (PEAK / 70%): THE HUMAN SOUL & PSYCHOLOGICAL CRUCIBLE                                          │
+│ ──> Unresolved childhood trauma, existential guilt, toxic ego, moral dilemmas, and emotional rebirth.   │
+├────────────────────────────────────────────────────────────────────────────────────────────────────────┤
+│ TIER 2 (MID / 20%): DYNAMIC INTERPERSONAL VOLTAGE & SUBTEXT                                           │
+│ ──> Ideological friction, hidden resentments, unsaid truths, adversarial pacing, and micro-somatics.   │
+├────────────────────────────────────────────────────────────────────────────────────────────────────────┤
+│ TIER 3 (BASE / 10%): TACTILE PROPS & PHYSICAL ANCHORS (SUBORDINATE CATALYST)                          │
+│ ──> Minor physical anchors (xúc tác nhỏ) grounding psychological states into observable diffusion reality.│
+└────────────────────────────────────────────────────────────────────────────────────────────────────────┘
+```
+
+#### 2. The Core Rules of Emotional Primacy (Quy Tắc Vận Hành Tâm Lý Vượt Trên Đạo Cụ):
+1. **The Catalyst Principle (Nguyên Lý Xúc Tác)**:
+   - A prop is merely a sensory spark, a physical match that ignites a preexisting reservoir of psychological gasoline. Without authentic internal guilt or terror, the prop is sterile plastic.
+2. **Character-Driven Causality (Nhân Quả Xuất Phát Từ Con Người)**:
+   - The conflict escalates because of character flaws (arrogance, fear of abandonment, thirst for vengeance), NOT because a prop magically moved.
+3. **Subtext Over Surface (Ý Nghĩa Ngầm Vượt Trên Đồ Vật)**:
+   - When a character touches, clutches, drops, or shatters a prop, the camera must capture the **subconscious emotional tremor** in their breathing and gaze, rather than turning the scene into a product commercial.
+
+---
+
 ## § CREATIVE POSITIONING SYSTEM
 
 > Full library lists: see `workflow.md § 1A` — Genre Library, Background Library, Trope Library.
@@ -169,6 +221,179 @@ Trope defines **dramatic structure and twist rhythm**:
 
 ---
 
+## 🪞 § 4. THE MASTER CINEMATIC PROP ARCHITECTURE & TACTILE SUBTEXT ENGINE
+# (NGHỆ THUẬT SỬ DỤNG ĐẠO CỤ ĐIỆN ẢNH & 3 LUẬT THÉP AI VIDEO)
+
+> **THE DIRECTORIAL PHILOSOPHY OF PROPS**:
+> In masterclass cinema, **props are never background clutter or decorative furniture**. 
+> *"A prop is the physical extension of a character's soul. It is the sole instrument through which a director makes invisible internal agony tangible to the camera lens without speaking a single word."*
+> If a character says *"I am in agonizing pain"*, that is amateur writing. But if a character trembles as they place an old tarnished brass ring onto a pawnshop counter, hesitate, and clench it back into their bleeding palm—the entire cinema audience weeps.
+
+```text
+┌────────────────────────────────────────────────────────────────────────────────────────────────────────┐
+│                               5 CẤP ĐỘ SỬ DỤNG ĐẠO CỤ TRONG ĐIỆN ẢNH HOLLYWOOD                         │
+├────────────────────────────────────────┬───────────────────────────────────────────────────────────────┤
+│ 1. ĐẠO CỤ NHÂN QUẢ (Chekhov's Gun)     │ Xuất hiện ở Hồi 1 ➔ Nhất định phải bùng nổ ở Hồi 3.           │
+│ 2. ĐẠO CỤ CHUYỂN HÓA (Wound ➔ Echo)    │ Biến đổi 180° từ "Vết thương/Xiềng xích" sang "Ân sủng/Tự do".│
+│ 3. ĐẠO CỤ HÀNH VI (Business Prop)      │ Giúp diễn viên bộc lộ tiềm thức và đối thoại không lời.       │
+│ 4. ĐẠO CỤ QUYỀN LỰC (Status Lever)     │ Ai đang cầm đạo cụ là người làm chủ quyền lực trong phân cảnh.│
+│ 5. ĐẠO CỤ MỒI NHỬ (The MacGuffin)      │ Thứ mọi người tranh giành để bộc lộ bản chất tham lam/cao cả. │
+└────────────────────────────────────────┴───────────────────────────────────────────────────────────────┘
+```
+
+---
+
+### 1. The 5 Universal Cinematic Functions of Props (5 Chức Năng Điện Ảnh Tối Thượng)
+
+#### 1. Đạo Cụ Nhân Quả (Chekhov's Gun — Luật Súng Của Chekhov)
+* **Nguyên lý bất hủ**: *"Nếu trong Hồi 1 bạn đặt một khẩu súng trên tường, thì sang Hồi 3 khẩu súng đó bắt buộc phải nổ. Nếu nó không nổ, tuyệt đối không được đưa nó vào khung hình."*
+* **Quy tắc biên kịch**: 
+  - Đạo cụ nhân quả phải được giới thiệu một cách **vô tình, tự nhiên trong đời sống thường nhật ở Act 1 / Beat 2 (Setup)**.
+  - Sang Act 3 / Beat 4 (Climax), chính đạo cụ đó trở thành chiếc đòn bẩy vật lý tháo gỡ bế tắc hoặc phơi bày sự thật.
+  - *Ví dụ*: Chiếc bật lửa cũ kỹ của người cha xuất hiện ở Tập 1 khi châm đóm lửa nhóm bếp; đến Tập 3, chính chiếc bật lửa đó soi sáng góc tối nơi kẻ phản diện đang giấu đứa trẻ làm con tin.
+
+#### 2. Cặp Đạo Cụ Chuyển Hóa: Wound Prop $\longrightarrow$ Echo Prop (Mô Hình Tiếng Vọng 180°)
+Đây là công cụ đo lường bước biến chuyển đạo đức (Character Arc) sâu sắc nhất của kịch bản Sven:
+
+```text
+   HỒI 1 (ACT 1 / BEAT 2): WOUND PROP                  HỒI 4 (ACT 4 / BEAT 6): ECHO PROP
+┌──────────────────────────────────────────┐       ┌──────────────────────────────────────────┐
+│ Tượng trưng cho sang chấn quá khứ,       │ ────► │ Trải qua một sự biến chuyển vật lý 180°, │
+│ sự bất an, xiềng xích hoặc nợ nần.       │       │ tượng trưng cho sự giải thoát & cứu rỗi. │
+│ (Cuốn sổ ghi nợ gia đình, thanh kiếm     │       │ (Cuốn sổ nợ bị đốt thành tro bay;        │
+│  báo thù, chiếc hộp khóa kín bí mật).    │       │  thanh kiếm rèn thành lưỡi cày bình yên; │
+└──────────────────────────────────────────┘       │  chiếc hộp mở toang dưới ánh mặt trời).  │
+                                                   └──────────────────────────────────────────┘
+```
+* **Định luật bất biến**: Đạo cụ ở đầu phim và cuối phim là **CÙNG MỘT VẬT**, nhưng **trạng thái vật lý hoặc mối quan hệ tâm lý của nhân vật với nó đã đảo cực 180°**, xác thực sự chữa lành của linh hồn.
+
+#### 3. Đạo Cụ Hành Vi (Business Props & Psychological Subtext)
+Khi nhân vật đang nói dối, che giấu sự sợ hãi hoặc toan tính âm mưu, họ không bao giờ đứng bất động. Đạo cụ là công cụ để **cơ thể phản bội lại lời nói**:
+* **Rót trà tràn ly**: Nhân vật nói giọng đanh thép cứng rắn: *"Tôi không ngán ông!"*, nhưng ngón tay run rẩy làm nước sôi tràn bỏng bàn tay $	o$ Khán giả nhìn thấy ngay nỗi sợ hãi tột cùng đang bị kìm nén.
+* **Lau kính / Châm thuốc**: Tháo kính ra lau tỉ mỉ, châm điếu thuốc rồi dụi ngay $	o$ Chiêu bài **"câu giờ tâm lý"**, né tránh ánh mắt đối phương để tính kế hãm hại.
+* **Siết chặt kỷ vật**: Đứa con nói lời cay đắng xua đuổi cha, nhưng hai bàn tay giấu sau lưng bấu chặt kỷ vật chiếc khóa bạc đến bật máu $	o$ Bộc lộ sự hy sinh cao cả (*Noble Lie*).
+
+#### 4. Đạo Cụ Quyền Lực & Cán Cân Thống Trị (Status & Power Levers)
+Trong một phân cảnh đối đầu (Adversarial Dialogue Duel), **vị trí của đạo cụ quyết định ai đang là kẻ thống trị căn phòng**:
+* **Chiếc bút ký / Con dấu**: Tên trùm phản diện A2 xoay tròn chiếc bút máy vàng trên ngón tay trong khi nhân vật chính đứng khúm núm $	o$ A2 nắm giữ 100% quyền sinh sát.
+* **Khoảnh khắc đảo chiều**: Khi A1 phát hiện bằng chứng giả, lao tới **giật phăng chiếc bút đập gãy đôi trên bàn** $	o$ Quyền lực lập tức đảo chiều 180° sang tay A1 mà chưa cần một hành động bạo lực nào!
+
+#### 5. Đạo Cụ Mồi Nhử (The MacGuffin — Định Nghĩa Của Alfred Hitchcock)
+* **Bản chất**: Là một vật thể mà **tất cả các phe phái đều điên cuồng tranh đoạt** (vali tiền, tờ di chúc thất lạc, chiếc thẻ nhớ ghi âm tội ác, miếng ngọc bội gia truyền).
+* **Bí mật điện ảnh**: Thứ chứa bên trong chiếc vali **hoàn toàn không quan trọng bằng bản chất con người**. Đạo cụ MacGuffin được tạo ra để thử thách nhân tâm: Kẻ nào tham lam sẽ sa vào tội ác; người nào nghĩa hiệp sẽ chấp nhận buông bỏ để cứu tính mạng đồng loại.
+
+---
+
+### 2. The 3 Iron Laws of Props in Generative AI Video (3 Luật Thép Khi Dùng Đạo Cụ Cho AI Video)
+
+Khi biên dịch kịch bản sang Prompt cho các mô hình AI Video (Sora, Runway Gen-3, Kling, Midjourney), việc nhồi nhét đạo cụ bừa bãi sẽ phá hủy khung hình bởi các lỗi biến dạng ngón tay (*finger warping*), đạo cụ trôi dạt lơ lửng (*floating artifacts*), hoặc đồ vật tự biến hình (*morphing*).
+
+Biên kịch và Đạo diễn AI bắt buộc phải tuân thủ nghiêm ngặt **3 Luật Thép**:
+
+```text
+┌────────────────────────────────────────────────────────────────────────────────────────────────────────┐
+│                          3 LUẬT THÉP DÙNG ĐẠO CỤ TRONG AI VIDEO GENERATION                             │
+├────────────────────────────────────────────────────────────────────────────────────────────────────────┤
+│ 1. SINGLE FOCAL PROP LAW (LUẬT 1 ĐẠO CỤ TIÊU ĐIỂM)   ──> TỐI ĐA 1 đạo cụ tương tác trong 1 cảnh.       │
+│ 2. SIMPLE GEOMETRY LAW (LUẬT HÌNH HỌC TỐI GIẢN)      ──> Ưu tiên hình khối đặc, cấm chi tiết vụn vặt.  │
+│ 3. TACTILE LOCKING SYNTAX (CÚ PHÁP KHÓA XÚC GIÁC)    ──> Mô tả giải phẫu ngón tay bấu chặt vào đạo cụ. │
+└────────────────────────────────────────────────────────────────────────────────────────────────────────┘
+```
+
+#### Luật 1: Single Focal Prop Law (Luật 1 Đạo Cụ Tiêu Điểm)
+* ❌ **Lỗi sai chết người**: Nhân vật vừa cầm điện thoại, vừa bưng tách cà phê, trên bàn có chùm chìa khóa và tài liệu. AI sẽ làm ngón tay dính liền vào quai tách, hoặc điện thoại biến hình thành chùm chìa khóa.
+* ✅ **Chuẩn Hollywood AI**: Cắt bỏ 100% đồ vật rác. Chỉ giữ lại **DUY NHẤT 1 ĐẠO CỤ TRUNG TÂM**: Bàn tay siết chặt chiếc chìa khóa đồng. Mọi đồ vật khác chỉ là nền mờ ảo (Cinematic Bokeh / Shallow Depth of Field).
+
+#### Luật 2: Simple Geometry Law (Luật Hình Học Tối Giản)
+* Các mô hình AI Video render hoàn hảo các vật thể có **kết cấu vật lý rõ ràng, khối đặc và bề mặt mang dấu vết thời gian**:
+  - *Vật thể VÀNG nên dùng*: Cuốn sổ da bìa sờn, phong bì thư niêm phong sáp đỏ, chìa khóa đồng thau hoen rỉ, đồng hồ quả quýt mặt kính xước, chén trà gốm mộc, mặt dây chuyền bạc khắc chữ.
+  - *Vật thể NGUY HIỂM nên tránh*: Ly thủy tinh trong suốt phản quang phức tạp, chất lỏng bắn tung tóe đa hướng, máy móc cơ khí tinh xảo nhiều bánh răng cưa li ti.
+
+#### Luật 3: Tactile Locking Syntax (Cú Pháp Khóa Tiếp Xúc Xúc Giác)
+Tuyệt đối không bao giờ viết chung chung `holding a prop` hoặc `carrying a book`. Phải mô tả **vật lý học tiếp xúc giải phẫu (Anatomical Contact Mechanics)**:
+* ❌ *Prompt yếu*: "A man holding an old debt ledger."
+* ✅ *Prompt chuẩn Sven SSOT*:
+  `"Extreme close-up macro focus: his dirt-crusted thumb and scarred index finger press firmly into the worn brown leather edge of a frayed debt ledger, knuckles blanching white under physical pressure, fibrous parchment trembling subtly under his shallow breath, tactile metallic clasp gleaming in low warm raking light."`
+
+---
+
+### 3. The Prop Mutability Lifecycle & The Mandatory Entity Re-Naming Law
+# (QUY TẮC TÁI ĐỊNH DANH THỰC THỂ ĐẠO CỤ KHI PHÁ HỦY CẤU TRÚC)
+
+Trong sản xuất phim và đặc biệt là chỉ đạo Prompt AI Video (Sora, Runway Gen-3, Kling), việc theo dõi **Tính biến đổi hình thái học của Đạo cụ (Prop Morphological Mutability)** là ranh giới sống còn giữa một tác phẩm liền mạch (Continuity) và một thảm họa ảo giác (AI Hallucination).
+
+```text
+┌────────────────────────────────────────────────────────────────────────────────────────────────────────┐
+│                        3 CẤP ĐỘ BIẾN ĐỔI TRẠNG THÁI ĐẠO CỤ TRONG ĐIỆN ẢNH                              │
+├────────────────────────────────────────────────────────────────────────────────────────────────────────┤
+│ CẤP ĐỘ 1: BIẾN ĐỔI BỀ MẶT (Surface Degradation)     ──► GIỮ NGUYÊN TÊN GỐC, chỉ thêm tính từ trạng thái│
+│ CẤP ĐỘ 2: PHÁ HỦY CẤU TRÚC (Structural Fracture)    ──► BẮT BUỘC ĐỔI TÊN DANH TÁNH THỰC THỂ MỚI        │
+│ CẤP ĐỘ 3: CHUYỂN HÓA TÁI SINH (Echo Metamorphosis)  ──► ĐỔI SANG THỰC THỂ TỰ DO / ÂN SỦNG 180°         │
+└────────────────────────────────────────────────────────────────────────────────────────────────────────┘
+```
+
+#### Cấp độ 1: Biến Đổi Bề Mặt (Surface Degradation / Weathering) — Cấp Độ Bảo Toàn Hình Học
+* **Bản chất**: Hình học tổng thể (Topology) của vật thể **chưa bị phá vỡ**, nó vẫn là một khối thống nhất, chỉ thay đổi bề mặt do môi trường hoặc tác động nhẹ bên ngoài.
+* **Quy tắc định danh**: **GIỮ NGUYÊN TÊN GỐC CỦA ĐẠO CỤ**, chỉ bổ sung các tính từ chỉ trạng thái bề mặt (Surface Modifiers):
+  - *Cuốn sổ bị bẩn*: `The Debt Ledger` $\longrightarrow$ `[The mud-splattered, dirt-streaked Debt Ledger]`.
+  - *Bức thư dính nước mưa*: `The Unsent Letter` $\longrightarrow$ `[The rain-soaked, water-stained Letter]`.
+  - *Chiếc áo rách gấu*: `The White Tunic` $\longrightarrow$ `[The frayed, blood-spotted White Tunic]`.
+  - *Chiếc chìa khóa cũ*: `The Brass Key` $\longrightarrow$ `[The tarnished, oxidized Brass Key]`.
+* **Cách xử lý trong Prompt AI**: Các mô hình khuếch tán AI hiểu rất tốt việc thêm texture bẩn/ướt lên vật thể cũ mà không làm thay đổi hình dáng cốt lõi.
+
+#### Cấp độ 2: Phá Hủy Cấu Trúc (Structural Fracture / Destruction) — CẤP ĐỘ BẮT BUỘC ĐỔI TÊN!
+* **Bản chất**: Vật thể đã **chết về mặt hình học vật lý**. Nó đã bị xé vụn, đập vỡ, thiêu rụi hoặc đứt lìa thành nhiều mảnh độc lập.
+* **Quy tắc vàng chống ảo giác AI (Anti-Hallucination Law)**: 
+  > **TUYỆT ĐỐI CẤM DÙNG TÊN CŨ. BẮT BUỘC PHẢI TÁI ĐỊNH DANH THÀNH THỰC THỂ HÌNH HỌC MỚI (MANDATORY ENTITY RE-NAMING).**
+  > Nếu bạn viết `"He drops the torn book to the ground"`, AI sẽ hallucinate và vẽ một cuốn sách còn nguyên vẹn rơi xuống đất! Nhưng nếu bạn đổi tên thành `"His fingers release, letting the fluttering torn parchment shreds scatter across the mud"`, AI sẽ vẽ chính xác những mảnh giấy bay lả tả.
+
+##### Bảng Tra Cứu Tái Định Danh Đạo Cụ Kinh Điển (Master Prop Re-Naming Directory):
+
+| Đạo Cụ Nguyên Bản (Tên cũ) | Hành vi phá hủy vật lý | TÊN THỰC THỂ MỚI BẮT BUỘC (New Entity Name) | Prompt AI Video chuẩn xác |
+| :--- | :--- | :--- | :--- |
+| **Cuốn sách / Sổ nợ** | Bị xé nát vụn | **`Torn Parchment Shreds`** *(Mảnh giấy rách tả tơi)* | `"Dozens of jagged torn parchment shreds fluttering through the air, scattered across the wet floor"` |
+| **Bức thư / Bản hợp đồng** | Bị đốt cháy | **`Smoldering Ash Flakes`** *(Tàn tro đen bay lơ lửng)* | `"Curling blackened paper edges disintegrating into fragile glowing ash flakes drifting in the smoke"` |
+| **Chiếc cốc / Bát sứ** | Bị đập vỡ | **`Jagged Ceramic Shards`** *(Mảnh gốm sắc nhọn)* | `"Sharp fragmented porcelain shards littering the stone floor, a puddle of dark tea pooling between splinters"` |
+| **Chiếc gương gia bảo** | Bị đấm vỡ | **`Fractured Silver Glass Splinters`** *(Mảnh gương vỡ)* | `"Spiderweb fracture lines exploding outward into tiny reflective glass splinters spraying across the desk"` |
+| **Thanh kiếm / Vũ khí** | Bị chém gãy | **`Broken Sword Hilt`** & **`Snapping Blade Tip`** | `"The severed jagged steel blade snaps mid-air with a dull metallic ring, leaving only the blunt broken hilt in his fist"` |
+| **Chuỗi vòng ngọc** | Bị giật đứt dây | **`Scattering Jade Beads`** *(Những hạt ngọc văng tung tóe)* | `"Individual polished green jade beads bouncing chaotically down the wooden steps, the frayed silk thread dangling limp"` |
+
+#### Cấp độ 3: Chuyển Hóa Tái Sinh (Echo Metamorphosis / 180° Rebirth)
+* **Bản chất**: Đạo cụ không bị vứt bỏ trong đống rác mà **được tái sinh dưới một hình thái mang ý nghĩa nhân văn/cứu rỗi** ở Hồi 4 (Tập cuối).
+* **Quy tắc định danh**: Đổi sang tên của biểu tượng tự do mới:
+  - *Chiếc còng sắt giam cầm* $\longrightarrow$ **`The Unlocked Open Shackle`** *(Chiếc còng mở toang đặt cạnh bông hoa).*
+  - *Cuốn sổ nợ nần dày cộp* $\longrightarrow$ **`The Incinerated White Ash`** *(Tro tàn thanh thản bay dưới ánh bình minh).*
+  - *Thanh kiếm sắc lạnh báo thù* $\longrightarrow$ **`The Reforged Plowshare`** *(Lưỡi cày bằng sắt cắm vào luống đất mùa màng).*
+
+---
+
+### 4. The Master Prop Lifecycle Continuity Matrix (Bảng Theo Dõi Vòng Đời Đạo Cụ)
+
+Trong kịch bản chi tiết của Sven, mỗi Đạo Cụ Chính bắt buộc phải có một **Bảng Theo Dõi Vòng Đời Trạng Thái (Lifecycle State Table)**:
+
+```text
+┌──────────────────────────────────────────────────────────────────────────────────────────────────────────────────┐
+│                            VÍ DỤ BẢNG THEO DÕI ĐẠO CỤ: CUỐN SỔ GHI NỢ CỦA CHA                                    │
+├─────────┬───────────────────────────────┬───────────────────────────────┬────────────────────────────────────────┤
+│ Giai đoạn│ Tên gọi kỹ thuật của Đạo cụ   │ Cấp độ biến đổi & Ngoại hình  │ Hành vi tiếp xúc vật lý                │
+├─────────┼───────────────────────────────┼───────────────────────────────┼────────────────────────────────────────┤
+│ Hồi 1   │ `The Sacred Debt Ledger`      │ Cấp độ 0 (Pristine): Da sờn,  │ Ôm chặt trước ngực, sợ bị cướp.        │
+│ (Setup) │                               │ còn nguyên vẹn, buộc dây dù.  │                                        │
+├─────────┼───────────────────────────────┼───────────────────────────────┼────────────────────────────────────────┤
+│ Hồi 2   │ `The Water-Stained Ledger`    │ Cấp độ 1 (Surface): Dính bùn, │ Bị kẻ phản bội giật mất ném xuống vũng │
+│ (Mid)   │                               │ ướt sũng nước mưa, nhòe mực.  │ nước bẩn.                              │
+├─────────┼───────────────────────────────┼───────────────────────────────┼────────────────────────────────────────┤
+│ Hồi 3   │ `Torn Ledger Parchment Shreds`│ CẤP ĐỘ 2 (STRUCTURAL FRACTURE)│ Đứa con xé toạc cuốn sổ ném vào mặt    │
+│ (Climax)│                               │ ➔ ĐÃ ĐỔI TÊN DANH TÁNH THÀNH  │ cha để cứu mẹ (The Noble Lie).         │
+│         │                               │ CÁC MẢNH GIẤY RÁCH TẢ TƠI.    │ Giấy vụn bay trong gió bão.            │
+├─────────┼───────────────────────────────┼───────────────────────────────┼────────────────────────────────────────┤
+│ Hồi 4   │ `Drifting White Ash Flakes`   │ CẤP ĐỘ 3 (ECHO METAMORPHOSIS) │ Hai cha con gom các mảnh giấy vụn lại, │
+│ (Finale)│                               │ ➔ ĐÃ ĐỔI TÊN THÀNH TÀN TRO.   │ châm lửa đốt. Tro tàn bay vào trời sớm.│
+└─────────┴───────────────────────────────┴───────────────────────────────┴────────────────────────────────────────┘
+```
+
+---
+
 ## § ROLE & OBJECTIVES
 
 - AI Screenwriter + Art Director for **all video genres**: Drama, Psychological, Family, Karma, Spiritual, Romance, Mystery, Inspirational...
@@ -182,21 +407,238 @@ Trope defines **dramatic structure and twist rhythm**:
 ---
 
 
-## 🏛️ PART II: THE HOLLYWOOD 6-BEAT NARRATIVE ARCHITECTURE & 18 SUB-BEATS
+
+---
+
+## 🧬 PART I.5: THE UNIVERSAL 3-LEVEL SCRIPTWRITING CONTINUITY ENGINE (SSOT)
+### (HỆ THỐNG MÓC XÍCH KỊCH BẢN TỔNG QUÁT 3 TẦNG: VĨ MÔ - TRUNG MÔ - VI MÔ)
+
+> [!CAUTION]
+> **ANTI-FRAGMENTATION CONSTITUTIONAL MANDATE (LUẬT PHÒNG CHỐNG KỊCH BẢN RỜI RẠC)**:
+> In masterclass cinematic screenwriting, individual scenes and episodes must NEVER exist as isolated vignettes or slideshow clips.
+> Every project authored under Sven MUST obey the **Universal 3-Level Continuity Engine**:
+
+```text
+┌────────────────────────────────────────────────────────────────────────────────────────────────────────┐
+│                        THE UNIVERSAL 3-LEVEL SCRIPTWRITING CONTINUITY ENGINE                           │
+├────────────────────────────────────────────────────────────────────────────────────────────────────────┤
+│ TIER 1: MACRO LEVEL (SEASON & SERIES ARC) — THE IRREVERSIBLE ESCALATION LADDER                        │
+│ • Symmetrical Character Transformation: Wound (Ep 1) ➔ False Armor ➔ Ego Death ➔ Catharsis (Finale).  │
+│ • Irreversible Stakes: Each episode escalates conflict to an irreversible tier. Zero status quo reset.  │
+│ • Point of No Return: Every episode must conclude with an action that permanently alters reality.      │
+├────────────────────────────────────────────────────────────────────────────────────────────────────────┤
+│ TIER 2: MESO LEVEL (BETWEEN EPISODES) — THE BROKEN MESO-LOOP & CLIFFHANGER ANATOMY                    │
+│ • The Invariant Binge Law: Ending (Beat 5–6) of Episode N ≡ Detonation Trigger (Beat 1) of Episode N+1.│
+│ • The 3-Second Cold Water Slap: False Dawn in final 10s shattered at 00:09 by a ruthless complication. │
+│ • Zero Temporal Gap (Real-Time Handover): Terminal frame at 00:10 of Ep N IS opening frame at 00:00    │
+│   of Ep N+1. Same physical momentum, lighting, coordinates, and bio-respiration.                       │
+├────────────────────────────────────────────────────────────────────────────────────────────────────────┤
+│ TIER 3: MICRO LEVEL (BETWEEN 10.0s SCENE ATOMS) — THE "THEREFORE / BUT" CAUSALITY CHAIN                │
+│ • The Anti-"And Then" Law: Scenes NEVER link by "And then...". Every scene link MUST BE:               │
+│   - "THEREFORE..." (Action in Scene N creates mandatory kinetic/emotional consequence in Scene N+1) OR│
+│   - "BUT..." (Action in Scene N strikes an unexpected physical/psychological obstruction in Scene N+1)│
+│ • The Scene-to-Scene Handoff Triangle:                                                                 │
+│   1. Kinetic Vector & Spatial Anchor: Momentum direction at 00:10 seamlessly continues at 00:00.      │
+│   2. Tactile Prop Bridge: Interactive prop held in Scene N becomes active catalyst in Scene N+1.       │
+│   3. Keyword & Emotional Handoff: Spoken dialogue in Scene N+1 directly retorts a keyword from Scene N.│
+│ • Micro-Loop Overlap: Terminal 1.5s of Scene N seeds an unresolved micro-hook triggering Scene N+1.    │
+└────────────────────────────────────────────────────────────────────────────────────────────────────────┘
+```
+
+#### 1. Tier 1 (Macro): The Irreversible Escalation Ladder Across Episodes
+In a multi-episode narrative (4 to 12 episodes), each episode occupies an irreversible tier of conflict. A script that repeats the same level of stakes is dead:
+1. **Tier 1 (Personal Survival & Inciting Trap)**: Direct physical/financial need. The protagonist accepts a dangerous compromise to survive.
+2. **Tier 2 (Relational Crisis & Betrayal)**: The compromise drags loved ones into mortal danger. Subordinate satellites cross lines (`TW-05 Judas Kiss`).
+3. **Tier 3 (Institutional / Communal Isolation)**: Society, law, or public mob (Tier C) turns aggressively against the protagonist. Exits sealed.
+4. **Tier 4 (Existential Crucible & Ego Death)**: The false armor crumbles completely. Total rock bottom (`PEAK 10/10`). Discovery of the devastating truth.
+5. **Tier 5 (Transcendent Grace & Communal Restoration)**: Resolution achieved through moral sacrifice and unconditional pardon, inspiring collective healing.
+
+#### 2. Tier 2 (Meso): The Inter-Episode Binge Loop Engine
+To eliminate episode-to-episode fragmentation and engineer addictive binge retention:
+- **The False Dawn to Cold Water Slap**:
+  - `00:00–00:07.5` of Episode N's Final Scene: Hero achieves temporary success or breathes a sigh of relief (False Dawn).
+  - `00:07.5–00:09.5`: Hard shock disruption strikes (Cold Water Slap: an arrest warrant slammed onto table, a fire alarm screaming, a weapon cocked behind the door).
+  - `00:09.5–00:10.0`: Immediate cut to black on the hero's paralyzed, breathless face.
+- **Zero Temporal Gap Standard**:
+  - Episode N+1 does NOT begin "the next morning" or "meanwhile elsewhere".
+  - Episode N+1 Scene 1 opens at the exact microsecond and camera angle where Episode N froze: the shock wave traveling, the hand trembling on the door handle, the breath caught in the throat.
+
+#### 3. Tier 3 (Micro): The Intra-Episode "Therefore / But" Causality Matrix
+Within any single episode, 10-second Scene Atoms must be forged together through relentless causality:
+- **Rule of Causality**:
+  - ❌ *Banned ("And then")*: Scene 1 shows hero baking bread. Scene 2 shows hero walking in street. Scene 3 shows hero talking to merchant. (Disjointed slideshow).
+  - ✅ *Mandatory ("Therefore / But")*: Scene 1 flour jar falls empty, mother faints; **THEREFORE** Scene 2 hero sprints out the door grabbing father's relic; **BUT** Scene 3 street elders spot the relic and shout accusations; **THEREFORE** Scene 4 hero is cornered against the storehouse wall...
+- **The Scene Handoff Triangle Execution**:
+  - *Vector Continuity*: If character exits frame-right at Scene N, camera must establish entry from frame-left at Scene N+1.
+  - *Prop Continuity*: The object touched at 00:09 of Scene N must be in physical contact at 00:00 of Scene N+1.
+  - *Dialogue Keyword Handoff*: The core noun/verb of the previous volley must be seized and weaponized in the next volley (e.g., *"This debt will destroy you"* ➔ *"Then let it destroy me, because I will not yield!"*).
+
+---
+
+## 🏛️ PART II: CINEMATIC STRUCTURAL HIERARCHY, NARRATIVE FUNCTIONS & THE MASTER BEAT ARCS
+
+## 🏛️ § 0. THE 6-LEVEL CINEMATIC STRUCTURAL HIERARCHY & UNIVERSAL NARRATIVE GLOSSARY
+
+To eliminate scale confusion (lẫn lộn thang đo cấu trúc) between macro story arcs and micro scene beats, all screenplays, directors, and AI prompts in the Sven Cinematic Universe must strictly adhere to the **6-Level Cinematic Structural Hierarchy**, the **Universal Narrative Functions Glossary**, and the **Emotional Intensity Calibration Protocol**.
+
+```text
+┌────────────────────────────────────────────────────────────────────────────────────────────────────────┐
+│                        THE 6-LEVEL CINEMATIC STRUCTURAL HIERARCHY (HỆ CẤU TRÚC 6 TẦNG)                 │
+├────────────────────────────────────────────────────────────────────────────────────────────────────────┤
+│ LEVEL 6: FEATURE FILM / FULL SERIES ──> Tác phẩm hoàn chỉnh (90-120m Feature hoặc N-Tập Phim Bộ).      │
+│ LEVEL 5: ACT (HỒI)                  ──> Khối cấu trúc vĩ mô 4 Hồi: Setup ➔ Escalation ➔ Climax ➔ Res.  │
+│ LEVEL 4: SEQUENCE (TRƯỜNG ĐOẠN)     ──> Chuỗi 2-5 phân cảnh gom chung 1 tiểu mục tiêu kịch tính.       │
+│ LEVEL 3: SCENE (PHÂN CẢNH)          ──> Đơn vị thống nhất: 1 Không gian, 1 Thời gian, 1 Nhóm nhân vật. │
+│ LEVEL 2: BEAT (NHỊP TỰ SỰ/TÂM LÝ)   ──> Đơn vị xung đột nhỏ nhất: 1 Thay đổi cảm xúc / hành động.     │
+│ LEVEL 1: SHOT (CÚ MÁY THỊ GIÁC)     ──> Khung hình vật lý tạo ra bởi camera: Single-Shot vs Multi-Shot.│
+└────────────────────────────────────────────────────────────────────────────────────────────────────────┘
+```
+
+---
+
+### § 0.1 The 6-Level Cinematic Structural Hierarchy (Hệ Cấu Trúc 6 Cấp Độ)
+
+1. **Level 6: Feature Film / Full Series (Toàn Tác Phẩm)**:
+   - Toàn bộ hành trình biến đổi nhân vật (Character Arc) từ xuất phát điểm bị tổn thương (*Root Wound*) đến khi được cứu chuộc hoặc thức tỉnh (*Transcendence*).
+2. **Level 5: Act (Hồi)**:
+   - Khối cấu trúc vĩ mô phân định sự chuyển đổi trạng thái của nhân vật và cốt truyện. Sven chuẩn hóa cấu trúc **4-Act Hollywood Architecture**:
+     - **Act 1: Setup & Inception** (~20-25%): Thiết lập thế giới, vết thương lòng, biến cố kích hoạt (Inciting Incident), và gài cắm Đạo cụ Vết thương (Wound Prop).
+     - **Act 2: Escalation & Complication** (~40-50%): Xung đột leo thang đa tầng, thử thách thất bại, bẫy siết chặt, cú lật giữa chừng (Midpoint Reversal).
+     - **Act 3: Climax & The Grand Showdown** (~20-25%): Điểm tối tăm nhất (All Hope Is Lost), đối đầu trực diện bùng nổ, sự sụp đổ bản ngã (Ego Death).
+     - **Act 4: Resolution & Restorative Grace** (~10-15%): Thanh lọc cảm xúc (Catharsis), sự tha thứ khoan hồng, phục hồi trật tự nhân văn mới (Zero-Fatality Positive Ending).
+3. **Level 4: Sequence (Trường Đoạn)**:
+   - Một tổ hợp gồm 2 đến 5 Scene liên tiếp nhau nhằm giải quyết một mục tiêu kịch tính cụ thể (ví dụ: *Trường đoạn đột nhập*, *Trường đoạn chất vấn trước hội đồng*, *Trường đoạn đối đầu tử thần*).
+4. **Level 3: Scene (Phân Cảnh — NGUYÊN TỬ VẬT LÝ 10 GIÂY BẤT BIẾN)**:
+   - **ĐỊNH LUẬT THÉP NGUYÊN TỬ CẢNH 10 GIÂY (THE INVARIANT 10-SECOND SCENE ATOM LAW)**: Trong toàn bộ hệ sinh thái sản xuất Generative AI Video (Sora, Kling, Runway Gen-3, Veo, Luma), **MỌI PHÂN CẢNH (SCENE) BẮT BUỘC PHẢI CÓ THỜI LƯỢNG CHUẨN XÁC ĐÚNG 10.0 GIÂY**.
+   - Tuyệt đối CẤM cảnh có thời lượng lẻ (không có cảnh 3s, 5s, 7s, 12s, 35s). DEFAULT (ACTIVE): mọi cảnh trong Roadmap (`setting.html` Section 5) và Prompt File (`tap-X.html`) dùng mốc 10 giây (`00:00–00:10`, `00:10–00:20`, `00:20–00:30`...). RESERVED (INACTIVE): 15s Extended / 30s Master chỉ kích hoạt khi user yêu cầu rõ ràng VÀ `prompt_compiler.py` + `episode_audit_suite.py` đã hỗ trợ (see `workflow.md` §2.4).
+5. **Level 2: Beat (Nhịp Kịch Tính / Chức Năng Tự Sự)**:
+   - Đơn vị biến chuyển cảm xúc và chức năng kịch tính (Hook, Setup, Drama, Climax, Release, Echo).
+   - **QUY TẮC LƯỢNG TỬ HÓA BEAT SANG CẢNH 10S (BEAT-TO-SCENE QUANTIZATION LAW)**: Mỗi Beat được phân bổ bằng **CÁC NGUYÊN TỬ CẢNH 10 GIÂY NGUYÊN VẸN** (1 Cảnh = 10s, 2 Cảnh = 20s, 3 Cảnh = 30s...). Beat là chức năng kịch tính vô hình, còn Cảnh (Scene) là đơn vị vật lý 10s hữu hình. Tuyệt đối KHÔNG cắt vụn kịch bản thành các số giây lẻ!
+6. **Level 1: Shot (Cú Máy Vật Lý)**:
+   - Khung hình máy quay thực tế do đạo diễn / AI Video sinh ra. Chuẩn hóa thành **Single-Shot (Continuous Take / Zero Cut)** hoặc **Multi-Shot (Kinetic Montage / 2-4 Cuts)**.
+
+---
+
+### § 0.2 Universal Narrative Functions Glossary (Từ Điển Chức Năng Tự Sự)
+
+Mỗi Beat trong phân cảnh hoặc mỗi giai đoạn trong phim phải đảm nhận một **Chức Năng Kịch Tính (Dramatic Function)** cụ thể, tuyệt đối không viết các nhịp vô nghĩa (filler):
+
+| Function (Thuật ngữ) | Tên tiếng Việt | Bản chất điện ảnh & Vai trò tự sự |
+| :--- | :--- | :--- |
+| **Hook** | **Móc câu chú ý** | Điểm chớp mở giật lấy 100% sự tập trung của người xem trong 3-5 giây đầu bằng nghịch lý thị giác, hiểm họa cận kề hoặc xung đột đạo đức nhức nhối. |
+| **Inciting Incident** | **Biến cố kích nổ** | Sự kiện bất thường phá vỡ thế cân bằng nguyên thủy, ép buộc nhân vật phải rời khỏi vùng an toàn để bước vào xung đột. |
+| **Escalation** | **Leo thang xung đột** | Chuỗi hành động dồn dập nâng mức cược (raising stakes), bịt kín dần các lối thoát hiểm, dồn ép nhân vật vào thế kẹt không thể thoái lui. |
+| **Midpoint Reversal** | **Cú lật trung tâm** | Bước ngoặt xoay chuyển 180° cục diện tại tâm điểm câu chuyện: từ hy vọng sang thảm họa, hoặc từ kẻ bị săn đuổi biến thành kẻ phản công. |
+| **All Hope Is Lost** | **Đáy sâu tuyệt vọng** | Điểm chạm đáy bi kịch (*Dark Night of the Soul / Rock Bottom*): Mọi phương án đều thất bại, nguồn lực cạn kiệt, cái chết hoặc sự sỉ nhục cận kề. |
+| **Climax** | **Cao trào đối đầu** | Điểm bùng nổ xung đột dữ dội nhất giữa hai thế lực đối địch. Nơi câu hỏi kịch tính cốt lõi của toàn bộ câu chuyện bắt buộc phải được giải quyết dứt điểm. |
+| **Trigger (Anagnorisis)**| **Ngòi nổ nhận thức** | Hành động hoặc bằng chứng cốt tử kích nổ sự bừng tỉnh lương tâm (Anagnorisis). Bản ngã kiêu ngạo của kẻ ác bị sụp đổ tan tành (*Ego Death*). |
+| **Resolution** | **Hạ màn / Phục hồi** | Điểm lắng dịu sau bão tố, thiết lập trật tự tâm lý và hiện thực mới, hoàn tất chu trình biến đổi nhân tính. |
+| **Catharsis** | **Thanh lọc cảm xúc** | Cảm giác nhẹ nhõm, thăng hoa và rơi nước mắt hạnh phúc của khán giả khi các nút thắt oán hận được cởi bỏ bằng lòng nhân ái. |
+| **Cliffhanger** | **Cú móc lửng khóa tập** | Đóng cảnh ngay tại đỉnh điểm của một câu hỏi chưa có lời đáp hoặc một mối nguy mới xuất hiện, tạo lực hút gây nghiện ép khán giả xem tiếp. |
+
+---
+
+### § 0.3 The Emotional Calibration & Intensity Scoring Protocol (Đo Nhiệt Cảm Xúc 1-10)
+
+Mọi Beat trong kịch bản phải được định danh cảm xúc theo công thức chuẩn:
+$$\mathbf{[Tên\ Trạng\ Thái\ Cảm\ Xúc]\ /\ [Chỉ\ Số\ Cường\ Độ\ (Thang\ 1\text{--}10)]}$$
+
+* **1 – 3 / 10 (Neutral / Low Baseline)**: Giao tiếp đời thường, trao đổi thông tin kỹ thuật, quan sát tĩnh tại.
+* **4 – 6 / 10 (Simmering Tension / Subtext)**: Nghi ngờ âm ỉ, dự cảm xấu, lời thoại bóng gió mang hàm ý đối đầu ngầm.
+* **7 – 8 / 10 (High Conflict / Escalation)**: Căm hận lạnh lùng (*Cold hatred / 7*), Nỗi sợ dâng trào (*Rising dread / 7*), Thịnh nộ bùng phát (*Explosive fury / 8*).
+* **9 / 10 (Severe Crisis / Rock Bottom)**: Thịnh nộ quằn quại đau đớn (*Anguished fury / 9*), Thất bại tuyệt vọng (*Desperate defeat / 9*), Niềm tin sụp đổ tan tành (*Shattered certainty / 9*).
+* **10 / 10 (PEAK / Sublime Transcendence)**: Đỉnh điểm biến đổi linh hồn — Khoan dung chấn động (*Stunned mercy / 10*), Cứu chuộc mạng sống giữa lằn ranh sinh tử.
+
+---
+
+### § 0.4 The 8-Beat High-Intensity Showdown Architecture (Kiến Trúc Cao Trào 8 Nhịp Chuẩn)
+
+Đối với các phân cảnh đối đầu sinh tử (The Grand Climax Showdown) hoặc các tập cao trào đỉnh điểm của Series (Act 3 Finale), biên kịch triển khai **Cấu trúc 8 Nhịp Cao Trào** với đường cong cảm xúc hình sin chuẩn mực:
+
+```text
+┌─────────────────────────────────────────────────────────────────────────────────────────────────────────────────┐
+│                    THE 8-BEAT HIGH-INTENSITY SHOWDOWN MASTER ARCHITECTURE                                       │
+├──────┬──────────────┬───────────────────────────┬───────────────────────────────────────────────────────────────┤
+│ Beat │ Function     │ Emotion & Intensity Score │ Dramatic Mechanics & Biomechanics                            │
+├──────┼──────────────┼───────────────────────────┼───────────────────────────────────────────────────────────────┤
+│  1   │ Hook         │ Cold hatred / 7           │ Ánh mắt băng giá, hàm khóa chặt; đối đầu không khoan nhượng.  │
+│  2   │ Escalation   │ Rising dread / 7          │ Linh cảm cạm bẫy bò tới; nhịp tim dồn dập, đồng tử co giật.   │
+│  3   │ Escalation   │ Explosive fury / 8        │ Xung đột vỡ toang thành hành vi bạo liệt; rút vũ khí/gầm thét.│
+│  4   │ Escalation   │ Anguished fury / 9        │ Cơn giận xé rách vết thương lòng; đau đớn uất nghẹn tột cùng. │
+│  5   │ Climax       │ Desperate defeat / 9      │ Chạm đáy tuyệt lộ (Rock Bottom); bị tước vũ khí, dồn vào chết.│
+│  6   │ Climax       │ Stunned mercy / 10 (PEAK) │ Cú sốc khoan dung: Hạ vũ khí, tha bổng kẻ thù; vỡ òa nhân tính│
+│  7   │ Trigger      │ Shattered certainty / 9   │ Cú sụp đổ bản ngã (Ego Death): Kẻ ác bàng hoàng thức tỉnh.    │
+│  8   │ Resolution   │ Quiet catharsis / 7       │ Thanh lọc tĩnh lặng: Nước mắt cởi bỏ hận thù; hòa giải an yên.│
+└──────┴──────────────┴───────────────────────────┴───────────────────────────────────────────────────────────────┘
+```
+
+$$\mathbf{Đường\ Cong\ Cảm\ Xúc:\ 7\ \longrightarrow\ 7\ \longrightarrow\ 8\ \longrightarrow\ 9\ \longrightarrow\ 9\ \longrightarrow\ 10\ [PEAK]\ \longrightarrow\ 9\ \longrightarrow\ 7}$$
+
+---
+
+### 🌌 § 0.5 THE UNIVERSAL PSYCHOLOGICAL TRANSFORMATION ARC (BEYOND RIGID FORMULAS)
+# (CUNG BIẾN CHUYỂN TÂM LÝ PHỔ QUÁT: PHÁ VỠ TÍNH CỤC BỘ & MÁY MÓC TRONG BIÊN KỊCH)
+
+> [!NOTE]
+> **LIBERATION FROM RIGID CHECKLISTS (GIẢI PHÓNG TÍNH MÁY MÓC)**:
+> External structures (3 acts, 6 beats, 8 showdown beats, or 13 viral beats) are simply **external pacing rulers** (thước đo nhịp điệu bên ngoài).
+> If a writer treats them as rigid, mechanical checklists, the story becomes robotic, predictable, and devoid of life.
+> The TRUE universal engine that drives all legendary Hollywood cinema, world literature, and viral human drama is the **Internal Psychological Transformation Arc**—the painful, inevitable metamorphosis of a human soul.
+
+#### The 6 Invariant Stages of Human Psychological Metamorphosis:
+
+```text
+┌────────────────────────────────────────────────────────────────────────────────────────────────────────┐
+│                        THE 6 INVARIANT STAGES OF PSYCHOLOGICAL TRANSFORMATION                          │
+├────────────────────────────────────────────────────────────────────────────────────────────────────────┤
+│ 1. THE PROTECTED LIE (Bản Ngã & Lời Nói Dối Phòng Vệ)                                                  │
+│    ──> The character clings to a false belief ("I need no one", "Money is safety") to mask deep wound.│
+├────────────────────────────────────────────────────────────────────────────────────────────────────────┤
+│ 2. THE IRREVERSIBLE DISRUPTION (Biến Cố Xé Toạc Vùng An Toàn)                                          │
+│    ──> A catalytic event shatters the false equilibrium; denial is no longer sustainable.              │
+├────────────────────────────────────────────────────────────────────────────────────────────────────────┤
+│ 3. THE CRUCIBLE & FALSE RESISTANCE (Lò Luyện Thử Thách & Sự Chống Cự Tuyệt Vọng)                       │
+│    ──> The character desperately uses old toxic coping mechanisms to solve a new, profound crisis.     │
+├────────────────────────────────────────────────────────────────────────────────────────────────────────┤
+│ 4. THE ABYSS & EGO DEATH (Đáy Vực Tuyệt Lộ & Cái Chết Của Bản Ngã Giả Tạo)                            │
+│    ──> All external tactics fail. Total collapse of certainty. The old identity completely dies.       │
+├────────────────────────────────────────────────────────────────────────────────────────────────────────┤
+│ 5. ANAGNORISIS & MORAL EPIPHANY (Khoảnh Khắc Bừng Tỉnh & Nhận Diện Chân Lý)                            │
+│    ──> In the deepest darkness, the truth is recognized. Pride dissolves into humility, love, or duty.│
+├────────────────────────────────────────────────────────────────────────────────────────────────────────┤
+│ 6. TRANSCENDENCE & RESTORATIVE CATHARSIS (Sự Siêu Việt & Tái Sinh Nhân Cách Mới)                       │
+│    ──> Acting from authentic moral courage. Sacrificing personal ego for universal healing.             │
+└────────────────────────────────────────────────────────────────────────────────────────────────────────┘
+```
+
+#### Application Across Different Pacing Rulers:
+- In a **60s–90s Short Film**: This 6-stage arc is compressed into pure emotional velocity, where micro-somatics and sudden truth bombs accomplish in seconds what feature films do in minutes.
+- In a **Multi-Episode Series**: Each episode executes a micro-loop of this arc, while the macro series slowly deepens the protagonist's descent toward the ultimate Stage 4 Ego Death and Stage 6 Transcendence.
+- **Directional Core**: Whenever constructing a scene, ask not *"Which beat number is this?"*, but rather: **"What lie is the character protecting, and what truth is threatening to shatter their soul right now?"**
+
+---
+
+
 
 ## § BEAT MATRIX — HOLLYWOOD 6-BEAT NARRATIVE ARCHITECTURE & 18 SUB-BEATS
 
-> **Core Mathematical Allocation:**
+> **Core Mathematical Allocation & Invariant 10-Second Scene Quantization:**
 > 
 > ```
 > [BEAT 1: HOOK] ──► [BEAT 2: SETUP] ──► [BEAT 3: DRAMA] ──► [BEAT 4: CLIMAX] ──► [BEAT 5: RELEASE] ──► [BEAT 6: ECHO]
->      (3%)               (12%)               (35%)               (30%)               (12%)               (8%)
->   Visual Paradox      Old Wound /         Opposing Clash      Collapse of Ego     New Action /        Eternal Truth /
->   & Frozen Potential  Hamartia & Contract (60% Dialogue)      & All Hope Lost     Redeeming Warmth    Echo Image
+>    Macro Ratio:         (~10-15%)           (~30-35%)           (~25-30%)           (~10%)              (~10%)
+>    Visual Paradox      Old Wound /         Opposing Clash      Collapse of Ego     New Action /        Eternal Truth /
+>    & Frozen Potential  Hamartia & Contract (60% Dialogue)      & All Hope Lost     Redeeming Warmth    Echo Image
 > ```
 > 
-> - **Total Arc Ratio**: `3% / 12% / 35% / 30% / 12% / 8% = 100%`
-> - **Micro-Architecture**: Exactly **18 Sub-Beats** (3 micro-beats per beat × 6 beats)
+> > [!CAUTION]
+> > **THE INVARIANT 10-SECOND SCENE ATOM LAW (LUẬT THÉP NGUYÊN TỬ CẢNH 10 GIÂY)**:
+> > In Generative AI Video, **EVERY SINGLE SCENE IS PRECISELY 10.0 SECONDS**.
+> > Percentages are macro dramatic pacing guides, NOT arbitrary continuous seconds. 
+> > **EVERY BEAT MUST BE QUANTIZED INTO INTEGER 10-SECOND SCENES**:
+> > - **60s Short Film (6 Scenes × 10s)**: Beat 1 (1 Sc) ➔ Beat 2 (1 Sc) ➔ Beat 3 (2 Sc) ➔ Beat 4 (1 Sc) ➔ Beat 5 & 6 (1 Sc) = 6 Scenes.
+> > - **120s Episode / Film (12 Scenes × 10s)**: Beat 1 (1 Sc) ➔ Beat 2 (2 Sc) ➔ Beat 3 (4 Sc) ➔ Beat 4 (3 Sc) ➔ Beat 5 (1 Sc) ➔ Beat 6 (1 Sc) = 12 Scenes.
+> - **Micro-Architecture**: Exactly **18 Sub-Beats** (3 micro-beats per beat × 6 beats).
 > - **Dynamic Peaks**: Beat 4 is the absolute peak (Emotion Score: 10/10), followed by an immediate thermal polarity release in Beat 5.
 
 ---
@@ -210,7 +652,7 @@ Trope defines **dramatic structure and twist rhythm**:
 | **Beat 3** | **35%** | **DRAMA** | **Flawed Tactics & Ideological Clash (60% Spoken Conflict)**<br>• `3.1 Flawed Defense Tactics`: Using toxic habits to solve the crisis<br>• `3.2 Ideological Collision`: Fierce battle of worldviews with Tier B1 (60% dialogue)<br>• `3.3 Sealed Exits & Misdirection`: Entrapment confirmed, false confidence shattered, pre-climax cliffhanger | 7–9 / 10 | **Tier A vs. Tier B1 (Antagonist)** (High-voltage adversarial collision) |
 | **Beat 4** | **30%** | **CLIMAX** | **3-Wave Climax ➔ All Hope Is Lost ➔ Ego Death (Twist Detonation)**<br>• `4.1 Wave 1 (Identity/Trap Twist)`: The mask tears off, trap springs shut (Twist Catalyst revealed)<br>• `4.2 Wave 2 (Loss/Physical Twist)`: Irreversible physical/material destruction<br>• `4.3 Wave 3 (Karma Twist & Ego Death)`: Anagnorisis (realizing self-destruction), All Hope Is Lost (chilly pale daylight cold) | **10 / 10**<br>(PEAK) | **Tier A Solo in Tragedy** (Facing the complete collapse of the false self) |
 | **Beat 5** | **12%** | **RELEASE** | **Redeeming Warmth & Tangible Transformation**<br>• `5.1 Safe Harbor & Thermal Shock`: Abrupt chilly pale daylight ➔ warm amber glow shift, audio pause `[pause: 1.5s]`<br>• `5.2 Reverse Rescue / Grace`: Unconditional compassion from Tier B2<br>• `5.3 Concrete Proof of Change`: Doing what was unthinkable in Beat 2 | 7–8 / 10 | **Tier A + Tier B2 (Companion)** (Healing, acceptance, selfless act) |
-| **Beat 6** | **8%** | **ECHO** | **Transformed World & Eternal Truth**<br>• `6.1 Harmonized Community`: Tier A integrates with Tier C society under open skies<br>• `6.2 180° Echo Rebirth`: Physical or symbolic wound resolves into vessel of grace<br>• `6.3 Closing Maxim`: Standalone universal truth (<15 words) | 6–7 / 10 | **Tier A + Tier C New World** (Universal harmony, transcendent peace) |
+| **Beat 6** | **8%** | **ECHO** | **Transformed World & Eternal Truth**<br>• `6.1 Harmonized Community`: Tier A integrates with Tier C society under open skies<br>• `6.2 180° Echo Rebirth`: Physical or symbolic wound resolves into vessel of grace<br>• `6.3 Closing Image`: the image that answers the opening image (a spoken maxim only with a `BREAK:` line; never the moral or the title — Doctrine §8.8) (<15 words) | 6–7 / 10 | **Tier A + Tier C New World** (Universal harmony, transcendent peace) |
 
 **Standard 6-Beat Emotion Arc:** `6–7` ➔ `6–7` ➔ `7–9` ➔ `10 [PEAK]` ➔ `7–8` ➔ `6–7`
 
@@ -264,10 +706,156 @@ To eliminate dialogue clutter and avoid monotonous soliloquies, each Beat is ass
 
 ---
 
-## 👥 § THE STANDARDIZED CINEMATIC CHARACTER SYSTEM (A1, A2, B-SATELLITES, TIER C)
+## 📺 § 5. FORMAT ADAPTATIONS: STANDALONE SHORT FILM (60s–120s) VS. MULTI-EPISODE SERIES (N EPISODES)
 
-> **PRIMARY DRAMATIC AXIS: A1 (PROTAGONIST) VS. A2 (ANTAGONIST)**:
-> In high-level screenwriting, the conflict is centered between two monumental opposing forces (`A1` vs. `A2`), surrounded by an interdependent web of satellites (`Tier B: B1, B2, B3...`) who have specific, explicit relationships with BOTH A1 and A2, all observed and judged by an active society (`Tier C Greek Chorus`).
+To completely eliminate narrative confusion between short-form single clips and multi-episode episodic series, the screenwriter must apply the **Dual-Format Architectural Separation Law**:
+
+```text
+┌────────────────────────────────────────────────────────────────────────────────────────────────────────┐
+│                        DUAL-FORMAT ARCHITECTURAL SEPARATION LAW                                        │
+├────────────────────────────────────────┬───────────────────────────────────────────────────────────────┤
+│ FORMAT A: STANDALONE SHORT FILM        │ FORMAT B: MULTI-EPISODE SERIES (SERIES DÀI TẬP)               │
+│ (1 Tập đơn lẻ · Thời lượng 60s–120s)   │ (N Tập phim · Chuỗi kịch tính liên hoàn)                      │
+├────────────────────────────────────────┼───────────────────────────────────────────────────────────────┤
+│ • Cấu trúc vi mô: 6 BEATS & 18 SUB-BEATS│ • Cấu trúc vĩ mô: 4 HỒI (ACTS) TOÁN HỌC (20% / 45% / 25% / 10%)│
+│ • Vòng đời khép kín: Có Hook, Setup,   │ • Vòng đời mở rộng: MỖI TẬP CHỈ ĐÓNG VAI TRÒ CHUYÊN BIỆT THEO │
+│   Drama, Climax, Release, và Echo.     │   HỒI. Tuyệt đối KHÔNG tự giải quyết mâu thuẫn trong 1 tập.   │
+│ • Giải tỏa cảm xúc ngay trong tập.     │ • Giữ căng thẳng bằng Cliffhanger (C1–C7) và Gáo Nước Lạnh.   │
+└────────────────────────────────────────┴───────────────────────────────────────────────────────────────┘
+```
+
+---
+
+### 1. Format A: Standalone Short Film (Phim Ngắn Độc Lập 60s–120s)
+* Dành cho video ngắn đơn lẻ (TikTok / Shorts / Reels xem 1 clip là hết câu chuyện).
+* Áp dụng trọn vẹn **Cấu trúc 6 Beat chuẩn mực**:
+  - `Beat 1 (3%)`: **Hook** — Nghịch lý thị giác, 3 giây giật sự chú ý.
+  - `Beat 2 (12%)`: **Setup** — Vết thương quá khứ & gieo Đạo cụ Vết thương.
+  - `Beat 3 (35%)`: **Drama** — Va chạm hệ tư tưởng, cãi vã căng thẳng (60% thoại).
+  - `Beat 4 (30%)`: **Climax** — 3 đợt cao trào nổ tung sự thật, sụp đổ bản ngã (Ego Death 10/10).
+  - `Beat 5 (12%)`: **Release** — Đảo cực nhiệt (Thermal Shock), lửa ấm áp & lòng nhân ái.
+  - `Beat 6 (8%)`: **Echo** — Đạo cụ chuyển hóa 180°, đúc kết câu châm ngôn cuộc đời.
+
+---
+
+### 2. Format B: Multi-Episode Series (Phim Bộ Dài Tập N Tập)
+Trong phim bộ nhiều tập, **CẢ BỘ PHIM** được kiến tạo bởi **4 HỒI (THE 4-ACT MACRO ARCHITECTURE)** theo tỷ lệ toán học vàng:
+
+$$\mathbf{HỒI\ 1\ (20\%)\ +\ HỒI\ 2\ (45\%)\ +\ HỒI\ 3\ (25\%)\ +\ HỒI\ 4\ (10\%)\ =\ 100\%}$$
+
+```text
+┌────────────────────────────────────────────────────────────────────────────────────────────────────────┐
+│                        TỶ LỆ TOÁN HỌC HOLLYWOOD CHO 4 HỒI CỦA CẢ BỘ PHIM                               │
+├─────────────────────┬───────────────────────────────────────────┬──────────────────────┬───────────────┤
+│    HỒI 1 (SETUP)    │         HỒI 2 (ESCALATION & MIDPOINT)     │    HỒI 3 (CLIMAX)    │ HỒI 4 (FINALE)│
+│     Chính xác 20%   │                 Chính xác 45%             │     Chính xác 25%    │  Chính xác 10%│
+├─────────────────────┼─────────────────────────────┬─────────────┼──────────────────────┼───────────────┤
+│ • Thế giới cũ & bẫy │ • Nỗ lực tự vệ trong sai lầm│ • Bẫy siết  │ • Chạm đáy tuyệt vọng│ • Hòa giải,   │
+│ • Gieo Đạo cụ       │   (Early Act 2 · ~22.5%)    │   chặt & thù│ • Đại đối đầu 8 Nhịp │   minh oan,   │
+│   Vết thương        ├─────────────────────────────┤   hận dâng  │ • Tha bổng kẻ ác     │   chuyển hóa  │
+│ • Không phản kháng  │   ► CÚ LẬT GIỮA PHIM ◄      │   cao       │   (Stunned Mercy)    │   Đạo cụ      │
+│   thành công        │   (MIDPOINT TWIST · TẠI 50%)│ (Late Act 2)│ • Sụp đổ bản ngã     │ • KHÔNG       │
+│                     │   (Bị phản bội / Gáo nước)  │             │   (Ego Death)        │   Cliffhanger │
+└─────────────────────┴─────────────────────────────┴─────────────┴──────────────────────┴───────────────┘
+```
+
+#### Thuật Toán Phân Bổ Số Tập Chính Xác Cho $N$ Tập (Integer Allocation Formula):
+1. **Hồi 4 ($	ext{Act 4}$)**: Luôn là **1 tập** (với $N \le 8$), hoặc $	ext{round}(N 	imes 0.10)$ (với $N \ge 10$).
+2. **Hồi 1 ($	ext{Act 1}$)**: $\max(1, \;	ext{round}(N 	imes 0.20))$.
+3. **Hồi 3 ($	ext{Act 3}$)**: $\max(1, \;	ext{round}(N 	imes 0.25))$.
+4. **Hồi 2 ($	ext{Act 2}$)**: Phần còn lại $= N - (	ext{Act 1} + 	ext{Act 3} + 	ext{Act 4})$.  
+   *(Bảo đảm Hồi 2 luôn là Hồi xương sống dài nhất, chiếm 40% đến 50% số tập).*
+
+#### Bảng Tra Cứu Phân Bổ Số Tập Chi Tiết (Exact Episode Lookup Matrix):
+
+| Tổng số ($N$) | HỒI 1 (Setup · 20%) | HỒI 2 (Escalation · 45%) | HỒI 3 (Climax · 25%) | HỒI 4 (Resolution · 10%) | Vị trí CÚ LẬT GIỮA PHIM (Midpoint Twist) |
+| :---: | :--- | :--- | :--- | :--- | :--- |
+| **4 tập** | **Tập 1** *(25%)* | **Tập 2** *(25%)* | **Tập 3** *(25%)* | **Tập 4** *(25%)* | Nằm ở **giữa Tập 2** (Phát hiện người thân bị bắt cóc) |
+| **5 tập** | **Tập 1** *(20%)* | **Tập 2, 3** *(40%)* | **Tập 4** *(20%)* | **Tập 5** *(20%)* | Nằm ở **cuối Tập 2 sang đầu Tập 3** |
+| **6 tập** | **Tập 1** *(17%)* | **Tập 2, 3** *(33%)* | **Tập 4, 5** *(33%)* | **Tập 6** *(17%)* | Nằm ở **cuối Tập 3** (Chính xác mốc 50% thời lượng) |
+| **7 tập** | **Tập 1** *(14%)* | **Tập 2, 3, 4** *(43%)* | **Tập 5, 6** *(29%)* | **Tập 7** *(14%)* | Nằm ở **giữa Tập 3** |
+| **8 tập** *(Chuẩn)* | **Tập 1, 2** *(25%)* | **Tập 3, 4, 5** *(37.5%)* | **Tập 6, 7** *(25%)* | **Tập 8** *(12.5%)* | Nằm ở **Tập 4** (Gáo nước lạnh tạt mặt / Judas Kiss) |
+| **10 tập** | **Tập 1, 2** *(20%)* | **Tập 3, 4, 5, 6** *(40%)* | **Tập 7, 8, 9** *(30%)* | **Tập 10** *(10%)* | Nằm ở **cuối Tập 5** (Chính xác mốc 50% thời lượng) |
+| **12 tập** | **Tập 1, 2** *(17%)* | **Tập 3, 4, 5, 6, 7** *(42%)*| **Tập 8, 9, 10, 11** *(33%)*| **Tập 12** *(8%)* | Nằm ở **Tập 6** |
+| **16 tập** | **Tập 1, 2, 3** *(19%)*| **Tập 4, 5, 6, 7, 8, 9, 10** *(44%)*| **Tập 11, 12, 13, 14** *(25%)*| **Tập 15, 16** *(12%)*| Nằm ở **Tập 8** |
+| **20 tập** | **Tập 1, 2, 3, 4** *(20%)* | **Tập 5, 6, 7, 8, 9, 10, 11, 12, 13** *(45%)* | **Tập 14, 15, 16, 17, 18** *(25%)* | **Tập 19, 20** *(10%)* | Nằm ở **cuối Tập 11** (55% thời lượng) |
+
+---
+
+### 3. Quy Tắc Bất Khả Xâm Phạm Của Từng Tập Trong Phim Bộ (Episodic Arc Mandates)
+1. **Tập ở Hồi 1 (Inception & The Trap)**: 
+   - Chỉ được thiết lập cạm bẫy, gieo rắc bi kịch và đẩy nhân vật qua lằn ranh không thể quay đầu.
+   - **CẤM**: Tuyệt đối không cho nhân vật phản kháng thành công hay lật kèo ở Hồi 1. Kết thúc bằng Cliffhanger bí ẩn hoặc đe dọa (C1/C2).
+2. **Tập ở Hồi 2 (Escalation & Midpoint)**:
+   - Dồn ép áp lực, tước đoạt vũ khí. Phải có ít nhất một kẻ phản bội (`TW-05 Judas Kiss`) hoặc một gáo nước lạnh chấn động (`False Dawn & Double-Bind`).
+   - Kết thúc bằng Cliffhanger bế tắc hoặc mất mát tài sản (C3/C4).
+3. **Tập ở Hồi 3 (Climax & Grand Showdown)**:
+   - Triển khai **Bảng 8 Nhịp Cao Trào Chuẩn**: Cold hatred / 7 ➔ Rising dread / 7 ➔ Explosive fury / 8 ➔ Anguished fury / 9 ➔ Desperate defeat / 9 ➔ **Stunned mercy / 10 (PEAK)** ➔ Shattered certainty / 9.
+   - Kết thúc bằng Cliffhanger quyết định sinh tử hoặc khoảnh khắc kẻ ác run rẩy buông vũ khí (C5/C6).
+4. **Tập ở Hồi 4 (Resolution & Catharsis)**:
+   - 100% thời lượng dành cho việc phơi bày công lý phục hồi, chuyển hóa Đạo cụ Vết thương thành Đạo cụ Ân sủng (180° Echo Prop), xã hội Tuyến C thức tỉnh hàn gắn, và khép lại bằng câu châm ngôn cuộc đời.
+   - **CẤM CLIFFHANGER Ở TẬP NÀY**.
+
+#### 🚨 Anti-Sitcom / Anti-Vignette Continuum Law (Luật Chống Sitcom Rời Rạc Trong Phim Bộ Kịch Tính)
+- **STRICT PROHIBITION FOR DRAMATIC SERIES**: A multi-episode dramatic series (Format B, such as *Cơm Không Chan Nước Mắt*) is NEVER a collection of independent, self-contained "conflict-of-the-week" sitcom sketches.
+- Every episode's closing frame MUST leave an open, bleeding wound or irreversible physical consequence that directly forces the opening action of the subsequent episode.
+- Early reconciliation, emotional closure, or moral lessons delivered inside Acts 1 and 2 are strictly forbidden; catharsis is earned ONLY at the climax of Act 3 and the dawn of Act 4.
+- *(NOTE ON MODULAR GENRES: This rule governs continuous dramatic series. When a production explicitly activates the **Sitcom Genre Module**, the screenwriter switches to [`engine/genres/sitcom.md`](file:///d:/Project/Sven/engine/genres/sitcom.md) where episodic Status Quo Reset, Escalating Absurdity, and A/B/C Multi-Plot Comedy are the governing standards).*
+
+---
+
+## 👥 § THE STANDARDIZED CINEMATIC CHARACTER SYSTEM (THE MULTI-POLAR CHARACTER WEB)
+
+> **PRIMARY DRAMATIC PRINCIPLE: MULTI-POLAR FACTION ARCHITECTURE & THE ANTAGONIST COMPANION LAW**:
+> In elite Hollywood screenwriting, conflict is never a simplistic duel between a lonely hero and a one-dimensional evil monster. Both **Protagonist (A1)** and **Antagonist (A2)** operate within their own dedicated companion ecosystems, connected and torn apart by volatile cross-faction levers (`The Cross-Faction Satellites`), and judged by an active society (`Tier C Greek Chorus`).
+>
+> **The Antagonist Companion Law**: The villain is only as human, terrifying, and deeply tragic as the people who surround them. A2 MUST possess loyal companions who believe in them, an Achilles' heel loved one who humanizes them, or a toxic whisperer who corrupts them.
+
+```text
+┌───────────────────────────────────────────────────────────────────────────────────────────────────────────────────────┐
+│                                     SƠ ĐỒ MẠNG LƯỚI MỐI QUAN HỆ ĐA CỰC HOLLYWOOD                                      │
+├───────────────────────────────────────────────────────────────────────────────────────────────────────────────────────┤
+│                                                                                                                       │
+│     ┌─────────────────────────────────┐                             ┌─────────────────────────────────┐               │
+│     │        PHE CHÍNH DIỆN           │                             │          PHE PHẢN DIỆN          │               │
+│     │          (CAMP A1)              │                             │            (CAMP A2)            │               │
+│     │                                 │                             │                                 │               │
+│     │  ┌───────────────────────────┐  │      TRỤC ĐỐI ĐẦU CHÍNH     │  ┌───────────────────────────┐  │               │
+│     │  │   A1: NHÂN VẬT CHÍNH      │◄─┼─────────────────────────────┼─►│     A2: KẺ ĐỐI ĐẦU        │  │               │
+│     │  │ (Mang vết thương gốc,     │  │  (Va chạm hệ tư tưởng,      │  │ (Tấm gương méo mó của A1, │  │               │
+│     │  │  chuyển hóa đạo đức)      │  │   chia sẻ vết thương chung) │  │  có lý lẽ & tổn thương)   │  │               │
+│     │  └─────────────┬─────────────┘  │                             │  └─────────────┬─────────────┘  │               │
+│     │                │                │                             │                │                │               │
+│     │   TUYẾN ĐỒNG HÀNH PHE A1:       │                             │   TUYẾN ĐỒNG HÀNH PHE A2:       │               │
+│     │   • B-A1: Lương tri / Ân sủng   │                             │   • B-V1: Cánh tay phải trung   │               │
+│     │     (Mẹ hiền, người yêu, người  │                             │           thành (The Dragon)    │               │
+│     │      giữ A1 không sa ngã)       │                             │   • B-V2: Trái tim kẻ ác        │               │
+│     │   • B-A2: Lá chắn trung thành   │                             │           (Con gái/mẹ già A2)   │               │
+│     │     (Người xả thân bảo vệ A1)   │                             │   • B-V3: Cố vấn độc hại        │               │
+│     │   • B-A3: Điểm yếu bảo bọc      │                             │           (Kẻ xúi giục sau lưng)│               │
+│     │     (Đứa em/con nhỏ của A1)     │                             │                                 │               │
+│     └────────────────┼────────────────┘                             └────────────────┼────────────────┘               │
+│                      │                                                               │                                │
+│                      ▼                                                               ▼                                │
+│         ┌────────────────────────────────────────────────────────────────────────────────────────┐                    │
+│         │               TUYẾN VỆ TINH TRUNG GIAN & VÙNG XÁM (THE CROSS-FACTION LEVERS)           │                    │
+│         ├────────────────────────────────────────────────────────────────────────────────────────┤                    │
+│         │ • B-Cross 1 (Con tin lương tâm): Người của A1 bị A2 bắt cóc/tống tiền ➔ Buộc nói dối  │                    │
+│         │ • B-Cross 2 (Kẻ phản bội ghen tức): Từ phe A1 bán tin cho A2 vì đố kỵ (Judas Kiss)    │                    │
+│         │ • B-Cross 3 (Kẻ thức tỉnh đào tẩu): Thuộc hạ A2 kinh sợ tội ác ➔ Quay xe cứu A1       │                    │
+│         │ • B-Cross 4 (Kẻ thực thi công lý): Quan tòa / Cảnh sát đứng giữa phân xử khách quan    │                    │
+│         └───────────────────────────────────────────┬────────────────────────────────────────────┘                    │
+│                                                     │                                                                 │
+│                                                     ▼                                                                 │
+│         ┌────────────────────────────────────────────────────────────────────────────────────────┐                    │
+│         │                     TIER C: DƯ LUẬN & ĐIỆP KHÚC QUẦN CHÚNG (GREEK CHORUS)              │                    │
+│         ├────────────────────────────────────────────────────────────────────────────────────────┤                    │
+│         │ • Đầu phim: Bị A2 dắt mũi truyền thông ➔ Thóa mạ, cô lập, ném đá A1 tàn nhẫn.          │                    │
+│         │ • Cuối phim: Được A1 cảm hóa ➔ Xấu hổ ăn năn, thức tỉnh tập thể và cùng vinh danh chân lý│                  │
+│         └────────────────────────────────────────────────────────────────────────────────────────┘                    │
+│                                                                                                                       │
+└───────────────────────────────────────────────────────────────────────────────────────────────────────────────────────┘
+```
 
 ---
 
@@ -279,6 +867,39 @@ To eliminate dialogue clutter and avoid monotonous soliloquies, each Beat is ass
 * **A2 (Main Antagonist — Phản diện chính)**:
   - **MANDATORY INDEPENDENT SUBPLOT & BACKSTORY**: A2 is the primary nemesis and ideological counterweight to A1.
   - A2 is never evil for the sake of evil; A2 has an unyielding personal wound, a clear philosophy, and **is objectively right about something** (e.g., exposing the fragility of A1's naive idealism).
+  - **Shared Past Anchor**: A1 and A2 are two sides of the same coin, forged in the same historical crucible or traumatic event, but having made divergent moral choices.
+
+---
+
+#### 🅱️ PHÂN TẦNG TUYẾN ĐỒNG HÀNH & VỆ TINH (THE SATELLITE ECOSYSTEM)
+
+##### 1. Tuyến Đồng Hành Phe Chính Diện (Camp A1 Companions)
+* **B-A1: The Moral Anchor / Beacon of Grace (Ngọn hải đăng lương tri)**:
+  - Mẹ hiền, người yêu thanh mai trúc mã, người thầy đạo hạnh. Luôn nhìn thấu nỗi đau bên trong A1, trao tặng sự tha thứ vô điều kiện và giữ A1 không vượt qua lằn ranh hắc hóa.
+* **B-A2: The Loyal Shield / Brother-in-Arms (Lá chắn trung thành)**:
+  - Người bạn vào sinh ra tử, mộc mạc, ít nói nhưng sẵn sàng nhận đòn chí mạng hoặc hy sinh danh dự để bảo vệ A1.
+* **B-A3: The Fragile Dependent (Điểm yếu bảo bọc)**:
+  - Đứa em gái bệnh tật, đứa con nhỏ ngây thơ. Là lý do A1 phải cắn răng nuốt nhục để sống sót, nhưng cũng là mục tiêu hiểm hóc bị kẻ thù nhắm tới.
+
+##### 2. Tuyến Đồng Hành Phe Phản Diện (Camp A2 Companions — The Villain's Humanizing Web)
+* **B-V1: The Loyal Dragon / Fanatical Enforcer (Cánh tay phải trung thành / "Con Rồng")**:
+  - Không phục vụ vì tiền, mà phục vụ vì **ân nghĩa và đức tin tuyệt đối vào A2**. Trong quá khứ, khi B-V1 bị ruồng bỏ hoặc cận kề cái chết, chính A2 là người duy nhất dang tay cứu giúp. B-V1 sẵn sàng gánh mọi tội lỗi, nhận án tử hoặc làm bia chắn đạn cuối cùng cho A2.
+* **B-V2: The Antagonist's Heart / Achilles' Heel (Trái tim kẻ ác / Gót chân Asin)**:
+  - Đứa con gái mang bạo bệnh, người mẹ già mất trí nhớ, hoặc người vợ nằm liệt giường của A2.
+  - Đây là **lời giải thích cho toàn bộ tội ác của A2**: Mọi sự tàn bạo, vơ vét tiền bạc, đạp lên luật pháp thực chất là vì A2 điên cuồng muốn bảo vệ B-V2.
+  - **The Climax Catalyst**: Khi A1 phát hiện ra bí mật này nhưng không bắt B-V2 làm con tin mà lại ra tay cứu chữa B-V2, chiếc áo giáp tàn nhẫn của A2 lập tức vỡ vụn (*Ego Death & Anagnorisis*).
+* **B-V3: The Corrupting Whisperer / Sycophant (Cố vấn độc hại / Kẻ xúi giục)**:
+  - Luật sư biến chất, trợ lý vụ lợi, kẻ đứng sau giật dây. Liên tục rót vào tai A2 sự nghi kỵ và lòng tham: *"Ngài chỉ cần lùi một bước là chúng nó sẽ giẫm chết ngài ngay!"*. Kẻ này ngăn cản mọi cơ hội hồi hương hướng thiện của A2.
+
+##### 3. Tuyến Vệ Tinh Trung Gian & Vùng Xám (The Cross-Faction Levers — Máy Kích Nổ Twist)
+* **B-Cross 1: The Blackmailed Hostage (Con tin lương tâm / Kỹ thuật Gáo Nước Lạnh)**:
+  - Người thuộc phe A1 nhưng bị A2 nắm giữ tính mạng người thân $	o$ Buộc phải nói dối tàn nhẫn, ném kỷ vật xuống bùn để đuổi A1 ra xa vùng nguy hiểm (*The Noble Lie & Double-Bind*).
+* **B-Cross 2: The Jealous Traitor (Kẻ phản bội vì đố kỵ — TW-05 Judas Kiss)**:
+  - Đồng đội của A1 nhưng uất ức vì luôn đứng dưới bóng A1 $	o$ Bị A2 mua chuộc và đâm sau lưng A1 ở thời khắc quyết định.
+* **B-Cross 3: The Turncoat Defector (Kẻ thức tỉnh đào tẩu — TW-06)**:
+  - Thuộc hạ dưới trướng A2, sau khi chứng kiến A2 vượt qua lằn ranh đỏ (định sát hại phụ nữ/trẻ nhỏ) thì rùng mình kinh hãi $	o$ Lén lút giao nộp chìa khóa hoặc chứng cứ quyết định cho A1.
+* **B-Cross 4: The Objective Justice Enforcer (Cán cân công lý khách quan — TW-04)**:
+  - Quan tòa, điều tra viên, cảnh sát trưởng. Ban đầu bị A2 làm giả chứng cứ dắt mũi $	o$ Truy bắt A1 ráo riết. Cuối cùng khi chân tướng lộ diện $	o$ Là người trực tiếp tra còng vào tay A2.
 
 ---
 
@@ -413,13 +1034,13 @@ $$\text{Beat 1-2 (Planting Setup)} \longrightarrow \text{Beat 3 (Misdirection)} 
 | **Beat 3** (35%) | **Drama** | **The Misdirection**: Misleading momentum; Tier A uses old tactics; Tier B1 moves in shadows; exits sealed. |
 | **Beat 4** (30%) | **Climax** | **3-WAVE CLIMAX & EGO DEATH**:<br>• *Wave 1 (Identity/Trap)*: The perceived victim/ally reveals the true trap.<br>• *Wave 2 (Physical/Loss)*: Concrete irreversible collapse of status/wealth/health.<br>• *Wave 3 (Karma & Anagnorisis)*: Protagonist realizes they forged their own destruction. Total Ego Death. |
 | **Beat 5** (12%) | **Release** | **Emotional Twist (Reverse Rescue)**: Grace offered by the unexpected companion (Tier B2); physical evidence of change. |
-| **Beat 6** (8%) | **Echo** | **Symbolic Payoff Twist**: 180° Echo Prop transformation + Universal Truth maxim (<15 words). |
+| **Beat 6** (8%) | **Echo** | **Symbolic Payoff Twist**: 180° Echo Prop transformation + closing image (no spoken moral or title — Doctrine §8.8). |
 
 ---
 
 ### 🎬 FORMAT 1 — SHORT FILM (1 Self-Contained Episode = 60s to 120s)
 - Complete self-contained story arc following the 6-Beat master framework (3% / 12% / 35% / 30% / 12% / 8%).
-- Beat 6 concludes with Still Catharsis + Echo Image + Moral Maxim (<15 words). NO cliffhangers.
+- Beat 6 concludes with Still Catharsis + Echo Image (no spoken moral or title — Doctrine §8.8). NO cliffhangers.
 
 ### 🎞️ FORMAT 2 — MULTI-EPISODE SERIES (N Episodes × 6 Beats)
 - Each episode executes the 6-Beat dynamic rhythm.
@@ -659,6 +1280,8 @@ Act 4 (Resolution) = N − (Act1 + Act2 + Act3) episodes, minimum 1
 
 ## 🏛️ PART IV: MASTER CINEMATIC TWIST CATALOG (TW-01 TO TW-20) & CLIMAX ANATOMY
 
+> **Doctrine first:** this Part is a catalog. When a twist is earned, how many plants it needs, how the viewer is led (Prediction Ledger, Knowledge Matrix, misdirection) and how surprise survives the positive-ending mandate are decided by `0-creative-doctrine.md` §9. The audit (W10) checks the plant order of the episode's Prediction Ledger.
+
 ## 🏛️ SECTION 1: THE UNIVERSAL 3-STEP TWIST FORMULA
 
 Every narrative twist follows a 3-stage mechanical causality chain:
@@ -821,6 +1444,9 @@ Never execute a twist purely through dialogue. Always physically anchor the twis
 1. **Zero Localized Clutter (Cấm Lạm Dụng Đạo Cụ Cục Bộ):** Maximum 1 to 2 Master Catalyst Props across an entire series arc. Never invent a new prop for each scene. Everyday items (vessels, chairs, bread) are subtle background texture, NEVER the focus.
 2. **Zero Inanimate Displacement:** A prop must NEVER displace the human face in moments of crisis. Broken objects or debris must NEVER replace a character's trembling jaw, unshed tear, or silent suffocating shock.
 3. **Twist-Point Foregrounding Only:** The Master Catalyst Prop enters foreground focus **strictly at the moment of the Twist Payoff**, functioning as the undeniable physical proof or turning lever.
+4. **The Two-Tier Prop Implementation Standard (Doctrine §10.5):**
+   - *Tier 1 (Everyday / Ambient Props)*: Rice bowls, teacups, envelopes, folding hammocks, pens, wrenches. **100% Text-Described in Screenplay and Prompts (Mode A)**. Zero 16:9 model sheets generated. AI natively understands these items.
+   - *Tier 2 (Sovereign / Soul / Weapon / Complex Artifacts)*: Ancestral relics, custom weapons, dynastic seals, intricate mechanisms. **Mandatory 16:9 4-View Model Sheet (Mode B)** to anchor geometric consistency and prevent AI visual drift.
 
 ### 2. The 5 Master Twist-Catalyst Mechanisms:
 1. **The Decoy Prop**: The briefcase, envelope, or sealed urn is opened at the twist moment to reveal it is a decoy (`TW-02`).
@@ -858,6 +1484,167 @@ When constructing any script with a twist, run this 6-point verification gate:
 - [ ] **Gate 6: The Rewatch Test**: If a viewer rewatches the video immediately, do all previous character behaviors become MORE poignant and brilliant?
 
 
+## 🌊 § 5. THE FALSE DAWN & DOUBLE-BIND REVERSAL ARCHITECTURE (CÔNG THỨC GÁO NƯỚC LẠNH & CON TIN LƯƠNG TÂM)
+
+To eliminate simplistic, one-dimensional linear storytelling ("cục bộ đơn tuyến") and engineer multi-layered, binge-worthy emotional retention across episodic drama, the screenwriter must deploy the **False Dawn & Double-Bind Reversal Architecture (Kỹ Thuật Gáo Nước Lạnh & Con Tin Lương Tâm)**.
+
+> **Doctrine §9.8:** the Cold Water Slap must be **caused by a plant or a character's earlier choice** — a stranger from nowhere is a random shock. The examples in this section are thriller scale; in family drama, scale the slap to a neighbor's sentence, a returned object, an overheard call.
+
+```text
+┌────────────────────────────────────────────────────────────────────────────────────────────────────────┐
+│                      THE 4-STAGE COLD WATER CYCLE (CHU KỲ GÁO NƯỚC LẠNH)                               │
+├────────────────────────────────────────────────────────────────────────────────────────────────────────┤
+│ STAGE 1: THE FALSE DAWN      ──> Mồi hy vọng le lói; khán giả tưởng nút thắt sắp được gỡ.              │
+│ STAGE 2: THE COLD WATER SLAP ──> Cú tát chối bỏ tàn nhẫn; dập tắt hy vọng bằng một hành vi cự tuyệt.   │
+│ STAGE 3: THE DOUBLE-BIND     ──> Hé lộ chiếc bẫy kẹp sinh tử: Nói thật thì mất người mình yêu nhất;   │
+│                                  Chấp nhận mang tiếng xấu/bất hiếu thì mới bảo toàn được sinh mạng.    │
+│ STAGE 4: DRAMATIC IRONY AGONY──> Khán giả uất nghẹn rơi lệ vì biết chân tướng nhưng nhân vật kia không │
+│                                  hề hay biết; buộc phải cày tập tiếp theo để chờ sự thật sáng tỏ.      │
+└────────────────────────────────────────────────────────────────────────────────────────────────────────┘
+```
+
+---
+
+### 1. The Psychology of the False Dawn (Tâm Lý Học "Bình Minh Giả Tạo")
+* **The Closure Trap**: Khán giả luôn vô thức khao khát một sự hòa giải êm đềm hoặc công lý được thực thi ngay (*Need for Closure*). 
+* **The Dopamine Crash**: Khi biên kịch trao cho họ một tia hy vọng le lói (Stage 1), não bộ tiết ra lượng lớn Dopamine hưng phấn. Ngay tại đỉnh điểm của niềm tin, một biến cố tàn nhẫn giáng xuống (Stage 2) khiến Dopamine tụt dốc không phanh, chuyển hóa ngay lập tức thành Adrenaline (căng thẳng, bàng hoàng, ức chế tột độ).
+* **The Retention Hook**: Sự ức chế không được giải tỏa ngay lập tức chính là **thỏi nam châm giữ chân người xem (Retention Anchor)**. Khán giả không bao giờ tắt màn hình khi trong lòng còn một nỗi oan khuất chưa được làm sáng tỏ.
+
+---
+
+### 2. The Mechanics of the Double Twist (Cú Lật 2 Tầng / Kỹ Thuật Búp Bê Nga)
+Thay vì chỉ lật một lần duy nhất, cao trào điện ảnh đỉnh cao luôn vận hành theo **cấu trúc lồng ghép 2 tầng**:
+
+* **Twist Lớp 1 (Bề Mặt — The False Twist)**: Khán giả tưởng cú lật là cuộc hội ngộ hoặc chiến thắng (*"Hai cha con sắp nhận nhau sau 10 năm xa cách!"*).
+* **Twist Lớp 2 (Chấn Động — The Cold Water Reversal)**: Đứa con bất ngờ ném chiếc khóa bạc kỷ vật xuống bùn đất, lăng mạ người cha là kẻ vô dụng (*"Tôi không có người cha như ông, cầm rác rưởi của ông cút đi!"*).
+* **Cú Rút Lưỡi Dao Cảm Xúc (The Subtext Knife)**: Khung hình lướt nhẹ ra bóng tối sau ô cửa sổ: Tên trùm phản diện đang kề dao vào cổ người mẹ đang bị trói nghiến. Đứa con vừa nói vừa cắn chặt môi dưới đến ứa máu, các đốt ngón tay siết rách da sau lưng để ngăn nước mắt rơi.
+* 👉 **Chuyển hóa cảm xúc**: Khán giả từ chỗ ngỡ ngàng $	o$ phẫn nộ với đứa con $	o$ vỡ òa xót xa và tôn sùng đức hy sinh vĩ đại của đứa con!
+
+---
+
+### 3. The Double-Bind & The Noble Lie Law (Định Luật Con Tin Lương Tâm & Lời Nói Dối Cao Thượng)
+
+#### 1. Định nghĩa The Double-Bind (Thế Tiến Thoái Lưỡng Nan):
+Một nhân vật chỉ thực sự vĩ đại khi họ bị dồn vào một tình thế mà **chọn bên nào cũng đau đớn đến xé ruột**:
+$$\mathbf{Lựa\ Chọn\ A\ (Nói\ Thật)} \longrightarrow \mathbf{Cứu\ danh\ dự\ bản\ thân,\ nhưng\ người\ thân\ bị\ giết}$$
+$$\mathbf{Lựa\ Chọn\ B\ (Nói\ Dối)} \longrightarrow \mathbf{Cứu\ được\ tính\ mạng\ người\ thân,\ nhưng\ bị\ người\ đời\ nguyền\ rủa\ là\ bất\ hiếu/phản\ bội}$$
+
+#### 2. The Noble Lie (Lời Nói Dối Cao Thượng / Hidden Kindness):
+* Nhân vật tự nguyện **mặc chiếc áo của kẻ ác** (vô ơn, tham tiền, hèn nhát) để đẩy người mình yêu thương ra xa vùng nguy hiểm.
+* **Quy tắc thể hiện sinh học (Biomechanics of the Noble Lie)**:
+  * *Lời thoại*: Lạnh lùng, tàn nhẫn, đanh thép (1.8–2.0 WPS), mắt không dám nhìn thẳng quá 2 giây.
+  * *Cơ thể phản bội lời nói*: Mắt ứa một ngấn lệ vô hình, ngón tay bấu chặt vào đùi đến bầm tím, nhịp thở đứt quãng run rẩy khi quay lưng bước đi.
+
+---
+
+### 4. The Multi-Episode Binge Loop Engine (Cơ Chế Khóa Tập Gây Nghiện Xuyên Suốt)
+
+Trong cấu trúc phim bộ nhiều tập (Series / Episodic Drama), tuyệt đối không bao giờ được phép đóng kín 100% cánh cửa ở cuối tập:
+
+$$\mathbf{Cái\ Kết\ (Beat\ 5	ext{--}6)\ của\ Tập\ N} \;\equiv\; \mathbf{Gáo\ Nước\ Lạnh\ (Beat\ 1)\ của\ Tập\ N+1}$$
+
+```text
+  TẬP 1: BEAT 4 (CLIMAX)                   TẬP 1: BEAT 6 (CLIFFHANGER)                 TẬP 2: BEAT 1 (NEW HOOK)
+┌─────────────────────────┐               ┌─────────────────────────┐                 ┌─────────────────────────┐
+│ Người cha rút kỷ vật,   │ ────────────► │ Đứa con ném kỷ vật      │ ──────────────► │ Tiết lộ con dao sau cửa:│
+│ hai người sắp nhận nhau.│ (Gáo nước     │ xuống bùn, đuổi cha đi. │ (Mở vòng lặp    │ Đứa con quỵ ngã ôm mẹ,  │
+│ (Bình minh giả tạo)     │  lạnh giáng)  │ Người cha bỏ đi tan nát.│  Open Loop)     │ thề sẽ trả thù trong im │
+└─────────────────────────┘               └─────────────────────────┘                 │ lặng.                   │
+                                                                                      └─────────────────────────┘
+```
+
+* Khán giả bị đẩy vào trạng thái **"Khát khao minh oan" (The Hunger for Vindication)**: Họ bắt buộc phải xem tiếp các tập sau cho đến khi nào người cha biết được sự thật đứa con đã hy sinh vì mình đến mức nào!
+
+---
+
+### ⏳ § 6. THE NEAR-MISS MECHANISM & THE TANTALUS TORMENT (CƠ CHẾ CÚ SUÝT SOÁT & SỰ CẢN TRỞ CỦA PHẢN DIỆN)
+# (NGHỆ THUẬT DỒN NÉN KỊCH TÍNH: TẠI SAO SỰ THẬT PHẢI BỊ NGĂN TRỞ Ở VẠCH ĐÍCH 1MM?)
+
+> [!IMPORTANT]
+> **THE TANTALUS TORMENT LAW (HIỆU ỨNG TANTALUS — NƯỚC TỚI MIỆNG LẠI RÚT)**:
+> In ancient Greek mythology, King Tantalus was punished to stand in a pool of fresh water beneath boughs of ripe fruit. Whenever he bent his head to drink, the water drained into the earth; whenever he reached for a fig, the branch sprang upward out of reach.
+> In masterclass cinematic screenwriting, **nothing destroys audience retention faster than effortless discovery.**
+> If an abandoned child searches for their mother, walks up to an address, knocks on the door, and immediately hugs the mother with zero obstacles—**the story is dead on arrival**. 
+> The human brain craves dopamine through **Delayed Gratification (Sự thỏa mãn bị trì hoãn)**. The near-miss is the ultimate cinematic engine that turns viewers into emotionally addicted prisoners of the narrative.
+
+```text
+┌────────────────────────────────────────────────────────────────────────────────────────────────────────┐
+│                           CƠ CHẾ "CÚ SUÝT SOÁT" & LÒ XO CẢM XÚC DỒN NÉN (TANTALUS CURVE)               │
+├────────────────────────────────────────────────────────────────────────────────────────────────────────┤
+│ [Khoảng cách tới Sự thật: 1 mét] ──► [PHẢN DIỆN/BIẾN CỐ CAN THIỆP] ──► [Khoảng cách lùi về: 100 mét]   │
+│     (Hy vọng tột độ)                     (Cú đập bất ngờ)                 (Uất nghẹn, khát khao x10)   │
+└────────────────────────────────────────────────────────────────────────────────────────────────────────┘
+```
+
+#### 1. The 3-Tier Escalation Ladder of Antagonist Obstruction (Thang Bậc Can Thiệp Của Phản Diện):
+
+When the protagonist is on the verge of discovering the truth or reuniting with their loved one, how does the antagonist/counter-force obstruct without feeling artificial?
+
+* **Tier 1: Tactical Foresight & Physical Sabotage (Phản Diện Đi Trước 1 Nước Cờ)**:
+  - *Mechanics*: The antagonist is not passive; they monitor the same leads. Right as the protagonist reaches the archive, hospital room, or witness house, the antagonist has **already burned the record, moved the witness, or intercepted the mail 5 minutes prior**.
+  - *Example*: The daughter enters the nursing home room holding the matching locket; the bed is freshly made and empty—the antagonistic uncle had her transferred to an undisclosed ward at dawn to protect his inheritance.
+
+* **Tier 2: Psychological Seduction & Poisoned Half-Truths (Đòn Ly Gián Tâm Lý & Sự Thật Nửa Vời)**:
+  - *Mechanics*: The antagonist does not use brute force; they use psychological warfare. They feed a poisoned half-truth to one party, causing them to **voluntarily reject the reunion**.
+  - *Example*: The mother is about to see her long-lost son; the antagonist whispers: *"He only tracked you down because he owes millions to loan sharks and needs you to sell your house."* When the son arrives with tears in his eyes, the mother coldly slams the door in his face, leaving both broken-hearted.
+
+* **Tier 3: Asymmetrical Hostage & Forced Moral Renunciation (Bắt Cóc Đạo Đức & Bức Tử Hy Vọng)**:
+  - *Mechanics*: The protagonist reaches the threshold of reunion, but the antagonist holds an asymmetrical hostage (a sibling's life, a family company, a community's safety).
+  - *Example*: The protagonist has their hand on the door handle to embrace their mother, but receives a live video feed of their younger sister surrounded by thugs. The antagonist gives one condition: *"Turn around, tell your mother you despise her, and walk away forever, or she never sees tomorrow."* The protagonist must voluntarily perform the heartbreaking **Noble Lie**.
+
+#### 2. The Iron Law of Anti-Coincidence (Luật Thép: Tuyệt Đối Cấm Trùng Hợp Ngẫu Nhiên):
+- ❌ **Amateur Writing**: A sudden random car crash, a slip on a banana peel, or sudden amnesia happens out of nowhere to prevent the reunion. The audience feels insulted and immediately tunes out.
+- ✅ **Masterclass Screenwriting**: 100% of obstructions must be **causally linked to character choices, strategic malice from antagonists, or the protagonist's own tragic flaw (hesitation, fear of rejection, pride)**.
+
+---
+
+### 💥 § 7. THE 5 JAW-DROPPING REVERSAL MECHANISMS (BỘ 5 LIỆU PHÁP KHIẾN KHÁN GIẢ HÁ HỐC MỒM)
+# (ARISTOTLE'S MASTER LAW: BẤT NGỜ NHƯNG TẤT YẾU — PHÁ TAN MỌI PHÁN ĐOÁN CỦA KHÁN GIẢ)
+
+> [!CAUTION]
+> **ARISTOTLE'S POETICS: SURPRISING YET INEVITABLE (BẤT NGỜ NHƯNG TẤT YẾU)**:
+> In ancient Greek dramatic theory, Aristotle declared that a twist that comes out of nowhere (Deus Ex Machina / Vô căn cứ) is pure trash. 
+> A truly great, jaw-dropping twist must satisfy two opposing criteria simultaneously:
+> 1. **At the moment of detonation**: The audience is left gasping, stunned, and disoriented—it completely shatters their predictions.
+> 2. **3 seconds later**: The audience realizes it could NOT have happened any other way. Every single clue, glance, gesture, and shadow throughout the film was whispering this exact truth, but the audience's own cognitive biases blinded them.
+
+```text
+┌────────────────────────────────────────────────────────────────────────────────────────────────────────┐
+│                       5 LIỆU PHÁP NGHỆ THUẬT KHIẾN KHÁN GIẢ "HÁ HỐC MỒM" (JAW-DROPPING TWISTS)          │
+├────────────────────────────────────────────────────────────────────────────────────────────────────────┤
+│ 1. THE SACRIFICIAL VILLAIN (Kẻ Phản Diện Mang Trái Tim Bồ Tát / Lời Nói Dối Cao Thượng)               │
+│ 2. THE MORAL PARADIGM SHIFT (Sự Sụp Đổ Của Hệ Quy Chiếu Đạo Đức / Chân Lý Đảo Chiều)                  │
+│ 3. THE PYRRHIC VICTORY & PARADOXICAL SURRENDER (Chiến Thắng Cay Đắng & Nghịch Lý Buông Bỏ)            │
+│ 4. THE ARROGANT RED HERRING (Chiếc Bẫy Tự Phụ / Đòn Gậy Ông Đập Lưng Ông)                             │
+│ 5. THE IMPOSSIBLE MORAL CRUCIBLE (Ngã Ba Sinh Tử Đạo Đức / Không Có Lựa Chọn Hoàn Hảo)                │
+└────────────────────────────────────────────────────────────────────────────────────────────────────────┘
+```
+
+#### 1. The Sacrificial Villain / The Noble Lie (Kẻ Phản Diện Mang Trái Tim Bồ Tát):
+* **Cơ chế tâm lý**: Khán giả và nhân vật chính dành 90% thời lượng phim để căm thù một nhân vật vì sự tàn bạo, lạnh lùng, xua đuổi hoặc phản bội của họ.
+* **Cú nổ nhận thức**: Tại cao trào, sự thật vỡ òa: Nhân vật đó không hề ác; họ **cố tình đóng vai quỷ dữ** để thu hút toàn bộ hỏa lực của kẻ thù thật sự, hoặc xua đuổi nhân vật chính ra xa vùng hủy diệt. Sự căm hận của khán giả lập tức biến thành cơn lũ nước mắt ân hận và kính phục tột cùng.
+* *Kinh điển*: Severus Snape trong *Harry Potter*, người cha giả vờ tham tiền đuổi con gái đi để giấu việc mình mắc bệnh nan y và đã hiến tủy cứu con.
+
+#### 2. The Moral Paradigm Shift (Sự Sụp Đổ Của Hệ Quy Chiếu Đạo Đức):
+* **Cơ chế tâm lý**: Toàn bộ câu chuyện được xây dựng trên một tiền đề đạo đức hiển nhiên: "Phe ta là Thiện, Phe địch là Ác", hoặc "Tôi đang thực thi một sứ mệnh công lý vĩ đại".
+* **Cú nổ nhận thức**: Nhân vật chính phát hiện ra rằng tổ chức, người thầy, hoặc lý tưởng mà mình phục vụ bấy lâu thực chất là cỗ máy áp bức tàn bạo nhất; kẻ thù mà mình săn đuổi thực chất chỉ là những nạn nhân đang cố gắng sinh tồn hoặc vạch trần tội ác.
+* *Kinh điển*: *The Matrix*, *Shutter Island*, *Blade Runner 2049*. Toàn bộ thế giới quan của nhân vật và khán giả sụp đổ hoàn toàn, buộc họ phải định nghĩa lại chính mình.
+
+#### 3. The Pyrrhic Victory & Paradoxical Surrender (Chiến Thắng Cay Đắng & Nghịch Lý Buông Bỏ):
+* **Cơ chế tâm lý**: Nhân vật chính chiến đấu kiên cường và cuối cùng giành được chính xác thứ họ khao khát từ đầu phim (tiền bạc, quyền lực, trả thù thành công, bằng chứng vinh quang).
+* **Cú nổ nhận thức**: Khi chiếc cúp được nâng lên, họ nhận ra cái giá phải trả chính là linh hồn của mình hoặc sinh mạng của người họ trân quý nhất. Chiến thắng vật lý trở thành thảm bại tâm hồn. Chỉ khi nhân vật dám làm điều không tưởng—**tự tay ném bỏ chiếc cúp, tha thứ cho kẻ thù, và buông bỏ cái tôi**—họ mới đạt được sự cứu rỗi siêu việt đích thực.
+
+#### 4. The Arrogant Red Herring (Chiếc Bẫy Tự Phụ Của Khán Giả & Kẻ Phản Diện):
+* **Cơ chế tâm lý**: Sử dụng chính sự thông minh, định kiến thể loại (trope familiarity) và cảm giác "ta đây biết trước kịch bản" của khán giả để giăng bẫy. Kịch bản cố tình để lộ một kẽ hở rõ ràng khiến khán giả và kẻ phản diện đắc chí: *"A ha, ta biết tỏng kế hoạch của mày rồi!"*
+* **Cú nổ nhận thức**: Toàn bộ sự đắc chí đó là một **sân khấu giả** được dàn dựng có chủ đích. Kẻ nghĩ mình đang đi trước 3 bước hóa ra lại là kẻ đang bước thẳng vào giữa tâm miệng cọp. Khán giả sững sờ vì bị chính sự tự phụ của mình đánh lừa ngoạn mục.
+* *Kinh điển*: *The Usual Suspects*, *Knives Out*, *Now You See Me*.
+
+#### 5. The Impossible Moral Crucible (Ngã Ba Sinh Tử Đạo Đức):
+* **Cơ chế tâm lý**: Đẩy nhân vật vào một tình huống mà **mọi lựa chọn đều dẫn đến mất mát đau đớn** (No-Win Dilemma). Không có phép màu rẻ tiền (Deus Ex Machina) nào được phép cứu nguy.
+* **Cú nổ nhận thức**: Khán giả nghẹt thở vì không thể đoán được nhân vật sẽ chọn gì. Nhân vật phá vỡ bế tắc không phải bằng sức mạnh, mà bằng một **lựa chọn đạo đức phi thường vượt lên trên quy luật sinh tồn cá nhân** (chấp nhận chịu nhục để người khác được vinh quang, hy sinh danh dự để bảo tồn tính mạng vô tội). Khán giả choáng ngợp trước tầm vóc vĩ đại của tâm hồn con người.
+
+---
+
 ## 🏛️ PART V: THE UNIVERSAL MULTI-GENRE SCREENPLAY & DIALOGUE ECOSYSTEM
 
 ## 🏛️ SYSTEM ARCHITECTURE OVERVIEW: THE UNIVERSAL DIALOGUE ECOSYSTEM
@@ -873,7 +1660,7 @@ When constructing any script with a twist, run this 6-point verification gate:
 │                                      (Romance, Comedy, Action/Tactical, Horror, Mystery, Drama, etc.). │
 │ 5. PROP-SPEECH TACTILE LOCKING     : Peak keywords trigger physical touch, impacts, or tender motions. │
 │ 6. 4-IN-1 DIRECTING PARENTHETICAL  : Timbre/WPS + Lip-Sync/Somatics + Lighting + Psychological Subtext. │
-│ 7. TERMINAL LIVING SETTLE BUFFER   : Final 1.0s (00:09–00:10) is 100% 0 words (Living Organic Settle). │
+│ 7. DIALOGUE TIMING & PACING       : Natural breathing room, script-driven rhythm (no rigid formulas).  │
 └────────────────────────────────────────────────────────────────────────────────────────────────────────┘
 ```
 
@@ -916,6 +1703,8 @@ ec{F}_{meta}$ — Lực Nội Tâm / Vô Thức)**:
 
 ## ⚖️ § 2. THE WORDS-PER-SECOND (WPS) PHYSICS LAW & CADENCE CALIBRATION
 
+> ⏱️ **TIMING NOTE** — This WPS table describes English emotional cadence including pauses (useful for performance direction). For clip timing, use [`0b-temporal-camera-grammar.md`](file:///d:/Project/Sven/engine/references/0b-temporal-camera-grammar.md) §2 (Vietnamese syllables/s, English words/s) and §3 (lip-sync windows).
+
 In live-action and cinematic animation, spoken dialogue cadence is strictly bounded by human biological breath cycles and cognitive processing speed. Generative video diffusion models (Omni Flash, Kling, Sora) experience severe facial warping and audio truncation if speech is delivered outside these kinetic thresholds.
 
 ### 2.1. Full-Spectrum Emotional Cadence Matrix (Bảng Hiệu Chuẩn Tốc Độ Nói Đa Thể Loại)
@@ -941,25 +1730,237 @@ In live-action and cinematic animation, spoken dialogue cadence is strictly boun
 | **Tactical Combat Callouts / Operational Orders**| `2.1 – 2.4 WPS` | Barked staccato; sharp diaphragm snaps | Adrenaline-fueled stance; weapon ready; scanning horizon | Sci-Fi, War, Heist |
 | **Panic / Impending Disaster** | `2.2 – 2.4 WPS` | Breathless staccato; rising pitch; vocal tremor | Hands reaching out; rapid ocular scanning; gasping | Disaster, Horror, Beat 1 |
 
-### 2.2. The Invariant Word Ceiling & High-Tension Physical Cadence
-* **Language & Genre Physicality Calibration**:
-  1. **English & Standard Multisyllabic Baseline**:
-     - Across standard dialogue exchanges, total density is capped at **14–18 English words (~80–120 characters)** per 10s unit (~1.8–2.2 WPS).
-  2. **Monosyllabic, Vietnamese & High-Tension Climax Hard Ceiling (Chuẩn Trần Vật Lý 8 Giây: 25 Từ / 140 Ký Tự)**:
-     - In rapid adversarial exchanges, stichomythia, courtroom clashes, or monosyllabic phonetics (e.g. Vietnamese), the dialogue window expands to a hard physical ceiling of strictly **≤ 25 words and ≤ 140 characters across maximum 8.0 seconds** (3.125 WPS / 17.5 CPS).
-     - **The Subtitle Two-Line Law**: 140 characters represents the physiological reading limit of a 2-line subtitle (≤ 70 characters per line) without visual overlap or viewer cognitive drift.
-* **The Mathematical Dialogue Conservation Formula**:
-  \\underbrace{T_{lead\\text{-}in}\\,(0.5\\text{s}\\text{--}1.0\\text{s})}_{\\text{Action Ignition}} \\;+\\; \\underbrace{\\mathbf{T_{dialogue}\\,(\\le 8.0\\text{s})}}_{\\mathbf{\\le 25\\text{ words / } \\le 140\\text{ chars}}} \\;+\\; \\underbrace{T_{settle}\\,(1.0\\text{s}\\text{--}1.5\\text{s})}_{\\text{Living Organic Settle, 0 Words}} \\;=\\; 10.0\\text{ Seconds}
-* **Ban on Micro-Snippets**: Dialogue lines must remain substantive and dramatic. Single-word throwaways (< 3 words like *"Yes"*, *"Wait"*, *"Stop"*) are BANNED unless operating as an intentional Model 7 interruption.
+### 2.2. The Invariant 10-Second Shot Mental Model & Word Budget Calibration
+* **The Master Cinematic Paradigm (10s Là Một Cú Máy / Shot, Không Phải Một Cảnh)**:
+  - In professional cinema, **a 10-second clip is a SHOT (cú máy), not an entire scene.** An entire dramatic scene comprises multiple shots edited together (e.g. 9 shots = 90s sequence).
+  - Therefore, the core directorial question is: **In each 10-second shot, WHO speaks and HOW MUCH do they speak?**
+* **Primary Directorial Law: One Active Speaker Per Shot (Shot - Reverse Shot Montage)**:
+  - In film, conversations are edited via shot-reverse-shot across consecutive shots:
+    - *Shot 1 (10s)*: Character A speaks (Camera on A; medium close-up or close-up).
+    - *Shot 2 (10s)*: Character B speaks or reacts (Camera on B; reverse angle or over-the-shoulder).
+    - *Shot 3 (10s)*: Returns to Character A.
+  - *Why this is essential for AI Video Engines (Veo, Sora, Kling)*: Each shot features only one active speaking face. Lip-sync, facial coherence, and vocal timbre remain 100% stable with zero voice bleeding or cross-talk morphing.
+* **The Two-Shot Exception (When 2 Speakers Are Permitted in a Single 10s Shot)**:
+  - Permitted ONLY when:
+    1. Each person speaks at most 1–2 short volleys (**5–10 words each**) for rapid Q&A, snappy bickering, or urgent interruptions.
+    2. Framed as a **Two-shot / Three-shot** (both characters in frame simultaneously) to deliberately evoke high tension, frantic bickering, or raw slice-of-life realism.
+    3. **The 15-Word Shot-Split Law**: If any single speaker speaks **> 15 words** in that shot $\to$ **DIRECTOR MUST SPLIT THE SHOT**.
+* **Word Budget & Psychological Pacing Calibration**:
+  1. **Vietnamese Standard Film Cadence (Sitcom / Slice-of-Life)**:
+     - Single-speaker shot: **25 – 30 words** (~6.5s – 7.5s natural delivery with breathing pauses; slower and more emotional than commercial ads).
+     - Two-shot exchange: **25 – 30 words total** divided across 2 speakers (5–10 words each).
+  2. **Psychological Drama / Heavy Emotion / Melodrama**:
+     - Single-speaker shot: **15 – 20 words**.
+     - The unspoken matters more than the spoken. The remaining 4.0s – 5.5s is dedicated to silence, trembling breaths, micro-physical reactions, and subtext.
+  3. **English Baseline**:
+     - Single-speaker shot: **12 – 16 words**. Two-shot exchange: **12 – 16 words total**.
+* **The 3 Advanced Cinematic Dialogue Continuity Techniques**:
+  1. **L-Cut (Split Audio Tail)**:
+     - Visual cuts to Character B, but Character A's voice continues for 1.0s – 2.0s into the new shot.
+     - The audience hears A finish the line while observing B's immediate somatic reaction (hurt, guilt, shock).
+  2. **J-Cut (Pre-Lap Dialogue)**:
+     - Character B's voice ignites 0.5s – 1.5s BEFORE the visual cut to Character B occurs, pulling the viewer forward.
+  3. **The Reaction Shot (Shot Phản Ứng — Zero Words Spoken)**:
+     - Character B speaks strictly ZERO words. The shot is dedicated entirely to silence, breathing, moistening eyes, a tightening jaw, or an averted gaze.
+* **Genre Architecture: Sitcom vs. Psychological Drama**:
+  - **Sitcom**: Fast-paced; two-shots permitted; Shot structure: **Setup ➔ Reaction ➔ Punchline** (Punchline lands in the last 2–3s and cuts immediately on the laugh). Reaction shots (breaking 4th wall, deadpan eye-roll) generate the primary comedic payoff.
+  - **Psychological Drama**: Strictly one speaker per shot (15–20 words); generous silence; subtext over exposition; heavy use of L-cuts and Voice-Over (V.O.) where lips remain sealed while inner thoughts resonate.
 
-### 2.3. Dedicated Timestamp Allocation Law (Luật Khóa Mốc Thời Gian Độc Lập)
-* **Rule**: Every dialogue volley MUST have its own explicit, non-overlapping timestamp range (e.g. `[00:00–00:02.0]`, `[00:02.0–00:04.0]`).
-* 🚫 **Strict Prohibition**: NEVER lump multiple spoken volleys into one shared timestamp (e.g. `[00:00–00:06] A speaks then B replies`). This causes AI diffusion engines to hallucinate two mouths moving simultaneously (cross-talk lip-sync failure).
+### 2.3. Dedicated Timestamp Allocation & Buffer Law
+* **Buffer Law for 10s Shots**:
+  - Spoken lines must leave **0.5s – 1.0s buffer at the head** (face established, breath intake) and **0.5s – 1.5s buffer at the tail** (mouth closure, settle, living reaction before cut).
+* **Rule**: In multi-speaker shots, every dialogue volley MUST have its own non-overlapping timestamp range (e.g. `[00:01.0–00:04.0]`, `[00:04.5–00:08.5]`). NEVER lump multiple spoken volleys into one shared timestamp.
 
-### 2.4. The Invariant Terminal Living Settle Safety Buffer (`00:09.0–00:10.0`)
-* The final **1.0 second (or minimum 0.5s from 00:09.5 to 00:10.0)** is **STRICTLY 0 SPOKEN WORDS**.
-* **Reason**: Allows the emotional or dramatic impact to land in the viewer's heart; protects video rendering from end-of-clip audio truncation; enables clean seamless audio crossfades in timeline assembly.
-* Prompt phrasing: `Lips remain firmly closed, breathing in diegetic silence, concluding in smooth deceleration into a stable resting frame with subtle biological respiration and ambient drift, strictly zero frozen frames.`
+### 2.4. Dynamic Script-Driven Dialogue Placement (Organic Biological Rhythm)
+* Dialogue placement is elastic and script-driven: whether starting at 00:01.0 or concluding with a punchline at 00:08.5, characters maintain organic respiration and natural mouth closure through the cut at 00:10.0 with strictly zero frozen frames and zero robotic cutoffs.
+
+---
+
+### 2.5. THE 5 INVARIANT LAWS OF DIALOGUE CONTINUITY & CONVERSATIONAL CAUSALITY
+# (BỘ 5 ĐỊNH LUẬT KIỂM SOÁT NGHIÊM TÚC LỜI THOẠI & LIÊN TỤC HỘI THOẠI — GATES 4A-4F ENFORCED)
+
+> [!CAUTION]
+> **ZERO-TOLERANCE CODE AUDIT ENFORCEMENT**:
+> The master linting suite (`engine/episode_audit_suite.py`) enforces Gates 4A to 4F with zero tolerance. Any script with disconnected parallel monologues, stale alienating pronouns post-reconciliation, domestic prop/meal contradictions, or lines > 18 words is AUTOMATICALLY BLOCKED from delivery.
+
+1. **Law 1: The Ping-Pong Action-Reaction Mandate (Luật Bóng Bàn Cặp Đôi — Gate 4C)**:
+   - Dialogue is NEVER two parallel monologues delivered into empty air.
+   - In any 2-line scene, Speaker 2 MUST directly address, confront, comfort, or counter Speaker 1's claim. Line 2 must contain an explicit conversational address or reaction vector (`má`, `con`, `vợ`, `anh`, `mình`, `mày`, `dạ`, `ừ`).
+   - Self-dialogue (same speaker uttering both lines consecutively without an intervening reaction) is strictly forbidden.
+
+2. **Law 2: The Keyword Handoff Relay (Luật Trao Gậy Từ Khóa Nối Nhịp — Gate 4C)**:
+   - The conversational spine is forged by seizing core semantic keywords across scene boundaries and dialogue turns.
+   - Example Vector:
+     * *Scene 01*: `"ráp nôi cho con nằm thẳng lưng nghen anh!"` ➔ `"nôi phẳng con dễ thở"`
+     * *Scene 02*: `"nằm võng ôm lưng mới ấm hơi!"` ➔ `"thằng nhỏ sinh non, nằm võng gập cổ làm sao nó thở nổi má!"`
+     * *Scene 03*: `"Mày nói ai làm ngạt thở?"` ➔ `"Tụi con đâu dám chê má, tại lo cho xương sống cháu nội má thôi!"`
+     * *Scene 04*: `"Hổng chê sao bảo tui nhà quê?"` ➔ `"Con sợ mình làm mẹ vụng về, hại con thôi má ơi..."`
+
+3. **Law 3: The Kinship Pronoun Progression Ladder & Post-Reconciliation Protocol (Gate 4D)**:
+   - In domestic drama, pronouns reflect the precise moral and psychological distance between characters.
+   - Across conflict escalation, pronouns evolve:
+     * *Setup*: Kinship (`Má - Con`, `Anh - Em`).
+     * *Friction/Confrontation*: Alienating distance (`Tôi - Chị`, `Tôi - Cô`).
+     * *Climax/Territorial Fury*: Primal defense (`Mày - Tao`).
+     * *Resolution & Catharsis*: Reclaimed maternal kinship (`Má - Con`, `con Duyên`, `con dâu`).
+   - **Post-Reconciliation Ban on Alienation**: Once catharsis/reconciliation occurs (Scene 05 in a 10-scene short drama), the elder character MUST NEVER continue addressing the daughter-in-law or son with estranged/sarcastic pronouns like `Chị` or `tui`. They must lock into maternal affection (`Má - Con`, `con Duyên`, `con dâu`). Stale alienating pronouns in post-reconciliation scenes fail Gate 4D instantly.
+
+4. **Law 4: The 18-Word Acoustic Breath Limit & Anti-Bookish Cadence (Gates 4B & 4F)**:
+   - **Word Hard Cap**: Spoken lines MUST NOT exceed **18 words** (no minimum target; length follows the beat). Plan the line in seconds with `0b-temporal-camera-grammar.md` §2: about 4–5 s for 18 Vietnamese syllables, about 7–8 s for 18 English words (keep English lines at 6–12 words).
+   - **Colloquial Dialect vs. Bookish Grammar**: Spoken lines must use authentic spoken particles (`nghen`, `dạ`, `hà`, `hén`, `thiệt`, `hổng`, `vầy`, `dữ nghen`, `đặng`).
+   - **Banned Bookish Syntax**: Written conjunctions (`bởi vì`, `cho nên`, `tuy nhiên`, `mặc dù`, `chúng ta hãy`, `rất là`) are strictly prohibited in spoken conversational dialogue.
+
+5. **Law 5: The Domestic Prop & Biological Meal Continuity Standard (Gate 4E)**:
+   - In continuous timeline episodes, domestic props, meals, and medical items must maintain rigorous physical and temporal continuity.
+   - If an elder cooks postpartum katuk soup (`canh bồ ngót thịt bằm`) in the kitchen in Scene 09, Scene 10 must depict serving and eating that exact same dish in the bedroom.
+   - Contradictory meals (e.g. sudden appearance of catfish sour soup and braised claypot fish) without explicit temporal jumps are strictly prohibited and blocked by Gate 4E.
+
+---
+
+## 🔗 § 2.6. THE DRAMATIC SPINE & 4-WAY CROSS-SCENE DIALOGUE RELAY
+# (ĐỊNH LUẬT XƯƠNG SỐNG KỊCH TÍNH & GẬY TIẾP SỨC THOẠI 4 CHIỀU — ERADICATING BUBBLE DIALOGUE)
+
+> 🚨 **ABSOLUTE BAN ON "BUBBLE DIALOGUE" (CẤM TUYỆT ĐỐI THOẠI BONG BÓNG / CẢNH CÔ LẬP)**:  
+> A fatal amateur and raw AI defect is treating each 10-second scene as an isolated bubble—where characters speak trivialities, preach empty moralisms, or argue over petty chores disconnected from the central crisis. In cinema, scenes NEVER connect via *"And then..." (Và rồi...)*. They connect STRICTLY via **"Therefore..." (Bởi vì thế...)** or **"However / But..." (Nhưng mà...)**. Every spoken line must be a structural rivet driven into the episode's Dramatic Spine.
+
+### 1. The Dramatic Spine Equation & Central Dramatic Question (CDQ)
+Before a single word of dialogue is drafted, the entire episode MUST be locked to a single, indivisible **Dramatic Spine Equation**:
+
+$$\mathbf{DRAMATIC\ SPINE} = \mathbf{Super\text{-}Objective\ (Want)} + \mathbf{Deadly\ Obstacle\ (Resistance)} + \mathbf{Ticking\ Clock\ Stakes\ (Loss)}$$
+
+- **The Central Dramatic Question (CDQ)**: The single burning question that holds audience attention across 10 scenes (e.g., *"Will Nam extort his mother's kidney medicine money before the loan sharks chop off his fingers at 18:00?"* or *"Can Duyen protect her newborn from an unsafe folk feeding ritual without shattering her marriage?"*).
+- **The Spine Gate (Luật Kiểm Duyệt Xương Sống)**: Every line of dialogue across all 10 scenes must serve at least one of four functions:
+  1. *Escalate the Super-Objective* (Pushing closer to what is desperately wanted).
+  2. *Intensify the Obstacle* (Raising the wall of resistance or exposing a deeper secret).
+  3. *Tighten the Stakes* (Shortening the fuse of the ticking clock or increasing the cost of failure).
+  4. *Force an Irreversible Choice* (Backing a character into a moral corner).
+- **Immediate Disqualification**: Any dialogue volley spent on weather, ambient greetings, domestic chit-chat, or abstract moral lectures unrelated to the CDQ is classified as **Zero-Value Dramatic Waste** and must be excised immediately.
+
+---
+
+### 2. The 4-Way Cross-Scene Dialogue Relay (Gậy Tiếp Sức Thoại 4 Chiều)
+Dialogue between Scene $N$ and Scene $N+1$ must never start from scratch. Scene $N+1$ MUST receive a "baton" handed off from Scene $N$ across at least one of four structural vectors:
+
+```
+[SCENE N: EXIT ANCHOR]
+  │
+  ├─► Vector 1: CAUSE-AND-EFFECT CHAIN  ──► (Action/Ultimatum in Scene N forces instant reaction in Scene N+1)
+  ├─► Vector 2: KEYWORD ECHO & INVERSION ──► (Crucial word from Scene N echoed with bitter/ironic meaning in Scene N+1)
+  ├─► Vector 3: EMOTIONAL INERTIA       ──► (Physiological adrenaline/respiration/tremor inherited across the cut)
+  └─► Vector 4: PROP & SPATIAL ANCHOR   ──► (Physical item contested in Scene N dictates tactile focus in Scene N+1)
+  │
+  ▼
+[SCENE N+1: ENTRY BATON]
+```
+
+1. **Vector 1: Cause-and-Effect Chain (Mắt Xích Nhân - Quả — "Therefore / But")**:
+   - The final line or physical rupture of Scene $N$ must create an unbearable pressure that triggers the opening volley of Scene $N+1$.
+   - *Example*:
+     * *Scene $N$ Tail*: Nam slams the wooden door frame: *"Tao đếm tới ba, không đưa năm triệu là tao đốt trụi cái nhà này!"*
+     * *Scene $N+1$ Head*: Duyen steps in front of the altar, clutching the deed to her chest: *"Anh đốt đi! Đốt luôn cả cái bàn thờ cha để lại cho anh đi!"* (Direct causal retaliation; zero delay).
+2. **Vector 2: Keyword Echo & Semantic Inversion (Âm Vang Từ Khóa & Nghịch Đảo Nghĩa)**:
+   - Seize the most sensitive semantic word from the end of Scene $N$ and invert or weaponize its meaning in the first volley of Scene $N+1$.
+   - *Example*:
+     * *Scene $N$ Tail*: Duyen whispers with tears streaming: *"Má sắp **chết** rồi anh Nam..."*
+     * *Scene $N+1$ Head*: Nam grabs her wrist, eyes bloodshot: *"**Chết**? Tao mới là thằng chết trước chiều nay nếu tụi nó không thấy tiền!"* (Word "Chết" acts as the conductive wire between two worlds).
+3. **Vector 3: Emotional Inertia & Acoustic Aftershock (Quán Tính Cảm Xúc & Dư Chấn Âm Học)**:
+   - Biological emotional momentum cannot reset at a cut. If Scene $N$ ends in a screaming rupture (140 bpm pulse, ragged hyperventilation), Scene $N+1$ must inherit that physical state.
+   - The first 2.0s of Scene $N+1$ must feature audible paralinguistic residue: choked swallowing, shallow wheezing breath, or trembling silence before the first line is fired. A character who was weeping in Scene $N$ cannot speak casually in Scene $N+1$.
+4. **Vector 4: Prop & Physical Anchor Relay (Tiếp Sức Đạo Cụ & Không Gian Vật Lý)**:
+   - A key Chekhov prop named or handled in Scene $N$ becomes the physical focal point of Scene $N+1$.
+   - *Example*: Scene $N$ ends with the sound of keys jingling as they are shoved into an apron pocket. Scene $N+1$ opens on a medium close-up of hands desperately grappling to tear open that same apron pocket.
+
+---
+
+### 3. Dialogue as Tactical Action & Subtext-over-Exposition Protocol
+In professional cinema, characters never speak simply to transmit information. **Every spoken line is a tactical weapon**:
+
+1. **Tactical Action Verbs (Động Từ Tác Vụ Cho Mỗi Câu Thoại)**:
+   Before writing a line, the screenwriter must specify its internal dramatic verb:
+   - `[ATTACK / CORNER]`: Demolishing the counterpart's defenses; demanding surrender.
+   - `[PROBE / BAIT]`: Testing how much the counterpart knows; setting a verbal trap.
+   - `[DEFEND / SHIELD]`: Protecting a vulnerability, child, or sacred boundary.
+   - `[BARGAIN / MANIPULATE]`: Offering a conditional compromise to buy time.
+   - `[DESPERATE-STAND / MARTYR]`: Accepting personal ruin to protect what truly matters.
+2. **The Hemingway Subtext Rule (Băng Chìm — Subtext Over Surface Text)**:
+   - **Surface Text (Mặt Chữ)**: What the character literally utters.
+   - **Subtext (Ý Ngầm)**: What the character is desperately thinking or calculating.
+   - *Rule*: Never let a character state their raw emotional theme aloud (e.g., never say *"Tôi cảm thấy rất cô đơn và bị tổn thương"*). Express it through friction over mundane objects, silence, or contradictory aggression (e.g., *"Cất cái chén đó đi, đừng có để tôi thấy mặt nó nữa!"*).
+
+---
+
+### 4. The Cross-Scene Continuity Matrix Standard (Ma Trận Cầu Nối Liên Cảnh)
+For every episode roadmap in `setting.html` (Section 5) and production breakdown, each scene must document its dual connective anchors:
+
+| Scene Field | Directorial Function | Operational Example |
+| :--- | :--- | :--- |
+| **Dramatic Spine** | Episode Central Dramatic Question | *Nam attempts to steal 5M kidney medicine money before 18:00 debt deadline.* |
+| **Inbound Baton (Nhận gậy)** | Connection from previous scene | *Inherited from Scene 01: The aluminum tray crashing down; Duyen's scream "Trời ơi".* |
+| **Tactical Action** | Internal verb governing dialogue | `[ATTACK]` *Nam leverages the loan shark threat to extort the key.* |
+| **Core Spoken Line** | High-density punchline (≤18 words) | *"Năm giờ chiều tụi nó chặt tay tao! Đưa chìa khóa tủ mau!"* |
+| **Subtext** | Hidden psychological reality | *(Nam is terrified for his own life and feels immense shame, masked as vicious rage).* |
+| **Outbound Baton (Trao gậy)** | Hook / Question thrown to next scene | *Duyen swallows key / throws key out window $\rightarrow$ Scene 03 opens on search outside.* |
+
+---
+
+## 🗣️ § 2.7. THE 3-LAYER ORGANIC DIALOGUE ANATOMY & ANTI-CURTNESS STANDARD
+# (CÔNG THỨC 3 TẦNG TRỊ DỨT ĐIỂM THOẠI CỘC LỐC / TRỐNG KHÔNG / KHÔ KHỐC)
+
+> 🚨 **ABSOLUTE BAN ON CURT & ROBOTIC DIALOGUE (CẤM TUYỆT ĐỐI THOẠI CỘC LỐC / TRƠ KHẤC)**:  
+> When writers or AI over-compress dialogue to satisfy word caps, they frequently commit the fatal error of stripping all emotional connective tissue—producing curt, robotic commands like: *"Đưa tiền cho má mau!"* or *"Con nít phải ăn nhiều"*. These lines sound like military orders or AI prompt instructions, completely devoid of human warmth, kinship, vulnerability, or cultural soul.
+
+### 1. Root Causes of Curt Dialogue (Căn Bệnh Thoại Cộc Lốc)
+1. **Stripping Inception & Address (Mất Hô Ngữ & Thán Từ)**: Dropping natural emotional greetings and acoustic intakes (`Má ơi...`, `Anh ơi...`, `Trời ơi...`).
+2. **Dropping Sentence-Final Modal Particles (Bỏ Rơi Trợ Từ Tình Thái Đuôi Câu)**: In Vietnamese (Northern & Southern alike), 70% of human emotion and relational nuance resides in the final modal particles (`...nghen`, `...hả má?`, `...hết trơn`, `...chớ bộ`, `...dữ vậy`, `...hả giời?`, `...cơ chứ`). Stripping them leaves the line bare, harsh, and aggressive.
+3. **Absence of Respiration Pauses (Thiếu Nhịp Thở & Nốt Lặng)**: Rushing out words without ellipsis (`...`), choked swallows, or hesitation beats.
+4. **Sub-5-Word Staccato Traps**: Forcing lines down to 3–4 words turns actors into speech synthesizers instead of living humans.
+
+---
+
+### 2. The 3-Layer Organic Dialogue Formula (Công Thức Cấu Trúc Thoại 3 Tầng)
+Every spoken line across drama, romance, and domestic conflict must be constructed using the **3-Layer Organic Formula**:
+
+$$\mathbf{SPOKEN\ LINE} = \mathbf{[Layer\ 1:\ Acoustic\ Inception]} + \mathbf{[Layer\ 2:\ Dramatic\ Payload]} + \mathbf{[Layer\ 3:\ Modal\ Particle\ Landing]}$$
+
+```
+┌────────────────────────────────────────────────────────────────────────────────────────────────────────┐
+│                        THE 3-LAYER ORGANIC DIALOGUE ANATOMY                                            │
+├────────────────────────────────────────────────────────────────────────────────────────────────────────┤
+│ LAYER 1: ACOUSTIC INCEPTION (Hô ngữ & Thán từ khởi động)                                               │
+│ • Emotional Intake: "Má ơi...", "Anh ơi...", "Trời ơi...", "Ủa...", "Mèn đéc ơi...", "Dạ thưa má..."    │
+│ • Function: Establishes immediate biological empathy, vocal register, and relational power dynamic.   │
+├────────────────────────────────────────────────────────────────────────────────────────────────────────┤
+│ LAYER 2: DRAMATIC PAYLOAD (Nhân kịch tính & Hành động ngôn từ)                                         │
+│ • Tactical Core: Direct, conflict-driven verb phrase delivering the want, obstacle, or ultimatum.     │
+│ • Function: Moves the Dramatic Spine forward; strictly <= 6–8 words.                                  │
+├────────────────────────────────────────────────────────────────────────────────────────────────────────┤
+│ LAYER 3: MODAL PARTICLE LANDING (Trợ từ tình thái & Đệm giảm xóc văn hóa)                              │
+│ • Southern Dialect: "...nghen má", "...hả trời?", "...chớ bộ!", "...hết trơn", "...dữ vậy nè", "...hà"│
+│ • Northern Dialect: "...đấy à?", "...hả giời?", "...cơ chứ!", "...nhé anh", "...cơ đấy", "...được đâu"│
+│ • Function: Determines emotional temperature (tenderness, bitter irony, desperate plea, or defiance). │
+└────────────────────────────────────────────────────────────────────────────────────────────────────────┘
+```
+
+---
+
+### 3. The 8 to 14 Word Emotional Sweet Spot (Vùng Độ Dài Hoàng Kim)
+- **Sub-5-Word Trap**: Highly susceptible to sounding curt, dry, and unnatural unless executing a deliberate punchline or physical shock.
+- **The Sweet Spot (8 – 14 Words)**:
+  - Takes exactly **3.0s – 4.5s** of natural human delivery.
+  - Leaves the remaining **5.5s – 7.0s** of the 10-second clip for living micro-biomechanics: trembling breaths, eye contact shifts, tactile prop contact, and somatic aftershock.
+  - Fully immune to AI video diffusion lip-sync truncation.
+
+---
+
+### 4. Side-by-Side Directorial Transformation (Bảng Đối Chiếu Thực Tế)
+
+| Tình Huống Kịch Tính | ❌ Thoại Cộc Lốc (Robotic / Trơ Khấc) | ✅ Thoại Tròn Trịa Có Hồn (Chuẩn 3 Tầng) | Phân Tích Kỹ Thuật |
+| :--- | :--- | :--- | :--- |
+| **Đòi tiền thuốc khẩn cấp** | *"Đưa tiền cho má mau!"* *(5 từ — cộc lốc, khô khốc)* | *"Má ơi... đưa tiền thuốc cho má mau lên coi, trễ giờ rồi nè!"* *(13 từ)* | Có `Má ơi...` mở đầu nghẹn ngào, có hành động chính, có trợ từ giục giã `...lên coi` và cọc cược `trễ giờ rồi nè`. |
+| **Bảo vệ con dâu trước mẹ chồng** | *"Má đừng nói Duyên nữa."* *(5 từ — xấc xược, máy móc)* | *"Má ơi má nhỏ tiếng giùm con... Duyên thức ba đêm kiệt sức rồi má!"* *(14 từ)* | `Má ơi má...` thể hiện sự kính trọng nhưng tha thiết; đuôi câu kết bằng `...rồi má!` làm dịu xung đột gia đình. |
+| **Mẹ chồng xót cháu ép ăn** | *"Con nít phải ép ăn nhiều."* *(6 từ — như đọc sách báo)* | *"Trời đất quỷ thần ơi, con nít thời này phải ép ăn mới chắc dạ chớ bộ!"* *(15 từ)* | Thán từ Nam Bộ `Trời đất quỷ thần ơi` + trợ từ phản biện `...chớ bộ!` tạo nên khẩu khí bà mẹ chồng bộc trực, chân thực 100%. |
+| **Vợ tủi thân mất sữa** | *"Em hết sữa rồi, con đói."* *(6 từ — trần thuật vô cảm)* | *"Anh ơi... vắt hoài hổng ra sữa... con đói quặn ruột rồi nè anh..."* *(13 từ)* | Nốt lặng `...`, từ ngữ bình dân miền Nam `hổng ra`, tiếng gọi `Anh ơi...`, `...nè anh` tạo sự vỡ òa xót xa. |
+| **Từ chối đưa chìa khóa** | *"Tôi không đưa chìa khóa đâu."* *(6 từ — khô khan)* | *"Anh muốn lấy hả?... Anh bước qua xác em rồi hẵng đụng vô nghen!"* *(13 từ)* | Thách thức bằng câu hỏi tu từ `Anh muốn lấy hả?`, nốt ngắt nhịp, kết bằng vĩ tố đanh thép `...nghen!`. |
 
 ---
 
@@ -987,7 +1988,7 @@ Who speaks in a scene is determined by **power dynamics, psychological hierarchy
 ┌────────────────────────────────────────────────────────────────────────────────────────────────────────┐
 │                          THE UNIVERSAL 8-MODEL INTERACTION SUITE                                       │
 ├────────────────────────────────────────────────────────────────────────────────────────────────────────┤
-│ GROUP 1: MULTI-SPEAKER VOLLEYS (PURE TRACK B: MULTI-CAMERA MONTAGE TRỤC 180°)                          │
+│ GROUP 1: MULTI-SPEAKER VOLLEYS (PURE TRACK B: MULTI-SHOT MONTAGE TRỤC 180°)                            │
 │ • Model 1  : Symmetrical Binary Exchange (5s – 4s – 1s • 2 Volleys • ~16–18w • Duel / Banter / Comms)  │
 │ • Model 1B : Rapid-Fire Staccato Volleys (2s – 2s – 2s – 3s – 1s • 4 Volleys • Bickering / Tactical)   │
 │ • Model 2  : Group / Ensemble Exchange (3s – 3s – 3s – 1s • 3-Way Exchange • Council / Squad / Friends)│
@@ -998,7 +1999,7 @@ Who speaks in a scene is determined by **power dynamics, psychological hierarchy
 │ • Model 6  : Proximity Whisper & Intimate Sibilance (4s – 4.5s – 1.5s • Pillow-Talk / Hushed Stealth)  │
 │ • Model 8  : Subjective P.O.V. Direct Address (4.5s – 4.5s – 1.0s • 4th-Wall / Lover Gaze / Rescue)   │
 ├────────────────────────────────────────────────────────────────────────────────────────────────────────┤
-│ GROUP 3: SONIC-DECOUPLED & EXTERNAL AUDIO (TRACK A SINGLE CAMERA DOMINANCE)                            │
+│ GROUP 3: SONIC-DECOUPLED & EXTERNAL AUDIO (TRACK A SINGLE-SHOT CONTINUOUS DOMINANCE)                   │
 │ • Model 4  : Internal Monologue / Voice of Thought (V.O. • 12–16 words • Lips 100% Sealed)            │
 │ • Model 5  : Off-Screen Authority / Ambient Comms (O.S. • Intercom / Calling from Afar • 14–18 words) │
 ├────────────────────────────────────────────────────────────────────────────────────────────────────────┤
@@ -1010,8 +2011,8 @@ Who speaks in a scene is determined by **power dynamics, psychological hierarchy
 ---
 
 ### 1. Model 1: Symmetrical Binary Exchange (Giao Thoa Đối Xứng 2 Lượt)
-* **Timeline Blueprint**: `[00:00–00:05.0]` Shot 1 (5.0s) ➔ `[00:05.0–00:09.0]` Shot 2 (4.0s) ➔ `[00:09.0–00:10.0]` Shot 3 (1.0s).
-* **Camera Architecture**: **Pure Track B: Multi-Camera Shot-Reverse-Shot (2 Cuts across 180° axis)**.
+* **Timeline Blueprint**: Flexible shot breakdown based on dramatic intensity (1 continuous take or 2 shots as required by the script).
+* **Camera Architecture**: **Pure Track B: Multi-Shot Shot-Reverse-Shot (2 Cuts across 180° axis)**.
 * **Word Budget**: Strictly **16–18 words total** (~1.9 WPS average).
 * **Multi-Genre Directorial Applications**:
   - 🎭 **High Drama**: *The Golden Ratio Duel* — Speaker A formal challenge (~8–10w) ➔ Speaker B devastating truth retort (~7–8w) ➔ Choker stunned reaction.
@@ -1023,7 +2024,7 @@ Who speaks in a scene is determined by **power dynamics, psychological hierarchy
 
 ### 2. Model 1B: Rapid-Fire Staccato Volleys (Tung Hứng Dồn Dập Tốc Độ Cao)
 * **Timeline Blueprint**: `[00–02]` S1 ➔ `[02–04]` R1 ➔ `[04–06]` S2 ➔ `[06–09]` Retort 2 ➔ `[09–10]` Living Settle.
-* **Camera Architecture**: **Pure Track B: Multi-Camera Rapid Montage (4 Hard Cuts across 180° line)**.
+* **Camera Architecture**: **Pure Track B: Multi-Shot Rapid Montage (4 Hard Cuts across 180° line)**.
 * **Word Budget**: Strictly **16–18 words across 4 volleys** (~1.9–2.1 WPS).
 * **Multi-Genre Directorial Applications**:
   - 🎭 **High Drama**: *Stichomythia* — High-velocity verbal swordplay trading lethal arguments back-and-forth.
@@ -1060,7 +2061,7 @@ Who speaks in a scene is determined by **power dynamics, psychological hierarchy
 ### 5. Model 4: Internal Monologue / Voice of Thought (Độc Thoại Nội Tâm Tiềm Thức — V.O.)
 * **Timeline Blueprint**: `[00–04]` External Reality / Setting ➔ `[04–05]` Eye Lock ➔ `[05–09]` Resonant V.O. (~7–8w) ➔ `[09–10]` Living Settle.
 * **Directorial Intent**: Reveals subconscious desires, tactical planning, or secret identity. **LIPS REMAIN 100% FIRMLY SEALED**, completely eliminating AI mouth-warping artifacts while conveying profound depth.
-* **Camera Architecture**: **Track A: Single Continuous Camera (Static Tripod or Subtle Push-In)**.
+* **Camera Architecture**: **Track A: Single-Shot Continuous Take (Static Tripod or Subtle Push-In)**.
 * **Word Budget**: Strictly **12–16 words total**.
 * **Multi-Genre Directorial Applications**:
   - 🕵️ **Noir / Detective / Mystery**: P.O.V. on rain-slicked neon street; V.O.: *"The killer didn't leave through the door. He was waiting upstairs."* (~11w).
@@ -1082,7 +2083,7 @@ Who speaks in a scene is determined by **power dynamics, psychological hierarchy
 ---
 
 ### 7. Model 6: Proximity Whisper & Intimate Sibilance (Hội Thoại Thì Thào / Cự Ly Siêu Gần)
-* **Timeline Blueprint**: `[00–04]` Whisper 1 (~5–6w) ➔ `[04–08.5]` Whisper 2 (~5–6w) ➔ `[08.5–10]` Living Settle.
+* **Timeline Blueprint**: `[00–04]` Whisper 1 (~5–6w) ➔ `[04.0–00:10.0]` Whisper 2 (~5–6w) ➔ `[Terminal Settle]` Living Settle.
 * **Directorial Intent**: Low cadence (1.2–1.5 WPS), hushed sibilance, minimal lip travel, intense emotional proximity.
 * **Camera Architecture**: **Track A (Creeping lateral push) or Track B (Two tight OTS Macro Close-Ups)**.
 * **Word Budget**: Strictly **10–13 words total**.
@@ -1118,7 +2119,7 @@ Who speaks in a scene is determined by **power dynamics, psychological hierarchy
 ---
 
 ### 10. Model 0: Pure Physical & Atmospheric Eloquence (Động Lực Học Thuần Túy — 0 Words)
-* **Timeline Blueprint**: `[00–04]` Momentum Build ➔ `[04–09]` Emotional / Physical Peak ➔ `[09–10]` Living Organic Settle.
+* **Timeline Blueprint**: Dynamic narrative progression adapted to the dramatic beat (1 continuous take, 2 dynamic shots, or action cuts).
 * **Word Budget**: **EXACTLY 0 WORDS**.
 * **Multi-Genre Directorial Applications**:
   - 💖 **Romance**: *The Electric Gaze* — Two lovers across a crowded ballroom; eyes lock through dancing silhouettes; breath catches; gentle tilt of the head with a shy, radiant smile; hands brushing against a velvet curtain.
@@ -1178,12 +2179,38 @@ Who speaks in a scene is determined by **power dynamics, psychological hierarchy
 | **Mortal Threat** | *Liệu hồn đấy / Đừng trách* | *Coi chừng đó / Có ngày thấy cảnh* | Southern creates an immediate eerie premonition of physical doom. |
 | **Sentence-Ending Particles** | *...nhé, cơ mà, phỏng, thế à, cơ đấy* | *...đó, nè, há, nghen, chi vậy, dữ hôn* | Governs 80% of voice actor delivery inflection and emotional landing. |
 
+### 3.1 The Anti-Stiffness & Modal Particle Law (Luật Chống Thoại Cộc Lốc & Bắt Buộc Trợ Từ Tình Thái)
+- **STRICT PROHIBITION**: Screenwriters must NEVER write curt, robotic, declarative lines devoid of exclamations and emotional particles (e.g., *"Con tự lo được... má đừng bận lòng thêm"* or *"Tay mầy... mầy đi truyền nước biển hồi nào sao hổng nói tao hay?!"*). Such lines read like machine-translated subtitles, completely stripping characters of empathy, vulnerability, and Southwestern regional warmth.
+- **MANDATORY EXCLAMATIVE & MODAL PARTICLE ARCHITECTURE**:
+  - In moments of shock, grief, or familial confrontation, lines MUST incorporate organic interjections (*Trời ơi, Trời đất quỷ thần ơi, Mèn đéc ơi, Má ơi con lạy má, Anh ơi, Chị ơi là chị...*) and land on authentic regional particles (*...hả trời, ...hả mầy, ...nè má, ...nè con, ...chớ bộ, ...đâu hà, ...nghen con, ...hết trơn, ...đặng*).
+  - Every line must stay strictly within the `<= 18 words` ceiling while conveying rich, trembling, organic vernacular cadence.
+
 ### 4. Directorial Synthesis in Code Block 1 Video Prompts
 When directing Vietnamese dialogue in AI Video prompts:
 - For Northern delivery: Specify `voice cold, precise, clipped consonants, subtle sardonic inflection, taut jaw lip-sync`.
 - For Southern delivery: Specify `voice raw, resonant, dynamic melodic inflection, wide expressive lip travel, aggressive cadence`.
 
+
+### 5. The Pronoun Shift Law & Emotional Kinship Architecture (Luật Biến Thiên Đại Từ & Đẳng Cấp Xung Đột)
+
+> 💡 **CINEMATIC SUBTEXT THROUGH KINSHIP SHIFT**:
+> In Vietnamese dramatic screenwriting, pronouns are not static labels—they are dynamic emotional weapons. As conflict escalates across the 6 beats of an episode, **characters MUST shift their address terms (Pronoun Shift)** to weaponize psychological distance or signal emotional collapse.
+
+#### 1. The 4-Stage Kinship Pronoun Escalation Ladder (Bậc Thang Biến Thiên Đại Từ 4 Giai Đoạn)
+
+| Dramatic Phase | Emotional Voltage | Southern Dialect Shift (Mẹ Chồng - Nàng Dâu) | Northern Dialect Shift (Cha - Con / Vợ - Chồng) | Dramatic Impact & Subtext |
+| :--- | :--- | :--- | :--- | :--- |
+| **Phase 1: Baseline / Setup** | Warm / Deferent (3–5/10) | `Má - Con` ("Má ơi, nôi phẳng bé dễ thở") | `Mẹ - Con` / `Anh - Em` | Blood-tie intimacy, mutual respect, family harmony. |
+| **Phase 2: Friction / Sarcasm** | Cold / Distant (6–7/10) | `Tôi - Chị Duyên / Cô` ("Tôi đâu dám phiền chị") | `Tôi - Cô / Chị` ("Tôi nói cho cô hay") | Psychological severing: stripping family status, treating as outsider. |
+| **Phase 3: Climax Explosion** | Visceral Fury (8–10/10) | `Tao - Mày` ("Nhà này tao còn sống, chưa tới lượt mày") | `Tao - Mày` ("Mày cút khỏi nhà tao") | Total ego meltdown, primal territorial conflict, raw vulnerability. |
+| **Phase 4: Anagnorisis & Catharsis**| Transcendent Tearful Pardon | `Má - Con` ("Duyên... Má xin lỗi con, má bậy quá") | `Mẹ - Con` ("Con ơi... Mẹ hiểu rồi") | Emotional catharsis: returning to intimate blood-tie brings audience to tears. |
+
+#### 2. The Single Dramatic Spine Mandate (Luật Trục Xung Đột Cảm Xúc Duy Nhất)
+- **STRICT PROHIBITION**: An episode (60s–120s) must NEVER split into disjointed vignettes or unrelated debates (e.g. arguing about baby gear, then abruptly cutting to external artisans crafting props).
+- **MANDATORY INVARIANCE**: The entire episode must serve **ONE SINGLE EMOTIONAL CORE**. Every line of dialogue across all scenes must link via **THEREFORE / BUT** and **Keyword Handoff**, culminating in emotional transcendence.
+
 ---
+
 
 ## ⚡ § 5. THE PROP-SPEECH TACTILE LOCKING LAW (ACROSS ALL GENRES)
 
@@ -1249,9 +2276,9 @@ All dialogue scenes in the Sven Production Engine select from the **8 Master Dia
 | **Model 1B** | **The Rapid Staccato Duel** | `[00-02]` S1 ➔ `[02-04]` R1 ➔ `[04-06]` S2 ➔ `[06-09]` Check ➔ `[09-10]` Settle| `1.9 – 2.1 WPS` | ~16–18 words | Pure Track B (4-Cut Rapid) |
 | **Model 2** | **Council / Mob 3-Way** | `[00-03]` A1 ➔ `[03-06]` A2 ➔ `[06-09]` Hero ➔ `[09-10]` Settle | `1.8 – 2.0 WPS` | ~15–18 words | Pure Track B (3-Way Coverage) |
 | **Model 3** | **Solo Strike & Shock** | `[00-04]` Verdict ➔ `[04-09]` Silent Shock ➔ `[09-10]` Settlee | `1.8 – 2.0 WPS` | ~7–9 words | Track A Push or Track B |
-| **Model 4** | **Internal Monologue V.O.** | `[00-04]` External ➔ `[04-05]` Eye Lock ➔ `[05-09]` V.O. ➔ `[09-10]` Settlee | `1.4 – 1.7 WPS` | ~12–16 words | Track A Single (Static) |
+| **Model 4** | **Internal Monologue V.O.** | `[00-04]` External ➔ `[04-05]` Eye Lock ➔ `[05-09]` V.O. ➔ `[09-10]` Settlee | `1.4 – 1.7 WPS` | ~12–16 words | Track A Single-Shot (Static) |
 | **Model 5** | **Off-Screen Authority O.S.**| `[00-04]` O.S. Decree ➔ `[04-05]` Shock Wave ➔ `[05-09]` Retort ➔ `[09-10]` Settle| `1.7 – 2.0 WPS` | ~14–18 words | Track A or Track B |
-| **Model 6** | **Conspiratorial Whisper** | `[00-04]` Whisper 1 ➔ `[04-08.5]` Whisper 2 ➔ `[08.5-10]` Shadow Fade | `1.2 – 1.4 WPS` | ~10–13 words | Track A Glide or Track B |
+| **Model 6** | **Conspiratorial Whisper** | `[00-04]` Whisper 1 ➔ `[04.0-10.0]` Whisper 2 ➔ `[Terminal Flow]` Shadow Fade | `1.2 – 1.4 WPS` | ~10–13 words | Track A Glide or Track B |
 | **Model 7** | **Interrupted Cut-Off** | `[00-03.5]` Line (Cut) ➔ `[03.5-05]` Impact ➔ `[05-09]` Retort ➔ `[09-10]` Settle| `2.0 WPS $	o$ Cut`| ~12–15 words | Pure Track B (Collision Cut) |
 | **Model 8** | **Subjective P.O.V.** | `[00-04.5]` Opponent Down Lens ➔ `[04.5-09]` P.O.V. Hand Retort ➔ `[09-10]` Settle| `1.7 – 2.0 WPS` | ~14–17 words | Subjective P.O.V. |
 | **Model 0** | **Pure Action Kinetics** | `[00-04]` Momentum ➔ `[04-09]` Collision ➔ `[09-10]` Settlee | **0.0 WPS** | **0 words** | Track A or Track B |
@@ -1311,10 +2338,10 @@ To avoid AI diffusion/video model physics hallucinations (limb morphing, blurry 
 ### Protocol 1: Dialogue Duel Blocking (Models 1, 1B, 2, 7)
 ```
 ┌─────────────────────────────────┐     ┌─────────────────────────────────┐     ┌─────────────────────────────────┐
-│ SHOT 1: VERBAL ADVANCE          │ ──► │ SHOT 2: RETORT COLLISION        │ ──► │ SHOT 3: SILENT REACTION (1.0s)  │
-│ [00:00–00:0X.0]                 │     │ [00:0X.0–00:09.0]               │     │ [00:09.0–00:10.0]               │
-│ Speaker A steps in, speaks L1.  │     │ Seamless link (0s gap). Retort. │     │ STRICTLY 0 SPOKEN WORDS.        │
-│ Optical focus locked on A.      │     │ Optical focus locked on B.      │     │ Lips sealed, living organic settle\.  │
+│ BEAT 1: VERBAL INITIATION       │ ──► │ BEAT 2: COUNTER / CLIMAX        │ ──► │ RESOLUTION: ORGANIC LANDING     │
+│ [Dynamic Initiation: 00:00–04]  │     │ [Dynamic Counter: 00:04–09.5]   │     │ [Flow to 00:10.0 Unbroken Take] │
+│ Speaker A steps in, speaks L1.  │     │ Seamless link. Speaker B retorts│     │ Natural emotional landing, lips │
+│ Optical focus locked on A.      │     │ Optical focus locked on B.      │     │ closed, fluid biological settle.│
 └─────────────────────────────────┘     └─────────────────────────────────┘     └─────────────────────────────────┘
 ```
 
@@ -1458,36 +2485,36 @@ $$\mathbf{Character\ Name：" Spoken\ Line\ "\ （\ 1.\ Timbre\ \&\ WPS\ ,\ 2.\ 
 ```text
 △ [00:00–00:05.0] Shot Medium Close-Up | Camera Setup A (OTS past Jun's shoulder) | Slow push-in:
 Eun-ji stands at frame-left under the glowing paper lanterns of the night market, steam rising from two bamboo skewers in her hands. Optical focus locked on Eun-ji. Jun maintains a quiet fond gaze at frame-right.
-Eun-ji：" You always pretend you are not hungry, Jun! "（voice playful and melodious at 1.8 WPS, lips parting dynamically in radiant lip-sync, eyes crinkling in affectionate teasing, soft amber lantern warmth on cheeks — fond domestic teasing）
+Eun-ji teases : “ You always pretend you are not hungry, Jun! ” (Voice of a 24-year-old woman; voice playful and melodious at 1.8 WPS, lips parting dynamically in radiant lip-sync, eyes crinkling in affectionate teasing, soft amber lantern warmth on cheeks — fond domestic teasing)
 
 △ [00:05.0–00:09.0] Shot Medium Close-Up | Camera Setup B (Reverse OTS past Eun-ji's shoulder) | Seamless cut:
 Connecting immediately without dead pause: Jun takes one skewer from her hand, taking a warm bite as his eyes soften. Optical focus locked on Jun.
-Jun：" Only because food tastes better when you choose it. "（voice low and warm at 1.7 WPS, lips moving in gentle genuine lip-sync, lantern specular gleam in amber pupils — quiet heartfelt flirtation）
+Jun replies : “ Only because food tastes better when you choose it. ” (Voice of a 26-year-old man; voice low and warm at 1.7 WPS, lips moving in gentle genuine lip-sync, lantern specular gleam in amber pupils — quiet heartfelt flirtation)
 
 △ [00:09.0–00:10.0] Shot Two-Shot Settle | Camera Setup C | Static resting frame:
-Both smiling shyly under the canopy of glowing lanterns. STRICTLY ZERO SPOKEN DIALOGUE. Eun-ji looks down with a soft blush as steam swirls between them. Concluding with a smooth deceleration into a living organic settle, maintaining subtle respiration and ambient drifting steam, strictly zero frozen frames.
+Both smiling shyly under the canopy of glowing lanterns. Eun-ji looks down with a soft blush as steam swirls between them. Concluding with a smooth deceleration into an organic resting frame, maintaining subtle respiration and ambient drifting steam, strictly zero frozen frames.
 ```
 
 ### Blueprint B: Action / Tactical (Model 1B Rapid Staccato)
 ```text
 △ [00:00–00:02.0] Shot Low-Angle MCU | Setup A | Rapid push-in:
 Kael at frame-left ducks behind concrete barrier, slamming fresh magazine into rifle:
-Kael：" Flank left on three! "（barked tactical staccato at 2.1 WPS, crisp aggressive lip-sync, muzzle flash reflections — tactical directive）
+Kael barks : “ Flank left on three! ” (Voice of a 30-year-old operative; barked tactical staccato at 2.1 WPS, crisp aggressive lip-sync, muzzle flash reflections — tactical directive)
 
 △ [00:02.0–00:04.0] Shot Low-Angle MCU | Setup B | Instant cut:
 Vance at frame-right sprays covering fire down corridor, brass casings tumbling:
-Vance：" I am dry on ammo! "（harsh breathless rasp at 2.2 WPS, wide focused eyes — emergency callout）
+Vance yells : “ I am dry on ammo! ” (Voice of a 28-year-old soldier; harsh breathless rasp at 2.2 WPS, wide focused eyes — emergency callout)
 
 △ [00:04.0–00:06.0] Shot Medium Action | Setup A | Match cut:
 Kael slides spare magazine across tiled floor:
-Kael：" Take my sidearm, move! "（urgent commanding shout at 2.2 WPS, lips moving in rapid lip-sync — split-second support）
+Kael shouts : “ Take my sidearm, move! ” (Voice of a 30-year-old operative; urgent commanding shout at 2.2 WPS, lips moving in rapid lip-sync — split-second support)
 
 △ [00:06.0–00:09.0] Shot Eye-Level Close-Up | Setup B | Tightening focus:
 Vance catches magazine mid-slide, slamming it into breach with a sharp metallic click:
-Vance：" Breaching the primary vault now! "（defiant roar at 2.0 WPS, jaw flexing in intense focus — climactic execution）
+Vance roars : “ Breaching the primary vault now! ” (Voice of a 28-year-old soldier; defiant roar at 2.0 WPS, jaw flexing in intense focus — climactic execution)
 
 △ [00:09.0–00:10.0] Shot Wide Over-Shoulder | Setup C | Deceleration settle:
-Both leaning shoulder-to-shoulder behind blast shield as smoke billows. STRICTLY ZERO SPOKEN DIALOGUE. Heavy tactical breathing, sparks drifting in air. Concluding in a living organic settle with subtle respiration and ambient dust drift, zero frozen frames.
+Both leaning shoulder-to-shoulder behind blast shield as smoke billows. Heavy tactical breathing, sparks drifting in air. Concluding in an organic resting frame with subtle respiration and ambient dust drift, zero frozen frames.
 ```
 
 ---
@@ -1663,7 +2690,7 @@ Every major twist (TW-01 to TW-20) MUST be physically anchored into an observabl
 **Resolution Rules:**
 - Visualized through the **180° Transformed Echo Prop** planted in Beat 2 (Setup).
 - Natural causality from the character's own choices — not divine deus ex machina.
-- Beat 6 (Echo) must conclude with an **independent moral maxim (<15 words)**.
+- Beat 6 (Echo) concludes with a **closing image that answers the opening image** (a spoken maxim only with a `BREAK:` line — Doctrine §8.8).
 
 ---
 
@@ -1711,6 +2738,8 @@ TARGET EMOTION: [Emotion audience will feel after watching]
 
 ## § TWIST BANK — 12 CINEMATIC TYPES & 3-WAVE CLIMAX ANATOMY
 
+> **Same catalog as Part IV, shorter names.** Record the TW code in the Spine TWIST row (Doctrine §9.9): Consequence → TW-02/14 · Identity → TW-05 · Perspective → TW-04/08 · Reverse Role → TW-09/12 · Hidden Kindness → TW-10/13 · Symbolic → TW-19 · Full Circle → TW-11 · Moral Awakening → TW-15 · Redemption → TW-06 · Forgiveness → TW-07 · Redirect → TW-03/20 · Secret Connection → TW-16. The 3-wave climax is one option; the twist budget is one major plus one or two minor per ~100 s episode (§9.7).
+
 #### 🎬 4-STAGE DYNAMIC TWIST PROGRESSION
 1. **Stage 1: Setup (Planting Belief & Wound Prop)** [Beats 1–2]: Plant the cognitive gap, flawed premise, and physical Wound Prop.
 2. **Stage 2: Misdirect (False Confidence & Shadow Maneuvers)** [Beat 3]: Reinforce protagonist's false control; Antagonist seals exits.
@@ -1718,7 +2747,7 @@ TARGET EMOTION: [Emotion audience will feel after watching]
    - *Wave 1 (Identity / Trap)*: The supposed victim or ally executes the real trap.
    - *Wave 2 (Physical / Loss)*: Material, bodily, or structural devastation.
    - *Wave 3 (Karma & Ego Death)*: Protagonist recognizes they created their own doom. Total collapse.
-4. **Stage 4: Payoff & Transformation (Reverse Rescue & Echo Prop)** [Beats 5–6]: Unexpected grace + 180° prop transformation + closing maxim.
+4. **Stage 4: Payoff & Transformation (Reverse Rescue & Echo Prop)** [Beats 5–6]: Unexpected grace + 180° prop transformation + closing image.
 
 | # | Twist Type | Description & Reversal Mechanism |
 |---|---|---|
@@ -1737,42 +2766,69 @@ TARGET EMOTION: [Emotion audience will feel after watching]
 
 ---
 
-## § SCENE ALLOCATION — AUTOMATIC CALCULATION PROCESS
+## § SCENE ALLOCATION — THE INVARIANT 10-SECOND SCENE ATOM ENGINE
+# (ĐỊNH LUẬT BẤT BIẾN: MỌI VIDEO ĐỀU ĐƯỢC CẤU THÀNH TỪ CÁC CẢNH ĐÚNG 10.0 GIÂY)
 
-### Step 1 — Determine Format & Duration
+> [!CAUTION]
+> **ABSOLUTE LAW: ZERO ARBITRARY FRACTIONAL SECONDS (TUYỆT ĐỐI CẤM GIÂY LẺ)**:
+> In the Sven AI Video Production Pipeline, **every scene generated is EXACTLY 10.0 SECONDS** (`00:00–00:10`, `00:10–00:20`, `00:20–00:30`, etc.).
+> There are NO 3-second, 7-second, 12-second, or 35-second scenes.
+> Total duration $T$ of any video or episode MUST ALWAYS satisfy:
+> $$\mathbf{T = N \times 10.0\ \text{Seconds}\quad (N \in \mathbb{Z}^+)}$$
+> All dramatic beats are mapped to **WHOLE 10-SECOND SCENE ATOMS**.
 
-| Priority | Condition | Action |
-|---|---|---|
-| 1 | User specifies duration (minutes/seconds) | Calculate total duration $T$; allocate 6 Beats per % table |
-| 2 | User specifies format but not duration | Short Film → default 60s–120s (6 Beats). Series → ask episode count & duration/episode |
-| 3 | Nothing specified | Default **Short Film 6 Beats (~60s to 120s)** |
+### Step 1 — Determine Video Duration & Exact Scene Count ($N$)
 
-### Step 2 — Apply 6-Beat % Allocation Table
+1. **Short Film 60s**: Exactly **6 Scenes × 10s = 60s** (Standard micro-short).
+2. **Short Film 90s**: Exactly **9 Scenes × 10s = 90s** (Extended short).
+3. **Standard Episode / Short Film 120s**: Exactly **12 Scenes × 10s = 120s / 2m00s** (Standard web-drama episode).
+4. **Custom Multi-Episode Series**: Each episode has $N$ scenes (default $N = 12$ scenes = 120s).
 
-```
-Beat 1 (Hook)     = 3% of total runtime (~3s)
-Beat 2 (Setup)    = 12% of total runtime (~12s)
-Beat 3 (Drama)    = 35% of total runtime (~35s) — 60% Spoken Conflict
-Beat 4 (Climax)   = 30% of total runtime (~30s) — 3-Wave Ego Death
-Beat 5 (Release)  = 12% of total runtime (~12s) — Thermal Shock chilly pale daylight ➔ warm amber glow
-Beat 6 (Echo)     = 8% of total runtime (~8s) — Echo Prop + Maxim <15 words
-```
+---
+
+### Step 2 — Exact Beat-to-Scene Quantization Lookup Tables
+
+#### Table A: 60-Second Video (Exactly 6 Scenes × 10s = 60s)
+* **Scene 01 [00:00–00:10] (10s)**: **BEAT 1 — HOOK** (Visual Paradox, Cognitive Gap & Frozen Potential)
+* **Scene 02 [00:10–00:20] (10s)**: **BEAT 2 — SETUP** (Old World, Generational Root Wound & Wound Prop Plant)
+* **Scene 03 [00:20–00:30] (10s)**: **BEAT 3A — DRAMA 1** (Flawed Tactics & Ideological Spoken Clash ≥60% Dialogue)
+* **Scene 04 [00:30–00:40] (10s)**: **BEAT 3B — DRAMA 2** (Escalation, Near-Miss Obstruction & Sealed Exits)
+* **Scene 05 [00:40–00:50] (10s)**: **BEAT 4 — CLIMAX** (3-Wave Truth Bomb, All Hope Lost & Ego Death · Peak 10/10)
+* **Scene 06 [00:50–01:00] (10s)**: **BEAT 5 & 6 — RELEASE & ECHO** (Thermal Shock ➔ Warm Hearth, 180° Echo Prop Payoff & Closing Image)
+
+#### Table B: 90-Second Video (Exactly 9 Scenes × 10s = 90s)
+* **Scene 01 [00:00–00:10] (10s)**: **BEAT 1 — HOOK** (Visual Paradox & 3s Hook)
+* **Scene 02 [00:10–00:20] (10s)**: **BEAT 2 — SETUP** (Old World & Wound Prop Plant)
+* **Scene 03–05 [00:20–00:50] (30s = 3 Scenes)**: **BEAT 3 — DRAMA** (Adversarial Collision & Escalating Stakes)
+* **Scene 06–07 [00:50–01:10] (20s = 2 Scenes)**: **BEAT 4 — CLIMAX** (Wave 1 Trap ➔ Wave 2 Loss ➔ Wave 3 Ego Death)
+* **Scene 08 [01:10–01:20] (10s)**: **BEAT 5 — RELEASE** (Thermal Shock, Grace & Reverse Rescue)
+* **Scene 09 [01:20–01:30] (10s)**: **BEAT 6 — ECHO** (180° Echo Prop Transformation & Community Harmony)
+
+#### Table C: 120-Second Video / Standard Episode (Exactly 12 Scenes × 10s = 120s / 2m00s)
+* **Scene 01 [00:00–00:10] (10s = 1 Scene)**: **BEAT 1 — HOOK** (Cognitive Gap & High-Stakes Paradox)
+* **Scene 02–03 [00:10–00:30] (20s = 2 Scenes)**: **BEAT 2 — SETUP** (Root Trauma Origin, Hamartia & Wound Prop)
+* **Scene 04–07 [00:30–01:10] (40s = 4 Scenes)**: **BEAT 3 — DRAMA** (Verbal Fencing, Near-Miss Obstruction & Sealed Exits)
+* **Scene 08–10 [01:10–01:40] (30s = 3 Scenes)**: **BEAT 4 — CLIMAX** (3-Wave Truth Bomb ➔ Rock Bottom ➔ Ego Death)
+* **Scene 11 [01:40–01:50] (10s = 1 Scene)**: **BEAT 5 — RELEASE** (Thermal Shock Cold ➔ Amber Warmth, Grace)
+* **Scene 12 [01:50–02:00] (10s = 1 Scene)**: **BEAT 6 — ECHO** (Transformed World, 180° Echo Prop Payoff, Closing Image / Caused Cliffhanger)
+
+---
 
 ### Step 3 — Mandatory Metadata Output
 
 ```
 FORMAT           : [Short Film / Multi-Episode Series]
 GENRE            : [Drama / Action / Romance / Psychological / ...]
-TOTAL DURATION   : [X minutes Y seconds = Z seconds]
-EPISODE COUNT    : [1 (Short Film) / N episodes (Series)]
+TOTAL DURATION   : [X Scenes × 10.0s = Total Duration in Seconds (e.g., 6 Scenes × 10s = 60s)]
+SCENE COUNT      : [Exact Integer N, e.g., 6 / 9 / 12 Scenes]
 NARRATIVE STRUCT : [A–G + 1 explanatory sentence]
 HOOK TECHNIQUE   : #N — [name] | Reason: [1 sentence]
 HOOK→SETUP BRIDGE: [Bridge type — specific element]
 WOUND PROP (B2)  : [Name & Initial Traumatic State]
 ECHO PROP (B6)   : [180° Physical Transformed State]
-THERMAL POLARITY : Cold chilly pale daylight (Beat 4.3) ➔ Warm warm amber glow (Beat 5.1) | [Specific visual cues]
+THERMAL POLARITY : Cold chilly pale daylight (Beat 4) ➔ Warm amber glow (Beat 5) | [Specific visual cues]
 CAST DYNAMICS    : B1: Solo | B2: A vs Past | B3: A vs B1 | B4: A Solo | B5: A + B2 | B6: A + C
-BEAT ALLOCATION  : B1(3%)=[s] | B2(12%)=[s] | B3(35%)=[s] | B4(30%)=[s] | B5(12%)=[s] | B6(8%)=[s]
+SCENE ALLOCATION : Scene 01 (10s) ➔ Scene 02 (10s) ➔ ... ➔ Scene N (10s) [100% compliant with 10s atom law]
 ```
 
 ---
@@ -1822,7 +2878,7 @@ Uniform pacing (twelve equal 8.3% blocks) destroys retention because viewer drop
   1. *The Provocation* (Antagonist strikes arrogantly, 4–8 words).
   2. *The 1.5-Second Somatic Gaze Arrest* (Protagonist freezes in cold composure; unblinking eyes, masseter jaw clench; strictly 0 spoken words).
   3. *The Fatal Reversal* (Protagonist delivers the undeniable counter-truth, 6–10 words).
-- **The 3 Master Reversal Archetypes**:
+- **The 3 Master Reversal Archetypes** *(genre tropes the audience already expects — list them as expected choices in the Cliché Audit, Doctrine §8.6, and use one only deliberately, with its plants on screen, §9.7)*:
   - *The Concealed Titan (`The Hidden Master`)*: Antagonist mocks humble status ➔ Protagonist activates dormant executive/military authority ➔ Antagonist collapses.
   - *The Sacred Token (`Secret Lineage`)*: Expelled protagonist revealed as rightful imperial heir when royal patriarch arrives.
   - *The Forged Contract Counter-Ambush (`Minute-89 Reversal`)*: Traitor gloats over stolen company/debt ➔ Protagonist reveals the document was an undercover sting operation; enforcers enter.

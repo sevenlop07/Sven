@@ -1,0 +1,1124 @@
+<!DOCTYPE html>
+<html lang="vi">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Tập 01: Bức Ảnh Bị Xóa Phút 89 (9 Cảnh · Tối Đa 3 Nhân Vật: Chính Vs. Phản Diện Tình Huống) — Lớp Mình Có Chuyện (Gạo House)</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Be+Vietnam+Pro:ital,wght@0,400;0,500;0,600;0,700;0,800;1,400&family=JetBrains+Mono:wght@400;500;600;700&display=swap" rel="stylesheet">
+  <style>
+    :root {
+      --bg: #0B0F17;
+      --card: #131B2E;
+      --card-alt: #19233C;
+      --border: #263554;
+      --border-highlight: #3B82F6;
+      --text: #F3F4F6;
+      --muted: #9CA3AF;
+      --gold: #F59E0B;
+      --emerald: #10B981;
+      --cyan: #06B6D4;
+      --rose: #F43F5E;
+      --indigo: #6366F1;
+      --orange: #EA580C;
+      --code-bg: #070A10;
+    }
+    * { box-sizing: border-box; margin: 0; padding: 0; }
+    body {
+      font-family: 'Be Vietnam Pro', sans-serif;
+      background-color: var(--bg);
+      color: var(--text);
+      line-height: 1.65;
+      padding-bottom: 90px;
+    }
+    .container {
+      max-width: 1280px;
+      margin: 0 auto;
+      padding: 0 24px;
+    }
+    header {
+      background: linear-gradient(135deg, #1E1B4B 0%, #0F172A 55%, #064E3B 100%);
+      border-bottom: 1px solid var(--border);
+      padding: 40px 0 32px 0;
+      margin-bottom: 32px;
+    }
+    .badge {
+      display: inline-flex;
+      align-items: center;
+      gap: 6px;
+      padding: 5px 12px;
+      border-radius: 999px;
+      font-size: 11.5px;
+      font-weight: 700;
+      text-transform: uppercase;
+      letter-spacing: 0.7px;
+      margin-right: 8px;
+      margin-bottom: 10px;
+    }
+    .badge-gold { background: rgba(245, 158, 11, 0.15); color: var(--gold); border: 1px solid rgba(245, 158, 11, 0.35); }
+    .badge-emerald { background: rgba(16, 185, 129, 0.15); color: var(--emerald); border: 1px solid rgba(16, 185, 129, 0.35); }
+    .badge-cyan { background: rgba(6, 182, 212, 0.15); color: var(--cyan); border: 1px solid rgba(6, 182, 212, 0.35); }
+    .badge-rose { background: rgba(244, 63, 94, 0.15); color: var(--rose); border: 1px solid rgba(244, 63, 94, 0.35); }
+
+    h1 {
+      font-size: 32px;
+      font-weight: 800;
+      letter-spacing: -0.5px;
+      color: #FFFFFF;
+      margin-bottom: 10px;
+    }
+    .subtitle {
+      font-size: 15px;
+      color: #D1D5DB;
+      max-width: 1060px;
+      margin-bottom: 22px;
+    }
+    .top-bar {
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      flex-wrap: wrap;
+      gap: 16px;
+      background: rgba(19, 27, 46, 0.9);
+      border: 1px solid var(--border);
+      padding: 16px 22px;
+      border-radius: 14px;
+      margin-bottom: 28px;
+    }
+    .master-btn {
+      background: linear-gradient(135deg, var(--gold), var(--orange));
+      color: #000;
+      font-weight: 800;
+      border: none;
+      padding: 10px 20px;
+      border-radius: 10px;
+      cursor: pointer;
+      font-size: 13.5px;
+      transition: all 0.2s;
+    }
+    .master-btn:hover {
+      transform: translateY(-2px);
+      box-shadow: 0 6px 20px rgba(245, 158, 11, 0.35);
+    }
+
+    .director-lock {
+      background: var(--card);
+      border: 1px solid var(--border);
+      border-left: 5px solid var(--gold);
+      border-radius: 14px;
+      padding: 22px 26px;
+      margin-bottom: 30px;
+    }
+    .director-lock h2 {
+      font-size: 18px;
+      color: var(--gold);
+      margin-bottom: 12px;
+      text-transform: uppercase;
+      letter-spacing: 0.5px;
+    }
+
+    .scene-card {
+      background: var(--card);
+      border: 1px solid var(--border);
+      border-radius: 16px;
+      padding: 28px;
+      margin-bottom: 32px;
+      box-shadow: 0 10px 30px rgba(0, 0, 0, 0.25);
+    }
+    .scene-header {
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      flex-wrap: wrap;
+      gap: 12px;
+      border-bottom: 1px solid var(--border);
+      padding-bottom: 16px;
+      margin-bottom: 20px;
+    }
+    .scene-title {
+      font-size: 20px;
+      font-weight: 800;
+      color: #FFF;
+    }
+    .time-tag {
+      background: rgba(6, 182, 212, 0.15);
+      color: var(--cyan);
+      border: 1px solid rgba(6, 182, 212, 0.35);
+      padding: 4px 12px;
+      border-radius: 8px;
+      font-family: 'JetBrains Mono', monospace;
+      font-size: 12.5px;
+      font-weight: 700;
+    }
+
+    .audit-grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(260px, 1fr));
+      gap: 14px;
+      margin-bottom: 20px;
+    }
+    .audit-box {
+      background: var(--card-alt);
+      border: 1px solid var(--border);
+      border-radius: 10px;
+      padding: 14px;
+      font-size: 13px;
+    }
+    .audit-label {
+      font-size: 11px;
+      font-weight: 700;
+      text-transform: uppercase;
+      color: var(--gold);
+      margin-bottom: 6px;
+      letter-spacing: 0.5px;
+    }
+
+    .dialogue-section {
+      background: rgba(7, 10, 16, 0.6);
+      border: 1px solid var(--border);
+      border-radius: 12px;
+      padding: 18px;
+      margin-bottom: 20px;
+    }
+    .dia-header {
+      font-size: 12px;
+      font-weight: 800;
+      text-transform: uppercase;
+      color: var(--emerald);
+      margin-bottom: 12px;
+      letter-spacing: 0.6px;
+    }
+    .dia-item {
+      padding: 10px 14px;
+      border-left: 3px solid var(--emerald);
+      background: var(--card-alt);
+      border-radius: 0 8px 8px 0;
+      margin-bottom: 10px;
+    }
+    .dia-item:last-child { margin-bottom: 0; }
+    .dia-speaker {
+      font-weight: 700;
+      color: var(--gold);
+      font-size: 13px;
+      margin-right: 8px;
+    }
+    .dia-spoken-quote {
+      font-weight: 600;
+      color: #FFFFFF;
+      font-size: 14px;
+    }
+    .dia-vn-dub {
+      font-size: 12px;
+      color: var(--muted);
+      margin-top: 4px;
+      font-style: italic;
+    }
+    .silent-banner {
+      padding: 12px 16px;
+      border-left: 4px solid var(--cyan);
+      background: rgba(6, 182, 212, 0.08);
+      border-radius: 0 8px 8px 0;
+      color: #A5F3FC;
+      font-size: 13px;
+    }
+
+    .block-wrap {
+      margin-top: 18px;
+    }
+    .block-header {
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      margin-bottom: 8px;
+    }
+    .block-label {
+      font-size: 12px;
+      font-weight: 800;
+      text-transform: uppercase;
+      letter-spacing: 0.6px;
+    }
+    .copy-btn {
+      background: rgba(255, 255, 255, 0.08);
+      border: 1px solid var(--border-highlight);
+      color: var(--text);
+      padding: 5px 12px;
+      border-radius: 7px;
+      font-size: 11.5px;
+      font-weight: 600;
+      cursor: pointer;
+      transition: all 0.2s;
+    }
+    .copy-btn:hover {
+      background: var(--gold);
+      color: #000;
+      border-color: var(--gold);
+    }
+    pre.prompt-display, pre.handover-display {
+      background: var(--code-bg);
+      border: 1px solid var(--border);
+      border-radius: 10px;
+      padding: 16px;
+      font-family: 'JetBrains Mono', monospace;
+      font-size: 12px;
+      color: #E2E8F0;
+      line-height: 1.6;
+      white-space: pre-wrap;
+      word-break: break-word;
+    }
+    pre.handover-display {
+      border-left: 4px solid var(--cyan);
+      color: #A5F3FC;
+    }
+
+    #toast {
+      position: fixed;
+      bottom: 24px;
+      right: 24px;
+      background: var(--emerald);
+      color: #000;
+      font-weight: 800;
+      padding: 12px 22px;
+      border-radius: 10px;
+      box-shadow: 0 8px 25px rgba(0, 0, 0, 0.4);
+      display: none;
+      z-index: 9999;
+      font-size: 13.5px;
+    }
+  </style>
+</head>
+<body>
+  <div id="toast">✔ Đã sao chép thành công!</div>
+
+  <header>
+    <div class="container">
+      <div>
+        <span class="badge badge-gold">Gạo House · Series Học Đường 11A1</span>
+        <span class="badge badge-emerald">Tập 01 / 15 · Chuẩn Điện Ảnh 10s Ghép Nối</span>
+        <span class="badge badge-cyan">9:16 Vertical Mobile · 9 Cú Máy × 10.0s (90.0s)</span>
+        <span class="badge badge-rose">Bộ Tứ Khóa Xuyên Suốt · Chuỗi Động Năng &amp; L-Cut</span>
+      </div>
+      <h1>TẬP 01: BỨC ẢNH BỊ XÓA PHÚT 89</h1>
+      <p class="subtitle">
+        Tái cấu trúc toàn diện theo <strong>Quy Chuẩn Điện Ảnh Sven (10s = 1 Cú máy trong Trường đoạn)</strong>: Triệt tiêu hoàn toàn độc thoại 30 từ máy móc, trả lại tiếng nói và sự chủ động cho <strong>Vy (Nhân vật chính)</strong>, luân chuyển nhịp độ đối thoại sắc nét giữa <strong>Linh</strong> và <strong>Nam</strong>, kết hợp <strong>Bộ Tứ Khóa Xuyên Suốt (Trục 180°, Gậy tiếp sức động năng, Cầu nối âm thanh L-Cut, Sổ bàn giao vật lý)</strong> để 9 cú máy 10s ghép lại thành một dòng chảy điện ảnh học đường sống động, tự nhiên và liền mạch không tì vết.
+      </p>
+    </div>
+  </header>
+
+  <div class="container">
+    <div class="top-bar">
+      <div style="font-size:13.5px; color:#E5E7EB;">
+        <strong>Cấu hình Điện Ảnh:</strong> Khóa cứng <strong>3 Nhân Vật</strong> (<code>Vy</code>, <code>Linh</code>, <code>Nam</code>) · <strong>9 Cú Máy = 90.0s</strong> · Luân chuyển <strong>Đa dạng Voice Mode (Đối đáp nhí nhảnh, Câm thuần thị giác, Thì thầm bí mật)</strong> + <strong>Gậy tiếp sức động năng</strong> nối liền từng điểm cắt.
+      </div>
+      <button class="master-btn" onclick="copyAllPrompts(this)">📋 Copy All Prompts (9 Cảnh)</button>
+    </div>
+
+    <!-- STORY SPINE & 4-TIER HOLISTIC STORYTELLING MATRIX -->
+    <div id="story-spine" class="director-lock" style="border-left-color:var(--emerald);">
+      <h2 style="color:var(--emerald);">🧬 Ma Trận Kể Chuyện Điện Ảnh &amp; Bộ Tứ Khóa Xuyên Suốt (Core Integration)</h2>
+      <div style="font-size:13px; color:#E5E7EB; line-height:1.75;">
+        <strong>[TẦNG 1 — TRƯỜNG ĐOẠN ĐA KHÔNG GIAN (MULTI-SPATIAL SEQUENCES)]</strong> Giải phóng khỏi chiếc hộp một phòng: <strong>Sequence A</strong> (Cảnh 01–03: Lớp học ngập nắng, điểm nổ T=0 &amp; tua ngược) &rarr; <strong>Sequence B</strong> (Cảnh 04–05: Bàn giáo viên &amp; câu đùa vạ miệng) &rarr; <strong>Sequence C</strong> (Cảnh 06: Hành lang lộng gió, chữa lành không lời) &rarr; <strong>Sequence D</strong> (Cảnh 07–09: Phòng học vắng, cú lật thùng rác &amp; bức ảnh cam thường).<br>
+        <strong>[TẦNG 2 — BỘ TỨ KHÓA XUYÊN SUỐT (4 CINEMATIC CONTINUITY LOCKS)]</strong><br>
+        &bull; <strong>Khóa 1 (Trục 180° &amp; Đường mắt):</strong> Vy luôn nhìn Trái &rarr; Phải, Linh luôn nhìn Phải &rarr; Trái; Nam linh hoạt ở tâm điểm.<br>
+        &bull; <strong>Khóa 2 (Gậy tiếp sức động năng):</strong> Cảnh trước ném gậy ở giây 08.5–10.0 (chuyển động chưa dứt), Cảnh sau bắt trọn và hoàn tất ở giây 00.0–01.5.<br>
+        &bull; <strong>Khóa 3 (Cầu nối âm thanh):</strong> Tiếng chuông trường, tiếng quạt trần và tiếng ve hè kéo dài xuyên suốt các điểm cắt; L-Cut gối đầu cảm xúc.<br>
+        &bull; <strong>Khóa 4 (Sổ bàn giao Code Block 2):</strong> Tọa độ nhân vật và trạng thái đạo cụ chuyển giao chính xác 1:1.<br>
+        <strong>[THESIS]</strong> Sự công bằng thật sự không phải là ép nhau phơi bày khuyết điểm cam thường, mà là dám mở lòng thừa nhận sự tự ti để đứng chung một khung hình.<br>
+        <strong>[PREDICT]</strong> 1. Khán giả đoán Linh ép đăng ảnh gốc vì Linh tự tin (BROKEN s07 | plant s03: Linh cũng lén selfie xóa vội 5 tấm) · 2. Khán giả đoán Vy cam chịu im lặng (BROKEN s01, s03: Vy chủ động giữ tay Linh và lên tiếng bảo vệ công sức của mình) · 3. Khán giả đoán Nam chỉ biết đùa cợt vô tâm (KEPT s06, s08: Nam biết hối lỗi ngoài hành lang và khui thư mục Thùng rác cứu nguy).
+      </div>
+    </div>
+
+    <!-- ==================== SCENE 01 ==================== -->
+    <div class="scene-card" id="s-01">
+      <div class="scene-header">
+        <div class="scene-title">CẢNH 01 [T = 0 · HOOK ĐỈNH ĐIỂM XUNG ĐỘT]: PHA GIẰNG CO ĐIỆN THOẠI &amp; NAM CAN NGĂN</div>
+        <span class="time-tag">00:00 – 00:10 (10.0s Clip · Track B · In Medias Res &amp; Match-Cut Baton)</span>
+      </div>
+
+      <div class="audit-grid">
+        <div class="audit-box">
+          <div class="audit-label">1. Động Lực Kịch Tính &amp; Thoại Tự Nhiên</div>
+          • <strong>Xung đột trực diện:</strong> Mở màn ngay giây 00:00 tại đỉnh điểm giằng co lúc T = 0. Linh giơ cao <code>iphone_15</code> dọa bấm đăng ảnh gốc; Vy lao tới giữ chặt cổ tay Linh; Nam nhảy vào giữa can ngăn khẩn thiết.<br>
+          • <strong>Thoại gãy gọn (≤ 15 từ/người):</strong> Vy (10 từ) cầu xin giữ lại ảnh lớp; Nam (12 từ) can ngăn bằng giọng điệu hóm hỉnh.
+        </div>
+        <div class="audit-box">
+          <div class="audit-label">2. Không Gian &amp; Trục 180° (Sequence A)</div>
+          • <strong>Vị trí:</strong> Cạnh bàn cửa sổ <code>phong_hoc_11a1</code>.<br>
+          • <strong>Trục 180°:</strong> Vy (trái) nhìn sang phải; Linh (phải) nhìn sang trái; Nam bước vào trung tâm.
+        </div>
+        <div class="audit-box">
+          <div class="audit-label">3. Gậy Tiếp Sức Động Năng (Outbound Baton)</div>
+          • <strong>[00:08.0–00:10.0]:</strong> Vy giằng lấy cổ tay Linh, ống kính máy quay lao thẳng (push-in) vào màn hình phát sáng của <code>iphone_15</code> để làm điểm nối Match-Cut vào Cảnh 02.
+        </div>
+      </div>
+
+      <div class="dialogue-section">
+        <div class="dia-header">🎙️ Lời Thoại Đối Đáp Sôi Nổi (Two-Shot Collision · ≤ 15 Từ / Người)</div>
+        <div class="dia-item">
+          <span class="dia-speaker">vy_student [00:01.0 – 00:03.8]:</span>
+          <span class="dia-spoken-quote">“ Linh ơi... đừng bấm đăng mà, tao xin mày luôn á! ”</span>
+          <div class="dia-vn-dub">Vy đỏ hoe mắt giữ chặt cổ tay Linh khẩn thiết xin dừng tay (10 từ).</div>
+        </div>
+        <div class="dia-item">
+          <span class="dia-speaker">nam_student [00:04.5 – 00:07.8]:</span>
+          <span class="dia-spoken-quote">“ Hai bà giằng điện thoại nhau giữa lớp kìa, toang tình bạn thiệt đó! ”</span>
+          <div class="dia-vn-dub">Nam nhảy bổ vào giữa xua tay can ngăn hốt hoảng (12 từ).</div>
+        </div>
+      </div>
+
+      <div class="block-wrap">
+        <div class="block-header">
+          <span class="block-label" style="color:var(--cyan);">CODE BLOCK 1: OMNI FLASH CINEMATIC AI VIDEO PROMPT (10S CLIP)</span>
+          <button class="copy-btn" onclick="copySnippet('p-01', this, 'Prompt Cảnh 01')">📋 Copy Video Prompt</button>
+        </div>
+        <pre class="prompt-display" id="p-01">Master-level cinematography and composition, fast-paced shot variation, atmospheric sound design. Style: Cinematic live-action Vietnamese high school slice-of-life, crisp morning daylight. Track B — multi-shot sequence cut on the 180-degree axis.
+
+[context]:
+phong_hoc_11a1 [100% Refer to image @phong_hoc_11a1], morning. Bright break-time classroom with warm sunlight slanting through side windows across wooden student desks and tiled floor.
+
+[subject]:
+linh_student [100% Appearance, attire, and facial features Refer to image @linh],
+vy_student [100% Appearance, attire, and facial features Refer to image @vy],
+nam_student [100% Appearance, attire, and facial features Refer to image @nam]
+
+[Pro] :
+iphone_15 [100% Refer to image @iphone_15]
+
+Diegetic room acoustics: urgent sneaker scuff on floor tiles, tense fabric rustle, sharp gasp, distant bell echo.
+
+[00:00–00:04.2] Over-the-shoulder medium shot at eye level, camera framing past vy_student's desperate shoulder in the soft foreground — standing beside the sunlit window desk, linh_student raises iphone_15 high with an unyielding glare; vy_student lunges forward, gripping linh_student's wrist to block the screen. Focus on vy_student.
+vy_student pleads : “ Linh ơi... đừng bấm đăng mà, tao xin mày luôn á! ”（Voice of a young female student from Northern Vietnam; breathless urgent plea, clutching linh_student's wrist）
+
+[00:04.2–00:08.0] Cut to a reverse medium two-shot on the 180-degree axis, slight low angle — nam_student rushes into the aisle between the desks with palms outstretched in comic alarm, nam_student's eyes darting frantically between linh_student and vy_student. Focus on nam_student.
+nam_student cries : “ Hai bà giằng điện thoại nhau giữa lớp kìa, toang tình bạn thiệt đó! ”（Voice of a young male student from Northern Vietnam; panicked humorous warning stepping between them）
+
+[00:08.0–00:10.0] Cut to a tight macro close-up on iphone_15 held between their trembling hands, eye level, static camera — vy_student's pale knuckles strain against linh_student's wrist as the glowing screen displays the group photo, initiating an outbound kinetic push straight into the screen pixels for the flashback match-cut through 00:10.0.
+
+Continuous fluid motion, realistic physics, zero morphing, two shots joined by cuts on the 180-degree axis. Spatial positions anchored. Do not generate subtitles, dialogue text, titles, timestamps, or written text. Do not render duplicate characters.</pre>
+      </div>
+
+      <div class="block-wrap">
+        <div class="block-header">
+          <span class="block-label" style="color:var(--gold);">CODE BLOCK 2: FINAL STATE SNAPSHOT HANDOVER (00:10)</span>
+          <button class="copy-btn" onclick="copySnippet('ho-01', this, 'Handover Cảnh 01')">📋 Copy Handover State</button>
+        </div>
+        <pre class="handover-display" id="ho-01">[HANDOVER STATE AT 00:10.0]:
+Active Characters: vy_student, linh_student, nam_student
+Characters State at 00:10.0:
+  - vy_student and linh_student grappling at the window desk over iphone_15.
+  - Camera pushed tight into the glowing screen of iphone_15, creating the Outbound Baton.
+Props State:
+  - iphone_15 [100% Refer to image @iphone_15]: Filling the frame for the Sensory Match-Cut jumping back 10 minutes.
+Setting: phong_hoc_11a1 [100% Refer to image @phong_hoc_11a1]
+Dialogue Audit: vy_student 10 words, nam_student 12 words (22 words total, natural teenage confrontation).
+Kinetic Momentum Bridge: Camera plunges into screen pixels, picked up by vy_student's thumbs in Scene 02.</pre>
+      </div>
+    </div>
+
+    <!-- ==================== SCENE 02 ==================== -->
+    <div class="scene-card" id="s-02">
+      <div class="scene-header">
+        <div class="scene-title">CẢNH 02 [T - 10 PHÚT · KỂ CHUYỆN THUẦN THỊ GIÁC]: VY CHỈNH ẢNH LỚP VÀ NỖI TỰ TI CẮT BỎ CHÍNH MÌNH</div>
+        <span class="time-tag">00:00 – 00:10 (10.0s Clip · Track A / Pull-out · Model 0 Pure Visual Silence)</span>
+      </div>
+
+      <div class="audit-grid">
+        <div class="audit-box">
+          <div class="audit-label">1. Nghệ Thuật Kể Chuyện Không Lời (Model 0)</div>
+          • <strong>Ngôn ngữ điện ảnh thuần túy:</strong> Không một câu thoại. Cú máy bắt trọn hành vi vi mô: nụ cười tự hào khi chỉnh ảnh cho bạn bè đối lập với sự bất lực khi chạm tới khuôn mặt chính mình ở góc rìa.<br>
+          • <strong>Hành động kịch tính:</strong> Bấm Undo 4 lần rồi kéo thanh Crop cắt phăng mặt mình, úp sấp máy xuống bàn.
+        </div>
+        <div class="audit-box">
+          <div class="audit-label">2. Kế Thừa Gậy Động Năng (Inbound Baton)</div>
+          • <strong>[00:00.0–00:05.4]:</strong> Cú máy bắt đầu cận cảnh từ chính màn hình <code>iphone_15</code> từ Cảnh 01, rồi kéo lùi (pull-out) ra trung cảnh cho thấy Vy ngồi một mình 10 phút trước.
+        </div>
+        <div class="audit-box">
+          <div class="audit-label">3. Chuyển Giao Trạng Thái (Outbound Baton)</div>
+          • <strong>[00:05.4–00:10.0]:</strong> Vy dứt khoát úp sấp điện thoại xuống bàn gỗ, bàn tay đè chặt lên lưng máy chuẩn bị cho sự xuất hiện của Linh ở Cảnh 03.
+        </div>
+      </div>
+
+      <div class="dialogue-section">
+        <div class="dia-header">🎬 Kể Chuyện Thuần Thị Giác &amp; Âm Thanh Hiện Trường (Model 0: Pure Visual Silence — 0 Từ Thoại)</div>
+        <div class="silent-banner">
+          <strong>[SILENT VISUAL STORYTELLING — ZERO SPOKEN DIALOGUE]:</strong> Không sử dụng lời thoại. Sự im lặng đắt giá lột tả trọn vẹn tâm lý tự ti của Vy qua từng cử động ngón tay trên màn hình cảm ứng và tiếng thở dài khẽ.
+        </div>
+      </div>
+
+      <div class="block-wrap">
+        <div class="block-header">
+          <span class="block-label" style="color:var(--cyan);">CODE BLOCK 1: OMNI FLASH CINEMATIC AI VIDEO PROMPT (10S CLIP)</span>
+          <button class="copy-btn" onclick="copySnippet('p-02', this, 'Prompt Cảnh 02')">📋 Copy Video Prompt</button>
+        </div>
+        <pre class="prompt-display" id="p-02">Master-level cinematography and composition, fast-paced shot variation, atmospheric sound design. Style: Cinematic live-action Vietnamese high school slice-of-life, crisp morning daylight. Track B — multi-shot sequence cut on the 180-degree axis.
+
+[context]:
+phong_hoc_11a1 [100% Refer to image @phong_hoc_11a1], morning. Quiet classroom ten minutes earlier, golden morning sunbeams pooling over polished wooden desk.
+
+[subject]:
+vy_student [100% Appearance, attire, and facial features Refer to image @vy]
+
+[Pro] :
+iphone_15 [100% Refer to image @iphone_15]
+
+Diegetic room acoustics: rhythmic screen swipes, repeated undo tap clicks, decisive crop drag, soft sigh and wooden clack as phone flips.
+
+[00:00–00:05.4] Macro close-up on the phone screen pulling back slowly to an eye-level medium close-up, motivated pull-out — catching the Inbound Baton from the glowing screen of iphone_15, vy_student sits alone ten minutes earlier at the sunlit wooden desk; vy_student's thumbs glide across the glass with deft artistic precision, smoothing faces and brightening lighting with a gentle, proud smile. Focus on vy_student.
+
+[00:05.4–00:10.0] Cut to an eye-level close-up on vy_student, slow push-in — sliding the photo toward the peripheral edge where vy_student's own unedited face appears, vy_student's smile vanishes; vy_student taps undo four times, bites lower lip, drags the crop box inward to sever vy_student's own face from the image, and decisively flips iphone_15 face-down onto the wooden desk, resting palm over the back cover through 00:10.0. Focus on vy_student.
+
+Continuous fluid motion, realistic physics, zero morphing, two shots joined by cut on the 180-degree axis. Spatial positions anchored. Do not generate subtitles, dialogue text, titles, timestamps, or written text. Do not render duplicate characters.</pre>
+      </div>
+
+      <div class="block-wrap">
+        <div class="block-header">
+          <span class="block-label" style="color:var(--gold);">CODE BLOCK 2: FINAL STATE SNAPSHOT HANDOVER (00:10)</span>
+          <button class="copy-btn" onclick="copySnippet('ho-02', this, 'Handover Cảnh 02')">📋 Copy Handover State</button>
+        </div>
+        <pre class="handover-display" id="ho-02">[HANDOVER STATE AT 00:10.0]:
+Active Characters: vy_student (Solo Scene)
+Characters State at 00:10.0:
+  - vy_student seated at the sunlit desk, palm resting flat over the face-down iphone_15.
+Props State:
+  - iphone_15 [100% Refer to image @iphone_15]: Lying face-down on the wooden desk beneath vy_student's palm.
+Setting: phong_hoc_11a1 [100% Refer to image @phong_hoc_11a1]
+Dialogue Audit: 0 words spoken (Model 0 Pure Visual Silence).
+Kinetic Momentum Bridge: vy_student's palm resting on phone becomes the anchor for linh_student's entrance in Scene 03.</pre>
+      </div>
+    </div>
+
+    <!-- ==================== SCENE 03 ==================== -->
+    <div class="scene-card" id="s-03">
+      <div class="scene-header">
+        <div class="scene-title">CẢNH 03 [ĐỐI THOẠI XUNG ĐỘT]: LINH TRA HỎI VỀ GÓC ẢNH &amp; VY TỰ VỆ</div>
+        <span class="time-tag">00:00 – 00:10 (10.0s Clip · Track B · Binary Clash &amp; Rack-Focus Plant)</span>
+      </div>
+
+      <div class="audit-grid">
+        <div class="audit-box">
+          <div class="audit-label">1. Nhân Vật Chính Lên Tiếng (Active Agency)</div>
+          • <strong>Không còn thụ động:</strong> Vy không câm nín chịu trận mà thẳng thắn phản biện Linh. Linh truy vấn lý do crop ảnh; Vy chỉ ra khuyết điểm của góc chụp cam thường.<br>
+          • <strong>Thoại cân bằng (≤ 15 từ/người):</strong> Linh (14 từ) nghiêm khắc; Vy (13 từ) giãi bày thẳng thắn.
+        </div>
+        <div class="audit-box">
+          <div class="audit-label">2. Kế Thừa Gậy Động Năng &amp; Trục 180°</div>
+          • <strong>[00:00.0–00:04.8]:</strong> Máy quay lia hất lên từ bàn tay Vy đang đè lên điện thoại, bắt trọn bước chân Linh bước tới gõ bút lên cuốn sổ.<br>
+          • <strong>Trục 180°:</strong> Linh (đứng bên phải nhìn xuống), Vy (ngồi bên trái ngước lên).
+        </div>
+        <div class="audit-box">
+          <div class="audit-label">3. Gieo Mầm Thị Giác (Rack-Focus)</div>
+          • <strong>[00:08.4–00:10.0]:</strong> Ống kính trượt nét (rack-focus) lướt qua chiếc máy tính Casio trên mặt sổ và biểu tượng Thùng rác trên màn hình điện thoại.
+        </div>
+      </div>
+
+      <div class="dialogue-section">
+        <div class="dia-header">🎙️ Lời Thoại Đối Đáp Kịch Tính (Binary Duel · ≤ 15 Từ / Người)</div>
+        <div class="dia-item">
+          <span class="dia-speaker">linh_student [00:01.0 – 00:04.2]:</span>
+          <span class="dia-spoken-quote">“ Cả lớp vừa chốt xong, sao bà lén cắt góc mặt mình ra ngoài vậy?! ”</span>
+          <div class="dia-vn-dub">Linh chống tay xuống bàn nghiêm nghị tra hỏi (14 từ).</div>
+        </div>
+        <div class="dia-item">
+          <span class="dia-speaker">vy_student [00:05.0 – 00:08.0]:</span>
+          <span class="dia-spoken-quote">“ Tao chỉnh lớp sáng đẹp rồi... góc đó mặt tao bị méo xẹo à! ”</span>
+          <div class="dia-vn-dub">Vy ngước lên phân trần thật lòng bảo vệ quyết định của mình (13 từ).</div>
+        </div>
+      </div>
+
+      <div class="block-wrap">
+        <div class="block-header">
+          <span class="block-label" style="color:var(--cyan);">CODE BLOCK 1: OMNI FLASH CINEMATIC AI VIDEO PROMPT (10S CLIP)</span>
+          <button class="copy-btn" onclick="copySnippet('p-03', this, 'Prompt Cảnh 03')">📋 Copy Video Prompt</button>
+        </div>
+        <pre class="prompt-display" id="p-03">Master-level cinematography and composition, fast-paced shot variation, atmospheric sound design. Style: Cinematic live-action Vietnamese high school slice-of-life, crisp morning daylight. Track B — multi-shot sequence cut on the 180-degree axis.
+
+[context]:
+phong_hoc_11a1 [100% Refer to image @phong_hoc_11a1], morning. Sunlit wooden student desk by the window, chalk dust motes dancing in ambient light shafts.
+
+[subject]:
+linh_student [100% Appearance, attire, and facial features Refer to image @linh],
+vy_student [100% Appearance, attire, and facial features Refer to image @vy]
+
+[Pro] :
+iphone_15 [100% Refer to image @iphone_15]; so_tay_ke_hoach [100% Refer to image @so_tay_ke_hoach]
+
+Diegetic room acoustics: ballpoint pen clicks on desk wood, rustle of notebook paper, firm direct vocal projection.
+
+[00:00–00:04.8] Medium close-up tilting up from vy_student's palm resting on the face-down phone to linh_student at eye level — holding so_tay_ke_hoach, linh_student steps briskly to the desk, tapping a ballpoint pen firmly against the wood with an inquisitive frown. Focus on linh_student.
+linh_student snaps : “ Cả lớp vừa chốt xong, sao bà lén cắt góc mặt mình ra ngoài vậy?! ”（Voice of a young female student from Northern Vietnam; sharp inquiring tone leaning over the desk）
+
+[00:04.8–00:08.4] Cut to an over-the-shoulder medium close-up past linh_student on the 180-degree axis, eye level — vy_student turns iphone_15 slightly toward linh_student with trembling fingers, shoulders hunched defensively while speaking. Focus on vy_student.
+vy_student replies : “ Tao chỉnh lớp sáng đẹp rồi... góc đó mặt tao bị méo xẹo à! ”（Voice of a young female student from Northern Vietnam; quiet defensive voice, averting gaze）
+
+[00:08.4–00:10.0] Cut to a reverse close-up on linh_student, eye level, static camera — linh_student's brow furrows as linh_student reaches down to tilt the phone upright, while the camera rack focuses past linh_student's hand to the pocket calculator on the ledger through 00:10.0. Focus on linh_student.
+
+Continuous fluid motion, realistic physics, zero morphing, two shots joined by cuts on the 180-degree axis. Spatial positions anchored. Do not generate subtitles, dialogue text, titles, timestamps, or written text. Do not render duplicate characters.</pre>
+      </div>
+
+      <div class="block-wrap">
+        <div class="block-header">
+          <span class="block-label" style="color:var(--gold);">CODE BLOCK 2: FINAL STATE SNAPSHOT HANDOVER (00:10)</span>
+          <button class="copy-btn" onclick="copySnippet('ho-03', this, 'Handover Cảnh 03')">📋 Copy Handover State</button>
+        </div>
+        <pre class="handover-display" id="ho-03">[HANDOVER STATE AT 00:10.0]:
+Active Characters: linh_student, vy_student
+Characters State at 00:10.0:
+  - linh_student holding iphone_15 upright facing both students.
+  - vy_student sitting with lowered eyes beside the ledger.
+Props State:
+  - iphone_15 [100% Refer to image @iphone_15] &amp; so_tay_ke_hoach [100% Refer to image @so_tay_ke_hoach]: Positioned on the desk with calculator planted.
+Setting: phong_hoc_11a1 [100% Refer to image @phong_hoc_11a1]
+Dialogue Audit: linh_student 14 words, vy_student 13 words (27 words total).
+Kinetic Momentum Bridge: The phone screen held upright becomes the target for nam_student's intrusion in Scene 04.</pre>
+      </div>
+    </div>
+
+    <!-- ==================== SCENE 04 ==================== -->
+    <div class="scene-card" id="s-04">
+      <div class="scene-header">
+        <div class="scene-title">CẢNH 04 [CÂU ĐÙA VẠ MIỆNG]: NAM CHÂM NGÒI VÔ TÂM &amp; NỖI ĐAU THỂ HIỆN QUA HÀNH ĐỘNG</div>
+        <span class="time-tag">00:00 – 00:10 (10.0s Clip · Track B · Action Barb &amp; Somatic Reaction)</span>
+      </div>
+
+      <div class="audit-grid">
+        <div class="audit-box">
+          <div class="audit-label">1. Đòn Tâm Lý Qua Hành Vi Sinh Học</div>
+          • <strong>Không dán nhãn cảm xúc:</strong> Thay vì dùng từ "buồn" hay "tủi thân", tổn thương của Vy được thể hiện 100% qua vi cử động sinh học: mi mắt rung nhẹ, răng cắn chặt môi dưới, ngón tay bấu chặt gấu áo đồng phục.<br>
+          • <strong>Thoại châm ngòi (14 từ):</strong> Câu đùa tai hại của Nam về "bánh bao" đánh trúng tử huyệt tự ti của bạn.
+        </div>
+        <div class="audit-box">
+          <div class="audit-label">2. Kế Thừa Gậy Động Năng &amp; Lập Tức Hối Lỗi</div>
+          • <strong>[00:00.0–00:05.0]:</strong> Nam từ phía sau chen vào giữa hai cô bạn, cúi đầu chỉ vào màn hình điện thoại đang dựng đứng từ Cảnh 03.<br>
+          • <strong>[00:05.0–00:10.0]:</strong> Nụ cười của Nam tắt ngấm; ánh mắt bối rối nhìn thấy giọt nước mắt chực trào của Vy.
+        </div>
+        <div class="audit-box">
+          <div class="audit-label">3. Chuyển Giao Sang Cảnh 05</div>
+          • Nam quay phắt sang Linh, chắp tay chuẩn bị mở lời xin trích quỹ lớp để chuộc lỗi.
+        </div>
+      </div>
+
+      <div class="dialogue-section">
+        <div class="dia-header">🎙️ Lời Thoại Vạ Miệng (Solo Strike &amp; Silent Absorber · ≤ 15 Từ)</div>
+        <div class="dia-item">
+          <span class="dia-speaker">nam_student [00:01.2 – 00:04.6]:</span>
+          <span class="dia-spoken-quote">“ Công nhận nha, cam thường chụp góc này nhìn mặt bà Vy tròn xoe luôn! ”</span>
+          <div class="dia-vn-dub">Nam vô tư buột miệng chọc bạn rồi sững người khi thấy Vy cúi gằm mặt cắn môi (14 từ).</div>
+        </div>
+      </div>
+
+      <div class="block-wrap">
+        <div class="block-header">
+          <span class="block-label" style="color:var(--cyan);">CODE BLOCK 1: OMNI FLASH CINEMATIC AI VIDEO PROMPT (10S CLIP)</span>
+          <button class="copy-btn" onclick="copySnippet('p-04', this, 'Prompt Cảnh 04')">📋 Copy Video Prompt</button>
+        </div>
+        <pre class="prompt-display" id="p-04">Master-level cinematography and composition, fast-paced shot variation, atmospheric sound design. Style: Cinematic live-action Vietnamese high school slice-of-life, crisp morning daylight. Track B — multi-shot sequence cut on the 180-degree axis.
+
+[context]:
+phong_hoc_11a1 [100% Refer to image @phong_hoc_11a1], morning. Sunlit classroom aisle between rows of wooden desks.
+
+[subject]:
+nam_student [100% Appearance, attire, and facial features Refer to image @nam],
+vy_student [100% Appearance, attire, and facial features Refer to image @vy]
+
+[Pro] :
+iphone_15 [100% Refer to image @iphone_15]
+
+Diegetic room acoustics: sudden floor scuff, quick playful chuckle cutting off into awkward silence, quiet sniffing.
+
+[00:00–00:05.0] Over-the-shoulder medium two-shot at eye level, camera framing past vy_student's seated shoulder — catching the Inbound Baton, nam_student's torso leans in between the desks, pointing an eager finger down at the glowing phone screen with a wide impulsive grin. Focus on nam_student.
+nam_student says : “ Công nhận nha, cam thường chụp góc này nhìn mặt bà Vy tròn xoe luôn! ”（Voice of a young male student from Northern Vietnam; impulsive playful chuckle pointing at screen）
+
+[00:05.0–00:10.0] Cut to an intimate solo close-up on vy_student, eye level, static camera — at the blunt remark, vy_student's eyes well with glistening moisture, lower lip quivering as vy_student turns head away in silence, knuckles whitening against the hem of AO_CHU_DAO_01; in the soft background, nam_student's grin freezes into horrified remorse through 00:10.0. Focus on vy_student.
+
+Continuous fluid motion, realistic physics, zero morphing, two shots joined by cut on the 180-degree axis. Spatial positions anchored. Do not generate subtitles, dialogue text, titles, timestamps, or written text. Do not render duplicate characters.</pre>
+      </div>
+
+      <div class="block-wrap">
+        <div class="block-header">
+          <span class="block-label" style="color:var(--gold);">CODE BLOCK 2: FINAL STATE SNAPSHOT HANDOVER (00:10)</span>
+          <button class="copy-btn" onclick="copySnippet('ho-04', this, 'Handover Cảnh 04')">📋 Copy Handover State</button>
+        </div>
+        <pre class="handover-display" id="ho-04">[HANDOVER STATE AT 00:10.0]:
+Active Characters: nam_student, vy_student
+Characters State at 00:10.0:
+  - vy_student turning away clutching the uniform hem in silent hurt.
+  - nam_student frozen in sudden remorse, shifting posture to plead with linh_student.
+Props State:
+  - iphone_15 [100% Refer to image @iphone_15]: Held on the desk by linh_student.
+Setting: phong_hoc_11a1 [100% Refer to image @phong_hoc_11a1]
+Dialogue Audit: nam_student 14 words (~3.5s speech).
+Kinetic Momentum Bridge: nam_student pivots toward linh_student, launching into Scene 05.</pre>
+      </div>
+    </div>
+
+    <!-- ==================== SCENE 05 ==================== -->
+    <div class="scene-card" id="s-05">
+      <div class="scene-header">
+        <div class="scene-title">CẢNH 05 [ĐÀM PHÁN QUỸ LỚP]: NAM XIN TRÍCH 15 NGHÌN &amp; SỰ NGUYÊN TẮC CỦA LINH</div>
+        <span class="time-tag">00:00 – 00:10 (10.0s Clip · Track B · Status Duel &amp; Multi-Spatial Egress)</span>
+      </div>
+
+      <div class="audit-grid">
+        <div class="audit-box">
+          <div class="audit-label">1. Xung Đột Quyền Lực &amp; Tiền Quỹ</div>
+          • <strong>Tính cách đối kháng:</strong> Nam muốn sửa sai bằng cách đề nghị trích 15 nghìn tiền quỹ thừa và bù tiền túi; Linh kiên định nguyên tắc kế toán không khoan nhượng.<br>
+          • <strong>Thoại đanh gọn (≤ 15 từ/người):</strong> Nam (14 từ) khẩn khoản; Linh (13 từ) sắt đá.
+        </div>
+        <div class="audit-box">
+          <div class="audit-label">2. Đạo Cụ Casio &amp; Gậy Động Năng</div>
+          • <strong>[00:04.6–00:08.0]:</strong> Tiếng bấm máy tính Casio chan chát củng cố lập trường của Linh.<br>
+          • <strong>[00:08.0–00:10.0]:</strong> Vy lặng lẽ đứng dậy bước ra phía cửa hành lang, mở ra không gian cho Sequence C.
+        </div>
+        <div class="audit-box">
+          <div class="audit-label">3. Chuyển Không Gian (Multi-Spatial Bridge)</div>
+          • Bước chân của Vy chạm ngưỡng cửa hành lang là chiếc cầu nối sang cảnh ngoài trời ngập nắng Cảnh 06.
+        </div>
+      </div>
+
+      <div class="dialogue-section">
+        <div class="dia-header">🎙️ Lời Thoại Xin Trích Quỹ &amp; Khước Từ (Status Sparring · ≤ 15 Từ / Người)</div>
+        <div class="dia-item">
+          <span class="dia-speaker">nam_student [00:01.0 – 00:04.2]:</span>
+          <span class="dia-spoken-quote">“ Lớp trưởng trích mười lăm nghìn quỹ chụp lại đi, tao bù thêm tiền túi! ”</span>
+          <div class="dia-vn-dub">Nam chống hai tay xuống bàn nài nỉ xin chuộc lỗi (14 từ).</div>
+        </div>
+        <div class="dia-item">
+          <span class="dia-speaker">linh_student [00:05.0 – 00:07.8]:</span>
+          <span class="dia-spoken-quote">“ Một nghìn cũng là quỹ lớp, nguyên tắc là nguyên tắc, không trích bừa! ”</span>
+          <div class="dia-vn-dub">Linh bấm máy tính cạch cạch lắc đầu dứt khoát bảo vệ kỷ luật (13 từ).</div>
+        </div>
+      </div>
+
+      <div class="block-wrap">
+        <div class="block-header">
+          <span class="block-label" style="color:var(--cyan);">CODE BLOCK 1: OMNI FLASH CINEMATIC AI VIDEO PROMPT (10S CLIP)</span>
+          <button class="copy-btn" onclick="copySnippet('p-05', this, 'Prompt Cảnh 05')">📋 Copy Video Prompt</button>
+        </div>
+        <pre class="prompt-display" id="p-05">Master-level cinematography and composition, fast-paced shot variation, atmospheric sound design. Style: Cinematic live-action Vietnamese high school slice-of-life, crisp morning daylight. Track B — multi-shot sequence cut on the 180-degree axis.
+
+[context]:
+phong_hoc_11a1 [100% Refer to image @phong_hoc_11a1], morning. Sunlit classroom platform and front desk cluster under bright morning chalk dust.
+
+[subject]:
+nam_student [100% Appearance, attire, and facial features Refer to image @nam],
+linh_student [100% Appearance, attire, and facial features Refer to image @linh],
+vy_student [100% Appearance, attire, and facial features Refer to image @vy]
+
+[Pro] :
+iphone_15 [100% Refer to image @iphone_15]; so_tay_ke_hoach [100% Refer to image @so_tay_ke_hoach]
+
+Diegetic room acoustics: rapid plastic calculator button clicks, earnest hushed voice, firm hand slap on ledger cover.
+
+[00:00–00:04.6] Medium shot on the 180-degree axis, slight low angle — spinning around from vy_student, nam_student slaps both open palms down on the desk edge before linh_student, leaning forward with desperate earnestness. Focus on nam_student.
+nam_student pleads : “ Lớp trưởng trích mười lăm nghìn quỹ chụp lại đi, tao bù thêm tiền túi! ”（Voice of a young male student from Northern Vietnam; desperate earnest plea, hands planted on desk）
+
+[00:04.6–00:08.0] Cut to an over-the-shoulder medium close-up past nam_student at eye level — linh_student lifts the pocket calculator beside so_tay_ke_hoach, punching buttons twice with sharp audible clicks, looking straight into nam_student's eyes with stern unbending resolve. Focus on linh_student.
+linh_student retorts : “ Một nghìn cũng là quỹ lớp, nguyên tắc là nguyên tắc, không trích bừa! ”（Voice of a young female student from Northern Vietnam; resolute strict refusal, tapping calculator）
+
+[00:08.0–00:10.0] Cut to a wide two-shot along the classroom aisle — linh_student shakes head with finality; in the middle ground, vy_student stands up quietly from the chair and begins walking toward the open hallway door through 00:10.0. Focus on vy_student.
+
+Continuous fluid motion, realistic physics, zero morphing, two shots joined by cuts on the 180-degree axis. Spatial positions anchored. Do not generate subtitles, dialogue text, titles, timestamps, or written text. Do not render duplicate characters.</pre>
+      </div>
+
+      <div class="block-wrap">
+        <div class="block-header">
+          <span class="block-label" style="color:var(--gold);">CODE BLOCK 2: FINAL STATE SNAPSHOT HANDOVER (00:10)</span>
+          <button class="copy-btn" onclick="copySnippet('ho-05', this, 'Handover Cảnh 05')">📋 Copy Handover State</button>
+        </div>
+        <pre class="handover-display" id="ho-05">[HANDOVER STATE AT 00:10.0]:
+Active Characters: nam_student, linh_student, vy_student
+Characters State at 00:10.0:
+  - vy_student stepping across the classroom threshold into hanh_lang_lop.
+  - nam_student watching vy_student leave, preparing to follow.
+Props State:
+  - so_tay_ke_hoach [100% Refer to image @so_tay_ke_hoach] &amp; iphone_15 [100% Refer to image @iphone_15]: Resting with linh_student.
+Setting: phong_hoc_11a1 [100% Refer to image @phong_hoc_11a1]
+Dialogue Audit: nam_student 14 words, linh_student 13 words (27 words total).
+Kinetic Momentum Bridge: vy_student's exit steps straight into the outdoor corridor of Scene 06.</pre>
+      </div>
+    </div>
+
+    <!-- ==================== SCENE 06 ==================== -->
+    <div class="scene-card" id="s-06">
+      <div class="scene-header">
+        <div class="scene-title">CẢNH 06 [HÀNH LANG LỘNG GIÓ · KỂ CHUYỆN THUẦN THỊ GIÁC]: NAM KÉO KHÓA MIỆNG XIN LỖI &amp; MẢNH GIẤY MẶT CƯỜI</div>
+        <span class="time-tag">00:00 – 00:10 (10.0s Clip · Track B · Model 0 Pure Visual Silence &amp; Sequence C)</span>
+      </div>
+
+      <div class="audit-grid">
+        <div class="audit-box">
+          <div class="audit-label">1. Không Gian Mới &amp; Chữa Lành Không Lời</div>
+          • <strong>Giải phóng không gian (Sequence C):</strong> Chuyển hẳn ra hành lang ngoài trời lộng gió nhìn xuống hàng cây xanh mát, đập tan cảm giác ngột ngạt trong lớp học.<br>
+          • <strong>Hành động thay ngàn lời nói:</strong> Nam không giải thích phân bua; Nam đưa hai ngón tay kéo khóa môi, tự gõ trán mình phạt tội rồi giơ hình vẽ mặt cá nóc ngố dỗ bạn.
+        </div>
+        <div class="audit-box">
+          <div class="audit-label">2. Kế Thừa Gậy Động Năng &amp; Nụ Cười Trở Lại</div>
+          • <strong>[00:00.0–00:04.2]:</strong> Vy chạm tay vào lan can bê tông, tiếp nối bước chân từ Cảnh 05.<br>
+          • <strong>[00:04.2–00:10.0]:</strong> Vy nhận mảnh giấy và bật cười; hai bạn nhìn về phía cửa lớp, chuẩn bị cho cú lật ở Cảnh 07.
+        </div>
+        <div class="audit-box">
+          <div class="audit-label">3. Chuyển Giao Trạng Thái</div>
+          • Cả hai quay đầu nhìn về phía cửa phòng học nơi Linh đang ở lại một mình.
+        </div>
+      </div>
+
+      <div class="dialogue-section">
+        <div class="dia-header">🎬 Kể Chuyện Thuần Thị Giác &amp; Âm Thanh Hiện Trường (Model 0: Pure Visual Silence — 0 Từ Thoại)</div>
+        <div class="silent-banner">
+          <strong>[SILENT VISUAL STORYTELLING — ZERO SPOKEN DIALOGUE]:</strong> Không sử dụng lời thoại. Khoảnh khắc tình bạn chân thành được diễn giải trọn vẹn bằng tiếng lá cây xào xạc ngoài sân và nụ cười tha thứ của Vy.
+        </div>
+      </div>
+
+      <div class="block-wrap">
+        <div class="block-header">
+          <span class="block-label" style="color:var(--cyan);">CODE BLOCK 1: OMNI FLASH CINEMATIC AI VIDEO PROMPT (10S CLIP)</span>
+          <button class="copy-btn" onclick="copySnippet('p-06', this, 'Prompt Cảnh 06')">📋 Copy Video Prompt</button>
+        </div>
+        <pre class="prompt-display" id="p-06">Master-level cinematography and composition, fast-paced shot variation, atmospheric sound design. Style: Cinematic live-action Vietnamese high school slice-of-life, crisp morning daylight. Track B — multi-shot sequence cut on the 180-degree axis.
+
+[context]:
+hanh_lang_lop [100% Refer to image @hanh_lang_lop], morning. Sunlit outdoor school corridor overlooking leafy courtyard trees, gentle morning breeze rustling through leaves.
+
+[subject]:
+vy_student [100% Appearance, attire, and facial features Refer to image @vy],
+nam_student [100% Appearance, attire, and facial features Refer to image @nam]
+
+[Pro] :
+to_giay_mat_cuoi [100% Refer to image @to_giay_mat_cuoi]
+
+Diegetic room acoustics: gentle courtyard breeze through leaves, quiet sneaker steps on corridor tiles, crisp paper note rustle, soft genuine laugh.
+
+[00:00–00:04.2] Solo medium shot along the balcony balustrade, eye level, slow tracking — catching the Inbound Baton from the doorway, vy_student walks to the sunlit railing, resting hands on the weathered concrete while gazing down at courtyard trees; in the background, nam_student steps quietly into the corridor. Focus on vy_student.
+
+[00:04.2–00:10.0] Cut to a medium close-up two-shot on the 180-degree axis, eye level — nam_student steps up facing vy_student, earnestly mimes pulling an invisible zipper across lips, taps forehead in mock self-rebuke, and extends to_giay_mat_cuoi; vy_student's lips part into a genuine warm laugh as fingers accept the sketch through 00:10.0. Focus on nam_student and vy_student.
+
+Continuous fluid motion, realistic physics, zero morphing, two shots joined by cut on the 180-degree axis. Spatial positions anchored. Do not generate subtitles, dialogue text, titles, timestamps, or written text. Do not render duplicate characters.</pre>
+      </div>
+
+      <div class="block-wrap">
+        <div class="block-header">
+          <span class="block-label" style="color:var(--gold);">CODE BLOCK 2: FINAL STATE SNAPSHOT HANDOVER (00:10)</span>
+          <button class="copy-btn" onclick="copySnippet('ho-06', this, 'Handover Cảnh 06')">📋 Copy Handover State</button>
+        </div>
+        <pre class="handover-display" id="ho-06">[HANDOVER STATE AT 00:10.0]:
+Active Characters: vy_student, nam_student
+Characters State at 00:10.0:
+  - vy_student and nam_student laughing warmly outside on hanh_lang_lop.
+  - nam_student peeking back toward the classroom entrance.
+Props State:
+  - to_giay_mat_cuoi [100% Refer to image @to_giay_mat_cuoi]: Held in vy_student's hand.
+Setting: hanh_lang_lop [100% Refer to image @hanh_lang_lop]
+Dialogue Audit: 0 words spoken (Model 0 Pure Visual Silence).
+Kinetic Momentum Bridge: nam_student's glance into the room bridges into Scene 07.</pre>
+      </div>
+    </div>
+
+    <!-- ==================== SCENE 07 ==================== -->
+    <div class="scene-card" id="s-07">
+      <div class="scene-header">
+        <div class="scene-title">CẢNH 07 [BÍ MẬT CỦA PHẢN DIỆN]: LINH LÉN CHỤP TỰ SƯỚNG VÀ VỘI VÀNG BẤM XÓA 5 TẤM</div>
+        <span class="time-tag">00:00 – 00:10 (10.0s Clip · Track B · Solo Secret Whisper &amp; The Smoking Gun)</span>
+      </div>
+
+      <div class="audit-grid">
+        <div class="audit-box">
+          <div class="audit-label">1. Bóc Trần Sự Tự Ti Giống Nhau</div>
+          • <strong>Chiều sâu tâm lý:</strong> Linh ép người khác cam thường nhưng chính mình đứng trước cam thường cũng hoảng hồn chê mặt to.<br>
+          • <strong>Thoại thì thầm độc thoại (13 từ):</strong> Linh buột miệng thốt lên trong phòng vắng rồi bấm xóa vội 5 tấm vào thùng rác.
+        </div>
+        <div class="audit-box">
+          <div class="audit-label">2. Điểm Nhìn Ẩn Nấp (Audience Gap &amp; Suspense)</div>
+          • Khán giả cùng Nam ở ngưỡng cửa nhìn thấy bí mật của Linh trước khi Linh nhận ra mình đã bị bắt quả tang!
+        </div>
+        <div class="audit-box">
+          <div class="audit-label">3. Gậy Tiếp Sức Động Năng (Outbound Baton)</div>
+          • Ngón tay Linh bấm xóa tấm ảnh thứ 5; Nam ở cửa nhếch mép cười đắc thắng chuẩn bị xông vào Cảnh 08.
+        </div>
+      </div>
+
+      <div class="dialogue-section">
+        <div class="dia-header">🎙️ Lời Thoại Thì Thầm Bí Mật (Solo Secret Whisper · ≤ 15 Từ)</div>
+        <div class="dia-item">
+          <span class="dia-speaker">linh_student [00:01.5 – 00:04.8]:</span>
+          <span class="dia-spoken-quote">“ Trời đất ơi, cam thường kiểu gì mặt bự chảng vậy nè... Xóa lẹ! ”</span>
+          <div class="dia-vn-dub">Linh nhìn gương mặt mình trên màn hình hoảng hốt thì thầm một mình (13 từ).</div>
+        </div>
+      </div>
+
+      <div class="block-wrap">
+        <div class="block-header">
+          <span class="block-label" style="color:var(--cyan);">CODE BLOCK 1: OMNI FLASH CINEMATIC AI VIDEO PROMPT (10S CLIP)</span>
+          <button class="copy-btn" onclick="copySnippet('p-07', this, 'Prompt Cảnh 07')">📋 Copy Video Prompt</button>
+        </div>
+        <pre class="prompt-display" id="p-07">Master-level cinematography and composition, fast-paced shot variation, atmospheric sound design. Style: Cinematic live-action Vietnamese high school slice-of-life, crisp morning daylight. Track B — multi-shot sequence cut on the 180-degree axis.
+
+[context]:
+phong_hoc_11a1 [100% Refer to image @phong_hoc_11a1], morning. Quiet empty classroom during recess with warm morning sunlight pooling on the floor tiles.
+
+[subject]:
+linh_student [100% Appearance, attire, and facial features Refer to image @linh],
+nam_student [100% Appearance, attire, and facial features Refer to image @nam]
+
+[Pro] :
+iphone_15 [100% Refer to image @iphone_15]
+
+Diegetic room acoustics: quiet outdoor bird chirp, frantic screen tap clicks, flustered feminine gasp.
+
+[00:00–00:05.6] Medium shot from the classroom doorway looking across empty desks toward the window, eye level, slow push-in — believing the room is deserted, linh_student stands by the sunlit frame raising iphone_15 in front camera mode, angling chin upward and grimacing in private panic. Focus on linh_student.
+linh_student whispers : “ Trời đất ơi, cam thường kiểu gì mặt bự chảng vậy nè... Xóa lẹ! ”（Voice of a young female student from Northern Vietnam; horrified conspiratorial whisper, staring at phone）
+
+[00:05.6–00:10.0] Cut to an over-the-shoulder close-up looking down at the glowing screen of iphone_15, eye level, static camera — seeing the unflattering wide-angle raw selfie, linh_student's thumb furiously taps the trash can icon five times; in the soft-focus doorway at frame-left, nam_student leans against the jamb with an amused knowing smirk through 00:10.0. Focus on linh_student.
+
+Continuous fluid motion, realistic physics, zero morphing, two shots joined by cut on the 180-degree axis. Spatial positions anchored. Do not generate subtitles, dialogue text, titles, timestamps, or written text. Do not render duplicate characters.</pre>
+      </div>
+
+      <div class="block-wrap">
+        <div class="block-header">
+          <span class="block-label" style="color:var(--gold);">CODE BLOCK 2: FINAL STATE SNAPSHOT HANDOVER (00:10)</span>
+          <button class="copy-btn" onclick="copySnippet('ho-07', this, 'Handover Cảnh 07')">📋 Copy Handover State</button>
+        </div>
+        <pre class="handover-display" id="ho-07">[HANDOVER STATE AT 00:10.0]:
+Active Characters: linh_student, nam_student
+Characters State at 00:10.0:
+  - linh_student holding iphone_15 with the trash album active.
+  - nam_student standing at the door threshold with a triumphant smirk.
+Props State:
+  - iphone_15 [100% Refer to image @iphone_15]: Held by linh_student displaying 5 deleted selfies.
+Setting: phong_hoc_11a1 [100% Refer to image @phong_hoc_11a1]
+Dialogue Audit: linh_student 13 words (~3.2s speech).
+Kinetic Momentum Bridge: nam_student pushes off the door frame to confront linh_student in Scene 08.</pre>
+      </div>
+    </div>
+
+    <!-- ==================== SCENE 08 ==================== -->
+    <div class="scene-card" id="s-08">
+      <div class="scene-header">
+        <div class="scene-title">CẢNH 08 [HỘI TỤ VỀ T = 0 &amp; CÚ LẬT KÈO]: BẮT QUẢ TANG MỤC THÙNG RÁC &amp; LINH ĐẦU HÀNG</div>
+        <span class="time-tag">00:00 – 00:10 (10.0s Clip · Track B · Loop Convergence &amp; Reversal Payoff)</span>
+      </div>
+
+      <div class="audit-grid">
+        <div class="audit-box">
+          <div class="audit-label">1. Khép Vòng Lặp Về Điểm Nổ T = 0</div>
+          • <strong>Khớp khít 100% Cảnh 01:</strong> Khung hình hội tụ về đúng thời khắc T = 0 nhưng tình thế đảo ngược 180 độ. Nam chỉ thẳng vào mục "Đã xóa gần đây", bóc trần sự thật.<br>
+          • <strong>Hóa giải bằng tiếng cười:</strong> Linh không bị sỉ nhục mà đỏ mặt tự đầu hàng trong sự đồng cảm của cả nhóm.
+        </div>
+        <div class="audit-box">
+          <div class="audit-label">2. Thoại Sắc Bén &amp; Hóm Hỉnh (≤ 15 từ)</div>
+          • Nam (15 từ) bóc phốt đắc ý; Linh (11 từ) đỏ mặt thu hồi lệnh đăng ảnh dìm bạn.
+        </div>
+        <div class="audit-box">
+          <div class="audit-label">3. Gậy Tiếp Sức Động Năng (Outbound Baton)</div>
+          • Nam đón lấy chiếc điện thoại giơ lên cao, chuyển sang tư thế chụp ảnh selfie chung 3 người ở Cảnh 09.
+        </div>
+      </div>
+
+      <div class="dialogue-section">
+        <div class="dia-header">🎙️ Lời Thoại Bắt Quả Tang &amp; Nhượng Bộ (Reversal Exchange · ≤ 15 Từ / Người)</div>
+        <div class="dia-item">
+          <span class="dia-speaker">nam_student [00:01.0 – 00:04.2]:</span>
+          <span class="dia-spoken-quote">“ Bắt quả tang nha! Miệng nói công bằng mà trong thùng rác xóa năm tấm! ”</span>
+          <div class="dia-vn-dub">Nam bước tới chỉ tay bóc phốt đắc chí (15 từ).</div>
+        </div>
+        <div class="dia-item">
+          <span class="dia-speaker">linh_student [00:05.0 – 00:07.8]:</span>
+          <span class="dia-spoken-quote">“ Ai mượn ông rình mò... Thôi được rồi, không đăng nữa! ”</span>
+          <div class="dia-vn-dub">Linh đỏ bừng mặt xấu hổ ôm máy chịu thua (11 từ).</div>
+        </div>
+      </div>
+
+      <div class="block-wrap">
+        <div class="block-header">
+          <span class="block-label" style="color:var(--cyan);">CODE BLOCK 1: OMNI FLASH CINEMATIC AI VIDEO PROMPT (10S CLIP)</span>
+          <button class="copy-btn" onclick="copySnippet('p-08', this, 'Prompt Cảnh 08')">📋 Copy Video Prompt</button>
+        </div>
+        <pre class="prompt-display" id="p-08">Master-level cinematography and composition, fast-paced shot variation, atmospheric sound design. Style: Cinematic live-action Vietnamese high school slice-of-life, crisp morning daylight. Track B — multi-shot sequence cut on the 180-degree axis.
+
+[context]:
+phong_hoc_11a1 [100% Refer to image @phong_hoc_11a1], morning. Sunlit window desk where the standoff resolves in shared laughter.
+
+[subject]:
+nam_student [100% Appearance, attire, and facial features Refer to image @nam],
+linh_student [100% Appearance, attire, and facial features Refer to image @linh],
+vy_student [100% Appearance, attire, and facial features Refer to image @vy]
+
+[Pro] :
+iphone_15 [100% Refer to image @iphone_15]
+
+Diegetic room acoustics: triumphant playful shout, flustered desk scuff, sudden joyful laugh from doorway.
+
+[00:00–00:04.8] Medium shot along the aisle on the 180-degree axis, eye level — catching the Inbound Baton from the doorway, nam_student strides into the room with vy_student following, pointing an accusing index finger straight at linh_student's phone screen with triumphant glee. Focus on nam_student.
+nam_student retorts : “ Bắt quả tang nha! Miệng nói công bằng mà trong thùng rác xóa năm tấm! ”（Voice of a young male student from Northern Vietnam; triumphant playful shout pointing finger）
+
+[00:04.8–00:08.2] Cut to an over-the-shoulder close-up past nam_student at eye level — caught completely off guard, linh_student's cheeks flush crimson as linh_student frantically clutches iphone_15 against chest, waving an arm in mock exasperation. Focus on linh_student.
+linh_student snaps : “ Ai mượn ông rình mò... Thôi được rồi, không đăng nữa! ”（Voice of a young female student from Northern Vietnam; flustered embarrassed surrender, blushing crimson）
+
+[00:08.2–00:10.0] Cut to a three-shot at eye level, static camera — vy_student steps beside them smiling warmly; nam_student reaches out to take iphone_15 by the edge, raising it toward the window light through 00:10.0. Focus on nam_student and vy_student.
+
+Continuous fluid motion, realistic physics, zero morphing, two shots joined by cuts on the 180-degree axis. Spatial positions anchored. Do not generate subtitles, dialogue text, titles, timestamps, or written text. Do not render duplicate characters.</pre>
+      </div>
+
+      <div class="block-wrap">
+        <div class="block-header">
+          <span class="block-label" style="color:var(--gold);">CODE BLOCK 2: FINAL STATE SNAPSHOT HANDOVER (00:10)</span>
+          <button class="copy-btn" onclick="copySnippet('ho-08', this, 'Handover Cảnh 08')">📋 Copy Handover State</button>
+        </div>
+        <pre class="handover-display" id="ho-08">[HANDOVER STATE AT 00:10.0]:
+Active Characters: nam_student, linh_student, vy_student
+Characters State at 00:10.0:
+  - nam_student holding iphone_15 upright by the desk.
+  - linh_student blushing sheepishly beside vy_student.
+Props State:
+  - iphone_15 [100% Refer to image @iphone_15]: Raised in nam_student's hand.
+Setting: phong_hoc_11a1 [100% Refer to image @phong_hoc_11a1]
+Dialogue Audit: nam_student 15 words, linh_student 11 words (26 words total).
+Kinetic Momentum Bridge: nam_student raises the phone higher to take the group selfie in Scene 09.</pre>
+      </div>
+    </div>
+
+    <!-- ==================== SCENE 09 ==================== -->
+    <div class="scene-card" id="s-09">
+      <div class="scene-header">
+        <div class="scene-title">CẢNH 09 [HÒA GIẢI &amp; CLIFFHANGER TẬP 02]: BỨC ẢNH CAM THƯỜNG 3 ĐỨA &amp; PHÁT HIỆN THIẾU HUY HIỆU</div>
+        <span class="time-tag">00:00 – 00:10 (10.0s Clip · Track B · Transforming Motif &amp; Hook sang Tập 02)</span>
+      </div>
+
+      <div class="audit-grid">
+        <div class="audit-box">
+          <div class="audit-label">1. Hoàn Tất Chặng 3 Motif Đạo Cụ</div>
+          • <code>iphone_15</code> hoàn tất chặng 3: Từ chỗ là vũ khí tự ti (Cảnh 02), bằng chứng bóc mẽ (Cảnh 07), nay trở thành cầu nối gắn kết tình bạn chân thực.<br>
+          • Nam xung phong đứng góc rìa phồng má làm mặt cá nóc chịu méo góc; Vy và Linh kề vai cười rạng rỡ.
+        </div>
+        <div class="audit-box">
+          <div class="audit-label">2. Cú Hook Cliffhanger Đỉnh Cao</div>
+          • Đúng lúc cả ba vui vẻ xem ảnh, Linh nhìn vào ngực áo phát hiện thiếu huy hiệu lớp do Khoa và An đang giữ &rarr; Mở toang cánh cửa bước vào Tập 02!
+        </div>
+        <div class="audit-box">
+          <div class="audit-label">3. Thoại Tươi Vui &amp; Giật Mình (≤ 15 từ)</div>
+          • Nam (14 từ) rủ chụp ảnh; Linh (12 từ) hét lên giật mình phát hiện thiếu đồ.
+        </div>
+      </div>
+
+      <div class="dialogue-section">
+        <div class="dia-header">🎙️ Lời Thoại Hòa Giải &amp; Cú Chốt Cliffhanger (Banter &amp; Hook · ≤ 15 Từ / Người)</div>
+        <div class="dia-item">
+          <span class="dia-speaker">nam_student [00:01.0 – 00:04.2]:</span>
+          <span class="dia-spoken-quote">“ Để tui đứng góc rìa phồng má làm mặt xấu, hai bà cười lên! ”</span>
+          <div class="dia-vn-dub">Nam giơ máy lên cao phồng căng má pha trò (14 từ).</div>
+        </div>
+        <div class="dia-item">
+          <span class="dia-speaker">linh_student [00:07.5 – 00:09.8]:</span>
+          <span class="dia-spoken-quote">“ Ủa... Khoa cầm túi huy hiệu lớp đâu mất tiêu rồi trời?! ”</span>
+          <div class="dia-vn-dub">Linh chỉ vào ngực áo hốt hoảng mở ra nút thắt Tập 02 (12 từ).</div>
+        </div>
+      </div>
+
+      <div class="block-wrap">
+        <div class="block-header">
+          <span class="block-label" style="color:var(--cyan);">CODE BLOCK 1: OMNI FLASH CINEMATIC AI VIDEO PROMPT (10S CLIP)</span>
+          <button class="copy-btn" onclick="copySnippet('p-09', this, 'Prompt Cảnh 09')">📋 Copy Video Prompt</button>
+        </div>
+        <pre class="prompt-display" id="p-09">Master-level cinematography and composition, fast-paced shot variation, atmospheric sound design. Style: Cinematic live-action Vietnamese high school slice-of-life, crisp morning daylight. Track B — multi-shot sequence cut on the 180-degree axis.
+
+[context]:
+phong_hoc_11a1 [100% Refer to image @phong_hoc_11a1], morning. Sunlit center aisle with desks pushed aside, golden morning light flooding the floor.
+
+[subject]:
+nam_student [100% Appearance, attire, and facial features Refer to image @nam],
+vy_student [100% Appearance, attire, and facial features Refer to image @vy],
+linh_student [100% Appearance, attire, and facial features Refer to image @linh]
+
+[Pro] :
+iphone_15 [100% Refer to image @iphone_15]
+
+Diegetic room acoustics: joyful school bell chime in background, cheerful laughter, virtual phone shutter click sound.
+
+[00:00–00:04.5] High-angle over-the-arm selfie medium three-shot, motivated wide perspective — catching the Inbound Baton with phone raised high, nam_student puffs out cheeks to absorb the wide-angle lens distortion while vy_student and linh_student press shoulders together, smiling radiantly into the lens. Focus on nam_student.
+nam_student says : “ Để tui đứng góc rìa phồng má làm mặt xấu, hai bà cười lên! ”（Voice of a young male student from Northern Vietnam; energetic cheerful shout holding phone high）
+
+[00:04.5–00:07.5] Cut to an intimate eye-level two-shot on vy_student and linh_student — the digital camera shutter clicks with a brief screen flash; vy_student and linh_student look at the candid unedited raw photo on the screen, bursting into shared spontaneous laughter. Focus on vy_student and linh_student.
+
+[00:07.5–00:10.0] Cut to a close-up on linh_student at eye level, static camera — linh_student's laughter cuts off abruptly as eyes snap wide; linh_student points an alarmed index finger down at the bare chest of AO_CHU_DAO_01, spinning gaze toward the open door to ignite the Episode 2 cliffhanger through 00:10.0. Focus on linh_student.
+linh_student cries : “ Ủa... Khoa cầm túi huy hiệu lớp đâu mất tiêu rồi trời?! ”（Voice of a young female student from Northern Vietnam; sudden alarmed shout, pointing at uniform chest）
+
+Continuous fluid motion, realistic physics, zero morphing, two shots joined by cuts on the 180-degree axis. Spatial positions anchored. Do not generate subtitles, dialogue text, titles, timestamps, or written text. Do not render duplicate characters.</pre>
+      </div>
+
+      <div class="block-wrap">
+        <div class="block-header">
+          <span class="block-label" style="color:var(--gold);">CODE BLOCK 2: FINAL STATE SNAPSHOT HANDOVER (00:10)</span>
+          <button class="copy-btn" onclick="copySnippet('ho-09', this, 'Handover Cảnh 09')">📋 Copy Handover State</button>
+        </div>
+        <pre class="handover-display" id="ho-09">[HANDOVER STATE AT 00:10.0]:
+Active Characters: vy_student, nam_student, linh_student
+Characters State at 00:10.0:
+  - vy_student and nam_student laughing beside linh_student.
+  - linh_student pointing at the bare chest of AO_CHU_DAO_01 in sudden panic.
+Props State:
+  - iphone_15 [100% Refer to image @iphone_15]: Held by nam_student displaying the candid raw photo.
+Setting: phong_hoc_11a1 [100% Refer to image @phong_hoc_11a1]
+Dialogue Audit: nam_student 14 words, linh_student 12 words (26 words total).
+Kinetic Momentum Bridge: linh_student pointing toward the door launches directly into Episode 02.</pre>
+      </div>
+    </div>
+
+  </div>
+
+  <script>
+    function copySnippet(elementId, btnElement, label) {
+      const el = document.getElementById(elementId);
+      if (!el) return;
+      const text = el.innerText || el.textContent;
+      navigator.clipboard.writeText(text.trim()).then(() => {
+        showToast("✔ Đã copy " + label + "!");
+        if (btnElement) {
+          const originalText = btnElement.innerText;
+          btnElement.innerText = "✔ Đã chép!";
+          btnElement.style.background = "var(--emerald)";
+          btnElement.style.color = "#000";
+          setTimeout(() => {
+            btnElement.innerText = originalText;
+            btnElement.style.background = "";
+            btnElement.style.color = "";
+          }, 2000);
+        }
+      });
+    }
+
+    function copyAllPrompts(btnElement) {
+      const promptIds = ['p-01', 'p-02', 'p-03', 'p-04', 'p-05', 'p-06', 'p-07', 'p-08', 'p-09'];
+      let allPrompts = "";
+      promptIds.forEach((id, idx) => {
+        const el = document.getElementById(id);
+        if (el) {
+          allPrompts += `--- [CẢNH 0${idx + 1}] ---
+` + el.innerText.trim() + "
+
+";
+        }
+      });
+      navigator.clipboard.writeText(allPrompts.trim()).then(() => {
+        showToast("✔ Đã copy toàn bộ 9 prompts video!");
+        if (btnElement) {
+          const originalText = btnElement.innerText;
+          btnElement.innerText = "✔ Đã chép toàn bộ!";
+          setTimeout(() => {
+            btnElement.innerText = originalText;
+          }, 2000);
+        }
+      });
+    }
+
+    function showToast(msg) {
+      const toast = document.getElementById('toast');
+      if (toast) {
+        toast.innerText = msg;
+        toast.style.display = 'block';
+        setTimeout(() => {
+          toast.style.display = 'none';
+        }, 2500);
+      }
+    }
+  </script>
+</body>
+</html>

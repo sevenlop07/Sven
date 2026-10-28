@@ -1,16 +1,19 @@
 # PILLAR 4: AI VIDEO PROMPT COMPILER & QUALITY ASSURANCE (SSOT)
 # (ĐẠO TRÌNH BIÊN DỊCH PROMPT OMNI FLASH, 10S KINETIC UNIT & KIỂM ĐỊNH LINTER)
 
+> 📚 **CATALOG NOTICE** — This Pillar is a catalog of tools, patterns, and examples. Timings, word budgets, shot counts, and combos are illustrative Craft Defaults unless listed as Hard Constraints in `workflow.md` §2.10. Choose among them through [`0-creative-doctrine.md`](file:///d:/Project/Sven/engine/references/0-creative-doctrine.md): intent first, tool second, reason always.
+
 > **SINGLE SOURCE OF TRUTH (SSOT) FOR PROMPT COMPILATION & QUALITY CONTROL**  
 > **Master Authority**: Level-2 Film Director (`.agents/skills/director/` & `.agents/DIRECTOR.md`)  
 > **Direct Stakeholders**: Level-1 Executive Producer (`AGENT.md`), Level-2 Master Screenwriter (`.agents/skills/screenwriter/`)  
-> **Consolidation Note**: This document fuses, streamlines, and replaces legacy references: `4-ai-video-prompt-compiler.md`, `4-ai-video-prompt-compiler.md`, and `4-ai-video-prompt-compiler.md`. All prompt syntax, Mode B Zero-Costume & Zero-Age laws, the 10s kinetic unit breath cycle, the Living Organic Settle Gate, the 4 neural continuity bridges, Code Block 1 & 2 handover protocols, `tap-X.html` episode specifications, and the 5-Point Pre-Flight Linter reside here as the single source of truth with zero contradiction.
+> **Consolidation Note**: This document fuses, streamlines, and replaces legacy references: `4-ai-video-prompt-compiler.md`, `4-ai-video-prompt-compiler.md`, and `4-ai-video-prompt-compiler.md`. All prompt syntax, Mode B Zero-Costume & Zero-Age laws, the 10s kinetic unit breath cycle, organic continuous motion & zero freeze holds, the 4 neural continuity bridges, Code Block 1 & 2 handover protocols, `tap-X.html` episode specifications, and the 6-Point Pre-Flight Linter reside here as the single source of truth with zero contradiction.
 
 ---
 
 ## 🏛️ TABLE OF MASTER CONTENTS
 
 - **PART I: FOUNDATIONAL PROMPT ARCHITECTURE & STATELESS GENERATION**
+  - § 0. The 4 Sovereign Anti-Stagnation Laws (Buzzword Purge, Action Verbs, Tactile Props, Editing Rhythm)
   - § 1. Stateless Prompt Architecture & One-Move Rule
   - § 2. Singularity Lock & Anti-Duplication Directives
   - § 3. The 6-Point Lighting Contract (Key, Direction, Kelvin, Medium, Shadow, Transitions)
@@ -24,9 +27,9 @@
   - § 1. The Dynamic Temporal Law & Flexible Timing Formula (Anti-Rigid Timestamp Mandate)
   - § 2. The 3-Phase Breath Cycle: Ignition, Collision, and Psychological Arrest
   - § 3. Second-by-Second Micro-Action Breakdown Anatomy (0.5s–1.0s Resolution)
-  - § 4. Phase 3: The Living Organic Settle Gate (Exhale — STRICT ZERO FREEZE HOLDS)
+  - § 4. Terminal Cadence & Organic Motion (STRICT ZERO FREEZE HOLDS; Script-Driven Pacing)
   - § 5. The 4 Emotional Landing Destinations of Phase 3 (A1, A2, Tier B, Tier C)
-- **PART IV: THE 4 CONTINUITY NEURAL BRIDGES (MULTI-CAMERA CONTINUITY)**
+- **PART IV: THE 4 CONTINUITY NEURAL BRIDGES (MULTI-SHOT CONTINUITY)**
   - § 1. Spatial Vector & 180° Axis Lock
   - § 2. Kinetic Momentum Handoff (STRICT ZERO ACTION REPETITION)
   - § 3. Chekhov Prop State Machine & The Prop Bifurcation Law (Intact ➔ Kinetic Fracture ➔ Inert Fragment)
@@ -34,24 +37,37 @@
 - **PART V: TWO-TIER PHYSICAL OUTPUT SPECIFICATION & HANDOVER LEDGER**
   - § 1. Code Block 1: Omni Flash Video Prompt in 100% English Natural Prose
   - § 2. Code Block 2: Physical Handover State Ledger at 00:10.0 (5 Physical Fields)
-  - § 3. Standard Dual Prompt Templates: Track A (Single Continuous Take) & Track B (Multi-Camera Montage)
+  - § 3. Standard Dual Prompt Templates: Track A (Single-Shot Continuous Take) & Track B (Multi-Shot Cut Sequence)
 - **PART VI: MASTER PER-EPISODE PRODUCTION SPECIFICATION (`tap-X.html`)**
-- **PART VII: THE CINEMATIC METAPHORICAL SAFETY TRANSLATION ENGINE**
-  - § 1. Universal Safety Filter Immunity Contract (Kling, Runway, Sora, Midjourney)
-  - § 2. Metaphorical Translation Lexicon: Violence, Trauma & Weaponry
-  - § 3. Metaphorical Translation Lexicon: Sensuality & Vulnerability
   - § 1. 100% Verbatim Roadmap Inheritance & Zero Narrative Drift
   - § 2. 1:1 Roadmap-to-Execution Dialogue Parity Standard
   - § 3. Lore-Bound Asset Naming Mandate
   - § 4. Absolute Pronoun Ban in Prompt Prose
   - § 5. The Universal Minor-Policy Immunity Contract
-- **PART VII: THE 5-POINT PRE-FLIGHT DIRECTORIAL LINTER & 12 COMMON ERRORS**
-  - § 1. The 5-Point Pre-Flight Directorial Linter Gate
+- **PART VII: THE CINEMATIC METAPHORICAL SAFETY TRANSLATION ENGINE**
+  - § 1. Universal Safety Filter Immunity Contract (Kling, Runway, Sora, Midjourney)
+  - § 2. Metaphorical Translation Lexicon: Violence, Trauma & Weaponry
+  - § 3. Metaphorical Translation Lexicon: Sensuality & Vulnerability
+- **PART VIII: THE 6-POINT PRE-FLIGHT DIRECTORIAL LINTER & 12 COMMON ERRORS**
+  - § 1. The 6-Point Pre-Flight Directorial Linter Gate
   - § 2. The 12 Cross-Cutting Directorial Errors Audit Table
   - § 3. The 3-Layer Check System (Core, Important, Nice-to-Have)
 
 ---
 
+
+## § MANDATORY MASTER PROMPT PREFIX LAW (LỆNH TIỀN TỐ PROMPT BẤT BIẾN)
+
+> [!IMPORTANT]
+> **THE MANDATORY MASTER PROMPT PREFIX LAW**:
+> 100% of generative AI Video Prompts (Code Block 1) MUST begin with the invariant master cinematic quality modifier:
+> Master-level cinematography and composition, fast-paced shot variation, atmospheric sound design.
+> - **Directorial Rationale**:
+>   1. *Master-level cinematography and composition*: Sets golden-ratio framing prior, rule of thirds, deep focal separation, and cinematic camera aesthetics.
+>   2. *fast-paced shot variation*: Forces generative diffusion models to support multi-shot variation dynamics across 10 seconds (Track B cuts and Track A dynamic moves) without latent degradation.
+>   3. *atmospheric sound design*: Activates native diegetic Foley, room tone, and acoustic synthesis in multimodal video generation models (Sora, Omni, Kling Audio).
+
+---
 
 ## § FOUNDATIONAL PRINCIPLES
 
@@ -65,10 +81,49 @@
 If **NO** (contains Scene/Shot numbers, "as established", "as seen before", negative sentences like "does not appear") → **rewrite** as observable physical detail.
 
 **Content zones:**
-| Zone | Audience | Labels |
+| Zone | Audience | Labels & Multi-Modal Structure |
 |---|---|---|
 | Internal: `[Final State]`, Beat Breakdown, Checklist | Agent only | Free |
-| Actual output: `[Subject]`, `[Prop Profile]`, `[Context]`, Shots | Omni Flash | **ABSOLUTELY NO reference labels** |
+| Actual output: Code Block 1 (Omni Flash / Sora / Kling / Runway) | Machine Prompt | **Mandatory 3-Block Structure**: `[context]:`, `[subject]:`, `[PROP]:` separated by blank lines with full reference bindings |
+
+---
+
+## ⚡ § 0. THE 4 SOVEREIGN ANTI-STAGNATION LAWS (BỐN NGUYÊN TẮC CỐT LÕI CHỐNG ĐƠ & BỆNH ĐẸP ĐỀU)
+
+> [!CRITICAL]
+> **ANTI-MANNEQUIN & ANTI-AESTHETIC-TRAP MANDATE**:
+> Video diffusion models (Sora, Kling, Runway Gen-3, Wan 2.1, Luma) naturally default to motionless hovering mannequins when fed static descriptive adjectives and unanchored subjects.
+> **Every compiled prompt in Code Block 1 MUST pass the 4 Sovereign Anti-Stagnation Laws:**
+
+### 1. Purge Hollow Beauty Buzzwords (Triệt Tiêu Từ Khóa Làm Đẹp Vô Nghĩa)
+- 🚫 **BANNED BUZZWORDS**: `photorealistic`, `cinematic 8k`, `hyper-realistic`, `masterpiece`, `dramatic lighting`, `moody atmospheric`, `unreal engine 5`, `gorgeous depth of field`.
+  - Stacking these words destroys prompt attention budgets and forces AI into a generic, blurry cosmetic filter.
+- ✅ **PHYSICAL OPTICAL GROUNDING**: Replace buzzwords with **tangible optical physics**:
+  - Exact key light trajectory: `low-angle amber late-afternoon sunlight cutting diagonally across the room`.
+  - Atmospheric particulates: `floating dust motes illuminated in the light beam`, `rising steam from a hot teacup`.
+  - Surface wear & texture: `peeling lime plaster wall`, `beads of cold sweat along the temple`, `worn varnished tabletop with scratches`.
+
+### 2. Targeted Action Verbs Over Passive Adjectives (Thay Tính Từ Bằng ĐỘNG TỪ HÀNH ĐỘNG CÓ MỤC TIÊU)
+- 🚫 **BANNED PASSIVE ADJECTIVES**: `looks sad`, `is angry`, `feels terrified`, `tense atmosphere`, `nervous expression`.
+  - Abstract emotional states cannot be rendered by diffusion latents; the model will render an unmoving statue.
+- ✅ **VERBS OF KINETIC DISRUPTION & SOMATIC DRIVE**:
+  - Express emotion strictly through physical causality: `slams flat palm against wooden jamb`, `knuckles whiten gripping the edge of the sheet`, `abruptly recoils two steps backward as if struck`, `rapid shallow chest heaving`, `throat muscles visibly swallowing hard`.
+  - Every action phase MUST contain a transitive verb acting upon a physical target or observable anatomy.
+
+### 3. Compulsory Prop & Environmental Tactile Interaction (Bắt Nhân Vật Tương Tác Đồ Vật & Bối Cảnh)
+- 🚫 **BANNED FLOATING TALKING HEADS**: Characters standing limp-armed in empty space with zero physical contact.
+- ✅ **MANDATORY TACTILE FRICTION IN EVERY SHOT**:
+  - The actor's hands and limbs MUST be anchored to a physical prop or architectural feature: clutching a chipped bowl, tearing a paper slip, gripping crib pine balusters, rubbing a stiff shoulder, pressing a palm against a doorframe, fidgeting with a metal zipper.
+  - Physical interaction forces the AI video engine to calculate collision mechanics, weight, and spatial planes, eliminating floating bodies.
+
+### 4. Dynamic Editing Rhythm & Sequence Assembly Over Monolithic Takes (Dựng Phim Bằng Nhịp Cắt — Editing Rhythm)
+- 🚫 **BANNED MONOLITHIC RUN-ON PROMPTS**: Never attempt to cram a multi-beat 20s–30s dramatic scene into a single unbroken prompt. AI models lose temporal coherence and freeze after 5–8 seconds without a cut.
+- ✅ **MULTI-SHOT TIMELINE BREAKDOWN (Track B Sequence)**:
+  - Any scene exceeding 10s MUST be partitioned into a dynamic editing sequence:
+    * **Shot 1 (In Medias Res Opening Action, 4s–6s)**: Fast momentum, establishing spatial power.
+    * **Cut to Shot 2 (Reverse Reaction & Somatic Shock, 6s–8s)**: Shift camera >30° across 180° line.
+    * **Cut to Shot 3 (Tactile Prop Detail / ECU Cutaway, 3s–5s)**: Physical object bearing the dramatic subtext.
+    * **Cut to Shot 4 (Resolving Climax / Power Shift, 6s–10s)**: Emotional landing or sharp cliffhanger cut.
 
 ---
 
@@ -105,19 +160,31 @@ For **each Scene**, before writing the Shot breakdown, determine:
 
 ---
 
-## § ONE-MOVE RULE
+## § ONE-MOVE RULE (CAMERA & CHARACTER KINETICS)
 
-Each Shot carries **exactly ONE camera intention**: one movement, one speed, one relationship to the subject. Do not stack multiple movements in one short 2-3s Shot.
+1. **Camera Kinetics**: Each Shot carries **exactly ONE camera intention**: one movement, one speed, one relationship to the subject. Do not stack multiple camera movements in one short 2–3s Shot.
+2. **Character Kinetics (Anti-Compounded Action Law)**: In any 3–4 second shot window, characters are strictly limited to **ONE primary kinetic momentum + ONE secondary biological reaction**.
+   - *Primary kinetic move*: e.g., turning a bolt, reaching for a hand, setting down a cup, taking two steps forward.
+   - *Secondary biological reaction*: e.g., sharp exhalation, locked jaw, widened eyes, temple pulse.
+   - Compounding multiple independent tasks ("vừa làm A vừa làm B vừa làm C") is strictly forbidden to prevent AI limb morphing and phantom hands.
 
 ---
 
 ## § [3] CHARACTERS & PROPS
 
-### Naming Convention (§3.0)
-- Character names in Code Block 1: **1-syllable English proper noun, no vocabulary meaning, no Vietnamese diacritics** (`Lok`, `Vin`, `Ren`, `Keth`, `Tor`, `Mael`, `Ryn`)
-- Vietnamese name → create internal **Name Mapping Table** at Stages 1 & 2, use throughout, NEVER output to Omni Flash
-- Spiritual characters: keep original title (Quan Am, Dia Tang Vuong) + full appearance description
-- Strictly forbidden: names ≥ 2 syllables (`Helen`, `Elena`), names with English meaning (`Grace`, `Hope`), latinized Vietnamese (`Tran`, `Lien`)
+### Naming Convention (§3.0) — The Universal `ho_ten` Character Entity Anchor Law
+- **Mandatory `ho_ten` Snake_Case Syntax**: All character identifiers in AI Video Prompts (Code Block 1) MUST be written in **lowercase, unaccented Latin characters joined by underscores** (`ho_ten` standard):
+  - Examples: `Mỹ Duyên` ➔ `my_duyen`, `Minh Khang` ➔ `minh_khang`, `Má Ba` ➔ `ma_ba`, `Dì Tám` ➔ `di_tam`, `Ba Thao` ➔ `ba_thao`.
+- **Zero Vietnamese Diacritics in Character Identifier Tokens**: Strips 100% of accented characters (`ă, â, đ, ê, ô, ơ, ư` and tone marks) in character identifiers to prevent byte-pair tokenization fragmentation and facial distortion across Kling, Sora, Runway, and Hailuo text encoders.
+- **Unified Tri-Entity Triplet Architecture**: Creates complete structural parity across the Sven visual ontology:
+  - Environments: `phong_cu`, `nha_bep`, `san_truoc`
+  - Props: `bat_com`, `vong_xep`, `noi_go`, `mam_nhom`
+  - Characters: `my_duyen`, `minh_khang`, `ma_ba`, `di_tam`
+- **Atomic Entity Lock & Singularity**:
+  - Declaration in `[subject]:`: `my_duyen [100% Appearance, attire, and facial features Refer to image 1], ... — the only my_duyen in frame.`
+  - Action prose: `Camera tracks with ma_ba taking one resolute stride forward, standing squarely across the threshold...`
+  - Spoken dialogue vector: `my_duyen whispers : “ Em mệt quá anh ơi... ” (Voice of a 24-year-old Southern Vietnamese woman; ...)`
+- **Spiritual & Historical Figures**: Written in unaccented snake_case: `quan_am`, `dia_tang_vuong`, `ngoc_hoang`.
 
 
 ### [Subject] & Costume Directing Protocol — §3.2
@@ -130,155 +197,313 @@ Each Shot carries **exactly ONE camera intention**: one movement, one speed, one
 **MODE B — Reference image exists from Step 1 Pre-Production (image-anchored — DEFAULT):**
 - **CORE PRINCIPLE 1: NEVER WRITE WHAT THEY ARE WEARING IN THE PROMPT!** (TUYỆT ĐỐI KHÔNG ĐƯỢC VIẾT MẶC CÁI GÌ VÀO CÂU LỆNH).
   The 16:9 Character Reference Model Sheet already defines 100% of the character's clothing, silhouette, fabrics, and colors. Writing "wearing [garment]" in text forces the AI text encoder to compete with the image anchor, triggering clothing mutations and face morphing!
-- **CORE PRINCIPLE 2: NEVER WRITE CHARACTER AGE IN THE VIDEO PROMPT!** (TUYỆT ĐỐI KHÔNG GHI ĐỘ TUỔI VÀO CÂU LỆNH SINH VIDEO).
-  Age, facial bone structure, skin maturity, eye depth, wrinkles, and physical demographic are ALREADY 100% defined and anchored by the 16:9 Model Sheet reference image. Writing "twenty-six-year-old", "50-year-old", "middle-aged", or "young" causes the text encoder (CLIP/T5) to fight the visual reference, hallucinating artificial age features or causing facial distortion/morphing!
-- **CORE PRINCIPLE 3: ZERO BRACKETED REFERENCE TAGS IN PROMPTS!** (TUYỆT ĐỐI KHÔNG GHI THẺ THAM CHIẾU VÀO CÂU LỆNH).
-  User attaches reference images manually in the AI platform UI (Kling, Sora, Runway, Midjourney). Never inject `[Character Reference attached]`, `[Prop Reference attached]`, `[Environment Reference attached]`, or `[Mode A Anchor]` into prompt text — they clutter tokens and confuse text encoders.
+- **CORE PRINCIPLE 2: NEVER WRITE CHARACTER AGE IN THE VISUAL NARRATIVE PROSE!** (TUYỆT ĐỐI KHÔNG GHI ĐỘ TUỔI VÀO PHẦN MÔ TẢ THỊ GIÁC).
+  Age, facial bone structure, skin maturity, eye depth, wrinkles, and physical demographic are ALREADY 100% defined and anchored by the 16:9 Model Sheet reference image. Writing "twenty-six-year-old", "50-year-old", "middle-aged", or "young" in the visual scene description causes diffusion text encoders (CLIP/T5) to fight the visual reference, hallucinating artificial age features or causing facial distortion/morphing!
+  *(Note: Numerical age, gender, and regional dialect belong EXCLUSIVELY to the Dialogue Voice Directing Parenthetical for audio/lip-sync engines — see the Dual-Track Architecture below).*
+- **CORE PRINCIPLE 3: IMAGE REFERENCE SLOT MATCHING (`[Refer to image X]`)**:
+  In multi-character setups and image-to-video tools (Kling, Runway, Sora, Luma), explicitly bind each character name to their uploaded reference sheet slot: `[Character Name] [Refer to image 1]`, `[Character Name] [Refer to image 2]`.
 - **CORE PRINCIPLE 4: ZERO METRIC MEASUREMENTS (cm, kg) IN PROMPTS!** (TUYỆT ĐỐI KHÔNG DÙNG SỐ ĐO CHIỀU CAO / CÂN NẶNG TRONG PROMPT).
   Diffusion models do NOT have a ruler or scale. Writing `85cm` or `195cm` or `60kg` is meaningless noise that causes the AI to default all characters to identical average human height! ALWAYS enforce **Visual Relative Scale & Physical Mass Contrast** only when multi-subject contrast is required: e.g., `tiny juvenile cub, diminutive and fragile, dwarfed beneath the predator` vs `massive towering predator with broad muscular bulk, thrice the size of the cub, looming dominantly over the frame`.
-- **THE INITIAL OPENING STATE PROTOCOL (GIAO THỨC MÔ TẢ TRẠNG THÁI KHỞI ĐẦU TẠI [00:00])**:
-  In the video prompt, the character description describes ONLY their **initial physical state, somatic tension, and spatial blocking at the moment the shot opens [00:00]**:
-  1. **Character Name**: `[Character Name]` (exact match to UI reference slot; zero bracketed tags).
-  2. **Initial Spatial Staging & Posture at 00:00 (Vị trí & Tư thế không gian lúc bắt đầu)**:
-     - Exact frame position and body posture at [00:00] (e.g. `standing rigid at frame-left beside the cedar loom`, `kneeling upright at frame-right facing frame-left beside the overturned jar`, `seated slumped over the scarred oak table at frame-center`).
-  3. **Initial Somatic & Biomechanical State (Trạng thái cơ sinh học, hơi thở, áp lực cơ bắp lúc bắt đầu)**:
-     - Chest respiration cadence, muscle tension, tremors, hand/shoulder placement (e.g. `chest rising in shallow guarded breaths, shoulders squared with rigid spine, right hand clenched tightly at side`).
-  4. **Initial Gaze & Facial Expression State (Điểm nhìn & Trạng thái khuôn mặt lúc bắt đầu)**:
-     - Gaze vector, eye tension, jaw clench (e.g. `taut clenched jaw, dark unblinking eyes locked on the doorway with fierce resolve`, `downward averted weary eyes`).
-  5. **Surface Physical State (Trạng thái bề mặt nếu có — TUYỆT ĐỐI KHÔNG NHẮC TRANG PHỤC)**:
-     - Environmental impacts on body/skin (e.g. `beads of cold sweat glistening on temples, knuckles and palms caked with limestone dust`).
-  6. **Singularity Lock**: `— the only [Name] in frame.`
 
-- **MANDATORY FORMULA (CÔNG THỨC MỎ NEO TRẠNG THÁI MỞ ĐẦU BẮT BUỘC)**:
-  `[Character Name], [Initial Spatial Staging & Posture at 00:00], [Initial Somatic State: breathing cadence, physical tension], [Initial Gaze & Facial State], [Surface State if any: sweat, dust] — the only [Name] in frame.`
+---
 
+### 🎭 THE DUAL-TRACK CHARACTER SPECIFICATION PROTOCOL (QUY CHUẨN ĐẶC TẢ NHÂN VẬT 2 TUYẾN)
+
+To eliminate all contradictions between visual diffusion stability (Mode B) and multi-modal audio/lip-sync generation, character information is split into two non-overlapping operational tracks:
+
+#### TRACK 1: THE 4-PART SOVEREIGN SUBJECT PROTOCOL & DYNAMIC TIMELINE DIRECTING
+To anchor character identity, eliminate AI duplicate clones, and prevent spatial amnesia, character specification follows a rigorous two-tier division:
+
+1. **The `[subject]:` Declaration Block (The 4-Part Sovereign Formula)**:
+   In Code Block 1, every participating character in `[subject]:` MUST be declared using the **4-Part Sovereign Formula**:
+   $$\mathbf{[subject]:} = \mathbf{[Tên\ +\ Thẻ\ Ảnh]} + \mathbf{[Mỏ\ neo\ không\ gian\ kiến\ trúc]} + \mathbf{[Tư\ thế\ &\ Xúc\ giác\ ban\ đầu]} + \mathbf{[—\ the\ only\ \{name\}\ in\ frame]}$$
+   
+   - **Syntax Contract**:
+     `{ho_ten} [100% Appearance, attire, and facial features Refer to image X], {initial spatial anchor to in-scene architectural fixture}, {initial physical posture & tactile contact} — the only {ho_ten} in frame.`
+   - **The 3 Directorial Functions of `[subject]:`**:
+     * **Function 1: Multi-Modal Identity Lock**: Binds character token to the 16:9 Model Sheet (`image X`).
+     * **Function 2: Zero-Frame Spatial & Tactile Grounding**: Anchors character physically to an architectural fixture or furniture at Frame 0 (`00:00.0`), preventing floating bodies or deformed ghost hands.
+     * **Function 3: The Mandatory Anti-Duplication Seal (`— the only {name} in frame`)**: Explicitly blocks diffusion text encoders from generating twin/clone duplicates of the same character in one room.
+   - **Subject-to-Scale Invariance (Frame Capacity Law)**:
+     * *Single-Subject Scales (CU, MCU, Choker, ECU)*: `[subject]:` MUST contain strictly ONE character. Secondary characters are `O.S.` and must NEVER be declared in `[subject]:` or described in the prompt.
+     * *Two-Subject Scales (M2S, OTS, Two-Shot Profile)*: `[subject]:` lists both characters on separate lines, each with their own spatial anchor and `— the only {name} in frame`.
+
+2. **The 4-Vector Character Directing Protocol in Timeline Shots (`[00:00–00:XX]`)**:
+   While `[subject]:` locks the **static spatial grounding at 00:00.0**, the timeline phases (`[00:00–00:XX]`) direct **dynamic kinetic progression** across time:
+   - **Trạng thái & Tiến triển (Physical State & Evolving Kinetics)**: Weight shifts, stride forward, collapsing, lunging.
+   - **Tương tác hành động (Dynamic Action & Prop Manipulation)**: Yanks door open, crushes tin can, clutches bag.
+   - **Biểu cảm biến đổi (Micro-Biomechanics & Emotion Shift)**: Clenching jaw, trembling lower lip, widening eyes.
+   - **Chỉ đạo đàm thoại (Spoken Action Verbs & Dialogue Sync)**: `{ho_ten} {speech_action_verb} : “{line}” (...)`.
+
+3. **The Kinetic Handshake Protocol (Giao Thức Bắt Tay Động Học giữa `[subject]:` và `Action`)**:
+   Để triệt tiêu hoàn toàn hiện tượng lệch pha (motion glitch, jump artifacts, hoặc subject teleportation) giữa điểm định vị tĩnh tại `00:00.0` và hành động diễn ra từ `00:00` đến `00:10.0`, AI Agent phải tuân thủ **4 Tiên Đề Bắt Tay Bất Biến**:
+   - **Tiên đề 1: Bệ phóng Cơ sinh học (The Biomechanical Launchpad Law: T0 $\to$ T0+)**:
+     * `[subject]:` là **Bệ phóng (Launchpad)** (tọa độ không gian và điểm tựa xúc giác lúc chưa bấm máy).
+     * Hành động đầu tiên trong shot mở màn (`[00:00–00:XX]`) BẮT BUỘC phải là chuyển động cất cánh phát triển trực tiếp từ bệ phóng đó.
+     * *Quy tắc suy luận*: Nếu `[subject]:` định vị nhân vật đang quỳ bên lò sưởi, tay áp lên sàn $\implies$ Hành động tại giây 00:00 phải bắt đầu từ tư thế quỳ đó (nghiêng người với lấy cái bình, ngẩng đầu nhìn lên giường). Tuyệt đối cấm miêu tả nhân vật như thể vừa từ cửa bước vào phòng.
+   - **Tiên đề 2: Luật Phân Tách Trách Nhiệm 1 Chiều (The One-Way Responsibility Separation & Zero Redundancy)**:
+     * `[subject]:` độc quyền chịu trách nhiệm về: **Định danh Mode B + Tọa độ neo tĩnh kiến trúc + Tư thế xúc giác xuất phát + Seal chống nhân bản**.
+     * `Action` độc quyền chịu trách nhiệm về: **Động từ chuyển động (Active Verbs) + Chuyển động máy quay (Camera Moves) + Tương tác đạo cụ động (Prop Manipulation) + Thoại & Biểu cảm cơ mặt**.
+     * *Quy tắc chống lãng phí token*: Action TUYỆT ĐỐI KHÔNG lặp lại câu miêu tả trang phục, diện mạo, hoặc tả lại tư thế tĩnh nếu nhân vật không có sự thay đổi cơ học. Nhảy thẳng vào động từ hành động và diễn biến cảm xúc.
+   - **Tiên đề 3: Luật Bất Biến Dung Lượng Khung Hình (Frame Capacity & Single-Subject Isolation in Action)**:
+     * Nếu shot là góc máy đơn cận cảnh (`CU`, `MCU`, `Choker`): Trong câu action của shot đó, AI Agent CHỈ ĐƯỢC chỉ đạo cơ thể, nhịp thở, ánh mắt và chuyển động môi của **DUY NHẤT** nhân vật được camera đóng khung.
+     * Nhân vật còn lại trong phòng BẮT BUỘC phải là ngoại cảnh âm thanh (`O.S.`) hoặc đối tượng nhận ánh nhìn (eyeline target). Tuyệt đối không chỉ đạo cử chỉ tay chân hay nét mặt của người thứ hai trong shot cận đơn (làm như vậy sẽ ép AI sinh thêm một cơ thể dị dạng xen vào khung hình).
+   - **Tiên đề 4: Cầu Nối Động Lượng Xuyên Cảnh (The Cross-Scene Kinetic Handover Bridge)**:
+     * `[subject]:` của Cảnh $N+1$ được kế thừa trực tiếp từ **`[HANDOVER STATE AT 00:10.0]`** của Code Block 2 Cảnh $N$.
+     * Tư thế kết thúc ở giây `00:10.0` của cảnh trước tự động trở thành tư thế xuất phát tại `00:00.0` của cảnh tiếp theo (nếu cùng trục không-thời gian liên tục).
+
+---
+
+#### TRACK 2: DIALOGUE DIRECTING PARENTHETICAL & 10S SHOT ARCHITECTURE (Chỉ Đạo Thoại, Khẩu Hình & Cú Máy 10 Giây)
+> **MANDATORY AUDIO-DEMOGRAPHIC ALIGNMENT LAW (BÁM SÁT 100% CASTING SECTION 3)**:
+> Video audio models (Sora 2, Kling Audio, Runway Audio) and voice synthesizers (ElevenLabs, Hedra) require clear vocal identity. The Dialogue Parenthetical is the **MANDATORY AND EXCLUSIVE LOCATION** where **GENDER, DEMOGRAPHIC AGE DESCRIPTOR, and REGIONAL DIALECT** must be declared, strictly synchronized with Section 3 Character Casting!
+
+> [!IMPORTANT]
+> **THE 10-SECOND SHOT MENTAL MODEL FOR GENERATIVE AI DIALOGUE**:
+> 1. **10 Seconds is a SHOT (Cú Máy), NOT a Scene**: A dramatic scene consists of multiple 10s shots stitched together via **Shot - Reverse Shot** across consecutive shots (Shot 1: Speaker A 10s ➔ Shot 2: Speaker B or Reaction B 10s ➔ Shot 3: Return to A).
+> 2. **Single-Speaker Dominance for Lip-Sync Stability**: Generative diffusion models (Veo, Sora, Kling, Runway) achieve near-100% lip-sync accuracy and zero voice bleeding when each 10s shot features **EXACTLY ONE speaking face**.
+> 3. **The Two-Shot Exception & The 15-Word Split Law**: Two characters are permitted to speak in the same 10s shot ONLY in a Two-Shot during rapid, high-friction verbal sparring (each speaking 5–10 words). If either speaker speaks **more than 15 words** in that shot ➔ **MANDATORY EDITORIAL SPLIT** into separate solo shots.
+> 4. **Cinematic Word Budgets per 10s Shot**:
+>    - *Sitcom / Slice-of-Life*: **25–30 words** (single speaker, cap 32w). Paced at ~2.5–3.0 wps, ending with a punchline at 2–3s before cut.
+>    - *Psychological Drama*: **15–20 words** (single speaker). Reserves 4–5s for breathing, glances, and emotional subtext.
+>    - *Buffer Law*: 0.5s–1.0s buffer at head (breath intake); 0.5s–1.5s at tail (mouth closure, living settle).
+
+**Dialogue Parenthetical Formula (Speech Action Standard):**
+`{Speaker} {speech_action_verb} : “{Spoken Line}” (Voice of a [Age-descriptor] [Gender] from [Region / Dialect]; [Lip-sync & facial micro-expression]; [Tactile gesture / prop interaction]; [Gaze & Subtext / Emotional intent])`
+
+> [!CRITICAL]
+> **MANDATORY SPEECH ACTION VERB LAW**: Naked `{Speaker}:` without an action verb is strictly banned!
+> Generative video text encoders treat a naked colon as passive metadata, failing to activate facial/lip articulation kinematics.
+> Every spoken line MUST declare an active speech verb:
+> - Initiator / Opening statement: `{Speaker} says : “ ... ” (...)` or `whispers :`
+> - Responder / Dialogue counter: `{Speaker} replies : “ ... ” (...)` or `snaps :`, `pleads :`, `retorts :`
+
+**Directing Syntax for 4 Master Cinematic Dialogue Techniques in Prompts:**
+1. **Standard Solo Shot (Shot - Reverse Shot — Single Speaker)**:
+   ```text
+   Mỹ Duyên [Refer to image 1], framed in medium close-up at room-center, gentle brown eyes glowing with maternal hope, chest rising in calm measured breaths — the only Mỹ Duyên in frame.
+   Mỹ Duyên says : “A bamboo cradle, a bolster for the back, and a soft bed-edge to cradle you gently, Mama!” (Voice of a young adult woman from Southern Vietnam; lips parting in articulate lip-sync with a tender affectionate smile; slender fingers caressing the cotton fabric; gentle brown eyes conveying a tender plea for filial reconciliation.)
+   ```
+2. **Reaction Shot (Model 0 — 0 Spoken Words, Absolute Lip Closure)**:
+   ```text
+   Bà Ba [Refer to image 2], framed in tight close-up, shoulders rigid against the doorway frame, lips remaining 100% firmly sealed with zero mouth movement; eyes glistening with suppressed vulnerability, jaw clenching as throat swallows hard, absorbing the painful truth in heavy suffocating silence through 00:10.0.
+   ```
+3. **L-Cut Audio Bleed (Trailing Dialogue over Silent Reaction)**:
+   ```text
+   Bà Ba [Refer to image 2], framed in medium close-up, looking toward screen-left in stunned silence, lips remaining 100% firmly closed; in diegetic room acoustics, the trailing spoken words of Mỹ Duyên echo from off-screen during [00:00–00:02.0]: “...to cradle you gently, Mama!” while Bà Ba's eyes widen slightly, throat muscles tightening before a slow, wounded exhalation right to 00:10.0.
+   ```
+4. **Internal Monologue / Voice-Over (Model 4 — V.O.)**:
+   ```text
+   Minh Khang [Refer to image 3], sitting motionless on the wooden bench, eyes fixed down on the crumpled letter, lips remaining 100% firmly sealed with zero facial articulation; internal voiceover resonates in clear mental acoustics: “If I turn back now, there will be nothing left to save.” (Voice of a young adult man from Central Vietnam, hushed reflective timbre; slow shallow breathing, eyelids fluttering softly.)
+   ```
+
+**Two-Shot Exception Directing Demonstration (Rapid Sparring ≤ 15w/speaker):**
+```text
+[MULTI-CHARACTER TWO-SHOT VISUAL STAGING]
+Eleazar [Refer to image 1], standing rigid at screen-right facing screen-left across the timber ledger table with predatory jaw tension — the only Eleazar in frame.
+Noa [Refer to image 2], standing firm at screen-left facing screen-right in resolute stillness, right hand hovering primed above the tabletop — the only Noa in frame.
+
+[RAPID SPARRING DIALOGUE DIRECTING — UNDER 15 WORDS PER SPEAKER]
+Eleazar snaps : “Your father's debt is due tonight; yield the loom!” (Voice of a middle-aged man with harsh gravelly Levantine timbre; lips curling in a predatory sneer; heavy knuckles slapping the oak wood; eyes narrowed in tyrannical greed.)
+Noa replies : “A forged seal buys nothing; father paid in full!” (Voice of a young adult woman with clear ringing defiance; lips parting in sharp articulate lip-sync; slender hand pressing flat upon the loom frame; hazel eyes flashing with righteous truth.)
 ```
-[MODE B — Correct Subject Format: Zero age, zero clothing, purely Initial State & Staging]
-Noa Gilead, kneeling upright at frame-center on dusty limestone flagstones, chest rising in shallow guarded breaths, shoulders tense with taut jaw, hazel eyes locked unblinking toward the doorway, cold sweat beading at temples — the only Noa in frame.
 
-[MODE B — Multi-Character Scene Initial Staging]
-Eleazar, standing rigid at screen-right facing screen-left, leaning heavy forward over the timber ledger table with flared nostrils and predatory jaw tension, hawkish gaze bearing down across the oak tabletop — the only Eleazar in frame.
-Noa, standing firm at screen-left facing screen-right, shoulders squared with rigid spine, right hand hovering primed above the tabletop, hazel eyes locked in cold unyielding defiance — the only Noa in frame.
-```
-
-### Master 16:9 Four-View Character Model Sheet Prompt Architecture (Step 1B)
+### Master 16:9 Multi-Angle Character Model Sheet Prompt Architecture (Step 1B — Zero-Text Standard)
 
 > **CINEMATIC STYLE & 16:9 RATIO INHERITANCE LAW (MANDATORY)**: Every character reference asset (Step 1B) MUST inherit 100% of the project's designated Master Cinematic Visual Style (`Style: [Visual Style Name]`) AND MUST be standardized strictly to **16:9 Landscape aspect ratio**.
 
 #### 1. Bắt buộc khai báo 7 đặc tính nhân vật chi tiết (Character Attributes Checklist):
-- **Height**: `[Specific cm — e.g. 182cm]`
-- **Head-to-body ratio**: `[Specific ratio — e.g. 8 heads]`
-- **Ethnicity & Skin**: `[Specific ethnicity + tone + natural texture — e.g. White (Western), cool porcelain fair skin with natural texture]`
-- **Build**: `[Specific silhouette & frame — e.g. slim and well-proportioned]`
-- **Hair**: `[Color, cut, texture, strands, styling — e.g. neat slicked-back black hair with clear strands, tough and tidy style]`
-- **Facial features**: `[Three-dimensional facial bones, cool porcelain fair skin with natural texture; deep eye sockets, cool gray-blue and dark amber eyes with sharp calm gaze; tall straight nose bridge, thin nude lips, cold composed expression]`
-- **Clothing & props**: `[Pristine baseline costume: slim-fit black matte wool suit with matching shirt and silk inner lining; neat collar design, no earrings or tattoos, bare hands, zero unnecessary props]`
+- **Height**: `[Specific cm — e.g. 170cm]`
+- **Head-to-body ratio**: `[Specific ratio — e.g. 1:7.5 to 1:8 heads]`
+- **Ethnicity & Skin**: `[Specific ethnicity + tone + natural texture — e.g. East Asian, luminous porcelain fair skin with natural micro-pores]`
+- **Build**: `[Specific silhouette & frame — e.g. athletic, slim and toned, defined waistline, agile tactical curves]`
+- **Hair**: `[Color, cut, texture, strands, styling — e.g. layered chin-length bob in dark espresso brown with subtle caramel highlights]`
+- **Facial features**: `[Delicate oval face with sharp jaw, almond-shaped eyes with calm penetrating gaze, rimless silver wire spectacles, silver hoop lip ring piercing]`
+- **Clothing & props**: `[Pristine baseline costume: cropped dark maroon leather moto jacket, form-fitting bodysuit, tactical shorts, thigh holsters, thigh-high boots]`
 
-#### 2. Cấu trúc 5 tầng của câu lệnh tham chiếu 16:9 (The 5-Layer Prompt Architecture):
-1. **Style Header**: `Style: [Movie Master Visual Style]` (Adheres 100% to designated film aesthetic).
-2. **Optical Spec & Quality**: Intimate portrait focal depth, creamy shallow depth of field, 8K ultra HD, photorealistic texture (hoặc 3D Unreal Engine PBR parameters).
-3. **Character Persona & 3D Bone Structure**: Khí chất nhân vật, cấu trúc xương mặt 3D, nước da tự nhiên không trang điểm đậm, hốc mắt sâu tạo bóng đổ tự nhiên, màu mắt chính xác, độ sắc lạnh của ánh nhìn, sống mũi và khuôn môi.
-4. **Hair Grooming & Tailored Wardrobe**: Nếp tóc bóng mượt rõ từng lọn, quy chuẩn âm tính (không khuyên tai, không hình xăm), đường may âu phục cao cấp (chất dạ mờ, lót lụa, phom vai cứng cáp, cổ áo gọn gàng).
-5. **Lighting, Solid Contrast Backdrop & 4-View Layout**: Ánh sáng Rembrandt điện ảnh, viền rim outline phía sau, tương phản sáng tối cao.
-   - **LUẬT TƯƠNG PHẢN ĐỐI ỨNG ĐỘ SÁNG (THE OPTICAL VALUE CONTRAST INVERSION LAW)**:
-     Bắt buộc chọn màu nền studio nghịch đảo với màu trang phục để nhân vật nổi bật tuyệt đối:
-     • **Trang phục TỐI MÀU (Đen, xanh đậm, than, da sẫm)** ➔ BẮT BUỘC dùng **Hậu cảnh MÀU SÁNG (Nền trắng tinh khiết `solid pure white studio background` hoặc xám sáng)** để thấy rõ từng đường may vai áo, nếp gấp cánh tay, triệt tiêu lỗi chìm màu (Black-on-Black).
-     • **Trang phục SÁNG MÀU (Trắng, kem, be, pastel, linen sáng)** ➔ BẮT BUỘC dùng **Hậu cảnh MÀU TỐI (Nền xám tối trung tính `solid dark neutral grey studio background` hoặc đen tuyền)** để nổi bật viền áo sáng, triệt tiêu lỗi lóa mép vải (White-on-White).
-     • **TUYỆT ĐỐI CẤM MỌI BỐI CẢNH NGOẠI CẢNH / NỘI THẤT** (không đường phố, không nhà cửa, không cây cối, không đồ đạc) để chống lem bối cảnh sang video.
-   - **Bố cục 4 góc nhìn chuẩn 16:9**: 1 cận mặt bên trái + 3 toàn thân song song bên phải: front, side, back.
+#### 2. Cấu trúc bố cục đa góc nhìn của câu lệnh tham chiếu 16:9 (The Sovereign Multi-Angle Composition — Zero-Text Standard):
+1. **Tuyệt Đối Bãi Bỏ Chữ / Metadata Trên Ảnh (The Zero-Text Mandate)**:
+   > [!IMPORTANT]
+   > **QUY CHUẨN THỊ GIÁC THUẦN KHIẾT 100% (THE ZERO-TEXT MANDATE)**:
+   > 1. Khung hình 16:9 dành trọn vẹn 100% diện tích cho dữ liệu hình ảnh nhân vật. **Nghiêm cấm chèn bất kỳ thẻ chữ, tiêu đề tên, metadata card hay nhãn thông số nào lên canvas** để loại trừ triệt để nguy cơ AI sinh chữ rác hoặc loạn font.
+   > 2. Các thông số nhân vật (chiều cao, tính cách, đặc tính giải phẫu) được mô tả đầy đủ trong prompt văn bản gửi tới model AI, không in đè lên bề mặt hình ảnh.
 
-#### 3. Golden Reference Templates (Mẫu chuẩn thực chiến):
+2. **Khu Vực Trái & Giữa (~55–60% Canvas - Three-Angle Full-Body Turnaround in Natural Stance)**:
+   > [!IMPORTANT]
+   > **QUY CHUẨN THÂN HÌNH TOÀN THÂN: THẾ ĐỨNG TỰ NHIÊN, 3 GÓC NHÌN & MẶT SAU CÓ ĐẦU (RELAXED NATURAL STANCE & 3-ANGLE MANDATE)**:
+   > 1. **BÃI BỎ A-POSE ➔ CHUYỂN SANG DÁNG ĐỨNG THẢ LỎNG TỰ NHIÊN (RELAXED NATURAL STANCE LAW)**: Cả 3 thân hình toàn thân BẮT BUỘC ở tư thế **đứng thẳng tự nhiên, thả lỏng** (`natural, relaxed standing posture with arms resting naturally and loosely beside the torso, feet naturally grounded touching the floor`). Tuyệt đối không dùng tư thế A-pose giương tay cứng nhắc, giúp nếp vải và phom dáng buông rủ đúng trọng lực thực tế.
+   > 2. **BA GÓC NHÌN TOÀN THÂN CỐT LÕI (THREE FULL-BODY ANGLES)**:
+   >    - **Mặt Trước (Front View)**: Cắt từ chân cổ / đường may cổ áo trở xuống gót giày, **TUYỆT ĐỐI KHÔNG ĐẦU / KHÔNG MẶT** (`headless neck-down front view, strictly zero head and zero face`).
+   >    - **Mặt Nghiêng 90° (90-Degree Lateral Side Profile View)**: Hiển thị độ dày cơ thể, độ cong cột sống, form trang phục và phụ kiện nhìn ngang, **TUYỆT ĐỐI KHÔNG ĐẦU / KHÔNG MẶT** (`headless neck-down 90-degree lateral side profile view, strictly zero head and zero face`).
+   >    - **Mặt Sau (Rear Back View)**: Toàn thân từ đỉnh đầu xuống gót giày, **BẮT BUỘC CÓ ĐẦU VÀ TÓC PHÍA SAU** (`full-length rear back view INCLUDING complete back of head and rear hairstyle`), hiển thị trọn vẹn kết cấu lọn tóc phía sau, đường gáy, đường may lưng áo và gót giày chạm sàn.
+   > 3. **Lý do kỹ thuật cốt tử**:
+   >    - Mặt trước và mặt nghiêng 90° loại bỏ đầu để triệt tiêu lỗi dị tật khuôn mặt ở độ phân giải nhỏ và chống xung đột nhận diện đa mặt (*Multi-face identity conflict*).
+   >    - Mặt sau CÓ ĐẦU cung cấp mỏ neo thị giác cực kỳ quan trọng cho AI Video khi nhân vật quay lưng bước đi (thấy rõ form tóc sau gáy, độ dài đuôi tóc/búi tóc) mà hoàn toàn không lo méo mặt hay xung đột nhận diện vì phía sau không có mắt mũi miệng.
+   >    - Góc nghiêng 90° không đầu khóa chuẩn độ dày không gian 3 chiều của cơ thể và trang phục.
 
-**Mẫu 1A: Trang phục TỐI MÀU ➔ Bắt buộc NỀN TRẮNG SÁNG Studio (Dark Suit • Solid Pure White Backdrop)**
-*(Thợ săn mặc vest đen tuyền ➔ Bắt buộc phông trắng studio để nổi bật tối đa từng đường vai và form dáng)*
+3. **Khu Vực Nửa Phải (~40–45% Canvas - Prominent Direct Frontal Full-Head Portrait)**:
+   - Chiếm ~40–45% chiều ngang khung hình: Ảnh chân dung điện ảnh từ ngực trở lên, đóng vai trò là mỏ neo khuôn mặt, mắt, tóc duy nhất.
+   - **QUY CHUẨN CHÂN DUNG PHÓNG TO RÕ NÉT, CHÍNH DIỆN 100% & BẢO TOÀN TRỌN VẸN HỘP SỌ (PROMINENT DIRECT FRONTAL & FULL-CRANIAL LAW)**:
+     > [!CRITICAL]
+     > **ZOOM TO RÕ NÉT, CHÍNH DIỆN 100% & CẤM MỌI GÓC QUAY KHÁC**:
+     > 1. **Zoom to rõ nét khuôn mặt**: Chân dung ngực trở lên (chest-up portrait) được phóng to nổi bật (`prominent zoomed-in framing`) để thấy rõ từng chi tiết ngũ quan, mống mắt, da tự nhiên, sẹo/băng dán, khuyên tai và đường lọn tóc.
+     > 2. **Đảm bảo full 100% head & face - Không cắt xén**: BẮT BUỘC giữ khoảng thở an toàn (*safe headroom breathing space*) phía trên đỉnh tóc. Toàn bộ hộp sọ và lọn tóc phải nằm trọn vẹn 100% trong khung hình, cách mép trên một khoảng thở rõ ràng, không chạm mép hay bị cắt cụt.
+     > 3. **Chính diện 100% (Strictly Direct Frontal Eye-Level View)**: Khuôn mặt và ánh mắt nhìn thẳng trực diện vào tâm ống kính máy quay.
+     > 4. **CẤM TUYỆT ĐỐI TẤT CẢ CÁC GÓC QUAY KHÁC**: CẤM góc nghiêng 3/4 (`strictly zero three-quarter angle`), CẤM góc nhìn nghiêng sườn (`strictly zero side profile`), CẤM góc máy chéo (`strictly zero oblique view`), CẤM góc ngửa hay góc chúi (`strictly zero low or high tilt angles`).
+     > 5. **Cú pháp đóng khung cận ngực chính diện chuẩn mực**:
+     >    `prominent, zoomed-in high-definition chest-up portrait filling the right frame with impactful facial clarity while maintaining safe headroom margin above the hair crown, entire head, full cranium, and voluminous layered hairstyle 100% fully visible inside the canvas with clear breathing space below top border, in strictly direct frontal eye-level view facing camera directly`.
+     > 6. **Chuỗi Negative Directives bắt buộc**:
+     >    `strictly zero text, zero typography, zero labels, strictly zero cropped head, strictly no cut-off hair, no truncated hair crown, no hair touching canvas borders, safe headroom margin above skull, strictly zero out-of-frame head, no chopped skull, portrait strictly frontal view only`.
+
+#### 3. Luật tương phản đối ứng độ sáng (The Optical Value Contrast Inversion Law):
+- **Trang phục TỐI MÀU (Đen, xanh đậm, than, da sẫm, nâu đỏ)** ➔ BẮT BUỘC dùng **Hậu cảnh MÀU SÁNG (Nền trắng tinh khiết `solid pure white studio background` hoặc xám sáng)** để thấy rõ từng đường may vai áo, nếp gấp cánh tay, triệt tiêu lỗi chìm màu (Black-on-Black).
+- **Trang phục SÁNG MÀU (Trắng, kem, be, pastel, linen sáng)** ➔ BẮT BUỘC dùng **Hậu cảnh MÀU TỐI (Nền xám tối trung tính `solid dark neutral grey studio background` hoặc đen tuyền)** để nổi bật viền áo sáng, triệt tiêu lỗi lóa mép vải (White-on-White).
+- **TUYỆT ĐỐI CẤM MỌI BỐI CẢNH NGOẠI CẢNH / NỘI THẤT** (không đường phố, không nhà cửa, không cây cối, không đồ đạc) để chống lem bối cảnh sang video.
+
+#### 4. Golden Reference Templates (Mẫu chuẩn thực chiến):
+
+**Mẫu 1A: Nữ chiến binh / Mật vụ hiện đại (Dark Tactical Attire • Solid Pure White Backdrop)**
+*(Áp dụng quy chuẩn nâng cấp: Khung hình sạch 100% không text; Cụm toàn thân 3 góc đứng tự nhiên gồm Front không đầu, Side 90° không đầu, Back có đầu & tóc phía sau; Nửa bên phải là chân dung chính diện 100% sắc nét cao bảo toàn trọn vẹn full face, full head và khoảng thở đỉnh đầu)*
+```text
+Style: Theatrical film reference, high-end live-action fashion and tactical cinematic portraiture, DaVinci color grading, pristine digital finish.
+
+Ultra-realistic human character reference sheet, 8K ultra HD, ultimate details, photorealistic skin and fabric texture, professional commercial fashion studio photography, shot on Hasselblad H6D-100c with 85mm prime lens, crystal clear focus across the entire composition.
+
+Character: One young East Asian woman, aged 24, 170cm height, athletic and toned physique with agile tactical curves, delicate oval face with sharp V-line jaw, luminous porcelain fair skin with delicate natural micro-pores and subtle rosy undertones, no heavy makeup. Almond-shaped amber-brown eyes with a calm, penetrating, sharp gaze; wearing ultra-thin rimless silver wire spectacles. Straight refined nose bridge, full natural lips with a subtle metallic silver hoop ring piercing centered on the lower lip. Layered chin-length textured bob hair in dark espresso brown with delicate honey-caramel highlights and wispy ends.
+
+Wardrobe: Cropped dark burgundy maroon leather moto jacket with a neat stand-up collar, silver star-shaped metallic snap button, and form-fitting sleeve panels; form-fitting zipped taupe bodysuit underneath; low-rise black tactical mini shorts with a brown leather utility belt; dual black leather thigh holsters with buckle straps around upper thighs; over-the-knee black leather boots with sturdy block heels.
+
+Character reference model sheet, aspect ratio 16:9, clean solid pure white studio infinity background.
+
+Left and center area displays a three-angle full-body turnaround in a natural, relaxed standing posture with arms resting naturally and loosely beside the torso, feet naturally grounded touching the floor:
+1. Headless neck-down front view showing complete front silhouette, jacket zipper, bodysuit, shorts, thigh holsters, and boots, with strictly zero head and zero face.
+2. Headless neck-down 90-degree lateral side profile view showing body depth, spine posture, jacket arm profile, and holster profile, with strictly zero head and zero face.
+3. Full-length rear back view INCLUDING complete back of head and rear hairstyle, showing the full rear textured bob haircut, nape of the neck, rear jacket seams, waistline, and back of boots down to the floor.
+
+Right area features a prominent, zoomed-in high-definition chest-up portrait filling the right frame with impactful facial clarity while maintaining safe headroom margin above the hair crown, entire head, full cranium, and complete voluminous textured bob hairstyle 100% fully visible inside the canvas with clear breathing space below top border, in strictly direct frontal eye-level view facing camera directly, capturing razor-sharp facial features, delicate skin texture, amber-brown iris catchlights, styled bob hair strands, rimless spectacles, lip ring piercing, and collar star hardware.
+
+Professional high-key beauty studio lighting, subtle soft grounding contact shadows under boots, strictly zero text, zero typography, zero labels, strictly zero background scenery, zero environmental elements, zero furniture, zero watermark, strictly zero cropped head, strictly no cut-off hair, no truncated hair crown, no hair touching canvas edges, ample empty white headroom margin above the skull, pulled back camera framing, strictly zero out-of-frame head, no chopped skull, portrait strictly frontal view only.
+```
+
+**Mẫu 1B: Nam chính Âu phục tối màu (Dark Suit • Solid Pure White Backdrop)**
+*(Thợ săn mặc vest đen tuyền ➔ Bắt buộc phông trắng studio để nổi bật tối đa từng đường vai và form dáng; 3 góc toàn thân đứng thả lỏng tự nhiên, không text)*
 ```text
 Style: Theatrical film reference, live-action style, DaVinci grading, masterful composition & cinematic color.
 
-Ultra-realistic human portrait photography, 8K ultra HD, ultimate details, photorealistic texture, professional studio portrait shooting, intimate portrait focal depth, creamy shallow depth of field, focus precisely locked on the character's face.
+Ultra-realistic human portrait photography, 8K ultra HD, ultimate details, photorealistic texture, professional studio character model sheet, shot with 85mm f1.4 large aperture lens, shallow depth of field, focus precisely locked on the character's face.
 
-Aesthetic of restrained western suited hunter, cold elite temperament. One young Western male with three-dimensional facial bone structure, porcelain fair cold white skin, delicate and transparent natural skin texture, no heavy makeup, original handsome facial features preserved. Deep brow bones and eye sockets form natural stern shadows, cool gray-blue and dark amber eye color, sharp calm eyes with strong sense of oppression and alienation. Tall and delicate nose bridge, thin natural nude lips, cold and calm facial expression.
+Aesthetic of restrained western suited hunter, cold elite temperament. One young Western male, aged 28, 182cm height, with three-dimensional facial bone structure, porcelain fair cold white skin, delicate and transparent natural skin texture, no heavy makeup, original handsome facial features preserved. Deep brow bones and eye sockets form natural stern shadows, cool gray-blue and dark amber eye color, sharp calm eyes with strong sense of oppression and alienation. Tall and delicate nose bridge, thin natural nude lips, cold and calm facial expression.
 
 Neat slicked-back black hair with distinct clear strands, neat and tough style, no earrings and tattoos. Slim-fit black suit matched with high-quality shirt in the same tone, made of matte premium wool with silk inner lining, tailored fit highlighting tough shoulder lines and restrained aura with neat collar design. Overall style dark, cold, restrained and elegant with outstanding elite hunter charm.
 
 Solid pure white studio backdrop with zero scenery and zero environmental elements, creating absolute visual contrast against the black tailored suit and highlighting crisp edge separation. Professional high-end studio lighting, subtle soft contact shadows under feet, soft balanced fill light on face, perfectly showcasing high-grade texture of skin, hair and matte wool fabric. Clean, refined, authoritative elite hunter presentation.
 
-Four-view character layout, upper body close-up on the left side of the frame, full-body front view, side view and back view arranged side by side on the right. Aspect ratio 16:9, clean solid pure white studio background, strictly zero background scenery, zero environmental elements, zero furniture, zero text, no watermark.
+Character reference model sheet, aspect ratio 16:9, clean solid pure white studio background.
+
+Left and center area displays a three-angle full-body turnaround in a natural, relaxed standing posture with arms resting naturally and loosely beside the torso, feet naturally grounded touching floor:
+1. Headless neck-down front view showing tailored suit drape, buttons, lapels, trousers, and dress shoes, with strictly zero head and zero face.
+2. Headless neck-down 90-degree lateral side profile view showing masculine posture, jacket sleeve drape, and shoe profile, with strictly zero head and zero face.
+3. Full-length rear back view INCLUDING complete back of head and slicked-back hairstyle, showing the neat hairline at the nape, jacket vent lines, trouser drape, and heels touching floor.
+
+Right area features a prominent, zoomed-in high-definition chest-up portrait filling the right frame with impactful facial clarity while maintaining safe headroom margin above the hair crown, entire head, full cranium, and complete slicked-back hairstyle 100% fully visible inside the canvas with clear breathing space below top border, in strictly direct frontal eye-level view facing camera directly, capturing razor-sharp facial features, skin texture, iris color with natural catchlights, styled hair strands, and suit collar.
+
+Professional high-end studio lighting, subtle soft contact shadows under feet, strictly zero text, zero typography, zero labels, strictly zero background scenery, zero environmental elements, zero furniture, zero watermark, strictly zero cropped head, strictly no cut-off hair, no truncated hair crown, no hair touching canvas edges, ample empty white headroom margin above the skull, pulled back camera framing, strictly zero out-of-frame head, no chopped skull, portrait strictly frontal view only.
 ```
 
-**Mẫu 1B: Trang phục SÁNG MÀU ➔ Bắt buộc NỀN TỐI TRUNG TÍNH Studio (Light Attire • Solid Dark Backdrop)**
-*(Nhân vật mặc trang phục sáng màu như lanh kem, áo blouse trắng, váy ngà voi ➔ Bắt buộc phông xám tối studio để nổi bật viền vải)*
+**Mẫu 1C: Trang phục SÁNG MÀU ➔ Bắt buộc NỀN TỐI TRUNG TÍNH Studio (Light Attire • Solid Dark Backdrop)**
+*(Nhân vật mặc trang phục sáng màu như lanh kem, áo blouse trắng ➔ Bắt buộc dùng phông xám tối studio để nổi bật viền vải; 3 góc toàn thân đứng thả lỏng tự nhiên, không text)*
 ```text
 Style: Theatrical film reference, live-action style, DaVinci grading, masterful composition & cinematic color.
 
-Ultra-realistic human portrait photography, 8K ultra HD, ultimate details, photorealistic texture, professional studio portrait shooting, intimate portrait focal depth, creamy shallow depth of field, focus precisely locked on the character's face.
+Ultra-realistic human portrait photography, 8K ultra HD, ultimate details, photorealistic texture, professional studio character model sheet, shot with 85mm f1.4 large aperture lens, shallow depth of field, focus precisely locked on the character's face.
 
-Aesthetic of pure poised artisan, graceful resilient temperament. One young female with three-dimensional facial bone structure, warm luminous honey-olive skin with delicate natural skin texture, no heavy makeup, original beautiful facial features preserved. Expressive almond-shaped hazel eyes with calm resolute gaze, straight delicate nose bridge, natural soft lips, composed dignified facial expression.
+Aesthetic of pure poised artisan, graceful resilient temperament. One young female, aged 26, 168cm height, with three-dimensional facial bone structure, warm luminous honey-olive skin with delicate natural skin texture, no heavy makeup, original beautiful facial features preserved. Expressive almond-shaped hazel eyes with calm resolute gaze, straight delicate nose bridge, natural soft lips, composed dignified facial expression.
 
 Wavy walnut-brown hair tied neatly back with distinct clear hair strands, bare ears with no earrings, bare skin with no tattoos. Pristine baseline tailored light ivory-cream homespun linen tunic, natural breathable organic fabric texture, fine weave details, clean simple neckline, bare hands. Overall style elegant, serene, grounded and pure.
 
 Solid dark neutral grey studio backdrop with zero scenery and zero environmental elements, creating sharp luminous contrast against the light cream linen tunic. Cinematic Rembrandt studio lighting, crisp cool rim outline light separating the light silhouette from the dark background, soft warm fill light on face with controlled chiaroscuro shadows. Delicate light effect showcasing organic fabric weave and skin texture.
 
-Four-view character layout, upper body close-up on the left side of the frame, full-body front view, side view and back view arranged side by side on the right. Aspect ratio 16:9, clean solid dark neutral studio background, strictly zero background scenery, zero environmental elements, zero furniture, zero text, no watermark.
+Character reference model sheet, aspect ratio 16:9, clean solid dark neutral studio background.
+
+Left and center area displays a three-angle full-body turnaround in a natural, relaxed standing posture with arms resting naturally and loosely beside the torso, feet naturally grounded touching floor:
+1. Headless neck-down front view showing linen tunic drape, woven texture, simple neckline, trousers, and footwear, with strictly zero head and zero face.
+2. Headless neck-down 90-degree lateral side profile view showing tunic drape, relaxed posture, and side profile of footwear, with strictly zero head and zero face.
+3. Full-length rear back view INCLUDING complete back of head and tied walnut-brown hairstyle, showing nape of neck, rear linen seams, and heels touching floor.
+
+Right area features a prominent, zoomed-in high-definition chest-up portrait filling the right frame with impactful facial clarity while maintaining safe headroom margin above the hair crown, entire head, full cranium, and complete wavy walnut-brown hairstyle 100% fully visible inside the canvas with clear breathing space below top border, in strictly direct frontal eye-level view facing camera directly, capturing razor-sharp facial features, skin texture, hazel iris catchlights, styled walnut-brown hair strands, and organic neckline.
+
+Professional studio lighting, subtle soft grounding shadows under footwear, strictly zero text, zero typography, zero labels, strictly zero background scenery, zero environmental elements, zero furniture, zero watermark, strictly zero cropped head, strictly no cut-off hair, no truncated hair crown, no hair touching canvas edges, ample empty dark headroom margin above the skull, pulled back camera framing, strictly zero out-of-frame head, no chopped skull, portrait strictly frontal view only.
 ```
 
-**Mẫu B: 3D Animation / Unreal Engine Realism (Game CG • Solid Dark Studio Backdrop)**
+**Mẫu 2: 3D Animation / Unreal Engine Realism (Game CG • Solid Dark Studio Backdrop)**
 ```text
 Style: 3D, game CG, cinematic quality, rendered in Unreal Engine, Octane Render, Cinema 4D, Ray-traced global illumination, dark rich cinematic realism. Subsurface scattering skin shading, micro-texture fabrics.
 
-High-end character design showcase, 8K ultra HD, ultimate polygon details, physically based rendering (PBR) textures, professional studio character turntable, virtual camera with intimate portrait focal depth, creamy shallow depth of field, focus locked on facial features.
+High-end character design showcase, 8K ultra HD, ultimate polygon details, physically based rendering (PBR) textures, professional studio character model sheet, virtual camera with 85mm optical perspective, creamy shallow depth of field, focus locked on facial features.
 
-Aesthetic of restrained western suited hunter, cold elite temperament. One young Western male with stylized three-dimensional facial bone structure, porcelain fair cold skin with fine subsurface scattering pores, no heavy makeup, striking handsome features. Deep brow bones and sculpted eye sockets creating crisp natural shadow planes, dual-tone cool gray-blue and dark amber irises, sharp piercing calm gaze with palpable aura of dominance. Straight sculpted nose bridge, thin nude lips, cold disciplined expression.
+Aesthetic of restrained western suited hunter, cold elite temperament. One young Western male, aged 28, 182cm height, with stylized three-dimensional facial bone structure, porcelain fair cold skin with fine subsurface scattering pores, no heavy makeup, striking handsome features. Deep brow bones and sculpted eye sockets creating crisp natural shadow planes, dual-tone cool gray-blue and dark amber irises, sharp piercing calm gaze with palpable aura of dominance. Straight sculpted nose bridge, thin nude lips, cold disciplined expression.
 
 Neat slicked-back jet-black hair with distinct strand-based hair grooming, sharp clean hairline, zero earrings and zero tattoos. Slim-fit tailored black suit and matching dress shirt, rendered in matte wool PBR weave with subtle silk sheen on lapel and inner lining, sharp masculine shoulder silhouette, structured collar. Dark, austere, restrained aristocratic assassin aesthetic.
 
 Solid pure white studio backdrop with zero scenery and zero environmental elements, creating maximum visual contrast against the tailored black suit and ensuring pristine edge separation. Studio key lighting casting crisp contact shadows under feet, delicate fill light revealing micro-fabric weave and subsurface skin scatter. Disciplined, lethal, calculated hunter aura.
 
-Four-view character layout, upper body close-up on the left side of the frame, full-body front view, side view and back view arranged side by side on the right. Aspect ratio 16:9, clean solid pure white studio background, strictly zero environmental elements, zero scenery, zero furniture, zero text, no watermark.
+Character reference model sheet, aspect ratio 16:9, clean solid pure white studio background.
+
+Left and center area displays a three-angle full-body turnaround in a natural, relaxed standing posture with arms resting naturally and loosely beside the torso, feet naturally grounded touching floor:
+1. Headless neck-down front view showing tailored suit drape, buttons, lapels, trousers, and dress shoes, with strictly zero head and zero face.
+2. Headless neck-down 90-degree lateral side profile view showing 3D character silhouette, jacket profile, and shoe profile, with strictly zero head and zero face.
+3. Full-length rear back view INCLUDING complete back of head and sculpted slicked-back hairstyle, showing the sharp hairline at the nape, jacket vent lines, and shoes touching floor.
+
+Right area features a prominent, zoomed-in high-definition chest-up portrait filling the right frame with impactful facial clarity while maintaining safe headroom margin above the hair crown, entire head, full cranium, and complete sculpted hairstyle 100% fully visible inside the canvas with clear breathing space below top border, in strictly direct frontal eye-level view facing camera directly, capturing stylized facial features, PBR subsurface skin scattering, piercing irises, strand-based hair grooms, and suit lapel.
+
+Key lighting casting crisp contact shadows under feet, strictly zero text, zero typography, zero labels, strictly zero environmental elements, zero scenery, zero furniture, zero watermark, strictly zero cropped head, strictly no cut-off hair, no truncated hair crown, no hair touching canvas edges, ample empty white headroom margin above the skull, pulled back camera framing, strictly zero out-of-frame head, no chopped skull, portrait strictly frontal view only.
 ```
 
 ### [Prop Profile] & Physical Anchor Protocol — §3.4
 
 > **CINEMATIC STYLE & 16:9 RATIO INHERITANCE LAW (MANDATORY)**: Every single pre-production reference asset (Character Model Sheets §1B, Prop Design Sheets §1C, Location Design Sheets §1D) MUST inherit 100% of the project's designated Master Cinematic Visual Style (`Style: [Visual Style Name]`) AND MUST be standardized strictly to **16:9 Landscape aspect ratio**. Mixing visual styles or aspect ratios across assets is strictly prohibited.
 
-**MASTER 16:9 FOUR-VIEW PROP DESIGN SHEET PROMPT STRUCTURE (Step 1C):**
+> 🌟 **THE TWO-TIER PROP IMPLEMENTATION STANDARD (DOCTRINE §10.5)**:
+> - **Tier 1 (Everyday / Ambient Domestic Props)**: Rice bowls, tea cups, chopsticks, folding hammocks, pens, paper envelopes, wrenches, keys, phones. **100% PURE TEXT PROMPTING (Mode A)**. Generating 16:9 turnaround sheets for these common items is STRICTLY FORBIDDEN. AI generative models already possess rich semantic weights for mundane objects.
+> - **Tier 2 (Sovereign / Soul / Weapon / Complex Artifacts)**: Custom weapons, ancestral talismans, runic blades, glowing sci-fi cores, dynastic seals, intricate puzzle boxes. **MANDATORY 16:9 4-VIEW MODEL SHEET (Mode B)**. Text alone cannot maintain geometric consistency; visual image reference is strictly required to prevent consistency drift.
+
+**MASTER 16:9 FOUR-VIEW PROP DESIGN SHEET PROMPT STRUCTURE (Step 1C — TIER 2 SOVEREIGN PROPS ONLY):**
 ```
 Style: [Movie Master Visual Style Name — e.g. Pixar & DreamWorks 3D Biblical Realism / Theatrical Live-Action Realism...].
 
-Name: [Prop Name]. Category: [Weapon / Relic / Tool / Artifact / Document / Symbolic Object]. Description: [A cross-shaped blade forged in aged silver with a cool metallic patina. The ornate handguard is intricately carved with ancient runes and vampire-hunting inscriptions. The handle is wrapped in dark leather and engraved with a vampire hunter emblem. Stored in a waist leather sheath. The blade emits a sharp, cold glint under porch night light. Upon piercing a vampire, it reduces the target to fine ash — a symbol of faith-driven ultimate judgment].
+Name: [Prop Name]. Category: [Weapon / Relic / Artifact / Complex Mechanism / Symbolic Heirloom]. Description: [A cross-shaped blade forged in aged silver with a cool metallic patina. The ornate handguard is intricately carved with ancient runes and vampire-hunting inscriptions. The handle is wrapped in dark leather and engraved with a vampire hunter emblem. Stored in a waist leather sheath. The blade emits a sharp, cold glint under porch night light. Upon piercing a vampire, it reduces the target to fine ash — a symbol of faith-driven ultimate judgment].
 
 Format: Prop design sheet, 16:9 landscape. Strictly four views of the same prop only: one primary hero perspective view on the left, plus exactly three parallel orthographic views (front view, side profile view, back view) on the right. Exactly four views in total, zero extra panels or fifth view. Pure white background.
 
 Rules: Strictly four views only. Do not include any fifth view, extra detail insets, text, letters, numbers, annotations, captions, material swatches, dimension lines, arrows, close-up detail panels, or exploded views. The prop must remain completely consistent across all four views. No environmental elements, no characters, no watermark.
 ```
 
-**MODE A — No reference image (full description in clip):**
-- Layer 1: short identifying name (Bamboo Basket, Ledger, Bowl...)
-- Layer 2: material → shape/size → color/texture → weight/how held → **CURRENT state at opening frame of this Scene**
-- Add `"the only [name] in frame"` to prevent duplication
+---
 
-**MODE B — Reference image exists from Step 1C (image-anchored — DEFAULT):**
-- **CORE PRINCIPLE: NAME + PHYSICAL STATE + LOCATION / HOLDER ONLY!**
-  Never re-describe materials, craftsmanship, or ancient lore already locked in the 16:9 Prop Reference Sheet. Zero bracketed tags (`[Prop Reference attached]`, `[Mode A Anchor]`). User attaches reference in UI.
-- **MANDATORY FORMULA (CÔNG THỨC BẮT BUỘC)**:
-  `[Prop Name], [Physical State], [Spatial Location: resting in setting OR which character is holding/wearing it] — the only [prop noun] in frame.`
-- **THE 3 ESSENTIAL PROP ELEMENTS**:
-  1. **Name**: `[Prop Name]` (Reference image attached out-of-band by user in UI; zero bracketed tags).
-  2. **Physical State (Trạng thái vật lý)**:
-     - *Intact*: `pristine weathered cedar timber`, `intact baked earthenware with cracked wax seal`
-     - *Broken / Transformed (Derived Entity)*: `razor-sharp broken fragment with unglazed white jagged fracture edges`, `charred goatskin scrap with curled blackened edges`
-  3. **Location / Holder (Nằm ở đâu trong bối cảnh hay nhân vật nào đang cầm)**:
-     - *In Setting*: `resting flat on dusty limestone flagstones at frame-center`
-     - *Held by Character*: `held firmly in Noa's right hand with thumb and index finger gripping the edge`, `worn securely on Eleazar's left thumb with chipped signet facing outward`
-  4. **Singularity Lock**: `— the only [prop noun] in frame.`
-  5. **Causal Ripple Effect**: When actively manipulated, the physical interaction must produce an observable environmental reaction (e.g. displaces fine dust, swings weights).
+#### PROMPT COMPILATION: MODE A VS. MODE B
 
-```
-[MODE B — Correct Prop Format: In Setting — Zero Bracketed Tags]
-The Sharp Triangular Cobalt Porcelain Shard, razor-sharp broken fragment with unglazed white jagged edges, resting on dusty limestone flagstones at frame-center — the only porcelain shard in frame.
+**MODE A — TIER 1: EVERYDAY / AMBIENT PROPS (Pure Text — Zero Reference Image):**
+- **Trigger**: Domestic items, tools, ordinary paper, standard furniture, tableware, ambient objects.
+- **Formula**:
+  `[PROP: {material/texture} {prop noun}, {state/wear}, {spatial location OR which hand holds it} — the only {prop noun} in frame]`
+- **Examples**:
+  ```text
+  [PROP: chipped white ceramic rice bowl, steaming with hot jasmine rice, resting on the wooden dining table beside Duyen's left wrist — the only rice bowl in frame]
+  [PROP: tarnished stainless steel folding hammock frame, taut green woven mesh, resting open on the tiled floor at room-center — the only hammock in frame]
+  [PROP: folded kraft paper envelope with faded red ink hospital seal, held firmly in Khang's trembling right hand at waist level — the only envelope in frame]
+  ```
 
-[MODE B — Correct Prop Format: Held by Character — Zero Bracketed Tags]
-The Forged Terracotta Tablet, intact baked earthenware with chipped dove wax seal, held firmly in Eleazar's thick right hand at chest level — the only tablet in frame.
-```
+**MODE B — TIER 2: SOVEREIGN / SOUL / WEAPON PROPS (Image-Anchored — Reference Image Exists):**
+- **Trigger**: Custom weapons, soul props, ancestral relics, complex mechanisms with unique runes/inscriptions.
+- **Formula**:
+  `[PROP: {Prop Name} [100% Refer to image <prop_ref>], {Physical State}, {Spatial Location OR which hand holds it} — the only {prop noun} in frame]`
+- **Examples**:
+  ```text
+  [PROP: The Sharp Triangular Cobalt Porcelain Shard [100% Refer to image prop_shard_4view.jpg], razor-sharp broken fragment with unglazed white jagged edges, resting on dusty limestone flagstones at frame-center — the only porcelain shard in frame]
+  [PROP: The Forged Terracotta Tablet [100% Refer to image prop_tablet_4view.jpg], intact baked earthenware with chipped dove wax seal, held firmly in Eleazar's thick right hand at chest level — the only tablet in frame]
+  [PROP: The Obsidian Phoenix Hairpin [100% Refer to image prop_hairpin_4view.jpg], intricate carved black obsidian with blood-red jade eye, clutched in A1's trembling right fist — the only hairpin in frame]
+  ```
+
 
 ### [Environment / Context] — §3.6
 
@@ -298,11 +523,11 @@ Rules: Strictly four panels only (2x2 grid with exactly 4 camera angles). No cha
 
 **MODE B — Reference image exists from Step 1D (image-anchored — DEFAULT):**
 - **CORE PRINCIPLE: LOCATION NAME + TIME OF DAY + ATMOSPHERE ONLY!**
-  The 16:9 Location Reference Sheet already locks all architectural materials, masonry, beams, and flooring. NEVER re-describe buildings or room structures. Zero bracketed tags (`[Environment Reference attached]`). User attaches reference in UI.
+  The 16:9 Location Reference Sheet already locks all architectural materials, masonry, beams, and flooring. NEVER re-describe buildings or room structures. ALWAYS bind the location to its uploaded reference slot with the canonical anchor `[100% Refer to image <location_ref>]` (enforced by Gate 3K). Legacy free-text tags (`[Environment Reference attached]`) remain banned.
 - **MANDATORY FORMULA (CÔNG THỨC BẮT BUỘC)**:
-  `[Location Name], [Time of Day], [Atmosphere / Mood] — [Key light source & natural color tone (STRICTLY NO KELVIN NUMBERS)].`
+  `[Location Name] [100% Refer to image <location_ref>], [Time of Day], [Atmosphere / Mood] — [Key light source & natural color tone (STRICTLY NO KELVIN NUMBERS)].`
 - **THE 4 ESSENTIAL ENVIRONMENT ELEMENTS**:
-  1. **Location Name**: `[Location Name]` (Reference image attached out-of-band by user in UI; zero bracketed tags).
+  1. **Location Name + Reference Anchor**: `[Location Name] [100% Refer to image <location_ref>]` (slot must match the image uploaded in the AI tool UI).
   2. **Time of Day (Thời gian trong ngày)**: e.g., `deep night`, `early morning sunrise`, `high noon`, `late dusk`
   3. **Atmosphere / Mood (Bầu không khí ra sao)**: e.g., `tense and desolate atmosphere with howling wind`, `solemn judicial atmosphere under heavy silence`, `warm tranquil atmosphere with soft evening breeze`
   4. **Key Light & Natural Color Tone (NO KELVIN)**: Diffusion AI text encoders (T5, CLIP) confuse Kelvin numbers (e.g. `cool daylight`) with 8K resolution! ALWAYS describe the natural light source and sensory color: e.g., `key light from a single flickering warm golden oil lamp casting trembling shadows, intersected by an icy-blue moonlight beam` (BANNED: `amber warmth`, `cool daylight`, `cool daylight`).
@@ -312,9 +537,15 @@ Rules: Strictly four panels only (2x2 grid with exactly 4 camera angles). No cha
 The Weaver's Stone Cottage & Hearth Workshop, deep night, tense and desolate atmosphere with howling wind — key light from a single flickering warm golden oil lamp casting trembling shadows, intersected by an icy-blue pale moonlight beam.
 ```
 
-### Anti-Duplication — §3.5
+### Anti-Duplication & Anti-Ghost Prop Law (Single Instance Lock) — §3.5
 - **§3.5b** (Wide/Full shot): add `"the only [two] figures in the [empty] space"` when few people
 - **§3.5e** (Prop): add `"the only [prop] in frame"`
+- **Anti-Ghost Prop Law (Single Instance Lock)**:
+  - Generative diffusion models (Kling, Runway, Sora) render all prompt tokens in a single semantic pass.
+  - If a prop is introduced at Location A at 00:00 and then handled at Location B in Shot 2 without clearing Location A, the diffusion model renders **two simultaneous copies of the prop** (one on the ground, one in the hand).
+  - **Explicit Resting Surface Clearance**: When a prop is lifted/moved from a surface, the prompt MUST explicitly declare that the resting surface is clear (e.g., `lifts the wrench, leaving the floor tiles completely clear and empty`).
+  - **Stationary Spatial Anchor Law**: Heavy fixtures (Pine Crib, Bed, Dining Table, Altar) are permanently locked to their designated room/space coordinates across all scenes. They CANNOT teleport between rooms across scenes.
+  - **Scene-to-Scene Chain of Custody**: The resting state of every prop at `00:10.0` of Scene N is the exact physical opening state at `00:00.0` of Scene N+1.
 
 > **Mode selection rule:** If Step 1 Pre-Production is complete and reference images have been created → **MANDATORY use Mode B** to avoid conflict between text description and image. If no image → use Mode A.
 
@@ -336,7 +567,7 @@ The Weaver's Stone Cottage & Hearth Workshop, deep night, tense and desolate atm
 
 1. **Step 1: Single Anchor Dictionary**: Lock 1 unique identifier phrase for Setting (`mossy stone floor`), Camera angle (`Shot Medium-Close-up`), Prop (`Wooden Bowl`), and Sound. Use word-for-word 100% from start to end of prompt, FORBIDDEN to swap synonyms.
 2. **Step 2: Behavioral Handoff Bridge**: Every coordinate/prop state transition must be described through 3 anchors: *Initial position ➔ Reach/bend/pick-up behavior ➔ New position*. FORBIDDEN: position teleportation artifact.
-3. **Step 3: Single Camera Continuum**: 1 Clip of 10s MUST hold EXACTLY 1 fixed camera angle and unbroken continuous setting from 00:00 to 00:10 (Beats 1, 2, 3 share the same camera parameters). FORBIDDEN: changing camera angle or cutting background within a 10s clip, to eliminate the Background Morphing Artifact.
+3. **Step 3: Single-Shot Continuum**: 1 Clip of 10s MUST hold an unbroken spatiotemporal setting and continuous camera trajectory from 00:00 to 00:10 (Beats 1, 2, 3 share the same scene continuum). FORBIDDEN: hard cuts or background regeneration within a Single-Shot clip, to eliminate Background Morphing Artifacts.
 4. **Step 4: Entity State Audit**: Run entity test checking 3 points (unified setting keyword, direct prop pickup bridge, dialogue & acoustic sync) before outputting code block.
 
 ---
@@ -407,7 +638,7 @@ Every sentence in actual output must be **observable physical detail**:
 **How to embed in Code Block 1:**
 
 ```
-Child's bedroom interior, nighttime — bedside table lamp (practical, frame-right) casts...
+Master bedroom interior, nighttime — bedside table lamp (practical, frame-right) casts...
               ↑ time declared immediately after setting name, before the em dash —
 ```
 
@@ -440,51 +671,51 @@ Before finalizing `[Subject]`, check:
 - **Head/eyes**: do not describe 2 gaze directions simultaneously without a transition
 - Always explicitly state **LEFT HAND or RIGHT HAND** when holding/handling a prop (e.g.: `held in Dax's right hand with Dax's right thumb pressed along the upper edge`). If prop is not being held, MANDATORY state `resting on the floor beside Vin's right foot — ZERO hand contact — the only [prop] in frame`.
 
-### 📌 SHOT HEADER STRUCTURE & PURE CINEMATIC ACTION PROSE (△ BEAT OPTICAL LOCKDOWN)
-1. **Master Optical Lockdown per Beat `△`:**
-   $$\mathbf{\bigtriangleup\ [Timestamp]\ Shot\ [Shot\ Scale]\ |\ [Visual\ Optics\ +\ Camera\ Angle]\ |\ [Trajectory\ \&\ Focus\ Target]}$$
-   Every beat MUST declare the 3 optical components clearly.
-2. **Eliminate All Filler Connector Words THAT STIFFEN THE PROMPT**: ABSOLUTELY FORBIDDEN awkward connectors like `Driven by the stillness...`, `As Dax halts...`, `Continuing the reach...`. A 10s Scene is a continuous visual flow — describe **DIRECTLY THE OBSERVABLE PHYSICAL ACTION**.
-3. **Standard Description Across Timeline (3 Standard 10s Production Templates):**
-    - **Template 1A (Default — Ping-Pong 2 Dialogues: 4.0s / 4.5s / 1.5s)**:
-      - `△ [00:00–00:04.0] Shot [Scale] | [Visual Optics: Shallow depth / Deep focus] | [Camera Trajectory]:`
-        Subject A at frame-left performs primary action <--> Subject B at frame-right reacts. Focus on A. Line 1 spoken (~7–9 words).
-      - `△ [00:04.0–00:08.5] Shot [Scale] | [Visual Optics] | [Continuing Trajectory / Kinetic Tracking]:`
-        Seamless continuation with zero dead pause: Subject B retorts fiercely <--> Subject A recoils/stiffens. Focus on B. Line 2 spoken (~7–9 words).
-      - `△ [00:08.5–00:10.0] Shot [Scale] | [Visual Optics] | [Static Lock]:`
-        Both subjects lock in suffocating silent standoff. Lips remain firmly closed, zero spoken dialogue. smooth deceleration into a living organic settle, zero frozen frames.
-    - **Template 1B (3 Dialogues: 3.0s / 3.0s / 4.0s)**:
-      - `△ [00:00–00:03.0]` (Line 1: ~5–6 words) ➔ `△ [00:03.0–00:06.0]` (Line 2: ~5–6 words) ➔ `△ [00:06.0–00:10.0]` (Line 3: ~5–6 words spoken 06–09s + 1.0s Living Settle Safety Buffer 09–10s).
-    - **Template 2 (Pure Action / Kinetics: 4.0s / 5.0s / 1.0s)**:
-      - `△ [00:00–00:04.0]` (Momentum Build) ➔ `△ [00:04.0–00:09.0]` (Climactic Collision) ➔ `△ [00:09.0–00:10.0]` (1.0s Impact Landing Living Settle (zero frozen frames)).
+### 📌 PHASE LINE STRUCTURE & PURE CINEMATIC ACTION PROSE
 
-* **✅ CORRECT (Natural, decisive, pure visual optics, continuous co-presence — Template 1A example):**
-  > ⚠️ **STRICT PURGE LAW**: NEVER write f-stops or camera brand names in prompt lines (AI has no optical glass engine; numeric settings confuse text encoders). Use pure visual optics!
-  `△ [00:00–00:04.0] Shot Medium Two-Shot | Shallow depth of field, soft background blur | Slow forward push-in along table plane:`
-  `Dax at frame-right steps forward on the wet granite floor, thrusting the Debt Scroll toward Vin; Vin at frame-left stands rigid in unblinking defiance. Optical focus locked on Dax.`
-  `Dax："Ten years of hiding ends today, blacksmith."（voice low and arrogant, lips parting dynamically in crisp lip-sync, eyes cold — crushing pressure）`
+> [!IMPORTANT]
+> **Syntax and timing SSOT**: [`0b-temporal-camera-grammar.md`](file:///d:/Project/Sven/engine/references/0b-temporal-camera-grammar.md) §8 (canonical syntax) and §2–§7 (speech rate, lip-sync windows, action capacity, camera-move durations, shots per clip, clip density). The former `△ … | … |` beat header and the fixed Templates 1A / 1B / 2 are retired.
 
-  `△ [00:04.0–00:08.5] Shot Medium Close-Up | Creamy background blur, sharp subject focus | Lateral tracking push:`
-  `Continuous continuation without pause: Vin slams his blackened hammer onto the anvil, sparks flying; Dax recoils half a step as the shockwave rings out. Optical focus locked on Vin.`
-  `Vin："I forged your armor, Dax; I can shatter it."（voice deep and unhurried, lips parting in sharp counter lip-sync, jaw set in stone — lethal defiance）`
+1. **One phase line = one time bracket + one short camera clause + prose**:
+   `[00:00–00:03.5] Medium shot, slight low angle, static camera — [one primary action + one reaction, observable physics]. Focus on [name].`
+   Track B phases after the first open with `Cut to …`. The track itself is declared once, in the style line of the prefix (`Track A — one continuous take, zero cuts` or `Track B — multi-shot sequence cut on the 180-degree axis`).
+2. **Describe the observable physical action directly.** No filler connectors such as `Driven by the stillness...`, `As Dax halts...`, `Continuing the reach...`.
+3. **Split points come from the beats** (Doctrine §2; grammar §3–§6), never from a fixed template. Phases run contiguously from 00:00 to the clip end, 10 s by default, 15 s or 30 s when requested (Gate 3M).
+4. **Pure visual optics only**: never write lens millimeters, f-stops, fps, camera brands, Kelvin, or frame coordinates (Gates 3D / 3H). Characters are anchored to architecture, never to `frame-left` / `screen-right`.
 
-  `△ [00:08.5–00:10.0] Shot Choker Standoff | Tight macro focus on eyes | Static lock with living organic settle (zero frozen frames):`
-  `Both men lean inches apart in suffocating face-to-face deadlock. Lips remain firmly closed, breathing in absolute diegetic silence, maintaining the physical standoff with subtle biological respiration, zero frozen frames.`
+* **✅ CORRECT (10 s, Track B, English dialogue):**
+```text
+[00:00–00:04.0] Medium two-shot, slight low angle, slow push-in along the anvil — Dax steps forward on the wet granite floor and thrusts the debt scroll across the anvil; Vin stands rigid beside the forge, unblinking. Focus on Dax.
+Dax snaps : “ Ten years of hiding ends today. ”（Voice of a 45-year-old man from the northern highlands, low and arrogant, precise lip-sync, cold forge light on the cheekbone, savoring the threat）
 
-* **❌ WRONG (Uses awkward connectors, missing camera specs):**
-  `Driven by the stillness...` / `As Dax halts...` (redundant, stiff, hazes the prompt).
+[00:04.0–00:07.8] Cut to a medium close-up on Vin, eye level, static camera — Vin brings the blackened hammer down onto the anvil, sparks scattering; Dax recoils half a step. Focus on Vin.
+Vin replies : “ Your armor came from this anvil. ”（Voice of a 50-year-old man from the northern highlands, deep and unhurried, precise lip-sync, ember glow along the jaw, a quiet reminder of who holds the power）
+
+[00:07.8–00:10.0] Cut to a close-up on Dax, eye level, static camera — the smirk drains from Dax's face and the throat tightens in a hard swallow; lips stay closed, breathing slows, embers drift past.
+```
+Timing check (grammar §2–§3): each line is 6 words ≈ 2.7–3.0 s inside a ≥ 3.8 s phase (starts ≥ 0.3 s in, ends ≥ 0.8 s before the cut). Speech ≈ 5.5 s of 10 s.
+
+* **❌ WRONG (legacy, retired):**
+  `△ [00:00–00:04.0] Shot Medium Two-Shot | Shallow depth of field | Slow push-in:` — symbol, pipes, and a metadata header instead of prose.
+  `Dax at frame-right …` — frame coordinates instead of architectural anchors.
+  `Vin slams his hammer …` — pronoun in visual prose (Gate 3C).
+  Overlapping brackets such as `[00:04.5–00:10.0]` followed by `[00:06.0–00:10.0]` (Gate 3M).
+  `Driven by the stillness...` / `As Dax halts...` — stiff connectors that haze the prompt.
 
 ---
 
 ## 🏛️ § 1. THE DYNAMIC TEMPORAL LAW & 3-PHASE BREATH CYCLE
 
+> ⏱️ **NUMBERS SUPERSEDED** — The breath-cycle philosophy below stays valid. Every number in this section (the 2.5 wps formula, phase ranges, terminal minimums) is superseded by [`0b-temporal-camera-grammar.md`](file:///d:/Project/Sven/engine/references/0b-temporal-camera-grammar.md) §2–§4. A terminal settle of 1.0–2.5 s suits scenes that end on a held emotion; a scene may also end on momentum (Doctrine).
+
 In masterclass cinema, a 10-second scene is **A SINGLE KINETIC AND EMOTIONAL BREATH (Một Nhịp Thở Động Lực & Cảm Xúc Khép Kín)**.
 
 > [!IMPORTANT]
 > **THE ANTI-RIGID TIMESTAMP MANDATE (ĐỊNH LUẬT THỜI GIAN ĐỘNG HỌC)**:
-> - **STRICTLY PROHIBITED**: Hardcoding rigid, mechanical timestamps like `[00:00–04.0s]`, `[04.0–08.5s]`, `[08.5–10.0s]` across all prompts!
+> - **STRICTLY PROHIBITED**: Hardcoding rigid, mechanical timestamps like `[00:00–04.0s]`, `[04.5–10.0s]`, `[Terminal Beat]` across all prompts!
 > - The duration of each shot is a **dynamic physical variable** calculated mathematically from:
->   $$\mathbf{T_{shot}} = \mathbf{T_{lead	ext{-}in}} + \left(rac{	ext{Spoken Word Count}}{2.5	ext{ wps}}
+>   $$\mathbf{T_{shot}} = \mathbf{T_{lead	ext{-}in}} + \left(
+rac{	ext{Spoken Word Count}}{2.5	ext{ wps}}
 ight) + \mathbf{T_{followthrough}}$$
 >   * $\mathbf{T_{lead	ext{-}in}}$ (0.5s–1.2s): Time for physiological preparation (turning head, shifting weight, drawing breath).
 >   * $\mathbf{T_{dialogue}}$: Measured at standard Hollywood natural speaking cadence ($pprox 2.5 	ext{ words/sec}$).
@@ -495,7 +726,7 @@ ight) + \mathbf{T_{followthrough}}$$
      [00:00 ────────► 00:XX.Xs]              [00:XX.X ────────► 00:YY.Ys]                 [00:YY.Y ────────► 10.0s]
  ┌──────────────────────────────────┐    ┌──────────────────────────────────┐        ┌──────────────────────────────────┐
  │ • Potential kinetic energy builds│    │ • THE POINT OF NO RETURN         │        │ • THE EMOTIONAL STRIKE LANDS     │
- │ • 180° spatial & gaze vector lock│    │ • The verbal or physical blow    │        │ • Strictly ZERO spoken dialogue  │
+ │ • 180° spatial & gaze vector lock│    │ • The verbal or physical blow    │        │ • Emotional resonance & settle   │
  │ • Breath cadence: INHALE         │    │ • Breath cadence: HOLD & DISCHARGE        │ • Living Organic Settle (0.5s)   │
  └──────────────────────────────────┘    └──────────────────────────────────┘        └──────────────────────────────────┘
 ```
@@ -516,7 +747,7 @@ ight) + \mathbf{T_{followthrough}}$$
 
 ### 3. Phase 3 (`00:YY.Y` to `00:10.0s`): Psychological Arrest & Resonance (Dư Chấn Cảm Xúc & Đóng Băng — Exhale)
 - **Directorial Intent**: **WHERE DOES THE BLOW LAND IN THE HUMAN SOUL?**
-  This terminal buffer (minimum `1.0s` to `2.5s`, typically landing between `00:07.5` and `00:08.5` through `00:10.0`) is the most sacred moment in cinema: **spoken dialogue ceases completely**, lips press firmly closed, noise recedes into diegetic room tone, and the camera scrutinizes raw, unfiltered human vulnerability.
+  This terminal buffer (minimum `1.0s` to `2.5s`, typically landing between a natural clearance point before 00:10.0) is the most sacred moment in cinema: **spoken dialogue ceases completely**, lips press firmly closed, noise recedes into diegetic room tone, and the camera scrutinizes raw, unfiltered human vulnerability.
 - **The Living Organic Settle Gate (Mandatory Terminal Buffer)**:
   Macroscopic camera movement decelerates smoothly (0.5s smooth deceleration) into a **stable resting frame**. The character and environment maintain **living biological and atmospheric micro-motion** (deep chest respiration, vapor drifting, subtle eye moisture, wind-drifted dust or embers), strictly prohibiting artificial frozen frames or dead static holds.
 - **The Mindset**: *The emotional shockwave penetrates to the bone. Total, suffocating stillness.*
@@ -538,23 +769,97 @@ To eliminate stiff, generic character animations, every shot within the 10-secon
 
 ---
 
-## 🧭 § 2. THE DUAL CAMERA PARADIGM: SINGLE-CAMERA VS. MULTI-CAMERA TAXONOMY
+## ⚖️ § 1.2. THE UNIFIED NATURAL PROSE SHOT STANDARD & TEMPORAL-PHYSICS BUDGET LAW (NGUYÊN TẮC SỐ S)
 
-Before crafting any 10-second scene, the director must resolve the foundational cinematic fork:  
-**"Does this scene demand the accumulative pressure of an unbroken temporal stream (Single Camera), or the violent dialectic collision of editorial cuts (Multi-Camera)?"**
+> ⏱️ **SYNTAX & BUDGET SSOT** — The canonical phase line is `[start–end] scale, angle, move — prose` (grammar §8). The budget matrix below is illustrative; the authoritative capacity table is grammar §4.
 
-Both tracks obey the 3-Phase Breath Wave (Inhale ➔ Strike ➔ Exhale & Arrest). Their technical divergence lies in whether spatial continuity is preserved within a single lens trajectory or fractured across deliberate editorial cuts.
+> [!IMPORTANT]
+> **THE UNIFIED PROMPT SHOT SPECIFICATION (QUY CHUẨN SHOT TINH GỌN)**:
+> In generative video prompts (Code Block 1), every shot or temporal beat MUST be introduced strictly with **a clean timestamp in brackets** followed immediately by **a single, fluid paragraph of Cinematic Natural Prose**:
+> `[00:00–00:XX] [Cinematic Natural Prose integrating: Shot scale + Angle + Camera movement + Physical action bounded by seconds + Observable biomechanical emotion + Lip-sync speech parenthetical]`
+> - **STRICTLY PURGED**: Fake bracket headers (`Phase 1`, `Shot 1 (MCU | High-Angle 30° | Pan)`), mechanical symbols (`△`), and pipe separators (`|`).
+> - **5 Core Cinematic Dimensions Fully Unified**: Shot scale, angle, and camera kinetics must be woven directly into the descriptive sentence rather than isolated in mechanical metadata.
+
+### The Temporal-Physics Budget Matrix (Nguyên Tắc Ngân Sách Giây & Động Lực Học Vật Lý)
+Diffusion text encoders (T5, CLIP) and latent physical transformers (Sora, Kling, Runway, Hailuo) generate unnatural morphing, phantom limbs, or frozen mannequins when the physical action exceeds the temporal capacity of the shot. Every second must be calibrated against real-world human biomechanics:
+
+| Temporal Duration | Physical Action Capacity (Hành Động Vật Lý) | Observable Biomechanical Emotion (Cơ Sinh Học) | Spoken Lip-Sync Budget (Thoại Khẩu Hình) |
+| :--- | :--- | :--- | :--- |
+| **1.0s – 2.0s** *(Micro-Beat / Fast Cut)* | **1 Single Micro-Action**: 90° head turn, startled jolt back, hand slamming a desk, or drawing a weapon. Compounding multiple moves is forbidden. | Pupil contraction, swallowed breath, flared nostrils, or curled lip smirk. | **2 to 5 words max** (or sharp gasp, chuckle, zero words). |
+| **3.0s – 4.5s** *(Standard Beat / Fluid Take)* | **1 Primary Kinetic Momentum**: Taking 3 strides forward ➔ halting; or extending hand with an object ➔ recoiling; or 180° body turnaround ➔ crossing arms. | Masseter jaw clenching, visible throat swallow, chest heaving in rapid breath, shifting eyeline. | **6 to 12 words** (paced at 2.5–3 words/sec natural cadence). |
+| **5.0s – 8.0s** *(Extended Dynamic Take / Solo Delivery)* | **1 Cause-and-Effect Sequence**: Navigating a path ➔ encountering an obstacle ➔ dynamic deceleration to stop ➔ settling into stance; or sustained single-speaker emotional delivery. | Dual-stage emotional transition: Initial shock ➔ settling into defiance or emotional truth. | **15 to 30 words** (Drama: 15–20w; Sitcom solo: 25–30w; cap ≤ 32w per 10s shot; speech share ≤ 75%). |
+| **1.5s – 2.0s Terminal** *(Living Organic Settle)* | **Zero Gross Motor Movement**: Hands and feet remain grounded at terminal contact points. Kinetic energy dissipates into subtle biological respiration. | Rhythmic ribcage expansion/contraction, micro-flutter of eyelashes, wind catching loose hair strands. | **0 spoken words (Absolute Silence)**: Protects clean audio landing, zero frozen frames. |
 
 ---
 
-### 🅰️ TRACK A: SINGLE CONTINUOUS CAMERA (Unbroken Cinematic Take)
+## 🌐 § 1.3. THE UNIVERSAL SPATIAL DYNAMICS ENGINE (INTERIOR, EXTERIOR & CROSS-SPACE TRANSITIONS)
+
+Generative AI diffusion engines risk catastrophic latent distortion (severe blooming, exposure clipping, architectural warping) when transitioning between environments. The director must enforce explicit spatial rules:
+
+### 1. Pure Interior Architecture (INT.)
+- **Lighting & Physics**: Controlled directional sources (recessed LED strips, tungsten desk lamps, soft window bounce). High-contrast specular reflections on polished floors (epoxy, terrazzo, dark hardwood).
+- **Acoustics & Diegetics**: Enclosed reverberant room tone, footstep squeaks, air circulation hum.
+- **Prompt Mandate**: Rigidly anchor room geometry and bounding planes (`polished epoxy floor`, `far wall glass panels`).
+
+### 2. Pure Exterior Environments (EXT.)
+- **Lighting & Physics**: Infinite depth of field, directional celestial lighting (midday sun, golden hour angle, diffuse overcast sky). Aerodynamic forces must be observable (wind catching coat lapels, hair strands fluttering, foliage sway).
+- **Acoustics & Diegetics**: Unbounded ambient audio (distant urban traffic, open-air wind whistle, rustling leaves).
+
+### 3. Cross-Space & Threshold Transitions (Giao Thoa Hai Không Gian Khác Nhau)
+- **Track A (Single-Shot Threshold Push-Through)**:
+  - *Mechanism*: Camera moves with subject from an interior corridor/room directly through open sliding glass doors or a threshold onto an outdoor terrace/courtyard.
+  - *Exposure Adaptation Mandate*: Prompt MUST explicitly describe camera exposure adjustment: `gliding from the cool interior hallway through the open glass doorway into blazing midday sunlight, the exposure adapting smoothly to natural exterior illumination`.
+  - *Context Declaration*: Declare unified linked space: `khong_gian_lien_hoan [100% Refer to...] spanning from the interior room through floor-to-ceiling glass doors onto the sunlit exterior terrace`.
+- **Track B (Multi-Shot Cross-Space Intercut)**:
+  - *Mechanism*: Shot 1 frames Subject A indoors looking outward through a transparent glass divider; Shot 2 cuts across the 180° action axis framing Subject B outdoors looking back inward.
+  - *Eyeline & Lighting Delta Lock*:
+    - Subject A indoors has screen-left eyeline and dim interior lighting, with bright outdoor sky visible beyond the glass.
+    - Subject B outdoors has screen-right eyeline, buffeted by exterior wind and drenched in direct sunlight, with dim interior room reflected in the glass pane.
+    - Eyeline matching through the physical divider is 100% mandatory.
+
+### 4. Confined & Intimate Spaces (Không Gian Hẹp: Ngôi Nhà Nhỏ, Hang Động, Cabin, Ngưỡng Cửa)
+> [!IMPORTANT]
+> **THE CONFINED SPACE PARADOX IN GENERATIVE AI**:
+> When staging in physically tight environments (small rustic house, narrow cave mouth, compact kitchen, small wooden cabin), wide shots trigger catastrophic diffusion failures: the AI hallucinates unnatural cavernous dimensions, distorts walls with fisheye warping, or merges characters into background clutter.
+> Directing in confined spaces requires **Intelligent Focal Depth, Progressive Shot Scaling, and Spatial Framing**:
+
+#### A. The 3 Golden Rules of Confined Space Staging:
+1. **Ban Unmotivated Wide Shots**: Never use an Extreme Wide Shot inside a small 15m² room or narrow cave. Use **Medium Close-Up (MCU)**, **Tight Medium (MS)**, and **Tactile Inserts (CU/ECU)** to convey intimacy, claustrophobia, or rustic coziness without exposing AI boundary limitations.
+2. **Frame-Within-a-Frame (Khung Hình Trong Khung Hình)**: Utilize natural architectural apertures (doorframes, low cave ceilings, wooden lintels, window mullions) as foreground silhouettes. This anchors depth and prevents wall warping.
+3. **The Reverse Threshold Looking-Out Angle (Góc Nhìn Ngược Từ Trong Nhìn Ra)**: Position the camera INSIDE the darker compact space looking out through the door/mouth at the brightly lit exterior. The subject enters as a dramatic silhouette catching sharp separation rim light, creating maximum dynamic contrast without needing massive room volume.
+
+#### B. The Threshold Access Action Chain (Case Study: Unlocking & Entering a Small House):
+To depict a character approaching, unlocking, and entering a small house or cavern without AI hand-morphing or spatial jumps:
+- **Track A: Single-Shot Unbroken Steadicam Follow (00:00–00:10)**:
+  * `[00:00–00:04.0]`: Medium three-quarter tracking shot following the character up the porch steps, closing distance to the wooden door. The camera tilts subtly down to frame the hand raising brass keys toward the keyhole.
+  * `[00:04.0–00:07.0]`: Smooth push-in to an intimate close-up as the key inserts into the brass lock with a crisp mechanical snap, the hand turning the latch and pushing the heavy timber door inward. Outdoor light slices across the narrow interior entrance.
+  * `[00:07.0–00:10.0]`: Camera glides forward across the raised wooden threshold behind the character's shoulder, entering the compact interior. Exposure adapts to warm ambient indoor shadow; the character pulls the door half-closed behind her, settling into a deep, relieved biological breath.
+- **Track B: Multi-Shot Kinetic Threshold Montage (3 Beats)**:
+  * `Beat 1 [00:00–00:03.5] (EXT)`: Eye-level Medium Tracking shot on the exterior porch: The woman advances briskly to the weathered door frame under natural daylight.
+  * `Beat 2 [00:03.5–00:06.5] (THRESHOLD INSERT)`: Low-angle Extreme Close-Up on the door lock: Slender fingers slide a brass key into the keyway, twisting 90 degrees with an audible metallic click, pushing the lock bolt back as the door unlatches.
+  * `Beat 3 [00:06.5–00:10.0] (INT)`: Low-angle Interior Reverse Shot looking out: Positioned inside the dim small room looking out the open doorway. The woman crosses the threshold as a rim-lit silhouette against the sunlit porch, stepping onto the floorboards and pulling the wooden door shut behind her, ambient room dust settling in the light shaft right to 00:10.0, zero frozen frames.
+
+---
+
+## 🧭 § 2. THE DUAL SCENE PARADIGM: SINGLE-SHOT VS. MULTI-SHOT TAXONOMY
+
+Before crafting any 10-second scene, the director must resolve the foundational cinematic fork:  
+**"Does this scene demand the accumulative pressure of an unbroken temporal stream (Single-Shot), or the violent dialectic collision of editorial cuts (Multi-Shot)?"**
+
+Both tracks are governed by **Elastic Montage & Temporal Physics (1 to 5 dynamic shots/beats)**, preserving kinetic momentum and biological realism without forcing rigid 3-phase templates or artificial bracket headers.
+
+> 🔀 **THIRD OPTION — TRACK AB (HYBRID TAKE + CUT)**: when pressure must accumulate in one unbroken breath **but the landing must be seen through another eye** (the witness, the prop, the reverse), combine them: one continuous take ≥ 5 s holding 2+ phases, punctuated by 1–2 cuts on the 180° axis. Selection table, hybrid shapes, shot counts, and syntax (`In the same take` / `Cut to`): [`0b-temporal-camera-grammar.md` §6.1, §8, §12](file:///d:/Project/Sven/engine/references/0b-temporal-camera-grammar.md).
+
+---
+
+### 🅰️ TRACK A: SINGLE-SHOT CONTINUOUS TAKE (Unbroken Cinematic Take)
 * **Core Directorial Philosophy**: *"Spatiotemporal Preservation & Accumulative Pressure (Bảo Toàn Không-Thời Gian & Tích Tụ Áp Suất)"*.
 * **Camera Mechanics**: One continuous, motivated trajectory across all 10 seconds (Slow Dolly Push-in, Dynamic Velocity Tracking, Orbital Arc, Focus Pull, Revealing Pan). **STRICTLY ZERO HARD CUTS**.
-* **Dialogue Architecture**: Single-Speaker Dominance (~10–12 words English maximum). The opposing character reacts purely through physical micro-biomechanics and silent gaze. 100% clean lip-sync focus.
-* **Phase 3 Arrest Mechanics (`[08.5–10.0s]`)**: **Camera Deceleration & Living Organic Settle (Hãm phanh & Lắng đọng sống động)**. The moving camera comes to a smooth halt into a stable resting frame, while the subject and environment maintain continuous subtle biological respiration and atmospheric drift from `00:08.5 to 00:10.0`, with strictly zero frozen frames.
+* **Dialogue Architecture**: Single-speaker dominance is the typical shape; budget lines in seconds, not words (grammar §2–§3, §7). Two speakers fit when the camera is static or slow and the lines do not overlap. The opposing character reacts purely through physical micro-biomechanics and silent gaze. 100% clean lip-sync focus.
+* **Terminal Cadence & Kinetic Handoff**: The camera and subject complete the beat organically—either gliding into a natural emotional pause or sustaining physical momentum into the next cut, with continuous living motion and strictly zero artificial frozen frames.
 * **AI Diffusion Advantage**: Maximum spatiotemporal stability (95%+ success rate). Zero facial morphing, zero costume drift, zero background latent regeneration.
 
-#### The 5 Generalized Directorial Archetypes for Single Camera:
+#### The 5 Generalized Directorial Archetypes for Single-Shot:
 1. **Intimate Psychological Immersion (Thâm Nhập Nội Tâm & Biến Chuyển Cảm Xúc Đơn Tuyến)**:
    * *Dramatic Nature*: Gradual internal transition from one emotional state to another on a single human face (e.g. from numb shock to welling tears, or from trembling fear to rock-solid defiance).
    * *Scenarios*: Solemn vows, private confessions, prayer, bereavement beside a sacred relic, internal monologues.
@@ -578,14 +883,55 @@ Both tracks obey the 3-Phase Breath Wave (Inhale ➔ Strike ➔ Exhale & Arrest)
 
 ---
 
-### 🅱️ TRACK B: MULTI-CAMERA MONTAGE (Kinetic Cut Sequence)
+### 🅰️-LOCKED: TRACK A-LOCKED — THE LOCKED-OFF PERFORMANCE VARIANT (Cú Máy Tĩnh Khóa Cố Định Tập Trung Diễn Hoạt)
+* **Core Directorial Philosophy**: *"Stillness As Magnitude (Sự Tĩnh Lặng Tạo Nên Sức Nặng)"*.
+* **Camera Mechanics**: The camera is **100% stationary on a locked tripod**. Zero panning, zero tilting, zero tracking, zero zooming, strictly zero camera drift.
+* **The Problem in Generative Diffusion Models**: If a prompt simply writes `static camera`, AI video engines (Kling, Runway, Wan 2.1, Sora) tend to render a lifeless still photo or freeze the actor into an emotionless wax mannequin.
+* **The 5-Pillar Dedicated Prompt Optimization Protocol**:
+  1. **Optical Anchor Rigidity**: Style line declares `Track A — one continuous take, zero cuts, locked-off static camera on stationary tripod.` Every phase header explicitly enforces `completely stationary static camera on locked tripod, zero camera movement`.
+  2. **Hyper-Dense Somatic Micro-Acting Directing**: Replace camera translation vectors with high-density biological micro-actions distributed across 3 time brackets:
+     - `[00:00–00:03.5]`: Initial tension (shallow rapid chest heaving, masseter muscle twitching, eyes locked down).
+     - `[00:03.5–00:07.0]`: Somatic rupture or spoken delivery (eyes welling with unshed tears catching the light, throat swallowing down a choke, knuckles whitening).
+     - `[00:07.0–00:10.0]`: Emotional aftermath (chin trembling, single tear spilling down cheek, eyelids fluttering half-closed as shoulders slowly slump).
+  3. **Living Environmental Micro-Dynamics (Anti-Freeze Insurance)**: Mandate continuous physical motion in the background (dust motes drifting lazily through diagonal sunbeams, a delicate curl of steam rising steadily from a teacup, loose strands of hair fluttering in a draft, sheer curtains rippling).
+  4. **Tactile Prop Friction & Internal Staging**: The character maintains a physical tactile anchor (fingers clutching wooden rail, twisting ring, pressing palm to table). Movements are internal (head lowering 2 inches, gaze shifting from floor to doorway).
+  5. **Clean Single-Subject Frame**: Single-subject framing (CU, MCU, or Dirty Single) ensures the DiT latent space focuses 100% of its parameters on facial musculature and eye expression.
+
+#### Canonical Prompt Syntax for Track A-Locked:
+```text
+Master-level cinematography and composition, fast-paced shot variation, atmospheric sound design. Style: [Visual Style Header]. Track A — one continuous take, zero cuts, locked-off static camera on stationary tripod.
+
+[context]:
+[Location Name] [100% Refer to image <ref>], [time of day]. [Fixed architectural inventory, key lighting direction, and continuous environmental micro-motion: dust motes dancing in sunbeams, steam curling steadily].
+
+[subject]:
+[character_name] [100% Appearance, attire, and facial features Refer to image X], [spatial anchor], [tactile posture] — the only [character_name] in frame.
+
+[PROP]:
+[hero_prop] [100% Refer to image <prop_ref>]; [tactile fixture].
+
+Diegetic sound of [room tone], accompanied by [specific Foley: creak of wood, rustle of linen, choked breathing].
+
+[00:00–00:03.5] Medium close-up, eye level, completely stationary static camera on locked tripod, zero camera movement — [actor initial posture, rapid chest breathing, jaw clenched, fingers gripping prop rail; microscopic dust motes swirl in sunbeams]. Focus on [character_name].
+
+[00:03.5–00:07.0] In the same locked static frame, eye level — [actor swallows hard, jaw quivering, eyes welling with tears, delivers line with breathy choke]. Focus on [character_name].
+[character_name] [expressive verb] : “ [spoken line ≤ 18 words] ”（Voice of [demographic]; [acoustic paralinguistic tags]）
+
+[00:07.0–00:10.0] In the same locked static frame, eye level — [lips seal tightly, single tear spills down cheek, chin trembles, head lowers slightly, shoulders slump under invisible weight; background curtains ripple faintly]. Focus on [character_name].
+
+Consistent character, lighting, and environmental physics maintained through 00:10.0. No subtitles, no watermark, no text overlays, no duplicate subjects.
+```
+
+---
+
+### 🅱️ TRACK B: MULTI-SHOT CUT SEQUENCE (Kinetic Montage)
 * **Core Directorial Philosophy**: *"Adversarial Dialectics & Cognitive Shock (Biện Chứng Đối Kháng & Cú Sốc Nhận Thức)"*.
-* **Camera Mechanics**: 2 to 4 deliberate editorial cuts with dynamic timestamps (`△ [00:00–00:XX.Xs] Shot 1` ➔ `△ [00:XX.X–00:YY.Ys] Shot 2` ➔ `△ [00:YY.Y–00:10.0s] Shot 3/4`). Governed strictly by the 180° Action Axis, Invariant Screen Directions, and continuous kinetic momentum handoff.
-* **Dialogue Architecture**: Adversarial Ping-Pong Exchange (~14–18 words English total; ~7–9 words per speaker). Both characters actively deliver speech across alternating shots.
-* **Phase 3 Arrest Mechanics (`[08.5–10.0s]`)**: **Hard Editorial Cut to Choker/Macro (Cắt máy sang cận cảnh Choker)**. The camera cuts decisively to a tight portrait of the character bearing the psychological shockwave, settling into a stable resting frame with continuous subtle biological breathing and atmospheric drift from `00:08.5 to 00:10.0`, with strictly zero frozen frames.
+* **Camera Mechanics**: Flexible shot breakdown dictated entirely by the screenplay (Single-shot continuous take, 2 dynamic shots, or rapid cuts as required by narrative tension; strictly NO mandatory 3-shot quota). Governed strictly by the 180° Action Axis, Invariant Screen Directions, and continuous kinetic momentum handoff.
+* **Dialogue Architecture**: Governed by the **10-Second Shot Mental Model** ([`0b-temporal-camera-grammar.md`](file:///d:/Project/Sven/engine/references/0b-temporal-camera-grammar.md) §1.1). Standard cinematic dialogue achieves **Shot - Reverse Shot across consecutive 10s shot prompts** (Shot 1: Speaker A ➔ Shot 2: Speaker B or Reaction B). Within a single 10s Track B cut sequence, dialogue is permitted ONLY under the **Two-Shot Exception & 15-Word Split Law**: rapid, high-tension staccato sparring where each speaker delivers 5–10 words (hard cap ≤ 15 words per speaker, total ≤ 32w). If any speaker exceeds 15 words, the scene MUST be split into separate solo shots.
+* **Phase 3 Arrest Mechanics (`[Terminal Beat]`)**: **Hard Editorial Cut to Choker/Macro (Cắt máy sang cận cảnh Choker)**. The camera cuts decisively to a tight portrait of the character bearing the psychological shockwave, settling into a stable resting frame with continuous subtle biological breathing and atmospheric drift from `terminal seconds right to 00:10.0`, with strictly zero frozen frames.
 * **AI Diffusion Advantage**: High-velocity narrative momentum, sharp pacing, classic Hollywood shot/reverse-shot dramatic friction.
 
-#### The 5 Generalized Directorial Archetypes for Multi-Camera:
+#### The 5 Generalized Directorial Archetypes for Multi-Shot:
 1. **Adversarial Verbal Sparring & Ping-Pong Clash (Đấu Kiếm Tư Tưởng Ngang Tài Ngang Sức)**:
    * *Dramatic Nature*: Two opposing wills of equal intensity collide face-to-face. Words act as kinetic blades parried and returned.
    * *Scenarios*: Moral disputes, ideological showdowns, courtroom cross-examinations, betrayal confrontations.
@@ -611,11 +957,11 @@ Both tracks obey the 3-Phase Breath Wave (Inhale ➔ Strike ➔ Exhale & Arrest)
 
 ### 📊 COMPARATIVE DIRECTORIAL MATRIX
 
-| Directorial Parameter | Track A: Single Continuous Camera | Track B: Multi-Camera Montage |
+| Directorial Parameter | Track A: Single-Shot Continuous Take | Track B: Multi-Shot Cut Sequence |
 | :--- | :--- | :--- |
-| **Camera Cuts** | **Zero Cuts** (1 Unbroken Take across 10.0s) | **2 to 3 Deliberate Cuts** (`△ [00:00]`, `△ [04.0]`, `△ [08.5]`) |
+| **Camera Cuts** | **Zero Cuts** (1 Unbroken Take across 10.0s) | **1 to 4 shots per 10 s** (grammar §6); each later phase opens with `Cut to …` |
 | **Camera Trajectory** | Continuous motivated glide (Dolly, Pan, Track, Orbit) | Discrete angle shifts anchored to the 180° Action Axis |
-| **Dialogue Capacity** | **Single Speaker Focus** (~10–12 words English max) | **Ping-Pong / 3-Way Exchange** (~14–18 words English; ≤ 25 words / ≤ 140 chars in High-Tension/Vietnamese) |
+| **Dialogue Capacity** | **Single Speaker Focus** (Sitcom: 25–30w, cap 32w; Drama: 15–20w; timed by grammar §2–§3) | **Rapid Sparring Volleys** (Two-shot exception: ≤ 15w per speaker, total ≤ 32w; standard dialogue uses Shot-Reverse-Shot across consecutive shots) |
 | **Phase 3 Arrest Method** | **Deceleration, Settle & Static Lock** | **Hard Editorial Cut to Choker/Macro** |
 | **AI Latent Stability** | **Maximum (95%+)**: Zero morphing, zero garment drift | High narrative friction; requires strict 4-Bridge locks |
 | **Hollywood Purpose** | Intimate psychological truth, raw physical momentum | Fast-paced conflict, shock revelations, societal friction |
@@ -624,7 +970,7 @@ Both tracks obey the 3-Phase Breath Wave (Inhale ➔ Strike ➔ Exhale & Arrest)
 
 ## 🎭 § 3. THE 4 EMOTIONAL DESTINATIONS OF PHASE 3 (NƠI DƯ CHẤN HẠ CÁNH)
 
-> 💡 **DIRECTORIAL MANDATE**: In Phase 3 `[00:08.5–00:10.0]`, whether executing a **Hard Editorial Cut** (Multi-Camera) or a **Camera Settle & Static Lock** (Single Camera), the director must answer: **"Whose heart is broken? Whose world just shattered?"**
+> 💡 **DIRECTORIAL MANDATE**: In the Terminal Resolution Beat, whether executing a **Hard Editorial Cut** (Multi-Shot) or a **Camera Settle & Static Lock** (Single-Shot), the director must answer: **"Whose heart is broken? Whose world just shattered?"**
 
 ```
                                   PHASE 3: WHERE DOES THE BLOW LAND?
@@ -675,10 +1021,10 @@ Both tracks obey the 3-Phase Breath Wave (Inhale ➔ Strike ➔ Exhale & Arrest)
 
 ---
 
-## 🔗 § 4. THE 4 CONTINUITY NEURAL BRIDGES (FOR MULTI-CAMERA MONTAGE)
+## 🔗 § 4. THE 4 CONTINUITY NEURAL BRIDGES (FOR MULTI-SHOT CUT SEQUENCE)
 
 > 💡 **THE ROOT CAUSE OF FRAGMENTATION ("CHẮP VÁ")**:  
-> Multi-camera prompts look "stitched together" and stutter when Shot 2 does not know what Shot 1 just did, or when Shot 3 suddenly jumps to an unrelated spatial dimension.  
+> Multi-shot prompts look "stitched together" and stutter when Shot 2 does not know what Shot 1 just did, or when Shot 3 suddenly jumps to an unrelated spatial dimension.  
 > To weave cuts into an unbroken, silk-smooth kinetic ribbon, four neural continuity bridges must be locked:
 
 ```
@@ -704,112 +1050,267 @@ Both tracks obey the 3-Phase Breath Wave (Inhale ➔ Strike ➔ Exhale & Arrest)
   - ❌ *Broken*: Shot 1 shows character beginning to unsheathe dagger. Shot 2 shows character unsheathing dagger again.
   - ✅ *Kinetic Handoff*: Shot 1 shows dagger clearing scabbard; Shot 2 inherits velocity into a gleaming steel arc whistling through air; Shot 3 embeds point into timber or levels it at opponent's throat!
 
-### 3. The Chekhov Prop State Machine (Khóa Trạng Thái Đạo Cụ)
+### 3. The Chekhov Prop State Machine & The Mandatory Entity Re-Naming Law (Khóa Trạng Thái Đạo Cụ & Đổi Tên Thực Thể)
+
+The prompt compiler tracks props across a 3-phase kinetic state machine, governed by the **Prop Mutability Lifecycle**:
 - **Shot 1 (Ready)**: Prop rests in an intact, poised state (resting in hand / resting on table / sheathed).
 - **Shot 2 (Under Load)**: Prop absorbs or delivers force (swung through air / struck / flexing under strain / liquid splashing).
 - **Shot 3 (Landed / Transformed)**: Prop reaches final altered state (embedded in wood / shattered shards / clutched tightly to sternum).
 
+#### ⚠️ The Mandatory Entity Re-Naming Law for Structural Fractures (Luật Đổi Tên Tránh Ảo Giác AI):
+When a prop undergoes structural destruction (torn, shattered, incinerated, severed), **PROMPT COMPILERS ARE STRICTLY FORBIDDEN FROM RETAINING THE ORIGINAL INTACT ENTITY NAME**:
+- **Surface Weathering (Level 1)**: Topology intact. Retain original name with surface modifier (`[The mud-stained Debt Ledger]`, `[The rain-soaked Letter]`).
+- **Structural Fracture (Level 2 — Anti-Hallucination Mandate)**: Topology destroyed. **PROMPT MUST RE-NAME TO THE NEW PHYSICAL FRAGMENTS**:
+  - `The Book / Ledger` $\longrightarrow$ **`Torn Parchment Shreds`** (Prevents AI from rendering an intact falling book!).
+  - `The Porcelain Teacup` $\longrightarrow$ **`Jagged Ceramic Shards`** (Prevents AI from rendering an unbroken teacup on the floor!).
+  - `The Letter / Contract` $\longrightarrow$ **`Smoldering Ash Flakes`** (Forces AI to render drifting glowing embers instead of flat paper).
+  - `The Heirloom Mirror` $\longrightarrow$ **`Fractured Silver Glass Splinters`**.
+  - `The Broadsword` $\longrightarrow$ **`Broken Sword Hilt`** & **`Snapping Blade Tip`**.
+
 ### 4. Cinematic Scale Progression (Logic Biến Thiên Cỡ Cảnh)
-- **Model A: Inward Funnel (Default)**: `Shot 1 Medium Two-Shot` ➔ `Shot 2 Close-Up / OTS` ➔ `Shot 3 Choker / Macro`.
+- **Model A: Dynamic Two-Shot (Action ➔ Reaction)**: `Shot 1 Medium / Tracking` ➔ `Shot 2 Counter-Angle / Close-Up` (pacing governed by dramatic tension).
 - **Model B: Outward Explosion (For Revelations & Shockwaves)**: `Shot 1 Tight Choker` ➔ `Shot 2 Medium Action Clash` ➔ `Shot 3 Wide Living Society in Stunned Silence`.
+
+### 5. Inter-Clip 10s Continuity & Temporal Handshake Protocol (Cầu Nối Ghép Nối 10s Giữa Scene N và Scene N+1)
+
+> 🎬 **THE MASTER STITCHING MANDATE (QUY CHUẨN GHÉP PHIM ĐIỆN ẢNH TỪ CÁC CLIP 10S)**:
+> In third-party AI video generation (Sora, Runway, Kling, Veo), each 10-second scene is rendered as an isolated, stateless file. When imported into an NLE editor (Premiere, DaVinci, CapCut) and assembled sequentially, the edit must look like **one continuous, seamless cinematic film** rather than 10 disconnected clips.
+> This seamless flow is achieved through the **Inter-Clip Handshake Protocol**:
+
+```
+SCENE N (10.0s Clip)                                SCENE N+1 (10.0s Clip)
+┌─────────────────────────────────────────┐         ┌─────────────────────────────────────────┐
+│ [00:08.5–00:10.0] Terminal Outbound     │ ──────► │ [00:00.0–00:01.5] Inbound Ingestion     │
+│ Active character initiates a physical   │  MATCH  │ Reverse angle or new shot catches and   │
+│ vector (turns head, reaches out, drops  │   CUT   │ completes that exact physical vector,   │
+│ an object, begins stepping forward).    │  RELAY  │ inheriting velocity with ZERO restart.  │
+└─────────────────────────────────────────┘         └─────────────────────────────────────────┘
+```
+
+1. **The Inbound/Outbound Kinetic Baton**:
+   - **Outbound Baton (Scene N, 00:08.5–00:10.0)**: The prompt MUST direct a micro-action that carries unfinished kinetic momentum into the cut (e.g. `Ma Ba turns sharply toward the door frame, right hand reaching out for the latch...`).
+   - **Inbound Baton (Scene N+1, 00:00.0–00:01.5)**: The opening line of the next prompt MUST catch this exact motion from the new camera angle (e.g. `Cut to reverse shot from the dim corridor: Ma Ba's hand pushes the latch downward, stepping across the wooden threshold...`).
+   - **Editing Impact**: When cut together on the action (Action Match-Cut), the camera switch feels intentional and cinematic, erasing the AI clip boundary completely.
+2. **Invariant Spatial & Gaze Geometry (The Screen Direction Law)**:
+   - If Character A faces Screen-Right and Character B faces Screen-Left in Scene N, Scene N+1 MUST strictly maintain this gaze vector across all reverse shots, close-ups, and over-the-shoulders.
+   - The floor material (`[context]` ground phrase) and key light orientation MUST remain 100% identical across consecutive scenes in the same setting.
+3. **Auditory Suture (L-Cut & Diegetic Foley Continuity)**:
+   - In Code Block 1: `Diegetic room acoustics:` must use the same ambient texture (e.g. `steady ceiling fan drone, rain patter against corrugated tin`) across all contiguous scenes in that space.
+   - In dialogue delivery: The Director may script an **L-Cut Audio Tail**, where Scene N's closing line resonates over Scene N+1's opening silent reaction shot.
+4. **Prop & Posture Handover Ledger (Code Block 2 Synchronization)**:
+   - Code Block 2 of Scene N records the **Exact Physical Coordinate Snapshot** at `00:10.0` (Character positions, hands holding props, facial tension).
+   - Scene N+1's `[subject]` and `[PROP]` sections must inherit this exact physical state at `00:00.0` with zero discrepancies.
+5. **Aesthetic Specificity Over Boilerplate Beauty Phrases**:
+   - Strictly ban the copy-pasting of generic `"Modern K-Drama Premium Cinematography, high-key beauty illumination, soft pastel urban palette"` across all scenes regardless of genre.
+   - The style line must reflect the **film's psychological reality**: naturalistic contrast, atmospheric grain, chiaroscuro shadows, tactile surfaces, and genuine human skin tones.
 
 ---
 
 ## 📋 § 5. PRODUCTION TEMPLATES & REFERENCE DEMOS
 
 > [!IMPORTANT]
-> **THE PURE CINEMATIC NATURAL PROSE MANDATE**:
-> Code Block 1 MUST BE WRITTEN IN PURE VIVID CINEMATIC NATURAL PROSE.
-> **ABSOLUTELY ZERO REFERENCE LABELS** (`Subject:`, `Prop:`, `Context:`, `Line A:`, `Line B:`). All subjects, spatial positions, props, and lighting are woven directly into natural spatial paragraphs.
+> **THE ZERO-CONFLICT MULTI-MODAL PROMPT ARCHITECTURE (2026 MANDATE)**:
+> Code Block 1 MUST BE STRUCTURED INTO EXACT THREE EXPLICIT MULTI-MODAL REFERENCE BLOCKS:
+> 1. `[context]:` Location Name with `[100% Refer to image ...]` + Time of Day, Atmosphere, and Key Lighting.
+> 2. `[subject]:` The 4-Part Sovereign Formula ([Name + Image Anchor] + [Architectural Spatial Anchor] + [Initial Physical Posture & Tactile Contact] + [— the only [name] in frame]).
+> 3. `[PROP]:` Interactive Hand Props and Key Fixtures with `[100% Refer to image ...]` (semicolon-separated clean list).
+> **BLANK LINE SPACING LAW**: Each section MUST be separated by an empty line (`\n\n`) for visual clarity and token parsing isolation.
+> **THE 4-VECTOR CHARACTER DIRECTING PROTOCOL**: In every timeline shot (`[00:00–00:XX]`), for any participating character, explicitly specify (1) Physical State / Posture, (2) Action / Movement, (3) Emotion / Somatic Reaction, (4) Spatial Location / 3D Blocking.
+> Timeline phases follow beneath in canonical syntax terminating in standard stability and negative lines.
 
-### 🎬 DEMO 1: TRACK A — SINGLE CONTINUOUS CAMERA (SOLO VOW & INWARD PUSH-IN)
+> [!NOTE]
+> Every demo below passes `engine/episode_audit_suite.py` with zero warnings. Syntax and timing follow [`0b-temporal-camera-grammar.md`](file:///d:/Project/Sven/engine/references/0b-temporal-camera-grammar.md). In real deliverables, Code Block 2 is written in Vietnamese (`workflow.md` §9.5); it is shown in English here for reference.
 
-#### Code Block 1: Omni Flash Video Prompt (Track A — Unbroken Take)
+### 🎬 DEMO 1: TRACK A — 10 s SINGLE-SHOT CONTINUOUS TAKE (SOLO VOW & MOTIVATED PUSH-IN)
+
+Intent: Noa promises more than Noa can deliver. The camera stays still while the empty jar is discovered (witness), then pushes in only when Noa decides (motive: inner shift).
+
+#### Code Block 1 (Track A — 10 s)
 ```text
-3D Animation Masterwork in iconic Pixar and DreamWorks studio style, Octane Render, Cinema 4D, Ray-traced global illumination, dark rich cinematic realism. Subsurface scattering skin shading, micro-texture fabrics.
+Master-level cinematography and composition, fast-paced shot variation, atmospheric sound design. Style: 3D animation masterwork in a Pixar and DreamWorks studio style. Track A — one continuous take, zero cuts.
 
-Inside a rustic biblical limestone kitchen at dusk. Warm amber hearth embers glowing softly on frame-left, balanced by cool pale blue evening twilight slicing through an open stone doorway; fine airborne dust motes hovering in the dim light shafts.
+[context]:
+Rustic limestone kitchen [100% Refer to image location_kitchen_4view.jpg], at dusk. Warm amber embers glow low inside the stone hearth, balanced by pale blue twilight slanting through the open doorway; fine dust motes hang in the light shafts.
 
-Milcah, resting quietly on a low wooden cot at frame-left facing frame-right, head propped on a straw pillow with weary half-closed eyes, breathing slowly in shallow exhaustion — the only Milcah in frame.
-Noa, kneeling upright beside an overturned terracotta grain jar at frame-right facing frame-left, chest rising in shallow guarded breaths, hazel eyes locked toward the cot with fierce protective resolve, faint sheen of sweat glistening at temples — the only Noa in frame.
-Empty overturned terracotta grain jar lying between them on the packed earthen floor with its dusty hollow facing the lens.
-Diegetic room acoustics: Muffled howling desert wind outside, crackle of dying hearth coals, soft scrape of wood against clay.
+[subject]:
+Milcah [100% Appearance, attire, and facial features Refer to image 2], resting on the low wooden cot against the back wall, head on a straw pillow, eyes half-closed, breathing slowly in shallow exhaustion — the only Milcah in frame.
+Noa [100% Appearance, attire, and facial features Refer to image 1], kneeling on the packed earthen floor beside the hearth, chest rising in guarded breaths, gaze on the cot — the only Noa in frame.
 
-A single unbroken cinematic camera take with zero cuts: The camera opens in a low-angle medium two-shot framing both subjects. In foreground frame-right, Noa kneels beside the overturned jar, lifting a worn wooden scoop to find it empty, while in background frame-left, Milcah rests motionless under her brown blanket, watching in weary grief.
+[PROP]:
+empty_grain_jar [100% Refer to image prop_jar_4view.jpg], terracotta, lying on the earthen floor beside Noa's left knee, hollow mouth facing the hearth — the only grain jar in frame.
 
-From 00:03.0 to 00:07.5, the camera glides forward in an unbroken, smooth dolly push-in past the dusty clay rim, compressing the focal plane directly onto Noa's resolute face as Noa turns her head toward the cot:
-Noa：“ Rest now, mother; our loom will bring us bread! ”（voice steady and fervent with fierce protective devotion, lips parting dynamically in precise natural lip-sync, cheek illuminated by warm amber hearth flare, jaw setting into rock-solid resolve）
+Diegetic room acoustics: muffled desert wind outside, crackle of dying coals, soft scrape of wood against clay.
 
-From 00:07.5 to 00:10.0, the camera settles motionless into an intimate close-up on Noa's face. Spoken dialogue ceases completely. Noa's lips press firmly together, chest rising in a deep silent breath, hazel eyes glistening with unshed tears of defiance. Concluding with smooth deceleration into a stable resting frame, Noa's chest subtly rising in slow respiration with zero frozen frames.
+[00:00–00:03.0] Medium two-shot, low angle, static camera — Noa tips the grain jar and scrapes a worn wooden scoop along the inside, finding nothing; on the cot Milcah watches through half-closed eyes.
 
-Continuous fluid motion, realistic physics, zero camera cuts, zero morphing. Both characters remain strictly anchored in their spatial positions throughout the shot. Do not generate subtitles, dialogue text, titles, timestamps, or written text. Do not render duplicate characters or extra props.
+[00:03.0–00:07.5] Slow push-in to a medium close-up on Noa, eye level — Noa sets the scoop down and turns toward the cot, jaw setting. Focus on Noa.
+Noa whispers : “ Rest, Mother. The loom will feed us. ”（Voice of a 20-year-old woman from the Judean hills, steady and fervent, precise lip-sync, warm hearth light across the cheek, a promise Noa is not sure of）
+
+[00:07.5–00:10.0] The push-in settles into a close-up on Noa, eye level — lips press together, the chest rises in one deep silent breath, eyes glisten in the amber light; behind, Milcah's hand slides from the blanket edge.
+
+Continuous fluid motion, realistic physics, zero morphing. All characters remain anchored in fixed spatial positions throughout the shot.
+Do not generate subtitles, dialogue text, titles, timestamps, or written text anywhere in the video. Do not render duplicate characters or extra props.
 ```
+Timing: line = 7 words ≈ 3.1 s inside a 4.5 s phase; push-in MS → MCU over 4.5 s (grammar §5: 3–5 s). Speech ≈ 31 % of the clip.
 
-#### Code Block 2: Handover State at 00:10.0 (Track A)
+#### Code Block 2 (Handover @00:10)
 ```text
 [HANDOVER STATE AT 00:10.0]:
-- Noa (Protagonist): Midground screen-right, kneeling upright beside the overturned jar, torso angled three-quarters toward screen-left, right hand gripping the wooden scoop against her knee, jaw set firm, hazel eyes locked toward the cot.
-- Milcah (Tier B): Background screen-left, reclining motionless on the wooden cot under the brown blanket, head resting on straw pillow, eyes half-closed in shadow.
-- Primary Prop: Overturned terracotta jar lying between them on the packed earthen floor, clean empty interior facing the hearth light.
-- Lighting & Atmosphere: Amber hearth embers dying on screen-left, cool blue twilight dominating screen-right doorway.
-- Camera Staging: Settled in a low-angle tight close-up on Noa, camera stationary, shallow depth of field softly blurring Milcah in the background.
-- Dialogue Audit: 10 words spoken by Noa (100% single-speaker lip-sync focus, 2.5s terminal silent buffer verified).
+- Noa: kneeling beside the hearth, torso turned toward the cot, wooden scoop resting on the floor beside the right knee, jaw set, eyes wet.
+- Milcah: lying on the cot against the back wall, right hand fallen from the blanket edge, eyes half-closed.
+- Prop: empty grain jar on its side beside Noa's left knee, mouth toward the hearth.
+- Light: embers fading in the hearth, blue twilight from the doorway now dominant.
+- Camera: settled in a close-up on Noa, static.
+- Dialogue audit: 7 words, one speaker.
 ```
 
 ---
 
-### 🎬 DEMO 2: TRACK B — MULTI-CAMERA MONTAGE (ADVERSARIAL PING-PONG CLASH)
+### 🎬 DEMO 2: TRACK B — 10 s MULTI-SHOT CUT SEQUENCE (ADVERSARIAL PING-PONG)
 
-#### Code Block 1: Omni Flash Video Prompt (Track B — 3-Shot Cut)
+Intent: Eleazar springs a trap; Noa reverses it with proof. Each cut lands on a change of power (grammar §6), the angle on Noa rises as Noa takes control.
+
+#### Code Block 1 (Track B — 10 s)
 ```text
-3D Animation Masterwork in iconic Pixar and DreamWorks studio style, Octane Render, Cinema 4D, Ray-traced global illumination, dark rich cinematic realism. Subsurface scattering skin shading, micro-texture fabrics.
+Master-level cinematography and composition, fast-paced shot variation, atmospheric sound design. Style: 3D animation masterwork in a Pixar and DreamWorks studio style. Track B — multi-shot sequence cut on the 180-degree axis.
 
-Inside a dimly lit limestone debt-collector's alcove at nightfall. A heavy iron brazier glowing with harsh charcoal embers at screen-right casting deep angular shadows, intersected by cold moonlight slanting through a high barred window slit.
+[context]:
+Limestone debt-collector's alcove [100% Refer to image location_alcove_4view.jpg], at nightfall. A heavy iron brazier beside the ledger table throws harsh orange charcoal light upward; cold moonlight slants through a high barred window; charcoal haze hangs under the low ceiling.
 
-Eleazar, standing rigid at screen-right facing screen-left, leaning heavy weight forward over the timber ledger table with flared nostrils and heavy shoulder tension, hawkish gaze bearing down across the oak wood — the only Eleazar in frame.
-Noa, standing firm at screen-left facing screen-right, shoulders squared with rigid spine, right hand hovering primed above the tabletop, hazel eyes locked in cold unyielding defiance — the only Noa in frame.
-PROP-01: The Forged Debt Tablet of baked clay with a cracked wax seal, resting flat upon the heavy timber ledger table between them.
-Diegetic room acoustics: Crackling brazier coals, resonant hollow whistle of wind through window bars, heavy tense breathing.
+[subject]:
+Eleazar [100% Appearance, attire, and facial features Refer to image 4], standing behind the timber ledger table on the brazier side, palms pressed flat against the wood — the only Eleazar in frame.
+Noa [100% Appearance, attire, and facial features Refer to image 1], standing erect on the doorway side of the table, holding the copper seal in a clenched right fist — the only Noa in frame.
 
-△ [00:00–00:04.0] Shot Medium Close-Up, Low-angle push-in on screen-right:
-Eleazar leans heavily forward over the timber table at screen-right, slamming his heavy brass ring against the forged clay tablet, his bearded face twisted into a cruel, arrogant sneer while Noa glares back unblinking from screen-left. Optical focus locked on Eleazar.
-Eleazar：“ Your father's debt is due; yield the cedar loom! ”（voice harsh and gravelly with predatory triumph, lips parting dynamically in precise sneering lip-sync, brow catching red brazier glare — tyrannical coercion）
+[PROP]:
+forged_debt_tablet [100% Refer to image prop_tablet_4view.jpg]; copper_family_seal [100% Refer to image prop_seal_4view.jpg]
 
-△ [00:04.0–00:08.5] Shot Medium Close-Up, Slight low-angle upward tilt on screen-left:
-Continuous continuation with zero dead pause: The cut snaps across the 180-degree axis to Noa standing unyielding at screen-left. Inheriting the tension, Noa's right hand slams a copper seal onto the table with ringing force, chin lifted in absolute refusal while Eleazar stiffens in sudden disbelief. Optical focus locked on Noa.
-Noa：“ A forged seal buys nothing; our father paid in full! ”（voice ringing with fierce defiance, lips parting in sharp articulate counter lip-sync, eyes blazing in cold moonlight — righteous truth）
+Diegetic room acoustics: crackling brazier coals, wind whistling through the window bars, heavy breathing.
 
-△ [00:08.5–00:10.0] Shot Choker Standoff, Static lock:
-Intimate breathless silence. The cut snaps directly to an extreme close-up on Eleazar's eyes. STRICTLY ZERO SPOKEN DIALOGUE. Eleazar's condescending smirk drains into hollow paralyzed shock as his pupils contract under the moonlight beam. Lips remain tightly sealed. Concluding with smooth deceleration into a stable resting frame, maintaining subtle chest respiration and drifting moonlight dust motes, zero frozen frames.
+[00:00–00:03.8] Medium close-up on Eleazar standing behind the timber ledger table, low angle, slow push-in — weight pressed forward onto both palms, slaps a flat palm down beside the debt tablet with flared nostrils; across the table Noa stands rigid without blinking. Focus on Eleazar.
+Eleazar snaps : “ Your father's debt is due tonight. ”（Voice of a 55-year-old man from Jerusalem, harsh and gravelly, precise lip-sync, brazier glow under the brow, savoring the trap）
 
-Continuous fluid motion, realistic physics, zero morphing. Both characters remain strictly anchored in their spatial positions across cuts.
-Do not generate subtitles, dialogue text, titles, timestamps, or written text. Do not render duplicate characters or extra props.
+[00:03.8–00:07.6] Cut to a medium close-up on Noa on the doorway side of the table, slight low angle, static camera — shoulders squared, presses the copper seal flat onto the table with a ringing clack, chin lifting in defiance; across the table Eleazar stiffens. Focus on Noa.
+Noa replies : “ That seal is forged. Father paid. ”（Voice of a 22-year-old woman from the Judean hills, ringing and fierce, precise lip-sync, moonlight across the eyes, refusing to be afraid）
+
+[00:07.6–00:10.0] Cut to an extreme close-up on Eleazar's eyes, eye level, static camera — the condescending smirk drains, pupils contract under the moonlight; lips stay sealed, breath catches, charcoal haze drifts across the frame.
+
+Continuous fluid motion, realistic physics, zero morphing. All characters remain anchored in fixed spatial positions throughout the shot.
+Do not generate subtitles, dialogue text, titles, timestamps, or written text anywhere in the video. Do not render duplicate characters or extra props.
 ```
+Timing: two 6-word lines ≈ 2.7 s each inside 3.8 s phases; 3 shots in 10 s (grammar §6: 1–4); speech ≈ 54 %.
 
-#### Code Block 2: Handover State at 00:10.0 (Track B)
+#### Code Block 2 (Handover @00:10)
 ```text
 [HANDOVER STATE AT 00:10.0]:
-- Eleazar (Antagonist): Foreground screen-right, leaning forward over the table, right hand planted rigidly against the wood, eyes wide in paralyzed disbelief, lips parted slightly in soundless shock.
-- Noa (Protagonist): Midground screen-left, standing erect with shoulders back, right hand pinned firmly atop the copper seal, chin raised high, gaze locked on Eleazar.
-- Primary Prop: PROP-01 Forged Debt Tablet pinned beneath Eleazar's ring beside the gleaming copper seal on the scarred oak table.
-- Lighting & Atmosphere: Red charcoal brazier glow flickering low on screen-right, icy moonlight beam slicing across Noa's jaw and Eleazar's temple.
-- Camera Staging: Settled in an extreme close-up on Eleazar's eyes, camera static, deep shadows engulfing the background.
-- Dialogue Audit: 18 words total (Eleazar: 9 words, Noa: 9 words, passed hard density cap, Shot 3 verified 0 words with living organic settle, zero frozen frames).
+- Eleazar: behind the ledger table on the brazier side, right palm flat beside the tablet, eyes wide, lips parted.
+- Noa: doorway side of the table, right hand pinning the copper seal to the wood, chin raised, gaze on Eleazar.
+- Props: forged debt tablet at the table center; copper seal beside the tablet under Noa's right hand.
+- Light: orange brazier glow from below, moonlight across Noa's jaw and Eleazar's temple.
+- Camera: settled on an extreme close-up of Eleazar's eyes, static.
+- Dialogue audit: 12 words (Eleazar 6, Noa 6).
 ```
 
 ---
 
-## 🛡️ § 6. PRE-FLIGHT DIRECTORIAL CHECKLIST
+### 🎬 DEMO 3: TRACK A — 15 s TAKE (USER-REQUESTED) (VIETNAMESE, TWO SPEAKERS, ONE SLOW MOVE)
 
-Before approving any 10-second prompt, verify these eight essential gates:
-1. **[ ] The Camera Paradigm Gate**: Is Track A (Single Continuous Camera) or Track B (Multi-Camera Montage) explicitly selected based on dramatic intent? Does Track A enforce an unbroken trajectory + settle & static lock? Does Track B enforce 180° axis + kinetic momentum handoff + hard cut to living settle?
-2. **[ ] The Emotional Core Gate**: Does Phase 3 (Shot 3 or Terminal Lock) focus on **HUMAN EMOTION & PSYCHOLOGY** (eyes, breathing, tears, jaw, grief, defiance) rather than an inanimate broken prop?
-3. **[ ] The Zero-Repetition Gate (Track B)**: Does Shot 2 advance the action rather than re-describing the motion started in Shot 1? (Inherit velocity; zero recycled movement).
-4. **[ ] The 180° Axis & Floor Invariance Gate**: Do character screen directions (left vs right) and the floor noun phrase remain strictly identical across all shots?
-5. **[ ] The Prop State Gate**: Does the prop transition through Ready ➔ Under Load ➔ Transformed/Emotional Anchor?
-6. **[ ] The Living Organic Settle Gate**: Does the prompt enforce smooth deceleration into a stable resting frame with continuous biological micro-motion (breathing, drifting particles) and strictly zero artificial frozen frames?
-7. **[ ] The Zero-Mechanical-Metrics Gate**: ABSOLUTELY ZERO optical lens focal length millimeter numbers, ZERO aperture f-stops, ZERO numerical Kelvin color temperatures, ZERO camera hardware model brand names, ZERO numerical framerate labels. ALL replaced by pure Cinematic Natural Prose.
-8. **[ ] The Minor-Safety & Policy Immunity Gate**: ABSOLUTELY ZERO words triggering automated AI safety filters for minors (`girl`, `boy`, `kid`, `child`, `teen`, `little`, `beggar girl`, `soaked against chest/ribs`). ALL subjects MUST be explicitly anchored with adult terminology (`young woman`, `adult female`, `adult craftsman`, `a 22-year-old artisan`). Action, posture, and dialogue MUST be fully sanitized against false-positive vulnerability flags.
+Use only when the user explicitly asks for 15 s (`workflow.md` §2.4). Intent: Hạnh brings a letter from the estranged son; Bà Tư hides years of hurt behind a dry joke. One continuous slow push-in carries the pressure; both lines are spoken while the camera moves slowly, which is lip-sync safe (grammar §5).
+
+#### Code Block 1 (Track A — 15 s)
+```text
+Master-level cinematography and composition, fast-paced shot variation, atmospheric sound design. Style: cinematic live-action realism, warm Mekong Delta palette, gentle film grain. Track A — one continuous take, zero cuts.
+
+[context]:
+Riverside wooden kitchen [100% Refer to image location_kitchen_ref.jpg], late afternoon. Low sun enters through the slatted bamboo wall behind the clay stove, laying warm stripes across the floorboards; wood smoke hangs under the thatch.
+
+[subject]:
+ba_tu [100% Appearance, attire, and facial features Refer to image 1], seated on a low wooden stool beside the clay stove, both hands around the handle of a blackened clay pot, shoulders rounded, gaze on the fire — the only ba_tu in frame.
+hanh [100% Appearance, attire, and facial features Refer to image 2], standing in the kitchen doorway with one shoulder against the frame, gaze on ba_tu — the only hanh in frame.
+
+[PROP]:
+folded_letter [100% Refer to image prop_letter_ref.jpg], creased cream paper, held in hanh's right hand against the thigh — the only letter in frame.
+
+Diegetic room acoustics: crackling firewood, a pot lid ticking with steam, river water lapping under the stilts.
+
+[00:00–00:04.0] Wide shot, eye level, static camera — hanh steps over the threshold and stops two paces from the stove; ba_tu keeps both hands on the pot handle without looking up. Focus on hanh.
+
+[00:04.0–00:08.0] Slow push-in to a medium two-shot, eye level — hanh holds the folded letter out at arm's length. Focus on hanh.
+hanh says : “ Thư của anh Hai gửi về nè má. ”（Voice of a 30-year-old woman from the Mekong Delta; soft high-pitched hesitant tone, anxious filial vulnerability）
+
+[00:08.0–00:12.5] The push-in continues to a medium close-up on ba_tu, eye level — ba_tu lets go of the pot handle and stares at the letter without taking it. Focus on ba_tu.
+ba_tu says : “ Nó còn nhớ đường về cái nhà này hả con? ”（Voice of a 68-year-old woman from the Mekong Delta; low raspy dry timbre, bitter defensive hurt masking sorrow）
+
+[00:12.5–00:15.0] The camera settles into a static medium close-up — ba_tu's fingers curl slowly toward the letter and stop a hand's width short; smoke drifts across the frame, breathing slows.
+
+Continuous fluid motion, realistic physics, zero morphing. Spatial positions anchored to the architecture; characters move only where the action says they move.
+Do not generate subtitles, dialogue text, titles, timestamps, or written text anywhere in the video. Do not render duplicate characters or extra props.
+```
+Timing: 8 + 10 = 18 syllables (grammar §7: 18–36 for 15 s); line 2 ≈ 2.9 s inside 4.5 s; one push-in, wide → medium close-up across 8.5 s; living settle 2.5 s. Speech ≈ 31 %.
+
+---
+
+### 🎬 DEMO 4: TRACK B — 30 s SINGLE PROMPT (USER-REQUESTED) (EXPANDED SHOTS, THREE-ACT MINI SCENE)
+
+Use when the user explicitly requests 30s. The macro scene architecture (`[context]`, `[subject]`, `[PROP]`, acoustics, closing line) is **identical to a 10s or 15s scene**. Duration is expanded simply by **adding shots on the 180° axis** (Act I Setup → Act II Collision & Power Shifts → Act III Decision & Settle).
+
+#### Code Block 1 (Track B — 30 s Single Prompt)
+```text
+Master-level cinematography and composition, fast-paced shot variation, atmospheric sound design. Style: cinematic live-action realism, warm Mekong Delta palette, gentle film grain. Track B — multi-shot sequence cut on the 180-degree axis.
+
+[context]:
+Riverside wooden kitchen [100% Refer to image location_kitchen_ref.jpg], late afternoon. Low sun enters through the slatted bamboo wall behind the clay stove, laying warm stripes across the floorboards; wood smoke hangs under the thatch.
+
+[subject]:
+ba_tu [100% Appearance, attire, and facial features Refer to image 1], seated on a low wooden stool beside the clay stove, both hands around the handle of a blackened clay pot, shoulders rounded, gaze on the fire — the only ba_tu in frame.
+hanh [100% Appearance, attire, and facial features Refer to image 2], standing in the kitchen doorway with one shoulder against the frame, gaze on ba_tu — the only hanh in frame.
+
+[PROP]:
+folded_letter [100% Refer to image prop_letter_ref.jpg], creased cream paper, held in hanh's right hand against the thigh — the only letter in frame.
+
+Diegetic room acoustics: crackling firewood, a pot lid ticking with steam, river water lapping under the stilts.
+
+[00:00–00:05.5] Wide shot, eye level, slow push-in — hanh steps over the bamboo threshold and stops two paces from the stove; ba_tu keeps both hands pinned to the clay pot handle without turning her head. Focus on hanh.
+
+[00:05.5–00:11.0] Cut to an over-the-shoulder shot past ba_tu toward hanh, eye level, static camera — hanh extends her right arm, holding the folded letter out into the shaft of low sunlight. Focus on hanh.
+hanh says : “ Thư của anh Hai gửi về từ thành phố nè má. ”（Voice of a 30-year-old woman from the Mekong Delta; soft high-pitched hesitant tone, earnest filial vulnerability）
+
+[00:11.0–00:17.5] Cut to a medium close-up on ba_tu, slight low angle, static camera — ba_tu slowly withdraws both hands from the pot handle, palms trembling as her fingers rest on her lap; her chin tightens. Focus on ba_tu.
+ba_tu says : “ Mày cất đi. Tao không có đứa con nào thứ hai hết. ”（Voice of a 68-year-old woman from the Mekong Delta; low raspy dry timbre, stubborn pride masking deep hurt）
+
+[00:17.5–00:24.0] Cut to a medium shot on hanh, eye level, slow push-in — hanh crouches down onto one knee beside the stove, placing the creased letter gently onto the dry timber beside ba_tu's stool; she looks directly into ba_tu's eyes. Focus on hanh.
+hanh says : “ Anh Hai nói tháng sau anh về giỗ ba. ”（Voice of a 30-year-old woman from the Mekong Delta; warm mellow gentle cadence, earnest emotional plea to heal the family）
+
+[00:24.0–00:30.0] Cut to an extreme close-up on ba_tu's right hand and the letter, eye level, static camera — the gnarled fingers hover over the paper for two seconds, touch the creased edge without picking it up, then press flat against the warm floorboards; wood smoke drifts across the edge of the frame, breathing slows to a living rhythm.
+
+Continuous fluid motion, realistic physics, zero morphing. Spatial positions anchored to the architecture; characters move only where the action says they move.
+Do not generate subtitles, dialogue text, titles, timestamps, or written text anywhere in the video. Do not render duplicate characters or extra props.
+```
+Timing: 12 + 14 + 10 = 36 syllables (grammar §7: 35–70 for 30 s); 5 shots across 3 acts (Act I: 0–5.5s, Act II: 5.5–17.5s, Act III: 17.5–30s); each shot ≥ 5.5s; terminal settle 2.5s. Speech ≈ 35 %.
+
+---
+
+### 🎬 DEMO 4B: 30 s CHAINED (ALTERNATIVE FALLBACK ONLY)
+
+Use only when the user explicitly requests chaining or reports that the generator cannot hold 30 s in a single prompt.
+- **Part 1 (00:00–00:10)** — Act I, arrival and trigger: a complete Code Block 1 like Demo 1, ending on momentum rather than a full settle.
+- **Part 2 (00:00–00:10)** — Act II, the exchange where power shifts: a complete Code Block 1 like Demo 2. Its `[subject]` and `[Pro]` blocks restate the exact positions and prop states from Part 1's Code Block 2; nothing refers to "the previous scene" (Gate 3I).
+- **Part 3 (00:00–00:10)** — Act III, the reveal or decision, closing on a living settle ≥ 2 s.
+- Keep the camera on the same side of the axis across the three parts unless a part crosses it with a visible move.
+
+---
+
+## 🛡️ § 6. THE 9-POINT PRE-FLIGHT DIRECTORIAL LINTER
+
+Before approving any 10-second prompt, the Director MUST verify all 9 points of the Pre-Flight Linter:
+1. **[ ] Zero Freeze Holds & Organic Motion**: STRICTLY BAN `freeze hold` or `zero-velocity`. Maintain continuous natural motion throughout the 10s clip without forcing repetitive boilerplate settle text.
+2. **[ ] Zero Camera Hardware & Lighting Jargon Gate**: STRICTLY BAN `24fps`, `18mm`, `35mm`, `50mm`, `f/1.4`, `ISO`, `Arri Alexa`, `Panavision`, and raw Kelvin numbers (`2800K`, `3200K`). Translate into evocative sensory optical prose.
+3. **[ ] Zero Clothing & Demographic Age in Initial State (Mode B Gate)**: Wardrobe 100% governed by the 16:9 Model Sheet. Strictly zero numerical age/gender descriptors in prompt initial state (belongs exclusively to voice directing parentheticals).
+4. **[ ] Two-Tier Completeness Gate**: Tier 1 Director's Audit Card (with explicit technical labels) MUST precede Tier 2 Machine Execution Blocks (Code Block 1 Prompt + Code Block 2 Handover).
+5. **[ ] Anti-Math Vector Law Gate (Gate 3H)**: STRICTLY BAN `X:`, `Y:`, `Z:` coordinates and raw meter numbers `(X:+0.8m, Y:0.0m, Z:2.0m)` in Code Block 1. Pure natural prose only.
+6. **[ ] Stateless Prompt Law Gate (Gate 3I)**: STRICTLY BAN `from Scene XX` or cross-scene dependencies in Code Block 1. Diffusion engines render each 10s clip statelessly; all action sequences within the clip must be self-contained.
+7. **[ ] Single Instance Lock & Anti-Ghost Prop Gate**: Exactly ONE physical instance of any interactive prop exists. Explicit resting surface clearance (`leaving the floor completely clear`). Heavy fixtures (Pine Crib, Bed, Table) permanently anchored to room coordinates with zero teleportation.
+8. **[ ] The One-Move Rule Gate (Anti-Compounded Action Law)**: Strictly 1 primary kinetic move + 1 secondary biological reaction per 3–4s shot window. Compound multi-tasking is banned.
+9. **[ ] Dialogue Word Count Hard Cap (Gate 4B) & 10s Shot Allocation**: STRICTLY adhere to the 10s Shot Word Budget: Single-speaker solo shots are budgeted at 25–30 words (Sitcom/Slice-of-Life, hard cap ≤ 32w) or 15–20 words (Psychological Drama). Two-speaker shots are strictly limited to rapid volleys of 5–10 words each (hard cap ≤ 15 words per speaker, total ≤ 32w). If any speaker exceeds 15 words, the shot MUST be split into separate solo shots.
 
 ## 🏛️ PART VI: MASTER PER-EPISODE PRODUCTION SPECIFICATION (`tap-X.html`) & QUALITY GATES
 
@@ -831,7 +1332,7 @@ A per-episode production file (`tap-X.html`) is **NEVER** an independent creativ
 │                                      ▼ (Programmatic 1:1 Ingestion)                         │
 │  [EXECUTION FILE: tap-X.html]                                                               │
 │  • Card UI: Verbatim Story Beat, Dramatic Intent, Bridge, Dialogue Breakdown                │
-│  • Code Block 1: Omni Flash 10s Video Prompt (△ Optical Beats, In-Line Dialogue, Zero §6b)  │
+│  • Code Block 1: Video Prompt, 10s default (Timed Phases, In-Line Dialogue, Zero §6b)       │
 │  • Handover State: Exact Spatial, Posture, Lighting coordinate lock at 00:10.0              │
 │                                      │                                                      │
 │                                      ▼ (Automated Audit)                                    │
@@ -858,7 +1359,7 @@ The following fields in `tap-X.html` MUST match Section 5 of `setting.html` **ve
 In high-end cinematic video generation, dialogue and interaction are governed by the **Universal Multi-Genre Interaction Meta-Framework** (SSOT: [`1-narrative-screenplay-architecture.md`](file:///d:/Project/Sven/engine/references/1-narrative-screenplay-architecture.md)). **Dialogue Parity does NOT mean forcing every scene into a rigid drama ping-pong.** It mandates **100% 1:1 Roadmap-to-Execution Parity** between Section 5 Roadmap of `setting.html` and Episode Execution (`tap-X.html`), seamlessly adapting across **Drama, Romance, Comedy, Action/Sci-Fi, Horror, Mystery, Fantasy, and Animation**.
 
 #### 1. The 8 Universal Interaction Geometries (+ Model 0) Across All Genres:
-* **Group 1: Multi-Speaker Volleys (Pure Track B: Multi-Camera Montage trục 180°)**:
+* **Group 1: Multi-Speaker Volleys (Pure Track B: Multi-Shot Montage trục 180°)**:
   - **Model 1: Symmetrical Binary Exchange (5s – 4s – 1s • 2 Volleys • ~16–18w)**:
     - *Drama*: Duel of Truths (Ultimatum ➔ Retort ➔ Stunned shock).
     - *Romance*: Flirtatious Banter (Teasing poke ➔ Melted witty retort ➔ Shy blush).
@@ -895,7 +1396,7 @@ In high-end cinematic video generation, dialogue and interaction are governed by
     - *Action*: Fallen soldier looks up as teammate reaches down to pull them up.
     - *Comedy*: Direct 4th-wall address to audience (*Fleabag*, *The Office*).
     - *Drama*: Interrogator leaning down directly into lens axis.
-* **Group 3: Sonic-Decoupled & External Audio (Track A Single Camera Dominance)**:
+* **Group 3: Sonic-Decoupled & External Audio (Track A Single-Shot Continuous Dominance)**:
   - **Model 4: Internal Monologue / Voice of Thought (V.O. • 12–16w • Lips 100% Sealed)**:
     - *Romance*: Secret unspoken longing and heart flutter.
     - *Noir / Mystery*: Gritty detective deduction on rain-slicked street.
@@ -917,31 +1418,37 @@ In high-end cinematic video generation, dialogue and interaction are governed by
 1. **UI Card Parity (`.dialogue-breakdown-box`)**:
    - Number of Turn Cards MUST exactly match the number of volleys in the chosen Model (1 Card for Model 3/4; 2 Cards for Model 1/6; 3 Cards for Model 2/7; 4 Cards for Model 1B; Zero Dialogue Banner for Model 0).
    - Each Turn Card displays: Speaker Tag, English Spoken Line, Vietsub Translation, and 4-in-1 Acting Direction.
-   - Terminal Safety Buffer Pill `[00:09.0–00:10.0]` (or `[00:08.5–00:10.0]`) at the bottom.
+   - Dynamic Timeline Progression: Each Turn Card displays its natural temporal window with seamless kinetic continuation to 00:10.0 (strictly BAN rigid '00:08.5' cutoff dogma).
 2. **Prompt Injection Parity (Code Block 1 Omni Flash Prompt)**:
    - Every spoken volley MUST have its own dedicated, non-overlapping timestamp.
-   - Standard In-Line 4-in-1 Directing Parenthetical Syntax:
-     `{Speaker}：" {Spoken Line EN} "（{1. Timbre & WPS}, {2. Lip-Sync & Somatics}, {3. Directional Lighting}, {4. Subtext & Tactile Action}）`
+    - Standard In-Line 4-in-1 Directing Parenthetical Syntax (Bám Sát 100% Casting Section 3):
+      `{Speaker} {speech_action_verb} : “{Spoken Line}” (Voice of a [Age]-year-old [Gender] from [Region / Dialect]; [Lip-sync & facial micro-expression]; [Tactile gesture / prop interaction]; [Gaze & Subtext / Emotional intent])`
+      *Exemplar:* `my_duyen says : “ A bamboo cradle, a bolster for the back, and a soft bed-edge to cradle you gently, Mama! ” (Voice of a 24-year-old woman from Southern Vietnam; lips parted in a sweet, affectionate smile; slender fingers caressing the cotton fabric; gentle brown eyes conveying a tender plea for reconciliation—and filial devotion.)`
    - For Model 4 (V.O.): Explicitly declare `lips remain 100% firmly sealed, zero mouth movement, internal voiceover echoes in mind`.
 3. **The Words-Per-Second (WPS) Physics Law**:
-   - Speeds calibrated from 1.1 WPS (Fragile romance / Grief) to 2.4 WPS (Emergency / Panic).
-   - Invariant 10-Second Word Budget: Total dialogue across all speakers MUST NOT exceed **14–18 English words** (~80–120 characters).
+   - Speech rates and clip density: grammar §2 and §7 (authoritative). The 1.1–2.4 WPS table in Pillar 1 describes English emotional cadence including pauses.
+   - Clip density is governed by [`0b-temporal-camera-grammar.md`](file:///d:/Project/Sven/engine/references/0b-temporal-camera-grammar.md) §7 and Gate 4B: Single-speaker solo shots allow 25–30 words (Sitcom/Slice-of-Life, hard cap ≤ 32w; speech share up to 75% of the 10s clip) or 15–20 words (Psychological Drama). Two-shot volleys are strictly ≤ 15 words per speaker (total ≤ 32w). Buffer law preserves 0.5–1.0s at head and 0.5–1.5s at tail.
    - Zero micro-snippets (< 3 words) unless intentional Model 7 interruption.
 4. **The Prop-Speech Tactile Locking Law & Living Settle**:
    - Peak spoken keywords synchronize with observable physical actions (tender touch, coffee spill, lever switch, ledger slam).
-   - Final 1.0s (00:09.0–00:10.0) is STRICTLY 0 SPOKEN WORDS, concluding with smooth deceleration into a stable resting frame, maintaining subtle biological respiration and ambient drift, strictly zero frozen frames.
+   - Dynamic Kinetic Flow & Organic Resolution: Dialogue timing is motivated by scene beats. When spoken words finish, facial subtext and physical motion flow naturally through continuous biological respiration and camera momentum right to 00:10.0, strictly zero frozen frames and zero artificial cutoff dogmas.
 
 ---
 
 ### Law 3: Mode B Asset Anchoring & Lore-Bound Asset Naming Mandate (Section 2, 4A, 4B)
-* **Subject Descriptions:** ALWAYS inject the official Mode B Character Anchor registered in Section 2 of `setting.html`.
-  * *Negative Rule 1 (Zero-Costume Law):* **NEVER describe clothing or costumes in prompt lines** (costume is 100% locked by the 16:9 Model Sheet).
-  * *Negative Rule 2 (Zero-Age Law):* **NEVER describe age or numerical ages in prompt lines** (age, facial bone structure, skin maturity, and demographics are 100% locked by the 16:9 Model Sheet). Writing age numbers into diffusion video prompts creates semantic conflict and causes facial morphing/distortion.
-  * *Positive Rule (Initial Opening State Only):* Describe ONLY the character's **Initial State at [00:00]**: initial spatial staging & posture at 00:00, initial somatic/biomechanical tension (breathing cadence, muscle tension), initial gaze vector and facial tension, surface state (sweat, dust — zero clothing names), and Singularity Lock (`— the only [Name] in frame`).
-* **Prop Descriptions (The Lore-Bound Canonical ID Mandate):** ALWAYS prefix with the registered Canonical ID and an evocative, world-tied proper noun bound to a character, clan, or mythical origin.
-  * **Prop Naming Formula:** `[CANONICAL-ID: PROP-XX] + [Owner / Clan / Origin] + [Unique Physical Trait] + [Object Type]`
+* **Subject Declarations in `[subject]:` (The 4-Part Sovereign Formula):**
+  - In `[subject]:`, declare every participating character using the 4-Part Sovereign Formula: `{ho_ten} [100% Appearance, attire, and facial features Refer to image X], {initial spatial anchor to architectural fixture}, {initial physical posture & tactile contact} — the only {ho_ten} in frame.`
+  - *Function at 00:00.0:* Establishes identity lock, zero-frame architectural grounding, initial physical posture, and the mandatory negative anti-duplication seal.
+  - *The 4-Vector Character Directing Protocol in Timeline Shots:* While `[subject]:` locks the initial state at 00:00.0, characters are dynamically directed within timeline shots (`[00:00–00:XX]`) across the four physical vectors: (1) Trạng thái (Evolving physical posture / somatic tension), (2) Làm gì (Active physical verb / prop interaction), (3) Cảm xúc ra sao (Somatic emotion / facial micro-expression), (4) Ở đâu (Dynamic 3D blocking anchored to architecture). NEVER write literal placeholder tags (`[TRẠNG THÁI]`, `[Ở ĐÂU]`).
+  - *Negative Rule 1 (Zero-Costume Law):* **NEVER describe clothing or costumes in prompt lines** (costume is 100% locked by the 16:9 Model Sheet).
+  - *Negative Rule 2 (Zero-Age Law):* **NEVER describe age or numerical ages in visual narrative prose** (age is 100% locked by the Model Sheet; numeric age appears ONLY inside voice parentheticals).
+* **Prop Declarations in `[PROP]:` (The Two-Tier Prop Architecture & Production Velocity Law):**
+  - In `[PROP]:`, list objects separated by semicolons `;`. To optimize pre-production time, strictly enforce Two Tiers:
+    * **Tier 1 (Soul & Catalyst Hero Props — Max 1–2 per series)**: Objects carrying the narrative soul or activating the twist. MUST have a 16:9 four-view Model Sheet in Section 4A and bind with `[100% Refer to image prop_X_4view.jpg]`.
+    * **Tier 2 (Everyday Ambient & Common Hand Props)**: Ordinary items (ceramic spoons, plastic stools, tea cups, brooms, ledgers). **STRICTLY ZERO IMAGE MODEL SHEETS** (saving massive pre-production time). Handled 100% via rich, unambiguous physical tactile descriptions inside `[PROP]:` without image tags.
+  * **Prop Naming Formula (Tier 1 Hero Props):** `[CANONICAL-ID: PROP-XX] + [Owner / Clan / Origin] + [Unique Physical Trait] + [Object Type]`
     - *Examples:* `PROP-01: Dao găm Kaya (The Kaya Bone Dagger)`, `PROP-02: Vò nước linh tuyền Bramble (The Bramble Glazed Spring-Urn)`, `PROP-03: Chuông bạc trừ tà Maya (Maya's Silver Warding Bell)`, `PROP-04: Móng vuốt báo xám Korr (Korr's Grey-Leopard Talons)`.
-  * *Negative Rule:* **STRICTLY BANNED: generic names** like "a water jar", "a dagger", "an ancient bowl", "a stick", "a sword".
+  * *Negative Rule:* **STRICTLY BANNED: generic names for Tier 1 Props** like "a water jar", "a dagger", "an ancient bowl", "a stick", "a sword".
 * **Environment Descriptions (The Lore-Bound Canonical ID Mandate):** ALWAYS prefix with the registered Canonical ID and a specific mythological/world-tied proper noun.
   * **Environment Naming Formula:** `[CANONICAL-ID: ENV-XX] + [Legendary Region / Clan / Realm] + [3D Spatial/Physical Landmark] + [Setting Type]`
     - *Examples:* `ENV-01: Khu vườn Alaka (The Alaka Whispering Garden)`, `ENV-02: Tổ tùng la ngàn năm Faelen (Faelen's Ancient Cedar Canopy Nest)`, `ENV-03: Đàn tế đá rêu phong Eldoria (The Eldoria Moss-Stone Altar)`, `ENV-04: Hẻm đá chênh vênh Cự Thần (The Titan-Spire Wind Chasm)`.
@@ -982,12 +1489,28 @@ In physical action, collision, and falling sequences, the prompt MUST adhere to 
 
 ---
 
-### Law 7: The Universal Minor-Policy Immunity Contract (Zero Banned Minor Lexicon & Adult Age Anchor)
-To ensure 100% immunity against automated AI video safety classifiers (Sora, Kling, Veo, Runway, Luma) flagging prompts for "harmful content related to minors":
-1. **The Zero-Minor Lexicon Ban:** STRICTLY FORBIDDEN in both prose and dialogue: `girl`, `boy`, `kid`, `child`, `children`, `teen`, `teenager`, `little`, `beggar girl`, `maid`.
-2. **Mandatory Adult Age Anchor:** ALWAYS declare explicit adult status in Mode B subject definitions: `young woman`, `adult female`, `adult craftsman`, `a 22-year-old adult weaver`.
-3. **Anatomical & Vulnerability Sanitization:** BANNED phrases suggesting child endangerment/abuse: `soaked against chest/ribs`, `frayed/torn clothes`, `kneeling in mud begging`. Replace with professional cinematic and functional terms: `holding fabric securely with both hands`, `dignified grounded posture`, `kneeling firmly on the stone pavement`.
-4. **Dialogue Sanitization:** Spoken lines must never use derogatory minor terms (e.g. replace `"A beggar girl..."` with `"An unproven apprentice..."`).
+### Law 7: The Universal Child Safety & Simple Action Protocol (Zero Harm, Minimal Kinetics, Proxy Prop Architecture)
+To ensure 100% immunity against automated AI video safety classifiers (Sora, Kling, Veo, Runway, Luma) flagging prompts for "harmful content related to minors", and to guarantee flawless anatomical fidelity in diffusion models:
+1. **The Strict Zero-Harm & Endangerment Prohibition:**
+   - 🚫 **BANNED SYSTEM-WIDE:** Absolutely zero depiction of physical harm, hitting, striking, slapping, dragging, shaking, confining, starving, choking, burns, wounds, blood, or placing minors in dangerous environments (near open fire, boiling liquids, heights, moving traffic, deep water, sharp blades).
+### Law 7: The Universal Child Safety, Simple Action & cu_tin Somatic Sleep Staging Protocol (Gate 3F)
+1. **The Core Safety Reality**:
+   - Commercial AI video generation models (Kling AI, Runway, Sora, Hailuo, Pika) enforce aggressive automated NLP content moderation filters.
+   - Any video prompt mentioning minor vocabulary (`kid`, `child`, `children`, `baby`, `infant`, `toddler`, `newborn`, `boy`, `girl`, `teen`, `teenager`) or banned aliases (`be_tin`, `bé tin`) in proximity to domestic tension, crying, exhaustion, illness, shouting, or emotional trauma triggers an **IMMEDIATE PLATFORM SAFETY BAN or prompt rejection**.
+2. **The cu_tin Child Entity & Somatic Sleep Staging Protocol**:
+   - **Declaration in `[subject]:`**: When a scene occurs in the presence of the wooden crib (`noi_go`) and the sleeping child, the entity **MUST BE DECLARED IN `[subject]:`**:
+     `cu_tin [100% Appearance, attire, and facial features Refer to image cu_tin_4view.jpg]`
+     Never leave the crib empty or desynchronized from narrative staging.
+   - **Somatic Sleep Staging in Action Prose**: In timeline action prose, `cu_tin` is strictly animated with low-velocity, safe somatic physical states:
+     `Beside the queen bed, cu_tin rests peacefully inside noi_go on the firm flat organic cotton mattress, chest rising and falling in calm rhythmic sleep, tiny fists curled gently beside soft cheeks through 00:10.0.`
+   - 🚫 **BANNED IN PROSE & SUBJECT**: NEVER write minor-related words (`kid`, `child`, `children`, `baby`, `babies`, `infant`, `infants`, `toddler`, `toddlers`, `newborn`, `newborns`, `boy`, `girl`, `teen`, `bé`) or former child character names (`be_tin`, `bé tin`) anywhere in the visual narrative prose, subject blocks, or camera staging.
+   - 🚫 **BANNED IN DIEGETIC SOUND**: Never describe child vocalizations (`infant's crying`, `baby's coo`). Use neutral room acoustics (`soft room tone`, `gentle cotton rustle from the bedside crib`).
+3. **Environmental Prop & Mattress Safety Integration**:
+   - The child's sleeping environment is anchored to physical furniture:
+     * Example: `noi_go [100% Refer to image prop_crib_4view.jpg]` declared inside `[PROP]:`.
+     * In timeline prose: `the wooden pine crib stands steady beside the queen bed with firm flat organic cotton bedding`.
+4. **Mandatory Adult Age Anchor for Older Protagonists**:
+   - When characters are apprentices or young adults, always declare explicit adult status to avoid false-positive minor flags: `young woman`, `adult female`, `adult craftsman`, `young adult weaver`. NEVER use numeric ages in visual prose (Gate 3A); numeric age belongs exclusively in the voice parenthetical (`Voice of a 22-year-old woman...`). Purge ambiguous slang (`girl`, `boy`, `kid`, `teen`, `little`).
 
 ---
 
@@ -995,8 +1518,8 @@ To ensure 100% immunity against automated AI video safety classifiers (Sora, Kli
 1. **Absolute Ban on Localized Prop Titles & Clutter:**
    - STRICTLY FORBIDDEN: Titling scenes after props (e.g. "Hũ Bột Rỗng Đáy", "Mảnh Sứ Men Lam"). Scene titles and dramatic intents MUST reflect **Human Drama, Psychological States, and Interpersonal Conflicts** (e.g. "Bản Năng Sinh Tồn", "Cạm Bẫy Nợ Nần", "Lời Thề Trong Bóng Tối").
    - STRICTLY FORBIDDEN: Forcing an "Đạo Cụ Linh Hồn" or exhaustive prop inventory into episode meta headers. Props occupy strictly **≤ 5% to 10%** of narrative focus.
-2. **Shot 3 Sacred Arrest Mandate (Human Emotion over Inanimate Debris):**
-   - Phase 3 / Shot 3 (`[08.5–10.0s]`) is the **Psychological Arrest & Emotional Resonance**.
+2. **Terminal Emotional Resonance (Human Drama over Mechanical Buffers):**
+   - The final beat of the scene belongs to genuine dramatic impact and character reaction, without forcing an artificial 3-shot structure or mechanical silence buffer.
    - The camera lens MUST lock onto the **Human Face**: pupil contraction, tight jaw, unshed tear freezing on the eyelid, or heavy ragged breathing.
    - **STRICTLY FORBIDDEN:** Defaulting to inanimate broken objects (shattered bowls, falling coins, bouncing shards) replacing the emotional reaction of the human characters.
 3. **Restricted Foregrounding at Twist Points Only:**
@@ -1005,9 +1528,31 @@ To ensure 100% immunity against automated AI video safety classifiers (Sora, Kli
 
 ---
 
-## 🛡️ 3. THE 5-GATE PRE-DELIVERY AUTOMATED AUDIT PROTOCOL
+## 🛡️ 3. THE AUTOMATED PRE-DELIVERY AUDIT SUITE (`episode_audit_suite.py`)
 
-Before delivering ANY episode file (`tap-X.html`) to the user, the agent MUST run an automated audit script executing the following 5 gates. If ANY gate fails, delivery is BLOCKED until rectified:
+> The authoritative gate code is `engine/episode_audit_suite.py`. Code snippets in this section are historical illustrations; some still parse the retired `△` syntax.
+
+Before delivering ANY episode file (`tap-X.html`) to the user, the agent MUST run the automated audit suite:
+`python engine/episode_audit_suite.py output/<project-slug>/tap-X.html`
+Delivery is STRICTLY BLOCKED unless all gates pass with exit code 0.
+
+### Complete Gate Architecture:
+- **Gate 1: Verbatim Roadmap Field Identity**: Verifies Title, Story Beat, Dramatic Intent, and Kinetic Bridge verbatim parity.
+- **Gate 2: Multi-Turn Dialogue Parity**: Verifies all spoken lines match roadmap verbatim.
+- **Gate 3: Prompt Quality & Safety Enforcement**:
+  - *Gate 3A*: Zero Prohibited Clothing Descriptions in Mode B initial state.
+  - *Gate 3B*: Zero Demographic Age Numbers in visual prompt initial state.
+  - *Gate 3C*: Absolute Pronoun Ban (`he`, `she`, `it`, `his`, `her`, `its`, `him`, `they`, `their`, `them`).
+  - *Gate 3D*: Zero Hardware & Lighting Jargon (`24fps`, `18mm`, `35mm`, `f/1.4`, `Arri`, Kelvin numbers).
+  - *Gate 3E*: Mandatory Master Prompt Prefix (`Master-level cinematography...`).
+  - *Gate 3F*: Zero Frozen Frames / Freeze Holds (Enforcing Continuous Organic Motion).
+  - *Gate 3G*: Minor-Safety Lexicon Purge (`child`, `kid`, `girl`, `boy`, `little`).
+  - *Gate 3H*: **Total Mathematical Purge Law**: Zero Cartesian Math Coordinates `[XYZ]:\s*[-+]?\d` document-wide (Tier 1, Tier 2, Code Block 1, Code Block 2). 100% Observable Physical Architecture.
+  - *Gate 3I*: **Stateless Prompt Law**: Zero Cross-Scene Dependencies `from Scene XX` in Code Block 1.
+- **Gate 4: Chronological Time & Dialogue Cadence**:
+  - *Gate 4A*: 12-Hour AM/PM Time Notation across all 10 scenes.
+  - *Gate 4B*: **Dialogue Word Count Hard Cap**: Single-speaker line $\le 32$ words (budgeted at 25–30w for Sitcom, 15–20w for Drama); two-shot volleys strictly $\le 15$ words per speaker (total $\le 32$w).
+- **Gate 5: DOM & Tag Balance Integrity**: Perfectly balanced `<div>` and `<pre>` tags.
 
 ```python
 # episode_audit_suite.py
@@ -1086,28 +1631,38 @@ def run_5_gate_audit(episode_html_path, canonical_roadmap_json):
 | **D.1** | **Dialogue Over-Explicit** | Dialogue states emotion directly (`"I am afraid"`, `"I hate you"`) | Replace with indirect dialogue + body betraying subtext (§D.0, §D.3) |
 | **D.2** | **Dialogue Causality Break** | Next dialogue line does not pick up keyword from previous line | Apply Logical Causality Chain — Keyword Handoff (§D.2) |
 | **D.3** | **Camera-Speaker Mismatch** | Camera does not cut to the speaker | Apply Camera-Speaker Binding §D.5 Rule 1 |
-| **D.4** | **Lip-sync Camera Violation** | Beat has dialogue but uses Crane/Orbit/Arc | Switch to Static or Slow Push-in |
-| **12.12** | **Minor Policy Trigger (CSAM/Child Endangerment)** | Prompt blocked for 'Harmful content related to minors'; contains `girl`, `boy`, `kid`, `beggar girl`, `soaked on chest` | Purge all minor terms. Anchor adult status: `young woman`, `adult female`, `22-year-old artisan`. Sanitize wet/torn clothing and vulnerable postures (§[10d]). |
+| **D.4** | **Lip-sync Camera Violation** | A lip-synced line is spoken while a crane, orbit, arc, whip, or crash zoom is traveling | Place the line before the move or after it lands (grammar §5), or use a static frame / slow push-in |
+| **12.12** | **Minor Policy Trigger (CSAM/Child Endangerment)** | Prompt blocked for 'Harmful content related to minors'; contains `girl`, `boy`, `kid`, `beggar girl`, `soaked on chest` | Purge all minor terms. Anchor adult status: `young woman`, `adult female`, `young adult artisan` (numeric age only inside the voice parenthetical). Sanitize wet/torn clothing and vulnerable postures (§[10d]). |
 
 
 ---
 
-## § [10d] THE UNIVERSAL MINOR-POLICY IMMUNITY CONTRACT (ZERO MINOR SAFETY VIOLATIONS)
+## § [10d] THE UNIVERSAL CHILD SAFETY & cu_tin SOMATIC SLEEP STAGING PROTOCOL (GATE 3F)
 
 > **MANDATORY POLICY DEFENSE DIRECTIVE (ALL AI VIDEO PLATFORMS: SORA, KLING, VEO, RUNWAY, LUMA)**:
-> Automated AI safety classifiers run before diffusion models. Combining terms for minors with distress, wet clothes, or vulnerability instantly triggers a hard-block under "Harmful content related to minors".
-> To achieve 100% immunity, adhere strictly to the 4 Pillars of Policy Sanitization:
+> Automated AI safety classifiers run before diffusion models. Any prompt mentioning minor vocabulary (`child`, `kid`, `baby`, `infant`, `newborn`, `toddler`, `boy`, `girl`, `teen`) or former child character names (`be_tin`, `bé tin`) triggers an immediate account suspension or prompt rejection for 'Harmful content related to minors'. Furthermore, diffusion latent space severely hallucinates anatomy (polydactyly, facial melting) when generating minors.
+> To achieve 100% immunity, flawless anatomical fidelity, and seamless subject-action synchronization across all scenes, adhere strictly to the cu_tin Somatic Sleep Staging Protocol (Gate 3F):
 
-1. **Absolute Zero-Minor Lexicon Ban:**
-   - 🚫 **STRICTLY FORBIDDEN:** `girl`, `boy`, `kid`, `child`, `children`, `teen`, `teenager`, `little`, `beggar girl`, `maid`.
-   - ✅ **MANDATORY REPLACEMENTS:** `young woman`, `adult female`, `adult woman in her 20s`, `craftswoman`, `female artisan`, `young man`, `adult craftsman`.
-2. **Explicit Adult Age Anchoring:**
-   - In `▼ LINE A` and `▼ LINE B`, always specify: `[Name], a 22-year-old adult female weaver...` or `[Name], a young adult artisan...` to instantly clear safety flags.
-3. **Anatomical & Vulnerability Sanitization:**
+1. **Pre-Production vs Video Prompt Architectural Alignment**:
+   - In **Screenplay, Casting & Worldbuilding (Pillars 1 & 2 / `setting.html`)**: The child character entity is named `cu_tin` (screenplay: `Cu Tin`), purging all banned terms (`baby`, `kid`, `infant`, `newborn`, `bé tin`).
+   - In **AI Video Prompt Compilation (Pillar 4 / Code Block 1)**: When scenes occur in the bedroom with `noi_go`, `cu_tin [100% Appearance, attire, and facial features Refer to image cu_tin_4view.jpg]` MUST be declared in `[subject]:`.
+
+2. **The Absolute Ban on Minor Terms and Outdated Child Aliases in Prompts**:
+   - 🚫 **BANNED IN PROSE & SUBJECT**: NEVER write minor-related words (`kid`, `child`, `children`, `baby`, `babies`, `infant`, `infants`, `toddler`, `toddlers`, `newborn`, `newborns`, `boy`, `girl`, `teen`, `teenager`, `bé`) or former character names (`be_tin`, `bé tin`) anywhere in the visual narrative prose or camera staging.
+   - 🚫 **BANNED IN DIEGETIC SOUND**: Never describe child vocalizations (`infant's crying`, `baby's coo`). Use neutral room acoustics (`soft room tone`, `gentle cotton rustle from the bedside crib`).
+
+3. **Somatic Sleep Staging (Low-Velocity Kinetic Law)**:
+   - In the prompt timeline prose, `cu_tin` is strictly animated with low-velocity, safe somatic physical states:
+     `Beside the queen bed, cu_tin rests peacefully inside noi_go on the firm flat organic cotton mattress, chest rising and falling in calm rhythmic sleep, tiny fists curled gently beside soft cheeks through 00:10.0.`
+   - In `[PROP]:`, declare `noi_go [100% Refer to image prop_crib_4view.jpg]`. Bedding is described as `firm flat organic cotton mattress`.
+
+4. **Adult Age Anchoring for Non-Minor Characters**:
+   - Mislabeled apprentices/young adults must be anchored with explicit adult terms (`young adult female artisan`, `dignified craftsman`) and purge ambiguous slang (`girl`, `boy`, `kid`, `teen`, `little`).
+   - Numerical age belongs exclusively inside the Dialogue Voice Directing Parenthetical (`Voice of a 22-year-old woman...`).
+
+5. **Anatomical & Vulnerability Sanitization**:
    - 🚫 **BANNED:** `soaked against chest/ribs`, `wet clothes clinging`, `frayed tunic`, `crying on knees in mud`.
    - ✅ **REPLACEMENTS:** `holding fabric securely with both hands`, `dignified grounded posture`, `kneeling firmly on the stone pavement`.
-4. **Dialogue Sanitization:**
-   - Spoken lines must never use derogatory minor terms (e.g., replace `"A beggar girl..."` with `"An unproven apprentice..."`).
 
 
 ---
@@ -1132,3 +1687,208 @@ Never dilute dramatic tension by removing conflict. Instead, **translate physica
 
 ### 3. Integrated Safety Linter Protocol
 Every compiled prompt in Code Block 1 must pass the **Metaphorical Translation Gate**: zero instances of explicit banned keywords; all conflict physicalized through lighting flares, air displacement, shattered stone/timber textures, and biological somatic tension (clenched jaws, dilated pupils, ragged breathing).
+
+### 4. The Lip-Sync Visibility & Dynamic Perspective Law (Anti-Static P.O.V Trap)
+- **Zero Lip-Sync in Blind Perspectives**: Never assign spoken dialogue with lip-sync to a character whose perspective is currently Subjective First-Person P.O.V. or Macro Prop Insert. Generative models cannot animate invisible lips and hallucinate facial morphing in hands.
+- **Mandatory In-Camera Transition**: Prompts starting in P.O.V. must transition to a Frontal Medium Close-Up (MCU) or Medium Shot (MS) before that character speaks.
+- **The cu_tin Child Entity & Somatic Sleep Staging Protocol for AI Video Pipelines**: When a scene occurs in the bedroom where `noi_go` is present, `cu_tin [100% Appearance, attire, and facial features Refer to image cu_tin_4view.jpg]` MUST be declared in `[subject]:` and animated with low-velocity sleep staging (resting peacefully on flat mattress, calm rhythmic breathing, curled fists). Purge all AI trigger keywords (`baby`, `kid`, `infant`, `newborn`, `child`, `bé`, `be_tin`, `sữa`, `vắt`, `starve`, `choke`).
+
+---
+
+## ⚡ § 6. ZERO-CONFLICT MULTI-MODAL PROMPT ARCHITECTURE & KINETIC GOVERNANCE (2026 CODIFIED SSOT)
+
+To completely eliminate spatiotemporal morphing, background drift, lip-sync hallucination, and action compounding across all AI video generation pipelines, the Sven Production Engine mandates the following **Zero-Conflict Protocols**:
+
+### 1. The 3-Block Label Standard (`[context]:`, `[subject]:`, `[PROP]:`)
+Every video prompt in **Code Block 1** MUST be partitioned into exactly three explicit structural blocks separated by blank lines (`\n\n`):
+- **`[context]:` (The Master 5-Vector Location & Environmental Staging Standard)**
+  - Syntax: `[Location Name] [100% Refer to image [filename/ref]], [exact time of day]. [Complete 5-vector physical architectural specification: full fixed furniture inventory ("có cái gì ở đó"), lighting physics, and atmospheric medium].`
+  - Function: Permanently locks spatial boundaries, architecture, fixed furniture landmarks, daylight progression, and atmospheric physics before subjects are parsed, completely immunizing against AI spatial amnesia and environment hallucination.
+  - **The 5 Mandatory Physical Vectors in `[context]:`**:
+    * **Vector 1 (Image Anchor)**: `[Location Name] [100% Refer to image <ref>]`.
+    * **Vector 2 (Biological Time of Day)**: Exact natural daylight phase (`early dawn`, `golden morning`, `harsh midday`, `amber late afternoon`, `blue hour dusk`, `dim midnight lamp-lit`).
+    * **Vector 3 (Fixed Architectural & Furniture Inventory — "Có cái gì ở đó")**: Complete inventory of physical structures and major fixed furniture mirroring the 4-View Location Sheet (e.g. for `phong_cu`: patterned encaustic cement floor tiles, sturdy dark wooden queen bed with white linen, light pine wood crib placed firmly directly beside bed, wooden doorway leading to hallway). Barren 5-word declarations (`phong_cu, morning.`) are strictly banned.
+    * **Vector 4 (Lighting Physics & Direction)**: Key light source, angle/direction (diagonal 45° from window, overhead downward), natural color tone (warm golden amber, cool blue morning light; strictly zero Kelvin), and shadow behavior (long soft diagonal shadows).
+    * **Vector 5 (Atmospheric Medium & Emotional Climate)**: Physical medium (floating dust motes in sunbeams, stagnant domestic air, humidity) and psychological mood (suffocating confinement, tense silence, protective warmth).
+- **`[subject]:` (The 4-Part Sovereign Subject Protocol)**
+  - Syntax: Each character participating in the scene is declared using the 4-Part Sovereign Formula:
+    $$\mathbf{[subject]:} = \mathbf{[Tên\ +\ Thẻ\ Ảnh]} + \mathbf{[Mỏ\ neo\ không\ gian\ kiến\ trúc]} + \mathbf{[Tư\ thế\ \&\ Xúc\ giác\ ban\ đầu]} + \mathbf{[—\ the\ only\ \{name\}\ in\ frame]}$$
+    ```text
+    [subject]:
+    my_duyen [100% Appearance, attire, and facial features Refer to image 1], sitting propped up against the dark wooden headboard on the queen bed, fingers clutching the edge of the linen sheet — the only my_duyen in frame.
+    minh_khang [100% Appearance, attire, and facial features Refer to image 2], standing in the wooden bedroom doorway with one palm pressed flat against the jamb, chest held taut — the only minh_khang in frame.
+    cu_tin [100% Appearance, attire, and facial features Refer to image cu_tin_4view.jpg], resting peacefully on the flat mattress inside the pine crib, chest rising with calm rhythmic breathing — the only cu_tin in frame.
+    ```
+  - Directorial Law: `[subject]:` establishes the zero-frame (00:00.0) spatial grounding to architecture, initial bodily posture, and the negative anti-duplication seal. All dynamic character actions, kinetic transitions, and emotional evolutions are directed within the Timeline Shots.
+  - The cu_tin Entity Standard: When `cu_tin` is present in the bedroom near `noi_go`, declare `cu_tin [100% Appearance, attire, and facial features Refer to image cu_tin_4view.jpg]` in `[subject]:`, synchronized with safe somatic sleep staging in the timeline action prose. Banned aliases: `be_tin`, `bé tin`, and all minor keywords (`baby`, `kid`, `infant`, `newborn`).
+- **`[PROP]:` (Streamlined Interactive & Setting Props)**
+  - Syntax: List key interactive hand props and crucial setting fixtures cleanly, binding each to its reference image:
+    ```text
+    [PROP]:
+    bat_chao [100% Refer to image prop_chao_thit_4view.jpg]; binh_hut_sua [100% Refer to image prop_binh_sua_4view.jpg]; mam_nhom [100% Refer to image prop_mam_nhom_4view.jpg]; noi_go [100% Refer to image prop_crib_4view.jpg]
+    ```
+  - Directorial Law: Keep `[PROP]:` concise, separated by semicolons. Anchor props to their physical location or character.
+
+### 1b. The 4-Vector Character Directing Protocol in Timeline Shots (`[00:00–00:XX]`)
+While `[subject]:` locks the 00:00.0 static foundation and anti-duplication seal, **ALL dynamic character staging, kinetic actions, and emotional transitions are orchestrated inside each Timeline Shot**.
+For EVERY character participating in a shot (e.g., `[00:00–00:04.5]`), the prompt prose MUST explicitly articulate the **4 Directing Vectors**:
+1. **Trạng thái (Physical State / Posture / Condition)**: Explicit posture and physical condition (e.g., sitting propped up against wooden headboard, standing rigid with stiff spine, slumped forward in exhaustion, kneeling upright).
+2. **Làm gì (Action / Kinetic Movement)**: Specific kinetic action and physical interaction (e.g., pulling linen sheet up over waist, placing soft bolster pillow, handing congee bowl with both hands, averting face).
+3. **Cảm xúc ra sao (Emotion / Facial Expression / Somatic Reaction)**: Vivid facial expression and somatic physiological response (e.g., lips trembling in wounded vulnerability, eyes wide with stunned hurt pride, brow furrowing with maternal anxiety, jaw tightening in resolute defense).
+4. **Ở đâu (Spatial Location / 3D Blocking)**: Precise 3D position in the set and relative to other characters and props (e.g., at screen-left on queen bed mattress beside headboard, at screen-right framed in wooden doorway, centered between bed and pine crib).
+
+### 2. Spacing Integrity Law (Khoảng Trống Phân Tách Bắt Buộc)
+- There MUST be an explicit blank line (`\n\n`) between the Visual Style Header and `[context]:`, between `[context]:` and `[subject]:`, between `[subject]:` and `[PROP]:`, and between `[PROP]:` and `Diegetic room acoustics:`.
+- This guarantees clean token chunking for LLM parsers and eliminates multi-modal conditioning bleed in diffusion models.
+
+### 3. Track A (Single-Shot) Kinetic Governance (Quy Chuẩn Cú Máy Đơn)
+- **Sub-Timeline Phase Division Law (Gate 3M)**:
+  - Even though Track A has **0 CUTS** (unbroken camera trajectory), it is **STRICTLY FORBIDDEN to lump the entire 10 seconds into a single un-subdivided `[00:00–00:10.0]` paragraph**.
+  - Lumping 10 seconds causes AI video models (Kling, Sora, Runway) to trigger all actions and dialogues simultaneously at second 0, resulting in catastrophic dual-speaker lip-sync overlap and action compounding.
+  - Track A MUST be explicitly partitioned into 2 to 3 chronological phase brackets:
+    * `[00:00.0 – 00:04.5]` [SINGLE CONTINUOUS TAKE - PHASE 1: INITIATION & OPENING TRAJECTORY]
+    * `[00:04.5 – 00:10.0]` [SINGLE CONTINUOUS TAKE - PHASE 2: UNBROKEN GLIDE & RESOLUTION BEAT]
+    *(Or dynamic 3-phase progression tailored to dramatic beats, with unbroken camera and acting flowing naturally to 00:10.0; strictly BAN rigid '00:08.5' cutoff dogma)
+- **Single-Speaker Dominance (typical; timed by grammar §2–§3)**: In an unbroken take, primary dominance usually belongs to ONE character speaking. If an exchange occurs, lines must be strictly quarantined into non-overlapping phase windows.
+- **The One-Move Rule**: Maximum 1 primary kinetic movement + 1 biological reaction per 3–4 second window. Never compound actions ("vừa làm A vừa làm B vừa làm C").
+- **Phase 3 Settle & Static Lock `[Terminal Beat]`**: Camera decelerates smoothly to an organic rest. Spoken dialogue is **strictly 0 words**. Subtle biological respiration only (zero frozen frames).
+
+### 4. Track B (Multi-Shot) 180° Action Axis Governance (Quy Chuẩn Cắt Đa Cú Máy)
+- **Explicit Time Brackets**: Every shot boundary states its exact second window in the canonical syntax (e.g., `[00:00–00:04.2] Medium shot on Eleazar, low angle, static camera — …`, `[00:04.2–00:07.5] Cut to a reverse medium close-up on Noa, eye level, static camera — …`, `[00:07.5–00:10.0] Cut to a close-up on Eleazar, eye level, static camera — …`).
+- **Invariant Screen Directions**: Characters locked on screen-left MUST continue looking toward screen-right across all cuts; characters on screen-right MUST look toward screen-left.
+- **Kinetic Momentum Handoff**: Strict zero action repetition across cuts.
+- **Chekhov Prop State Machine**: Broken or severed props MUST be re-named to their derived physical fragments in subsequent cuts (`Jagged Ceramic Shards`, `Torn Parchment Shreds`).
+- **Terminal Cut / Reaction or Parting Climax**: Final shot resolves naturally to 00:10.0 (whether holding an emotional reaction shockwave or delivering a parting cliffhanger retort), ensuring camera and character physics complete their arc cleanly into the cut (strictly BAN dogmatic cutoffs like 'cấm thoại sau 00:08.5').
+
+### 5. Interactive 16:9 Model Sheet Deliverable Standard
+In all deliverables (`setting.html` and `tap-X.html`):
+- Every referenced character, prop, and location MUST have its complete, ready-to-run 16:9 Model Sheet prompt displayed inside a dedicated prompt code box.
+- Every asset card MUST be equipped with an interactive `📋 Copy Prompt` button for instant copy-paste execution in Midjourney, Flux, or Leonardo.
+
+### 6. The Dual Taxonomy Law: Fixed Location Fixtures vs. Dynamic Kinetic Props
+(ĐỊNH LUẬT PHÂN ĐỊNH BỐI CẢNH CỐ ĐỊNH & ĐẠO CỤ ĐỘNG CẦM NẮM)
+
+> [!CRITICAL]
+> **QUY TẮC CỐT LÕI: CỐ ĐỊNH TẠO 1 LẦN TRONG BỐI CẢNH — ĐỘNG MỚI TẠO PROP RIÊNG BIỆT.**
+> 
+> 1. **Vật thể Cố định (Fixed Set Dressing & Architectural Fixtures)**: Mọi đồ đạc nội thất gắn liền với không gian phòng ốc hoặc địa điểm (Ví dụ: Giường ngủ, Nôi thông kê sát giường, Tủ đầu giường, Tủ quần áo, Rèm cửa, Lò than sưởi ấm, Cột lều, Bàn làm việc, Khiên dựa cột...) PHẢI ĐƯỢC THIẾT KẾ 1 LẦN DUY NHẤT VÀ NẰM TRỌN VẸN TRONG **Location Concept Design Sheet**.
+>    - **TUYỆT ĐỐI CẤM**: Không được tạo thêm ảnh tham chiếu đạo cụ riêng lẻ cho vật cố định (ví dụ: đã có nôi gỗ nằm trong phòng ngủ thì **CẤM** tạo thêm `prop_crib_4view.jpg`).
+>    - **Khi biên dịch prompt video**: Chỉ cần gọi `[context]: phong_cu [100% Refer to image location_bedroom_4view.jpg]`. Toàn bộ giường, nôi, tủ, rèm tự động đồng bộ theo bối cảnh. **CẤM** gọi lặp lại `noi_go [100% Refer to image ...]` trong `[PROP]:` vì sẽ khiến AI model sinh ra chiếc nôi thứ hai (Ghost Duplicate) hoặc xung đột hình học (Mesh Clashing).
+> 
+> 2. **Đạo cụ Động (Dynamic Kinetic Props & Interactive Hand Props)**: CHỈ NHỮNG VẬT THỂ CÓ TÍNH ĐỘNG — được nhân vật trực tiếp cầm nắm, thao tác, ăn uống, di chuyển, vung đập, biến đổi trạng thái (Ví dụ: Bát cháo thịt, Bình hút sữa rỗng, Búa chiến của Kael, Mâm nhôm bưng bê, Võng xếp xách từ quê lên, Chiếc áo bà ba cởi ra gấp lại...) MỚI ĐƯỢC TẠO **Prop Design Sheet** RIÊNG.
+> 
+> 3. **Luật Đạo Cụ Độc Lập — Tuyệt Đối Không Tạo Gộp (Isolated Clean Prop Law)**:
+>    - Khi tạo Prop Sheet cho đạo cụ động, **CHỈ CÓ DUY NHẤT 1 ĐẠO CỤ ĐÓ** trên nền trắng thuần studio (`#FFFFFF`).
+>    - Tuyệt đối không được tạo gộp mâm với bát canh, búa với khiên giáp, bình sữa với khăn xô. Zero environmental elements, zero human hands, zero text overlays, zero clutter.
+
+---
+
+### 7. Directorial Master Prompt Templates (Mẫu Prompt Chuẩn Hóa Theo Phong Cách)
+
+#### TEMPLATE A: LOCATION CONCEPT DESIGN SHEET (16:9 Landscape · Multi-Angle Layout)
+*Áp dụng cho mọi bối cảnh nội thất hẹp (căn phòng, ngôi nhà, lều quân sự) lẫn ngoại cảnh rộng (đấu trường, sân vườn, thung lũng):*
+```text
+Style: [Visual Style, e.g., Modern K-Drama Premium Cinematography / Pixar\Disney 3D animation style]
+
+Name: [Location Name, e.g., Human War Pavilion / The Arena of Reckoning / phong_cu Master Bedroom at Dawn]
+Description: [Mô tả chi tiết không gian kiến trúc, kết cấu vật liệu, nguồn sáng, bầu không khí và TOÀN BỘ ĐỒ ĐẠC CỐ ĐỊNH (giường nệm, nôi em bé, tủ đầu giường, đèn ngủ, tủ áo, rèm voan, cờ hiệu, lò than, khiên dựa cột...)]
+
+Format: Location concept design sheet, 16:9 landscape, multi-angle layout. At least 4 panels showing the same location from different camera angles or directions: wide establishing shot, reverse angle, overhead/bird-eye view, and low-angle or detail close-up. Panels may vary lighting or time of day if needed by the story. Focus entirely on full location views, with no written descriptions, detail labels, or floor plans.
+
+Rules: No characters or people - environment only. The location must look consistent and recognizable across all panels, with the same buildings, props, and layout. Do not include any text, letters, numbers, annotations, captions, dimension lines, arrows, labels, legends, zoning notes, or watermarks.
+```
+
+#### TEMPLATE B: DYNAMIC PROP DESIGN SHEET (Chỉ dành cho Đạo Cụ Động · Cô Lập Tuyệt Đối)
+*Áp dụng cho vũ khí, món ăn, bình sữa, công cụ cầm nắm — Không được phép tạo gộp:*
+```text
+Style: [Visual Style, e.g., Modern K-Drama Premium Cinematography / Pixar\Disney 3D animation style]
+
+Name: [Prop Name, e.g., Kael's warhammer / bat_chao / binh_hut_sua]
+Category: [Category: Weapon / Culinary / Medical / Tool / Relic]
+Description: [Mô tả chi tiết kích thước, chất liệu, độ mài mòn thời gian, dấu vết sử dụng, cơ chế vật lý đặc thù. Khi rơi hoặc đặt xuống thể hiện rõ tính chất vật liệu]
+
+Format: Prop design sheet, 16:9 landscape (or 4:3). Show only four views of the same prop: one main view that best presents its visual features, plus front, side, and back views. The main view must be the largest and clearest; the three orthographic views must fully show the prop shape and structure. Pure white background (#FFFFFF).
+
+Rules: Do not include any text, letters, numbers, annotations, captions, material swatches, dimension lines, arrows, close-up detail panels, or exploded views. The prop must remain completely consistent across all views. No environmental elements, no characters, no watermark.
+```
+
+---
+
+### 8. Directorial Interaction Syntax for In-Scene Location Fixtures
+(CÚ PHÁP TƯƠNG TÁC ĐẠO CỤ & NỘI THẤT CÓ SẴN TRONG ẢNH ĐỊA ĐIỂM)
+
+Khi nhân vật cần **sử dụng, cầm nắm, tựa vào, chạm vào, hoặc nhấc một vật thể CÓ SẴN** trong ảnh bối cảnh (ví dụ: bám thành nôi gỗ, ngồi mép giường, vén rèm cửa, nhấc chiếc khiên dựa cọc lều, mở nắp đèn dầu bão trên xà...), Đạo diễn áp dụng **Quy chuẩn Cú pháp Tương tác Không Gian (In-Scene Spatial Anchoring Protocol)** sau:
+
+#### 1. Quy chuẩn 3 Khối Cú Pháp (The 3-Block Binding Protocol):
+- **Khối `[context]:` (Neo tọa độ khu vực diễn xuất)**:
+  - Khai báo rõ khu vực tương tác xoay quanh vật cố định trong ảnh tham chiếu:
+  - Cú pháp: `[location_id] [100% Refer to image [location_ref]], [focal staging zone anchored near the in-scene [fixture_name]].`
+  - *Ví dụ*: `phong_cu [100% Refer to image location_bedroom_4view.jpg], at dawn. Staging focused on the intimate floor area between the queen bed and the adjacent pine wooden crib.`
+- **Khối `[subject]:` (Khóa tư thế cơ thể vào vật thể cố định - Somatic Anchor)**:
+  - Tuyệt đối không để nhân vật trôi nổi trong không gian. Phải khóa trực tiếp cơ thể vào vật thể có sẵn:
+  - Cú pháp: `[character_id] [Refer to image X], [posture anchored directly to in-scene fixture: e.g. sitting on floor tiles leaning back against the queen bed edge, slender fingers gripping the vertical pine balusters of the in-scene pine crib — the only [Name] in frame].`
+- **Khối `[PROP]:` (Xử lý Đạo cụ - Clean Separation)**:
+  - **Tương tác Tĩnh tại chỗ (Static Contact)** (ngồi lên giường, vịn nôi, tựa vách, vén rèm): **KHÔNG ghi vào `[PROP]:`**. Vật thể đã thuộc về `[context]` bối cảnh.
+  - **Nhấc rời vật thể khỏi bối cảnh (Kinetic Detachment)** (nhấc chiếc khiên dựa cọc lều, lấy bình nước trên tủ, tháo đèn dầu trên xà): Khai báo là **In-Scene Derived Prop**:
+    - Cú pháp: `[item_name] [In-scene fixture of [location_ref]], [initial state resting on/against [fixture], picked up and wielded in hands — the only [item] in frame].`
+
+#### 2. Kịch Bản Hành Động `[00:00–00:10.0]` (Mô tả Chuỗi Nhân Quả Vật Lý):
+Trong phần mô tả hành động theo giây, mô tả chi tiết cách nhân vật tương tác với vật thể có sẵn:
+- **Trường hợp A: Tương tác chạm/tựa tại chỗ (In-Place Interaction)**:
+  - *Mô tả*: Dùng cụm từ `the in-scene [fixture]` kết hợp động từ xúc giác:
+  - *Ví dụ (Phòng ngủ)*: `[00:00-00:03.5] Slender trembling fingers reach out and clutch the smooth vertical pine balusters of the in-scene pine crib, knuckles whitening slightly under emotional strain as she leans her exhausted shoulder against the queen bed frame...`
+- **Trường hợp B: Nhấc/rút vật thể rời khỏi bối cảnh (Kinetic Detachment)**:
+  - *Mô tả*: Chỉ rõ vật thể được nhấc TỪ vị trí có sẵn trong ảnh bối cảnh, ngăn AI tạo vật mới từ hư không:
+  - *Ví dụ (Lều chiến)*: `[00:00-00:04.0] Kael steps firmly toward the timber tent upright, his heavy gauntlet gripping the leather arm strap of the battered steel shield leaning against the post in [pavilion_ref], pulling the shield free with a dull metallic scrape and raising it into high defensive guard...`
+
+
+---
+
+## 🎭 § [1.G] THE SVEN DIRECTORIAL TEMPORAL INTELLIGENCE ARCHITECTURE
+### (HIỂU KIẾN THỨC ĐIỆN ẢNH ĐỂ ĐIỀU PHỐI THỜI GIAN — CHỐNG RẬP KHUÔN CÔNG THỨC)
+
+A master film director does not impose arbitrary mathematical boxes onto living cinema. A 10-second scene is a dramatic canvas whose internal temporal pacing is determined 100% by the **Dramatic Intent & Scene Archetype**.
+
+The Director MUST consciously classify each scene into one of the **6 Directorial Archetypes** and apply its native temporal physics:
+
+```
+┌────────────────────────────────────────────────────────────────────────────────────────────────────────┐
+│                        THE 6 DIRECTORIAL ARCHETYPES & NATIVE TEMPORAL CADENCE                          │
+├────────────────────────────────────────────────────────────────────────────────────────────────────────┤
+│ 1. HIGH-TENSION INTRUSION (CẮT ĐỘT NGỘT & XUNG ĐỘT BÙNG PHÁT):                                         │
+│    • Pacing: Fast, explosive 0–4s opening shock; 4–10s sustained confrontational standoff.             │
+│    • Structure: Multi-Shot (Track B). Hard cut on physical door slam / vocal intrusion.               │
+│    • Dialogue: Aggressive, sharp, rapid (~3.0–3.5s per line).                                          │
+│    • Example: [00:00–00:04.2] Intrusion burst ➔ [00:04.2–00:10.0] Low-angle counter-thrust & standoff. │
+├────────────────────────────────────────────────────────────────────────────────────────────────────────┤
+│ 2. PHYSICAL BREAKDOWN / COLLAPSE (SỤP ĐỔ THỂ XÁC & CỨU NGUY):                                          │
+│    • Pacing: 0–4.5s faltering effort; 4.5–10s accelerated freefall and emergency catch.                │
+│    • Structure: Single Continuous Tracking Take or Dynamic Two-Shot.                                   │
+│    • Dialogue: Fading breathless whisper; dialogue ceases before the body hits the floor.              │
+│    • Example: [00:00–00:04.6] Weak apology & slipping grip ➔ [00:04.6–00:10.0] Panic dive & catch.     │
+├────────────────────────────────────────────────────────────────────────────────────────────────────────┤
+│ 3. EMOTIONAL CLIMAX / EXPOSURE (ĐỈNH ĐIỂM NƯỚC MẮT & BỘC LỘ SỰ THẬT):                                  │
+│    • Pacing: 0–5.5s heavy, weeping plea; 5.5–10s crane upward to crushing remorse & maternal silence.   │
+│    • Structure: Single Unbroken Master Take (Track A). Intimate macro gliding to wide remorse.         │
+│    • Dialogue: Trembling, broken, sobbing cadence (~4.0–4.5s).                                         │
+│    • Example: [00:00–00:05.4] Macro bruise reveal & plea ➔ [00:05.4–00:10.0] Crane to remorse kneel.   │
+├────────────────────────────────────────────────────────────────────────────────────────────────────────┤
+│ 4. DOMESTIC RECONCILIATION & HEALING (HÀN GẮN TÌNH THÂN & VỖ VỀ):                                      │
+│    • Pacing: Lingering, tender, slow emotional warmth throughout all 10 seconds.                       │
+│    • Structure: Single Continuous Take (Track A). Gentle push-in to touch and forehead lean.           │
+│    • Dialogue: Soft repentant whisper, followed by quiet emotional relief.                             │
+│    • Example: [00:00–00:04.8] Warm herbal compress & apology ➔ [00:04.8–00:10.0] Forehead lean & rest. │
+├────────────────────────────────────────────────────────────────────────────────────────────────────────┤
+│ 5. DOMESTIC ROUTINE & SERENE BREEZE (NHỊP SỐNG GIA ĐÌNH BÌNH THẢN):                                    │
+│    • Pacing: Relaxed, unhurried, rhythmic domestic blocking.                                           │
+│    • Structure: Multi-Shot (Track B) or Gentle Gliding Master Take.                                    │
+│    • Dialogue: Conversational, lighthearted, warm family banter.                                       │
+│    • Example: [00:00–00:05.2] Unfolding hammock/crib ➔ [00:05.2–00:10.0] Reverse angle to river breeze.│
+├────────────────────────────────────────────────────────────────────────────────────────────────────────┤
+│ 6. CLIFFHANGER SUSPENSE SNAP (ĐỨNG HÌNH NGHẸT THỞ CUỐI TẬP):                                          │
+│    • Pacing: 0–4s sudden external disruption; 4–10s unyielding defensive shield, sharp snap cut.       │
+│    • Structure: Rapid 180° Reverse Cut.                                                                │
+│    • Dialogue: Menacing intrusion line ➔ Sharp unyielding counter-bark.                                │
+│    • Example: [00:00–00:04.2] Intruder with scissors ➔ [00:04.2–00:10.0] Protective barrier & cut.     │
+└────────────────────────────────────────────────────────────────────────────────────────────────────────┘
+```

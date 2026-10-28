@@ -38,18 +38,23 @@ d:\Project\Sven\
 
 ## ⚙️ Core Operational Engine
 
-### 1. The Autonomous Talent Ecosystem
+### 1. The Pre-Production First Standard (Quy Trình Chuẩn Bị Toàn Diện Qua `setting.html`)
+To eliminate optical framing errors and rushed prompts, Sven strictly enforces **The Pre-Production First Standard**:
+- **Pre-Production Foundation (`setting.html`)**: Before scene prompt generation, the only deliverable produced is `setting.html` (The Master Pre-Production Bible), containing: (1) Characters & Casting Topology, (2) Reference Image Prompts & Anchors (16:9 Model Sheets), (3) Key Props & Chekhov State Chains, (4) Locations & 5-Vector Staging, (5) Episode Main Storylines & Scene Roadmap for each episode.
+- **Abolition of Blind Full-Episode Dumps**: Rushing to dump an entire 10-scene episode in one blind pass is abolished. Instead, directing proceeds **scene-by-scene directly on chat** (Interactive Chat Co-Pilot), checking framing scale, camera angle, kinematics, somatic action, and dialogue lip-sync before assembling into `tap-X.html`.
+
+### 2. The Autonomous Talent Ecosystem
 - **Executive Producer & Showrunner (`AGENT.md`)**: Macro-pipeline governor, human checkpoints, concept greenlighting.
 - **Master Screenwriter (`.agents/skills/screenwriter/` & `.agents/SCREENWRITER.md`)**: Master of Pillar 1 (Narrative & Screenplay) and Pillar 2 (Pre-Production & Worldbuilding).
 - **Film Director (`.agents/skills/director/` & `.agents/DIRECTOR.md`)**: Master of Pillar 3 (Cinematography & 3D Staging) and Pillar 4 (AI Video Prompt Compiler).
 - **YouTube Growth Architect (`.agents/skills/youtube-growth-architect/`)**: Master of Stage 5 Distribution, high-CTR titles, visual tension thumbnails, and master SEO.
 
-### 2. The Two-Block Prompt Standard
+### 3. The Two-Block Prompt Standard
 Every 10-second generative video clip is rendered using strict physical boundaries:
 - **Code Block 1 (Visual Latent Engine Only)**: Pure visual prose formatted for model comprehension. Strictly excludes camera jargon (`24fps`, `16:9`, `50mm f/1.4`, metric units `cm/kg`), sound directives, or meta labels. Every character anchored via standardized Mode B prompts.
 - **Code Block 2 (Production Soundscape & Continuity)**: Houses `[Diegetic Foley Soundscape]`, character dialogue with cinematic delivery subtext, and `[HANDOVER STATE]` vectors for next-clip match cuts.
 
-### 3. Specialized Camera Protocols
+### 4. Specialized Camera Protocols
 - **First-Person POV Protocol**: Enforces physical foreground anchoring (hands on reins/cockpit controls, mount crest), synchronized roll/tilt dynamic physics, and eliminates third-person avatar artifacts.
 - **Handheld Front-Facing Vlog Protocol**:
   - *The Ghost Camera Rule*: The recording smartphone is never depicted on screen.

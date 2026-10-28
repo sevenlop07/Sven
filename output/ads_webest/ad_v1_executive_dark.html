@@ -1,0 +1,754 @@
+<!DOCTYPE html>
+<html lang="vi">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=1080, height=1350">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Be+Vietnam+Pro:ital,wght@0,400;0,500;0,600;0,700;0,800;0,900;1,400&family=JetBrains+Mono:wght@600;700;800&display=swap" rel="stylesheet">
+<style>
+  * {
+    box-sizing: border-box;
+    margin: 0;
+    padding: 0;
+  }
+  body {
+    width: 1080px;
+    height: 1350px;
+    overflow: hidden;
+    font-family: 'Be Vietnam Pro', sans-serif;
+    background: #040914;
+    color: #ffffff;
+    position: relative;
+  }
+
+  /* Rich background ambient glow & grid */
+  .bg-canvas {
+    position: absolute;
+    inset: 0;
+    background:
+      radial-gradient(circle at 50% 14%, rgba(245, 158, 11, 0.18) 0%, rgba(239, 68, 68, 0.09) 28%, transparent 60%),
+      radial-gradient(circle at 15% 55%, rgba(14, 165, 233, 0.14) 0%, transparent 45%),
+      radial-gradient(circle at 85% 65%, rgba(16, 185, 129, 0.14) 0%, transparent 45%),
+      radial-gradient(circle at 50% 95%, rgba(220, 38, 38, 0.25) 0%, transparent 50%),
+      linear-gradient(180deg, #060d1f 0%, #040814 55%, #070b19 100%);
+    z-index: 0;
+  }
+
+  .bg-grid {
+    position: absolute;
+    inset: 0;
+    background-image: 
+      linear-gradient(rgba(255, 255, 255, 0.03) 1px, transparent 1px),
+      linear-gradient(90deg, rgba(255, 255, 255, 0.03) 1px, transparent 1px);
+    background-size: 36px 36px;
+    mask-image: radial-gradient(ellipse at 50% 45%, black 45%, transparent 92%);
+    -webkit-mask-image: radial-gradient(ellipse at 50% 45%, black 45%, transparent 92%);
+    z-index: 1;
+  }
+
+  /* Outer luxury frame */
+  .outer-frame {
+    position: absolute;
+    inset: 20px;
+    border: 2px solid rgba(245, 158, 11, 0.5);
+    border-radius: 22px;
+    box-shadow: 
+      inset 0 0 40px rgba(245, 158, 11, 0.07),
+      0 0 30px rgba(0, 0, 0, 0.85);
+    z-index: 2;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    padding: 28px 34px 28px;
+  }
+
+  /* Corner accents */
+  .corner {
+    position: absolute;
+    width: 24px;
+    height: 24px;
+    border-color: #fbbf24;
+    border-style: solid;
+    z-index: 5;
+  }
+  .c-tl { top: -2px; left: -2px; border-width: 4px 0 0 4px; border-top-left-radius: 20px; }
+  .c-tr { top: -2px; right: -2px; border-width: 4px 4px 0 0; border-top-right-radius: 20px; }
+  .c-bl { bottom: -2px; left: -2px; border-width: 0 0 4px 4px; border-bottom-left-radius: 20px; }
+  .c-br { bottom: -2px; right: -2px; border-width: 0 4px 4px 0; border-bottom-right-radius: 20px; }
+
+  /* Header Section */
+  .header {
+    text-align: center;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 10px;
+  }
+
+  .top-pill {
+    display: inline-flex;
+    align-items: center;
+    gap: 10px;
+    padding: 8px 26px;
+    background: linear-gradient(90deg, rgba(245, 158, 11, 0.15) 0%, rgba(251, 191, 36, 0.25) 50%, rgba(245, 158, 11, 0.15) 100%);
+    border: 1.5px solid rgba(251, 191, 36, 0.8);
+    border-radius: 999px;
+    box-shadow: 0 0 24px rgba(245, 158, 11, 0.25);
+  }
+
+  .top-pill .dot {
+    width: 10px;
+    height: 10px;
+    border-radius: 50%;
+    background: #10b981;
+    box-shadow: 0 0 10px #10b981;
+  }
+
+  .top-pill span {
+    font-size: 15.5px;
+    font-weight: 800;
+    letter-spacing: 1.4px;
+    color: #fde68a;
+    text-transform: uppercase;
+  }
+
+  .eyebrow {
+    font-size: 18.5px;
+    font-weight: 800;
+    letter-spacing: 1.5px;
+    color: #38bdf8;
+    text-transform: uppercase;
+    text-shadow: 0 0 18px rgba(56, 189, 248, 0.4);
+  }
+
+  .headline-wrap {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 4px;
+  }
+
+  .headline-1 {
+    font-size: 50px;
+    font-weight: 900;
+    line-height: 1.1;
+    letter-spacing: -0.5px;
+    color: #ffffff;
+    text-shadow: 0 4px 20px rgba(0, 0, 0, 0.7);
+  }
+
+  .headline-1 .highlight-red {
+    color: #ff4d4f;
+    text-shadow: 0 0 28px rgba(255, 77, 79, 0.55);
+  }
+
+  .headline-2 {
+    font-size: 43px;
+    font-weight: 900;
+    line-height: 1.14;
+    letter-spacing: -0.5px;
+    white-space: nowrap;
+    background: linear-gradient(180deg, #fffbeb 0%, #fde047 45%, #f59e0b 100%);
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+    filter: drop-shadow(0 4px 18px rgba(245, 158, 11, 0.35));
+  }
+
+  .subheadline {
+    font-size: 19.5px;
+    font-weight: 500;
+    color: #cbd5e1;
+    line-height: 1.45;
+    max-width: 760px;
+  }
+  .subheadline strong {
+    color: #ffffff;
+    font-weight: 700;
+  }
+
+  /* Visual Comparison Strip (Before vs After Speed & Ads Cost) */
+  .vs-strip {
+    display: grid;
+    grid-template-columns: 1fr 52px 1fr;
+    align-items: center;
+    background: rgba(15, 23, 42, 0.9);
+    border: 1.5px solid rgba(148, 163, 184, 0.25);
+    border-radius: 16px;
+    padding: 13px 20px;
+    gap: 10px;
+    box-shadow: 0 10px 25px rgba(0,0,0,0.45);
+    margin-top: 12px;
+  }
+
+  .vs-box {
+    display: flex;
+    align-items: center;
+    gap: 14px;
+  }
+  .vs-box.right {
+    justify-content: flex-end;
+  }
+
+  .gauge-mini {
+    width: 62px;
+    height: 62px;
+    border-radius: 50%;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    font-family: 'JetBrains Mono', monospace;
+    font-weight: 800;
+    flex-shrink: 0;
+  }
+  .gauge-bad {
+    background: radial-gradient(circle, rgba(239, 68, 68, 0.22) 0%, rgba(15, 23, 42, 0.95) 75%);
+    border: 3.5px solid #ef4444;
+    color: #f87171;
+    box-shadow: 0 0 18px rgba(239, 68, 68, 0.35);
+  }
+  .gauge-good {
+    background: radial-gradient(circle, rgba(16, 185, 129, 0.24) 0%, rgba(15, 23, 42, 0.95) 75%);
+    border: 3.5px solid #10b981;
+    color: #34d399;
+    box-shadow: 0 0 18px rgba(16, 185, 129, 0.4);
+  }
+  .gauge-score {
+    font-size: 22px;
+    line-height: 1;
+  }
+  .gauge-lbl {
+    font-size: 9px;
+    letter-spacing: 0.5px;
+    opacity: 0.9;
+    margin-top: 2px;
+  }
+
+  .vs-info {
+    display: flex;
+    flex-direction: column;
+    gap: 4px;
+  }
+  .vs-tag {
+    font-size: 13px;
+    font-weight: 800;
+    text-transform: uppercase;
+    letter-spacing: 0.5px;
+    white-space: nowrap;
+  }
+  .vs-tag.bad { color: #f87171; }
+  .vs-tag.good { color: #34d399; }
+
+  .vs-metrics {
+    font-size: 14.5px;
+    font-weight: 700;
+    color: #f1f5f9;
+    white-space: nowrap;
+  }
+
+  .vs-arrow {
+    width: 42px;
+    height: 42px;
+    border-radius: 50%;
+    background: linear-gradient(135deg, #f59e0b, #ea580c);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    margin: 0 auto;
+    box-shadow: 0 0 16px rgba(245, 158, 11, 0.5);
+  }
+
+  /* 2x2 Grid Cards */
+  .cards-grid {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    grid-template-rows: 1fr 1fr;
+    gap: 18px;
+    flex: 1;
+    margin: 14px 0;
+  }
+
+  .card {
+    background: linear-gradient(165deg, rgba(15, 27, 53, 0.95) 0%, rgba(8, 15, 32, 0.98) 100%);
+    border: 1.5px solid rgba(245, 158, 11, 0.52);
+    border-radius: 18px;
+    padding: 20px 22px;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    position: relative;
+    overflow: hidden;
+    box-shadow: 
+      0 12px 28px rgba(0, 0, 0, 0.5),
+      inset 0 1px 0 rgba(255, 255, 255, 0.08);
+  }
+
+  .card::before {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    height: 3px;
+    background: linear-gradient(90deg, #f59e0b, #38bdf8, transparent);
+    opacity: 0.9;
+  }
+
+  .card-top {
+    display: flex;
+    flex-direction: column;
+    gap: 12px;
+  }
+
+  .card-header {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    gap: 8px;
+    padding-bottom: 11px;
+    border-bottom: 1.5px solid rgba(56, 189, 248, 0.25);
+  }
+
+  .card-title-group {
+    display: flex;
+    align-items: center;
+    gap: 10px;
+    width: 100%;
+  }
+
+  .num-badge {
+    width: 30px;
+    height: 30px;
+    border-radius: 8px;
+    background: rgba(245, 158, 11, 0.2);
+    border: 1.5px solid #fbbf24;
+    color: #fde047;
+    font-family: 'JetBrains Mono', monospace;
+    font-size: 15px;
+    font-weight: 800;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    flex-shrink: 0;
+  }
+
+  .card-title {
+    font-size: 17.5px;
+    font-weight: 800;
+    color: #fde047;
+    letter-spacing: 0px;
+    line-height: 1.2;
+    white-space: nowrap;
+  }
+
+  .card-desc {
+    font-size: 20px;
+    line-height: 1.54;
+    color: #e2e8f0;
+    font-weight: 400;
+  }
+
+  .card-desc strong {
+    color: #ffffff;
+    font-weight: 700;
+  }
+
+  .card-desc .bad-hl {
+    color: #fca5a5;
+    font-weight: 700;
+  }
+  .card-desc .good-hl {
+    color: #6ee7b7;
+    font-weight: 700;
+  }
+
+  /* Visual Widget at the bottom of each card */
+  .card-widget {
+    background: rgba(4, 9, 20, 0.85);
+    border: 1px solid rgba(148, 163, 184, 0.22);
+    border-radius: 14px;
+    padding: 16px 18px;
+    display: flex;
+    flex-direction: column;
+    gap: 12px;
+  }
+
+  .widget-row {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    font-size: 13.5px;
+    font-weight: 600;
+    gap: 8px;
+  }
+
+  .bar-track {
+    width: 100%;
+    height: 12px;
+    background: rgba(30, 41, 59, 0.95);
+    border-radius: 999px;
+    overflow: hidden;
+    display: flex;
+    position: relative;
+  }
+
+  .bar-fill-green {
+    height: 100%;
+    background: linear-gradient(90deg, #10b981, #34d399);
+    border-radius: 999px;
+    box-shadow: 0 0 10px rgba(16, 185, 129, 0.6);
+  }
+
+  .pill-stat {
+    display: inline-flex;
+    align-items: center;
+    padding: 4px 10px;
+    border-radius: 6px;
+    font-family: 'JetBrains Mono', monospace;
+    font-size: 12px;
+    font-weight: 700;
+    white-space: nowrap;
+    flex-shrink: 0;
+  }
+  .pill-green {
+    background: rgba(16, 185, 129, 0.16);
+    border: 1px solid rgba(16, 185, 129, 0.45);
+    color: #6ee7b7;
+  }
+  .pill-gold {
+    background: rgba(245, 158, 11, 0.18);
+    border: 1px solid rgba(251, 191, 36, 0.5);
+    color: #fde047;
+  }
+
+  .cls-demo {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 8px;
+  }
+  .cls-box {
+    padding: 8px 10px;
+    border-radius: 8px;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    font-size: 12.5px;
+    font-weight: 700;
+    white-space: nowrap;
+  }
+
+  .qs-scale {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    gap: 4px;
+  }
+  .qs-step {
+    flex: 1;
+    height: 24px;
+    border-radius: 5px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-family: 'JetBrains Mono', monospace;
+    font-size: 12px;
+    font-weight: 800;
+    background: rgba(30, 41, 59, 0.85);
+    color: #64748b;
+  }
+  .qs-step.active-9 {
+    background: rgba(16, 185, 129, 0.35);
+    border: 1px solid #10b981;
+    color: #a7f3d0;
+  }
+  .qs-step.active-10 {
+    flex: 1.4;
+    background: linear-gradient(135deg, #10b981, #059669);
+    border: 1px solid #6ee7b7;
+    color: #ffffff;
+    box-shadow: 0 0 12px rgba(16, 185, 129, 0.6);
+  }
+
+  /* Bottom CTA Banner */
+  .cta-banner {
+    background: linear-gradient(135deg, #991b1b 0%, #dc2626 50%, #991b1b 100%);
+    border: 2px solid #fbbf24;
+    border-radius: 18px;
+    padding: 16px 26px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    gap: 10px;
+    position: relative;
+    overflow: hidden;
+    box-shadow: 
+      0 14px 35px rgba(220, 38, 38, 0.45),
+      inset 0 1px 0 rgba(255, 255, 255, 0.35);
+  }
+
+  .cta-title {
+    font-size: 24px;
+    font-weight: 900;
+    color: #fef08a;
+    letter-spacing: 0.5px;
+    text-transform: uppercase;
+    text-shadow: 0 2px 10px rgba(0, 0, 0, 0.5);
+    white-space: nowrap;
+  }
+
+  .cta-sub-bar {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 16px;
+  }
+
+  .cta-price-pill {
+    background: rgba(0, 0, 0, 0.4);
+    border: 1px solid rgba(254, 240, 138, 0.45);
+    padding: 6px 18px;
+    border-radius: 999px;
+    font-size: 20px;
+    font-weight: 700;
+    color: #ffffff;
+    white-space: nowrap;
+  }
+  .cta-price-pill strong {
+    color: #fde047;
+    font-weight: 900;
+  }
+
+  .cta-zalo-pill {
+    background: #ffffff;
+    color: #0f172a;
+    padding: 6px 20px;
+    border-radius: 999px;
+    font-size: 20px;
+    font-weight: 900;
+    display: flex;
+    align-items: center;
+    gap: 8px;
+    box-shadow: 0 4px 14px rgba(0, 0, 0, 0.35);
+    white-space: nowrap;
+  }
+  .cta-zalo-pill span.zalo-badge {
+    background: #0068ff;
+    color: #ffffff;
+    font-size: 14px;
+    padding: 2px 8px;
+    border-radius: 6px;
+    font-weight: 800;
+    letter-spacing: 0.4px;
+  }
+</style>
+</head>
+<body>
+  <div class="bg-canvas"></div>
+  <div class="bg-grid"></div>
+
+  <div class="outer-frame">
+    <div class="corner c-tl"></div>
+    <div class="corner c-tr"></div>
+    <div class="corner c-bl"></div>
+    <div class="corner c-br"></div>
+
+    <!-- HEADER -->
+    <div class="header">
+      <div class="top-pill">
+        <div class="dot"></div>
+        <span>WEBEST ASIA • TỐI ƯU TỐC ĐỘ GOOGLE CORE WEB VITALS</span>
+      </div>
+
+      <div class="eyebrow">SỰ THẬT VỀ TỐC ĐỘ TẢI TRANG &amp; CHI PHÍ QUẢNG CÁO 2026</div>
+
+      <div class="headline-wrap">
+        <div class="headline-1">WEB TẢI CHẬM <span class="highlight-red">QUÁ 3 GIÂY</span></div>
+        <div class="headline-2">ĐỐT SẠCH 50% NGÂN SÁCH CHẠY ADS!</div>
+      </div>
+
+      <p class="subheadline">
+        4 chỉ số kỹ thuật quyết định <strong>Điểm chất lượng (Quality Score)</strong> và <strong>Tỷ lệ chốt đơn</strong> trên trang đích của bạn.
+      </p>
+    </div>
+
+    <!-- VISUAL COMPARISON STRIP -->
+    <div class="vs-strip">
+      <div class="vs-box">
+        <div class="gauge-mini gauge-bad">
+          <span class="gauge-score">38</span>
+          <span class="gauge-lbl">CHẬM</span>
+        </div>
+        <div class="vs-info">
+          <div class="vs-tag bad">✖ TRANG ĐÍCH CHƯA TỐI ƯU (&gt; 3.5 GIÂY)</div>
+          <div class="vs-metrics">Khách thoát 53% • Giá CPC đắt gấp đôi</div>
+        </div>
+      </div>
+
+      <div class="vs-arrow">
+        <svg width="22" height="22" viewBox="0 0 24 24" fill="none">
+          <path d="M5 12H19M19 12L13 6M19 12L13 18" stroke="#ffffff" stroke-width="3" stroke-linecap="round" stroke-linejoin="round"/>
+        </svg>
+      </div>
+
+      <div class="vs-box right">
+        <div class="vs-info" style="text-align: right;">
+          <div class="vs-tag good">✔ ĐẠT CHUẨN CORE WEB VITALS 90+</div>
+          <div class="vs-metrics">Tải &lt; 1.2 giây • Điểm chất lượng 10/10</div>
+        </div>
+        <div class="gauge-mini gauge-good">
+          <span class="gauge-score">98</span>
+          <span class="gauge-lbl">CHUẨN</span>
+        </div>
+      </div>
+    </div>
+
+    <!-- 4 CARDS GRID -->
+    <div class="cards-grid">
+      <!-- CARD 1: LCP -->
+      <div class="card">
+        <div class="card-top">
+          <div class="card-header">
+            <div class="card-title-group">
+              <div class="num-badge">01</div>
+              <div class="card-title">LCP &lt; 1.2 GIÂY (HIỂN THỊ CHÍNH)</div>
+            </div>
+          </div>
+          <p class="card-desc">
+            Nếu khung hình đầu tiên tải quá 3 giây trên 4G, <span class="bad-hl">53% khách hàng bấm nút Quay lại</span> trước khi đọc được 1 chữ trên bài bán hàng của bạn.
+          </p>
+        </div>
+
+        <div class="card-widget">
+          <div class="widget-row">
+            <span style="color:#6ee7b7;">⚡ Chuẩn Webest: <strong>0.9s - 1.2s</strong></span>
+            <span class="pill-stat pill-green">GIỮ CHÂN 95% KHÁCH</span>
+          </div>
+          <div class="bar-track">
+            <div class="bar-fill-green" style="width: 34%;"></div>
+          </div>
+          <div class="widget-row" style="font-size:12px; color:#94a3b8;">
+            <span>Chuẩn Google (&lt; 2.5s)</span>
+            <span style="color:#f87171;">Web chậm &gt; 3.0s (Thoát 53%)</span>
+          </div>
+        </div>
+      </div>
+
+      <!-- CARD 2: INP -->
+      <div class="card">
+        <div class="card-top">
+          <div class="card-header">
+            <div class="card-title-group">
+              <div class="num-badge">02</div>
+              <div class="card-title">INP &lt; 200MS (ĐỘ TRỄ TƯƠNG TÁC)</div>
+            </div>
+          </div>
+          <p class="card-desc">
+            Khách bấm nút <strong>'Mở bảng giá'</strong> hoặc <strong>'Gửi form'</strong> mà web đơ 1-2 giây không phản hồi sẽ lập tức mất kiên nhẫn và <span class="bad-hl">sang trang đối thủ</span>.
+          </p>
+        </div>
+
+        <div class="card-widget">
+          <div class="widget-row">
+            <span style="color:#e2e8f0;">Độ nhạy khi bấm nút Mua hàng / Form:</span>
+            <span class="pill-stat pill-green">PHẢN HỒI 45ms</span>
+          </div>
+          <div class="cls-demo">
+            <div class="cls-box" style="background:rgba(16,185,129,0.12); border:1px solid rgba(16,185,129,0.4); color:#6ee7b7;">
+              <span>✔ Mở tức thì</span>
+              <span style="font-family:'JetBrains Mono';">&lt;200ms</span>
+            </div>
+            <div class="cls-box" style="background:rgba(239,68,68,0.12); border:1px solid rgba(239,68,68,0.35); color:#fca5a5;">
+              <span>✖ Đơ nút bấm</span>
+              <span style="font-family:'JetBrains Mono';">1.500ms</span>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <!-- CARD 3: CLS -->
+      <div class="card">
+        <div class="card-top">
+          <div class="card-header">
+            <div class="card-title-group">
+              <div class="num-badge">03</div>
+              <div class="card-title">CLS = 0.0 (CHỐNG NHẢY BỐ CỤC)</div>
+            </div>
+          </div>
+          <p class="card-desc">
+            Khắc phục triệt để lỗi đang đọc bài hoặc chuẩn bị bấm nút Zalo thì <span class="bad-hl">khung ảnh/banner tải muộn</span> làm nhảy lệch vị trí bấm.
+          </p>
+        </div>
+
+        <div class="card-widget">
+          <div class="widget-row">
+            <span style="color:#e2e8f0;">Khóa cứng khung hình &amp; Nút Chốt Đơn:</span>
+            <span class="pill-stat pill-gold">CLS = 0.000</span>
+          </div>
+          <div class="cls-demo">
+            <div class="cls-box" style="background:rgba(56,189,248,0.12); border:1px solid rgba(56,189,248,0.4); color:#7dd3fc;">
+              <span>🔒 Khung cố định</span>
+              <span>100%</span>
+            </div>
+            <div class="cls-box" style="background:rgba(16,185,129,0.12); border:1px solid rgba(16,185,129,0.4); color:#6ee7b7;">
+              <span>🎯 Bấm chuẩn Zalo</span>
+              <span>0 Lệch</span>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <!-- CARD 4: CPC GOOGLE -->
+      <div class="card">
+        <div class="card-top">
+          <div class="card-header">
+            <div class="card-title-group">
+              <div class="num-badge">04</div>
+              <div class="card-title">GIẢM 30-40% GIÁ THẦU CPC GOOGLE</div>
+            </div>
+          </div>
+          <p class="card-desc">
+            Trang đích đạt chuẩn Core Web Vitals 90+ giúp <strong>Điểm chất lượng Google Ads đạt 9/10 - 10/10</strong>, <span class="good-hl">giảm trực tiếp giá mỗi lượt click</span>.
+          </p>
+        </div>
+
+        <div class="card-widget">
+          <div class="widget-row">
+            <span style="color:#fde047;">Điểm Chất Lượng (Quality Score):</span>
+            <span class="pill-stat pill-green">TIẾT KIỆM 40% CPC</span>
+          </div>
+          <div class="qs-scale">
+            <div class="qs-step">1</div>
+            <div class="qs-step">2</div>
+            <div class="qs-step">3</div>
+            <div class="qs-step">4</div>
+            <div class="qs-step">5</div>
+            <div class="qs-step">6</div>
+            <div class="qs-step">7</div>
+            <div class="qs-step">8</div>
+            <div class="qs-step active-9">9</div>
+            <div class="qs-step active-10">10/10</div>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <!-- BOTTOM CTA BANNER -->
+    <div class="cta-banner">
+      <div class="cta-title">
+        <span>➤ NHẮN TÊN MIỀN ĐỂ ĐO ĐIỂM NGHẼN TỐC ĐỘ MIỄN PHÍ ◄</span>
+      </div>
+      <div class="cta-sub-bar">
+        <div class="cta-price-pill">
+          Tối ưu Core Web Vitals 90+ từ <strong>2.500.000đ</strong>
+        </div>
+        <div class="cta-zalo-pill">
+          <span class="zalo-badge">ZALO</span>
+          <span>0916.867.294</span>
+        </div>
+      </div>
+    </div>
+  </div>
+</body>
+</html>

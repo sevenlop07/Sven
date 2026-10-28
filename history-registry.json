@@ -1,34 +1,79 @@
 {
   "version": "3.0",
-  "last_updated": "2026-08-23T19:20:00+07:00",
+  "last_updated": "2026-10-07T21:42:00+07:00",
   "total_stories_produced": 0,
-  "active_series_id": null,
-
+  "active_series_id": "mat-an-ky-thi-dinh",
   "anti_repetition_14_axes": {
-    "axis_1_character_names_en": [],
-    "axis_2_character_names_vn": [],
+    "axis_1_character_names_en": [
+      "Nguyen Truc",
+      "Ton Trieu",
+      "Vu Bien",
+      "Tran Dac Luong"
+    ],
+    "axis_2_character_names_vn": [
+      "Nguyễn Trực",
+      "Vũ Biền",
+      "Trần Đắc Lương",
+      "Tôn Triều"
+    ],
     "axis_3_karma_direction": [],
     "axis_4_story_tracks": [],
-    "axis_5_symbolic_props_and_groups": [],
+    "axis_5_symbolic_props_and_groups": [
+      "Dragon-Eye Inkstone with Jade Signet Seal / Nghiên Mực Đá Mắt Rồng",
+      "Lotus Cinnabar Imperial Exam Scroll / Bài Thi Hương Chu Sa Hoa Sen"
+    ],
     "axis_6_hook_techniques": [],
-    "axis_7_visual_styles": [],
-    "axis_8_genres_and_backgrounds": [],
+    "axis_7_visual_styles": [
+      "Pixar 3D Masterwork Animation"
+    ],
+    "axis_8_genres_and_backgrounds": [
+      "Courtroom Mystery / Historical Integrity Drama",
+      "15th Century Dai Viet / Imperial Examination Grounds & Han Lam Vien"
+    ],
     "axis_9_escalation_variants": [],
     "axis_10_twist_and_revelation_types": [],
     "axis_11_cliffhanger_types": [],
-    "axis_12_tropes_stacked": [],
+    "axis_12_tropes_stacked": [
+      "Courtroom Procedural / Exam Rigging Conspiracy",
+      "Restorative Justice / Redemption Arc"
+    ],
     "axis_13_time_of_day_and_lighting": [],
-    "axis_14_narrative_mode": []
+    "axis_14_narrative_mode": [
+      "Dialogue-Driven Drama Mode (Voice Palette On)"
+    ]
   },
-
   "session_log": {
     "recent_hooks": [],
-    "recent_character_names": [],
-    "recent_props": [],
-    "recent_locations": [],
-    "recent_visual_styles": [],
+    "recent_character_names": [
+      "Nguyễn Trực",
+      "Vũ Biền",
+      "Trần Đắc Lương",
+      "Tôn Triều"
+    ],
+    "recent_props": [
+      "Nghiên Mực Đá Mắt Rồng",
+      "Bài Thi Hương Chu Sa Hoa Sen"
+    ],
+    "recent_locations": [
+      "Trường Thi Thăng Long Nửa Đêm Mưa Bão",
+      "Tàng Kinh Các Hàn Lâm Viện"
+    ],
+    "recent_visual_styles": [
+      "Pixar 3D"
+    ],
     "recent_cliffhangers": []
   },
-
-  "story_history": []
+  "story_history": [
+    {
+      "slug": "mat-an-ky-thi-dinh",
+      "title": "Mật Án Kỳ Thi Đình",
+      "format": "Series",
+      "theme": "Liêm chính khoa cử Đại Việt & Công lý phục hồi",
+      "lesson": "Sĩ khí và đạo học tồn tại nhờ đức liêm chính, chứ không dung túng đặc quyền danh gia.",
+      "episodes": 6,
+      "date": "2026-10-07",
+      "visual_style": "Pixar 3D",
+      "status": "draft"
+    }
+  ]
 }

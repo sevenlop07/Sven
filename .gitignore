@@ -7,6 +7,8 @@ __pycache__/
 *$py.class
 *.so
 .Python
+*.log
+*.bak*
 
 # OS generated files
 .DS_Store

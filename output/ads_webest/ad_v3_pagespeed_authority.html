@@ -1,0 +1,496 @@
+<!DOCTYPE html>
+<html lang="vi">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=1080, height=1350">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Be+Vietnam+Pro:wght@400;500;600;700;800;900&family=JetBrains+Mono:wght@700;800&display=swap" rel="stylesheet">
+<style>
+  * { box-sizing: border-box; margin: 0; padding: 0; }
+  body {
+    width: 1080px;
+    height: 1350px;
+    overflow: hidden;
+    font-family: 'Be Vietnam Pro', sans-serif;
+    background: #eef2f6;
+    color: #0f172a;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+  }
+
+  /* Dark Navy Authority Top Banner */
+  .top-hero {
+    background: linear-gradient(180deg, #060d1f 0%, #0f172a 100%);
+    color: #ffffff;
+    padding: 28px 38px 66px;
+    text-align: center;
+    position: relative;
+    border-bottom: 4px solid #f59e0b;
+  }
+
+  .top-badge {
+    display: inline-flex;
+    align-items: center;
+    gap: 8px;
+    background: rgba(245, 158, 11, 0.18);
+    border: 1.5px solid #fbbf24;
+    color: #fde047;
+    padding: 7px 22px;
+    border-radius: 999px;
+    font-size: 15px;
+    font-weight: 800;
+    letter-spacing: 1.2px;
+    margin-bottom: 12px;
+  }
+
+  .top-eyebrow {
+    font-size: 18px;
+    font-weight: 800;
+    color: #38bdf8;
+    letter-spacing: 1.4px;
+    text-transform: uppercase;
+    margin-bottom: 6px;
+  }
+
+  .top-h1 {
+    font-size: 48px;
+    font-weight: 900;
+    line-height: 1.1;
+    color: #ffffff;
+  }
+  .top-h1 span {
+    color: #ff4d4f;
+  }
+
+  .top-h2 {
+    font-size: 44px;
+    font-weight: 900;
+    line-height: 1.15;
+    color: #fde047;
+    margin-top: 4px;
+  }
+
+  .top-sub {
+    font-size: 19px;
+    color: #cbd5e1;
+    margin-top: 8px;
+    max-width: 740px;
+    margin-left: auto;
+    margin-right: auto;
+    line-height: 1.44;
+  }
+  .top-sub strong { color: #ffffff; }
+
+  /* Floating Google Lighthouse 4-Ring Bar */
+  .lighthouse-bar {
+    margin: -44px 36px 0;
+    background: #ffffff;
+    border-radius: 18px;
+    padding: 15px 28px;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    box-shadow: 0 16px 35px rgba(15, 23, 42, 0.14);
+    border: 1.5px solid #cbd5e1;
+    position: relative;
+    z-index: 5;
+  }
+
+  .lh-left-title {
+    display: flex;
+    flex-direction: column;
+    gap: 4px;
+  }
+  .lh-tag {
+    display: inline-flex;
+    align-items: center;
+    gap: 6px;
+    font-size: 13px;
+    font-weight: 800;
+    color: #059669;
+    background: #d1fae5;
+    padding: 4px 10px;
+    border-radius: 6px;
+    width: fit-content;
+  }
+  .lh-heading {
+    font-size: 19.5px;
+    font-weight: 900;
+    color: #0f172a;
+  }
+  .lh-sub {
+    font-size: 14px;
+    color: #475569;
+    font-weight: 500;
+  }
+
+  .lh-rings {
+    display: flex;
+    align-items: center;
+    gap: 24px;
+  }
+  .lh-item {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 5px;
+  }
+  .lh-circle {
+    width: 58px;
+    height: 58px;
+    border-radius: 50%;
+    background: #ecfdf5;
+    border: 4.5px solid #0cce6b;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-family: 'JetBrains Mono', monospace;
+    font-size: 20px;
+    font-weight: 800;
+    color: #059669;
+  }
+  .lh-label {
+    font-size: 12.5px;
+    font-weight: 700;
+    color: #334155;
+  }
+
+  /* Main 2x2 White Cards Section */
+  .main-grid {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    grid-template-rows: 1fr 1fr;
+    gap: 18px;
+    padding: 18px 36px;
+    flex: 1;
+  }
+
+  .w-card {
+    background: #ffffff;
+    border-radius: 18px;
+    padding: 20px 22px;
+    border: 1.5px solid #cbd5e1;
+    box-shadow: 0 8px 20px rgba(15, 23, 42, 0.05);
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    position: relative;
+    overflow: hidden;
+  }
+
+  .w-card::before {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 0;
+    bottom: 0;
+    width: 6px;
+    background: #0f172a;
+  }
+  .w-card.wc1::before { background: #0284c7; }
+  .w-card.wc2::before { background: #d97706; }
+  .w-card.wc3::before { background: #7c3aed; }
+  .w-card.wc4::before { background: #059669; }
+
+  .wc-head {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    gap: 8px;
+    padding-bottom: 11px;
+    border-bottom: 1.5px solid #e2e8f0;
+  }
+
+  .wc-title {
+    font-size: 17px;
+    font-weight: 900;
+    color: #0f172a;
+    white-space: nowrap;
+  }
+  .wc1 .wc-title { color: #0369a1; }
+  .wc2 .wc-title { color: #b45309; }
+  .wc3 .wc-title { color: #6d28d9; }
+  .wc4 .wc-title { color: #047857; }
+
+  .wc-badge {
+    font-family: 'JetBrains Mono', monospace;
+    font-size: 12.5px;
+    font-weight: 800;
+    padding: 4px 9px;
+    border-radius: 6px;
+    background: #dcfce7;
+    color: #15803d;
+    white-space: nowrap;
+    flex-shrink: 0;
+  }
+
+  .wc-desc {
+    font-size: 19.5px;
+    line-height: 1.54;
+    color: #334155;
+    margin: 12px 0;
+  }
+  .wc-desc strong {
+    color: #0f172a;
+    font-weight: 800;
+  }
+  .wc-desc .hl-danger {
+    color: #dc2626;
+    font-weight: 700;
+  }
+
+  /* Authentic Google Core Web Vitals 3-Segment Threshold Bar + Compare */
+  .wc-bottom-group {
+    display: flex;
+    flex-direction: column;
+    gap: 10px;
+    background: #f8fafc;
+    border: 1px solid #cbd5e1;
+    border-radius: 14px;
+    padding: 14px 16px;
+  }
+
+  .cwv-bar {
+    display: grid;
+    grid-template-columns: 5fr 3fr 2fr;
+    gap: 5px;
+    height: 10px;
+    width: 100%;
+  }
+  .cwv-seg-green { background: #0cce6b; border-radius: 99px; }
+  .cwv-seg-amber { background: #ffa400; border-radius: 99px; }
+  .cwv-seg-red { background: #ff4e42; border-radius: 99px; }
+
+  .wc-compare {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    font-size: 15px;
+    font-weight: 800;
+    white-space: nowrap;
+  }
+  .cmp-bad {
+    color: #dc2626;
+  }
+  .cmp-good {
+    color: #059669;
+  }
+
+  /* Bottom Footer CTA */
+  .bottom-cta {
+    margin: 0 36px 26px;
+    background: linear-gradient(135deg, #991b1b 0%, #dc2626 50%, #991b1b 100%);
+    border-radius: 18px;
+    padding: 16px 26px;
+    color: #ffffff;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 10px;
+    box-shadow: 0 14px 30px rgba(220, 38, 38, 0.35);
+    border: 2px solid #fde047;
+  }
+
+  .b-cta-title {
+    font-size: 24px;
+    font-weight: 900;
+    color: #fef08a;
+    letter-spacing: 0.4px;
+    white-space: nowrap;
+  }
+
+  .b-cta-row {
+    display: flex;
+    align-items: center;
+    gap: 18px;
+  }
+
+  .b-cta-price {
+    font-size: 20px;
+    font-weight: 700;
+    background: rgba(0, 0, 0, 0.3);
+    padding: 6px 18px;
+    border-radius: 999px;
+    border: 1px solid rgba(254, 240, 138, 0.4);
+    white-space: nowrap;
+  }
+  .b-cta-price strong {
+    color: #fde047;
+    font-weight: 900;
+  }
+
+  .b-cta-zalo {
+    background: #ffffff;
+    color: #0f172a;
+    font-size: 20px;
+    font-weight: 900;
+    padding: 6px 20px;
+    border-radius: 999px;
+    display: flex;
+    align-items: center;
+    gap: 8px;
+    white-space: nowrap;
+  }
+  .b-cta-zalo span {
+    background: #0068ff;
+    color: #ffffff;
+    font-size: 13.5px;
+    padding: 2px 8px;
+    border-radius: 5px;
+  }
+</style>
+</head>
+<body>
+  <!-- TOP HERO -->
+  <div class="top-hero">
+    <div class="top-badge">WEBEST ASIA • TỐI ƯU TỐC ĐỘ GOOGLE CORE WEB VITALS</div>
+    <div class="top-eyebrow">SỰ THẬT VỀ TỐC ĐỘ TẢI TRANG &amp; CHI PHÍ QUẢNG CÁO 2026</div>
+    <div class="top-h1">WEB TẢI CHẬM <span>QUÁ 3 GIÂY</span></div>
+    <div class="top-h2">ĐỐT SẠCH 50% NGÂN SÁCH CHẠY ADS!</div>
+    <p class="top-sub">
+      4 chỉ số kỹ thuật quyết định <strong>Điểm chất lượng (Quality Score)</strong> và <strong>Tỷ lệ chốt đơn</strong> trên trang đích của bạn.
+    </p>
+  </div>
+
+  <!-- GOOGLE LIGHTHOUSE 4-RING BAR -->
+  <div class="lighthouse-bar">
+    <div class="lh-left-title">
+      <div class="lh-tag">✔ GOOGLE PAGESPEED INSIGHTS</div>
+      <div class="lh-heading">Chuẩn Hoá Trang Đích Điểm Xanh 90+</div>
+      <div class="lh-sub">Đo lường trực tiếp trên mạng 4G Di động &amp; Máy tính</div>
+    </div>
+    <div class="lh-rings">
+      <div class="lh-item">
+        <div class="lh-circle">98</div>
+        <div class="lh-label">Hiệu suất</div>
+      </div>
+      <div class="lh-item">
+        <div class="lh-circle">100</div>
+        <div class="lh-label">Trải nghiệm</div>
+      </div>
+      <div class="lh-item">
+        <div class="lh-circle">100</div>
+        <div class="lh-label">Kỹ thuật</div>
+      </div>
+      <div class="lh-item">
+        <div class="lh-circle">100</div>
+        <div class="lh-label">Chuẩn SEO</div>
+      </div>
+    </div>
+  </div>
+
+  <!-- 4 CARDS -->
+  <div class="main-grid">
+    <!-- Card 1 -->
+    <div class="w-card wc1">
+      <div>
+        <div class="wc-head">
+          <div class="wc-title">1. LCP &lt; 1.2 GIÂY (HIỂN THỊ CHÍNH)</div>
+          <div class="wc-badge">PASSED</div>
+        </div>
+        <p class="wc-desc">
+          Nếu khung hình đầu tiên tải quá 3 giây trên 4G, <span class="hl-danger">53% khách hàng bấm nút Quay lại</span> trước khi đọc được 1 chữ trên bài bán hàng của bạn.
+        </p>
+      </div>
+      <div class="wc-bottom-group">
+        <div class="cwv-bar">
+          <div class="cwv-seg-green"></div>
+          <div class="cwv-seg-amber"></div>
+          <div class="cwv-seg-red"></div>
+        </div>
+        <div class="wc-compare">
+          <span class="cmp-bad">✖ Trước: &gt; 3.5 giây</span>
+          <span>➔</span>
+          <span class="cmp-good">✔ Sau tối ưu: 0.9 giây</span>
+        </div>
+      </div>
+    </div>
+
+    <!-- Card 2 -->
+    <div class="w-card wc2">
+      <div>
+        <div class="wc-head">
+          <div class="wc-title">2. INP &lt; 200MS (ĐỘ TRỄ TƯƠNG TÁC)</div>
+          <div class="wc-badge">PASSED</div>
+        </div>
+        <p class="wc-desc">
+          Khách bấm nút <strong>'Mở bảng giá'</strong> hoặc <strong>'Gửi form'</strong> mà web đơ 1-2 giây không phản hồi sẽ lập tức mất kiên nhẫn và <span class="hl-danger">sang trang đối thủ</span>.
+        </p>
+      </div>
+      <div class="wc-bottom-group">
+        <div class="cwv-bar">
+          <div class="cwv-seg-green"></div>
+          <div class="cwv-seg-amber"></div>
+          <div class="cwv-seg-red"></div>
+        </div>
+        <div class="wc-compare">
+          <span class="cmp-bad">✖ Trước: Đơ 1-2 giây</span>
+          <span>➔</span>
+          <span class="cmp-good">✔ Sau tối ưu: Mượt 45ms</span>
+        </div>
+      </div>
+    </div>
+
+    <!-- Card 3 -->
+    <div class="w-card wc3">
+      <div>
+        <div class="wc-head">
+          <div class="wc-title">3. CLS = 0.0 (CHỐNG NHẢY BỐ CỤC)</div>
+          <div class="wc-badge">PASSED</div>
+        </div>
+        <p class="wc-desc">
+          Khắc phục triệt để lỗi đang đọc bài hoặc chuẩn bị bấm nút Zalo thì <span class="hl-danger">khung ảnh/banner tải muộn</span> làm nhảy lệch vị trí bấm.
+        </p>
+      </div>
+      <div class="wc-bottom-group">
+        <div class="cwv-bar">
+          <div class="cwv-seg-green"></div>
+          <div class="cwv-seg-amber"></div>
+          <div class="cwv-seg-red"></div>
+        </div>
+        <div class="wc-compare">
+          <span class="cmp-bad">✖ Trước: Lệch nút bấm</span>
+          <span>➔</span>
+          <span class="cmp-good">✔ Sau tối ưu: CLS = 0.00</span>
+        </div>
+      </div>
+    </div>
+
+    <!-- Card 4 -->
+    <div class="w-card wc4">
+      <div>
+        <div class="wc-head">
+          <div class="wc-title">4. GIẢM 30-40% GIÁ THẦU CPC GOOGLE</div>
+          <div class="wc-badge">ROI +40%</div>
+        </div>
+        <p class="wc-desc">
+          Trang đích đạt chuẩn Core Web Vitals 90+ giúp <strong>Điểm chất lượng Google Ads đạt 9/10 - 10/10</strong>, giảm trực tiếp giá mỗi lượt click.
+        </p>
+      </div>
+      <div class="wc-bottom-group">
+        <div class="cwv-bar">
+          <div class="cwv-seg-green"></div>
+          <div class="cwv-seg-amber"></div>
+          <div class="cwv-seg-red"></div>
+        </div>
+        <div class="wc-compare">
+          <span class="cmp-bad">✖ Trước: QS 5/10 (Đắt)</span>
+          <span>➔</span>
+          <span class="cmp-good">✔ Sau: QS 10/10 (-40% CPC)</span>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <!-- BOTTOM CTA -->
+  <div class="bottom-cta">
+    <div class="b-cta-title">➤ NHẮN TÊN MIỀN ĐỂ ĐO ĐIỂM NGHẼN TỐC ĐỘ MIỄN PHÍ ◄</div>
+    <div class="b-cta-row">
+      <div class="b-cta-price">Tối ưu Core Web Vitals 90+ từ <strong>2.500.000đ</strong></div>
+      <div class="b-cta-zalo"><span>ZALO</span> 0916.867.294</div>
+    </div>
+  </div>
+</body>
+</html>

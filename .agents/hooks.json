@@ -1,0 +1,16 @@
+{
+  "sven-quality-gate": {
+    "PostToolUse": [
+      {
+        "matcher": "write_to_file|replace_file_content|multi_replace_file_content",
+        "hooks": [
+          {
+            "type": "command",
+            "command": "python hooks/quality_gate_hook.py",
+            "timeout": 30
+          }
+        ]
+      }
+    ]
+  }
+}
