@@ -713,7 +713,7 @@ wooden classroom desk; dien_thoai_chup_anh [100% Refer to image @dien_thoai_chup
 
 Diegetic room acoustics: gentle shuffling of school shoes on tiled floor, quiet classroom room tone, faint rustle of notebooks.
 
-[00:00–00:04.5] Medium shot, eye level, static camera — vy_student steps backward into the central classroom aisle, raising dien_thoai_chup_anh with screen facing the desk cluster to frame a group portrait. Focus on vy_student.
+[00:00–00:04.5] Medium shot, eye level, static camera — vy_student steps backward into the central classroom aisle, raising dien_thoai_chup_anh with screen facing the desk cluster to frame a group portrait.
 vy_student says : “ Nhanh lên các cậu, hàng trước ngồi, hàng sau đứng! ”（Voice of a 15-year-old girl from Northern Vietnam; bright crisp authoritative tone, urgent school cadence）
 
 [00:04.5–00:10.0] Cut to a reverse medium shot across the empty wooden desks, eye level, slow push-in — linh_student and nam_student instinctively step backward toward the rear wall, leaving the entire front row of chairs vacant; linh_student clutches backpack straps with an embarrassed grimace while nam_student ducks shoulders sideways with a sheepish grin; vy_student in foreground lowers the smartphone slightly with an exasperated sigh through 00:10.0.
@@ -790,10 +790,10 @@ wooden classroom desk; so_tay_ke_hoach [100% Refer to image @so_tay_ke_hoach]; A
 
 Diegetic room acoustics: crisp tap of finger on desk wood, rustle of uniform fabric, distant murmur of school hallway.
 
-[00:00–00:04.0] Medium two-shot, eye level, static camera — linh_student straightens back behind the wooden desk and points a firm index finger toward nam_student with formal class-monitor resolve. Focus on linh_student.
+[00:00–00:04.0] Medium two-shot, eye level, static camera — linh_student straightens back behind the wooden desk and points a firm index finger toward nam_student with formal class-monitor resolve.
 linh_student says : “ Nam, cậu ngồi hàng trước đi! ”（Voice of a 15-year-old girl from Northern Vietnam; firm organized tone, formal class monitor authority）
 
-[00:04.0–00:10.0] Cut to an over-the-shoulder close-up on nam_student, eye level, slow push-in — nam_student vigorously shakes head from side to side, bringing both palms up to cup cheeks in exaggerated comical panic; nam_student leans torso backward against the chalkboard edge with wide eyes through 00:10.0. Focus on nam_student.
+[00:04.0–00:10.0] Cut to an over-the-shoulder close-up on nam_student, eye level, slow push-in — nam_student vigorously shakes head from side to side, bringing both palms up to cup cheeks in exaggerated comical panic; nam_student leans torso backward against the chalkboard edge with wide eyes through 00:10.0.
 nam_student replies : “ Không đời nào, góc rộng dìm mặt tớ to lắm! ”（Voice of a 15-year-old boy from Northern Vietnam; lively defensive banter, quick humorous refusal）
 
 Continuous fluid motion, realistic physics, zero morphing, one unbroken take. Spatial positions anchored. Do not generate subtitles, dialogue text, titles, timestamps, or written text. Do not render duplicate characters.</pre>
@@ -868,10 +868,10 @@ wooden classroom desk; dien_thoai_chup_anh [100% Refer to image @dien_thoai_chup
 
 Diegetic room acoustics: soft fabric rustle of uniform shirts, subtle creak of wooden chair, quiet ambient classroom stillness.
 
-[00:00–00:04.5] Medium three-shot, eye level, static camera — vy_student folds arms across chest, tilting head with aesthetic disapproval while looking at linh_student and nam_student cornered behind the desk. Focus on vy_student.
+[00:00–00:04.5] Medium three-shot, eye level, static camera — vy_student folds arms across chest, tilting head with aesthetic disapproval while looking at linh_student and nam_student cornered behind the desk.
 vy_student says : “ Hai người mặc áo lớp đẹp mà đứng nép thế? ”（Voice of a 15-year-old girl from Northern Vietnam; sharp aesthetic scrutiny, exasperated tone）
 
-[00:04.5–00:10.0] Cut to a medium close-up on nam_student, eye level, slow push-in — nam_student shrugs shoulders defensively, hands outstretched in comical surrender; linh_student beside nam_student sighs softly, looking down at empty front desks through 00:10.0. Focus on nam_student.
+[00:04.5–00:10.0] Cut to a medium close-up on nam_student, eye level, slow push-in — nam_student shrugs shoulders defensively, hands outstretched in comical surrender; linh_student beside nam_student sighs softly, looking down at empty front desks through 00:10.0.
 nam_student replies : “ Áo đẹp nhưng camera góc rộng tàn nhẫn lắm! ”（Voice of a 15-year-old boy from Northern Vietnam; cheeky apologetic grin, self-deprecating tone）
 
 Continuous fluid motion, realistic physics, zero morphing, one unbroken take. Spatial positions anchored. Do not generate subtitles, dialogue text, titles, timestamps, or written text. Do not render duplicate characters.</pre>
@@ -939,9 +939,9 @@ so_phac_thao [100% Refer to image @so_phac_thao]; wooden classroom chair; AO_CHU
 
 Diegetic room acoustics: soft paper closing thud, scrape of wooden chair legs on tiled floor, quiet calm breath.
 
-[00:00–00:05.0] Medium shot panning gently right to center, eye level, slow lateral glide — an_student neatly shuts so_phac_thao, rises calmly from the desk, pulls out the empty front wooden classroom chair, and sits upright in the dead center of the frame, resting a dark backpack flat across the lap to anchor the lower framing. Focus on an_student.
+[00:00–00:05.0] Medium shot panning gently right to center, eye level, slow lateral glide — an_student neatly shuts so_phac_thao, rises calmly from the desk, pulls out the empty front wooden classroom chair, and sits upright in the dead center of the frame, resting a dark backpack flat across the lap to anchor the lower framing.
 
-[00:05.0–00:10.0] The camera glides into a held medium close-up and settles before an_student speaks: an_student raises a calm, unblinking gaze directly toward vy_student's camera lens, expression cool and collected through 00:10.0. Focus on an_student.
+[00:05.0–00:10.0] The camera glides into a held medium close-up and settles before an_student speaks: an_student raises a calm, unblinking gaze directly toward vy_student's camera lens, expression cool and collected through 00:10.0.
 an_student says : “ Ngồi đây che góc rồi, chụp nhanh đi. ”（Voice of a 15-year-old boy from Northern Vietnam; low steady calm baritone, practical caring deadpan delivery）
 
 Continuous fluid motion, realistic physics, zero morphing, one unbroken take. Spatial positions anchored. Do not generate subtitles, dialogue text, titles, timestamps, or written text. Do not render duplicate characters.</pre>
@@ -1017,10 +1017,10 @@ wooden classroom chair; dien_thoai_chup_anh [100% Refer to image @dien_thoai_chu
 
 Diegetic room acoustics: joyful footstep scuffle, wooden chair slide, light chuckles, classroom breeze.
 
-[00:00–00:05.0] Medium group shot, eye level, slow pull-out — nam_student hurries forward and rests both elbows casually on the back of an_student's chair, grinning broadly with exuberant relief; an_student remains seated and steady. Focus on nam_student.
+[00:00–00:05.0] Medium group shot, eye level, slow pull-out — nam_student hurries forward and rests both elbows casually on the back of an_student's chair, grinning broadly with exuberant relief; an_student remains seated and steady.
 nam_student says : “ Có An ngồi phong thủy là góc nào cũng đẹp! ”（Voice of a 15-year-old boy from Northern Vietnam; high energy enthusiastic banter, cheerful relief）
 
-[00:05.0–00:10.0] Cut to an over-the-shoulder medium shot past vy_student's raised smartphone, eye level, static camera — linh_student quickly slides an adjacent chair beside an_student and sits down smiling; vy_student's fingers steady the smartphone screen framing all four friends perfectly in matching uniform shirts through 00:10.0. Focus on linh_student.
+[00:05.0–00:10.0] Cut to an over-the-shoulder medium shot past vy_student's raised smartphone, eye level, static camera — linh_student quickly slides an adjacent chair beside an_student and sits down smiling; vy_student's fingers steady the smartphone screen framing all four friends perfectly in matching uniform shirts through 00:10.0.
 linh_student replies : “ Vy canh góc rồi bấm máy nhanh đi! ”（Voice of a 15-year-old girl from Northern Vietnam; relieved warm smile, unhurried soft cadence）
 
 Continuous fluid motion, realistic physics, zero morphing, one unbroken take. Spatial positions anchored. Do not generate subtitles, dialogue text, titles, timestamps, or written text. Do not render duplicate characters.</pre>
@@ -1098,10 +1098,10 @@ dien_thoai_chup_anh [100% Refer to image @dien_thoai_chup_anh]; AO_CHU_DAO_01 [1
 
 Diegetic room acoustics: subtle electronic camera shutter click, ringing school bell chime in background, spontaneous burst of group laughter.
 
-[00:00–00:05.5] Close-up on dien_thoai_chup_anh screen tilting up to medium shot, eye level, slow pedestal lift settles before vy_student speaks — vy_student's thumb taps the virtual camera shutter icon; a soft screen flash illuminates the captured photo of the four friends looking united in matching uniform shirts; vy_student rotates the phone outward with pride. Focus on vy_student.
+[00:00–00:05.5] Close-up on dien_thoai_chup_anh screen tilting up to medium shot, eye level, slow pedestal lift settles before vy_student speaks — vy_student's thumb taps the virtual camera shutter icon; a soft screen flash illuminates the captured photo of the four friends looking united in matching uniform shirts; vy_student rotates the phone outward with pride.
 vy_student says : “ Ảnh xong rồi, áo lớp mình lên hình nét căng! ”（Voice of a 15-year-old girl from Northern Vietnam; proud aesthetic satisfaction, joyful ringing tone）
 
-[00:05.5–00:10.0] Cut to a medium group reaction shot, eye level, static camera — nam_student peers over vy_student's shoulder pointing at the screen and chuckles warmly; linh_student giggles beside an_student whose lips finally curl into a quiet subtle smirk as the school bell rings rhythmically overhead through 00:10.0. Focus on nam_student.
+[00:05.5–00:10.0] Cut to a medium group reaction shot, eye level, static camera — nam_student peers over vy_student's shoulder pointing at the screen and chuckles warmly; linh_student giggles beside an_student whose lips finally curl into a quiet subtle smirk as the school bell rings rhythmically overhead through 00:10.0.
 nam_student replies : “ Nhìn An kìa, như chủ tịch tập đoàn đi học! ”（Voice of a 15-year-old boy from Northern Vietnam; chuckling playful tease, affectionate banter）
 
 Continuous fluid motion, realistic physics, zero morphing, one unbroken take. Spatial positions anchored. Do not generate subtitles, dialogue text, titles, timestamps, or written text. Do not render duplicate characters.</pre>

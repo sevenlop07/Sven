@@ -601,7 +601,7 @@ The matrix below is a **vocabulary, not a lookup table**. A shot scale is never 
 * **Story Beat Alignment**: **Beat 1 (Disruptive Hook)**, **Beat 3 (Core Ideological Clash)**.
 * **Spoken Dialogue Safety**: ✅ *100% Safe*. Recommended for 60%+ of all dialogue shots.
 * **Prompt Syntax**:
-  `[00:00–00:03] Medium Close-Up, flattering portrait perspective, Eye-level static focus on [Subject] delivering ultimatum with rising chest tension and pulsing jaw muscles...`
+  `[00:00–00:03] Medium Close-Up framing [Subject] at eye level, flattering portrait perspective, shallow depth of field holding sharp optical focus on [Subject], static camera — [Subject] delivers ultimatum with rising chest tension and pulsing jaw muscles...`
 * 🚫 **Strict Prohibition**: Do not cut off the chin or crown of the head; maintain proper cinematic headroom.
 
 #### 10. Close-Up (CU / Cận Cảnh Gương Mặt)
@@ -612,7 +612,7 @@ The matrix below is a **vocabulary, not a lookup table**. A shot scale is never 
 * **Story Beat Alignment**: **Beat 4 (Climax Peak / Fatal Revelation)**, **Beat 5 (Catharsis)**.
 * **Spoken Dialogue Safety**: ✅ *100% Safe for high-stakes lines*.
 * **Prompt Syntax**:
-  `[00:03–00:07] Low-Angle Close-Up, creamy soft background blur, Slow forward push-in tightening on [Subject]'s clenched jaw, nostril flare, and unblinking amber glare catching warm brazier light...`
+  `[00:03–00:07] Low-angle Close-Up framing [Subject], creamy soft background blur, shallow depth of field holding crisp optical focus on [Subject]'s facial features, slow forward push-in — [Subject]'s clenched jaw tightens, nostrils flare, unblinking amber glare catching warm brazier light...`
 * 🚫 **Strict Prohibition**: Never introduce complex multi-hand physical actions in a Close-Up; the frame is reserved exclusively for facial biomechanics.
 
 #### 11. Head-On Shot (Cảnh Trực Diện Xuyên Thấu Trục Ống Kính)
@@ -623,7 +623,7 @@ The matrix below is a **vocabulary, not a lookup table**. A shot scale is never 
 * **Story Beat Alignment**: **Beat 1 (Shock Hook)**, **Beat 4 (Defiant Ultimatum)**.
 * **Spoken Dialogue Safety**: ✅ *100% Safe*.
 * **Prompt Syntax**:
-  `[00:00–00:03] Head-On Shot, geometric central perspective, [Subject] marches straight down the central optical lens axis, piercing dark gaze locked dead-center on camera, zero lateral deviation...`
+  `[00:00–00:03] Head-On Shot framing [Subject], geometric central perspective, sharp optical focus on [Subject], static camera — [Subject] marches straight down the central optical lens axis, piercing dark gaze locked dead-center on camera, zero lateral deviation...`
 * 🚫 **Strict Prohibition**: Do not tilt the camera off-axis; symmetry and axial alignment are mandatory.
 
 #### 12. Choker Shot (Cận Cảnh Ngột Ngạt)
@@ -634,7 +634,7 @@ The matrix below is a **vocabulary, not a lookup table**. A shot scale is never 
 * **Story Beat Alignment**: **Beat 3.3 (Exits Sealed)**, **Beat 4.3 (All Hope Is Lost)**, **Shot 3 (Arrest Living Settle)**.
 * **Spoken Dialogue Safety**: ⚠️ *Restricted to short, choked phrases (1–4 words)* or complete diegetic silence.
 * **Prompt Syntax**:
-  `[00:05.5–00:10] Choker Shot, razor-thin focal slice, Static locked focus on [Subject]'s quivering lower lip and flared nostrils as cold sweat beads on forehead, lips sealed in breathless deadlock from 00:09.5 to 00:10...`
+  `[00:05.5–00:10] Choker Shot framing [Subject], razor-thin focal slice holding razor-sharp optical focus on [Subject]'s lower lip and flared nostrils, static camera — cold sweat beads on forehead, lips sealed in breathless deadlock from 00:09.5 to 00:10...`
 * 🚫 **Strict Prohibition**: NEVER assign multi-sentence speeches to a Choker Shot (causes severe AI mouth distortion and lip-sync failure).
 
 #### 13. Extreme Close-Up (ECU / Đặc Tả Vi Mô)
@@ -645,7 +645,7 @@ The matrix below is a **vocabulary, not a lookup table**. A shot scale is never 
 * **Story Beat Alignment**: **Beat 4 (Ego Death / Anagnorisis / Lie Exposure)**.
 * **Spoken Dialogue Safety**: ❌ **FORBIDDEN FOR SPOKEN DIALOGUE**. Silent breath or macro Foley only.
 * **Prompt Syntax**:
-  `[00:07–00:10] Extreme Close-Up, hyper-magnified macro focus, Static locked focus on [Subject]'s dark pupil dilating in paralyzed shock as heat embers reflect across the cornea...`
+  `[00:07–00:10] Extreme Close-Up framing [Subject]'s eye, hyper-magnified macro focus holding razor-sharp optical lock on iris and pupil, static camera — pupil dilates in paralyzed shock as heat embers reflect across the cornea...`
 * 🚫 **Strict Prohibition**: NEVER attempt spoken lip-sync in an ECU. NEVER use rapid camera pans.
 
 #### 14. Macro Insert Shot (Insert / Đặc Tả Đạo Cụ & Bằng Chứng)
@@ -656,7 +656,7 @@ The matrix below is a **vocabulary, not a lookup table**. A shot scale is never 
 * **Story Beat Alignment**: **Beat 3 (Trap Detonation)**, **Beat 4 (Irrefutable Evidence)**.
 * **Spoken Dialogue Safety**: ❌ **FORBIDDEN FOR ON-SCREEN DIALOGUE**. Voiceover or diegetic Foley only.
 * **Prompt Syntax**:
-  `[00:04–00:07] Macro Insert Shot, tactile macro focus, Static view as trembling calloused thumb forcefully cracks the crimson wax seal, brittle red flakes showering across aged parchment fibers...`
+  `[00:04–00:07] Macro Insert Shot framing [Prop], tactile macro focus holding sharp optical detail on contact point, static camera — trembling calloused thumb forcefully cracks the crimson wax seal, brittle red flakes showering across aged parchment fibers...`
 * 🚫 **Strict Prohibition**: Do not include human faces in a Macro Insert Shot; the object and hand contact are the sole focal points.
 
 ---

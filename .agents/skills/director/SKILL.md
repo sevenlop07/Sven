@@ -254,6 +254,7 @@ description: >
       * (3K) 100% Multi-Modal Reference Anchor Syntax
       * (3L) 100% Blank-line block separation integrity
       * (3M) 100% Sub-Timeline Phase Division Law (Both Track A Single-Shot & Track B Multi-Shot)
+      * (3Q) ZERO Dangling 'Focus on [name]' phrases (The Optical Camera Clause Law)
       * (4) Dialogue parity (spoken lip-sync + directing notes)
       * (4B) Hard cap <= 18 words per line (target: 14–17w)
       * (4C) Conversational Ping-Pong Vector Law
@@ -269,3 +270,8 @@ description: >
       * Environments/Locations: MUST use meaningful English descriptors (`rustic_wooden_bedroom`, `townhouse_living_room`, `ancestral_shrine_corner`). Banned: transliterated Vietnamese tokens (`phong_cu`, `nha_bep`, `san_truoc`).
       * Props: MUST use meaningful English descriptors (`steaming_ceramic_ginger_bowl`, `pine_wood_crib`, `ancestral_family_altar`, `worn_leather_ledger`). Banned: transliterated Vietnamese tokens (`bat_com`, `vong_xep`, `noi_go`, `mam_nhom`).
     - Strips 100% of accented characters in character identifier tokens, eliminating byte-pair tokenization fragmentation and facial/visual distortion across Kling, Sora, Runway, and Hailuo text encoders.
+
+21. **The Optical Camera Clause Law & Zero Dangling Focus Standard (Gate 3Q)**:
+    - **Upfront Optical Declaration**: In every timeline beat (`[start–end]`), camera framing, focal plane, and depth of field (DoF/bokeh) MUST be declared inside the **Camera Clause before the em-dash `—`** (e.g., `Medium close-up framing ho_ten_A at eye level, shallow depth of field holding sharp optical focus on ho_ten_A's facial features with background softly falling into bokeh, slow push-in — [action]`).
+    - **Strict Prohibition of Trailing Tags**: Tacking isolated, dangling sentences like `. Focus on [name].` at the tail of action prose is strictly banned as an architectural prompt bug that fragments diffusion model attention and destabilizes facial focus.
+    - **Track A-Locked Syntax**: Declared once in natural prose before timeline brackets with full optical parameters and `static camera`, with timeline brackets dedicated 100% to somatic acting without repeating camera tags.
