@@ -267,9 +267,8 @@ Before specifying shot scales or camera angles, the director must select the mac
   4. **Inner Monologue (Model 4 V.O.)**: The character's face is locked in contemplation while the internal voice echoes.
 
 * **The 5-Pillar Dedicated Prompt Optimization Protocol (Bảo Hiểm Chống Tượng Sáp / Wax Mannequin Trap)**:
-  In generative AI video models (Runway, Kling, Sora, Wan 2.1, Hailuo), writing simply `"static camera"` frequently triggers a fatal failure mode: the model interprets the scene as a still photograph, freezing the actor into an emotionless wax statue. To unlock hyper-realistic performance on a locked camera, prompts MUST enforce:
-  1. **Optical Anchor Rigidity**: Explicitly declare `locked-off eye-level static shot on a stationary tripod, completely fixed camera position with zero camera movement, zero panning, zero tracking, zero zoom.`
-  2. **Hyper-Dense Somatic Micro-Acting Directing**: Replace camera movement vectors with continuous biological micro-actions distributed across time brackets:
+  1. **Pure Natural Optical Declaration — Exclusive to Track A-Locked**: Because shot scale, angle, and camera stability are 100% constant across the entire 10s take, declare the optical setup ONCE in natural prose at the head of the action section without any `[camera]:` tag (e.g. `Medium close-up, eye level, static camera.`). Strictly ban the word "tripod" in prompt prose to prevent AI models from hallucinating a physical camera stand inside the set. This applies EXCLUSIVELY to Track A-Locked.
+  2. **Timeline Brackets Dedicated 100% to Character Acting & Environmental Physics**: Because the camera is locked upfront, sub-timeline brackets (`[00:00–00:03.5]`, `[00:03.5–00:07.0]`, `[00:07.0–00:10.0]`) contain strictly zero camera repetition. Every word inside the time brackets is dedicated to continuous biological micro-actions and environmental physics:
      - `[00:00–00:03.5]`: Initial physical tension (rapid shallow chest heaving, tight jaw, masseter muscle twitching, eyes locked down).
      - `[00:03.5–00:07.0]`: Somatic rupture or spoken delivery (eyes welling with unshed tears, throat visibly swallowing down a choke, knuckles whitening against table).
      - `[00:07.0–00:10.0]`: Emotional aftermath (chin trembling, single tear spilling down cheek, eyelids fluttering half-closed as shoulders slowly slump).

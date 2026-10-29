@@ -677,21 +677,22 @@ Before finalizing `[Subject]`, check:
 > **Syntax and timing SSOT**: [`0b-temporal-camera-grammar.md`](file:///d:/Project/Sven/engine/references/0b-temporal-camera-grammar.md) §8 (canonical syntax) and §2–§7 (speech rate, lip-sync windows, action capacity, camera-move durations, shots per clip, clip density). The former `△ … | … |` beat header and the fixed Templates 1A / 1B / 2 are retired.
 
 1. **One phase line = one time bracket + one short camera clause + prose**:
-   `[00:00–00:03.5] Medium shot, slight low angle, static camera — [one primary action + one reaction, observable physics]. Focus on [name].`
+   `[00:00–00:03.5] Medium shot framing [name], slight low angle, shallow depth of field holding sharp optical focus on [name], static camera — [one primary action + one reaction, observable physics].`
    Track B phases after the first open with `Cut to …`. The track itself is declared once, in the style line of the prefix (`Track A — one continuous take, zero cuts` or `Track B — multi-shot sequence cut on the 180-degree axis`).
 2. **Describe the observable physical action directly.** No filler connectors such as `Driven by the stillness...`, `As Dax halts...`, `Continuing the reach...`.
 3. **Split points come from the beats** (Doctrine §2; grammar §3–§6), never from a fixed template. Phases run contiguously from 00:00 to the clip end, 10 s by default, 15 s or 30 s when requested (Gate 3M).
 4. **Pure visual optics only**: never write lens millimeters, f-stops, fps, camera brands, Kelvin, or frame coordinates (Gates 3D / 3H). Characters are anchored to architecture, never to `frame-left` / `screen-right`.
+5. **The Optical Camera Clause Law (Banning Dangling "Focus on [name]")**: All subject framing, optical focal depth, and depth of field (shallow DoF, bokeh, rack focus) MUST be integrated into the camera clause before the em-dash `—`. NEVER tack an isolated `Focus on [name].` sentence to the tail of action prose.
 
 * **✅ CORRECT (10 s, Track B, English dialogue):**
 ```text
-[00:00–00:04.0] Medium two-shot, slight low angle, slow push-in along the anvil — Dax steps forward on the wet granite floor and thrusts the debt scroll across the anvil; Vin stands rigid beside the forge, unblinking. Focus on Dax.
+[00:00–00:04.0] Medium two-shot framing Dax and Vin along the anvil, slight low angle, slow push-in, deep depth of field holding sharp optical focus on Dax — Dax steps forward on the wet granite floor and thrusts the debt scroll across the anvil; Vin stands rigid beside the forge, unblinking.
 Dax snaps : “ Ten years of hiding ends today. ”（Voice of a 45-year-old man from the northern highlands, low and arrogant, precise lip-sync, cold forge light on the cheekbone, savoring the threat）
 
-[00:04.0–00:07.8] Cut to a medium close-up on Vin, eye level, static camera — Vin brings the blackened hammer down onto the anvil, sparks scattering; Dax recoils half a step. Focus on Vin.
+[00:04.0–00:07.8] Cut to a medium close-up framing Vin at eye level, shallow depth of field holding razor-sharp focus on Vin's face with background softly falling into bokeh, static camera — Vin brings the blackened hammer down onto the anvil, sparks scattering; Dax recoils half a step.
 Vin replies : “ Your armor came from this anvil. ”（Voice of a 50-year-old man from the northern highlands, deep and unhurried, precise lip-sync, ember glow along the jaw, a quiet reminder of who holds the power）
 
-[00:07.8–00:10.0] Cut to a close-up on Dax, eye level, static camera — the smirk drains from Dax's face and the throat tightens in a hard swallow; lips stay closed, breathing slows, embers drift past.
+[00:07.8–00:10.0] Cut to a close-up framing Dax along 180-degree axis, eye level, static camera — the smirk drains from Dax's face and the throat tightens in a hard swallow; lips stay closed, breathing slows, embers drift past.
 ```
 Timing check (grammar §2–§3): each line is 6 words ≈ 2.7–3.0 s inside a ≥ 3.8 s phase (starts ≥ 0.3 s in, ends ≥ 0.8 s before the cut). Speech ≈ 5.5 s of 10 s.
 
@@ -887,37 +888,42 @@ Both tracks are governed by **Elastic Montage & Temporal Physics (1 to 5 dynamic
 * **Core Directorial Philosophy**: *"Stillness As Magnitude (Sự Tĩnh Lặng Tạo Nên Sức Nặng)"*.
 * **Camera Mechanics**: The camera is **100% stationary on a locked tripod**. Zero panning, zero tilting, zero tracking, zero zooming, strictly zero camera drift.
 * **The Problem in Generative Diffusion Models**: If a prompt simply writes `static camera`, AI video engines (Kling, Runway, Wan 2.1, Sora) tend to render a lifeless still photo or freeze the actor into an emotionless wax mannequin.
-* **The 5-Pillar Dedicated Prompt Optimization Protocol**:
-  1. **Optical Anchor Rigidity**: Style line declares `Track A — one continuous take, zero cuts, locked-off static camera on stationary tripod.` Every phase header explicitly enforces `completely stationary static camera on locked tripod, zero camera movement`.
-  2. **Hyper-Dense Somatic Micro-Acting Directing**: Replace camera translation vectors with high-density biological micro-actions distributed across 3 time brackets:
-     - `[00:00–00:03.5]`: Initial tension (shallow rapid chest heaving, masseter muscle twitching, eyes locked down).
+* **The Dedicated Prompt Optimization Protocol (Exclusive to Track A-Locked)**:
+  1. **Pure Natural Optical Declaration (Khai Báo Cỡ Cảnh, Góc Quay & Camera Tĩnh Trực Tiếp — Bỏ Thẻ `[camera]:` & Bỏ Từ Khóa `tripod`) — Applied Exclusively to Track A-Locked**: Because shot scale, angle, and camera stability are 100% invariant across the entire 10s take, declare the optical setup as a clean natural prose sentence **strictly once** at the head of the action section (immediately after audio and before timeline brackets), completely omitting any `[camera]:` bracket.
+     *(Anti-Hardware Hallucination Rule: Strictly ban the word "tripod" or "camera locked on tripod" in prompt prose, because diffusion models mistake it as a literal physical 3-legged tripod apparatus standing inside the room! Simply declare `static camera`)*:
+     `[Shot scale, e.g. Medium close-up], [angle, e.g. eye level], static camera.`
+     *(Note: This direct natural prose declaration applies EXCLUSIVELY to Track A-Locked; standard Track A moving takes and Track B cuts retain their phase-by-phase camera clauses).*
+  2. **Timeline Brackets Dedicated 100% to Character Acting & Environmental Physics**: With the optical anchor fixed at the head, the sub-timeline brackets (`[00:00–00:03.5]`, `[00:03.5–00:07.0]`, `[00:07.0–00:10.0]`) are **100% stripped of repetitive camera clauses**. Every token inside the brackets is dedicated strictly to somatic micro-acting, biological reactions, speech-action delivery, and living atmospheric physics:
+     - `[00:00–00:03.5]`: Initial tension (shallow rapid chest heaving, masseter muscle twitching, eyes locked down, fingers clutching prop; dust motes dancing).
      - `[00:03.5–00:07.0]`: Somatic rupture or spoken delivery (eyes welling with unshed tears catching the light, throat swallowing down a choke, knuckles whitening).
-     - `[00:07.0–00:10.0]`: Emotional aftermath (chin trembling, single tear spilling down cheek, eyelids fluttering half-closed as shoulders slowly slump).
+     - `[00:07.0–00:10.0]`: Emotional aftermath (chin trembling, single tear spilling down cheek, eyelids fluttering half-closed as shoulders slowly slump; curtain rippling).
   3. **Living Environmental Micro-Dynamics (Anti-Freeze Insurance)**: Mandate continuous physical motion in the background (dust motes drifting lazily through diagonal sunbeams, a delicate curl of steam rising steadily from a teacup, loose strands of hair fluttering in a draft, sheer curtains rippling).
   4. **Tactile Prop Friction & Internal Staging**: The character maintains a physical tactile anchor (fingers clutching wooden rail, twisting ring, pressing palm to table). Movements are internal (head lowering 2 inches, gaze shifting from floor to doorway).
   5. **Clean Single-Subject Frame**: Single-subject framing (CU, MCU, or Dirty Single) ensures the DiT latent space focuses 100% of its parameters on facial musculature and eye expression.
 
 #### Canonical Prompt Syntax for Track A-Locked:
 ```text
-Master-level cinematography and composition, fast-paced shot variation, atmospheric sound design. Style: [Visual Style Header]. Track A — one continuous take, zero cuts, locked-off static camera on stationary tripod.
+Master-level cinematography and composition, fast-paced shot variation, atmospheric sound design. Style: [Visual Style Header]. Track A — one continuous take, zero cuts, static camera.
 
 [context]:
-[Location Name] [100% Refer to image <ref>], [time of day]. [Fixed architectural inventory, key lighting direction, and continuous environmental micro-motion: dust motes dancing in sunbeams, steam curling steadily].
+[Location Name in English] [100% Refer to image <location_ref_4view.jpg>], [time of day]. [Complete 5-vector physical architectural specification: full fixed furniture inventory, in-scene textiles/bedding, key lighting direction, and continuous environmental micro-motion: dust motes dancing in sunbeams, steam curling steadily].
 
 [subject]:
 [character_name] [100% Appearance, attire, and facial features Refer to image X], [spatial anchor], [tactile posture] — the only [character_name] in frame.
 
 [PROP]:
-[hero_prop] [100% Refer to image <prop_ref>]; [tactile fixture].
+[hero_prop_in_english] [100% Refer to image <prop_ref.jpg>]; [tactile fixture / resting state]. (or: "none (pure environmental and somatic staging)" if no hero prop)
 
 Diegetic sound of [room tone], accompanied by [specific Foley: creak of wood, rustle of linen, choked breathing].
 
-[00:00–00:03.5] Medium close-up, eye level, completely stationary static camera on locked tripod, zero camera movement — [actor initial posture, rapid chest breathing, jaw clenched, fingers gripping prop rail; microscopic dust motes swirl in sunbeams]. Focus on [character_name].
+Eye-level [Shot scale, e.g. medium close-up] framing [character_name], shallow depth of field holding razor-sharp optical focus on [character_name]'s face with background softly falling into cinematic bokeh, static camera.
 
-[00:03.5–00:07.0] In the same locked static frame, eye level — [actor swallows hard, jaw quivering, eyes welling with tears, delivers line with breathy choke]. Focus on [character_name].
+[00:00–00:03.5] [actor initial posture, rapid chest breathing, jaw clenched, fingers gripping prop rail; microscopic dust motes swirl in sunbeams].
+
+[00:03.5–00:07.0] [actor swallows hard, jaw quivering, eyes welling with tears, delivers line with breathy choke].
 [character_name] [expressive verb] : “ [spoken line ≤ 18 words] ”（Voice of [demographic]; [acoustic paralinguistic tags]）
 
-[00:07.0–00:10.0] In the same locked static frame, eye level — [lips seal tightly, single tear spills down cheek, chin trembles, head lowers slightly, shoulders slump under invisible weight; background curtains ripple faintly]. Focus on [character_name].
+[00:07.0–00:10.0] [lips seal tightly, single tear spills down cheek, chin trembles, head lowers slightly, shoulders slump under invisible weight; background curtains ripple faintly].
 
 Consistent character, lighting, and environmental physics maintained through 00:10.0. No subtitles, no watermark, no text overlays, no duplicate subjects.
 ```
@@ -1141,9 +1147,9 @@ empty_grain_jar [100% Refer to image prop_jar_4view.jpg], terracotta, lying on t
 
 Diegetic room acoustics: muffled desert wind outside, crackle of dying coals, soft scrape of wood against clay.
 
-[00:00–00:03.0] Medium two-shot, low angle, static camera — Noa tips the grain jar and scrapes a worn wooden scoop along the inside, finding nothing; on the cot Milcah watches through half-closed eyes.
+[00:00–00:03.0] Medium two-shot framing Noa and Milcah, low angle, static camera — Noa tips the grain jar and scrapes a worn wooden scoop along the inside, finding nothing; on the cot Milcah watches through half-closed eyes.
 
-[00:03.0–00:07.5] Slow push-in to a medium close-up on Noa, eye level — Noa sets the scoop down and turns toward the cot, jaw setting. Focus on Noa.
+[00:03.0–00:07.5] Slow push-in to a medium close-up framing Noa at eye level, shallow depth of field holding sharp optical focus on Noa's face — Noa sets the scoop down and turns toward the cot, jaw setting.
 Noa whispers : “ Rest, Mother. The loom will feed us. ”（Voice of a 20-year-old woman from the Judean hills, steady and fervent, precise lip-sync, warm hearth light across the cheek, a promise Noa is not sure of）
 
 [00:07.5–00:10.0] The push-in settles into a close-up on Noa, eye level — lips press together, the chest rises in one deep silent breath, eyes glisten in the amber light; behind, Milcah's hand slides from the blanket edge.
@@ -1186,10 +1192,10 @@ forged_debt_tablet [100% Refer to image prop_tablet_4view.jpg]; copper_family_se
 
 Diegetic room acoustics: crackling brazier coals, wind whistling through the window bars, heavy breathing.
 
-[00:00–00:03.8] Medium close-up on Eleazar standing behind the timber ledger table, low angle, slow push-in — weight pressed forward onto both palms, slaps a flat palm down beside the debt tablet with flared nostrils; across the table Noa stands rigid without blinking. Focus on Eleazar.
+[00:00–00:03.8] Medium close-up framing Eleazar standing behind the timber ledger table, low angle, slow push-in, sharp optical focus on Eleazar — weight pressed forward onto both palms, slaps a flat palm down beside the debt tablet with flared nostrils; across the table Noa stands rigid without blinking.
 Eleazar snaps : “ Your father's debt is due tonight. ”（Voice of a 55-year-old man from Jerusalem, harsh and gravelly, precise lip-sync, brazier glow under the brow, savoring the trap）
 
-[00:03.8–00:07.6] Cut to a medium close-up on Noa on the doorway side of the table, slight low angle, static camera — shoulders squared, presses the copper seal flat onto the table with a ringing clack, chin lifting in defiance; across the table Eleazar stiffens. Focus on Noa.
+[00:03.8–00:07.6] Cut to a medium close-up framing Noa on the doorway side of the table, slight low angle, sharp optical focus on Noa, static camera — shoulders squared, presses the copper seal flat onto the table with a ringing clack, chin lifting in defiance; across the table Eleazar stiffens.
 Noa replies : “ That seal is forged. Father paid. ”（Voice of a 22-year-old woman from the Judean hills, ringing and fierce, precise lip-sync, moonlight across the eyes, refusing to be afraid）
 
 [00:07.6–00:10.0] Cut to an extreme close-up on Eleazar's eyes, eye level, static camera — the condescending smirk drains, pupils contract under the moonlight; lips stay sealed, breath catches, charcoal haze drifts across the frame.
@@ -1232,12 +1238,12 @@ folded_letter [100% Refer to image prop_letter_ref.jpg], creased cream paper, he
 
 Diegetic room acoustics: crackling firewood, a pot lid ticking with steam, river water lapping under the stilts.
 
-[00:00–00:04.0] Wide shot, eye level, static camera — hanh steps over the threshold and stops two paces from the stove; ba_tu keeps both hands on the pot handle without looking up. Focus on hanh.
+[00:00–00:04.0] Wide shot framing hanh and ba_tu, eye level, deep depth of field, static camera — hanh steps over the threshold and stops two paces from the stove; ba_tu keeps both hands on the pot handle without looking up.
 
-[00:04.0–00:08.0] Slow push-in to a medium two-shot, eye level — hanh holds the folded letter out at arm's length. Focus on hanh.
+[00:04.0–00:08.0] Slow push-in to a medium two-shot at eye level, optical focus holding on hanh — hanh holds the folded letter out at arm's length.
 hanh says : “ Thư của anh Hai gửi về nè má. ”（Voice of a 30-year-old woman from the Mekong Delta; soft high-pitched hesitant tone, anxious filial vulnerability）
 
-[00:08.0–00:12.5] The push-in continues to a medium close-up on ba_tu, eye level — ba_tu lets go of the pot handle and stares at the letter without taking it. Focus on ba_tu.
+[00:08.0–00:12.5] The push-in continues to a medium close-up framing ba_tu at eye level, shallow depth of field holding sharp focus on ba_tu — ba_tu lets go of the pot handle and stares at the letter without taking it.
 ba_tu says : “ Nó còn nhớ đường về cái nhà này hả con? ”（Voice of a 68-year-old woman from the Mekong Delta; low raspy dry timbre, bitter defensive hurt masking sorrow）
 
 [00:12.5–00:15.0] The camera settles into a static medium close-up — ba_tu's fingers curl slowly toward the letter and stop a hand's width short; smoke drifts across the frame, breathing slows.
@@ -1269,15 +1275,15 @@ folded_letter [100% Refer to image prop_letter_ref.jpg], creased cream paper, he
 
 Diegetic room acoustics: crackling firewood, a pot lid ticking with steam, river water lapping under the stilts.
 
-[00:00–00:05.5] Wide shot, eye level, slow push-in — hanh steps over the bamboo threshold and stops two paces from the stove; ba_tu keeps both hands pinned to the clay pot handle without turning her head. Focus on hanh.
+[00:00–00:05.5] Wide shot framing hanh entering toward ba_tu, eye level, slow push-in — hanh steps over the bamboo threshold and stops two paces from the stove; ba_tu keeps both hands pinned to the clay pot handle without turning her head.
 
-[00:05.5–00:11.0] Cut to an over-the-shoulder shot past ba_tu toward hanh, eye level, static camera — hanh extends her right arm, holding the folded letter out into the shaft of low sunlight. Focus on hanh.
+[00:05.5–00:11.0] Cut to an over-the-shoulder shot framing hanh past ba_tu's foreground silhouette, sharp optical focus on hanh at eye level, static camera — hanh extends her right arm, holding the folded letter out into the shaft of low sunlight.
 hanh says : “ Thư của anh Hai gửi về từ thành phố nè má. ”（Voice of a 30-year-old woman from the Mekong Delta; soft high-pitched hesitant tone, earnest filial vulnerability）
 
-[00:11.0–00:17.5] Cut to a medium close-up on ba_tu, slight low angle, static camera — ba_tu slowly withdraws both hands from the pot handle, palms trembling as her fingers rest on her lap; her chin tightens. Focus on ba_tu.
+[00:11.0–00:17.5] Cut to a medium close-up framing ba_tu, slight low angle, shallow depth of field holding sharp focus on ba_tu's weathered face, static camera — ba_tu slowly withdraws both hands from the pot handle, palms trembling as her fingers rest on her lap; her chin tightens.
 ba_tu says : “ Mày cất đi. Tao không có đứa con nào thứ hai hết. ”（Voice of a 68-year-old woman from the Mekong Delta; low raspy dry timbre, stubborn pride masking deep hurt）
 
-[00:17.5–00:24.0] Cut to a medium shot on hanh, eye level, slow push-in — hanh crouches down onto one knee beside the stove, placing the creased letter gently onto the dry timber beside ba_tu's stool; she looks directly into ba_tu's eyes. Focus on hanh.
+[00:17.5–00:24.0] Cut to a medium shot framing hanh, eye level, slow push-in, sharp optical focus on hanh — hanh crouches down onto one knee beside the stove, placing the creased letter gently onto the dry timber beside ba_tu's stool; she looks directly into ba_tu's eyes.
 hanh says : “ Anh Hai nói tháng sau anh về giỗ ba. ”（Voice of a 30-year-old woman from the Mekong Delta; warm mellow gentle cadence, earnest emotional plea to heal the family）
 
 [00:24.0–00:30.0] Cut to an extreme close-up on ba_tu's right hand and the letter, eye level, static camera — the gnarled fingers hover over the paper for two seconds, touch the creased edge without picking it up, then press flat against the warm floorboards; wood smoke drifts across the edge of the frame, breathing slows to a living rhythm.
@@ -1702,12 +1708,16 @@ To completely eliminate spatiotemporal morphing, background drift, lip-sync hall
 ### 1. The 3-Block Label Standard (`[context]:`, `[subject]:`, `[PROP]:`)
 Every video prompt in **Code Block 1** MUST be partitioned into exactly three explicit structural blocks separated by blank lines (`\n\n`):
 - **`[context]:` (The Master 5-Vector Location & Environmental Staging Standard)**
-  - Syntax: `[Location Name] [100% Refer to image [filename/ref]], [exact time of day]. [Complete 5-vector physical architectural specification: full fixed furniture inventory ("có cái gì ở đó"), lighting physics, and atmospheric medium].`
+  - **Meaningful English Naming Standard**: Location names and image references MUST use meaningful, evocative English (e.g. `rustic_wooden_bedroom [100% Refer to image rustic_bedroom_4view.jpg]`, `humble_dining_kitchen [100% Refer to image dining_kitchen_4view.jpg]`). Transliterated Vietnamese aliases (`phong_ngu_01`, `nha_bep_01`) are strictly prohibited because AI text-encoders (T5, CLIP) parse English tokens for materials, lighting, and spatial geometry.
+  - Syntax: `[Location Name in English] [100% Refer to image [filename/ref]], [exact time of day]. [Complete 5-vector physical architectural specification: full fixed furniture inventory ("có cái gì ở đó"), lighting physics, and atmospheric medium].`
   - Function: Permanently locks spatial boundaries, architecture, fixed furniture landmarks, daylight progression, and atmospheric physics before subjects are parsed, completely immunizing against AI spatial amnesia and environment hallucination.
+  - **The Zero Ghost Object Law (Quy Chuẩn Bối Cảnh Chi Tiết & Chống Đồ Vật Tự Sinh)**:
+    * `[context]:` MUST provide a complete, rich physical inventory of all setting structures, furniture, and domestic elements present in the staging zone (e.g. the weathered wooden bed, the flat cotton mattress, the coarse woven wool blanket resting folded across the lower bed, the bedside nightstand with the amber tungsten lamp).
+    * **STRICT BAN ON GHOST OBJECTS**: Any object that characters manipulate, touch, or interact with in the Action timeline (`[00:00–00:XX]`) — such as pulling a blanket, leaning against a wooden headboard, or touching a lamp — **MUST ALREADY BE FULLY ESTABLISHED AND GROUNDED IN TEXT INSIDE `[context]:`**. It is strictly forbidden for an everyday object to suddenly materialize in Action if it was omitted from `[context]:`.
   - **The 5 Mandatory Physical Vectors in `[context]:`**:
-    * **Vector 1 (Image Anchor)**: `[Location Name] [100% Refer to image <ref>]`.
+    * **Vector 1 (Image Anchor & Meaningful English Name)**: `[Location Name] [100% Refer to image <ref>]`.
     * **Vector 2 (Biological Time of Day)**: Exact natural daylight phase (`early dawn`, `golden morning`, `harsh midday`, `amber late afternoon`, `blue hour dusk`, `dim midnight lamp-lit`).
-    * **Vector 3 (Fixed Architectural & Furniture Inventory — "Có cái gì ở đó")**: Complete inventory of physical structures and major fixed furniture mirroring the 4-View Location Sheet (e.g. for `phong_cu`: patterned encaustic cement floor tiles, sturdy dark wooden queen bed with white linen, light pine wood crib placed firmly directly beside bed, wooden doorway leading to hallway). Barren 5-word declarations (`phong_cu, morning.`) are strictly banned.
+    * **Vector 3 (Fixed Architectural & Furniture Inventory — "Có cái gì ở đó")**: Complete inventory of physical structures and major fixed furniture mirroring the 4-View Location Sheet (e.g. for `rustic_wooden_bedroom`: patterned encaustic cement floor tiles, sturdy dark wooden queen bed with white linen, coarse woven wool blanket spread over lower mattress, light pine wood crib placed firmly directly beside bed, wooden doorway leading to hallway). Barren 5-word declarations (`bedroom, morning.`) are strictly banned.
     * **Vector 4 (Lighting Physics & Direction)**: Key light source, angle/direction (diagonal 45° from window, overhead downward), natural color tone (warm golden amber, cool blue morning light; strictly zero Kelvin), and shadow behavior (long soft diagonal shadows).
     * **Vector 5 (Atmospheric Medium & Emotional Climate)**: Physical medium (floating dust motes in sunbeams, stagnant domestic air, humidity) and psychological mood (suffocating confinement, tense silence, protective warmth).
 - **`[subject]:` (The 4-Part Sovereign Subject Protocol)**
@@ -1721,13 +1731,22 @@ Every video prompt in **Code Block 1** MUST be partitioned into exactly three ex
     ```
   - Directorial Law: `[subject]:` establishes the zero-frame (00:00.0) spatial grounding to architecture, initial bodily posture, and the negative anti-duplication seal. All dynamic character actions, kinetic transitions, and emotional evolutions are directed within the Timeline Shots.
   - The cu_tin Entity Standard: When `cu_tin` is present in the bedroom near `noi_go`, declare `cu_tin [100% Appearance, attire, and facial features Refer to image cu_tin_4view.jpg]` in `[subject]:`, synchronized with safe somatic sleep staging in the timeline action prose. Banned aliases: `be_tin`, `bé tin`, and all minor keywords (`baby`, `kid`, `infant`, `newborn`).
-- **`[PROP]:` (Streamlined Interactive & Setting Props)**
-  - Syntax: List key interactive hand props and crucial setting fixtures cleanly, binding each to its reference image:
-    ```text
-    [PROP]:
-    bat_chao [100% Refer to image prop_chao_thit_4view.jpg]; binh_hut_sua [100% Refer to image prop_binh_sua_4view.jpg]; mam_nhom [100% Refer to image prop_mam_nhom_4view.jpg]; noi_go [100% Refer to image prop_crib_4view.jpg]
-    ```
-  - Directorial Law: Keep `[PROP]:` concise, separated by semicolons. Anchor props to their physical location or character.
+- **`[PROP]:` (The Sovereign Hero Prop Law — Đạo Luật Đạo Cụ Linh Hồn)**
+  - **Core Directorial Distinction: Hero Prop vs. Setting Dressing**:
+    * **`[PROP]:` is reserved EXCLUSIVELY for the Soul & Catalyst HERO PROP (Đạo Cụ Linh Hồn)**: Objects carrying the narrative soul, Chekhov's dramatic catalyst, or high-stakes proof (e.g. a steaming medicinal bowl, a crucial forged will, an heirloom wedding ring, a brass safe key, a secret diary).
+    * **Everyday Ambient & Domestic Fixtures (Chăn, gối, nệm, bàn ghế, rèm cửa, quạt, đèn...) ARE STRICTLY FORBIDDEN IN `[PROP]:`**. Ordinary domestic necessities are **Set Dressing** and MUST be described **100% via rich text directly inside `[context]:`**. Forcing everyday items into `[PROP]:` wastes token bandwidth and causes AI mesh clashing.
+  - **Meaningful English Naming**: Hero props must use evocative, meaningful English names and reference filenames (e.g. `steaming_ceramic_ginger_bowl [100% Refer to image ginger_tea_bowl.jpg]`; `brass_house_key_bundle [100% Refer to image brass_keys.jpg]`).
+  - **Syntax**:
+    * *When a Hero Prop exists in the scene*:
+      ```text
+      [PROP]:
+      steaming_ceramic_ginger_bowl [100% Refer to image ginger_tea_bowl.jpg]; resting on the wooden bedside table with hot aromatic steam curling steadily upward.
+      ```
+    * *When NO separate Hero Prop is present (Pure Somatic / Setting Interaction)*:
+      ```text
+      [PROP]:
+      none (pure environmental and somatic staging)
+      ```
 
 ### 1b. The 4-Vector Character Directing Protocol in Timeline Shots (`[00:00–00:XX]`)
 While `[subject]:` locks the 00:00.0 static foundation and anti-duplication seal, **ALL dynamic character staging, kinetic actions, and emotional transitions are orchestrated inside each Timeline Shot**.

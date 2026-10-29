@@ -1,0 +1,188 @@
+{
+  "_schema_version": "1.1.0",
+  "description": "Sven Cinematic Universe — Master Production Presets & Runbooks Catalog. Governs 1-click project initialization, automated parameter locking, model targeting, and audit thresholds for Antigravity IDE. NOTE: Aspect ratio is ALWAYS 100% user-governed and never rigidly fixed.",
+  "aspect_ratio_sovereignty_law": "The aspect ratio (16:9 horizontal, 9:16 vertical, 4:3, 1:1, or 2.39:1 anamorphic) is ALWAYS governed by the user's explicit choice. Presets provide default baseline recommendations, but the Director and Screenwriter must seamlessly adapt staging to ANY aspect ratio chosen by the user.",
+  "runbooks": [
+    {
+      "slug": "microdrama-vertical",
+      "title": "Viral Microdrama (Short-Form / Vi Đoản Kịch)",
+      "genre_module": "engine/genres/microdrama.md",
+      "default_aspect_ratio": "9:16",
+      "supported_aspect_ratios": ["9:16", "16:9", "1:1", "4:3"],
+      "target_video_models": ["Kling 1.6", "Hailuo Minimax", "Wan 2.1"],
+      "prompt_grammar_mode": "Track B-Kinetic (High Velocity)",
+      "default_episode_scenes": 9,
+      "default_scene_duration_s": 10.0,
+      "total_runtime_target_s": 90.0,
+      "max_characters_per_episode": 3,
+      "screenplay_constraints": {
+        "max_words_per_line": 12,
+        "cadence_style": "Staccato Dialogue Fencing (≤ 12 words per line)",
+        "hook_mandate": "0-3s Disruptive In Medias Res Hook",
+        "cliffhanger_mandate": "Mandatory Invariant C1-C7 Closing Cliffhanger",
+        "face_slap_reversal": true,
+        "retention_curve": "Asymmetrical 13-Beat Curve (Hook ➔ Escalation ➔ Face-Slap ➔ Cliffhanger)"
+      },
+      "camera_and_staging": {
+        "track_a_locked_quota": "Strictly 1 scene max per episode (~10%) at emotional boiling point",
+        "track_b_kinetic_quota": "80-90% dynamic cutting and kinetic camera push/whip",
+        "framing_bias": "Tight Singles, Medium Close-Up (MCU), Extreme Close-Up (ECU), Low-Angle Dominance (Adapts dynamically to 9:16 vertical or 16:9 widescreen)",
+        "forbidden_optics": ["Wide empty establishing shots without subjects", "Slow meandering pans without tension", "Monolithic static takes >10s"]
+      },
+      "soundscape_directives": {
+        "foley_profile": "Amplified micro-biomechanics, tense sharp diegetic foley, rapid breathing",
+        "voice_mode_palette": ["dialogue_fencing", "interrupted_gasp", "whisper_threat", "staccato_snicker"]
+      },
+      "active_crew": {
+        "showrunner": "AGENT.md",
+        "screenwriter": ".agents/SCREENWRITER.md (Viral Microdrama Engine)",
+        "director": ".agents/DIRECTOR.md (Dynamic Framing Staging)",
+        "growth_architect": ".agents/skills/youtube-growth-architect"
+      }
+    },
+    {
+      "slug": "healing-social-drama",
+      "title": "Social & Healing Drama (Phim Tâm Lý Xã Hội & Chữa Lành)",
+      "genre_module": "engine/genres/drama.md",
+      "default_aspect_ratio": "16:9",
+      "supported_aspect_ratios": ["16:9", "9:16", "2.39:1", "4:3"],
+      "target_video_models": ["Sora", "Wan 2.1", "Runway Gen-3"],
+      "prompt_grammar_mode": "Track A/B Harmonic (Cinematic Living Settle)",
+      "default_episode_scenes": 8,
+      "default_scene_duration_s": 10.0,
+      "total_runtime_target_s": 80.0,
+      "max_characters_per_episode": 3,
+      "screenplay_constraints": {
+        "max_words_per_line": 14,
+        "cadence_style": "Subtext-Dense, Vulnerable, Costly Moral Choice (The Lie ➔ The Truth)",
+        "hook_mandate": "Intimate Psychological Wound & Latent Conflict",
+        "ending_standard": "5 Pillars of an Earned Ending (Sweet-and-Bitter Equilibrium, Human-Scale Resolution)",
+        "face_slap_reversal": false
+      },
+      "camera_and_staging": {
+        "track_a_locked_quota": "1-2 scenes max (~15-20%) as Gravitational Anchors at peak revelation",
+        "track_b_kinetic_quota": "70-80% gentle push, lateral tracking, breathing camera",
+        "framing_bias": "Golden Ratio Wides, Dirty Singles with foreground blur, Over-The-Shoulder (OTS), Soft Natural Key Light",
+        "forbidden_optics": ["Exaggerated soap-opera crash zooms", "Sensationalist quick cuts"]
+      },
+      "soundscape_directives": {
+        "foley_profile": "Organic environmental acoustics, gentle fabric friction, room tone, delicate breathing exhalations",
+        "voice_mode_palette": ["whisper", "subtext_pause", "hesitant_confession", "reflective_inner_vo"]
+      },
+      "active_crew": {
+        "showrunner": "AGENT.md",
+        "screenwriter": ".agents/SCREENWRITER.md (Social & Healing Drama Engine)",
+        "director": ".agents/DIRECTOR.md (Dynamic Framing Staging)",
+        "growth_architect": ".agents/skills/youtube-growth-architect"
+      }
+    },
+    {
+      "slug": "sitcom-episodic",
+      "title": "Situation Comedy (Phim Hài Tình Huống / Sitcom)",
+      "genre_module": "engine/genres/sitcom.md",
+      "default_aspect_ratio": "16:9",
+      "supported_aspect_ratios": ["16:9", "9:16", "4:3"],
+      "target_video_models": ["Sora", "Wan 2.1", "Runway Gen-3"],
+      "prompt_grammar_mode": "Multi-Character Spatial Staging",
+      "default_episode_scenes": 12,
+      "default_scene_duration_s": 10.0,
+      "total_runtime_target_s": 120.0,
+      "max_characters_per_episode": 4,
+      "screenplay_constraints": {
+        "max_words_per_line": 16,
+        "cadence_style": "Rapid Verbal Ping-Pong, Comedic Timing, Status Inversion",
+        "reset_mechanics": "100% Status Quo Reset Law (Equilibrium restored by episode tag)",
+        "comedy_weapons": "10 Classical Comedy Weapons (Rule of 3, Misdirection, Literalism, The Slow Burn)",
+        "structure": "Cold Open + 3 Acts + Tag; Multi-Plot A/B/C Weave"
+      },
+      "camera_and_staging": {
+        "track_a_locked_quota": "2-3 scenes (Two-Shot / Three-Shot Proscenium Framing)",
+        "track_b_kinetic_quota": "60-70% snappy cuts to comedic reaction takes",
+        "framing_bias": "Medium Two-Shot (M2S), Clean Singles, Proscenium Living Room / Office Staging, High-Key Balanced Lighting",
+        "forbidden_optics": ["Melodramatic weeping ECU", "Dark moody silhouette lighting"]
+      },
+      "soundscape_directives": {
+        "foley_profile": "Clattering domestic props, exaggerated physical comedic thuds, sudden silence for punchline beats",
+        "voice_mode_palette": ["rapid_retort", "deadpan_monologue", "awkward_stutter", "over_the_top_declaration"]
+      },
+      "active_crew": {
+        "showrunner": "AGENT.md",
+        "screenwriter": ".agents/SCREENWRITER.md (Sitcom Narrative Engine)",
+        "director": ".agents/DIRECTOR.md (Proscenium & Reaction Staging)",
+        "growth_architect": ".agents/skills/youtube-growth-architect"
+      }
+    },
+    {
+      "slug": "family-melodrama-epic",
+      "title": "Family Melodrama / Generational Epic (Chính Kịch Gia Đình)",
+      "genre_module": "engine/references/1-narrative-screenplay-architecture.md",
+      "default_aspect_ratio": "16:9",
+      "supported_aspect_ratios": ["16:9", "9:16", "2.39:1", "4:3"],
+      "target_video_models": ["Sora", "Wan 2.1", "Kling 1.6"],
+      "prompt_grammar_mode": "Mode B Dual-Block Hollywood Architecture",
+      "default_episode_scenes": 9,
+      "default_scene_duration_s": 10.0,
+      "total_runtime_target_s": 90.0,
+      "max_characters_per_episode": 3,
+      "screenplay_constraints": {
+        "max_words_per_line": 18,
+        "cadence_style": "High-Tension Interpersonal Fencing, Psychological Trauma, Moral Dilemma",
+        "hook_mandate": "Pillar 1 12 Universal Narrative Hooks",
+        "twists": "20 Master Twists (TW-01 to TW-20)",
+        "structure": "6-Beat Standalone or 4-Act Serial Macro Arc (20% / 45% / 25% / 10%)"
+      },
+      "camera_and_staging": {
+        "track_a_locked_quota": "1-2 scenes max (~15-20%) Gravitational Anchor",
+        "track_b_kinetic_quota": "80-85% dynamic optical transitions",
+        "framing_bias": "14 Shot Scales, 6 Camera Angles, 7 Combos, 3D Cartesian Coordinate Staging",
+        "forbidden_optics": ["Frozen motionless mannequins", "Tripod keyword in prompts"]
+      },
+      "soundscape_directives": {
+        "foley_profile": "Living environmental acoustics, Chekhovian hero prop tactile sound, dialect vocalization",
+        "voice_mode_palette": ["fierce_confrontation", "choked_whisper", "restrained_cold_delivery", "pained_silence"]
+      },
+      "active_crew": {
+        "showrunner": "AGENT.md",
+        "screenwriter": ".agents/SCREENWRITER.md",
+        "director": ".agents/DIRECTOR.md",
+        "growth_architect": ".agents/skills/youtube-growth-architect"
+      }
+    },
+    {
+      "slug": "music-video-narrative",
+      "title": "Cinematic Music Video (MV Ca Nhạc Điện Ảnh)",
+      "genre_module": "engine/references/3-cinematography-3d-staging.md",
+      "default_aspect_ratio": "16:9",
+      "supported_aspect_ratios": ["16:9", "9:16", "2.39:1"],
+      "target_video_models": ["Wan 2.1", "Runway Gen-3", "Hailuo", "Sora"],
+      "prompt_grammar_mode": "Kinetic Visual Poetry & Beat Match-Cutting",
+      "default_episode_scenes": 12,
+      "default_scene_duration_s": 10.0,
+      "total_runtime_target_s": 120.0,
+      "max_characters_per_episode": 2,
+      "screenplay_constraints": {
+        "max_words_per_line": 0,
+        "cadence_style": "Zero Spoken Dialogue (Show, Don't Tell)",
+        "hook_mandate": "Instant Visual Metaphor & Rhythmic Motion Anchor",
+        "lyric_synchronization": true,
+        "structure": "Verse 1 ➔ Chorus ➔ Verse 2 ➔ Bridge ➔ Outro Visual Analog"
+      },
+      "camera_and_staging": {
+        "track_a_locked_quota": "0-1 scene (Slow Living Portrait)",
+        "track_b_kinetic_quota": "90-100% dynamic crane, drone, tracking, kinetic whip pans, rotational orbit",
+        "framing_bias": "Extreme Silhouette Contrast, Volumetric God Rays, Anamorphic Flares, Surreal Match Cuts",
+        "forbidden_optics": ["Static TV drama blocking", "Talking head conversations"]
+      },
+      "soundscape_directives": {
+        "foley_profile": "Musical Diegetic Foley woven seamlessly into track mix (rain on glass, vinyl crackle, boot scuffs)",
+        "voice_mode_palette": ["silence", "lyric_lip_sync"]
+      },
+      "active_crew": {
+        "showrunner": "AGENT.md",
+        "screenwriter": ".agents/SCREENWRITER.md (Visual Narrative & Poetry)",
+        "director": ".agents/DIRECTOR.md (Music Video Architecture & Rhythmic Montage)",
+        "growth_architect": ".agents/skills/youtube-growth-architect"
+      }
+    }
+  ]
+}

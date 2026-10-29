@@ -455,6 +455,19 @@ def audit_episode_html(file_path):
         else:
             print("[+] Gate 3P Passed: ZERO Literal Placeholder Tokens in Prompts (100% Inferred Real Acoustics & Prose)")
 
+        # Gate 3Q: The Optical Camera Clause Law (Banning Dangling "Focus on [name]")
+        # Optical framing, focal plane, and depth of field must be declared upfront inside the Camera Clause before "—", never as a trailing sentence.
+        dangling_focus_rx = re.compile(r'(?:^|[.;—\n])\s*Focus on\s+[A-Za-z_]+', re.IGNORECASE)
+        dangling_focus_violations = []
+        for p_id, p_text in prompt_matches:
+            v_df = dangling_focus_rx.findall(p_text)
+            if v_df:
+                dangling_focus_violations.append(f"{p_id}: {v_df}")
+        if dangling_focus_violations:
+            errors.append(f"Gate 3Q Fail: Dangling 'Focus on [name]' detected in prompts: {dangling_focus_violations} (Optical framing, focal plane, and depth of field must be declared inside the Camera Clause before '—', never as a dangling sentence)")
+        else:
+            print("[+] Gate 3Q Passed: ZERO Dangling 'Focus on [name]' Phrases (100% Optical Camera Clause Compliant)")
+
     # Per-scene model: card quotes + Code Block 1 lines (used by Gates 4–4F and monotony warnings)
     raw_scenes = re.findall(SCENE_SPLIT_RX, html, re.DOTALL | re.IGNORECASE)
     scenes = []

@@ -213,21 +213,21 @@ The upper bounds preserve the 0.5s–1.0s lead-in breath and 0.5s–1.5s mouth c
 Master-level cinematography and composition, fast-paced shot variation, atmospheric sound design. Style: [visual style header]. [Track A — one continuous take, zero cuts | Track B — multi-shot sequence cut on the 180-degree axis | Track AB — one continuous take punctuated by a cut on the 180-degree axis].
 
 [context]:
-[Location] [100% Refer to image <location_ref>], [time of day]. [Key light source, direction, natural color tone; atmospheric medium].
+[Location Name in English] [100% Refer to image <location_ref_4view.jpg>], [time of day]. [Complete physical architectural specification: full fixed furniture inventory, in-scene textiles/bedding, key lighting direction, and continuous environmental micro-motion: dust motes dancing in sunbeams, steam curling steadily].
 
 [subject]:
 [name_a] [100% Appearance, attire, and facial features Refer to image 1], [initial spatial anchor to in-scene architectural fixture], [initial physical posture & tactile contact] — the only [name_a] in frame.
 [name_b] [100% Appearance, attire, and facial features Refer to image 2], [initial spatial anchor to in-scene architectural fixture], [initial physical posture & tactile contact] — the only [name_b] in frame.
 
 [PROP]:
-[key_fixture_description]; [prop_name] [100% Refer to image <prop_ref>]
+[hero_prop_in_english] [100% Refer to image <prop_ref.jpg>]; [tactile fixture / resting state]. (or: "none (pure environmental and somatic staging)" if no hero prop)
 
 Diegetic room acoustics: [room tone and Foley].
 
-[00:00–00:03.5] [Scale], [angle], [camera move] — [Directing participating characters across the 4 Vectors: (1) State/Posture, (2) Action, (3) Emotion/Expression, (4) Spatial Location]. Focus on [name].
-[name] says : “ [line] ”（Voice of a [N]-year-old [man/woman] from [region]; [vocal timbre], [cảm xúc khi nói]）
+[00:00–00:03.5] [Scale framing name_a], [angle], [camera move / optical focal depth (e.g. shallow depth of field holding sharp optical focus on name_a's face with background softly falling into bokeh)] — [Directing participating characters across the 4 Vectors: (1) State/Posture, (2) Action, (3) Emotion/Expression, (4) Spatial Location].
+[name_a] says : “ [line] ”（Voice of a [N]-year-old [man/woman] from [region]; [vocal timbre], [cảm xúc khi nói]）
 
-[00:03.5–00:07.0] Cut to [scale], [angle], [move] — [Directing participating characters across 4 Vectors: State, Action, Emotion, Spatial Location]. Focus on [name].
+[00:03.5–00:07.0] Cut to [scale framing name_b], [angle], [move / optical focal depth] — [Directing participating characters across 4 Vectors: State, Action, Emotion, Spatial Location].
 
 [00:07.0–00:10.0] [Scale], [angle], [move] — [terminal beat: 4 Vectors for characters in frame, breathing, micro-expression, deceleration; never a frozen frame].
 
@@ -236,7 +236,12 @@ Do not generate subtitles, dialogue text, titles, timestamps, or written text an
 ```
 
 Rules:
-- A phase line = `[start–end]` + **one short camera clause** (scale, angle, move) + `—` + prose. Track B phases after the first start with `Cut to`. In Track AB, only a phase that begins a new shot starts with `Cut to`; a phase that continues the take starts with `In the same take`.
+- A phase line = `[start–end]` + **one short camera clause** (scale, angle, move, optical framing & focal depth) + `—` + prose. Track B phases after the first start with `Cut to`. In Track AB, only a phase that begins a new shot starts with `Cut to`; a phase that continues the take starts with `In the same take`.
+- **The Optical Camera Clause Law (Quy Chuẩn Quang Học Camera — Banning Dangling "Focus on [name]")**:
+  * Mọi thông số về chủ thể được đóng khung (Subject Framing), mặt phẳng tiêu cự (Focal plane), và độ sâu trường ảnh (Depth of field / bokeh) BẮT BUỘC được khai báo trực tiếp trong phần Camera Clause (trước dấu gạch ngang `—`).
+  * Ví dụ: `Medium close-up framing name_a at eye level, shallow depth of field holding sharp optical focus on name_a's facial features with background softly falling into bokeh, slow push-in — [action]`.
+  * Hoặc trong cảnh qua vai (OTS): `Over-the-shoulder medium shot framing name_b past name_a's soft-focus foreground shoulder, razor-sharp optical focus locked on name_b at eye level, static camera — [action]`.
+  * **TUYỆT ĐỐI CẤM** viết câu đuôi cô độc `Focus on [name].` ở cuối đoạn văn mô tả hành động. Thao tác này là lỗi kiến trúc câu lệnh cẩu thả làm phân mảnh prompt và khiến AI video diffusion model bị loạn tiêu cự.
 - **Subject-to-Scale Invariance & Frame Capacity Law (Single-Subject Framing Constraint)**: Single-person scales (`Medium close-up`, `Close-up`, `Choker`, `Head-on`, `Extreme close-up`) strictly frame and direct **ONE human subject**. Secondary characters are spatially Off-Screen (`O.S.`) and MUST NOT have their actions, gestures, breathing, or facial expressions described within that phase (doing so triggers severe AI spatial hallucinations and mutant anatomy). To direct two interacting characters simultaneously, the shot MUST be declared as a `Medium two-shot (M2S)`, `Over-the-shoulder (OTS)`, or `Two-shot profile`. Non-character inserts (`Macro insert`) strictly forbid facial acting and dialogue.
 - **Somatic Action-Speech Fusion Standard (Organic Speech Action)**: Dialogue is an organic physical action, never a detached mechanical block. While `says :` is supported, dialogue lines are encouraged to dynamically incorporate bodily prelude and expressive speech-action verbs: `[name] [bodily prelude / emotional physical action], [expressive action-verb] : “ [line] ”（Voice of [demographic]; [vocal timbre: trầm hay bổng], [cảm xúc khi nói], [inferred paralinguistic acoustic emotion tags: e.g. sharp staccato delivery, strained rasp, explosive consonants]）`. Examples of expressive verbs: `furiously snapping :`, `breathlessly pleading :`, `harshly barking :`, `bitterly hissing :`, `softly murmuring :`, `icily retorting :`. This binds facial micro-muscles, chest respiration, and vocal articulation into a single unified physical tensor for DiT diffusion models, eliminating rigid "puppet mouth" artifacts.
 - **STRICT PROHIBITION OF LITERAL PLACEHOLDERS**: NEVER write the literal string `"audio tag"` or `"cảm xúc khi nói"` into prompts. The system must always infer authentic paralinguistic acoustic tags (e.g. `[commanding harsh bark, impatient ragged breath, sharp staccato delivery]`).
@@ -251,10 +256,10 @@ Rules:
 #### Example 1: High-Velocity Stichomythia (Dạng 1: Đấu kiếm leo thang 3 nhịp — Zero Dead Air)
 *Cadence: Rapid Sparring. Verbal and physical clash volleys continuously up to 00:09.5. STRICTLY ZERO IDLE BUFFER.*
 ```text
-[00:00–00:03.5] Over-the-shoulder shot past minh_khang, slight low angle, fast track-in — ma_ba steps forward aggressively, thrusting a crumpled hospital receipt into the air inches from his face. Focus on ma_ba.
+[00:00–00:03.5] Over-the-shoulder medium shot framing ma_ba past minh_khang's foreground shoulder, shallow depth of field holding razor-sharp optical focus on ma_ba, slight low angle, fast track-in — ma_ba steps forward aggressively, thrusting a crumpled hospital receipt into the air inches from his face.
 ma_ba harshly barks : “ Mầy nói cho rõ, tiền nằm ở đâu?! ”（Voice of a 56-year-old Southern Vietnamese woman; sharp piercing shout, impatient ragged breath, explosive consonants）
 
-[00:03.5–00:07.0] Cut to reverse over-the-shoulder past ma_ba, eye level, static camera — minh_khang snatches the receipt mid-air, ripping it in half with trembling violent hands. Focus on minh_khang.
+[00:03.5–00:07.0] Cut to reverse over-the-shoulder shot framing minh_khang past ma_ba's foreground silhouette, sharp optical focus locked on minh_khang at eye level, static camera — minh_khang snatches the receipt mid-air, ripping it in half with trembling violent hands.
 minh_khang bitterly snarls : “ Tiền con trả viện phí cho vợ con hết rồi! ”（Voice of a 27-year-old Southern Vietnamese man; breathless fierce defense, strained rasp, desperate defiance）
 
 [00:07.0–00:10.0] Cut to close-up on ma_ba, low angle, fast push-in — ma_ba’s palm whips across in a sharp slap gesture that halts inches from minh_khang’s cheek; chest heaving violently, eyes blazing.
@@ -262,28 +267,31 @@ ma_ba furiously hisses : “ Mầy muốn chọc chết tao hả?! ”（Voice o
 ```
 *Timing check: Line 1 ≈ 2.5s (inside 3.5s phase); Line 2 ≈ 3.0s (inside 3.5s phase); Line 3 ≈ 2.4s (inside 3.0s phase). Speech fills active beats without dead air; physical action carries every cut.*
 
-#### Example 2: The Somatic Aftershock (Dạng 3: Dư chấn câm lặng & Vi phản ứng sinh học)
-*Cadence: Truth Bomb Shock. Speech terminates early at ~00:04.5; the second half is dedicated exclusively to somatic biological shock.*
+#### Example 2: The Somatic Snap Shock (Dạng 3: Cú sốc tung sự thật & Phản ứng giật 1 giây — 4.5s / 4.5s / 1.0s)
+*Cadence: Truth Bomb Shock. High-velocity tension: Shot 1 setup (4.5s) ➔ Shot 2 decisive truth counter-strike (4.5s) ➔ Shot 3 SNAP-CUT CHOKER STRICTLY 1.0S (00:09.0–00:10.0). Banning sluggish 3-second reaction settles.*
 ```text
-[00:00–00:03.5] Medium shot, slight low angle, static camera — ma_ba sets the folded steel hammock frame onto the floor tiles with a sharp clang; inside the pine crib a soft blanket rustles. Focus on ma_ba.
-ma_ba says : “ Võng này ba thằng Khang nằm lớn đó. ”（Voice of a 56-year-old woman from the Mekong Delta; proud unhurried tone, firm traditional claim staking family history）
+[00:00–00:04.5] Over-the-shoulder medium shot framing ma_ba past minh_khang's foreground shoulder, shallow depth of field holding sharp optical focus on ma_ba, slight low angle, static camera — ma_ba sets the folded steel hammock frame onto the floor tiles with a sharp metallic clang, standing tall with assertive authority; inside the pine crib a soft blanket rustles.
+ma_ba says : “ Võng này ba thằng Khang nằm lớn đó, để đây cho cháu tao! ”（Voice of a 56-year-old woman from the Mekong Delta; proud unhurried tone, firm traditional claim staking family history）
 
-[00:03.5–00:07.0] Cut to an over-the-shoulder shot past ma_ba, eye level, static camera — minh_khang crouches, lifts the hammock frame with both hands and turns toward the doorway, leaving the floor tiles clear. Focus on minh_khang.
-minh_khang says : “ Để con mang ra sau hè treo cho má mát. ”（Voice of a 27-year-old Southern Vietnamese man; warm low gentle baritone, soft filial placation masking guilt）
+[00:04.5–00:09.0] Cut to an over-the-shoulder shot framing minh_khang past ma_ba along the 180-degree axis, sharp optical focus locked on minh_khang at eye level, static camera — minh_khang steps in firmly, crouches to grip the hammock frame with both hands, lifting it decisively off the tiles as his voice tightens with calm defiance.
+minh_khang says : “ Bác sĩ dặn nôi phẳng mới tốt, con mang ra sau hè má nằm nghen! ”（Voice of a 27-year-old Southern Vietnamese man; warm low firm baritone, polite but unyielding filial pushback）
 
-[00:07.0–00:10.0] Cut to a close-up on ma_ba, eye level, slow push-in — the emptied right hand hangs in the air, fingers curling slowly inward as the gaze drifts to the crib; lips stay closed, breathing slows.
+[00:09.0–00:10.0] Snap-cut to an intimate close-up framing ma_ba along the 180-degree axis, shallow depth of field holding razor-sharp optical focus on ma_ba's contracting pupils with background falling into soft blur, eye level, static camera — ma_ba's jaw drops slightly, pupils contracting as her assertive smirk instantly freezes, taking in a sharp ragged breath at 00:10.0.
 ```
-*Timing check: Dialogue ends at 00:06.5; 00:07.0–00:10.0 is pure somatic reaction, letting the truth sink into the character's body.*
+*Timing check: Line 1 ≈ 2.8s (inside 4.5s phase); Line 2 ≈ 3.5s (inside 4.5s phase, finishing by 00:08.5); Shot 3 is strictly 1.0s (00:09.0–00:10.0) of sudden visceral paralysis without dragging down pacing.*
 
 #### Example 3: Track A-Locked — The Locked-Off Performance Take (Diễn Hoạt Tĩnh Siêu Đậm Đặc, Zero Camera Move)
 *Cadence: Intimate Confession / Somatic Agony. The camera is 100% stationary on a tripod; 100% of the movement is driven by micro-acting, tear physics, and dancing sunbeams.*
+*(Special Syntax Rule Exclusive to Track A-Locked: Because shot scale, angle, and camera position remain 100% constant across the entire take, the camera setup is declared directly in natural prose once at the start of the action block with full optical framing and focal depth, without any `[camera]:` tag and strictly banning the word "tripod". The timeline brackets are dedicated 100% to character somatic performance and living environmental physics, with ZERO dangling `Focus on [name]` tags).*
 ```text
-[00:00–00:03.5] Medium close-up, eye level, completely stationary static camera on locked tripod, zero camera movement — my_duyen kneels motionless beside the pine crib, right hand gripping the top wooden rail until knuckles whiten; shallow rapid breaths heave her chest as her gaze fixes downward on the woven blanket; microscopic dust motes drift lazily through the warm diagonal sunbeam. Focus on my_duyen.
+Eye-level medium close-up framing my_duyen, shallow depth of field holding razor-sharp optical focus on my_duyen's face with background softly falling into cinematic bokeh, static camera.
 
-[00:03.5–00:07.0] In the same locked static frame, eye level — my_duyen swallows hard against a tight throat, her jaw quivering; she lifts her gaze slowly toward the doorway, tears catching the golden morning light, and whispers with trembling defiance. Focus on my_duyen.
+[00:00–00:03.5] my_duyen kneels motionless beside the pine crib, right hand gripping the top wooden rail until knuckles whiten; shallow rapid breaths heave her chest as her gaze fixes downward on the woven blanket; microscopic dust motes drift lazily through the warm diagonal sunbeam.
+
+[00:03.5–00:07.0] my_duyen swallows hard against a tight throat, her jaw quivering; she lifts her gaze slowly toward the doorway, tears catching the golden morning light, and whispers with trembling defiance.
 my_duyen softly whispers : “ Má ơi, con tự ráng gượng được mà má... má bận lòng làm chi... ”（Voice of a 24-year-old Southern Vietnamese woman; choked fragile whisper, strained breathy rasp, suppressed weeping）
 
-[00:07.0–00:10.0] In the same locked static frame, eye level — lips seal tightly as a single tear spills silently down her left cheek; her head lowers two inches, shoulders slumping as she curls her trembling fingers inward against the wooden bar; in the background, sheer window curtains ripple faintly in a gentle draft. Focus on my_duyen.
+[00:07.0–00:10.0] Lips seal tightly as a single tear spills silently down her left cheek; her head lowers two inches, shoulders slumping as she curls her trembling fingers inward against the wooden bar; in the background, sheer window curtains ripple faintly in a gentle draft.
 ```
 *Directorial check: Zero cuts, zero camera translation. High-density somatic verbs (knuckles whitening, throat swallowing, jaw quivering, tear spilling, head lowering) and environmental motion (drifting dust motes, rippling sheer curtains) prevent the DiT diffusion model from freezing into a still mannequin.*
 
@@ -316,6 +324,18 @@ Authored as a single prompt with 5–8 shots/phases, keeping the exact same scen
 - **Act III `[00:22–00:30]`**: the reveal or decision, close shot, then a living settle ≥ 2 s (1–2 shots).
 
 Density: Vietnamese 35–70 syllables, English 25–38 words, ≤ 55 % speech (SSOT: §7).
+
+### 9.2b The Universal Multi-Duration Scaling Law for Confrontational & Reversal Cadences (Quy Luật Co Giãn Theo Thời Lượng 10s, 15s, 30s)
+
+> ⚡ **THE 5%–10% SHOCKWAVE LANDING STANDARD (ĐỊNH LUẬT ĐIỂM RƠI GIẬT SỐC ĐUÔI CẢNH)**:  
+> Trong mọi phân cảnh đối kháng, nổ bom sự thật, lật mặt nạ hoặc bẻ gãy uy quyền (`CADENCE: TRUTH_BOMB_SHOCK`), shot cận cảnh phản ứng cuối cùng (Shot 3 hoặc cú cắt hạ màn) **TUYỆT ĐỐI KHÔNG BAO GIỜ là một khoảng lặng đơ hình lê thê kéo dài 3–5 giây**.  
+> Cú cắt cuối cùng LUÔN LUÔN là một cú **Snap-Cut Choker dứt khoát chiếm đúng 5% đến 10% tổng thời lượng cảnh**. 90%–95% thời lượng trước đó dành trọn vẹn cho hành động công kích thể chất (Setup) và cú phản đòn tung chứng cứ sắc lẹm (Truth Bomb Counter-strike).
+
+| Clip Duration | Setup Phase (Shot 1) | Counter-Strike / Truth Bomb (Shot 2) | Final Snap-Cut Shockwave (Shot 3) | Target Ratio & Pacing |
+|:---:|:---|:---|:---|:---:|
+| **10.0s (Default)** | `[00:00–00:04.5]` (4.5s) | `[00:04.5–00:09.0]` (4.5s, thoại dứt ở 00:08.5) | `[00:09.0–00:10.0]` (**Đúng 1.0s**) | 10% Shockwave Landing. Zero dead air. |
+| **15.0s (Extended)** | `[00:00–00:06.5]` (6.5s) | `[00:06.5–00:13.5]` (7.0s, thoại dứt ở 00:13.0) | `[00:13.5–00:15.0]` (**Đúng 1.5s**) | 10% Shockwave Landing. Visceral sucker-punch. |
+| **30.0s (Mini-Act)** | `[00:00–00:11.0]` (11.0s, 1–2 shots) | `[00:11.0–00:28.0]` (17.0s, 2–3 shots, thoại dứt ở 00:27.5) | `[00:28.0–00:30.0]` (**Đúng 2.0s**) | 6.7% Shockwave Landing. Maximum retention. |
 
 ### 9.3 30 s chained (Alternative fallback only)
 - Used only if the user explicitly asks for chaining or generator engine limits prevent 30s single-clip rendering.

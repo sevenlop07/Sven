@@ -10,6 +10,7 @@
 ```
 [1] workflow.md                                   ← This file (pipeline, System Defaults, checkpoints)
 [2] AGENT.md                                      ← Level 1: Executive Producer & Showrunner (identity, routing, compliance)
+[2b] engine/runbooks.json                         ← Production Presets & Runbooks Catalog (1-click project initialization)
 [3] history-registry.json                         ← 14-axis anti-repetition memory
 [4] .agents/SCREENWRITER.md                       ← Level 2: Screenwriter (load at Stages 0–3)
 [5] .agents/DIRECTOR.md                           ← Level 2: Director (load at Stage 4)
@@ -17,11 +18,13 @@
 ─── THE THINKING LAYER (load at Stages 0 and 2–4, BEFORE any Pillar) ───
 [7]  engine/references/0-creative-doctrine.md                   ← Creative Doctrine: intent → choice → reason
 [7b] engine/references/0b-temporal-camera-grammar.md            ← Temporal & Camera Grammar: every timing number + canonical prompt syntax
-─── THE 4 MASTER PILLARS = CATALOGS (load the one governing the current stage via view_file) ───
-[8]  engine/references/1-narrative-screenplay-architecture.md   ← Pillar 1 SSOT
-[9]  engine/references/2-casting-worldbuilding-specification.md ← Pillar 2 SSOT
-[10] engine/references/3-cinematography-3d-staging.md           ← Pillar 3 SSOT (incl. Music Video rules)
-[11] engine/references/4-ai-video-prompt-compiler.md            ← Pillar 4 SSOT
+─── THE 4 MASTER PILLARS & SPECIALIZED DIRECTORIAL ASSISTANTS ───
+[8]   engine/references/1-narrative-screenplay-architecture.md   ← Pillar 1 SSOT
+[9]   engine/references/2-casting-worldbuilding-specification.md ← Pillar 2 SSOT
+[10]  engine/references/3-cinematography-3d-staging.md           ← Pillar 3 SSOT (incl. Music Video rules)
+[10b] engine/references/3b-lighting-atmospheric-physics.md       ← Assistant: 6-Point Lighting Contract & Atmosphere
+[11]  engine/references/4-ai-video-prompt-compiler.md            ← Pillar 4 SSOT
+[11b] engine/references/4b-diegetic-foley-sound-design.md        ← Assistant: Code Block 2 Diegetic Foley & Sound Design
 ```
 
 > **Golden Rule of Pre-Flight Verification**: never draft a stage output from memory. Open the Creative Doctrine and the Temporal & Camera Grammar (Stages 2–4), then the governing Pillar with `view_file` first.
@@ -83,6 +86,10 @@
   - Target-language productions: culturally native names drawn from the Pillar 2 6-Cultural Naming Matrix (e.g., `Má Ba`, `Tư Lành`).
   - Stage 0 always shows Vietnamese names for readability.
 
+### 2.2b Aspect Ratio Sovereignty Law (Quyền Tối Thượng Của Người Dùng Về Khung Hình)
+- **100% User-Governed**: The aspect ratio (16:9 widescreen, 9:16 vertical, 4:3, 1:1, or 2.39:1 anamorphic) is ALWAYS dictated by the user's explicit preference and target distribution channel.
+- **Zero Rigid Binding**: Strictly ban hard-coding or locking an aspect ratio to any genre. A microdrama can be shot in 16:9 for YouTube/OTT; a cinematic healing drama can be shot in 9:16 for mobile vertical platforms. Presets in `engine/runbooks.json` suggest defaults, but the Director and Screenwriter must adapt camera staging, optical headroom, and blocking dynamically to ANY frame ratio the user selects.
+
 ### 2.3 Project Mode & Per-Scene Voice Mode
 | Project mode | Activation | Rule |
 |---|---|---|
@@ -113,19 +120,31 @@ When a genre module is activated, its specific narrative conventions, structural
   - Generative video tools (Runway Gen-3, Kling 1.5, Sora, Hailuo, Wan 2.1) render each scene as an **INDEPENDENT CLIP** from second 0.
   - Inside Code Block 1 of EVERY scene, the timeline **MUST ALWAYS START AT `00:00`** (`00:00–00:10.0`, `00:00–00:15.0`, or `00:00–00:30.0`).
   - **NEVER write cumulative episode timestamps** (such as `[00:10–00:20]`, `[00:20–00:30]`) inside Code Block 1 or scene directing breakdowns. Cumulative timestamps confuse third-party AI models and corrupt video generation.
+- ⚓ **Track A-Locked Rhythmic Quota & Gravitational Anchor Law**:
+  - Strictly capped at **1–2 scenes maximum per 9–10 scene episode (~15–20% ratio)**.
+  - Serves as the emotional Gravitational Anchor at 4 Golden Positions: (1) Emotional Climax / Vulnerability Breakdown, (2) Intimate Refuge / Tender Aftermath, (3) Claustrophobic Standoff, (4) Somatic Shockwave Silence.
+  - 80–85% of scenes must utilize dynamic multi-angle cutting (Track B) or kinetic camera movement (Track A/AB).
+- ⚡ **The Multi-Duration Scaling Law for Confrontational Cadences (Định Luật Điểm Rơi Giật Sốc 5%–10%)**:
+  * Khi triển khai phân cảnh đối đầu nổ bom sự thật (`CADENCE: TRUTH_BOMB_SHOCK`) ở bất kỳ độ dài nào (10s, 15s, 30s hoặc dưới 30s), cú cắt cận cảnh phản ứng cuối cùng (Shot 3) **LUÔN LUÔN là cú Snap-Cut Choker chiếm đúng 5% đến 10% thời lượng cảnh**:
+    - **10s**: `4.5s / 4.5s / 1.0s` ➔ Shot 3 Snap-cut đúng **1.0s** (`00:09.0–00:10.0`).
+    - **15s**: `6.5s / 7.0s / 1.5s` ➔ Shot 3 Snap-cut đúng **1.5s** (`00:13.5–00:15.0`).
+    - **30s**: Setup 11s ➔ Truth Bomb 17s (thoại dứt ở 00:28.0) ➔ Snap-cut Choker đúng **2.0s** (`00:28.0–00:30.0`).
+  * Tuyệt đối cấm để shot phản ứng cuối kéo dài 3–5 giây làm chết nhịp phim. 90%–95% thời lượng trước đó dành cho hành động và lời thoại phản đòn.
 - ⚡ **The Zero Dead Air Law (Gate 3O)**:
   - Prohibits all dead-air phrases: `the frame holds still`, `stands rigid through 00:10`, `blinks quietly in background`.
   - 100% of the clip duration (10s, 15s, or 30s) must be densely packed with continuous living micro-actions (respiration, weight shifts, finger flexes, tactile prop contact).
 
 ### 2.5 Image Reference Policy (ALWAYS ON)
 Every Code Block 1 binds each location, character, and interactive prop to its uploaded reference image, using the exact syntax enforced by Gates 3J/3K/3L:
-- `[context]:` → `[Location Name] [100% Refer to image <location_ref>], [time of day]. [5-Vector Environmental Specification: architectural landmarks & fixed furniture inventory ("có cái gì ở đó"), lighting physics & direction without Kelvin, atmospheric medium & mood]`. Barren declarations are strictly banned to prevent AI spatial amnesia and hallucination.
+- `[context]:` → `[Location Name] [100% Refer to image <location_ref>], [time of day]. [5-Vector Environmental Specification: architectural landmarks & comprehensive physical furniture/textile inventory ("có cái gì ở đó": bed type, mattress, coarse blankets, tables, chairs, lamps, windows, steam/particulates), lighting physics & direction without Kelvin, atmospheric medium & mood]`. Barren declarations are strictly banned. **The Zero Ghost Object Law**: Any object touched, pulled, or manipulated in the action timeline (e.g. pulling up a wool blanket, gripping a bedpost) MUST already be grounded and established in `[context]:`.
 - `[subject]:` → **The 4-Part Sovereign Subject Formula**:
   `[name] [100% Appearance, attire, and facial features Refer to image <N>], [initial spatial anchor to in-scene architectural fixture], [initial physical posture & tactile contact] — the only [name] in frame.`
   (Strictly enforces zero clone duplicates, anchors zero-frame spatial positioning, and prevents floating hands).
 - `[Pro] :` (or `[PROP]:`) → **The Two-Tier Prop Protocol (Production Velocity Law)**:
-  * **Tier 1: Đạo Cụ Linh Hồn & Phương Tiện Bất Ly Thân (Signature Hero Props & Vehicles — CẦN ẢNH THAM CHIẾU / Max 1–2 per series)**: Những vật phẩm rất quan trọng, xuất hiện liên tục đi liền với nhân vật qua nhiều cảnh (vũ khí, xe máy, xe ô tô, kỷ vật trung tâm). BẮT BUỘC có ảnh Model Sheet 16:9 trong Section 4A và gắn thẻ `[Prop Name] [100% Refer to image <prop_ref>], [physical state], [resting place or holder + grip] — the only [prop noun] in frame`.
-  * **Tier 2: Đồ Đạc Sinh Hoạt Căn Bản (Everyday Living Items — CHỈ CẦN TEXT CHI TIẾT LÀ ĐỦ)**: Những đồ đạc thông thường phục vụ sinh hoạt căn bản (bát đĩa, đôi đũa, ly nước, khăn lau, ghế nhựa, bút bi, bao diêm, điếu thuốc). **TUYỆT ĐỐI KHÔNG TẠO SHEET ẢNH**. Chỉ cần mô tả bằng văn bản thật chi tiết, cụ thể (chất liệu, màu sắc, vị trí) trực tiếp trong `[PROP]:` hoặc `[context]:`.
+  * **Tier 1: Đạo Cụ Linh Hồn & Phương Tiện Bất Ly Thân (Signature Hero Props & Vehicles — CẦN ẢNH THAM CHIẾU / Max 1–2 per series)**: Những vật phẩm rất quan trọng, xuất hiện liên tục đi liền với nhân vật qua nhiều cảnh (vũ khí, xe máy, xe ô tô, kỷ vật trung tâm, bản di chúc, hợp đồng chứng cứ sống còn). BẮT BUỘC có ảnh Model Sheet 16:9 trong Section 4A và gắn thẻ `[Prop Name] [100% Refer to image <prop_ref>], [physical state], [resting place or holder + grip] — the only [prop noun] in frame`.
+  * **Tier 2: Đồ Đạc Sinh Hoạt Căn Bản (Everyday Living Items — CHỈ CẦN TEXT CHI TIẾT LÀ ĐỦ)**: Bát đĩa, đôi đũa, ly nước, chổi quét nhà, sổ tay, then cửa. **TUYỆT ĐỐI KHÔNG TẠO SHEET ẢNH**. Chỉ cần mô tả bằng văn bản thật chi tiết trong `[PROP]:` hoặc `action`.
+  * **The Sovereign Hero Prop Law (Đạo Luật Đạo Cụ Linh Hồn & Phân Tách Tuyệt Đối Khỏi Đồ Đạc Bối Cảnh)**: Thẻ `[PROP]:` trong prompt được dành RIÊNG BIỆT cho Đạo cụ Linh hồn / Xúc tác kịch tính. Các vật dụng sinh hoạt thường nhật, đồ nội thất gia dụng, chăn gối nệm, bàn ghế, tủ giường, rèm cửa, quạt máy, đèn ngủ... **TUYỆT ĐỐI CẤM ĐƯA VÀO `[PROP]:`**. Toàn bộ đồ đạc này thuộc 100% về phần mô tả bối cảnh `[context]:` (Location Set Dressing). Nếu một cảnh không có đạo cụ linh hồn, khai báo `[PROP]: none (pure environmental and somatic staging)`.
+  * **Meaningful English Naming Standard (Quy Chuẩn Định Danh Bối Cảnh & Đạo Cụ Bằng Tiếng Anh Có Nghĩa)**: Mọi ID/Key và tên file tham chiếu của Bối cảnh (`rustic_wooden_bedroom`, `rustic_bedroom_4view.jpg`, `townhouse_living_room`, `kitchen_hearth_corner`) và Đạo cụ (`steaming_ceramic_ginger_bowl`, `pine_wood_crib`, `ancestral_family_altar`, `ginger_tea_bowl.jpg`) BẮT BUỘC viết bằng tiếng Anh có nghĩa, chuẩn xác và gợi cảm giác điện ảnh. Tuyệt đối CẤM đặt tên theo kiểu phiên âm bồi tiếng Việt (`phong_ngu_01`, `tam_chan_len`, `bat_tra_gung`, `nha_bep`). Riêng tên nhân vật trong prompt vẫn giữ nguyên chuẩn `ho_ten` không dấu (`my_duyen`, `minh_khang`, `cu_tin`).
 - Blocks are separated by blank lines. Legacy free-text tags (`[Character Reference attached]`, `[Mode A Anchor]`) are banned.
 - Fixtures already visible in the location sheet (beds, cribs, tables) belong to `[context]`. Never re-declare them in `[Pro] :`, because that produces ghost duplicates.
 
@@ -585,7 +604,7 @@ Function: [...]
 INTENT: Want A → [...]; B → [...] | Obstacle: [...] | Tactic: A [...] / B [...]
 SHIFT: [value at 00:00] → [value at 00:10] | SUBTEXT: [...] | GAP: [suspense / mystery / empathy]
 VOICE MODE: [Doctrine §4 mode] — because [one clause]
-CADENCE: [RAPID_SPARRING / ASYMMETRIC_DOMINANCE / TRUTH_BOMB_SHOCK / PURE_VISUAL_STEALTH / COLD_WATER_CLIFFHANGER]
+CADENCE: [RAPID_SPARRING / ASYMMETRIC_DOMINANCE / TRUTH_BOMB_SHOCK / PURE_VISUAL_STEALTH / COLD_WATER_CLIFFHANGER / INTIMATE_REFUGE / VULNERABILITY_BREAKDOWN / CLAUSTROPHOBIC_STANDOFF / SOMATIC_AFTERSHOCK]
 ACTION FRAMEWORK: [Tier 1: reinforce / contradict / replace / reveal] + [Tier 2: Stichomythia / Dominance / Aftershock / Covert / False Dawn Cold Water]
 Cast & positions: [architectural anchors]
 Track: [A dynamic single-shot / A-Locked static performance / B multi-shot / AB mixed] — because [one clause]
@@ -601,7 +620,7 @@ HANDOFF @00:10: [characters / props / setting]
 ### 8.4 Per-Beat Micro-Check
 - **Format A (Short Film)**: Hook plants visual anchor; Setup plants Wound Prop; Drama is conflict-dense; Climax pays off major twist to Ego Death; Release lands thermal shock + grace; Echo shows transformed world.
 - **Format B (Series Episode)**: Verifies against its Act duty (§8.1 Format B). In Act 1/2: strictly verifies that NO unearned reconciliation, NO therapeutic confessions, and NO premature endings occur. Ensures ending lands a caused Cold Water cliffhanger.
-- **Two-Tier Action & Cadence Check (Doctrine §3.3)**: Verifies that every scene orchestrates Action via `[Tier 1 Relationship] + [Tier 2 Dynamic]` and declares its `CADENCE:` tag. Confirms that rapid sparring scenes contain zero dead-air buffers and that somatic shocks have earned silence.
+- **Two-Tier Action & Cadence Check (Doctrine §3.3)**: Verifies that every scene orchestrates Action via `[Tier 1 Relationship] + [Tier 2 Dynamic]` and declares its `CADENCE:` tag. Confirms that rapid sparring scenes contain zero dead-air buffers and that somatic shocks have earned silence. Verifies that `Track A-Locked` static performance scenes are strictly capped at 1–2 scenes per 9–10 scene episode (~15–20% ratio) as the emotional Gravitational Anchor.
 - **Dialogue & Subtext Check (Doctrine §3.8)**: Verifies zero psychological self-diagnosis, zero symmetrical ping-pong debates, and zero cliché fainting spells used as instant reversal devices.
 - Every scene has a value shift; voice modes and turn counts vary across the episode (Doctrine §4.1); no line restates what the frame shows (Doctrine §3.2).
 - The Prediction Ledger has ≥ 2 BROKEN predictions with earlier plants, some KEPT; every misunderstanding passes the idiot-plot test (Doctrine §9).
@@ -671,9 +690,9 @@ Master-level cinematography and composition, fast-paced shot variation, atmosphe
 
 Diegetic room acoustics: [room tone and Foley].
 
-[00:00–00:03.5] [Scale], [angle], [camera move] — [ho_ten_A] [bodily movement and visceral somatic prelude], [expressive action-verb: furiously snapping / breathlessly pleading / etc.] : “ [line] ”（Voice of a [N]-year-old [man/woman] from [region]; [vocal timbre: trầm hay bổng], [cảm xúc khi nói], [audio tag]）; [ho_ten_B] [one synchronized reaction]. Focus on [ho_ten_A].
+[00:00–00:03.5] [Scale framing ho_ten_A], [angle], [camera move / optical focal depth (e.g. shallow depth of field holding sharp focus on ho_ten_A with background softly falling into bokeh)] — [ho_ten_A] [bodily movement and visceral somatic prelude], [expressive action-verb: furiously snapping / breathlessly pleading / etc.] : “ [line] ”（Voice of a [N]-year-old [man/woman] from [region]; [vocal timbre: trầm hay bổng], [cảm xúc khi nói], [audio tag]）; [ho_ten_B] [one synchronized reaction].
 
-[00:03.5–00:07.5] [Track B: Cut to] [scale], [angle], [camera move] — [ho_ten_B] [somatic physical reaction], [expressive action-verb] : “ [line] ”（Voice of a [N]-year-old [man/woman] from [region]; [vocal timbre: trầm hay bổng], [cảm xúc khi nói], [audio tag]）; [ho_ten_A] [reaction]. Focus on [ho_ten_B].
+[00:03.5–00:07.5] [Track B: Cut to] [scale framing ho_ten_B], [angle], [camera move / optical focal depth] — [ho_ten_B] [somatic physical reaction], [expressive action-verb] : “ [line] ”（Voice of a [N]-year-old [man/woman] from [region]; [vocal timbre: trầm hay bổng], [cảm xúc khi nói], [audio tag]）; [ho_ten_A] [reaction].
 
 [00:07.5–00:10.0] [Scale], [angle], [camera move] — [terminal beat: micro-expressions, breathing, natural deceleration handing momentum to the next scene; never a frozen frame].
 
@@ -686,7 +705,14 @@ Template notes:
 - Never write lens millimeters, f-stops, fps, camera brands, or Kelvin.
 - Use proper names only; no pronouns in visual prose (Gate 3C).
 - Max 18 words per spoken line (Hard Constraint). Clip density is a craft default (`0b` §7: 10s ≈ 12–24 Vietnamese syllables or 8–13 English words; 15s ≈ 18–36 syl; 30s ≈ 35–70 syl); peak scenes often need far fewer.
-- Syntax (`0b` §8): one time bracket + one short camera clause (scale, angle, move) + `—` + prose. Dialogue lines use the **Somatic Action-Speech Fusion Standard**: dialogue is an organic physical action integrated into bodily movement and breathing, using expressive speech-action verbs with adverbs (`furiously snapping :`, `breathlessly pleading :`, `icily hissing :`) rather than sterile, detached statements. No `△`, no `|` pipes, no `Shot 1` / `Phase 1` labels (audit warning W6). The track is declared in the style line; Track B phases after the first open with `Cut to`.
+- Syntax (`0b` §8): one time bracket + one short camera clause (scale, angle, move, optical focus) + `—` + prose. Dialogue lines use the **Somatic Action-Speech Fusion Standard**: dialogue is an organic physical action integrated into bodily movement and breathing, using expressive speech-action verbs with adverbs (`furiously snapping :`, `breathlessly pleading :`, `icily hissing :`) rather than sterile, detached statements. No `△`, no `|` pipes, no `Shot 1` / `Phase 1` labels (audit warning W6). The track is declared in the style line; Track B phases after the first open with `Cut to`.
+  * **The Optical Camera Clause Law (Quy Chuẩn Quang Học Camera Trước Dấu Gạch Ngang — Banning Dangling "Focus on [name]")**:
+    - Mọi thông số về chủ thể được đóng khung (Subject Framing), mặt phẳng tiêu cự quang học (Focal plane), và độ sâu trường ảnh (Depth of field / bokeh) BẮT BUỘC được khai báo trực tiếp trong phần Camera Clause (trước dấu gạch ngang `—`), ví dụ: `Medium close-up framing ho_ten_A at eye level, shallow depth of field holding sharp optical focus on ho_ten_A's facial features with background softly falling into bokeh, slow push-in — [action]`.
+    - Trong cảnh qua vai (OTS): `Over-the-shoulder medium shot framing ho_ten_B past ho_ten_A's soft-focus foreground shoulder, razor-sharp optical focus locked on ho_ten_B at eye level, static camera — [action]`.
+    - **TUYỆT ĐỐI CẤM** viết câu đuôi cô độc `Focus on [name].` ở cuối đoạn văn mô tả hành động. Thao tác này là lỗi kiến trúc câu lệnh cẩu thả làm phân mảnh prompt và khiến AI video diffusion model bị loạn tiêu cự.
+  * *Special Track A-Locked Exception (Exclusive)*: For locked-off static performance takes (`Track A-Locked`), shot scale, angle, optical framing, and camera stability are invariant across the entire take. The camera setup is declared directly in natural prose once at the head of the action section (immediately after audio, declaring scale, subject framing, optical focus, angle, and simply `static camera` without any `[camera]:` tag and strictly banning the word "tripod" to avoid physical equipment hallucination, e.g. `Eye-level medium close-up framing ho_ten_A, shallow depth of field holding razor-sharp optical focus on ho_ten_A's face with background softly falling into bokeh, static camera.`). The sub-timeline brackets (`[00:00–00:03.5]`, `[00:03.5–00:07.0]`, etc.) are dedicated 100% to character somatic performance, speech-action fusion, and living environmental physics without repeating camera clauses and with ZERO dangling `Focus on [name].` tags.
+     - **The Sovereign Hero Prop Law**: Thẻ `[PROP]:` is strictly for Tier 1 Hero Props; everyday domestic items (blankets, pillows, chairs, beds) belong 100% to `[context]:`. If no hero prop: `[PROP]: none (pure environmental and somatic staging)`.
+     - **Natural Somatic-Speech-Physics Fusion**: Strictly ban hollow adjectives ("lấp lánh yêu thương", "nũng nịu"); anchor acting to physical causality, tactile friction, and breath exhalation.
 - Timing (`0b` §2–§5): time every line in seconds (calm speech ≈ 3.5–4.5 Vietnamese syllables/s or 2.0–2.5 English words/s). A phase that carries a lip-synced line lasts ≥ line + 1.0s, starts the line ≥ 0.3s in, and ends it ≥ 0.8s before the cut (audit W4). Each camera move gets at least its §5 duration; never lip-sync while a crane, orbit, arc, or whip is traveling. Speech stays ≤ ~60% of the clip (audit W5).
 - Duration: 10s always; 15s / 30s only on explicit user request (§2.4), with the last bracket ending at `00:15` or `00:30`.
 - Never give lip-synced dialogue during a downward POV shot. Transition to a frontal MCU/MS first.
@@ -737,6 +763,12 @@ Above the scene cards, `tap-X.html` publishes the episode's Story Spine card (`i
 | 3-block labels | 3J |
 | Reference anchor syntax | 3K |
 | Blank-line spacing | 3L |
+| No `[camera]:` tag (natural prose line declaration) | 3P |
+| No `tripod` word in prompt prose (Hardware Literalization Bug immunity) | 3Q |
+| Meaningful English asset naming (Locations & Props) | 3R |
+| Sovereign Hero Prop Law (No domestic furnishings in `[PROP]:`) | 3S |
+| Zero ghost objects (Comprehensive In-Context Setting Inventory) | 3T |
+| Track A-Locked Quota (Strictly <= 2 scenes per 9–10 scene episode) | 3U |
 | ≥ 2 phases, contiguous from 00:00 to a 10 / 15 / 30s end | 3M |
 | Stability + negative clause | 3N |
 | Dialogue ↔ prompt verbatim parity (where lines exist; silent scenes allowed) | 4 |

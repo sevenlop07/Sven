@@ -197,7 +197,7 @@ Depending on dramatic tension and narrative velocity, the action inside any 10.0
 |---|---|---|
 | **1. High-Velocity Stichomythia (Đấu kiếm leo thang 3 nhịp)** | 3-beat physical escalation: Prop assault ➔ Counter-assault (ripping/parrying prop) ➔ Near-miss somatic contact. | Rapid, continuous staccato lines volleying up to 00:09.0. **STRICTLY ZERO IDLE DEAD AIR**. Absolutely bans 3s passive reaction settles. |
 | **2. Single-Speaker Dominance (Bất đối xứng & Áp đảo đơn phương)** | Asymmetrical power clash: 1 character presses forward with aggressive unbroken monologue; 1 listener resists purely through physical micro-reactions (recoiling, biting lip, clutching doorframe). | Single continuous speech (20–30 words) across 1–2 shots while listener absorbs silently. Eliminates the artificial "ping-pong tennis match" trap. |
-| **3. The Somatic Aftershock (Dư chấn câm lặng & Vi phản ứng sinh học)** | The dialogue detonates in the first 4.0–5.0s (Truth Bomb). The remaining 5.0s is **100% VISCERAL PHYSICAL SILENCE**: jaw clenching, pupil dilation, dry swallowing, trembling hands slowly lowering. | Spoken line terminates by 00:04.5–00:05.0. Second half is dedicated exclusively to biological aftermath and somatic shock. |
+| **3. The Somatic Snap Shock (Cú sốc sự thật & Phản ứng giật 1 giây — 4.5s / 4.5s / 1.0s)** | Shot 1 (00:00–00:04.5) khiêu khích/công kích ➔ Shot 2 (00:04.5–00:09.0) nổ bom sự thật phản đòn ➔ Shot 3 (00:09.0–00:10.0) Snap-cut cận cảnh giật sốc ĐÚNG 1.0S DUY NHẤT. | Spoken line terminates by 00:08.5–00:08.8. Shot 3 is strictly a 1.0s visceral snap freeze (pupil contracting, smirk vanishing, gasped breath). Banning sluggish 3s dead air. |
 | **4. Pure Covert Action (Hành động tác nghiệp / Lén lút thuần túy)** | High tactile friction with environment/props: unlatching a rusty deadbolt, crawling through a low window frame, slipping a cash envelope into a mattress seam. | **DIALOGUE = EXACTLY 0 WORDS**. 100% physical suspense and tactile diegetic Foley across the entire 10 seconds. |
 | **5. False Dawn to Cold Water (Đảo chiều Bình minh giả ➔ Gáo nước lạnh)** | 00:00–00:07.5: Deceptive relief, relaxed breathing, gentle smiles, domestic harmony ➔ 00:07.5–00:10.0: Brutal visual or somatic shock freezes the body mid-motion. | The scene snaps to black (`Cut to black`) exactly at the peak of physical horror/paralysis, propelling the cliffhanger into the next scene/episode. |
 
@@ -309,8 +309,8 @@ Strictly eradicate any dogmatic formula forcing every scene into the exact same 
    - High-velocity verbal and physical fencing; quick cuts across the 180° line where lines and reactions strike like sharp staccato notes up to 00:09.0. **Zero dead-air buffer**.
 2. **The Asymmetric Press (Track A or B — Single-Speaker Dominance)**:
    - One character dominates space and voice (20–30 words); the camera holds tight on the physical duress and micro-defenses of the silent absorber.
-3. **The Shockwave Aftermath (Track B, 3-Phase — Somatic Aftershock)**:
-   - Dialogue detonates by 00:04.5; the remaining 5s is dead silence as all characters freeze in stunned horror (somatic settle, slow push-in, micro-twitches).
+3. **The Shockwave Snap (Track B, 3-Phase — Somatic Snap Shock / 4.5s / 4.5s / 1.0s)**:
+   - Dialogue detonates by 00:08.5; Shot 3 is strictly 1.0s (00:09.0–00:10.0) of sudden stunned shock before the scene cut, preserving high emotional velocity and banning sluggish 3s reaction settles.
 4. **The Silent Suspense Glide (Track A, Single-Take — Pure Covert Action)**:
    - 0 words spoken. Camera tracks continuous tactile interaction with props and architecture (unlatching, searching, hiding).
 5. **The Sudden Fracture (Track AB Snap-Cut — False Dawn to Cold Water)**:
@@ -383,13 +383,13 @@ LINK    | Action↔Line: Khang CONTRADICTS — gentle words, hands carrying the 
 
 ### After (Track B, three phases with uneven splits)
 ```
-[00:00–00:03.5] Medium shot, slight low angle from the crib side, static camera — ma_ba sets the folded steel hammock frame onto the floor tiles with a sharp clang; inside the pine crib a soft blanket rustles. Focus on ma_ba.
-ma_ba says : “ Võng này ba thằng Khang nằm lớn đó. ”（Voice of a 56-year-old woman from the Mekong Delta, proud and unhurried, precise lip-sync, morning light across the cheekbone, staking a claim on family history）
+[00:00–00:04.5] Over-the-shoulder medium shot framing ma_ba past minh_khang's foreground shoulder, shallow depth of field holding sharp optical focus on ma_ba, slight low angle, static camera — ma_ba sets the folded steel hammock frame onto the floor tiles with a sharp metallic clang, standing tall with assertive authority; inside the pine crib a soft blanket rustles.
+ma_ba says : “ Võng này ba thằng Khang nằm lớn đó, để đây cho cháu tao! ”（Voice of a 56-year-old woman from the Mekong Delta; proud unhurried tone, firm traditional claim staking family history）
 
-[00:03.5–00:07.0] Cut to an over-the-shoulder shot past ma_ba, eye level, static camera — minh_khang crouches, lifts the hammock frame with both hands and turns toward the doorway, leaving the floor tiles clear. Focus on minh_khang.
-minh_khang replies : “ Để con treo ngoài hiên cho má nằm trưa. ”（Voice of a 27-year-old man from Southern Vietnam, warm and gentle, precise lip-sync, soft window light, a polite refusal disguised as a gift）
+[00:04.5–00:09.0] Cut to an over-the-shoulder shot framing minh_khang past ma_ba along the 180-degree axis, sharp optical focus locked on minh_khang at eye level, static camera — minh_khang steps in firmly, crouches to grip the hammock frame with both hands, lifting it decisively off the tiles as his voice tightens with calm defiance.
+minh_khang replies : “ Bác sĩ dặn nôi phẳng mới tốt, con mang ra sau hè má nằm nghen! ”（Voice of a 27-year-old Southern Vietnamese man; warm low firm baritone, polite but unyielding filial pushback）
 
-[00:07.0–00:10.0] Cut to a close-up on ma_ba, eye level, slow push-in — the emptied right hand hangs in the air, fingers curling slowly inward as the gaze drifts to the crib; behind, out of focus, my_duyen lowers the gaze. Lips stay closed, breathing slows.
+[00:09.0–00:10.0] Snap-cut to an intimate close-up framing ma_ba along the 180-degree axis, shallow depth of field holding razor-sharp optical focus on ma_ba's contracting pupils with background falling into soft blur, eye level, static camera — ma_ba's jaw drops slightly, pupils contracting as her assertive smirk instantly freezes, taking in a sharp ragged breath at 00:10.0.
 ```
 
 **Rationale**

@@ -176,9 +176,30 @@ When compiling 10s video prompts (Code Block 1) from the Scene Intent Card, the 
 2. **Dạng 2: Single-Speaker Dominance (`CADENCE: ASYMMETRIC_DOMINANCE`) — Bất Đối Xứng & Áp Đảo Đơn Phương**:
    - *Directorial Staging*: One character presses forward with unbroken monologue (20–30 words) across 1–2 sequential shots. Camera prioritizes the physical duress of the listener (Track B OTS or Track A Slow Push-in on listener's trembling frame).
    - *Pacing & Audio Standard*: Speaker delivers continuous lines; Listener has 0 spoken words, resisting purely through physical micro-reactions (lip-biting, knuckle whitening, looking away, heavy chest heaving).
-3. **Dạng 3: The Somatic Aftershock (`CADENCE: TRUTH_BOMB_SHOCK`) — Dư Chấn Câm Lặng & Vi Phản Ứng Sinh Học**:
-   - *Directorial Staging*: Deploy Track B 3-Phase: Shot 1 (00:00–00:03.5) trigger/claim ➔ Shot 2 (00:03.5–00:06.5) counter-strike / truth reveal ➔ Shot 3 (00:06.5–00:10.0) Cut to tight Close-Up or Slow Push-in on the stunned character.
-   - *Pacing & Audio Standard*: Dialogue terminates completely by 00:05.0–00:06.5. The final 3.5–5.0 seconds are **100% VISCERAL PHYSICAL SILENCE**: jaw drops, pupils dilate, dry swallow, breathing slows or hitches.
+3. **Dạng 3: The Somatic Snap Shock (`CADENCE: TRUTH_BOMB_SHOCK`) — Cú Sốc Tung Sự Thật & Điểm Rơi Giật Sốc Đuôi Cảnh**:
+   - *4 Vị Trí Vàng Áp Dụng (Golden Scenarios)*:
+     1. *Cú Lật Kèo / Tát Mặt Nạ Tại Chỗ (The Face-Slap Reversal / Anagnorisis Reveal)*: Kẻ phản diện đang đắc thắng nhục mạ ➔ Chính diện tung chứng cứ sống còn (kết quả ADN, hóa đơn viện phí, hợp đồng thật) tát thẳng vào mặt ➔ Cận cảnh nụ cười đắc thắng tắt ngấm, mắt trợn trừng kinh hoàng.
+     2. *Bẻ Gãy Uy Quyền / Lần Đầu Dám Phản Kháng (The Boundary Strike / Breaking the Bully)*: Kẻ nắm quyền độc đoán ra lệnh áp đặt ➔ Nạn nhân lần đầu tiên nhìn thẳng vào mắt, dùng hành động thể chất dứt khoát chặn đứng thao túng (bê võng cất đi, giật lại thẻ) và nói câu từ chối đanh thép ➔ Kẻ áp bức chết sững vì sốc.
+     3. *Nổ Bom Sự Thật Trước Cửa Tử (The Pre-Climax Truth Bomb)*: Hiểu lầm đẩy lên đỉnh điểm ➔ Một bên ném thẳng sự thật nghiệt ngã giải tỏa uẩn ức ➔ Đối phương đờ đẫn nhận đòn thấu tim.
+     4. *Cảnh Chốt Đuôi Của Tập Phim (The Ultimate Episode Cliffhanger Hook)*: Cảnh 9 hoặc 10 của tập, câu phản đòn nổ ra ở cuối ➔ Snap-cut cận cảnh giật sốc ➔ Cắt đen phụt (`Cut to black`) ngay đỉnh điểm để kích hoạt xem tiếp (Binge Retention).
+   - *Các Trường Hợp CẤM Áp Dụng (Banned Scenarios)*:
+     * CẤM dùng cho cảnh nương náu yêu thương, chăm sóc êm dịu (`CADENCE: INTIMATE_REFUGE` ➔ Bắt buộc dùng Track A-Locked).
+     * CẤM dùng cho cảnh tang thương, gục ngã đau đớn (`CADENCE: VULNERABILITY_BREAKDOWN` ➔ Bắt buộc dùng Track A-Locked).
+     * Khống chế tần suất: Tối đa 2–3 cảnh / tập 10 cảnh. Tuyệt đối không lặp lại 2 cảnh liên tiếp.
+   - *The Multi-Duration Scaling Law (Quy Luật Co Giãn Theo Thời Lượng 10s, 15s, 30s hoặc Dưới 30s)*:
+     * **Định Luật Điểm Rơi Giật Sốc Đuôi Cảnh (The 5%–10% Shockwave Landing Standard)**: Trong mọi độ dài clip (10s, 15s, 30s hay dưới 30s), cú cắt cận cảnh phản ứng cuối cùng (Shot 3 hoặc cú cắt hạ màn) **LUÔN LUÔN là một cú Snap-Cut Choker dứt khoát chiếm đúng 5% đến 10% tổng thời lượng cảnh**. 90%–95% thời lượng trước đó dành trọn vẹn cho đòn công kích thể chất (Setup) và cú phản đòn nổ bom sự thật (Truth Bomb Counter-strike). Tuyệt đối KHÔNG BAO GIỜ để phản ứng câm lặng kéo dài 3–5 giây làm chết nhịp phim.
+     * **Cảnh 10s (Mặc định chuẩn)**: Cấu trúc 3-Shot: `4.5s / 4.5s / 1.0s` (hoặc `4.0s / 5.0s / 1.0s`).
+       - Shot 1 (`[00:00–00:04.5]`): Khiêu khích / Công kích (Medium/OTS). Thoại dứt trước 00:04.0.
+       - Shot 2 (`[00:04.5–00:09.0]`) `Cut to`: Phản đòn / Nổ bom sự thật (Reverse OTS/MCU). Thoại đanh thép dứt điểm ở 00:08.5–00:08.8.
+       - Shot 3 (`[00:09.0–00:10.0]`) `Snap-cut to`: Cận cảnh chấn động (Close-Up/Choker) **ĐÚNG 1.0 GIÂY DUY NHẤT** (đồng tử co rút, nụ cười đông cứng, hơi hít giật).
+     * **Cảnh 15s (Khi mở rộng)**: Cấu trúc 3-Shot hoặc 4-Phase: `6.5s / 7.0s / 1.5s` (hoặc `3.5s / 4.5s / 5.5s / 1.5s`).
+       - Shot 1 (`[00:00–00:06.5]`): Dồn ép thể chất và lời đe nẹt leo thang.
+       - Shot 2 (`[00:06.5–00:13.5]`) `Cut to`: Phản kích đanh thép, đưa chứng cứ, thoại dứt ở 00:13.0.
+       - Shot 3 (`[00:13.5–00:15.0]`) `Snap-cut to`: Choker chấn động **ĐÚNG 1.5 GIÂY DUY NHẤT** (~10% thời lượng clip).
+     * **Cảnh 30s (Mini-Act Drama / Dưới 30s)**: Cấu trúc 3 mini-acts (4–5 shots):
+       - Act I Thiết lập & Áp bức (`[00:00–00:11.0]`, 1–2 shots): Khiêu khích dồn dập.
+       - Act II Va đập & Nổ bom sự thật (`[00:11.0–00:28.0]`, 2–3 shots): Phản đòn nhiều lớp, thoại hạ màn dứt ở 00:27.5–00:28.0.
+       - Act III Snap-Cut Choker chấn động cực hạn (`[00:28.0–00:30.0]`): **ĐÚNG 2.0 GIÂY DUY NHẤT** (~6.7% thời lượng clip) bắt trọn cú sốc tột cùng trước khi chuyển cảnh/hết phim.
 4. **Dạng 4: Pure Covert Action (`CADENCE: PURE_VISUAL_STEALTH`) — Hành Động Tác Nghiệp / Lén Lút Thuần Túy**:
    - *Directorial Staging*: Deploy Track A (unbroken tracking shot / macro glide) or Track B with macro inserts. Maximize tactile friction with props and architecture (unlatching a bolt, sliding cash into mattress, crawling through window).
    - *Pacing & Audio Standard*: **DIALOGUE = 0 WORDS**. 100% diegetic Foley (metallic scrape, floorboard creak, rapid breath).
@@ -186,14 +207,32 @@ When compiling 10s video prompts (Code Block 1) from the Scene Intent Card, the 
    - *Directorial Staging*: 00:00–00:07.5 peaceful relaxed framing (gentle two-shot, warm lighting, smiling/sighing) ➔ 00:07.5–00:10.0 sudden camera jolt or snap-cut to an unexpected hazard/intruder/shock.
    - *Pacing & Audio Standard*: Body freezes mid-motion at second 9. Clip snaps to black (`Cut to black`) exactly at the shock apex.
 6. **Biến Thể Cú Máy Tĩnh: Track A-Locked — Khóa Cố Định Tập Trung Diễn Hoạt (The Locked-Off Performance Take)**:
-   - *Directorial Staging*: Camera is 100% physically stationary on a locked tripod (`locked-off eye-level static shot on a stationary tripod, completely fixed camera position with zero camera movement, zero panning, zero tracking, zero zoom`). Strictly zero cuts. Focus is 100% on the actor's internal somatic performance.
+   - *Directorial Staging*: Camera is 100% physically stationary (`static camera`, completely fixed camera position with zero camera movement, zero panning, zero tracking, zero zoom). Strictly zero cuts. Focus is 100% on the actor's internal somatic performance and respiration.
+   - *Episode Pacing Quota & The 4 Golden Positions (Định Mức Nhịp Điệu & 4 Vị Trí Vàng)*:
+     * **Gravitational Anchor Quota**: Strictly cap at most **1–2 scenes per 9–10 scene episode (~15–20% ratio)**. Track A-Locked is a powerful emotional sledgehammer / gravitational anchor, never a default. 80–85% of scenes must utilize dynamic cutting (Track B multi-angle) or kinetic moves (Track A/AB).
+     * **4 Golden Positions**:
+       1. *Emotional Climax / Vulnerability Breakdown*: Raw tearful confession, moral surrender, ego collapse.
+       2. *Intimate Refuge / Tender Aftermath*: Tender caretaking, whispered comfort, domestic warmth, shared rhythmic breathing.
+       3. *Claustrophobic Standoff*: Paralyzed psychological deadlock, unbroken hostile glares, breathless tension.
+       4. *Somatic Shockwave Silence*: Post-trauma stillness, numb disbelief, wordless shock (Model 0 silence).
+   - *Prompt Syntax Standard (Exclusive to Track A-Locked)*:
+     * **Pure Natural Optical Declaration (Bỏ thẻ `[camera]:` & Bỏ Từ Khóa `tripod`)**: Declare the fixed camera setup as a clean natural prose sentence once at the very beginning of the action section (immediately after Foley/acoustics and before `[00:00–00:03.5]`) without any `[camera]:` tag: e.g. `Medium two-shot, eye level, static camera.` (Strictly ban the word "tripod" in prompt prose to eliminate the Hardware Literalization Bug where video diffusion models render an actual 3-legged camera tripod inside the room).
+     * **Acting-Only Timeline Brackets**: Timeline brackets (`[00:00–00:03.5]`, `[00:03.5–00:07.0]`, `[00:07.0–00:10.0]`) are **100% dedicated to character somatic performance, speech-action fusion, and living environmental physics** without repeating any camera clauses.
+     * *(Scope: Applies EXCLUSIVELY to Track A-Locked; moving takes and cuts retain per-phase/per-shot camera clauses).*
+   - *The Sovereign Hero Prop Law (Đạo Luật Đạo Cụ Linh Hồn & Phân Tách Tuyệt Đối Khỏi Đồ Đạc Bối Cảnh)*:
+     * Thẻ `[PROP]:` trong prompt được dành RIÊNG BIỆT cho Đạo cụ Linh hồn / Xúc tác kịch tính (Chekhov's Gun, Signature Heirlooms, Catalyst Weapons, Legal Contracts).
+     * Các vật dụng sinh hoạt thường nhật, đồ nội thất gia dụng, chăn gối nệm, bàn ghế, tủ giường, rèm cửa, quạt máy, đèn ngủ... **TUYỆT ĐỐI CẤM ĐƯA VÀO `[PROP]:`**. Toàn bộ đồ đạc này thuộc 100% về phần mô tả bối cảnh `[context]:` (Location Set Dressing). Nếu một cảnh không có đạo cụ linh hồn, khai báo `[PROP]: none (pure environmental and somatic staging)`.
+   - *Comprehensive In-Context Setting Inventory & The Zero Ghost Object Law (Kiểm Kê Bối Cảnh Toàn Diện & Chống Vật Thể Ma)*:
+     * Mô tả `[context]:` BẮT BUỘC liệt kê đầy đủ đồ đạc, chăn màn, bề mặt vật lý của không gian ("có cái gì ở đó": ví dụ giường gỗ gụ trải đệm bông, tấm chăn len thô gấp ở đuôi giường, bàn trà gỗ, rèm vải, cửa sổ mở hờ, hơi nước bốc lên từ chậu gốm).
+     * Mọi vật dụng được nhân vật chạm vào, kéo lên hay tương tác trong diễn hoạt kịch bản (ví dụ kéo chăn, bám thành giường) BẮT BUỘC phải hiện diện trước trong mô tả `[context]:`. Tuyệt đối cấm tạo ra "vật thể ma" (ghost objects) đột ngột xuất hiện ở phần hành động mà bối cảnh không có.
+   - *Natural Somatic-Speech-Physics Fusion (Đồng Điệu Vật Lý - Cảm Xúc - Thoại Tự Nhiên)*:
+     * Triệt tiêu hoàn toàn các tính từ sáo rỗng, thụ động ("ánh mắt lấp lánh yêu thương", "vẻ mặt nũng nịu", "hiền từ").
+     * Hành động, cảm xúc và lời thoại phải hòa quyện thành chuỗi nguyên nhân - kết quả sinh học tự nhiên: nhịp thở ra (respiratory exhalation) gắn liền với lời thì thầm mềm mại, ngón tay run rẩy chạm vào bề mặt ấm, cơ hàm giãn ra trước khi cất lời.
    - *Anti-Mannequin Directing Safeguards (Bảo Hiểm Chống Đơ Hình)*: To prevent generative AI models from freezing into a still photo, Director MUST direct:
-     * High-density somatic micro-acting across all 3 phases (pupil dilation, jaw clenching, masseter muscle twitching, throat swallow, trembling chin, whitening knuckles).
+     * High-density somatic micro-acting across all phases (pupil dilation, jaw clenching, masseter muscle twitching, throat swallow, trembling chin, whitening knuckles).
      * Continuous living atmospheric motion (dust motes dancing in sunlight, curling steam from teacup, loose strands of hair fluttering in breeze, curtain rippling).
-     * Tactile prop friction (hands gripping table/rail/blanket) and internal head/gaze shifts.
+     * Tactile prop/surface friction (hands gripping table/rail/blanket) and internal head/gaze shifts.
    - *Pacing & Audio Standard*: Spoken line ≤ 18 words (or Model 0 pure silence). Accompanied by room tone and choked respiration Foley.
-
-
 
 ### 6. The Universal Child Safety, Simple Action & cu_tin Somatic Sleep Staging Protocol (Quy Chuẩn An Toàn Trẻ Em & Đồng Bộ Thực Thể cu_tin)
 - **Strict Zero-Harm & Endangerment Prohibition (Cấm Tuyệt Đối Hành Động Gây Hại)**:
@@ -227,15 +266,12 @@ When compiling 10s video prompts (Code Block 1) from the Scene Intent Card, the 
 - **Dialogue Lexicon Purge in Prompts**:
   - In video generation prompts, replace words that trigger AI safety translations (e.g., replace `"hết sữa"`, `"vắt hoài"` with `"kiệt sức rồi"`, `"mệt quá"`; replace `"bỏ đói"`, `"hành hạ"` with natural emotional confrontation).
 
-### 7. The Universal `ho_ten` Character Entity Anchor Law (Quy Chuẩn Định Danh Nhân Vật ho_ten Trong Prompt)
+### 7. The Universal `ho_ten` Character Entity Anchor Law & Meaningful English Naming Standard (Quy Chuẩn Định Danh Bối Cảnh, Đạo Cụ & Nhân Vật)
 - Mọi tên nhân vật xuất hiện trong Khối Lệnh 1 (Code Block 1 / Video Prompts) BẮT BUỘC viết bằng **chữ thường, không dấu, nối bằng dấu gạch dưới** theo cú pháp `ho_ten` (`my_duyen`, `minh_khang`, `ma_ba`, `di_tam`, `cu_tin`).
-- Thiết lập tính đồng bộ tam giác thực thể (Tri-Entity Parity):
-  - Bối cảnh: `phong_cu`, `nha_bep`, `san_truoc`
-  - Đạo cụ: `bat_com`, `vong_xep`, `noi_go`, `mam_nhom`
-  - Nhân vật: `my_duyen`, `minh_khang`, `ma_ba`, `di_tam`, `cu_tin`
-- Triệt tiêu 100% lỗi vỡ token (sub-word tokenization fragmentation) và biến dạng khuôn mặt do ký tự unicode có dấu tiếng Việt trên các text encoder của Kling, Sora, Runway, và Hailuo.
-
-
+- **Meaningful English Naming Standard cho Bối Cảnh & Đạo Cụ**:
+  - Bối cảnh (Locations): BẮT BUỘC dùng tiếng Anh có nghĩa, miêu tả rõ ràng thực thể không gian (`rustic_wooden_bedroom`, `townhouse_living_room`, `ancestral_shrine_corner`). CẤM dùng tiếng Việt bồi (`phong_cu`, `nha_bep`, `san_truoc`).
+  - Đạo cụ (Props): BẮT BUỘC dùng tiếng Anh có nghĩa (`steaming_ceramic_ginger_bowl`, `pine_wood_crib`, `ancestral_family_altar`, `worn_leather_ledger`). CẤM dùng tiếng Việt bồi (`bat_com`, `vong_xep`, `noi_go`, `mam_nhom`).
+  - Triệt tiêu 100% lỗi vỡ token (sub-word tokenization fragmentation) và biến dạng khuôn mặt/thị giác do ký tự unicode có dấu tiếng Việt trên các text encoder của Kling, Sora, Runway, và Hailuo.
 
 ---
 name: Director
