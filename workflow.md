@@ -690,7 +690,8 @@ Master-level cinematography and composition, fast-paced shot variation, atmosphe
 [ho_ten_B] [100% Appearance, attire, and facial features Refer to image 2], [initial architectural spatial anchor and physical posture, relative distance to ho_ten_A (e.g. 1.5m across aisle), 180° Action Axis & eyeline vector facing ho_ten_A, hands naturally free of props/weapons] — the only [ho_ten_B] in frame.
 
 [PROP]:
-[Prop Name] [100% Refer to image <prop_ref>], [physical state], [resting place on in-scene fixture independent of character hands] — the only [prop noun] in frame.
+[hero_prop_name] [100% Refer to image <prop_ref>], [physical state], [resting place on in-scene fixture independent of character hands] — the only [prop noun] in frame.
+[everyday_prop_name], [hyper-clear material & visual text description], [resting place on in-scene fixture independent of character hands] — the only [prop noun] in frame.
 
 Diegetic room acoustics: [room tone and Foley].
 
