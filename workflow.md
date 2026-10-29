@@ -137,9 +137,9 @@ When a genre module is activated, its specific narrative conventions, structural
 ### 2.5 Image Reference Policy (ALWAYS ON)
 Every Code Block 1 binds each location, character, and interactive prop to its uploaded reference image, using the exact syntax enforced by Gates 3J/3K/3L:
 - `[context]:` → `[Location Name] [100% Refer to image <location_ref>], [time of day]. [5-Vector Environmental Specification: architectural landmarks & comprehensive physical furniture/textile inventory ("có cái gì ở đó": bed type, mattress, coarse blankets, tables, chairs, lamps, windows, steam/particulates), lighting physics & direction without Kelvin, atmospheric medium & mood]`. Barren declarations are strictly banned. **The Zero Ghost Object Law**: Any object touched, pulled, or manipulated in the action timeline (e.g. pulling up a wool blanket, gripping a bedpost) MUST already be grounded and established in `[context]:`.
-- `[subject]:` → **The 4-Part Sovereign Subject Formula**:
-  `[name] [100% Appearance, attire, and facial features Refer to image <N>], [initial spatial anchor to in-scene architectural fixture], [initial physical posture & tactile contact] — the only [name] in frame.`
-  (Strictly enforces zero clone duplicates, anchors zero-frame spatial positioning, and prevents floating hands).
+- `[subject]:` → **The 4-Part Sovereign Subject Formula & Absolute Prop-Free Law**:
+  `[name] [100% Appearance, attire, and facial features Refer to image <N>], [initial spatial anchor to in-scene architectural fixture], [initial physical posture, hands naturally free of props/weapons] — the only [name] in frame.`
+  (Strictly enforces zero clone duplicates, anchors zero-frame spatial positioning, and prevents baking props into character anatomy. TUYỆT ĐỐI CẤM nhồi đạo cụ cầm nắm vào khối `[subject]:`!).
 - `[Pro] :` (or `[PROP]:`) → **The Two-Tier Prop Protocol (Production Velocity Law)**:
   * **Tier 1: Đạo Cụ Linh Hồn & Phương Tiện Bất Ly Thân (Signature Hero Props & Vehicles — CẦN ẢNH THAM CHIẾU / Max 1–2 per series)**: Những vật phẩm rất quan trọng, xuất hiện liên tục đi liền với nhân vật qua nhiều cảnh (vũ khí, xe máy, xe ô tô, kỷ vật trung tâm, bản di chúc, hợp đồng chứng cứ sống còn). BẮT BUỘC có ảnh Model Sheet 16:9 trong Section 4A và gắn thẻ `[Prop Name] [100% Refer to image <prop_ref>], [physical state], [resting place or holder + grip] — the only [prop noun] in frame`.
   * **Tier 2: Đồ Đạc Sinh Hoạt Căn Bản (Everyday Living Items — CHỈ CẦN TEXT CHI TIẾT LÀ ĐỦ)**: Bát đĩa, đôi đũa, ly nước, chổi quét nhà, sổ tay, then cửa. **TUYỆT ĐỐI KHÔNG TẠO SHEET ẢNH**. Chỉ cần mô tả bằng văn bản thật chi tiết trong `[PROP]:` hoặc `action`.
@@ -686,11 +686,11 @@ Master-level cinematography and composition, fast-paced shot variation, atmosphe
 [Location Name] [100% Refer to image <location_ref>], [exact time of day]. [5-Vector Environmental Specification: full physical architectural layout, inventory of all key fixed furniture and room landmarks ("có cái gì ở đó"); key light source, angle/direction, natural color tone without Kelvin, shadow behavior; atmospheric medium (dust motes, humidity) and emotional climate].
 
 [subject]:
-[ho_ten_A] [100% Appearance, attire, and facial features Refer to image 1], [initial architectural spatial anchor and physical posture, tactile contact with fixture/prop] — the only [ho_ten_A] in frame.
-[ho_ten_B] [100% Appearance, attire, and facial features Refer to image 2], [initial architectural spatial anchor and physical posture, relative distance to ho_ten_A (e.g. 1.5m across aisle), 180° Action Axis & eyeline vector facing ho_ten_A, tactile contact with fixture/prop] — the only [ho_ten_B] in frame.
+[ho_ten_A] [100% Appearance, attire, and facial features Refer to image 1], [initial architectural spatial anchor and physical posture, hands naturally free of props/weapons] — the only [ho_ten_A] in frame.
+[ho_ten_B] [100% Appearance, attire, and facial features Refer to image 2], [initial architectural spatial anchor and physical posture, relative distance to ho_ten_A (e.g. 1.5m across aisle), 180° Action Axis & eyeline vector facing ho_ten_A, hands naturally free of props/weapons] — the only [ho_ten_B] in frame.
 
 [PROP]:
-[Prop Name] [100% Refer to image <prop_ref>], [physical state], [resting place or holder + grip] — the only [prop noun] in frame.
+[Prop Name] [100% Refer to image <prop_ref>], [physical state], [resting place on in-scene fixture independent of character hands] — the only [prop noun] in frame.
 
 Diegetic room acoustics: [room tone and Foley].
 

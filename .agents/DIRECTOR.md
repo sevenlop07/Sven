@@ -59,20 +59,21 @@ phong_cu [100% Refer to image location_bedroom_4view.jpg], early morning. Intima
   4. *Atmospheric medium & sensory particles*: Rising steam from pots, sunbeams illuminating dust motes, tactile room atmosphere.
 - *Directorial Function*: Establishes the concrete 3D physics box and spatial coordinate system before any actors step onto the stage.
 
-#### Tier 2: Zero-Frame Interpersonal Grounding & Relationship at $t=0.0\text{s}$ (`[subject]:` & `[PROP]:`)
-- **Multi-Character Spatial Anchoring & Relational Physics**:
-  In any scene featuring two or more characters, the Director MUST establish their exact physical relationship at zero seconds ($t=0.0\text{s}$):
-  1. **Character A Spatial Coordinate & Posture**: Architectural anchor, body posture, and tactile contact with the environment (e.g., *standing behind the white marble cooktop on the left, right hand firmly gripping a cast-iron skillet handle over the blue gas flame*).
-  2. **Character B Spatial Coordinate & Proximity**: Exact distance and position relative to Character A (e.g., *perched on a wooden barstool at the oak breakfast island on the right, exactly 1.5 meters opposite Character A across the central aisle*).
-  3. **The 180° Action Axis & Eyeline Vector**: Establish who is looking where at $t=0$ (e.g., *Character A faces frame-right toward Character B; Character B leans forward with elbows on the counter, gazing frame-left across the 1.5-meter gap directly into Character A's face*).
-  4. **The Dramatic Dynamic / Interpersonal Stance at $t=0$**: Define the operational dynamic between them (e.g., *playful morning banter, tense domestic interrogation, protective guardianship, or ideological standoff*).
-  5. **Tactile Prop Anchoring at $t=0$**: Hero and secondary props must be physically attached to hands or surfaces (e.g., *Character A holds the skillet; Character B cups a steaming porcelain mug in both hands*).
-- *Directorial Function*: Locks the actors' physical bodies, line of sight, and props to fixed 3D coordinates, eliminating floating heads, duplicated bodies, and spatial chaos.
+#### Tier 2: Zero-Frame Interpersonal Grounding at $t=0.0\text{s}$ & Absolute Character-Prop Separation
+- **The Absolute Character-Prop Separation Law (Luật Tách Rời Tuyệt Đối Nhân Vật & Đạo Cụ — Chống Nhúng Cứng Đạo Cụ Vào Khối Subject)**:
+  * **In `[subject]:`**: Strictly declare character identity, architectural position, body posture, and eyeline vector. **Characters MUST be in a prop-free state: hands naturally free of props/weapons (`hands free of props`, `empty palms resting naturally`)**. TUYỆT ĐỐI CẤM nhồi đạo cụ hoặc miêu tả tay cầm nắm đạo cụ vào `[subject]:`! Baking props into `[subject]:` causes AI diffusion text encoders to permanently fuse props into the character's anatomy (causing phantom 6-finger limbs, inability to release props, or duplicating props when manipulated).
+  * **In `[PROP]:` (The Sovereign Prop Control Inventory & Zero Ghost Object Law)**: Strictly and exhaustively declare ALL interactive props (Hero props and secondary everyday props) on separate lines or clean entries: prop name in meaningful English, reference tag / physical material description, initial resting place independent of the characters' hands (e.g. *resting flat on the cooktop*, *placed on the oak counter*). Any object touched in action MUST exist in `[PROP]:`.
+  * **Multi-Character Spatial Anchoring & Relational Physics**:
+    1. *Character A Spatial Coordinate & Posture*: Architectural anchor, body posture, hands free of props (e.g., *standing behind the white marble cooktop on the left, empty hands resting on the counter ledge, facing frame-right*).
+    2. *Character B Spatial Coordinate & Proximity*: Relative distance to Character A (e.g., *perched on a wooden barstool at the oak breakfast island on the right, exactly 1.5 meters opposite Character A across the central aisle, empty hands resting on the island surface*).
+    3. *The 180° Action Axis & Eyeline Vector*: (e.g., *Character A faces frame-right toward Character B; Character B faces frame-left toward Character A across the 1.5-meter gap*).
+    4. *The Dramatic Dynamic / Interpersonal Stance*: (e.g., *playful morning banter, tense domestic interrogation, protective guardianship*).
 
-#### Tier 3: The Biomechanical Action Launchpad at $t>0$ (Actions Evolving from Tier 1 & Tier 2)
-- **Zero Disconnected Actions**: Actions in the timeline (`[00:00–00:03.5]`, `[00:03.5–00:07.0]`, etc.) CANNOT introduce sudden, ungrounded movements or teleport characters across the room.
+#### Tier 3: The Biomechanical Action Launchpad at $t>0$ (Where Characters Interact with Props)
+- **Detailed Prop Manipulation in Action**: Timeline action phases (`[00:00–00:XX]`) are the **EXCLUSIVE location** where characters reach out, grip, manipulate, and interact with props.
 - **Biomechanical Launchpad Law**:
-  - The first action beat at $00:00.0$ MUST mechanically launch directly from the posture, grip, and eyeline established in Tier 2.
+  - At $00:00.0$, character begins motion from the Tier 2 pose, reaches out to the resting prop declared in `[PROP]:`, grips it, and executes the physical action.
+  - Describe exactly what the character does with the prop (wrist flick, lifting from counter, scooping with spoon, swinging, putting down).
   - Every subsequent movement and collision MUST interact with the landmarks established in Tier 1 (e.g., *if a prop flies or a character steps, it moves along the 1.5-meter central aisle, passes beneath the brass pendant lamp, or collides with the marble counter*).
   - Multi-shot cuts (Track B) must preserve the 180° action axis established between Character A and Character B, preventing inverted gaze directions across cuts.
 

@@ -219,14 +219,14 @@ To anchor character identity, eliminate AI duplicate clones, and prevent spatial
    $$\mathbf{[subject]:} = \mathbf{[Tên\ +\ Thẻ\ Ảnh]} + \mathbf{[Mỏ\ neo\ không\ gian\ kiến\ trúc]} + \mathbf{[Tư\ thế\ &\ Xúc\ giác\ ban\ đầu]} + \mathbf{[—\ the\ only\ \{name\}\ in\ frame]}$$
    
    - **Syntax Contract**:
-     `{ho_ten} [100% Appearance, attire, and facial features Refer to image X], {initial spatial anchor to in-scene architectural fixture}, {initial physical posture & tactile contact} — the only {ho_ten} in frame.`
+     `{ho_ten} [100% Appearance, attire, and facial features Refer to image X], {initial spatial anchor to in-scene architectural fixture}, {initial physical posture, hands naturally free of props/weapons} — the only {ho_ten} in frame.`
    - **The 3 Directorial Functions of `[subject]:`**:
      * **Function 1: Multi-Modal Identity Lock**: Binds character token to the 16:9 Model Sheet (`image X`).
      * **Function 2: Zero-Frame Spatial & Tactile Grounding**: Anchors character physically to an architectural fixture or furniture at Frame 0 (`00:00.0`), preventing floating bodies or deformed ghost hands.
      * **Function 3: The Mandatory Anti-Duplication Seal (`— the only {name} in frame`)**: Explicitly blocks diffusion text encoders from generating twin/clone duplicates of the same character in one room.
    - **Subject-to-Scale Invariance & Multi-Character Relational Grounding Law**:
      * *Single-Subject Scales (CU, MCU, Choker, ECU)*: [subject]: MUST contain strictly ONE character. Secondary characters are O.S. and must NEVER be declared in [subject]: or described in the prompt.
-     * *Two-Subject Scales (M2S, OTS, Two-Shot Profile)*: [subject]: lists both characters on separate lines, each with their own spatial anchor, mutual proximity (e.g. *1.5 meters apart across the central aisle*), 180° Action Axis & eyeline vectors (*ho_ten_A facing frame-right toward B; ho_ten_B facing frame-left toward A*), tactile contact with fixtures/props, and the mandatory — the only {name} in frame seal.
+     * *Two-Subject Scales (M2S, OTS, Two-Shot Profile)*: [subject]: lists both characters on separate lines, each with their own spatial anchor, mutual proximity (e.g. *1.5 meters apart across the central aisle*), 180° Action Axis & eyeline vectors (*ho_ten_A facing frame-right toward B; ho_ten_B facing frame-left toward A*), hands naturally free of props/weapons, and the mandatory — the only {name} in frame seal.
      * *The 3-Tier Staging Hierarchy (Mandatory Order of Compilation)*:
        1. **Tier 1 ([context]:)**: 5-Vector 3D physical stage architecture, room boundaries, fixed landmarks with physical distances, directional lighting physics, and atmospheric medium. Never 1-line superficial text.
        2. **Tier 2 ([subject]: & [PROP]:)**: Zero-frame (=0.0\text{s}$) coordinates, proximity, eyelines, and initial tactile contacts.
@@ -1447,7 +1447,7 @@ In high-end cinematic video generation, dialogue and interaction are governed by
 
 ### Law 3: Mode B Asset Anchoring & Lore-Bound Asset Naming Mandate (Section 2, 4A, 4B)
 * **Subject Declarations in `[subject]:` (The 4-Part Sovereign Formula):**
-  - In `[subject]:`, declare every participating character using the 4-Part Sovereign Formula: `{ho_ten} [100% Appearance, attire, and facial features Refer to image X], {initial spatial anchor to architectural fixture}, {initial physical posture & tactile contact} — the only {ho_ten} in frame.`
+  - In `[subject]:`, declare every participating character using the 4-Part Sovereign Formula: `{ho_ten} [100% Appearance, attire, and facial features Refer to image X], {initial spatial anchor to architectural fixture}, {initial physical posture, hands naturally free of props/weapons} — the only {ho_ten} in frame.`
   - *Function at 00:00.0:* Establishes identity lock, zero-frame architectural grounding, initial physical posture, and the mandatory negative anti-duplication seal.
   - *The 4-Vector Character Directing Protocol in Timeline Shots:* While `[subject]:` locks the initial state at 00:00.0, characters are dynamically directed within timeline shots (`[00:00–00:XX]`) across the four physical vectors: (1) Trạng thái (Evolving physical posture / somatic tension), (2) Làm gì (Active physical verb / prop interaction), (3) Cảm xúc ra sao (Somatic emotion / facial micro-expression), (4) Ở đâu (Dynamic 3D blocking anchored to architecture). NEVER write literal placeholder tags (`[TRẠNG THÁI]`, `[Ở ĐÂU]`).
   - *Negative Rule 1 (Zero-Costume Law):* **NEVER describe clothing or costumes in prompt lines** (costume is 100% locked by the 16:9 Model Sheet).
