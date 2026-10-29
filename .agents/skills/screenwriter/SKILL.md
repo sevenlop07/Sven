@@ -231,8 +231,9 @@ Within any single episode, 10-second Scene Atoms must be forged together through
   - Every primary setting environment MUST feature a **16:9 Landscape 4-Panel Grid (2x2)** showing 4 distinct spatial perspectives of the SAME physical environment:
     1. *Top-Left*: Establishing Wide Angle (spatial layout, floor plan, structural walls, entryways).
     2. *Top-Right*: Reverse Angle (180° opposite view showing opposite wall and depth).
-    3. *Bottom-Left*: Interior / Key Landmark Angle (bedside, altar, crib, dining table).
-    4. *Bottom-Right*: Diurnal / Lighting Transition Angle (dawn, dusk, or night shift).
+    3. *Bottom-Left*: Overhead Bird's-Eye View (spatial layout of every fixture and walkway).
+    4. *Bottom-Right*: Ground-Level Key Landmark View (the fixture where the main action happens: bedside, altar, crib, dining table).
+  - Lighting stays uniform across all 4 panels; time of day is set per scene in `[context]:`.
   - Prompts must maintain strict architectural and material continuity across all 4 panels.
 * **Key Props & The Two-Tier Implementation Standard (Doctrine §10.5)**:
   - **Tier 1: Đạo Cụ Linh Hồn & Phương Tiện Bất Ly Thân (Signature Hero Props & Vehicles — CẦN ẢNH THAM CHIẾU / Max 1–2 per series)**: Vũ khí, thanh kiếm, súng lục, xe máy, xe hơi, kỷ vật gia truyền, bản di chúc, hợp đồng chứng cứ sống còn (`blood wax seal`, `ancestral sword`, `worn leather ledger`). **MANDATORY 16:9 4-VIEW MODEL SHEET (Mode B)** trong `setting.html` Section 4A và gắn thẻ neo `[100% Refer to image <ref>]` trong `[PROP]:` của prompt video để chống biến dạng hoặc mất trí nhớ thị giác giữa các cảnh. Khống chế tối đa 1–2 món cốt lõi mỗi series.

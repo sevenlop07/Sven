@@ -42,7 +42,7 @@
 | Grammar | [`0b-temporal-camera-grammar.md`](file:///d:/Project/Sven/engine/references/0b-temporal-camera-grammar.md) | Speech rate (VN syllables / EN words per second), lip-sync windows, action capacity, camera-move durations and lip-sync safety, shots per clip, clip density, canonical prompt syntax, 10s / 15s / 30s duration modes | 3, 4 |
 | Pillar 1 | [`1-narrative-screenplay-architecture.md`](file:///d:/Project/Sven/engine/references/1-narrative-screenplay-architecture.md) | 6-Beat / 18 sub-beats, 12 hooks, 20 twists (TW-01–TW-20), 3-wave climax, 8-model dialogue suite, WPS cadence, 4-in-1 parentheticals, Positive & Zero-Fatality Mandate | 0, 2, 3 |
 | Pillar 2 | [`2-casting-worldbuilding-specification.md`](file:///d:/Project/Sven/engine/references/2-casting-worldbuilding-specification.md) | Cast topology (A1/A2/B/C), archetypes, naming matrix, Living Continuum, **model / prop / location sheet templates**, `setting.html` sections, visual style encyclopedia | 1, 3 |
-| Pillar 3 | [`3-cinematography-3d-staging.md`](file:///d:/Project/Sven/engine/references/3-cinematography-3d-staging.md) | 14 scales, 6 angles, 7 combos, 3D staging, elastic deformation, 180° axis, continuity ledgers, Music Video architecture | 4 |
+| Pillar 3 | [`3-cinematography-3d-staging.md`](file:///d:/Project/Sven/engine/references/3-cinematography-3d-staging.md) | 14 scales, 4-axis angle architecture, camera combos, 3D staging, elastic deformation, 180° axis, continuity ledgers, Music Video architecture | 4 |
 | Pillar 4 | [`4-ai-video-prompt-compiler.md`](file:///d:/Project/Sven/engine/references/4-ai-video-prompt-compiler.md) | 10s kinetic unit, Track A/B, Mode B laws, Code Block 1/2 spec, `tap-X.html` spec, minor-safety protocol | 4 |
 | Growth | [`SKILL.md`](file:///d:/Project/Sven/.agents/skills/youtube-growth-architect/SKILL.md) | Niche validation, entity clusters, titles, thumbnails, `seo-youtube.html` | 0, 5 |
 | Engine | `engine/prompt_compiler.py`, `engine/episode_audit_suite.py`, `engine/setting_audit_suite.py` | Deterministic compile + automated gates | 1, 4 |
@@ -137,8 +137,8 @@ When a genre module is activated, its specific narrative conventions, structural
 ### 2.5 Image Reference Policy (ALWAYS ON)
 Every Code Block 1 binds each location, character, and interactive prop to its uploaded reference image, using the exact syntax enforced by Gates 3J/3K/3L:
 - `[context]:` → `[Location Name] [100% Refer to image <location_ref>], [time of day]. [5-Vector Environmental Specification: architectural landmarks & comprehensive physical furniture/textile inventory ("có cái gì ở đó": bed type, mattress, coarse blankets, tables, chairs, lamps, windows, steam/particulates), lighting physics & direction without Kelvin, atmospheric medium & mood]`. Barren declarations are strictly banned. **The Zero Ghost Object Law**: Any object touched, pulled, or manipulated in the action timeline (e.g. pulling up a wool blanket, gripping a bedpost) MUST already be grounded and established in `[context]:`.
-- `[subject]:` → **The 4-Part Sovereign Subject Formula & Absolute Prop-Free Law**:
-  `[name] [100% Appearance, attire, and facial features Refer to image <N>], [initial spatial anchor to in-scene architectural fixture], [initial physical posture, hands naturally free of props/weapons] — the only [name] in frame.`
+- `[subject]:` → **The Prop-Free Sovereign Subject Formula**:
+  `[ho_ten] [100% Appearance, attire, and facial features Refer to image <N>], [initial spatial anchor to in-scene architectural fixture], [initial physical posture], hands free of props, [eyeline toward a character or landmark] — the only [ho_ten] in frame.`
   (Strictly enforces zero clone duplicates, anchors zero-frame spatial positioning, and prevents baking props into character anatomy. TUYỆT ĐỐI CẤM nhồi đạo cụ cầm nắm vào khối `[subject]:`!).
 - `[PROP]:` (legacy `[Pro] :` still accepted by Gate 3J) → **The Two-Tier Prop Protocol (Production Velocity Law)**:
   * **Tier 1: Đạo Cụ Linh Hồn & Phương Tiện Bất Ly Thân (Signature Hero Props & Vehicles — CẦN ẢNH THAM CHIẾU / Max 1–2 per series)**: Những vật phẩm rất quan trọng, xuất hiện liên tục đi liền với nhân vật qua nhiều cảnh (vũ khí, xe máy, xe ô tô, kỷ vật trung tâm, bản di chúc, hợp đồng chứng cứ sống còn). BẮT BUỘC có ảnh Model Sheet 16:9 trong Section 4A và gắn thẻ `[Prop Name] [100% Refer to image <prop_ref>], [physical state], [resting place independent of character hands] — the only [prop noun] in frame`.
@@ -173,10 +173,10 @@ To eliminate catastrophic AI hallucinations, rushed prompt writing, and optical 
 1. **Pre-Production Master Deliverable (`setting.html`)**:
    Before generating video scene prompts, the ONLY approved initial deliverable is `setting.html` (The Production Bible). It consolidates all 5 mandatory pillars to prepare the entire universe:
    - **(1) Các nhân vật (Characters & Full Cast Topology)**: Complete casting profiles (A1 Protagonist, A2 Antagonist, Tier B Satellites), wounds, psychological depth, flaws, wants vs needs, and kinship networks.
-   - **(2) Ảnh tham chiếu (Reference Images & Multi-Angle Model Sheets)**: Exact image generation prompts for 16:9 4-view model sheets and explicit image reference tags (`image_1.jpg`, `image_2.jpg`, `cu_tin.jpg`).
-   - **(3) Đạo cụ quan trọng (Key Interactive Props & Chekhov State Chains)**: Prop universe, dimensions, physical transformation states (Ready ➔ Under Load ➔ Broken/Landed), and reference image prompts (`prop_1.jpg`).
+   - **(2) Ảnh tham chiếu (Reference Images & Multi-Angle Model Sheets)**: Exact image generation prompts for 16:9 4-view model sheets and explicit image reference tags (`image_1.jpg`, `image_2.jpg`, `{ho_ten}_4view.jpg`).
+   - **(3) Đạo cụ quan trọng (Key Interactive Props & Chekhov State Chains)**: Two-Tier prop universe: Tier 1 hero props (max 1–2 per series) get dimensions, physical transformation states (Ready ➔ Under Load ➔ Broken/Landed), and a reference image prompt (`{prop}_ref.jpg`); Tier 2 everyday handheld items are described in text only; furniture, fixtures, and bedding belong to the Location inventory (4).
    - **(4) Địa điểm (Locations & 5-Vector Environmental Staging)**: 5-vector environmental staging (Time of day, Fixed architecture & furniture, Key lighting & shadow physics, Atmospheric medium) and 4-view grid prompts (`location_1.jpg`).
-   - **(5) Cốt truyện chính của mỗi tập & Roadmap chi tiết (Main Storylines & Scene Roadmap per Episode)**: The macro storyline of the series + detailed narrative breakdown of each episode (Tập 1, Tập 2...) with Section 5 Scene Roadmap detailing all 10 scenes:
+   - **(5) Cốt truyện chính của mỗi tập & Roadmap chi tiết (Main Storylines & Scene Roadmap per Episode)**: The macro storyline of the series + detailed narrative breakdown of each episode (Tập 1, Tập 2...) with Section 5 Scene Roadmap detailing every scene of the episode (scene count per §2.4):
      * **Mandatory Episode Dramatic Spine**: Central Dramatic Question (CDQ) = $\mathbf{Want} + \mathbf{Deadly\ Obstacle} + \mathbf{Ticking\ Clock\ Stakes}$.
      * **Per-Scene Connective Matrix**: Scene Title, Timeline, Cast, Location, Props, Beat Function, Tactical Action Subtext (`[ATTACK]`, `[DEFEND]`, `[PROBE]`, `[BARGAIN]`, `[TRAP]`), **Inbound Dialogue Baton** (inherited keyword/aftershock from scene N-1), **Core Action Line (≤18w)**, and **Outbound Dialogue Baton** (momentum hook/question thrown to scene N+1).
 
@@ -207,7 +207,7 @@ Every story ends positive and hopeful: growth, redemption, truth exposure, justi
 - Numeric age only in the voice parenthetical; no clothing in visual prose (§2.6; Gates 3A/3E)
 - No freeze holds; no camera hardware, lens, fps, or Kelvin terms (Gates 3B/3D)
 - No pronouns in visual prose; stateless prompts; no coordinate math (Gates 3C/3I/3H)
-- Dialogue Word Cap: Single-Speaker Shot target 25–30 words (hard cap ≤ 32w); Two-Shot exchange ≤ 15w/speaker (Gate 4B); no lip-synced line during a downward POV; V.O. with lips sealed
+- Dialogue Word Cap (Gate 4B hard cap): ≤ 32 words single speaker; ≤ 15 words per speaker in a two-shot. Craft target 8–14 words (Microdrama ≤ 12); no lip-synced line during a downward POV; V.O. with lips sealed
 - Dialogue ↔ prompt verbatim parity wherever lines exist (Gate 4)
 - Minor safety and Approved Child Entity Somatic Sleep Staging Protocol (Gate 3F; Pillar 4 §[10d] & DIRECTOR.md §6; zero-minor lexicon, low-velocity sleep whitelist); no combat, chases, or brawls (§2.3)
 - One primary move + one reaction per phase; one physical instance per prop
@@ -389,7 +389,7 @@ STAGE 5  seo-youtube.html             → ✋ CP5
 VISUAL STYLE  : Pixar 3D (DEFAULT) — override only on user request
 EPISODE MODE  : Short Film (1 ep) / Multi-Episode Series (N eps)
 RATIO         : 9:16 vertical / 16:9 horizontal
-DURATION/EP   : 60s (6×10s) / 90s (9×10s) / 120s (12×10s)
+DURATION/EP   : 60s (6×10s) / 90s (9×10s) / 120s (12×10s) / project override (§2.4)
 GENRE / BACKGROUND / TROPE (max 2 stacked)
 DIALOGUE LANG : English (default) / [target language + dialect]
 ```
@@ -434,7 +434,7 @@ To optimize production velocity and eliminate massive wasted rendering time, Sve
 - Interaction rules (grip contract, causal ripple, 3-step anti-teleport handoff): Pillar 4 §3.4. Props take ≤ 5–10% of narrative attention. Never title scenes after props.
 
 ### 6.4 — 1D Locations
-Each primary location gets an environment profile (era, time and weather, palette, textures, atmospheric medium) and a 16:9 2×2 grid sheet. Panels: wide establishing, reverse angle, overhead, ground-level low angle. No people, no text. Template: Pillar 2 / Pillar 4 §3.6.
+Each primary location gets an environment profile (era, time and weather, palette, textures, atmospheric medium) and a 16:9 2×2 grid sheet. Panels: top-left wide establishing shot, top-right reverse angle (180° opposite wall and depth), bottom-left overhead bird's-eye view (spatial layout of fixtures), and bottom-right ground-level key-landmark view (the fixture where the main action happens). Uniform lighting across panels (time of day is set in `[context]:`). No people, no text. Template: Pillar 2 / Pillar 4 §3.6.
 
 ### 6.5 — 1E Initial Setting Declaration
 Lock the starting state: time, location, lighting (source, direction, natural color tone — no Kelvin), weather, floor surface, each character's architectural position, pose and gaze, each prop's position, state and holder, plus series-wide consistency notes.
@@ -581,7 +581,7 @@ ACT 2 / ACT 3 / ACT 4 (Ep N finale, cliffhanger NONE)
 > - **Act 3 Episodes (The Abyss, Direct Showdown & Ego Death)**:
 >   - Focuses on Rock Bottom, the truth bomb confrontation, genuine Ego Death, and Anagnorisis.
 > - **Act 4 Episodes (Transcendence, Catharsis & Restorative Feast)**:
->   - Focuses on earned reconciliation, restorative actions, and the genuine transformed feast ("Cơm Không Chan Nước Mắt").
+>   - Focuses on earned reconciliation, restorative actions, and the genuine transformed closing ritual (the project's title image paid off).
 
 ### 8.2 Script Continuity Law (3 Tiers & The 4 Cinematic Continuity Locks)
 1. **Macro (season)**: irreversible escalation ladder (personal → family → institutional → ego death → transcendent redemption). Each episode ends on a point of no return.
@@ -589,13 +589,13 @@ ACT 2 / ACT 3 / ACT 4 (Ep N finale, cliffhanger NONE)
 3. **Micro (10s Scene-to-Scene & Sequence Stitching)**:
    - **"Therefore / But" law**: never "and then". Every cut advances power, knowledge, or emotional cost.
    - **The 4 Cinematic Continuity Locks (Grammar §1.3 & Compiler §4.5)**:
-     - *Lock 1 (180° Axis & Gaze Vector)*: Characters maintain invariant screen left/right gaze alignment across shot-reverse-shot cuts.
+     - *Lock 1 (180° Axis & Gaze Vector)*: Characters maintain invariant gaze alignment across shot-reverse-shot cuts. Screen direction is recorded only in the Audit Card; Code Block 1 anchors eyelines to people and architecture (no frame-left / frame-right).
      - *Lock 2 (Kinetic Baton Relay / Action Match-Cut)*: Scene N ends on an unfinished physical motion (`08.5–10.0s`); Scene N+1 catches and completes it (`00.0–01.5s`) from the new angle with zero action repetition.
      - *Lock 3 (Auditory Suture)*: L-Cut dialogue tails and uniform diegetic Foley/room tone bridge the cut, eliminating fragmented seams.
      - *Lock 4 (Physical Handover Ledger)*: Code Block 2 records the exact 00:10.0 snapshot inherited 1:1 by Scene N+1.
    - **Multi-Spatial Sequence Architecture (The Anti-Box Mandate)**:
      - An episode of 100s–120s is structured into **2–3 distinct physical or psychological Sequences** (Setup/Tension $\to$ Sensory Match-Cut $\to$ Collision Core $\to$ Aftermath Resonance).
-     - Strictly ban trapping all 10 scenes in a single bedroom/box to prevent sterile, static sitcom syndrome.
+     - Strictly ban trapping every scene of the episode in a single bedroom/box to prevent sterile, static sitcom syndrome.
 
 ### 8.3 Output Template (per episode)
 ```
@@ -690,8 +690,8 @@ Master-level cinematography and composition, fast-paced shot variation, atmosphe
 [evocative location name in natural English without underscores] [100% Refer to image <location_ref>], [exact time of day]. [5-Vector Environmental Specification: full physical architectural layout, inventory of all key fixed furniture and room landmarks ("có cái gì ở đó"); key light source, angle/direction, natural color tone without Kelvin, shadow behavior; atmospheric medium (dust motes, humidity) and emotional climate].
 
 [subject]:
-[ho_ten_A] [100% Appearance, attire, and facial features Refer to image 1], [initial architectural spatial anchor and physical posture, hands naturally free of props/weapons] — the only [ho_ten_A] in frame.
-[ho_ten_B] [100% Appearance, attire, and facial features Refer to image 2], [initial architectural spatial anchor and physical posture, relative distance to ho_ten_A in natural language (e.g. directly across the narrow aisle; zero metre figures), 180° Action Axis & eyeline vector facing ho_ten_A, hands naturally free of props/weapons] — the only [ho_ten_B] in frame.
+[ho_ten_A] [100% Appearance, attire, and facial features Refer to image 1], [initial architectural spatial anchor and physical posture], hands free of props, [eyeline toward ho_ten_B or a landmark] — the only [ho_ten_A] in frame.
+[ho_ten_B] [100% Appearance, attire, and facial features Refer to image 2], [initial architectural spatial anchor and physical posture, relative distance to ho_ten_A in natural language (e.g. directly across the narrow aisle; zero metre figures), 180° Action Axis], hands free of props, [eyeline toward ho_ten_A or a landmark] — the only [ho_ten_B] in frame.
 
 [PROP]:
 [hero prop name in natural English without underscores] [100% Refer to image <prop_ref>], [physical state], [resting place on in-scene fixture independent of character hands] — the only [prop noun] in frame.
@@ -787,26 +787,25 @@ Above the scene cards, `tap-X.html` publishes the episode's Story Spine card (`i
 | 3-block labels | 3J |
 | Reference anchor syntax | 3K |
 | Blank-line spacing | 3L |
-| No `[camera]:` tag (natural prose line declaration) | 3P |
-| No `tripod` word in prompt prose (Hardware Literalization Bug immunity) | 3Q |
-| Meaningful English asset naming (Locations & Props) | 3R |
-| Two-Tier Prop Law (furniture/fixtures only in `[context]:`; Tier 1 hero props ≤ 2 per series with image; Tier 2 everyday handheld items text-only in `[PROP]:`) | 3S |
-| Zero ghost objects (Comprehensive In-Context Setting Inventory) | 3T |
-| Track A-Locked Quota (Strictly <= 2 scenes per 9–10 scene episode) | 3U |
 | ≥ 2 phases, contiguous from 00:00 to a 10 / 15 / 30s end | 3M |
 | Stability + negative clause | 3N |
+| Zero dead air (no freeze phrases, continuous micro-action) | 3O |
+| No literal placeholder / meta tokens in prompts | 3P |
+| No dangling `Focus on [name].` (Optical Camera Clause Law) | 3Q |
 | Dialogue ↔ prompt verbatim parity (where lines exist; silent scenes allowed) | 4 |
-| Single-Speaker 25–30w (cap ≤ 32w); Two-Shot ≤ 15w/speaker | 4B |
+| ≤ 32 words single speaker; ≤ 15 words per speaker in a two-shot (craft target 8–14) | 4B |
 | Line causality: back-to-back lines by one speaker inside an exchange (warning) | 4C |
 | Kinship address ladder (`project_rules.json`, if present) | 4D |
 | Meal continuity (`project_rules.json`, if present) | 4E |
 | Colloquial grammar (`project_rules.json`, if present) | 4F |
+| Speech-action verb on every spoken line | 4G |
+| Code Block 2 handover + Kinetic Momentum Bridge per scene | 4H |
 | Copy buttons + copy-all + toast | 5 |
 | Monotony warnings: phase splits, reply openers, voice-mode runs, turn counts | W (non-blocking) |
 | Timing warnings: lip-sync window per phase (W4), speech share ≤ ~60% (W5), canonical syntax (W6) | W (non-blocking) |
 | Camera under a line / track label (W8); story depth and Spine present (W9); prediction ledger and plant order (W10) | W (non-blocking) |
 | **Creative Review**: Story Spine + plot rows, Intent Card per scene, value shift, Action↔Line relation per line, motive per camera move, voice-mode rhythm | Doctrine §5 |
-| **Manual**: one-move rule per phase; multi-character blocking matrix sync (CU=1 face, OTS/M2S=2, M3S/Master=3; DIRECTOR.md §3b); anti-ghost prop (one instance, surface cleared, fixtures never teleport); eyeline & 180° axis; architectural anchoring (no frame labels); track declared in 3 places; dialogue language matches §2.2; 16:9 sheet prompts with copy buttons embedded | — |
+| **Manual (no automated gate yet)**: no `[camera]:` tag and no `tripod` in prose; natural English names for locations and props (no underscores); Two-Tier `[PROP]:` scope (furniture/fixtures/bedding only in `[context]:`; Tier 1 hero props ≤ 2 per series with image; Tier 2 text-only); zero ghost objects; Track A-Locked ≤ 1–2 scenes per episode; no metre figures; one-move rule per phase; multi-character blocking matrix sync (CU=1 face, OTS/M2S=2, M3S/Master=3; DIRECTOR.md §3b); anti-ghost prop (one instance, surface cleared, fixtures never teleport); eyeline & 180° axis; architectural anchoring (no frame labels); track declared in 3 places; dialogue language matches §2.2; 16:9 sheet prompts with copy buttons embedded | — |
 
 ### 9.9 ✋ CHECKPOINT 4 (per episode)
 ```
@@ -881,10 +880,11 @@ d:\Project\Sven\
 │   ├── DIRECTOR.md             ← Level 2 Director (Pillars 3–4)
 │   └── skills\ director\ · screenwriter\ · youtube-growth-architect\
 ├── engine\
+│   ├── genres\                 ← sitcom.md · drama.md · microdrama.md (modular genre engines)
 │   ├── prompt_compiler.py      ← Deterministic tap-X.html compiler
 │   ├── episode_audit_suite.py  ← Stage 4 gates
 │   ├── setting_audit_suite.py  ← Gate 1.5
 │   └── references\  0-creative-doctrine.md · 0b-temporal-camera-grammar.md · 1-narrative-screenplay-architecture.md
 │                    2-casting-worldbuilding-specification.md · 3-cinematography-3d-staging.md · 4-ai-video-prompt-compiler.md
-└── output\<slug>\  setting.html · tap-1..N.html · seo-youtube.html · scripts\
+└── output\<slug>\  setting.html · tap-1..N.html · seo-youtube.html · project_rules.json · project_staging_rules.md · scripts\
 ```

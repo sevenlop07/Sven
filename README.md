@@ -38,7 +38,7 @@ d:\Project\Sven\
 │       │
 │       ├── 1-narrative-screenplay-architecture.md   ← Pillar 1: 6 Beats, 20 Twists, Dialogue Geometries, WPS
 │       ├── 2-casting-worldbuilding-specification.md ← Pillar 2: Cast Topology, 16:9 Sheets, 39 Visual Styles
-│       ├── 3-cinematography-3d-staging.md          ← Pillar 3: 14 Scales, 6 Angles, 7 Combos, 3D Cartesian
+│       ├── 3-cinematography-3d-staging.md          ← Pillar 3: 14 Scales, 4-Axis Angle Architecture, Camera Combos, 3D Spatial Staging
 │       ├── 3b-lighting-atmospheric-physics.md      ← Directorial Assistant 3B: 6-Point Lighting & Atmosphere
 │       ├── 4-ai-video-prompt-compiler.md            ← Pillar 4: Prompt Compilers, Handover States, Mode B Laws
 │       └── 4b-diegetic-foley-sound-design.md        ← Directorial Assistant 4B: Code Block 2 Soundscape & Foley
@@ -94,10 +94,10 @@ To eliminate optical hallucinations, character drift, and rushed prompts, Sven s
 - **Track A (Single-Shot Continuous Take)**: 1 single camera, unbroken take, **0 cuts**. Scale and angle change strictly through physical camera trajectory (`slow push-in`, `tracking`, `pedestal up`).
 - **Track B (Multi-Shot Cut Sequence)**: Multi-camera coverage cut on the **180° Action Axis** (2–4 shots per 10s clip). Every subsequent shot begins with `Cut to`. Enforces the 4 Continuity Locks (Gaze Vector, Kinetic Baton Relay, Audio Suture, Handover Ledger).
 - **Track AB (Hybrid Take + Cut)**: One continuous take (≥ 5s holding 2+ phases) punctuated by 1–2 decisive cuts on the power shift (Take ➔ Button, Trigger ➔ Take, Take ➔ Cut ➔ Take).
-- **Track A-Locked Performance Take (Golden Quota §9.8)**: Stationary camera locked on a tripod (0 cuts, 0 camera moves). Camera setup declared once in prose header; timeline brackets dedicated 100% to somatic micro-acting and environmental physics. Strictly capped at 1–2 scenes per 9–10 scene episode (~15–20% ratio).
+- **Track A-Locked Performance Take (Golden Quota §9.8)**: Fixed static camera (0 cuts, 0 camera moves; the word "tripod" is banned in prompt prose). Camera setup declared once in prose header; timeline brackets dedicated 100% to somatic micro-acting and environmental physics. Strictly capped at 1–2 scenes per 9–10 scene episode (~15–20% ratio).
 
 ### 3. Subject & Prop Governance
-- **4-Part Sovereign Subject Formula**:
+- **Prop-Free Sovereign Subject Formula**:
   `{ho_ten} [100% Appearance, attire, and facial features Refer to image X], {architectural anchor}, {body posture}, hands free of props, {eyeline toward a character or landmark} — the only {ho_ten} in frame.`
 - **Biomechanical Launchpad & Kinetic Handshake Protocol**: Action prose emerges directly from the physical posture declared in `[subject]:`.
 - **The Two-Tier `[PROP]:` Scope Law**: `[PROP]:` holds every handheld item, one per line in natural English without underscores, each with a resting place independent of character hands. Tier 1 hero props (max 1–2 per series) carry `[100% Refer to image …]`; Tier 2 everyday items are text only. Furniture and fixtures (blankets, pillows, chairs, beds, cribs) belong 100% to `[context]:` as rich set dressing inventory.
