@@ -49,7 +49,7 @@
   - § 2.6 The Dramatic Spine & 4-Way Cross-Scene Dialogue Relay (Eradicating Bubble Dialogue)
   - § 2.7 The 3-Layer Organic Dialogue Anatomy & Anti-Curtness Standard (No Robotic Commands)
   - § 3. 4 Dynamic Narrative Casting Models (Across All Genres)
-  - § 4. Dedicated Timestamp Allocation & Word Ceiling (14–18 Words)
+  - § 4. Dedicated Timestamp Allocation & Word Ceiling (Gate 4B: ≤32 Solo / ≤15 per Speaker)
 - **PART VI: THE UNIVERSAL 8-MODEL INTERACTION SUITE (MULTI-GENRE GEOMETRIES)**
   - § 1. Complete Architecture: Model 1 to Model 8 + Model 0
   - § 2. Adversarial Dialogue Fencing & Prop-Speech Tactile Locking Law
@@ -1445,8 +1445,8 @@ Never execute a twist purely through dialogue. Always physically anchor the twis
 2. **Zero Inanimate Displacement:** A prop must NEVER displace the human face in moments of crisis. Broken objects or debris must NEVER replace a character's trembling jaw, unshed tear, or silent suffocating shock.
 3. **Twist-Point Foregrounding Only:** The Master Catalyst Prop enters foreground focus **strictly at the moment of the Twist Payoff**, functioning as the undeniable physical proof or turning lever.
 4. **The Two-Tier Prop Implementation Standard (Doctrine §10.5):**
-   - *Tier 1 (Everyday / Ambient Props)*: Rice bowls, teacups, envelopes, folding hammocks, pens, wrenches. **100% Text-Described in Screenplay and Prompts (Mode A)**. Zero 16:9 model sheets generated. AI natively understands these items.
-   - *Tier 2 (Sovereign / Soul / Weapon / Complex Artifacts)*: Ancestral relics, custom weapons, dynastic seals, intricate mechanisms. **Mandatory 16:9 4-View Model Sheet (Mode B)** to anchor geometric consistency and prevent AI visual drift.
+   - *Tier 1 (Signature Hero Props & Vehicles, max 1–2 per series)*: Ancestral relics, custom weapons, dynastic seals, intricate mechanisms, signature vehicles. **Mandatory 16:9 4-View Model Sheet (Mode B)** to anchor geometric consistency and prevent AI visual drift.
+   - *Tier 2 (Everyday Handheld Items)*: Rice bowls, teacups, envelopes, pens, wrenches. **100% Text-Described in Screenplay and Prompts (Mode A)**; zero 16:9 model sheets. Furniture and fixtures (beds, cribs, hammocks, tables) are never props; they live in `[context]:`. Numbering matches `workflow.md` §6.3.
 
 ### 2. The 5 Master Twist-Catalyst Mechanisms:
 1. **The Decoy Prop**: The briefcase, envelope, or sealed urn is opened at the twist moment to reveal it is a decoy (`TW-02`).
@@ -1654,7 +1654,7 @@ When the protagonist is on the verge of discovering the truth or reuniting with 
 │                          THE UNIVERSAL MULTI-GENRE DIALOGUE ECOSYSTEM                                  │
 ├────────────────────────────────────────────────────────────────────────────────────────────────────────┤
 │ 1. THE 4 INTERACTION ENERGY VECTORS: Harmonic (+), Frictional (-), Tactical (➔), Metaphysical (⟲).     │
-│ 2. THE WPS PHYSICS LAW             : Calibrates cadence by emotion (1.1 to 2.4 WPS • 14–18 words max). │
+│ 2. THE WPS PHYSICS LAW             : Calibrates cadence by emotion (1.1 to 2.4 WPS • Gate 4B cap)    . │
 │ 3. DEDICATED TIMESTAMPS            : Every volley has its own strict timestamp. Zero speech collisions.│
 │ 4. THE 8 UNIVERSAL GEOMETRIES      : 8 Interaction Geometries + Model 0 adapting across ALL genres     │
 │                                      (Romance, Comedy, Action/Tactical, Horror, Mystery, Drama, etc.). │
@@ -1781,34 +1781,34 @@ In live-action and cinematic animation, spoken dialogue cadence is strictly boun
 
 > [!CAUTION]
 > **ZERO-TOLERANCE CODE AUDIT ENFORCEMENT**:
-> The master linting suite (`engine/episode_audit_suite.py`) enforces Gates 4A to 4F with zero tolerance. Any script with disconnected parallel monologues, stale alienating pronouns post-reconciliation, domestic prop/meal contradictions, or lines > 18 words is AUTOMATICALLY BLOCKED from delivery.
+> The master linting suite (`engine/episode_audit_suite.py`) blocks delivery on Gate 4B (word cap: ≤ 32 words solo, ≤ 15 words per speaker in a two-shot). Gate 4C (line causality) only warns; monologue, solo, and V.O. scenes are valid. Gates 4D / 4E / 4F block only when the project's `project_rules.json` defines `kinship_ladder` / `meal_terms` / `bookish_terms`.
 
-1. **Law 1: The Ping-Pong Action-Reaction Mandate (Luật Bóng Bàn Cặp Đôi — Gate 4C)**:
+1. **Law 1: The Ping-Pong Action-Reaction Mandate (Luật Bóng Bàn Cặp Đôi — Gate 4C, warning)**:
    - Dialogue is NEVER two parallel monologues delivered into empty air.
-   - In any 2-line scene, Speaker 2 MUST directly address, confront, comfort, or counter Speaker 1's claim. Line 2 must contain an explicit conversational address or reaction vector (`má`, `con`, `vợ`, `anh`, `mình`, `mày`, `dạ`, `ừ`).
-   - Self-dialogue (same speaker uttering both lines consecutively without an intervening reaction) is strictly forbidden.
+   - In an exchange, Speaker 2 directly answers, confronts, comforts, or counters Speaker 1's line or action. The reaction can live in the words or in the body; a reply never needs to open with an address word (`SCREENWRITER.md` Dialogue Law 2).
+   - Back-to-back lines by the same speaker need a visible reaction between them (Gate 4C warns). Single-speaker scenes (solo line, monologue, V.O.) are valid when the Intent Card states why.
 
-2. **Law 2: The Keyword Handoff Relay (Luật Trao Gậy Từ Khóa Nối Nhịp — Gate 4C)**:
+2. **Law 2: The Keyword Handoff Relay (Luật Trao Gậy Từ Khóa Nối Nhịp — craft law)**:
    - The conversational spine is forged by seizing core semantic keywords across scene boundaries and dialogue turns.
    - Example Vector:
-     * *Scene 01*: `"ráp nôi cho con nằm thẳng lưng nghen anh!"` ➔ `"nôi phẳng con dễ thở"`
-     * *Scene 02*: `"nằm võng ôm lưng mới ấm hơi!"` ➔ `"thằng nhỏ sinh non, nằm võng gập cổ làm sao nó thở nổi má!"`
-     * *Scene 03*: `"Mày nói ai làm ngạt thở?"` ➔ `"Tụi con đâu dám chê má, tại lo cho xương sống cháu nội má thôi!"`
-     * *Scene 04*: `"Hổng chê sao bảo tui nhà quê?"` ➔ `"Con sợ mình làm mẹ vụng về, hại con thôi má ơi..."`
+     * *Scene 01*: `"Canh chua này má nấu từ sáng đó nghen!"` ➔ `"Canh mặn quá má ơi..."`
+     * *Scene 02*: `"Mặn hả? Hồi xưa ba mày ăn vậy hoài!"` ➔ `"Ba ăn mặn hoài nên mới bệnh áp huyết đó má..."`
+     * *Scene 03*: `"Mày trách tao nấu hại ba mày hả?"` ➔ `"Con đâu dám trách, con sợ mất luôn má thôi..."`
+     * *Scene 04*: `"Sợ mất tao thì ngồi xuống ăn đi!"` ➔ `"Dạ... để con múc thêm chén nữa nghen má."`
 
-3. **Law 3: The Kinship Pronoun Progression Ladder & Post-Reconciliation Protocol (Gate 4D)**:
+3. **Law 3: The Kinship Pronoun Progression Ladder & Post-Reconciliation Protocol (Project Rule, Gate 4D)**:
    - In domestic drama, pronouns reflect the precise moral and psychological distance between characters.
    - Across conflict escalation, pronouns evolve:
      * *Setup*: Kinship (`Má - Con`, `Anh - Em`).
      * *Friction/Confrontation*: Alienating distance (`Tôi - Chị`, `Tôi - Cô`).
      * *Climax/Territorial Fury*: Primal defense (`Mày - Tao`).
-     * *Resolution & Catharsis*: Reclaimed maternal kinship (`Má - Con`, `con Duyên`, `con dâu`).
-   - **Post-Reconciliation Ban on Alienation**: Once catharsis/reconciliation occurs (Scene 05 in a 10-scene short drama), the elder character MUST NEVER continue addressing the daughter-in-law or son with estranged/sarcastic pronouns like `Chị` or `tui`. They must lock into maternal affection (`Má - Con`, `con Duyên`, `con dâu`). Stale alienating pronouns in post-reconciliation scenes fail Gate 4D instantly.
+     * *Resolution & Catharsis*: Reclaimed maternal kinship (`Má - Con`, `con dâu`).
+   - **Post-Reconciliation Ban on Alienation**: Once reconciliation occurs, the elder no longer addresses family members with estranged or sarcastic address forms; address locks into affectionate kinship. The exact ladder for each film lives in `project_rules.json` → `kinship_ladder`; violations fail Gate 4D when that key is present.
 
-4. **Law 4: The 18-Word Acoustic Breath Limit & Anti-Bookish Cadence (Gates 4B & 4F)**:
-   - **Word Hard Cap**: Spoken lines MUST NOT exceed **18 words** (no minimum target; length follows the beat). Plan the line in seconds with `0b-temporal-camera-grammar.md` §2: about 4–5 s for 18 Vietnamese syllables, about 7–8 s for 18 English words (keep English lines at 6–12 words).
+4. **Law 4: The Gate 4B Word Cap & Anti-Bookish Cadence (Gates 4B & 4F)**:
+   - **Word Hard Cap (Gate 4B)**: ≤ 32 words for a single speaker; ≤ 15 words per speaker in a two-shot (no minimum; length follows the beat; craft target 8–14 words). Plan the line in seconds with `0b-temporal-camera-grammar.md` §2: about 4–5 s for 18 Vietnamese syllables, about 7–8 s for 18 English words (keep English lines at 6–12 words).
    - **Colloquial Dialect vs. Bookish Grammar**: Spoken lines must use authentic spoken particles (`nghen`, `dạ`, `hà`, `hén`, `thiệt`, `hổng`, `vầy`, `dữ nghen`, `đặng`).
-   - **Banned Bookish Syntax**: Written conjunctions (`bởi vì`, `cho nên`, `tuy nhiên`, `mặc dù`, `chúng ta hãy`, `rất là`) are strictly prohibited in spoken conversational dialogue.
+   - **Banned Bookish Syntax**: Written conjunctions (`bởi vì`, `cho nên`, `tuy nhiên`, `mặc dù`, `chúng ta hãy`, `rất là`) are strictly prohibited in spoken conversational dialogue. The enforced list for each film lives in `project_rules.json` → `bookish_terms` (Gate 4F).
 
 5. **Law 5: The Domestic Prop & Biological Meal Continuity Standard (Gate 4E)**:
    - In continuous timeline episodes, domestic props, meals, and medical items must maintain rigorous physical and temporal continuity.
@@ -1897,7 +1897,7 @@ For every episode roadmap in `setting.html` (Section 5) and production breakdown
 | **Dramatic Spine** | Episode Central Dramatic Question | *Nam attempts to steal 5M kidney medicine money before 18:00 debt deadline.* |
 | **Inbound Baton (Nhận gậy)** | Connection from previous scene | *Inherited from Scene 01: The aluminum tray crashing down; Duyen's scream "Trời ơi".* |
 | **Tactical Action** | Internal verb governing dialogue | `[ATTACK]` *Nam leverages the loan shark threat to extort the key.* |
-| **Core Spoken Line** | High-density punchline (≤18 words) | *"Năm giờ chiều tụi nó chặt tay tao! Đưa chìa khóa tủ mau!"* |
+| **Core Spoken Line** | High-density punchline (within the Gate 4B cap) | *"Năm giờ chiều tụi nó chặt tay tao! Đưa chìa khóa tủ mau!"* |
 | **Subtext** | Hidden psychological reality | *(Nam is terrified for his own life and feels immense shame, masked as vicious rage).* |
 | **Outbound Baton (Trao gậy)** | Hook / Question thrown to next scene | *Duyen swallows key / throws key out window $\rightarrow$ Scene 03 opens on search outside.* |
 
@@ -1959,7 +1959,7 @@ $$\mathbf{SPOKEN\ LINE} = \mathbf{[Layer\ 1:\ Acoustic\ Inception]} + \mathbf{[L
 | **Đòi tiền thuốc khẩn cấp** | *"Đưa tiền cho má mau!"* *(5 từ — cộc lốc, khô khốc)* | *"Má ơi... đưa tiền thuốc cho má mau lên coi, trễ giờ rồi nè!"* *(13 từ)* | Có `Má ơi...` mở đầu nghẹn ngào, có hành động chính, có trợ từ giục giã `...lên coi` và cọc cược `trễ giờ rồi nè`. |
 | **Bảo vệ con dâu trước mẹ chồng** | *"Má đừng nói Duyên nữa."* *(5 từ — xấc xược, máy móc)* | *"Má ơi má nhỏ tiếng giùm con... Duyên thức ba đêm kiệt sức rồi má!"* *(14 từ)* | `Má ơi má...` thể hiện sự kính trọng nhưng tha thiết; đuôi câu kết bằng `...rồi má!` làm dịu xung đột gia đình. |
 | **Mẹ chồng xót cháu ép ăn** | *"Con nít phải ép ăn nhiều."* *(6 từ — như đọc sách báo)* | *"Trời đất quỷ thần ơi, con nít thời này phải ép ăn mới chắc dạ chớ bộ!"* *(15 từ)* | Thán từ Nam Bộ `Trời đất quỷ thần ơi` + trợ từ phản biện `...chớ bộ!` tạo nên khẩu khí bà mẹ chồng bộc trực, chân thực 100%. |
-| **Vợ tủi thân mất sữa** | *"Em hết sữa rồi, con đói."* *(6 từ — trần thuật vô cảm)* | *"Anh ơi... vắt hoài hổng ra sữa... con đói quặn ruột rồi nè anh..."* *(13 từ)* | Nốt lặng `...`, từ ngữ bình dân miền Nam `hổng ra`, tiếng gọi `Anh ơi...`, `...nè anh` tạo sự vỡ òa xót xa. |
+| **Vợ kiệt sức sau sinh** | *"Em mệt rồi, em không chịu nổi."* *(7 từ — trần thuật vô cảm)* | *"Anh ơi... em rã rời hết rồi... ru hoài mà nó hổng chịu ngủ nè anh..."* *(16 từ)* | Nốt lặng `...`, từ ngữ bình dân miền Nam `hổng chịu`, tiếng gọi `Anh ơi...`, `...nè anh` tạo sự vỡ òa xót xa; tránh từ ngữ cho bú / bỏ đói vì kích hoạt bộ lọc an toàn AI video (DIRECTOR.md §6). |
 | **Từ chối đưa chìa khóa** | *"Tôi không đưa chìa khóa đâu."* *(6 từ — khô khan)* | *"Anh muốn lấy hả?... Anh bước qua xác em rồi hẵng đụng vô nghen!"* *(13 từ)* | Thách thức bằng câu hỏi tu từ `Anh muốn lấy hả?`, nốt ngắt nhịp, kết bằng vĩ tố đanh thép `...nghen!`. |
 
 ---
@@ -2183,7 +2183,7 @@ Who speaks in a scene is determined by **power dynamics, psychological hierarchy
 - **STRICT PROHIBITION**: Screenwriters must NEVER write curt, robotic, declarative lines devoid of exclamations and emotional particles (e.g., *"Con tự lo được... má đừng bận lòng thêm"* or *"Tay mầy... mầy đi truyền nước biển hồi nào sao hổng nói tao hay?!"*). Such lines read like machine-translated subtitles, completely stripping characters of empathy, vulnerability, and Southwestern regional warmth.
 - **MANDATORY EXCLAMATIVE & MODAL PARTICLE ARCHITECTURE**:
   - In moments of shock, grief, or familial confrontation, lines MUST incorporate organic interjections (*Trời ơi, Trời đất quỷ thần ơi, Mèn đéc ơi, Má ơi con lạy má, Anh ơi, Chị ơi là chị...*) and land on authentic regional particles (*...hả trời, ...hả mầy, ...nè má, ...nè con, ...chớ bộ, ...đâu hà, ...nghen con, ...hết trơn, ...đặng*).
-  - Every line must stay strictly within the `<= 18 words` ceiling while conveying rich, trembling, organic vernacular cadence.
+  - Every line must stay within the Gate 4B cap (≤ 32 words solo, ≤ 15 per speaker in a two-shot) while conveying rich, trembling, organic vernacular cadence.
 
 ### 4. Directorial Synthesis in Code Block 1 Video Prompts
 When directing Vietnamese dialogue in AI Video prompts:
@@ -2439,13 +2439,13 @@ To avoid AI diffusion/video model physics hallucinations (limb morphing, blurry 
 
 Generative video models suffer from **Subject Amnesia** if characters are described in isolation. To maintain absolute character permanence and dramatic realism across all 10 seconds:
 
-1. **Both Characters Anchored Continuously**: Throughout the entire shot, both characters must be anchored in space (Frame-Left vs. Frame-Right).
+1. **Both Characters Anchored Continuously**: Throughout the entire shot, both characters stay anchored to architecture and to each other (e.g., `behind the counter`, `across the table from Kaelen Song`), never to frame edges. Screen direction is recorded in the Audit Card only.
 2. **Every Second is Bidirectional (Dual-Action Rule)**:
 
 $$\mathbf{Subject\ A\ Initiates\ Physical\ Action}\ \longleftrightarrow\ \mathbf{Subject\ B\ Somatic\ Reaction\ Simultaneously}$$
 
 * **Canonical Directorial Example**:
-  `△ [00:03–00:07]: Kaelen Song at frame-right forcefully slides the bronze deed across the wood, gouging a white scratch into the varnish; directly opposite at frame-left, Tarik Al-Mansur clamps his iron-gauntleted palm over the parchment the instant it strikes his cuffs, chest heaving in unblinking defiance.`
+  `△ [00:03–00:07]: Kaelen Song, standing on the window side of the oak table, forcefully slides the bronze deed across the wood, gouging a white scratch into the varnish; directly opposite on the hearth side, Tarik Al-Mansur clamps his iron-gauntleted palm over the parchment the instant it strikes his cuffs, chest heaving in unblinking defiance.`
 
 ---
 
@@ -2481,10 +2481,12 @@ $$\mathbf{Character\ Name：" Spoken\ Line\ "\ （\ 1.\ Timbre\ \&\ WPS\ ,\ 2.\ 
 
 ## 📋 § 7. MASTER PROMPT COMPILATION BLUEPRINTS
 
+> ⚠️ **Legacy syntax notice**: The `△ … | … |` headers and pronouns in the blueprints below are legacy. Compile real prompts with the canonical phase-line syntax of [`0b-temporal-camera-grammar.md`](file:///d:/Project/Sven/engine/references/0b-temporal-camera-grammar.md) §8 and the 3-block structure of DIRECTOR.md §1c; use these blueprints only for dialogue rhythm.
+
 ### Blueprint A: Romance / Slice of Life (Model 1 Symmetrical Binary)
 ```text
 △ [00:00–00:05.0] Shot Medium Close-Up | Camera Setup A (OTS past Jun's shoulder) | Slow push-in:
-Eun-ji stands at frame-left under the glowing paper lanterns of the night market, steam rising from two bamboo skewers in her hands. Optical focus locked on Eun-ji. Jun maintains a quiet fond gaze at frame-right.
+Eun-ji stands beside the skewer stall under the glowing paper lanterns of the night market, steam rising from two bamboo skewers in her hands. Optical focus locked on Eun-ji. Jun, an arm's length across from Eun-ji, maintains a quiet fond gaze.
 Eun-ji teases : “ You always pretend you are not hungry, Jun! ” (Voice of a 24-year-old woman; voice playful and melodious at 1.8 WPS, lips parting dynamically in radiant lip-sync, eyes crinkling in affectionate teasing, soft amber lantern warmth on cheeks — fond domestic teasing)
 
 △ [00:05.0–00:09.0] Shot Medium Close-Up | Camera Setup B (Reverse OTS past Eun-ji's shoulder) | Seamless cut:
@@ -2498,11 +2500,11 @@ Both smiling shyly under the canopy of glowing lanterns. Eun-ji looks down with 
 ### Blueprint B: Action / Tactical (Model 1B Rapid Staccato)
 ```text
 △ [00:00–00:02.0] Shot Low-Angle MCU | Setup A | Rapid push-in:
-Kael at frame-left ducks behind concrete barrier, slamming fresh magazine into rifle:
+Kael, at the near end of the corridor, ducks behind concrete barrier, slamming fresh magazine into rifle:
 Kael barks : “ Flank left on three! ” (Voice of a 30-year-old operative; barked tactical staccato at 2.1 WPS, crisp aggressive lip-sync, muzzle flash reflections — tactical directive)
 
 △ [00:02.0–00:04.0] Shot Low-Angle MCU | Setup B | Instant cut:
-Vance at frame-right sprays covering fire down corridor, brass casings tumbling:
+Vance, across the corridor from Kael, sprays covering fire down corridor, brass casings tumbling:
 Vance yells : “ I am dry on ammo! ” (Voice of a 28-year-old soldier; harsh breathless rasp at 2.2 WPS, wide focused eyes — emergency callout)
 
 △ [00:04.0–00:06.0] Shot Medium Action | Setup A | Match cut:

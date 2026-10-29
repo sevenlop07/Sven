@@ -1454,12 +1454,12 @@ A compliant Master Setting file consists of exactly **10 core structural section
 
 ### § 7. Section 4A — Master Prop Universe & Minimalist Twist-Catalyst Standard (`#sec-4a`)
 * **The Two-Tier Prop Implementation Standard (Doctrine §10.5):**
-  * **Tier 1 (Everyday / Ambient Domestic Props — 100% Text-Described):**
-    - Household, culinary, office, and ordinary tools (bát cơm, đôi đũa, ly nước, tách trà, phong bì, cờ lê, võng xếp, điện thoại, bút viết, giấy viện phí).
-    - **STRICT BAN ON MODEL SHEETS**: Never generate 16:9 turnaround reference image sheets or visual assets for Tier 1 props. AI already understands these common objects natively. Described purely with precise text keywords (material, texture, wear, resting position).
-  * **Tier 2 (Sovereign / Soul / Weapon / Complex Artifacts — Mandatory Image-Anchored):**
-    - Weapons with custom runes, ancestral soul heirlooms, dynastic seals, intricate mechanical puzzle boxes, glowing sci-fi power cores.
+  * **Tier 1 (Signature Hero Props & Vehicles — Mandatory Image-Anchored, max 1–2 per series):**
+    - Weapons with custom runes, ancestral soul heirlooms, dynastic seals, intricate mechanical puzzle boxes, signature vehicles, glowing sci-fi power cores.
     - **Mandatory 16:9 4-View Turnaround Model Sheet**: Generated in Step 1C (Hero 3D perspective + 3 orthographic views: front, side, back on pure white `#FFFFFF` backdrop) to lock geometric consistency and prevent AI visual drift across scenes.
+  * **Tier 2 (Everyday Handheld Items — 100% Text-Described):**
+    - Household, culinary, office, and ordinary handheld tools (bát cơm, đôi đũa, ly nước, tách trà, phong bì, cờ lê, điện thoại, bút viết, giấy viện phí). Furniture and fixtures (giường, nôi, bàn ghế, võng xếp, rèm) are never props; they are described in the location profile and `[context]:`.
+    - **STRICT BAN ON MODEL SHEETS**: Never generate 16:9 turnaround reference image sheets or visual assets for Tier 2 items. AI already understands these common objects natively. Describe them with precise natural-English keywords (material, texture, wear, resting position). Numbering matches `workflow.md` §6.3.
 * **The Minimalist Twist-Catalyst Law (Quy Chuẩn Đạo Cụ Tối Giản Phục Vụ Điểm Twist):**
   * **Proportion Cap:** Props must occupy strictly **≤ 5% to 10%** of narrative attention. The story belongs to the humans, their wounds, and their choices.
   * **Strict Quota:** Maximum **1 to 2 Master Tier 2 Props** per series (e.g. `PROP-01`, and at most `PROP-02`).
@@ -1628,9 +1628,9 @@ print("✓ All 5 Master Setting Compliance Tests (including strict AM/PM notatio
 ## 📌 6. SUMMARY OF OPERATIONAL GOLDEN RULES
 
 1. **Setting Bible is Pre-Production Only:** It establishes characters, props, environments, diurnal lighting, master script spine, and scene roadmaps. NEVER generate clip-level rendering prompts in `setting.html`.
-2. **English First Spoken Dialogue:** In the `.dialogue-breakdown-box`, the primary quote (`.dia-en-quote`) must be in English to ensure audio-lip synchronization in AI video pipelines. Vietnamese is used for subtitles (`.dia-vn-dub`) and acting notes (`.dia-parenthetical-text`).
-3. **Density Cap (14–18 words):** Dialogue must fit within the strict 10s audio duration limit.
-4. **Zero Continuity Gaps:** Diurnal progression (time & Kelvin) and kinetic vectors must connect seamlessly across all 48 scenes and between episodes.
+2. **Spoken Dialogue Language (`workflow.md` §2.2 Layer 3):** The primary quote (`.dia-en-quote`) is in English by default; when the user targets a country or language, spoken dialogue switches 100% to that language and dialect. Vietnamese is used for subtitles (`.dia-vn-dub`) and acting notes (`.dia-parenthetical-text`).
+3. **Density Cap (Gate 4B):** ≤ 32 words for a single speaker, ≤ 15 words per speaker in a two-shot; dialogue must fit within the 10s audio window (`0b` §2).
+4. **Zero Continuity Gaps:** Diurnal progression (time & natural color tone) and kinetic vectors must connect seamlessly across all 48 scenes and between episodes.
 5. **Mandatory 12-Hour AM/PM Time Notation:** Every timestamp across Section 1, Section 1B, Section 1C, and all 48 scene cards in Section 5 MUST explicitly state **AM** or **PM** (e.g., `05:30 PM`, `10:30 PM`, `01:00 AM`, `04:30 AM`, `05:00 AM`, `06:30 AM`). Ambiguous 24-hour military numbers without AM/PM (e.g. `01:00` or `17:30`) are strictly prohibited.
 
 

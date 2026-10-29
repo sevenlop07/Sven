@@ -16,7 +16,7 @@
   - § 0. The 4 Sovereign Anti-Stagnation Laws (Buzzword Purge, Action Verbs, Tactile Props, Editing Rhythm)
   - § 1. Stateless Prompt Architecture & One-Move Rule
   - § 2. Singularity Lock & Anti-Duplication Directives
-  - § 3. The 6-Point Lighting Contract (Key, Direction, Kelvin, Medium, Shadow, Transitions)
+  - § 3. The 6-Point Lighting Contract (Key, Direction, Natural Color Tone, Medium, Shadow, Transitions)
   - § 4. Silent Mode Prompt Syntax Engine (Visual Replacements for Dialogue)
 - **PART II: MODE B ASSET ANCHORING & ZERO-COSTUME / ZERO-AGE LAWS**
   - § 1. The Mode B Initial Opening State Protocol at `[00:00]`
@@ -48,8 +48,8 @@
   - § 1. Universal Safety Filter Immunity Contract (Kling, Runway, Sora, Midjourney)
   - § 2. Metaphorical Translation Lexicon: Violence, Trauma & Weaponry
   - § 3. Metaphorical Translation Lexicon: Sensuality & Vulnerability
-- **PART VIII: THE 6-POINT PRE-FLIGHT DIRECTORIAL LINTER & 12 COMMON ERRORS**
-  - § 1. The 6-Point Pre-Flight Directorial Linter Gate
+- **PART VIII: THE CORE PRE-FLIGHT DIRECTORIAL LINTER (SUBSET OF DIRECTOR.md 13-POINT LINTER) & 12 COMMON ERRORS**
+  - § 1. The Core Pre-Flight Directorial Linter Gate
   - § 2. The 12 Cross-Cutting Directorial Errors Audit Table
   - § 3. The 3-Layer Check System (Core, Important, Nice-to-Have)
 
@@ -178,9 +178,8 @@ For **each Scene**, before writing the Shot breakdown, determine:
 - **Zero Vietnamese Diacritics in Character Identifier Tokens**: Strips 100% of accented characters (`ă, â, đ, ê, ô, ơ, ư` and tone marks) in character identifiers to prevent byte-pair tokenization fragmentation and facial distortion across Kling, Sora, Runway, and Hailuo text encoders.
 - **The Triad Entity Architecture (Characters vs. Locations & Props)**:
   - **Characters (Mandatory ho_ten Snake_Case)**: Written strictly in lowercase unaccented snake_case (my_duyen, minh_khang, ma_ba, di_tam, cu_tin). Serves as a unique synthetic entity token to bind Model Sheet appearances, anchor singular presence, and prevent AI character cloning.
-  - **Locations (Evocative Natural English — Zero Underscores _)**: Written in descriptive natural English without underscores (intimate Southern Vietnamese master bedroom, sunlit townhouse open kitchen, sunlit high school classroom). Banned: Vietnamese pinyin (phong_cu, 
-ha_bep, lop_hoc) and programmer snake_case (modern_townhouse_kitchen).
-  - **Props (Natural English Prose — Zero Underscores _)**: Written in natural English words without underscores (lack cast-iron skillet, white ceramic coffee mug, pine wood crib, steaming bowl of ginger congee). AI video diffusion text encoders (T5-XXL, CLIP) are pre-trained on natural English; snake_case (cast_iron_skillet) fragments tokens and ruins semantic physics comprehension.
+  - **Locations (Evocative Natural English — Zero Underscores _)**: Written in descriptive natural English without underscores (intimate Southern Vietnamese master bedroom, sunlit townhouse open kitchen, sunlit high school classroom). Banned: Vietnamese pinyin (phong_cu, nha_bep, lop_hoc) and programmer snake_case (modern_townhouse_kitchen).
+  - **Props (Natural English Prose — Zero Underscores _)**: Written in natural English words without underscores (black cast-iron skillet, white ceramic coffee mug, woven bamboo hand fan, steaming bowl of ginger congee). AI video diffusion text encoders (T5-XXL, CLIP) are pre-trained on natural English; snake_case (cast_iron_skillet) fragments tokens and ruins semantic physics comprehension.
 - **Atomic Entity Lock & Singularity**:
   - Declaration in `[subject]:`: `my_duyen [100% Appearance, attire, and facial features Refer to image 1], ... — the only my_duyen in frame.`
   - Action prose: `Camera tracks with ma_ba taking one resolute stride forward, standing squarely across the threshold...`
@@ -227,11 +226,11 @@ To anchor character identity, eliminate AI duplicate clones, and prevent spatial
      * **Function 3: The Mandatory Anti-Duplication Seal (`— the only {name} in frame`)**: Explicitly blocks diffusion text encoders from generating twin/clone duplicates of the same character in one room.
    - **Subject-to-Scale Invariance & Multi-Character Relational Grounding Law**:
      * *Single-Subject Scales (CU, MCU, Choker, ECU)*: [subject]: MUST contain strictly ONE character. Secondary characters are O.S. and must NEVER be declared in [subject]: or described in the prompt.
-     * *Two-Subject Scales (M2S, OTS, Two-Shot Profile)*: [subject]: lists both characters on separate lines, each with their own spatial anchor, mutual proximity (e.g. *1.5 meters apart across the central aisle*), 180° Action Axis & eyeline vectors (*ho_ten_A facing frame-right toward B; ho_ten_B facing frame-left toward A*), hands naturally free of props/weapons, and the mandatory — the only {name} in frame seal.
+     * *Two-Subject Scales (M2S, OTS, Two-Shot Profile)*: [subject]: lists both characters on separate lines, each with their own spatial anchor, mutual proximity in natural language (e.g. *directly across the narrow central aisle*; zero metre figures), 180° Action Axis & eyeline vectors anchored to people and architecture (*ho_ten_A facing ho_ten_B across the aisle; ho_ten_B looking back at ho_ten_A over the island*; never frame-left / frame-right), hands naturally free of props/weapons, and the mandatory — the only {name} in frame seal.
      * *The 3-Tier Staging Hierarchy (Mandatory Order of Compilation)*:
-       1. **Tier 1 ([context]:)**: 5-Vector 3D physical stage architecture, room boundaries, fixed landmarks with physical distances, directional lighting physics, and atmospheric medium. Never 1-line superficial text.
-       2. **Tier 2 ([subject]: & [PROP]:)**: Zero-frame (=0.0\text{s}$) coordinates, proximity, eyelines, and initial tactile contacts.
-       3. **Tier 3 (Action Timeline >0$)**: Biomechanical launchpad strictly originating from Tier 2 postures and Tier 1 architecture. Zero ungrounded jumps or spatial chaos.
+       1. **Tier 1 ([context]:)**: 5-Vector 3D physical stage architecture, room boundaries, fixed landmarks with relative distances in natural language (zero metre figures), directional lighting physics, and atmospheric medium. Never 1-line superficial text.
+       2. **Tier 2 ([subject]: & [PROP]:)**: Zero-frame ($t=0.0\text{s}$) architectural anchors, proximity, eyelines, hands free of props; every prop at its resting place.
+       3. **Tier 3 (Action Timeline $t>0$)**: Biomechanical launchpad strictly originating from Tier 2 postures and Tier 1 architecture. Zero ungrounded jumps or spatial chaos.
 
 2. **The 4-Vector Character Directing Protocol in Timeline Shots (`[00:00–00:XX]`)**:
    While `[subject]:` locks the **static spatial grounding at 00:00.0**, the timeline phases (`[00:00–00:XX]`) direct **dynamic kinetic progression** across time:
@@ -286,27 +285,27 @@ To anchor character identity, eliminate AI duplicate clones, and prevent spatial
 **Directing Syntax for 4 Master Cinematic Dialogue Techniques in Prompts:**
 1. **Standard Solo Shot (Shot - Reverse Shot — Single Speaker)**:
    ```text
-   Mỹ Duyên [Refer to image 1], framed in medium close-up at room-center, gentle brown eyes glowing with maternal hope, chest rising in calm measured breaths — the only Mỹ Duyên in frame.
-   Mỹ Duyên says : “A bamboo cradle, a bolster for the back, and a soft bed-edge to cradle you gently, Mama!” (Voice of a young adult woman from Southern Vietnam; lips parting in articulate lip-sync with a tender affectionate smile; slender fingers caressing the cotton fabric; gentle brown eyes conveying a tender plea for filial reconciliation.)
+   my_duyen [Refer to image 1], framed in medium close-up at room-center, gentle brown eyes glowing with maternal hope, chest rising in calm measured breaths — the only my_duyen in frame.
+   my_duyen says : “A bamboo cradle, a bolster for the back, and a soft bed-edge to cradle you gently, Mama!” (Voice of a young adult woman from Southern Vietnam; lips parting in articulate lip-sync with a tender affectionate smile; slender fingers caressing the cotton fabric; gentle brown eyes conveying a tender plea for filial reconciliation.)
    ```
 2. **Reaction Shot (Model 0 — 0 Spoken Words, Absolute Lip Closure)**:
    ```text
-   Bà Ba [Refer to image 2], framed in tight close-up, shoulders rigid against the doorway frame, lips remaining 100% firmly sealed with zero mouth movement; eyes glistening with suppressed vulnerability, jaw clenching as throat swallows hard, absorbing the painful truth in heavy suffocating silence through 00:10.0.
+   ba_ba [Refer to image 2], framed in tight close-up, shoulders rigid against the doorway frame, lips remaining 100% firmly sealed with zero mouth movement; eyes glistening with suppressed vulnerability, jaw clenching as throat swallows hard, absorbing the painful truth in heavy suffocating silence through 00:10.0.
    ```
 3. **L-Cut Audio Bleed (Trailing Dialogue over Silent Reaction)**:
    ```text
-   Bà Ba [Refer to image 2], framed in medium close-up, looking toward screen-left in stunned silence, lips remaining 100% firmly closed; in diegetic room acoustics, the trailing spoken words of Mỹ Duyên echo from off-screen during [00:00–00:02.0]: “...to cradle you gently, Mama!” while Bà Ba's eyes widen slightly, throat muscles tightening before a slow, wounded exhalation right to 00:10.0.
+   ba_ba [Refer to image 2], framed in medium close-up, looking toward the doorway in stunned silence, lips remaining 100% firmly closed; in diegetic room acoustics, the trailing spoken words of my_duyen echo from off-screen during [00:00–00:02.0]: “...to cradle you gently, Mama!” while ba_ba's eyes widen slightly, throat muscles tightening before a slow, wounded exhalation right to 00:10.0.
    ```
 4. **Internal Monologue / Voice-Over (Model 4 — V.O.)**:
    ```text
-   Minh Khang [Refer to image 3], sitting motionless on the wooden bench, eyes fixed down on the crumpled letter, lips remaining 100% firmly sealed with zero facial articulation; internal voiceover resonates in clear mental acoustics: “If I turn back now, there will be nothing left to save.” (Voice of a young adult man from Central Vietnam, hushed reflective timbre; slow shallow breathing, eyelids fluttering softly.)
+   minh_khang [Refer to image 3], sitting motionless on the wooden bench, eyes fixed down on the crumpled letter, lips remaining 100% firmly sealed with zero facial articulation; internal voiceover resonates in clear mental acoustics: “If I turn back now, there will be nothing left to save.” (Voice of a young adult man from Central Vietnam, hushed reflective timbre; slow shallow breathing, eyelids fluttering softly.)
    ```
 
 **Two-Shot Exception Directing Demonstration (Rapid Sparring ≤ 15w/speaker):**
 ```text
 [MULTI-CHARACTER TWO-SHOT VISUAL STAGING]
-Eleazar [Refer to image 1], standing rigid at screen-right facing screen-left across the timber ledger table with predatory jaw tension — the only Eleazar in frame.
-Noa [Refer to image 2], standing firm at screen-left facing screen-right in resolute stillness, right hand hovering primed above the tabletop — the only Noa in frame.
+Eleazar [Refer to image 1], standing rigid behind the timber ledger table on the brazier side, facing Noa across the table with predatory jaw tension, hands free of props — the only Eleazar in frame.
+Noa [Refer to image 2], standing firm on the doorway side of the table, facing Eleazar in resolute stillness, empty hands hovering above the tabletop — the only Noa in frame.
 
 [RAPID SPARRING DIALOGUE DIRECTING — UNDER 15 WORDS PER SPEAKER]
 Eleazar snaps : “Your father's debt is due tonight; yield the loom!” (Voice of a middle-aged man with harsh gravelly Levantine timbre; lips curling in a predatory sneer; heavy knuckles slapping the oak wood; eyes narrowed in tyrannical greed.)
@@ -469,10 +468,11 @@ Key lighting casting crisp contact shadows under feet, strictly zero text, zero 
 > **CINEMATIC STYLE & 16:9 RATIO INHERITANCE LAW (MANDATORY)**: Every single pre-production reference asset (Character Model Sheets §1B, Prop Design Sheets §1C, Location Design Sheets §1D) MUST inherit 100% of the project's designated Master Cinematic Visual Style (`Style: [Visual Style Name]`) AND MUST be standardized strictly to **16:9 Landscape aspect ratio**. Mixing visual styles or aspect ratios across assets is strictly prohibited.
 
 > 🌟 **THE TWO-TIER PROP IMPLEMENTATION STANDARD (DOCTRINE §10.5)**:
-> - **Tier 1 (Everyday / Ambient Domestic Props)**: Rice bowls, tea cups, chopsticks, folding hammocks, pens, paper envelopes, wrenches, keys, phones. **100% PURE TEXT PROMPTING (Mode A)**. Generating 16:9 turnaround sheets for these common items is STRICTLY FORBIDDEN. AI generative models already possess rich semantic weights for mundane objects.
-> - **Tier 2 (Sovereign / Soul / Weapon / Complex Artifacts)**: Custom weapons, ancestral talismans, runic blades, glowing sci-fi cores, dynastic seals, intricate puzzle boxes. **MANDATORY 16:9 4-VIEW MODEL SHEET (Mode B)**. Text alone cannot maintain geometric consistency; visual image reference is strictly required to prevent consistency drift.
+> - **Tier 1 (Signature Hero Props & Vehicles, max 1–2 per series)**: Custom weapons, ancestral talismans, heirloom relics, dynastic seals, signature vehicles, intricate puzzle boxes. **MANDATORY 16:9 4-VIEW MODEL SHEET (Mode B)**. Text alone cannot maintain geometric consistency; a visual reference is required to prevent drift.
+> - **Tier 2 (Everyday Handheld Items)**: Rice bowls, tea cups, chopsticks, pens, paper envelopes, wrenches, keys, phones. **100% PURE TEXT PROMPTING (Mode A)**; generating 16:9 turnaround sheets for these items is STRICTLY FORBIDDEN. Furniture and fixtures (beds, cribs, tables, hammocks, curtains) are never props; they belong to `[context]:`.
+> - *Numbering note*: Tier 1 = image-anchored hero props, Tier 2 = text-only everyday handheld items, matching `workflow.md` §6.3 and DIRECTOR.md §1c.
 
-**MASTER 16:9 FOUR-VIEW PROP DESIGN SHEET PROMPT STRUCTURE (Step 1C — TIER 2 SOVEREIGN PROPS ONLY):**
+**MASTER 16:9 FOUR-VIEW PROP DESIGN SHEET PROMPT STRUCTURE (Step 1C — TIER 1 HERO PROPS ONLY):**
 ```
 Style: [Movie Master Visual Style Name — e.g. Pixar & DreamWorks 3D Biblical Realism / Theatrical Live-Action Realism...].
 
@@ -487,26 +487,26 @@ Rules: Strictly four views only. Do not include any fifth view, extra detail ins
 
 #### PROMPT COMPILATION: MODE A VS. MODE B
 
-**MODE A — TIER 1: EVERYDAY / AMBIENT PROPS (Pure Text — Zero Reference Image):**
-- **Trigger**: Domestic items, tools, ordinary paper, standard furniture, tableware, ambient objects.
+**MODE A — TIER 2: EVERYDAY HANDHELD ITEMS (Pure Text — Zero Reference Image):**
+- **Trigger**: Handheld domestic items, tools, ordinary paper, tableware. Furniture and fixtures are described in `[context]:`, never here.
 - **Formula**:
-  `[PROP: {material/texture} {prop noun}, {state/wear}, {spatial location OR which hand holds it} — the only {prop noun} in frame]`
+  One line inside `[PROP]:`: `{material/texture} {prop noun}, {state/wear}, {resting place independent of character hands} — the only {prop noun} in frame`
 - **Examples**:
   ```text
-  [PROP: chipped white ceramic rice bowl, steaming with hot jasmine rice, resting on the wooden dining table beside Duyen's left wrist — the only rice bowl in frame]
-  [PROP: tarnished stainless steel folding hammock frame, taut green woven mesh, resting open on the tiled floor at room-center — the only hammock in frame]
-  [PROP: folded kraft paper envelope with faded red ink hospital seal, held firmly in Khang's trembling right hand at waist level — the only envelope in frame]
+  chipped white ceramic rice bowl, steaming with hot jasmine rice, resting on the wooden dining table beside my_duyen's left wrist — the only rice bowl in frame
+  dented aluminum kettle, soot-blackened base, resting on the clay stove ledge with a thin thread of steam rising from the spout — the only kettle in frame
+  folded kraft paper envelope with faded red ink hospital seal, resting on the wooden side table beside the doorway — the only envelope in frame
   ```
 
-**MODE B — TIER 2: SOVEREIGN / SOUL / WEAPON PROPS (Image-Anchored — Reference Image Exists):**
+**MODE B — TIER 1: SIGNATURE HERO / SOUL / WEAPON PROPS (Image-Anchored — Reference Image Exists):**
 - **Trigger**: Custom weapons, soul props, ancestral relics, complex mechanisms with unique runes/inscriptions.
 - **Formula**:
-  `[PROP: {Prop Name} [100% Refer to image <prop_ref>], {Physical State}, {Spatial Location OR which hand holds it} — the only {prop noun} in frame]`
+  One line inside `[PROP]:`: `{Prop Name in natural English} [100% Refer to image <prop_ref>], {Physical State}, {resting place independent of character hands} — the only {prop noun} in frame`
 - **Examples**:
   ```text
-  [PROP: The Sharp Triangular Cobalt Porcelain Shard [100% Refer to image prop_shard_4view.jpg], razor-sharp broken fragment with unglazed white jagged edges, resting on dusty limestone flagstones at frame-center — the only porcelain shard in frame]
-  [PROP: The Forged Terracotta Tablet [100% Refer to image prop_tablet_4view.jpg], intact baked earthenware with chipped dove wax seal, held firmly in Eleazar's thick right hand at chest level — the only tablet in frame]
-  [PROP: The Obsidian Phoenix Hairpin [100% Refer to image prop_hairpin_4view.jpg], intricate carved black obsidian with blood-red jade eye, clutched in A1's trembling right fist — the only hairpin in frame]
+  sharp triangular cobalt porcelain shard [100% Refer to image prop_shard_4view.jpg], razor-sharp broken fragment with unglazed white jagged edges, resting on the dusty limestone flagstones below the altar step — the only porcelain shard in frame
+  forged terracotta tablet [100% Refer to image prop_tablet_4view.jpg], intact baked earthenware with chipped dove wax seal, resting at the center of the timber ledger table — the only tablet in frame
+  obsidian phoenix hairpin [100% Refer to image prop_hairpin_4view.jpg], intricate carved black obsidian with blood-red jade eye, resting on the lacquered dressing table beside the bronze mirror — the only hairpin in frame
   ```
 
 
@@ -643,7 +643,7 @@ Every sentence in actual output must be **observable physical detail**:
 **How to embed in Code Block 1:**
 
 ```
-Master bedroom interior, nighttime — bedside table lamp (practical, frame-right) casts...
+Master bedroom interior, nighttime — bedside table lamp (practical, on the nightstand beside the bed) casts...
               ↑ time declared immediately after setting name, before the em dash —
 ```
 
@@ -657,10 +657,10 @@ Stone courtyard interior, midday harsh sunlight, overhead sun —
 vertical sunlight entering through open roof, hard brilliant white light, deep shadow pools directly beneath pillars...
 
 Village road exterior, golden hour, low warm sun before sunset —
-warm rich amber sidelight from frame-right at 15° angle, long stretched shadows pointing left...
+warm rich amber sidelight raking low from the western fields at 15° angle, long stretched shadows reaching east across the road...
 
 Bedroom interior, nighttime, artificial light only —
-bedside table lamp (practical, frame-right, bed-height) casts warm soft amber pool across the bed...
+bedside table lamp (practical, on the nightstand at bed height) casts warm soft amber pool across the bed...
 ```
 
 ---
@@ -815,12 +815,12 @@ Generative AI diffusion engines risk catastrophic latent distortion (severe bloo
 - **Track A (Single-Shot Threshold Push-Through)**:
   - *Mechanism*: Camera moves with subject from an interior corridor/room directly through open sliding glass doors or a threshold onto an outdoor terrace/courtyard.
   - *Exposure Adaptation Mandate*: Prompt MUST explicitly describe camera exposure adjustment: `gliding from the cool interior hallway through the open glass doorway into blazing midday sunlight, the exposure adapting smoothly to natural exterior illumination`.
-  - *Context Declaration*: Declare unified linked space: `khong_gian_lien_hoan [100% Refer to...] spanning from the interior room through floor-to-ceiling glass doors onto the sunlit exterior terrace`.
+  - *Context Declaration*: Declare unified linked space: `linked interior-to-terrace living space [100% Refer to...] spanning from the interior room through floor-to-ceiling glass doors onto the sunlit exterior terrace`.
 - **Track B (Multi-Shot Cross-Space Intercut)**:
   - *Mechanism*: Shot 1 frames Subject A indoors looking outward through a transparent glass divider; Shot 2 cuts across the 180° action axis framing Subject B outdoors looking back inward.
   - *Eyeline & Lighting Delta Lock*:
-    - Subject A indoors has screen-left eyeline and dim interior lighting, with bright outdoor sky visible beyond the glass.
-    - Subject B outdoors has screen-right eyeline, buffeted by exterior wind and drenched in direct sunlight, with dim interior room reflected in the glass pane.
+    - Subject A indoors looks out through the glass toward Subject B, under dim interior lighting, with bright outdoor sky visible beyond the glass.
+    - Subject B outdoors looks back in toward Subject A, buffeted by exterior wind and drenched in direct sunlight, with the dim interior room reflected in the glass pane. Screen direction (who holds screen-left / screen-right) is recorded in the Audit Card; Code Block 1 expresses it only through these architecture-anchored eyelines.
     - Eyeline matching through the physical divider is 100% mandatory.
 
 ### 4. Confined & Intimate Spaces (Không Gian Hẹp: Ngôi Nhà Nhỏ, Hang Động, Cabin, Ngưỡng Cửa)
@@ -914,10 +914,10 @@ Master-level cinematography and composition, fast-paced shot variation, atmosphe
 [Location Name in English] [100% Refer to image <location_ref_4view.jpg>], [time of day]. [Complete 5-vector physical architectural specification: full fixed furniture inventory, in-scene textiles/bedding, key lighting direction, and continuous environmental micro-motion: dust motes dancing in sunbeams, steam curling steadily].
 
 [subject]:
-[character_name] [100% Appearance, attire, and facial features Refer to image X], [spatial anchor], [tactile posture] — the only [character_name] in frame.
+[character_name] [100% Appearance, attire, and facial features Refer to image X], [architectural anchor], [body posture], hands free of props, [eyeline toward a character or landmark] — the only [character_name] in frame.
 
 [PROP]:
-[hero_prop_in_english] [100% Refer to image <prop_ref.jpg>]; [tactile fixture / resting state]. (or: "none (pure environmental and somatic staging)" if no hero prop)
+[hero prop in natural English] [100% Refer to image <prop_ref.jpg>], [physical state], [resting place] — the only [prop noun] in frame.  (Tier 2 everyday handheld items: same line without the image tag. No handheld item in the scene: "none (pure environmental and somatic staging)")
 
 Diegetic sound of [room tone], accompanied by [specific Foley: creak of wood, rustle of linen, choked breathing].
 
@@ -926,7 +926,7 @@ Eye-level [Shot scale, e.g. medium close-up] framing [character_name], shallow d
 [00:00–00:03.5] [actor initial posture, rapid chest breathing, jaw clenched, fingers gripping prop rail; microscopic dust motes swirl in sunbeams].
 
 [00:03.5–00:07.0] [actor swallows hard, jaw quivering, eyes welling with tears, delivers line with breathy choke].
-[character_name] [expressive verb] : “ [spoken line ≤ 18 words] ”（Voice of [demographic]; [acoustic paralinguistic tags]）
+[character_name] [expressive verb] : “ [spoken line within Gate 4B: ≤ 32 words solo, ≤ 15 words per speaker in a two-shot] ”（Voice of [demographic]; [acoustic paralinguistic tags]）
 
 [00:07.0–00:10.0] [lips seal tightly, single tear spills down cheek, chin trembles, head lowers slightly, shoulders slump under invisible weight; background curtains ripple faintly].
 
@@ -957,7 +957,7 @@ Consistent character, lighting, and environmental physics maintained through 00:
    * *Camera Execution*: Shot 1 (Wide Mob framing) ➔ Cut to Shot 2 (Low-Angle MCU Hero) ➔ Cut to Shot 3 (Wide Living Society in stunned breathless silence).
 4. **Cause-and-Effect Spatial Dispersion (Nhân - Quả Phân Tán Không Gian)**:
    * *Dramatic Nature*: An action initiated in one spatial quadrant detonates an immediate physical consequence in another quadrant within the 10-second breath.
-   * *Scenarios*: Cutting a rope at frame-left ➔ Heavy portcullis slams into stone at frame-center ➔ Trapped infiltrator halts rigidly against the bars at frame-right.
+   * *Scenarios*: Cutting a rope beside the gate winch ➔ Heavy portcullis slams into the stone threshold ➔ Trapped infiltrator halts rigidly against the bars on the far side of the gate.
    * *Camera Execution*: Shot 1 (Tight Trigger Action) ➔ Cut to Shot 2 (Medium Impact Event) ➔ Cut to Shot 3 (Standoff Arrest).
 5. **Emotional Witnessing & Third-Party Stake (Phản Ứng Đa Chiều Của Nhân Chứng Thứ Ba)**:
    * *Dramatic Nature*: The catastrophic weight of a clash lands hardest not on the two combatants, but on an innocent third party observing from the sidelines.
@@ -1122,9 +1122,9 @@ SCENE N (10.0s Clip)                                SCENE N+1 (10.0s Clip)
 > [!IMPORTANT]
 > **THE ZERO-CONFLICT MULTI-MODAL PROMPT ARCHITECTURE (2026 MANDATE)**:
 > Code Block 1 MUST BE STRUCTURED INTO EXACT THREE EXPLICIT MULTI-MODAL REFERENCE BLOCKS:
-> 1. `[context]:` Location Name with `[100% Refer to image ...]` + Time of Day, Atmosphere, and Key Lighting.
-> 2. `[subject]:` The 4-Part Sovereign Formula ([Name + Image Anchor] + [Architectural Spatial Anchor] + [Initial Physical Posture & Tactile Contact] + [— the only [name] in frame]).
-> 3. `[PROP]:` Interactive Hand Props and Key Fixtures with `[100% Refer to image ...]` (semicolon-separated clean list).
+> 1. `[context]:` Evocative natural-English Location Name (no underscores) with `[100% Refer to image ...]` + Time of Day, Atmosphere, and Key Lighting.
+> 2. `[subject]:` The Prop-Free Sovereign Formula ([ho_ten + Image Anchor] + [Architectural Anchor] + [Body Posture, hands free of props] + [Eyeline] + [— the only [name] in frame]). No frame-edge directions, no metre figures.
+> 3. `[PROP]:` Handheld items only, one prop per line, each with a resting place: Tier 1 hero props with `[100% Refer to image ...]`, Tier 2 everyday items as natural-English text only. Furniture and fixtures stay in `[context]:`.
 > **BLANK LINE SPACING LAW**: Each section MUST be separated by an empty line (`\n\n`) for visual clarity and token parsing isolation.
 > **THE 4-VECTOR CHARACTER DIRECTING PROTOCOL**: In every timeline shot (`[00:00–00:XX]`), for any participating character, explicitly specify (1) Physical State / Posture, (2) Action / Movement, (3) Emotion / Somatic Reaction, (4) Spatial Location / 3D Blocking.
 > Timeline phases follow beneath in canonical syntax terminating in standard stability and negative lines.
@@ -1145,14 +1145,15 @@ Rustic limestone kitchen [100% Refer to image location_kitchen_4view.jpg], at du
 
 [subject]:
 Milcah [100% Appearance, attire, and facial features Refer to image 2], resting on the low wooden cot against the back wall, head on a straw pillow, eyes half-closed, breathing slowly in shallow exhaustion — the only Milcah in frame.
-Noa [100% Appearance, attire, and facial features Refer to image 1], kneeling on the packed earthen floor beside the hearth, chest rising in guarded breaths, gaze on the cot — the only Noa in frame.
+Noa [100% Appearance, attire, and facial features Refer to image 1], kneeling on the packed earthen floor beside the hearth, empty hands resting on the thighs, chest rising in guarded breaths, gaze on the cot — the only Noa in frame.
 
 [PROP]:
-empty_grain_jar [100% Refer to image prop_jar_4view.jpg], terracotta, lying on the earthen floor beside Noa's left knee, hollow mouth facing the hearth — the only grain jar in frame.
+empty terracotta grain jar, cracked rim, lying on its side on the earthen floor beside Noa's left knee, hollow mouth facing the hearth — the only grain jar in frame.
+worn wooden scoop, resting on the earthen floor beside the jar mouth — the only scoop in frame.
 
 Diegetic room acoustics: muffled desert wind outside, crackle of dying coals, soft scrape of wood against clay.
 
-[00:00–00:03.0] Medium two-shot framing Noa and Milcah, low angle, static camera — Noa tips the grain jar and scrapes a worn wooden scoop along the inside, finding nothing; on the cot Milcah watches through half-closed eyes.
+[00:00–00:03.0] Medium two-shot framing Noa and Milcah, low angle, static camera — Noa scrapes the worn wooden scoop along the inside of the grain jar, finding nothing; on the cot Milcah watches through half-closed eyes.
 
 [00:03.0–00:07.5] Slow push-in to a medium close-up framing Noa at eye level, shallow depth of field holding sharp optical focus on Noa's face — Noa sets the scoop down and turns toward the cot, jaw setting.
 Noa whispers : “ Rest, Mother. The loom will feed us. ”（Voice of a 20-year-old woman from the Judean hills, steady and fervent, precise lip-sync, warm hearth light across the cheek, a promise Noa is not sure of）
@@ -1190,17 +1191,18 @@ Limestone debt-collector's alcove [100% Refer to image location_alcove_4view.jpg
 
 [subject]:
 Eleazar [100% Appearance, attire, and facial features Refer to image 4], standing behind the timber ledger table on the brazier side, palms pressed flat against the wood — the only Eleazar in frame.
-Noa [100% Appearance, attire, and facial features Refer to image 1], standing erect on the doorway side of the table, holding the copper seal in a clenched right fist — the only Noa in frame.
+Noa [100% Appearance, attire, and facial features Refer to image 1], standing erect on the doorway side of the table, empty hands clenched at the sides, facing Eleazar — the only Noa in frame.
 
 [PROP]:
-forged_debt_tablet [100% Refer to image prop_tablet_4view.jpg]; copper_family_seal [100% Refer to image prop_seal_4view.jpg]
+forged debt tablet [100% Refer to image prop_tablet_4view.jpg], cracked terracotta with a dove wax seal, resting at the center of the ledger table — the only debt tablet in frame.
+copper family seal [100% Refer to image prop_seal_4view.jpg], worn green-tinged copper, resting at the doorway-side edge of the table within Noa's reach — the only seal in frame.
 
 Diegetic room acoustics: crackling brazier coals, wind whistling through the window bars, heavy breathing.
 
 [00:00–00:03.8] Medium close-up framing Eleazar standing behind the timber ledger table, low angle, slow push-in, sharp optical focus on Eleazar — weight pressed forward onto both palms, slaps a flat palm down beside the debt tablet with flared nostrils; across the table Noa stands rigid without blinking.
 Eleazar snaps : “ Your father's debt is due tonight. ”（Voice of a 55-year-old man from Jerusalem, harsh and gravelly, precise lip-sync, brazier glow under the brow, savoring the trap）
 
-[00:03.8–00:07.6] Cut to a medium close-up framing Noa on the doorway side of the table, slight low angle, sharp optical focus on Noa, static camera — shoulders squared, presses the copper seal flat onto the table with a ringing clack, chin lifting in defiance; across the table Eleazar stiffens.
+[00:03.8–00:07.6] Cut to a medium close-up framing Noa on the doorway side of the table, slight low angle, sharp optical focus on Noa, static camera — shoulders squared, slaps a palm onto the copper seal and drives it flat against the wood with a ringing clack, chin lifting in defiance; across the table Eleazar stiffens.
 Noa replies : “ That seal is forged. Father paid. ”（Voice of a 22-year-old woman from the Judean hills, ringing and fierce, precise lip-sync, moonlight across the eyes, refusing to be afraid）
 
 [00:07.6–00:10.0] Cut to an extreme close-up on Eleazar's eyes, eye level, static camera — the condescending smirk drains, pupils contract under the moonlight; lips stay sealed, breath catches, charcoal haze drifts across the frame.
@@ -1208,7 +1210,7 @@ Noa replies : “ That seal is forged. Father paid. ”（Voice of a 22-year-old
 Continuous fluid motion, realistic physics, zero morphing. All characters remain anchored in fixed spatial positions throughout the shot.
 Do not generate subtitles, dialogue text, titles, timestamps, or written text anywhere in the video. Do not render duplicate characters or extra props.
 ```
-Timing: two 6-word lines ≈ 2.7 s each inside 3.8 s phases; 3 shots in 10 s (grammar §6: 1–4); speech ≈ 54 %.
+Timing: two 6-word lines ≈ 2.7 s each inside 3.8 s phases; 3 shots in 10 s (grammar §6: 2–4); speech ≈ 54 %.
 
 #### Code Block 2 (Handover @00:10)
 ```text
@@ -1235,17 +1237,18 @@ Master-level cinematography and composition, fast-paced shot variation, atmosphe
 Riverside wooden kitchen [100% Refer to image location_kitchen_ref.jpg], late afternoon. Low sun enters through the slatted bamboo wall behind the clay stove, laying warm stripes across the floorboards; wood smoke hangs under the thatch.
 
 [subject]:
-ba_tu [100% Appearance, attire, and facial features Refer to image 1], seated on a low wooden stool beside the clay stove, both hands around the handle of a blackened clay pot, shoulders rounded, gaze on the fire — the only ba_tu in frame.
+ba_tu [100% Appearance, attire, and facial features Refer to image 1], seated on a low wooden stool beside the clay stove, both hands resting on the knees, shoulders rounded, gaze on the fire — the only ba_tu in frame.
 hanh [100% Appearance, attire, and facial features Refer to image 2], standing in the kitchen doorway with one shoulder against the frame, gaze on ba_tu — the only hanh in frame.
 
 [PROP]:
-folded_letter [100% Refer to image prop_letter_ref.jpg], creased cream paper, held in hanh's right hand against the thigh — the only letter in frame.
+blackened clay pot, lid ticking with steam, resting on the clay stove beside ba_tu — the only clay pot in frame.
+folded letter [100% Refer to image prop_letter_ref.jpg], creased cream paper, resting on the low bamboo shelf just inside the doorway beside hanh — the only letter in frame.
 
 Diegetic room acoustics: crackling firewood, a pot lid ticking with steam, river water lapping under the stilts.
 
-[00:00–00:04.0] Wide shot framing hanh and ba_tu, eye level, deep depth of field, static camera — hanh steps over the threshold and stops two paces from the stove; ba_tu keeps both hands on the pot handle without looking up.
+[00:00–00:04.0] Wide shot framing hanh and ba_tu, eye level, deep depth of field, static camera — hanh lifts the folded letter from the bamboo shelf beside the doorway; ba_tu wraps both hands around the clay pot handle without looking up.
 
-[00:04.0–00:08.0] Slow push-in to a medium two-shot at eye level, optical focus holding on hanh — hanh holds the folded letter out at arm's length.
+[00:04.0–00:08.0] Slow push-in to a medium two-shot at eye level, optical focus holding on hanh — hanh steps two paces toward the stove and holds the folded letter out at arm's length.
 hanh says : “ Thư của anh Hai gửi về nè má. ”（Voice of a 30-year-old woman from the Mekong Delta; soft high-pitched hesitant tone, anxious filial vulnerability）
 
 [00:08.0–00:12.5] The push-in continues to a medium close-up framing ba_tu at eye level, shallow depth of field holding sharp focus on ba_tu — ba_tu lets go of the pot handle and stares at the letter without taking it.
@@ -1272,23 +1275,24 @@ Master-level cinematography and composition, fast-paced shot variation, atmosphe
 Riverside wooden kitchen [100% Refer to image location_kitchen_ref.jpg], late afternoon. Low sun enters through the slatted bamboo wall behind the clay stove, laying warm stripes across the floorboards; wood smoke hangs under the thatch.
 
 [subject]:
-ba_tu [100% Appearance, attire, and facial features Refer to image 1], seated on a low wooden stool beside the clay stove, both hands around the handle of a blackened clay pot, shoulders rounded, gaze on the fire — the only ba_tu in frame.
+ba_tu [100% Appearance, attire, and facial features Refer to image 1], seated on a low wooden stool beside the clay stove, both hands resting on the knees, shoulders rounded, gaze on the fire — the only ba_tu in frame.
 hanh [100% Appearance, attire, and facial features Refer to image 2], standing in the kitchen doorway with one shoulder against the frame, gaze on ba_tu — the only hanh in frame.
 
 [PROP]:
-folded_letter [100% Refer to image prop_letter_ref.jpg], creased cream paper, held in hanh's right hand against the thigh — the only letter in frame.
+blackened clay pot, lid ticking with steam, resting on the clay stove beside ba_tu — the only clay pot in frame.
+folded letter [100% Refer to image prop_letter_ref.jpg], creased cream paper, resting on the low bamboo shelf just inside the doorway beside hanh — the only letter in frame.
 
 Diegetic room acoustics: crackling firewood, a pot lid ticking with steam, river water lapping under the stilts.
 
-[00:00–00:05.5] Wide shot framing hanh entering toward ba_tu, eye level, slow push-in — hanh steps over the bamboo threshold and stops two paces from the stove; ba_tu keeps both hands pinned to the clay pot handle without turning her head.
+[00:00–00:05.5] Wide shot framing hanh and ba_tu, eye level, slow push-in — hanh lifts the folded letter from the bamboo shelf beside the doorway, eyes on ba_tu; ba_tu grips the clay pot handle with both hands without turning toward the doorway.
 
-[00:05.5–00:11.0] Cut to an over-the-shoulder shot framing hanh past ba_tu's foreground silhouette, sharp optical focus on hanh at eye level, static camera — hanh extends her right arm, holding the folded letter out into the shaft of low sunlight.
+[00:05.5–00:11.0] Cut to an over-the-shoulder shot framing hanh past ba_tu's foreground silhouette, sharp optical focus on hanh at eye level, static camera — hanh steps two paces toward the stove and extends the folded letter into the shaft of low sunlight.
 hanh says : “ Thư của anh Hai gửi về từ thành phố nè má. ”（Voice of a 30-year-old woman from the Mekong Delta; soft high-pitched hesitant tone, earnest filial vulnerability）
 
-[00:11.0–00:17.5] Cut to a medium close-up framing ba_tu, slight low angle, shallow depth of field holding sharp focus on ba_tu's weathered face, static camera — ba_tu slowly withdraws both hands from the pot handle, palms trembling as her fingers rest on her lap; her chin tightens.
+[00:11.0–00:17.5] Cut to a medium close-up framing ba_tu, slight low angle, shallow depth of field holding sharp focus on ba_tu's weathered face, static camera — ba_tu slowly withdraws both hands from the pot handle, palms trembling as the fingers settle onto the lap; the chin tightens.
 ba_tu says : “ Mày cất đi. Tao không có đứa con nào thứ hai hết. ”（Voice of a 68-year-old woman from the Mekong Delta; low raspy dry timbre, stubborn pride masking deep hurt）
 
-[00:17.5–00:24.0] Cut to a medium shot framing hanh, eye level, slow push-in, sharp optical focus on hanh — hanh crouches down onto one knee beside the stove, placing the creased letter gently onto the dry timber beside ba_tu's stool; she looks directly into ba_tu's eyes.
+[00:17.5–00:24.0] Cut to a medium shot framing hanh, eye level, slow push-in, sharp optical focus on hanh — hanh crouches down onto one knee beside the stove, placing the creased letter gently onto the dry timber beside ba_tu's stool; hanh's gaze holds ba_tu's eyes.
 hanh says : “ Anh Hai nói tháng sau anh về giỗ ba. ”（Voice of a 30-year-old woman from the Mekong Delta; warm mellow gentle cadence, earnest emotional plea to heal the family）
 
 [00:24.0–00:30.0] Cut to an extreme close-up on ba_tu's right hand and the letter, eye level, static camera — the gnarled fingers hover over the paper for two seconds, touch the creased edge without picking it up, then press flat against the warm floorboards; wood smoke drifts across the edge of the frame, breathing slows to a living rhythm.
@@ -1304,13 +1308,13 @@ Timing: 12 + 14 + 10 = 36 syllables (grammar §7: 35–70 for 30 s); 5 shots acr
 
 Use only when the user explicitly requests chaining or reports that the generator cannot hold 30 s in a single prompt.
 - **Part 1 (00:00–00:10)** — Act I, arrival and trigger: a complete Code Block 1 like Demo 1, ending on momentum rather than a full settle.
-- **Part 2 (00:00–00:10)** — Act II, the exchange where power shifts: a complete Code Block 1 like Demo 2. Its `[subject]` and `[Pro]` blocks restate the exact positions and prop states from Part 1's Code Block 2; nothing refers to "the previous scene" (Gate 3I).
+- **Part 2 (00:00–00:10)** — Act II, the exchange where power shifts: a complete Code Block 1 like Demo 2. Its `[subject]` and `[PROP]` blocks restate the exact positions and prop states from Part 1's Code Block 2; nothing refers to "the previous scene" (Gate 3I).
 - **Part 3 (00:00–00:10)** — Act III, the reveal or decision, closing on a living settle ≥ 2 s.
 - Keep the camera on the same side of the axis across the three parts unless a part crosses it with a visible move.
 
 ---
 
-## 🛡️ § 6. THE 9-POINT PRE-FLIGHT DIRECTORIAL LINTER
+## 🛡️ § 6. THE 9-POINT CORE PRE-FLIGHT LINTER (SUBSET OF THE DIRECTOR.md 13-POINT LINTER)
 
 Before approving any 10-second prompt, the Director MUST verify all 9 points of the Pre-Flight Linter:
 1. **[ ] Zero Freeze Holds & Organic Motion**: STRICTLY BAN `freeze hold` or `zero-velocity`. Maintain continuous natural motion throughout the 10s clip without forcing repetitive boilerplate settle text.
@@ -1319,7 +1323,7 @@ Before approving any 10-second prompt, the Director MUST verify all 9 points of 
 4. **[ ] Two-Tier Completeness Gate**: Tier 1 Director's Audit Card (with explicit technical labels) MUST precede Tier 2 Machine Execution Blocks (Code Block 1 Prompt + Code Block 2 Handover).
 5. **[ ] Anti-Math Vector Law Gate (Gate 3H)**: STRICTLY BAN `X:`, `Y:`, `Z:` coordinates and raw meter numbers `(X:+0.8m, Y:0.0m, Z:2.0m)` in Code Block 1. Pure natural prose only.
 6. **[ ] Stateless Prompt Law Gate (Gate 3I)**: STRICTLY BAN `from Scene XX` or cross-scene dependencies in Code Block 1. Diffusion engines render each 10s clip statelessly; all action sequences within the clip must be self-contained.
-7. **[ ] Single Instance Lock & Anti-Ghost Prop Gate**: Exactly ONE physical instance of any interactive prop exists. Explicit resting surface clearance (`leaving the floor completely clear`). Heavy fixtures (Pine Crib, Bed, Table) permanently anchored to room coordinates with zero teleportation.
+7. **[ ] Single Instance Lock & Anti-Ghost Prop Gate**: Exactly ONE physical instance of any interactive prop exists. Explicit resting surface clearance (`leaving the floor completely clear`). Heavy fixtures (Pine Crib, Bed, Table) declared in `[context]:` and permanently anchored to their room landmarks with zero teleportation.
 8. **[ ] The One-Move Rule Gate (Anti-Compounded Action Law)**: Strictly 1 primary kinetic move + 1 secondary biological reaction per 3–4s shot window. Compound multi-tasking is banned.
 9. **[ ] Dialogue Word Count Hard Cap (Gate 4B) & 10s Shot Allocation**: STRICTLY adhere to the 10s Shot Word Budget: Single-speaker solo shots are budgeted at 25–30 words (Sitcom/Slice-of-Life, hard cap ≤ 32w) or 15–20 words (Psychological Drama). Two-speaker shots are strictly limited to rapid volleys of 5–10 words each (hard cap ≤ 15 words per speaker, total ≤ 32w). If any speaker exceeds 15 words, the shot MUST be split into separate solo shots.
 
@@ -1448,20 +1452,20 @@ In high-end cinematic video generation, dialogue and interaction are governed by
 
 ### Law 3: Mode B Asset Anchoring & Lore-Bound Asset Naming Mandate (Section 2, 4A, 4B)
 * **Subject Declarations in `[subject]:` (The 4-Part Sovereign Formula):**
-  - In `[subject]:`, declare every participating character using the 4-Part Sovereign Formula: `{ho_ten} [100% Appearance, attire, and facial features Refer to image X], {initial spatial anchor to architectural fixture}, {initial physical posture, hands naturally free of props/weapons} — the only {ho_ten} in frame.`
+  - In `[subject]:`, declare every participating character using the 4-Part Sovereign Formula: `{ho_ten} [100% Appearance, attire, and facial features Refer to image X], {initial spatial anchor to architectural fixture}, {initial physical posture, hands naturally free of props/weapons}, {eyeline toward a character or landmark} — the only {ho_ten} in frame.`
   - *Function at 00:00.0:* Establishes identity lock, zero-frame architectural grounding, initial physical posture, and the mandatory negative anti-duplication seal.
   - *The 4-Vector Character Directing Protocol in Timeline Shots:* While `[subject]:` locks the initial state at 00:00.0, characters are dynamically directed within timeline shots (`[00:00–00:XX]`) across the four physical vectors: (1) Trạng thái (Evolving physical posture / somatic tension), (2) Làm gì (Active physical verb / prop interaction), (3) Cảm xúc ra sao (Somatic emotion / facial micro-expression), (4) Ở đâu (Dynamic 3D blocking anchored to architecture). NEVER write literal placeholder tags (`[TRẠNG THÁI]`, `[Ở ĐÂU]`).
   - *Negative Rule 1 (Zero-Costume Law):* **NEVER describe clothing or costumes in prompt lines** (costume is 100% locked by the 16:9 Model Sheet).
   - *Negative Rule 2 (Zero-Age Law):* **NEVER describe age or numerical ages in visual narrative prose** (age is 100% locked by the Model Sheet; numeric age appears ONLY inside voice parentheticals).
 * **Prop Declarations in `[PROP]:` (The Two-Tier Prop Architecture & Production Velocity Law):**
-  - In `[PROP]:`, list objects separated by semicolons `;`. To optimize pre-production time, strictly enforce Two Tiers:
+  - In `[PROP]:`, list one handheld item per line, each with a resting place independent of character hands. Furniture and fixtures stay in `[context]:`. Enforce Two Tiers:
     * **Tier 1 (Soul & Catalyst Hero Props — Max 1–2 per series)**: Objects carrying the narrative soul or activating the twist. MUST have a 16:9 four-view Model Sheet in Section 4A and bind with `[100% Refer to image prop_X_4view.jpg]`.
     * **Tier 2 (Everyday Ambient & Common Hand Props)**: Ordinary items (ceramic spoons, plastic stools, tea cups, brooms, ledgers). **STRICTLY ZERO IMAGE MODEL SHEETS** (saving massive pre-production time). Handled 100% via rich, unambiguous physical tactile descriptions inside `[PROP]:` without image tags.
-  * **Prop Naming Formula (Tier 1 Hero Props):** `[CANONICAL-ID: PROP-XX] + [Owner / Clan / Origin] + [Unique Physical Trait] + [Object Type]`
+  * **Prop Naming Formula (Tier 1 Hero Props):** `[CANONICAL-ID: PROP-XX] + [Owner / Clan / Origin] + [Unique Physical Trait] + [Object Type]` *(Registry format for `setting.html` only; inside Code Block 1 write the natural-English name without the canonical ID or underscores, e.g. `Kaya bone dagger`.)*
     - *Examples:* `PROP-01: Dao găm Kaya (The Kaya Bone Dagger)`, `PROP-02: Vò nước linh tuyền Bramble (The Bramble Glazed Spring-Urn)`, `PROP-03: Chuông bạc trừ tà Maya (Maya's Silver Warding Bell)`, `PROP-04: Móng vuốt báo xám Korr (Korr's Grey-Leopard Talons)`.
   * *Negative Rule:* **STRICTLY BANNED: generic names for Tier 1 Props** like "a water jar", "a dagger", "an ancient bowl", "a stick", "a sword".
 * **Environment Descriptions (The Lore-Bound Canonical ID Mandate):** ALWAYS prefix with the registered Canonical ID and a specific mythological/world-tied proper noun.
-  * **Environment Naming Formula:** `[CANONICAL-ID: ENV-XX] + [Legendary Region / Clan / Realm] + [3D Spatial/Physical Landmark] + [Setting Type]`
+  * **Environment Naming Formula:** `[CANONICAL-ID: ENV-XX] + [Legendary Region / Clan / Realm] + [3D Spatial/Physical Landmark] + [Setting Type]` *(Registry format only; in Code Block 1 use the natural-English location name, e.g. `Alaka whispering garden`.)*
     - *Examples:* `ENV-01: Khu vườn Alaka (The Alaka Whispering Garden)`, `ENV-02: Tổ tùng la ngàn năm Faelen (Faelen's Ancient Cedar Canopy Nest)`, `ENV-03: Đàn tế đá rêu phong Eldoria (The Eldoria Moss-Stone Altar)`, `ENV-04: Hẻm đá chênh vênh Cự Thần (The Titan-Spire Wind Chasm)`.
   * *Negative Rule:* **STRICTLY BANNED: generic phrases** like "the village", "a room", "the forest", "the market", "crossroads".
 * **The Dual Operational Pillars of Lore-Bound Naming:**
@@ -1507,18 +1511,18 @@ To ensure 100% immunity against automated AI video safety classifiers (Sora, Kli
 ### Law 7: The Universal Child Safety, Simple Action & cu_tin Somatic Sleep Staging Protocol (Gate 3F)
 1. **The Core Safety Reality**:
    - Commercial AI video generation models (Kling AI, Runway, Sora, Hailuo, Pika) enforce aggressive automated NLP content moderation filters.
-   - Any video prompt mentioning minor vocabulary (`kid`, `child`, `children`, `baby`, `infant`, `toddler`, `newborn`, `boy`, `girl`, `teen`, `teenager`) or banned aliases (`be_tin`, `bé tin`) in proximity to domestic tension, crying, exhaustion, illness, shouting, or emotional trauma triggers an **IMMEDIATE PLATFORM SAFETY BAN or prompt rejection**.
+   - Any video prompt mentioning minor vocabulary (`kid`, `child`, `children`, `baby`, `infant`, `toddler`, `newborn`, `boy`, `girl`, `teen`, `teenager`) or banned child names (listed per project in `project_rules.json` → `minor_character_names`) in proximity to domestic tension, crying, exhaustion, illness, shouting, or emotional trauma triggers an **IMMEDIATE PLATFORM SAFETY BAN or prompt rejection**.
 2. **The cu_tin Child Entity & Somatic Sleep Staging Protocol**:
-   - **Declaration in `[subject]:`**: When a scene occurs in the presence of the wooden crib (`noi_go`) and the sleeping child, the entity **MUST BE DECLARED IN `[subject]:`**:
+   - **Declaration in `[subject]:`**: When a scene occurs in the presence of the pine wood crib (declared in `[context]:`) and the sleeping child, the entity **MUST BE DECLARED IN `[subject]:`**:
      `cu_tin [100% Appearance, attire, and facial features Refer to image cu_tin_4view.jpg]`
      Never leave the crib empty or desynchronized from narrative staging.
    - **Somatic Sleep Staging in Action Prose**: In timeline action prose, `cu_tin` is strictly animated with low-velocity, safe somatic physical states:
-     `Beside the queen bed, cu_tin rests peacefully inside noi_go on the firm flat organic cotton mattress, chest rising and falling in calm rhythmic sleep, tiny fists curled gently beside soft cheeks through 00:10.0.`
-   - 🚫 **BANNED IN PROSE & SUBJECT**: NEVER write minor-related words (`kid`, `child`, `children`, `baby`, `babies`, `infant`, `infants`, `toddler`, `toddlers`, `newborn`, `newborns`, `boy`, `girl`, `teen`, `bé`) or former child character names (`be_tin`, `bé tin`) anywhere in the visual narrative prose, subject blocks, or camera staging.
+     `Beside the queen bed, cu_tin rests peacefully inside the pine wood crib on the firm flat organic cotton mattress, chest rising and falling in calm rhythmic sleep, tiny fists curled gently beside soft cheeks through 00:10.0.`
+   - 🚫 **BANNED IN PROSE & SUBJECT**: NEVER write minor-related words (`kid`, `child`, `children`, `baby`, `babies`, `infant`, `infants`, `toddler`, `toddlers`, `newborn`, `newborns`, `boy`, `girl`, `teen`, `bé`) or banned child names from `project_rules.json` anywhere in the visual narrative prose, subject blocks, or camera staging.
    - 🚫 **BANNED IN DIEGETIC SOUND**: Never describe child vocalizations (`infant's crying`, `baby's coo`). Use neutral room acoustics (`soft room tone`, `gentle cotton rustle from the bedside crib`).
-3. **Environmental Prop & Mattress Safety Integration**:
+3. **Environmental Fixture & Mattress Safety Integration**:
    - The child's sleeping environment is anchored to physical furniture:
-     * Example: `noi_go [100% Refer to image prop_crib_4view.jpg]` declared inside `[PROP]:`.
+     * The crib is furniture: describe it in `[context]:` (e.g. `a light pine wood crib placed firmly beside the queen bed`). Never declare it in `[PROP]:` and never generate a separate crib prop sheet (see the Fixed vs. Dynamic rule below).
      * In timeline prose: `the wooden pine crib stands steady beside the queen bed with firm flat organic cotton bedding`.
 4. **Mandatory Adult Age Anchor for Older Protagonists**:
    - When characters are apprentices or young adults, always declare explicit adult status to avoid false-positive minor flags: `young woman`, `adult female`, `adult craftsman`, `young adult weaver`. NEVER use numeric ages in visual prose (Gate 3A); numeric age belongs exclusively in the voice parenthetical (`Voice of a 22-year-old woman...`). Purge ambiguous slang (`girl`, `boy`, `kid`, `teen`, `little`).
@@ -1629,7 +1633,7 @@ def run_5_gate_audit(episode_html_path, canonical_roadmap_json):
 |---|---|---|---|
 | 12.1 | Profile-Action Conflict | `[Subject]` locks hands but Shot needs to hold prop | Remove hand-lock from `[Subject]`, use neutral upper-body description |
 | 12.2 | Causal Motivation Gap | Character changes mind/action without observable stimulus before it | Add 1 physical trigger detail before the change-of-mind action |
-| 12.3 | Spatial Overcrowding | ≥ 2 characters but no frame-left/right/foreground-background declared | Add `Subject A at frame-left... Subject B at frame-right...` |
+| 12.3 | Spatial Overcrowding | ≥ 2 characters but no architectural anchors, relative distance, or foreground/background declared | Anchor each character to architecture and to each other (`ho_ten_A behind the counter`, `ho_ten_B across the aisle from ho_ten_A`); record screen direction in the Audit Card only |
 | 12.4 | Unmotivated Camera Jump | Jump from ECU to Wide with no dramatic reason | Add 1 intermediate Shot or explain reason for scale change |
 | 12.5 | Sound-Shot Mismatch | Sound line doesn't match action/timing of Shot | Rearrange Sound line chronologically to match each Shot |
 | 12.6 | Identity Loss at Close-up | Close-up omits identifying detail (costume color, scar, accessory) | Restate ≥ 1 clear identifying detail in opening sentence of Shot |
@@ -1651,21 +1655,21 @@ def run_5_gate_audit(episode_html_path, canonical_roadmap_json):
 ## § [10d] THE UNIVERSAL CHILD SAFETY & cu_tin SOMATIC SLEEP STAGING PROTOCOL (GATE 3F)
 
 > **MANDATORY POLICY DEFENSE DIRECTIVE (ALL AI VIDEO PLATFORMS: SORA, KLING, VEO, RUNWAY, LUMA)**:
-> Automated AI safety classifiers run before diffusion models. Any prompt mentioning minor vocabulary (`child`, `kid`, `baby`, `infant`, `newborn`, `toddler`, `boy`, `girl`, `teen`) or former child character names (`be_tin`, `bé tin`) triggers an immediate account suspension or prompt rejection for 'Harmful content related to minors'. Furthermore, diffusion latent space severely hallucinates anatomy (polydactyly, facial melting) when generating minors.
+> Automated AI safety classifiers run before diffusion models. Any prompt mentioning minor vocabulary (`child`, `kid`, `baby`, `infant`, `newborn`, `toddler`, `boy`, `girl`, `teen`) or banned child names (per project in `project_rules.json`) triggers an immediate account suspension or prompt rejection for 'Harmful content related to minors'. Furthermore, diffusion latent space severely hallucinates anatomy (polydactyly, facial melting) when generating minors.
 > To achieve 100% immunity, flawless anatomical fidelity, and seamless subject-action synchronization across all scenes, adhere strictly to the cu_tin Somatic Sleep Staging Protocol (Gate 3F):
 
 1. **Pre-Production vs Video Prompt Architectural Alignment**:
-   - In **Screenplay, Casting & Worldbuilding (Pillars 1 & 2 / `setting.html`)**: The child character entity is named `cu_tin` (screenplay: `Cu Tin`), purging all banned terms (`baby`, `kid`, `infant`, `newborn`, `bé tin`).
-   - In **AI Video Prompt Compilation (Pillar 4 / Code Block 1)**: When scenes occur in the bedroom with `noi_go`, `cu_tin [100% Appearance, attire, and facial features Refer to image cu_tin_4view.jpg]` MUST be declared in `[subject]:`.
+   - In **Screenplay, Casting & Worldbuilding (Pillars 1 & 2 / `setting.html`)**: The child character entity is named `cu_tin` (screenplay: `Cu Tin`), purging all banned terms (`baby`, `kid`, `infant`, `newborn`) and every name listed in `project_rules.json` → `minor_character_names`.
+   - In **AI Video Prompt Compilation (Pillar 4 / Code Block 1)**: When scenes occur in the bedroom with the pine wood crib (declared in `[context]:`), `cu_tin [100% Appearance, attire, and facial features Refer to image cu_tin_4view.jpg]` MUST be declared in `[subject]:`.
 
 2. **The Absolute Ban on Minor Terms and Outdated Child Aliases in Prompts**:
-   - 🚫 **BANNED IN PROSE & SUBJECT**: NEVER write minor-related words (`kid`, `child`, `children`, `baby`, `babies`, `infant`, `infants`, `toddler`, `toddlers`, `newborn`, `newborns`, `boy`, `girl`, `teen`, `teenager`, `bé`) or former character names (`be_tin`, `bé tin`) anywhere in the visual narrative prose or camera staging.
+   - 🚫 **BANNED IN PROSE & SUBJECT**: NEVER write minor-related words (`kid`, `child`, `children`, `baby`, `babies`, `infant`, `infants`, `toddler`, `toddlers`, `newborn`, `newborns`, `boy`, `girl`, `teen`, `teenager`, `bé`) or banned child names from `project_rules.json` anywhere in the visual narrative prose or camera staging.
    - 🚫 **BANNED IN DIEGETIC SOUND**: Never describe child vocalizations (`infant's crying`, `baby's coo`). Use neutral room acoustics (`soft room tone`, `gentle cotton rustle from the bedside crib`).
 
 3. **Somatic Sleep Staging (Low-Velocity Kinetic Law)**:
    - In the prompt timeline prose, `cu_tin` is strictly animated with low-velocity, safe somatic physical states:
-     `Beside the queen bed, cu_tin rests peacefully inside noi_go on the firm flat organic cotton mattress, chest rising and falling in calm rhythmic sleep, tiny fists curled gently beside soft cheeks through 00:10.0.`
-   - In `[PROP]:`, declare `noi_go [100% Refer to image prop_crib_4view.jpg]`. Bedding is described as `firm flat organic cotton mattress`.
+     `Beside the queen bed, cu_tin rests peacefully inside the pine wood crib on the firm flat organic cotton mattress, chest rising and falling in calm rhythmic sleep, tiny fists curled gently beside soft cheeks through 00:10.0.`
+   - The crib and its bedding are furniture: describe them in `[context]:` (`light pine wood crib beside the queen bed with a firm flat organic cotton mattress`). Never declare the crib in `[PROP]:`.
 
 4. **Adult Age Anchoring for Non-Minor Characters**:
    - Mislabeled apprentices/young adults must be anchored with explicit adult terms (`young adult female artisan`, `dignified craftsman`) and purge ambiguous slang (`girl`, `boy`, `kid`, `teen`, `little`).
@@ -1702,7 +1706,7 @@ Every compiled prompt in Code Block 1 must pass the **Metaphorical Translation G
 ### 4. The Lip-Sync Visibility & Dynamic Perspective Law (Anti-Static P.O.V Trap)
 - **Zero Lip-Sync in Blind Perspectives**: Never assign spoken dialogue with lip-sync to a character whose perspective is currently Subjective First-Person P.O.V. or Macro Prop Insert. Generative models cannot animate invisible lips and hallucinate facial morphing in hands.
 - **Mandatory In-Camera Transition**: Prompts starting in P.O.V. must transition to a Frontal Medium Close-Up (MCU) or Medium Shot (MS) before that character speaks.
-- **The cu_tin Child Entity & Somatic Sleep Staging Protocol for AI Video Pipelines**: When a scene occurs in the bedroom where `noi_go` is present, `cu_tin [100% Appearance, attire, and facial features Refer to image cu_tin_4view.jpg]` MUST be declared in `[subject]:` and animated with low-velocity sleep staging (resting peacefully on flat mattress, calm rhythmic breathing, curled fists). Purge all AI trigger keywords (`baby`, `kid`, `infant`, `newborn`, `child`, `bé`, `be_tin`, `sữa`, `vắt`, `starve`, `choke`).
+- **The cu_tin Child Entity & Somatic Sleep Staging Protocol for AI Video Pipelines**: When a scene occurs in the bedroom where the pine wood crib is present, `cu_tin [100% Appearance, attire, and facial features Refer to image cu_tin_4view.jpg]` MUST be declared in `[subject]:` and animated with low-velocity sleep staging (resting peacefully on flat mattress, calm rhythmic breathing, curled fists). Purge all AI trigger keywords (`baby`, `kid`, `infant`, `newborn`, `child`, `bé`, `be_tin`, `sữa`, `vắt`, `starve`, `choke`).
 
 ---
 
@@ -1713,21 +1717,21 @@ To completely eliminate spatiotemporal morphing, background drift, lip-sync hall
 ### 1. The 3-Block Label Standard (`[context]:`, `[subject]:`, `[PROP]:`)
 Every video prompt in **Code Block 1** MUST be partitioned into exactly three explicit structural blocks separated by blank lines (`\n\n`):
 - **`[context]:` (The Master 5-Vector Location & Environmental Staging Standard)**
-  - **Meaningful English Naming Standard**: Location names and image references MUST use meaningful, evocative English (e.g. `rustic_wooden_bedroom [100% Refer to image rustic_bedroom_4view.jpg]`, `humble_dining_kitchen [100% Refer to image dining_kitchen_4view.jpg]`). Transliterated Vietnamese aliases (`phong_ngu_01`, `nha_bep_01`) are strictly prohibited because AI text-encoders (T5, CLIP) parse English tokens for materials, lighting, and spatial geometry.
+  - **Meaningful English Naming Standard**: Location names and image references MUST use meaningful, evocative English (e.g. `rustic wooden bedroom [100% Refer to image rustic_bedroom_4view.jpg]`, `humble dining kitchen [100% Refer to image dining_kitchen_4view.jpg]`). Transliterated Vietnamese aliases (`phong_ngu_01`, `nha_bep_01`) are strictly prohibited because AI text-encoders (T5, CLIP) parse English tokens for materials, lighting, and spatial geometry.
   - Syntax: `[Location Name in English] [100% Refer to image [filename/ref]], [exact time of day]. [Complete 5-vector physical architectural specification: full fixed furniture inventory ("có cái gì ở đó"), lighting physics, and atmospheric medium].`
   - Function: Permanently locks spatial boundaries, architecture, fixed furniture landmarks, daylight progression, and atmospheric physics before subjects are parsed, completely immunizing against AI spatial amnesia and environment hallucination.
   - **The Zero Ghost Object Law (Quy Chuẩn Bối Cảnh Chi Tiết & Chống Đồ Vật Tự Sinh)**:
     * `[context]:` MUST provide a complete, rich physical inventory of all setting structures, furniture, and domestic elements present in the staging zone (e.g. the weathered wooden bed, the flat cotton mattress, the coarse woven wool blanket resting folded across the lower bed, the bedside nightstand with the amber tungsten lamp).
-    * **STRICT BAN ON GHOST OBJECTS**: Any object that characters manipulate, touch, or interact with in the Action timeline (`[00:00–00:XX]`) — such as pulling a blanket, leaning against a wooden headboard, or touching a lamp — **MUST ALREADY BE FULLY ESTABLISHED AND GROUNDED IN TEXT INSIDE `[context]:`**. It is strictly forbidden for an everyday object to suddenly materialize in Action if it was omitted from `[context]:`.
+    * **STRICT BAN ON GHOST OBJECTS**: Any fixture that characters touch, lean on, or pull in the Action timeline (`[00:00–00:XX]`) — such as pulling a blanket, leaning against a wooden headboard, or touching a lamp — **MUST ALREADY BE FULLY ESTABLISHED AND GROUNDED IN TEXT INSIDE `[context]:`**, and any handheld item they lift or carry MUST already be declared in `[PROP]:`. It is strictly forbidden for an everyday object to suddenly materialize in Action if it was omitted from `[context]:`.
   - **The 5 Mandatory Physical Vectors in `[context]:`**:
     * **Vector 1 (Image Anchor & Meaningful English Name)**: `[Location Name] [100% Refer to image <ref>]`.
     * **Vector 2 (Biological Time of Day)**: Exact natural daylight phase (`early dawn`, `golden morning`, `harsh midday`, `amber late afternoon`, `blue hour dusk`, `dim midnight lamp-lit`).
-    * **Vector 3 (Fixed Architectural & Furniture Inventory — "Có cái gì ở đó")**: Complete inventory of physical structures and major fixed furniture mirroring the 4-View Location Sheet (e.g. for `rustic_wooden_bedroom`: patterned encaustic cement floor tiles, sturdy dark wooden queen bed with white linen, coarse woven wool blanket spread over lower mattress, light pine wood crib placed firmly directly beside bed, wooden doorway leading to hallway). Barren 5-word declarations (`bedroom, morning.`) are strictly banned.
+    * **Vector 3 (Fixed Architectural & Furniture Inventory — "Có cái gì ở đó")**: Complete inventory of physical structures and major fixed furniture mirroring the 4-View Location Sheet (e.g. for the rustic wooden bedroom: patterned encaustic cement floor tiles, sturdy dark wooden queen bed with white linen, coarse woven wool blanket spread over lower mattress, light pine wood crib placed firmly directly beside bed, wooden doorway leading to hallway). Barren 5-word declarations (`bedroom, morning.`) are strictly banned.
     * **Vector 4 (Lighting Physics & Direction)**: Key light source, angle/direction (diagonal 45° from window, overhead downward), natural color tone (warm golden amber, cool blue morning light; strictly zero Kelvin), and shadow behavior (long soft diagonal shadows).
     * **Vector 5 (Atmospheric Medium & Emotional Climate)**: Physical medium (floating dust motes in sunbeams, stagnant domestic air, humidity) and psychological mood (suffocating confinement, tense silence, protective warmth).
 - **`[subject]:` (The 4-Part Sovereign Subject Protocol)**
   - Syntax: Each character participating in the scene is declared using the 4-Part Sovereign Formula:
-    $$\mathbf{[subject]:} = \mathbf{[Tên\ +\ Thẻ\ Ảnh]} + \mathbf{[Mỏ\ neo\ không\ gian\ kiến\ trúc]} + \mathbf{[Tư\ thế\ \&\ Xúc\ giác\ ban\ đầu]} + \mathbf{[—\ the\ only\ \{name\}\ in\ frame]}$$
+    $$\mathbf{[subject]:} = \mathbf{[Tên\ +\ Thẻ\ Ảnh]} + \mathbf{[Mỏ\ neo\ không\ gian\ kiến\ trúc]} + \mathbf{[Tư\ thế,\ tay\ trống\ \&\ hướng\ nhìn]} + \mathbf{[—\ the\ only\ \{name\}\ in\ frame]}$$
     ```text
     [subject]:
     my_duyen [100% Appearance, attire, and facial features Refer to image 1], sitting propped up against the dark wooden headboard on the queen bed, fingers clutching the edge of the linen sheet — the only my_duyen in frame.
@@ -1735,19 +1739,24 @@ Every video prompt in **Code Block 1** MUST be partitioned into exactly three ex
     cu_tin [100% Appearance, attire, and facial features Refer to image cu_tin_4view.jpg], resting peacefully on the flat mattress inside the pine crib, chest rising with calm rhythmic breathing — the only cu_tin in frame.
     ```
   - Directorial Law: `[subject]:` establishes the zero-frame (00:00.0) spatial grounding to architecture, initial bodily posture, and the negative anti-duplication seal. All dynamic character actions, kinetic transitions, and emotional evolutions are directed within the Timeline Shots.
-  - The cu_tin Entity Standard: When `cu_tin` is present in the bedroom near `noi_go`, declare `cu_tin [100% Appearance, attire, and facial features Refer to image cu_tin_4view.jpg]` in `[subject]:`, synchronized with safe somatic sleep staging in the timeline action prose. Banned aliases: `be_tin`, `bé tin`, and all minor keywords (`baby`, `kid`, `infant`, `newborn`).
-- **`[PROP]:` (The Sovereign Hero Prop Law — Đạo Luật Đạo Cụ Linh Hồn)**
-  - **Core Directorial Distinction: Hero Prop vs. Setting Dressing**:
-    * **`[PROP]:` is reserved EXCLUSIVELY for the Soul & Catalyst HERO PROP (Đạo Cụ Linh Hồn)**: Objects carrying the narrative soul, Chekhov's dramatic catalyst, or high-stakes proof (e.g. a steaming medicinal bowl, a crucial forged will, an heirloom wedding ring, a brass safe key, a secret diary).
-    * **Everyday Ambient & Domestic Fixtures (Chăn, gối, nệm, bàn ghế, rèm cửa, quạt, đèn...) ARE STRICTLY FORBIDDEN IN `[PROP]:`**. Ordinary domestic necessities are **Set Dressing** and MUST be described **100% via rich text directly inside `[context]:`**. Forcing everyday items into `[PROP]:` wastes token bandwidth and causes AI mesh clashing.
-  - **Meaningful English Naming**: Hero props must use evocative, meaningful English names and reference filenames (e.g. `steaming_ceramic_ginger_bowl [100% Refer to image ginger_tea_bowl.jpg]`; `brass_house_key_bundle [100% Refer to image brass_keys.jpg]`).
+  - The cu_tin Entity Standard: When `cu_tin` is present in the bedroom near the pine wood crib, declare `cu_tin [100% Appearance, attire, and facial features Refer to image cu_tin_4view.jpg]` in `[subject]:`, synchronized with safe somatic sleep staging in the timeline action prose. Banned: child names listed in `project_rules.json` → `minor_character_names`, and all minor keywords (`baby`, `kid`, `infant`, `newborn`).
+- **`[PROP]:` (The Two-Tier `[PROP]:` Scope Law — mirrors DIRECTOR.md §1c & §5b)**
+  - **Core Directorial Distinction: Handheld Props vs. Set Dressing**:
+    * **`[PROP]:` holds every handheld item a character will lift, carry, or manipulate**, one per line, each with a resting place independent of character hands: Tier 1 Signature Hero Props (Chekhov catalyst, heirloom, decisive proof; max 1–2 per series; bound with `[100% Refer to image ...]`) and Tier 2 everyday handheld items (bowls, cups, keys, phones; natural-English text only, no image tag).
+    * **Furniture, fixtures, and bedding (beds, cribs, tables, chairs, curtains, fans, lamps, blankets, pillows) ARE STRICTLY FORBIDDEN IN `[PROP]:`**. They are Set Dressing described 100% via rich text inside `[context]:`; duplicating them in `[PROP]:` causes ghost duplicates and mesh clashing.
+  - **Natural English Naming**: Prop names use natural English without underscores (e.g. `steaming ceramic ginger tea bowl`, `brass house key bundle`). Reference image filenames may keep underscores (`ginger_tea_bowl.jpg`).
   - **Syntax**:
-    * *When a Hero Prop exists in the scene*:
+    * *Tier 1 hero prop*:
       ```text
       [PROP]:
-      steaming_ceramic_ginger_bowl [100% Refer to image ginger_tea_bowl.jpg]; resting on the wooden bedside table with hot aromatic steam curling steadily upward.
+      brass house key bundle [100% Refer to image brass_keys.jpg], three tarnished keys on a frayed red cord, resting on the wooden bedside table — the only key bundle in frame.
       ```
-    * *When NO separate Hero Prop is present (Pure Somatic / Setting Interaction)*:
+    * *Tier 2 everyday handheld item*:
+      ```text
+      [PROP]:
+      steaming ceramic ginger tea bowl, chipped white glaze, resting on the wooden bedside table with hot aromatic steam curling upward — the only bowl in frame.
+      ```
+    * *When the scene has no handheld item (pure somatic or fixture interaction)*:
       ```text
       [PROP]:
       none (pure environmental and somatic staging)
@@ -1759,7 +1768,7 @@ For EVERY character participating in a shot (e.g., `[00:00–00:04.5]`), the pro
 1. **Trạng thái (Physical State / Posture / Condition)**: Explicit posture and physical condition (e.g., sitting propped up against wooden headboard, standing rigid with stiff spine, slumped forward in exhaustion, kneeling upright).
 2. **Làm gì (Action / Kinetic Movement)**: Specific kinetic action and physical interaction (e.g., pulling linen sheet up over waist, placing soft bolster pillow, handing congee bowl with both hands, averting face).
 3. **Cảm xúc ra sao (Emotion / Facial Expression / Somatic Reaction)**: Vivid facial expression and somatic physiological response (e.g., lips trembling in wounded vulnerability, eyes wide with stunned hurt pride, brow furrowing with maternal anxiety, jaw tightening in resolute defense).
-4. **Ở đâu (Spatial Location / 3D Blocking)**: Precise 3D position in the set and relative to other characters and props (e.g., at screen-left on queen bed mattress beside headboard, at screen-right framed in wooden doorway, centered between bed and pine crib).
+4. **Ở đâu (Spatial Location / 3D Blocking)**: Precise 3D position in the set and relative to other characters and props (e.g., on the queen bed mattress beside headboard, framed in the wooden doorway across the room, centered between bed and pine crib).
 
 ### 2. Spacing Integrity Law (Khoảng Trống Phân Tách Bắt Buộc)
 - There MUST be an explicit blank line (`\n\n`) between the Visual Style Header and `[context]:`, between `[context]:` and `[subject]:`, between `[subject]:` and `[PROP]:`, and between `[PROP]:` and `Diegetic room acoustics:`.
@@ -1779,7 +1788,7 @@ For EVERY character participating in a shot (e.g., `[00:00–00:04.5]`), the pro
 
 ### 4. Track B (Multi-Shot) 180° Action Axis Governance (Quy Chuẩn Cắt Đa Cú Máy)
 - **Explicit Time Brackets**: Every shot boundary states its exact second window in the canonical syntax (e.g., `[00:00–00:04.2] Medium shot on Eleazar, low angle, static camera — …`, `[00:04.2–00:07.5] Cut to a reverse medium close-up on Noa, eye level, static camera — …`, `[00:07.5–00:10.0] Cut to a close-up on Eleazar, eye level, static camera — …`).
-- **Invariant Screen Directions**: Characters locked on screen-left MUST continue looking toward screen-right across all cuts; characters on screen-right MUST look toward screen-left.
+- **Invariant Screen Directions**: Characters locked on screen-left MUST continue looking toward screen-right across all cuts; characters on screen-right MUST look toward screen-left. (Record screen direction in the Audit Card; inside Code Block 1, express it through architecture-anchored eyelines, never `screen-left` / `frame-right` words.)
 - **Kinetic Momentum Handoff**: Strict zero action repetition across cuts.
 - **Chekhov Prop State Machine**: Broken or severed props MUST be re-named to their derived physical fragments in subsequent cuts (`Jagged Ceramic Shards`, `Torn Parchment Shreds`).
 - **Terminal Cut / Reaction or Parting Climax**: Final shot resolves naturally to 00:10.0 (whether holding an emotional reaction shockwave or delivering a parting cliffhanger retort), ensuring camera and character physics complete their arc cleanly into the cut (strictly BAN dogmatic cutoffs like 'cấm thoại sau 00:08.5').
@@ -1797,13 +1806,13 @@ In all deliverables (`setting.html` and `tap-X.html`):
 > 
 > 1. **Vật thể Cố định (Fixed Set Dressing & Architectural Fixtures)**: Mọi đồ đạc nội thất gắn liền với không gian phòng ốc hoặc địa điểm (Ví dụ: Giường ngủ, Nôi thông kê sát giường, Tủ đầu giường, Tủ quần áo, Rèm cửa, Lò than sưởi ấm, Cột lều, Bàn làm việc, Khiên dựa cột...) PHẢI ĐƯỢC THIẾT KẾ 1 LẦN DUY NHẤT VÀ NẰM TRỌN VẸN TRONG **Location Concept Design Sheet**.
 >    - **TUYỆT ĐỐI CẤM**: Không được tạo thêm ảnh tham chiếu đạo cụ riêng lẻ cho vật cố định (ví dụ: đã có nôi gỗ nằm trong phòng ngủ thì **CẤM** tạo thêm `prop_crib_4view.jpg`).
->    - **Khi biên dịch prompt video**: Chỉ cần gọi `[context]: phong_cu [100% Refer to image location_bedroom_4view.jpg]`. Toàn bộ giường, nôi, tủ, rèm tự động đồng bộ theo bối cảnh. **CẤM** gọi lặp lại `noi_go [100% Refer to image ...]` trong `[PROP]:` vì sẽ khiến AI model sinh ra chiếc nôi thứ hai (Ghost Duplicate) hoặc xung đột hình học (Mesh Clashing).
+>    - **Khi biên dịch prompt video**: Chỉ cần gọi `[context]: intimate Southern Vietnamese master bedroom [100% Refer to image location_bedroom_4view.jpg]` kèm mô tả nội thất. Toàn bộ giường, nôi, tủ, rèm tự động đồng bộ theo bối cảnh. **CẤM** khai báo lại chiếc nôi (`pine wood crib [100% Refer to image ...]`) trong `[PROP]:` vì sẽ khiến AI model sinh ra chiếc nôi thứ hai (Ghost Duplicate) hoặc xung đột hình học (Mesh Clashing).
 > 
-> 2. **Đạo cụ Động (Dynamic Kinetic Props & Interactive Hand Props)**: CHỈ NHỮNG VẬT THỂ CÓ TÍNH ĐỘNG — được nhân vật trực tiếp cầm nắm, thao tác, ăn uống, di chuyển, vung đập, biến đổi trạng thái (Ví dụ: Bát cháo thịt, Bình hút sữa rỗng, Búa chiến của Kael, Mâm nhôm bưng bê, Võng xếp xách từ quê lên, Chiếc áo bà ba cởi ra gấp lại...) MỚI ĐƯỢC TẠO **Prop Design Sheet** RIÊNG.
+> 2. **Đạo cụ Động (Handheld Kinetic Props)**: Những vật thể được nhân vật trực tiếp cầm nắm, thao tác, di chuyển, vung đập, biến đổi trạng thái được khai báo trong `[PROP]:`. **Chỉ Tier 1 Hero Props (tối đa 1–2 mỗi series: vũ khí gia truyền, kỷ vật, hợp đồng sống còn) mới được tạo Prop Design Sheet riêng.** Tier 2 vật dụng cầm tay đời thường (bát, cốc, mâm, khăn) chỉ mô tả bằng văn bản, không tạo sheet.
 > 
 > 3. **Luật Đạo Cụ Độc Lập — Tuyệt Đối Không Tạo Gộp (Isolated Clean Prop Law)**:
 >    - Khi tạo Prop Sheet cho đạo cụ động, **CHỈ CÓ DUY NHẤT 1 ĐẠO CỤ ĐÓ** trên nền trắng thuần studio (`#FFFFFF`).
->    - Tuyệt đối không được tạo gộp mâm với bát canh, búa với khiên giáp, bình sữa với khăn xô. Zero environmental elements, zero human hands, zero text overlays, zero clutter.
+>    - Tuyệt đối không được tạo gộp búa với khiên giáp, chìa khóa với hộp gỗ. Zero environmental elements, zero human hands, zero text overlays, zero clutter.
 
 ---
 
@@ -1814,20 +1823,20 @@ In all deliverables (`setting.html` and `tap-X.html`):
 ```text
 Style: [Visual Style, e.g., Modern K-Drama Premium Cinematography / Pixar\Disney 3D animation style]
 
-Name: [Location Name, e.g., Human War Pavilion / The Arena of Reckoning / phong_cu Master Bedroom at Dawn]
-Description: [Mô tả chi tiết không gian kiến trúc, kết cấu vật liệu, nguồn sáng, bầu không khí và TOÀN BỘ ĐỒ ĐẠC CỐ ĐỊNH (giường nệm, nôi em bé, tủ đầu giường, đèn ngủ, tủ áo, rèm voan, cờ hiệu, lò than, khiên dựa cột...)]
+Name: [Location Name, e.g., Human War Pavilion / The Arena of Reckoning / Intimate Master Bedroom at Dawn]
+Description: [Mô tả chi tiết không gian kiến trúc, kết cấu vật liệu, nguồn sáng, bầu không khí và TOÀN BỘ ĐỒ ĐẠC CỐ ĐỊNH (giường nệm, nôi gỗ thông, tủ đầu giường, đèn ngủ, tủ áo, rèm voan, cờ hiệu, lò than, khiên dựa cột...)]
 
 Format: Location concept design sheet, 16:9 landscape, multi-angle layout. At least 4 panels showing the same location from different camera angles or directions: wide establishing shot, reverse angle, overhead/bird-eye view, and low-angle or detail close-up. Panels may vary lighting or time of day if needed by the story. Focus entirely on full location views, with no written descriptions, detail labels, or floor plans.
 
 Rules: No characters or people - environment only. The location must look consistent and recognizable across all panels, with the same buildings, props, and layout. Do not include any text, letters, numbers, annotations, captions, dimension lines, arrows, labels, legends, zoning notes, or watermarks.
 ```
 
-#### TEMPLATE B: DYNAMIC PROP DESIGN SHEET (Chỉ dành cho Đạo Cụ Động · Cô Lập Tuyệt Đối)
-*Áp dụng cho vũ khí, món ăn, bình sữa, công cụ cầm nắm — Không được phép tạo gộp:*
+#### TEMPLATE B: DYNAMIC PROP DESIGN SHEET (Chỉ dành cho Tier 1 Hero Props · Cô Lập Tuyệt Đối)
+*Áp dụng cho Tier 1 hero props (vũ khí gia truyền, kỷ vật, hợp đồng, phương tiện đặc trưng). Không tạo sheet cho đồ cầm tay đời thường. Không được phép tạo gộp:*
 ```text
 Style: [Visual Style, e.g., Modern K-Drama Premium Cinematography / Pixar\Disney 3D animation style]
 
-Name: [Prop Name, e.g., Kael's warhammer / bat_chao / binh_hut_sua]
+Name: [Prop Name in natural English, e.g., Kael's warhammer / heirloom pocket watch / forged land deed]
 Category: [Category: Weapon / Culinary / Medical / Tool / Relic]
 Description: [Mô tả chi tiết kích thước, chất liệu, độ mài mòn thời gian, dấu vết sử dụng, cơ chế vật lý đặc thù. Khi rơi hoặc đặt xuống thể hiện rõ tính chất vật liệu]
 
@@ -1846,15 +1855,15 @@ Khi nhân vật cần **sử dụng, cầm nắm, tựa vào, chạm vào, hoặ
 #### 1. Quy chuẩn 3 Khối Cú Pháp (The 3-Block Binding Protocol):
 - **Khối `[context]:` (Neo tọa độ khu vực diễn xuất)**:
   - Khai báo rõ khu vực tương tác xoay quanh vật cố định trong ảnh tham chiếu:
-  - Cú pháp: `[location_id] [100% Refer to image [location_ref]], [focal staging zone anchored near the in-scene [fixture_name]].`
-  - *Ví dụ*: `phong_cu [100% Refer to image location_bedroom_4view.jpg], at dawn. Staging focused on the intimate floor area between the queen bed and the adjacent pine wooden crib.`
+  - Cú pháp: `[Evocative location name in natural English] [100% Refer to image [location_ref]], [focal staging zone anchored near the in-scene [fixture_name]].`
+  - *Ví dụ*: `intimate Southern Vietnamese master bedroom [100% Refer to image location_bedroom_4view.jpg], at dawn. Staging focused on the intimate floor area between the queen bed and the adjacent pine wood crib.`
 - **Khối `[subject]:` (Khóa tư thế cơ thể vào vật thể cố định - Somatic Anchor)**:
   - Tuyệt đối không để nhân vật trôi nổi trong không gian. Phải khóa trực tiếp cơ thể vào vật thể có sẵn:
-  - Cú pháp: `[character_id] [Refer to image X], [posture anchored directly to in-scene fixture: e.g. sitting on floor tiles leaning back against the queen bed edge, slender fingers gripping the vertical pine balusters of the in-scene pine crib — the only [Name] in frame].`
+  - Cú pháp: `[ho_ten] [Refer to image X], [posture anchored directly to in-scene fixture: e.g. sitting on floor tiles leaning back against the queen bed edge, slender fingers gripping the vertical pine balusters of the in-scene pine crib — the only [Name] in frame].`
 - **Khối `[PROP]:` (Xử lý Đạo cụ - Clean Separation)**:
   - **Tương tác Tĩnh tại chỗ (Static Contact)** (ngồi lên giường, vịn nôi, tựa vách, vén rèm): **KHÔNG ghi vào `[PROP]:`**. Vật thể đã thuộc về `[context]` bối cảnh.
   - **Nhấc rời vật thể khỏi bối cảnh (Kinetic Detachment)** (nhấc chiếc khiên dựa cọc lều, lấy bình nước trên tủ, tháo đèn dầu trên xà): Khai báo là **In-Scene Derived Prop**:
-    - Cú pháp: `[item_name] [In-scene fixture of [location_ref]], [initial state resting on/against [fixture], picked up and wielded in hands — the only [item] in frame].`
+    - Cú pháp: `[item name in natural English] [In-scene fixture of [location_ref]], [initial state resting on/against [fixture]] — the only [item] in frame`. Hành động nhấc lên và sử dụng chỉ được mô tả trong timeline (`[00:00–00:XX]`).
 
 #### 2. Kịch Bản Hành Động `[00:00–00:10.0]` (Mô tả Chuỗi Nhân Quả Vật Lý):
 Trong phần mô tả hành động theo giây, mô tả chi tiết cách nhân vật tương tác với vật thể có sẵn:
@@ -1907,7 +1916,7 @@ The Director MUST consciously classify each scene into one of the **6 Directoria
 │    • Pacing: Relaxed, unhurried, rhythmic domestic blocking.                                           │
 │    • Structure: Multi-Shot (Track B) or Gentle Gliding Master Take.                                    │
 │    • Dialogue: Conversational, lighthearted, warm family banter.                                       │
-│    • Example: [00:00–00:05.2] Unfolding hammock/crib ➔ [00:05.2–00:10.0] Reverse angle to river breeze.│
+│    • Example: [00:00–00:05.2] Setting the dinner mat ➔ [00:05.2–00:10.0] Reverse angle to river breeze.│
 ├────────────────────────────────────────────────────────────────────────────────────────────────────────┤
 │ 6. CLIFFHANGER SUSPENSE SNAP (ĐỨNG HÌNH NGHẸT THỞ CUỐI TẬP):                                          │
 │    • Pacing: 0–4s sudden external disruption; 4–10s unyielding defensive shield, sharp snap cut.       │

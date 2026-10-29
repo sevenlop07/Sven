@@ -228,14 +228,14 @@ Specific objects, names and memories ("this hammock is the one Khang's father gr
    - Authentic Vietnamese dialogue—especially Southwestern Nam Bộ and domestic family vernacular—lives and breathes through **modal particles and visceral exclamations** (*thán từ & trợ từ tình thái*).
    - In emotional confrontation, characters involuntarily cry out with exclamative anchors: *Trời ơi, Trời đất quỷ thần ơi, Mèn đéc ơi, Má ơi con lạy má, Anh ơi, Chị ơi là chị...*
    - Lines must land on organic colloquial sentence-ending particles: *...hả trời, ...hả mầy, ...nè má, ...nè con, ...chớ bộ, ...đâu hà, ...nghen con, ...hết trơn, ...đặng*.
-   - ✅ *Authentic, emotionally charged lines (≤ 18 words)*:
+   - ✅ *Authentic, emotionally charged lines (≤ 18 words — emotional craft ceiling; Gate 4B hard cap stays ≤ 32 words single speaker / ≤ 15 words per speaker in a two-shot)*:
      - Má Ba: “Trời đất quỷ thần ơi... tay mầy vầy nè, mầy đi truyền nước biển hồi nào sao giấu tao hả mầy?!” (18 words)
      - Mỹ Duyên: “Má ơi, con tự ráng gượng được mà má... má bận lòng làm chi cho khổ thân má nè...” (17 words)
      - Má Ba: “Mèn đéc ơi mầy nói cái giọng đó... mầy coi bà già này như người dưng thiệt rồi hả?!” (17 words)
      - Má Ba: “Trời ơi tao lặn lội từ dưới quê lên... đâu phải để tụi bây xua đuổi tao hả trời?!” (17 words)
      - Minh Khang: “Má ơi con lạy má! Duyên nó đuối sức dữ lắm rồi, má đừng nói vậy tội nghiệp nó má ơi!” (18 words)
      - Dì Tám: “Bà Ba ơi là bà Ba! Con dâu nó leo tuốt lên đầu ngồi kìa, mà bà nín nhịn cho đặng hả?!” (18 words)
-3. **Word Budget Discipline**: Emotional particles do NOT require exceeding the word budget. Rich, tearful, authentic colloquial cadence fits comfortably within the 12–18 word limit when redundant filler words are trimmed and replaced with genuine human breath.
+3. **Word Budget Discipline**: Emotional particles do NOT require exceeding the word budget. Rich, tearful, authentic colloquial cadence fits comfortably within the 8–18 word emotional sweet spot (craft target 8–14 words; Gate 4B hard cap ≤ 32) when redundant filler words are trimmed and replaced with genuine human breath.
 4. **Strict Ban on Death-Wishing Slang & Taboo Exclamations in Medical Panic**:
    - Expressions like *"Chết chưa"* (implies "Served you right" or wishing death), *"Đáng đời"*, or any gloating/curse idioms must NEVER be used when a family member collapses, faints, or suffers an accident. Such phrasing implies malicious schadenfreude, cruelty, and deep cultural taboo.
    - Real domestic panic uses immediate protective alerts: *"Duyên ơi coi chừng té! Khang ơi, vô đỡ vợ mầy lẹ lên con!"* or *"Trời đất ơi coi chừng té con!"*
@@ -246,8 +246,8 @@ Inside a 10.0-second scene atom, spoken dialogue is bounded by human biological 
    - Emotional Vietnamese speech operates at ~3.5–4.5 syllables per second.
    - An 8–10 word line consumes ~2.0–2.5 seconds of physical time.
    - An 18-word line consumes ~4.0–4.5 seconds of physical time.
-2. **The Invariant 18-Word Ceiling Rationale**:
-   - *Physical Acting Space*: In a 10s clip, if dialogue takes 4.5s, the remaining 5.5s is essential for breath intake (lead-in), physical action, eye reaction, and the listener's somatic settle. Exceeding 18 words freezes the body into a static talking-head puppet.
+2. **The 18-Word Emotional Craft Ceiling Rationale** (craft ceiling for action-bearing emotional clips; the Gate 4B hard cap remains ≤ 32 words single speaker / ≤ 15 words per speaker in a two-shot, ≤ 12 for Microdrama):
+   - *Physical Acting Space*: In a 10s clip, if dialogue takes 4.5s, the remaining 5.5s is essential for breath intake (lead-in), physical action, eye reaction, and the listener's somatic settle. Exceeding 18 words in an action-bearing emotional clip freezes the body into a static talking-head puppet; 19–32 word lines are reserved for single-speaker monologue / V.O. clips with minimal physical action.
    - *Mobile Subtitle Readability*: 18 Vietnamese syllables translate to ~110–120 characters, the exact ceiling for a clean 2-line subtitle (≤ 60 chars/line) on mobile screens without obscuring faces.
    - *AI Lip-Sync Stability*: Diffusion engines maintain accurate phoneme alignment only when speech has natural biological pause buffers.
 3. **The 3 Dynamic Placement Zones in a 10s Clip**:
@@ -738,19 +738,19 @@ Before compiling a script into video prompts, the Screenwriter must audit:
 
 ### 10.5 The Two-Tier Prop Implementation Standard (Phân Tầng Đạo Cụ: Text-Described vs. Image-Anchored)
 
-In cinematic generative AI production, **props must be strategically bifurcated based on their visual entropy, cultural ubiquity, and semantic complexity**. Forcing 4-view turnaround reference images for mundane objects is a catastrophic waste of compute, memory, and cognitive focus. Conversely, relying on text alone for idiosyncratic, high-concept artifacts triggers uncontrollable visual hallucinations across scenes.
+In cinematic generative AI production, **props must be strategically bifurcated based on their visual entropy, cultural ubiquity, and semantic complexity**. Forcing 4-view turnaround reference images for mundane objects is a catastrophic waste of compute, memory, and cognitive focus. Conversely, relying on text alone for idiosyncratic, high-concept artifacts triggers uncontrollable visual hallucinations across scenes. Numbering follows `workflow.md` §6.3: **Tier 1 = image-anchored hero props; Tier 2 = text-only everyday handheld items.** Furniture and fixtures are never props.
 
 ```text
 ┌────────────────────────────────────────────────────────────────────────────────────────────────────────┐
 │                              THE TWO-TIER PROP IMPLEMENTATION STANDARD                                 │
 ├────────────────────────────────────────┬───────────────────────────────────────────────────────────────┤
-│ TIER 1: EVERYDAY / MUNDANE PROPS       │ TIER 2: SOVEREIGN / SOUL / WEAPON / COMPLEX PROPS             │
+│ TIER 2: EVERYDAY HANDHELD ITEMS        │ TIER 1: SIGNATURE HERO / SOUL / WEAPON PROPS                  │
 │ (Đạo cụ Đời thường & Vật dụng Sinh hoạt)│ (Đạo cụ Linh hồn, Vũ khí Đặc chế & Cổ vật Biểu tượng)         │
 ├────────────────────────────────────────┼───────────────────────────────────────────────────────────────┤
 │ • Scope: Household, culinary, office,  │ • Scope: Custom weapons, ancestral talismans, intricate       │
 │   and everyday items (rice bowl, tea   │   puzzle mechanisms, runic blades, glowing sci-fi cores,      │
 │   cup, pen, envelope, key, wrench,     │   dynastic signets, idiosyncratic heirlooms with rare runes.  │
-│   folding hammock, stool, phone).      │                                                               │
+│   phone; never furniture or fixtures). │                                                               │
 │ • Implementation: 100% PURE TEXT       │ • Implementation: MANDATORY 16:9 4-VIEW MODEL SHEET           │
 │   PROMPTING (Mode A).                  │   (Mode B — Step 1C).                                         │
 │ • Rationale: AI diffusion models       │ • Rationale: Text alone cannot maintain geometric consistency │
@@ -761,18 +761,18 @@ In cinematic generative AI production, **props must be strategically bifurcated 
 └────────────────────────────────────────┴───────────────────────────────────────────────────────────────┘
 ```
 
-#### 1. Tier 1 (Everyday / Ambient Props) — Mode A (Pure Text Specification)
-- **Zero Pre-Production Visual Burden**: Never generate a 16:9 turnaround sheet or Midjourney/Flux image prompt for everyday domestic items (`bat_com`, `ly_nuoc`, `doi_dua`, `co_le`, `vong_xep`, `phong_bi`, `to_giay_vien_phi`). AI generative models possess vast pre-trained weights for these objects.
+#### 1. Tier 2 (Everyday Handheld Items) — Mode A (Pure Text Specification)
+- **Zero Pre-Production Visual Burden**: Never generate a 16:9 turnaround sheet or Midjourney/Flux image prompt for everyday domestic items (rice bowl, water glass, chopsticks, wrench, envelope, hospital bill). Furniture and fixtures (beds, cribs, folding hammocks, chairs) are never props; describe them in `[context]:`. AI generative models possess vast pre-trained weights for these objects.
 - **In-Prompt Anchor Formula**:
-  `[PROP: {material/surface texture} {canonical noun}, {current physical state/wear}, {spatial resting location OR which hand holds it} — the only {canonical noun} in frame]`  
-  *Example*: `[PROP: chipped white ceramic rice bowl, steaming with hot jasmine rice, resting on the worn mahogany table beside Duyen's left wrist — the only rice bowl in frame]`
-- **Mechanical Continuity Invariance**: The Single Instance Lock, Resting Surface Clearance, and Prop Mutability Lifecycle (Intact ➔ Kinetic Fracture ➔ Inert Fragments) apply identically to Tier 1 props via pure text cues.
+  Line inside `[PROP]:`: `{material/surface texture} {canonical noun}, {current physical state/wear}, {resting place independent of character hands} — the only {canonical noun} in frame`  
+  *Example*: `chipped white ceramic rice bowl, steaming with hot jasmine rice, resting on the worn mahogany table beside my_duyen's left wrist — the only rice bowl in frame`
+- **Mechanical Continuity Invariance**: The Single Instance Lock, Resting Surface Clearance, and Prop Mutability Lifecycle (Intact ➔ Kinetic Fracture ➔ Inert Fragments) apply identically to Tier 2 items via pure text cues.
 
-#### 2. Tier 2 (Sovereign / Soul / Weapon / Complex Props) — Mode B (Image-Anchored Specification)
-- **Mandatory Pre-Production Visual Asset (Step 1C)**: Exactly 1–2 master sovereign artifacts per narrative arc. Rendered as a standardized 16:9 Four-View Turnaround Model Sheet (Hero 3D perspective + 3 orthographic views: front, side profile, back) on a pure white `#FFFFFF` studio backdrop.
+#### 2. Tier 1 (Signature Hero / Soul / Weapon Props) — Mode B (Image-Anchored Specification)
+- **Mandatory Pre-Production Visual Asset (Step 1C)**: At most 1–2 master hero props per series. Rendered as a standardized 16:9 Four-View Turnaround Model Sheet (Hero 3D perspective + 3 orthographic views: front, side profile, back) on a pure white `#FFFFFF` studio backdrop.
 - **In-Prompt Anchor Formula**:
-  `[PROP: {Prop Name} [100% Refer to image <prop_ref>], {current physical state}, {spatial resting location OR which hand holds it} — the only {canonical noun} in frame]`  
-  *Example*: `[PROP: The Obsidian Phoenix Hairpin [100% Refer to image prop_hairpin_4view.jpg], intricate carved black obsidian with blood-red jade eye, clutched in A1's trembling right fist — the only hairpin in frame]`
+  Line inside `[PROP]:`: `{Prop Name in natural English} [100% Refer to image <prop_ref>], {current physical state}, {resting place independent of character hands} — the only {canonical noun} in frame`  
+  *Example*: `obsidian phoenix hairpin [100% Refer to image prop_hairpin_4view.jpg], intricate carved black obsidian with blood-red jade eye, resting on the lacquered dressing table — the only hairpin in frame`
 
 ---
 
