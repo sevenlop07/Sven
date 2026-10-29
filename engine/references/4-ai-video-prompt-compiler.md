@@ -176,10 +176,9 @@ For **each Scene**, before writing the Shot breakdown, determine:
 - **Mandatory `ho_ten` Snake_Case Syntax**: All character identifiers in AI Video Prompts (Code Block 1) MUST be written in **lowercase, unaccented Latin characters joined by underscores** (`ho_ten` standard):
   - Examples: `Mỹ Duyên` ➔ `my_duyen`, `Minh Khang` ➔ `minh_khang`, `Má Ba` ➔ `ma_ba`, `Dì Tám` ➔ `di_tam`, `Ba Thao` ➔ `ba_thao`.
 - **Zero Vietnamese Diacritics in Character Identifier Tokens**: Strips 100% of accented characters (`ă, â, đ, ê, ô, ơ, ư` and tone marks) in character identifiers to prevent byte-pair tokenization fragmentation and facial distortion across Kling, Sora, Runway, and Hailuo text encoders.
-- **Unified Tri-Entity Triplet Architecture**: Creates complete structural parity across the Sven visual ontology:
-  - Environments: `phong_cu`, `nha_bep`, `san_truoc`
-  - Props: `bat_com`, `vong_xep`, `noi_go`, `mam_nhom`
-  - Characters: `my_duyen`, `minh_khang`, `ma_ba`, `di_tam`
+- **The Dual Entity Architecture (Characters vs. Props & Environments)**:
+  - **Characters (Mandatory ho_ten Snake_Case)**: Written strictly in lowercase unaccented snake_case (my_duyen, minh_khang, ma_ba, di_tam, cu_tin). Serves as a unique synthetic entity token to bind Model Sheet appearances, anchor singular presence, and prevent AI character cloning.
+  - **Props (Natural English Prose — Zero Underscores _)**: Written in natural English words without underscores (cast-iron skillet, ceramic coffee mug, pine wood crib, porcelain bowl of hot congee). AI video diffusion text encoders (T5-XXL, CLIP) are pre-trained on natural English; snake_case (cast_iron_skillet) fragments tokens and ruins semantic physics comprehension.
 - **Atomic Entity Lock & Singularity**:
   - Declaration in `[subject]:`: `my_duyen [100% Appearance, attire, and facial features Refer to image 1], ... — the only my_duyen in frame.`
   - Action prose: `Camera tracks with ma_ba taking one resolute stride forward, standing squarely across the threshold...`
