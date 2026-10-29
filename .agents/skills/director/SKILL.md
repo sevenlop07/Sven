@@ -83,8 +83,8 @@ description: >
        - *Triangular Staging*: Apex (dominant power/catalyst in middle) vs. Base (two reactive characters on flank).
        - *3-Plane Dynamic Depth*: Foreground (FG - seated/shoulder anchor) + Middleground (MG - primary conflict/speaker) + Background (BG - fearful witness/protector).
        - *M3S / Group Master*: Deep focus capturing all 3 bodies with continuous somatic co-presence (gasping, clenched fists, dilated eyes).
-     * **Passive / Anchor Entity (the project's approved child `ho_ten`, asleep in a crib declared in `[context]:`)**:
-        - The approved child entity is a static biological anchor entity, NOT a sparring adult. Staged in crib at room landmark. Outside frame in adult CUs; visible beside bed in M2S/M3S wide frames to heighten tragic contrast against adult conflict.
+     * **Passive / Anchor Entity (a Band I/II minor `ho_ten`, asleep in a crib declared in `[context]:`; Pillar 4 §[10d])**:
+        - The minor entity is a static anchor, never part of the conflict and never in the path of aggressive movement. Staged in crib at room landmark. Outside frame in adult CUs; visible beside bed in M2S/M3S wide frames to heighten tragic contrast against adult conflict.
 
 5. **10s Kinetic Units & Dynamic Script-Driven Pacing**:
    - Enforces the Directorial Dynamic Temporal Intelligence Law: Pacing is determined organically by narrative tension and scene archetype (e.g. 2-Beat Action/Reaction, 3-Beat Escalation, or Single-Take Emotional Glide). Strictly bans cookie-cutter timestamps.
@@ -229,13 +229,15 @@ description: >
     * Tactile prop/surface friction (hands gripping table/rail/blanket) and internal head/gaze shifts.
   - *Pacing & Audio Standard*: Spoken lines follow Gate 4B (≤ 32 words single speaker; ≤ 15 per speaker in a two-shot); Craft Default for a locked take is one short line of ≤ 10–12 words (or Model 0 pure silence). Accompanied by room tone and choked respiration Foley.
 
-18. **The Universal Child Safety, Simple Action & Approved Child Entity Somatic Sleep Staging Protocol (Zero Harm & Platform Safety Immunity)**:
-    - **Strict Zero-Harm & Endangerment Prohibition**: Strictly ban any depiction of physical violence, harm, injury, crying in agony, starvation, burns, or hazardous environments (fire, heights, deep water, weapons) involving children. Minors must never commit or suffer harm.
-    - **The Simple Action Whitelist (Low-Velocity Kinetic Law)**: When children appear in frame during scenes, actions are strictly limited to simple, peaceful, low-velocity physical states (sleeping peacefully in a pine crib declared in `[context]:`, gentle chest breathing, resting head on parent's shoulder, smiling subtly, slowly blinking, curling fingers around parent's finger, gentle clapping, holding a soft plush toy). Complex kinetic moves are banned to prevent AI anatomical morphing (polydactyly, facial melting).
-    - **The Approved Child Entity & Somatic Sleep Staging Protocol** (Pillar 4 §[10d]): When the screenplay places the sleeping child in the room, declare the project's approved child `ho_ten` in `[subject]:` as `{child_ho_ten} [100% Appearance, attire, and facial features Refer to image {child_ho_ten}_4view.jpg]`, synchronized with safe somatic sleep prose (e.g. `Beside the queen bed, {child_ho_ten} rests peacefully inside the pine crib on the firm flat organic cotton mattress, chest rising and falling in calm rhythmic sleep through 00:10.0`). A crib the screenplay says is occupied is never shown empty; when the child is outside the room, omit the child entirely.
-    - **Zero Minor Safety Lexicon Standard**: 100% ban on NLP tokens that trip AI moderation: `baby`, `babies`, `kid`, `kids`, `infant`, `infants`, `newborn`, `newborns`, `child`, `children`, `bé`. Child names listed in `project_rules.json` → `minor_character_names` are banned; use only the project's approved child `ho_ten` in prompts (Title Case display name in the screenplay). Replace fixture terms: `pine crib` (not baby crib, declared in `[context]:`), `cotton bolster pillow` (not baby pillow).
-    - **Metaphorical Sanitization**: Translate clinical pathology/trauma (`haematomas`, `bruises`, `rolling eyes upward`, `faint`) into clean cinematic metaphors (`clean white medical adhesive bandage tape on pale wrist`, `weary eyelids closing gently in deep fatigue`).
-    - Purge NLP trigger words (e.g. `milk`, `pump`, `starve`, `choke`, `suffocate`, `burn`) plus any project-specific distress vocabulary listed in `output/<project>/project_staging_rules.md`.
+18. **Minor Protection Protocol (canonical spec: Pillar 4 §[10d]; DIRECTOR.md §6)**:
+    - **Purpose & Honesty**: protect every under-18 character and the audience. Never relabel, rename, or disguise a minor to pass a platform filter; if a minor scene is blocked, restage (Option B or adults-only framing) or cut it.
+    - **Truthful Age**: true age + band (I 0–3 · II 4–12 · III 13–17) in `setting.html`; `ho_ten` listed in `project_rules.json` → `minor_characters`. Adult storylines belong to characters written as adults from Stage 0.
+    - **Zero Harm & Endangerment**: no violence, injury, crying in agony, starvation, burns, or hazards (fire, heights, deep water, weapons, traffic) involving a minor; abuse, neglect, and self-harm only implied off-screen without detail. No violence lexicon in any prompt where a minor is present.
+    - **Zero Sexualization**: no sexual or romantic physical content, no body-focused descriptors, no camera lingering on a minor's body, no low angle up the body, no POV gaze at a minor. Band III crushes stay innocent.
+    - **Band Actions**: Band I — Simple Action Whitelist (sleeping in a crib declared in `[context]:`, resting on a parent's shoulder, curling fingers around an adult's finger, slow blink, soft toy); Band II — calm everyday actions, short lines; Band III — ordinary school and home life, full dialogue under Gate 4B, no fights, stunts, alcohol, smoking, or driving.
+    - **Sleep Staging (Band I/II in adult conflict)**: `{minor_ho_ten} [100% Appearance, attire, and facial features Refer to image {minor_ho_ten}_4view.jpg]` in `[subject]:` with safe sleep prose (`Beside the queen bed, {minor_ho_ten} rests peacefully inside the pine crib on the firm flat organic cotton mattress, chest rising and falling in calm rhythmic sleep through 00:10.0`). A crib the screenplay says is occupied is never shown empty; when the minor is outside the room, omit the minor entirely.
+    - **Identity Naming**: generic minor nouns stay out of visual prose (duplicate-figure risk, Gate 3C/3F); retired aliases in `project_rules.json` → `minor_character_names` are banned; the voice parenthetical states the true age. Fixture terms: `pine crib` (in `[context]:`), `cotton bolster pillow`.
+    - **Adult Sanitization**: translate clinical pathology on adults (`haematomas`, `rolling eyes upward`, `faint`) into clean imagery (`clean white medical adhesive bandage tape on pale wrist`, `weary eyelids closing gently in deep fatigue`). Purge distress words (`milk`, `pump`, `starve`, `choke`, `suffocate`, `burn`) plus project-specific lists in `output/<project>/project_staging_rules.md`.
 
 19. **The Master Episode Audit Suite (Gates 1A–5 Enforced via `engine/episode_audit_suite.py`)**:
     - Pre-flight automated verification enforcing 18/18 Master Production Gates:
@@ -246,7 +248,7 @@ description: >
       * (3C) ZERO forbidden pronouns (proper name enforcement)
       * (3D) ZERO hardware and Kelvin jargon
       * (3E) ZERO Mode B costume violations
-      * (3F) ZERO minor safety triggers, zero minor terms (kid, child, baby, infant, newborn), and ZERO child names listed in `project_rules.json` → `minor_character_names`
+      * (3F) Minor protection: zero generic minor nouns and retired aliases (`minor_character_names`) in visual prose; for prompts naming a `minor_characters` entry, zero sexual, body-focused, or violence lexicon and zero adult labels on the minor
       * (3G) 100% Master Cinematography Prefix
       * (3H) ZERO Cartesian math coordinates document-wide
       * (3I) ZERO cross-scene dependencies (100% stateless)

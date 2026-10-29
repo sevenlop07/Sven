@@ -465,28 +465,36 @@ Right area features a prominent, zoomed-in high-definition chest-up portrait fil
 Professional high-key beauty studio lighting, subtle soft grounding contact shadows under boots, strictly zero text, zero typography, zero labels, strictly zero background scenery, zero environmental elements, zero furniture, zero watermark, strictly zero cropped head, strictly no cut-off hair, no truncated hair crown, no hair touching canvas edges, ample empty white headroom margin above the skull, pulled back camera framing, strictly zero out-of-frame head, no chopped skull, portrait strictly frontal view only.
 ```
 
-##### 🎬 MẪU 0B (BENCHMARK NỮ CHÍNH HỌC ĐƯỜNG CÁ TÍNH 18 TUỔI, ĐÃ TRƯỞNG THÀNH - RIN MORITA):
-*(Benchmark thực chiến tối ưu 100%: Hoàn toàn không text; 3 góc toàn thân đứng thả lỏng tự nhiên (Front không đầu, Side 90° không đầu, Rear có đầu); chân dung chính diện 100% zoom to rõ nét, full head và khoảng thở an toàn không chạm mép)*
+##### 🎬 MẪU 0B (BENCHMARK NHÂN VẬT DƯỚI 18 TUỔI — NỮ SINH 16 TUỔI, MINOR-SAFE SHEET — RIN MORITA)
+*(Template bắt buộc cho mọi nhân vật dưới 18 tuổi — Pillar 4 §[10d]. Khác Mẫu 0: không phong cách thời trang/beauty, không mô tả vóc dáng hay làn da, không cắt cảnh thân không đầu; 3 góc toàn thân CÓ ĐẦU + chân dung đầu-vai; tuổi thật được ghi rõ.)*
 ```text
-Style: Theatrical film reference, high-end live-action high school youth drama cinematic portraiture, DaVinci color grading, pristine digital finish.
+Style: Neutral live-action casting reference for a family-friendly high school drama, soft natural color, clean documentary finish.
 
-Ultra-realistic human character reference sheet, 8K ultra HD, ultimate details, photorealistic skin and fabric texture, professional commercial fashion studio photography, shot on Hasselblad H6D-100c with 85mm prime lens, crystal clear focus across the entire composition.
+Character reference sheet for wardrobe and continuity, photorealistic, clear even focus, neutral casting-office photography.
 
-Character: One young adult East Asian woman, aged 18, 167cm height, slender and athletic physique, symmetrical oval face with defined jawline, warm fair complexion with delicate natural micro-pores and subtle faint freckles across nose bridge, no heavy makeup. Almond-shaped dark amber-brown eyes with a calm, aloof, sharp rebellious gaze looking directly into the camera lens; straight refined nose bridge with a small flesh-tone medical adhesive bandage strip across the bridge. Natural soft lips, delicate silver chain ear-cuff pierced along the helix of the left ear. Tousled shoulder-length dark espresso wolf-cut hair with subtle ash-grey peekaboo highlights, voluminous textured crown, wispy layered curtain bangs framing the forehead.
+Character: A 16-year-old East Asian teenage high school student, 160cm height, average build, oval face, calm and slightly guarded expression, natural bare face, faint freckles across the nose bridge, small flesh-tone adhesive bandage across the nose bridge. Dark amber-brown almond-shaped eyes with a steady, stubborn look. Tousled shoulder-length dark brown wolf-cut hair with wispy curtain bangs.
 
-Wardrobe: Dark charcoal-grey tailored wool school blazer with neat lapels and structured shoulders; crisp white cotton collared button-up dress shirt worn unbuttoned at the top collar; loosely tied wine-red silk necktie hanging naturally down the chest; charcoal-grey pleated knee-length school uniform skirt; black ribbed calf-high socks; chunky black leather platform penny loafers with sturdy rubber soles.
+Wardrobe: Loose-fitting charcoal-grey school blazer buttoned over a white collared shirt buttoned to the collar, wine-red school necktie neatly tied; charcoal-grey pleated school skirt falling below the knee; opaque black knee socks; flat black school shoes. Age-appropriate, fully covering school uniform.
 
-Character reference model sheet, aspect ratio 16:9, clean solid pure white studio infinity background.
+Character reference model sheet, aspect ratio 16:9, plain light-grey studio background.
 
-Left and center area displays a three-angle full-body turnaround in a natural, relaxed standing posture with arms resting naturally and loosely beside the torso, feet naturally grounded touching floor:
-1. Headless neck-down front view of the charcoal blazer, white shirt, red tie, pleated skirt, black socks, and platform loafers from collar down to shoes, with strictly zero head and zero face.
-2. Headless neck-down 90-degree lateral side profile view showing blazer side silhouette, skirt pleats, and platform shoes, with strictly zero head and zero face.
-3. Full-length rear back view INCLUDING complete back of head and rear wolf-cut hairstyle, showing the textured layers at the nape, back of blazer, skirt, and shoes down to the floor.
+Left and center area displays three full-length views including the head, standing upright in a relaxed neutral pose, arms resting at the sides, feet flat on the floor:
+1. Front view, full figure from head to shoes, calm neutral face.
+2. 90-degree side profile, full figure from head to shoes.
+3. Back view, full figure from the back of the head to the shoes, showing the rear wolf-cut hairstyle and the back of the blazer.
 
-Right area features a prominent, zoomed-in high-definition chest-up portrait filling the right frame with impactful facial clarity while maintaining safe headroom margin above the hair crown, entire head, full cranium, and voluminous layered wolf-cut hairstyle 100% fully visible inside the canvas with clear breathing space below top border, in strictly direct frontal eye-level view facing camera directly, subject looking straight forward into lens, capturing razor-sharp facial bone structure, delicate skin texture, amber iris catchlights, textured wolf-cut hair strands, nose bandage, silver ear-cuff chain, and blazer lapels.
+Right area features a head-and-shoulders portrait at eye level facing the camera, calm neutral expression, showing the hairstyle, the nose bandage, and the blazer collar, with safe headroom above the hair.
 
-Professional high-key beauty studio lighting, subtle soft grounding contact shadows under loafers, strictly zero text, zero typography, zero labels, strictly zero background scenery, zero environmental elements, zero furniture, zero watermark, strictly zero cropped head, strictly no cut-off hair, no truncated hair crown, no hair touching canvas borders, safe headroom margin above skull, strictly zero out-of-frame head, no chopped skull, portrait strictly frontal view only.
+Soft even studio lighting, light grounding shadow under the shoes, strictly zero text, zero typography, zero labels, zero watermark, zero background scenery, zero props, head and hair fully inside the frame.
 ```
+
+**Minor-Safe Model Sheet Rules (mọi nhân vật dưới 18 tuổi — Setting Gate 3B):**
+1. **Truthful age**: state the real age and `teenage student` / `child`. Never `adult`, `young woman`, `young man`, never age up or down.
+2. **Style**: neutral casting / continuity reference. Banned: fashion, editorial, commercial, beauty, glamour photography; beauty lighting.
+3. **Descriptors**: allowed — height (cm), build word (`small`, `average`, `stocky`), face, eyes, hair, expression. Banned — physique, figure, curves, toned, slender, skin sensuality (`dewy`, `porcelain`, `luminous skin`, `micro-pores`), makeup, `seductive` / `sultry` / `alluring` / `sexy` / `attractive`.
+4. **Wardrobe**: fully covering, age-appropriate. Banned — form-fitting, skin-tight, cropped, mini, low-cut, sheer, bodysuit, swimwear, underwear, sleepwear.
+5. **Layout**: exception to the headless turnaround standard — full-length views always include the head; the portrait is head-and-shoulders, never chest-up.
+6. **Pose**: neutral upright standing; no reclining, no over-the-shoulder looks, no pouting.
 
 ##### 🎬 MẪU 1A: TRANG PHỤC TỐI MÀU ➔ BẮT BUỘC NỀN TRẮNG SÁNG STUDIO (DARK SUIT • SOLID PURE WHITE BACKDROP)
 *(Áp dụng luật tương phản: Thợ săn mặc vest đen tuyền ➔ Bắt buộc dùng phông trắng studio để nổi bần bật từng đường cắt vai và form dáng; 3 góc toàn thân đứng thả lỏng tự nhiên, không text)*

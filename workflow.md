@@ -154,7 +154,7 @@ Every Code Block 1 binds each location, character, and interactive prop to its u
 
 ### 2.6 Age & Appearance Policy
 - **Numeric age appears ONLY in the voice parenthetical**: `（Voice of a 24-year-old woman from Southern Vietnam, ...）`. Gate 3A strips this pattern before scanning.
-- Visual prose never contains a numeric age (`34-year-old`, `aged 34`). For minor-safety anchoring, use non-numeric adult terms: `young woman`, `adult craftsman`, `young adult weaver`.
+- Visual prose never contains a numeric age (`34-year-old`, `aged 34`). A character who really is 18+ may be anchored with non-numeric adult terms (`young woman`, `adult craftsman`) to avoid ambiguity. Never apply adult terms to a character under 18; minors follow the Minor Protection Protocol (Pillar 4 §[10d]).
 - Visual prose never describes clothing. Wardrobe, face, and age appearance are locked by the 16:9 model sheet.
 - Model sheets themselves (Stage 1) DO state an exact integer age (`aged 34`, never a range).
 
@@ -209,7 +209,7 @@ Every story ends positive and hopeful: growth, redemption, truth exposure, justi
 - No pronouns in visual prose; stateless prompts; no coordinate math (Gates 3C/3I/3H)
 - Dialogue Word Cap (Gate 4B hard cap): ≤ 32 words single speaker; ≤ 15 words per speaker in a two-shot. Craft target 8–14 words (Microdrama ≤ 12); no lip-synced line during a downward POV; V.O. with lips sealed
 - Dialogue ↔ prompt verbatim parity wherever lines exist (Gate 4)
-- Minor safety and Approved Child Entity Somatic Sleep Staging Protocol (Gate 3F; Pillar 4 §[10d] & DIRECTOR.md §6; zero-minor lexicon, low-velocity sleep whitelist); no combat, chases, or brawls (§2.3)
+- Minor Protection Protocol (Gate 3F + Setting Gate 3B; Pillar 4 §[10d] & DIRECTOR.md §6): truthful age and band, zero sexualization, zero violence or danger involving a minor, band-based actions, never disguise a minor to pass a filter; no combat, chases, or brawls (§2.3)
 - One primary move + one reaction per phase; one physical instance per prop
 - **The Master Directorial Symphony Law & Kinetic Baton Relay**: Anti-fragmented flow across scenes. Exit vector of Scene N = Entry vector of Scene N+1. Strict prohibition on isolated, siloed prompt cards, spatial amnesia, and monotonic identical dialogue templates across scenes (Dynamic Voice Mode progression required; DIRECTOR.md §4c & SCREENWRITER.md Rule 9)
 - Positive ending, zero fatalities (§2.9)
@@ -740,7 +740,7 @@ Template notes:
 - Timing (`0b` §2–§5): time every line in seconds (calm speech ≈ 3.5–4.5 Vietnamese syllables/s or 2.0–2.5 English words/s). A phase that carries a lip-synced line lasts ≥ line + 1.0s, starts the line ≥ 0.3s in, and ends it ≥ 0.8s before the cut (audit W4). Each camera move gets at least its §5 duration; never lip-sync while a crane, orbit, arc, or whip is traveling. Speech stays ≤ ~60% of the clip (audit W5).
 - Duration: 10s always; 15s / 30s only on explicit user request (§2.4), with the last bracket ending at `00:15` or `00:30`.
 - Never give lip-synced dialogue during a downward POV shot. Transition to a frontal MCU/MS first.
-- Minor-safety lexicon and Approved Child Entity Somatic Sleep Staging Protocol: Pillar 4 §[10d] & DIRECTOR.md §6.
+- Minor Protection Protocol (under-18 characters): Pillar 4 §[10d] & DIRECTOR.md §6.
 
 ### 9.4 Silent Scenes & Silent Film
 Applies to every scene of a Silent Film and to any individual silent scene inside a dialogue project. Remove every dialogue line and voice parenthetical from that prompt. Amplify micro-biomechanics and Foley. Replace the final negative line with:
@@ -780,7 +780,7 @@ Above the scene cards, `tap-X.html` publishes the episode's Story Spine card (`i
 | No clothing in prose | 3E |
 | No numeric age outside the voice parenthetical | 3A |
 | No pronouns in prose | 3C |
-| No minor lexicon | 3F |
+| Minor protection: no generic minor nouns or retired aliases; for `minor_characters`: no sexual, body-focused, or violence lexicon, no adult labels | 3F |
 | Master prefix present | 3G |
 | No coordinate math document-wide | 3H |
 | Stateless (no cross-scene references) | 3I |

@@ -180,12 +180,12 @@ intimate Southern Vietnamese master bedroom [100% Refer to image location_bedroo
     - `[00:03.5–00:07.0]`: Cut sang MCU của kẻ áp đảo (Apex) nói câu dao găm 1.
     - `[00:07.0–00:10.0]`: Cut sang Two-Shot gồm nạn nhân và đồng minh bảo vệ phản ứng / đáp trả câu 2.
 
-#### 4. Quy Chuẩn Khi Có Thực Thể Trẻ Em / Thực Thể Bị Động (`cu_tin` trong nôi gỗ):
-- `cu_tin` KHÔNG phải là một người lớn tham gia tranh cãi, mà là **Thực Thể Mỏ Neo Cảm Xúc & Đạo Cụ Sống (Somatic Emotional Anchor)**.
-- Khi phân cảnh có 2 hoặc 3 người lớn cãi nhau trong phòng ngủ:
-  * Chiếc nôi gỗ thông (`pine wood crib`, khai báo trong `[context]:`) và `cu_tin` đóng vai trò **Mỏ neo tiền cảnh/trung cảnh cố định**.
-  * Trong các cú cận (CU/MCU) của người lớn, `cu_tin` nằm ngoài khung hình (chỉ có thành nôi mờ lướt qua).
-  * Trong các cú Two-Shot hoặc Three-Shot (M2S/M3S), chiếc nôi hiện diện rõ bên giường, tạo độ tương phản tàn khốc: **sự giận dữ gào thét của người lớn đối lập với hơi thở ngủ say ngây thơ của đứa trẻ**.
+#### 4. Quy Chuẩn Khi Có Nhân Vật Dưới 18 Tuổi Trong Cảnh Xung Đột (`{minor_ho_ten}`; Mandate §6 & Pillar 4 §[10d]):
+- **Band I/II (0–12)**: `{minor_ho_ten}` KHÔNG tham gia tranh cãi; là **Thực Thể Mỏ Neo Cảm Xúc (Somatic Emotional Anchor)**, đang ngủ trong vùng an toàn (Option A) hoặc ở ngoài phòng (Option B).
+  * Chiếc nôi/giường (`pine wood crib`, khai báo trong `[context]:`) là mỏ neo cố định, đặt xa vùng xung đột của người lớn.
+  * Trong các cú cận (CU/MCU) của người lớn, `{minor_ho_ten}` nằm ngoài khung hình.
+  * Trong Two-Shot/Three-Shot (M2S/M3S), chiếc nôi hiện diện bên giường, tạo tương phản: **cơn giận của người lớn đối lập với hơi thở ngủ say bình yên**. Không có từ ngữ bạo lực trong prompt có mặt nhân vật dưới 18 tuổi.
+- **Band III (13–17)**: có thể có mặt, tỉnh và tham gia xung đột bằng lời; luôn đứng ngoài đường di chuyển hung hăng; không có hành vi thể chất gây hấn nào hướng tới hoặc xuất phát từ nhân vật.
 
 #### 5. Danh Mục Kiểm Tra Chống "Mất Não Vô Lý" Trước Khi Duyệt Cảnh (Anti-Braindead Checklist):
 1. **Kiểm tra quân số trong khung hình**: Khung CU chỉ được có 1 mặt người. Muốn thấy tương tác 2 người phải là M2S hoặc OTS. Muốn thấy cả 3 người phải là M3S / Master Shot.
@@ -329,31 +329,32 @@ When compiling 10s video prompts (Code Block 1) from the Scene Intent Card, the 
      * Tactile prop/surface friction (hands gripping table/rail/blanket) and internal head/gaze shifts.
     - *Pacing & Audio Standard*: Spoken lines follow Gate 4B (≤ 32 words single speaker; ≤ 15 words per speaker in a two-shot). Craft Default for a locked performance take: one short line of ≤ 10–12 words, or Model 0 pure silence. Accompanied by room tone and choked respiration Foley.
 
-### 6. The Universal Child Safety, Simple Action & Approved Child Entity Somatic Sleep Staging Protocol (Quy Chuẩn An Toàn Trẻ Em & Đồng Bộ Thực Thể Trẻ Em Đã Duyệt)
+### 6. Minor Protection Protocol (Quy Chuẩn Bảo Vệ Nhân Vật Dưới 18 Tuổi — canonical spec: Pillar 4 §[10d])
+- **Purpose**: Protect every under-18 character (children and teenagers) and the audience. These rules govern what we write; they are never a technique for slipping content past a platform filter. If a platform blocks a scene involving a minor, restage it (Option B, or frame only the adults) or cut it — never relabel, rename, or disguise the minor.
+- **Truthful Age**: register true age and age band (Band I 0–3 · Band II 4–12 · Band III 13–17) in `setting.html`, and list the `ho_ten` in `project_rules.json` → `minor_characters`. Never write a minor as `adult` / `young woman` / `young man` / `aged 18`. Adult storylines (romance, sexuality, graphic violence, substances) belong to characters written as adults from Stage 0.
 - **Strict Zero-Harm & Endangerment Prohibition (Cấm Tuyệt Đối Hành Động Gây Hại)**:
-  - Tuyệt đối CẤM mọi cảnh bạo lực, đánh, tát, đẩy, xô ngã, trói, giằng giật, nhốt giữ hoặc đặt trẻ em vào môi trường nguy hiểm (gần lửa, nước sâu, mép cao, dao kéo, xe cộ).
-  - Cấm mô tả trẻ em đói khát, thương tích, bầm tím, sốt giật, dầm mưa rét run, hoặc gào khóc thảm thiết trong kinh hoàng.
-  - Trẻ em tuyệt đối không làm hành vi nguy hại hay cầm vũ khí.
-- **The Simple Action Whitelist (Đạo Luật Hành Động Đơn Giản Cho Trẻ Em)**:
-  - Khi trẻ em xuất hiện trực tiếp trong các cảnh gia đình, hòa thuận, ấm áp, hành động của trẻ BẮT BUỘC chỉ được nằm trong danh mục tối giản, vận tốc thấp:
+  - Tuyệt đối CẤM mọi cảnh bạo lực, đánh, tát, đẩy, xô ngã, trói, giằng giật, nhốt giữ hoặc đặt nhân vật dưới 18 tuổi vào môi trường nguy hiểm (gần lửa, nước sâu, mép cao, dao kéo, xe cộ).
+  - Cấm mô tả nhân vật dưới 18 tuổi đói khát, thương tích, bầm tím, sốt giật, dầm mưa rét run, hoặc gào khóc thảm thiết trong kinh hoàng. Bạo hành, bỏ bê, tự hại chỉ được ngụ ý ngoài khung hình qua phản ứng của người lớn, không chi tiết.
+  - Nhân vật dưới 18 tuổi tuyệt đối không làm hành vi nguy hại, không cầm vũ khí, không rượu bia, thuốc lá, không lái xe.
+- **Zero Sexualization (Cấm Tình Dục Hóa)**: no sexual or romantic physical content, innuendo, kissing (a parent's kiss on the forehead or hair is allowed for Band I/II), caressing, undressing, bathing, or changing. No body-focused descriptors and no body-focused camera (no lingering on the body, no low angle up the body, no POV gaze at a minor). Band III crushes stay innocent: glances, a passed note, a shared umbrella.
+- **Action by Age Band**:
+  - **Band I — Simple Action Whitelist (Đạo Luật Hành Động Đơn Giản)**, vận tốc thấp:
     * *Ngủ bình yên*: Nằm ngoan trong nôi/giường, ngực phập phồng thở đều đặn, tay nhỏ đặt cạnh má.
     * *Tựa vai êm ái*: Tựa đầu vào hõm vai cha/mẹ khi được bế, mắt khép hờ hoặc lim dim ngủ.
-    * *Cầm ngón tay*: Bàn tay nhỏ bé khẽ cuộn tròn quanh một ngón tay trỏ của người lớn.
-    * *Nụ cười thiên thần*: Mỉm cười nhẹ ngây thơ, mắt to tròn chớp chậm nhìn ánh nắng ấm.
-    * *Ôm đồ chơi mềm*: Ôm gấu bông nhỏ hoặc cầm hoa dại sát ngực.
+    * *Cầm ngón tay*: Bàn tay nhỏ khẽ cuộn tròn quanh một ngón tay trỏ của người lớn.
+    * *Nụ cười hồn nhiên*: Mỉm cười nhẹ, mắt chớp chậm nhìn ánh nắng ấm.
+    * *Ôm đồ chơi mềm*: Ôm gấu bông nhỏ sát ngực.
     * *Vỗ tay nhẹ*: Hai bàn tay vỗ nhẹ nhịp nhàng, chậm rãi.
-  - *Nguyên nhân kỹ thuật*: Không gian tiềm ẩn (latent diffusion space) không thể xử lý cử động phức tạp của trẻ em mà không bị ảo giác dị tật (mọc thêm ngón tay, méo miệng, biến dạng mặt kinh dị). Hành động đơn giản là chìa khóa duy nhất bảo toàn giải phẫu hoàn hảo và an toàn kiểm duyệt.
-- **The Approved Child Entity & Somatic Sleep Staging Protocol (Quy Chuẩn Đồng Bộ Thực Thể Trẻ Em Đã Duyệt & Diễn Hoạt An Toàn)**:
-  - **Khai báo thực thể chuẩn trong `[subject]:`**: Khi kịch bản đặt đứa trẻ trong phòng (ví dụ đang ngủ trong nôi khai báo ở `[context]:`), thực thể dùng `ho_ten` trẻ em đã duyệt của dự án (`{child_ho_ten}`, ví dụ `cu_tin`) **BẮT BUỘC ĐƯỢC KHAI BÁO TRONG `[subject]:`**:
-    `{child_ho_ten} [100% Appearance, attire, and facial features Refer to image {child_ho_ten}_4view.jpg]`
-    Nôi mà kịch bản nói có trẻ thì tuyệt đối KHÔNG được để trống. Khi trẻ không ở trong phòng (Pillar 3 §4.3, Option B), bỏ hẳn thực thể khỏi prompt.
-  - **Diễn hoạt vật lý đồng bộ (Somatic Sleep Staging)**: Trong nội dung diễn hoạt (timeline action prose), `{child_ho_ten}` được neo chặt với cử động sinh học an toàn, nhịp thở êm đềm:
-    *Ví dụ chuẩn*: `Beside the queen bed, {child_ho_ten} rests peacefully inside the pine crib on the firm flat organic cotton mattress, chest rising and falling in calm rhythmic sleep, tiny fists curled gently beside soft cheeks through 00:10.0.`
-  - **Lệnh cấm tuyệt đối bộ từ khóa nhạy cảm kiểm duyệt AI (Zero Minor Safety Lexicon)**:
-    * Cấm 100% các từ khóa kích hoạt bộ lọc kiểm duyệt AI video: `baby`, `babies`, `kid`, `kids`, `infant`, `infants`, `newborn`, `newborns`, `child`, `children`, `bé`.
-    * Định danh trẻ em do `output/<project>/project_rules.json` → `minor_character_names` quản lý: tên trong danh sách cấm bị Gate 3F chặn; chỉ dùng định danh `ho_ten` đã duyệt (ví dụ trong dự án hiện hành: `cu_tin` trong prompt, `Cu Tin` trong kịch bản).
-    * Thay thế thuật ngữ đạo cụ: dùng `pine wood crib` (thay vì `baby crib`, khai báo trong `[context]:`), `cotton bolster pillow` (thay vì `baby pillow`), `organic cotton onesie` (thay vì `baby clothes`).
-  - **Bảo hộ an toàn tuyệt đối (Zero Harm Standard)**: Đứa trẻ luôn nằm an toàn trên mặt nằm phẳng, chắc chắn (nôi hoặc giường khai báo trong `[context]:`). Triệt tiêu 100% hành vi rung lắc, bế xốc, giằng co, hoặc đặt vào bề mặt cong, võng hay chỗ nằm không an toàn.
+  - **Band II**: calm everyday actions (sitting, walking beside an adult, drawing, eating, holding an adult's hand, short lines); no running near hazards, no climbing.
+  - **Band III**: ordinary school and home life with full dialogue under Gate 4B; no fights, stunts, alcohol, smoking, or driving.
+  - *Nguyên nhân kỹ thuật bổ sung*: latent diffusion space dễ ảo giác dị tật (thừa ngón, méo mặt) khi cơ thể trẻ nhỏ cử động phức tạp; hành động đơn giản giữ giải phẫu chính xác.
+- **Approved Minor Entity & Somatic Sleep Staging (Band I/II)**:
+  - **Khai báo trong `[subject]:`**: Khi kịch bản đặt nhân vật trong phòng (ví dụ đang ngủ trong nôi khai báo ở `[context]:`), dùng `ho_ten` đã duyệt (`{minor_ho_ten}`) **BẮT BUỘC KHAI BÁO TRONG `[subject]:`**:
+    `{minor_ho_ten} [100% Appearance, attire, and facial features Refer to image {minor_ho_ten}_4view.jpg]`
+    Nôi mà kịch bản nói có người nằm thì tuyệt đối KHÔNG để trống. Khi nhân vật không ở trong phòng (Pillar 3 §4.3, Option B), bỏ hẳn khỏi prompt.
+  - **Somatic Sleep Staging**: *Ví dụ chuẩn*: `Beside the queen bed, {minor_ho_ten} rests peacefully inside the pine crib on the firm flat organic cotton mattress, chest rising and falling in calm rhythmic sleep, tiny fists curled gently beside soft cheeks through 00:10.0.`
+- **Identity Naming**: generic nouns (`baby`, `kid`, `child`, `boy`, `girl`, `teen`, `bé`) stay out of visual prose because they spawn unanchored duplicate figures (Gate 3C/3F) — identity is always `ho_ten` + reference image, and the voice parenthetical states the true age. Retired aliases live in `project_rules.json` → `minor_character_names` (Gate 3F). Fixture naming: `pine wood crib` (in `[context]:`), `cotton bolster pillow`, `organic cotton onesie`.
+- **Bảo hộ an toàn tuyệt đối (Zero Harm Standard)**: Nhân vật Band I luôn nằm trên mặt nằm phẳng, chắc chắn (nôi hoặc giường khai báo trong `[context]:`). Triệt tiêu 100% hành vi rung lắc, bế xốc, giằng co, hoặc đặt vào bề mặt cong, võng hay chỗ nằm không an toàn.
 
 - **Metaphorical Sanitization of Trauma & Violence**:
   - Strictly ban clinical pathology and trauma vocabulary: `haematomas`, `bruises`, `eyes rolling upward as consciousness slips`, `slumping limp on tiles`, `blackout`.
@@ -523,16 +524,16 @@ When executing scene direction, the Director coordinates ten interconnected disc
 - **Tier 1 (Audit Card) & Code Block 2 (Handover Snapshot)**:
   - The repository for physical spatial positions, observable architectural relationships, prop tracking matrices, and cumulative episode timestamps (`01:20–01:30`) for human supervision and downstream agent handover. STRICTLY ZERO raw Cartesian math numbers.
 
-### D10. The Minor Lexicon Ban & AI Platform Safety Pragmatism (Universal Kling/Sora/Runway Defense)
-- **The Core Safety Reality**: Commercial AI video generators (Kling AI, Runway, Sora, Hailuo) employ automated NLP moderation filters that block prompts combining minor vocabulary with domestic conflict, illness, screaming, crying, or physiological terms.
-- **The Minor Lexicon Mandate** (aligned with Mandate §6 and Gate 3F):
-  1. **Zero Minor Vocabulary**: Purge 100% of minor terms from Code Block 1 (`kid`, `kids`, `child`, `children`, `baby`, `babies`, `infant`, `infants`, `toddler`, `toddlers`, `newborn`, `newborns`, `teen`, `teenager`, `boy`, `girl`, `bé`).
-  2. **Banned Child Names**: Names listed in `output/<project>/project_rules.json` → `minor_character_names` are banned from the prompt body (Gate 3F).
-  3. **Approved Child Entity**: A child character MAY be declared in `[subject]:` under an approved unique `ho_ten` with a reference image (e.g., `cu_tin [100% Appearance, attire, and facial features Refer to image cu_tin_4view.jpg]`), restricted to the Simple Action Whitelist and Zero-Harm Standard of Mandate §6. The crib or bed holding the child is furniture declared in `[context]:`.
+### D10. Minor Protection & Platform Honesty
+- **Reality**: Commercial AI video generators (Kling AI, Runway, Sora, Hailuo, Veo) run safety classifiers on prompts involving minors. Those classifiers exist to protect children; we work with them, never around them.
+- **Mandate** (Mandate §6, Pillar 4 §[10d], Gate 3F):
+  1. **Identity**: approved `ho_ten` + reference image; generic minor nouns stay out of visual prose (duplicate-figure risk); the true age stays in the setting bible and the voice parenthetical.
+  2. **Retired Aliases**: names listed in `output/<project>/project_rules.json` → `minor_character_names` are banned from the prompt body (Gate 3F).
+  3. **Approved Minor Entity**: declared in `[subject]:` under approved `ho_ten` with a reference image, restricted to the band actions, Zero-Harm and Zero-Sexualization rules of Mandate §6. The crib or bed is furniture declared in `[context]:`.
   4. **Dialogue & Somatic Sanitization**:
-     * Purge feeding/lactation, starvation, choking, and suffocation trigger words from prompts; project-specific trigger lists live in `output/<project>/project_rules.json`.
-     * Translate clinical pathology into clean cinematic metaphors: Replace `haematomas`, `bruises`, `bầm nát` with `delicate white medical adhesive bandage tape on pale wrist`.
-     * Replace `eyes rolling upward as consciousness slips` with `weary eyelids closing gently in deep fatigue as supportive arms catch the swaying torso`.
+     * Purge feeding/lactation, starvation, choking, and suffocation words from prompts; project-specific lists live in `output/<project>/project_rules.json`.
+     * Translate clinical pathology on adults into clean cinematic imagery (`bruises` → `delicate white medical adhesive bandage tape on pale wrist`; `eyes rolling upward` → `weary eyelids closing gently in deep fatigue as supportive arms catch the swaying torso`). Injury on a minor is never shown, translated or not.
+  5. **Blocked Prompt Rule**: if a platform blocks a scene involving a minor, never rephrase to evade. Restage (Option B or adults-only framing) or cut the beat, and log the change in the CP4 summary.
 
 ---
 

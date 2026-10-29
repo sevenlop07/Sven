@@ -240,9 +240,24 @@ def audit_episode_html(file_path):
             'newborn', 'newborns', 'teen', 'teens', 'teenager', 'teenagers',
             'boyish', 'girlish', 'pediatric'
         ]
-        project_minor_names = project_rules.get('minor_character_names', ['be_tin'])
+        # Retired child aliases (per project). No hard-coded film default (engine stays film-agnostic).
+        project_minor_names = project_rules.get('minor_character_names', [])
         banned_minor_all = list(set(base_minor_terms + [str(m).lower() for m in project_minor_names]))
         minor_rx = re.compile(r'\b(' + '|'.join(re.escape(t) for t in sorted(banned_minor_all, key=len, reverse=True)) + r')\b', re.IGNORECASE)
+
+        # Minor Protection Protocol (Pillar 4 §[10d]): approved ho_ten of every under-18 character.
+        minor_characters = [str(m).strip() for m in project_rules.get('minor_characters', []) if str(m).strip()]
+        minor_char_rx = re.compile(r'\b(' + '|'.join(re.escape(m) for m in minor_characters) + r')\b', re.IGNORECASE) if minor_characters else None
+        # Sexual lexicon: banned anywhere in a prompt where a minor is present.
+        minor_sexual_rx = re.compile(r'\b(sexy|seductive\w*|sultry|alluring|sensual\w*|erotic\w*|flirt\w*|kiss\w*|caress\w*|naked|nude|nudity|undress\w*|lingerie|topless|making out)\b', re.IGNORECASE)
+        # A parent's kiss on the forehead or hair is caring contact (Band I/II) and is allowed.
+        caring_kiss_rx = re.compile(r'\bkiss\w*\b[^.;\n]{0,40}\b(forehead|hair|crown of)\b', re.IGNORECASE)
+        # Body-focused lexicon: banned in any sentence that names the minor.
+        minor_body_rx = re.compile(r'\b(physique|curves|curvy|hourglass|figure-hugging|thighs?|hips|buttocks|bosom|breasts?|cleavage|bare skin|bare shoulders|bare legs|form-fitting|skin-tight|tight-fitting|crop top|cropped top|miniskirt|mini skirt|low-cut|see-through|underwear|bikini|swimsuit|lips parted|pouting)\b', re.IGNORECASE)
+        # Violence lexicon: banned anywhere in a prompt where a minor is present.
+        # Physical-violence terms only; emotional idioms ("wounded disbelief", "choked sob") are not listed.
+        minor_violence_rx = re.compile(r'\b(slap|slaps|slapped|slapping|punch|punches|punched|punching|kick|kicks|kicked|kicking|shove|shoves|shoved|shoving|strangl\w*|knife|knives|blade|blades|gun|guns|weapon\w*|blood|bloody|bloodied|bleeding|bruis\w*|restrain\w*)\b', re.IGNORECASE)
+        adult_label_words = r'(adult|grown woman|grown man|young woman|young man|aged (?:1[89]|[2-9]\d))'
 
         age_violations = []
         freeze_violations = []
@@ -286,6 +301,30 @@ def audit_episode_html(file_path):
             v_min = minor_rx.findall(narrative_prose)
             if v_min: minor_violations.append(f"{p_id}: {v_min}")
 
+            # Minor Protection Protocol: only for prompts that name a registered under-18 character
+            if minor_char_rx is not None:
+                full_prompt = html_lib.unescape(p_text)
+                # Negative safety directives may name banned concepts; they are not depictions.
+                full_prompt = re.sub(r'Strictly zero violence.*?zero harm to minors[^\n]*', '', full_prompt, flags=re.IGNORECASE)
+                full_prompt = re.sub(r'Do not generate.*', '', full_prompt, flags=re.DOTALL | re.IGNORECASE)
+                present = sorted(set(m.lower() for m in minor_char_rx.findall(full_prompt)))
+                if present:
+                    scan_full = caring_kiss_rx.sub('', full_prompt)
+                    v_sex = minor_sexual_rx.findall(scan_full)
+                    if v_sex: minor_violations.append(f"{p_id}: sexual lexicon with minor {present}: {v_sex}")
+                    v_vio = minor_violence_rx.findall(full_prompt)
+                    if v_vio: minor_violations.append(f"{p_id}: violence lexicon with minor {present}: {v_vio}")
+                    for sentence in re.split(r'[.;\n]', narrative_prose):
+                        if minor_char_rx.search(sentence):
+                            v_body = minor_body_rx.findall(sentence)
+                            if v_body: minor_violations.append(f"{p_id}: body-focused lexicon on minor: {v_body}")
+                    label_scan = re.sub(r'\[100%[^\]]*\]', ' ', narrative_prose)
+                    for name in present:
+                        n = re.escape(name)
+                        lab_rx = re.compile(r'\b' + n + r'\b[^.;\n]{0,40}\b' + adult_label_words + r'\b|\b' + adult_label_words + r'\s+' + n + r'\b', re.IGNORECASE)
+                        if lab_rx.search(label_scan):
+                            minor_violations.append(f"{p_id}: adult label attached to minor '{name}' (never relabel a minor)")
+
         # Comprehensive Document-Wide Check for Hardware & Kelvin Jargon across ALL <pre> blocks (including 16:9 Model Sheets)
         all_pres = re.findall(r'<pre[^>]*id="([^"]*)"[^>]*>(.*?)</pre>', html, re.DOTALL | re.IGNORECASE)
         for pre_id, pre_text in all_pres:
@@ -319,9 +358,9 @@ def audit_episode_html(file_path):
             print("[+] Gate 3E Passed: ZERO Mode B Costume Violations (Model Sheet SSOT Compliant)")
 
         if minor_violations:
-            errors.append(f"Gate 3F Fail: Minor-Safety Lexicon or Child Character Name detected in prompts: {minor_violations} (Absolute Zero-Minor & Zero-Child-Name Prompt Law violated)")
+            errors.append(f"Gate 3F Fail: Minor Protection Protocol violated (Pillar 4 §[10d]): {minor_violations}")
         else:
-            print("[+] Gate 3F Passed: ZERO Minor Safety Policy Triggers & Child Character Names in Prompts")
+            print(f"[+] Gate 3F Passed: Minor Protection Protocol (generic minor nouns / retired aliases clear; {len(minor_characters)} registered minor character(s) checked)")
 
         # Gate 3G: Mandatory Master Prompt Prefix
         prefix_rx = re.compile(r'Master-level cinematography and composition, fast-paced shot variation, atmospheric sound design', re.IGNORECASE)

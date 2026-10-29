@@ -1775,7 +1775,8 @@ CLOSING MORAL MAXIM: "[Universal truth reflecting song's soul < 15 words]"
 2. **Camera Blocking & Eyeline Respect:**
    - In wholesome scenes with children, framing must use gentle Eye-Level, Shoulder-Level, or soft High-Angle looking down with maternal/paternal warmth.
    - Strictly prohibit aggressive, looming low-angle dominance, Dutch angles, or rapid handheld shakes over minors. Use smooth Slow Push-In or Static Lock-off with serene depth of field.
-3. **Child Presence Staging in Conflict Scenes (two valid options; Pillar 4 §[10d] and Law 7):**
-   - *Option A — Present & Sleeping*: The screenplay places the child in the room. Declare the child in `[subject]:` only by the project's approved child `ho_ten` (never minor vocabulary, never names in `project_rules.json` → `minor_character_names`), resting inside the sanctuary zone with low-velocity sleep staging, far from the adult conflict. A crib the screenplay says is occupied is never shown empty.
-   - *Option B — Off-Screen*: The screenplay places the child outside the room, or the camera frames away from the crib. The child is not mentioned anywhere in the prompt.
-   - In both options the child is never awake, crying, or in the path of aggressive movement, and the camera blocks only the adult subjects' emotional action.
+3. **Minor Presence Staging in Conflict Scenes (Pillar 4 §[10d]):**
+   - *Option A — Present & Sleeping (Band I/II)*: The screenplay places the young character in the room. Declare the character in `[subject]:` only by approved `ho_ten` + reference image (never generic minor nouns, never retired aliases in `project_rules.json` → `minor_character_names`), resting inside the sanctuary zone with low-velocity sleep staging, far from the adult conflict. A crib the screenplay says is occupied is never shown empty.
+   - *Option B — Off-Screen (any band)*: The screenplay places the minor outside the room, or the camera frames away. The minor is not mentioned anywhere in the prompt.
+   - *Band III — Present & Awake*: A teenager may take part in verbal family conflict, positioned out of the path of any aggressive movement; no physical aggression toward or from the teenager.
+   - In every option the minor is never in the path of aggressive movement, the camera never lingers on a minor's body, and no violence lexicon appears in a prompt where a minor is present.

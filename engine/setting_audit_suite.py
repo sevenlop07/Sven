@@ -6,6 +6,7 @@ File: engine/setting_audit_suite.py
 Purpose: Strictly validates output/<project>/setting.html before Checkpoint 1.
 """
 
+import html as html_lib
 import os
 import re
 import sys
@@ -106,6 +107,30 @@ def audit_setting_html(file_path):
                 errors.append("Gate 3 Fail: Section 3 missing Mode B Video Prompt Snippet references")
             else:
                 print(f"[+] Gate 3 Passed: Section 3 has {len(prompts)} Model Sheet Prompts & Mode B Snippets")
+
+        # 3B. Minor-Safe Model Sheets (Pillar 4 §[10d] §3; Pillar 2 Mẫu 0B)
+        age_decl_rx = re.compile(r'\b(\d{1,2})-year-old\b|\baged\s+(\d{1,2})\b', re.IGNORECASE)
+        minor_sheet_banned_rx = re.compile(
+            r'\b(fashion|editorial|glamou?r|beauty (?:lighting|studio|photography)|commercial (?:fashion|studio)|'
+            r'physique|curves|curvy|toned|slender|hourglass|figure-hugging|form-fitting|skin-tight|tight-fitting|'
+            r'micro-pores|porcelain|luminous (?:fair )?skin|dewy|glowing skin|lipstick|eyeliner|mascara|'
+            r'seductive|sultry|alluring|sexy|attractive|cropped|mini ?skirt|mini shorts|low-cut|see-through|sheer|'
+            r'bodysuit|swimsuit|swimwear|bikini|lingerie|underwear|headless|neck-down|'
+            r'adult|young woman|young man)\b', re.IGNORECASE)
+        minor_sheet_violations = []
+        for i, snippet in enumerate(prompts, 1):
+            text = re.sub(r'<[^>]+>', ' ', html_lib.unescape(snippet))
+            # Voice parentheticals describe audio, not the sheet.
+            sheet_text = re.sub(r'[\(（]\s*Voice of a .*?[\)）]', ' ', text, flags=re.DOTALL | re.IGNORECASE)
+            ages = [int(a or b) for a, b in age_decl_rx.findall(sheet_text)]
+            if ages and min(ages) < 18:
+                hits = sorted(set(h.lower() for h in minor_sheet_banned_rx.findall(sheet_text)))
+                if hits:
+                    minor_sheet_violations.append(f"sheet #{i} (age {min(ages)}): {hits}")
+        if minor_sheet_violations:
+            errors.append(f"Gate 3B Fail: Minor-safe model sheet rules violated (Pillar 4 §[10d] §3): {minor_sheet_violations}")
+        else:
+            print("[+] Gate 3B Passed: Minor-Safe Model Sheets (every sheet under 18 is free of glamour, body, and adult-label lexicon)")
 
     # 4. Section 4A — Master Prop Universe Prompts
     sec4a_content = extract_section_content(["props", "sec-4a", "prop-universe"])

@@ -43,7 +43,7 @@
   - § 2. 1:1 Roadmap-to-Execution Dialogue Parity Standard
   - § 3. Lore-Bound Asset Naming Mandate
   - § 4. Absolute Pronoun Ban in Prompt Prose
-  - § 5. The Universal Minor-Policy Immunity Contract
+  - § [10d]. Minor Protection Protocol (Under-18 Characters)
 - **PART VII: THE CINEMATIC METAPHORICAL SAFETY TRANSLATION ENGINE**
   - § 1. Universal Safety Filter Immunity Contract (Kling, Runway, Sora, Midjourney)
   - § 2. Metaphorical Translation Lexicon: Violence, Trauma & Weaponry
@@ -1502,28 +1502,10 @@ In physical action, collision, and falling sequences, the prompt MUST adhere to 
 
 ---
 
-### Law 7: The Universal Child Safety & Simple Action Protocol (Zero Harm, Minimal Kinetics, Proxy Prop Architecture)
-To ensure 100% immunity against automated AI video safety classifiers (Sora, Kling, Veo, Runway, Luma) flagging prompts for "harmful content related to minors", and to guarantee flawless anatomical fidelity in diffusion models:
-1. **The Strict Zero-Harm & Endangerment Prohibition:**
-   - 🚫 **BANNED SYSTEM-WIDE:** Absolutely zero depiction of physical harm, hitting, striking, slapping, dragging, shaking, confining, starving, choking, burns, wounds, blood, or placing minors in dangerous environments (near open fire, boiling liquids, heights, moving traffic, deep water, sharp blades).
-### Law 7: The Universal Child Safety, Simple Action & Approved Child Entity Somatic Sleep Staging Protocol (Gate 3F)
-1. **The Core Safety Reality**:
-   - Commercial AI video generation models (Kling AI, Runway, Sora, Hailuo, Pika) enforce aggressive automated NLP content moderation filters.
-   - Any video prompt mentioning minor vocabulary (`kid`, `child`, `children`, `baby`, `infant`, `toddler`, `newborn`, `boy`, `girl`, `teen`, `teenager`) or banned child names (listed per project in `project_rules.json` → `minor_character_names`) in proximity to domestic tension, crying, exhaustion, illness, shouting, or emotional trauma triggers an **IMMEDIATE PLATFORM SAFETY BAN or prompt rejection**.
-2. **The Approved Child Entity (`{child_ho_ten}`) & Somatic Sleep Staging Protocol**:
-   - **Declaration in `[subject]:`**: When the screenplay places the sleeping child in the room (e.g. in a crib declared in `[context]:`), the entity **MUST BE DECLARED IN `[subject]:`**:
-     `{child_ho_ten} [100% Appearance, attire, and facial features Refer to image {child_ho_ten}_4view.jpg]`
-     A crib the screenplay says is occupied is never left empty or desynchronized from narrative staging. When the child is outside the room, omit the child entirely.
-   - **Somatic Sleep Staging in Action Prose**: In timeline action prose, `{child_ho_ten}` is strictly animated with low-velocity, safe somatic physical states:
-     `Beside the queen bed, {child_ho_ten} rests peacefully inside the pine crib on the firm flat organic cotton mattress, chest rising and falling in calm rhythmic sleep, tiny fists curled gently beside soft cheeks through 00:10.0.`
-   - 🚫 **BANNED IN PROSE & SUBJECT**: NEVER write minor-related words (`kid`, `child`, `children`, `baby`, `babies`, `infant`, `infants`, `toddler`, `toddlers`, `newborn`, `newborns`, `boy`, `girl`, `teen`, `bé`) or banned child names from `project_rules.json` anywhere in the visual narrative prose, subject blocks, or camera staging.
-   - 🚫 **BANNED IN DIEGETIC SOUND**: Never describe child vocalizations (`infant's crying`, `baby's coo`). Use neutral room acoustics (`soft room tone`, `gentle cotton rustle from the bedside crib`).
-3. **Environmental Fixture & Mattress Safety Integration**:
-   - The child's sleeping environment is anchored to physical furniture:
-     * The crib is furniture: describe it in `[context]:` (e.g. `a light pine wood crib placed firmly beside the queen bed`). Never declare it in `[PROP]:` and never generate a separate crib prop sheet (see the Fixed vs. Dynamic rule below).
-     * In timeline prose: `the wooden pine crib stands steady beside the queen bed with firm flat organic cotton bedding`.
-4. **Mandatory Adult Age Anchor for Older Protagonists**:
-   - When characters are apprentices or young adults, always declare explicit adult status to avoid false-positive minor flags: `young woman`, `adult female`, `adult craftsman`, `young adult weaver`. NEVER use numeric ages in visual prose (Gate 3A); numeric age belongs exclusively in the voice parenthetical (`Voice of a 22-year-old woman...`). Purge ambiguous slang (`girl`, `boy`, `kid`, `teen`, `little`).
+### Law 7: Minor Protection (canonical spec: §[10d])
+Every character under 18 follows the Minor Protection Protocol in §[10d]: truthful age and age band, identity by approved `ho_ten` + reference image, zero sexualization, zero violence or danger involving a minor, band-based actions, and protective staging. If a platform blocks a scene that involves a minor, restage it (Option B, or frame only the adults) or cut it. Never relabel, rename, or disguise the minor to get past the block.
+1. **Fixture integration**: the crib or bed holding a sleeping Band I/II character is furniture described in `[context]:` (e.g. `a light pine wood crib placed firmly beside the queen bed with a firm flat organic cotton mattress`). Never declare it in `[PROP]:` and never generate a separate crib prop sheet.
+2. **Adult age anchor (true adults only)**: a character who really is 18 or older may be anchored with non-numeric adult terms (`young woman`, `adult craftsman`, `young adult weaver`) to avoid ambiguity. Never apply adult terms to a character under 18. Numeric age stays inside the voice parenthetical (Gate 3A).
 
 ---
 
@@ -1550,22 +1532,27 @@ Before delivering ANY episode file (`tap-X.html`) to the user, the agent MUST ru
 Delivery is STRICTLY BLOCKED unless all gates pass with exit code 0.
 
 ### Complete Gate Architecture:
-- **Gate 1: Verbatim Roadmap Field Identity**: Verifies Title, Story Beat, Dramatic Intent, and Kinetic Bridge verbatim parity.
-- **Gate 2: Multi-Turn Dialogue Parity**: Verifies all spoken lines match roadmap verbatim.
-- **Gate 3: Prompt Quality & Safety Enforcement**:
-  - *Gate 3A*: Zero Prohibited Clothing Descriptions in Mode B initial state.
-  - *Gate 3B*: Zero Demographic Age Numbers in visual prompt initial state.
-  - *Gate 3C*: Absolute Pronoun Ban (`he`, `she`, `it`, `his`, `her`, `its`, `him`, `they`, `their`, `them`).
-  - *Gate 3D*: Zero Hardware & Lighting Jargon (`24fps`, `18mm`, `35mm`, `f/1.4`, `Arri`, Kelvin numbers).
-  - *Gate 3E*: Mandatory Master Prompt Prefix (`Master-level cinematography...`).
-  - *Gate 3F*: Zero Frozen Frames / Freeze Holds (Enforcing Continuous Organic Motion).
-  - *Gate 3G*: Minor-Safety Lexicon Purge (`child`, `kid`, `girl`, `boy`, `little`).
-  - *Gate 3H*: **Total Mathematical Purge Law**: Zero Cartesian Math Coordinates `[XYZ]:\s*[-+]?\d` document-wide (Tier 1, Tier 2, Code Block 1, Code Block 2). 100% Observable Physical Architecture.
-  - *Gate 3I*: **Stateless Prompt Law**: Zero Cross-Scene Dependencies `from Scene XX` in Code Block 1.
-- **Gate 4: Chronological Time & Dialogue Cadence**:
-  - *Gate 4A*: 12-Hour AM/PM Time Notation across all 10 scenes.
-  - *Gate 4B*: **Dialogue Word Count Hard Cap**: Single-speaker line $\le 32$ words (budgeted at 25–30w for Sitcom, 15–20w for Drama); two-shot volleys strictly $\le 15$ words per speaker (total $\le 32$w).
-- **Gate 5: DOM & Tag Balance Integrity**: Perfectly balanced `<div>` and `<pre>` tags.
+- **Gate 1A / 1B: DOM Integrity**: balanced `<div>` and `<pre>` tags.
+- **Gate 2: Scene Count & Clip Duration**: every scene states its clip duration (10s default; 15s / 30s on request); scene count vs `project_rules.json` → `episode_scenes` (warning).
+- **Gate 3: Prompt Quality & Safety Enforcement** (one `p-XX` prompt per scene):
+  - *Gate 3A*: No numeric age in visual prose (voice parenthetical exempt).
+  - *Gate 3B*: No freeze frames / freeze holds.
+  - *Gate 3C*: Absolute pronoun ban (`he`, `she`, `his`, `her`, `him`, `they`, `their`, `them`).
+  - *Gate 3D*: No hardware or Kelvin jargon (`24fps`, `35mm`, `f/1.4`, `ARRI`, Kelvin numbers).
+  - *Gate 3E*: No costume words in Mode B prose (wardrobe is locked by the model sheet).
+  - *Gate 3F*: **Minor Protection Protocol** (§[10d]): no generic minor nouns or retired aliases in visual prose; for prompts naming a `minor_characters` entry, no sexual, body-focused, or violence lexicon and no adult label on the minor.
+  - *Gate 3G*: Mandatory Master Prompt Prefix (`Master-level cinematography...`).
+  - *Gate 3H*: **Total Mathematical Purge Law**: zero Cartesian coordinates `[XYZ]:\s*[-+]?\d` document-wide.
+  - *Gate 3I*: **Stateless Prompt Law**: zero cross-scene references (`from Scene XX`) in Code Block 1.
+  - *Gate 3J–3L*: 3-block labels (`[context]:` / `[subject]:` / `[PROP]:`, legacy `[Pro] :` accepted), reference anchor syntax, blank-line spacing.
+  - *Gate 3M–3N*: ≥ 2 contiguous phases from 00:00 to a 10 / 15 / 30s end; stability + negative clause.
+  - *Gate 3O–3Q*: zero dead air; zero literal placeholder tokens; zero dangling `Focus on [name].`
+- **Gate 4: Dialogue**:
+  - *Gate 4*: dialogue ↔ prompt verbatim parity where lines exist.
+  - *Gate 4B*: **Dialogue Word Count Hard Cap**: single speaker ≤ 32 words; two-shot ≤ 15 words per speaker (total ≤ 32). Craft target 8–14 words (Microdrama ≤ 12).
+  - *Gate 4C* (warning): line causality. *Gate 4D–4F*: project rules (`kinship_ladder`, `meal_terms`, `bookish_terms`) when defined.
+  - *Gate 4G*: speech-action verb on every spoken line. *Gate 4H*: Code Block 2 handover + Kinetic Momentum Bridge per scene.
+- **Gate 5: Copy UX**: copy buttons, copy-all, toast.
 
 ```python
 # episode_audit_suite.py
@@ -1645,44 +1632,71 @@ def run_5_gate_audit(episode_html_path, canonical_roadmap_json):
 | **D.2** | **Dialogue Causality Break** | Next dialogue line does not pick up keyword from previous line | Apply Logical Causality Chain — Keyword Handoff (§D.2) |
 | **D.3** | **Camera-Speaker Mismatch** | Camera does not cut to the speaker | Apply Camera-Speaker Binding §D.5 Rule 1 |
 | **D.4** | **Lip-sync Camera Violation** | A lip-synced line is spoken while a crane, orbit, arc, whip, or crash zoom is traveling | Place the line before the move or after it lands (grammar §5), or use a static frame / slow push-in |
-| **12.12** | **Minor Policy Trigger (CSAM/Child Endangerment)** | Prompt blocked for 'Harmful content related to minors'; contains `girl`, `boy`, `kid`, `beggar girl`, `soaked on chest` | Purge all minor terms. Anchor adult status: `young woman`, `adult female`, `young adult artisan` (numeric age only inside the voice parenthetical). Sanitize wet/torn clothing and vulnerable postures (§[10d]). |
+| **12.12** | **Minor Policy Block** | Prompt blocked for 'harmful content related to minors' | **Adult character**: remove ambiguous nouns (`girl`, `boy`, `kid`) and anchor adult status (`young woman`, `adult craftsman`). **Under-18 character**: do NOT relabel or rephrase to evade; check the scene against §[10d], then restage (Option B or adults-only framing) or cut the beat. Remove wet/torn clothing and vulnerable postures. |
 
 
 ---
 
-## § [10d] THE UNIVERSAL CHILD SAFETY & APPROVED CHILD ENTITY SOMATIC SLEEP STAGING PROTOCOL (GATE 3F)
+## § [10d] MINOR PROTECTION PROTOCOL — UNDER-18 CHARACTERS (GATE 3F + SETTING GATE 3B)
 
-> **MANDATORY POLICY DEFENSE DIRECTIVE (ALL AI VIDEO PLATFORMS: SORA, KLING, VEO, RUNWAY, LUMA)**:
-> Automated AI safety classifiers run before diffusion models. Any prompt mentioning minor vocabulary (`child`, `kid`, `baby`, `infant`, `newborn`, `toddler`, `boy`, `girl`, `teen`) or banned child names (per project in `project_rules.json`) triggers an immediate account suspension or prompt rejection for 'Harmful content related to minors'. Furthermore, diffusion latent space severely hallucinates anatomy (polydactyly, facial melting) when generating minors.
-> To achieve 100% immunity, flawless anatomical fidelity, and seamless subject-action synchronization across all scenes, adhere strictly to the Approved Child Entity Somatic Sleep Staging Protocol (Gate 3F). `{child_ho_ten}` below is the project's single approved child identifier registered in its casting sheet (e.g. `cu_tin` in one series):
+> **Purpose.** Protect every character under 18 (children and teenagers) and the audience. This protocol governs what we write. It is never a technique for slipping content past a platform's safety system. If a platform blocks a scene that involves a minor, restage it (Option B: off-screen, or frame only the adults) or cut it. Never relabel, rename, or disguise the minor to bypass the block.
 
-1. **Pre-Production vs Video Prompt Architectural Alignment**:
-   - In **Screenplay, Casting & Worldbuilding (Pillars 1 & 2 / `setting.html`)**: The child character entity uses one approved `ho_ten` (`{child_ho_ten}`; Title Case display name in the screenplay), purging all banned terms (`baby`, `kid`, `infant`, `newborn`) and every name listed in `project_rules.json` → `minor_character_names`.
-   - In **AI Video Prompt Compilation (Pillar 4 / Code Block 1)**: When the screenplay places the child in the room (e.g. asleep in a crib declared in `[context]:`), `{child_ho_ten} [100% Appearance, attire, and facial features Refer to image {child_ho_ten}_4view.jpg]` MUST be declared in `[subject]:`. When the child is outside the room, the child is omitted entirely (Pillar 3 §4.3, Option B).
+### 1. Registration & Truthful Age (Hard Constraint)
+- Every under-18 character is registered in `setting.html` with true age and age band, and the `ho_ten` is listed in `output/<project>/project_rules.json` → `minor_characters` (this activates the Gate 3F minor checks).
+- Age bands: **Band I — Infant/Toddler (0–3)** · **Band II — Child (4–12)** · **Band III — Teen (13–17)**.
+- Never relabel a minor as an adult (`adult`, `young woman`, `young man`, `aged 18`) and never move a minor's age up or down to pass a filter.
+- A character who needs romance, sexuality, graphic violence, substance use, or another adult storyline is written as an adult (18+) from Stage 0, in an adult setting (university, workplace). Never dress an "18-year-old" in a school uniform as a stand-in for a minor.
+- Retired child aliases go in `project_rules.json` → `minor_character_names`; Gate 3F blocks them.
 
-2. **The Absolute Ban on Minor Terms and Outdated Child Aliases in Prompts**:
-   - 🚫 **BANNED IN PROSE & SUBJECT**: NEVER write minor-related words (`kid`, `child`, `children`, `baby`, `babies`, `infant`, `infants`, `toddler`, `toddlers`, `newborn`, `newborns`, `boy`, `girl`, `teen`, `teenager`, `bé`) or banned child names from `project_rules.json` anywhere in the visual narrative prose or camera staging.
-   - 🚫 **BANNED IN DIEGETIC SOUND**: Never describe child vocalizations (`infant's crying`, `baby's coo`). Use neutral room acoustics (`soft room tone`, `gentle cotton rustle from the bedside crib`).
+### 2. Identity in Prompts
+- A minor is referenced only by approved `ho_ten` + reference image, like every character: `{minor_ho_ten} [100% Appearance, attire, and facial features Refer to image {minor_ho_ten}_4view.jpg]`.
+- Generic nouns (`child`, `kid`, `boy`, `girl`, `teen`, `baby`) stay out of visual prose because they spawn unanchored duplicate figures (Gate 3C/3F), not to hide the age.
+- Visual prose carries no numeric age (Gate 3A). The voice parenthetical states the true age: `（Voice of a 14-year-old girl from Southern Vietnam; ...）`.
 
-3. **Somatic Sleep Staging (Low-Velocity Kinetic Law)**:
-   - In the prompt timeline prose, `{child_ho_ten}` is strictly animated with low-velocity, safe somatic physical states:
-     `Beside the queen bed, {child_ho_ten} rests peacefully inside the pine crib on the firm flat organic cotton mattress, chest rising and falling in calm rhythmic sleep, tiny fists curled gently beside soft cheeks through 00:10.0.`
-   - The crib and its bedding are furniture: describe them in `[context]:` (`light pine wood crib beside the queen bed with a firm flat organic cotton mattress`). Never declare the crib in `[PROP]:`.
+### 3. Model Sheets for Minors (`setting.html` Section 3; template: Pillar 2 Mẫu 0B)
+- **Style**: neutral casting / continuity reference. Banned: fashion, editorial, commercial, beauty, or glamour photography; beauty lighting.
+- **Allowed descriptors**: true age, height in cm, a build word (`small`, `average`, `stocky`), face shape, eyes, hair, expression, age-appropriate wardrobe.
+- **Banned descriptors**: physique, figure, curves, toned, slender, hourglass; skin sensuality (`dewy`, `glowing`, `porcelain`, `luminous skin`, `micro-pores`); makeup (lipstick, eyeliner, mascara); `seductive`, `sultry`, `alluring`, `sexy`, `attractive`.
+- **Wardrobe**: fully covering and age-appropriate. Banned: form-fitting, skin-tight, cropped, mini, low-cut, sheer, see-through, bodysuit, swimwear, underwear, sleepwear as a sheet outfit.
+- **Layout**: three full-length views WITH the head (front, 90° side, back) plus a head-and-shoulders portrait. No headless neck-down crops, no chest-up glamour portrait.
 
-4. **Adult Age Anchoring for Non-Minor Characters**:
-   - Mislabeled apprentices/young adults must be anchored with explicit adult terms (`young adult female artisan`, `dignified craftsman`) and purge ambiguous slang (`girl`, `boy`, `kid`, `teen`, `little`).
-   - Numerical age belongs exclusively inside the Dialogue Voice Directing Parenthetical (`Voice of a 22-year-old woman...`).
+### 4. Content Boundaries (Screenplay & Prompts)
+| Area | Never | Allowed |
+|---|---|---|
+| Sexual / romantic | Any sexual content or innuendo; kissing, caressing, intimate touch, undressing, bathing, changing involving a minor | Band III crushes through glances, a passed note, a shared umbrella, walking side by side |
+| Violence | Hitting, slapping, shoving, dragging, shaking, restraining, locking in; any weapon held by or near a minor; a minor in the path of adult aggression | Verbal conflict (Band III may argue); aftermath shown through an adult's reaction |
+| Danger | Fire, boiling liquid, deep water, heights, traffic, blades, medication, imitable stunts | Safe everyday environments |
+| Abuse, neglect, self-harm | Depicted or described (starvation, wounds, bruises, any method) | Implied off-screen only, through an adult's discovery or a closed door; no method, no injury detail |
+| Distress | Terror screaming, crying in agony | Quiet sadness, a held hand, comfort from an adult |
+| Adult contact | Intimate or restraining touch | Caring and non-intimate: holding hands, a side hug, carrying a sleeping Band I character, tucking a blanket, a hand on the shoulder, a parent's kiss on the forehead or hair (Band I/II) |
+| Dialogue | Remarks on a minor's body or looks; sexual jokes near a minor; slurs or body-shaming aimed at a minor | Age-appropriate speech; Band I has no lip-synced lines; Band II keeps lines short |
 
-5. **Anatomical & Vulnerability Sanitization**:
-   - 🚫 **BANNED:** `soaked against chest/ribs`, `wet clothes clinging`, `frayed tunic`, `crying on knees in mud`.
-   - ✅ **REPLACEMENTS:** `holding fabric securely with both hands`, `dignified grounded posture`, `kneeling firmly on the stone pavement`.
+### 5. Action by Age Band
+- **Band I (0–3)** — Simple Action Whitelist only: sleeping in a crib or bed declared in `[context]:`, resting on a parent's shoulder, curling fingers around an adult's finger, a slow blink or soft smile, hugging a soft toy. Always a flat, firm sleeping surface; never shaken, tossed, or laid on a soft or curved surface.
+  `Beside the queen bed, {minor_ho_ten} rests peacefully inside the pine crib on the firm flat organic cotton mattress, chest rising and falling in calm rhythmic sleep, tiny fists curled gently beside soft cheeks through 00:10.0.`
+- **Band II (4–12)** — calm, low-velocity everyday actions: sitting, walking beside an adult, drawing, eating, holding an adult's hand, short lines. No running near hazards, no climbing.
+- **Band III (13–17)** — ordinary school and home life: walking, studying, talking, cooking under supervision; full dialogue within Gate 4B. Never fights, stunts, alcohol, smoking, or driving.
+- Complex fast kinetics on young bodies also break diffusion anatomy (extra fingers, melting faces) — another reason to keep Band I/II actions simple.
 
+### 6. Staging & Camera (Pillar 3 §4)
+- Sanctuary zone and protective buffer apply to every minor.
+- In adult conflict scenes, Band I/II use Option A (present and asleep, far from the conflict, a crib the screenplay says is occupied is never shown empty) or Option B (off-screen, never mentioned). Band III may be present and awake during verbal family conflict, positioned out of the path of any aggressive movement.
+- The camera never lingers on or isolates a minor's body: ECU only on the face or hands for emotion; no low angle up the body, no voyeur or POV gaze at a minor, no slow pan along the body. Prefer eye-level medium and wide framing.
+- No violence lexicon in any prompt where a minor is present (Gate 3F).
+- Diegetic sound: no distressed child vocalizations (`infant's crying`); use neutral room tone (`soft room tone`, `gentle cotton rustle from the bedside crib`).
+
+### 7. Enforcement
+- **Gate 3F** (`episode_audit_suite.py`): generic minor nouns and retired aliases in visual prose; for every prompt that names a `minor_characters` entry: sexual lexicon anywhere in the prompt, body-focused lexicon in any sentence naming the minor, violence lexicon anywhere in the prompt, and adult labels attached to the minor.
+- **Setting Gate 3B** (`setting_audit_suite.py`): every model sheet that declares an age under 18 is scanned against §3.
+- **Manual (Creative Review, Doctrine §5)**: the §4 table, §5 band actions, and §6 camera rules.
 
 ---
 
 ## 🛡️ PART VII: THE CINEMATIC METAPHORICAL SAFETY TRANSLATION ENGINE
 
 > When compiling generative video prompts into Code Block 1, the AI Prompt Architect must ensure **100% prompt acceptance by content moderation filters** across all major generative models (Kling, Runway, Sora, Midjourney, Pika).
+>
+> **Never applies to minors**: violence or sensual content involving an under-18 character is removed, not translated into metaphor (§[10d]).
 
 ### 1. The Safety Paradox Law
 Never dilute dramatic tension by removing conflict. Instead, **translate physical violence and sensitive concepts into high-contrast cinematic, atmospheric, and kinetic metaphors**. The output retains 100% dramatic friction while guaranteeing 0% account moderation flags.
@@ -1704,7 +1718,7 @@ Every compiled prompt in Code Block 1 must pass the **Metaphorical Translation G
 ### 4. The Lip-Sync Visibility & Dynamic Perspective Law (Anti-Static P.O.V Trap)
 - **Zero Lip-Sync in Blind Perspectives**: Never assign spoken dialogue with lip-sync to a character whose perspective is currently Subjective First-Person P.O.V. or Macro Prop Insert. Generative models cannot animate invisible lips and hallucinate facial morphing in hands.
 - **Mandatory In-Camera Transition**: Prompts starting in P.O.V. must transition to a Frontal Medium Close-Up (MCU) or Medium Shot (MS) before that character speaks.
-- **The Approved Child Entity & Somatic Sleep Staging Protocol for AI Video Pipelines**: When the screenplay places the child in the room, `{child_ho_ten} [100% Appearance, attire, and facial features Refer to image {child_ho_ten}_4view.jpg]` MUST be declared in `[subject]:` and animated with low-velocity sleep staging (resting peacefully on flat mattress, calm rhythmic breathing, curled fists). Purge all AI trigger keywords (`baby`, `kid`, `infant`, `newborn`, `child`, `bé`, `starve`, `choke`, every name in `project_rules.json` → `minor_character_names`, and any project-specific distress vocabulary listed in `output/<project>/project_staging_rules.md`).
+- **Minor Protection (§[10d])**: an under-18 character present in the scene is declared in `[subject]:` by approved `ho_ten` + reference image and staged by age band (Band I/II asleep or off-screen in adult conflict). Never rephrase or relabel a minor to pass a moderation filter; restage or cut instead. Retired aliases (`project_rules.json` → `minor_character_names`) and project-specific distress vocabulary (`output/<project>/project_staging_rules.md`) stay out of prompts.
 
 ---
 
@@ -1727,9 +1741,9 @@ Every video prompt in **Code Block 1** MUST be partitioned into exactly three ex
     * **Vector 3 (Fixed Architectural & Furniture Inventory — "Có cái gì ở đó")**: Complete inventory of physical structures and major fixed furniture mirroring the 4-View Location Sheet (e.g. for the rustic wooden bedroom: patterned encaustic cement floor tiles, sturdy dark wooden queen bed with white linen, coarse woven wool blanket spread over lower mattress, light pine wood crib placed firmly directly beside bed, wooden doorway leading to hallway). Barren 5-word declarations (`bedroom, morning.`) are strictly banned.
     * **Vector 4 (Lighting Physics & Direction)**: Key light source, angle/direction (diagonal 45° from window, overhead downward), natural color tone (warm golden amber, cool blue morning light; strictly zero Kelvin), and shadow behavior (long soft diagonal shadows).
     * **Vector 5 (Atmospheric Medium & Emotional Climate)**: Physical medium (floating dust motes in sunbeams, stagnant domestic air, humidity) and psychological mood (suffocating confinement, tense silence, protective warmth).
-- **`[subject]:` (The 4-Part Sovereign Subject Protocol)**
-  - Syntax: Each character participating in the scene is declared using the 4-Part Sovereign Formula:
-    $$\mathbf{[subject]:} = \mathbf{[Tên\ +\ Thẻ\ Ảnh]} + \mathbf{[Mỏ\ neo\ không\ gian\ kiến\ trúc]} + \mathbf{[Tư\ thế,\ tay\ trống\ \&\ hướng\ nhìn]} + \mathbf{[—\ the\ only\ \{name\}\ in\ frame]}$$
+- **`[subject]:` (The Prop-Free Sovereign Subject Protocol)**
+  - Syntax: each character in the scene is declared with the Prop-Free Sovereign Formula:
+    `[ho_ten] [100% Appearance, attire, and facial features Refer to image X], [architectural anchor], [body posture], hands free of props, [eyeline toward a character or landmark] — the only [ho_ten] in frame.`
     ```text
     [subject]:
     my_duyen [100% Appearance, attire, and facial features Refer to image 1], sitting propped up against the dark wooden headboard on the queen bed, fingers clutching the edge of the linen sheet — the only my_duyen in frame.
@@ -1737,7 +1751,7 @@ Every video prompt in **Code Block 1** MUST be partitioned into exactly three ex
     cu_tin [100% Appearance, attire, and facial features Refer to image cu_tin_4view.jpg], resting peacefully on the flat mattress inside the pine crib, chest rising with calm rhythmic breathing — the only cu_tin in frame.
     ```
   - Directorial Law: `[subject]:` establishes the zero-frame (00:00.0) spatial grounding to architecture, initial bodily posture, and the negative anti-duplication seal. All dynamic character actions, kinetic transitions, and emotional evolutions are directed within the Timeline Shots.
-  - The Approved Child Entity Standard: When the screenplay places the project's approved child (`{child_ho_ten}`, e.g. `cu_tin`) in the room, declare `{child_ho_ten} [100% Appearance, attire, and facial features Refer to image {child_ho_ten}_4view.jpg]` in `[subject]:`, synchronized with safe somatic sleep staging in the timeline action prose. Banned: child names listed in `project_rules.json` → `minor_character_names`, and all minor keywords (`baby`, `kid`, `infant`, `newborn`).
+  - Minor entities (§[10d]): an under-18 character present in the scene is declared by approved `ho_ten` + reference image and staged by age band; Band I/II in adult conflict scenes are asleep (Option A) or omitted entirely (Option B). Retired aliases in `project_rules.json` → `minor_character_names` are banned.
 - **`[PROP]:` (The Two-Tier `[PROP]:` Scope Law — mirrors DIRECTOR.md §1c & §5b)**
   - **Core Directorial Distinction: Handheld Props vs. Set Dressing**:
     * **`[PROP]:` holds every handheld item a character will lift, carry, or manipulate**, one per line, each with a resting place independent of character hands: Tier 1 Signature Hero Props (Chekhov catalyst, heirloom, decisive proof; max 1–2 per series; bound with `[100% Refer to image ...]`) and Tier 2 everyday handheld items (bowls, cups, keys, phones; natural-English text only, no image tag).
