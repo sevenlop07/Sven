@@ -85,8 +85,14 @@ phong_cu [100% Refer to image location_bedroom_4view.jpg], early morning. Intima
     - *Trung tâm nét (Focus plane)*: Khuôn mặt và thân trên của Người A (nói câu thoại, mắt găm chặt vào người B).
   * **Medium Two-Shot (M2S / Trung cảnh 2 người)**:
     - Cắt từ thắt lưng lên đỉnh đầu của cả 2 nhân vật.
-    - Bố cục đối xứng (Profile-to-Profile) hoặc Bố cục chênh lệch chiều cao (1 người đứng uy hiếp - Low Angle hất lên; 1 người quỳ co rúm - High Angle chúc xuống).
+    - Bố cục góc 3/4 (Three-Quarter Frontal) hoặc Bố cục chênh lệch chiều cao (1 người đứng uy hiếp - Low Angle hất lên; 1 người quỳ co rúm - High Angle chúc xuống).
     - Thể hiện rõ khoảng cách vật lý (proximity), sự xâm phạm không gian cá nhân, va chạm cơ học (giật cổ tay, tát, đỡ lấy bờ vai sắp ngã).
+  * **The Two-Shot Profile Stagnation Law (Luật Chống Bẫy Nhìn Nhau Bất Động Trong Two-Shot Profile 90°)**:
+    - **CẤM TUYỆT ĐỐI giữ Two-Shot Profile tĩnh > 2.5–3.0 giây**: Hai người đứng đối mặt ngang 90° nhìn sang hai mép màn hình suốt 10s là bẫy đạo diễn tai hại khiến nhân vật nói xong 1 câu thì 7 giây sau đứng chết lặng nhìn nhau đờ đẫn, mặt nghiêng mất khối cơ và méo khẩu hình.
+    - **Chỉ cho phép Two-Shot Profile trong 3 trường hợp**:
+      1. *Thiết lập xung đột ngắn (< 3s)*: Đứng ngang gườm nhau 2s trong Track B rồi lập tức cắt (`Cut to`) sang OTS hoặc CU trên trục 180°.
+      2. *Va chạm giằng co vật lý liên tục*: Hai người trực tiếp vật lộn cơ học (kéo giằng chiếc túi, bẻ cổ tay, níu vạt áo), động lực chuyển động không ngắt quãng một giây nào.
+      3. *Cú máy lướt vòng cung (In-Camera Orbital Glide)*: Máy quay di chuyển lướt vòng cung từ góc nghiêng 90° vòng sang góc 3/4 trực diện để bắt trọn ánh mắt và khẩu hình.
   * **Wide Two-Shot (W2S / Toàn cảnh 2 người)**:
     - Thu trọn cả 2 người và không gian chia cắt ở giữa (khoảng trống tâm lý giữa 2 đầu giường, 2 mép bàn).
   * **Cơ chế cắt gọt 10s cho 2 nhân vật (Track B Match-Cut on 180° Axis)**:
@@ -157,6 +163,25 @@ phong_cu [100% Refer to image location_bedroom_4view.jpg], early morning. Intima
   * TUYỆT ĐỐI CẤM viết câu đuôi cô độc `. Focus on [name].` ở cuối đoạn văn mô tả hành động (Action Prose).
   * *Lý do kỹ thuật*: AI Diffusion Video Models (Wan 2.1, Kling, Sora, Runway Gen-3) xử lý văn bản theo cơ chế attention tuyến tính. Việc vứt một câu đuôi cẩu thả `. Focus on [name].` ở cuối prompt sẽ làm phân mảnh không gian chú ý, khiến model không định hình được tiêu cự quang học ngay từ frame đầu tiên (`t=0`), dẫn đến hiện tượng trôi nét hoặc nhân vật phụ bị mờ/biến dạng một cách vô lý.
 - **Track A-Locked Exception**: Đối với cú máy tĩnh hoàn toàn (`Track A-Locked`), thông số quang học được khai báo bằng văn xuôi tự nhiên duy nhất 1 lần ở đầu phần hành động (ngay sau diegetic sound, ví dụ: `Eye-level medium close-up framing ho_ten_A, shallow depth of field holding razor-sharp optical focus on ho_ten_A's face with background softly falling into bokeh, static camera.`), và các mốc thời gian phụ phía dưới tập trung 100% vào biểu cảm somatic, tuyệt đối không chèn câu đuôi `Focus on [name].`
+
+### 4e. The Master Camera Model Architecture (Hệ Thống Phân Loại Mô Hình Máy Quay: Single Shot, Multi Shot, Kép & Biến Thể Đặc Biệt)
+Đạo diễn bắt buộc phải hiểu rõ bản chất công nghệ và ngôn ngữ điện ảnh của từng mô hình camera trước khi bấm máy:
+1. **Track A — Single Shot Continuous Take (Cú Máy Đơn Liền Mạch)**:
+   - *Bản chất*: Đúng 1 camera duy nhất ghi hình liên tục từ 00:00 đến 00:10.0, **STRICTLY ZERO CUTS (0 nhát cắt)**.
+   - *Biến thiên cỡ cảnh*: Thay đổi góc nhìn và quy mô khung hình hoàn toàn dựa vào **động học di chuyển vật lý của máy quay** (`slow push-in`, `tracking glide`, `pedestal up/down`, `arc 90°`) hoặc chuyển động tiếp cận của nhân vật.
+   - *Ứng dụng tối ưu*: Giữ khán giả ở lại trong cùng một hơi thở, một áp lực nội tâm không bị xé vụn (thú tội nghẹn ngào, bước chân rình rập, khoảnh khắc nhận ra sự thật cay đắng).
+2. **Track B — Multi Shot / Multi-Camera Coverage (Hệ Thống Đa Camera / Dựng Phân Cảnh)**:
+   - *Bản chất*: Phủ sóng đa góc máy với **2 đến 4 nhát cắt biên tập (`Cut to`)** khóa chặt trên Trục Hành Động 180° (180° Action Axis).
+   - *Quy chuẩn cắt*: Mỗi shot sau shot đầu tiên bắt buộc mở đầu bằng `Cut to`. Giữa hai nhát cắt liên tiếp của cùng 1 nhân vật phải đổi góc máy $\ge 30^\circ$ hoặc đổi cỡ cảnh để tránh lỗi giật hình (Jump Cut).
+   - *Ứng dụng tối ưu*: Đấu khẩu stichomythia sắc bén (A nói ➔ B phản đòn), nhịp điệu hài hước sitcom (Setup ➔ Punchline cut ➔ Double-take reaction cut), hoặc xung đột va chạm thể chất nhiều bên.
+3. **Track AB — Kép / Hybrid Take (Cú Máy Kép Kết Hợp)**:
+   - *Bản chất*: Kết hợp hoàn hảo giữa cú máy dài nén cảm xúc và nhát cắt bộc phá. Bao gồm **1 cú máy dài (Master Take $\ge 5.0\text{s}$, trải qua 2+ micro-phases)** kết hợp với **1 đến 2 nhát cắt sắc lẹm (`Cut to`)**.
+   - *Cơ chế hoạt động*: Áp lực tích tụ liên tục trong một hơi thở dài, nhưng cú chạm đích hoặc cú giáng đòn phải được nhìn thấy qua một góc nhìn khác (cận cảnh đạo cụ vỡ nát, phản ứng bàng hoàng của nhân chứng). Cú cắt chính là dấu chấm than của cú máy dài.
+4. **Các Biến Thể Đạo Diễn Đặc Biệt (Special Directorial Sub-Types)**:
+   - `Track A-Locked (Static Performance Take)`: Máy quay đứng yên 100% tại chỗ (`static camera`, cấm tuyệt đối dùng chữ "tripod" để chống AI sinh chân máy thật trong phòng), không chuyển động, không cắt. Đóng vai trò Mỏ Neo Hấp Dẫn (Gravitational Anchor), giới hạn nghiêm ngặt $\le 1\text{–}2$ cảnh mỗi tập 10 cảnh (~15–20% tỷ lệ).
+   - `Single-Take Rack Focus & Tracking`: 1 camera duy nhất giữ nguyên góc nhưng chủ động chuyển dịch mặt phẳng nét quang học (Rack Focus) từ tiền cảnh (FG) sang hậu cảnh (BG) hoặc ngược lại để chuyển dịch sự chú ý mà không cần cắt hình.
+   - `In-Camera Dynamic Transition`: Chuyển đổi mượt mà từ góc nhìn chủ quan thứ nhất (P.O.V nhìn xuống tay/đạo cụ) sang góc nhìn khách quan (Eye-level MCU nhìn thấy khẩu hình nhân vật) bằng chuyển động nâng máy (Pedestal Lift) kết hợp lướt vòng cung (Arc Glide).
+   - `Dynamic Re-Framing (Tái Đóng Khung Hữu Cơ)`: Máy quay tự động điều chỉnh độ cao/độ nghiêng mượt mà theo chuyển động đứng dậy, ngồi xuống hoặc ngã quỵ của nhân vật để giữ vững bố cục điện ảnh.
 
 ### 5. Multi-Timeline Dynamic Rhythm Progression Engine & Elastic Montage Law
 - **Motivated Camera Law** (supersedes the former "Zero Static Trap"): Move the camera only for a named motive — follow attention, reveal information, or express an inner shift (Creative Doctrine §2.3). A locked frame with living subjects and living light is a valid choice, often the strongest at the emotional peak. Only frozen frames are banned.

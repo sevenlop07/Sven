@@ -773,10 +773,13 @@ Camera angles operate on a 3D spatial coordinate system defined across **4 indep
 | **Over-The-Shoulder (OTS)** | 1/3 foreground shoulder/nape blur + 2/3 opposite speaker sharp. | Immerses viewer as third party inside the conversational ring; anchors 180° axis. |
 | **Reverse OTS** | Matches preceding OTS across 180° line with inverse screen gaze. | Shot-reverse-shot ping-pong battle parity. |
 | **Dirty Single** | Tight framing on Subject B with a tiny blurred edge of A's hair/sleeve. | Subconscious reminder: Subject A is looming over B even in B's solo shot. |
-| **Clean Single** | Tight framing on Subject B with ABSOLUTELY ZERO trace of Subject A. | Complete emotional or moral isolation; B has severed connection with A. |
-| **Two-Shot Profile** | Both A and B in profile facing each other across the frame. | Direct standoff; symmetrical moral contest; high-stakes negotiation. |
+| **Two-Shot Profile** | Both A and B in 90° profile facing each other across the frame. | Direct standoff; symmetrical moral contest. **CẤM GIỮ TĨNH > 3.0s** (Bẫy đứng nhìn nhau chết lặng). Chỉ được dùng khi: (1) Setup ngắn <3s rồi cắt sang OTS/CU, (2) Va chạm vật lý giằng co liên tục, (3) Máy quay lướt vòng cung (Arc Glide) chuyển sang góc 3/4. |
 | **Point-of-View (P.O.V)** | Camera lens replaces character's eyes; 20% lower frame anchor. | First-person visceral immersion; shared adrenaline and vulnerability. |
 | **SnorriCam Rig** | Camera harnessed to chest facing subject; static face, dynamic background. | Extreme somatic crisis; intoxication, panic attack, dissociation. |
+
+> 🚨 **CẢNH BÁO SỐNG CÒN — BẪY ĐỨNG NHÌN NHAU CHẾT LẶNG TRONG TWO-SHOT PROFILE (90° DEAD-AIR STARE TRAP)**:
+> Trong video AI 10 giây, việc xếp 2 nhân vật đứng ngang đối đầu 90° nhìn sang hai mép khung hình rồi để máy quay tĩnh chạy suốt 5–10s là một sai lầm chết người. Nhân vật nói xong 1 câu (2–3s) sẽ rơi vào trạng thái "hết việc để làm", dẫn đến 7 giây sau đứng đờ đẫn nhìn nhau vô hồn như hai khúc gỗ, đồng thời góc nghiêng 90° làm biến dạng khẩu hình lip-sync và che mất 50% cơ mặt.
+> **Quy định bất khả xâm phạm**: Two-Shot Profile TUYỆT ĐỐI KHÔNG ĐƯỢC chạy tĩnh quá 3 giây. Bắt buộc phải: (1) Cắt góc (Track B Cut to OTS/CU), hoặc (2) Có va chạm vật lý giằng co cơ học liên tục từng giây, hoặc (3) Máy quay chuyển động lượn vòng cung (Camera Arc) đổi trục sang góc 3/4.
 
 ---
 

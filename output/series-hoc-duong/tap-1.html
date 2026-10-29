@@ -3,7 +3,7 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Tập 01: Bức Ảnh Bị Xóa Phút 89 (9 Cảnh · Tối Đa 3 Nhân Vật: Chính Vs. Phản Diện Tình Huống) — Lớp Mình Có Chuyện (Gạo House)</title>
+  <title>Tập 01: Dân Chủ Phút 89 (9 Cảnh · Tối Đa 3 Nhân Vật) — Lớp Mình Có Chuyện (Gạo House)</title>
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
   <link href="https://fonts.googleapis.com/css2?family=Be+Vietnam+Pro:ital,wght@0,400;0,500;0,600;0,700;0,800;1,400&family=JetBrains+Mono:wght@400;500;600;700&display=swap" rel="stylesheet">
@@ -295,12 +295,12 @@
       <div>
         <span class="badge badge-gold">Gạo House · Series Học Đường 11A1</span>
         <span class="badge badge-emerald">Tập 01 / 15 · Chuẩn Điện Ảnh 10s Ghép Nối</span>
-        <span class="badge badge-cyan">9:16 Vertical Mobile · 9 Cú Máy × 10.0s (90.0s)</span>
-        <span class="badge badge-rose">Bộ Tứ Khóa Xuyên Suốt · Chuỗi Động Năng &amp; L-Cut</span>
+        <span class="badge badge-cyan">9 Cảnh × 10.0s (90.0s) · 100% Phương Ngữ Miền Bắc</span>
+        <span class="badge badge-rose">Optical Camera Clause Law (Gate 3Q) · Split-Dialogue Cutaway</span>
       </div>
-      <h1>TẬP 01: BỨC ẢNH BỊ XÓA PHÚT 89</h1>
+      <h1>TẬP 01: DÂN CHỦ PHÚT 89</h1>
       <p class="subtitle">
-        Tái cấu trúc toàn diện theo <strong>Quy Chuẩn Điện Ảnh Sven (10s = 1 Cú máy trong Trường đoạn)</strong>: Triệt tiêu hoàn toàn độc thoại 30 từ máy móc, trả lại tiếng nói và sự chủ động cho <strong>Vy (Nhân vật chính)</strong>, luân chuyển nhịp độ đối thoại sắc nét giữa <strong>Linh</strong> và <strong>Nam</strong>, kết hợp <strong>Bộ Tứ Khóa Xuyên Suốt (Trục 180°, Gậy tiếp sức động năng, Cầu nối âm thanh L-Cut, Sổ bàn giao vật lý)</strong> để 9 cú máy 10s ghép lại thành một dòng chảy điện ảnh học đường sống động, tự nhiên và liền mạch không tì vết.
+        Biên dịch 100% theo <strong>Quy Chuẩn Core Mới Nhất (`0b-temporal-camera-grammar.md` §8 &amp; `Gate 3Q`)</strong>: Khai báo đầy đủ <strong>Chủ thể đóng khung (`framing [name]`) + Góc máy + Chuyển động máy + Mặt phẳng tiêu cự quang học (`shallow/deep depth of field holding razor-sharp optical focus on ...`)</strong> ngay trong <strong>Camera Clause trước dấu gạch ngang `—`</strong>; triệt tiêu 100% câu đuôi `. Focus on [name].`; loại bỏ hoàn toàn mã áo rời trong prompt vì đồng phục đã khóa cứng trong ảnh tham chiếu nhân vật; tích hợp <strong>Cutaway 1.8s–2.0s bắt phản ứng người nghe</strong> khi tách thoại.
       </p>
     </div>
   </header>
@@ -308,61 +308,59 @@
   <div class="container">
     <div class="top-bar">
       <div style="font-size:13.5px; color:#E5E7EB;">
-        <strong>Cấu hình Điện Ảnh:</strong> Khóa cứng <strong>3 Nhân Vật</strong> (<code>Vy</code>, <code>Linh</code>, <code>Nam</code>) · <strong>9 Cú Máy = 90.0s</strong> · Luân chuyển <strong>Đa dạng Voice Mode (Đối đáp nhí nhảnh, Câm thuần thị giác, Thì thầm bí mật)</strong> + <strong>Gậy tiếp sức động năng</strong> nối liền từng điểm cắt.
+        <strong>Cấu hình Điện Ảnh:</strong> Khóa cứng <strong>3 Nhân Vật</strong> (<code>linh</code>, <code>vy</code>, <code>nam</code>) · <strong>9 Cú Máy = 90.0s</strong> · <strong>100% Phương ngữ miền Bắc (Hà Nội)</strong> · <strong>Zero Dangling Focus (`Gate 3Q`)</strong>.
       </div>
       <button class="master-btn" onclick="copyAllPrompts(this)">📋 Copy All Prompts (9 Cảnh)</button>
     </div>
 
-    <!-- STORY SPINE & 4-TIER HOLISTIC STORYTELLING MATRIX -->
+    <!-- STORY SPINE & PREDICTION LEDGER -->
     <div id="story-spine" class="director-lock" style="border-left-color:var(--emerald);">
-      <h2 style="color:var(--emerald);">🧬 Ma Trận Kể Chuyện Điện Ảnh &amp; Bộ Tứ Khóa Xuyên Suốt (Core Integration)</h2>
+      <h2 style="color:var(--emerald);">🧬 Story Spine &amp; Sổ Cái Dự Đoán Khán Giả (Core Doctrine §8.10 &amp; §9.9)</h2>
       <div style="font-size:13px; color:#E5E7EB; line-height:1.75;">
-        <strong>[TẦNG 1 — TRƯỜNG ĐOẠN ĐA KHÔNG GIAN (MULTI-SPATIAL SEQUENCES)]</strong> Giải phóng khỏi chiếc hộp một phòng: <strong>Sequence A</strong> (Cảnh 01–03: Lớp học ngập nắng, điểm nổ T=0 &amp; tua ngược) &rarr; <strong>Sequence B</strong> (Cảnh 04–05: Bàn giáo viên &amp; câu đùa vạ miệng) &rarr; <strong>Sequence C</strong> (Cảnh 06: Hành lang lộng gió, chữa lành không lời) &rarr; <strong>Sequence D</strong> (Cảnh 07–09: Phòng học vắng, cú lật thùng rác &amp; bức ảnh cam thường).<br>
-        <strong>[TẦNG 2 — BỘ TỨ KHÓA XUYÊN SUỐT (4 CINEMATIC CONTINUITY LOCKS)]</strong><br>
-        &bull; <strong>Khóa 1 (Trục 180° &amp; Đường mắt):</strong> Vy luôn nhìn Trái &rarr; Phải, Linh luôn nhìn Phải &rarr; Trái; Nam linh hoạt ở tâm điểm.<br>
-        &bull; <strong>Khóa 2 (Gậy tiếp sức động năng):</strong> Cảnh trước ném gậy ở giây 08.5–10.0 (chuyển động chưa dứt), Cảnh sau bắt trọn và hoàn tất ở giây 00.0–01.5.<br>
-        &bull; <strong>Khóa 3 (Cầu nối âm thanh):</strong> Tiếng chuông trường, tiếng quạt trần và tiếng ve hè kéo dài xuyên suốt các điểm cắt; L-Cut gối đầu cảm xúc.<br>
-        &bull; <strong>Khóa 4 (Sổ bàn giao Code Block 2):</strong> Tọa độ nhân vật và trạng thái đạo cụ chuyển giao chính xác 1:1.<br>
-        <strong>[THESIS]</strong> Sự công bằng thật sự không phải là ép nhau phơi bày khuyết điểm cam thường, mà là dám mở lòng thừa nhận sự tự ti để đứng chung một khung hình.<br>
-        <strong>[PREDICT]</strong> 1. Khán giả đoán Linh ép đăng ảnh gốc vì Linh tự tin (BROKEN s07 | plant s03: Linh cũng lén selfie xóa vội 5 tấm) · 2. Khán giả đoán Vy cam chịu im lặng (BROKEN s01, s03: Vy chủ động giữ tay Linh và lên tiếng bảo vệ công sức của mình) · 3. Khán giả đoán Nam chỉ biết đùa cợt vô tâm (KEPT s06, s08: Nam biết hối lỗi ngoài hành lang và khui thư mục Thùng rác cứu nguy).
+        <strong>[QUESTION]</strong> Liệu buổi bình chọn bộ ảnh kỷ niệm lớp 11A1 có vỡ trận khi lớp trưởng Linh tự ý lật kèo phút 89 và Nam vô tình chọc trúng nỗi tự ti cam thường của Vy?<br>
+        <strong>[TRUTH]</strong> Một bức ảnh tập thể đẹp không nằm ở góc chụp cầu kỳ hay lớp filter che giấu, mà nằm ở sự thấu cảm để không ai phải đứng rìa khung hình.<br>
+        <strong>[LOOPS]</strong> L1 Vì sao Linh đòi hủy phương án cả lớp vừa chốt? s01 → s03 · L2 Nỗi tự ti cam thường của Vy sẽ được hóa giải thế nào? s04 → s07 · L3 Làm sao thuyết phục thủ quỹ Minh duyệt chi phí đạo cụ chụp ảnh? s08 → s09.<br>
+        <strong>[PREDICT]</strong> P1 s01 | Khán giả đoán Linh độc đoán hủy kết quả vì muốn tự làm nổi bật mình | → BROKEN s03 | plant s01, s02 · P2 s04 | Khán giả đoán Nam cố tình chê Vy trước mặt lớp | → BROKEN s07 | plant s04, s06 · P3 s08 | Khán giả đoán cả nhóm đã chốt xong xuôi mọi việc | → KEPT s09 (Mồi nổ sang Tập 2 với ải Thủ quỹ Minh).
       </div>
     </div>
 
     <!-- ==================== SCENE 01 ==================== -->
     <div class="scene-card" id="s-01">
       <div class="scene-header">
-        <div class="scene-title">CẢNH 01 [T = 0 · HOOK ĐỈNH ĐIỂM XUNG ĐỘT]: PHA GIẰNG CO ĐIỆN THOẠI &amp; NAM CAN NGĂN</div>
-        <span class="time-tag">00:00 – 00:10 (10.0s Clip · Track B · In Medias Res &amp; Match-Cut Baton)</span>
+        <div class="scene-title">CẢNH 01: CÚ &ldquo;BẺ LÁI&rdquo; NGAY ĐẦU BÀN (SPLIT-DIALOGUE &amp; 1.8S REACTION CUTAWAY)</div>
+        <span class="time-tag">00:00 – 00:10 (10.0s Clip · Track B · 3 Shots)</span>
       </div>
 
       <div class="audit-grid">
         <div class="audit-box">
-          <div class="audit-label">1. Động Lực Kịch Tính &amp; Thoại Tự Nhiên</div>
-          • <strong>Xung đột trực diện:</strong> Mở màn ngay giây 00:00 tại đỉnh điểm giằng co lúc T = 0. Linh giơ cao <code>iphone_15</code> dọa bấm đăng ảnh gốc; Vy lao tới giữ chặt cổ tay Linh; Nam nhảy vào giữa can ngăn khẩn thiết.<br>
-          • <strong>Thoại gãy gọn (≤ 15 từ/người):</strong> Vy (10 từ) cầu xin giữ lại ảnh lớp; Nam (12 từ) can ngăn bằng giọng điệu hóm hỉnh.
+          <div class="audit-label">1. Nhịp Điệu &amp; Chia Shot Phản Ứng</div>
+          • <strong>Shot 1 (`00:00–00:03.4`):</strong> `MCU framing linh` — Linh xoay cuốn sổ kế hoạch mở sẵn về phía bàn, gọi hai bạn.<br>
+          • <strong>Shot 2 (`00:03.4–00:05.2` — Cutaway 1.8s):</strong> `M2S framing vy and nam` — Cả hai đồng loạt ngẩng đầu khỏi điện thoại nhìn lên Linh.<br>
+          • <strong>Shot 3 (`00:05.2–00:10.0`):</strong> `MCU framing linh` — Linh gõ bút bi vào lề sổ, tuyên bố hủy phương án vừa chốt.
         </div>
         <div class="audit-box">
-          <div class="audit-label">2. Không Gian &amp; Trục 180° (Sequence A)</div>
-          • <strong>Vị trí:</strong> Cạnh bàn cửa sổ <code>phong_hoc_11a1</code>.<br>
-          • <strong>Trục 180°:</strong> Vy (trái) nhìn sang phải; Linh (phải) nhìn sang trái; Nam bước vào trung tâm.
+          <div class="audit-label">2. Optical Camera Clause (Gate 3Q)</div>
+          • <strong>Shot 1:</strong> `shallow depth of field holding razor-sharp optical focus on linh's expressive face with background softly falling into bokeh`<br>
+          • <strong>Shot 2:</strong> `deep depth of field holding sharp optical focus on both vy and nam's faces`<br>
+          • <strong>Shot 3:</strong> `shallow depth of field holding razor-sharp optical focus on linh's furrowed brow and lips`
         </div>
         <div class="audit-box">
           <div class="audit-label">3. Gậy Tiếp Sức Động Năng (Outbound Baton)</div>
-          • <strong>[00:08.0–00:10.0]:</strong> Vy giằng lấy cổ tay Linh, ống kính máy quay lao thẳng (push-in) vào màn hình phát sáng của <code>iphone_15</code> để làm điểm nối Match-Cut vào Cảnh 02.
+          • <strong>[00:08.8–00:10.0]:</strong> Linh mím môi giữ chặt mép sổ kế hoạch ngang ngực, tạo thế đối đầu trực diện để Nam bật dậy chất vấn ở đầu Cảnh 02.
         </div>
       </div>
 
       <div class="dialogue-section">
-        <div class="dia-header">🎙️ Lời Thoại Đối Đáp Sôi Nổi (Two-Shot Collision · ≤ 15 Từ / Người)</div>
+        <div class="dia-header">🎙️ Lời Thoại Tách Shot Chèn Phản Ứng (Split-Dialogue · ≤ 15 Từ / Câu)</div>
         <div class="dia-item">
-          <span class="dia-speaker">vy_student [00:01.0 – 00:03.8]:</span>
-          <span class="dia-spoken-quote">“ Linh ơi... đừng bấm đăng mà, tôi xin bà luôn á! ”</span>
-          <div class="dia-vn-dub">Vy đỏ hoe mắt giữ chặt cổ tay Linh khẩn thiết xin dừng tay (10 từ).</div>
+          <span class="dia-speaker">linh [00:00.4 – 00:02.6]:</span>
+          <span class="dia-spoken-quote">“ Này hai ông bà ơi, nhìn sổ kế hoạch nhé! ”</span>
+          <div class="dia-vn-dub">Linh xoay cuốn sổ kế hoạch bìa cứng về phía bàn, hào hứng gọi Vy và Nam (10 từ — theo sau bởi 1.8s Cutaway phản ứng của Vy &amp; Nam).</div>
         </div>
         <div class="dia-item">
-          <span class="dia-speaker">nam_student [00:04.5 – 00:07.8]:</span>
-          <span class="dia-spoken-quote">“ Hai bà giằng điện thoại nhau giữa lớp kìa, toang tình bạn thiệt đó! ”</span>
-          <div class="dia-vn-dub">Nam nhảy bổ vào giữa xua tay can ngăn hốt hoảng (12 từ).</div>
+          <span class="dia-speaker">linh [00:05.8 – 00:08.8]:</span>
+          <span class="dia-spoken-quote">“ Cả lớp chốt phương án này rồi, cơ mà tôi hủy nhé! ”</span>
+          <div class="dia-vn-dub">Linh hạ sổ xuống ngang ngực, gõ bút bi vào lề trang giấy và nghiêm mặt tự lật kèo phút 89 (12 từ).</div>
         </div>
       </div>
 
@@ -371,77 +369,86 @@
           <span class="block-label" style="color:var(--cyan);">CODE BLOCK 1: OMNI FLASH CINEMATIC AI VIDEO PROMPT (10S CLIP)</span>
           <button class="copy-btn" onclick="copySnippet('p-01', this, 'Prompt Cảnh 01')">📋 Copy Video Prompt</button>
         </div>
-        <pre class="prompt-display" id="p-01">Master-level cinematography and composition, fast-paced shot variation, atmospheric sound design. Style: Cinematic live-action Vietnamese high school slice-of-life, crisp morning daylight. Track B — multi-shot sequence cut on the 180-degree axis.
+        <pre class="prompt-display" id="p-01">Master-level cinematography and composition, fast-paced shot variation, atmospheric sound design. Style: contemporary high-school romantic sitcom realism, warm golden-hour natural sunlight, luminescent organic skin tones, crisp optical depth of field, fast-paced editorial momentum on the 180-degree axis. Track B — multi-shot sequence cut on the 180-degree axis.
 
 [context]:
-phong_hoc_11a1 [100% Refer to image @phong_hoc_11a1], morning. Bright break-time classroom with warm sunlight slanting through side windows across wooden student desks and tiled floor.
+sunlit_high_school_classroom [100% Refer to image sunlit_classroom_4view.jpg], late afternoon golden hour. Vietnamese high school classroom featuring rows of honey-toned wooden student desks with black steel frames, wooden chairs, a hardcover grid-lined planning ledger and a blue ballpoint pen resting at the front desk corner, a matte dark-green chalkboard along the front wall, slow-turning white ceiling fans overhead, and tall left-side glass windows overlooking green courtyard foliage. Warm golden-amber sunlight slants diagonally at a 45-degree angle through the left window panes, casting long soft diagonal shadows across the wooden desktops and cream terrazzo floor tiles while illuminating microscopic chalk-dust motes drifting lazily in the sunbeams.
 
 [subject]:
-linh_student [100% Appearance, attire, and facial features Refer to image @linh],
-vy_student [100% Appearance, attire, and facial features Refer to image @vy],
-nam_student [100% Appearance, attire, and facial features Refer to image @nam]
+linh [100% Appearance, attire, and facial features Refer to image 1], standing upright in the central aisle beside the front corner of the middle wooden student desk, left hand holding open the hardcover planning ledger at chest height and right hand gripping the blue ballpoint pen — the only linh in frame.
+vy [100% Appearance, attire, and facial features Refer to image 2], seated on the left wooden chair behind the middle student desk, both hands resting lightly around the edges of the smartphone on the wooden desktop — the only vy in frame.
+nam [100% Appearance, attire, and facial features Refer to image 3], seated on the right wooden chair beside vy behind the middle student desk, forearms resting on the wooden desktop leaning inward toward the smartphone — the only nam in frame.
 
-[Pro] :
-iphone_15 [100% Refer to image @iphone_15]
+[PROP]:
+class_yearbook_smartphone [100% Refer to image prop_smartphone_4view.jpg], sleek black smartphone displaying the class yearbook concept layout, resting flat at the center of the wooden desktop beneath vy's fingertips — the only smartphone in frame.
 
-Diegetic room acoustics: urgent sneaker scuff on floor tiles, tense fabric rustle, sharp gasp, distant bell echo.
+Diegetic room acoustics: low continuous whir of overhead ceiling fans, crisp paper rustle of hardcover ledger pages turning, sharp plastic click of ballpoint pen tapping against paper, soft late-afternoon courtyard breeze outside.
 
-[00:00–00:04.2] Over-the-shoulder medium shot framing linh_student past vy_student's foreground shoulder at eye level, shallow depth of field holding sharp optical focus on vy_student — standing beside the sunlit window desk, linh_student raises iphone_15 high with an unyielding glare; vy_student lunges forward, gripping linh_student's wrist to block the screen.
-vy_student pleads : “ Linh ơi... đừng bấm đăng mà, tôi xin bà luôn á! ”（Voice of a young female student from Northern Vietnam; breathless urgent plea, clutching linh_student's wrist）
+[00:00–00:03.7] Medium close-up framing linh at eye level, slow push-in, shallow depth of field holding razor-sharp optical focus on linh's expressive face with background softly falling into bokeh — standing beside the front corner of the sunlit wooden desk, linh turns the open grid-lined page of the hardcover planning ledger forward toward the desk with arched eyebrows.
+linh speaks : “ Này hai ông bà ơi, nhìn sổ kế hoạch nhé! ”（Voice of a 17-year-old woman from Northern Vietnam; bright lively soprano, eager upbeat cadence, crisp clear consonants）
 
-[00:04.2–00:08.0] Cut to a reverse medium two-shot framing nam_student on the 180-degree axis, slight low angle, sharp optical focus on nam_student — nam_student rushes into the aisle between the desks with palms outstretched in comic alarm, nam_student's eyes darting frantically between linh_student and vy_student.
-nam_student cries : “ Hai bà giằng điện thoại nhau giữa lớp kìa, toang tình bạn thiệt đó! ”（Voice of a young male student from Northern Vietnam; panicked humorous warning stepping between them）
+[00:03.7–00:05.5] Cut to a medium two-shot framing vy and nam along the 180-degree axis at eye level, static camera, deep depth of field holding sharp optical focus on both vy and nam's faces with the rear classroom wall softly blurred — interrupted while inspecting class_yearbook_smartphone on the wooden desktop, vy and nam simultaneously lift both chins and gaze upward along the conversational eyeline toward linh, vy's fingertips pausing flat against the smartphone bezel while nam's eyes widen in curious surprise.
 
-[00:08.0–00:10.0] Cut to a tight macro close-up on iphone_15 held between vy_student and linh_student's trembling hands, eye level, static camera — vy_student's pale knuckles strain against linh_student's wrist as the glowing screen displays the group photo, initiating an outbound kinetic push straight into the screen pixels for the flashback match-cut through 00:10.0.
+[00:05.5–00:10.0] Cut to a medium close-up framing linh on the 180-degree axis, slight low angle, slow push-in, shallow depth of field holding razor-sharp optical focus on linh's furrowed brow and lips with background softly falling into bokeh — linh lowers the hardcover planning ledger to chest height with a sudden solemn frown, tapping the blue ballpoint pen twice against the page margin.
+linh snaps : “ Cả lớp chốt phương án này rồi, cơ mà tôi hủy nhé! ”（Voice of a 17-year-old woman from Northern Vietnam; earnest overthinking tone, firm staccato delivery abruptly overturning the class vote）
+linh presses both lips together and grips the ledger edge tightly as chalk-dust motes drift across the golden sunbeam through 00:10.0.
 
-Continuous fluid motion, realistic physics, zero morphing, two shots joined by cuts on the 180-degree axis. Spatial positions anchored. Do not generate subtitles, dialogue text, titles, timestamps, or written text. Do not render duplicate characters.</pre>
+Continuous fluid motion, realistic physics, zero morphing. Spatial positions anchored to the architecture; characters move only where the action says characters move.
+Do not generate subtitles, dialogue text, titles, timestamps, or written text anywhere in the video. Do not render duplicate characters or extra props.</pre>
       </div>
 
       <div class="block-wrap">
         <div class="block-header">
-          <span class="block-label" style="color:var(--gold);">CODE BLOCK 2: FINAL STATE SNAPSHOT HANDOVER (00:10)</span>
+          <span class="block-label" style="color:var(--gold);">CODE BLOCK 2: PRODUCTION SOUNDSCAPE &amp; CONTINUITY HANDOVER (00:10.0)</span>
           <button class="copy-btn" onclick="copySnippet('ho-01', this, 'Handover Cảnh 01')">📋 Copy Handover State</button>
         </div>
-        <pre class="handover-display" id="ho-01">[HANDOVER STATE AT 00:10.0]:
-Active Characters: vy_student, linh_student, nam_student
-Characters State at 00:10.0:
-  - vy_student and linh_student grappling at the window desk over iphone_15.
-  - Camera pushed tight into the glowing screen of iphone_15, creating the Outbound Baton.
-Props State:
-  - iphone_15 [100% Refer to image @iphone_15]: Filling the frame for the Sensory Match-Cut jumping back 10 minutes.
-Setting: phong_hoc_11a1 [100% Refer to image @phong_hoc_11a1]
-Dialogue Audit: vy_student 10 words, nam_student 12 words (22 words total, natural teenage confrontation).
-Kinetic Momentum Bridge: Camera plunges into screen pixels, picked up by vy_student's thumbs in Scene 02.</pre>
+        <pre class="handover-display" id="ho-01">[Diegetic Foley Soundscape]:
+Continuous gentle whir of overhead classroom ceiling fans blended with distant muffled courtyard chatter through open glass windows. At [00:00.4], the crisp paper rustle of the hardcover planning ledger turning in linh's hand. At [00:03.4], the soft fabric swish and light wooden chair creak as vy and nam simultaneously lift both heads from the desktop. At [00:05.4], two sharp staccato clicks of the ballpoint pen tip striking the paper margin, followed by linh's earnest Northern Vietnamese delivery and a quiet, tense intake of breath at [00:09.2].
+
+[HANDOVER STATE AT 00:10.0]:
+- linh: standing beside the front corner of the sunlit wooden desk, left hand holding open the hardcover planning ledger at chest height, right hand pressing the ballpoint pen tip against the page margin, gazing downward toward nam and vy with a solemn overthinking frown.
+- vy: seated on the left wooden chair behind the middle desk, fingertips resting around class_yearbook_smartphone at the desktop center, looking upward at linh in stunned surprise.
+- nam: seated on the right wooden chair beside vy, forearms planted on the wooden desktop, looking upward at linh in disbelief, jaw slightly parted to protest.
+- Prop: class_yearbook_smartphone resting flat at the center of the wooden desktop beneath vy's fingertips.
+- Kinetic Momentum Bridge: nam's sudden backward lean and raised hand protest launch directly into Scene 02 at [00:00.0].</pre>
       </div>
     </div>
 
     <!-- ==================== SCENE 02 ==================== -->
     <div class="scene-card" id="s-02">
       <div class="scene-header">
-        <div class="scene-title">CẢNH 02 [T - 10 PHÚT · KỂ CHUYỆN THUẦN THỊ GIÁC]: VY CHỈNH ẢNH LỚP VÀ NỖI TỰ TI CẮT BỎ CHÍNH MÌNH</div>
-        <span class="time-tag">00:00 – 00:10 (10.0s Clip · Track A / Pull-out · Model 0 Pure Visual Silence)</span>
+        <div class="scene-title">CẢNH 02: NAM PHẢN PHÁO &amp; NỖI LO &ldquo;ĐỤNG HÀNG&rdquo; CỦA LỚP TRƯỞNG</div>
+        <span class="time-tag">00:00 – 00:10 (10.0s Clip · Track B · OTS / Reverse OTS)</span>
       </div>
 
       <div class="audit-grid">
         <div class="audit-box">
-          <div class="audit-label">1. Nghệ Thuật Kể Chuyện Không Lời (Model 0)</div>
-          • <strong>Ngôn ngữ điện ảnh thuần túy:</strong> Không một câu thoại. Cú máy bắt trọn hành vi vi mô: nụ cười tự hào khi chỉnh ảnh cho bạn bè đối lập với sự bất lực khi chạm tới khuôn mặt chính mình ở góc rìa.<br>
-          • <strong>Hành động kịch tính:</strong> Bấm Undo 4 lần rồi kéo thanh Crop cắt phăng mặt mình, úp sấp máy xuống bàn.
+          <div class="audit-label">1. Nhịp Điệu Đối Đáp (2 Shots)</div>
+          • <strong>Shot 1 (`00:00–00:04.6`):</strong> `OTS framing nam past linh's soft-focus foreground shoulder` — Nam ngửa người ra lưng ghế, xòe tay phản đối.<br>
+          • <strong>Shot 2 (`00:04.6–00:10.0`):</strong> `Reverse OTS framing linh past nam's soft-focus foreground shoulder` — Linh chỉ bút vào trang sổ giải thích lý do sợ đụng hàng.
         </div>
         <div class="audit-box">
-          <div class="audit-label">2. Kế Thừa Gậy Động Năng (Inbound Baton)</div>
-          • <strong>[00:00.0–00:05.4]:</strong> Cú máy bắt đầu cận cảnh từ chính màn hình <code>iphone_15</code> từ Cảnh 01, rồi kéo lùi (pull-out) ra trung cảnh cho thấy Vy ngồi một mình 10 phút trước.
+          <div class="audit-label">2. Optical Camera Clause (Gate 3Q)</div>
+          • <strong>Shot 1:</strong> `shallow depth of field holding razor-sharp optical focus locked on nam's face`<br>
+          • <strong>Shot 2:</strong> `shallow depth of field holding razor-sharp optical focus locked on linh's face`
         </div>
         <div class="audit-box">
-          <div class="audit-label">3. Chuyển Giao Trạng Thái (Outbound Baton)</div>
-          • <strong>[00:05.4–00:10.0]:</strong> Vy dứt khoát úp sấp điện thoại xuống bàn gỗ, bàn tay đè chặt lên lưng máy chuẩn bị cho sự xuất hiện của Linh ở Cảnh 03.
+          <div class="audit-label">3. Gậy Tiếp Sức Động Năng (Outbound Baton)</div>
+          • <strong>[00:08.8–00:10.0]:</strong> Linh hạ thấp giọng nhìn xuống chiếc điện thoại trên mặt bàn nơi Vy đang mở bố cục ảnh, chuyển tiêu điểm sang Vy ở Cảnh 03.
         </div>
       </div>
 
       <div class="dialogue-section">
-        <div class="dia-header">🎬 Kể Chuyện Thuần Thị Giác &amp; Âm Thanh Hiện Trường (Model 0: Pure Visual Silence — 0 Từ Thoại)</div>
-        <div class="silent-banner">
-          <strong>[SILENT VISUAL STORYTELLING — ZERO SPOKEN DIALOGUE]:</strong> Không sử dụng lời thoại. Sự im lặng đắt giá lột tả trọn vẹn tâm lý tự ti của Vy qua từng cử động ngón tay trên màn hình cảm ứng và tiếng thở dài khẽ.
+        <div class="dia-header">🎙️ Lời Thoại Đối Đáp Sắc Lẹm (Shot / Reverse-Shot · ≤ 15 Từ / Câu)</div>
+        <div class="dia-item">
+          <span class="dia-speaker">nam [00:00.5 – 00:03.4]:</span>
+          <span class="dia-spoken-quote">“ Cả lớp biểu quyết xong rồi, sao bà lại tự hủy thế? ”</span>
+          <div class="dia-vn-dub">Nam ngửa người ra ghế, xòe bàn tay phải chỉ lên cuốn sổ kế hoạch chất vấn Linh (12 từ).</div>
+        </div>
+        <div class="dia-item">
+          <span class="dia-speaker">linh [00:05.0 – 00:08.0]:</span>
+          <span class="dia-spoken-quote">“ Kiểu chụp nghiêm túc này lớp bên cạnh vừa đăng sáng nay! ”</span>
+          <div class="dia-vn-dub">Linh nghiêng người tới trước, gõ đầu bút vào dòng ghi chú với vẻ lo lắng cầu toàn (12 từ).</div>
         </div>
       </div>
 
@@ -450,78 +457,78 @@ Kinetic Momentum Bridge: Camera plunges into screen pixels, picked up by vy_stud
           <span class="block-label" style="color:var(--cyan);">CODE BLOCK 1: OMNI FLASH CINEMATIC AI VIDEO PROMPT (10S CLIP)</span>
           <button class="copy-btn" onclick="copySnippet('p-02', this, 'Prompt Cảnh 02')">📋 Copy Video Prompt</button>
         </div>
-        <pre class="prompt-display" id="p-02">Master-level cinematography and composition, fast-paced shot variation, atmospheric sound design. Style: Cinematic live-action Vietnamese high school slice-of-life, crisp morning daylight. Track B — multi-shot sequence cut on the 180-degree axis.
+        <pre class="prompt-display" id="p-02">Master-level cinematography and composition, fast-paced shot variation, atmospheric sound design. Style: contemporary high-school romantic sitcom realism, warm golden-hour natural sunlight, luminescent organic skin tones, crisp optical depth of field, fast-paced editorial momentum on the 180-degree axis. Track B — multi-shot sequence cut on the 180-degree axis.
 
 [context]:
-phong_hoc_11a1 [100% Refer to image @phong_hoc_11a1], morning. Quiet classroom ten minutes earlier, golden morning sunbeams pooling over polished wooden desk.
+sunlit_high_school_classroom [100% Refer to image sunlit_classroom_4view.jpg], late afternoon golden hour. Vietnamese high school classroom featuring rows of honey-toned wooden student desks with black steel frames, wooden chairs, a hardcover grid-lined planning ledger and a blue ballpoint pen held above the front desk corner, a matte dark-green chalkboard along the front wall, slow-turning white ceiling fans overhead, and tall left-side glass windows overlooking green courtyard foliage. Warm golden-amber sunlight slants diagonally at a 45-degree angle through the left window panes, casting long soft diagonal shadows across the wooden desktops and illuminating drifting chalk-dust motes.
 
 [subject]:
-vy_student [100% Appearance, attire, and facial features Refer to image @vy]
+nam [100% Appearance, attire, and facial features Refer to image 3], seated on the right wooden chair behind the middle student desk, leaning back against the wooden backrest with right palm raised open toward the ledger — the only nam in frame.
+linh [100% Appearance, attire, and facial features Refer to image 1], standing upright in the central aisle beside the front corner of the middle wooden desk, left hand holding the open hardcover planning ledger and right hand gripping the blue ballpoint pen — the only linh in frame.
 
-[Pro] :
-iphone_15 [100% Refer to image @iphone_15]
+[PROP]:
+class_yearbook_smartphone [100% Refer to image prop_smartphone_4view.jpg], sleek black smartphone displaying the class yearbook concept layout, resting flat at the center of the wooden desktop — the only smartphone in frame.
 
-Diegetic room acoustics: rhythmic screen swipes, repeated undo tap clicks, decisive crop drag, soft sigh and wooden clack as phone flips.
+Diegetic room acoustics: steady hum of overhead ceiling fans, wooden chair backrest creaking under shifted weight, sharp tap of plastic pen barrel against paper, lively classroom ambience.
 
-[00:00–00:05.4] Macro close-up on the phone screen pulling back slowly to an eye-level medium close-up framing vy_student, motivated pull-out, shallow depth of field holding sharp optical focus on vy_student — catching the Inbound Baton from the glowing screen of iphone_15, vy_student sits alone ten minutes earlier at the sunlit wooden desk; vy_student's thumbs glide across the glass with deft artistic precision, smoothing faces and brightening lighting with a gentle, proud smile.
+[00:00–00:04.6] Over-the-shoulder medium shot framing nam past linh's soft-focus foreground shoulder at slight high angle, static camera, shallow depth of field holding razor-sharp optical focus locked on nam's incredulous face with background desks softly blurred — nam leans back against the wooden chair backrest and gestures upward toward the open planning ledger with an open right palm, eyebrows raised in theatrical protest.
+nam retorts : “ Cả lớp biểu quyết xong rồi, sao bà lại tự hủy thế? ”（Voice of a 17-year-old man from Northern Vietnam; lively animated baritone, incredulous comedic cadence, crisp Hanoi intonation）
 
-[00:05.4–00:10.0] Cut to an eye-level close-up framing vy_student, slow push-in, shallow depth of field holding razor-sharp optical focus on vy_student's face — sliding the photo toward the peripheral edge where vy_student's own unedited face appears, vy_student's smile vanishes; vy_student taps undo four times, bites lower lip, drags the crop box inward to sever vy_student's own face from the image, and decisively flips iphone_15 face-down onto the wooden desk, resting palm over the back cover through 00:10.0.
+[00:04.6–00:10.0] Cut to a reverse over-the-shoulder medium close-up framing linh past nam's soft-focus foreground shoulder at slight low angle, slow push-in, shallow depth of field holding razor-sharp optical focus locked on linh's anxious eyes and lips with background softly falling into bokeh — linh leans forward half a step over the desk corner, pointing the blue ballpoint pen tip at the top line of the hardcover planning ledger with urgent perfectionist intensity.
+linh replies : “ Kiểu chụp nghiêm túc này lớp bên cạnh vừa đăng sáng nay! ”（Voice of a 17-year-old woman from Northern Vietnam; urgent fast-paced soprano, perfectionist anxiety, emphatic final stress）
+linh lowers the pen tip and glances downward toward class_yearbook_smartphone on the wooden desktop as golden sunbeams shimmer across the paper margin through 00:10.0.
 
-Continuous fluid motion, realistic physics, zero morphing, two shots joined by cut on the 180-degree axis. Spatial positions anchored. Do not generate subtitles, dialogue text, titles, timestamps, or written text. Do not render duplicate characters.</pre>
+Continuous fluid motion, realistic physics, zero morphing. Spatial positions anchored to the architecture; characters move only where the action says characters move.
+Do not generate subtitles, dialogue text, titles, timestamps, or written text anywhere in the video. Do not render duplicate characters or extra props.</pre>
       </div>
 
       <div class="block-wrap">
         <div class="block-header">
-          <span class="block-label" style="color:var(--gold);">CODE BLOCK 2: FINAL STATE SNAPSHOT HANDOVER (00:10)</span>
+          <span class="block-label" style="color:var(--gold);">CODE BLOCK 2: PRODUCTION SOUNDSCAPE &amp; CONTINUITY HANDOVER (00:10.0)</span>
           <button class="copy-btn" onclick="copySnippet('ho-02', this, 'Handover Cảnh 02')">📋 Copy Handover State</button>
         </div>
-        <pre class="handover-display" id="ho-02">[HANDOVER STATE AT 00:10.0]:
-Active Characters: vy_student (Solo Scene)
-Characters State at 00:10.0:
-  - vy_student seated at the sunlit desk, palm resting flat over the face-down iphone_15.
-Props State:
-  - iphone_15 [100% Refer to image @iphone_15]: Lying face-down on the wooden desk beneath vy_student's palm.
-Setting: phong_hoc_11a1 [100% Refer to image @phong_hoc_11a1]
-Dialogue Audit: 0 words spoken (Model 0 Pure Visual Silence).
-Kinetic Momentum Bridge: vy_student's palm resting on phone becomes the anchor for linh_student's entrance in Scene 03.</pre>
+        <pre class="handover-display" id="ho-02">[Diegetic Foley Soundscape]:
+Low whir of ceiling fans and warm room tone. At [00:00.3], the dry wooden creak of nam's chair backrest as nam leans back in protest. At [00:04.8], a crisp paper rustle and sharp pen tap as linh leans in to counter. At [00:08.5], a soft sigh from linh as gaze shifts down toward the smartphone on the desk.
+
+[HANDOVER STATE AT 00:10.0]:
+- linh: standing at the front desk corner, leaning slightly forward, looking down toward vy and class_yearbook_smartphone.
+- nam: seated on the right chair, lowering right hand back onto the wooden desktop, turning head toward vy.
+- vy: seated on the left chair behind the desk, fingertips resting on class_yearbook_smartphone, preparing to speak up to defend the layout.
+- Prop: class_yearbook_smartphone resting flat on the wooden desktop under vy's fingers.
+- Kinetic Momentum Bridge: vy slides class_yearbook_smartphone forward across the sunlit wood at [00:00.0] of Scene 03 to show the lighting sample.</pre>
       </div>
     </div>
 
     <!-- ==================== SCENE 03 ==================== -->
     <div class="scene-card" id="s-03">
       <div class="scene-header">
-        <div class="scene-title">CẢNH 03 [ĐỐI THOẠI XUNG ĐỘT]: LINH TRA HỎI VỀ GÓC ẢNH &amp; VY TỰ VỆ</div>
-        <span class="time-tag">00:00 – 00:10 (10.0s Clip · Track B · Binary Clash &amp; Rack-Focus Plant)</span>
+        <div class="scene-title">CẢNH 03: VY BÊNH VỰC BỐ CỤC ẢNH &amp; PHẢN ỨNG CỦA HAI BẠN</div>
+        <span class="time-tag">00:00 – 00:10 (10.0s Clip · Track B · Solo Line + 4.0s Reaction Cutaway)</span>
       </div>
 
       <div class="audit-grid">
         <div class="audit-box">
-          <div class="audit-label">1. Nhân Vật Chính Lên Tiếng (Active Agency)</div>
-          • <strong>Không còn thụ động:</strong> Vy không câm nín chịu trận mà thẳng thắn phản biện Linh. Linh truy vấn lý do crop ảnh; Vy chỉ ra khuyết điểm của góc chụp cam thường.<br>
-          • <strong>Thoại cân bằng (≤ 15 từ/người):</strong> Linh (14 từ) nghiêm khắc; Vy (13 từ) giãi bày thẳng thắn.
+          <div class="audit-label">1. Nhịp Điệu &amp; Chia Shot Phản Ứng</div>
+          • <strong>Shot 1 (`00:00–00:06.0`):</strong> `MCU framing vy` — Vy xoay nhẹ màn hình điện thoại trên mặt bàn, dịu dàng giải thích ưu điểm của góc nắng cửa sổ.<br>
+          • <strong>Shot 2 (`00:06.0–00:10.0` — Cutaway 4.0s):</strong> `M2S framing linh and nam` — Linh cúi xuống ngắm màn hình gật gù xuôi lòng, còn Nam ghé sát mắt soi bức ảnh mẫu.
         </div>
         <div class="audit-box">
-          <div class="audit-label">2. Kế Thừa Gậy Động Năng &amp; Trục 180°</div>
-          • <strong>[00:00.0–00:04.8]:</strong> Máy quay lia hất lên từ bàn tay Vy đang đè lên điện thoại, bắt trọn bước chân Linh bước tới gõ bút lên cuốn sổ.<br>
-          • <strong>Trục 180°:</strong> Linh (đứng bên phải nhìn xuống), Vy (ngồi bên trái ngước lên).
+          <div class="audit-label">2. Optical Camera Clause (Gate 3Q)</div>
+          • <strong>Shot 1:</strong> `shallow depth of field holding razor-sharp optical focus on vy's gentle eyes and lips with background softly falling into bokeh`<br>
+          • <strong>Shot 2:</strong> `deep depth of field holding sharp optical focus on both linh and nam's faces`
         </div>
         <div class="audit-box">
-          <div class="audit-label">3. Gieo Mầm Thị Giác (Rack-Focus)</div>
-          • <strong>[00:08.4–00:10.0]:</strong> Ống kính trượt nét (rack-focus) lướt qua chiếc máy tính Casio trên mặt sổ và biểu tượng Thùng rác trên màn hình điện thoại.
+          <div class="audit-label">3. Gậy Tiếp Sức Động Năng (Outbound Baton)</div>
+          • <strong>[00:08.5–00:10.0]:</strong> Nam nheo mắt chỉ ngón trỏ vào góc phải màn hình điện thoại nơi có ảnh chụp thử cam thường của Vy, mồi nổ cho câu trêu vạ miệng ở Cảnh 04.
         </div>
       </div>
 
       <div class="dialogue-section">
-        <div class="dia-header">🎙️ Lời Thoại Đối Đáp Kịch Tính (Binary Duel · ≤ 15 Từ / Người)</div>
+        <div class="dia-header">🎙️ Lời Thoại Đơn &amp; Cắt Cảnh Phản Ứng (Single-Speaker + Reaction Cutaway · 17 Từ)</div>
         <div class="dia-item">
-          <span class="dia-speaker">linh_student [00:01.0 – 00:04.2]:</span>
-          <span class="dia-spoken-quote">“ Cả lớp vừa chốt xong, sao bà lén cắt góc mặt mình ra ngoài vậy?! ”</span>
-          <div class="dia-vn-dub">Linh chống tay xuống bàn nghiêm nghị tra hỏi (14 từ).</div>
-        </div>
-        <div class="dia-item">
-          <span class="dia-speaker">vy_student [00:05.0 – 00:08.0]:</span>
-          <span class="dia-spoken-quote">“ Tôi chỉnh lớp sáng đẹp rồi... góc đó mặt tôi bị méo xẹo à! ”</span>
-          <div class="dia-vn-dub">Vy ngước lên phân trần thật lòng bảo vệ quyết định của mình (13 từ).</div>
+          <span class="dia-speaker">vy [00:00.5 – 00:04.8]:</span>
+          <span class="dia-spoken-quote">“ Chụp ở dãy bàn nắng xiên thế này sáng mặt lắm, cả lớp chẳng ai bị tối đâu nhé. ”</span>
+          <div class="dia-vn-dub">Vy nhẹ nhàng xoay màn hình điện thoại về phía Linh và Nam, chỉ tay vào vệt nắng mẫu trên ảnh (19 từ).</div>
         </div>
       </div>
 
@@ -530,79 +537,84 @@ Kinetic Momentum Bridge: vy_student's palm resting on phone becomes the anchor f
           <span class="block-label" style="color:var(--cyan);">CODE BLOCK 1: OMNI FLASH CINEMATIC AI VIDEO PROMPT (10S CLIP)</span>
           <button class="copy-btn" onclick="copySnippet('p-03', this, 'Prompt Cảnh 03')">📋 Copy Video Prompt</button>
         </div>
-        <pre class="prompt-display" id="p-03">Master-level cinematography and composition, fast-paced shot variation, atmospheric sound design. Style: Cinematic live-action Vietnamese high school slice-of-life, crisp morning daylight. Track B — multi-shot sequence cut on the 180-degree axis.
+        <pre class="prompt-display" id="p-03">Master-level cinematography and composition, fast-paced shot variation, atmospheric sound design. Style: contemporary high-school romantic sitcom realism, warm golden-hour natural sunlight, luminescent organic skin tones, crisp optical depth of field, fast-paced editorial momentum on the 180-degree axis. Track B — multi-shot sequence cut on the 180-degree axis.
 
 [context]:
-phong_hoc_11a1 [100% Refer to image @phong_hoc_11a1], morning. Sunlit wooden student desk by the window, chalk dust motes dancing in ambient light shafts.
+sunlit_high_school_classroom [100% Refer to image sunlit_classroom_4view.jpg], late afternoon golden hour. Vietnamese high school classroom featuring rows of honey-toned wooden student desks with black steel frames, wooden chairs, a hardcover grid-lined planning ledger and a blue ballpoint pen held above the front desk corner, a matte dark-green chalkboard along the front wall, slow-turning white ceiling fans overhead, and tall left-side glass windows overlooking green courtyard foliage. Warm golden-amber sunlight slants diagonally at a 45-degree angle through the left window panes, casting long soft diagonal shadows across the wooden desktops and illuminating drifting chalk-dust motes.
 
 [subject]:
-linh_student [100% Appearance, attire, and facial features Refer to image @linh],
-vy_student [100% Appearance, attire, and facial features Refer to image @vy]
+vy [100% Appearance, attire, and facial features Refer to image 2], seated on the left wooden chair behind the middle student desk, right index finger resting on the bezel of the smartphone on the sunlit wooden desktop — the only vy in frame.
+linh [100% Appearance, attire, and facial features Refer to image 1], standing beside the front corner of the middle wooden desk holding the hardcover planning ledger and blue ballpoint pen — the only linh in frame.
+nam [100% Appearance, attire, and facial features Refer to image 3], seated on the right wooden chair beside vy behind the middle student desk, leaning inward over the wooden desktop — the only nam in frame.
 
-[Pro] :
-iphone_15 [100% Refer to image @iphone_15]; so_tay_ke_hoach [100% Refer to image @so_tay_ke_hoach]
+[PROP]:
+class_yearbook_smartphone [100% Refer to image prop_smartphone_4view.jpg], sleek black smartphone displaying the sunlit classroom photo layout on the glowing screen, resting flat on the wooden desktop — the only smartphone in frame.
 
-Diegetic room acoustics: ballpoint pen clicks on desk wood, rustle of notebook paper, firm direct vocal projection.
+Diegetic room acoustics: gentle whir of overhead ceiling fans, soft slide of smartphone casing across polished wood, quiet attentive breathing, distant courtyard breeze.
 
-[00:00–00:04.8] Medium close-up tilting up from vy_student's palm on the phone to linh_student at eye level, shallow depth of field holding sharp optical focus on linh_student — holding so_tay_ke_hoach, linh_student steps briskly to the desk, tapping a ballpoint pen firmly against the wood with an inquisitive frown.
-linh_student snaps : “ Cả lớp vừa chốt xong, sao bà lén cắt góc mặt mình ra ngoài vậy?! ”（Voice of a young female student from Northern Vietnam; sharp inquiring tone leaning over the desk）
+[00:00–00:06.0] Medium close-up framing vy at eye level, slow push-in, shallow depth of field holding razor-sharp optical focus on vy's gentle eyes and lips with background softly falling into bokeh — seated behind the sunlit wooden desktop, vy slides class_yearbook_smartphone two inches forward and traces a fingertip along the warm window-light preview on the screen with an earnest, hopeful smile.
+vy speaks : “ Chụp ở dãy bàn nắng xiên thế này sáng mặt lắm, cả lớp chẳng ai bị tối đâu nhé. ”（Voice of a 17-year-old woman from Northern Vietnam; soft warm alto, gentle persuasive sincerity, clear Hanoi articulation）
 
-[00:04.8–00:08.4] Cut to an over-the-shoulder medium close-up framing vy_student past linh_student on the 180-degree axis, eye level, sharp optical focus on vy_student — vy_student turns iphone_15 slightly toward linh_student with trembling fingers, shoulders hunched defensively while speaking.
-vy_student replies : “ Tôi chỉnh lớp sáng đẹp rồi... góc đó mặt tôi bị méo xẹo à! ”（Voice of a young female student from Northern Vietnam; quiet defensive voice, averting gaze）
+[00:06.0–00:10.0] Cut to a medium two-shot framing linh and nam along the 180-degree axis at eye level, static camera, deep depth of field holding sharp optical focus on both linh and nam's faces with the rear chalkboard softly blurred — linh tilts the chin downward to inspect the glowing screen of class_yearbook_smartphone and nods slowly in thoughtful agreement, while nam leans torso closer over the desktop, squinting mischievously at the corner of the screen and pointing a right index finger toward the preview image through 00:10.0.
 
-[00:08.4–00:10.0] Cut to a reverse close-up framing linh_student, eye level, rack focus shifting past linh_student's hand to the pocket calculator on the ledger, static camera — linh_student's brow furrows as linh_student reaches down to tilt the phone upright through 00:10.0.
-
-Continuous fluid motion, realistic physics, zero morphing, two shots joined by cuts on the 180-degree axis. Spatial positions anchored. Do not generate subtitles, dialogue text, titles, timestamps, or written text. Do not render duplicate characters.</pre>
+Continuous fluid motion, realistic physics, zero morphing. Spatial positions anchored to the architecture; characters move only where the action says characters move.
+Do not generate subtitles, dialogue text, titles, timestamps, or written text anywhere in the video. Do not render duplicate characters or extra props.</pre>
       </div>
 
       <div class="block-wrap">
         <div class="block-header">
-          <span class="block-label" style="color:var(--gold);">CODE BLOCK 2: FINAL STATE SNAPSHOT HANDOVER (00:10)</span>
+          <span class="block-label" style="color:var(--gold);">CODE BLOCK 2: PRODUCTION SOUNDSCAPE &amp; CONTINUITY HANDOVER (00:10.0)</span>
           <button class="copy-btn" onclick="copySnippet('ho-03', this, 'Handover Cảnh 03')">📋 Copy Handover State</button>
         </div>
-        <pre class="handover-display" id="ho-03">[HANDOVER STATE AT 00:10.0]:
-Active Characters: linh_student, vy_student
-Characters State at 00:10.0:
-  - linh_student holding iphone_15 upright facing both students.
-  - vy_student sitting with lowered eyes beside the ledger.
-Props State:
-  - iphone_15 [100% Refer to image @iphone_15] &amp; so_tay_ke_hoach [100% Refer to image @so_tay_ke_hoach]: Positioned on the desk with calculator planted.
-Setting: phong_hoc_11a1 [100% Refer to image @phong_hoc_11a1]
-Dialogue Audit: linh_student 14 words, vy_student 13 words (27 words total).
-Kinetic Momentum Bridge: The phone screen held upright becomes the target for nam_student's intrusion in Scene 04.</pre>
+        <pre class="handover-display" id="ho-03">[Diegetic Foley Soundscape]:
+Soft continuous ceiling fan hum. At [00:00.4], the smooth tactile slide of the smartphone across the wooden desktop, followed by vy's warm, gentle Northern Vietnamese voice. At [00:06.3], the faint rustle of fabric as linh and nam lean in over the desk, ending with nam's light finger tap near the smartphone bezel at [00:09.2].
+
+[HANDOVER STATE AT 00:10.0]:
+- vy: seated on the left chair, hand resting beside class_yearbook_smartphone, looking toward nam with a calm smile.
+- linh: standing beside the front desk corner, nodding thoughtfully at the phone screen.
+- nam: seated on the right chair leaning over the desktop, right index finger pointing at the corner of class_yearbook_smartphone with a playful grin forming.
+- Prop: class_yearbook_smartphone resting flat on the center of the wooden desktop.
+- Kinetic Momentum Bridge: nam's playful finger point and mischievous grin launch directly into nam's teasing remark at [00:00.0] of Scene 04.</pre>
       </div>
     </div>
 
     <!-- ==================== SCENE 04 ==================== -->
     <div class="scene-card" id="s-04">
       <div class="scene-header">
-        <div class="scene-title">CẢNH 04 [CÂU ĐÙA VẠ MIỆNG]: NAM CHÂM NGÒI VÔ TÂM &amp; NỖI ĐAU THỂ HIỆN QUA HÀNH ĐỘNG</div>
-        <span class="time-tag">00:00 – 00:10 (10.0s Clip · Track B · Action Barb &amp; Somatic Reaction)</span>
+        <div class="scene-title">CẢNH 04: CÂU TRÊU VẠ MIỆNG CỦA NAM &amp; NỤ CƯỜI TẮT LỊM CỦA VY (SPLIT-DIALOGUE CUTAWAY)</div>
+        <span class="time-tag">00:00 – 00:10 (10.0s Clip · Track B · 3 Shots)</span>
       </div>
 
       <div class="audit-grid">
         <div class="audit-box">
-          <div class="audit-label">1. Đòn Tâm Lý Qua Hành Vi Sinh Học</div>
-          • <strong>Không dán nhãn cảm xúc:</strong> Thay vì dùng từ "buồn" hay "tủi thân", tổn thương của Vy được thể hiện 100% qua vi cử động sinh học: mi mắt rung nhẹ, răng cắn chặt môi dưới, ngón tay bấu chặt gấu áo đồng phục.<br>
-          • <strong>Thoại châm ngòi (14 từ):</strong> Câu đùa tai hại của Nam về "bánh bao" đánh trúng tử huyệt tự ti của bạn.
+          <div class="audit-label">1. Nhịp Điệu &amp; Chia Shot Phản Ứng</div>
+          • <strong>Shot 1 (`00:00–00:04.2`):</strong> `MCU framing nam` — Nam vô tư chỉ vào ảnh chụp thử cam thường trêu má Vy tròn.<br>
+          • <strong>Shot 2 (`00:04.2–00:06.2` — Cutaway 2.0s):</strong> `Intimate CU framing vy` — Nụ cười của Vy tắt lịm, Vy cụp mắt kéo tay che góc màn hình.<br>
+          • <strong>Shot 3 (`00:06.2–00:10.0`):</strong> `M2S framing nam and vy` — Nam chợt nhận ra mình lỡ lời, lắp bắp chữa cháy.
         </div>
         <div class="audit-box">
-          <div class="audit-label">2. Kế Thừa Gậy Động Năng &amp; Lập Tức Hối Lỗi</div>
-          • <strong>[00:00.0–00:05.0]:</strong> Nam từ phía sau chen vào giữa hai cô bạn, cúi đầu chỉ vào màn hình điện thoại đang dựng đứng từ Cảnh 03.<br>
-          • <strong>[00:05.0–00:10.0]:</strong> Nụ cười của Nam tắt ngấm; ánh mắt bối rối nhìn thấy giọt nước mắt chực trào của Vy.
+          <div class="audit-label">2. Optical Camera Clause (Gate 3Q)</div>
+          • <strong>Shot 1:</strong> `shallow depth of field holding razor-sharp optical focus on nam's grinning face with background softly falling into bokeh`<br>
+          • <strong>Shot 2:</strong> `shallow depth of field holding razor-sharp optical focus on vy's downcast eyes and quivering lip`<br>
+          • <strong>Shot 3:</strong> `deep depth of field holding sharp optical focus on both nam and vy's faces`
         </div>
         <div class="audit-box">
-          <div class="audit-label">3. Chuyển Giao Sang Cảnh 05</div>
-          • Nam quay phắt sang Linh, chắp tay chuẩn bị mở lời xin trích quỹ lớp để chuộc lỗi.
+          <div class="audit-label">3. Gậy Tiếp Sức Động Năng (Outbound Baton)</div>
+          • <strong>[00:08.8–00:10.0]:</strong> Vy lặng lẽ chạm tay vào mép điện thoại chuẩn bị úp màn hình xuống mặt bàn ở đầu Cảnh 05.
         </div>
       </div>
 
       <div class="dialogue-section">
-        <div class="dia-header">🎙️ Lời Thoại Vạ Miệng (Solo Strike &amp; Silent Absorber · ≤ 15 Từ)</div>
+        <div class="dia-header">🎙️ Lời Thoại Tách Shot Chèn Phản Ứng (Split-Dialogue · ≤ 13 Từ / Câu)</div>
         <div class="dia-item">
-          <span class="dia-speaker">nam_student [00:01.2 – 00:04.6]:</span>
-          <span class="dia-spoken-quote">“ Công nhận nha, cam thường chụp góc này nhìn mặt bà Vy tròn xoe luôn! ”</span>
-          <div class="dia-vn-dub">Nam vô tư buột miệng chọc bạn rồi sững người khi thấy Vy cúi gằm mặt cắn môi (14 từ).</div>
+          <span class="dia-speaker">nam [00:00.4 – 00:03.2]:</span>
+          <span class="dia-spoken-quote">“ Công nhận góc cam thường này nhìn má bà Vy tròn xoe nhé! ”</span>
+          <div class="dia-vn-dub">Nam cười tít mắt chỉ tay vào tấm ảnh chụp thử góc cam thường mà không biết Vy rất nhạy cảm (13 từ — theo sau bởi 1.8s Cutaway cận mặt Vy).</div>
+        </div>
+        <div class="dia-item">
+          <span class="dia-speaker">nam [00:06.4 – 00:08.8]:</span>
+          <span class="dia-spoken-quote">“ Ơ kìa, ý tôi khen nhìn đáng yêu cơ mà! ”</span>
+          <div class="dia-vn-dub">Thấy Vy cụp mắt im lặng, Nam luống cuống xua hai tay phân trần chữa cháy (10 từ).</div>
         </div>
       </div>
 
@@ -611,81 +623,85 @@ Kinetic Momentum Bridge: The phone screen held upright becomes the target for na
           <span class="block-label" style="color:var(--cyan);">CODE BLOCK 1: OMNI FLASH CINEMATIC AI VIDEO PROMPT (10S CLIP)</span>
           <button class="copy-btn" onclick="copySnippet('p-04', this, 'Prompt Cảnh 04')">📋 Copy Video Prompt</button>
         </div>
-        <pre class="prompt-display" id="p-04">Master-level cinematography and composition, fast-paced shot variation, atmospheric sound design. Style: Cinematic live-action Vietnamese high school slice-of-life, crisp morning daylight. Track B — multi-shot sequence cut on the 180-degree axis.
+        <pre class="prompt-display" id="p-04">Master-level cinematography and composition, fast-paced shot variation, atmospheric sound design. Style: contemporary high-school romantic sitcom realism, warm golden-hour natural sunlight, luminescent organic skin tones, crisp optical depth of field, fast-paced editorial momentum on the 180-degree axis. Track B — multi-shot sequence cut on the 180-degree axis.
 
 [context]:
-phong_hoc_11a1 [100% Refer to image @phong_hoc_11a1], morning. Sunlit classroom aisle between rows of wooden desks.
+sunlit_high_school_classroom [100% Refer to image sunlit_classroom_4view.jpg], late afternoon golden hour. Vietnamese high school classroom featuring rows of honey-toned wooden student desks with black steel frames, wooden chairs, a hardcover grid-lined planning ledger and a blue ballpoint pen on the front desk corner, a matte dark-green chalkboard along the front wall, slow-turning white ceiling fans overhead, and tall left-side glass windows overlooking green courtyard foliage. Warm golden-amber sunlight slants diagonally at a 45-degree angle through the left window panes, casting long soft diagonal shadows across the wooden desktops and illuminating drifting chalk-dust motes.
 
 [subject]:
-nam_student [100% Appearance, attire, and facial features Refer to image @nam],
-vy_student [100% Appearance, attire, and facial features Refer to image @vy]
+nam [100% Appearance, attire, and facial features Refer to image 3], seated on the right wooden chair behind the middle student desk, leaning over the wooden desktop pointing right index finger at the smartphone screen — the only nam in frame.
+vy [100% Appearance, attire, and facial features Refer to image 2], seated on the left wooden chair beside nam behind the middle student desk, hands resting beside the smartphone on the wooden desktop — the only vy in frame.
 
-[Pro] :
-iphone_15 [100% Refer to image @iphone_15]
+[PROP]:
+class_yearbook_smartphone [100% Refer to image prop_smartphone_4view.jpg], sleek black smartphone displaying a candid test photo on the glowing screen, resting flat on the wooden desktop between vy and nam — the only smartphone in frame.
 
-Diegetic room acoustics: sudden floor scuff, quick playful chuckle cutting off into awkward silence, quiet sniffing.
+Diegetic room acoustics: low hum of overhead ceiling fans, light tap of fingertip on glass screen, sudden quiet pause in room tone, flustered rustle of sleeves.
 
-[00:00–00:05.0] Over-the-shoulder medium two-shot framing nam_student past vy_student's shoulder at eye level, sharp optical focus on nam_student — catching the Inbound Baton, nam_student's torso leans in between the desks, pointing an eager finger down at the glowing phone screen with a wide impulsive grin.
-nam_student says : “ Công nhận nha, cam thường chụp góc này nhìn mặt bà Vy tròn xoe luôn! ”（Voice of a young male student from Northern Vietnam; impulsive playful chuckle pointing at screen）
+[00:00–00:04.3] Medium close-up framing nam at eye level, static camera, shallow depth of field holding razor-sharp optical focus on nam's grinning face with background softly falling into bokeh — leaning over the sunlit wooden desktop, nam points a playful index finger down toward class_yearbook_smartphone with an oblivious, teasing grin.
+nam says : “ Công nhận góc cam thường này nhìn má bà Vy tròn xoe nhé! ”（Voice of a 17-year-old man from Northern Vietnam; playful teasing baritone, lighthearted comedic cadence, unguarded chuckle）
 
-[00:05.0–00:10.0] Cut to an intimate solo close-up framing vy_student at eye level, shallow depth of field holding razor-sharp optical focus on vy_student's face with background softly falling into bokeh, static camera — at the blunt remark, vy_student's eyes well with glistening moisture, lower lip quivering as vy_student turns head away in silence, knuckles whitening against the hem of AO_CHU_DAO_01; in the soft background, nam_student's grin freezes into horrified remorse through 00:10.0.
+[00:04.3–00:06.1] Cut to an intimate close-up framing vy along the 180-degree axis at eye level, slow push-in, shallow depth of field holding razor-sharp optical focus on vy's downcast eyes and tightening lower lip with background softly falling into bokeh — vy's hopeful smile vanishes instantly; vy lowers the eyelashes toward the desktop and draws right fingers inward to cover the corner of class_yearbook_smartphone in quiet self-conscious withdrawal.
 
-Continuous fluid motion, realistic physics, zero morphing, two shots joined by cut on the 180-degree axis. Spatial positions anchored. Do not generate subtitles, dialogue text, titles, timestamps, or written text. Do not render duplicate characters.</pre>
+[00:06.1–00:10.0] Cut to a medium two-shot framing nam and vy behind the wooden desktop at eye level, static camera, deep depth of field holding sharp optical focus on both nam and vy's faces with the rear classroom wall softly blurred — catching vy's sudden silence, nam's teasing grin freezes into flustered panic as nam waves both open palms in awkward explanation.
+nam pleads : “ Ơ kìa, ý tôi khen nhìn đáng yêu cơ mà! ”（Voice of a 17-year-old man from Northern Vietnam; flustered stammering baritone, anxious apologetic pitch rise, hurried delivery）
+vy keeps gaze fixed downward on the wooden desktop as nam lowers both hands sheepishly through 00:10.0.
+
+Continuous fluid motion, realistic physics, zero morphing. Spatial positions anchored to the architecture; characters move only where the action says characters move.
+Do not generate subtitles, dialogue text, titles, timestamps, or written text anywhere in the video. Do not render duplicate characters or extra props.</pre>
       </div>
 
       <div class="block-wrap">
         <div class="block-header">
-          <span class="block-label" style="color:var(--gold);">CODE BLOCK 2: FINAL STATE SNAPSHOT HANDOVER (00:10)</span>
+          <span class="block-label" style="color:var(--gold);">CODE BLOCK 2: PRODUCTION SOUNDSCAPE &amp; CONTINUITY HANDOVER (00:10.0)</span>
           <button class="copy-btn" onclick="copySnippet('ho-04', this, 'Handover Cảnh 04')">📋 Copy Handover State</button>
         </div>
-        <pre class="handover-display" id="ho-04">[HANDOVER STATE AT 00:10.0]:
-Active Characters: nam_student, vy_student
-Characters State at 00:10.0:
-  - vy_student turning away clutching the uniform hem in silent hurt.
-  - nam_student frozen in sudden remorse, shifting posture to plead with linh_student.
-Props State:
-  - iphone_15 [100% Refer to image @iphone_15]: Held on the desk by linh_student.
-Setting: phong_hoc_11a1 [100% Refer to image @phong_hoc_11a1]
-Dialogue Audit: nam_student 14 words (~3.5s speech).
-Kinetic Momentum Bridge: nam_student pivots toward linh_student, launching into Scene 05.</pre>
+        <pre class="handover-display" id="ho-04">[Diegetic Foley Soundscape]:
+Steady ceiling fan hum. At [00:00.4], nam's lighthearted chuckle and teasing delivery. At [00:04.3], an abrupt acoustic hush as vy's fingers slide quietly over the phone bezel. At [00:06.4], the frantic fabric swish of nam waving both hands, followed by nam's flustered stammer and a tense silence at [00:09.2].
+
+[HANDOVER STATE AT 00:10.0]:
+- vy: seated on the left chair, gaze lowered, right fingers gripping the edge of class_yearbook_smartphone to flip it face-down.
+- nam: seated on the right chair beside vy, palms frozen mid-air in sheepish regret, looking anxiously at vy.
+- linh: standing beside the front corner of the wooden desk, watching nam with a sharp disapproving glare.
+- Prop: class_yearbook_smartphone resting on the wooden desktop under vy's fingers.
+- Kinetic Momentum Bridge: vy flips class_yearbook_smartphone face-down onto the wooden desktop at [00:00.0] of Scene 05.</pre>
       </div>
     </div>
 
     <!-- ==================== SCENE 05 ==================== -->
     <div class="scene-card" id="s-05">
       <div class="scene-header">
-        <div class="scene-title">CẢNH 05 [ĐÀM PHÁN QUỸ LỚP]: NAM XIN TRÍCH 15 NGHÌN &amp; SỰ NGUYÊN TẮC CỦA LINH</div>
-        <span class="time-tag">00:00 – 00:10 (10.0s Clip · Track B · Status Duel &amp; Multi-Spatial Egress)</span>
+        <div class="scene-title">CẢNH 05: VY ÚP ĐIỆN THOẠI RÚT LUI &amp; LINH CHỈNH ĐỐN NAM</div>
+        <span class="time-tag">00:00 – 00:10 (10.0s Clip · Track B · 2 Shots)</span>
       </div>
 
       <div class="audit-grid">
         <div class="audit-box">
-          <div class="audit-label">1. Xung Đột Quyền Lực &amp; Tiền Quỹ</div>
-          • <strong>Tính cách đối kháng:</strong> Nam muốn sửa sai bằng cách đề nghị trích 15 nghìn tiền quỹ thừa và bù tiền túi; Linh kiên định nguyên tắc kế toán không khoan nhượng.<br>
-          • <strong>Thoại đanh gọn (≤ 15 từ/người):</strong> Nam (14 từ) khẩn khoản; Linh (13 từ) sắt đá.
+          <div class="audit-label">1. Nhịp Điệu Đối Đáp (2 Shots)</div>
+          • <strong>Shot 1 (`00:00–00:05.0`):</strong> `MCU framing vy` — Vy úp màn hình điện thoại xuống mặt bàn, tự nhận đứng ngoài bấm máy cho cả lớp.<br>
+          • <strong>Shot 2 (`00:05.0–00:10.0`):</strong> `M2S framing linh and nam` — Linh gõ sổ kế hoạch lườm Nam sắc lẹm, Nam gãi đầu biết lỗi.
         </div>
         <div class="audit-box">
-          <div class="audit-label">2. Đạo Cụ Casio &amp; Gậy Động Năng</div>
-          • <strong>[00:04.6–00:08.0]:</strong> Tiếng bấm máy tính Casio chan chát củng cố lập trường của Linh.<br>
-          • <strong>[00:08.0–00:10.0]:</strong> Vy lặng lẽ đứng dậy bước ra phía cửa hành lang, mở ra không gian cho Sequence C.
+          <div class="audit-label">2. Optical Camera Clause (Gate 3Q)</div>
+          • <strong>Shot 1:</strong> `shallow depth of field holding razor-sharp optical focus on vy's composed yet guarded face with background softly falling into bokeh`<br>
+          • <strong>Shot 2:</strong> `deep depth of field holding sharp optical focus on both linh and nam's faces`
         </div>
         <div class="audit-box">
-          <div class="audit-label">3. Chuyển Không Gian (Multi-Spatial Bridge)</div>
-          • Bước chân của Vy chạm ngưỡng cửa hành lang là chiếc cầu nối sang cảnh ngoài trời ngập nắng Cảnh 06.
+          <div class="audit-label">3. Gậy Tiếp Sức Động Năng (Outbound Baton)</div>
+          • <strong>[00:08.8–00:10.0]:</strong> Nam nhìn tia nắng chiếu chói vào mắt Vy và vươn tay mở lại chiếc điện thoại trên bàn để chuộc lỗi bằng hành động ở Cảnh 06.
         </div>
       </div>
 
       <div class="dialogue-section">
-        <div class="dia-header">🎙️ Lời Thoại Xin Trích Quỹ &amp; Khước Từ (Status Sparring · ≤ 15 Từ / Người)</div>
+        <div class="dia-header">🎙️ Lời Thoại Đối Đáp (Two-Speaker Exchange · ≤ 14 Từ / Câu)</div>
         <div class="dia-item">
-          <span class="dia-speaker">nam_student [00:01.0 – 00:04.2]:</span>
-          <span class="dia-spoken-quote">“ Lớp trưởng trích mười lăm nghìn quỹ chụp lại đi, tôi bù thêm tiền túi! ”</span>
-          <div class="dia-vn-dub">Nam chống hai tay xuống bàn nài nỉ xin chuộc lỗi (14 từ).</div>
+          <span class="dia-speaker">vy [00:00.6 – 00:03.8]:</span>
+          <span class="dia-spoken-quote">“ Thôi để tôi đứng ngoài cầm máy chụp, hai ông bà đứng giữa nhé. ”</span>
+          <div class="dia-vn-dub">Vy lật úp chiếc điện thoại xuống mặt bàn gỗ, khẽ dịch ghế lùi lại tự rút mình khỏi khung hình (14 từ).</div>
         </div>
         <div class="dia-item">
-          <span class="dia-speaker">linh_student [00:05.0 – 00:07.8]:</span>
-          <span class="dia-spoken-quote">“ Một nghìn cũng là quỹ lớp, nguyên tắc là nguyên tắc, không trích bừa! ”</span>
-          <div class="dia-vn-dub">Linh bấm máy tính cạch cạch lắc đầu dứt khoát bảo vệ kỷ luật (13 từ).</div>
+          <span class="dia-speaker">linh [00:05.4 – 00:08.0]:</span>
+          <span class="dia-spoken-quote">“ Đấy, ông Nam ăn nói vô duyên vừa thôi nhé! ”</span>
+          <div class="dia-vn-dub">Linh gõ nhẹ gáy sổ kế hoạch xuống mép bàn, nghiêm giọng chấn chỉnh khiến Nam cúi đầu gãi gáy (10 từ).</div>
         </div>
       </div>
 
@@ -694,78 +710,77 @@ Kinetic Momentum Bridge: nam_student pivots toward linh_student, launching into 
           <span class="block-label" style="color:var(--cyan);">CODE BLOCK 1: OMNI FLASH CINEMATIC AI VIDEO PROMPT (10S CLIP)</span>
           <button class="copy-btn" onclick="copySnippet('p-05', this, 'Prompt Cảnh 05')">📋 Copy Video Prompt</button>
         </div>
-        <pre class="prompt-display" id="p-05">Master-level cinematography and composition, fast-paced shot variation, atmospheric sound design. Style: Cinematic live-action Vietnamese high school slice-of-life, crisp morning daylight. Track B — multi-shot sequence cut on the 180-degree axis.
+        <pre class="prompt-display" id="p-05">Master-level cinematography and composition, fast-paced shot variation, atmospheric sound design. Style: contemporary high-school romantic sitcom realism, warm golden-hour natural sunlight, luminescent organic skin tones, crisp optical depth of field, fast-paced editorial momentum on the 180-degree axis. Track B — multi-shot sequence cut on the 180-degree axis.
 
 [context]:
-phong_hoc_11a1 [100% Refer to image @phong_hoc_11a1], morning. Sunlit classroom platform and front desk cluster under bright morning chalk dust.
+sunlit_high_school_classroom [100% Refer to image sunlit_classroom_4view.jpg], late afternoon golden hour. Vietnamese high school classroom featuring rows of honey-toned wooden student desks with black steel frames, wooden chairs, a hardcover grid-lined planning ledger and a blue ballpoint pen at the front desk corner, a matte dark-green chalkboard along the front wall, slow-turning white ceiling fans overhead, and tall left-side glass windows overlooking green courtyard foliage. Warm golden-amber sunlight slants diagonally at a 45-degree angle through the left window panes, casting long soft diagonal shadows across the wooden desktops and illuminating drifting chalk-dust motes.
 
 [subject]:
-nam_student [100% Appearance, attire, and facial features Refer to image @nam],
-linh_student [100% Appearance, attire, and facial features Refer to image @linh],
-vy_student [100% Appearance, attire, and facial features Refer to image @vy]
+vy [100% Appearance, attire, and facial features Refer to image 2], seated on the left wooden chair behind the middle student desk, right hand flipping the smartphone face-down onto the wooden desktop — the only vy in frame.
+linh [100% Appearance, attire, and facial features Refer to image 1], standing beside the front corner of the middle wooden desk holding the hardcover planning ledger and blue ballpoint pen — the only linh in frame.
+nam [100% Appearance, attire, and facial features Refer to image 3], seated on the right wooden chair beside vy behind the middle student desk, shoulders slumping in sheepish guilt — the only nam in frame.
 
-[Pro] :
-iphone_15 [100% Refer to image @iphone_15]; so_tay_ke_hoach [100% Refer to image @so_tay_ke_hoach]
+[PROP]:
+class_yearbook_smartphone [100% Refer to image prop_smartphone_4view.jpg], sleek black smartphone being turned face-down on the center of the sunlit wooden desktop under vy's palm — the only smartphone in frame.
 
-Diegetic room acoustics: rapid plastic calculator button clicks, earnest hushed voice, firm hand slap on ledger cover.
+Diegetic room acoustics: gentle whir of overhead ceiling fans, muted wooden thud of smartphone flipping face-down onto desktop, crisp tap of ledger spine on wood, sheepish exhale.
 
-[00:00–00:04.6] Medium shot framing nam_student on the 180-degree axis, slight low angle, sharp optical focus on nam_student — spinning around from vy_student, nam_student slaps both open palms down on the desk edge before linh_student, leaning forward with desperate earnestness.
-nam_student pleads : “ Lớp trưởng trích mười lăm nghìn quỹ chụp lại đi, tôi bù thêm tiền túi! ”（Voice of a young male student from Northern Vietnam; desperate earnest plea, hands planted on desk）
+[00:00–00:05.0] Medium close-up framing vy at eye level, static camera, shallow depth of field holding razor-sharp optical focus on vy's composed yet guarded face with background softly falling into bokeh — vy gently flips class_yearbook_smartphone face-down onto the wooden desktop and leans back slightly against the wooden chair, offering a small self-effacing nod.
+vy murmurs : “ Thôi để tôi đứng ngoài cầm máy chụp, hai ông bà đứng giữa nhé. ”（Voice of a 17-year-old woman from Northern Vietnam; quiet restrained alto, polite self-effacing tone masking shyness, soft trailing cadence）
 
-[00:04.6–00:08.0] Cut to an over-the-shoulder medium close-up framing linh_student past nam_student at eye level, sharp optical focus on linh_student — linh_student lifts the pocket calculator beside so_tay_ke_hoach, punching buttons twice with sharp audible clicks, looking straight into nam_student's eyes with stern unbending resolve.
-linh_student retorts : “ Một nghìn cũng là quỹ lớp, nguyên tắc là nguyên tắc, không trích bừa! ”（Voice of a young female student from Northern Vietnam; resolute strict refusal, tapping calculator）
+[00:05.0–00:10.0] Cut to a medium two-shot framing linh and nam along the 180-degree axis at eye level, static camera, deep depth of field holding sharp optical focus on both linh and nam's faces with the rear classroom wall softly blurred — standing at the desk corner, linh taps the spine of the hardcover planning ledger firmly against the wooden desktop and shoots a sharp reprimanding glare at nam.
+linh snaps : “ Đấy, ông Nam ăn nói vô duyên vừa thôi nhé! ”（Voice of a 17-year-old woman from Northern Vietnam; crisp reprimanding soprano, protective sisterly scolding, firm Hanoi emphasis）
+nam winces sheepishly, scratching the back of the neck with the right hand before glancing toward the bright window sunbeam hitting vy's desk corner through 00:10.0.
 
-[00:08.0–00:10.0] Cut to a wide two-shot along the classroom aisle, deep depth of field holding sharp optical focus on vy_student in the middle ground — linh_student shakes head with finality; in the middle ground, vy_student stands up quietly from the chair and begins walking toward the open hallway door through 00:10.0.
-
-Continuous fluid motion, realistic physics, zero morphing, two shots joined by cuts on the 180-degree axis. Spatial positions anchored. Do not generate subtitles, dialogue text, titles, timestamps, or written text. Do not render duplicate characters.</pre>
+Continuous fluid motion, realistic physics, zero morphing. Spatial positions anchored to the architecture; characters move only where the action says characters move.
+Do not generate subtitles, dialogue text, titles, timestamps, or written text anywhere in the video. Do not render duplicate characters or extra props.</pre>
       </div>
 
       <div class="block-wrap">
         <div class="block-header">
-          <span class="block-label" style="color:var(--gold);">CODE BLOCK 2: FINAL STATE SNAPSHOT HANDOVER (00:10)</span>
+          <span class="block-label" style="color:var(--gold);">CODE BLOCK 2: PRODUCTION SOUNDSCAPE &amp; CONTINUITY HANDOVER (00:10.0)</span>
           <button class="copy-btn" onclick="copySnippet('ho-05', this, 'Handover Cảnh 05')">📋 Copy Handover State</button>
         </div>
-        <pre class="handover-display" id="ho-05">[HANDOVER STATE AT 00:10.0]:
-Active Characters: nam_student, linh_student, vy_student
-Characters State at 00:10.0:
-  - vy_student stepping across the classroom threshold into hanh_lang_lop.
-  - nam_student watching vy_student leave, preparing to follow.
-Props State:
-  - so_tay_ke_hoach [100% Refer to image @so_tay_ke_hoach] &amp; iphone_15 [100% Refer to image @iphone_15]: Resting with linh_student.
-Setting: phong_hoc_11a1 [100% Refer to image @phong_hoc_11a1]
-Dialogue Audit: nam_student 14 words, linh_student 13 words (27 words total).
-Kinetic Momentum Bridge: vy_student's exit steps straight into the outdoor corridor of Scene 06.</pre>
+        <pre class="handover-display" id="ho-05">[Diegetic Foley Soundscape]:
+Continuous low ceiling fan whir. At [00:00.4], the soft flat click of the smartphone landing face-down on the wooden desktop, followed by vy's quiet, self-effacing voice. At [00:05.2], the firm rap of the hardcover ledger spine against wood and linh's crisp scolding tone. At [00:08.5], the soft rustle of hair as nam scratches the back of his neck in remorse.
+
+[HANDOVER STATE AT 00:10.0]:
+- vy: seated on the left chair, hands folded lightly near the edge of the desktop, squinting slightly as a bright shaft of late-afternoon window sunlight shifts across her eyes.
+- nam: seated on the right chair beside vy, looking earnestly at the harsh sunbeam across vy's face and reaching toward the hardcover ledger to shield the glare.
+- linh: standing beside the front desk corner, watching nam's next move in silence.
+- Prop: class_yearbook_smartphone lying face-down at the center of the wooden desktop.
+- Kinetic Momentum Bridge: nam silently lifts the hardcover ledger upright to block the harsh window glare for vy and flips class_yearbook_smartphone face-up at [00:00.0] of Scene 06.</pre>
       </div>
     </div>
 
     <!-- ==================== SCENE 06 ==================== -->
     <div class="scene-card" id="s-06">
       <div class="scene-header">
-        <div class="scene-title">CẢNH 06 [HÀNH LANG LỘNG GIÓ · KỂ CHUYỆN THUẦN THỊ GIÁC]: NAM KÉO KHÓA MIỆNG XIN LỖI &amp; MẢNH GIẤY MẶT CƯỜI</div>
-        <span class="time-tag">00:00 – 00:10 (10.0s Clip · Track B · Model 0 Pure Visual Silence &amp; Sequence C)</span>
+        <div class="scene-title">CẢNH 06 [ĐỘ SẾN 30S · GRAVITATIONAL ANCHOR]: KHOẢNH KHẮC NGƯỢC SÁNG KHÔNG LỜI</div>
+        <span class="time-tag">00:00 – 00:10 (10.0s Clip · Track A-Locked · Pure Visual Silence)</span>
       </div>
 
       <div class="audit-grid">
         <div class="audit-box">
-          <div class="audit-label">1. Không Gian Mới &amp; Chữa Lành Không Lời</div>
-          • <strong>Giải phóng không gian (Sequence C):</strong> Chuyển hẳn ra hành lang ngoài trời lộng gió nhìn xuống hàng cây xanh mát, đập tan cảm giác ngột ngạt trong lớp học.<br>
-          • <strong>Hành động thay ngàn lời nói:</strong> Nam không giải thích phân bua; Nam đưa hai ngón tay kéo khóa môi, tự gõ trán mình phạt tội rồi giơ hình vẽ mặt cá nóc ngố dỗ bạn.
+          <div class="audit-label">1. Khoảnh Khắc Chữa Lành Không Lời</div>
+          • <strong>0 từ thoại (Model 0 — Silence):</strong> Nam không biện minh bằng lời nữa mà âm thầm nghiêng người che bớt tia nắng gắt từ cửa sổ cho Vy, rồi lật chiếc điện thoại lên nghiêng góc 45° đón ánh sáng dịu.<br>
+          • <strong>Phản ứng cơ sinh học:</strong> Bóng nắng dịu rơi trên gương mặt Vy, khóe môi Vy khẽ cong lên thành nụ cười ấm áp.
         </div>
         <div class="audit-box">
-          <div class="audit-label">2. Kế Thừa Gậy Động Năng &amp; Nụ Cười Trở Lại</div>
-          • <strong>[00:00.0–00:04.2]:</strong> Vy chạm tay vào lan can bê tông, tiếp nối bước chân từ Cảnh 05.<br>
-          • <strong>[00:04.2–00:10.0]:</strong> Vy nhận mảnh giấy và bật cười; hai bạn nhìn về phía cửa lớp, chuẩn bị cho cú lật ở Cảnh 07.
+          <div class="audit-label">2. Track A-Locked Optical Declaration</div>
+          • Khai báo quang học tự nhiên duy nhất 1 lần ở đầu phần hành động theo chuẩn <strong>Track A-Locked Exception</strong>:<br>
+          <code>Eye-level medium two-shot framing vy and nam behind the sunlit wooden desktop, shallow depth of field holding razor-sharp optical focus on vy and nam's faces with background softly falling into golden bokeh, static camera.</code>
         </div>
         <div class="audit-box">
-          <div class="audit-label">3. Chuyển Giao Trạng Thái</div>
-          • Cả hai quay đầu nhìn về phía cửa phòng học nơi Linh đang ở lại một mình.
+          <div class="audit-label">3. Gậy Tiếp Sức Động Năng (Outbound Baton)</div>
+          • <strong>[00:07.5–00:10.0]:</strong> Nam giữ chiếc điện thoại ở góc nghiêng hoàn hảo trên mặt bàn và chuẩn bị mở lời khen chân thành ở đầu Cảnh 07.
         </div>
       </div>
 
       <div class="dialogue-section">
-        <div class="dia-header">🎬 Kể Chuyện Thuần Thị Giác &amp; Âm Thanh Hiện Trường (Model 0: Pure Visual Silence — 0 Từ Thoại)</div>
+        <div class="dia-header">🤫 Chế Độ Im Lặng Giàu Kịch Tính (Model 0: Pure Visual &amp; Somatic Silence · 0 Từ)</div>
         <div class="silent-banner">
-          <strong>[SILENT VISUAL STORYTELLING — ZERO SPOKEN DIALOGUE]:</strong> Không sử dụng lời thoại. Khoảnh khắc tình bạn chân thành được diễn giải trọn vẹn bằng tiếng lá cây xào xạc ngoài sân và nụ cười tha thứ của Vy.
+          <strong>[00:00.0 – 00:10.0] Không lời thoại:</strong> Cú máy tĩnh <code>Track A-Locked</code> đóng vai trò mỏ neo cảm xúc (1/9 cảnh = 11% quota). Chỉ có tiếng quạt trần quay nhè nhẹ, tiếng gió sân trường rì rào và cử chỉ tinh tế của Nam khi nghiêng vai che nắng gắt, chỉnh lại góc điện thoại giúp Vy tìm thấy góc sáng dịu dàng nhất.
         </div>
       </div>
 
@@ -774,74 +789,81 @@ Kinetic Momentum Bridge: vy_student's exit steps straight into the outdoor corri
           <span class="block-label" style="color:var(--cyan);">CODE BLOCK 1: OMNI FLASH CINEMATIC AI VIDEO PROMPT (10S CLIP)</span>
           <button class="copy-btn" onclick="copySnippet('p-06', this, 'Prompt Cảnh 06')">📋 Copy Video Prompt</button>
         </div>
-        <pre class="prompt-display" id="p-06">Master-level cinematography and composition, fast-paced shot variation, atmospheric sound design. Style: Cinematic live-action Vietnamese high school slice-of-life, crisp morning daylight. Track B — multi-shot sequence cut on the 180-degree axis.
+        <pre class="prompt-display" id="p-06">Master-level cinematography and composition, fast-paced shot variation, atmospheric sound design. Style: contemporary high-school romantic sitcom realism, warm golden-hour natural sunlight, luminescent organic skin tones, romantic backlit rim glow, creamy optical bokeh. Track A — one continuous take, zero cuts, static camera.
 
 [context]:
-hanh_lang_lop [100% Refer to image @hanh_lang_lop], morning. Sunlit outdoor school corridor overlooking leafy courtyard trees, gentle morning breeze rustling through leaves.
+sunlit_high_school_classroom [100% Refer to image sunlit_classroom_4view.jpg], late afternoon golden hour. Vietnamese high school classroom featuring rows of honey-toned wooden student desks with black steel frames, wooden chairs, a hardcover grid-lined planning ledger and a blue ballpoint pen on the front desk corner, a matte dark-green chalkboard along the front wall, slow-turning white ceiling fans overhead, and tall left-side glass windows overlooking green courtyard foliage. Warm golden-amber sunlight slants diagonally at a 45-degree angle through the left window panes, casting long soft diagonal shadows across the wooden desktops and illuminating drifting microscopic chalk-dust motes.
 
 [subject]:
-vy_student [100% Appearance, attire, and facial features Refer to image @vy],
-nam_student [100% Appearance, attire, and facial features Refer to image @nam]
+vy [100% Appearance, attire, and facial features Refer to image 2], seated on the left wooden chair behind the middle student desk, hands resting lightly on the sunlit wooden desktop — the only vy in frame.
+nam [100% Appearance, attire, and facial features Refer to image 3], seated on the right wooden chair beside vy behind the middle student desk, leaning torso slightly leftward to soften the window glare across the desktop — the only nam in frame.
 
-[Pro] :
-to_giay_mat_cuoi [100% Refer to image @to_giay_mat_cuoi]
+[PROP]:
+class_yearbook_smartphone [100% Refer to image prop_smartphone_4view.jpg], sleek black smartphone resting at the center of the wooden desktop between vy and nam — the only smartphone in frame.
 
-Diegetic room acoustics: gentle courtyard breeze through leaves, quiet sneaker steps on corridor tiles, crisp paper note rustle, soft genuine laugh.
+Diegetic room acoustics: gentle rhythmic whir of overhead ceiling fans, soft rustle of courtyard leaves in the late-afternoon breeze, quiet tactile slide of smartphone casing on polished wood, calm synchronous breathing.
 
-[00:00–00:04.2] Solo medium shot framing vy_student along the balcony balustrade at eye level, slow tracking, sharp optical focus on vy_student — catching the Inbound Baton from the doorway, vy_student walks to the sunlit railing, resting hands on the weathered concrete while gazing down at courtyard trees; in the background, nam_student steps quietly into the corridor.
+Eye-level medium two-shot framing vy and nam behind the sunlit wooden desktop, shallow depth of field holding razor-sharp optical focus on vy and nam's faces with background softly falling into golden bokeh, static camera.
 
-[00:04.2–00:10.0] Cut to a medium close-up two-shot framing nam_student and vy_student on the 180-degree axis, eye level, balanced optical focus across both subjects — nam_student steps up facing vy_student, earnestly mimes pulling an invisible zipper across lips, taps forehead in mock self-rebuke, and extends to_giay_mat_cuoi; vy_student's lips part into a genuine warm laugh as fingers accept the sketch through 00:10.0.
+[00:00–00:04.4] Seated beside vy, nam notices the harsh diagonal window glare making vy squint; without a word, nam shifts torso half an inch leftward so nam's shoulder casts a soft, even shade across vy's brow while floating chalk-dust motes dance lazily in the golden rim light behind both shoulders.
 
-Continuous fluid motion, realistic physics, zero morphing, two shots joined by cut on the 180-degree axis. Spatial positions anchored. Do not generate subtitles, dialogue text, titles, timestamps, or written text. Do not render duplicate characters.</pre>
+[00:04.4–00:10.0] nam reaches down with gentle care, flips class_yearbook_smartphone face-up on the wooden desktop, and tilts the phone screen forty-five degrees toward the diffused golden window light; seeing the soft, flattering reflection on the glass, vy's guarded tension melts away as vy's eyelids lift and lips part into a warm, genuine smile while nam watches vy with quiet, bashful sincerity through 00:10.0.
+
+Continuous fluid motion, realistic physics, zero morphing. Spatial positions anchored to the architecture; characters move only where the action says characters move.
+Do not generate subtitles, dialogue text, titles, timestamps, or written text anywhere in the video. Do not render duplicate characters or extra props.</pre>
       </div>
 
       <div class="block-wrap">
         <div class="block-header">
-          <span class="block-label" style="color:var(--gold);">CODE BLOCK 2: FINAL STATE SNAPSHOT HANDOVER (00:10)</span>
+          <span class="block-label" style="color:var(--gold);">CODE BLOCK 2: PRODUCTION SOUNDSCAPE &amp; CONTINUITY HANDOVER (00:10.0)</span>
           <button class="copy-btn" onclick="copySnippet('ho-06', this, 'Handover Cảnh 06')">📋 Copy Handover State</button>
         </div>
-        <pre class="handover-display" id="ho-06">[HANDOVER STATE AT 00:10.0]:
-Active Characters: vy_student, nam_student
-Characters State at 00:10.0:
-  - vy_student and nam_student laughing warmly outside on hanh_lang_lop.
-  - nam_student peeking back toward the classroom entrance.
-Props State:
-  - to_giay_mat_cuoi [100% Refer to image @to_giay_mat_cuoi]: Held in vy_student's hand.
-Setting: hanh_lang_lop [100% Refer to image @hanh_lang_lop]
-Dialogue Audit: 0 words spoken (Model 0 Pure Visual Silence).
-Kinetic Momentum Bridge: nam_student's glance into the room bridges into Scene 07.</pre>
+        <pre class="handover-display" id="ho-06">[Diegetic Foley Soundscape]:
+Intimate, hushed late-afternoon room tone with slow overhead ceiling fan hum and distant courtyard breeze rustling leaves. At [00:01.2], the subtle fabric rustle as nam shifts his shoulder to shade vy from the direct glare. At [00:04.6], the delicate click and smooth slide of the smartphone casing tilting upward on the wooden desktop, followed by a soft, relieved breath from vy at [00:08.4].
+
+[HANDOVER STATE AT 00:10.0]:
+- vy: seated on the left chair in soft golden diffused light, gazing at the tilted screen of class_yearbook_smartphone with a warm, softened smile.
+- nam: seated on the right chair beside vy, right hand supporting class_yearbook_smartphone at a 45-degree angle on the desktop, looking at vy with bashful earnestness.
+- Prop: class_yearbook_smartphone held at a 45-degree angle on the wooden desktop by nam's right hand.
+- Kinetic Momentum Bridge: nam's bashful smile and held phone angle flow directly into nam's sincere compliment at [00:00.0] of Scene 07.</pre>
       </div>
     </div>
 
     <!-- ==================== SCENE 07 ==================== -->
     <div class="scene-card" id="s-07">
       <div class="scene-header">
-        <div class="scene-title">CẢNH 07 [BÍ MẬT CỦA PHẢN DIỆN]: LINH LÉN CHỤP TỰ SƯỚNG VÀ VỘI VÀNG BẤM XÓA 5 TẤM</div>
-        <span class="time-tag">00:00 – 00:10 (10.0s Clip · Track B · Solo Secret Whisper &amp; The Smoking Gun)</span>
+        <div class="scene-title">CẢNH 07: LỜI KHEN CHỮA CHÁY SẾN RỆN &amp; NỤ CƯỜI XÓA TAN TỰ TI</div>
+        <span class="time-tag">00:00 – 00:10 (10.0s Clip · Track B · OTS / Reverse OTS)</span>
       </div>
 
       <div class="audit-grid">
         <div class="audit-box">
-          <div class="audit-label">1. Bóc Trần Sự Tự Ti Giống Nhau</div>
-          • <strong>Chiều sâu tâm lý:</strong> Linh ép người khác cam thường nhưng chính mình đứng trước cam thường cũng hoảng hồn chê mặt to.<br>
-          • <strong>Thoại thì thầm độc thoại (13 từ):</strong> Linh buột miệng thốt lên trong phòng vắng rồi bấm xóa vội 5 tấm vào thùng rác.
+          <div class="audit-label">1. Nhịp Điệu Đối Đáp (2 Shots)</div>
+          • <strong>Shot 1 (`00:00–00:04.8`):</strong> `OTS framing nam past vy's soft-focus foreground shoulder` — Nam gãi mũi khen Vy cười tự nhiên ăn đứt mọi lớp filter.<br>
+          • <strong>Shot 2 (`00:04.8–00:10.0`):</strong> `Reverse OTS framing vy past nam's soft-focus foreground shoulder` — Vy bật cười trêu lại câu nịnh của Nam, chính thức nhận lời đứng giữa khung hình.
         </div>
         <div class="audit-box">
-          <div class="audit-label">2. Điểm Nhìn Ẩn Nấp (Audience Gap &amp; Suspense)</div>
-          • Khán giả cùng Nam ở ngưỡng cửa nhìn thấy bí mật của Linh trước khi Linh nhận ra mình đã bị bắt quả tang!
+          <div class="audit-label">2. Optical Camera Clause (Gate 3Q)</div>
+          • <strong>Shot 1:</strong> `shallow depth of field holding razor-sharp optical focus locked on nam's bashful face`<br>
+          • <strong>Shot 2:</strong> `shallow depth of field holding razor-sharp optical focus locked on vy's radiant smiling face`
         </div>
         <div class="audit-box">
           <div class="audit-label">3. Gậy Tiếp Sức Động Năng (Outbound Baton)</div>
-          • Ngón tay Linh bấm xóa tấm ảnh thứ 5; Nam ở cửa nhếch mép cười đắc thắng chuẩn bị xông vào Cảnh 08.
+          • <strong>[00:08.8–00:10.0]:</strong> Vy cầm chiếc điện thoại hướng lên phía Linh đang đứng ở đầu bàn để chốt phương án cuối cùng ở Cảnh 08.
         </div>
       </div>
 
       <div class="dialogue-section">
-        <div class="dia-header">🎙️ Lời Thoại Thì Thầm Bí Mật (Solo Secret Whisper · ≤ 15 Từ)</div>
+        <div class="dia-header">🎙️ Lời Thoại Ngọt Ngào &amp; Hóm Hỉnh (Shot / Reverse-Shot · ≤ 12 Từ / Câu)</div>
         <div class="dia-item">
-          <span class="dia-speaker">linh_student [00:01.5 – 00:04.8]:</span>
-          <span class="dia-spoken-quote">“ Trời đất ơi, cam thường kiểu gì mặt bự chảng vậy nè... Xóa lẹ! ”</span>
-          <div class="dia-vn-dub">Linh nhìn gương mặt mình trên màn hình hoảng hốt thì thầm một mình (13 từ).</div>
+          <span class="dia-speaker">nam [00:00.5 – 00:03.6]:</span>
+          <span class="dia-spoken-quote">“ Góc nắng này nhé, bà cười tự nhiên ăn đứt filter luôn! ”</span>
+          <div class="dia-vn-dub">Nam vừa giữ góc điện thoại vừa gãi sống mũi ngượng nghịu khen thật lòng (12 từ).</div>
+        </div>
+        <div class="dia-item">
+          <span class="dia-speaker">vy [00:05.2 – 00:08.0]:</span>
+          <span class="dia-spoken-quote">“ Thôi đừng nịnh khéo, tôi đứng cùng là được chứ gì! ”</span>
+          <div class="dia-vn-dub">Vy bật cười tươi tắn, đón lấy chiếc điện thoại từ tay Nam và gật đầu đồng ý (11 từ).</div>
         </div>
       </div>
 
@@ -850,80 +872,78 @@ Kinetic Momentum Bridge: nam_student's glance into the room bridges into Scene 0
           <span class="block-label" style="color:var(--cyan);">CODE BLOCK 1: OMNI FLASH CINEMATIC AI VIDEO PROMPT (10S CLIP)</span>
           <button class="copy-btn" onclick="copySnippet('p-07', this, 'Prompt Cảnh 07')">📋 Copy Video Prompt</button>
         </div>
-        <pre class="prompt-display" id="p-07">Master-level cinematography and composition, fast-paced shot variation, atmospheric sound design. Style: Cinematic live-action Vietnamese high school slice-of-life, crisp morning daylight. Track B — multi-shot sequence cut on the 180-degree axis.
+        <pre class="prompt-display" id="p-07">Master-level cinematography and composition, fast-paced shot variation, atmospheric sound design. Style: contemporary high-school romantic sitcom realism, warm golden-hour natural sunlight, luminescent organic skin tones, crisp optical depth of field, fast-paced editorial momentum on the 180-degree axis. Track B — multi-shot sequence cut on the 180-degree axis.
 
 [context]:
-phong_hoc_11a1 [100% Refer to image @phong_hoc_11a1], morning. Quiet empty classroom during recess with warm morning sunlight pooling on the floor tiles.
+sunlit_high_school_classroom [100% Refer to image sunlit_classroom_4view.jpg], late afternoon golden hour. Vietnamese high school classroom featuring rows of honey-toned wooden student desks with black steel frames, wooden chairs, a hardcover grid-lined planning ledger and a blue ballpoint pen on the front desk corner, a matte dark-green chalkboard along the front wall, slow-turning white ceiling fans overhead, and tall left-side glass windows overlooking green courtyard foliage. Warm golden-amber sunlight slants diagonally at a 45-degree angle through the left window panes, casting long soft diagonal shadows across the wooden desktops and illuminating drifting chalk-dust motes.
 
 [subject]:
-linh_student [100% Appearance, attire, and facial features Refer to image @linh],
-nam_student [100% Appearance, attire, and facial features Refer to image @nam]
+nam [100% Appearance, attire, and facial features Refer to image 3], seated on the right wooden chair behind the middle student desk, right hand holding the smartphone tilted at forty-five degrees on the desktop — the only nam in frame.
+vy [100% Appearance, attire, and facial features Refer to image 2], seated on the left wooden chair beside nam behind the middle student desk, leaning slightly toward the smartphone screen with a warm smile — the only vy in frame.
 
-[Pro] :
-iphone_15 [100% Refer to image @iphone_15]
+[PROP]:
+class_yearbook_smartphone [100% Refer to image prop_smartphone_4view.jpg], sleek black smartphone tilted on the wooden desktop catching soft golden window light — the only smartphone in frame.
 
-Diegetic room acoustics: quiet outdoor bird chirp, frantic screen tap clicks, flustered feminine gasp.
+Diegetic room acoustics: gentle whir of overhead ceiling fans, soft finger brush against nose bridge, light cheerful laughter, crisp tactile handoff of smartphone casing.
 
-[00:00–00:05.6] Medium shot framing linh_student from the classroom doorway looking across empty desks toward the window, eye level, slow push-in, sharp optical focus on linh_student — believing the room is deserted, linh_student stands by the sunlit frame raising iphone_15 in front camera mode, angling chin upward and grimacing in private panic.
-linh_student whispers : “ Trời đất ơi, cam thường kiểu gì mặt bự chảng vậy nè... Xóa lẹ! ”（Voice of a young female student from Northern Vietnam; horrified conspiratorial whisper, staring at phone）
+[00:00–00:04.8] Over-the-shoulder medium close-up framing nam past vy's soft-focus foreground shoulder at eye level, static camera, shallow depth of field holding razor-sharp optical focus locked on nam's bashful face with background softly falling into bokeh — holding class_yearbook_smartphone steady at a forty-five-degree angle on the wooden desktop with the right hand, nam rubs the bridge of the nose sheepishly with the left index finger, offering an earnest, endearing grin.
+nam says : “ Góc nắng này nhé, bà cười tự nhiên ăn đứt filter luôn! ”（Voice of a 17-year-old man from Northern Vietnam; warm sincere baritone, bashful boyish charm, gentle upbeat Hanoi cadence）
 
-[00:05.6–00:10.0] Cut to an over-the-shoulder close-up framing linh_student looking down at the glowing screen of iphone_15, eye level, shallow depth of field holding sharp optical focus on linh_student with doorway soft-focus, static camera — seeing the unflattering wide-angle raw selfie, linh_student's thumb furiously taps the trash can icon five times; in the soft-focus doorway at frame-left, nam_student leans against the jamb with an amused knowing smirk through 00:10.0.
+[00:04.8–00:10.0] Cut to a reverse over-the-shoulder medium close-up framing vy past nam's soft-focus foreground shoulder at eye level, slow push-in, shallow depth of field holding razor-sharp optical focus locked on vy's radiant smiling face with background softly falling into bokeh — vy's cheeks brighten as vy bursts into a clear, carefree laugh and takes class_yearbook_smartphone gently into both hands.
+vy replies : “ Thôi đừng nịnh khéo, tôi đứng cùng là được chứ gì! ”（Voice of a 17-year-old woman from Northern Vietnam; bright playful alto, cheerful teasing warmth, crisp clear consonants）
+vy lifts class_yearbook_smartphone slightly off the desktop and turns a confident gaze upward toward the front desk corner through 00:10.0.
 
-Continuous fluid motion, realistic physics, zero morphing, two shots joined by cut on the 180-degree axis. Spatial positions anchored. Do not generate subtitles, dialogue text, titles, timestamps, or written text. Do not render duplicate characters.</pre>
+Continuous fluid motion, realistic physics, zero morphing. Spatial positions anchored to the architecture; characters move only where the action says characters move.
+Do not generate subtitles, dialogue text, titles, timestamps, or written text anywhere in the video. Do not render duplicate characters or extra props.</pre>
       </div>
 
       <div class="block-wrap">
         <div class="block-header">
-          <span class="block-label" style="color:var(--gold);">CODE BLOCK 2: FINAL STATE SNAPSHOT HANDOVER (00:10)</span>
+          <span class="block-label" style="color:var(--gold);">CODE BLOCK 2: PRODUCTION SOUNDSCAPE &amp; CONTINUITY HANDOVER (00:10.0)</span>
           <button class="copy-btn" onclick="copySnippet('ho-07', this, 'Handover Cảnh 07')">📋 Copy Handover State</button>
         </div>
-        <pre class="handover-display" id="ho-07">[HANDOVER STATE AT 00:10.0]:
-Active Characters: linh_student, nam_student
-Characters State at 00:10.0:
-  - linh_student holding iphone_15 with the trash album active.
-  - nam_student standing at the door threshold with a triumphant smirk.
-Props State:
-  - iphone_15 [100% Refer to image @iphone_15]: Held by linh_student displaying 5 deleted selfies.
-Setting: phong_hoc_11a1 [100% Refer to image @phong_hoc_11a1]
-Dialogue Audit: linh_student 13 words (~3.2s speech).
-Kinetic Momentum Bridge: nam_student pushes off the door frame to confront linh_student in Scene 08.</pre>
+        <pre class="handover-display" id="ho-07">[Diegetic Foley Soundscape]:
+Warm classroom room tone with gentle ceiling fan hum. At [00:00.4], the soft skin brush of nam rubbing his nose bridge, followed by nam's warm, bashful voice. At [00:05.0], vy's light, melodic laugh and the subtle click of fingers taking hold of the smartphone casing, ending with a confident upward turn at [00:09.2].
+
+[HANDOVER STATE AT 00:10.0]:
+- vy: seated on the left chair, holding class_yearbook_smartphone in both hands, looking upward toward linh with a radiant, confident smile.
+- nam: seated on the right chair beside vy, grinning warmly in relief.
+- linh: standing beside the front corner of the wooden desk holding the hardcover planning ledger, smiling brightly at vy and nam.
+- Prop: class_yearbook_smartphone held in vy's hands above the wooden desktop.
+- Kinetic Momentum Bridge: vy raises class_yearbook_smartphone toward linh at [00:00.0] of Scene 08 to propose the candid golden-hour concept.</pre>
       </div>
     </div>
 
     <!-- ==================== SCENE 08 ==================== -->
     <div class="scene-card" id="s-08">
       <div class="scene-header">
-        <div class="scene-title">CẢNH 08 [HỘI TỤ VỀ T = 0 &amp; CÚ LẬT KÈO]: BẮT QUẢ TANG MỤC THÙNG RÁC &amp; LINH ĐẦU HÀNG</div>
-        <span class="time-tag">00:00 – 00:10 (10.0s Clip · Track B · Loop Convergence &amp; Reversal Payoff)</span>
+        <div class="scene-title">CẢNH 08: VY CHỐT Ý TƯỞNG &ldquo;KHOẢNH KHẮC TỰ NHIÊN&rdquo; &amp; LINH TÍCH SỔ</div>
+        <span class="time-tag">00:00 – 00:10 (10.0s Clip · Track B · Solo Line + 4.2s Reaction Cutaway)</span>
       </div>
 
       <div class="audit-grid">
         <div class="audit-box">
-          <div class="audit-label">1. Khép Vòng Lặp Về Điểm Nổ T = 0</div>
-          • <strong>Khớp khít 100% Cảnh 01:</strong> Khung hình hội tụ về đúng thời khắc T = 0 nhưng tình thế đảo ngược 180 độ. Nam chỉ thẳng vào mục "Đã xóa gần đây", bóc trần sự thật.<br>
-          • <strong>Hóa giải bằng tiếng cười:</strong> Linh không bị sỉ nhục mà đỏ mặt tự đầu hàng trong sự đồng cảm của cả nhóm.
+          <div class="audit-label">1. Nhịp Điệu &amp; Chia Shot Phản Ứng</div>
+          • <strong>Shot 1 (`00:00–00:05.8`):</strong> `MCU framing vy` — Vy giơ màn hình điện thoại đề xuất chụp khoảnh khắc cười đùa tự nhiên bên cửa sổ.<br>
+          • <strong>Shot 2 (`00:05.8–00:10.0` — Cutaway 4.2s):</strong> `M2S framing linh and nam` — Linh phấn khích gạch bút chốt ngay vào sổ kế hoạch, Nam giơ ngón cái tán thưởng.
         </div>
         <div class="audit-box">
-          <div class="audit-label">2. Thoại Sắc Bén &amp; Hóm Hỉnh (≤ 15 từ)</div>
-          • Nam (15 từ) bóc phốt đắc ý; Linh (11 từ) đỏ mặt thu hồi lệnh đăng ảnh dìm bạn.
+          <div class="audit-label">2. Optical Camera Clause (Gate 3Q)</div>
+          • <strong>Shot 1:</strong> `shallow depth of field holding razor-sharp optical focus on vy's confident face with background softly falling into bokeh`<br>
+          • <strong>Shot 2:</strong> `deep depth of field holding sharp optical focus on both linh and nam's enthusiastic faces`
         </div>
         <div class="audit-box">
           <div class="audit-label">3. Gậy Tiếp Sức Động Năng (Outbound Baton)</div>
-          • Nam đón lấy chiếc điện thoại giơ lên cao, chuyển sang tư thế chụp ảnh selfie chung 3 người ở Cảnh 09.
+          • <strong>[00:08.5–00:10.0]:</strong> Nam vươn tay đón lấy chiếc điện thoại và đứng dậy khỏi ghế để bấm ngay tấm ảnh selfie mẫu đầu tiên ở Cảnh 09.
         </div>
       </div>
 
       <div class="dialogue-section">
-        <div class="dia-header">🎙️ Lời Thoại Bắt Quả Tang &amp; Nhượng Bộ (Reversal Exchange · ≤ 15 Từ / Người)</div>
+        <div class="dia-header">🎙️ Lời Thoại Đơn &amp; Cắt Cảnh Phản Ứng (Single-Speaker + Reaction Cutaway · 18 Từ)</div>
         <div class="dia-item">
-          <span class="dia-speaker">nam_student [00:01.0 – 00:04.2]:</span>
-          <span class="dia-spoken-quote">“ Bắt quả tang nha! Miệng nói công bằng mà trong thùng rác xóa năm tấm! ”</span>
-          <div class="dia-vn-dub">Nam bước tới chỉ tay bóc phốt đắc chí (15 từ).</div>
-        </div>
-        <div class="dia-item">
-          <span class="dia-speaker">linh_student [00:05.0 – 00:07.8]:</span>
-          <span class="dia-spoken-quote">“ Ai mượn ông rình mò... Thôi được rồi, không đăng nữa! ”</span>
-          <div class="dia-vn-dub">Linh đỏ bừng mặt xấu hổ ôm máy chịu thua (11 từ).</div>
+          <span class="dia-speaker">vy [00:00.5 – 00:04.7]:</span>
+          <span class="dia-spoken-quote">“ Thế mình chụp kiểu khoảnh khắc cười đùa tự nhiên bên cửa sổ nhé, khỏi lo đụng hàng luôn! ”</span>
+          <div class="dia-vn-dub">Vy xoay màn hình điện thoại lên phía Linh, hào hứng đề xuất ý tưởng vừa độc đáo vừa tự nhiên (18 từ).</div>
         </div>
       </div>
 
@@ -932,84 +952,84 @@ Kinetic Momentum Bridge: nam_student pushes off the door frame to confront linh_
           <span class="block-label" style="color:var(--cyan);">CODE BLOCK 1: OMNI FLASH CINEMATIC AI VIDEO PROMPT (10S CLIP)</span>
           <button class="copy-btn" onclick="copySnippet('p-08', this, 'Prompt Cảnh 08')">📋 Copy Video Prompt</button>
         </div>
-        <pre class="prompt-display" id="p-08">Master-level cinematography and composition, fast-paced shot variation, atmospheric sound design. Style: Cinematic live-action Vietnamese high school slice-of-life, crisp morning daylight. Track B — multi-shot sequence cut on the 180-degree axis.
+        <pre class="prompt-display" id="p-08">Master-level cinematography and composition, fast-paced shot variation, atmospheric sound design. Style: contemporary high-school romantic sitcom realism, warm golden-hour natural sunlight, luminescent organic skin tones, crisp optical depth of field, fast-paced editorial momentum on the 180-degree axis. Track B — multi-shot sequence cut on the 180-degree axis.
 
 [context]:
-phong_hoc_11a1 [100% Refer to image @phong_hoc_11a1], morning. Sunlit window desk where the standoff resolves in shared laughter.
+sunlit_high_school_classroom [100% Refer to image sunlit_classroom_4view.jpg], late afternoon golden hour. Vietnamese high school classroom featuring rows of honey-toned wooden student desks with black steel frames, wooden chairs, a hardcover grid-lined planning ledger and a blue ballpoint pen at the front desk corner, a matte dark-green chalkboard along the front wall, slow-turning white ceiling fans overhead, and tall left-side glass windows overlooking green courtyard foliage. Warm golden-amber sunlight slants diagonally at a 45-degree angle through the left window panes, casting long soft diagonal shadows across the wooden desktops and illuminating drifting chalk-dust motes.
 
 [subject]:
-nam_student [100% Appearance, attire, and facial features Refer to image @nam],
-linh_student [100% Appearance, attire, and facial features Refer to image @linh],
-vy_student [100% Appearance, attire, and facial features Refer to image @vy]
+vy [100% Appearance, attire, and facial features Refer to image 2], seated on the left wooden chair behind the middle student desk, holding the smartphone up at chest height toward the desk corner with a confident smile — the only vy in frame.
+linh [100% Appearance, attire, and facial features Refer to image 1], standing beside the front corner of the middle wooden desk holding the open hardcover planning ledger and blue ballpoint pen — the only linh in frame.
+nam [100% Appearance, attire, and facial features Refer to image 3], seated on the right wooden chair beside vy behind the middle student desk, leaning forward with an enthusiastic grin — the only nam in frame.
 
-[Pro] :
-iphone_15 [100% Refer to image @iphone_15]
+[PROP]:
+class_yearbook_smartphone [100% Refer to image prop_smartphone_4view.jpg], sleek black smartphone held in vy's hands displaying the golden-hour candid layout — the only smartphone in frame.
 
-Diegetic room acoustics: triumphant playful shout, flustered desk scuff, sudden joyful laugh from doorway.
+Diegetic room acoustics: gentle whir of overhead ceiling fans, energetic scratch of ballpoint pen nib checking off paper, wooden chair legs sliding lightly on terrazzo floor, upbeat classroom energy.
 
-[00:00–00:04.8] Medium shot framing nam_student along the aisle on the 180-degree axis, eye level, sharp optical focus on nam_student — catching the Inbound Baton from the doorway, nam_student strides into the room with vy_student following, pointing an accusing index finger straight at linh_student's phone screen with triumphant glee.
-nam_student retorts : “ Bắt quả tang nha! Miệng nói công bằng mà trong thùng rác xóa năm tấm! ”（Voice of a young male student from Northern Vietnam; triumphant playful shout pointing finger）
+[00:00–00:05.8] Medium close-up framing vy at eye level, slow push-in, shallow depth of field holding razor-sharp optical focus on vy's confident face with background softly falling into bokeh — seated behind the sunlit wooden desktop, vy raises class_yearbook_smartphone toward the front corner of the desk with sparkling, self-assured eyes.
+vy speaks : “ Thế mình chụp kiểu khoảnh khắc cười đùa tự nhiên bên cửa sổ nhé, khỏi lo đụng hàng luôn! ”（Voice of a 17-year-old woman from Northern Vietnam; bright enthusiastic alto, confident melodic cadence, clear Hanoi intonation）
 
-[00:04.8–00:08.2] Cut to an over-the-shoulder close-up framing linh_student past nam_student at eye level, shallow depth of field holding sharp optical focus on linh_student — caught completely off guard, linh_student's cheeks flush crimson as linh_student frantically clutches iphone_15 against chest, waving an arm in mock exasperation.
-linh_student snaps : “ Ai mượn ông rình mò... Thôi được rồi, không đăng nữa! ”（Voice of a young female student from Northern Vietnam; flustered embarrassed surrender, blushing crimson）
+[00:05.8–00:10.0] Cut to a medium two-shot framing linh and nam along the 180-degree axis at eye level, static camera, deep depth of field holding sharp optical focus on both linh and nam's enthusiastic faces with the rear chalkboard softly blurred — linh's eyes light up in instant approval as linh swiftly draws a bold checkmark across the hardcover planning ledger with the blue ballpoint pen, while nam grins broadly, gives a crisp thumbs-up, and rises halfway from the wooden chair reaching out to take class_yearbook_smartphone through 00:10.0.
 
-[00:08.2–00:10.0] Cut to a three-shot framing all three subjects at eye level, deep depth of field holding sharp optical focus across nam_student and vy_student, static camera — vy_student steps beside nam_student and linh_student smiling warmly; nam_student reaches out to take iphone_15 by the edge, raising it toward the window light through 00:10.0.
-
-Continuous fluid motion, realistic physics, zero morphing, two shots joined by cuts on the 180-degree axis. Spatial positions anchored. Do not generate subtitles, dialogue text, titles, timestamps, or written text. Do not render duplicate characters.</pre>
+Continuous fluid motion, realistic physics, zero morphing. Spatial positions anchored to the architecture; characters move only where the action says characters move.
+Do not generate subtitles, dialogue text, titles, timestamps, or written text anywhere in the video. Do not render duplicate characters or extra props.</pre>
       </div>
 
       <div class="block-wrap">
         <div class="block-header">
-          <span class="block-label" style="color:var(--gold);">CODE BLOCK 2: FINAL STATE SNAPSHOT HANDOVER (00:10)</span>
+          <span class="block-label" style="color:var(--gold);">CODE BLOCK 2: PRODUCTION SOUNDSCAPE &amp; CONTINUITY HANDOVER (00:10.0)</span>
           <button class="copy-btn" onclick="copySnippet('ho-08', this, 'Handover Cảnh 08')">📋 Copy Handover State</button>
         </div>
-        <pre class="handover-display" id="ho-08">[HANDOVER STATE AT 00:10.0]:
-Active Characters: nam_student, linh_student, vy_student
-Characters State at 00:10.0:
-  - nam_student holding iphone_15 upright by the desk.
-  - linh_student blushing sheepishly beside vy_student.
-Props State:
-  - iphone_15 [100% Refer to image @iphone_15]: Raised in nam_student's hand.
-Setting: phong_hoc_11a1 [100% Refer to image @phong_hoc_11a1]
-Dialogue Audit: nam_student 15 words, linh_student 11 words (26 words total).
-Kinetic Momentum Bridge: nam_student raises the phone higher to take the group selfie in Scene 09.</pre>
+        <pre class="handover-display" id="ho-08">[Diegetic Foley Soundscape]:
+Steady ceiling fan hum and warm acoustic room tone. At [00:00.5], vy's bright, confident Northern Vietnamese proposal. At [00:06.1], the brisk, decisive scratch of linh's ballpoint pen marking a checkmark on the hardcover ledger paper. At [00:08.2], the light scrape of nam's wooden chair as nam rises to take the phone for a group test shot.
+
+[HANDOVER STATE AT 00:10.0]:
+- linh: standing beside the front corner of the sunlit wooden desk, closing the hardcover planning ledger under the left arm and stepping in beside vy.
+- vy: seated on the left chair, handing class_yearbook_smartphone to nam and leaning inward toward linh.
+- nam: standing beside the front corner of the desk, raising class_yearbook_smartphone in front-camera selfie mode to frame all three friends.
+- Prop: class_yearbook_smartphone raised in nam's right hand in front-camera mode.
+- Kinetic Momentum Bridge: nam's raised arm holding class_yearbook_smartphone launches directly into the three-person selfie framing at [00:00.0] of Scene 09.</pre>
       </div>
     </div>
 
     <!-- ==================== SCENE 09 ==================== -->
     <div class="scene-card" id="s-09">
       <div class="scene-header">
-        <div class="scene-title">CẢNH 09 [HÒA GIẢI &amp; CLIFFHANGER TẬP 02]: BỨC ẢNH CAM THƯỜNG 3 ĐỨA &amp; PHÁT HIỆN THIẾU HUY HIỆU</div>
-        <span class="time-tag">00:00 – 00:10 (10.0s Clip · Track B · Transforming Motif &amp; Hook sang Tập 02)</span>
+        <div class="scene-title">CẢNH 09 [SCENE BUTTON &amp; MỒI NỔ TẬP 2]: BỨC ẢNH CAM THƯỜNG &amp; ẢI THỦ QUỸ MINH</div>
+        <span class="time-tag">00:00 – 00:10 (10.0s Clip · Track B · 4.4s / 4.4s / 1.2s Snap-Cut Button)</span>
       </div>
 
       <div class="audit-grid">
         <div class="audit-box">
-          <div class="audit-label">1. Hoàn Tất Chặng 3 Motif Đạo Cụ</div>
-          • <code>iphone_15</code> hoàn tất chặng 3: Từ chỗ là vũ khí tự ti (Cảnh 02), bằng chứng bóc mẽ (Cảnh 07), nay trở thành cầu nối gắn kết tình bạn chân thực.<br>
-          • Nam xung phong đứng góc rìa phồng má làm mặt cá nóc chịu méo góc; Vy và Linh kề vai cười rạng rỡ.
+          <div class="audit-label">1. Nhịp Điệu 3 Nhịp &amp; Snap-Cut 1.2s</div>
+          • <strong>Shot 1 (`00:00–00:04.4`):</strong> `M3S framing nam, vy, and linh` — Linh giục chụp ngay tấm mẫu gửi cho Minh thủ quỹ duyệt ngân sách đạo cụ.<br>
+          • <strong>Shot 2 (`00:04.4–00:08.8`):</strong> `MCU framing nam` — Nam bấm chụp xong chợt tái mặt nhắc đến sự chặt chẽ của Minh.<br>
+          • <strong>Shot 3 (`00:08.8–00:10.0` — 1.2s Snap-Cut Button):</strong> `Tight CU framing linh` — Linh giật mình mở to mắt nhìn ra cửa lớp khi nghe tiếng bước chân của Minh (Mồi nổ Tập 2).
         </div>
         <div class="audit-box">
-          <div class="audit-label">2. Cú Hook Cliffhanger Đỉnh Cao</div>
-          • Đúng lúc cả ba vui vẻ xem ảnh, Linh nhìn vào ngực áo phát hiện thiếu huy hiệu lớp do Khoa và An đang giữ &rarr; Mở toang cánh cửa bước vào Tập 02!
+          <div class="audit-label">2. Optical Camera Clause (Gate 3Q)</div>
+          • <strong>Shot 1:</strong> `deep depth of field holding sharp optical focus on all three smiling faces`<br>
+          • <strong>Shot 2:</strong> `shallow depth of field holding razor-sharp optical focus on nam's suddenly alarmed face`<br>
+          • <strong>Shot 3:</strong> `shallow depth of field holding razor-sharp optical focus on linh's wide startled eyes`
         </div>
         <div class="audit-box">
-          <div class="audit-label">3. Thoại Tươi Vui &amp; Giật Mình (≤ 15 từ)</div>
-          • Nam (14 từ) rủ chụp ảnh; Linh (12 từ) hét lên giật mình phát hiện thiếu đồ.
+          <div class="audit-label">3. Domino Mồi Nổ Tập 2 (Cliffhanger)</div>
+          • Bức ảnh mẫu vừa chụp xong nhưng ý tưởng bong bóng xà phòng và phụ kiện cửa sổ lại đụng ngay &ldquo;nóc nhà tài chính&rdquo; Minh thủ quỹ ở Tập 02!
         </div>
       </div>
 
       <div class="dialogue-section">
-        <div class="dia-header">🎙️ Lời Thoại Hòa Giải &amp; Cú Chốt Cliffhanger (Banter &amp; Hook · ≤ 15 Từ / Người)</div>
+        <div class="dia-header">🎙️ Lời Thoại Chốt Hạ &amp; Bẻ Lái Cuối Tập (Scene Button · ≤ 12 Từ / Câu)</div>
         <div class="dia-item">
-          <span class="dia-speaker">nam_student [00:01.0 – 00:04.2]:</span>
-          <span class="dia-spoken-quote">“ Để tui đứng góc rìa phồng má làm mặt xấu, hai bà cười lên! ”</span>
-          <div class="dia-vn-dub">Nam giơ máy lên cao phồng căng má pha trò (14 từ).</div>
+          <span class="dia-speaker">linh [00:00.5 – 00:03.4]:</span>
+          <span class="dia-spoken-quote">“ Chụp một tấm gửi bà Minh duyệt quỹ mua phụ kiện nhé! ”</span>
+          <div class="dia-vn-dub">Linh nghiêng đầu vào cạnh Vy, hào hứng giục Nam bấm máy để gửi xin kinh phí đạo cụ (12 từ).</div>
         </div>
         <div class="dia-item">
-          <span class="dia-speaker">linh_student [00:07.5 – 00:09.8]:</span>
-          <span class="dia-spoken-quote">“ Ủa... Khoa cầm túi huy hiệu lớp đâu mất tiêu rồi trời?! ”</span>
-          <div class="dia-vn-dub">Linh chỉ vào ngực áo hốt hoảng mở ra nút thắt Tập 02 (12 từ).</div>
+          <span class="dia-speaker">nam [00:04.8 – 00:07.8]:</span>
+          <span class="dia-spoken-quote">“ Nhắc đến quỹ lớp là bà Minh lại cằn nhằn cho xem! ”</span>
+          <div class="dia-vn-dub">Nam vừa bấm nút chụp xong liền hạ máy xuống, trợn mắt nhớ ra độ khó tính của Thủ quỹ Minh (12 từ).</div>
         </div>
       </div>
 
@@ -1018,106 +1038,81 @@ Kinetic Momentum Bridge: nam_student raises the phone higher to take the group s
           <span class="block-label" style="color:var(--cyan);">CODE BLOCK 1: OMNI FLASH CINEMATIC AI VIDEO PROMPT (10S CLIP)</span>
           <button class="copy-btn" onclick="copySnippet('p-09', this, 'Prompt Cảnh 09')">📋 Copy Video Prompt</button>
         </div>
-        <pre class="prompt-display" id="p-09">Master-level cinematography and composition, fast-paced shot variation, atmospheric sound design. Style: Cinematic live-action Vietnamese high school slice-of-life, crisp morning daylight. Track B — multi-shot sequence cut on the 180-degree axis.
+        <pre class="prompt-display" id="p-09">Master-level cinematography and composition, fast-paced shot variation, atmospheric sound design. Style: contemporary high-school romantic sitcom realism, warm golden-hour natural sunlight, luminescent organic skin tones, crisp optical depth of field, fast-paced editorial momentum on the 180-degree axis. Track B — multi-shot sequence cut on the 180-degree axis.
 
 [context]:
-phong_hoc_11a1 [100% Refer to image @phong_hoc_11a1], morning. Sunlit center aisle with desks pushed aside, golden morning light flooding the floor.
+sunlit_high_school_classroom [100% Refer to image sunlit_classroom_4view.jpg], late afternoon golden hour. Vietnamese high school classroom featuring rows of honey-toned wooden student desks with black steel frames, wooden chairs, a hardcover grid-lined planning ledger and a blue ballpoint pen resting on the front desk corner, a matte dark-green chalkboard along the front wall, slow-turning white ceiling fans overhead, and tall left-side glass windows overlooking green courtyard foliage. Warm golden-amber sunlight slants diagonally at a 45-degree angle through the left window panes, casting long soft diagonal shadows across the wooden desktops and illuminating drifting chalk-dust motes.
 
 [subject]:
-nam_student [100% Appearance, attire, and facial features Refer to image @nam],
-vy_student [100% Appearance, attire, and facial features Refer to image @vy],
-linh_student [100% Appearance, attire, and facial features Refer to image @linh]
+nam [100% Appearance, attire, and facial features Refer to image 3], standing beside the front corner of the middle wooden student desk, right arm extended forward holding the smartphone in selfie mode — the only nam in frame.
+vy [100% Appearance, attire, and facial features Refer to image 2], seated on the left wooden chair behind the middle student desk, leaning playfully inward toward the camera lens with a bright smile — the only vy in frame.
+linh [100% Appearance, attire, and facial features Refer to image 1], standing close beside vy at the wooden desk corner, leaning in with an upbeat grin — the only linh in frame.
 
-[Pro] :
-iphone_15 [100% Refer to image @iphone_15]
+[PROP]:
+class_yearbook_smartphone [100% Refer to image prop_smartphone_4view.jpg], sleek black smartphone held in nam's extended right hand capturing the group selfie — the only smartphone in frame.
 
-Diegetic room acoustics: joyful school bell chime in background, cheerful laughter, virtual phone shutter click sound.
+Diegetic room acoustics: gentle whir of overhead ceiling fans, crisp digital camera shutter click from smartphone speaker, sudden comedic gulp, brisk footsteps approaching from the hallway doorway.
 
-[00:00–00:04.5] High-angle over-the-arm selfie medium three-shot framing all three subjects, motivated wide perspective, sharp optical focus on nam_student in foreground — catching the Inbound Baton with phone raised high, nam_student puffs out cheeks to absorb the wide-angle lens distortion while vy_student and linh_student press shoulders together, smiling radiantly into the lens.
-nam_student says : “ Để tui đứng góc rìa phồng má làm mặt xấu, hai bà cười lên! ”（Voice of a young male student from Northern Vietnam; energetic cheerful shout holding phone high）
+[00:00–00:04.4] High-angle medium three-shot framing nam, vy, and linh around the sunlit wooden desk, static camera, deep depth of field holding sharp optical focus on all three smiling faces with the rear classroom wall softly blurred — nam extends the right arm holding class_yearbook_smartphone high while vy and linh lean shoulders together in the warm golden window light.
+linh speaks : “ Chụp một tấm gửi bà Minh duyệt quỹ mua phụ kiện nhé! ”（Voice of a 17-year-old woman from Northern Vietnam; excited upbeat soprano, brisk decisive energy, clear Hanoi intonation）
 
-[00:04.5–00:07.5] Cut to an intimate eye-level two-shot framing vy_student and linh_student, shallow depth of field holding sharp optical focus on both faces — the digital camera shutter clicks with a brief screen flash; vy_student and linh_student look at the candid unedited raw photo on the screen, bursting into shared spontaneous laughter.
+[00:04.4–00:08.8] Cut to a medium close-up framing nam at eye level on the 180-degree axis, static camera, shallow depth of field holding razor-sharp optical focus on nam's suddenly alarmed face with background softly falling into bokeh — nam's thumb taps the shutter button on class_yearbook_smartphone with a crisp click, then nam lowers the phone two inches as the grin vanishes into comical dread.
+nam mutters : “ Nhắc đến quỹ lớp là bà Minh lại cằn nhằn cho xem! ”（Voice of a 17-year-old man from Northern Vietnam; comical dread baritone, animated mock-panic, expressive Hanoi cadence）
 
-[00:07.5–00:10.0] Cut to a close-up framing linh_student at eye level, shallow depth of field holding razor-sharp optical focus on linh_student's alarmed facial features, static camera — linh_student's laughter cuts off abruptly as eyes snap wide; linh_student points an alarmed index finger down at the bare chest of AO_CHU_DAO_01, spinning gaze toward the open door to ignite the Episode 2 cliffhanger through 00:10.0.
-linh_student cries : “ Ủa... Khoa cầm túi huy hiệu lớp đâu mất tiêu rồi trời?! ”（Voice of a young female student from Northern Vietnam; sudden alarmed shout, pointing at uniform chest）
+[00:08.8–00:10.0] Cut to a tight close-up framing linh along the 180-degree axis at eye level, fast push-in, shallow depth of field holding razor-sharp optical focus on linh's wide startled eyes with background falling into soft blur — hearing brisk footsteps outside the open classroom doorway, linh's smile freezes mid-breath as linh's head snaps toward the corridor entrance in comedic suspense at 00:10.0.
 
-Continuous fluid motion, realistic physics, zero morphing, two shots joined by cuts on the 180-degree axis. Spatial positions anchored. Do not generate subtitles, dialogue text, titles, timestamps, or written text. Do not render duplicate characters.</pre>
+Continuous fluid motion, realistic physics, zero morphing. Spatial positions anchored to the architecture; characters move only where the action says characters move.
+Do not generate subtitles, dialogue text, titles, timestamps, or written text anywhere in the video. Do not render duplicate characters or extra props.</pre>
       </div>
 
       <div class="block-wrap">
         <div class="block-header">
-          <span class="block-label" style="color:var(--gold);">CODE BLOCK 2: FINAL STATE SNAPSHOT HANDOVER (00:10)</span>
+          <span class="block-label" style="color:var(--gold);">CODE BLOCK 2: PRODUCTION SOUNDSCAPE &amp; CONTINUITY HANDOVER (00:10.0)</span>
           <button class="copy-btn" onclick="copySnippet('ho-09', this, 'Handover Cảnh 09')">📋 Copy Handover State</button>
         </div>
-        <pre class="handover-display" id="ho-09">[HANDOVER STATE AT 00:10.0]:
-Active Characters: vy_student, nam_student, linh_student
-Characters State at 00:10.0:
-  - vy_student and nam_student laughing beside linh_student.
-  - linh_student pointing at the bare chest of AO_CHU_DAO_01 in sudden panic.
-Props State:
-  - iphone_15 [100% Refer to image @iphone_15]: Held by nam_student displaying the candid raw photo.
-Setting: phong_hoc_11a1 [100% Refer to image @phong_hoc_11a1]
-Dialogue Audit: nam_student 14 words, linh_student 12 words (26 words total).
-Kinetic Momentum Bridge: linh_student pointing toward the door launches directly into Episode 02.</pre>
+        <pre class="handover-display" id="ho-09">[Diegetic Foley Soundscape]:
+Warm classroom room tone with steady ceiling fan hum. At [00:00.5], linh's excited voice. At [00:04.6], a crisp digital smartphone camera shutter click, followed by nam's comical gulp and mock-panicked mutter. At [00:08.9], crisp approaching sneakers echo from the corridor outside, cutting off on linh's sharp intake of breath at [00:10.0].
+
+[HANDOVER STATE AT 00:10.0 — EPISODE 01 -> EPISODE 02 CLIFFHANGER BRIDGE]:
+- linh: standing beside the middle wooden desk, head snapped toward the open classroom doorway with wide startled eyes.
+- vy: seated behind the wooden desk, looking toward the doorway in curious anticipation.
+- nam: standing at the desk corner holding class_yearbook_smartphone at chest height with a frozen comical grimace.
+- Prop: class_yearbook_smartphone held in nam's right hand displaying the freshly captured raw group selfie of linh, vy, and nam.
+- Kinetic Momentum Bridge: The approaching footsteps at the classroom threshold bridge directly into Episode 02 (Cuộc chiến duyệt ngân sách phụ kiện với Thủ quỹ Minh).</pre>
       </div>
     </div>
 
   </div>
 
   <script>
-    function copySnippet(elementId, btnElement, label) {
-      const el = document.getElementById(elementId);
-      if (!el) return;
-      const text = el.innerText || el.textContent;
-      navigator.clipboard.writeText(text.trim()).then(() => {
-        showToast("✔ Đã copy " + label + "!");
-        if (btnElement) {
-          const originalText = btnElement.innerText;
-          btnElement.innerText = "✔ Đã chép!";
-          btnElement.style.background = "var(--emerald)";
-          btnElement.style.color = "#000";
-          setTimeout(() => {
-            btnElement.innerText = originalText;
-            btnElement.style.background = "";
-            btnElement.style.color = "";
-          }, 2000);
-        }
-      });
-    }
-
-    function copyAllPrompts(btnElement) {
-      const promptIds = ['p-01', 'p-02', 'p-03', 'p-04', 'p-05', 'p-06', 'p-07', 'p-08', 'p-09'];
-      let allPrompts = "";
-      promptIds.forEach((id, idx) => {
-        const el = document.getElementById(id);
-        if (el) {
-          allPrompts += `--- [CẢNH 0${idx + 1}] ---
-` + el.innerText.trim() + "
-
-";
-        }
-      });
-      navigator.clipboard.writeText(allPrompts.trim()).then(() => {
-        showToast("✔ Đã copy toàn bộ 9 prompts video!");
-        if (btnElement) {
-          const originalText = btnElement.innerText;
-          btnElement.innerText = "✔ Đã chép toàn bộ!";
-          setTimeout(() => {
-            btnElement.innerText = originalText;
-          }, 2000);
-        }
-      });
-    }
-
     function showToast(msg) {
-      const toast = document.getElementById('toast');
-      if (toast) {
-        toast.innerText = msg;
-        toast.style.display = 'block';
-        setTimeout(() => {
-          toast.style.display = 'none';
-        }, 2500);
-      }
+      const t = document.getElementById('toast');
+      t.textContent = '✔ ' + (msg || 'Đã sao chép thành công!');
+      t.style.display = 'block';
+      clearTimeout(window._toastTimer);
+      window._toastTimer = setTimeout(() => { t.style.display = 'none'; }, 2400);
+    }
+
+    function copySnippet(id, btn, label) {
+      const el = document.getElementById(id);
+      if (!el) return;
+      navigator.clipboard.writeText(el.innerText.trim()).then(() => {
+        const old = btn.innerHTML;
+        btn.innerHTML = '✔ Đã chép!';
+        setTimeout(() => { btn.innerHTML = old; }, 1800);
+        showToast('Đã sao chép ' + (label || id));
+      });
+    }
+
+    function copyAllPrompts(btn) {
+      const pres = document.querySelectorAll('pre.prompt-display');
+      const all = Array.from(pres).map((p, idx) => `=== SCENE 0${idx + 1} ===\n` + p.innerText.trim()).join('\n\n');
+      navigator.clipboard.writeText(all).then(() => {
+        const old = btn.innerHTML;
+        btn.innerHTML = '✔ Đã sao chép toàn bộ 9 Cảnh!';
+        setTimeout(() => { btn.innerHTML = old; }, 2200);
+        showToast('Đã sao chép toàn bộ 9 Video Prompts!');
+      });
     }
   </script>
 </body>

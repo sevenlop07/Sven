@@ -130,9 +130,11 @@ class PromptSanitizer:
         r'\bKodak\s+Vision\d*\b',
         r'\b24fps\b',
         r'\b60fps\b',
-        r'\bf/1\.[248]\b',
-        r'\bf/2\.0\b',
-        r'\bISO\s*\d+\b'
+        r'\b\d{2,3}\s?fps\b',
+        r'\b\d{2,3}\s?mm\b',
+        r'\bf/\d(?:\.\d)?\b',
+        r'\bISO\s*\d+\b',
+        r'\btripod\b'
     ]
 
     MODE_B_COSTUME_TERMS = [
@@ -209,6 +211,13 @@ class PromptSanitizer:
                 p = re.sub(r'\b(his|her)\b', f"{speaker}'s", p, flags=re.IGNORECASE)
                 p = re.sub(r'\b(herself|himself)\b', speaker, p, flags=re.IGNORECASE)
                 p = re.sub(r'\b(their|them)\b', "the actors'", p, flags=re.IGNORECASE)
+
+                # 7. Purge Mode B numeric age in narrative prose (Gate 3A)
+                p = re.sub(r'\b(\d{1,2}-year-old|aged \d{1,2})\b', 'youthful', p, flags=re.IGNORECASE)
+
+                # 8. Purge Dangling Focus on [name] (Gate 3Q)
+                p = re.sub(r'\.\s*Focus on\s+[A-Za-z0-9_ ]+\.', '.', p, flags=re.IGNORECASE)
+                p = re.sub(r'\.\s*Focus on\s+[A-Za-z0-9_ ]+$', '.', p, flags=re.IGNORECASE)
 
                 p = re.sub(r"'s's", "'s", p)
                 p = re.sub(r'\s{2,}', ' ', p)
