@@ -224,9 +224,13 @@ To anchor character identity, eliminate AI duplicate clones, and prevent spatial
      * **Function 1: Multi-Modal Identity Lock**: Binds character token to the 16:9 Model Sheet (`image X`).
      * **Function 2: Zero-Frame Spatial & Tactile Grounding**: Anchors character physically to an architectural fixture or furniture at Frame 0 (`00:00.0`), preventing floating bodies or deformed ghost hands.
      * **Function 3: The Mandatory Anti-Duplication Seal (`— the only {name} in frame`)**: Explicitly blocks diffusion text encoders from generating twin/clone duplicates of the same character in one room.
-   - **Subject-to-Scale Invariance (Frame Capacity Law)**:
-     * *Single-Subject Scales (CU, MCU, Choker, ECU)*: `[subject]:` MUST contain strictly ONE character. Secondary characters are `O.S.` and must NEVER be declared in `[subject]:` or described in the prompt.
-     * *Two-Subject Scales (M2S, OTS, Two-Shot Profile)*: `[subject]:` lists both characters on separate lines, each with their own spatial anchor and `— the only {name} in frame`.
+   - **Subject-to-Scale Invariance & Multi-Character Relational Grounding Law**:
+     * *Single-Subject Scales (CU, MCU, Choker, ECU)*: [subject]: MUST contain strictly ONE character. Secondary characters are O.S. and must NEVER be declared in [subject]: or described in the prompt.
+     * *Two-Subject Scales (M2S, OTS, Two-Shot Profile)*: [subject]: lists both characters on separate lines, each with their own spatial anchor, mutual proximity (e.g. *1.5 meters apart across the central aisle*), 180° Action Axis & eyeline vectors (*ho_ten_A facing frame-right toward B; ho_ten_B facing frame-left toward A*), tactile contact with fixtures/props, and the mandatory — the only {name} in frame seal.
+     * *The 3-Tier Staging Hierarchy (Mandatory Order of Compilation)*:
+       1. **Tier 1 ([context]:)**: 5-Vector 3D physical stage architecture, room boundaries, fixed landmarks with physical distances, directional lighting physics, and atmospheric medium. Never 1-line superficial text.
+       2. **Tier 2 ([subject]: & [PROP]:)**: Zero-frame (=0.0\text{s}$) coordinates, proximity, eyelines, and initial tactile contacts.
+       3. **Tier 3 (Action Timeline >0$)**: Biomechanical launchpad strictly originating from Tier 2 postures and Tier 1 architecture. Zero ungrounded jumps or spatial chaos.
 
 2. **The 4-Vector Character Directing Protocol in Timeline Shots (`[00:00–00:XX]`)**:
    While `[subject]:` locks the **static spatial grounding at 00:00.0**, the timeline phases (`[00:00–00:XX]`) direct **dynamic kinetic progression** across time:

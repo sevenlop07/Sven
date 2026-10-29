@@ -670,9 +670,13 @@ For each scene in order:
 1. Read the scene's Intent Card (§8.3) and locate the value shift: the moment power, knowledge, or feeling flips. Verify that dialogue is locked into the 4-Way Dialogue Relay (never bubble dialogue) and actively serves the Episode Dramatic Spine (CDQ). The shot plan turns at that moment.
 2. Pick a track with the Doctrine §2.5 question: **A** single continuous take (one unbroken breath; camera transitions in-camera) or **B** multi-shot cuts on the 180° axis (both sides of a collision). Shot count and phase splits follow the beats; there is no fixed 3-shot quota and no fixed split.
 3. Choose scale, angle, and movement per shot from intent (Doctrine §2.1–2.3). Every camera move names its motive: follow attention, reveal information, or inner shift. Static is a valid choice. Write a one-clause reason per shot in the `[TIMELINE SHOTS]` row of the scene audit card.
-4. Block in 3D (Pillar 3 & DIRECTOR.md §3b): architectural anchors, eyelines (speaker locks on listener, listener reacts, height delta), 180° axis, and the Multi-Character Blocking Matrix (Solo CU = 1 face; OTS/M2S = 2 persons; Triangular M3S/Master = 3 persons; passive child anchor). For falls or collisions, apply the vector-to-plane law and 5-step elastic deformation.
-5. Write Code Block 1 (§9.3) and Code Block 2 (§9.5).
-6. Use Code Block 2 as the launchpad for the next scene. Apply the **Inter-Clip 10s Continuity & Temporal Handshake Protocol** (Compiler §4.5 & Grammar §1.3): the terminal vector at `[00:08.5–00:10.0]` of Scene N forms the Outbound Baton, caught and completed seamlessly by the Inbound Baton at `[00:00.0–00:01.5]` of Scene N+1 from the new camera angle/subject. Strictly enforce zero action repetition across the cut, 180° screen direction invariance, and auditory suture (L-cuts and uniform diegetic Foley).
+4. **The 3-Tier Spatial Staging & Interpersonal Grounding Law (DIRECTOR.md §1c & Pillar 4 §2.1)**:
+   - **Tier 1 (Context 3D Architecture)**: Never write a superficial 1-line context. Enforce the 5-Vector standard: room boundaries, key fixed landmarks and relative distances between them, directional lighting physics, and atmospheric medium.
+   - **Tier 2 (Zero-Frame Interpersonal Grounding at $t=0.0\text{s}$)**: In multi-character scenes, define initial physical coordinates, relative proximity (e.g. 1.5m apart), 180° Action Axis & eyeline vectors (who is looking where), operational relationship/dynamic, and tactile prop/fixture contact at $t=0$.
+   - **Tier 3 (The Biomechanical Action Launchpad at $t>0$)**: Author timeline actions strictly launching from the Tier 2 zero-frame postures and contacts, preserving established 3D geometry and 180° eyelines. Zero teleportation, zero spatial chaos.
+5. Block in 3D (Pillar 3 & DIRECTOR.md §3b): architectural anchors, eyelines (speaker locks on listener, listener reacts, height delta), 180° axis, and the Multi-Character Blocking Matrix (Solo CU = 1 face; OTS/M2S = 2 persons; Triangular M3S/Master = 3 persons; passive child anchor). For falls or collisions, apply the vector-to-plane law and 5-step elastic deformation.
+6. Write Code Block 1 (§9.3) and Code Block 2 (§9.5).
+7. Use Code Block 2 as the launchpad for the next scene. Apply the **Inter-Clip 10s Continuity & Temporal Handshake Protocol** (Compiler §4.5 & Grammar §1.3): the terminal vector at `[00:08.5–00:10.0]` of Scene N forms the Outbound Baton, caught and completed seamlessly by the Inbound Baton at `[00:00.0–00:01.5]` of Scene N+1 from the new camera angle/subject. Strictly enforce zero action repetition across the cut, 180° screen direction invariance, and auditory suture (L-cuts and uniform diegetic Foley).
 
 ### 9.3 Code Block 1 — Canonical Syntax Template
 ```
@@ -683,9 +687,9 @@ Master-level cinematography and composition, fast-paced shot variation, atmosphe
 
 [subject]:
 [ho_ten_A] [100% Appearance, attire, and facial features Refer to image 1], [initial architectural spatial anchor and physical posture, tactile contact with fixture/prop] — the only [ho_ten_A] in frame.
-[ho_ten_B] [100% Appearance, attire, and facial features Refer to image 2], [initial architectural spatial anchor and physical posture, tactile contact with fixture/prop] — the only [ho_ten_B] in frame.
+[ho_ten_B] [100% Appearance, attire, and facial features Refer to image 2], [initial architectural spatial anchor and physical posture, relative distance to ho_ten_A (e.g. 1.5m across aisle), 180° Action Axis & eyeline vector facing ho_ten_A, tactile contact with fixture/prop] — the only [ho_ten_B] in frame.
 
-[Pro] :
+[PROP]:
 [Prop Name] [100% Refer to image <prop_ref>], [physical state], [resting place or holder + grip] — the only [prop noun] in frame.
 
 Diegetic room acoustics: [room tone and Foley].

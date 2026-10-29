@@ -45,6 +45,38 @@
 phong_cu [100% Refer to image location_bedroom_4view.jpg], early morning. Intimate Southern Vietnamese townhouse master bedroom featuring patterned encaustic cement floor tiles, a sturdy dark wooden queen bed with white linen bedding, a light pine wood crib (noi_go) placed firmly directly beside the bed frame, a tall dark wooden wardrobe against the back wall, and an open wooden doorframe leading to the hallway. Warm golden morning sunlight streams diagonally through sheer curtains, casting long soft shadows across the floor and illuminating floating dust motes in the stagnant, emotionally heavy domestic air.
 ```
 
+### 1c. The 3-Tier Spatial Staging & Interpersonal Grounding Law (Luật 3 Tầng: Khóa Không Gian ➔ Khóa Tọa Độ, Cự Ly & Quan Hệ Nhân Vật t=0 ➔ Bệ Phóng Động Lực Hành Động t>0)
+
+> 🏛️ **THE STAGING HIERARCHY LAW**: AI video diffusion models are stateless spatial generators. If an author writes actions before fully staging the physical architecture, characters, and props, the model suffers immediate spatial amnesia, floating bodies, inverted eyelines, phantom props, and disjointed cuts.
+> Prompt compilation MUST execute in strict 3-tier sequential order: **Tier 1 (Physical Stage Architecture) ➔ Tier 2 (Zero-Frame Interpersonal Grounding at $t=0.0\text{s}$) ➔ Tier 3 (The Biomechanical Action Launchpad at $t>0$)**.
+
+#### Tier 1: Concrete Architectural Staging in `[context]:` (Never Superficial)
+- **STRICT PROHIBITION ON 1-LINE CONTEXT**: Writing generic phrases like `phong_bep, morning. A kitchen with cabinets` is strictly banned. A superficial context guarantees a broken, hallucinated video generation.
+- **Mandatory Physical Architecture & Landmarks (5 Vectors)**:
+  1. *Room boundaries & dimensions*: (e.g., *a 4x5-meter townhouse kitchen with an encaustic cement tile floor and lime plaster walls*).
+  2. *Fixed landmarks & relative distances*: (e.g., *a white marble L-counter along the left wall, separated by a 1.5-meter central aisle from a dark oak breakfast island on the right; a suspended brass pendant lamp hangs directly over the central aisle; a wooden doorframe opens 2 meters behind into the sunlit courtyard*).
+  3. *Directional lighting physics*: Key source trajectory, window slant, shadow behavior (natural color tones, zero Kelvin terms).
+  4. *Atmospheric medium & sensory particles*: Rising steam from pots, sunbeams illuminating dust motes, tactile room atmosphere.
+- *Directorial Function*: Establishes the concrete 3D physics box and spatial coordinate system before any actors step onto the stage.
+
+#### Tier 2: Zero-Frame Interpersonal Grounding & Relationship at $t=0.0\text{s}$ (`[subject]:` & `[PROP]:`)
+- **Multi-Character Spatial Anchoring & Relational Physics**:
+  In any scene featuring two or more characters, the Director MUST establish their exact physical relationship at zero seconds ($t=0.0\text{s}$):
+  1. **Character A Spatial Coordinate & Posture**: Architectural anchor, body posture, and tactile contact with the environment (e.g., *standing behind the white marble cooktop on the left, right hand firmly gripping a cast-iron skillet handle over the blue gas flame*).
+  2. **Character B Spatial Coordinate & Proximity**: Exact distance and position relative to Character A (e.g., *perched on a wooden barstool at the oak breakfast island on the right, exactly 1.5 meters opposite Character A across the central aisle*).
+  3. **The 180° Action Axis & Eyeline Vector**: Establish who is looking where at $t=0$ (e.g., *Character A faces frame-right toward Character B; Character B leans forward with elbows on the counter, gazing frame-left across the 1.5-meter gap directly into Character A's face*).
+  4. **The Dramatic Dynamic / Interpersonal Stance at $t=0$**: Define the operational dynamic between them (e.g., *playful morning banter, tense domestic interrogation, protective guardianship, or ideological standoff*).
+  5. **Tactile Prop Anchoring at $t=0$**: Hero and secondary props must be physically attached to hands or surfaces (e.g., *Character A holds the skillet; Character B cups a steaming porcelain mug in both hands*).
+- *Directorial Function*: Locks the actors' physical bodies, line of sight, and props to fixed 3D coordinates, eliminating floating heads, duplicated bodies, and spatial chaos.
+
+#### Tier 3: The Biomechanical Action Launchpad at $t>0$ (Actions Evolving from Tier 1 & Tier 2)
+- **Zero Disconnected Actions**: Actions in the timeline (`[00:00–00:03.5]`, `[00:03.5–00:07.0]`, etc.) CANNOT introduce sudden, ungrounded movements or teleport characters across the room.
+- **Biomechanical Launchpad Law**:
+  - The first action beat at $00:00.0$ MUST mechanically launch directly from the posture, grip, and eyeline established in Tier 2.
+  - Every subsequent movement and collision MUST interact with the landmarks established in Tier 1 (e.g., *if a prop flies or a character steps, it moves along the 1.5-meter central aisle, passes beneath the brass pendant lamp, or collides with the marble counter*).
+  - Multi-shot cuts (Track B) must preserve the 180° action axis established between Character A and Character B, preventing inverted gaze directions across cuts.
+
+
 ### 2. Conversational Eyeline Match & 180° Action Axis Law (Khóa Trục Ánh Nhìn Đối Thoại)
 - Mọi shot cắt trong phân cảnh PHẢI khai báo rõ ràng Cỡ cảnh (Shot Scale: CU, MCU, OTS, M2S, WS) và Góc quay (Angle: Eye-level, Low-angle, High-angle, Reverse-angle).
 - **Người nói (Speaker)**: Đầu và ánh mắt bắt buộc khóa chặt vào tọa độ người nghe (downward / upward gaze vector theo độ chênh chiều cao đứng/quỳ).
