@@ -202,7 +202,7 @@ For **each Scene**, before writing the Shot breakdown, determine:
   *(Note: Numerical age, gender, and regional dialect belong EXCLUSIVELY to the Dialogue Voice Directing Parenthetical for audio/lip-sync engines — see the Dual-Track Architecture below).*
 - **CORE PRINCIPLE 3: IMAGE REFERENCE SLOT MATCHING (`[Refer to image X]`)**:
   In multi-character setups and image-to-video tools (Kling, Runway, Sora, Luma), explicitly bind each character name to their uploaded reference sheet slot: `[Character Name] [Refer to image 1]`, `[Character Name] [Refer to image 2]`.
-- **CORE PRINCIPLE 4: ZERO METRIC MEASUREMENTS (cm, kg) IN PROMPTS!** (TUYỆT ĐỐI KHÔNG DÙNG SỐ ĐO CHIỀU CAO / CÂN NẶNG TRONG PROMPT).
+- **CORE PRINCIPLE 4: ZERO METRIC MEASUREMENTS (cm, kg, metres) IN VIDEO PROMPTS!** (Casting data and the model-sheet prompt may record height in cm as a pre-production spec; Code Block 1 never does.) (TUYỆT ĐỐI KHÔNG DÙNG SỐ ĐO CHIỀU CAO / CÂN NẶNG TRONG PROMPT).
   Diffusion models do NOT have a ruler or scale. Writing `85cm` or `195cm` or `60kg` is meaningless noise that causes the AI to default all characters to identical average human height! ALWAYS enforce **Visual Relative Scale & Physical Mass Contrast** only when multi-subject contrast is required: e.g., `tiny juvenile cub, diminutive and fragile, dwarfed beneath the predator` vs `massive towering predator with broad muscular bulk, thrice the size of the cub, looming dominantly over the frame`.
 
 ---
@@ -585,7 +585,7 @@ The Weaver's Stone Cottage & Hearth Workshop, deep night, tense and desolate atm
 |---|---|---|
 | **Beat 2s** | 1 short explosive movement / startle causal reaction | Jerk away, slap the table, step back 1 step. |
 | **Beat 3s – 4s** | 2–3 causally linked sequential movement phases | Walk 3 steps + lower foot + raise scroll up. |
-| **Beat 5s (Kinetic Glide)** | Extended smooth sustained movement + continuous camera tracking | Camera pulls back 2m parallel to a 5-step stride. |
+| **Beat 5s (Kinetic Glide)** | Extended smooth sustained movement + continuous camera tracking | Camera pulls back a few paces in parallel with a 5-step stride. |
 
 **Per-Second Action and Scene Closing Rules:**
 - **1-Second Budget**: AI renders maximum 1 micro-movement or 1 acceleration increment. FORBIDDEN to cram 2 independent large actions into 1 second.
@@ -828,7 +828,7 @@ Generative AI diffusion engines risk catastrophic latent distortion (severe bloo
 > Directing in confined spaces requires **Intelligent Focal Depth, Progressive Shot Scaling, and Spatial Framing**:
 
 #### A. The 3 Golden Rules of Confined Space Staging:
-1. **Ban Unmotivated Wide Shots**: Never use an Extreme Wide Shot inside a small 15m² room or narrow cave. Use **Medium Close-Up (MCU)**, **Tight Medium (MS)**, and **Tactile Inserts (CU/ECU)** to convey intimacy, claustrophobia, or rustic coziness without exposing AI boundary limitations.
+1. **Ban Unmotivated Wide Shots**: Never use an Extreme Wide Shot inside a small cramped room or narrow cave. Use **Medium Close-Up (MCU)**, **Tight Medium (MS)**, and **Tactile Inserts (CU/ECU)** to convey intimacy, claustrophobia, or rustic coziness without exposing AI boundary limitations.
 2. **Frame-Within-a-Frame (Khung Hình Trong Khung Hình)**: Utilize natural architectural apertures (doorframes, low cave ceilings, wooden lintels, window mullions) as foreground silhouettes. This anchors depth and prevents wall warping.
 3. **The Reverse Threshold Looking-Out Angle (Góc Nhìn Ngược Từ Trong Nhìn Ra)**: Position the camera INSIDE the darker compact space looking out through the door/mouth at the brightly lit exterior. The subject enters as a dramatic silhouette catching sharp separation rim light, creating maximum dynamic contrast without needing massive room volume.
 
@@ -944,7 +944,7 @@ Consistent character, lighting, and environmental physics maintained through 00:
 1. **Adversarial Verbal Sparring & Ping-Pong Clash (Đấu Kiếm Tư Tưởng Ngang Tài Ngang Sức)**:
    * *Dramatic Nature*: Two opposing wills of equal intensity collide face-to-face. Words act as kinetic blades parried and returned.
    * *Scenarios*: Moral disputes, ideological showdowns, courtroom cross-examinations, betrayal confrontations.
-   * *Camera Execution*: Shot 1 (Speaker A MCU on screen-left) ➔ Cut to Shot 2 (Speaker B counter MCU on screen-right) ➔ Cut to Shot 3 (Reaction Choker).
+   * *Camera Execution*: Shot 1 (Speaker A MCU, anchored by the window) ➔ Cut to Shot 2 (Speaker B counter MCU, anchored by the doorway) ➔ Cut to Shot 3 (Reaction Choker). Screen direction is recorded in the Audit Card only.
 2. **The Truth Bomb & Mask Shattering / Anagnorisis (Cú Lật Mặt Nạ & Bộc Lộ Chân Tướng)**:
    * *Dramatic Nature*: Sudden reversal of psychological dominance when devastating evidence or identity is revealed.
    * *Scenarios*: The villain gloats over a forged will ➔ Hero pulls out the authentic royal decree ➔ Villain's smug grin collapses into paralyzed shock.

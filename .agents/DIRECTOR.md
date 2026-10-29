@@ -329,7 +329,7 @@ When compiling 10s video prompts (Code Block 1) from the Scene Intent Card, the 
      * Tactile prop/surface friction (hands gripping table/rail/blanket) and internal head/gaze shifts.
     - *Pacing & Audio Standard*: Spoken lines follow Gate 4B (≤ 32 words single speaker; ≤ 15 words per speaker in a two-shot). Craft Default for a locked performance take: one short line of ≤ 10–12 words, or Model 0 pure silence. Accompanied by room tone and choked respiration Foley.
 
-### 6. The Universal Child Safety, Simple Action & cu_tin Somatic Sleep Staging Protocol (Quy Chuẩn An Toàn Trẻ Em & Đồng Bộ Thực Thể cu_tin)
+### 6. The Universal Child Safety, Simple Action & Approved Child Entity Somatic Sleep Staging Protocol (Quy Chuẩn An Toàn Trẻ Em & Đồng Bộ Thực Thể Trẻ Em Đã Duyệt)
 - **Strict Zero-Harm & Endangerment Prohibition (Cấm Tuyệt Đối Hành Động Gây Hại)**:
   - Tuyệt đối CẤM mọi cảnh bạo lực, đánh, tát, đẩy, xô ngã, trói, giằng giật, nhốt giữ hoặc đặt trẻ em vào môi trường nguy hiểm (gần lửa, nước sâu, mép cao, dao kéo, xe cộ).
   - Cấm mô tả trẻ em đói khát, thương tích, bầm tím, sốt giật, dầm mưa rét run, hoặc gào khóc thảm thiết trong kinh hoàng.
@@ -343,17 +343,17 @@ When compiling 10s video prompts (Code Block 1) from the Scene Intent Card, the 
     * *Ôm đồ chơi mềm*: Ôm gấu bông nhỏ hoặc cầm hoa dại sát ngực.
     * *Vỗ tay nhẹ*: Hai bàn tay vỗ nhẹ nhịp nhàng, chậm rãi.
   - *Nguyên nhân kỹ thuật*: Không gian tiềm ẩn (latent diffusion space) không thể xử lý cử động phức tạp của trẻ em mà không bị ảo giác dị tật (mọc thêm ngón tay, méo miệng, biến dạng mặt kinh dị). Hành động đơn giản là chìa khóa duy nhất bảo toàn giải phẫu hoàn hảo và an toàn kiểm duyệt.
-- **The cu_tin Child Entity & Somatic Sleep Staging Protocol (Quy Chuẩn Đồng Bộ Thực Thể cu_tin & Diễn Hoạt An Toàn)**:
-  - **Khai báo thực thể chuẩn trong `[subject]:`**: Khi phân cảnh diễn ra trong không gian có nôi gỗ thông (`pine wood crib`, khai báo trong `[context]:`) và đứa trẻ hiện diện, thực thể **BẮT BUỘC ĐƯỢC KHAI BÁO TRONG `[subject]:`**:
-    `cu_tin [100% Appearance, attire, and facial features Refer to image cu_tin_4view.jpg]`
-    Tuyệt đối KHÔNG bỏ quên nhân vật hoặc biến thành nôi trống.
-  - **Diễn hoạt vật lý đồng bộ (Somatic Sleep Staging)**: Trong nội dung diễn hoạt (timeline action prose), `cu_tin` được neo chặt với cử động sinh học an toàn, nhịp thở êm đềm:
-    *Ví dụ chuẩn*: `Beside the queen bed, cu_tin rests peacefully inside the pine wood crib on the firm flat organic cotton mattress, chest rising and falling in calm rhythmic sleep, tiny fists curled gently beside soft cheeks through 00:10.0.`
+- **The Approved Child Entity & Somatic Sleep Staging Protocol (Quy Chuẩn Đồng Bộ Thực Thể Trẻ Em Đã Duyệt & Diễn Hoạt An Toàn)**:
+  - **Khai báo thực thể chuẩn trong `[subject]:`**: Khi kịch bản đặt đứa trẻ trong phòng (ví dụ đang ngủ trong nôi khai báo ở `[context]:`), thực thể dùng `ho_ten` trẻ em đã duyệt của dự án (`{child_ho_ten}`, ví dụ `cu_tin`) **BẮT BUỘC ĐƯỢC KHAI BÁO TRONG `[subject]:`**:
+    `{child_ho_ten} [100% Appearance, attire, and facial features Refer to image {child_ho_ten}_4view.jpg]`
+    Nôi mà kịch bản nói có trẻ thì tuyệt đối KHÔNG được để trống. Khi trẻ không ở trong phòng (Pillar 3 §4.3, Option B), bỏ hẳn thực thể khỏi prompt.
+  - **Diễn hoạt vật lý đồng bộ (Somatic Sleep Staging)**: Trong nội dung diễn hoạt (timeline action prose), `{child_ho_ten}` được neo chặt với cử động sinh học an toàn, nhịp thở êm đềm:
+    *Ví dụ chuẩn*: `Beside the queen bed, {child_ho_ten} rests peacefully inside the pine crib on the firm flat organic cotton mattress, chest rising and falling in calm rhythmic sleep, tiny fists curled gently beside soft cheeks through 00:10.0.`
   - **Lệnh cấm tuyệt đối bộ từ khóa nhạy cảm kiểm duyệt AI (Zero Minor Safety Lexicon)**:
     * Cấm 100% các từ khóa kích hoạt bộ lọc kiểm duyệt AI video: `baby`, `babies`, `kid`, `kids`, `infant`, `infants`, `newborn`, `newborns`, `child`, `children`, `bé`.
     * Định danh trẻ em do `output/<project>/project_rules.json` → `minor_character_names` quản lý: tên trong danh sách cấm bị Gate 3F chặn; chỉ dùng định danh `ho_ten` đã duyệt (ví dụ trong dự án hiện hành: `cu_tin` trong prompt, `Cu Tin` trong kịch bản).
     * Thay thế thuật ngữ đạo cụ: dùng `pine wood crib` (thay vì `baby crib`, khai báo trong `[context]:`), `cotton bolster pillow` (thay vì `baby pillow`), `organic cotton onesie` (thay vì `baby clothes`).
-  - **Bảo hộ an toàn tuyệt đối (Zero Harm Standard)**: Đứa trẻ luôn nằm an toàn trên đệm phẳng y khoa của nôi gỗ thông. Triệt tiêu 100% hành vi rung lắc, bế xốc, giằng co, hoặc đặt vào võng cong.
+  - **Bảo hộ an toàn tuyệt đối (Zero Harm Standard)**: Đứa trẻ luôn nằm an toàn trên mặt nằm phẳng, chắc chắn (nôi hoặc giường khai báo trong `[context]:`). Triệt tiêu 100% hành vi rung lắc, bế xốc, giằng co, hoặc đặt vào bề mặt cong, võng hay chỗ nằm không an toàn.
 
 - **Metaphorical Sanitization of Trauma & Violence**:
   - Strictly ban clinical pathology and trauma vocabulary: `haematomas`, `bruises`, `eyes rolling upward as consciousness slips`, `slumping limp on tiles`, `blackout`.

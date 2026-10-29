@@ -30,7 +30,7 @@ description: >
 0. **The 4 Sovereign Anti-Stagnation Laws (Chống Đơ & Bệnh Đẹp Đều)**:
    - **Purge Hollow Beauty Buzzwords**: Strictly ban `photorealistic, cinematic 8k, masterpiece, moody lighting, ultra-detailed`. Replace with tangible optical physics (light vector, dust/steam particles, surface imperfections).
    - **Targeted Action Verbs Over Passive Adjectives**: Strictly ban abstract emotions (`looks sad`, `is angry`). Direct actors via verbs of kinetic disruption and somatic drive (`slams palms on table`, `skids backward`, `rapid chest heaving`, `knuckles whitening`).
-   - **Compulsory Prop & Environmental Tactile Interaction**: Strictly ban floating statues and limp hands. In EVERY shot, actors must have tactile contact with a prop or architectural fixture (gripping crib bars, wiping counters, clutching bowls, opening latches).
+   - **Compulsory Prop & Environmental Tactile Interaction**: Strictly ban floating statues and limp hands. In EVERY shot, actors must have tactile contact with an architectural fixture declared in `[context]:` or with a declared prop lifted from its `[PROP]:` resting place during the timeline (gripping crib bars, wiping counters, lifting a bowl off the table, opening latches).
    - **Dynamic Editing Rhythm Over Monolithic Takes**: Ban monolithic run-on shots. Break complex scenes (>10s) into Track B multi-shot sequences (Action ➔ Reaction cut >30° ➔ Tactile prop insert ➔ Resolving cut).
 
 1. **The Cinematography Golden Triangle & Confusion-Killer Matrix**:
@@ -53,19 +53,19 @@ description: >
    - **Track A: Single-Shot Continuous Take**:
      - 0 cuts, unbroken camera trajectory (push-in, tracking, crane descent, arc).
      - Smooth inward/outward motion with continuous fluid physics.
-     - **Strict Single-Speaker Dominance**: Only ONE character speaks per dialogue window (capped at <= 18 words, sweet spot 10–14 words, placed flexibly anywhere across the 10s take as motivated by dramatic beats). Secondary characters perform silent somatic reactions.
+     - **Strict Single-Speaker Dominance**: Only ONE character speaks per dialogue window (Gate 4B hard cap ≤ 32 words single speaker; craft target 8–14 words; placed flexibly anywhere across the 10s take as motivated by dramatic beats). Secondary characters perform silent somatic reactions.
      - Terminal Momentum Flow: Spoken dialogue naturally resolves before the final beat, allowing the camera and subject to complete the emotional or kinetic trajectory cleanly to 00:10.0 (strictly ZERO artificial boilerplate tail slices).
    - **Track B: Multi-Shot Kinetic Montage**:
-     - 2 to 4 rapid hard cuts across the 180° action axis with explicit cut markers (`[00:03.5–00:07.0] Cut to …`).
+     - 2–4 shots (1–3 hard cuts) across the 180° action axis (`0b` §6.1) with explicit cut markers (`[00:03.5–00:07.0] Cut to …`).
      - Each cut enforces **Kinetic Momentum Handoff** (e.g. forward push handoff to low-angle counter-thrust).
-     - Maximum 1 dialogue line per shot window (strictly capped at <= 18 words, sweet spot 14–17 words).
+     - Maximum 1 dialogue line per shot window (Gate 4B: ≤ 15 words per speaker in a two-shot exchange, total ≤ 32; craft target 8–14 words).
      - Final shot resolves naturally to 00:10.0 with organic kinetic deceleration or sharp suspense freeze according to dramatic stakes (strictly ZERO rigid 08.5s chops or dogmatic cutoffs).
    - **The Blinking Eye Law (Ẩn dụ Chớp Mắt)**: A cut is a physiological blink — cuts must happen at emotional realization or cognitive shifts, never at mechanical intervals.
 
 4. **Spatial Geometry, 3D Blocking & Observable Physical Architecture**:
    - Enforces **Observable Physical Staging**: Replaces all abstract Cartesian numbers with concrete architectural relationships (e.g., "standing under the wooden bedroom doorway entrance", "half-kneeling on the ceramic tiled floor between door and crib").
    - Directs 5-Step Elastic Mechanical Deformation and 3 Descent Setups (Kneeling, Collapsing, Prostrating).
-   - Enforces strict 180° Action Axis protection and Screen Direction continuity.
+   - Enforces strict 180° Action Axis protection and Screen Direction continuity (screen direction recorded in the Audit Card only; Code Block 1 anchors to architecture).
 
 4b. **The Universal Framing Scale, Camera Angle & Multi-Character Blocking Matrix (1, 2, 3+ Characters)**:
    - **Anti-Braindead Desynchronization & Frame Capacity Law**: Framing scales, camera angles, and character actions must obey strict optical physics and spatial anatomy:
@@ -76,15 +76,15 @@ description: >
        - 🚨 **STRICT PROHIBITION**: In single-subject framing (CU, MCU, Choker, Head-On), NEVER describe the facial biomechanics, reactions, or posture of a secondary character who is "two paces behind" or "in the background". That character is spatially **Off-Screen (O.S.)**. Doing so causes AI video diffusion models to hallucinate mutant double faces, morphing limbs, and grotesque anatomical distortions!
      * **2 Characters (Interpersonal Blocking & Co-Presence)**:
        - *OTS*: 15–20% soft-focus shoulder of B at edge of frame (anchor); sharp focus on A speaking/reacting. B never turns toward camera.
-       - *Medium Two-Shot (M2S) / Cowboy 2S*: Waist/thighs up of both characters. Explicitly anchor A at Frame-Left and B at Frame-Right. This is the ONLY shot scale where two characters can be directed reacting simultaneously in the same frame! Shows proximity, power dynamic (standing vs. kneeling/sitting), and physical friction.
+       - *Medium Two-Shot (M2S) / Cowboy 2S*: Waist/thighs up of both characters. Explicitly anchor A and B to opposite sides of a physical landmark (e.g. either side of the table; one by the doorway, one by the window) — never to frame edges. This is the ONLY shot scale where two characters can be directed reacting simultaneously in the same frame! Shows proximity, power dynamic (standing vs. kneeling/sitting), and physical friction.
        - *Track B 10s Exchange*: Shot 1 (OTS on A, speaks line 1) ➔ Match Cut 180° Axis to Shot 2 (Reverse OTS on B, speaks line 2).
      * **3 Characters (Triangular Staging & 3-Plane Depth)**:
        - *Strict Ban*: Arranging 3 characters in a flat, parallel row (Flat Mannequin Row).
        - *Triangular Staging*: Apex (dominant power/catalyst in middle) vs. Base (two reactive characters on flank).
        - *3-Plane Dynamic Depth*: Foreground (FG - seated/shoulder anchor) + Middleground (MG - primary conflict/speaker) + Background (BG - fearful witness/protector).
        - *M3S / Group Master*: Deep focus capturing all 3 bodies with continuous somatic co-presence (gasping, clenched fists, dilated eyes).
-     * **Passive / Anchor Entity (`cu_tin` in crib `noi_go`)**:
-       - `cu_tin` is a static biological anchor entity, NOT a sparring adult. Staged in crib at room landmark. Outside frame in adult CUs; visible beside bed in M2S/M3S wide frames to heighten tragic contrast against adult conflict.
+     * **Passive / Anchor Entity (the project's approved child `ho_ten`, asleep in a crib declared in `[context]:`)**:
+        - The approved child entity is a static biological anchor entity, NOT a sparring adult. Staged in crib at room landmark. Outside frame in adult CUs; visible beside bed in M2S/M3S wide frames to heighten tragic contrast against adult conflict.
 
 5. **10s Kinetic Units & Dynamic Script-Driven Pacing**:
    - Enforces the Directorial Dynamic Temporal Intelligence Law: Pacing is determined organically by narrative tension and scene archetype (e.g. 2-Beat Action/Reaction, 3-Beat Escalation, or Single-Take Emotional Glide). Strictly bans cookie-cutter timestamps.
@@ -97,8 +97,8 @@ description: >
        - Những đạo cụ cốt lõi, gắn liền với nhân vật, xuất hiện lặp đi lặp lại xuyên suốt tác phẩm (vũ khí, kiếm, súng lục, xe máy cổ, xe hơi, mặt dây chuyền gia truyền, bùa hộ mệnh).
        - BẮT BUỘC có bảng prompt tạo ảnh Model Sheet 16:9 trong `setting.html` Section 4A và gắn thẻ neo tham chiếu ảnh `[100% Refer to image <ref>]` trong `[PROP]:` của prompt video để chống biến dạng/mất trí nhớ thị giác giữa các cảnh. Khống chế tối đa 1–2 món cốt lõi mỗi series.
      * **Tier 2: Đồ Đạc Sinh Hoạt Căn Bản (Everyday Living Items — CHỈ CẦN TEXT CHI TIẾT LÀ ĐỦ)**:
-       - Các vật dụng sinh hoạt hàng ngày thông thường (bát cơm, đôi đũa, muỗng inox, ly nước, ghế nhựa, chổi quét nhà, cuốn sổ ghi chép thông thường, then cửa).
-       - TUYỆT ĐỐI KHÔNG sinh ảnh Model Sheet (tiết kiệm 80% thời gian tiền kỳ); chỉ cần mô tả bằng văn bản chi tiết, rõ ràng và giàu cảm giác xúc giác/chất liệu vật lý trong `[PROP]:` hoặc `action` (ví dụ: `bat_com [sturdy ceramic rice bowl holding steaming white rice, held tightly in left palm]`).
+       - Các vật dụng sinh hoạt hàng ngày thông thường (bát cơm, đôi đũa, muỗng inox, ly nước, chổi quét nhà, cuốn sổ ghi chép thông thường, điện thoại).
+       - TUYỆT ĐỐI KHÔNG sinh ảnh Model Sheet (tiết kiệm 80% thời gian tiền kỳ); chỉ cần mô tả bằng văn bản tiếng Anh tự nhiên, chi tiết, giàu chất liệu trong `[PROP]:`, mỗi món một dòng kèm vị trí đặt tĩnh độc lập với tay nhân vật (ví dụ: `chipped white ceramic rice bowl, steaming with hot jasmine rice, resting on the wooden dining table — the only rice bowl in frame`). Đồ nội thất và vật cố định (ghế nhựa, then cửa, giường, nôi) thuộc `[context]:`.
    - **Anti-Ghost Prop Law (Chống Nhân Bản Đạo Cụ)**: In generative diffusion models (Kling, Runway, Sora), every active prop must have strictly **ONE physical instance**. Desynchronized descriptions cause dual cloning. When a prop is lifted/moved, the text MUST explicitly state that the resting surface is clear. Heavy fixtures (e.g. pine crib) are permanently locked to room coordinates and cannot teleport between rooms across scenes.
    - **Per-Shot Prop Tracking**: In EVERY shot of Tier 1 and Tier 2 (Code Block 1), the Director MUST explicitly specify the physical state (`Ready` ➔ `Under Load` ➔ `Landed/Stationary`) and single-instance placement.
    - **Cross-Scene Prop Continuity (Chain of Custody)**: The resting state of every prop at `00:10.0` of Scene N is the exact physical opening state at `00:00.0` of Scene N+1.
@@ -120,13 +120,13 @@ description: >
    - Strictly ban barren, 5-word location declarations (e.g. `phong_cu, morning.`). To prevent AI spatial amnesia and environment hallucination, every `[context]:` MUST enforce 5 Physical Vectors:
      * **Vector 1 (Image Anchor)**: `[Location Name] [100% Refer to image <ref>]`.
      * **Vector 2 (Time of Day)**: Exact biological daylight (early dawn, golden morning, harsh midday, amber late afternoon, blue hour dusk, midnight lamp-lit).
-     * **Vector 3 (Fixed Architectural & Furniture Inventory)**: Explicitly inventory all fixed furniture and spatial fixtures established in the 4-View Location Sheet (floor tile patterns, queen bed, crib `noi_go` placement beside bed, wardrobe, doorframe leading to hallway).
+     * **Vector 3 (Fixed Architectural & Furniture Inventory)**: Explicitly inventory all fixed furniture and spatial fixtures established in the 4-View Location Sheet (floor tile patterns, queen bed, pine crib placed beside the bed, wardrobe, doorframe leading to hallway).
      * **Vector 4 (Lighting Physics & Direction)**: Key light source, angle/direction (diagonal 45° from window, top-down overhead), natural color tone (warm golden amber, cool blue daylight; strictly zero Kelvin), and shadow behavior (long soft diagonal shadows).
      * **Vector 5 (Atmospheric Medium & Emotional Climate)**: Physical medium (floating dust motes in sunbeams, stagnant domestic air, humidity) and psychological climate (suffocating confinement, domestic tension).
 
 10. **The 4-Part Sovereign Subject Protocol vs. Dynamic Timeline Staging**:
     - **The 4-Part `[subject]:` Declaration**: In `[subject]:`, declare each character using the invariant formula:
-      `[character_name] [100% Appearance, attire, and facial features Refer to image X], [initial spatial anchor to architectural fixture], [initial physical posture & tactile contact] — the only [character_name] in frame.`
+      `[ho_ten] [100% Appearance, attire, and facial features Refer to image X], [architectural anchor], [body posture], hands free of props, [eyeline toward a character or landmark] — the only [ho_ten] in frame` (Prop-Free Sovereign Formula; mirrors DIRECTOR.md §1c)
       * **Function 1 (Identity Lock)**: Mode B image slot mapping.
       * **Function 2 (Zero-Frame Grounding)**: Anchors physical presence to architecture/furniture at 00:00.0, preventing floating bodies and ghost hands.
       * **Function 3 (Anti-Duplication Seal)**: Mandatory `— the only [name] in frame` suffix to strictly block AI twin/clone hallucinations.
@@ -160,17 +160,17 @@ description: >
 13. **The 3-Block Multi-Modal Label & Blank-Line Spacing Standard (Gates 3J, 3K, 3L)**:
     - In Code Block 1, the narrative setup immediately following the Master Prefix must be structured into 3 explicit blocks, each separated by a blank line:
       * `[context]:` Location Name + `[100% Refer to image ...]` + time of day, atmosphere, lighting setup.
-      * `[subject]:` Character Name + `[100% Appearance, attire, and facial features Refer to image X]`, spatial anchor, tactile contact `— the only [name] in frame` on separate lines.
-      * `[PROP]:` Semicolon-separated list of interactive props & fixtures + `[100% Refer to image ...]`.
+      * `[subject]:` one line per framed character using the Prop-Free Sovereign Formula `[ho_ten] [100% Appearance, attire, and facial features Refer to image X], [architectural anchor], [body posture], hands free of props, [eyeline toward a character or landmark] — the only [ho_ten] in frame`.
+      * `[PROP]:` Two-Tier handheld props only, one per line in natural English without underscores, each with a resting place independent of character hands; Tier 1 hero props (max 1–2 per series) add `[100% Refer to image ...]`, Tier 2 everyday items are text only. Furniture and fixtures stay in `[context]:`. No handheld item → `[PROP]: none (pure environmental and somatic staging)`.
     - Strictly maintain blank-line separation (`\n\n`) for visual clarity and token segregation in generative video pipelines.
 
 14. **Multi-Subject Continuous Presence Mandate**:
     - When multiple characters are present in a room or scene, all active characters must be accounted for continuously in spatial blocking, emotional reaction, and eyeline. Characters never mysteriously vanish when a new character enters or speaks.
 
-15. **Modern Domestic Architectural Staging & Freestanding Fixture Law**:
-    - **Zero False Pillars**: Modern urban homes have NO central wooden or concrete pillars to tie ropes to.
-    - **Freestanding Folding Hammocks**: Hammocks must be collapsible stainless-steel folding frames (võng xếp khung inox di chuyển được).
-    - **Open Space Staging**: Positioned in spacious, uncluttered open floor areas (khoảng sàn gạch trống ngoài hiên/phòng khách). Unfolded with notched stabilizer bars clicking into place; zero ropes, zero pillars.
+15. **Housing-Type Fixture Realism Law** (Pillar 3):
+    - Fixtures match the housing type in the Location Sheet; every fixture is freestanding or mounted on architecture that exists there (no ropes tied to non-existent pillars).
+    - Large deployable fixtures need open floor space; in tight rooms they are stored folded or against a wall.
+    - Project-specific fixture rules (e.g. one series' hammock type) live in `output/<project>/project_staging_rules.md`, never in engine or skill files.
 
 16. **The Dynamic Camera Transition & Lip-Sync Visibility Mandate (Anti-Static P.O.V Trap)**:
     - **Invisibility in P.O.V.**: While the lens acts as a character's downward/tactile P.O.V., that character's lips are invisible. They **CANNOT speak dialogue with lip-sync** during this phase (tactile actions, Foley, and biological sobs/breaths only).
@@ -183,7 +183,7 @@ description: >
     - **Zero Static Trap**: Never freeze the camera in a single static focal setup across an entire shot. Every shot must feature a motivated journey across shot scales and psychological angles.
     - **Elastic Shot & Beat Division (Anti-Rigid Mandate)**:
       * Strictly ban rigid, dogmatic formulas (purge fake labels like 'Phase 1', 'Phase 2', 'Phase 3' or '△' from prompt prose).
-      * The 10s scene is fully elastic: Single unbroken continuous take (1 shot), 2-shot dialogue volley (Track B), 3-shot dramatic clash, 4-shot suspense, or rapid 5-shot action/comedic montage (1.5s–2.0s per cut).
+      * The 10s scene is fully elastic: Single unbroken continuous take (1 shot), 2-shot dialogue volley (Track B), 3-shot dramatic clash, 4-shot suspense, or 4-shot staccato (each shot ≥ 2 s, `0b` §6).
       * Temporal progression is expressed cleanly via timestamps (`[00:00–00:04]`, `[00:04–00:10]`) driving vivid, observable Cinematic Natural Prose without bracket clutter or repetitive boilerplate.
     - **15s Extended Unit**: 2 to 4 motivated shots or continuous tracking moves adapted to dramatic escalation.
     - **30s Master Blockbuster Take (3-Act Mini Structure)**: Establishing & Trigger ➔ Escalation & Sparring ➔ Climax Truth Reveal & Living Settle.
@@ -214,9 +214,9 @@ description: >
     * **Pure Natural Optical Declaration (Bỏ thẻ `[camera]:` & Bỏ Từ Khóa `tripod`)**: Declare the fixed camera setup as a clean natural prose sentence once at the very beginning of the action section (immediately after Foley/acoustics and before `[00:00–00:03.5]`) without any `[camera]:` tag: e.g. `Medium two-shot, eye level, static camera.` (Strictly ban the word "tripod" in prompt prose to eliminate the Hardware Literalization Bug where video diffusion models render an actual 3-legged camera tripod inside the room).
     * **Acting-Only Timeline Brackets**: Timeline brackets (`[00:00–00:03.5]`, `[00:03.5–00:07.0]`, `[00:07.0–00:10.0]`) are **100% dedicated to character somatic performance, speech-action fusion, and living environmental physics** without repeating any camera clauses.
     * *(Scope: Applies EXCLUSIVELY to Track A-Locked; moving takes and cuts retain per-phase/per-shot camera clauses).*
-  - *The Sovereign Hero Prop Law (Đạo Luật Đạo Cụ Linh Hồn & Phân Tách Tuyệt Đối Khỏi Đồ Đạc Bối Cảnh)*:
-    * Thẻ `[PROP]:` trong prompt được dành RIÊNG BIỆT cho Đạo cụ Linh hồn / Xúc tác kịch tính (Chekhov's Gun, Signature Heirlooms, Catalyst Weapons, Legal Contracts).
-    * Các vật dụng sinh hoạt thường nhật, đồ nội thất gia dụng, chăn gối nệm, bàn ghế, tủ giường, rèm cửa, quạt máy, đèn ngủ... **TUYỆT ĐỐI CẤM ĐƯA VÀO `[PROP]:`**. Toàn bộ đồ đạc này thuộc 100% về phần mô tả bối cảnh `[context]:` (Location Set Dressing). Nếu một cảnh không có đạo cụ linh hồn, khai báo `[PROP]: none (pure environmental and somatic staging)`.
+  - *The Two-Tier `[PROP]:` Scope Law (Phạm Vi Thẻ `[PROP]:`; mirrors DIRECTOR.md §1c & §5b)*:
+    * `[PROP]:` chứa MỌI vật cầm tay nhân vật sẽ nhấc, cầm, di chuyển trong cảnh, mỗi món một dòng bằng tiếng Anh tự nhiên không gạch dưới, kèm vị trí đặt tĩnh độc lập với tay nhân vật: Tier 1 Đạo cụ Linh hồn (tối đa 1–2 món mỗi series, có `[100% Refer to image ...]`) và Tier 2 đồ sinh hoạt (chỉ mô tả văn bản, không thẻ ảnh).
+    * Đồ nội thất, vật cố định và set dressing (chăn gối nệm, bàn ghế, tủ giường, nôi, rèm cửa, quạt máy, đèn ngủ...) **TUYỆT ĐỐI CẤM ĐƯA VÀO `[PROP]:`**; chúng thuộc 100% về `[context]:`. Nếu cảnh không có vật cầm tay nào, khai báo `[PROP]: none (pure environmental and somatic staging)`.
   - *Comprehensive In-Context Setting Inventory & The Zero Ghost Object Law (Kiểm Kê Bối Cảnh Toàn Diện & Chống Vật Thể Ma)*:
     * Mô tả `[context]:` BẮT BUỘC liệt kê đầy đủ đồ đạc, chăn màn, bề mặt vật lý của không gian ("có cái gì ở đó": ví dụ giường gỗ gụ trải đệm bông, tấm chăn len thô gấp ở đuôi giường, bàn trà gỗ, rèm vải, cửa sổ mở hờ, hơi nước bốc lên từ chậu gốm).
     * Mọi vật dụng được nhân vật chạm vào, kéo lên hay tương tác trong diễn hoạt kịch bản (ví dụ kéo chăn, bám thành giường) BẮT BUỘC phải hiện diện trước trong mô tả `[context]:`. Tuyệt đối cấm tạo ra "vật thể ma" (ghost objects) đột ngột xuất hiện ở phần hành động mà bối cảnh không có.
@@ -227,15 +227,15 @@ description: >
     * High-density somatic micro-acting across all phases (pupil dilation, jaw clenching, masseter muscle twitching, throat swallow, trembling chin, whitening knuckles).
     * Continuous living atmospheric motion (dust motes dancing in sunlight, curling steam from teacup, loose strands of hair fluttering in breeze, curtain rippling).
     * Tactile prop/surface friction (hands gripping table/rail/blanket) and internal head/gaze shifts.
-  - *Pacing & Audio Standard*: Spoken line ≤ 18 words (or Model 0 pure silence). Accompanied by room tone and choked respiration Foley.
+  - *Pacing & Audio Standard*: Spoken lines follow Gate 4B (≤ 32 words single speaker; ≤ 15 per speaker in a two-shot); Craft Default for a locked take is one short line of ≤ 10–12 words (or Model 0 pure silence). Accompanied by room tone and choked respiration Foley.
 
-18. **The Universal Child Safety, Simple Action & cu_tin Somatic Sleep Staging Protocol (Zero Harm & Platform Safety Immunity)**:
+18. **The Universal Child Safety, Simple Action & Approved Child Entity Somatic Sleep Staging Protocol (Zero Harm & Platform Safety Immunity)**:
     - **Strict Zero-Harm & Endangerment Prohibition**: Strictly ban any depiction of physical violence, harm, injury, crying in agony, starvation, burns, or hazardous environments (fire, heights, deep water, weapons) involving children. Minors must never commit or suffer harm.
-    - **The Simple Action Whitelist (Low-Velocity Kinetic Law)**: When children appear in frame during scenes, actions are strictly limited to simple, peaceful, low-velocity physical states (sleeping peacefully in wooden crib `noi_go`, gentle chest breathing, resting head on parent's shoulder, smiling subtly, slowly blinking, curling fingers around parent's finger, gentle clapping, holding a soft plush toy). Complex kinetic moves are banned to prevent AI anatomical morphing (polydactyly, facial melting).
-    - **The cu_tin Child Entity & Somatic Sleep Staging Protocol**: When a scene occurs in the presence of the wooden crib (`noi_go`) and the sleeping child, the entity **MUST BE DECLARED IN `[subject]:`** as `cu_tin [100% Appearance, attire, and facial features Refer to image cu_tin_4view.jpg]`. The entity is synchronized with safe somatic sleep action prose in the timeline (e.g. `Beside the queen bed, cu_tin rests peacefully inside noi_go on the firm flat organic cotton mattress, chest rising and falling in calm rhythmic sleep, tiny fists curled gently beside soft cheeks through 00:10.0`). Empty crib desynchronization is strictly prohibited.
-    - **Zero Minor Safety Lexicon Standard**: 100% ban on NLP tokens that trip AI moderation: `baby`, `babies`, `kid`, `kids`, `infant`, `infants`, `newborn`, `newborns`, `child`, `children`, `bé`. Replace former aliases (`be_tin` / `bé tin`) exclusively with `cu_tin` (code/prompt) and `Cu Tin` (screenplay). Replace props: `wooden pine crib` / `noi_go` (not baby crib), `cotton bolster pillow` (not baby pillow).
+    - **The Simple Action Whitelist (Low-Velocity Kinetic Law)**: When children appear in frame during scenes, actions are strictly limited to simple, peaceful, low-velocity physical states (sleeping peacefully in a pine crib declared in `[context]:`, gentle chest breathing, resting head on parent's shoulder, smiling subtly, slowly blinking, curling fingers around parent's finger, gentle clapping, holding a soft plush toy). Complex kinetic moves are banned to prevent AI anatomical morphing (polydactyly, facial melting).
+    - **The Approved Child Entity & Somatic Sleep Staging Protocol** (Pillar 4 §[10d]): When the screenplay places the sleeping child in the room, declare the project's approved child `ho_ten` in `[subject]:` as `{child_ho_ten} [100% Appearance, attire, and facial features Refer to image {child_ho_ten}_4view.jpg]`, synchronized with safe somatic sleep prose (e.g. `Beside the queen bed, {child_ho_ten} rests peacefully inside the pine crib on the firm flat organic cotton mattress, chest rising and falling in calm rhythmic sleep through 00:10.0`). A crib the screenplay says is occupied is never shown empty; when the child is outside the room, omit the child entirely.
+    - **Zero Minor Safety Lexicon Standard**: 100% ban on NLP tokens that trip AI moderation: `baby`, `babies`, `kid`, `kids`, `infant`, `infants`, `newborn`, `newborns`, `child`, `children`, `bé`. Child names listed in `project_rules.json` → `minor_character_names` are banned; use only the project's approved child `ho_ten` in prompts (Title Case display name in the screenplay). Replace fixture terms: `pine crib` (not baby crib, declared in `[context]:`), `cotton bolster pillow` (not baby pillow).
     - **Metaphorical Sanitization**: Translate clinical pathology/trauma (`haematomas`, `bruises`, `rolling eyes upward`, `faint`) into clean cinematic metaphors (`clean white medical adhesive bandage tape on pale wrist`, `weary eyelids closing gently in deep fatigue`).
-    - Purge all NLP trigger words (`milk`, `pump`, `starve`, `choke`, `suffocate`, `burn`).
+    - Purge NLP trigger words (e.g. `milk`, `pump`, `starve`, `choke`, `suffocate`, `burn`) plus any project-specific distress vocabulary listed in `output/<project>/project_staging_rules.md`.
 
 19. **The Master Episode Audit Suite (Gates 1A–5 Enforced via `engine/episode_audit_suite.py`)**:
     - Pre-flight automated verification enforcing 18/18 Master Production Gates:
@@ -246,7 +246,7 @@ description: >
       * (3C) ZERO forbidden pronouns (proper name enforcement)
       * (3D) ZERO hardware and Kelvin jargon
       * (3E) ZERO Mode B costume violations
-      * (3F) ZERO minor safety triggers, zero minor terms (kid, child, baby, infant, newborn), and ZERO banned child aliases (`be_tin`, `bé tin`)
+      * (3F) ZERO minor safety triggers, zero minor terms (kid, child, baby, infant, newborn), and ZERO child names listed in `project_rules.json` → `minor_character_names`
       * (3G) 100% Master Cinematography Prefix
       * (3H) ZERO Cartesian math coordinates document-wide
       * (3I) ZERO cross-scene dependencies (100% stateless)
@@ -256,19 +256,20 @@ description: >
       * (3M) 100% Sub-Timeline Phase Division Law (Both Track A Single-Shot & Track B Multi-Shot)
       * (3Q) ZERO Dangling 'Focus on [name]' phrases (The Optical Camera Clause Law)
       * (4) Dialogue parity (spoken lip-sync + directing notes)
-      * (4B) Hard cap <= 18 words per line (target: 14–17w)
-      * (4C) Conversational Ping-Pong Vector Law
-      * (4D) Post-Reconciliation Kinship Pronoun Progression
-      * (4E) Domestic Prop & Biological Meal Continuity
-      * (4F) Anti-Bookish Grammar Law
+      * (4B) Hard cap ≤ 32 words single speaker / ≤ 15 per speaker in a two-shot (craft target 8–14w; Microdrama ≤ 12)
+      * (4C) Conversational Ping-Pong Vector Law (warning only)
+      * (4D) Post-Reconciliation Kinship Pronoun Progression (runs only when `project_rules.json` defines `kinship_ladder`)
+      * (4E) Domestic Prop & Biological Meal Continuity (runs only when `project_rules.json` defines `meal_terms`)
+      * (4F) Anti-Bookish Grammar Law (runs only when `project_rules.json` defines `bookish_terms`)
       * (4G) Somatic Action-Speech Fusion Standard: Dialogue is an organic physical action integrated into bodily movement and breathing, using expressive speech-action verbs with adverbs (`furiously snapping :`, `breathlessly pleading :`, `icily hissing :`, `harshly barking :`)
       * (5) Interactive UI infrastructure (Copy buttons + Toast)
 
 20. **The Universal `ho_ten` Character Entity Anchor Law & Meaningful English Naming Standard**:
     - All character identifiers in AI Video Prompts (Code Block 1) MUST be written in **lowercase, unaccented Latin characters joined by underscores** (`ho_ten` standard): `my_duyen`, `minh_khang`, `ma_ba`, `di_tam`, `cu_tin`.
     - **Meaningful English Naming Standard for Environments & Props**:
-      * Environments/Locations: MUST use meaningful English descriptors (`rustic_wooden_bedroom`, `townhouse_living_room`, `ancestral_shrine_corner`). Banned: transliterated Vietnamese tokens (`phong_cu`, `nha_bep`, `san_truoc`).
-      * Props: MUST use meaningful English descriptors (`steaming_ceramic_ginger_bowl`, `pine_wood_crib`, `ancestral_family_altar`, `worn_leather_ledger`). Banned: transliterated Vietnamese tokens (`bat_com`, `vong_xep`, `noi_go`, `mam_nhom`).
+      * Environments/Locations: MUST use meaningful natural English without underscores (`rustic wooden bedroom`, `townhouse living room`, `ancestral shrine corner`). Banned: transliterated Vietnamese tokens (`phong_cu`, `nha_bep`, `san_truoc`) and raw snake_case.
+      * Props: MUST use meaningful natural English without underscores (`steaming ceramic ginger bowl`, `worn leather ledger`, `brass house key bundle`). Banned: transliterated Vietnamese tokens (`bat_com`, `vong_xep`, `noi_go`, `mam_nhom`) and raw snake_case. Furniture (cribs, altars, beds) is a `[context]:` fixture, not a prop.
+      * Reference image filenames may keep underscores (`rustic_bedroom_4view.jpg`, `ginger_tea_bowl.jpg`).
     - Strips 100% of accented characters in character identifier tokens, eliminating byte-pair tokenization fragmentation and facial/visual distortion across Kling, Sora, Runway, and Hailuo text encoders.
 
 21. **The Optical Camera Clause Law & Zero Dangling Focus Standard (Gate 3Q)**:

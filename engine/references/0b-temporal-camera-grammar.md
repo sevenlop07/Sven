@@ -49,7 +49,7 @@
 When assembling discrete 10-second AI video shots into a seamless cinematic sequence on an NLE timeline (Premiere, DaVinci, CapCut), four mandatory continuity locks guarantee that cuts feel natural, fluid, and coherent rather than fragmented or jarring:
 
 1. **Lock 1: Spatial & 180° Axis Gaze Vector Lock (Khóa Trục Không Gian & Đường Mắt Bất Biến)**:
-   - *Screen-Direction Invariance*: If Character A is framed on Screen-Left looking toward Screen-Right, and Character B is on Screen-Right looking toward Screen-Left, this geometry **must never flip** across shot-reverse-shot cuts unless the camera physically orbits across the axis on screen.
+   - *Screen-Direction Invariance*: If Character A is framed on Screen-Left looking toward Screen-Right, and Character B is on Screen-Right looking toward Screen-Left, this geometry **must never flip** across shot-reverse-shot cuts unless the camera physically orbits across the axis on screen. Record it in the Audit Card; inside Code Block 1 express it through architecture and eyelines (e.g. `ho_ten_A by the window facing ho_ten_B at the doorway`).
    - *Ground & Architectural Anchor*: Every shot within the same sequence must cite the identical floor/surface noun phrase (`encaustic cement tiles`, `packed earthen floor`) and directional key light source to prevent AI latent background hallucinations.
 2. **Lock 2: Kinetic Momentum Baton Relay (Gậy Tiếp Sức Động Năng & Action Match-Cut)**:
    - *The Relay Principle*: In the final 1.0s–1.5s of Shot N (`[00:08.5–00:10.0]`), the active character begins an observable physical movement (raising a hand to wipe a tear, turning a head toward the door, letting a utensil slip).
@@ -64,7 +64,7 @@ When assembling discrete 10-second AI video shots into a seamless cinematic sequ
    - Recorded strictly in Code Block 2: Character 3D positions, facial expression at `00:10.0`, prop physical states (held in left hand, placed on shelf, shattered into fragments) transfer 1:1 into the opening frame of Shot N+1.
 
 ### 1.4 Multi-Spatial Sequence Architecture (Giải Thoát Khỏi Chiếc Hộp Một Phòng)
-- **The Anti-Box Mandate**: Sticking 10 consecutive shots into a single 15m² room to maintain easy continuity destroys cinematic scale and creates stagey, sterile melodrama.
+- **The Anti-Box Mandate**: Sticking 10 consecutive shots into a single cramped room to maintain easy continuity destroys cinematic scale and creates stagey, sterile melodrama.
 - **Cinematic Sequence Breakdown**: A 100s–120s production must be organized into **2 to 3 dynamic physical or psychological Sequences**:
   - *Sequence 1 (Shots 1–3 — Atmospheric Setup & Compressed Tension)*: Intimate tactile space (hallway, quiet room corner, balcony, kitchen hearth) where the protagonist's dilemma is established through physical action and visual metaphor with minimal or zero dialogue.
   - *Sequence Boundary Transition*: Connected to Sequence 2 via a **Sensory Match-Cut** (sound bridge, door threshold crossing, or visual graphic match), moving the narrative forward in space and time.
@@ -303,7 +303,7 @@ my_duyen softly whispers : “ Má ơi, con tự ráng gượng được mà má
 ---
 
 ## §9 — DURATION MODES: 10s, 15s, 30s
-> **Core Principle**: A scene's macro architecture (`[context]`, `[subject]`, `[Pro]`, acoustics, closing stability) is **100% INVARIANT** across 10s, 15s, and 30s.
+> **Core Principle**: A scene's macro architecture (`[context]`, `[subject]`, `[PROP]`, acoustics, closing stability) is **100% INVARIANT** across 10s, 15s, and 30s.
 > Extending duration from 10s to 15s or 30s is simply **adding shots (Track B/AB) or phases (Track A)** within the same single prompt.
 >
 > ⚠️ **THE THIRD-PARTY AI RENDER ENGINE LAW (ZERO CUMULATIVE TIMESTAMPS)**:

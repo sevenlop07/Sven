@@ -85,7 +85,7 @@ To guarantee seamless match-cuts and acoustic continuity between Scene N and Sce
 Continuous low drone of humid afternoon room tone punctured by the rhythmic ticking of an unseen mechanical pendulum clock on the back wall. At [00:01.5], the dry scrape of coarse cotton trousers as he shifts his weight on the wooden stool, followed by the sharp ceramic click of a rice bowl placed firmly on unvarnished pine. A ragged, trembling breath catches in her throat at [00:04.2], audible through tight lips. Her whisper at [00:05.5] is breathy, choked, and intimate with dry sibilance, deadened by the surrounding bed curtains. In the wake of her words, only the faint flutter of her uneven exhalation remains until [00:10.0].
 
 [HANDOVER STATE]:
-Audio carries forward the dying resonance of the ceramic bowl impact and the lingering intake of breath into Scene 02. Camera framing handoff: Close-up eye gaze locked downward at Frame-Right, ready for reverse shot.
+Audio carries forward the dying resonance of the ceramic bowl impact and the lingering intake of breath into Scene 02. Camera framing handoff: close-up, eye gaze locked downward toward the shattered bowl on the tiles, ready for the reverse shot.
 ```
 
 ### Example B: Viral Microdrama Staccato Confrontation

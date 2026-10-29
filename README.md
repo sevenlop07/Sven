@@ -98,9 +98,9 @@ To eliminate optical hallucinations, character drift, and rushed prompts, Sven s
 
 ### 3. Subject & Prop Governance
 - **4-Part Sovereign Subject Formula**:
-  `{ho_ten} [100% Appearance, attire, and facial features Refer to image X], {initial spatial anchor to architectural fixture}, {initial physical posture & tactile contact at T0} — the only {ho_ten} in frame.`
+  `{ho_ten} [100% Appearance, attire, and facial features Refer to image X], {architectural anchor}, {body posture}, hands free of props, {eyeline toward a character or landmark} — the only {ho_ten} in frame.`
 - **Biomechanical Launchpad & Kinetic Handshake Protocol**: Action prose emerges directly from the physical posture declared in `[subject]:`.
-- **The Sovereign Hero Prop Law**: Thẻ `[PROP]:` is reserved exclusively for Tier 1 Chekhovian Hero Props; everyday domestic items (blankets, pillows, chairs, beds) belong 100% to `[context]:` as rich set dressing inventory.
+- **The Two-Tier `[PROP]:` Scope Law**: `[PROP]:` holds every handheld item, one per line in natural English without underscores, each with a resting place independent of character hands. Tier 1 hero props (max 1–2 per series) carry `[100% Refer to image …]`; Tier 2 everyday items are text only. Furniture and fixtures (blankets, pillows, chairs, beds, cribs) belong 100% to `[context]:` as rich set dressing inventory.
 - **Zero Ghost Object Law**: Any object touched in action must be pre-declared in `[context]:` or `[PROP]:`.
 
 ### 4. Zero Dead Air & Independent Render Atoms

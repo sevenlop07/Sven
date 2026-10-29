@@ -465,16 +465,16 @@ Right area features a prominent, zoomed-in high-definition chest-up portrait fil
 Professional high-key beauty studio lighting, subtle soft grounding contact shadows under boots, strictly zero text, zero typography, zero labels, strictly zero background scenery, zero environmental elements, zero furniture, zero watermark, strictly zero cropped head, strictly no cut-off hair, no truncated hair crown, no hair touching canvas edges, ample empty white headroom margin above the skull, pulled back camera framing, strictly zero out-of-frame head, no chopped skull, portrait strictly frontal view only.
 ```
 
-##### 🎬 MẪU 0B (BENCHMARK NỮ SINH CÁ TÍNH 17 TUỔI - RIN MORITA):
+##### 🎬 MẪU 0B (BENCHMARK NỮ CHÍNH HỌC ĐƯỜNG CÁ TÍNH 18 TUỔI, ĐÃ TRƯỞNG THÀNH - RIN MORITA):
 *(Benchmark thực chiến tối ưu 100%: Hoàn toàn không text; 3 góc toàn thân đứng thả lỏng tự nhiên (Front không đầu, Side 90° không đầu, Rear có đầu); chân dung chính diện 100% zoom to rõ nét, full head và khoảng thở an toàn không chạm mép)*
 ```text
 Style: Theatrical film reference, high-end live-action high school youth drama cinematic portraiture, DaVinci color grading, pristine digital finish.
 
 Ultra-realistic human character reference sheet, 8K ultra HD, ultimate details, photorealistic skin and fabric texture, professional commercial fashion studio photography, shot on Hasselblad H6D-100c with 85mm prime lens, crystal clear focus across the entire composition.
 
-Character: One 17-year-old East Asian high school girl, 167cm height, slender and athletic youth physique, symmetrical oval face with defined jawline, luminous porcelain fair skin with delicate natural micro-pores and subtle faint freckles across nose bridge, no heavy makeup. Almond-shaped dark amber-brown eyes with a calm, aloof, sharp rebellious gaze looking directly into the camera lens; straight refined nose bridge with a small flesh-tone medical adhesive bandage strip across the bridge. Natural soft lips, delicate silver chain ear-cuff pierced along the helix of the left ear. Tousled shoulder-length dark espresso wolf-cut hair with subtle ash-grey peekaboo highlights, voluminous textured crown, wispy layered curtain bangs framing the forehead.
+Character: One young adult East Asian woman, aged 18, 167cm height, slender and athletic physique, symmetrical oval face with defined jawline, warm fair complexion with delicate natural micro-pores and subtle faint freckles across nose bridge, no heavy makeup. Almond-shaped dark amber-brown eyes with a calm, aloof, sharp rebellious gaze looking directly into the camera lens; straight refined nose bridge with a small flesh-tone medical adhesive bandage strip across the bridge. Natural soft lips, delicate silver chain ear-cuff pierced along the helix of the left ear. Tousled shoulder-length dark espresso wolf-cut hair with subtle ash-grey peekaboo highlights, voluminous textured crown, wispy layered curtain bangs framing the forehead.
 
-Wardrobe: Dark charcoal-grey tailored wool school blazer with neat lapels and structured shoulders; crisp white cotton collared button-up dress shirt worn unbuttoned at the top collar; loosely tied wine-red silk necktie hanging naturally down the chest; charcoal-grey pleated high-waisted school uniform mini skirt; black ribbed calf-high socks; chunky black leather platform penny loafers with sturdy rubber soles.
+Wardrobe: Dark charcoal-grey tailored wool school blazer with neat lapels and structured shoulders; crisp white cotton collared button-up dress shirt worn unbuttoned at the top collar; loosely tied wine-red silk necktie hanging naturally down the chest; charcoal-grey pleated knee-length school uniform skirt; black ribbed calf-high socks; chunky black leather platform penny loafers with sturdy rubber soles.
 
 Character reference model sheet, aspect ratio 16:9, clean solid pure white studio infinity background.
 

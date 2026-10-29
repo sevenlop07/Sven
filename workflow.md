@@ -112,7 +112,7 @@ When a genre module is activated, its specific narrative conventions, structural
   - Episode runtimes: 60s = 6 scenes, 90s = 9 scenes, 120s = 12 scenes.
   - **Project scene-count override**: when the user approves another count per episode (e.g., 10 scenes = 100s), record it as `"episode_scenes"` in `output/<slug>/project_rules.json` and in the `setting.html` header. The audit warns when an episode's scene count differs from it. Scale the §8.1 beat map proportionally.
 - **15s / 30s — only on explicit user request** (for a named scene, an episode, or the whole project). Gate 3M accepts clips ending at 10, 15, or 30s.
-  - When requested, write one single prompt of that length. The macro scene architecture (`[context]`, `[subject]`, `[Pro]`, acoustics, closing line) is 100% identical to a 10s scene; duration is expanded simply by adding shots/phases (15s: 3–5 phases / 2–5 shots; 30s: 5–8 phases / 4–8 shots in three mini acts).
+  - When requested, write one single prompt of that length. The macro scene architecture (`[context]`, `[subject]`, `[PROP]`, acoustics, closing line) is 100% identical to a 10s scene; duration is expanded simply by adding shots/phases (15s: 3–5 phases / 2–5 shots; 30s: 5–8 phases / 4–8 shots in three mini acts).
   - **Chained** 30s (three stateless 10s prompts joined through Code Block 2 handovers): ONLY if the user specifically requests chaining or reports generator crash.
   - Shapes, phase counts, and density per duration: `0b-temporal-camera-grammar.md` §6, §7, §9. State the duration on the scene card (`00:00 – 00:15` or `00:00 – 00:30`).
 - No other durations (no 12s, no 20s).
@@ -140,7 +140,7 @@ Every Code Block 1 binds each location, character, and interactive prop to its u
 - `[subject]:` → **The 4-Part Sovereign Subject Formula & Absolute Prop-Free Law**:
   `[name] [100% Appearance, attire, and facial features Refer to image <N>], [initial spatial anchor to in-scene architectural fixture], [initial physical posture, hands naturally free of props/weapons] — the only [name] in frame.`
   (Strictly enforces zero clone duplicates, anchors zero-frame spatial positioning, and prevents baking props into character anatomy. TUYỆT ĐỐI CẤM nhồi đạo cụ cầm nắm vào khối `[subject]:`!).
-- `[Pro] :` (or `[PROP]:`) → **The Two-Tier Prop Protocol (Production Velocity Law)**:
+- `[PROP]:` (legacy `[Pro] :` still accepted by Gate 3J) → **The Two-Tier Prop Protocol (Production Velocity Law)**:
   * **Tier 1: Đạo Cụ Linh Hồn & Phương Tiện Bất Ly Thân (Signature Hero Props & Vehicles — CẦN ẢNH THAM CHIẾU / Max 1–2 per series)**: Những vật phẩm rất quan trọng, xuất hiện liên tục đi liền với nhân vật qua nhiều cảnh (vũ khí, xe máy, xe ô tô, kỷ vật trung tâm, bản di chúc, hợp đồng chứng cứ sống còn). BẮT BUỘC có ảnh Model Sheet 16:9 trong Section 4A và gắn thẻ `[Prop Name] [100% Refer to image <prop_ref>], [physical state], [resting place independent of character hands] — the only [prop noun] in frame`.
   * **Tier 2: Đồ Đạc Sinh Hoạt Căn Bản (Everyday Living Items — CHỈ CẦN TEXT CHI TIẾT LÀ ĐỦ)**: Bát đĩa, đôi đũa, ly nước, chổi quét nhà, sổ tay, điện thoại. **TUYỆT ĐỐI KHÔNG TẠO SHEET ẢNH**. Chỉ cần mô tả bằng văn bản thật chi tiết trong `[PROP]:` (không thẻ ảnh), kèm vị trí đặt tĩnh ban đầu.
   * **The Two-Tier `[PROP]:` Scope Law (Phạm Vi Thẻ `[PROP]:`)**: Thẻ `[PROP]:` chứa MỌI vật cầm tay mà nhân vật sẽ nhấc, cầm, di chuyển trong cảnh (Tier 1 có thẻ ảnh, Tier 2 chỉ mô tả văn bản), mỗi prop một dòng kèm vị trí đặt tĩnh độc lập với tay nhân vật. Đồ nội thất, vật cố định và set dressing (giường, nôi, bàn ghế, tủ, chăn gối nệm, rèm cửa, quạt máy, đèn ngủ...) **TUYỆT ĐỐI CẤM ĐƯA VÀO `[PROP]:`**; chúng thuộc 100% về `[context]:`. Nếu cảnh không có vật cầm tay nào, khai báo `[PROP]: none (pure environmental and somatic staging)`.
@@ -150,7 +150,7 @@ Every Code Block 1 binds each location, character, and interactive prop to its u
     - **Tên đạo cụ (Props)**: **TUYỆT ĐỐI KHÔNG DÙNG DẤU GẠCH DƯỚI `_` (NO UNDERSCORES)**! Viết bằng **tiếng Anh tự nhiên (Natural English Prose)** (e.g. `black cast-iron skillet`, `white ceramic coffee mug`, `woven bamboo hand fan`, `steaming bowl of ginger congee`, `carved walking cane`) để AI video text encoders (CLIP, T5) kích hoạt đúng ma trận trọng số vật lý của đồ vật.
     - Tên file ảnh tham chiếu (Location & Hero Prop): Viết bằng tiếng Anh có nghĩa (`location_kitchen_morning.jpg`, `heirloom_pocket_watch.jpg`, `ginger_tea_bowl.jpg`). Tuyệt đối CẤM đặt tên theo kiểu phiên âm bồi tiếng Việt (`phong_ngu_01`, `chao_pancake`, `bat_tra_gung`, `nha_bep`). Tên file được giữ dấu gạch dưới vì là đường dẫn file.
 - Blocks are separated by blank lines. Legacy free-text tags (`[Character Reference attached]`, `[Mode A Anchor]`) are banned.
-- Fixtures already visible in the location sheet (beds, cribs, tables) belong to `[context]`. Never re-declare them in `[Pro] :`, because that produces ghost duplicates.
+- Fixtures already visible in the location sheet (beds, cribs, tables) belong to `[context]`. Never re-declare them in `[PROP]:`, because that produces ghost duplicates.
 
 ### 2.6 Age & Appearance Policy
 - **Numeric age appears ONLY in the voice parenthetical**: `（Voice of a 24-year-old woman from Southern Vietnam, ...）`. Gate 3A strips this pattern before scanning.

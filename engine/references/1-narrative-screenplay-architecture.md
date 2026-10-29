@@ -469,7 +469,7 @@ Within any single episode, 10-second Scene Atoms must be forged together through
   - ❌ *Banned ("And then")*: Scene 1 shows hero baking bread. Scene 2 shows hero walking in street. Scene 3 shows hero talking to merchant. (Disjointed slideshow).
   - ✅ *Mandatory ("Therefore / But")*: Scene 1 flour jar falls empty, mother faints; **THEREFORE** Scene 2 hero sprints out the door grabbing father's relic; **BUT** Scene 3 street elders spot the relic and shout accusations; **THEREFORE** Scene 4 hero is cornered against the storehouse wall...
 - **The Scene Handoff Triangle Execution**:
-  - *Vector Continuity*: If character exits frame-right at Scene N, camera must establish entry from frame-left at Scene N+1.
+  - *Vector Continuity*: If character exits frame-right at Scene N, camera must establish entry from frame-left at Scene N+1 (an editorial note for the Audit Card; Code Block 1 anchors exits and entries to architecture, e.g. `exits through the kitchen doorway`).
   - *Prop Continuity*: The object touched at 00:09 of Scene N must be in physical contact at 00:00 of Scene N+1.
   - *Dialogue Keyword Handoff*: The core noun/verb of the previous volley must be seized and weaponized in the next volley (e.g., *"This debt will destroy you"* ➔ *"Then let it destroy me, because I will not yield!"*).
 
