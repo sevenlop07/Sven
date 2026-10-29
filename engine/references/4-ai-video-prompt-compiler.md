@@ -211,15 +211,15 @@ For **each Scene**, before writing the Shot breakdown, determine:
 
 To eliminate all contradictions between visual diffusion stability (Mode B) and multi-modal audio/lip-sync generation, character information is split into two non-overlapping operational tracks:
 
-#### TRACK 1: THE 4-PART SOVEREIGN SUBJECT PROTOCOL & DYNAMIC TIMELINE DIRECTING
+#### TRACK 1: THE PROP-FREE SOVEREIGN SUBJECT PROTOCOL & DYNAMIC TIMELINE DIRECTING
 To anchor character identity, eliminate AI duplicate clones, and prevent spatial amnesia, character specification follows a rigorous two-tier division:
 
-1. **The `[subject]:` Declaration Block (The 4-Part Sovereign Formula)**:
-   In Code Block 1, every participating character in `[subject]:` MUST be declared using the **4-Part Sovereign Formula**:
-   $$\mathbf{[subject]:} = \mathbf{[Tên\ +\ Thẻ\ Ảnh]} + \mathbf{[Mỏ\ neo\ không\ gian\ kiến\ trúc]} + \mathbf{[Tư\ thế\ &\ Xúc\ giác\ ban\ đầu]} + \mathbf{[—\ the\ only\ \{name\}\ in\ frame]}$$
+1. **The `[subject]:` Declaration Block (The Prop-Free Sovereign Subject Formula)**:
+   In Code Block 1, every participating character in `[subject]:` MUST be declared using the **Prop-Free Sovereign Subject Formula**:
+   $$\mathbf{[subject]:} = \mathbf{[Tên\ +\ Thẻ\ Ảnh]} + \mathbf{[Mỏ\ neo\ kiến\ trúc]} + \mathbf{[Tư\ thế\ ban\ đầu]} + \mathbf{[hands\ free\ of\ props]} + \mathbf{[Đường\ mắt]} + \mathbf{[—\ the\ only\ \{ho\_ten\}\ in\ frame]}$$
    
    - **Syntax Contract**:
-     `{ho_ten} [100% Appearance, attire, and facial features Refer to image X], {initial spatial anchor to in-scene architectural fixture}, {initial physical posture, hands naturally free of props/weapons} — the only {ho_ten} in frame.`
+     `{ho_ten} [100% Appearance, attire, and facial features Refer to image X], {initial spatial anchor to in-scene architectural fixture}, {initial physical posture}, hands free of props, {eyeline toward ho_ten_B or a landmark} — the only {ho_ten} in frame.`
    - **The 3 Directorial Functions of `[subject]:`**:
      * **Function 1: Multi-Modal Identity Lock**: Binds character token to the 16:9 Model Sheet (`image X`).
      * **Function 2: Zero-Frame Spatial & Tactile Grounding**: Anchors character physically to an architectural fixture or furniture at Frame 0 (`00:00.0`), preventing floating bodies or deformed ghost hands.
@@ -268,8 +268,8 @@ To anchor character identity, eliminate AI duplicate clones, and prevent spatial
 > 2. **Single-Speaker Dominance for Lip-Sync Stability**: Generative diffusion models (Veo, Sora, Kling, Runway) achieve near-100% lip-sync accuracy and zero voice bleeding when each 10s shot features **EXACTLY ONE speaking face**.
 > 3. **The Two-Shot Exception & The 15-Word Split Law**: Two characters are permitted to speak in the same 10s shot ONLY in a Two-Shot during rapid, high-friction verbal sparring (each speaking 5–10 words). If either speaker speaks **more than 15 words** in that shot ➔ **MANDATORY EDITORIAL SPLIT** into separate solo shots.
 > 4. **Cinematic Word Budgets per 10s Shot**:
->    - *Sitcom / Slice-of-Life*: **25–30 words** (single speaker, cap 32w). Paced at ~2.5–3.0 wps, ending with a punchline at 2–3s before cut.
->    - *Psychological Drama*: **15–20 words** (single speaker). Reserves 4–5s for breathing, glances, and emotional subtext.
+>    - *Sitcom / Slice-of-Life*: **14–24 words** (single speaker, hard cap ≤ 32w; craft target 8–14w). Paced at ~2.2–2.8 wps, ending with a punchline at 2–3s before cut.
+>    - *Psychological Drama*: **8–14 words** (single speaker; Microdrama ≤ 12w; cap ≤ 20w). Reserves 4–5s for breathing, glances, and emotional subtext.
 >    - *Buffer Law*: 0.5s–1.0s buffer at head (breath intake); 0.5s–1.5s at tail (mouth closure, living settle).
 
 **Dialogue Parenthetical Formula (Speech Action Standard):**
@@ -285,20 +285,20 @@ To anchor character identity, eliminate AI duplicate clones, and prevent spatial
 **Directing Syntax for 4 Master Cinematic Dialogue Techniques in Prompts:**
 1. **Standard Solo Shot (Shot - Reverse Shot — Single Speaker)**:
    ```text
-   my_duyen [Refer to image 1], framed in medium close-up at room-center, gentle brown eyes glowing with maternal hope, chest rising in calm measured breaths — the only my_duyen in frame.
+   my_duyen [100% Appearance, attire, and facial features Refer to image 1], framed in medium close-up at room-center, gentle brown eyes glowing with maternal hope, chest rising in calm measured breaths — the only my_duyen in frame.
    my_duyen says : “A bamboo cradle, a bolster for the back, and a soft bed-edge to cradle you gently, Mama!” (Voice of a young adult woman from Southern Vietnam; lips parting in articulate lip-sync with a tender affectionate smile; slender fingers caressing the cotton fabric; gentle brown eyes conveying a tender plea for filial reconciliation.)
    ```
 2. **Reaction Shot (Model 0 — 0 Spoken Words, Absolute Lip Closure)**:
    ```text
-   ba_ba [Refer to image 2], framed in tight close-up, shoulders rigid against the doorway frame, lips remaining 100% firmly sealed with zero mouth movement; eyes glistening with suppressed vulnerability, jaw clenching as throat swallows hard, absorbing the painful truth in heavy suffocating silence through 00:10.0.
+   ba_ba [100% Appearance, attire, and facial features Refer to image 2], framed in tight close-up, shoulders rigid against the doorway frame, lips remaining 100% firmly sealed with zero mouth movement; eyes glistening with suppressed vulnerability, jaw clenching as throat swallows hard, absorbing the painful truth in heavy suffocating silence through 00:10.0.
    ```
 3. **L-Cut Audio Bleed (Trailing Dialogue over Silent Reaction)**:
    ```text
-   ba_ba [Refer to image 2], framed in medium close-up, looking toward the doorway in stunned silence, lips remaining 100% firmly closed; in diegetic room acoustics, the trailing spoken words of my_duyen echo from off-screen during [00:00–00:02.0]: “...to cradle you gently, Mama!” while ba_ba's eyes widen slightly, throat muscles tightening before a slow, wounded exhalation right to 00:10.0.
+   ba_ba [100% Appearance, attire, and facial features Refer to image 2], framed in medium close-up, looking toward the doorway in stunned silence, lips remaining 100% firmly closed; in diegetic room acoustics, the trailing spoken words of my_duyen echo from off-screen during [00:00–00:02.0]: “...to cradle you gently, Mama!” while ba_ba's eyes widen slightly, throat muscles tightening before a slow, wounded exhalation right to 00:10.0.
    ```
 4. **Internal Monologue / Voice-Over (Model 4 — V.O.)**:
    ```text
-   minh_khang [Refer to image 3], sitting motionless on the wooden bench, eyes fixed down on the crumpled letter, lips remaining 100% firmly sealed with zero facial articulation; internal voiceover resonates in clear mental acoustics: “If I turn back now, there will be nothing left to save.” (Voice of a young adult man from Central Vietnam, hushed reflective timbre; slow shallow breathing, eyelids fluttering softly.)
+   minh_khang [100% Appearance, attire, and facial features Refer to image 3], sitting motionless on the wooden bench, eyes fixed down on the crumpled letter, lips remaining 100% firmly sealed with zero facial articulation; internal voiceover resonates in clear mental acoustics: “If I turn back now, there will be nothing left to save.” (Voice of a young adult man from Central Vietnam, hushed reflective timbre; slow shallow breathing, eyelids fluttering softly.)
    ```
 
 **Two-Shot Exception Directing Demonstration (Rapid Sparring ≤ 15w/speaker):**
@@ -366,102 +366,13 @@ Noa replies : “A forged seal buys nothing; father paid in full!” (Voice of a
 
 #### 4. Golden Reference Templates (Mẫu chuẩn thực chiến):
 
-**Mẫu 1A: Nữ chiến binh / Mật vụ hiện đại (Dark Tactical Attire • Solid Pure White Backdrop)**
-*(Áp dụng quy chuẩn nâng cấp: Khung hình sạch 100% không text; Cụm toàn thân 3 góc đứng tự nhiên gồm Front không đầu, Side 90° không đầu, Back có đầu & tóc phía sau; Nửa bên phải là chân dung chính diện 100% sắc nét cao bảo toàn trọn vẹn full face, full head và khoảng thở đỉnh đầu)*
-```text
-Style: Theatrical film reference, high-end live-action fashion and tactical cinematic portraiture, DaVinci color grading, pristine digital finish.
-
-Ultra-realistic human character reference sheet, 8K ultra HD, ultimate details, photorealistic skin and fabric texture, professional commercial fashion studio photography, shot on Hasselblad H6D-100c with 85mm prime lens, crystal clear focus across the entire composition.
-
-Character: One young East Asian woman, aged 24, 170cm height, athletic and toned physique with agile tactical curves, delicate oval face with sharp V-line jaw, luminous porcelain fair skin with delicate natural micro-pores and subtle rosy undertones, no heavy makeup. Almond-shaped amber-brown eyes with a calm, penetrating, sharp gaze; wearing ultra-thin rimless silver wire spectacles. Straight refined nose bridge, full natural lips with a subtle metallic silver hoop ring piercing centered on the lower lip. Layered chin-length textured bob hair in dark espresso brown with delicate honey-caramel highlights and wispy ends.
-
-Wardrobe: Cropped dark burgundy maroon leather moto jacket with a neat stand-up collar, silver star-shaped metallic snap button, and form-fitting sleeve panels; form-fitting zipped taupe bodysuit underneath; low-rise black tactical mini shorts with a brown leather utility belt; dual black leather thigh holsters with buckle straps around upper thighs; over-the-knee black leather boots with sturdy block heels.
-
-Character reference model sheet, aspect ratio 16:9, clean solid pure white studio infinity background.
-
-Left and center area displays a three-angle full-body turnaround in a natural, relaxed standing posture with arms resting naturally and loosely beside the torso, feet naturally grounded touching the floor:
-1. Headless neck-down front view showing complete front silhouette, jacket zipper, bodysuit, shorts, thigh holsters, and boots, with strictly zero head and zero face.
-2. Headless neck-down 90-degree lateral side profile view showing body depth, spine posture, jacket arm profile, and holster profile, with strictly zero head and zero face.
-3. Full-length rear back view INCLUDING complete back of head and rear hairstyle, showing the full rear textured bob haircut, nape of the neck, rear jacket seams, waistline, and back of boots down to the floor.
-
-Right area features a prominent, zoomed-in high-definition chest-up portrait filling the right frame with impactful facial clarity while maintaining safe headroom margin above the hair crown, entire head, full cranium, and complete voluminous textured bob hairstyle 100% fully visible inside the canvas with clear breathing space below top border, in strictly direct frontal eye-level view facing camera directly, capturing razor-sharp facial features, delicate skin texture, amber-brown iris catchlights, styled bob hair strands, rimless spectacles, lip ring piercing, and collar star hardware.
-
-Professional high-key beauty studio lighting, subtle soft grounding contact shadows under boots, strictly zero text, zero typography, zero labels, strictly zero background scenery, zero environmental elements, zero furniture, zero watermark, strictly zero cropped head, strictly no cut-off hair, no truncated hair crown, no hair touching canvas edges, ample empty white headroom margin above the skull, pulled back camera framing, strictly zero out-of-frame head, no chopped skull, portrait strictly frontal view only.
-```
-
-**Mẫu 1B: Nam chính Âu phục tối màu (Dark Suit • Solid Pure White Backdrop)**
-*(Thợ săn mặc vest đen tuyền ➔ Bắt buộc phông trắng studio để nổi bật tối đa từng đường vai và form dáng; 3 góc toàn thân đứng thả lỏng tự nhiên, không text)*
-```text
-Style: Theatrical film reference, live-action style, DaVinci grading, masterful composition & cinematic color.
-
-Ultra-realistic human portrait photography, 8K ultra HD, ultimate details, photorealistic texture, professional studio character model sheet, shot with 85mm f1.4 large aperture lens, shallow depth of field, focus precisely locked on the character's face.
-
-Aesthetic of restrained western suited hunter, cold elite temperament. One young Western male, aged 28, 182cm height, with three-dimensional facial bone structure, porcelain fair cold white skin, delicate and transparent natural skin texture, no heavy makeup, original handsome facial features preserved. Deep brow bones and eye sockets form natural stern shadows, cool gray-blue and dark amber eye color, sharp calm eyes with strong sense of oppression and alienation. Tall and delicate nose bridge, thin natural nude lips, cold and calm facial expression.
-
-Neat slicked-back black hair with distinct clear strands, neat and tough style, no earrings and tattoos. Slim-fit black suit matched with high-quality shirt in the same tone, made of matte premium wool with silk inner lining, tailored fit highlighting tough shoulder lines and restrained aura with neat collar design. Overall style dark, cold, restrained and elegant with outstanding elite hunter charm.
-
-Solid pure white studio backdrop with zero scenery and zero environmental elements, creating absolute visual contrast against the black tailored suit and highlighting crisp edge separation. Professional high-end studio lighting, subtle soft contact shadows under feet, soft balanced fill light on face, perfectly showcasing high-grade texture of skin, hair and matte wool fabric. Clean, refined, authoritative elite hunter presentation.
-
-Character reference model sheet, aspect ratio 16:9, clean solid pure white studio background.
-
-Left and center area displays a three-angle full-body turnaround in a natural, relaxed standing posture with arms resting naturally and loosely beside the torso, feet naturally grounded touching floor:
-1. Headless neck-down front view showing tailored suit drape, buttons, lapels, trousers, and dress shoes, with strictly zero head and zero face.
-2. Headless neck-down 90-degree lateral side profile view showing masculine posture, jacket sleeve drape, and shoe profile, with strictly zero head and zero face.
-3. Full-length rear back view INCLUDING complete back of head and slicked-back hairstyle, showing the neat hairline at the nape, jacket vent lines, trouser drape, and heels touching floor.
-
-Right area features a prominent, zoomed-in high-definition chest-up portrait filling the right frame with impactful facial clarity while maintaining safe headroom margin above the hair crown, entire head, full cranium, and complete slicked-back hairstyle 100% fully visible inside the canvas with clear breathing space below top border, in strictly direct frontal eye-level view facing camera directly, capturing razor-sharp facial features, skin texture, iris color with natural catchlights, styled hair strands, and suit collar.
-
-Professional high-end studio lighting, subtle soft contact shadows under feet, strictly zero text, zero typography, zero labels, strictly zero background scenery, zero environmental elements, zero furniture, zero watermark, strictly zero cropped head, strictly no cut-off hair, no truncated hair crown, no hair touching canvas edges, ample empty white headroom margin above the skull, pulled back camera framing, strictly zero out-of-frame head, no chopped skull, portrait strictly frontal view only.
-```
-
-**Mẫu 1C: Trang phục SÁNG MÀU ➔ Bắt buộc NỀN TỐI TRUNG TÍNH Studio (Light Attire • Solid Dark Backdrop)**
-*(Nhân vật mặc trang phục sáng màu như lanh kem, áo blouse trắng ➔ Bắt buộc dùng phông xám tối studio để nổi bật viền vải; 3 góc toàn thân đứng thả lỏng tự nhiên, không text)*
-```text
-Style: Theatrical film reference, live-action style, DaVinci grading, masterful composition & cinematic color.
-
-Ultra-realistic human portrait photography, 8K ultra HD, ultimate details, photorealistic texture, professional studio character model sheet, shot with 85mm f1.4 large aperture lens, shallow depth of field, focus precisely locked on the character's face.
-
-Aesthetic of pure poised artisan, graceful resilient temperament. One young female, aged 26, 168cm height, with three-dimensional facial bone structure, warm luminous honey-olive skin with delicate natural skin texture, no heavy makeup, original beautiful facial features preserved. Expressive almond-shaped hazel eyes with calm resolute gaze, straight delicate nose bridge, natural soft lips, composed dignified facial expression.
-
-Wavy walnut-brown hair tied neatly back with distinct clear hair strands, bare ears with no earrings, bare skin with no tattoos. Pristine baseline tailored light ivory-cream homespun linen tunic, natural breathable organic fabric texture, fine weave details, clean simple neckline, bare hands. Overall style elegant, serene, grounded and pure.
-
-Solid dark neutral grey studio backdrop with zero scenery and zero environmental elements, creating sharp luminous contrast against the light cream linen tunic. Cinematic Rembrandt studio lighting, crisp cool rim outline light separating the light silhouette from the dark background, soft warm fill light on face with controlled chiaroscuro shadows. Delicate light effect showcasing organic fabric weave and skin texture.
-
-Character reference model sheet, aspect ratio 16:9, clean solid dark neutral studio background.
-
-Left and center area displays a three-angle full-body turnaround in a natural, relaxed standing posture with arms resting naturally and loosely beside the torso, feet naturally grounded touching floor:
-1. Headless neck-down front view showing linen tunic drape, woven texture, simple neckline, trousers, and footwear, with strictly zero head and zero face.
-2. Headless neck-down 90-degree lateral side profile view showing tunic drape, relaxed posture, and side profile of footwear, with strictly zero head and zero face.
-3. Full-length rear back view INCLUDING complete back of head and tied walnut-brown hairstyle, showing nape of neck, rear linen seams, and heels touching floor.
-
-Right area features a prominent, zoomed-in high-definition chest-up portrait filling the right frame with impactful facial clarity while maintaining safe headroom margin above the hair crown, entire head, full cranium, and complete wavy walnut-brown hairstyle 100% fully visible inside the canvas with clear breathing space below top border, in strictly direct frontal eye-level view facing camera directly, capturing razor-sharp facial features, skin texture, hazel iris catchlights, styled walnut-brown hair strands, and organic neckline.
-
-Professional studio lighting, subtle soft grounding shadows under footwear, strictly zero text, zero typography, zero labels, strictly zero background scenery, zero environmental elements, zero furniture, zero watermark, strictly zero cropped head, strictly no cut-off hair, no truncated hair crown, no hair touching canvas edges, ample empty dark headroom margin above the skull, pulled back camera framing, strictly zero out-of-frame head, no chopped skull, portrait strictly frontal view only.
-```
-
-**Mẫu 2: 3D Animation / Unreal Engine Realism (Game CG • Solid Dark Studio Backdrop)**
-```text
-Style: 3D, game CG, cinematic quality, rendered in Unreal Engine, Octane Render, Cinema 4D, Ray-traced global illumination, dark rich cinematic realism. Subsurface scattering skin shading, micro-texture fabrics.
-
-High-end character design showcase, 8K ultra HD, ultimate polygon details, physically based rendering (PBR) textures, professional studio character model sheet, virtual camera with 85mm optical perspective, creamy shallow depth of field, focus locked on facial features.
-
-Aesthetic of restrained western suited hunter, cold elite temperament. One young Western male, aged 28, 182cm height, with stylized three-dimensional facial bone structure, porcelain fair cold skin with fine subsurface scattering pores, no heavy makeup, striking handsome features. Deep brow bones and sculpted eye sockets creating crisp natural shadow planes, dual-tone cool gray-blue and dark amber irises, sharp piercing calm gaze with palpable aura of dominance. Straight sculpted nose bridge, thin nude lips, cold disciplined expression.
-
-Neat slicked-back jet-black hair with distinct strand-based hair grooming, sharp clean hairline, zero earrings and zero tattoos. Slim-fit tailored black suit and matching dress shirt, rendered in matte wool PBR weave with subtle silk sheen on lapel and inner lining, sharp masculine shoulder silhouette, structured collar. Dark, austere, restrained aristocratic assassin aesthetic.
-
-Solid pure white studio backdrop with zero scenery and zero environmental elements, creating maximum visual contrast against the tailored black suit and ensuring pristine edge separation. Studio key lighting casting crisp contact shadows under feet, delicate fill light revealing micro-fabric weave and subsurface skin scatter. Disciplined, lethal, calculated hunter aura.
-
-Character reference model sheet, aspect ratio 16:9, clean solid pure white studio background.
-
-Left and center area displays a three-angle full-body turnaround in a natural, relaxed standing posture with arms resting naturally and loosely beside the torso, feet naturally grounded touching floor:
-1. Headless neck-down front view showing tailored suit drape, buttons, lapels, trousers, and dress shoes, with strictly zero head and zero face.
-2. Headless neck-down 90-degree lateral side profile view showing 3D character silhouette, jacket profile, and shoe profile, with strictly zero head and zero face.
-3. Full-length rear back view INCLUDING complete back of head and sculpted slicked-back hairstyle, showing the sharp hairline at the nape, jacket vent lines, and shoes touching floor.
-
-Right area features a prominent, zoomed-in high-definition chest-up portrait filling the right frame with impactful facial clarity while maintaining safe headroom margin above the hair crown, entire head, full cranium, and complete sculpted hairstyle 100% fully visible inside the canvas with clear breathing space below top border, in strictly direct frontal eye-level view facing camera directly, capturing stylized facial features, PBR subsurface skin scattering, piercing irises, strand-based hair grooms, and suit lapel.
-
-Key lighting casting crisp contact shadows under feet, strictly zero text, zero typography, zero labels, strictly zero environmental elements, zero scenery, zero furniture, zero watermark, strictly zero cropped head, strictly no cut-off hair, no truncated hair crown, no hair touching canvas edges, ample empty white headroom margin above the skull, pulled back camera framing, strictly zero out-of-frame head, no chopped skull, portrait strictly frontal view only.
-```
+> [!NOTE]
+> **Single Source of Truth for Character Model Sheets**: To avoid desynchronization, all canonical 16:9 Character Model Sheet prompt templates reside exclusively in [`2-casting-worldbuilding-specification.md`](file:///d:/Project/Sven/engine/references/2-casting-worldbuilding-specification.md) §3:
+> - **Mẫu 0 / 1A**: Human Adult Dark Wardrobe ➔ Solid Pure White Studio Backdrop (Three-angle headless turnaround + prominent frontal chest-up portrait).
+> - **Mẫu 1B**: Human Adult Light Wardrobe ➔ Solid Dark Neutral Grey Studio Backdrop.
+> - **Mẫu 0B**: Human Minor-Safe Benchmark (< 18 years old — Rin Morita; three full-length views with head + head-and-shoulders portrait; zero glamour/beauty, zero adult-labeling).
+> - **Mẫu 3**: Non-Human Entity Benchmark (Robot, Creature, Beast — 3 full-body views with head intact + 1 upper torso & head medium shot).
+> - **Mẫu 2**: 3D Animation & Unreal Engine PBR Model Sheet.
 
 ### [Prop Profile] & Physical Anchor Protocol — §3.4
 
@@ -493,7 +404,7 @@ Rules: Strictly four views only. Do not include any fifth view, extra detail ins
   One line inside `[PROP]:`: `{material/texture} {prop noun}, {state/wear}, {resting place independent of character hands} — the only {prop noun} in frame`
 - **Examples**:
   ```text
-  chipped white ceramic rice bowl, steaming with hot jasmine rice, resting on the wooden dining table beside my_duyen's left wrist — the only rice bowl in frame
+  chipped white ceramic rice bowl, steaming with hot jasmine rice, resting at the center of the wooden dining table — the only rice bowl in frame
   dented aluminum kettle, soot-blackened base, resting on the clay stove ledge with a thin thread of steam rising from the spout — the only kettle in frame
   folded kraft paper envelope with faded red ink hospital seal, resting on the wooden side table beside the doorway — the only envelope in frame
   ```
@@ -889,7 +800,7 @@ Both tracks are governed by **Elastic Montage & Temporal Physics (1 to 5 dynamic
 
 ### 🅰️-LOCKED: TRACK A-LOCKED — THE LOCKED-OFF PERFORMANCE VARIANT (Cú Máy Tĩnh Khóa Cố Định Tập Trung Diễn Hoạt)
 * **Core Directorial Philosophy**: *"Stillness As Magnitude (Sự Tĩnh Lặng Tạo Nên Sức Nặng)"*.
-* **Camera Mechanics**: The camera is **100% stationary on a locked tripod**. Zero panning, zero tilting, zero tracking, zero zooming, strictly zero camera drift.
+* **Camera Mechanics**: The camera is **100% stationary on a fixed static mount** (prose bans the word "tripod"). Zero panning, zero tilting, zero tracking, zero zooming, strictly zero camera drift.
 * **The Problem in Generative Diffusion Models**: If a prompt simply writes `static camera`, AI video engines (Kling, Runway, Wan 2.1, Sora) tend to render a lifeless still photo or freeze the actor into an emotionless wax mannequin.
 * **The Dedicated Prompt Optimization Protocol (Exclusive to Track A-Locked)**:
   1. **Pure Natural Optical Declaration (Khai Báo Cỡ Cảnh, Góc Quay & Camera Tĩnh Trực Tiếp — Bỏ Thẻ `[camera]:` & Bỏ Từ Khóa `tripod`) — Applied Exclusively to Track A-Locked**: Because shot scale, angle, and camera stability are 100% invariant across the entire 10s take, declare the optical setup as a clean natural prose sentence **strictly once** at the head of the action section (immediately after audio and before timeline brackets), completely omitting any `[camera]:` bracket.
@@ -970,7 +881,7 @@ Consistent character, lighting, and environmental physics maintained through 00:
 | :--- | :--- | :--- |
 | **Camera Cuts** | **Zero Cuts** (1 Unbroken Take across 10.0s) | **1 to 4 shots per 10 s** (grammar §6); each later phase opens with `Cut to …` |
 | **Camera Trajectory** | Continuous motivated glide (Dolly, Pan, Track, Orbit) | Discrete angle shifts anchored to the 180° Action Axis |
-| **Dialogue Capacity** | **Single Speaker Focus** (Sitcom: 25–30w, cap 32w; Drama: 15–20w; timed by grammar §2–§3) | **Rapid Sparring Volleys** (Two-shot exception: ≤ 15w per speaker, total ≤ 32w; standard dialogue uses Shot-Reverse-Shot across consecutive shots) |
+| **Dialogue Capacity** | **Single Speaker Focus** (Sitcom: 14–24w, cap ≤ 32w; Drama: 8–14w, cap ≤ 20w; craft target 8–14w; timed by grammar §2–§3) | **Rapid Sparring Volleys** (Two-shot exception: ≤ 15w per speaker, total ≤ 32w; standard dialogue uses Shot-Reverse-Shot across consecutive shots) |
 | **Phase 3 Arrest Method** | **Deceleration, Settle & Static Lock** | **Hard Editorial Cut to Choker/Macro** |
 | **AI Latent Stability** | **Maximum (95%+)**: Zero morphing, zero garment drift | High narrative friction; requires strict 4-Bridge locks |
 | **Hollywood Purpose** | Intimate psychological truth, raw physical momentum | Fast-paced conflict, shock revelations, societal friction |
@@ -1048,7 +959,7 @@ Consistent character, lighting, and environmental physics maintained through 00:
 ### 1. Spatial Vector & 180° Axis Lock (Khóa Không Gian & Đường Trục 180°)
 - **The Invariant Screen-Direction Law**:
   - If in Shot 1, **Subject A is on Screen-Left looking toward Screen-Right, and Subject B is on Screen-Right looking toward Screen-Left**, then across all cuts:
-  - Even when switching to an Over-the-Shoulder, Low-Angle, or Tight Choker in Shot 2 and Shot 3: **A MUST maintain left-to-right gaze/vector, and B MUST maintain right-to-left gaze/vector**.
+  - Even when switching to an Over-the-Shoulder, Low-Angle, or Tight Choker in Shot 2 and Shot 3: **A MUST maintain left-to-right gaze/vector, and B MUST maintain right-to-left gaze/vector**. (Record screen direction in the Audit Card only; Code Block 1 anchors gaze to characters and architecture, with zero frame-left / frame-right words).
   - The 180° action line is sacred and must never be crossed without an explicit in-camera tracking orbit.
 - **The Invariant Ground/Floor Anchor (Mặt Sàn Bất Biến)**:
   - All shots within a 10s prompt must use the exact identical noun phrase for the floor/ground surface (e.g., `packed earthen floor`, `mossy stone flagstones`, `sun-baked red clay soil`).
@@ -1101,7 +1012,7 @@ SCENE N (10.0s Clip)                                SCENE N+1 (10.0s Clip)
    - **Inbound Baton (Scene N+1, 00:00.0–00:01.5)**: The opening line of the next prompt MUST catch this exact motion from the new camera angle (e.g. `Cut to reverse shot from the dim corridor: Ma Ba's hand pushes the latch downward, stepping across the wooden threshold...`).
    - **Editing Impact**: When cut together on the action (Action Match-Cut), the camera switch feels intentional and cinematic, erasing the AI clip boundary completely.
 2. **Invariant Spatial & Gaze Geometry (The Screen Direction Law)**:
-   - If Character A faces Screen-Right and Character B faces Screen-Left in Scene N, Scene N+1 MUST strictly maintain this gaze vector across all reverse shots, close-ups, and over-the-shoulders.
+   - If Character A faces Screen-Right and Character B faces Screen-Left in Scene N, Scene N+1 MUST strictly maintain this gaze vector across all reverse shots, close-ups, and over-the-shoulders. (Record screen direction in the Audit Card only; Code Block 1 anchors eyelines to characters and landmarks).
    - The floor material (`[context]` ground phrase) and key light orientation MUST remain 100% identical across consecutive scenes in the same setting.
 3. **Auditory Suture (L-Cut & Diegetic Foley Continuity)**:
    - In Code Block 1: `Diegetic room acoustics:` must use the same ambient texture (e.g. `steady ceiling fan drone, rain patter against corrugated tin`) across all contiguous scenes in that space.
@@ -1323,7 +1234,7 @@ Before approving any 10-second prompt, the Director MUST verify all 9 points of 
 6. **[ ] Stateless Prompt Law Gate (Gate 3I)**: STRICTLY BAN `from Scene XX` or cross-scene dependencies in Code Block 1. Diffusion engines render each 10s clip statelessly; all action sequences within the clip must be self-contained.
 7. **[ ] Single Instance Lock & Anti-Ghost Prop Gate**: Exactly ONE physical instance of any interactive prop exists. Explicit resting surface clearance (`leaving the floor completely clear`). Heavy fixtures (Pine Crib, Bed, Table) declared in `[context]:` and permanently anchored to their room landmarks with zero teleportation.
 8. **[ ] The One-Move Rule Gate (Anti-Compounded Action Law)**: Strictly 1 primary kinetic move + 1 secondary biological reaction per 3–4s shot window. Compound multi-tasking is banned.
-9. **[ ] Dialogue Word Count Hard Cap (Gate 4B) & 10s Shot Allocation**: STRICTLY adhere to the 10s Shot Word Budget: Single-speaker solo shots are budgeted at 25–30 words (Sitcom/Slice-of-Life, hard cap ≤ 32w) or 15–20 words (Psychological Drama). Two-speaker shots are strictly limited to rapid volleys of 5–10 words each (hard cap ≤ 15 words per speaker, total ≤ 32w). If any speaker exceeds 15 words, the shot MUST be split into separate solo shots.
+9. **[ ] Dialogue Word Count Hard Cap (Gate 4B) & 10s Shot Allocation**: STRICTLY adhere to the 10s Shot Word Budget: Single-speaker solo shots are budgeted at 14–24 words (Sitcom/Slice-of-Life, hard cap ≤ 32w; craft target 8–14w; Microdrama ≤ 12w) or 8–14 words (Psychological Drama, cap ≤ 20w). Two-speaker shots are strictly limited to rapid volleys of 5–10 words each (hard cap ≤ 15 words per speaker, total ≤ 32w). If any speaker exceeds 15 words, the shot MUST be split into separate solo shots.
 
 ## 🏛️ PART VI: MASTER PER-EPISODE PRODUCTION SPECIFICATION (`tap-X.html`) & QUALITY GATES
 
@@ -1440,7 +1351,7 @@ In high-end cinematic video generation, dialogue and interaction are governed by
    - For Model 4 (V.O.): Explicitly declare `lips remain 100% firmly sealed, zero mouth movement, internal voiceover echoes in mind`.
 3. **The Words-Per-Second (WPS) Physics Law**:
    - Speech rates and clip density: grammar §2 and §7 (authoritative). The 1.1–2.4 WPS table in Pillar 1 describes English emotional cadence including pauses.
-   - Clip density is governed by [`0b-temporal-camera-grammar.md`](file:///d:/Project/Sven/engine/references/0b-temporal-camera-grammar.md) §7 and Gate 4B: Single-speaker solo shots allow 25–30 words (Sitcom/Slice-of-Life, hard cap ≤ 32w; speech share up to 75% of the 10s clip) or 15–20 words (Psychological Drama). Two-shot volleys are strictly ≤ 15 words per speaker (total ≤ 32w). Buffer law preserves 0.5–1.0s at head and 0.5–1.5s at tail.
+   - Clip density is governed by [`0b-temporal-camera-grammar.md`](file:///d:/Project/Sven/engine/references/0b-temporal-camera-grammar.md) §7 and Gate 4B: Single-speaker solo shots allow 14–24 words (Sitcom/Slice-of-Life, hard cap ≤ 32w; craft target 8–14w; speech share up to 75% of the 10s clip) or 8–14 words (Psychological Drama, cap ≤ 20w). Two-shot volleys are strictly ≤ 15 words per speaker (total ≤ 32w). Buffer law preserves 0.5–1.0s at head and 0.5–1.5s at tail.
    - Zero micro-snippets (< 3 words) unless intentional Model 7 interruption.
 4. **The Prop-Speech Tactile Locking Law & Living Settle**:
    - Peak spoken keywords synchronize with observable physical actions (tender touch, coffee spill, lever switch, ledger slam).
@@ -1449,8 +1360,8 @@ In high-end cinematic video generation, dialogue and interaction are governed by
 ---
 
 ### Law 3: Mode B Asset Anchoring & Lore-Bound Asset Naming Mandate (Section 2, 4A, 4B)
-* **Subject Declarations in `[subject]:` (The 4-Part Sovereign Formula):**
-  - In `[subject]:`, declare every participating character using the 4-Part Sovereign Formula: `{ho_ten} [100% Appearance, attire, and facial features Refer to image X], {initial spatial anchor to architectural fixture}, {initial physical posture, hands naturally free of props/weapons}, {eyeline toward a character or landmark} — the only {ho_ten} in frame.`
+* **Subject Declarations in `[subject]:` (The Prop-Free Sovereign Subject Formula):**
+  - In `[subject]:`, declare every participating character using the Prop-Free Sovereign Subject Formula: `{ho_ten} [100% Appearance, attire, and facial features Refer to image X], {initial spatial anchor to architectural fixture}, {initial physical posture}, hands free of props, {eyeline toward a character or landmark} — the only {ho_ten} in frame.`
   - *Function at 00:00.0:* Establishes identity lock, zero-frame architectural grounding, initial physical posture, and the mandatory negative anti-duplication seal.
   - *The 4-Vector Character Directing Protocol in Timeline Shots:* While `[subject]:` locks the initial state at 00:00.0, characters are dynamically directed within timeline shots (`[00:00–00:XX]`) across the four physical vectors: (1) Trạng thái (Evolving physical posture / somatic tension), (2) Làm gì (Active physical verb / prop interaction), (3) Cảm xúc ra sao (Somatic emotion / facial micro-expression), (4) Ở đâu (Dynamic 3D blocking anchored to architecture). NEVER write literal placeholder tags (`[TRẠNG THÁI]`, `[Ở ĐÂU]`).
   - *Negative Rule 1 (Zero-Costume Law):* **NEVER describe clothing or costumes in prompt lines** (costume is 100% locked by the 16:9 Model Sheet).
@@ -1474,7 +1385,7 @@ In high-end cinematic video generation, dialogue and interaction are governed by
 
 ### Law 4: Absolute Pronoun Ban (§6b of `4-ai-video-prompt-compiler.md`)
 In generative AI video models, third-person pronouns (`he, she, it, his, her, its, him, they, their, them`) cause acute subject ambiguity, cross-character body morphing, and limb duplication.
-* **PROHIBITION:** Zero third-person pronouns in action prose across all 12 scenes.
+* **PROHIBITION:** Zero third-person pronouns in action prose across every scene of the episode.
 * **MANDATE:** Always repeat the proper character name (e.g. `Faelen's neck`, `Korr's steel claws`, `Pip's brass tooth`).
 
 ---
@@ -1653,7 +1564,7 @@ def run_5_gate_audit(episode_html_path, canonical_roadmap_json):
 - Generic nouns (`child`, `kid`, `boy`, `girl`, `teen`, `baby`) stay out of visual prose because they spawn unanchored duplicate figures (Gate 3C/3F), not to hide the age.
 - Visual prose carries no numeric age (Gate 3A). The voice parenthetical states the true age: `（Voice of a 14-year-old girl from Southern Vietnam; ...）`.
 
-### 3. Model Sheets for Minors (`setting.html` Section 3; template: Pillar 2 Mẫu 0B)
+### 3. Model Sheets for Characters (`setting.html` Section 3: Adult Human, Minor Mẫu 0B, Non-Human Mẫu 3)
 - **Style**: neutral casting / continuity reference. Banned: fashion, editorial, commercial, beauty, or glamour photography; beauty lighting.
 - **Allowed descriptors**: true age, height in cm, a build word (`small`, `average`, `stocky`), face shape, eyes, hair, expression, age-appropriate wardrobe.
 - **Banned descriptors**: physique, figure, curves, toned, slender, hourglass; skin sensuality (`dewy`, `glowing`, `porcelain`, `luminous skin`, `micro-pores`); makeup (lipstick, eyeliner, mascara); `seductive`, `sultry`, `alluring`, `sexy`, `attractive`.

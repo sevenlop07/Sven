@@ -32,7 +32,7 @@ Every Code Block 2 `[Diegetic Foley Soundscape]` must be engineered across **4 a
 - Establishes the physical boundaries of the room before any action begins:
   - *Southern Townhouse*: `low continuous whir of a slow-turning ceiling fan; distant muffled street vendor cry through closed shutter; humid afternoon room silence`.
   - *Rainy Bedroom*: `steady rhythmic pelting of heavy monsoon raindrops on corrugated zinc roof; distant low rumble of rolling thunder`.
-  - *Modern Office / Clinic*: `subtle 60Hz hum of overhead fluorescent ballast; muted whoosh of central air ventilation`.
+  - *Modern Office / Clinic*: `subtle low electrical hum of overhead fluorescent ballast; muted whoosh of central air ventilation`.
 
 ### Layer 2: Tactile Material Interaction & Prop Friction
 - In AI video, every hand movement must produce a physical sound:

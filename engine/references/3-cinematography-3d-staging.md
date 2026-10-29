@@ -6,7 +6,7 @@
 > **SINGLE SOURCE OF TRUTH (SSOT) FOR CINEMATOGRAPHY, CAMERA OPTICS & 3D STAGING**  
 > **Master Authority**: Level-2 Film Director (`.agents/skills/director/` & `.agents/DIRECTOR.md`)  
 > **Direct Stakeholders**: Level-1 Executive Producer (`AGENT.md`), Level-2 Master Screenwriter (`.agents/skills/screenwriter/`)  
-> **Consolidation Note**: This document fuses, streamlines, and replaces legacy references: `3-cinematography-3d-staging.md`, `3-cinematography-3d-staging.md`, `3-cinematography-3d-staging.md`, and `3-cinematography-3d-staging.md`. All 14 shot scales, 6 power angles, 7 master combos, 3D Cartesian coordinates, elastic mechanical deformation, 180° action axis, continuity ledgers, and music video exceptions reside here as the single source of truth with zero contradiction.
+> **Consolidation Note**: This document fuses, streamlines, and defines the visual staging standard: All 14 shot scales, 4-axis angle architecture, camera combos, 3D spatial staging, 180° action axis, continuity ledgers, and music video exceptions reside here as the single source of truth with zero contradiction.
 
 ---
 
@@ -56,7 +56,7 @@
 │ DIMENSION 2: REFERENCE FRAME & PERSPECTIVE GRAMMAR (HỆ QUY CHIẾU & GÓC NHÌN)                           │
 │ ──> 1. Third-Person Objective (Góc nhìn thứ ba khách quan điện ảnh chuẩn mực)                          │
 │ ──> 2. Subjective First-Person P.O.V. (Góc nhìn qua mắt nhân vật - Bàn tay ở tiền cảnh / Eye Contact) │
-│ ──> 3. Direct-to-Camera Vlog / Whistleblower (Tự sự trực diện ống kính / Góc rộng selfie 20-24mm)      │
+│ ──> 3. Direct-to-Camera Vlog / Whistleblower (Tự sự trực diện ống kính / Góc rộng selfie tự nhiên)     │
 ├────────────────────────────────────────────────────────────────────────────────────────────────────────┤
 │ DIMENSION 3: THE 14 CLASSICAL SHOT SCALES & SCALE PROGRESSION (BỘ CỠ CẢNH & TIẾN TRÌNH KHUNG HÌNH)     │
 │ ──> Macro Environment (EWS, WS, Solitary Environmental)                                                │
@@ -258,7 +258,7 @@ Before specifying shot scales or camera angles, the director must select the mac
 ### 🅰️-LOCKED: TRACK A-LOCKED — THE LOCKED-OFF PERFORMANCE VARIANT (Cú Máy Tĩnh Khóa Cố Định Tập Trung Diễn Hoạt)
 
 > 🎬 **MASTER DIRECTORIAL ESSENCE**: *"When acting reaches its highest peak of truth, the camera must stop moving."* (David Fincher, Ingmar Bergman).  
-> In dramatic storytelling, moving the camera during an actor's emotional breakdown is an amateur mistake that dilutes audience empathy. A **Locked-Off Performance Take (Track A-Locked)** physically anchors the camera on a stationary tripod, transferring 100% of the kinetic energy to the actor's internal somatic performance and environmental physics.
+> In dramatic storytelling, moving the camera during an actor's emotional breakdown is an amateur mistake that dilutes audience empathy. A **Locked-Off Performance Take (Track A-Locked)** physically anchors the camera on a fixed static mount (prose bans the word "tripod"), transferring 100% of the kinetic energy to the actor's internal somatic performance and environmental physics.
 
 * **Core Applications**:
   1. **Emotional Peak & Breakdown**: Unspoken agony, weeping, shock, where any camera motion feels artificial.
@@ -380,7 +380,7 @@ Dynamic Kinetic & Biological Flow       Dynamic Kinetic & Biological Flow      D
 ├────────────────────────────────────────────────────────────────────────────────────────────────────────┤
 │ 1. THIRD-PERSON OBJECTIVE   : Audience observes conflict as an impartial third party. Classic cinema.  │
 │ 2. FIRST-PERSON P.O.V.      : Camera IS character's eyes. Hands in foreground. Opponent fourth-wall.   │
-│ 3. DIRECT-TO-CAMERA VLOG    : Character holds device, addresses viewer. Wide 20-24mm, walking sway.    │
+│ 3. DIRECT-TO-CAMERA VLOG    : Character holds device, addresses viewer. Ultra-wide selfie perspective, walking sway. │
 │ 4. SNORRICAM BODY-MOUNT RIG : Camera locked on chest facing subject. Face static, world spinning.      │
 └────────────────────────────────────────────────────────────────────────────────────────────────────────┘
 ```
@@ -420,7 +420,7 @@ Dynamic Kinetic & Biological Flow       Dynamic Kinetic & Biological Flow      D
   4. ⚡ *The Clean UI Negative Guard*: Negative constraint MUST purge device graphics: `Do not render visible phone, camera device, UI overlays, battery icons, red REC dots, timestamps, subtitles, or dialogue text.`
 * **The 4 Dynamic Variants of Vlog**:
   1. *The Walking Whistleblower*: Medium Close-Up wide angle, walking through night street/rain, organic handheld micro-shake, streetlights raking face.
-  2. *The Desktop Interrogation Vlog*: Device locked on dashboard/desk (Locked-off Tripod), subject sitting back, raising physical evidence into frame.
+  2. *The Desktop Interrogation Vlog*: Device locked on dashboard/desk (Fixed Static Camera), subject sitting back, raising physical evidence into frame.
   3. *The Whip-Pan Flip Vlog*: Direct address on face $\to$ Rapid 180° whip-pan down to table or out window revealing crime scene.
   4. *The Signal Jam Cutoff*: Whispered truth close to lens before camera violently drops to floor, creating high-tension cliffhanger.
 
@@ -696,7 +696,7 @@ In Code Block 1 (The Clean Generative Video Prompt), generative AI models (Kling
   - Focal Length Numbers: `18mm`, `35mm`, `50mm`, `85mm` -> translate to *wide environmental vista*, *intimate portrait depth*, *compressed telephoto background*.
   - Aperture: `f/1.4`, `f/2.8` -> translate to *shallow depth of field*, *creamy soft bokeh*.
   - Hardware Brands: `Arri Alexa`, `RED V-Raptor`, `Panavision` -> translate to *high dynamic range contrast*, *subtle filmic grain*.
-  - **Kelvin Temperature Numbers**: `2400K`, `2800K`, `3200K`, `5500K`, `6500K` -> **STRICTLY PROHIBITED IN CODE BLOCK 1**. Kelvin numbers belong ONLY in pre-production documentation (Tier 1 Audit Card, `setting.html`). In Code Block 1, translate 100% into sensory optical prose:
+  - **Kelvin Temperature Numbers**: `2400K`, `2800K`, `3200K`, `5500K`, `6500K` -> **STRICTLY PROHIBITED SYSTEM-WIDE (including Code Block 1 and setting.html)**. Raw numeric Kelvin triggers hallucinated text overlays or sterile color grading. Translate 100% into sensory optical prose:
     * `2400K–2800K` -> *warm amber incandescent glow*, *honey-gold lamp spill*, *soft hearth ember radiance*.
     * `3200K` -> *warm golden sunrise rays*, *radiant morning dawn beam*.
     * `5500K` -> *crisp neutral daylight*, *clear midday sunbeams*.
@@ -813,8 +813,8 @@ A camera move is felt as **the audience's attention travelling**. The table belo
 | **Static** | Zero movement on all axes. | None | Solemn gravity, unblinking witness, aftermath truth. | Post-climax silence, corpses, signed treaties. | ✅ 100% Safe |
 | **Push-In (Dolly In)** | Linear forward movement toward subject. | Slow, creeping pace | Tightening intimacy, escalating dread, sudden realization. | Character realizing a lethal trap; internal decision. | ✅ 100% Safe |
 | **Pull-Out (Dolly Out)**| Linear backward movement away. | Slow, creeping pace | Abandonment, expanding dread, isolation in vast darkness. | Defeated character left alone on floor. | ✅ 100% Safe |
-| **Pan Shot** | Horizontal rotation on fixed tripod axis. | Medium (5°–15°/s) | Scanning room, connecting cause to effect, revealing hidden threat. | Revealing an assassin standing in the shadows. | ✅ Safe |
-| **Tilt Shot** | Vertical rotation on fixed tripod axis. | Slow (5°–10°/s) | Scanning from boots to eyes; revealing colossal height or fall. | Introducing an armored warlord or king. | ✅ Safe |
+| **Pan Shot** | Horizontal rotation on fixed camera pivot axis. | Medium (5°–15°/s) | Scanning room, connecting cause to effect, revealing hidden threat. | Revealing an assassin standing in the shadows. | ✅ Safe |
+| **Tilt Shot** | Vertical rotation on fixed camera pivot axis. | Slow (5°–10°/s) | Scanning from boots to eyes; revealing colossal height or fall. | Introducing an armored warlord or king. | ✅ Safe |
 | **Tracking Shot** | Camera travels parallel/ahead of moving subject. | Matches walking speed | Kinetic pursuit, urgency, continuous stride. | Marching into throne hall, fleeing through alley. | ⚠️ Moderate |
 | **Steadicam Glide** | Floating multi-axis stabilized movement. | Smooth fluid glide | Immersive 3D navigation through intricate architecture. | Navigating palace corridors, moving between tables. | ⚠️ Moderate |
 | **Handheld Shot** | Unstabilized operator micro-shake. | Organic micro-shake | Visceral panic, combat chaos, documentary realism. | Explosive arguments, earthquakes, sudden brawls. | ⚠️ Gentle drift ✅ with dialogue; violent shake ❌ |
@@ -976,7 +976,7 @@ To eliminate visual monotony and generic formulaic shot repetition (e.g. repetit
 3. **Reaction Shot (Cú Máy Bắt Phản Ứng)**:
    - *Mechanics*: Speaker delivers crushing verbal blow; cut immediately to listener absorbing shock in absolute silence.
 4. **Smash Cut (Cắt Giật Đột Ngột)**:
-   - *Mechanics*: Cut abruptly from 100dB battle chaos to 0dB dead-silent empty room with locked static tripod.
+   - *Mechanics*: Cut abruptly from deafening battle chaos to dead-silent empty room with locked static camera.
 5. **J-Cut & L-Cut (Âm Thanh Dẫn Đường)**:
    - *J-Cut*: Diegetic sound of next scene starts 1.5s before video cuts.
    - *L-Cut*: Dialogue or weeping from previous scene lingers 2.0s after video transitions.
@@ -1170,18 +1170,18 @@ Every prompt referencing a 4-View Location Sheet (`[100% Refer to image location
 
 ### 🦅 A. Vector Blocking for First-Person Mount / Flight POV:
 1. **Camera Position & View Vector**:
-   - The viewpoint is anchored at the rider's eye-line $(\vec{V}_{\text{view}} = +Z)$, elevated slightly above the mount's spine $(+Y)$.
-2. **Mandatory In-Frame Foreground Anchor ($X-Z$ Lower Plane)**:
-   - To eliminate disembodied floating camera drift, the lower $25\%$ of the frame MUST contain a physical anchor: rider's gloved hands gripping the reins, saddle pommel, or the muscular crest/spikes of the mount.
+   - The viewpoint is anchored directly at the rider's eye-line, elevated slightly above the mount's spine along the forward line of sight.
+2. **Mandatory In-Frame Foreground Anchor (Lower Horizon Plane)**:
+   - To eliminate disembodied floating camera drift, the lower 25% of the frame MUST contain a physical anchor: rider's gloved hands gripping the reins, saddle pommel, or the muscular crest/spikes of the mount.
 3. **Roll-Axis Dynamic Horizon Tilting**:
-   - When the mount executes an aerial bank or sharp turn, the horizon line tilts by angle $\Delta \theta$ matching the mount's roll axis. The camera never stays artificially level while the mount banks.
+   - When the mount executes an aerial bank or sharp turn, the horizon line tilts dynamically to match the mount's roll banking. The camera never stays artificially level while the mount banks.
 4. **Natural Velocity Translation**:
    - In steep dives or supersonic acceleration, translate speed into observable physics: `wind shear rippling violently across scales, wisps of cloud vapor shredding past the frame, subtle peripheral motion blur`.
 
 ### 📱 B. Vector Mechanics for Handheld Front-Facing Vlog:
 1. **The Lever-Arm Pendulum Model**:
-   - The camera is held at the end of an outstretched arm forming a physical lever from the character's right shoulder $(\text{Origin})$.
-   - The camera follows the character's walking gait: gentle vertical bobbing (a slight rise and fall) and subtle rotational yaw $(\Delta \phi)$ with every step.
+   - The camera is held at the end of an outstretched arm forming a physical lever from the character's right shoulder (body origin).
+   - The camera follows the character's walking gait: gentle vertical bobbing (a slight rise and fall) and subtle rotational yaw with every step.
 2. **The Zero-Device Axiom (Không vẽ thiết bị)**:
    - Never define the recording phone or camera as a physical prop in front of the lens! The entire frame IS the camera lens.
    - Describe: `Authentic self-recorded handheld vlog viewpoint, recorded continuously by the subject holding the camera with her right hand just out of frame.`
@@ -1746,7 +1746,7 @@ CLOSING MORAL MAXIM: "[Universal truth reflecting song's soul < 15 words]"
 - **Vertical Crane-Down**: Descends from cavernous ceiling into intimate choker (`Graceful crane descent from high chandelier into intimate choker`).
 - **Low-Angle Tilt-Up**: Reveals royal attire and supreme status (`Smooth upward tilt from dusty boots to regal, commanding face`).
 - **Steadicam Track-Lead**: Maintains kinetic drive through corridors (`Dynamic steadicam tracking shot leading hurried footsteps`).
-- **Locked-Off Tripod**: Cold, suffocating stillness before strike (`Static locked-off shot with piercing unblinking gaze`).
+- **Locked-Off Static Shot**: Cold, suffocating stillness before strike (`Static locked-off shot with piercing unblinking gaze`).
 
 ### § 2. Post-Production Transition Suites (FFmpeg Xfade Mappings)
 - `circleopen`: Focus iris reveal on critical physical clue.

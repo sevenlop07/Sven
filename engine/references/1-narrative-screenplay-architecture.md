@@ -797,7 +797,7 @@ $$\mathbf{HỒI\ 1\ (20\%)\ +\ HỒI\ 2\ (45\%)\ +\ HỒI\ 3\ (25\%)\ +\ HỒI\ 
    - **CẤM CLIFFHANGER Ở TẬP NÀY**.
 
 #### 🚨 Anti-Sitcom / Anti-Vignette Continuum Law (Luật Chống Sitcom Rời Rạc Trong Phim Bộ Kịch Tính)
-- **STRICT PROHIBITION FOR DRAMATIC SERIES**: A multi-episode dramatic series (Format B, such as *Cơm Không Chan Nước Mắt*) is NEVER a collection of independent, self-contained "conflict-of-the-week" sitcom sketches.
+- **STRICT PROHIBITION FOR DRAMATIC SERIES**: A multi-episode dramatic series (Format B dramatic series) is NEVER a collection of independent, self-contained "conflict-of-the-week" sitcom sketches.
 - Every episode's closing frame MUST leave an open, bleeding wound or irreversible physical consequence that directly forces the opening action of the subsequent episode.
 - Early reconciliation, emotional closure, or moral lessons delivered inside Acts 1 and 2 are strictly forbidden; catharsis is earned ONLY at the climax of Act 3 and the dawn of Act 4.
 - *(NOTE ON MODULAR GENRES: This rule governs continuous dramatic series. When a production explicitly activates the **Sitcom Genre Module**, the screenwriter switches to [`engine/genres/sitcom.md`](file:///d:/Project/Sven/engine/genres/sitcom.md) where episodic Status Quo Reset, Escalating Absurdity, and A/B/C Multi-Plot Comedy are the governing standards).*
@@ -1058,115 +1058,6 @@ Act 4 (Resolution) = N − (Act1 + Act2 + Act3) episodes, minimum 1
 ```
 
 ---
-
-
-## § HOOK TECHNIQUES — 12 TYPES & SELECTION TABLE BY PLOT
-
-> 📌 **HOOK SELECTION**: Dynamic — AI selects from the 12-Hook Library based on this story's plot features (karma type, escalation behavior, target emotion, narrative structure). No fixed default. Follow the 3-Step selection process below.
-
-### 4 Life-or-Death Elements of the Hook Scene (First 3 Seconds)
-1. **Cognitive Gap**: Immediately create a visual question in the audience's brain (*"Why is it like that?"*, *"What's about to happen?"*). DO NOT explain context or cause.
-2. **Single Visual Signal Rule**: Do not cram in character/history/context. Only one close-up detail (ECU) or one condensed physical contradiction.
-3. **Feel Before Understand (Emotional Impulse First)**: Hit the emotional instinct (Curiosity, Emotion, Tension) in the first 3s before the audience can process logic.
-4. **Visual Anchor Bridge**: The Hook scene MUST contain 1 specific physical object/detail so that Scene 2 (Setup) opens with the camera starting from exactly that element.
-
-### 🚫 3 Forbidden Traps When Writing Hook:
-- ❌ **Narrative Opener Trap**: Opens with narration "Once upon a time...", "In a place...", "There was a person named..."
-- ❌ **Spoiler Trap**: Within 3s already reveals who is good/bad, cause and outcome.
-- ❌ **Empty Stillness Trap**: Opening scene has only beautiful scenery/setting with no conflict or suspended movement.
-
-
-| # | Technique | How to Execute | Suggested Example | SVEN Shot Execution |
-|---|---|---|---|---|
-| 1 | **Visual Paradox** | 2 logically contradictory images placed side by side | Expensive suit placed next to a meager meal | Wide: 2 worlds in same frame → ECU intersection point |
-| 2 | **In medias res** | Opens mid-action/climax, cause not yet clear | A hand snatching something, unclear who is right | Close-up ongoing action → gentle pull back → ECU expression |
-| 3 | **Strange object/sign** | ECU of an unusual object, no immediate explanation | A crumpled letter lying at a doorstep | ECU static object → push-in/tilt for more context → object + hand |
-| **4** | **"Suspended Kinetic Moment"** | Suspended action moment in slow drift | A glass falling mid-air, not yet hitting the ground | Medium suspended action → ultra-slow static → ECU motion point |
-| 5 | **Atmospheric Contrast** | Setting evokes feeling opposite to what's about to happen | In a festive space, one figure stands completely still | Wide festive scene → rack focus/pull back → Close-up discordant detail |
-| 6 | **Body/Expression Detail** | ECU of unusual eyes/hands/gaze, reason not yet clear | A trembling hand gripping something tight | ECU unusual eyes/hand → push-in hold → ECU another body part confirming |
-| 7 | **Out of Place / Disrupted Order** | Image that belongs elsewhere appears in the wrong context | An expensive object lying among garbage | Medium/Wide object out of place → tilt/pan hints more → ECU wrong contact point |
-| 8 | **Overlapping Time Traces** | Evokes both "before" and "after" simultaneously | Old and new marks on the same surface | Close-up old+new marks together → pull back → ECU intersection point |
-| 9 | **Consequence First / Effect Before Cause** | Shows the consequence scene before flashing back | An abandoned room, cause unknown | ECU faded object → slow pull back revealing context → tracking shot |
-| 10 | **Scale Contrast** | Contrast between human smallness and massive scale | Tiny character facing a vast space/structure | Extreme Wide → Low angle pan |
-| 11 | **Diegetic Acoustic Stimulus** | Hits the hearing directly with hyper-realistic ambient sound | A shattering sound echoing in a silent night | Close-up sound-emitting object → gentle camera shake → ECU reaction |
-| 12 | **Cognitive Silence / Glitch** | Chaotic movement suddenly halts into breathless silence for 0.5s | A noisy crowd suddenly stops dead | Tracking fast movement → Instant Deceleration Settle 0.5s → ECU eye lock |
-
-### Scoring Framework — Flexible Hook Selection
-
-**Foundational question before selecting:**
-> *"What is the first emotion I want the audience to FEEL (not UNDERSTAND) in the first 3 seconds?"*
-> → Select the hook that creates exactly that emotion through observable physical images.
-
-#### Trigger Conditions Per Hook
-
-| # | Technique | Activate when plot has... | AVOID when... |
-|---|---|---|---|
-| **#1** Visual Paradox | Extreme power/status gap; outer appearance concealing inner truth | Plot needs still/quiet tone |
-| **#2** In medias res | Ongoing action with unexplained conflict; strong Twist needing misdirection from the start; Structure C (opens with consequence) | Plot needs slow buildup, meditative tone |
-| **#3** Strange object/sign | Symbolic prop plays a key role; quiet/anonymous behavior needing physical traces | Symbolic prop not yet clearly established |
-| **#4** "Suspended Kinetic Moment" | Suspended decision moment; acquisitive/greedy behavior needing to emphasize the moment of transgression | Plot needs to create questions about setting (not action) |
-| **#5** Atmospheric Contrast | Tragedy hidden in normal appearance; community/group concealing something wrong | Setting already naturally implies danger |
-| **#6** Body/Expression Detail | Suppressed emotion at center (silent sacrifice, bearing injustice, hidden fear); vulnerable character needs immediate empathy | Plot needs to keep character identity completely hidden |
-| **#7** Out of Place | Object/person appearing against social space norms; mysterious/supernatural element | Purely realistic plot with no mysterious elements |
-| **#8** Overlapping Time Traces | Plot has historical depth (years of grudges/bonds); symbolic prop has transformed over time | Story happens within a single day |
-| **#9** Consequence First | Narrative Structure C (flashback); conflict measured in years | Linearly progressing plot |
-| **#10** Scale Contrast | Character faces something massive (organization, nature, power) | Tight interior setting |
-| **#11** Diegetic Acoustic | Peak acoustic tension; dark atmosphere with heavy sound design | Video viewed with sound off by default |
-| **#12** Cognitive Silence | Crowd chaos; rapid film rhythm needing a shock settle | Scene already still |
-
-#### Hook Selection Process (3 Steps — MANDATORY)
-
-**Step 1 — Identify 2–3 most prominent features of the plot:**
-- Genre & target emotional tone (haunting / heartbreaking / mysterious / unjust / funny / strange...)
-- Chosen Escalation behavior
-- Symbolic prop's role in the plot (central / supporting)
-- Narrative structure (A–G) — especially Structure C → prioritize #2
-
-**Step 2 — Use "Trigger Conditions" table to evaluate:**
-- Hook matching **the most conditions** → **Primary Hook**
-- Hook matching **second most** and not violating AVOID column → **Backup Hook**
-- Record: `Primary hook: #N | Backup hook: #M | Reason: [1 sentence tied to specific feature]`
-
-**Step 3 — Anti-repetition check:**
-- Scan entire session — if primary hook was used → use backup hook
-- Add to metadata: `HOOK TECHNIQUE: #N — [technique name] | Reason: [1 sentence]`
-
-### Mandatory Rules When Writing Hook
-
-- DO NOT introduce full name/identity, DO NOT explain setting, DO NOT state reasons — only suggest through image
-- AVOID narrative opener style ("one day", "once upon a time") — that is SETUP voice
-- Use specific cinematic language (shot scale: close/extreme close/wide; camera movement: pan, tracking, slow zoom...)
-- May combine 2 techniques in 1 Hook scene if reasonable, as long as no more than 1 core piece of information
-
----
-
-### HOOK-SETUP BRIDGE — Mandatory Cognitive Bridge
-
-> **Core problem:** Hook deliberately hides all information → Scene 2 (Setup) begins storytelling → without a shared visual element, viewers experience **cognitive discontinuity** — failing to understand the 2 scenes belong to the same story.
-
-**MANDATORY RULE:** Every Hook scene MUST contain at least 1 **Visual Anchor** — a specific, observable visual element that will **reappear within the first 3 seconds of Scene 2 (Setup)**.
-
-**5 Bridge Types (priority from top to bottom):**
-
-| # | Type | How it works | Example |
-|---|---|---|---|
-| 1 | **Object Bridge** | Symbolic object appears in Hook (ECU, decontextualized) → reappears in Scene 2 in character's hand/nearby | Hook: a key lying on the ground → Scene 2: character holding that key |
-| 2 | **Person Bridge** | Body detail/clothing revealed in Hook → full body revealed in Scene 2 | Hook: a trembling hand gripping a shirt hem → Scene 2: full figure wearing that shirt |
-| 3 | **Spatial Bridge** | Hook shows one fragment of space (ECU/CU) → Scene 2 expands same space (Wide) | Hook: burn mark on the floor → Scene 2: pull back reveals the entire room |
-| 4 | **Reverse Angle** | Same object/space, different angle | Hook: front of object → Scene 2: back of object, pull back reveals character |
-| 5 | **Atmospheric** | Same atmosphere (sound, light) continues unbroken | Weakest — **use combined** with types 1-4 only, NEVER standalone |
-
-**Add to script metadata:**
-`HOOK→SETUP BRIDGE: [Bridge type] — [specific element from Hook] → [how it reappears in Scene 2]`
-
-**Mandatory check:**
-- [ ] Does the visual anchor from Hook reappear within the first 3 seconds of Scene 2?
-- [ ] Is the visual anchor described with enough physical detail in both scenes (not just named)?
-- [ ] Does Scene 2 NOT reference Scene 1 ("same as Hook", "as seen before") — rewritten with independent detail?
-
----
-
-## § CHARACTERS — THE 3-TIER CAST SYSTEM & PRODUCTION STANDARDS
 
 
 ## 🏛️ PART III: HOOK ARCHITECTURE (THE FIRST 3 SECONDS & RETENTION ENGINE)
@@ -1481,7 +1372,7 @@ When constructing any script with a twist, run this 6-point verification gate:
 - [ ] **Gate 3: The Cross-Faction Complicity**: Are the satellites of A1 and B1 dynamically linked (jealous ally colluding, secret benefactor, or shared bloodline) rather than living in isolated silos?
 - [ ] **Gate 4: The Mechanical Payoff**: Does the twist click into place physically through a prop or action without requiring more than 1 sentence of explanation?
 - [ ] **Gate 5: The Moral Alignment**: Does the twist elevate the central philosophical message, or is it merely an empty stunt?
-- [ ] **Gate 6: The Rewatch Test**: If a viewer rewatches the video immediately, do all previous character behaviors become MORE poignant and brilliant?
+- [ ] **Check 6: The Rewatch Test**: If a viewer rewatches the video immediately, do all previous character behaviors become MORE poignant and brilliant?
 
 
 ## 🌊 § 5. THE FALSE DAWN & DOUBLE-BIND REVERSAL ARCHITECTURE (CÔNG THỨC GÁO NƯỚC LẠNH & CON TIN LƯƠNG TÂM)
@@ -1777,7 +1668,7 @@ In live-action and cinematic animation, spoken dialogue cadence is strictly boun
 ---
 
 ### 2.5. THE 5 INVARIANT LAWS OF DIALOGUE CONTINUITY & CONVERSATIONAL CAUSALITY
-# (BỘ 5 ĐỊNH LUẬT KIỂM SOÁT NGHIÊM TÚC LỜI THOẠI & LIÊN TỤC HỘI THOẠI — GATES 4A-4F ENFORCED)
+# (BỘ 5 ĐỊNH LUẬT KIỂM SOÁT NGHIÊM TÚC LỜI THOẠI & LIÊN TỤC HỘI THOẠI — GATES 4–4H ENFORCED)
 
 > [!CAUTION]
 > **ZERO-TOLERANCE CODE AUDIT ENFORCEMENT**:
@@ -1829,7 +1720,7 @@ Before a single word of dialogue is drafted, the entire episode MUST be locked t
 $$\mathbf{DRAMATIC\ SPINE} = \mathbf{Super\text{-}Objective\ (Want)} + \mathbf{Deadly\ Obstacle\ (Resistance)} + \mathbf{Ticking\ Clock\ Stakes\ (Loss)}$$
 
 - **The Central Dramatic Question (CDQ)**: The single burning question that holds audience attention across 10 scenes (e.g., *"Will Nam extort his mother's kidney medicine money before the loan sharks chop off his fingers at 18:00?"* or *"Can Duyen protect her newborn from an unsafe folk feeding ritual without shattering her marriage?"*).
-- **The Spine Gate (Luật Kiểm Duyệt Xương Sống)**: Every line of dialogue across all 10 scenes must serve at least one of four functions:
+- **The Spine Gate (Luật Kiểm Duyệt Xương Sống)**: Every line of dialogue across every scene of the episode must serve at least one of four functions:
   1. *Escalate the Super-Objective* (Pushing closer to what is desperately wanted).
   2. *Intensify the Obstacle* (Raising the wall of resistance or exposing a deeper secret).
   3. *Tighten the Stakes* (Shortening the fuse of the ticking clock or increasing the cost of failure).
@@ -2061,7 +1952,7 @@ Who speaks in a scene is determined by **power dynamics, psychological hierarchy
 ### 5. Model 4: Internal Monologue / Voice of Thought (Độc Thoại Nội Tâm Tiềm Thức — V.O.)
 * **Timeline Blueprint**: `[00–04]` External Reality / Setting ➔ `[04–05]` Eye Lock ➔ `[05–09]` Resonant V.O. (~7–8w) ➔ `[09–10]` Living Settle.
 * **Directorial Intent**: Reveals subconscious desires, tactical planning, or secret identity. **LIPS REMAIN 100% FIRMLY SEALED**, completely eliminating AI mouth-warping artifacts while conveying profound depth.
-* **Camera Architecture**: **Track A: Single-Shot Continuous Take (Static Tripod or Subtle Push-In)**.
+* **Camera Architecture**: **Track A: Single-Shot Continuous Take (Fixed Static Camera or Subtle Push-In)**.
 * **Word Budget**: Strictly **12–16 words total**.
 * **Multi-Genre Directorial Applications**:
   - 🕵️ **Noir / Detective / Mystery**: P.O.V. on rain-slicked neon street; V.O.: *"The killer didn't leave through the door. He was waiting upstairs."* (~11w).
@@ -2308,32 +2199,9 @@ The 8 Interaction Geometries adapt dynamically across all genres through the **4
 
 ---
 
-## 🎯 4. Universal Multi-Genre Directorial Application Matrix
-
-The 8 Interaction Geometries adapt dynamically across all genres through the **4 Interaction Energy Vectors** (Harmonic, Frictional, Tactical, Metaphysical):
-
-| Narrative & Genre Objective | Optimal Geometry & Energy Vector | Word Budget | Action-Dialogue Synergy Structure |
-|---|---|---|---|
-| **1. Romance: Flirtatious Banter & Melting Smile** | **Model 1 (Harmonic Vector)** | ~16–18 words | Fond Teasing (A: ~8w) $\to$ Melting Witty Retort (B: ~8w) $\to$ Soft blush & living settle |
-| **2. Drama: Ideological Duel / Courtroom Clash** | **Model 1 (Frictional Vector)** | ~16–18 words | Premise Jab (A: ~8w) $\to$ Defiant Retort (B: ~8w) $\to$ Choker shock reaction |
-| **3. Rom-Com: Sweet Bickering / Playful Sparring**| **Model 1B (Harmonic Vector)** | ~16–18 words | 4 rapid volleys trading sweet insults $\to$ helpless shared laughter |
-| **4. Action / Sci-Fi: High-Velocity Combat Comms** | **Model 1B (Tactical Vector)** | ~16–18 words | 4 rapid staccato callouts ("Flank left!" $\to$ "Dry!" $\to$ "Take sidearm!" $\to$ "Breaching!") |
-| **5. Comedy: Friends Gang-Up & Deadpan Defeat** | **Model 2 (Disruptive Vector)**| ~15–18 words | Friend 1 tease $\to$ Friend 2 pile-on $\to$ Hero indignant retort $\to$ Room laughter |
-| **6. Romance: Vulnerable Romantic Confession** | **Model 3 (Harmonic Vector)** | ~7–9 words | Soul-baring confession line $\to$ Listener breath catches, tear wells in stunned silence |
-| **7. Drama: Authoritarian Verdict / Sentence** | **Model 3 (Frictional Vector)**| ~7–9 words | Authoritarian Sentence $\to$ Silent defiant stare or tearful jaw clench |
-| **8. Noir / Mystery: Detective Clue Deduction** | **Model 4 (Metaphysical Vector)**| ~12–16 words | Eye-lock on physical trace $\to$ Resonant V.O. deduction (lips 100% sealed) |
-| **9. Romance / Slice: Heart Flutter Longing** | **Model 4 (Harmonic Vector)** | ~12–16 words | Watching partner laugh $\to$ Gentle V.O. secret confession (lips 100% sealed) |
-| **10. Romance / Horror: Proximity Whisper** | **Model 6 (Harmonic / Survival)**| ~10–13 words | Pillow-talk under rain (1.3 WPS) OR Hiding from monster ("Don't breathe...") |
-| **11. Romance: Silencing Tender Touch / Kiss** | **Model 7 (Harmonic Vector)** | ~12–15 words | Nervous rambling cut short mid-sentence by finger gently pressing against lips |
-| **12. Drama: Blade Slam / Violent Termination** | **Model 7 (Frictional Vector)**| ~12–15 words | Boastful speech severed mid-sentence by blade slamming through deed into oak |
-| **13. Romance / Rescue: Subjective P.O.V.** | **Model 8 (Harmonic / Action)**| ~14–17 words | Direct-to-lens address with adoring smile OR Hand reaching down to pull comrade up |
-| **14. Pure Action / The Romantic Gaze** | **Model 0 (Zero Dialogue)** | **0 words** | Martial arts choreography OR Two lovers locking eyes across a ballroom in silence |
-
----
-
 ## 📐 5. The 3-Shot Kinetic Blocking Protocol (AI Video Prompt Pipeline)
 
-To avoid AI diffusion/video model physics hallucinations (limb morphing, blurry motion artifacts, audio clipping), all 10-second sequences MUST follow the standardized kinetic blocking pipeline:
+To avoid AI diffusion/video model physics hallucinations (limb morphing, blurry motion artifacts, audio clipping), 10-second sequences may deploy standardized kinetic blocking pipelines (flexible craft examples, not a mandatory 3-shot quota):
 
 ### Protocol 1: Dialogue Duel Blocking (Models 1, 1B, 2, 7)
 ```
@@ -2888,7 +2756,7 @@ Uniform pacing (twelve equal 8.3% blocks) destroys retention because viewer drop
 ### § 4. AI Voiceover Directing & Emotional Modulation Tags
 When directing synthetic TTS speech (Minimax, ElevenLabs, Piper), script lines must be tagged with directional acoustics:
 - `[Coldly]`: Monotone, slow cadence (1.8 wps), lowered pitch, zero breathiness (Protagonist initiating counter-strike).
-- `[Thunderous Fury]`: High volume (+4dB), resonant chest projection, rapid staccato delivery (Antagonist intimidation).
+- `[Thunderous Fury]`: High volume (raised intensity), resonant chest projection, rapid staccato delivery (Antagonist intimidation).
 - `[Contemptuous Smirk]`: Raised pitch on syllable endings, casual sneering cadence (Antagonist taunting).
 - `[Paralyzed Terror]`: Trembling vibrato, vocal cord constriction, broken breaths (Defeated villain).
 - `[Subservient Reverence]`: Low pitch, dignified measured cadence, zero inflection (Loyal guards/assistants).

@@ -394,7 +394,7 @@ Mỗi nhân vật Tier A và Tier B bắt buộc phải có bảng thuộc tính
 #### 2. CẤU TRÚC 5 TẦNG CÂU LỆNH THAM CHIẾU 16:9 (THE 5-LAYER PROMPT ARCHITECTURE)
 Mỗi prompt tham chiếu Model Sheet 16:9 gồm 5 đoạn rõ ràng:
 1. **Header Style Token**: `Style: [Movie Master Visual Style]` (Kế thừa phong cách bộ phim).
-2. **Optical Spec & Quality**: Chuẩn máy ảnh hoặc Render Engine (85mm f/1.4, shallow DOF, 8K ultra HD, photorealistic texture).
+2. **Optical Spec & Quality**: Chuẩn máy ảnh hoặc Render Engine (cho ảnh tĩnh Model Sheet trong setting.html: 85mm f/1.4, shallow DOF, 8K ultra HD, photorealistic texture; trong Code Block 1 video prompt cấm dùng số mm và khẩu độ).
 3. **Character Persona & 3D Bone Structure**: Khí chất nhân vật, cấu trúc xương mặt 3D, nước da tự nhiên không trang điểm đậm, hốc mắt sâu tạo bóng đổ tự nhiên, màu mắt chính xác, độ sắc lạnh của ánh nhìn, sống mũi và khuôn môi.
 4. **Hair Grooming & Tailored Wardrobe**: Nếp tóc bóng mượt rõ từng lọn, quy chuẩn âm tính (không khuyên tai, không hình xăm), đường may âu phục cao cấp (chất dạ mờ, lót lụa, phom vai cứng cáp, cổ áo gọn gàng).
 5. **Lighting, Solid Contrast Backdrop & Sovereign Multi-Angle Layout**:
@@ -412,16 +412,28 @@ Mỗi prompt tham chiếu Model Sheet 16:9 gồm 5 đoạn rõ ràng:
       
       • **Khu vực Trái & Giữa (~55–60% Canvas - Three-Angle Full-Body Turnaround in Natural Stance)**:
         > [!IMPORTANT]
-        > **QUY CHUẨN THÂN HÌNH TOÀN THÂN: THẾ ĐỨNG TỰ NHIÊN, 3 GÓC NHÌN & MẶT SAU CÓ ĐẦU (RELAXED NATURAL STANCE & 3-ANGLE MANDATE)**:
-        > 1. **BÃI BỎ A-POSE ➔ CHUYỂN SANG DÁNG ĐỨNG THẢ LỎNG TỰ NHIÊN (RELAXED NATURAL STANCE LAW)**: Cả 3 thân hình toàn thân BẮT BUỘC ở tư thế **đứng thẳng tự nhiên, thả lỏng** (`natural, relaxed standing posture, arms resting naturally and loosely beside the torso, feet naturally grounded touching the floor`). Tuyệt đối không dùng tư thế A-pose giương tay cứng nhắc, giúp nếp vải và phom dáng buông rủ đúng trọng lực thực tế.
-        > 2. **BA GÓC NHÌN TOÀN THÂN CỐT LÕI (THREE FULL-BODY ANGLES)**:
-        >    - **Mặt Trước (Front View)**: Cắt từ chân cổ / đường may cổ áo trở xuống gót giày, **TUYỆT ĐỐI KHÔNG ĐẦU / KHÔNG MẶT** (`headless neck-down front view, strictly zero head and zero face`).
-        >    - **Mặt Nghiêng 90° (90-Degree Lateral Side Profile View)**: Hiển thị độ dày cơ thể, độ cong cột sống, form trang phục và phụ kiện nhìn ngang, **TUYỆT ĐỐI KHÔNG ĐẦU / KHÔNG MẶT** (`headless neck-down 90-degree lateral side profile view, strictly zero head and zero face`).
-        >    - **Mặt Sau (Rear Back View)**: Toàn thân từ đỉnh đầu xuống gót giày, **BẮT BUỘC CÓ ĐẦU VÀ TÓC PHÍA SAU** (`full-length rear back view INCLUDING complete back of head and rear hairstyle`), hiển thị trọn vẹn kết cấu lọn tóc phía sau, đường gáy, đường may lưng áo và gót giày chạm sàn.
-        > 3. **Lý do kỹ thuật cốt tử**:
-        >    - Mặt trước và mặt nghiêng 90° loại bỏ đầu để triệt tiêu lỗi dị tật khuôn mặt ở độ phân giải nhỏ và chống xung đột nhận diện đa mặt (*Multi-face identity conflict*).
-        >    - Mặt sau CÓ ĐẦU cung cấp mỏ neo thị giác cực kỳ quan trọng cho AI Video khi nhân vật quay lưng bước đi (thấy rõ form tóc sau gáy, độ dài đuôi tóc/búi tóc) mà hoàn toàn không lo méo mặt hay xung đột nhận diện vì phía sau không có mắt mũi miệng.
-        >    - Góc nghiêng 90° không đầu khóa chuẩn độ dày không gian 3 chiều của cơ thể và trang phục.
+        > **PHÂN LOẠI QUY CHUẨN THÂN HÌNH TOÀN THÂN: CON NGƯỜI VS PHI NHÂN LOẠI**:
+        > 
+        > 1. **QUY TẮC CHUNG CHO MỌI NHÂN VẬT (RELAXED NATURAL STANCE LAW)**:
+        >    - Cả 3 thân hình toàn thân BẮT BUỘC ở tư thế **đứng thẳng tự nhiên, thả lỏng** (`natural, relaxed standing posture, arms/limbs resting naturally beside torso, feet/claws naturally grounded touching the floor`). Tuyệt đối cấm A-pose giương tay cứng nhắc.
+        > 
+        > 2. **ĐỐI TƯỢNG 1: NHÂN VẬT CON NGƯỜI TRƯỞNG THÀNH (ADULT HUMAN — CORE STANDARD)**:
+        >    - **Mặt Trước (Front View)**: Cắt từ chân cổ trở xuống gót giày, **TUYỆT ĐỐI KHÔNG ĐẦU / KHÔNG MẶT** (`headless neck-down front view, strictly zero head and zero face`).
+        >    - **Mặt Nghiêng 90° (90-Degree Lateral Side Profile View)**: Hiển thị độ dày cơ thể, form trang phục nhìn ngang, **TUYỆT ĐỐI KHÔNG ĐẦU / KHÔNG MẶT** (`headless neck-down 90-degree lateral side profile view, strictly zero head and zero face`).
+        >    - **Mặt Sau (Rear Back View)**: Toàn thân từ đỉnh đầu xuống gót giày, **BẮT BUỘC CÓ ĐẦU VÀ TÓC PHÍA SAU** (`full-length rear back view INCLUDING complete back of head and rear hairstyle`), hiển thị trọn vẹn kết cấu lọn tóc, đường gáy, đường may lưng áo và gót giày.
+        >    - *Lý do kỹ thuật*: Triệt tiêu lỗi dị tật khuôn mặt ở độ phân giải nhỏ và chống xung đột nhận diện đa mặt (*Multi-face identity conflict*) ở người. Nửa phải canvas dành trọn vẹn cho chân dung cận ngực (Chest-up) phóng to sắc nét.
+        > 
+        > 3. **ĐỐI TƯỢNG 2: NHÂN VẬT CON NGƯỜI VỊ THÀNH NIÊN / TRẺ EM (< 18 TUỔI — MINOR-SAFE STANDARD MẪU 0B)**:
+        >    - Cả 3 góc nhìn toàn thân BẮT BUỘC **CÓ ĐẦU TRỌN VẸN**; Nửa phải là chân dung đầu-vai (Head-and-shoulders) trung tính, không phong cách thời trang/beauty, cấm từ ngữ gợi cảm/tôn dáng (Pillar 4 §[10d]).
+        > 
+        > 4. **ĐỐI TƯỢNG 3: NHÂN VẬT PHI NHÂN LOẠI / KHÔNG PHẢI CON NGƯỜI (NON-HUMAN ENTITIES: ROBOT, MECHA, QUÁI THÚ, SINH VẬT GIẢ TƯỞNG, THÚ NHÂN, QUÁI VẬT, LINH HỒN)**:
+        >    - **NGUYÊN LÝ GIẢI PHẪU CỐT TỬ**: Sinh vật phi nhân loại có cấu trúc đầu, mặt, sừng, tai, bờm, mắt, miệng, vảy, giáp kim loại, cảm biến hoặc ống xả gắn liền hữu cơ với toàn bộ cơ thể. **TUYỆT ĐỐI CẤM CẮT ĐẦU (STRICTLY NO HEADLESS CUT)** vì sẽ phá hủy toàn bộ tỷ lệ cơ thể và hình thái giải phẫu của sinh vật/robot!
+        >    - **3 GÓC QUAY TOÀN THÂN CÓ ĐẦU TRỌN VẸN (THREE FULL-BODY VIEWS WITH COMPLETE HEAD)**:
+        >      * **Mặt trước toàn thân CÓ ĐẦU (Full-body front view WITH complete head)**: Hiển thị trọn vẹn hình hài sinh học/cơ khí từ đỉnh đầu/sừng/tai xuống bàn chân/móng vuốt/chân cơ khí chạm sàn.
+        >      * **Mặt nghiêng 90° sườn toàn thân CÓ ĐẦU (Full-body 90-degree lateral side profile view WITH complete head)**: Hiển thị độ dày cơ thể, độ cong sống lưng/giáp lưng, mõm/visor, sừng, đuôi và khớp chi nhìn ngang.
+        >      * **Mặt sau toàn thân CÓ ĐẦU (Full-body rear back view WITH complete back of head/crest)**: Hiển thị từ đỉnh gáy/bờm/giáp gáy xuống sống lưng, đuôi và gót chân chạm sàn.
+        >    - **NỬA PHẢI CANVAS (~40–45% Canvas): 1 MEDIUM SHOT TOÀN BỘ TỪ NGỰC ĐẾN ĐẦU (UPPER TORSO TO HEAD MEDIUM SHOT)**:
+        >      * Phóng to sắc nét trực diện hoặc 3/4 nhẹ (`prominent high-definition upper torso to head medium shot`), làm rõ cấu trúc giải phẫu từ ngực/thân trên lên đến đỉnh đầu/sừng/tai: mắt quang học/đồng tử dã thú, sừng, răng nanh, kết cấu da/vảy/lông xù/giáp kim loại phong hóa, giữ khoảng thở an toàn (*safe headroom margin*) phía trên đỉnh đầu.
 
       • **Khu vực Nửa Phải (~40–45% Canvas - Prominent Direct Frontal Full-Head Portrait)**:
         > [!CRITICAL]
@@ -568,6 +580,30 @@ Left and center area displays a three-angle full-body turnaround in a natural, r
 Right area features a prominent, zoomed-in high-definition chest-up portrait filling the right frame with impactful facial clarity while maintaining safe headroom margin above the hair crown, entire head, full cranium, and complete sculpted hairstyle 100% fully visible inside the canvas with clear breathing space below top border, in strictly direct frontal eye-level view facing camera directly, capturing stylized facial features, PBR subsurface skin scattering, piercing irises, strand-based hair grooms, and suit lapel.
 
 Key lighting casting crisp contact shadows under feet, strictly zero text, zero typography, zero labels, strictly zero environmental elements, zero scenery, zero furniture, zero watermark, strictly zero cropped head, strictly no cut-off hair, no truncated hair crown, no hair touching canvas edges, ample empty white headroom margin above the skull, pulled back camera framing, strictly zero out-of-frame head, no chopped skull, portrait strictly frontal view only.
+```
+
+
+##### 🤖 MẪU 3 (BENCHMARK NHÂN VẬT PHI NHÂN LOẠI — NON-HUMAN ENTITY / ROBOT / CREATURE — MECHA ENFORCER)
+*(Template bắt buộc cho mọi nhân vật KHÔNG PHẢI CON NGƯỜI: Robot, Mecha, Quái thú, Quái vật, Thú nhân, Sinh vật giả tưởng, Linh hồn. Khác chuẩn người: Tuyệt đối KHÔNG cắt đầu (No headless cut); 3 góc toàn thân CÓ ĐẦU TRỌN VẸN (Front, 90° Profile, Rear) + 1 Medium Shot từ ngực đến đầu sắc nét cao; Zero-text.)*
+```text
+Style: Theatrical film reference, high-end live-action sci-fi cinematic character design, DaVinci color grading, industrial realism finish.
+
+High-end character design showcase, 8K ultra HD, ultimate mechanical and biological details, physically based rendering (PBR) textures, professional studio character model sheet, virtual camera with 85mm optical perspective, creamy shallow depth of field, focus locked on facial features.
+
+Character: One heavy cybernetic security enforcer automaton, non-human android frame, 210cm height, broad angular reinforced chassis, rugged weathered dark gunmetal and matte carbon-fiber armor plating with subtle industrial edge wear and faint oil scuffs. Chiseled angular mechanical skull, glowing cyan-blue horizontal monovisor optical sensor emitting a cold calculated scanning beam, reinforced jaw servos with micro-hydraulic pistons, articulated neck conduits and braided coolant cables.
+
+Aesthetic: Industrial, tactical, imposing cybernetic enforcer. Zero organic human facial features, zero fabric costume, integrated chest core reactor module with subtle internal cyan luminescence, reinforced shoulder pauldrons, articulated hydraulic forearm plates, heavy digitigrade pneumatic legs with magnetic stabilizing foot clamps.
+
+Character reference model sheet, aspect ratio 16:9, clean solid neutral dark-grey studio infinity cyclorama background.
+
+Left and center area displays a three-angle full-body turnaround in an imposing, relaxed upright standing posture with heavy arms resting naturally beside the mechanical torso, feet grounded touching floor:
+1. Front view, full figure from cranial apex to foot clamps, showing complete frontal chassis, chest reactor, shoulder pauldrons, waist joints, and leg hydraulics, WITH complete mechanical head, monovisor, and jaw servos 100% fully visible.
+2. 90-degree lateral side profile view, full figure from cranial apex to foot clamps, showing chassis depth, spinal heat sinks, hydraulic pistons, arm profile, and stabilizing heel clamps, WITH complete head and visor profile 100% fully visible.
+3. Full-length rear back view from the top of the mechanical skull down to the floor, showing rear cranial plating, neck cable cluster, dorsal exhaust vents, spine power conduits, and rear leg hydraulics.
+
+Right area features a prominent, zoomed-in high-definition upper-torso-to-head medium shot filling the right frame with impactful mechanical clarity while maintaining safe headroom margin above the cranial antenna and apex, entire mechanical head and skull 100% fully visible inside the canvas with clear breathing space below top border, in direct frontal eye-level view facing camera directly, capturing razor-sharp detail of the glowing cyan monovisor optical lens, micro-etched serial numbers, brushed titanium neck hydraulics, and pulsing chest core reactor.
+
+Professional high-end studio rim lighting, crisp cool contact shadows under foot clamps, strictly zero text, zero typography, zero labels, strictly zero background scenery, zero environmental elements, zero furniture, zero watermark, strictly zero cropped head, strictly no cut-off antenna, safe headroom margin above cranial apex, pulled back camera framing, strictly zero out-of-frame head, medium shot strictly frontal view.
 ```
 
 ---
@@ -1082,55 +1118,14 @@ Every reference model sheet must define these 7 invariant physical attributes wi
 
 ### 3. Master Golden Model Sheet Prompts (Sovereign Multi-Angle 16:9 Landscape Layout — Zero-Text Standard)
 
-#### 🎬 Model Sheet 1A: Dark Wardrobe ➔ Solid Pure White Studio Backdrop (Theatrical Live-Action)
-*(Applied when character wears dark/black suit — maximum silhouette separation against pure white; 3 full-body angles in natural stance + direct frontal portrait; zero text)*
-```text
-Style: Theatrical film reference, live-action style, DaVinci grading, masterful composition & cinematic color.
-
-Ultra-realistic human portrait photography, 8K ultra HD, ultimate details, photorealistic texture, professional studio character model sheet, shot with 85mm f1.4 large aperture lens, shallow depth of field, focus precisely locked on the character's face.
-
-Aesthetic of restrained western suited hunter, cold elite temperament. One young Western male, aged 28, 182cm height, with three-dimensional facial bone structure, porcelain fair cold white skin, delicate and transparent natural skin texture, no heavy makeup, original handsome facial features preserved. Deep brow bones and eye sockets form natural stern shadows, cool gray-blue and dark amber eye color, sharp calm eyes with strong sense of oppression and alienation. Tall and delicate nose bridge, thin natural nude lips, cold and calm facial expression.
-
-Neat slicked-back black hair with distinct clear strands, neat and tough style, no earrings and tattoos. Slim-fit black suit matched with high-quality shirt in the same tone, made of matte premium wool with silk inner lining, tailored fit highlighting tough shoulder lines and restrained aura with neat collar design. Overall style dark, cold, restrained and elegant with outstanding elite hunter charm.
-
-Solid pure white studio backdrop with zero scenery and zero environmental elements, creating absolute visual contrast against the black tailored suit and highlighting crisp edge separation. Professional high-end studio lighting, subtle soft contact shadows under feet, soft balanced fill light on face, perfectly showcasing high-grade texture of skin, hair and matte wool fabric. Clean, refined, authoritative elite hunter presentation.
-
-Character reference model sheet, aspect ratio 16:9, clean solid pure white studio background.
-
-Left and center area displays a three-angle full-body turnaround in a natural, relaxed standing posture with arms resting naturally and loosely beside the torso, feet naturally grounded touching floor:
-1. Headless neck-down front view showing tailored suit drape, buttons, lapels, trousers, and dress shoes, with strictly zero head and zero face.
-2. Headless neck-down 90-degree lateral side profile view showing masculine posture, jacket sleeve drape, and shoe profile, with strictly zero head and zero face.
-3. Full-length rear back view INCLUDING complete back of head and slicked-back hairstyle, showing the neat hairline at the nape, jacket vent lines, trouser drape, and heels touching floor.
-
-Right area features a prominent, zoomed-in high-definition chest-up portrait filling the right frame with impactful facial clarity while maintaining safe headroom margin above the hair crown, entire head, full cranium, and complete slicked-back hairstyle 100% fully visible inside the canvas with clear breathing space below top border, in strictly direct frontal eye-level view facing camera directly, capturing razor-sharp facial features, skin texture, iris color with natural catchlights, styled hair strands, and suit collar.
-
-Professional high-end studio lighting, subtle soft contact shadows under feet, strictly zero text, zero typography, zero labels, strictly zero background scenery, zero environmental elements, zero furniture, zero watermark, strictly zero cropped head, strictly no cut-off hair, no truncated hair crown, no hair touching canvas edges, ample empty white headroom margin above the skull, pulled back camera framing, strictly zero out-of-frame head, no chopped skull, portrait strictly frontal view only.
-```
-
-#### 🎬 Model Sheet 1B: Light Wardrobe ➔ Solid Dark Neutral Grey Studio Backdrop (Theatrical Live-Action)
-*(Applied when character wears light/cream tunic — luminous fabric edge retention against neutral dark grey; 3 full-body angles in natural stance + direct frontal portrait; zero text)*
-```text
-Style: Theatrical film reference, live-action style, DaVinci grading, masterful composition & cinematic color.
-
-Ultra-realistic human portrait photography, 8K ultra HD, ultimate details, photorealistic texture, professional studio character model sheet, shot with 85mm f1.4 large aperture lens, shallow depth of field, focus precisely locked on the character's face.
-
-Aesthetic of pure poised artisan, graceful resilient temperament. One young female, aged 26, 168cm height, with three-dimensional facial bone structure, warm luminous honey-olive skin with delicate natural skin texture, no heavy makeup, original beautiful facial features preserved. Expressive almond-shaped hazel eyes with calm resolute gaze, straight delicate nose bridge, natural soft lips, composed dignified facial expression.
-
-Wavy walnut-brown hair tied neatly back with distinct clear hair strands, bare ears with no earrings, bare skin with no tattoos. Pristine baseline tailored light ivory-cream homespun linen tunic, natural breathable organic fabric texture, fine weave details, clean simple neckline, bare hands. Overall style elegant, serene, grounded and pure.
-
-Solid dark neutral grey studio backdrop with zero scenery and zero environmental elements, creating sharp luminous contrast against the light cream linen tunic. Cinematic Rembrandt studio lighting, crisp cool rim outline light separating the light silhouette from the dark background, soft warm fill light on face with controlled chiaroscuro shadows. Delicate light effect showcasing organic fabric weave and skin texture.
-
-Character reference model sheet, aspect ratio 16:9, clean solid dark neutral studio background.
-
-Left and center area displays a three-angle full-body turnaround in a natural, relaxed standing posture with arms resting naturally and loosely beside the torso, feet naturally grounded touching floor:
-1. Headless neck-down front view showing linen tunic drape, woven texture, simple neckline, trousers, and footwear, with strictly zero head and zero face.
-2. Headless neck-down 90-degree lateral side profile view showing tunic drape, relaxed posture, and side profile of footwear, with strictly zero head and zero face.
-3. Full-length rear back view INCLUDING complete back of head and tied walnut-brown hairstyle, showing nape of neck, rear linen seams, and heels touching floor.
-
-Right area features a prominent, zoomed-in high-definition chest-up portrait filling the right frame with impactful facial clarity while maintaining safe headroom margin above the hair crown, entire head, full cranium, and complete wavy walnut-brown hairstyle 100% fully visible inside the canvas with clear breathing space below top border, in strictly direct frontal eye-level view facing camera directly, capturing razor-sharp facial features, skin texture, hazel iris catchlights, styled walnut-brown hair strands, and organic neckline.
-
-Professional studio lighting, subtle soft grounding shadows under footwear, strictly zero text, zero typography, zero labels, strictly zero background scenery, zero environmental elements, zero furniture, zero watermark, strictly zero cropped head, strictly no cut-off hair, no truncated hair crown, no hair touching canvas edges, ample empty dark headroom margin above the skull, pulled back camera framing, strictly zero out-of-frame head, no chopped skull, portrait strictly frontal view only.
-```
+> [!NOTE]
+> All primary live-action, minor-safe, and non-human benchmark reference prompts reside in [Section 3 Golden Reference Prompts](#3-các-mẫu-câu-lệnh-tham-chiếu-chuẩn-mực-golden-reference-prompts) above:
+> - **Mẫu 0 / 1A**: Human Adult Dark Wardrobe ➔ Solid Pure White Studio Backdrop (Three-angle headless turnaround + prominent frontal chest-up portrait).
+> - **Mẫu 1B**: Human Adult Light Wardrobe ➔ Solid Dark Neutral Grey Studio Backdrop.
+> - **Mẫu 0B**: Human Minor-Safe Benchmark (< 18 years old — Rin Morita; three full-length views with head + head-and-shoulders portrait; zero glamour/beauty, zero adult-labeling).
+> - **Mẫu 3**: Non-Human Entity Benchmark (Robot, Creature, Beast — 3 full-body views with head intact + 1 upper torso & head medium shot).
+>
+> Below is **Model Sheet 2** illustrating 3D Feature Animation / Unreal Engine integration:
 
 #### 🎬 Model Sheet 2: 3D Feature Animation / Pixar / Game CG
 ```text
@@ -1343,7 +1338,7 @@ The `setting.html` file serves as the **Master Production Bible** for an entire 
 ├──────────────────────────────┬──────────────────────────────┬───────────────────────────────┤
 │    I. NARRATIVE FOUNDATION   │     II. ASSET CATALOGS       │   III. PRODUCTION ROADMAP     │
 │  • Sec 1: Philosophy & Arcs  │  • Sec 2: Canonical Cast     │  • Sec 5: 48 Scene Cards      │
-│  • Sec 1B: Diurnal Timeline  │  • Sec 3: 16:9 Model Sheets  │    - Diurnal & Light Kelvin   │
+│  • Sec 1B: Diurnal Timeline  │  • Sec 3: 16:9 Model Sheets  │    - Diurnal & Lighting Tone  │
 │  • Sec 1C: Kinetic Bridges   │  • Sec 4A: Master Props      │    - English Dialogue First   │
 │  • Sec 1D: Dialogue Matrix   │  • Sec 4B: Master Locations  │    - In-Line Continuity Links │
 │                              │                              │  • Sec 6: Production SOP & QA │
@@ -1419,7 +1414,7 @@ A compliant Master Setting file consists of exactly **10 core structural section
 * **Diurnal Progression Matrix (Mandatory AM/PM Standard):**
   * Maps the progression of daylight, twilight, midnight, predawn, and golden sunrise exclusively using clear **12-Hour AM/PM notation** (e.g. `05:30 PM ➔ 10:30 PM ➔ 01:00 AM ➔ 04:30 AM ➔ 05:00 AM ➔ 05:50 AM ➔ 06:00 AM ➔ 06:30 AM`).
   * *Strict Prohibition:* Ambiguous 24-hour military numbers without AM/PM designators (e.g. `17:30`, `01:00`, `05:00`) are strictly forbidden across the codebase.
-* **Atmospheric Physics:** Color temperature (Kelvin), volumetric fog density, atmospheric medium.
+* **Atmospheric Physics:** Color temperature (sensory descriptive lighting tone: warm amber, neutral daylight, steel-blue; zero numeric Kelvin), volumetric fog density, atmospheric medium.
 * **Biomechanical Realism:** Observable physical causality (condensed breath, pupil dilation, muscle tremor, wound degradation, exhaustion states).
 
 ### § 3. Section 1C — Inter-Episode Causality Matrix & Kinetic Bridges (`#sec-1c`)
@@ -1431,7 +1426,7 @@ A compliant Master Setting file consists of exactly **10 core structural section
   1. *Frame-to-Frame Kinetic Vector:* Matching camera motion and subject velocity.
   2. *Physical Wound & Dirt Conservation:* Exact location of cuts, bloodstains, soot, or mud.
   3. *Subject Emotional & Bodily Continuum:* Breathing cadence, exhaustion state, facial tension.
-  4. *Diurnal Kelvin Continuity & Explicit AM/PM Timestamp:* Zero light temperature jumping between episodes.
+  4. *Diurnal Lighting Progression Continuity & Explicit AM/PM Timestamp:* Zero light temperature jumping between episodes.
 
 ### § 4. Section 1D — Master Dialogue Architecture & Typology Matrix (`#sec-1d`)
 * Standardizes the **4 Hollywood Directorial Dialogue Typologies**:
@@ -1487,11 +1482,11 @@ A compliant Master Setting file consists of exactly **10 core structural section
 * Numbered environments (ENV-01 to ENV-05).
 * Acoustic properties, dominant materials, lighting fixtures, weather vulnerability, 16:9 master environment prompt grids.
 
-### § 9. Section 5 — Scene-by-Scene Production Roadmap (48 Scenes / 4 Episodes) (`#sec-5`)
+### § 9. Section 5 — Scene-by-Scene Production Roadmap (`#sec-5`)
 * **Structure:** Exactly 48 master scene cards (12 scenes per episode x 4 episodes).
 * **Core Directorial Mandate:** Every scene is an emotional pulse between living humans. The camera tracks faces, breathing, and psychological tension.
 * **Each Scene Card MUST include:**
-  1. `.scene-header-strip`: Scene number badge, Act phase badge, **⏰ Thời Gian Trong Ngày (Diurnal Time)**, **🌡️ Ánh Sáng & Kelvin (Lighting Kelvin)**.
+  1. `.scene-header-strip`: Scene number badge, Act phase badge, **⏰ Thời Gian Trong Ngày (Diurnal Time)**, **🌡️ Ánh Sáng & Tông Màu (Lighting Tone & Color Temperature)**.
   2. `.scene-specs-bar`: Environment ID, Visual Mood, Dramatic Function (Driven by Character Action/Emotion), Participating Cast.
   3. `.scene-content-box`: Action beats, camera blocking, psychological tension score (x/10).
   4. `.dialogue-breakdown-box`:
@@ -1518,7 +1513,7 @@ To guarantee standardized implementation across projects, use these exact DOM co
 ### 4.1 Master Scene Card Component Contract
 ```html
 <div class="scene-master-card" id="scene-card-XX">
-  <!-- 1. Header Strip with Diurnal Time & Kelvin -->
+  <!-- 1. Header Strip with Diurnal Time & Lighting Tone -->
   <div class="scene-header-strip">
     <div style="display: flex; gap: 8px; align-items: center;">
       <span class="scene-num-badge">SCENE XX</span>
@@ -1580,7 +1575,7 @@ To guarantee standardized implementation across projects, use these exact DOM co
   <!-- 5. In-Line Kinetic Continuity Bridge -->
   <div style="background: rgba(16, 185, 129, 0.08); border-left: 3px solid var(--emerald); border-radius: 6px; padding: 8px 12px; margin-top: 12px; font-size: 12px; color: #9CA3AF; font-family: 'JetBrains Mono', monospace;">
     <strong style="color: var(--emerald);">🔗 Mắt Xích Kế Thừa &amp; Cầu Nối Động Năng:</strong>
-    [Camera vector match from previous shot] ➔ [Outgoing momentum, lighting Kelvin, and subject state passed to next scene].
+    [Camera vector match from previous shot] ➔ [Outgoing momentum, lighting color tone, and subject state passed to next scene].
   </div>
 </div>
 ```
@@ -1638,7 +1633,7 @@ print("✓ All 5 Master Setting Compliance Tests (including strict AM/PM notatio
 1. **Setting Bible is Pre-Production Only:** It establishes characters, props, environments, diurnal lighting, master script spine, and scene roadmaps. NEVER generate clip-level rendering prompts in `setting.html`.
 2. **Spoken Dialogue Language (`workflow.md` §2.2 Layer 3):** The primary quote (`.dia-en-quote`) is in English by default; when the user targets a country or language, spoken dialogue switches 100% to that language and dialect. Vietnamese is used for subtitles (`.dia-vn-dub`) and acting notes (`.dia-parenthetical-text`).
 3. **Density Cap (Gate 4B):** ≤ 32 words for a single speaker, ≤ 15 words per speaker in a two-shot; dialogue must fit within the 10s audio window (`0b` §2).
-4. **Zero Continuity Gaps:** Diurnal progression (time & natural color tone) and kinetic vectors must connect seamlessly across all 48 scenes and between episodes.
+4. **Zero Continuity Gaps:** Diurnal progression (time & natural color tone) and kinetic vectors must connect seamlessly across all scenes and between episodes.
 5. **Mandatory 12-Hour AM/PM Time Notation:** Every timestamp across Section 1, Section 1B, Section 1C, and all 48 scene cards in Section 5 MUST explicitly state **AM** or **PM** (e.g., `05:30 PM`, `10:30 PM`, `01:00 AM`, `04:30 AM`, `05:00 AM`, `06:30 AM`). Ambiguous 24-hour military numbers without AM/PM (e.g. `01:00` or `17:30`) are strictly prohibited.
 
 
@@ -1654,7 +1649,7 @@ When a project or episode selects a **Visual Style**, that choice propagates dow
 ├─────────────────────────────────────────────────────────────────────────────────────────────────┤
 │ 1. CODE BLOCK 1 (LINE 1) : Injects exact camera, sensor, film stock, lighting & shader keywords.│
 │ 2. REFERENCE SHEETS (1B) : Character model sheets & prop grids inherit the exact rendering DNA. │
-│ 3. LIGHTING & COLOR (1D) : Dictates Kelvin temperature, shadow falloff, and color grading LUTs. │
+│ 3. LIGHTING & COLOR (1D) : Dictates lighting color tone, shadow falloff, and color grading LUTs. │
 └─────────────────────────────────────────────────────────────────────────────────────────────────┘
 ```
 

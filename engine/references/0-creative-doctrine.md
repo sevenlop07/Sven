@@ -290,7 +290,7 @@ The Screenwriter chooses the voice mode for **each scene** from the dramatic nee
 | **Direct address / POV** | The viewer is placed inside the relationship | Model 8 |
 | **Silence** | The peak, where words would be smaller than the moment | Model 0 |
 
-**Timings and word budgets in the Pillar 1 models are illustrative.** The Hard Constraints remain: Dialogue Word Cap (Single-Speaker 25–30w, cap ≤ 32w; Two-Shot ≤ 15w/speaker), natural speech rate for the clip, no lip-sync during a downward POV, V.O. with lips sealed.
+**Timings and word budgets in the Pillar 1 models are illustrative.** The Hard Constraints remain: Dialogue Word Cap (Gate 4B: Single-Speaker ≤ 32w, craft target 8–14w; Two-Shot ≤ 15w per speaker, total ≤ 32w), natural speech rate for the clip, no lip-sync during a downward POV, V.O. with lips sealed.
 
 ### 4.1 Episode Rhythm
 - Avoid **3 or more consecutive scenes in the same mode** unless the repetition itself is the point (state the reason).
@@ -315,7 +315,7 @@ Strictly eradicate any dogmatic formula forcing every scene into the exact same 
    - 0 words spoken. Camera tracks continuous tactile interaction with props and architecture (unlatching, searching, hiding).
 5. **The Sudden Fracture (Track AB Snap-Cut — False Dawn to Cold Water)**:
    - 00:00–00:07.5 peaceful breathing/dialogue shattered at 00:07.5 by an unexpected visual strike, cutting black on the physical shock.
-*(Note: For contemplative moments or grief, the Director may deploy **The Lyrical Emotional Drift** [unbroken Track A tracking glide]; and for profound emotional peaks where camera movement would dilute raw human performance, the Director deploys **The Locked-Off Performance Take (Track A-Locked)**: 100% stationary tripod, zero camera movement, transferring all kinetic energy to somatic micro-acting, tear physics, and living atmospheric dust motes).*
+*(Note: For contemplative moments or grief, the Director may deploy **The Lyrical Emotional Drift** [unbroken Track A tracking glide]; and for profound emotional peaks where camera movement would dilute raw human performance, the Director deploys **The Locked-Off Performance Take (Track A-Locked)**: 100% fixed static camera (the word "tripod" is banned in prompt prose), zero camera movement, transferring all kinetic energy to somatic micro-acting, tear physics, and living atmospheric dust motes).*
 
 ---
 
@@ -408,12 +408,16 @@ Why monologue: this truth can only be said to someone who cannot answer. Why Tra
 
 ## §7 — HOW TO USE THE PILLARS AFTER THIS DOCTRINE
 
-| Need | Open | Use it as |
+| Document & Pillar | Authority Domain | Precedence & Usage Standard |
 |---|---|---|
-| Beat structure, hooks, twists, dialogue model catalog, parentheticals, dialect | Pillar 1 | A menu of patterns. Timings and word budgets are starting points. |
-| Cast, naming, model/prop/location sheets, `setting.html` | Pillar 2 | Specification (format rules here are mostly Hard Constraints for delivery). |
-| Scales, angles, combos, 3D staging, 180° axis, continuity | Pillar 3 | A vocabulary. The "situation → combo" tables are examples, not prescriptions. |
-| Code Block 1/2 syntax, Track A/B format, minor safety, HTML spec | Pillar 4 | Syntax and safety (mostly Hard Constraints). Example prompts show syntax, not the only valid rhythm. |
+| [`0-creative-doctrine.md`](file:///d:/Project/Sven/engine/references/0-creative-doctrine.md) | Story spine, thematic core, scene intent card, creative review | Single Source of Truth for dramatic intent, subtext, and creative direction. |
+| [`0b-temporal-camera-grammar.md`](file:///d:/Project/Sven/engine/references/0b-temporal-camera-grammar.md) | Quantitative timing grammar, wps, word caps, lip-sync capacity, buffer laws | **Master SSOT for all numerical figures and word budgets** (trumps all narrative suggestions). |
+| [`1-narrative-screenplay-architecture.md`](file:///d:/Project/Sven/engine/references/1-narrative-screenplay-architecture.md) (Pillar 1) | Beat curves, 12 hooks, 20 twists, dialogue interaction suites (Models 0–8), parentheticals | Menu of dramatic patterns. Timings and word budgets defer to `0b`. |
+| [`2-casting-worldbuilding-specification.md`](file:///d:/Project/Sven/engine/references/2-casting-worldbuilding-specification.md) (Pillar 2) | Casting archetypes, Model Sheets (Human Adult, Minor Mẫu 0B, Non-Human Mẫu 3), Prop & Location Universes, `setting.html` | **Master SSOT for all pre-production Model Sheets and entity specifications**. |
+| [`3-cinematography-3d-staging.md`](file:///d:/Project/Sven/engine/references/3-cinematography-3d-staging.md) (Pillar 3) | 14 shot scales, 4-axis angle architecture, camera combos, 3D spatial staging, 180° action axis, continuity ledger | Master cinematic visual staging vocabulary. |
+| [`3b-lighting-atmospheric-physics.md`](file:///d:/Project/Sven/engine/references/3b-lighting-atmospheric-physics.md) | 6-point lighting contract, atmospheric medium, sensory color temperature | Master SSOT for lighting physics; raw numeric Kelvin is banned system-wide. |
+| [`4-ai-video-prompt-compiler.md`](file:///d:/Project/Sven/engine/references/4-ai-video-prompt-compiler.md) (Pillar 4) | Prompt block architecture (Code Blocks 1/2/3), Track A/B syntax, Minor Protection Protocol (§[10d]), HTML delivery spec | **Master SSOT for prompt compilation syntax, safety, and audit gate enforcement**. |
+| [`4b-diegetic-foley-sound-design.md`](file:///d:/Project/Sven/engine/references/4b-diegetic-foley-sound-design.md) | 4-layer diegetic soundscape, acoustic spatialization, Foley handover | Master SSOT for audio and foley sound design. |
 
 **Order of thought at Stages 2, 3 and 4**: Story Spine Card (§8, once per episode) → plot engine: Prediction Ledger, Knowledge Matrix, twist plants (§9) → Intent Card (§1, per scene) → voice mode (§4) → Action↔Line pairing (§3) → scale / angle / movement with reasons (§2) → Pillar syntax → Creative Review (§5) → compile and audit.
 
@@ -714,7 +718,7 @@ Never enforce a static dialogue formula across all genres. Calibrate the vocal p
 |---|---|---|---|
 | **Domestic & Family Melodrama** | Moderate (10–14 words/scene). Modes: Model 1B (Rapid Fencing), Model 4 (Counterpoint V.O.), Model 0 (Silence). | **Adversarial Friction & Protective Lies**: One attacks/queries, the other deflects/lies to protect. Climax features tearful Anagnorisis exchange. | 50% Somatic Action / 50% Dialogue |
 | **Psychological Thriller & Mystery** | Low-to-Moderate (8–12 words/scene). Modes: Model 7 (Interrupted), Model 5 (O.S. Intrusion), Model 6 (Whisper). | **Power Interrogation & Trapped Evasion**: Loaded one-sentence scalpels, long suffocating silences, sudden auditory shocks from outside the frame. | 70% Suspense Visuals / 30% Dialogue |
-| **Sitcom & Light Social Comedy** | High (25–30 words/shot; 5–10w volleys, punchline in last 2–3s). Modes: Model 1B (Rapid Volleys), Model 2 (Ensemble Overlap), Model 8 (Direct 4th Wall). | **Eccentric Ping-Pong & Mutual Misunderstanding**: Rapid rhythmic volleys, unexpected punchlines, characters talking over each other. | 30% Physical Comedy / 70% Dialogue |
+| **Sitcom & Light Social Comedy** | Snappy (14–24 words/shot; 5–10w volleys, hard cap ≤ 32w; punchline in last 2–3s). Modes: Model 1B (Rapid Volleys), Model 2 (Ensemble Overlap), Model 8 (Direct 4th Wall). | **Eccentric Ping-Pong & Mutual Misunderstanding**: Rapid rhythmic volleys, unexpected punchlines, characters talking over each other. | 30% Physical Comedy / 70% Dialogue |
 | **Art-House & Healing Drama** | Sparse (0–8 words/scene). Modes: Model 0 (Pure Eloquence), Model 3 (Silent Absorber), Model 6 (Tender Whisper). | **Somatic Resonance & Reverence**: Extended silences, tactile caretaking (serving tea, wrapping a shawl), gentle shared breath. | 80% Pure Visuals / 20% Dialogue |
 | **Workplace & High-Stakes Corporate** | Sharp & Compact (12–16 words/scene). Modes: Model 1 (Status Duel), Model 1B (Ultimatum). | **Hierarchical Leverage**: Dominant executive issues a mandate; subordinate counter-attacks with hidden contract evidence. | 40% Blocking & Props / 60% Dialogue |
 

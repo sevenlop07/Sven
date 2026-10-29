@@ -12,7 +12,7 @@
 
 | Item | Status |
 |---|---|
-| Dialogue Word Cap (Gate 4B): Single-Speaker Shot target 25–30 words (hard cap ≤ 32w); Two-Shot exchange ≤ 15 words per speaker (total ≤ 32w) | Hard Constraint |
+| Dialogue Word Cap (Gate 4B): Single-Speaker hard cap ≤ 32 words (craft target 8–14w; Microdrama ≤ 12w); Two-Shot exchange ≤ 15 words per speaker (total ≤ 32w) | Hard Constraint |
 | Phases contiguous, non-overlapping, start at 00:00, end at the clip duration 10s / 15s / 30s (Gate 3M) | Hard Constraint |
 | **Zero Cumulative Timestamps**: Every scene prompt MUST start at 00:00 for third-party AI generators; NEVER use cumulative episode timestamps like [00:10–00:20] in prompts (Gate 3M) | Hard Constraint |
 | **Zero Dead Air Law**: continuous micro-action density spanning 100% of the clip duration; zero "holds still", "stands rigid", or idle buffers (Gate 3O) | Hard Constraint |
@@ -77,10 +77,10 @@ When assembling discrete 10-second AI video shots into a seamless cinematic sequ
 
 | Delivery Mode | Vietnamese (syl / s) | English (words / s) | 10s Single-Speaker Word Budget | Target Genres & Pacing |
 |---|---|---|---|---|
-| **Sitcom / Comedy / Fast Banter** | 3.8 – 5.0 | 2.2 – 2.8 | **25 – 30 words** (Single speaker) or **25–30w total** (Two-shot split 5–10w each) | High-energy, snappy pacing. Structure: Setup ➔ Reaction ➔ Punchline in final 2–3s. |
-| **Calm Conversation / Everyday Slice-of-Life** | 3.5 – 4.5 | 2.0 – 2.5 | **25 – 30 words** | Natural conversational cadence with breathing room (6.5s – 7.5s speech). |
-| **Psychological Drama / Heavy Emotion / Melodrama** | 2.5 – 3.5 | 1.3 – 1.8 | **15 – 20 words** | The unspoken matters more than the spoken. 4–5s pregnant pauses, trembling breaths, eye shifts. |
-| **Panic / Emergency Command / Stichomythia** | 4.5 – 6.0 | 2.5 – 3.3 | **20 – 28 words** (staccato volleys) | Rapid adrenaline pacing, clipped consonants, urgent interruptions. |
+| **Sitcom / Comedy / Fast Banter** | 3.8 – 5.0 | 2.2 – 2.8 | **14 – 24 words** (Single speaker, cap ≤ 32w) or **14–24w total** (Two-shot split 5–10w each; cap ≤ 15w/speaker) | High-energy, snappy pacing. Structure: Setup ➔ Reaction ➔ Punchline in final 2–3s. |
+| **Calm Conversation / Everyday Slice-of-Life** | 3.5 – 4.5 | 2.0 – 2.5 | **12 – 20 words** (Single speaker, craft target 8–14w) | Natural conversational cadence with breathing room (5.0s – 7.0s speech). |
+| **Psychological Drama / Heavy Emotion / Melodrama** | 2.5 – 3.5 | 1.3 – 1.8 | **8 – 14 words** (Microdrama ≤ 12w; cap ≤ 20w) | The unspoken matters more than the spoken. 4–5s pregnant pauses, trembling breaths, eye shifts. |
+| **Panic / Emergency Command / Stichomythia** | 4.5 – 6.0 | 2.5 – 3.3 | **14 – 24 words** (staccato volleys, cap ≤ 32w) | Rapid adrenaline pacing, clipped consonants, urgent interruptions. |
 
 **Buffer Law for 10s Shots**:
 - Always leave **0.5s – 1.0s buffer at the head** of the shot (establishing subject, breath intake before speech).
@@ -197,11 +197,11 @@ Each added cut raises the risk of identity and costume drift in AI generation, s
 
 | Shot Type & Genre | Mode | Spoken Word Budget (VN) | Spoken Word Budget (EN) | Speech Share (% of 10s) |
 |---|---|---|---|---|
-| **Single-Speaker (Sitcom / Slice-of-Life)** | 1 Active Speaker | **25 – 30 syllables** | 12 – 16 words | ~65 % – 75 % |
-| **Single-Speaker (Psychological Drama / Heavy)** | 1 Active Speaker | **15 – 20 syllables** | 8 – 12 words | ~40 % – 55 % |
-| **Two-Shot / Multi-Speaker (Sitcom Fast Banter)** | 2 Speakers (Two-Shot) | **25 – 30 syllables total** (5–10w each; cap ≤ 15w/speaker) | 12 – 16 words total | ~60 % – 70 % |
+| **Single-Speaker (Sitcom / Slice-of-Life)** | 1 Active Speaker | **18 – 28 syllables** | 10 – 14 words (cap ≤ 32w) | ~50 % – 60 % (up to 75% max) |
+| **Single-Speaker (Psychological Drama / Heavy)** | 1 Active Speaker | **12 – 18 syllables** | 6 – 10 words (craft target 8–14w) | ~30 % – 45 % |
+| **Two-Shot / Multi-Speaker (Sitcom Fast Banter)** | 2 Speakers (Two-Shot) | **18 – 28 syllables total** (5–10w each; cap ≤ 15w/speaker) | 10 – 14 words total | ~50 % – 60 % |
 | **Reaction Shot / Pure Physical Silence** | Model 0 (Silence) | **0 syllables** | 0 words | 0 % (100% Visual) |
-| **Voice-Over (V.O.) / Inner Monologue** | V.O. (Sealed Lips) | **20 – 30 syllables** | 12 – 18 words | ~60 % – 75 % |
+| **Voice-Over (V.O.) / Inner Monologue** | V.O. (Sealed Lips) | **15 – 25 syllables** | 8 – 12 words | ~40 % – 60 % |
 
 The upper bounds preserve the 0.5s–1.0s lead-in breath and 0.5s–1.5s mouth closure / reaction settle. Lower bounds apply to scenes that use dialogue; silent reaction scenes (Model 0) and pure visual action shots are 100% first-class citizens. The linter permits up to 75% speech share for single-speaker 10s shots.
 
@@ -216,11 +216,12 @@ Master-level cinematography and composition, fast-paced shot variation, atmosphe
 [Location Name in English] [100% Refer to image <location_ref_4view.jpg>], [time of day]. [Complete physical architectural specification: full fixed furniture inventory, in-scene textiles/bedding, key lighting direction, and continuous environmental micro-motion: dust motes dancing in sunbeams, steam curling steadily].
 
 [subject]:
-[name_a] [100% Appearance, attire, and facial features Refer to image 1], [initial spatial anchor to in-scene architectural fixture], [initial physical posture & tactile contact] — the only [name_a] in frame.
-[name_b] [100% Appearance, attire, and facial features Refer to image 2], [initial spatial anchor to in-scene architectural fixture], [initial physical posture & tactile contact] — the only [name_b] in frame.
+[ho_ten_a] [100% Appearance, attire, and facial features Refer to image 1], [initial spatial anchor to in-scene architectural fixture], [initial physical posture], hands free of props, [eyeline toward ho_ten_b or a landmark] — the only [ho_ten_a] in frame.
+[ho_ten_b] [100% Appearance, attire, and facial features Refer to image 2], [initial spatial anchor to in-scene architectural fixture], [initial physical posture], hands free of props, [eyeline toward ho_ten_a or a landmark] — the only [ho_ten_b] in frame.
 
 [PROP]:
-[hero_prop_in_english] [100% Refer to image <prop_ref.jpg>]; [tactile fixture / resting state]. (or: "none (pure environmental and somatic staging)" if no hero prop)
+[hero prop in natural English] [100% Refer to image <prop_ref.jpg>], [physical state], [resting place independent of character hands] — the only [prop noun] in frame.
+(Tier 2 everyday handheld items: same line without the image tag. If no handheld item in scene: "none (pure environmental and somatic staging)". Furniture/fixtures/bedding stay in [context]:.)
 
 Diegetic room acoustics: [room tone and Foley].
 
@@ -286,7 +287,7 @@ minh_khang says : “ Bác sĩ dặn nôi phẳng mới tốt, con mang ra sau h
 *Timing check: Line 1 ≈ 2.8s (inside 4.5s phase); Line 2 ≈ 3.5s (inside 4.5s phase, finishing by 00:08.5); Shot 3 is strictly 1.0s (00:09.0–00:10.0) of sudden visceral paralysis without dragging down pacing.*
 
 #### Example 3: Track A-Locked — The Locked-Off Performance Take (Diễn Hoạt Tĩnh Siêu Đậm Đặc, Zero Camera Move)
-*Cadence: Intimate Confession / Somatic Agony. The camera is 100% stationary on a tripod; 100% of the movement is driven by micro-acting, tear physics, and dancing sunbeams.*
+*Cadence: Intimate Confession / Somatic Agony. The camera is 100% stationary on a fixed static mount; 100% of the movement is driven by micro-acting, tear physics, and dancing sunbeams.*
 *(Special Syntax Rule Exclusive to Track A-Locked: Because shot scale, angle, and camera position remain 100% constant across the entire take, the camera setup is declared directly in natural prose once at the start of the action block with full optical framing and focal depth, without any `[camera]:` tag and strictly banning the word "tripod". The timeline brackets are dedicated 100% to character somatic performance and living environmental physics, with ZERO dangling `Focus on [name]` tags).*
 ```text
 Eye-level medium close-up framing my_duyen, shallow depth of field holding razor-sharp optical focus on my_duyen's face with background softly falling into cinematic bokeh, static camera.
