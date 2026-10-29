@@ -613,7 +613,7 @@ ACTION FRAMEWORK: [Tier 1: reinforce / contradict / replace / reveal] + [Tier 2:
 Cast & positions: [architectural anchors]
 Track: [A dynamic single-shot / A-Locked static performance / B multi-shot / AB mixed] — because [one clause]
 Action: [beats in order, one primary move per phase; phase count and splits follow the beats, not a template]
-Lines: [Speaker (spoken / V.O. / O.S.): line ≤ 18 words (Hard Cap, target 14–17w)] + VN dub line + hidden verb + Action↔Line [reinforce / contradict / replace / reveal]
+Lines: [Speaker (spoken / V.O. / O.S.): line ≤ 32 words single speaker / ≤ 15 words per speaker in a two-shot (Gate 4B Hard Cap)] + VN dub line + hidden verb + Action↔Line [reinforce / contradict / replace / reveal]
        or: SILENCE — [what the body says instead]
 Sound: [diegetic Foley, room tone]
 BREAK: [craft default broken — reason]   (only when a default is broken)
@@ -659,7 +659,7 @@ After drafting, write this episode's scene rows into `setting.html` Section 5 (p
   The Director and Showrunner Assistant present each scene **interactively in the chat window** for the user (Executive Director):
   1. Present the **Scene Directorial Card**:
      - *Dramaturgical Intent & Spine Progress*: What value shifts (`00:00 → 00:10`), whose power changes, how this scene advances the Episode Dramatic Spine (CDQ).
-     - *Cross-Scene Dialogue Relay*: Inbound Baton received from Scene N-1 (keyword echo, emotional aftershock, causal retaliation), Tactical Action Subtext (`[ATTACK]`, `[DEFEND]`, `[PROBE]`, `[BARGAIN]`, `[TRAP]`), Spoken line (≤18w), and Outbound Baton thrown to Scene N+1.
+     - *Cross-Scene Dialogue Relay*: Inbound Baton received from Scene N-1 (keyword echo, emotional aftershock, causal retaliation), Tactical Action Subtext (`[ATTACK]`, `[DEFEND]`, `[PROBE]`, `[BARGAIN]`, `[TRAP]`), Spoken line (Gate 4B: ≤32w single / ≤15w per speaker in a two-shot), and Outbound Baton thrown to Scene N+1.
      - *Camera Choreography & 3D Staging*: Scale (CU, OTS, M2S, etc.), Angle, Camera Movement motive, 180° axis alignment.
      - *Actor Micro-Biomechanical Acting*: Breathing, eyelines, tactile prop handling, somatic reactions.
      - *Dialogue Delivery & Foley*: Spoken lines with vocal timbre & parentheticals + Diegetic room Foley.
@@ -713,7 +713,7 @@ Template notes:
 - Voice modes: one speaker, V.O. (parenthetical states `inner voice-over, lips remain sealed`), O.S., or no lines at all are all valid inside this template (Doctrine §4.2). A reply never needs to open with an address word.
 - Never write lens millimeters, f-stops, fps, camera brands, or Kelvin.
 - Use proper names only; no pronouns in visual prose (Gate 3C).
-- Max 18 words per spoken line (Hard Constraint). Clip density is a craft default (`0b` §7: 10s ≈ 12–24 Vietnamese syllables or 8–13 English words; 15s ≈ 18–36 syl; 30s ≈ 35–70 syl); peak scenes often need far fewer.
+- Gate 4B word cap per spoken line (Hard Constraint): ≤ 32 words single speaker, ≤ 15 words per speaker in a two-shot. Clip density is a craft default (`0b` §7: 10s ≈ 12–24 Vietnamese syllables or 8–13 English words; 15s ≈ 18–36 syl; 30s ≈ 35–70 syl); peak scenes often need far fewer.
 - Syntax (`0b` §8): one time bracket + one short camera clause (scale, angle, move, optical focus) + `—` + prose. Dialogue lines use the **Somatic Action-Speech Fusion Standard**: dialogue is an organic physical action integrated into bodily movement and breathing, using expressive speech-action verbs with adverbs (`furiously snapping :`, `breathlessly pleading :`, `icily hissing :`) rather than sterile, detached statements. No `△`, no `|` pipes, no `Shot 1` / `Phase 1` labels (audit warning W6). The track is declared in the style line; Track B phases after the first open with `Cut to`.
   * **The Optical Camera Clause Law (Quy Chuẩn Quang Học Camera Trước Dấu Gạch Ngang — Banning Dangling "Focus on [name]")**:
     - Mọi thông số về chủ thể được đóng khung (Subject Framing), mặt phẳng tiêu cự quang học (Focal plane), và độ sâu trường ảnh (Depth of field / bokeh) BẮT BUỘC được khai báo trực tiếp trong phần Camera Clause (trước dấu gạch ngang `—`), ví dụ: `Medium close-up framing ho_ten_A at eye level, shallow depth of field holding sharp optical focus on ho_ten_A's facial features with background softly falling into bokeh, slow push-in — [action]`.

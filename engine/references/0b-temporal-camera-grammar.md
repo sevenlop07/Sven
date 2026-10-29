@@ -181,7 +181,7 @@ Limits:
 |---|---|---|
 | **A — one continuous take** | The viewer must stay inside one breath, one body, one unbroken pressure (confession, realization, intimacy, dread, a fall). | 2–4 phases, zero cuts; scale and angle change only through camera movement. |
 | **A-Locked — locked-off static take** | The acting reaches maximum emotional truth; camera motion would dilute empathy (wordless weeping, razor confession, truth-bomb shock). | 2–3 phases in one fixed setup; camera is 100% stationary with zero camera movement; 100% of motion comes from somatic micro-acting and living atmosphere. |
-| **B — multi-shot** | The viewer must see both sides of a collision: whose move lands, who absorbs it. | 1–4 shots on the 180° axis; each later shot opens with `Cut to`. |
+| **B — multi-shot** | The viewer must see both sides of a collision: whose move lands, who absorbs it. | 2–4 shots (1–3 cuts) on the 180° axis; each later shot opens with `Cut to`. |
 | **AB — hybrid take + cut** | Pressure accumulates in one breath, **but the landing must be seen through another eye** — the witness, the prop, the reverse. The cut is the punctuation mark of the take. | One take ≥ 5 s carrying 2+ phases, plus 1–2 cuts. |
 
 Hybrid shapes (illustrative, not templates):
