@@ -269,14 +269,14 @@ Trope defines **dramatic structure and twist rhythm**:
 
 #### 3. Đạo Cụ Hành Vi (Business Props & Psychological Subtext)
 Khi nhân vật đang nói dối, che giấu sự sợ hãi hoặc toan tính âm mưu, họ không bao giờ đứng bất động. Đạo cụ là công cụ để **cơ thể phản bội lại lời nói**:
-* **Rót trà tràn ly**: Nhân vật nói giọng đanh thép cứng rắn: *"Tôi không ngán ông!"*, nhưng ngón tay run rẩy làm nước sôi tràn bỏng bàn tay $	o$ Khán giả nhìn thấy ngay nỗi sợ hãi tột cùng đang bị kìm nén.
-* **Lau kính / Châm thuốc**: Tháo kính ra lau tỉ mỉ, châm điếu thuốc rồi dụi ngay $	o$ Chiêu bài **"câu giờ tâm lý"**, né tránh ánh mắt đối phương để tính kế hãm hại.
-* **Siết chặt kỷ vật**: Đứa con nói lời cay đắng xua đuổi cha, nhưng hai bàn tay giấu sau lưng bấu chặt kỷ vật chiếc khóa bạc đến bật máu $	o$ Bộc lộ sự hy sinh cao cả (*Noble Lie*).
+* **Rót trà tràn ly**: Nhân vật nói giọng đanh thép cứng rắn: *"Tôi không ngán ông!"*, nhưng ngón tay run rẩy làm nước sôi tràn bỏng bàn tay $\to$ Khán giả nhìn thấy ngay nỗi sợ hãi tột cùng đang bị kìm nén.
+* **Lau kính / Châm thuốc**: Tháo kính ra lau tỉ mỉ, châm điếu thuốc rồi dụi ngay $\to$ Chiêu bài **"câu giờ tâm lý"**, né tránh ánh mắt đối phương để tính kế hãm hại.
+* **Siết chặt kỷ vật**: Đứa con nói lời cay đắng xua đuổi cha, nhưng hai bàn tay giấu sau lưng bấu chặt kỷ vật chiếc khóa bạc đến bật máu $\to$ Bộc lộ sự hy sinh cao cả (*Noble Lie*).
 
 #### 4. Đạo Cụ Quyền Lực & Cán Cân Thống Trị (Status & Power Levers)
 Trong một phân cảnh đối đầu (Adversarial Dialogue Duel), **vị trí của đạo cụ quyết định ai đang là kẻ thống trị căn phòng**:
-* **Chiếc bút ký / Con dấu**: Tên trùm phản diện A2 xoay tròn chiếc bút máy vàng trên ngón tay trong khi nhân vật chính đứng khúm núm $	o$ A2 nắm giữ 100% quyền sinh sát.
-* **Khoảnh khắc đảo chiều**: Khi A1 phát hiện bằng chứng giả, lao tới **giật phăng chiếc bút đập gãy đôi trên bàn** $	o$ Quyền lực lập tức đảo chiều 180° sang tay A1 mà chưa cần một hành động bạo lực nào!
+* **Chiếc bút ký / Con dấu**: Tên trùm phản diện A2 xoay tròn chiếc bút máy vàng trên ngón tay trong khi nhân vật chính đứng khúm núm $\to$ A2 nắm giữ 100% quyền sinh sát.
+* **Khoảnh khắc đảo chiều**: Khi A1 phát hiện bằng chứng giả, lao tới **giật phăng chiếc bút đập gãy đôi trên bàn** $\to$ Quyền lực lập tức đảo chiều 180° sang tay A1 mà chưa cần một hành động bạo lực nào!
 
 #### 5. Đạo Cụ Mồi Nhử (The MacGuffin — Định Nghĩa Của Alfred Hitchcock)
 * **Bản chất**: Là một vật thể mà **tất cả các phe phái đều điên cuồng tranh đoạt** (vali tiền, tờ di chúc thất lạc, chiếc thẻ nhớ ghi âm tội ác, miếng ngọc bội gia truyền).
@@ -760,10 +760,10 @@ $$\mathbf{HỒI\ 1\ (20\%)\ +\ HỒI\ 2\ (45\%)\ +\ HỒI\ 3\ (25\%)\ +\ HỒI\ 
 ```
 
 #### Thuật Toán Phân Bổ Số Tập Chính Xác Cho $N$ Tập (Integer Allocation Formula):
-1. **Hồi 4 ($	ext{Act 4}$)**: Luôn là **1 tập** (với $N \le 8$), hoặc $	ext{round}(N 	imes 0.10)$ (với $N \ge 10$).
-2. **Hồi 1 ($	ext{Act 1}$)**: $\max(1, \;	ext{round}(N 	imes 0.20))$.
-3. **Hồi 3 ($	ext{Act 3}$)**: $\max(1, \;	ext{round}(N 	imes 0.25))$.
-4. **Hồi 2 ($	ext{Act 2}$)**: Phần còn lại $= N - (	ext{Act 1} + 	ext{Act 3} + 	ext{Act 4})$.  
+1. **Hồi 4 ($\text{Act 4}$)**: Luôn là **1 tập** (với $N \le 8$), hoặc $\text{round}(N \times 0.10)$ (với $N \ge 10$).
+2. **Hồi 1 ($\text{Act 1}$)**: $\max(1, \;\text{round}(N \times 0.20))$.
+3. **Hồi 3 ($\text{Act 3}$)**: $\max(1, \;\text{round}(N \times 0.25))$.
+4. **Hồi 2 ($\text{Act 2}$)**: Phần còn lại $= N - (\text{Act 1} + \text{Act 3} + \text{Act 4})$.  
    *(Bảo đảm Hồi 2 luôn là Hồi xương sống dài nhất, chiếm 40% đến 50% số tập).*
 
 #### Bảng Tra Cứu Phân Bổ Số Tập Chi Tiết (Exact Episode Lookup Matrix):
@@ -893,13 +893,13 @@ $$\mathbf{HỒI\ 1\ (20\%)\ +\ HỒI\ 2\ (45\%)\ +\ HỒI\ 3\ (25\%)\ +\ HỒI\ 
 
 ##### 3. Tuyến Vệ Tinh Trung Gian & Vùng Xám (The Cross-Faction Levers — Máy Kích Nổ Twist)
 * **B-Cross 1: The Blackmailed Hostage (Con tin lương tâm / Kỹ thuật Gáo Nước Lạnh)**:
-  - Người thuộc phe A1 nhưng bị A2 nắm giữ tính mạng người thân $	o$ Buộc phải nói dối tàn nhẫn, ném kỷ vật xuống bùn để đuổi A1 ra xa vùng nguy hiểm (*The Noble Lie & Double-Bind*).
+  - Người thuộc phe A1 nhưng bị A2 nắm giữ tính mạng người thân $\to$ Buộc phải nói dối tàn nhẫn, ném kỷ vật xuống bùn để đuổi A1 ra xa vùng nguy hiểm (*The Noble Lie & Double-Bind*).
 * **B-Cross 2: The Jealous Traitor (Kẻ phản bội vì đố kỵ — TW-05 Judas Kiss)**:
-  - Đồng đội của A1 nhưng uất ức vì luôn đứng dưới bóng A1 $	o$ Bị A2 mua chuộc và đâm sau lưng A1 ở thời khắc quyết định.
+  - Đồng đội của A1 nhưng uất ức vì luôn đứng dưới bóng A1 $\to$ Bị A2 mua chuộc và đâm sau lưng A1 ở thời khắc quyết định.
 * **B-Cross 3: The Turncoat Defector (Kẻ thức tỉnh đào tẩu — TW-06)**:
-  - Thuộc hạ dưới trướng A2, sau khi chứng kiến A2 vượt qua lằn ranh đỏ (định sát hại phụ nữ/trẻ nhỏ) thì rùng mình kinh hãi $	o$ Lén lút giao nộp chìa khóa hoặc chứng cứ quyết định cho A1.
+  - Thuộc hạ dưới trướng A2, sau khi chứng kiến A2 vượt qua lằn ranh đỏ (định sát hại phụ nữ/trẻ nhỏ) thì rùng mình kinh hãi $\to$ Lén lút giao nộp chìa khóa hoặc chứng cứ quyết định cho A1.
 * **B-Cross 4: The Objective Justice Enforcer (Cán cân công lý khách quan — TW-04)**:
-  - Quan tòa, điều tra viên, cảnh sát trưởng. Ban đầu bị A2 làm giả chứng cứ dắt mũi $	o$ Truy bắt A1 ráo riết. Cuối cùng khi chân tướng lộ diện $	o$ Là người trực tiếp tra còng vào tay A2.
+  - Quan tòa, điều tra viên, cảnh sát trưởng. Ban đầu bị A2 làm giả chứng cứ dắt mũi $\to$ Truy bắt A1 ráo riết. Cuối cùng khi chân tướng lộ diện $\to$ Là người trực tiếp tra còng vào tay A2.
 
 ---
 
@@ -1518,7 +1518,7 @@ Thay vì chỉ lật một lần duy nhất, cao trào điện ảnh đỉnh cao
 * **Twist Lớp 1 (Bề Mặt — The False Twist)**: Khán giả tưởng cú lật là cuộc hội ngộ hoặc chiến thắng (*"Hai cha con sắp nhận nhau sau 10 năm xa cách!"*).
 * **Twist Lớp 2 (Chấn Động — The Cold Water Reversal)**: Đứa con bất ngờ ném chiếc khóa bạc kỷ vật xuống bùn đất, lăng mạ người cha là kẻ vô dụng (*"Tôi không có người cha như ông, cầm rác rưởi của ông cút đi!"*).
 * **Cú Rút Lưỡi Dao Cảm Xúc (The Subtext Knife)**: Khung hình lướt nhẹ ra bóng tối sau ô cửa sổ: Tên trùm phản diện đang kề dao vào cổ người mẹ đang bị trói nghiến. Đứa con vừa nói vừa cắn chặt môi dưới đến ứa máu, các đốt ngón tay siết rách da sau lưng để ngăn nước mắt rơi.
-* 👉 **Chuyển hóa cảm xúc**: Khán giả từ chỗ ngỡ ngàng $	o$ phẫn nộ với đứa con $	o$ vỡ òa xót xa và tôn sùng đức hy sinh vĩ đại của đứa con!
+* 👉 **Chuyển hóa cảm xúc**: Khán giả từ chỗ ngỡ ngàng $\to$ phẫn nộ với đứa con $\to$ vỡ òa xót xa và tôn sùng đức hy sinh vĩ đại của đứa con!
 
 ---
 
@@ -1541,7 +1541,7 @@ $$\mathbf{Lựa\ Chọn\ B\ (Nói\ Dối)} \longrightarrow \mathbf{Cứu\ đư�
 
 Trong cấu trúc phim bộ nhiều tập (Series / Episodic Drama), tuyệt đối không bao giờ được phép đóng kín 100% cánh cửa ở cuối tập:
 
-$$\mathbf{Cái\ Kết\ (Beat\ 5	ext{--}6)\ của\ Tập\ N} \;\equiv\; \mathbf{Gáo\ Nước\ Lạnh\ (Beat\ 1)\ của\ Tập\ N+1}$$
+$$\mathbf{Cái\ Kết\ (Beat\ 5\text{--}6)\ của\ Tập\ N} \;\equiv\; \mathbf{Gáo\ Nước\ Lạnh\ (Beat\ 1)\ của\ Tập\ N+1}$$
 
 ```text
   TẬP 1: BEAT 4 (CLIMAX)                   TẬP 1: BEAT 6 (CLIFFHANGER)                 TẬP 2: BEAT 1 (NEW HOOK)
@@ -2279,7 +2279,7 @@ All dialogue scenes in the Sven Production Engine select from the **8 Master Dia
 | **Model 4** | **Internal Monologue V.O.** | `[00-04]` External ➔ `[04-05]` Eye Lock ➔ `[05-09]` V.O. ➔ `[09-10]` Settlee | `1.4 – 1.7 WPS` | ~12–16 words | Track A Single-Shot (Static) |
 | **Model 5** | **Off-Screen Authority O.S.**| `[00-04]` O.S. Decree ➔ `[04-05]` Shock Wave ➔ `[05-09]` Retort ➔ `[09-10]` Settle| `1.7 – 2.0 WPS` | ~14–18 words | Track A or Track B |
 | **Model 6** | **Conspiratorial Whisper** | `[00-04]` Whisper 1 ➔ `[04.0-10.0]` Whisper 2 ➔ `[Terminal Flow]` Shadow Fade | `1.2 – 1.4 WPS` | ~10–13 words | Track A Glide or Track B |
-| **Model 7** | **Interrupted Cut-Off** | `[00-03.5]` Line (Cut) ➔ `[03.5-05]` Impact ➔ `[05-09]` Retort ➔ `[09-10]` Settle| `2.0 WPS $	o$ Cut`| ~12–15 words | Pure Track B (Collision Cut) |
+| **Model 7** | **Interrupted Cut-Off** | `[00-03.5]` Line (Cut) ➔ `[03.5-05]` Impact ➔ `[05-09]` Retort ➔ `[09-10]` Settle| `2.0 WPS $\to$ Cut`| ~12–15 words | Pure Track B (Collision Cut) |
 | **Model 8** | **Subjective P.O.V.** | `[00-04.5]` Opponent Down Lens ➔ `[04.5-09]` P.O.V. Hand Retort ➔ `[09-10]` Settle| `1.7 – 2.0 WPS` | ~14–17 words | Subjective P.O.V. |
 | **Model 0** | **Pure Action Kinetics** | `[00-04]` Momentum ➔ `[04-09]` Collision ➔ `[09-10]` Settlee | **0.0 WPS** | **0 words** | Track A or Track B |
 
@@ -2291,15 +2291,15 @@ The 8 Interaction Geometries adapt dynamically across all genres through the **4
 
 | Narrative & Genre Objective | Optimal Geometry & Energy Vector | Word Budget | Action-Dialogue Synergy Structure |
 |---|---|---|---|
-| **1. Romance: Flirtatious Banter & Melting Smile** | **Model 1 (Harmonic Vector)** | ~16–18 words | Fond Teasing (A: ~8w) $	o$ Melting Witty Retort (B: ~8w) $	o$ Soft blush & living settle |
-| **2. Drama: Ideological Duel / Courtroom Clash** | **Model 1 (Frictional Vector)** | ~16–18 words | Premise Jab (A: ~8w) $	o$ Defiant Retort (B: ~8w) $	o$ Choker shock reaction |
-| **3. Rom-Com: Sweet Bickering / Playful Sparring**| **Model 1B (Harmonic Vector)** | ~16–18 words | 4 rapid volleys trading sweet insults $	o$ helpless shared laughter |
-| **4. Action / Sci-Fi: High-Velocity Combat Comms** | **Model 1B (Tactical Vector)** | ~16–18 words | 4 rapid staccato callouts ("Flank left!" $	o$ "Dry!" $	o$ "Take sidearm!" $	o$ "Breaching!") |
-| **5. Comedy: Friends Gang-Up & Deadpan Defeat** | **Model 2 (Disruptive Vector)**| ~15–18 words | Friend 1 tease $	o$ Friend 2 pile-on $	o$ Hero indignant retort $	o$ Room laughter |
-| **6. Romance: Vulnerable Romantic Confession** | **Model 3 (Harmonic Vector)** | ~7–9 words | Soul-baring confession line $	o$ Listener breath catches, tear wells in stunned silence |
-| **7. Drama: Authoritarian Verdict / Sentence** | **Model 3 (Frictional Vector)**| ~7–9 words | Authoritarian Sentence $	o$ Silent defiant stare or tearful jaw clench |
-| **8. Noir / Mystery: Detective Clue Deduction** | **Model 4 (Metaphysical Vector)**| ~12–16 words | Eye-lock on physical trace $	o$ Resonant V.O. deduction (lips 100% sealed) |
-| **9. Romance / Slice: Heart Flutter Longing** | **Model 4 (Harmonic Vector)** | ~12–16 words | Watching partner laugh $	o$ Gentle V.O. secret confession (lips 100% sealed) |
+| **1. Romance: Flirtatious Banter & Melting Smile** | **Model 1 (Harmonic Vector)** | ~16–18 words | Fond Teasing (A: ~8w) $\to$ Melting Witty Retort (B: ~8w) $\to$ Soft blush & living settle |
+| **2. Drama: Ideological Duel / Courtroom Clash** | **Model 1 (Frictional Vector)** | ~16–18 words | Premise Jab (A: ~8w) $\to$ Defiant Retort (B: ~8w) $\to$ Choker shock reaction |
+| **3. Rom-Com: Sweet Bickering / Playful Sparring**| **Model 1B (Harmonic Vector)** | ~16–18 words | 4 rapid volleys trading sweet insults $\to$ helpless shared laughter |
+| **4. Action / Sci-Fi: High-Velocity Combat Comms** | **Model 1B (Tactical Vector)** | ~16–18 words | 4 rapid staccato callouts ("Flank left!" $\to$ "Dry!" $\to$ "Take sidearm!" $\to$ "Breaching!") |
+| **5. Comedy: Friends Gang-Up & Deadpan Defeat** | **Model 2 (Disruptive Vector)**| ~15–18 words | Friend 1 tease $\to$ Friend 2 pile-on $\to$ Hero indignant retort $\to$ Room laughter |
+| **6. Romance: Vulnerable Romantic Confession** | **Model 3 (Harmonic Vector)** | ~7–9 words | Soul-baring confession line $\to$ Listener breath catches, tear wells in stunned silence |
+| **7. Drama: Authoritarian Verdict / Sentence** | **Model 3 (Frictional Vector)**| ~7–9 words | Authoritarian Sentence $\to$ Silent defiant stare or tearful jaw clench |
+| **8. Noir / Mystery: Detective Clue Deduction** | **Model 4 (Metaphysical Vector)**| ~12–16 words | Eye-lock on physical trace $\to$ Resonant V.O. deduction (lips 100% sealed) |
+| **9. Romance / Slice: Heart Flutter Longing** | **Model 4 (Harmonic Vector)** | ~12–16 words | Watching partner laugh $\to$ Gentle V.O. secret confession (lips 100% sealed) |
 | **10. Romance / Horror: Proximity Whisper** | **Model 6 (Harmonic / Survival)**| ~10–13 words | Pillow-talk under rain (1.3 WPS) OR Hiding from monster ("Don't breathe...") |
 | **11. Romance: Silencing Tender Touch / Kiss** | **Model 7 (Harmonic Vector)** | ~12–15 words | Nervous rambling cut short mid-sentence by finger gently pressing against lips |
 | **12. Drama: Blade Slam / Violent Termination** | **Model 7 (Frictional Vector)**| ~12–15 words | Boastful speech severed mid-sentence by blade slamming through deed into oak |
@@ -2314,15 +2314,15 @@ The 8 Interaction Geometries adapt dynamically across all genres through the **4
 
 | Narrative & Genre Objective | Optimal Geometry & Energy Vector | Word Budget | Action-Dialogue Synergy Structure |
 |---|---|---|---|
-| **1. Romance: Flirtatious Banter & Melting Smile** | **Model 1 (Harmonic Vector)** | ~16–18 words | Fond Teasing (A: ~8w) $	o$ Melting Witty Retort (B: ~8w) $	o$ Soft blush & living settle |
-| **2. Drama: Ideological Duel / Courtroom Clash** | **Model 1 (Frictional Vector)** | ~16–18 words | Premise Jab (A: ~8w) $	o$ Defiant Retort (B: ~8w) $	o$ Choker shock reaction |
-| **3. Rom-Com: Sweet Bickering / Playful Sparring**| **Model 1B (Harmonic Vector)** | ~16–18 words | 4 rapid volleys trading sweet insults $	o$ helpless shared laughter |
-| **4. Action / Sci-Fi: High-Velocity Combat Comms** | **Model 1B (Tactical Vector)** | ~16–18 words | 4 rapid staccato callouts ("Flank left!" $	o$ "Dry!" $	o$ "Take sidearm!" $	o$ "Breaching!") |
-| **5. Comedy: Friends Gang-Up & Deadpan Defeat** | **Model 2 (Disruptive Vector)**| ~15–18 words | Friend 1 tease $	o$ Friend 2 pile-on $	o$ Hero indignant retort $	o$ Room laughter |
-| **6. Romance: Vulnerable Romantic Confession** | **Model 3 (Harmonic Vector)** | ~7–9 words | Soul-baring confession line $	o$ Listener breath catches, tear wells in stunned silence |
-| **7. Drama: Authoritarian Verdict / Sentence** | **Model 3 (Frictional Vector)**| ~7–9 words | Authoritarian Sentence $	o$ Silent defiant stare or tearful jaw clench |
-| **8. Noir / Mystery: Detective Clue Deduction** | **Model 4 (Metaphysical Vector)**| ~12–16 words | Eye-lock on physical trace $	o$ Resonant V.O. deduction (lips 100% sealed) |
-| **9. Romance / Slice: Heart Flutter Longing** | **Model 4 (Harmonic Vector)** | ~12–16 words | Watching partner laugh $	o$ Gentle V.O. secret confession (lips 100% sealed) |
+| **1. Romance: Flirtatious Banter & Melting Smile** | **Model 1 (Harmonic Vector)** | ~16–18 words | Fond Teasing (A: ~8w) $\to$ Melting Witty Retort (B: ~8w) $\to$ Soft blush & living settle |
+| **2. Drama: Ideological Duel / Courtroom Clash** | **Model 1 (Frictional Vector)** | ~16–18 words | Premise Jab (A: ~8w) $\to$ Defiant Retort (B: ~8w) $\to$ Choker shock reaction |
+| **3. Rom-Com: Sweet Bickering / Playful Sparring**| **Model 1B (Harmonic Vector)** | ~16–18 words | 4 rapid volleys trading sweet insults $\to$ helpless shared laughter |
+| **4. Action / Sci-Fi: High-Velocity Combat Comms** | **Model 1B (Tactical Vector)** | ~16–18 words | 4 rapid staccato callouts ("Flank left!" $\to$ "Dry!" $\to$ "Take sidearm!" $\to$ "Breaching!") |
+| **5. Comedy: Friends Gang-Up & Deadpan Defeat** | **Model 2 (Disruptive Vector)**| ~15–18 words | Friend 1 tease $\to$ Friend 2 pile-on $\to$ Hero indignant retort $\to$ Room laughter |
+| **6. Romance: Vulnerable Romantic Confession** | **Model 3 (Harmonic Vector)** | ~7–9 words | Soul-baring confession line $\to$ Listener breath catches, tear wells in stunned silence |
+| **7. Drama: Authoritarian Verdict / Sentence** | **Model 3 (Frictional Vector)**| ~7–9 words | Authoritarian Sentence $\to$ Silent defiant stare or tearful jaw clench |
+| **8. Noir / Mystery: Detective Clue Deduction** | **Model 4 (Metaphysical Vector)**| ~12–16 words | Eye-lock on physical trace $\to$ Resonant V.O. deduction (lips 100% sealed) |
+| **9. Romance / Slice: Heart Flutter Longing** | **Model 4 (Harmonic Vector)** | ~12–16 words | Watching partner laugh $\to$ Gentle V.O. secret confession (lips 100% sealed) |
 | **10. Romance / Horror: Proximity Whisper** | **Model 6 (Harmonic / Survival)**| ~10–13 words | Pillow-talk under rain (1.3 WPS) OR Hiding from monster ("Don't breathe...") |
 | **11. Romance: Silencing Tender Touch / Kiss** | **Model 7 (Harmonic Vector)** | ~12–15 words | Nervous rambling cut short mid-sentence by finger gently pressing against lips |
 | **12. Drama: Blade Slam / Violent Termination** | **Model 7 (Frictional Vector)**| ~12–15 words | Boastful speech severed mid-sentence by blade slamming through deed into oak |

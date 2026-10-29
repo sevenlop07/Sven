@@ -209,7 +209,7 @@ Every story ends positive and hopeful: growth, redemption, truth exposure, justi
 - No pronouns in visual prose; stateless prompts; no coordinate math (Gates 3C/3I/3H)
 - Dialogue Word Cap: Single-Speaker Shot target 25–30 words (hard cap ≤ 32w); Two-Shot exchange ≤ 15w/speaker (Gate 4B); no lip-synced line during a downward POV; V.O. with lips sealed
 - Dialogue ↔ prompt verbatim parity wherever lines exist (Gate 4)
-- Minor safety and cu_tin Somatic Sleep Staging Protocol (Gate 3F; Pillar 4 §[10d] & DIRECTOR.md §6; zero-minor lexicon, low-velocity sleep whitelist); no combat, chases, or brawls (§2.3)
+- Minor safety and Approved Child Entity Somatic Sleep Staging Protocol (Gate 3F; Pillar 4 §[10d] & DIRECTOR.md §6; zero-minor lexicon, low-velocity sleep whitelist); no combat, chases, or brawls (§2.3)
 - One primary move + one reaction per phase; one physical instance per prop
 - **The Master Directorial Symphony Law & Kinetic Baton Relay**: Anti-fragmented flow across scenes. Exit vector of Scene N = Entry vector of Scene N+1. Strict prohibition on isolated, siloed prompt cards, spatial amnesia, and monotonic identical dialogue templates across scenes (Dynamic Voice Mode progression required; DIRECTOR.md §4c & SCREENWRITER.md Rule 9)
 - Positive ending, zero fatalities (§2.9)
@@ -740,7 +740,7 @@ Template notes:
 - Timing (`0b` §2–§5): time every line in seconds (calm speech ≈ 3.5–4.5 Vietnamese syllables/s or 2.0–2.5 English words/s). A phase that carries a lip-synced line lasts ≥ line + 1.0s, starts the line ≥ 0.3s in, and ends it ≥ 0.8s before the cut (audit W4). Each camera move gets at least its §5 duration; never lip-sync while a crane, orbit, arc, or whip is traveling. Speech stays ≤ ~60% of the clip (audit W5).
 - Duration: 10s always; 15s / 30s only on explicit user request (§2.4), with the last bracket ending at `00:15` or `00:30`.
 - Never give lip-synced dialogue during a downward POV shot. Transition to a frontal MCU/MS first.
-- Minor-safety lexicon and cu_tin Somatic Sleep Staging Protocol: Pillar 4 §[10d] & DIRECTOR.md §6.
+- Minor-safety lexicon and Approved Child Entity Somatic Sleep Staging Protocol: Pillar 4 §[10d] & DIRECTOR.md §6.
 
 ### 9.4 Silent Scenes & Silent Film
 Applies to every scene of a Silent Film and to any individual silent scene inside a dialogue project. Remove every dialogue line and voice parenthetical from that prompt. Amplify micro-biomechanics and Foley. Replace the final negative line with:

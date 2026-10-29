@@ -232,7 +232,7 @@ Before specifying shot scales or camera angles, the director must select the mac
 
 > 👁️ **THE BLINKING EYE LAW (ẨN DỤ CHỚP MẮT ĐỂ KHÔNG BAO GIỜ NHẦM LẪN)**:  
 > • **Single-Shot (Cú máy đơn)**: Like keeping your **eyes wide open without blinking for a single millisecond (0 Cuts)**. Every shift in scale, angle, or focus occurs via physical camera choreography (Dolly Push-in, 180° Orbital Arc, Pedestal Shift). It imprisons the audience in real-time reality with zero editorial escape hatch.  
-> • **Multi-Shot (Chuỗi đa cú máy)**: Like **blinking 2 to 3 times in rapid succession (2–4 Hard Cuts)**. The viewer's gaze jumps instantaneously across matching angles (Setup A OTS $	o$ Cut $	o$ Setup B Reverse OTS $	o$ Cut $	o$ Reaction Choker). Designed for rapid ping-pong clash, adversarial friction, and cognitive shocks.
+> • **Multi-Shot (Chuỗi đa cú máy)**: Like **blinking 2 to 3 times in rapid succession (2–4 Hard Cuts)**. The viewer's gaze jumps instantaneously across matching angles (Setup A OTS $\to$ Cut $\to$ Setup B Reverse OTS $\to$ Cut $\to$ Reaction Choker). Designed for rapid ping-pong clash, adversarial friction, and cognitive shocks.
 
 ---
 
@@ -246,7 +246,7 @@ Before specifying shot scales or camera angles, the director must select the mac
   3. **Continuous Kinetic Physics & High-Speed Trajectories (kinetic take, usually wordless)**: Tracking subject plummeting, sprinting through a collapsing corridor, or vaulting over thresholds where cuts would break momentum ($V_{cam} = V_{subj}$).
   4. **Tactile Micro-Mechanics & Delicate Prop Interaction**: Hand breaking a wax seal, slipping poison into wine, drawing a concealed blade. Keeps prop geometry 100% stable.
   5. **Dynamic In-Camera Multi-Angle 2-Person Dialogue (Two-Shot Choreography)**:
-     - **Mechanism**: The camera moves continuously through multiple angles/setups within 0 cuts (e.g. Low-Angle OTS on Speaker A $	o$ 180° Orbital Arc $	o$ Frontal Eye-Level on Speaker B).
+     - **Mechanism**: The camera moves continuously through multiple angles/setups within 0 cuts (e.g. Low-Angle OTS on Speaker A $\to$ 180° Orbital Arc $\to$ Frontal Eye-Level on Speaker B).
      - **Dialogue Budget**: timed in seconds by `0b-temporal-camera-grammar.md` §2–§3; lines land before an arc starts or after it settles (§5). Best in 15 s clips when both lines are full.
      - **Non-Overlapping Dialogue Windows**: Spoken turns are distributed dynamically (e.g. Phase 1 Speaker A speaks while Speaker B reacts silently $\to$ Phase 2 Speaker B counters while Speaker A absorbs impact), with unbroken kinetic and emotional momentum flowing naturally across the full 10.0s take. Strictly BAN rigid cutoff dogma (e.g. claiming dialogue cannot occur after 00:08.0 or 00:08.5).
 * **Terminal Kinetic Flow & Biological Settle**: Camera decelerates smoothly along an exponential deceleration curve, settling into a stable resting position with continuous biological micro-motion (breathing, drifting dust, flickering light) from the terminal seconds right up to 00:10.0, strictly zero frozen frames.
@@ -276,7 +276,7 @@ Before specifying shot scales or camera angles, the director must select the mac
      - `Microscopic dust motes floating and dancing lazily through the diagonal morning sunbeam`.
      - `A delicate curl of steam rising steadily from a teacup on the table`.
      - `Loose wisps of hair fluttering gently against the temple in a subtle domestic draft`.
-  4. **Tactile Prop Friction & Internal Staging**: The character MUST maintain tactile contact with an architectural fixture or prop (clutching bedframe, pressing thumb against bandaged wrist, gripping wooden armrest). Movement is internal (leaning forward 2 inches, head lowering, gaze sweeping upward).
+  4. **Tactile Prop Friction & Internal Staging**: The character MUST maintain tactile contact with an architectural fixture declared in `[context]:` or with their own body (clutching the bedframe, pressing a thumb against a bandaged wrist, gripping a wooden armrest). Handheld items start at their declared `[PROP]:` resting place and are lifted only inside the timeline. Movement is internal (leaning forward slightly, head lowering, gaze sweeping upward).
   5. **Clean Single-Subject Frame**: Single-subject framing (CU, MCU, or Dirty Single). Background characters, if present, are soft-blurred and purely reactive.
 
 ---
@@ -348,11 +348,11 @@ Dynamic Kinetic & Biological Flow       Dynamic Kinetic & Biological Flow      D
   1. **Adversarial Verbal Sparring & Ping-Pong Clash (Model 1, Model 1B, Model 2)**:
      - Two opposing wills collide face-to-face. Words act as kinetic blades parried and returned across alternating cuts (density by seconds, grammar §7).
   2. **The Truth Bomb & Mask Shattering / Anagnorisis (Cú Lật Mặt Nạ)**:
-     - Shot 1 (Antagonist gloating in Medium) $	o$ Shot 2 (Tight Insert on physical proof/warrant) $	o$ Shot 3 (Macro Choker on Antagonist's trembling pupil and collapsing arrogance).
+     - Shot 1 (Antagonist gloating in Medium) $\to$ Shot 2 (Tight Insert on physical proof/warrant) $\to$ Shot 3 (Macro Choker on Antagonist's trembling pupil and collapsing arrogance).
   3. **Protagonist vs. Greek Chorus / Living Society (Cá Nhân Đối Đầu Đám Đông)**:
-     - High-contrast scale collision: Shot 1 (Extreme Wide of roaring mob) $	o$ Shot 2 (Low-Angle MCU Hero speaking truth) $	o$ Shot 3 (Wide Mob silenced in collective breathless shock).
+     - High-contrast scale collision: Shot 1 (Extreme Wide of roaring mob) $\to$ Shot 2 (Low-Angle MCU Hero speaking truth) $\to$ Shot 3 (Wide Mob silenced in collective breathless shock).
   4. **Cause-and-Effect Spatial Dispersion (Nhân - Quả Phân Tán)**:
-     - Shot 1 (Trigger action at Frame-Left) $	o$ Shot 2 (Impact event detonating at Frame-Right) $	o$ Shot 3 (Reaction standoff).
+     - Shot 1 (Trigger action beside one architectural landmark, e.g. the gate winch) $\to$ Shot 2 (Impact event detonating at a second landmark, e.g. the stone threshold) $\to$ Shot 3 (Reaction standoff). Each beat is anchored to architecture, never to frame edges.
   5. **Third-Party Moral Witnessing (Nhân Chứng Đạo Đức Thứ Ba)**:
      - The moral blow of a violent clash lands hardest not on the two combatants, but on an innocent third party watching from the sidelines (e.g. child, mother, loyal lieutenant).
 * **Terminal Kinetic Flow & Biological Settle**: Decisive hard editorial cut to a tight Choker or Macro reaction shot, settling into a stable resting frame with continuous biological micro-motion (breathing, drifting dust) from the terminal seconds right up to 00:10.0, strictly zero frozen frames.
@@ -365,9 +365,9 @@ Dynamic Kinetic & Biological Flow       Dynamic Kinetic & Biological Flow      D
 * **Essence**: A hybrid sequence that starts with one continuous, unbroken take of $\ge 5.0$ seconds (holding 2+ phases) to build accumulative dramatic pressure, followed by 1–2 editorial cuts along the 180° Action Axis to reveal the emotional shockwave or physical consequence.
 * **Selection & Grammar**: Governed by [`0b-temporal-camera-grammar.md` §6.1, §8, §12](file:///d:/Project/Sven/engine/references/0b-temporal-camera-grammar.md).
 * **Phasing Syntax**:
-  - The opening take states its camera trajectory (e.g. `[00:00–00:05.5] Medium close-up on Duyen, slow push-in...`).
+  - The opening take states its camera trajectory (e.g. `[00:00–00:05.5] Medium close-up on ho_ten_A, slow push-in...`).
   - Phased extensions within the take use `In the same take — ...`.
-  - Cuts start explicitly with `Cut to ...` on the 180° axis (e.g. `[00:05.5–00:10.0] Cut to a reverse close-up on Khang, eye level, static camera...`).
+  - Cuts start explicitly with `Cut to ...` on the 180° axis (e.g. `[00:05.5–00:10.0] Cut to a reverse close-up on ho_ten_B, eye level, static camera...`).
 * **Best Archetype**: Confessions, confrontation climaxes, and moral verdicts where pressure must build in one unbroken breath, but the landing must be witnessed on the opposing face or the physical prop.
 
 ---
@@ -425,7 +425,7 @@ Dynamic Kinetic & Biological Flow       Dynamic Kinetic & Biological Flow      D
   4. *The Signal Jam Cutoff*: Whispered truth close to lens before camera violently drops to floor, creating high-tension cliffhanger.
 
 ### 4. SnorriCam Body-Mounted Rig (Góc Gương Mặt Bất Động / Khủng Hoảng Tâm Lý Cực Đoan)
-* **Definition**: A specialized mechanical body-rig (chest harness) is strapped to the actor, holding the camera on an extended boom pole 60cm–80cm away, pointing **DIRECTLY BACK AT THE ACTOR'S FACE**.
+* **Definition**: A specialized mechanical body-rig (chest harness) is strapped to the actor, holding the camera on a short boom pole roughly an arm's length away, pointing **DIRECTLY BACK AT THE ACTOR'S FACE**.
 * **Visual Phenomenon**: The actor's face remains **PERFECTLY STABILIZED DEAD-CENTER IN THE FRAME**, while the background (walls, streets, lights) violently shakes, warps, retreats, and streaks past in extreme motion blur.
 * **Directorial Function**: Conveys extreme dissociation, drug-induced euphoria/paranoia (*Requiem for a Dream*), intoxicated vertigo (*Mean Streets*), visceral panic, or existential shock where the human mind freezes while the physical world collapses around them.
 * **Prompt Syntax**:
@@ -454,7 +454,7 @@ The matrix below is a **vocabulary, not a lookup table**. A shot scale is never 
 
 **Rules of use:**
 - The **Typical Uses** column lists where a scale commonly serves well. It never assigns a scale to a beat. A Beat 4 climax may land hardest in a Solitary Environmental wide rather than an ECU.
-- **Hard constraints stay hard; everything else is a choice.** Non-negotiable: dialogue safety (no visible lip-sync in ECU, Macro Insert, or downward P.O.V.), room-size physics (no Extreme Wide inside a 15m² room), and the 30° rule for same-scale cuts on one character.
+- **Hard constraints stay hard; everything else is a choice.** Non-negotiable: dialogue safety (no visible lip-sync in ECU, Macro Insert, or downward P.O.V.), room-size physics (no Extreme Wide inside a cramped room), and the 30° rule for same-scale cuts on one character.
 - **Name the scale in prose inside prompts** ("a frontal medium close-up of…"), never as a bracket label or pipe-separated header.
 - **Anti-formula self-check:** if the same scale progression (e.g., Insert → MCU → Two-Shot) repeats across three consecutive scenes, it has become a template. Rethink at least one of them from question 1.
 ### 1.0b. The Subject-to-Scale Invariance & Frame Capacity Law (Định Luật Sức Chứa Khung Hình & Triệt Tiêu Xung Đột Quang Học)
@@ -472,7 +472,7 @@ The matrix below is a **vocabulary, not a lookup table**. A shot scale is never 
 > 
 > 2. **Two-Subject Scales (`Medium Two-Shot [M2S]`, `Cowboy 2S`, `Two-Shot Profile`, `Over-the-Shoulder [OTS]`)**:
 >    - **Subject Capacity**: Strictly **2 Interacting Subjects**.
->    - *M2S / Cowboy 2S*: Both characters are framed waist-up or mid-thigh-up, explicitly anchored at **Frame-Left** and **Frame-Right** across a physical tension gap. This is the ONLY shot scale where both characters can be directed reacting simultaneously in the same frame!
+>    - *M2S / Cowboy 2S*: Both characters are framed waist-up or mid-thigh-up, explicitly anchored to opposite sides of a physical tension gap (e.g. on either side of the table; one by the doorway, one by the window). Anchors are architectural; screen direction is recorded only in the Audit Card. This is the ONLY shot scale where both characters can be directed reacting simultaneously in the same frame!
 >    - *OTS*: 1 character's shoulder/nape sits blurred in the foreground outer 1/3 (spatial anchor, never looking into lens); the opposing character occupies the central 2/3 in razor-sharp focus.
 > 
 > 3. **Multi-Subject Scales (`Three-Shot`, `Group Master`, `Establishing Wide [WS]`)**:
@@ -562,13 +562,13 @@ The matrix below is a **vocabulary, not a lookup table**. A shot scale is never 
 
 #### 6. Medium Two-Shot (M2S / Trung Cảnh Hai Người Đối Đầu)
 * **Framing Boundaries**: Both characters framed simultaneously from waist up, with the physical table, desk, or open space between them clearly delineated.
-* **Optical Depth**: Wide focal plane holding both characters in sharp focus across the 1.5m–3m staging gap.
+* **Optical Depth**: Wide focal plane holding both characters in sharp focus across the conversational staging gap (a table's width or a few paces apart; never written as metres).
 * **Lens Perspective Equivalent**: Standard natural perspective (`balanced depth maintaining dual subject sharpness`).
 * **Psychological Pressure Level**: `7/10` (Balanced power struggle).
 * **Story Beat Alignment**: **Beat 1 (Negotiation Opening)**, **Beat 3 (Tabletop Clash)**, **Beat 6 (Equal Reconciliation)**.
 * **Spoken Dialogue Safety**: ✅ *100% Safe*. Perfect for continuous co-presence without cutting.
 * **Prompt Syntax**:
-  `[00:00–00:03] Eye-Level Medium Two-Shot, balanced focal plane, Slow forward push-in: [Subject A] at frame-left faces [Subject B] at frame-right across the rough-hewn oak table, both with palms planted firmly on the grain...`
+  `[00:00–00:03] Eye-Level Medium Two-Shot, balanced focal plane, Slow forward push-in: [Subject A] on the hearth side of the rough-hewn oak table faces [Subject B] on the window side, both with palms planted firmly on the grain...`
 * 🚫 **Strict Prohibition**: Never let one character block the face of the other unless intentionally executing a foreground occlusion wipe.
 
 #### 7. Over-The-Shoulder Shot (OTS / Góc Qua Bờ Vai Đối Thoại)
@@ -715,7 +715,7 @@ Shot scale decides **how close** the audience stands; the angle decides **from w
 3. **Has alignment or power shifted since the previous frame?** A new angle must be earned. When power flips, the angles flip or converge — both setups at eye level reads as equality or reconciliation. If nothing shifted, keep the angle.
 
 **Principles:**
-- **Angles are relative.** "Eye level" means the subject's eye level. Kneeling, seated, lying, or infant-in-crib subjects pull the camera down with them. The absolute heights in the Pitch table (1.3 m, 0.9 m, 40 cm) assume a standing adult.
+- **Angles are relative.** "Eye level" means the subject's eye level. Kneeling, seated, lying, or infant-in-crib subjects pull the camera down with them. The body-relative heights in the Pitch table (chest, waist, knee) assume a standing adult.
 - **Vertical eyeline match.** If A stands and B kneels, A looks down and B looks up. A's single sits slightly below A's eyes and B's single slightly above B's, or the geography of the cut breaks.
 - **Subtle carries more than extreme.** A few degrees off eye level shifts power while keeping the face readable. Reserve overhead, worm's-eye, nadir, and Dutch for moments where the character's world itself tilts — usually once per episode at most.
 - **Meaning comes from context, not from the angle.** The same low angle reads as threat in one scene and as protection in a later one; that callback is an angle arc. Counter-use is legitimate: a low angle on a weeping character can grant dignity; a high angle on a victor can expose a hollow win. The "Usually Avoid" column below states a default, not a ban.
@@ -728,11 +728,11 @@ Shot scale decides **how close** the audience stands; the angle decides **from w
 - **No fast angle change under a spoken line:** whip pan, rapid tilt, or a travelling orbit must land before the line starts (§3.2, `0b-temporal-camera-grammar.md` §5).
 
 **Prompt syntax:**
-- Describe the angle through a **physical anchor**, not numbers: "camera at crib-mattress height, looking up at ma_ba's face", "from behind ma_ba's shoulder, looking down on minh_khang".
+- Describe the angle through a **physical anchor**, not numbers: "camera at tabletop height, looking up at ho_ten_A's face", "from behind ho_ten_A's shoulder, looking down on ho_ten_B".
 - For OTS and dirty singles, name what sits soft in the foreground so the model renders the relationship, not just the face.
 - State the angle at the start of each phase, and again whenever a move changes it.
 
-> **Worked angle arc (`com-khong-chan-nuoc-mat` Ep 1):** Scene 02 shoots Má Ba from floor level, looking up (the couple's fear), and Minh Khang from above (pinned). In Scene 05, when Má Ba breaks, her reverse drops to eye level — power has levelled. In Scene 10, the same low angle returns, now making her a shield for the crib. One angle, three meanings, earned by story.
+> **Worked angle arc (illustrative):** An early scene shoots the antagonist from floor level, looking up (the couple's fear), and the husband from above (pinned). Mid-episode, when the antagonist breaks, her reverse drops to eye level — power has levelled. In the finale the same low angle returns, now making her a shield for the family. One angle, three meanings, earned by story. Project-specific angle arcs live in `output/<project>/project_staging_rules.md`.
 
 ### 3.1. The Universal 4-Axis Camera Angle Architecture (Hệ Thống 4 Trục Góc Quay Toàn Diện)
 
@@ -744,9 +744,9 @@ Camera angles operate on a 3D spatial coordinate system defined across **4 indep
 | **1. Overhead / God's Eye (90°)**| Directly perpendicular down from ceiling. | **Karmic Fate & Chessboard:** God-like detachment; mortals trapped in destiny's maze. | Tactical map planning; crime scene overviews; corpse on flagstones. | Emotional close-up acting (flattens facial planes). |
 | **2. High-Angle** | Camera 30°–60° above eye-level tilting down. | **Vulnerability & Guilt:** Shrinks subject into a weak, cornered, or condemned figure. | Interrogation captive; defeated soldier; kneeling beggar; moral failure. | When framing a victorious warlord or triumphant king. |
 | **3. Eye-Level** | Camera at exact eye level (0° tilt). | **Equality & Neutrality:** Impartial realism; equal clash of matching wills. | Honest negotiations; philosophical debates; balanced standoffs. | When wanting to exaggerate severe power imbalance. |
-| **4. Shoulder / Chest-Level** | Camera 15cm below eye-level (1.3m). | **Natural Demeanor:** Flattering posture, balanced torso-to-head perspective. | Dinner table conversations, seated in car, casual walking dialogue. | Extreme dominance or submission beats. |
-| **5. Hip / Cowboy Angle** | Camera at waist/holster height (0.9m–1.0m). | **Latent Lethality:** Focuses on weapon reach, hand tension, Western standoff. | Standoffs, duels, moments before drawing weapons or throwing punches. | Emotional romantic vulnerability. |
-| **6. Knee-Level** | Camera 40cm above ground. | **Aggressive March:** Exaggerates stride length, boots, sweeping cloaks. | Marching into throne hall, predatory stalker pacing toward victim. | Static long dialogue exchanges. |
+| **4. Shoulder / Chest-Level** | Camera slightly below eye level, at chest height. | **Natural Demeanor:** Flattering posture, balanced torso-to-head perspective. | Dinner table conversations, seated in car, casual walking dialogue. | Extreme dominance or submission beats. |
+| **5. Hip / Cowboy Angle** | Camera at waist / holster height. | **Latent Lethality:** Focuses on weapon reach, hand tension, Western standoff. | Standoffs, duels, moments before drawing weapons or throwing punches. | Emotional romantic vulnerability. |
+| **6. Knee-Level** | Camera at knee height, close to the ground. | **Aggressive March:** Exaggerates stride length, boots, sweeping cloaks. | Marching into throne hall, predatory stalker pacing toward victim. | Static long dialogue exchanges. |
 | **7. Low-Angle** | Camera 30°–45° below eye-level tilting up. | **Dominance & Tyranny:** Imparts monumental size, overwhelming threat, heroic rise. | Antagonist imposing debt; Sovereign on throne; Protagonist regaining resolve. | When portraying a helpless, weeping victim (cognitive dissonance). |
 | **8. Worm's Eye / Ground-Level**| Camera flush on ground plane tilting up 70°–80°. | **Crushing Oppression:** Microscopic vulnerability; titan trampling the earth. | Iron boots splashing through rain mud; collapsing face hitting flagstones. | Ordinary conversational scenes. |
 | **9. Nadir Angle (90° Upward)** | Directly perpendicular upward from pit/floor. | **Subterranean Entombment:** Trapped at bottom of abyss looking up at sky. | Looking up from bottom of well/grave; glass floor looking up at captors. | Standard dialogue scenes. |
@@ -800,25 +800,25 @@ A camera move is felt as **the audience's attention travelling**. The table belo
 - **Budget.** Track A: at most 2 chained moves per 10 s; Track B: at most 1 move per shot (0b §5). A compound move (arc while rising) counts as one only when it has one motive and one landing.
 
 **AI prompt craft:**
-- One camera verb per sentence, with a speed word (*slow, unhurried, swift*) and a named landing ("…and settles on a frontal medium close-up of my_duyen").
+- One camera verb per sentence, with a speed word (*slow, unhurried, swift*) and a named landing ("…and settles on a frontal medium close-up of ho_ten_A").
 - When the subject makes a big body move, keep the camera simple — follow it or stay locked. Two complex trajectories at once invite morphing.
 - Parallax needs a named foreground layer (crib slats, a doorframe, a shoulder).
 - **An unstated move is a move the model chooses for you** (usually a drifting glide). Write "locked frame" when stillness is intended.
-- Write the timing into the prose: "the arc settles before minh_khang speaks".
+- Write the timing into the prose: "the arc settles before ho_ten_B speaks".
 
 **Hard constraints:** lip-sync compatibility per move (0b §5), no freeze frames, minimum stable durations.
 
 | Movement | Mechanical Vector | Velocity & Dynamic | Directorial Purpose | Best Story Scenario | Lip-Sync Safety |
 |---|---|---|---|---|---|
-| **Static** | Zero movement on all axes. | 0.0 m/s | Solemn gravity, unblinking witness, aftermath truth. | Post-climax silence, corpses, signed treaties. | ✅ 100% Safe |
-| **Push-In (Dolly In)** | Linear forward movement toward subject. | Slow (0.1–0.3 m/s) | Tightening intimacy, escalating dread, sudden realization. | Character realizing a lethal trap; internal decision. | ✅ 100% Safe |
-| **Pull-Out (Dolly Out)**| Linear backward movement away. | Slow (0.1–0.3 m/s) | Abandonment, expanding dread, isolation in vast darkness. | Defeated character left alone on floor. | ✅ 100% Safe |
+| **Static** | Zero movement on all axes. | None | Solemn gravity, unblinking witness, aftermath truth. | Post-climax silence, corpses, signed treaties. | ✅ 100% Safe |
+| **Push-In (Dolly In)** | Linear forward movement toward subject. | Slow, creeping pace | Tightening intimacy, escalating dread, sudden realization. | Character realizing a lethal trap; internal decision. | ✅ 100% Safe |
+| **Pull-Out (Dolly Out)**| Linear backward movement away. | Slow, creeping pace | Abandonment, expanding dread, isolation in vast darkness. | Defeated character left alone on floor. | ✅ 100% Safe |
 | **Pan Shot** | Horizontal rotation on fixed tripod axis. | Medium (5°–15°/s) | Scanning room, connecting cause to effect, revealing hidden threat. | Revealing an assassin standing in the shadows. | ✅ Safe |
 | **Tilt Shot** | Vertical rotation on fixed tripod axis. | Slow (5°–10°/s) | Scanning from boots to eyes; revealing colossal height or fall. | Introducing an armored warlord or king. | ✅ Safe |
 | **Tracking Shot** | Camera travels parallel/ahead of moving subject. | Matches walking speed | Kinetic pursuit, urgency, continuous stride. | Marching into throne hall, fleeing through alley. | ⚠️ Moderate |
 | **Steadicam Glide** | Floating multi-axis stabilized movement. | Smooth fluid glide | Immersive 3D navigation through intricate architecture. | Navigating palace corridors, moving between tables. | ⚠️ Moderate |
 | **Handheld Shot** | Unstabilized operator micro-shake. | Organic micro-shake | Visceral panic, combat chaos, documentary realism. | Explosive arguments, earthquakes, sudden brawls. | ⚠️ Gentle drift ✅ with dialogue; violent shake ❌ |
-| **Crane / Jib Shot** | Vertical sweep on mechanical arm (1m–10m). | Sweeping arc | Grand reveal, ascending from detail to world overview. | Opening scene hook, final transcendent ascension. | ❌ While traveling; ✅ once it lands |
+| **Crane / Jib Shot** | Vertical sweep on mechanical arm (from low to high above the set). | Sweeping arc | Grand reveal, ascending from detail to world overview. | Opening scene hook, final transcendent ascension. | ❌ While traveling; ✅ once it lands |
 | **Whip Pan** | Ultra-rapid horizontal rotation. | High (>90°/s) | Shocking kinetic redirection, sudden gunshot, jump transition. | Bullet striking wall, sudden scream from corner. | ❌ FORBIDDEN with Dialogue |
 | **360° Orbit** | Circular revolution around subject center. | Continuous rotation | Dizzying crisis, surrounded by enemies, romantic gravity. | Hero surrounded by blades; sudden mind-shattering shock.| ⚠️ Conditional (See § 3.3) |
 | **Dolly Zoom (Vertigo)**| Dolly In + Optical Zoom Out simultaneously. | Perspective warp | Ground opening beneath feet; seismic shock; world shattering. | Realizing the person you trusted murdered your family. | ❌ FORBIDDEN with Dialogue |
@@ -844,8 +844,7 @@ A camera move is felt as **the audience's attention travelling**. The table belo
 ```
 
 1. **Rotational Velocity Formula**:
-   $$\mathbf{Angular\ Velocity} = 
-rac{360^\circ}{10\text{ seconds}} = \mathbf{36^\circ / \text{second}}$$
+   $$\mathbf{Angular\ Velocity} = \frac{360^\circ}{10\text{ seconds}} = \mathbf{36^\circ / \text{second}}$$
    - **Beat 1 `[00:00–00:03]`**: Arc $0^\circ \to 90^\circ$ (Front face $\to$ Right shoulder).
    - **Beat 2 `[00:03–00:07]`**: Arc $90^\circ \to 270^\circ$ (Right shoulder $\to$ Full back $\to$ Left shoulder, revealing the background encirclement/threat).
    - **Beat 3 `[00:07–00:10]`**: Arc $270^\circ \to 360^\circ$ (Left shoulder $\to$ Front face complete lock).
@@ -1012,7 +1011,7 @@ The video model hallucinates the most common training representation of a spider
 ```
                [Faelen falling along -Y Vertical Vector]
                                  │
-                                 │  ↓ (Falling 15m/s)
+                                 │  ↓ (Falling fast)
                                  │
                  ┌───────────────┼───────────────┐
                  │               │               │
@@ -1044,22 +1043,22 @@ Every motion trajectory has a directional vector ($\vec{V}$). To create an obser
 When a falling character (diminutive juvenile dragon cub) strikes a catching surface (spiderweb, net, canopy foliage), the prompt MUST explicitly dictate **5-Step Mechanical Deformation**:
 
 ```
-                       [Faelen descending at 15m/s]
+                       [Faelen descending at full speed]
                                     │
                                     ▼
        Branch A ════════════════════════════════════ Branch B
                  \                                /
-                  \     [FUNNEL SAG: 1.5 METERS] /
+                  \     [FUNNEL SAG: VERY DEEP]  /
                    \            ▼               /
                     \───► [FAELEN CAUGHT] ◄───/
                            (Apex of Tension)
 ```
 
 1. **Horizontal Plane Anchor:** The web is NOT a wall; it is a **`vast horizontal circular hammock spanning the X-Z plane, anchored between 4 cedar boughs directly underneath Faelen's descent vector`**.
-2. **Impact Apex & Funnel Sag:** Upon impact at $00:02.5$, the center of the web does not stay rigid; it **`deforms elastically, sinking 1.5 meters downward into a deep funnel shape under Faelen's falling mass`**.
+2. **Impact Apex & Funnel Sag:** Upon impact at $00:02.5$, the center of the web does not stay rigid; it **`deforms elastically, sinking deeply downward into a funnel shape under Faelen's falling mass`**.
 3. **Radial Tensile Vibration:** The supporting anchor anchor-threads **`quiver violently in high-frequency harmonic vibration, flinging dew and purple venom beads outward in radial rings`**.
 4. **Viscous Adhesive Anchoring:** **`Thick translucent purple venom strands wrap and adhere around Faelen's thrashing limbs and emerald chest scales, arresting downward momentum instantly`**.
-5. **Rebound Kinetic Recoil:** The web reaches maximum strain, then **`springs upward 0.5 meters in elastic recoil, suspending Faelen bouncing in mid-air`**.
+5. **Rebound Kinetic Recoil:** The web reaches maximum strain, then **`springs back upward in a sharp elastic recoil, suspending Faelen bouncing in mid-air`**.
 
 ---
 
@@ -1080,8 +1079,8 @@ When a character plummets along the vertical $-Y$ axis, an unguided camera produ
 
 ### Setup C: Synchronized Velocity Descent (Khóa Vận Tốc Tương Đối $V_{cam} = V_{subj}$)
 * **Camera Position:** Positioned level with Faelen's torso at a 45-degree front-quarter three-quarter angle.
-* **Optical Mechanics:** Camera plunges downward in a matching vertical crane descent at exact relative velocity ($15\text{m/s}$).
-* **Action Dynamic:** Faelen stays locked at dead frame-center. The background tree trunks blur vertically upward at high velocity. At $00:04.0$, the horizontal web enters frame from bottom-screen rushing upward, instantly catching Faelen and decelerating both character and camera to zero velocity simultaneously.
+* **Optical Mechanics:** Camera plunges downward in a matching vertical crane descent at exactly the subject's falling speed.
+* **Action Dynamic:** Faelen stays locked dead-center in the frame. The background tree trunks blur vertically upward at high velocity. At $00:04.0$, the horizontal web enters frame from bottom-screen rushing upward, instantly catching Faelen and decelerating both character and camera to zero velocity simultaneously.
 
 ---
 
@@ -1089,7 +1088,7 @@ When a character plummets along the vertical $-Y$ axis, an unguided camera produ
 
 1. ❌ **The Parallel Fall Fallacy:** Never place a catching net or web on the vertical wall plane when the character is moving vertically.
 2. ❌ **The Disembodied Camera:** Never command the camera to "look at the fall" without specifying the camera's spatial height, tilt angle, and whether it is static or tracking.
-3. ❌ **The Instant Teleportation Landing:** Never have a character falling at $15\text{m/s}$ suddenly appear resting peacefully on a surface without depicting the mechanical deceleration / impact shockwave.
+3. ❌ **The Instant Teleportation Landing:** Never have a character plunging at full speed suddenly appear resting peacefully on a surface without depicting the mechanical deceleration / impact shockwave.
 4. ❌ **Ambiguous Contact Geometry:** Never write "caught in web" without specifying which limb or body part makes first contact (e.g. `sternum strikes center hub, left wing entangled in spiral thread`).
 5. ❌ **Unanchored Multi-Object Collisions:** In multi-character interceptions (e.g. Korr severing the web to catch Faelen), ALWAYS state the angular trajectory: Korr leaps *transversely* (horizontal X-axis) to slice the *vertical suspension lines* of a *horizontal web*.
 
@@ -1101,8 +1100,8 @@ When a character plummets along the vertical $-Y$ axis, an unguided camera produ
 [Camera Spatial Setup]: {Setup A (Under-Mesh Worm's-Eye) / Setup B (God's-Eye) / Setup C (Velocity Sync)}
 [Target Surface Plane]: {Horizontal catching surface / Funnel mesh spanning between {Anchor Point A} and {Anchor Point B} directly beneath {Subject's} descent path}
 [Intersection Mechanics]:
-- Point of Impact: {Subject's body part} impacts {surface} at frame-center at {timestamp}.
-- Structural Deformation: Surface deforms {distance in meters} downward into {shape}, absorbing {kinetic energy}.
+- Point of Impact: {Subject's body part} impacts {surface} at {named landmark, e.g. the central hub} at {timestamp}.
+- Structural Deformation: Surface deforms {relative depth in natural language, e.g. sags deeply} downward into {shape}, absorbing {kinetic energy}.
 - Particle / Fluid Dynamics: {Tensile thread vibration / venom droplets scattering radially / bark splinters flying}.
 - Terminal Equilibrium: System settles into {stable resting tension / subtle living settle} at {timestamp}.
 ```
@@ -1158,11 +1157,11 @@ Direct characters **ONLY within the timeline shot/phase where they are physicall
 1. **Trạng thái (Physical State / Posture / Condition)**: Explicit posture and physical condition (e.g., `sitting propped up against wooden headboard`, `standing rigid with stiff spine`, `slumped forward in exhaustion`, `kneeling upright`).
 2. **Làm gì (Action / Kinetic Movement)**: Specific kinetic action and physical interaction (e.g., `pulling linen sheet up over waist`, `placing soft bolster pillow`, `handing congee bowl with both hands`, `averting face`).
 3. **Cảm xúc ra sao (Emotion / Facial Expression / Somatic Reaction)**: Vivid facial expression and somatic physiological response (e.g., `lips trembling in wounded vulnerability`, `eyes wide with stunned hurt pride`, `brow furrowing with maternal anxiety`, `jaw tightening in resolute defense`).
-4. **Ở đâu (Spatial Location / 3D Blocking)**: Precise 3D position in the set and relative to other characters and fixed architectural fixtures (e.g., `at screen-left on queen bed mattress beside headboard`, `at screen-right framed in wooden doorway`, `centered between queen bed and pine crib`).
+4. **Ở đâu (Spatial Location / 3D Blocking)**: Precise 3D position in the set and relative to other characters and fixed architectural fixtures (e.g., `on the queen bed mattress beside the headboard, facing the doorway`, `framed in the wooden doorway, facing the bed`, `standing in the open floor between the bed and the window`). Never use screen-left / screen-right / frame-left / frame-right.
 
 ### 4. The Location Reference Fidelity Law:
 Every prompt referencing a 4-View Location Sheet (`[100% Refer to image location_X_4view.jpg]`) must accurately reflect all fixed spatial fixtures and architectural landmarks (e.g. pine crib beside queen bed, doorframe, patterned floor tiles, hearth) established in that location sheet.
-- **Fixed vs Dynamic**: Fixed architectural furniture belongs 100% to `[context]:` and must NEVER be declared in `[PROP]:`.
+- **Fixed vs Dynamic**: Fixed architectural furniture belongs 100% to `[context]:` and must NEVER be declared in `[PROP]:`. Handheld items follow the Two-Tier `[PROP]:` law (Tier 1 hero prop with image, max 1–2 per series; Tier 2 everyday item as text only), each with a resting place independent of character hands.
 - **Zero Spatial Drift**: Characters interact directly with in-scene fixtures (`leaning against the queen bed frame`, `gripping the vertical pine balusters of the in-scene crib`) to anchor diffusion models to the reference image and eliminate background hallucination.
 
 ---
@@ -1182,7 +1181,7 @@ Every prompt referencing a 4-View Location Sheet (`[100% Refer to image location
 ### 📱 B. Vector Mechanics for Handheld Front-Facing Vlog:
 1. **The Lever-Arm Pendulum Model**:
    - The camera is held at the end of an outstretched arm forming a physical lever from the character's right shoulder $(\text{Origin})$.
-   - The camera follows the character's walking gait: gentle vertical bobbing $(\Delta Y \approx 2\text{--}4\text{cm})$ and subtle rotational yaw $(\Delta \phi)$ with every step.
+   - The camera follows the character's walking gait: gentle vertical bobbing (a slight rise and fall) and subtle rotational yaw $(\Delta \phi)$ with every step.
 2. **The Zero-Device Axiom (Không vẽ thiết bị)**:
    - Never define the recording phone or camera as a physical prop in front of the lens! The entire frame IS the camera lens.
    - Describe: `Authentic self-recorded handheld vlog viewpoint, recorded continuously by the subject holding the camera with her right hand just out of frame.`
@@ -1238,7 +1237,7 @@ These are long-established live-action filmmaking principles that transfer direc
 - **180-degree rule:** once an imaginary line is established through the main axis of action (e.g., the direction two characters are facing each other, or the direction of travel), the camera should stay on one side of that line across the clip sequence. Crossing it without a deliberate transition disorients the viewer and reads as a spatial "jump" even if each clip is individually well-made.
 - **Eyeline match:** if a subject is looking in a direction at the end of a clip, the next clip should pay off or continue that direction of attention (what they're looking at, or continuing to move that way).
 - **Continuity of wardrobe/props/setting details:** clothing, held objects, hairstyles, lighting direction, and background elements must not change between clips unless the script explicitly calls for it (a costume change, a time skip, weather changing). Any change must be *motivated* by the story, never accidental.
-- **Screen direction consistency:** if a subject or vehicle exits frame-right in one clip, it should generally enter frame-left in the next (standard convention for "continuing the same direction of travel"), unless the script uses a reversal deliberately.
+- **Screen direction consistency:** if a subject or vehicle exits frame-right in one clip, it should generally enter frame-left in the next (standard convention for "continuing the same direction of travel"), unless the script uses a reversal deliberately. Record screen direction in the Audit Card only; Code Block 1 anchors entries and exits to architecture (e.g. `enters through the kitchen doorway`).
 
 **Agent checklist per handoff between clips** — before finalizing a clip transition, verify:
 1. Position/pose continuity
@@ -1283,13 +1282,13 @@ Because each clip is short, the overall script should be organized as a **beat s
 
 ---
 
-### 🏠 Modern Domestic Architectural Staging & Freestanding Fixture Law
+### 🏠 Housing-Type Fixture Realism Law
 > [!IMPORTANT]
-> **RESPECT HOUSING TYPE REALITY — ZERO RUSTIC PILLARS IN MODERN TOWNHOUSES**:
-> In contemporary urban settings (Saigon townhouse, modern apartments), interior and veranda spaces have tiled floors, painted drywall/concrete, and aluminum-framed sliding glass doors.
-> - **Zero Ropes Tied to Pillars**: Tying hammock ropes to wooden house posts or non-existent central pillars is an immersion-breaking rural fallacy.
-> - **Freestanding Folding Hammocks (Võng Xếp Khung Inox)**: Characters utilize collapsible tubular stainless-steel hammock frames that stand independently.
-> - **Open Space Placement (Khoảng Trống Sàn)**: A deployed folding hammock requires open, uncluttered floor space (e.g., breezy tiled veranda overlooking plants). In tight indoor rooms, it is stored collapsed/folded upright against a corner wall.
+> **RESPECT HOUSING TYPE REALITY**:
+> Fixtures must match the housing type established in the Location Sheet. Contemporary urban settings (townhouses, apartments) have tiled floors, painted drywall or concrete, and aluminium-framed sliding glass doors — no rustic timber posts or rural fixings.
+> - **Physically plausible mounting**: Every fixture is either freestanding or mounted on architecture that exists in the Location Sheet (no ropes tied to non-existent pillars, no shelves bolted to glass).
+> - **Open-space placement**: Large deployable fixtures need open floor space; in tight rooms they are stored folded or upright against a wall.
+> - **Project-specific fixture rules** (e.g. one series' hammock type) live in `output/<project>/project_staging_rules.md`, never in this engine file.
 
 ---
 
@@ -1314,11 +1313,11 @@ When a scene bridges an indoor and outdoor environment (e.g. from a room out ont
 - **Track A: Single-Shot Threshold Push-Through (Cú Máy Xuyên Ngưỡng Cửa)**:
   * Camera moves with subject from an interior space directly through open sliding glass doors or an open portal into the exterior.
   * **Exposure Adaptation Law**: The prompt MUST describe camera optical exposure adjustment (`camera tracks through the glass doorway into brilliant exterior sunlight, exposure adapting smoothly from indoor LED ambiance to natural daylight`) to prevent AI latent clipping and white-out blown highlights.
-  * **Connected Spatial Context**: Context is declared as an integrated threshold (`khong_gian_lien_hoan [100% Refer to...] spanning from interior room through open glass sliding doors onto the outdoor sunlit terrace`).
+  * **Connected Spatial Context**: Context is declared as an integrated threshold (`connected bedroom and sunlit terrace [100% Refer to...] spanning from interior room through open glass sliding doors onto the outdoor sunlit terrace`).
 - **Track B: Multi-Shot Cross-Space Intercut (Cắt Cảnh Đối Lập Qua Ranh Giới)**:
   * Shot 1 frames Subject A indoors looking outward through a physical transparent barrier (window, sliding glass, threshold).
   * Shot 2 cuts across the 180° Action Axis framing Subject B outdoors looking back inward.
-  * **180° Eyeline Match**: Screen directions must remain locked (Subject A screen-left looking screen-right; Subject B screen-right looking screen-left).
+  * **180° Eyeline Match**: Eyelines stay locked across the cut (Subject A inside, looking out through the glass toward Subject B; Subject B on the terrace, looking back in toward Subject A). Screen direction is recorded in the Audit Card only.
   * **Lighting Contrast Delta**: Indoor shot features tungsten/LED key with exterior bright background; outdoor shot features natural celestial key with dark interior reflections in the glass.
 
 ### 4. Confined & Intimate Spaces (Không Gian Hẹp: Ngôi Nhà Nhỏ, Hang Động, Cabin, Ngưỡng Cửa)
@@ -1328,7 +1327,7 @@ When a scene bridges an indoor and outdoor environment (e.g. from a room out ont
 > Directing in confined spaces requires **Intelligent Focal Depth, Progressive Shot Scaling, and Spatial Framing**:
 
 #### A. The 3 Golden Rules of Confined Space Staging:
-1. **Ban Unmotivated Wide Shots**: Never use an Extreme Wide Shot inside a small 15m² room or narrow cave. Use **Medium Close-Up (MCU)**, **Tight Medium (MS)**, and **Tactile Inserts (CU/ECU)** to convey intimacy, claustrophobia, or rustic coziness without exposing AI boundary limitations.
+1. **Ban Unmotivated Wide Shots**: Never use an Extreme Wide Shot inside a small cramped room or narrow cave. Use **Medium Close-Up (MCU)**, **Tight Medium (MS)**, and **Tactile Inserts (CU/ECU)** to convey intimacy, claustrophobia, or rustic coziness without exposing AI boundary limitations.
 2. **Frame-Within-a-Frame (Khung Hình Trong Khung Hình)**: Utilize natural architectural apertures (doorframes, low cave ceilings, wooden lintels, window mullions) as foreground silhouettes. This anchors depth and prevents wall warping.
 3. **The Reverse Threshold Looking-Out Angle (Góc Nhìn Ngược Từ Trong Nhìn Ra)**: Position the camera INSIDE the darker compact space looking out through the door/mouth at the brightly lit exterior. The subject enters as a dramatic silhouette catching sharp separation rim light, creating maximum dynamic contrast without needing massive room volume.
 
@@ -1357,7 +1356,7 @@ To depict a character approaching, unlocking, and entering a small house or cave
 > 1. **Single Instance Lock**: Exactly ONE physical instance of any interactive prop exists in the story universe.
 > 2. **Explicit Resting Surface Clearance**: Whenever a character picks up or shifts a prop, the prompt MUST explicitly declare that the resting surface is clear (e.g., `lifts the wrench, leaving the floor tiles completely clear and empty`).
 > 3. **Stationary Spatial Anchor Law for Heavy Fixtures**: Heavy furniture, large fixtures, and major architectural elements (Pine Crib, Bed, Dining Table, Ancestral Altar) are permanently locked to their designated room/space coordinates across all scenes. They CANNOT teleport between rooms across scenes (e.g., if a pine crib is anchored beside the master bed, subsequent family interactions must occur in the bedroom or respect its stationary placement).
-> 4. **Scene-to-Scene Chain of Custody**: The resting state of every prop at `00:10.0` of Scene N is the exact physical opening state at `00:00.0` of Scene N+1.
+> 4. **Scene-to-Scene Chain of Custody**: The resting state of every prop at `00:10.0` of Scene N is the exact physical opening state at `00:00.0` of Scene N+1. Because every clip opens with hands free of props (Pillar 4 §6.1), a prop still in hand at the end of Scene N should be set down before `00:10.0`; if it cannot be, Scene N+1 declares it in `[PROP]:` at a resting place within arm's reach and the first phase re-engages it. The Ledger records the transfer.
 
 This is the digitized version of a film production's **continuity bible** (traditionally kept by the script supervisor). It is the single most important structural artifact for multi-clip generation, because clips are usually generated somewhat independently and nothing "remembers" state automatically the way a live film shoot does.
 
@@ -1771,11 +1770,12 @@ CLOSING MORAL MAXIM: "[Universal truth reflecting song's soul < 15 words]"
 ### § 4. 3D Spatial Staging & Protective Sanctuary Geometry for Minors
 1. **The Protective Sanctuary Zone (Vùng An Toàn Bất Khả Xâm Phạm):**
    - In any scene involving a child or infant, spatial staging must establish a concrete architectural Sanctuary Zone:
-     * *Direct Presence:* A sturdy pine crib (`noi_go`), soft bedding on a low platform bed, or the secure embrace of a nurturing parent.
-     * *Protective Buffer:* Maintain a minimum 2-meter physical buffer between any adult interpersonal confrontation and the child sanctuary zone. The child is NEVER staged between arguing adults or in the trajectory of aggressive movement.
+     * *Direct Presence:* A sturdy pine crib or soft bedding on a low platform bed (fixtures declared in `[context]:`, never in `[PROP]:`), or the secure embrace of a nurturing parent.
+     * *Protective Buffer:* Keep the child sanctuary zone clearly separated from any adult confrontation — on the far side of the room or behind a fixture, never within arm's reach of the conflict. The child is NEVER staged between arguing adults or in the trajectory of aggressive movement.
 2. **Camera Blocking & Eyeline Respect:**
    - In wholesome scenes with children, framing must use gentle Eye-Level, Shoulder-Level, or soft High-Angle looking down with maternal/paternal warmth.
    - Strictly prohibit aggressive, looming low-angle dominance, Dutch angles, or rapid handheld shakes over minors. Use smooth Slow Push-In or Static Lock-off with serene depth of field.
-3. **The Ghost Minor Spatial Staging (In Conflict Scenes):**
-   - When adult characters engage in emotional breakdown, crying, or intense arguments, stage the crib or child prop in the foreground/background as a silent moral anchor.
-   - The camera blocks the adult subjects while keeping the crib structure stationary and undisturbed. The minor entity is never directly rendered inside the prompt, preserving 100% policy immunity and allowing the full force of adult drama to resonate.
+3. **Child Presence Staging in Conflict Scenes (two valid options; Pillar 4 §[10d] and Law 7):**
+   - *Option A — Present & Sleeping*: The screenplay places the child in the room. Declare the child in `[subject]:` only by the project's approved child `ho_ten` (never minor vocabulary, never names in `project_rules.json` → `minor_character_names`), resting inside the sanctuary zone with low-velocity sleep staging, far from the adult conflict. A crib the screenplay says is occupied is never shown empty.
+   - *Option B — Off-Screen*: The screenplay places the child outside the room, or the camera frames away from the crib. The child is not mentioned anywhere in the prompt.
+   - In both options the child is never awake, crying, or in the path of aggressive movement, and the camera blocks only the adult subjects' emotional action.

@@ -720,11 +720,9 @@ In masterclass cinema, a 10-second scene is **A SINGLE KINETIC AND EMOTIONAL BRE
 > **THE ANTI-RIGID TIMESTAMP MANDATE (ĐỊNH LUẬT THỜI GIAN ĐỘNG HỌC)**:
 > - **STRICTLY PROHIBITED**: Hardcoding rigid, mechanical timestamps like `[00:00–04.0s]`, `[04.5–10.0s]`, `[Terminal Beat]` across all prompts!
 > - The duration of each shot is a **dynamic physical variable** calculated mathematically from:
->   $$\mathbf{T_{shot}} = \mathbf{T_{lead	ext{-}in}} + \left(
-rac{	ext{Spoken Word Count}}{2.5	ext{ wps}}
-ight) + \mathbf{T_{followthrough}}$$
->   * $\mathbf{T_{lead	ext{-}in}}$ (0.5s–1.2s): Time for physiological preparation (turning head, shifting weight, drawing breath).
->   * $\mathbf{T_{dialogue}}$: Measured at standard Hollywood natural speaking cadence ($pprox 2.5 	ext{ words/sec}$).
+>   $$\mathbf{T_{shot}} = \mathbf{T_{lead\text{-}in}} + \left(\frac{\text{Spoken Word Count}}{2.5\text{ wps}}\right) + \mathbf{T_{followthrough}}$$
+>   * $\mathbf{T_{lead\text{-}in}}$ (0.5s–1.2s): Time for physiological preparation (turning head, shifting weight, drawing breath).
+>   * $\mathbf{T_{dialogue}}$: Measured at standard Hollywood natural speaking cadence ($\approx 2.5 \text{ words/sec}$).
 >   * $\mathbf{T_{followthrough}}$ (0.8s–1.5s): Physical recoil, reaction absorption, and kinetic momentum handoff.
 
 ```
@@ -746,8 +744,8 @@ ight) + \mathbf{T_{followthrough}}$$
 ### 2. Phase 2 (`00:XX.X` to `00:YY.Ys`): Climax Collision (Bùng Nổ / Nhát Dao Cảm Xúc — Hold & Discharge)
 - **Directorial Intent**: The verbal accusation, painful truth, decisive strike, or sacrificial act crosses the **Point of No Return**.
 - **Dynamic Duration**: Flexible range (typically `3.5s` to `5.5s`), calibrated to the exact word count of the spoken line:
-  - *Short sharp barb (4–6 words)*: $pprox 2.0	ext{s} - 2.5	ext{s}$.
-  - *Full dramatic counter-strike (8–12 words)*: $pprox 3.5	ext{s} - 4.8	ext{s}$.
+  - *Short sharp barb (4–6 words)*: $\approx 2.0\text{s} - 2.5\text{s}$.
+  - *Full dramatic counter-strike (8–12 words)*: $\approx 3.5\text{s} - 4.8\text{s}$.
 - **Dynamics**: Peak intensity. The words cut deeper than steel; the physical strike makes impact; the secret is torn open. Momentum is at maximum velocity.
 - **The Mindset**: *The irreversible blow is struck.*
 
@@ -1508,16 +1506,16 @@ In physical action, collision, and falling sequences, the prompt MUST adhere to 
 To ensure 100% immunity against automated AI video safety classifiers (Sora, Kling, Veo, Runway, Luma) flagging prompts for "harmful content related to minors", and to guarantee flawless anatomical fidelity in diffusion models:
 1. **The Strict Zero-Harm & Endangerment Prohibition:**
    - 🚫 **BANNED SYSTEM-WIDE:** Absolutely zero depiction of physical harm, hitting, striking, slapping, dragging, shaking, confining, starving, choking, burns, wounds, blood, or placing minors in dangerous environments (near open fire, boiling liquids, heights, moving traffic, deep water, sharp blades).
-### Law 7: The Universal Child Safety, Simple Action & cu_tin Somatic Sleep Staging Protocol (Gate 3F)
+### Law 7: The Universal Child Safety, Simple Action & Approved Child Entity Somatic Sleep Staging Protocol (Gate 3F)
 1. **The Core Safety Reality**:
    - Commercial AI video generation models (Kling AI, Runway, Sora, Hailuo, Pika) enforce aggressive automated NLP content moderation filters.
    - Any video prompt mentioning minor vocabulary (`kid`, `child`, `children`, `baby`, `infant`, `toddler`, `newborn`, `boy`, `girl`, `teen`, `teenager`) or banned child names (listed per project in `project_rules.json` → `minor_character_names`) in proximity to domestic tension, crying, exhaustion, illness, shouting, or emotional trauma triggers an **IMMEDIATE PLATFORM SAFETY BAN or prompt rejection**.
-2. **The cu_tin Child Entity & Somatic Sleep Staging Protocol**:
-   - **Declaration in `[subject]:`**: When a scene occurs in the presence of the pine wood crib (declared in `[context]:`) and the sleeping child, the entity **MUST BE DECLARED IN `[subject]:`**:
-     `cu_tin [100% Appearance, attire, and facial features Refer to image cu_tin_4view.jpg]`
-     Never leave the crib empty or desynchronized from narrative staging.
-   - **Somatic Sleep Staging in Action Prose**: In timeline action prose, `cu_tin` is strictly animated with low-velocity, safe somatic physical states:
-     `Beside the queen bed, cu_tin rests peacefully inside the pine wood crib on the firm flat organic cotton mattress, chest rising and falling in calm rhythmic sleep, tiny fists curled gently beside soft cheeks through 00:10.0.`
+2. **The Approved Child Entity (`{child_ho_ten}`) & Somatic Sleep Staging Protocol**:
+   - **Declaration in `[subject]:`**: When the screenplay places the sleeping child in the room (e.g. in a crib declared in `[context]:`), the entity **MUST BE DECLARED IN `[subject]:`**:
+     `{child_ho_ten} [100% Appearance, attire, and facial features Refer to image {child_ho_ten}_4view.jpg]`
+     A crib the screenplay says is occupied is never left empty or desynchronized from narrative staging. When the child is outside the room, omit the child entirely.
+   - **Somatic Sleep Staging in Action Prose**: In timeline action prose, `{child_ho_ten}` is strictly animated with low-velocity, safe somatic physical states:
+     `Beside the queen bed, {child_ho_ten} rests peacefully inside the pine crib on the firm flat organic cotton mattress, chest rising and falling in calm rhythmic sleep, tiny fists curled gently beside soft cheeks through 00:10.0.`
    - 🚫 **BANNED IN PROSE & SUBJECT**: NEVER write minor-related words (`kid`, `child`, `children`, `baby`, `babies`, `infant`, `infants`, `toddler`, `toddlers`, `newborn`, `newborns`, `boy`, `girl`, `teen`, `bé`) or banned child names from `project_rules.json` anywhere in the visual narrative prose, subject blocks, or camera staging.
    - 🚫 **BANNED IN DIEGETIC SOUND**: Never describe child vocalizations (`infant's crying`, `baby's coo`). Use neutral room acoustics (`soft room tone`, `gentle cotton rustle from the bedside crib`).
 3. **Environmental Fixture & Mattress Safety Integration**:
@@ -1652,23 +1650,23 @@ def run_5_gate_audit(episode_html_path, canonical_roadmap_json):
 
 ---
 
-## § [10d] THE UNIVERSAL CHILD SAFETY & cu_tin SOMATIC SLEEP STAGING PROTOCOL (GATE 3F)
+## § [10d] THE UNIVERSAL CHILD SAFETY & APPROVED CHILD ENTITY SOMATIC SLEEP STAGING PROTOCOL (GATE 3F)
 
 > **MANDATORY POLICY DEFENSE DIRECTIVE (ALL AI VIDEO PLATFORMS: SORA, KLING, VEO, RUNWAY, LUMA)**:
 > Automated AI safety classifiers run before diffusion models. Any prompt mentioning minor vocabulary (`child`, `kid`, `baby`, `infant`, `newborn`, `toddler`, `boy`, `girl`, `teen`) or banned child names (per project in `project_rules.json`) triggers an immediate account suspension or prompt rejection for 'Harmful content related to minors'. Furthermore, diffusion latent space severely hallucinates anatomy (polydactyly, facial melting) when generating minors.
-> To achieve 100% immunity, flawless anatomical fidelity, and seamless subject-action synchronization across all scenes, adhere strictly to the cu_tin Somatic Sleep Staging Protocol (Gate 3F):
+> To achieve 100% immunity, flawless anatomical fidelity, and seamless subject-action synchronization across all scenes, adhere strictly to the Approved Child Entity Somatic Sleep Staging Protocol (Gate 3F). `{child_ho_ten}` below is the project's single approved child identifier registered in its casting sheet (e.g. `cu_tin` in one series):
 
 1. **Pre-Production vs Video Prompt Architectural Alignment**:
-   - In **Screenplay, Casting & Worldbuilding (Pillars 1 & 2 / `setting.html`)**: The child character entity is named `cu_tin` (screenplay: `Cu Tin`), purging all banned terms (`baby`, `kid`, `infant`, `newborn`) and every name listed in `project_rules.json` → `minor_character_names`.
-   - In **AI Video Prompt Compilation (Pillar 4 / Code Block 1)**: When scenes occur in the bedroom with the pine wood crib (declared in `[context]:`), `cu_tin [100% Appearance, attire, and facial features Refer to image cu_tin_4view.jpg]` MUST be declared in `[subject]:`.
+   - In **Screenplay, Casting & Worldbuilding (Pillars 1 & 2 / `setting.html`)**: The child character entity uses one approved `ho_ten` (`{child_ho_ten}`; Title Case display name in the screenplay), purging all banned terms (`baby`, `kid`, `infant`, `newborn`) and every name listed in `project_rules.json` → `minor_character_names`.
+   - In **AI Video Prompt Compilation (Pillar 4 / Code Block 1)**: When the screenplay places the child in the room (e.g. asleep in a crib declared in `[context]:`), `{child_ho_ten} [100% Appearance, attire, and facial features Refer to image {child_ho_ten}_4view.jpg]` MUST be declared in `[subject]:`. When the child is outside the room, the child is omitted entirely (Pillar 3 §4.3, Option B).
 
 2. **The Absolute Ban on Minor Terms and Outdated Child Aliases in Prompts**:
    - 🚫 **BANNED IN PROSE & SUBJECT**: NEVER write minor-related words (`kid`, `child`, `children`, `baby`, `babies`, `infant`, `infants`, `toddler`, `toddlers`, `newborn`, `newborns`, `boy`, `girl`, `teen`, `teenager`, `bé`) or banned child names from `project_rules.json` anywhere in the visual narrative prose or camera staging.
    - 🚫 **BANNED IN DIEGETIC SOUND**: Never describe child vocalizations (`infant's crying`, `baby's coo`). Use neutral room acoustics (`soft room tone`, `gentle cotton rustle from the bedside crib`).
 
 3. **Somatic Sleep Staging (Low-Velocity Kinetic Law)**:
-   - In the prompt timeline prose, `cu_tin` is strictly animated with low-velocity, safe somatic physical states:
-     `Beside the queen bed, cu_tin rests peacefully inside the pine wood crib on the firm flat organic cotton mattress, chest rising and falling in calm rhythmic sleep, tiny fists curled gently beside soft cheeks through 00:10.0.`
+   - In the prompt timeline prose, `{child_ho_ten}` is strictly animated with low-velocity, safe somatic physical states:
+     `Beside the queen bed, {child_ho_ten} rests peacefully inside the pine crib on the firm flat organic cotton mattress, chest rising and falling in calm rhythmic sleep, tiny fists curled gently beside soft cheeks through 00:10.0.`
    - The crib and its bedding are furniture: describe them in `[context]:` (`light pine wood crib beside the queen bed with a firm flat organic cotton mattress`). Never declare the crib in `[PROP]:`.
 
 4. **Adult Age Anchoring for Non-Minor Characters**:
@@ -1706,7 +1704,7 @@ Every compiled prompt in Code Block 1 must pass the **Metaphorical Translation G
 ### 4. The Lip-Sync Visibility & Dynamic Perspective Law (Anti-Static P.O.V Trap)
 - **Zero Lip-Sync in Blind Perspectives**: Never assign spoken dialogue with lip-sync to a character whose perspective is currently Subjective First-Person P.O.V. or Macro Prop Insert. Generative models cannot animate invisible lips and hallucinate facial morphing in hands.
 - **Mandatory In-Camera Transition**: Prompts starting in P.O.V. must transition to a Frontal Medium Close-Up (MCU) or Medium Shot (MS) before that character speaks.
-- **The cu_tin Child Entity & Somatic Sleep Staging Protocol for AI Video Pipelines**: When a scene occurs in the bedroom where the pine wood crib is present, `cu_tin [100% Appearance, attire, and facial features Refer to image cu_tin_4view.jpg]` MUST be declared in `[subject]:` and animated with low-velocity sleep staging (resting peacefully on flat mattress, calm rhythmic breathing, curled fists). Purge all AI trigger keywords (`baby`, `kid`, `infant`, `newborn`, `child`, `bé`, `be_tin`, `sữa`, `vắt`, `starve`, `choke`).
+- **The Approved Child Entity & Somatic Sleep Staging Protocol for AI Video Pipelines**: When the screenplay places the child in the room, `{child_ho_ten} [100% Appearance, attire, and facial features Refer to image {child_ho_ten}_4view.jpg]` MUST be declared in `[subject]:` and animated with low-velocity sleep staging (resting peacefully on flat mattress, calm rhythmic breathing, curled fists). Purge all AI trigger keywords (`baby`, `kid`, `infant`, `newborn`, `child`, `bé`, `starve`, `choke`, every name in `project_rules.json` → `minor_character_names`, and any project-specific distress vocabulary listed in `output/<project>/project_staging_rules.md`).
 
 ---
 
@@ -1739,7 +1737,7 @@ Every video prompt in **Code Block 1** MUST be partitioned into exactly three ex
     cu_tin [100% Appearance, attire, and facial features Refer to image cu_tin_4view.jpg], resting peacefully on the flat mattress inside the pine crib, chest rising with calm rhythmic breathing — the only cu_tin in frame.
     ```
   - Directorial Law: `[subject]:` establishes the zero-frame (00:00.0) spatial grounding to architecture, initial bodily posture, and the negative anti-duplication seal. All dynamic character actions, kinetic transitions, and emotional evolutions are directed within the Timeline Shots.
-  - The cu_tin Entity Standard: When `cu_tin` is present in the bedroom near the pine wood crib, declare `cu_tin [100% Appearance, attire, and facial features Refer to image cu_tin_4view.jpg]` in `[subject]:`, synchronized with safe somatic sleep staging in the timeline action prose. Banned: child names listed in `project_rules.json` → `minor_character_names`, and all minor keywords (`baby`, `kid`, `infant`, `newborn`).
+  - The Approved Child Entity Standard: When the screenplay places the project's approved child (`{child_ho_ten}`, e.g. `cu_tin`) in the room, declare `{child_ho_ten} [100% Appearance, attire, and facial features Refer to image {child_ho_ten}_4view.jpg]` in `[subject]:`, synchronized with safe somatic sleep staging in the timeline action prose. Banned: child names listed in `project_rules.json` → `minor_character_names`, and all minor keywords (`baby`, `kid`, `infant`, `newborn`).
 - **`[PROP]:` (The Two-Tier `[PROP]:` Scope Law — mirrors DIRECTOR.md §1c & §5b)**
   - **Core Directorial Distinction: Handheld Props vs. Set Dressing**:
     * **`[PROP]:` holds every handheld item a character will lift, carry, or manipulate**, one per line, each with a resting place independent of character hands: Tier 1 Signature Hero Props (Chekhov catalyst, heirloom, decisive proof; max 1–2 per series; bound with `[100% Refer to image ...]`) and Tier 2 everyday handheld items (bowls, cups, keys, phones; natural-English text only, no image tag).
