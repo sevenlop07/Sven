@@ -16,10 +16,11 @@
 - BẮT BUỘC neo nhân vật theo các điểm mốc kiến trúc không gian vật lý 3D trong bối cảnh: *vị trí cụ thể trong phòng (dưới khung cửa gỗ, quỳ sát thành nôi thông, ngồi trên mép nệm), điểm tiếp xúc thể chất (bám thanh nôi, tựa vách tường), tư thế sinh học ban đầu, nhịp thở lồng ngực, và hướng ánh mắt ban đầu khóa vào đâu lúc 00:00* giúp AI nhìn thấy và định vị chính xác.
 
 ### 1b. The Master 5-Vector Location & Environmental Staging Protocol in [context]: (Quy Chuẩn 5 Thành Phần Bối Cảnh, Đồ Đạc Cố Định, Thời Gian, Ánh Sáng & Bầu Không Khí)
-*Tuyệt đối CẤM chỉ ghi tên địa điểm sơ sài (ví dụ: `phong_cu, morning.`). Nếu thiếu mô tả chi tiết, AI diffusion model sẽ bị "mất trí nhớ không gian" (spatial amnesia) và tự tiện hoang tưởng sinh ra đồ đạc lung tung hoặc biến đổi phòng ốc giữa các cảnh. Mọi khối `[context]:` BẮT BUỘC phải hội đủ 5 Vector vật lý sau:*
+*Tuyệt đối CẤM chỉ ghi tên địa điểm sơ sài hoặc dùng tên phiên âm tiếng Việt bồi, dùng dấu gạch dưới thô kệch (ví dụ: `phong_cu, morning.` hay `nha_bep` hay `phong_cu_01`). Tên địa điểm BẮT BUỘC viết bằng tiếng Anh có nghĩa, gợi cảm và tự nhiên không dùng dấu gạch dưới (ví dụ: `intimate Southern Vietnamese master bedroom`, `sunlit townhouse open kitchen`). Nếu thiếu mô tả chi tiết, AI diffusion model sẽ bị "mất trí nhớ không gian" (spatial amnesia) và tự tiện hoang tưởng sinh ra đồ đạc lung tung hoặc biến đổi phòng ốc giữa các cảnh. Mọi khối `[context]:` BẮT BUỘC phải hội đủ 5 Vector vật lý sau:*
 
-1. **Vector 1: Multi-Modal Reference Image Anchor (Mỏ neo tham chiếu ảnh bối cảnh)**:
-   - Cú pháp: `[Location Name] [100% Refer to image <location_ref>]`.
+1. **Vector 1: Multi-Modal Reference Image Anchor & Evocative English Name (Mỏ neo tham chiếu ảnh bối cảnh & Tên tiếng Anh có nghĩa)**:
+   - Cú pháp: `[Evocative Location Name in Natural English without underscores] [100% Refer to image <location_ref>]`.
+   - Ví dụ: `intimate Southern Vietnamese master bedroom [100% Refer to image location_bedroom_4view.jpg]`, `sunlit townhouse open kitchen [100% Refer to image location_kitchen_morning.jpg]`.
    - Khóa chặt không gian với bảng thiết kế 4-View Location Sheet đã được duyệt.
 2. **Vector 2: Exact Biological Time of Day (Thời gian cụ thể trong ngày)**:
    - Ghi rõ thời khắc sinh học cụ thể: `early dawn` (tinh mơ), `golden morning` (sáng sớm chan hòa), `harsh midday` (trưa gay gắt), `amber late afternoon` (chiều tà vàng sẫm), `blue hour dusk` (chập tối nhá nhem), `midnight lamp-lit` (đêm khuya đèn dầu).
@@ -42,7 +43,7 @@
 *Ví dụ chuẩn mực*:
 ```text
 [context]:
-phong_cu [100% Refer to image location_bedroom_4view.jpg], early morning. Intimate Southern Vietnamese townhouse master bedroom featuring patterned encaustic cement floor tiles, a sturdy dark wooden queen bed with white linen bedding, a light pine wood crib (noi_go) placed firmly directly beside the bed frame, a tall dark wooden wardrobe against the back wall, and an open wooden doorframe leading to the hallway. Warm golden morning sunlight streams diagonally through sheer curtains, casting long soft shadows across the floor and illuminating floating dust motes in the stagnant, emotionally heavy domestic air.
+intimate Southern Vietnamese master bedroom [100% Refer to image location_bedroom_4view.jpg], early morning. Intimate Southern Vietnamese townhouse master bedroom featuring patterned encaustic cement floor tiles, a sturdy dark wooden queen bed with white linen bedding, a light pine wood crib placed firmly directly beside the bed frame, a tall dark wooden wardrobe against the back wall, and an open wooden doorframe leading to the hallway. Warm golden morning sunlight streams diagonally through sheer curtains, casting long soft shadows across the floor and illuminating floating dust motes in the stagnant, emotionally heavy domestic air.
 ```
 
 ### 1c. The 3-Tier Spatial Staging & Interpersonal Grounding Law (Luật 3 Tầng: Khóa Không Gian ➔ Khóa Tọa Độ, Cự Ly & Quan Hệ Nhân Vật t=0 ➔ Bệ Phóng Động Lực Hành Động t>0)
@@ -67,9 +68,11 @@ phong_cu [100% Refer to image location_bedroom_4view.jpg], early morning. Intima
     - **Tier 2: Đồ Đạc Sinh Hoạt Đời Thường (Everyday Living Items — CHỈ CẦN TEXT CHI TIẾT / TUYỆT ĐỐI KHÔNG TẠO SHEET ẢNH)**: Chảo rán, ly tách, cốc cà phê, bát cơm, thìa đũa, chổi, then cửa, sổ tay... Đây là vật phẩm thông thường, **TUYỆT ĐỐI CẤM TẠO SHEET ẢNH THAM CHIẾU** để tránh lãng phí thời gian và làm nghẽn quy trình sản xuất! Chỉ cần mô tả bằng văn bản siêu chi tiết (chất liệu, màu sắc, tình trạng, vị trí đặt tĩnh ban đầu): `{prop_name}, {hyper-clear physical material description}, {resting place independent of character hands} — the only {prop_noun} in frame`. (KHÔNG dùng thẻ `[100% Refer to image ...]`).
     - **Zero Ghost Object**: Bất kỳ vật thể nào được nhân vật cầm nắm trong Action timeline BẮT BUỘC phải được khai báo trong `[PROP]:`.
 
-  * **The Entity Naming Law: Unique `ho_ten` for Characters vs. Natural English for Props (Zero Underscores for Props)**:
-    - **Tên nhân vật (Characters)**: BẮT BUỘC tuân thủ **unique `ho_ten`** (snake_case không dấu, ví dụ: `hoang_nam`, `mai_anh`, `my_duyen`, `minh_khang`, `cu_tin`). Tên nhân vật hoạt động như một Token thực thể độc nhất vô nhị giúp AI diffusion model phân biệt rõ ràng từng con người và chống nhân bản sinh đôi (anti-cloning).
-    - **Tên đạo cụ (Props)**: **TUYỆT ĐỐI KHÔNG DÙNG DẤU GẠCH DƯỚI `_` (NO UNDERSCORES)**! Viết bằng **tiếng Anh tự nhiên (Natural English Prose)** để text encoder của AI video (CLIP/T5) hiểu đúng bản chất ngữ nghĩa và tương tác vật lý của đồ vật (ví dụ: `black cast-iron skillet`, `white ceramic coffee mug`, `pine wood crib`, `steaming ginger tea bowl` thay vì `cast_iron_skillet` hay `ceramic_coffee_mug`). Dấu gạch dưới trong tên đạo cụ gây phân mảnh token và làm giảm khả năng nhận diện vật lý của mô hình AI!
+  * **The Triad Entity Naming Law: Unique `ho_ten` for Characters vs. Evocative Natural English for Locations & Props (Zero Underscores for Locations & Props)**:
+    - **Tên nhân vật (Characters)**: BẮT BUỘC tuân thủ **unique `ho_ten`** (snake_case không dấu: `hoang_nam`, `mai_anh`, `my_duyen`, `minh_khang`, `cu_tin`). Tên nhân vật hoạt động như một Token thực thể độc nhất vô nhị giúp AI diffusion model phân biệt rõ ràng từng con người và chống nhân bản sinh đôi (anti-cloning).
+    - **Tên địa điểm (Locations)**: BẮT BUỘC viết bằng **tiếng Anh có nghĩa, gợi cảm và tự nhiên không dùng dấu gạch dưới `_`** (e.g. `sunlit townhouse open kitchen`, `intimate Southern Vietnamese master bedroom`, `sunlit high school classroom`). Tuyệt đối CẤM dùng tiếng Việt bồi không nghĩa với AI (`phong_cu`, `nha_bep`, `lop_hoc`, `san_truoc`) hoặc snake_case thô kệch (`modern_townhouse_kitchen`).
+    - **Tên đạo cụ (Props)**: **TUYỆT ĐỐI KHÔNG DÙNG DẤU GẠCH DƯỚI `_` (NO UNDERSCORES)**! Viết bằng **tiếng Anh tự nhiên (Natural English Prose)** để text encoder của AI video (CLIP/T5) hiểu đúng bản chất ngữ nghĩa và tương tác vật lý của đồ vật (ví dụ: `black cast-iron skillet`, `white ceramic coffee mug`, `pine wood crib`, `steaming ginger tea bowl` thay vì `cast_iron_skillet` hay `ceramic_coffee_mug`). Dấu gạch dưới trong tên địa điểm và đạo cụ gây phân mảnh token và làm giảm khả năng nhận diện vật lý của mô hình AI!
+
 
   * **Multi-Character Spatial Anchoring & Relational Physics**:
     1. *Character A Spatial Coordinate & Posture*: Architectural anchor, body posture, hands free of props (e.g., *standing behind the white marble cooktop on the left, empty hands resting on the counter ledge, facing frame-right*).
