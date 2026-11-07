@@ -90,10 +90,10 @@ Executive oak-paneled study <<<Image 1>>>, late night. A polished walnut desk at
 ### 3. Independent Clip Timelines (`00:00` Start) & 3-Case Continuity Reference Law (`TH1 / TH2 / TH3`)
 - **Zero Cumulative Timestamps (`Gate 3M`)**: Every scene prompt starts at `00:00` (`Shot 1 (00:00-00:XX)`) and ends at `00:10` (`@Director`) or `00:15` (`@CombatDirector`). Never use cumulative episode timestamps (`00:10-00:20`) inside Code Block 1.
 - **Clean Terminal Keyframe Landing**: The final shot of every clip settles into a clear, stable physical pose free of wild mid-swing blur so the terminal frame (`@00:10` or `@00:15`) can be extracted cleanly whenever the next scene is `TH1` or `TH3`.
-- **The 3-Case Continuity Reference Protocol (`TH1 / TH2 / TH3`)**:
-  1. **`TH1` (Same Time & Same Location)**: Lock `[subject]:` at `00:00` of Scene $K$ 100% verbatim to the physical posture, hand-prop state, and landmark of Scene $K-1$'s Static Terminal Frame.
-  2. **`TH2` (Different Location, Time Jump, or New Character Lineup)**: Anchor `[context]:` and `[subject]:` to the New Location & Character Reference Images (`<<<Image X>>>`).
-  3. **`TH3` (Supernatural / Time-Travel / Spatial Shift)**: Preserve 100% of the character's posture and held prop from Scene $K-1$'s terminal frame in `[subject]:`, while replacing `[context]:` with the New World/Era Location Reference Image.
+- **The 3-Case Continuity Reference Protocol (`TH1 / TH2 / TH3` — User ONLY Sends `Last Frame` for `TH1 / TH3`)**:
+  1. **`TH1` (Same Time & Same Location — User Sends `Last Frame` of Scene $K-1$)**: Lock `[subject]:` and `[prop]:` at `00:00` of Scene $K$ 100% verbatim to the physical posture, hand-prop state, and landmark of Scene $K-1$'s user-supplied Static Terminal Frame (`@00:10.0 / @00:15.0`), while `[context]:` / `[subject]:` / `[prop]:` reference tags come from `setting.html`.
+  2. **`TH2` (Scene 01, Different Location, Time Jump, or New Character Lineup — Agent Reads Directly from `setting.html`, Zero Image Upload Needed from User in Chat)**: Do **NOT** ask the user to send location or character reference images in chat! Read all 5-Vector location, character, and Tier-1 prop specifications directly from `output/<slug>/setting.html` and the Stage 3 Rough Script to write `[context]:`, `[subject]:`, and `[prop]:` (`<<<Image X>>>`).
+  3. **`TH3` (Supernatural / Time-Travel / Spatial Shift — User Sends `Last Frame` of Scene $K-1$)**: Preserve 100% of the character's posture and held prop from Scene $K-1$'s terminal frame in `[subject]:` and `[prop]:`, while reading the New World/Era Location's `[context]:` directly from `setting.html`.
 
 ### 4. Flexible Shot Pacing & 5-Tier Dialogue Economy Inside Storyboards
 - **1–2 Short Natural Sentences per Shot (`15–30 Words` · Zero `→` Arrows)**: Express 1 clear state transition `A ➔ B` per shot in natural cinematic prose.

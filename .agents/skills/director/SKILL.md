@@ -119,10 +119,10 @@ description: >
      Do not generate subtitles, dialogue text, titles, timestamps, or any written text anywhere in the video.
      ```
 
-7. **Cross-Scene Continuity Reference Protocol (`TH1 / TH2 / TH3`)**:
-   - **🟢 Case 1 (`TH1` — Same Time & Same Location)**: Inspect the user-supplied **Static Terminal Frame (`Last Frame @00:10.0` or `@00:15.0`)** from Scene $K-1$ to lock `[subject]:` at `00:00` of Scene $K$ with 100% physical fidelity.
-   - **🔵 Case 2 (`TH2` — Different Location, Different Time, or New Character Lineup)**: Anchor `[context]:` and `[subject]:` to the user-supplied **New Location & Character Reference Images (`<<<Image X>>>`)**.
-   - **🟣 Case 3 (`TH3` — Supernatural / Time-Travel / Spatial Shift)**: Lock character posture and hand-grip from Scene $K-1$'s terminal frame at `00:00`, while replacing `[context]:` with the New World/Era Location Reference Image.
+7. **Cross-Scene Continuity Reference Protocol (`TH1 / TH2 / TH3` — User ONLY Sends `Last Frame` for `TH1 / TH3`)**:
+   - **🟢 Case 1 (`TH1` — Same Time & Same Location)**: Inspect the user-supplied **Static Terminal Frame (`Last Frame @00:10.0` or `@00:15.0`)** from Scene $K-1$ to lock `[subject]:` and `[prop]:` at `00:00` of Scene $K$ with 100% physical fidelity.
+   - **🔵 Case 2 (`TH2` — Scene 01, Different Location, Different Time, or New Character Lineup)**: Read all 5-Vector location, character, and Tier-1 prop specifications **directly from `output/<slug>/setting.html`** to write `[context]:`, `[subject]:`, and `[prop]:` (`<<<Image X>>>`) immediately — **NEVER ask the user to upload location/character reference images in chat for `TH2`!**
+   - **🟣 Case 3 (`TH3` — Supernatural / Time-Travel / Spatial Shift)**: Lock character posture and hand-grip from Scene $K-1$'s user-supplied terminal frame at `00:00`, while reading the New World/Era Location's `[context]:` directly from `output/<slug>/setting.html`.
 
 8. **Minor Protection Protocol (Gate 3F & Setting Gate 3B; Pillar 4 §[10d])**:
    - Under-18 characters carry their true integer age and developmental band (`Band I: 0–3`, `Band II: 4–12`, `Band III: 13–17`), are registered in `project_rules.json` → `"minor_characters"`, use Minor-Safe Model Sheet `Mẫu 0B`, and are strictly protected from any sexualization, violence, abuse, chases, or physical danger.
