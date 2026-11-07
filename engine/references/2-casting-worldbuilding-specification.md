@@ -4,7 +4,7 @@
 > **SINGLE SOURCE OF TRUTH (SSOT) FOR CASTING, MODEL SHEETS & WORLDBUILDING**  
 > **Master Authority**: Level-2 Master Screenwriter (`.agents/skills/screenwriter/`)  
 > **Direct Stakeholders**: Level-1 Executive Producer (`AGENT.md`), Level-2 Film Director (`.agents/skills/director/`)  
-> **Consolidation Note**: This document fuses, streamlines, and replaces legacy references: `2-casting-worldbuilding-specification.md`, `2-casting-worldbuilding-specification.md`, and `2-casting-worldbuilding-specification.md`. All casting topology (A1/A2/B/C), 20 archetypes, the Living Continuum, 16:9 model sheet prompt architecture (Dual-Value Contrast Inversion Law), the 10-section `setting.html` specification, and 39 visual styles reside here as the single source of truth with zero contradiction.
+> **Consolidation Note**: This document fuses, streamlines, and replaces legacy references: `2-casting-worldbuilding-specification.md`, `2-casting-worldbuilding-specification.md`, and `2-casting-worldbuilding-specification.md`. All casting topology (A1/A2/B/C), 20 archetypes, the Living Continuum, 16:9 model sheet prompt architecture (Dual-Value Contrast Inversion Law), the 10-section `setting.html` specification, and 50 visual styles reside here as the single source of truth with zero contradiction.
 
 ---
 
@@ -32,15 +32,15 @@
   - § 2. 24-Hour Diurnal Timeline with Mandatory 12-Hour AM/PM Notation
   - § 3. Inter-Episode Causality Matrix & Kinetic Bridges
   - § 4. Master Prop & Location Universes (Minimalist Twist-Catalyst Standards)
-  - § 5. 48-Scene Scene-by-Scene Production Roadmap Architecture
+  - § 5. Dynamic Act & Episode Production Roadmap Architecture (`Archetypes 1–5`)
   - § 6. Automated Compliance Verification Protocol
-- **PART VI: THE MASTER CINEMATIC VISUAL STYLE CATALOG (39 MASTER STYLES)**
+- **PART VI: THE MASTER CINEMATIC VISUAL STYLE CATALOG (50 MASTER STYLES)**
   - § 1. System Architecture & Technical Header Injection Engine
-  - § 2. Live Action Style Directory (19 Master Styles Across 3 Groups)
-  - § 3. Animation Style Directory (20 Master Styles Across 4 Groups)
-  - § 4. Master Dramatic Genre Directory (22 Genres)
-  - § 5. Primary Background Arena Directory (13 Arenas)
-  - § 6. Master Trope Library (18 Narrative Engines)
+  - § 2. Live Action Style Directory (25 Master Styles Across 4 Groups)
+  - § 3. Animation Style Directory (25 Master Styles Across 4 Groups)
+  - § 4. Master Dramatic Genre Directory (30 Genres)
+  - § 5. Primary Background Arena Directory (18 Arenas)
+  - § 6. Master Trope Library (24 Narrative Engines)
 
 ---
 
@@ -78,7 +78,10 @@
 >    - *Matrix 4 (Modern Global & Latin)*: `Mateo Ramos`, `Lucia Cruz`, `Gabriel Alvarez`.
 >    - *Matrix 5 (Americana Vintage)*: `Cole Harrington`, `Wyatt Calloway`, `Hazel Faulkner`.
 >    - *Matrix 6 (Continental & Slavic)*: `Julian Laurent`, `Simone Moreau`, `Nikolai Rostova`.
-> 3. **Full Name Format**: Strictly **`[First Name] [Last Name]`** (1–2 syllables per name, natural, immersive).
+> 3. **Full Name Format & Triad Entity Naming Law (`workflow.md` §2.7)**:
+>    - **Display Name (`setting.html` & Screenplay)**: Culturally authentic full name (`[First Name] [Last Name]` for Western/Global matrices, or native Vietnamese/East Asian order when set in Vietnam/Asia).
+>    - **Prompt Character ID Token (`tap-X.html`)**: Unaccented `snake_case` format **`ho_ten`** (e.g., `minh_khang`, `hoang_nam`, `finn_gallagher`) to prevent AI twin-cloning and enforce unique subject identity (`— the only [ho_ten] in frame`).
+>    - **Props & Locations in Prompts**: Natural English noun phrases **strictly without underscores** (e.g., `carved mahogany walking cane`, `sunlit townhouse open kitchen`). Reference image filenames retain underscores (`char_minh_khang.jpg`, `location_open_kitchen_4view.jpg`).
 
 ---
 
@@ -88,7 +91,14 @@
 Before creating any character profile, establish:
 1. **Central Emotional Wound & Thematic Question** of the narrative.
 2. **Earned Life Lesson ($L\text{-}XX$) & Narrative Format** (Short, Mini-Series, Full Series).
-3. **Dynamic Cast Scaling Law (Phân bổ nhân vật theo thời lượng/số tập)**:
+3. **Dynamic Cast Scaling Law (`workflow.md` §2.4 & `1-narrative-screenplay-architecture.md` §0)**:
+   - **Short Film / Single Episode (1 episode)**: **3–4 named characters** (`A1` Protagonist + `A2` Antagonist/Counter-pole + `1–2 Tier B` Satellites) + `Tier C Chorus`.
+   - **Mini-Series (3–5 episodes)**: **5–6 named characters** (`A1` + `A2` + `3–4 Tier B` Satellites) + `Tier C Chorus` (2–3 multi-layered twists across acts).
+   - **Full Series (6–10+ episodes)**: **7–9 named characters** (`A1` + `A2` + `5–7 Tier B` Satellites across faction webs) + `Tier C Chorus`.
+   - **Mega / Long-Running Series (12–20+ episodes)**: **10–14+ named characters** organized into rotating faction arcs.
+   - **Per-Scene Character Rule (`Line A & B: 1–4 Max per Scene` | `Line C: Flexible`) & Context-Matched Multi-Outfit System**:
+     * In the Stage 3 Rough Script, each scene stages **`1 to maximum 4 named characters` from Line A (`A1/A2`) and Line B (`Tier B`)**, while **Line C (`Tier C Chorus`) scales flexibly (`linh động`)** according to the location and plot beat.
+     * **Story-Driven Locations & Multi-Outfit Progression**: Every location (*Ở nhà, Công việc, Đi chơi, Hẹn hò, Sự kiện...*) is engineered with deep narrative purpose. Characters retain 100% invariant facial/physical DNA while switching **Outfit Model Sheets (`Home / Work / Outing / Date / Event`)** across episodes and settings to match the story timeline.
    - **Short-Form Viral (15s–60s / 1–3 episodes / <1,800w)**:
      - `A1` (Protagonist) + `A2` (Antagonist) + **1–2 Tier B Satellites** (`B1`, `B2`) + `Tier C Chorus`.
      - 1 Primary Twist detonator (`Judas Kiss`, `Karma Twist`, or `Perspective Twist`).
@@ -125,28 +135,28 @@ Archetype:      [A1-01 The Quiet Carrier / A1-02 The Indispensable Provider / A1
 Name:               [First Name Last Name — strictly 2 words]
 Age:                [Specific — 25–70, for 16:9 Model Sheet Image Generation only]
 Gender:             [Specific]
-Occupation:         [Specific — e.g., "independent restoration carpenter", not "worker"]
+Occupation:         [High-Precision, Arena-Calibrated Vocation — e.g., "Wall Street M&A Restructuring Attorney", "Forensic Trust & Offshore Auditor", "Quantitative Hedge Fund Strategist", "Chief Neurosurgeon", "Aerospace Systems Architect", "Federal Prosecutor". STRICT BAN on defaulting to manual/artisan/handicraft/carpentry/blue-collar trades unless explicitly requested by the user]
 Setting:            [Specific sensory locale and socio-economic milieu]
 
-CHARACTER ANATOMICAL & STYLING ATTRIBUTES (BẮT BUỘC KHAI BÁO RÕ RÀNG):
+CHARACTER ANATOMICAL & STYLING ATTRIBUTES (MANDATORY EXPLICIT DECLARATION):
 Height:             [Specific cm — e.g. 182cm]
 Head-to-body ratio: [Specific ratio — e.g. 8 heads]
-Ethnicity:          [Specific ethnicity & skin tone — e.g. White (Western), cool porcelain fair skin with natural texture]
+Ethnicity & Skin:   [Specific ethnicity, skin tone/undertone, and subsurface finish — e.g. East Asian, translucent dewy porcelain skin with rosy undertones; or Western, toned warm-ivory masculine complexion with a refined satin-matte finish]
 Build:              [Specific silhouette — e.g. slim and well-proportioned]
 Hair:               [Color, cut, texture, strands, style — e.g. neat slicked-back black hair with clear strands, tough and tidy style]
-Facial features:    [Three-dimensional facial bones, cool porcelain fair skin with natural texture; deep eye sockets, cool gray-blue and dark amber eyes with sharp calm gaze; tall straight nose bridge, thin nude lips, cold composed expression]
+Facial features:    [3D facial bone structure, deep eye sockets, iris color & gaze, nose bridge + Female Makeup Spec (brow arch, eyeliner/eyeshadow, cheek blush/contour, lip color & finish) OR Male Grooming Spec (chiseled jaw contour, groomed sword/structured brows, clean-shaven or 1mm designer stubble, well-defined lips with a healthy natural muted-rose tone) — calibrated to persona & genre; strictly zero generic "no heavy makeup / thin nude lips" boilerplate]
 Clothing & props:   [Pristine baseline costume: slim-fit black matte wool suit with matching shirt and silk inner lining; neat collar design, no earrings or tattoos, bare hands, zero props]
 
 VISUAL DESIGN SPECIFICATION ⭐ (For Step 1B 16:9 Reference Model Sheet Image Generation)
 ──────────────────────────────────────────────────────────────────
 > [!IMPORTANT]
 > **TWO-PHASE CHARACTER DESCRIPTIVE DISCIPLINE**:
-> 1. **Step 1B Pre-Production (Image Generation)**: The Character Profile and 16:9 Model Sheet Prompt below specify full demographic traits (age, height, facial features, baseline pristine costume) to render the 16:9 reference sheet in Midjourney / Flux.
-> 2. **Stages 2 & 4 Production Video Prompts (Omni Flash / Kling / Sora)**: Video Prompts strictly enforce the **Zero-Costume & Zero-Age Law (§3.2)**. The video prompt describes ONLY the character's **Initial Opening State at [00:00]** (initial spatial staging, posture, somatic breathing/tension, gaze vector, surface sweat/dust, and singularity lock). ZERO age numbers, ZERO clothing names!
+> 1. **Step 1B Pre-Production (Image Generation)**: The Character Profile and 16:9 Model Sheet Prompt below specify full demographic and aesthetic traits (age, height, 3D facial bone structure, **skin complexion finish, persona-calibrated female makeup or male grooming**, and baseline pristine costume) to render the 16:9 reference sheet in Midjourney / Flux.
+> 2. **Stages 2 & 4 Production Video Prompts (Omni Flash / Kling / Sora)**: Video Prompts strictly enforce the **Zero-Costume, Zero-Age & Zero-Static-Makeup Law (§3.2)**. Because the 16:9 reference sheet already locks clothing, age, skin tone, and static makeup/grooming, the video prompt describes ONLY the character's **Initial Opening State at [00:00]** (initial spatial staging, posture, somatic breathing/tension, gaze vector, dynamic light/sweat/flush on skin in close-ups, and singularity lock). ZERO age numbers, ZERO clothing names, ZERO static makeup re-description!
 
 FORMAT: Single continuous prose paragraph, max ~120 words, 9 fields in exact order:
 
-[Full Name] is a [Age]-year-old [Gender], [Height]cm tall, [Weight]kg, with a [Head-to-body ratio: e.g. 7.5-head athletic] frame. [Ethnicity + skin tone + surface texture: e.g. "East Asian, warm weathered amber skin with fine sun-creases around the temples"]. [Build + posture: e.g. "broad-shouldered, carrying weight slightly forward on the right hip"]. [Hair: color + texture + natural fall: e.g. "coarse ink-black hair brushed back, streaked with silver at the left temple"]. [Facial features: e.g. "angular jawline, straight nose bridge, deep-set steady brown eyes"] featuring [UNIQUE MARK: sole unmistakable physical feature]. [Pristine baseline costume: fabrics, cut, color, NO hat, NO cloak, bare hands]. [Micro-expression tied to wound: observable physical micro-action — e.g. "instinctively touches the empty brass watch fob whenever authority is challenged"].
+[Full Name] is a [Age]-year-old [Gender], [Height]cm tall, [Weight]kg, with a [Head-to-body ratio: e.g. 7.5-head athletic] frame. [Ethnicity + skin tone/undertone + surface finish: e.g. "East Asian, warm weathered amber skin with fine sun-creases" or "translucent dewy porcelain skin with rosy undertones"]. [Build + posture: e.g. "broad-shouldered, carrying weight slightly forward on the right hip"]. [Hair: color + texture + natural fall: e.g. "coarse ink-black hair brushed back, streaked with silver at the left temple"]. [Facial features + Female Makeup OR Male Grooming: e.g. "chiseled angular jawline, groomed sword-shaped brows, clean-shaven skin, straight nose bridge, deep-set steady brown eyes, well-defined lips with a healthy natural muted-rose tone"] featuring [UNIQUE MARK: sole unmistakable physical feature]. [Pristine baseline costume: fabrics, cut, color, NO hat, NO cloak, bare hands]. [Micro-expression tied to wound: observable physical micro-action — e.g. "instinctively touches the empty brass watch fob whenever authority is challenged"].
 
 UNIQUE MARK (Summary):  [Sole physical identifier — unmistakable across all shots]
 
@@ -207,19 +217,19 @@ Gender:             [Specific]
 Occupation:         [Institutional power, corporate tycoon, senior magistrate, rival master]
 Independent Subplot: [Their private struggle, dynasty pressure, or desperate effort to save their own empire]
 
-CHARACTER ANATOMICAL & STYLING ATTRIBUTES (BẮT BUỘC KHAI BÁO RÕ RÀNG):
+CHARACTER ANATOMICAL & STYLING ATTRIBUTES (MANDATORY EXPLICIT DECLARATION):
 Height:             [Specific cm — e.g. 185cm]
 Head-to-body ratio: [Specific ratio — e.g. 8 heads]
-Ethnicity:          [Specific ethnicity & skin tone]
+Ethnicity & Skin:   [Specific ethnicity, skin tone/undertone, and subsurface finish — distinct from A1]
 Build:              [Distinct silhouette from A1 — e.g. broad imposing frame]
 Hair:               [Distinct hair color and style from A1]
-Facial features:    [Three-dimensional facial bones, unique bone contours, eye color, nose bridge, lip line, stern tension]
+Facial features:    [3D facial bone structure, unique bone contours, eye color, nose bridge + Female Makeup Spec OR Male Grooming Spec (brow styling, eyeliner/contour or clean-shaven/stubble jaw, healthy natural or velvet-matte lip tone) — distinct from A1]
 Clothing & props:   [Pristine baseline costume: tailored fabrics, distinct color palette from A1, no earrings or tattoos, bare hands, zero props]
 
 VISUAL ANCHOR ⭐ (Word-for-word in generative prompts featuring A2)
 ──────────────────────────────────────────────────────────────────
 FORMAT: Single continuous prose paragraph, max ~120 words, 9 fields:
-[Full Name] is a [Age]-year-old [Gender], [Height]cm tall, [Weight]kg, with a [Head-to-body ratio] frame. [Ethnicity + skin + texture]. [Build + posture: distinct silhouette from A1]. [Hair: color + styling]. [Facial features] featuring [UNIQUE MARK: distinct from A1]. [Pristine baseline costume: fabrics, colors, bare hands]. [Micro-expression: cold calculation or tension habit].
+[Full Name] is a [Age]-year-old [Gender], [Height]cm tall, [Weight]kg, with a [Head-to-body ratio] frame. [Ethnicity + skin tone/undertone + surface finish]. [Build + posture: distinct silhouette from A1]. [Hair: color + styling]. [Facial features + Female Makeup OR Male Grooming] featuring [UNIQUE MARK: distinct from A1]. [Pristine baseline costume: fabrics, colors, bare hands]. [Micro-expression: cold calculation or tension habit].
 
 UNIQUE MARK:     [Sole physical identifier]
 Lighting Note:   [Scenes featuring A2 MUST use cooler, higher-contrast, or harsher directional lighting]
@@ -273,13 +283,13 @@ Name:           [First Name Last Name]
 Age / Gender:   [Age] / [Gender]
 Occupation:     [Specific profession linking both camps]
 
-CHARACTER ANATOMICAL & STYLING ATTRIBUTES (BẮT BUỘC KHAI BÁO RÕ RÀNG):
+CHARACTER ANATOMICAL & STYLING ATTRIBUTES (MANDATORY EXPLICIT DECLARATION):
 Height:             [Specific cm — e.g. 175cm]
 Head-to-body ratio: [Specific ratio — e.g. 7.5 heads]
-Ethnicity:          [Specific ethnicity & skin tone]
+Ethnicity & Skin:   [Specific ethnicity, skin tone/undertone, and subsurface finish]
 Build:              [Specific silhouette & frame]
 Hair:               [Color, cut, texture, strands, styling]
-Facial features:    [Three-dimensional facial bones, eye color, nose bridge, lip line, expression]
+Facial features:    [3D facial bone structure, eye color, nose bridge + Female Makeup Spec OR Male Grooming Spec (brow styling, eyeliner/blush or jaw/stubble grooming, lip tone & finish), expression]
 Clothing & props:   [Pristine baseline costume: tailored fabrics, palette, zero earrings, zero tattoos, bare hands, zero unnecessary props]
 
 DUAL-RELATIONSHIP MANDATE (QUAN HỆ KÉP) ⭐
@@ -374,29 +384,52 @@ THE TRIADIC CROSS-AXIS TETHER (A1 ⇄ B ⇄ A2)
 > 1. **MANDATORY COVERAGE**: ALL Tier A (`A1`, `A2`) and ALL Tier B Satellites (`B1`, `B2`, `B3...`) MUST have a dedicated 16:9 Sovereign Multi-Angle Model Sheet (Zero-Text Standard). (Tier C Greek Chorus is strictly text-only: ZERO model sheets).
 > 2. **CINEMATIC STYLE INHERITANCE LAW**: Every model sheet prompt MUST strictly lead with `Style: [Movie Master Visual Style]` and adhere 100% to the film's chosen aesthetic (e.g. `Style: Theatrical film reference, live-action style, DaVinci grading...` vs `Style: 3D, game CG, cinematic quality, rendered in Unreal Engine...`). Mixing styles across characters or props is strictly forbidden.
 > 3. **TWO-PHASE DESCRIPTIVE SEPARATION**: 
->    - **Step 1B Pre-Production (Image Generation)**: Explicitly describes age, height, head-to-body ratio, facial bone structure, skin texture, iris color, hair strands, and pristine baseline costume.
->    - **Stages 2 & 4 Production Video Prompts (Mode B)**: Strictly ZERO age numbers and ZERO costume names! (Only describes initial spatial position, posture, breathing cadence, and somatic tension at [00:00]).
+>    - **Step 1B Pre-Production (Image Generation)**: Explicitly describes age, height, head-to-body ratio, 3D facial bone structure, **skin complexion finish, persona-calibrated female makeup or male grooming**, iris color, hair strands, and pristine baseline costume so the generated 16:9 reference sheet locks maximum visual beauty and character charisma from the root.
+>    - **Stages 2 & 4 Production Video Prompts (Mode B)**: Strictly ZERO age numbers, ZERO costume names, and ZERO static makeup re-description! Because the 16:9 reference sheet already locks static outfit, age, skin tone, and baseline makeup/grooming, the video prompt describes ONLY initial spatial position, posture, breathing cadence, somatic tension at `[00:00]`, and dynamic lighting/biological reactions on skin (e.g., light grazing cheekbones, flushed skin, sweat sheen) during close-ups.
 
 ---
 
-#### 1. BẮT BUỘC KHAI BÁO 7 ĐẶC TÍNH NHÂN VẬT (CHARACTER ATTRIBUTES CHECKLIST)
-Mỗi nhân vật Tier A và Tier B bắt buộc phải có bảng thuộc tính chi tiết, không được ghi chung chung:
+#### 1. MANDATORY 7 CHARACTER PHYSICAL ATTRIBUTES CHECKLIST (WITH SKIN COMPLEXION & MAKEUP / GROOMING ARCHITECTURE)
+Every Tier A and Tier B character must declare these 7 detailed physical attributes (strictly banning generic one-size-fits-all phrases like `"no heavy makeup, thin natural nude lips"`):
 - **Height**: `[Specific cm — e.g. 182cm]`
-- **Head-to-body ratio**: `[Specific ratio — e.g. 8 heads]`
-- **Ethnicity & Skin**: `[Specific ethnicity + tone + natural texture — e.g. White (Western), cool porcelain fair skin with natural texture]`
-- **Build**: `[Specific silhouette & frame — e.g. slim and well-proportioned]`
-- **Hair**: `[Color, cut, texture, strands, styling — e.g. neat slicked-back black hair with clear strands, tough and tidy style]`
-- **Facial features**: `[Three-dimensional facial bones, cool porcelain fair skin with natural texture; deep eye sockets, cool gray-blue and dark amber eyes with sharp calm gaze; tall straight nose bridge, thin nude lips, cold composed expression]`
-- **Clothing & props**: `[Pristine baseline costume: slim-fit black matte wool suit with matching shirt and silk inner lining; neat collar design, no earrings or tattoos, bare hands, zero unnecessary props]`
+- **Head-to-body ratio**: `[Specific ratio — e.g. 8-head high-fashion proportions for glamorous adult leads or 7.5-head proportions]`
+- **Ethnicity & Skin Complexion**: `[Specific ethnicity + undertone + surface finish — e.g. East Asian, translucent dewy porcelain skin with rosy subsurface glow; or Western, toned warm-ivory masculine complexion with a refined satin-matte finish and realistic micro-pores]`
+- **Build & Adult Feminine / Masculine Silhouette**: `[Specific silhouette & frame — For Adult Females (>= 18): graceful hourglass figure, slender cinched waist, sculpted feminine bust-to-hip curves, delicate collarbones, and long slender toned legs. For Adult Males (>= 18): broad-shouldered athletic V-taper build, lean muscular torso, and long sturdy legs]`
+- **Hair**: `[Color, cut, texture, strands, styling — e.g. neat slicked-back black hair with clear strands, tough and tidy style; or voluminous silky waves / sleek updo with strand-based grooming]`
+- **Facial Features & Makeup / Grooming**: `[3D facial bone structure, deep eye sockets, iris color & gaze, nose bridge + Female Makeup Spec (brow styling, eyeliner/eyeshadow, cheek blush/contour, lip color & finish) OR Male Grooming Spec (chiseled jaw contour, groomed sword/structured brows, clean-shaven or 1mm designer stubble, well-defined lips with a healthy natural muted-rose tone)]`
+- **Clothing & Context-Driven Outfit Variants (`-home.jpg / -work.jpg / -date.jpg / -outing.jpg`) — High-Fashion Adult Female Dress Mandate**: `[While locking 100% invariant facial/body DNA above, define Context-Matched Outfit Sheets using ultra-simple filenames ([name]-home.jpg, [name]-work.jpg, [name]-date.jpg, [name]-outing.jpg). CRITICAL FOR ADULT FEMALES (>= 18): Prioritize flattering, fashionable dresses (bodycon midi dresses, tailored couture sheath dresses, off-the-shoulder cocktail dresses, silk slip dresses, halter resort dresses, blazer-dresses, or fitted pencil-skirt couture sets) that highlight her hourglass waist and feminine silhouette. Strictly BAN clunky, unflattering, or bizarre hybrid outfits (no bulky trench coats over turtlenecks and trousers, no baggy wide-leg jumpsuits, no strange trench-lapel hybrid dresses); bare hands, zero handheld props baked into the turnaround sheet]`
+
+#### 1B. THE ADULT SKIN COMPLEXION, FEMALE MAKEUP & MALE GROOMING MATRIX (4 FEMALE + 4 MALE ARCHETYPES)
+To ensure every adult character ($\ge 18$ years old) is rendered in the 16:9 Model Sheet with authentic cinematic beauty, social-class accuracy, and vitality—while keeping downstream video prompts (`tap-X.html`) clean—select and adapt the character's **Skin Finish & Makeup/Grooming** from the canonical matrix below:
+
+##### A. Adult Female Skin Complexion & Makeup Archetypes
+| Archetype & Persona | Skin Complexion & Subsurface Finish | Eye, Brow, Cheek & Lip Makeup Specification |
+| :--- | :--- | :--- |
+| **F1. Youth / K-Drama / Healing Heroine**<br>*(Dewy Natural Glow)* | `translucent dewy glass-skin with soft rosy undertones, fine micro-pores, and radiant subsurface glow` | `softly arched natural feathered brows, subtle tightline eyeliner, delicately curled wispy lashes, soft champagne-peach eyelid shimmer, sheer apricot-pink blush on the apples of the cheeks, plump hydrated lips with a glossy rosewood / coral-pink gradient tint` |
+| **F2. Female CEO / High-Society / Sharp Antagonist**<br>*(Sculpted High-Glamour)* | `flawless satin-matte porcelain complexion with sculpted cheekbone contour and subtle pearl highlights` | `precisely sculpted high-arch brows, sharp winged cat-eye eyeliner, smoky bronze-taupe eyeshadow adding deep orbital dimension, lush defined lashes, refined rose-bronze sculpting blush, full sharply defined lips in rich velvet-matte crimson / deep burgundy` |
+| **F3. Classical Period / Noble Lady**<br>*(Poetic Silk Elegance)* | `luminous warm-ivory silk complexion with delicate porcelain smoothness` | `slender willow-leaf arched dark brows, subtle warm vermilion-wash eyeshadow along the outer corners, faint peony-pink cheek flush, classic petal-shaped lips stained with rich cinnabar red` |
+| **F4. Tactical Action / Everyday Working Realism**<br>*(Cinematic Bare Realism)* | `warm honey-toned / weathered organic skin with realistic micro-pores and authentic skin sheen` | `natural structured eyebrows, expressive eyes with subtle tightline or bare emotional depth, natural soft rose-toned hydrated lips with realistic texture` |
+
+##### B. Adult Male Skin Complexion & Grooming Archetypes
+| Archetype & Persona | Masculine Skin Complexion & Bone Contour | Brow, Facial Hair & Lip Grooming Specification |
+| :--- | :--- | :--- |
+| **M1. Executive CEO / Aristocrat / Cold Elite**<br>*(Sculpted Executive Grooming)* | `toned, even-textured warm-ivory / cool-beige masculine complexion with a refined natural satin-matte finish, razor-sharp chiseled jawline and high sculpted cheekbones` | `thick, neatly groomed sword-shaped dark eyebrows framing deep-set piercing eyes with natural orbital shadow depth, immaculately clean-shaven jawline, well-defined masculine lips in a healthy natural muted-rose / warm taupe tone` *(strictly ban "thin nude lips")* |
+| **M2. Modern Romantic Lead / Warm Protagonist**<br>*(Luminous Masculine Grooming)* | `smooth luminous warm-beige skin with healthy subsurface warmth, clean micro-pore texture, and sculpted approachable contours` | `softly structured straight dark eyebrows, clear expressive eyes with warm catchlights, clean-shaven smooth jaw, naturally full lips with a healthy warm coral-nude / rosy-natural tone` |
+| **M3. Warrior / Action Enforcer / Rugged Alpha**<br>*(Rugged Bronze & Stubble)* | `sun-bronzed / warm olive rugged masculine complexion with authentic pore texture, subtle natural skin sheen across the brow and cheekbones, strong square jaw` | `heavy bold masculine eyebrows, intense weathered gaze, precisely groomed 1mm dark shadow stubble framing the jawline and chin, firm masculine lips with a natural weathered terracotta-rose tone` |
+| **M4. Working-Class / Seasoned Elder**<br>*(Grounded Lived-in Realism)* | `weathered warm-amber skin with earned sun-creases around the eyes and temples, authentic lived-in texture` | `natural thick or salt-and-pepper brows, light unshaven stubble or clean rustic grooming, natural matte lips` |
+
+> [!CAUTION]
+> **MINOR-SAFE EXEMPTION (`< 18` YEARS OLD — GATE 3B INVARIANT)**:
+> The Adult Makeup & Grooming Matrix above applies **EXCLUSIVELY to adult characters ($\ge 18$ years old)**. Every character under 18 years old MUST strictly follow **Minor-Safe Benchmark `Mẫu 0B`** (`natural bare face`, zero makeup, zero lipstick/eyeliner/mascara, zero dewy/porcelain/luminous skin descriptors) to guarantee 100% compliance with `engine/setting_audit_suite.py` Gate 3B.
 
 ---
 
-#### 2. CẤU TRÚC 5 TẦNG CÂU LỆNH THAM CHIẾU 16:9 (THE 5-LAYER PROMPT ARCHITECTURE)
-Mỗi prompt tham chiếu Model Sheet 16:9 gồm 5 đoạn rõ ràng:
-1. **Header Style Token**: `Style: [Movie Master Visual Style]` (Kế thừa phong cách bộ phim).
-2. **Optical Spec & Quality**: Chuẩn máy ảnh hoặc Render Engine (cho ảnh tĩnh Model Sheet trong setting.html: 85mm f/1.4, shallow DOF, 8K ultra HD, photorealistic texture; trong Code Block 1 video prompt cấm dùng số mm và khẩu độ).
-3. **Character Persona & 3D Bone Structure**: Khí chất nhân vật, cấu trúc xương mặt 3D, nước da tự nhiên không trang điểm đậm, hốc mắt sâu tạo bóng đổ tự nhiên, màu mắt chính xác, độ sắc lạnh của ánh nhìn, sống mũi và khuôn môi.
-4. **Hair Grooming & Tailored Wardrobe**: Nếp tóc bóng mượt rõ từng lọn, quy chuẩn âm tính (không khuyên tai, không hình xăm), đường may âu phục cao cấp (chất dạ mờ, lót lụa, phom vai cứng cáp, cổ áo gọn gàng).
+#### 2. THE 5-LAYER 16:9 MODEL SHEET PROMPT ARCHITECTURE
+Every 16:9 Character Model Sheet prompt consists of 5 explicit paragraphs:
+1. **Header Style Token**: `Style: [Movie Master Visual Style]` (Inherits the film's master visual style).
+2. **Optical Spec & Quality**: Studio camera or Render Engine spec (for static Model Sheets in `setting.html`: 85mm f/1.4, shallow DOF, 8K ultra HD, photorealistic texture; lens mm and f-stops remain banned in downstream Code Block 1 video prompts).
+3. **Character Persona, 3D Bone Structure, Skin Complexion & Makeup / Grooming**: Character temperament, 3D facial bone contours, **specific skin finish & subsurface tone**, deep eye sockets, exact iris color and gaze intensity, nose bridge, and **persona-calibrated Female Makeup (brows, eyeliner/eyeshadow, blush/contour, lip tint/matte color) or Male Grooming (groomed brows, clean-shaven or designer stubble jaw, healthy natural lip tone)**.
+4. **Hair Grooming & Tailored Wardrobe**: Distinct hair strand grooming and pristine baseline wardrobe (fabric weave, lining, shoulder structure, collar cut).
 5. **Lighting, Solid Contrast Backdrop & Sovereign Multi-Angle Layout**:
    - **LUẬT TƯƠNG PHẢN ĐỐI ỨNG ĐỘ SÁNG (THE OPTICAL VALUE CONTRAST INVERSION LAW)**:
      Bắt buộc chọn màu nền studio nghịch đảo với màu trang phục để nhân vật nổi bật tuyệt đối:
@@ -410,100 +443,112 @@ Mỗi prompt tham chiếu Model Sheet 16:9 gồm 5 đoạn rõ ràng:
         > 1. Khung hình 16:9 dành trọn vẹn 100% diện tích cho dữ liệu hình ảnh nhân vật. **Nghiêm cấm chèn bất kỳ thẻ chữ, tiêu đề tên, metadata card hay nhãn thông số nào lên canvas** để loại trừ triệt để nguy cơ AI sinh chữ rác hoặc loạn font.
         > 2. Các thông số nhân vật (chiều cao, tính cách, đặc tính giải phẫu) được mô tả đầy đủ trong prompt văn bản gửi tới model AI, không in đè lên bề mặt hình ảnh.
       
-      • **Khu vực Trái & Giữa (~55–60% Canvas - Three-Angle Full-Body Turnaround in Natural Stance)**:
+      • **Khu vực Trái & Giữa (55% Canvas Width - Three Compact Full-Body Turnaround Figures at Identical 1:1 Body Scale)**:
         > [!IMPORTANT]
-        > **PHÂN LOẠI QUY CHUẨN THÂN HÌNH TOÀN THÂN: CON NGƯỜI VS PHI NHÂN LOẠI**:
+        > **PHÂN LOẠI QUY CHUẨN THÂN HÌNH TOÀN THÂN & LUẬT KHÓA TỶ LỆ 1:1 NGANG VAI - EO - GÓT GIÀY**:
         > 
-        > 1. **QUY TẮC CHUNG CHO MỌI NHÂN VẬT (RELAXED NATURAL STANCE LAW)**:
-        >    - Cả 3 thân hình toàn thân BẮT BUỘC ở tư thế **đứng thẳng tự nhiên, thả lỏng** (`natural, relaxed standing posture, arms/limbs resting naturally beside torso, feet/claws naturally grounded touching the floor`). Tuyệt đối cấm A-pose giương tay cứng nhắc.
+        > 1. **QUY TẮC CHUNG CHO MỌI NHÂN VẬT (RELAXED NATURAL STANCE & 4-FIGURE ZONE SPLIT LAW)**:
+        >    - Khung hình 16:9 BẮT BUỘC khai báo rõ ngay từ đầu gồm **4 hình nhân vật (4 figures arranged from left to right)** chia làm 2 phân khu: **Khu vực Trái & Giữa (55% chiều ngang canvas)** chứa 3 hình toàn thân thu gọn (compact full-body turnaround figures) và **Khu vực Nửa Phải (45% chiều ngang canvas)** chứa 1 chân dung cận ngực phóng to (1 large frontal chest-up portrait) — đảm bảo hình thứ 4 bên phải không bao giờ bị đẩy tràn khỏi khung hình.
+        >    - Cả 3 thân hình toàn thân BẮT BUỘC ở tư thế **đứng thẳng tự nhiên, thả lỏng** (`natural, relaxed standing posture, arms/limbs resting naturally beside torso, feet/claws naturally grounded on the exact same horizontal floor baseline`). Tuyệt đối cấm A-pose giương tay cứng nhắc.
         > 
-        > 2. **ĐỐI TƯỢNG 1: NHÂN VẬT CON NGƯỜI TRƯỞNG THÀNH (ADULT HUMAN — CORE STANDARD)**:
-        >    - **Mặt Trước (Front View)**: Cắt từ chân cổ trở xuống gót giày, **TUYỆT ĐỐI KHÔNG ĐẦU / KHÔNG MẶT** (`headless neck-down front view, strictly zero head and zero face`).
-        >    - **Mặt Nghiêng 90° (90-Degree Lateral Side Profile View)**: Hiển thị độ dày cơ thể, form trang phục nhìn ngang, **TUYỆT ĐỐI KHÔNG ĐẦU / KHÔNG MẶT** (`headless neck-down 90-degree lateral side profile view, strictly zero head and zero face`).
-        >    - **Mặt Sau (Rear Back View)**: Toàn thân từ đỉnh đầu xuống gót giày, **BẮT BUỘC CÓ ĐẦU VÀ TÓC PHÍA SAU** (`full-length rear back view INCLUDING complete back of head and rear hairstyle`), hiển thị trọn vẹn kết cấu lọn tóc, đường gáy, đường may lưng áo và gót giày.
-        >    - *Lý do kỹ thuật*: Triệt tiêu lỗi dị tật khuôn mặt ở độ phân giải nhỏ và chống xung đột nhận diện đa mặt (*Multi-face identity conflict*) ở người. Nửa phải canvas dành trọn vẹn cho chân dung cận ngực (Chest-up) phóng to sắc nét.
+        > 2. **ĐỐI TƯỢNG 1: NHÂN VẬT CON NGƯỜI TRƯỞNG THÀNH (ADULT HUMAN — CORE STANDARD & 1:1 HORIZONTAL SHOULDER ALIGNMENT LAW)**:
+        >    - **LUẬT SỐNG CÒN — ĐỒNG NHẤT TỶ LỆ CƠ THỂ 1:1 & GIÓNG THẲNG HÀNG NGANG VAI - EO - GÓT GIÀY (THE 1:1 BODY SCALE & HORIZONTAL SHOULDER-WAIST-HEEL ALIGNMENT LAW)**:
+        >      * **Nguyên nhân lỗi nghiêm trọng cần triệt tiêu**: Nếu chỉ viết `"headless neck-down view"`, AI tạo ảnh sẽ hiểu nhầm là cắt khung hình sát cổ (kéo cổ chạm sát mép trên canvas `y = 0`), trong khi hình số 3 có đầu lại đặt đỉnh đầu ở `y = 0`. Hậu quả là 2 hình không đầu bị phóng to/kéo giãn cao hơn hình có đầu ~20%, lệch hẳn đường vai - eo và đẩy tràn hình chân dung thứ 4 ra khỏi khung 16:9!
+        >      * **Quy chuẩn khóa tỷ lệ bắt buộc**: Cả 3 hình toàn thân (Hình 1, Hình 2, Hình 3) BẮT BUỘC là **cùng một kích thước cơ thể 1:1 tuyệt đối (`exact same 1:1 anatomical body scale`)**. Đường ngang vai (`shoulder line`), đường ngang ngực (`chest line`), gấu áo (`garment hem`), vòng eo (`waistline`) và gót giày chạm sàn (`heels on the floor baseline`) của cả 3 hình BẮT BUỘC **nằm trên cùng các đường thẳng nằm ngang song song tuyệt đối**!
+        >      * **Khoảng trống phía trên cổ (Wide Empty Headspace Above Neck Cut)**: Ở Hình 1 và Hình 2, phần thân kết thúc gọn gàng tại chân cổ theo kiểu ma-nơ-canh (`clean mannequin-style neck termination at the collar at the exact same horizontal shoulder level as Figure 3`), **BẮT BUỘC để trống khoảng nền studio rộng rãi phía trên cổ** (tương đương chiều cao của phần đầu ở Hình 3). **TUYỆT ĐỐI CẤM kéo giãn hình không đầu chạm mép trên canvas!**
+        >    - **Cấu trúc 3 hình toàn thân (Left & Center Zone — 55% width)**:
+        >      * **Figure 1 (Far Left — Front Full-Body View, Clean Mannequin Neck Cut at Shared Shoulder Line)**: Toàn thân nhìn thẳng từ chân cổ xuống gót giày ở đúng tỷ lệ 1:1 và đúng độ cao ngang vai với Figure 3, kết thúc gọn tại cổ với khoảng nền trống rộng phía trên cổ (`strictly zero head, zero face, wide empty background space above the neck, never stretching neck to top border`).
+        >      * **Figure 2 (Center-Left — 90-Degree Lateral Side Profile Full-Body View, Clean Mannequin Neck Cut at Shared Shoulder Line)**: Toàn thân nhìn nghiêng 90° từ chân cổ xuống gót giày ở đúng tỷ lệ 1:1 và đúng độ cao ngang vai với Figure 3, kết thúc gọn tại cổ với khoảng nền trống rộng phía trên cổ (`strictly zero head, zero face, wide empty background space above the neck`).
+        >      * **Figure 3 (Center — Rear Back Full-Body View WITH Head & Hair at Shared Shoulder Line)**: Toàn thân nhìn từ phía sau **BẮT BUỘC CÓ ĐẦU VÀ TÓC PHÍA SAU**, đứng cùng tỷ lệ cơ thể 1:1 với vai, eo, gấu áo và gót giày gióng thẳng hàng ngang tuyệt đối với Figure 1 và Figure 2; chỉ duy nhất phần đầu và tóc phía sau nhô cao lên khoảng không phía trên đường ngang vai chung.
+        >    - *Lý do kỹ thuật*: Giữ tỷ lệ giải phẫu chuẩn xác 100% giữa 3 góc xoay mà vẫn triệt tiêu lỗi dị tật khuôn mặt ở độ phân giải nhỏ và chống xung đột nhận diện đa mặt (*Multi-face identity conflict*). Nửa phải canvas (45% width) dành trọn vẹn cho chân dung cận ngực (Chest-up) phóng to sắc nét.
         > 
         > 3. **ĐỐI TƯỢNG 2: NHÂN VẬT CON NGƯỜI VỊ THÀNH NIÊN / TRẺ EM (< 18 TUỔI — MINOR-SAFE STANDARD MẪU 0B)**:
-        >    - Cả 3 góc nhìn toàn thân BẮT BUỘC **CÓ ĐẦU TRỌN VẸN**; Nửa phải là chân dung đầu-vai (Head-and-shoulders) trung tính, không phong cách thời trang/beauty, cấm từ ngữ gợi cảm/tôn dáng (Pillar 4 §[10d]).
+        >    - Cả 3 góc nhìn toàn thân BẮT BUỘC **CÓ ĐẦU TRỌN VẸN** và gióng thẳng hàng ngang đỉnh đầu - vai - eo - gót giày ở cùng tỷ lệ 1:1; Nửa phải (45% width) là chân dung đầu-vai (Head-and-shoulders) trung tính, không phong cách thời trang/beauty, cấm từ ngữ gợi cảm/tôn dáng (Pillar 4 §[10d]).
         > 
         > 4. **ĐỐI TƯỢNG 3: NHÂN VẬT PHI NHÂN LOẠI / KHÔNG PHẢI CON NGƯỜI (NON-HUMAN ENTITIES: ROBOT, MECHA, QUÁI THÚ, SINH VẬT GIẢ TƯỞNG, THÚ NHÂN, QUÁI VẬT, LINH HỒN)**:
         >    - **NGUYÊN LÝ GIẢI PHẪU CỐT TỬ**: Sinh vật phi nhân loại có cấu trúc đầu, mặt, sừng, tai, bờm, mắt, miệng, vảy, giáp kim loại, cảm biến hoặc ống xả gắn liền hữu cơ với toàn bộ cơ thể. **TUYỆT ĐỐI CẤM CẮT ĐẦU (STRICTLY NO HEADLESS CUT)** vì sẽ phá hủy toàn bộ tỷ lệ cơ thể và hình thái giải phẫu của sinh vật/robot!
-        >    - **3 GÓC QUAY TOÀN THÂN CÓ ĐẦU TRỌN VẸN (THREE FULL-BODY VIEWS WITH COMPLETE HEAD)**:
+        >    - **3 GÓC QUAY TOÀN THÂN CÓ ĐẦU TRỌN VẸN ĐỒNG NHẤT TỶ LỆ 1:1 (THREE FULL-BODY VIEWS WITH COMPLETE HEAD)**:
         >      * **Mặt trước toàn thân CÓ ĐẦU (Full-body front view WITH complete head)**: Hiển thị trọn vẹn hình hài sinh học/cơ khí từ đỉnh đầu/sừng/tai xuống bàn chân/móng vuốt/chân cơ khí chạm sàn.
-        >      * **Mặt nghiêng 90° sườn toàn thân CÓ ĐẦU (Full-body 90-degree lateral side profile view WITH complete head)**: Hiển thị độ dày cơ thể, độ cong sống lưng/giáp lưng, mõm/visor, sừng, đuôi và khớp chi nhìn ngang.
-        >      * **Mặt sau toàn thân CÓ ĐẦU (Full-body rear back view WITH complete back of head/crest)**: Hiển thị từ đỉnh gáy/bờm/giáp gáy xuống sống lưng, đuôi và gót chân chạm sàn.
-        >    - **NỬA PHẢI CANVAS (~40–45% Canvas): 1 MEDIUM SHOT TOÀN BỘ TỪ NGỰC ĐẾN ĐẦU (UPPER TORSO TO HEAD MEDIUM SHOT)**:
+        >      * **Mặt nghiêng 90° sườn toàn thân CÓ ĐẦU (Full-body 90-degree lateral side profile view WITH complete head)**: Hiển thị độ dày cơ thể, độ cong sống lưng/giáp lưng, mõm/visor, sừng, đuôi và khớp chi nhìn ngang ở cùng tỷ lệ 1:1.
+        >      * **Mặt sau toàn thân CÓ ĐẦU (Full-body rear back view WITH complete back of head/crest)**: Hiển thị từ đỉnh gáy/bờm/giáp gáy xuống sống lưng, đuôi và gót chân chạm sàn ở cùng tỷ lệ 1:1.
+        >    - **NỬA PHẢI CANVAS (45% Canvas Width): 1 MEDIUM SHOT TOÀN BỘ TỪ NGỰC ĐẾN ĐẦU (UPPER TORSO TO HEAD MEDIUM SHOT)**:
         >      * Phóng to sắc nét trực diện hoặc 3/4 nhẹ (`prominent high-definition upper torso to head medium shot`), làm rõ cấu trúc giải phẫu từ ngực/thân trên lên đến đỉnh đầu/sừng/tai: mắt quang học/đồng tử dã thú, sừng, răng nanh, kết cấu da/vảy/lông xù/giáp kim loại phong hóa, giữ khoảng thở an toàn (*safe headroom margin*) phía trên đỉnh đầu.
 
-      • **Khu vực Nửa Phải (~40–45% Canvas - Prominent Direct Frontal Full-Head Portrait)**:
+      • **Khu vực Nửa Phải (45% Canvas Width - Prominent Direct Frontal Full-Head Portrait)**:
         > [!CRITICAL]
         > **QUY CHUẨN CHÂN DUNG PHÓNG TO RÕ NÉT, CHÍNH DIỆN 100% & BẢO TOÀN TRỌN VẸN HỘP SỌ (PROMINENT DIRECT FRONTAL & FULL-CRANIAL LAW)**:
-        > 1. **ZOOM TO RÕ NÉT KHUÔN MẶT ĐỂ THẤY RÕ TỪNG CHI TIẾT NGŨ QUAN**:
-        >    - Chân dung ngực trở lên (chest-up portrait) được phóng to nổi bật (prominent zoomed-in framing), lấp đầy nửa phải canvas để làm rõ từng lỗ chân lông, tia mắt, vết sẹo/băng dán, khuyên tai và kết cấu sợi tóc.
-        > 2. **ĐẢM BẢO 100% FULL HEAD VÀ FACE - TUYỆT ĐỐI KHÔNG BỊ CẮT XÉN**:
-        >    - Dù phóng to rõ nét nhưng BẮT BUỘC giữ khoảng thở an toàn (*safe headroom breathing space*) phía trên đỉnh tóc. Toàn bộ đỉnh hộp sọ và lọn tóc bồng bềnh phải nằm trọn vẹn 100% trong khung hình, cách một khoảng thở rõ ràng dưới mép trên canvas, không bao giờ chạm mép hay bị cắt cụt.
+        > 1. **KHÓA PHÂN KHU 45% BÊN PHẢI & ZOOM TO RÕ NÉT KHUÔN MẶT**:
+        >    - Hình thứ 4 (Figure 4) là chân dung ngực trở lên (chest-up portrait) được phóng to nổi bật (prominent zoomed-in framing), chiếm trọn vẹn **45% chiều ngang bên phải của khung hình 16:9** để làm rõ từng lỗ chân lông, lớp trang điểm/grooming, tia mắt, vết sẹo/băng dán, khuyên tai và kết cấu sợi tóc.
+        > 2. **ĐẢM BẢO 100% FULL HEAD VÀ FACE - TUYỆT ĐỐI KHÔNG BỊ CẮT XÉN HAY TRÀN KHUNG**:
+        >    - Toàn bộ Hình thứ 4 BẮT BUỘC nằm trọn vẹn 100% trong khung hình 16:9 (không bao giờ bị cắt mất nửa người bên mép phải) và giữ khoảng thở an toàn (*safe headroom breathing space*) phía trên đỉnh tóc. Toàn bộ đỉnh hộp sọ và lọn tóc bồng bềnh phải cách một khoảng thở rõ ràng dưới mép trên canvas, không bao giờ chạm mép hay bị cắt cụt.
         > 3. **BẮT BUỘC ẢNH CHÍNH DIỆN 100% (STRICT DIRECT FRONTAL EYE-LEVEL VIEW)**:
         >    - Khuôn mặt và ánh mắt BẮT BUỘC nhìn thẳng trực diện vào ống kính máy quay ở tầm mắt (`strictly direct frontal eye-level portrait, subject looking straight forward into the lens`).
-        >    - **CẤM TUYỆT ĐỐI TẤT CẢ CÁC GÓC QUAY KHÁC**: CẤM góc nghiêng 3/4 (`strictly zero three-quarter angle`), CẤM góc nhìn nghiêng sườn (`strictly zero side profile`), CẤM góc máy chéo (`strictly zero oblique view`), CẤM góc ngửa hay góc chúi (`strictly zero low or high tilt angles`).
+        >    - **CẤM TUỆT ĐỐI TẤT CẢ CÁC GÓC QUAY KHÁC**: CẤM góc nghiêng 3/4 (`strictly zero three-quarter angle`), CẤM góc nhìn nghiêng sườn (`strictly zero side profile`), CẤM góc máy chéo (`strictly zero oblique view`), CẤM góc ngửa hay góc chúi (`strictly zero low or high tilt angles`).
         > 4. **Cú pháp đóng khung cận ngực chính diện chuẩn mực**:
-        >    `prominent, zoomed-in high-definition chest-up portrait filling the right frame with impactful facial clarity while maintaining safe headroom margin above the hair crown, entire head, full cranium, and voluminous layered hairstyle 100% fully visible inside the canvas with clear breathing space below top border, in strictly direct frontal eye-level view facing camera directly`.
+        >    `Right zone (occupying the right 45% of the 16:9 canvas width) features Figure 4: a prominent, zoomed-in high-definition chest-up portrait filling the right frame with impactful facial clarity while maintaining safe headroom margin above the hair crown, entire head, full cranium, and voluminous layered hairstyle 100% fully visible inside the canvas with clear breathing space below top border, in strictly direct frontal eye-level view facing camera directly`.
         > 5. **Chuỗi Negative Directives bắt buộc**:
-        >    `strictly zero text, zero typography, zero labels, strictly zero cropped head, strictly no cut-off hair, no truncated hair crown, no hair touching canvas borders, safe headroom margin above skull, strictly zero out-of-frame head, no chopped skull, portrait strictly frontal view only`.
+        >    `strictly zero text, zero typography, zero labels, strictly zero height mismatch between the three full-body turnaround figures, strictly no enlarged or stretched headless bodies, headless necks must never touch the top canvas border, all three turnaround bodies must align horizontally at the shoulders, waist, and heels, all 4 figures (3 compact full-body views + 1 large right-side chest-up portrait) 100% fully visible inside the 16:9 frame, strictly zero cropped head, strictly no cut-off hair, no truncated hair crown, no hair touching canvas borders, safe headroom margin above skull, strictly zero out-of-frame head, no chopped skull, portrait strictly frontal view only`.
 
 ---
 
 #### 3. CÁC MẪU CÂU LỆNH THAM CHIẾU CHUẨN MỰC (GOLDEN REFERENCE PROMPTS)
 
 ##### 🎬 MẪU 0 (BENCHMARK THỰC CHIẾN CHUẨN MỰC): NỮ CHIẾN BINH / MẬT VỤ HIỆN ĐẠI (MOLI)
-*(Mẫu benchmark chuẩn mực 100% theo quy chuẩn nâng cấp: Khung hình sạch 100% không text; Cụm toàn thân 3 góc đứng tự nhiên gồm Front không đầu, Side 90° không đầu, Back có đầu & tóc phía sau; Nửa bên phải là chân dung chính diện 100% sắc nét cao bảo toàn trọn vẹn full face, full head và khoảng thở đỉnh đầu)*
+*(Mẫu benchmark chuẩn mực 100% theo quy chuẩn nâng cấp: Khung hình 16:9 chia rõ 4 hình [Trái 55% gồm 3 hình toàn thân cùng tỷ lệ 1:1 gióng thẳng hàng ngang vai - eo - gót giày + Phải 45% gồm 1 chân dung cận ngực chính diện phóng to]; Hình 1 & 2 kết thúc gọn ở chân cổ ngang đúng tầm vai Hình 3 với khoảng nền trắng trống rộng phía trên cổ)*
 ```text
 Style: Theatrical film reference, high-end live-action fashion and tactical cinematic portraiture, DaVinci color grading, pristine digital finish.
 
 Ultra-realistic human character reference sheet, 8K ultra HD, ultimate details, photorealistic skin and fabric texture, professional commercial fashion studio photography, shot on Hasselblad H6D-100c with 85mm prime lens, crystal clear focus across the entire composition.
 
-Character: One young East Asian woman, aged 24, 170cm height, athletic and toned physique with agile tactical curves, delicate oval face with sharp V-line jaw, luminous porcelain fair skin with delicate natural micro-pores and subtle rosy undertones, no heavy makeup. Almond-shaped amber-brown eyes with a calm, penetrating, sharp gaze; wearing ultra-thin rimless silver wire spectacles. Straight refined nose bridge, full natural lips with a subtle metallic silver hoop ring piercing centered on the lower lip. Layered chin-length textured bob hair in dark espresso brown with delicate honey-caramel highlights and wispy ends.
+Character: One young East Asian woman, aged 24, 170cm height, athletic and toned physique with agile tactical curves, delicate oval face with sharp V-line jaw, luminous porcelain fair skin with a smooth satin-dewy finish, delicate natural micro-pores, and subtle rosy undertones; softly sculpted cheekbones, sleek arched dark eyebrows, and sharp tightline eyeliner accentuating almond-shaped amber-brown eyes with a calm, penetrating gaze; wearing ultra-thin rimless silver wire spectacles. Straight refined nose bridge, full sculpted lips with a natural rosewood satin tint and a subtle metallic silver hoop ring piercing centered on the lower lip. Layered chin-length textured bob hair in dark espresso brown with delicate honey-caramel highlights and wispy ends.
 
 Wardrobe: Cropped dark burgundy maroon leather moto jacket with a neat stand-up collar, silver star-shaped metallic snap button, and form-fitting sleeve panels; form-fitting zipped taupe bodysuit underneath; low-rise black tactical mini shorts with a brown leather utility belt; dual black leather thigh holsters with buckle straps around upper thighs; over-the-knee black leather boots with sturdy block heels.
 
-Character reference model sheet, aspect ratio 16:9, clean solid pure white studio infinity background.
+Character reference model sheet, 16:9 widescreen aspect ratio, clean solid pure white studio infinity background, containing 4 figures arranged from left to right across two zones:
 
-Left and center area displays a three-angle full-body turnaround in a natural, relaxed standing posture with arms resting naturally and loosely beside the torso, feet naturally grounded touching the floor:
-1. Headless neck-down front view showing complete front silhouette, jacket zipper, bodysuit, shorts, thigh holsters, and boots, with strictly zero head and zero face.
-2. Headless neck-down 90-degree lateral side profile view showing body depth, spine posture, jacket arm profile, and holster profile, with strictly zero head and zero face.
-3. Full-length rear back view INCLUDING complete back of head and rear hairstyle, showing the full rear textured bob haircut, nape of the neck, rear jacket seams, waistline, and back of boots down to the floor.
+LEFT AND CENTER ZONE (occupying the left 55% of the canvas width — Three Compact Full-Body Turnaround Figures at Identical 1:1 Body Scale):
+Displays three full-body turnaround figures standing side by side in a natural, relaxed posture with arms resting loosely beside the torso and boots grounded on the exact same horizontal floor baseline. CRITICAL SCALE LOCK: All three turnaround bodies MUST share the exact same 1:1 anatomical body size — their shoulder lines, chest lines, jacket hems, waistlines, and boot heels must align along strict horizontal parallel lines across all three figures:
+1. Figure 1 (Far Left — Front Full-Body View, Clean Mannequin Neck Cut at Shared Shoulder Line): Full-length front body from the base of the neck down to the boots at the exact same 1:1 body scale and exact same horizontal shoulder height as Figure 3, showing front jacket zipper, bodysuit, shorts, thigh holsters, and boots. Clean mannequin-style neck termination at the collar with wide empty white studio background space above the neck (strictly zero head, zero face, and never stretching the headless body to touch the top border).
+2. Figure 2 (Center-Left — 90-Degree Lateral Side Profile Full-Body View, Clean Mannequin Neck Cut at Shared Shoulder Line): Full-length 90-degree side profile body from the base of the neck down to the boots at the exact same 1:1 body scale and exact same horizontal shoulder height as Figure 3, showing body depth, jacket arm profile, and holster profile. Clean mannequin-style neck termination at the collar with wide empty white studio background space above the neck (strictly zero head, zero face, and never stretching the headless body to touch the top border).
+3. Figure 3 (Center — Rear Back Full-Body View WITH Head & Hair at Shared Shoulder Line): Full-length rear back view from the top of the head down to the boots at the exact same 1:1 body scale, with shoulders, jacket hem, waistline, and boot heels aligned strictly horizontally with Figures 1 and 2, showing the complete back of the head and rear textured bob haircut extending into the upper space above the shared shoulder line, nape of the neck, rear jacket seams, and back of boots down to the floor.
 
-Right area features a prominent, zoomed-in high-definition chest-up portrait filling the right frame with impactful facial clarity while maintaining safe headroom margin above the hair crown, entire head, full cranium, and complete voluminous textured bob hairstyle 100% fully visible inside the canvas with clear breathing space below top border, in strictly direct frontal eye-level view facing camera directly, capturing razor-sharp facial features, delicate skin texture, amber-brown iris catchlights, styled bob hair strands, rimless spectacles, lip ring piercing, and collar star hardware.
+RIGHT ZONE (occupying the right 45% of the canvas width — Figure 4: One Large Frontal Chest-Up Portrait):
+Features a prominent, zoomed-in high-definition chest-up portrait filling the right 45% of the frame with impactful facial clarity while maintaining safe headroom margin above the hair crown, entire head, full cranium, and complete voluminous textured bob hairstyle 100% fully visible inside the canvas with clear breathing space below top border, in strictly direct frontal eye-level view facing camera directly, capturing razor-sharp facial features, satin-dewy porcelain skin texture, tightline eyeliner, amber-brown iris catchlights, rosewood satin lips with lower-lip silver hoop ring piercing, rimless spectacles, and collar star hardware.
 
-Professional high-key beauty studio lighting, subtle soft grounding contact shadows under boots, strictly zero text, zero typography, zero labels, strictly zero background scenery, zero environmental elements, zero furniture, zero watermark, strictly zero cropped head, strictly no cut-off hair, no truncated hair crown, no hair touching canvas edges, ample empty white headroom margin above the skull, pulled back camera framing, strictly zero out-of-frame head, no chopped skull, portrait strictly frontal view only.
+Professional high-key beauty studio lighting, subtle soft grounding contact shadows under boots, strictly zero text, zero typography, zero labels, strictly zero background scenery, zero environmental elements, zero furniture, zero watermark, strictly zero height mismatch between the three full-body turnaround figures, strictly no enlarged or stretched headless bodies, headless necks must never touch the top canvas border, all three turnaround bodies must align horizontally at the shoulders, waist, and heels, all 4 figures 100% fully visible inside the 16:9 frame, strictly zero cropped head, strictly no cut-off hair, no truncated hair crown, no hair touching canvas edges, ample empty white headroom margin above the skull, strictly zero out-of-frame head, no chopped skull, portrait strictly frontal view only.
 ```
 
 ##### 🎬 MẪU 0B (BENCHMARK NHÂN VẬT DƯỚI 18 TUỔI — NỮ SINH 16 TUỔI, MINOR-SAFE SHEET — RIN MORITA)
-*(Template bắt buộc cho mọi nhân vật dưới 18 tuổi — Pillar 4 §[10d]. Khác Mẫu 0: không phong cách thời trang/beauty, không mô tả vóc dáng hay làn da, không cắt cảnh thân không đầu; 3 góc toàn thân CÓ ĐẦU + chân dung đầu-vai; tuổi thật được ghi rõ.)*
+*(Template bắt buộc cho mọi nhân vật dưới 18 tuổi — Pillar 4 §[10d]. Khác Mẫu 0: không phong cách thời trang/beauty, không dùng từ ngữ mỹ phẩm/trang điểm người lớn (`dewy`, `porcelain`, `lipstick`, `eyeliner`), nhưng BẮT BUỘC mô tả **sắc diện làn da khỏe mạnh, hồng hào tự nhiên đúng lứa tuổi** (`healthy warm-ivory natural skin, soft natural rosy cheeks, healthy natural pink lips`); không cắt cảnh thân không đầu; 3 góc toàn thân CÓ ĐẦU + chân dung đầu-vai; tuổi thật được ghi rõ.)*
 ```text
 Style: Neutral live-action casting reference for a family-friendly high school drama, soft natural color, clean documentary finish.
 
 Character reference sheet for wardrobe and continuity, photorealistic, clear even focus, neutral casting-office photography.
 
-Character: A 16-year-old East Asian teenage high school student, 160cm height, average build, oval face, calm and slightly guarded expression, natural bare face, faint freckles across the nose bridge, small flesh-tone adhesive bandage across the nose bridge. Dark amber-brown almond-shaped eyes with a steady, stubborn look. Tousled shoulder-length dark brown wolf-cut hair with wispy curtain bangs.
+Character: A 16-year-old East Asian teenage high school student, 160cm height, average build, oval face, healthy warm-ivory natural skin with soft natural rosy cheeks, natural bare face, faint childhood freckles across the nose bridge, small flesh-tone adhesive bandage across the nose bridge, and healthy natural pink lips; calm and slightly guarded expression. Dark amber-brown almond-shaped eyes with a steady, stubborn look. Tousled shoulder-length dark brown wolf-cut hair with wispy curtain bangs.
 
 Wardrobe: Loose-fitting charcoal-grey school blazer buttoned over a white collared shirt buttoned to the collar, wine-red school necktie neatly tied; charcoal-grey pleated school skirt falling below the knee; opaque black knee socks; flat black school shoes. Age-appropriate, fully covering school uniform.
 
-Character reference model sheet, aspect ratio 16:9, plain light-grey studio background.
+Character reference model sheet, 16:9 widescreen aspect ratio, plain light-grey studio background, containing 4 figures arranged from left to right across two zones:
 
-Left and center area displays three full-length views including the head, standing upright in a relaxed neutral pose, arms resting at the sides, feet flat on the floor:
-1. Front view, full figure from head to shoes, calm neutral face.
-2. 90-degree side profile, full figure from head to shoes.
-3. Back view, full figure from the back of the head to the shoes, showing the rear wolf-cut hairstyle and the back of the blazer.
+LEFT AND CENTER ZONE (occupying the left 55% of the canvas width — Three Compact Full-Length Views at Identical 1:1 Scale):
+Displays three full-length views including the head, standing upright side by side in a relaxed neutral pose, arms resting at the sides, shoes grounded on the exact same horizontal floor baseline. All three full-length figures share the exact same 1:1 scale with strictly aligned horizontal head crowns, shoulders, blazer hems, skirt hems, and shoes:
+1. Figure 1 (Far Left — Front View WITH Head): Full figure from head to shoes at 1:1 scale, calm neutral face.
+2. Figure 2 (Center-Left — 90-Degree Side Profile WITH Head): Full figure from head to shoes at the exact same 1:1 scale and horizontal alignment.
+3. Figure 3 (Center — Back View WITH Head): Full figure from the back of the head to the shoes at the exact same 1:1 scale and horizontal alignment, showing the rear wolf-cut hairstyle and the back of the blazer.
 
-Right area features a head-and-shoulders portrait at eye level facing the camera, calm neutral expression, showing the hairstyle, the nose bandage, and the blazer collar, with safe headroom above the hair.
+RIGHT ZONE (occupying the right 45% of the canvas width — Figure 4: One Head-and-Shoulders Portrait):
+Features a head-and-shoulders portrait filling the right 45% of the frame at eye level facing the camera directly, calm neutral expression, healthy warm-ivory natural skin with soft rosy cheeks, showing the hairstyle, the nose bandage, and the blazer collar, with safe headroom above the hair.
 
-Soft even studio lighting, light grounding shadow under the shoes, strictly zero text, zero typography, zero labels, zero watermark, zero background scenery, zero props, head and hair fully inside the frame.
+Soft even studio lighting, light grounding shadow under the shoes, strictly zero text, zero typography, zero labels, zero watermark, zero background scenery, zero props, strictly zero height mismatch between the three full-length views, all 4 figures 100% fully visible inside the 16:9 frame, head and hair fully inside the frame.
 ```
 
 **Minor-Safe Model Sheet Rules (mọi nhân vật dưới 18 tuổi — Setting Gate 3B):**
-1. **Truthful age**: state the real age and `teenage student` / `child`. Never `adult`, `young woman`, `young man`, never age up or down.
+1. **Truthful age**: state the real age and `teenage student` / `child` / `toddler`. Never `adult`, `young woman`, `young man`, never age up or down.
 2. **Style**: neutral casting / continuity reference. Banned: fashion, editorial, commercial, beauty, glamour photography; beauty lighting.
-3. **Descriptors**: allowed — height (cm), build word (`small`, `average`, `stocky`), face, eyes, hair, expression. Banned — physique, figure, curves, toned, slender, skin sensuality (`dewy`, `porcelain`, `luminous skin`, `micro-pores`), makeup, `seductive` / `sultry` / `alluring` / `sexy` / `attractive`.
+3. **Descriptors & Healthy Child/Teen Skin Complexion**:
+   - **Allowed & Recommended**: height (cm), build word (`small`, `average`, `stocky`), face shape, **healthy age-appropriate natural skin complexion** (`healthy warm-ivory natural skin`, `smooth fair child complexion`, `healthy sun-kissed tan skin`, `soft natural rosy cheeks`, `faint childhood freckles`, `healthy natural pink lips`), eyes, hair, expression.
+   - **Banned (Adult Glamour/Cosmetic Lexicon)**: physique, figure, curves, toned, slender, adult skin sensuality (`dewy`, `porcelain`, `luminous skin`, `glowing skin`, `micro-pores`), adult cosmetics/makeup (`lipstick`, `eyeliner`, `mascara`), `seductive` / `sultry` / `alluring` / `sexy` / `attractive`.
 4. **Wardrobe**: fully covering, age-appropriate. Banned — form-fitting, skin-tight, cropped, mini, low-cut, sheer, bodysuit, swimwear, underwear, sleepwear.
 5. **Layout**: exception to the headless turnaround standard — full-length views always include the head; the portrait is head-and-shoulders, never chest-up.
 6. **Pose**: neutral upright standing; no reclining, no over-the-shoulder looks, no pouting.
@@ -515,47 +560,51 @@ Style: Theatrical film reference, live-action style, DaVinci grading, masterful 
 
 Ultra-realistic human portrait photography, 8K ultra HD, ultimate details, photorealistic texture, professional studio character model sheet, shot with 85mm f1.4 large aperture lens, shallow depth of field, focus precisely locked on the character's face.
 
-Aesthetic of restrained western suited hunter, cold elite temperament. One young Western male, aged 28, 182cm height, with three-dimensional facial bone structure, porcelain fair cold white skin, delicate and transparent natural skin texture, no heavy makeup, original handsome facial features preserved. Deep brow bones and eye sockets form natural stern shadows, cool gray-blue and dark amber eye color, sharp calm eyes with strong sense of oppression and alienation. Tall and delicate nose bridge, thin natural nude lips, cold and calm facial expression.
+Aesthetic of restrained western suited hunter, cold elite temperament. One young Western male, aged 28, 182cm height, with razor-sharp three-dimensional facial bone structure, toned warm-ivory masculine complexion with a refined natural satin-matte finish and realistic micro-pores, immaculately clean-shaven chiseled jawline, and high sculpted cheekbones. Thick, neatly groomed sword-shaped dark eyebrows and deep brow bones form natural stern shadows over cool gray-blue and dark amber irises with a sharp, commanding gaze. Tall straight nose bridge, well-defined masculine lips with a healthy natural muted-rose tone, cold and composed facial expression.
 
 Neat slicked-back black hair with distinct clear strands, neat and tough style, no earrings and tattoos. Slim-fit black suit matched with high-quality shirt in the same tone, made of matte premium wool with silk inner lining, tailored fit highlighting tough shoulder lines and restrained aura with neat collar design. Overall style dark, cold, restrained and elegant with outstanding elite hunter charm.
 
 Solid pure white studio backdrop with zero scenery and zero environmental elements, creating absolute visual contrast against the black tailored suit and highlighting crisp edge separation. Professional high-end studio lighting, subtle soft contact shadows under feet, soft balanced fill light on face, perfectly showcasing high-grade texture of skin, hair and matte wool fabric. Clean, refined, authoritative elite hunter presentation.
 
-Character reference model sheet, aspect ratio 16:9, clean solid pure white studio background.
+Character reference model sheet, 16:9 widescreen aspect ratio, clean solid pure white studio background, containing 4 figures arranged from left to right across two zones:
 
-Left and center area displays a three-angle full-body turnaround in a natural, relaxed standing posture with arms resting naturally and loosely beside the torso, feet naturally grounded touching floor:
-1. Headless neck-down front view showing tailored suit drape, buttons, lapels, trousers, and dress shoes, with strictly zero head and zero face.
-2. Headless neck-down 90-degree lateral side profile view showing masculine posture, jacket sleeve drape, and shoe profile, with strictly zero head and zero face.
-3. Full-length rear back view INCLUDING complete back of head and slicked-back hairstyle, showing the neat hairline at the nape, jacket vent lines, trouser drape, and heels touching floor.
+LEFT AND CENTER ZONE (occupying the left 55% of the canvas width — Three Compact Full-Body Turnaround Figures at Identical 1:1 Body Scale):
+Displays three full-body turnaround figures standing side by side in a natural, relaxed posture with arms resting loosely beside the torso and dress shoes grounded on the exact same horizontal floor baseline. CRITICAL SCALE LOCK: All three turnaround bodies MUST share the exact same 1:1 anatomical body size — their shoulder lines, chest lines, suit jacket hems, waistlines, and shoe heels must align along strict horizontal parallel lines across all three figures:
+1. Figure 1 (Far Left — Front Full-Body View, Clean Mannequin Neck Cut at Shared Shoulder Line): Full-length front body from the base of the neck down to the dress shoes at the exact same 1:1 body scale and exact same horizontal shoulder height as Figure 3, showing tailored suit drape, buttons, lapels, trousers, and dress shoes. Clean mannequin-style neck termination at the collar with wide empty white studio background space above the neck (strictly zero head, zero face, and never stretching the headless body to touch the top border).
+2. Figure 2 (Center-Left — 90-Degree Lateral Side Profile Full-Body View, Clean Mannequin Neck Cut at Shared Shoulder Line): Full-length 90-degree side profile body from the base of the neck down to the dress shoes at the exact same 1:1 body scale and exact same horizontal shoulder height as Figure 3, showing masculine posture, jacket sleeve drape, and shoe profile. Clean mannequin-style neck termination at the collar with wide empty white studio background space above the neck (strictly zero head, zero face, and never stretching the headless body to touch the top border).
+3. Figure 3 (Center — Rear Back Full-Body View WITH Head & Hair at Shared Shoulder Line): Full-length rear back view from the top of the head down to the dress shoes at the exact same 1:1 body scale, with shoulders, jacket hem, waistline, and shoe heels aligned strictly horizontally with Figures 1 and 2, showing the complete back of the head and slicked-back hairstyle extending into the upper space above the shared shoulder line, neat hairline at the nape, jacket vent lines, trouser drape, and heels touching floor.
 
-Right area features a prominent, zoomed-in high-definition chest-up portrait filling the right frame with impactful facial clarity while maintaining safe headroom margin above the hair crown, entire head, full cranium, and complete slicked-back hairstyle 100% fully visible inside the canvas with clear breathing space below top border, in strictly direct frontal eye-level view facing camera directly, capturing razor-sharp facial features, skin texture, iris color with natural catchlights, styled hair strands, and suit collar.
+RIGHT ZONE (occupying the right 45% of the canvas width — Figure 4: One Large Frontal Chest-Up Portrait):
+Features a prominent, zoomed-in high-definition chest-up portrait filling the right 45% of the frame with impactful facial clarity while maintaining safe headroom margin above the hair crown, entire head, full cranium, and complete slicked-back hairstyle 100% fully visible inside the canvas with clear breathing space below top border, in strictly direct frontal eye-level view facing camera directly, capturing razor-sharp facial features, satin-matte skin texture, iris color with natural catchlights, styled hair strands, and suit collar.
 
-Professional high-end studio lighting, subtle soft contact shadows under feet, strictly zero text, zero typography, zero labels, strictly zero background scenery, zero environmental elements, zero furniture, zero watermark, strictly zero cropped head, strictly no cut-off hair, no truncated hair crown, no hair touching canvas edges, ample empty white headroom margin above the skull, pulled back camera framing, strictly zero out-of-frame head, no chopped skull, portrait strictly frontal view only.
+Professional high-end studio lighting, subtle soft contact shadows under feet, strictly zero text, zero typography, zero labels, strictly zero background scenery, zero environmental elements, zero furniture, zero watermark, strictly zero height mismatch between the three full-body turnaround figures, strictly no enlarged or stretched headless bodies, headless necks must never touch the top canvas border, all three turnaround bodies must align horizontally at the shoulders, waist, and heels, all 4 figures 100% fully visible inside the 16:9 frame, strictly zero cropped head, strictly no cut-off hair, no truncated hair crown, no hair touching canvas edges, ample empty white headroom margin above the skull, strictly zero out-of-frame head, no chopped skull, portrait strictly frontal view only.
 ```
 
 ##### 🎬 MẪU 1B: TRANG PHỤC SÁNG MÀU ➔ BẮT BUỘC NỀN TỐI TRUNG TÍNH STUDIO (LIGHT ATTIRE • SOLID DARK BACKDROP)
-*(Áp dụng luật tương phản: Nhân vật mặc trang phục sáng màu như lanh kem, áo blouse trắng ➔ Bắt buộc dùng phông xám tối studio để nổi bật viền vải; 3 góc toàn thân đứng thả lỏng tự nhiên, không text)*
+*(Áp dụng luật tương phản: Nhân vật mặc trang phục sáng màu như lanh kem, áo blouse trắng ➔ Bắt buộc dùng phông xám tối studio để nổi bật viền vải; 3 góc toàn thân cùng tỷ lệ 1:1 gióng thẳng hàng ngang vai - eo - gót giày, không text)*
 ```text
 Style: Theatrical film reference, live-action style, DaVinci grading, masterful composition & cinematic color.
 
 Ultra-realistic human portrait photography, 8K ultra HD, ultimate details, photorealistic texture, professional studio character model sheet, shot with 85mm f1.4 large aperture lens, shallow depth of field, focus precisely locked on the character's face.
 
-Aesthetic of pure poised artisan, graceful resilient temperament. One young female, aged 26, 168cm height, with three-dimensional facial bone structure, warm luminous honey-olive skin with delicate natural skin texture, no heavy makeup, original beautiful facial features preserved. Expressive almond-shaped hazel eyes with calm resolute gaze, straight delicate nose bridge, natural soft lips, composed dignified facial expression.
+Aesthetic of pure poised artisan, graceful resilient temperament. One young female, aged 26, 168cm height, with three-dimensional facial bone structure, warm luminous honey-olive complexion with a radiant dewy-satin skin finish and delicate natural micro-pores; softly arched feathered eyebrows, subtle tightline lash definition framing expressive almond-shaped hazel eyes with a calm resolute gaze, a faint warm-apricot flush on the cheekbones, straight delicate nose bridge, and plump hydrated lips with a soft coral-rose gradient tint, composed dignified facial expression.
 
 Wavy walnut-brown hair tied neatly back with distinct clear hair strands, bare ears with no earrings, bare skin with no tattoos. Pristine baseline tailored light ivory-cream homespun linen tunic, natural breathable organic fabric texture, fine weave details, clean simple neckline, bare hands. Overall style elegant, serene, grounded and pure.
 
 Solid dark neutral grey studio backdrop with zero scenery and zero environmental elements, creating sharp luminous contrast against the light cream linen tunic. Cinematic Rembrandt studio lighting, crisp cool rim outline light separating the light silhouette from the dark background, soft warm fill light on face with controlled chiaroscuro shadows. Delicate light effect showcasing organic fabric weave and skin texture.
 
-Character reference model sheet, aspect ratio 16:9, clean solid dark neutral studio background.
+Character reference model sheet, 16:9 widescreen aspect ratio, clean solid dark neutral studio background, containing 4 figures arranged from left to right across two zones:
 
-Left and center area displays a three-angle full-body turnaround in a natural, relaxed standing posture with arms resting naturally and loosely beside the torso, feet naturally grounded touching floor:
-1. Headless neck-down front view showing linen tunic drape, woven texture, simple neckline, trousers, and footwear, with strictly zero head and zero face.
-2. Headless neck-down 90-degree lateral side profile view showing tunic drape, relaxed posture, and side profile of footwear, with strictly zero head and zero face.
-3. Full-length rear back view INCLUDING complete back of head and tied walnut-brown hairstyle, showing nape of neck, rear linen seams, and heels touching floor.
+LEFT AND CENTER ZONE (occupying the left 55% of the canvas width — Three Compact Full-Body Turnaround Figures at Identical 1:1 Body Scale):
+Displays three full-body turnaround figures standing side by side in a natural, relaxed posture with arms resting loosely beside the torso and footwear grounded on the exact same horizontal floor baseline. CRITICAL SCALE LOCK: All three turnaround bodies MUST share the exact same 1:1 anatomical body size — their shoulder lines, chest lines, tunic hems, waistlines, and footwear heels must align along strict horizontal parallel lines across all three figures:
+1. Figure 1 (Far Left — Front Full-Body View, Clean Mannequin Neck Cut at Shared Shoulder Line): Full-length front body from the base of the neck down to the footwear at the exact same 1:1 body scale and exact same horizontal shoulder height as Figure 3, showing linen tunic drape, woven texture, simple neckline, trousers, and footwear. Clean mannequin-style neck termination at the neckline with wide empty dark studio background space above the neck (strictly zero head, zero face, and never stretching the headless body to touch the top border).
+2. Figure 2 (Center-Left — 90-Degree Lateral Side Profile Full-Body View, Clean Mannequin Neck Cut at Shared Shoulder Line): Full-length 90-degree side profile body from the base of the neck down to the footwear at the exact same 1:1 body scale and exact same horizontal shoulder height as Figure 3, showing tunic drape, relaxed posture, and side profile of footwear. Clean mannequin-style neck termination at the neckline with wide empty dark studio background space above the neck (strictly zero head, zero face, and never stretching the headless body to touch the top border).
+3. Figure 3 (Center — Rear Back Full-Body View WITH Head & Hair at Shared Shoulder Line): Full-length rear back view from the top of the head down to the footwear at the exact same 1:1 body scale, with shoulders, tunic hem, waistline, and heels aligned strictly horizontally with Figures 1 and 2, showing the complete back of the head and tied walnut-brown hairstyle extending into the upper space above the shared shoulder line, nape of neck, rear linen seams, and heels touching floor.
 
-Right area features a prominent, zoomed-in high-definition chest-up portrait filling the right frame with impactful facial clarity while maintaining safe headroom margin above the hair crown, entire head, full cranium, and complete wavy walnut-brown hairstyle 100% fully visible inside the canvas with clear breathing space below top border, in strictly direct frontal eye-level view facing camera directly, capturing razor-sharp facial features, skin texture, hazel iris catchlights, styled walnut-brown hair strands, and organic neckline.
+RIGHT ZONE (occupying the right 45% of the canvas width — Figure 4: One Large Frontal Chest-Up Portrait):
+Features a prominent, zoomed-in high-definition chest-up portrait filling the right 45% of the frame with impactful facial clarity while maintaining safe headroom margin above the hair crown, entire head, full cranium, and complete wavy walnut-brown hairstyle 100% fully visible inside the canvas with clear breathing space below top border, in strictly direct frontal eye-level view facing camera directly, capturing razor-sharp facial features, dewy-satin skin texture, hazel iris catchlights, coral-rose gradient lips, styled walnut-brown hair strands, and organic neckline.
 
-Professional studio lighting, subtle soft grounding shadows under footwear, strictly zero text, zero typography, zero labels, strictly zero background scenery, zero environmental elements, zero furniture, zero watermark, strictly zero cropped head, strictly no cut-off hair, no truncated hair crown, no hair touching canvas edges, ample empty dark headroom margin above the skull, pulled back camera framing, strictly zero out-of-frame head, no chopped skull, portrait strictly frontal view only.
+Professional studio lighting, subtle soft grounding shadows under footwear, strictly zero text, zero typography, zero labels, strictly zero background scenery, zero environmental elements, zero furniture, zero watermark, strictly zero height mismatch between the three full-body turnaround figures, strictly no enlarged or stretched headless bodies, headless necks must never touch the top canvas border, all three turnaround bodies must align horizontally at the shoulders, waist, and heels, all 4 figures 100% fully visible inside the 16:9 frame, strictly zero cropped head, strictly no cut-off hair, no truncated hair crown, no hair touching canvas edges, ample empty dark headroom margin above the skull, strictly zero out-of-frame head, no chopped skull, portrait strictly frontal view only.
 ```
 
 ##### 🎮 MẪU 2: PHONG CÁCH 3D GAME CG HOLLYWOOD (UNREAL ENGINE & OCTANE RENDER • SOLID STUDIO BACKDROP)
@@ -564,22 +613,51 @@ Style: 3D, game CG, cinematic quality, rendered in Unreal Engine, Octane Render,
 
 High-end character design showcase, 8K ultra HD, ultimate polygon details, physically based rendering (PBR) textures, professional studio character model sheet, virtual camera with 85mm optical perspective, creamy shallow depth of field, focus locked on facial features.
 
-Aesthetic of restrained western suited hunter, cold elite temperament. One young Western male, aged 28, 182cm height, with stylized three-dimensional facial bone structure, porcelain fair cold skin with fine subsurface scattering pores, no heavy makeup, striking handsome features. Deep brow bones and sculpted eye sockets creating crisp natural shadow planes, dual-tone cool gray-blue and dark amber irises, sharp piercing calm gaze with palpable aura of dominance. Straight sculpted nose bridge, thin nude lips, cold disciplined expression.
+Aesthetic of restrained western suited hunter, cold elite temperament. One young Western male, aged 28, 182cm height, with stylized three-dimensional facial bone structure, toned warm-ivory masculine skin with fine subsurface scattering pores and a clean satin-matte finish, immaculately clean-shaven angular jawline, and striking handsome features. Thick, neatly groomed dark eyebrows, deep brow bones, and sculpted eye sockets creating crisp natural shadow planes, dual-tone cool gray-blue and dark amber irises, sharp piercing calm gaze with palpable aura of dominance. Straight sculpted nose bridge, well-defined masculine lips with a healthy natural muted-rose tone, cold disciplined expression.
 
 Neat slicked-back jet-black hair with distinct strand-based hair grooming, sharp clean hairline, zero earrings and zero tattoos. Slim-fit tailored black suit and matching dress shirt, rendered in matte wool PBR weave with subtle silk sheen on lapel and inner lining, sharp masculine shoulder silhouette, structured collar. Dark, austere, restrained aristocratic assassin aesthetic.
 
 Solid pure white studio backdrop with zero scenery and zero environmental elements, creating maximum visual contrast against the tailored black suit and ensuring pristine edge separation. Studio key lighting casting crisp contact shadows under feet, delicate fill light revealing micro-fabric weave and subsurface skin scatter. Disciplined, lethal, calculated hunter aura.
 
-Character reference model sheet, aspect ratio 16:9, clean solid pure white studio background.
+Character reference model sheet, 16:9 widescreen aspect ratio, clean solid pure white studio background, containing 4 figures arranged from left to right across two zones:
 
-Left and center area displays a three-angle full-body turnaround in a natural, relaxed standing posture with arms resting naturally and loosely beside the torso, feet naturally grounded touching floor:
-1. Headless neck-down front view showing tailored suit drape, buttons, lapels, trousers, and dress shoes, with strictly zero head and zero face.
-2. Headless neck-down 90-degree lateral side profile view showing 3D character silhouette, jacket profile, and shoe profile, with strictly zero head and zero face.
-3. Full-length rear back view INCLUDING complete back of head and sculpted slicked-back hairstyle, showing the sharp hairline at the nape, jacket vent lines, and shoes touching floor.
+LEFT AND CENTER ZONE (occupying the left 55% of the canvas width — Three Compact Full-Body Turnaround Figures at Identical 1:1 Body Scale):
+Displays three full-body turnaround figures standing side by side in a natural, relaxed posture with arms resting loosely beside the torso and dress shoes grounded on the exact same horizontal floor baseline. CRITICAL SCALE LOCK: All three turnaround bodies MUST share the exact same 1:1 anatomical body size — their shoulder lines, chest lines, suit jacket hems, waistlines, and shoe heels must align along strict horizontal parallel lines across all three figures:
+1. Figure 1 (Far Left — Front Full-Body View, Clean Mannequin Neck Cut at Shared Shoulder Line): Full-length front body from the base of the neck down to the dress shoes at the exact same 1:1 body scale and exact same horizontal shoulder height as Figure 3, showing tailored suit drape, buttons, lapels, trousers, and dress shoes. Clean mannequin-style neck termination at the collar with wide empty white studio background space above the neck (strictly zero head, zero face, and never stretching the headless body to touch the top border).
+2. Figure 2 (Center-Left — 90-Degree Lateral Side Profile Full-Body View, Clean Mannequin Neck Cut at Shared Shoulder Line): Full-length 90-degree side profile body from the base of the neck down to the dress shoes at the exact same 1:1 body scale and exact same horizontal shoulder height as Figure 3, showing 3D character silhouette, jacket profile, and shoe profile. Clean mannequin-style neck termination at the collar with wide empty white studio background space above the neck (strictly zero head, zero face, and never stretching the headless body to touch the top border).
+3. Figure 3 (Center — Rear Back Full-Body View WITH Head & Hair at Shared Shoulder Line): Full-length rear back view from the top of the head down to the dress shoes at the exact same 1:1 body scale, with shoulders, jacket hem, waistline, and shoe heels aligned strictly horizontally with Figures 1 and 2, showing the complete back of the head and sculpted slicked-back hairstyle extending into the upper space above the shared shoulder line, sharp hairline at the nape, jacket vent lines, and shoes touching floor.
 
-Right area features a prominent, zoomed-in high-definition chest-up portrait filling the right frame with impactful facial clarity while maintaining safe headroom margin above the hair crown, entire head, full cranium, and complete sculpted hairstyle 100% fully visible inside the canvas with clear breathing space below top border, in strictly direct frontal eye-level view facing camera directly, capturing stylized facial features, PBR subsurface skin scattering, piercing irises, strand-based hair grooms, and suit lapel.
+RIGHT ZONE (occupying the right 45% of the canvas width — Figure 4: One Large Frontal Chest-Up Portrait):
+Features a prominent, zoomed-in high-definition chest-up portrait filling the right 45% of the frame with impactful facial clarity while maintaining safe headroom margin above the hair crown, entire head, full cranium, and complete sculpted hairstyle 100% fully visible inside the canvas with clear breathing space below top border, in strictly direct frontal eye-level view facing camera directly, capturing stylized facial features, PBR subsurface skin scattering, piercing irises, strand-based hair grooms, and suit lapel.
 
-Key lighting casting crisp contact shadows under feet, strictly zero text, zero typography, zero labels, strictly zero environmental elements, zero scenery, zero furniture, zero watermark, strictly zero cropped head, strictly no cut-off hair, no truncated hair crown, no hair touching canvas edges, ample empty white headroom margin above the skull, pulled back camera framing, strictly zero out-of-frame head, no chopped skull, portrait strictly frontal view only.
+Key lighting casting crisp contact shadows under feet, strictly zero text, zero typography, zero labels, strictly zero environmental elements, zero scenery, zero furniture, zero watermark, strictly zero height mismatch between the three full-body turnaround figures, strictly no enlarged or stretched headless bodies, headless necks must never touch the top canvas border, all three turnaround bodies must align horizontally at the shoulders, waist, and heels, all 4 figures 100% fully visible inside the 16:9 frame, strictly zero cropped head, strictly no cut-off hair, no truncated hair crown, no hair touching canvas edges, ample empty white headroom margin above the skull, strictly zero out-of-frame head, no chopped skull, portrait strictly frontal view only.
+```
+
+##### 🎨 MẪU 2B: PHONG CÁCH HOẠT HÌNH 3D BÁN CHÂN THỰC (3D SEMI-REALISTIC ANIMATION • LIGHT CHASER & BLUR STUDIO STYLE • SOLID STUDIO BACKDROP)
+*(Chuẩn vàng cho dòng phim Hoạt hình 3D Bán Chân Thực / 3D Stylized Realism — kết hợp tỷ lệ giải phẫu người thật 7.5–8 đầu, cấu trúc xương mặt 3D sắc nét, đôi mắt bán chân thực có hồn với catchlight kép, làn da Subsurface Scattering [SSS] mịn satin tự nhiên [tránh rãnh lỗ chân lông quá thô gây hiệu ứng Uncanny Valley và tránh bề mặt nhựa bóng như búp bê], tóc 3D gẩy sợi mượt [strand-based hair grooming] và chất liệu vải/kim loại PBR cao cấp)*
+```text
+Style: 3D Semi-Realistic Cinematic Animation, high-end stylized 3D realism in the signature style of Light Chaser Animation and Blur Studio, rendered in Unreal Engine 5 and Octane Render, ray-traced global illumination, physically based rendering (PBR) textures, refined subsurface scattering skin shader, strand-based 3D hair grooming.
+
+High-end 3D semi-realistic character design showcase, 8K ultra HD, sculpted three-dimensional facial geometry, physically based rendering (PBR) material shaders, professional studio character model sheet, creamy shallow depth of field, focus precisely locked on facial features.
+
+Aesthetic of poised modern heroine, sharp resilient temperament. One young East Asian female, aged 24, 170cm height, true-to-life 8-head high-fashion anatomical proportions, graceful hourglass figure with a slender cinched waist, sculpted feminine bust-to-hip curves, delicate collarbones, and long toned legs, with refined sculpted 3D facial bone structure, defined V-line jawline, and high cheekbones. Smooth warm-ivory complexion rendered with delicate subsurface scattering (SSS) warmth at the cheeks and ears and a natural satin-dewy skin finish — neither hyper-rough photorealistic pores nor glossy plastic doll sheen. Softly arched feathered dark-brown eyebrows with individual hair fibers framing expressive semi-realistic almond-shaped dark amber eyes with multi-layered iris depth, crisp dual studio catchlights, and lush curled eyelashes. Straight sculpted nose bridge, plump hydrated coral-rose lips with subtle satin-gloss sheen, calm alluring facial expression.
+
+Long flowing raven-black hair styled in a sleek half-up ponytail with distinct 3D strand-based hair grooming, fine silky flyaway wisps catching the rim light, and natural anisotropic hair sheen; delicate pearl drop earrings, bare skin with zero tattoos. Tailored form-fitting midnight-navy couture sheath midi dress with a sculpted V-neckline, structured shoulders, a slender gold-buckled waist belt accentuating her hourglass waist, and a sleek knee-length pencil skirt silhouette, rendered in tactile PBR silk-wool weave and paired with pointed black patent-leather stiletto heels, bare hands free of props.
+
+Solid pure white studio backdrop with zero scenery and zero environmental elements, creating maximum optical contrast against the midnight-navy couture sheath dress and raven-black hair for razor-sharp silhouette separation. Three-point studio key lighting casting crisp soft contact shadows under stiletto heels, warm rim light defining hair strands and hourglass contours, delicate fill light showcasing refined SSS skin shader and PBR fabric weave.
+
+Character reference model sheet, 16:9 widescreen aspect ratio, clean solid pure white studio background, containing 4 figures arranged from left to right across two zones:
+
+LEFT AND CENTER ZONE (occupying the left 55% of the canvas width — Three Compact Full-Body Turnaround Figures at Identical 1:1 Body Scale):
+Displays three full-body turnaround figures standing side by side in a natural, poised posture with arms resting loosely beside the torso and stiletto heels grounded on the exact same horizontal floor baseline. CRITICAL SCALE LOCK: All three turnaround bodies MUST share the exact same 1:1 anatomical body size — their shoulder lines, bust lines, cinched waistlines, dress hems, and stiletto heels must align along strict horizontal parallel lines across all three figures:
+1. Figure 1 (Far Left — Front Full-Body View, Clean Mannequin Neck Cut at Shared Shoulder Line): Full-length front body from the base of the neck down to the stiletto heels at the exact same 1:1 body scale and exact same horizontal shoulder height as Figure 3, showing midnight-navy form-fitting couture sheath midi dress, gold waist belt, hourglass waist-to-hip silhouette, and black stiletto heels. Clean mannequin-style neck termination at the collar with wide empty white studio background space above the neck (strictly zero head, zero face, and never stretching the headless body to touch the top border).
+2. Figure 2 (Center-Left — 90-Degree Lateral Side Profile Full-Body View, Clean Mannequin Neck Cut at Shared Shoulder Line): Full-length 90-degree side profile body from the base of the neck down to the stiletto heels at the exact same 1:1 body scale and exact same horizontal shoulder height as Figure 3, showing sculpted 3D hourglass body profile, sheath dress contour, and stiletto heel silhouette. Clean mannequin-style neck termination at the collar with wide empty white studio background space above the neck (strictly zero head, zero face, and never stretching the headless body to touch the top border).
+3. Figure 3 (Center — Rear Back Full-Body View WITH Head & Hair at Shared Shoulder Line): Full-length rear back view from the top of the head down to the stiletto heels at the exact same 1:1 body scale, with shoulders, waistline, dress hem, and stiletto heels aligned strictly horizontally with Figures 1 and 2, showing the complete back of the head and flowing half-up raven-black strand-groomed hair extending above and below the shared shoulder line, tailored back seam of the sheath dress, and heels touching floor.
+
+RIGHT ZONE (occupying the right 45% of the canvas width — Figure 4: One Large Frontal Chest-Up Portrait):
+Features a prominent, zoomed-in high-definition chest-up portrait filling the right 45% of the frame with impactful 3D semi-realistic facial clarity while maintaining safe headroom margin above the hair crown, entire head, full cranium, and complete half-up raven-black hairstyle 100% fully visible inside the canvas with clear breathing space below top border, in strictly direct frontal eye-level view facing camera directly, capturing sculpted 3D facial geometry, refined SSS satin skin finish, expressive dark amber irises with dual catchlights, strand-based hair grooming, and midnight-navy V-neck dress collarbone line.
+
+Studio key lighting casting crisp contact shadows under boots, strictly zero text, zero typography, zero labels, strictly zero environmental elements, zero scenery, zero furniture, zero watermark, strictly zero height mismatch between the three full-body turnaround figures, strictly no enlarged or stretched headless bodies, headless necks must never touch the top canvas border, all three turnaround bodies must align horizontally at the shoulders, waist, and heels, all 4 figures 100% fully visible inside the 16:9 frame, strictly zero cropped head, strictly no cut-off hair, no truncated hair crown, no hair touching canvas edges, ample empty white headroom margin above the skull, strictly zero out-of-frame head, no chopped skull, portrait strictly frontal view only.
 ```
 
 
@@ -594,16 +672,18 @@ Character: One heavy cybernetic security enforcer automaton, non-human android f
 
 Aesthetic: Industrial, tactical, imposing cybernetic enforcer. Zero organic human facial features, zero fabric costume, integrated chest core reactor module with subtle internal cyan luminescence, reinforced shoulder pauldrons, articulated hydraulic forearm plates, heavy digitigrade pneumatic legs with magnetic stabilizing foot clamps.
 
-Character reference model sheet, aspect ratio 16:9, clean solid neutral dark-grey studio infinity cyclorama background.
+Character reference model sheet, 16:9 widescreen aspect ratio, clean solid neutral dark-grey studio infinity cyclorama background, containing 4 figures arranged from left to right across two zones:
 
-Left and center area displays a three-angle full-body turnaround in an imposing, relaxed upright standing posture with heavy arms resting naturally beside the mechanical torso, feet grounded touching floor:
-1. Front view, full figure from cranial apex to foot clamps, showing complete frontal chassis, chest reactor, shoulder pauldrons, waist joints, and leg hydraulics, WITH complete mechanical head, monovisor, and jaw servos 100% fully visible.
-2. 90-degree lateral side profile view, full figure from cranial apex to foot clamps, showing chassis depth, spinal heat sinks, hydraulic pistons, arm profile, and stabilizing heel clamps, WITH complete head and visor profile 100% fully visible.
-3. Full-length rear back view from the top of the mechanical skull down to the floor, showing rear cranial plating, neck cable cluster, dorsal exhaust vents, spine power conduits, and rear leg hydraulics.
+LEFT AND CENTER ZONE (occupying the left 55% of the canvas width — Three Compact Full-Body Turnaround Figures WITH Complete Head at Identical 1:1 Scale):
+Displays three full-body turnaround figures standing side by side in an imposing, relaxed upright posture with heavy arms resting naturally beside the mechanical torso and foot clamps grounded on the exact same horizontal floor baseline. CRITICAL SCALE LOCK: All three full-body figures MUST share the exact same 1:1 anatomical scale — their cranial apexes, shoulder pauldrons, chest reactors, waist joints, and foot clamps must align along strict horizontal parallel lines across all three figures:
+1. Figure 1 (Far Left — Front Full-Body View WITH Complete Head): Full figure from cranial apex to foot clamps at 1:1 scale, showing complete frontal chassis, chest reactor, shoulder pauldrons, waist joints, and leg hydraulics, WITH complete mechanical head, monovisor, and jaw servos 100% fully visible.
+2. Figure 2 (Center-Left — 90-Degree Lateral Side Profile Full-Body View WITH Complete Head): Full figure from cranial apex to foot clamps at the exact same 1:1 scale and horizontal shoulder/cranial alignment as Figures 1 and 3, showing chassis depth, spinal heat sinks, hydraulic pistons, arm profile, and stabilizing heel clamps, WITH complete head and visor profile 100% fully visible.
+3. Figure 3 (Center — Rear Back Full-Body View WITH Complete Head): Full-length rear back view from the top of the mechanical skull down to the floor at the exact same 1:1 scale and horizontal alignment, showing rear cranial plating, neck cable cluster, dorsal exhaust vents, spine power conduits, and rear leg hydraulics.
 
-Right area features a prominent, zoomed-in high-definition upper-torso-to-head medium shot filling the right frame with impactful mechanical clarity while maintaining safe headroom margin above the cranial antenna and apex, entire mechanical head and skull 100% fully visible inside the canvas with clear breathing space below top border, in direct frontal eye-level view facing camera directly, capturing razor-sharp detail of the glowing cyan monovisor optical lens, micro-etched serial numbers, brushed titanium neck hydraulics, and pulsing chest core reactor.
+RIGHT ZONE (occupying the right 45% of the canvas width — Figure 4: One Large Upper-Torso-to-Head Medium Shot):
+Features a prominent, zoomed-in high-definition upper-torso-to-head medium shot filling the right 45% of the frame with impactful mechanical clarity while maintaining safe headroom margin above the cranial antenna and apex, entire mechanical head and skull 100% fully visible inside the canvas with clear breathing space below top border, in strictly direct frontal eye-level view facing camera directly, capturing razor-sharp detail of the glowing cyan monovisor optical lens, micro-etched serial numbers, brushed titanium neck hydraulics, and pulsing chest core reactor.
 
-Professional high-end studio rim lighting, crisp cool contact shadows under foot clamps, strictly zero text, zero typography, zero labels, strictly zero background scenery, zero environmental elements, zero furniture, zero watermark, strictly zero cropped head, strictly no cut-off antenna, safe headroom margin above cranial apex, pulled back camera framing, strictly zero out-of-frame head, medium shot strictly frontal view.
+Professional high-end studio rim lighting, crisp cool contact shadows under foot clamps, strictly zero text, zero typography, zero labels, strictly zero background scenery, zero environmental elements, zero furniture, zero watermark, strictly zero height mismatch between the three full-body turnaround figures, all three turnaround bodies must align horizontally at the cranial apex, shoulders, waist, and foot clamps, all 4 figures 100% fully visible inside the 16:9 frame, strictly zero cropped head, strictly no cut-off antenna, safe headroom margin above cranial apex, strictly zero out-of-frame head, medium shot strictly frontal view.
 ```
 
 ---
@@ -651,7 +731,8 @@ Before finalizing any cast architecture, verify:
 In the Sven Cinematic Directorial Framework, dramatic energy does not emerge from isolated characters, but from the high-voltage friction between **A1 (Main Protagonist)** and **A2 (Main Antagonist)**, detonated by the cross-tethered loyalties of **Tier B Satellites (`B-01` to `B-20`)**, and mirrored by the vocal public opinion of **Tier C (Greek Chorus)**.
 
 > [!IMPORTANT]
-> **STRICT POSITIVE & ZERO-FATALITY MANDATE**:
+> **ZERO-FATALITY SAFETY GUARDRAIL & GENRE-CALIBRATED RESOLUTION (`1-narrative-screenplay-architecture.md` §0.1)**:
+> While **Zero Fatalities / Zero Gore** applies system-wide for AI video platform safety, the **climax & resolution mechanism MUST calibrate by genre** (Moral Awakening & Reconciliation for Family/Healing Drama; Kinetic Breakthrough & Knockout/Disarmament for Action/Martial Arts; Intellectual Checkmate & Cold Legal Arrest for Thriller/Crime; Ruthless Status Reversal & Severing Toxic Ties for Viral Microdrama; Comedic Snowball Collapse & Reset for Sitcom). Below is the foundational positive/restorative resolution baseline:
 > All stories must resolve with **positive, restorative, uplifting moral catharsis**. 
 > - **Zero fatalities, zero executions, zero terminal violence.**
 > - Conflicts are won through truth, legal justice, moral awakening (Anagnorisis), and community reconciliation.
@@ -692,7 +773,7 @@ The narrative revolves around this character. Every plot beat, scene, and camera
 ---
 
 ### A1-01 | The Quiet Carrier (Người Gánh Vác Trầm Lặng)
-* **Age**: 45–65 | **Gender**: Any
+* **Age**: Any (Genre-Calibrated: 20s–30s Action/Microdrama/Romance, 30s–50s Thriller, 45–65 Family Drama) | **Gender**: Any
 * **Core**: Has carried a crushing burden — grief, family debt, or unconfessed sacrifice — so long that it has shaped their physical posture and quiet demeanor.
 * **Wound**: The exact moment they chose silence to protect someone else, living with the silent consequences ever since.
 * **Want (Surface)**: To maintain the fragile peace — avoid confrontation, keep their head down.
@@ -701,7 +782,7 @@ The narrative revolves around this character. Every plot beat, scene, and camera
 * **Observable Habits**: Subconsciously touches a brass watch fob or worn ring; always positions themselves with a clear line of sight to the room's exit.
 
 ### A1-02 | The Indispensable Provider (Người Cho Đi Quên Bản Thân)
-* **Age**: 48–62 | **Gender**: Any
+* **Age**: Any (Genre-Calibrated) | **Gender**: Any
 * **Core**: Has spent decades organizing, shielding, and sustaining everyone else (family, enterprise, community). Now faces an era where they are cast aside.
 * **Wound**: Identity built entirely on being indispensable. When others take credit or discard them, who are they?
 * **Want**: Acknowledgment, respect, and rest.
@@ -710,7 +791,7 @@ The narrative revolves around this character. Every plot beat, scene, and camera
 * **Observable Habits**: Silently clears glasses or straightens objects; drinks lukewarm tea because they always serve others first.
 
 ### A1-03 | The Unyielding Stoic (Kẻ Độc Hành Tự Lực)
-* **Age**: 50–68 | **Gender**: Any
+* **Age**: Any (Genre-Calibrated) | **Gender**: Any
 * **Core**: Radical self-reliance as religion. Equates asking for assistance with shameful weakness.
 * **Wound**: Conditioned by an unyielding parent or severe early betrayal that vulnerability is fatal.
 * **Want**: To solve the mounting crisis single-handedly without letting anyone see the cracks.
@@ -719,7 +800,7 @@ The narrative revolves around this character. Every plot beat, scene, and camera
 * **Observable Habits**: Inspects tools or knots meticulously; never initiates a hug but leans in when embraced.
 
 ### A1-04 | The Late Bloomer (Người Bừng Tỉnh Muộn)
-* **Age**: 45–58 | **Gender**: Any
+* **Age**: Any (Genre-Calibrated) | **Gender**: Any
 * **Core**: Attempting an authentic moral path or creative endeavor for the first time at an age when society expects quiet complacency.
 * **Wound**: Spent half a lifetime fulfilling everyone else's expectations, shelving their own soul.
 * **Want**: To prove that time has not run out and that their life still has weight.
@@ -728,7 +809,7 @@ The narrative revolves around this character. Every plot beat, scene, and camera
 * **Observable Habits**: Begins profound sentences and cuts themselves off; wakes up 15 minutes before the alarm to stare at their hands.
 
 ### A1-05 | The Returning Exile (Kẻ Trở Về Từ Bão Táp)
-* **Age**: 45–65 | **Gender**: Any
+* **Age**: Any (Genre-Calibrated: 20s–30s Action/Microdrama/Romance, 30s–50s Thriller, 45–65 Family Drama) | **Gender**: Any
 * **Core**: Has returned to their homeland, trade, or family estate after decades away, forced to confront the wreckage they left behind.
 * **Wound**: The original departure — was it cowardly flight or necessary survival?
 * **Want**: To quietly settle affairs and slip away unrecognized.
@@ -1091,13 +1172,13 @@ Tier C characters (bazaar merchants, neighborhood gossips, court spectators) are
 ## 🏛️ PART III-B: MASTER 16:9 SOVEREIGN MULTI-ANGLE MODEL SHEET SPECIFICATION & PROMPT ENGINE (ZERO-TEXT STANDARD)
 
 ### 1. The 7 Mandatory Character Physical Attributes
-Every reference model sheet must define these 7 invariant physical attributes with zero ambiguity:
+Every reference model sheet must define these 7 invariant physical attributes with zero ambiguity (and strictly zero generic `"no heavy makeup, thin natural nude lips"` boilerplate):
 1. **Height**: Precise height in centimeters (e.g., `Height: 182cm`).
 2. **Head-to-Body Ratio**: Anthropometric proportion (e.g., `Head-to-body ratio: 8 heads`).
-3. **Ethnicity & Skin Texture**: Cultural origin and natural micro-texture (e.g., `Ethnicity: White Western; porcelain fair cold white skin, delicate and transparent natural skin texture, no heavy makeup`).
+3. **Ethnicity, Skin Complexion & Subsurface Finish**: Cultural origin, undertone, and natural skin finish (e.g., `Ethnicity & Skin: East Asian, translucent dewy porcelain skin with rosy undertones; or White Western, toned warm-ivory masculine complexion with a refined natural satin-matte finish and realistic micro-pores`).
 4. **Build**: Anatomical frame (e.g., `Build: slim and well-proportioned, athletic restrained frame`).
 5. **Hair**: Exact cut, color, strand definition, and styling (e.g., `Hair: neat slicked-back black hair with distinct clear strands, neat and tough style, no earrings, no tattoos`).
-6. **Facial Features**: Bone structure, eye sockets, iris colors, nose, and lips (e.g., `Facial features: three-dimensional facial bone structure, deep brow bones forming natural stern shadows, cool gray-blue and dark amber eye color with sharp calm gaze; tall straight nose bridge, thin natural nude lips, cold composed expression`).
+6. **Facial Features & Makeup / Grooming Architecture**: Bone structure, eye sockets, iris colors, nose, lips, and persona-calibrated **Female Makeup Spec** (brow arch, eyeliner/eyeshadow, blush/contour, lip color/finish) or **Male Grooming Spec** (chiseled jaw contour, groomed sword/structured brows, clean-shaven or 1mm designer stubble, healthy natural muted-rose lip tone) — see the **4 Female + 4 Male Archetypes Matrix (§1B)** above.
 7. **Pristine Baseline Wardrobe**: Fabrics, tailoring, and palette (e.g., `Clothing & props: slim-fit black suit matched with high-quality shirt in the same tone, made of matte premium wool with silk inner lining; neat collar design, tailored fit highlighting tough shoulder lines, bare hands`).
 
 ---
@@ -1133,27 +1214,29 @@ Style: 3D, game CG, cinematic quality, rendered in Unreal Engine, Octane Render,
 
 High-end character design showcase, 8K ultra HD, ultimate polygon details, physically based rendering (PBR) textures, professional studio character model sheet, virtual camera with 85mm optical perspective, creamy shallow depth of field, focus locked on facial features.
 
-Aesthetic of determined young master artisan. One young Western male, aged 22, 178cm height, with stylized three-dimensional facial anatomy, smooth warm skin with subtle freckles across nose bridge, large expressive amber irises with clear eye catchlights, resolute eyebrows, gentle sculpted nose, quiet confident smile.
+Aesthetic of sharp young corporate crisis strategist. One young Western male, aged 28, 182cm height, with stylized three-dimensional facial anatomy, smooth warm-ivory skin with subtle subsurface scattering, expressive slate-blue irises with clear eye catchlights, structured eyebrows, straight sculpted nose, composed analytical expression.
 
-Stylized volumetric tousled auburn hair with clear sculpted locks and subtle ambient light bounce, no modern accessories, no piercing. Fitted dark indigo tailored artisan vest over a rolled-sleeve parchment-white linen shirt, weathered leather arm guards, sturdy work trousers, utilitarian leather tool belt.
+Stylized volumetric side-parted dark espresso hair with clear sculpted locks and subtle ambient light bounce, no piercing. Fitted midnight-navy tailored double-breasted blazer over a fine charcoal merino turtleneck sweater, tailored slate wool trousers, polished dark oxblood leather Oxford dress shoes.
 
-Solid dark charcoal studio infinity cyclorama backdrop with zero scenery and zero environmental props, ensuring character colors and clothing silhouette pop with vibrant clarity. Key light angled 45 degrees, soft cool rim light along hair and shoulders, grounding contact shadow under stylized boots.
+Solid light neutral pearl-grey studio infinity cyclorama backdrop with zero scenery and zero environmental props, ensuring dark wardrobe silhouette pops with vibrant clarity. Key light angled 45 degrees, soft cool rim light along hair and shoulders, grounding contact shadow under dress shoes.
 
-Character reference model sheet, aspect ratio 16:9, solid dark studio background.
+Character reference model sheet, 16:9 widescreen aspect ratio, solid studio background, containing 4 figures arranged from left to right across two zones:
 
-Left and center area displays a three-angle full-body turnaround in a natural, relaxed standing posture with arms resting naturally and loosely beside the torso, feet naturally grounded touching floor:
-1. Headless neck-down front view showing tailored artisan vest, rolled-sleeve shirt, trousers, and boots, with strictly zero head and zero face.
-2. Headless neck-down 90-degree lateral side profile view showing stylized silhouette, arm guards, and boot profile, with strictly zero head and zero face.
-3. Full-length rear back view INCLUDING complete back of head and sculpted tousled auburn hairstyle, showing the nape of neck, rear vest seams, and boots touching floor.
+LEFT AND CENTER ZONE (occupying the left 55% of the canvas width — Three Compact Full-Body Turnaround Figures at Identical 1:1 Body Scale):
+Displays three full-body turnaround figures standing side by side in a natural, relaxed posture with arms resting loosely beside the torso and shoes grounded on the exact same horizontal floor baseline. CRITICAL SCALE LOCK: All three turnaround bodies MUST share the exact same 1:1 anatomical body size — their shoulder lines, chest lines, blazer hems, waistlines, and shoe heels must align along strict horizontal parallel lines across all three figures:
+1. Figure 1 (Far Left — Front Full-Body View, Clean Mannequin Neck Cut at Shared Shoulder Line): Full-length front body from the base of the neck down to the shoes at the exact same 1:1 body scale and exact same horizontal shoulder height as Figure 3, showing tailored midnight-navy blazer, charcoal turtleneck, trousers, and Oxford shoes. Clean mannequin-style neck termination at the collar with wide empty studio background space above the neck (strictly zero head, zero face, and never stretching the headless body to touch the top border).
+2. Figure 2 (Center-Left — 90-Degree Lateral Side Profile Full-Body View, Clean Mannequin Neck Cut at Shared Shoulder Line): Full-length 90-degree side profile body from the base of the neck down to the shoes at the exact same 1:1 body scale and exact same horizontal shoulder height as Figure 3, showing stylized silhouette, blazer lapel profile, and shoe profile. Clean mannequin-style neck termination at the collar with wide empty studio background space above the neck (strictly zero head, zero face, and never stretching the headless body to touch the top border).
+3. Figure 3 (Center — Rear Back Full-Body View WITH Head & Hair at Shared Shoulder Line): Full-length rear back view from the top of the head down to the shoes at the exact same 1:1 body scale, with shoulders, blazer hem, waistline, and shoe heels aligned strictly horizontally with Figures 1 and 2, showing the complete back of the head and sculpted dark espresso hairstyle extending into the upper space above the shared shoulder line, nape of neck, rear blazer seams, and shoes touching floor.
 
-Right area features a prominent, zoomed-in high-definition chest-up portrait filling the right frame with impactful facial clarity while maintaining safe headroom margin above the hair crown, entire head, full cranium, and complete sculpted auburn hairstyle 100% fully visible inside the canvas with clear breathing space below top border, in strictly direct frontal eye-level view facing camera directly, capturing stylized facial features, PBR subsurface skin scattering, large amber irises, sculpted hair locks, and tailored vest collar.
+RIGHT ZONE (occupying the right 45% of the canvas width — Figure 4: One Large Frontal Chest-Up Portrait):
+Features a prominent, zoomed-in high-definition chest-up portrait filling the right 45% of the frame with impactful facial clarity while maintaining safe headroom margin above the hair crown, entire head, full cranium, and complete sculpted dark espresso hairstyle 100% fully visible inside the canvas with clear breathing space below top border, in strictly direct frontal eye-level view facing camera directly, capturing stylized facial features, PBR subsurface skin scattering, slate-blue irises, sculpted hair locks, and tailored blazer lapel.
 
-Key lighting casting crisp contact shadows under boots, strictly zero text, zero typography, zero labels, strictly zero environmental elements, zero scenery, zero furniture, zero watermark, strictly zero cropped head, strictly no cut-off hair, no truncated hair crown, no hair touching canvas edges, ample empty dark headroom margin above the skull, pulled back camera framing, strictly zero out-of-frame head, no chopped skull, portrait strictly frontal view only.
+Key lighting casting crisp contact shadows under boots, strictly zero text, zero typography, zero labels, strictly zero environmental elements, zero scenery, zero furniture, zero watermark, strictly zero height mismatch between the three full-body turnaround figures, strictly no enlarged or stretched headless bodies, headless necks must never touch the top canvas border, all three turnaround bodies must align horizontally at the shoulders, waist, and heels, all 4 figures 100% fully visible inside the 16:9 frame, strictly zero cropped head, strictly no cut-off hair, no truncated hair crown, no hair touching canvas edges, ample empty dark headroom margin above the skull, strictly zero out-of-frame head, no chopped skull, portrait strictly frontal view only.
 ```
 
 ## 🏛️ PART IV: THE LIVING CONTINUUM: BASELINE PRESENCE & DYNAMIC FLUIDITY
 
-﻿# Character State Dynamics — Baseline Presence & Dynamic Fluidity
+# Character State Dynamics — Baseline Presence & Dynamic Fluidity
 
 ## The Directorial Philosophy: Beyond Fragmentation & Mechanical Causality
 
@@ -1434,7 +1517,7 @@ A compliant Master Setting file consists of exactly **10 core structural section
   * **1B (Rapid 3-Speaker):** High-stakes rapid reaction, max 3 beats per 10s clip.
   * **1C (Solo Monologue):** Internal revelation / prayer / vow, 1 continuous beat per 10s clip.
   * **2 (Pure Action Non-verbal):** 0 dialogue lines; physical actions, breathing, eye lines only.
-* **Density Rules:** Maximum 14–18 spoken English words per 10s clip to prevent AI audio sync collapse.
+* **Density Rules (Gate 4B):** Maximum **≤ 32 words** for a single speaker (or **≤ 15 words per speaker** in a 2-speaker exchange) per 10s clip to ensure natural AI lip-sync and breathing room.
 * **Format Contract:** English dialogue default, followed by Vietnamese contextual subtitles and parenthetical acting notes.
 
 ### § 5. Section 2 — Canonical Character Cast (`#sec-2`)
@@ -1446,14 +1529,21 @@ A compliant Master Setting file consists of exactly **10 core structural section
 * Profile attributes: Height, silhouettes, color palette, costume textures, signature props, vocal timbre.
 
 ### § 6. Section 3 — Master 16:9 Sovereign Multi-Angle Character Model Sheet Prompts (`#sec-3`)
-* **Standard 16:9 Sovereign Multi-Angle Layout Protocol (Quy Chuẩn Bố Cục Đa Góc Nhìn Chủ Quyền 16:9 — Zero-Text Standard)**:
-  * **Zero-Text Mandate**: Strictly zero text, zero typography, zero metadata card on canvas (100% visual imagery, zero text labels).
-  * **Left-Center Area (~55–60% Canvas - Three-Angle Full-Body Turnaround in Natural Stance)**: Relaxed, natural standing posture with arms resting loosely beside the torso, feet naturally grounded on floor: 1) Headless neck-down front view (zero head and zero face); 2) Headless neck-down 90-degree lateral side profile view (zero head and zero face); 3) Full-length rear back view INCLUDING complete back of head and rear hairstyle (showing rear haircut, nape of neck, rear garment tailoring, and footwear touching floor).
-  * **Right Half (~40–45% Canvas - Dominant High-Definition Chest-Up Portrait)**: The sole facial identity anchor in strictly direct frontal eye-level view facing camera directly. Must strictly enforce the **Headroom & Full-Cranial Retention Law** (`chest-up portrait perfectly framed with generous headroom margin above the hair crown, entire head and complete hairstyle volume 100% visible inside the frame with clear breathing margin below top canvas border`; negative directives: `strictly zero cropped head, no cut-off hair, no truncated hair crown, no out-of-frame head, no chopped skull, strictly zero three-quarter view, strictly zero profile view, strictly zero tilted angle`).
+* **Standard 16:9 Sovereign Multi-Angle Layout Protocol (Quy Chuẩn Bố Cục 4 Hình Đa Góc Nhìn Chủ Quyền 16:9 & Luật Khóa Tỷ Lệ 1:1 Ngang Vai - Eo - Gót Giày — Zero-Text Standard)**:
+  * **Zero-Text Mandate & 4-Figure Zone Split**: Strictly zero text, zero typography, zero metadata card on canvas (100% visual imagery, zero text labels). Must declare upfront `4 figures arranged from left to right across two zones` (`Left & Center Zone = 55% width` for 3 compact turnaround figures + `Right Zone = 45% width` for 1 large frontal chest-up portrait) so Figure 4 is never pushed out of frame.
+  * **Left-Center Zone (55% Canvas Width - Three Compact Full-Body Turnaround Figures at Identical 1:1 Body Scale)**: Relaxed, natural standing posture with arms resting loosely beside the torso, feet naturally grounded on the exact same horizontal floor baseline. **1:1 Body Scale & Horizontal Shoulder-Waist-Heel Alignment Law**: All 3 turnaround bodies MUST share the exact same 1:1 anatomical body size with strictly aligned horizontal shoulder lines, garment hems, waistlines, and shoe heels: 1) Figure 1 (Far Left — Front Full-Body View, clean mannequin-style neck termination at the collar at the exact same horizontal shoulder level as Figure 3, with wide empty studio background space above the neck; strictly zero head, zero face, and never stretching the headless body to touch the top border); 2) Figure 2 (Center-Left — 90-Degree Lateral Side Profile Full-Body View, clean mannequin-style neck termination at the exact same horizontal shoulder level as Figure 3, with wide empty studio background space above the neck; strictly zero head, zero face); 3) Figure 3 (Center — Full-Length Rear Back View INCLUDING complete back of head and rear hairstyle extending into the upper empty space above the shared shoulder line, aligned strictly horizontally with Figures 1 & 2 at the shoulders, waist, and heels).
+  * **Right Zone (45% Canvas Width - Figure 4: Dominant High-Definition Chest-Up Portrait)**: The sole facial identity anchor in strictly direct frontal eye-level view facing camera directly, 100% visible inside the right 45% of the frame. Must strictly enforce the **Headroom & Full-Cranial Retention Law** (`chest-up portrait perfectly framed with generous headroom margin above the hair crown, entire head and complete hairstyle volume 100% visible inside the frame with clear breathing margin below top canvas border`; negative directives: `strictly zero height mismatch between the three full-body turnaround figures, strictly no enlarged or stretched headless bodies, headless necks must never touch the top canvas border, all three turnaround bodies must align horizontally at the shoulders, waist, and heels, all 4 figures 100% fully visible inside the 16:9 frame, strictly zero cropped head, no cut-off hair, no truncated hair crown, no out-of-frame head, no chopped skull, strictly zero three-quarter view, strictly zero profile view, strictly zero tilted angle`).
   * **Aspect Ratio**: Strictly 16:9 Landscape.
   * **Backdrop (The Optical Value Contrast Inversion Law)**: Bắt buộc chọn màu nền studio nghịch đảo với trang phục: Trang phục TỐI MÀU (áo vest đen, sẫm màu) ➔ BẮT BUỘC dùng nền TRẮNG SÁNG Studio (`solid pure white studio background` hoặc xám sáng); Trang phục SÁNG MÀU (áo trắng, kem, ngà voi) ➔ BẮT BUỘC dùng nền TỐI Studio (`solid dark neutral grey studio background` hoặc than chì). Tuyệt đối ZERO bối cảnh ngoại cảnh/nội thất.
-* **7 Mandatory Character Attributes Declared Per Subject**: Height (cm), Head-to-body ratio (heads), Ethnicity & Skin texture, Build, Hair (strands & cut), Facial Features (bone structure, deep eye sockets, dual-tone irises, nose, lips), and Pristine Baseline Costume (fabrics, tailored fit, zero earrings, zero tattoos, bare hands).
+* **7 Mandatory Character Attributes Declared Per Subject**: Height (cm), Head-to-body ratio (heads), Ethnicity & Skin Complexion finish, Build, Hair (strands & cut), Facial Features & Female Makeup / Male Grooming Architecture (bone structure, deep eye sockets, iris color, nose, lips + persona-calibrated female makeup or male grooming; strictly zero generic "no heavy makeup / thin nude lips" boilerplate), and Pristine Baseline Costume (fabrics, tailored fit, zero earrings, zero tattoos, bare hands).
 * **Unified Visual Style Inheritance**: Must explicitly lead with `Style: [Movie Master Visual Style]` (e.g. Theatrical Live-Action DaVinci Grading vs 3D Unreal Engine Realism).
+* **Downstream `[subject]:` Prop-Free Sovereign Subject Contract (In `tap-X.html` Code Block 1)**:
+  * **Formula**: `[ho_ten] [100% Appearance, attire, and facial features Refer to image <N>], [initial architectural anchor & physical posture], hands free of props, [eyeline toward character/landmark] — the only [ho_ten] in frame.`
+  * **4 Strict Prohibitions in `[subject]:` & Action Prose**:
+    1. **Zero Numeric Age (Gate 3A)**: Never write `72-year-old` or `aged 28` in `[subject]:` (exact integer age belongs only in the voice parenthetical `(late-40s weary baritone)`).
+    2. **Zero Clothing Descriptions (Gate 3E)**: Never re-describe suits, dresses, or fabrics in `[subject]:` (100% locked by `[Refer to image <N>]`).
+    3. **Zero Static Makeup / Baseline Skin Re-Description**: Never re-describe static lipstick color, eyeliner, blush, or baseline skin tone in `[subject]:` or action prose (100% locked by the 16:9 Model Sheet reference image); only direct dynamic optical/somatic skin reactions (e.g., warm light grazing cheekbones, flushed cheeks, sweat sheen) during close-ups.
+    4. **Zero Handheld Props**: Never attach cups, bowls, papers, or tools to `[subject]:` at `00:00` (`hands free of props`; all handheld items live in `[PROP]:` and are picked up inside the `[00:00-00:0X]` timeline). *(Exception: In Zone 2 `@CombatDirector` scenes, Combat-Sovereign `[subject]:` declares Martial Style, Tier-1 Weapon/Aura signature, and Story Stake while keeping zero Mode B costume leaks.)*
 
 ### § 7. Section 4A — Master Prop Universe & Minimalist Twist-Catalyst Standard (`#sec-4a`)
 * **The Two-Tier Prop Implementation Standard (Doctrine §10.5):**
@@ -1465,7 +1555,11 @@ A compliant Master Setting file consists of exactly **10 core structural section
     - **STRICT BAN ON MODEL SHEETS**: Never generate 16:9 turnaround reference image sheets or visual assets for Tier 2 items. AI already understands these common objects natively. Describe them with precise natural-English keywords (material, texture, wear, resting position). Numbering matches `workflow.md` §6.3.
 * **The Minimalist Twist-Catalyst Law (Quy Chuẩn Đạo Cụ Tối Giản Phục Vụ Điểm Twist):**
   * **Proportion Cap:** Props must occupy strictly **≤ 5% to 10%** of narrative attention. The story belongs to the humans, their wounds, and their choices.
-  * **Strict Quota:** Maximum **1 to 2 Master Tier 2 Props** per series (e.g. `PROP-01`, and at most `PROP-02`).
+  * **Strict Quota:** Maximum **1 to 2 Master Tier 1 Hero Props** per series (`PROP-01`, and at most `PROP-02`), and **≤ 1–2 active focal props per episode**.
+  * **Prop Mutability & Mandatory Entity Re-Naming Law (`3-cinematography-spatial-continuity.md` §2.3):**
+    - *Level 1 (Surface Change — wet, dusty, blood-stained)*: Keep original noun + surface modifier (`mud-stained leather ledger`).
+    - *Level 2 (Structural Destruction — torn, shattered, burned)*: **MUST rename to a new physical entity noun** (`Torn Parchment Shreds`, `Jagged Ceramic Shards`, `Smoldering Ash Flakes`) and **DROP the intact `[Refer to image]` tag** so the AI video engine does not hallucinate the unbroken object back together.
+    - *Level 3 (180° Echo Metamorphosis)*: At the series finale, the Wound Prop transforms in physical state or meaning to embody the earned catharsis (`WoundProp ➔ 180° EchoProp`).
   * **Anti-Localization Ban (Chống Lạm Dụng Đạo Cụ Cục Bộ):**
     - STRICTLY FORBIDDEN: Bloated catalogs of 5–6 props that clutter every scene or force every scene card to track an object.
     - STRICTLY FORBIDDEN: Titling scenes after props (e.g. "The Empty Jar", "The Broken Bowl"). Scene titles must reflect **Human Drama & Psychological States**.
@@ -1477,13 +1571,30 @@ A compliant Master Setting file consists of exactly **10 core structural section
 * Explicit documentation of:
   * **Stability Laws:** Invariant physical features (dimensions, materials, lore origin).
   * **Twist Payoff Mechanics:** Exactly which Twist Beat (Act II Midpoint or Act III Climax) this prop activates.
+* **Downstream `[PROP]:` Contract (In Stage 4 Interactive Scene Card — Code Block 1)**:
+  * **Tier 1 Hero Prop Formula**: `[Prop Name] [100% Refer to image <prop_ref>] ([brief material/surface state]), resting on [in-scene fixture declared in context] — the only [prop noun] in frame.`
+  * **Tier 2 Everyday Prop Formula**: `[Natural English Prop Name] ([hyper-clear material, color, texture, surface state]), resting on [in-scene fixture declared in context] — the only [prop noun] in frame.`
+  * **Strict Boundary**: Stationary furniture, beds, cribs, tables, chairs, blankets, and curtains belong 100% in `[context]:` and are **NEVER** placed in `[PROP]:`. Only handheld interactive objects picked up, passed, or manipulated by characters in that scene belong in `[PROP]:`.
 
-### § 8. Section 4B — Master Location Universe (`#sec-4b`)
+### § 8. Section 4B — Master Location Universe & Downstream `[context]:` Continuity (`#sec-4b`)
+* **Numbered Environments (`ENV-01` to `ENV-XX`)**: Named using natural English noun phrases **without underscores** in prompt text (e.g., `sunlit townhouse open kitchen`, `weathered riverside timber workshop`).
+* **Mandatory 16:9 2×2 4-Panel Grid Reference Prompt**:
+  * **Top-Left Panel**: Wide establishing view of the main space and entry axis.
+  * **Top-Right Panel**: 180° reverse-angle view showing the opposite wall and full architectural depth.
+  * **Bottom-Left Panel**: High-angle / overhead bird's-eye spatial layout mapping all stationary furniture and fixtures.
+  * **Bottom-Right Panel**: Eye-level detail view of the primary dramatic landmark where core character interaction occurs.
+  * **Invariants**: Uniform lighting color tone across all 4 panels (zero raw Kelvin numbers), **strictly zero people/characters**, **strictly zero text/labels**.
+* **Downstream `[context]:` 5-Vector & Zero Ghost Object Law (In Stage 4 Interactive Scene Card — Code Block 1)**:
+  1. **Anchor & Time**: `[Location Name] [100% Refer to image <location_ref>], [exact time of day (AM/PM)].`
+  2. **Fixed Architectural & Furniture/Textile Inventory ("Có cái gì ở đó")**: Explicitly list all stationary furniture, beds, cribs, tables, chairs, blankets, pillows, curtains, doors, and windows. **Zero Ghost Object Law**: Any fixed structure or bedding a character touches, leans on, sits on, or pulls in the scene MUST be pre-declared here in `[context]:` (and NEVER placed in `[PROP]:`).
+  3. **6-Point Lighting Physics (Zero Kelvin)**: Key source, direction/height, natural color tone (warm amber, steel-blue, neutral daylight — strictly zero raw Kelvin numbers like `4500K`), and shadow falloff.
+  4. **Atmospheric Medium**: Floating dust motes, rain mist, steam, smoke, humidity.
+  5. **Relative Spatial Topology (Zero Metre Math)**: Natural language spatial relationships between landmarks (strictly zero `X/Y/Z` coordinates or metric distance math like `2.5m`).
 * Numbered environments (ENV-01 to ENV-05).
 * Acoustic properties, dominant materials, lighting fixtures, weather vulnerability, 16:9 master environment prompt grids.
 
-### § 9. Section 5 — Scene-by-Scene Production Roadmap (`#sec-5`)
-* **Structure:** Exactly 48 master scene cards (12 scenes per episode x 4 episodes).
+### § 9. Section 5 — Dynamic Episode & Scene Storyline Roadmap (`#sec-5`)
+* **Structure (Dynamic Scale & Act-Specific Archetypes — `workflow.md` §6.4 & `1-narrative-screenplay-architecture.md` Part II §5):** `output/<slug>/setting.html` is the **SOLE HTML deliverable** of the project (generated in Stage 2 for visual asset preparation). Section 5 maps the episode storylines scaled dynamically by **Genre Structural Engine (`Engines 1–6`)** and **Episode Archetype (`Archetypes 1–5`: `Act I = 6–8 Sc`, `Act IIA = 8–9 Sc`, `Act IIB = 9–11 Sc`, `Act IIIA = 8–10 Sc`, `Act IIIB+IV Finale = 10–14 Sc` combining `10.0s` and `15.0s` clips)**—never locked to a rigid 48-scene count. Detailed per-scene rough scripts (`Stage 3`) and scene-by-scene video prompts (`Stage 4`) are executed **100% interactively in chat**.
 * **Core Directorial Mandate:** Every scene is an emotional pulse between living humans. The camera tracks faces, breathing, and psychological tension.
 * **Each Scene Card MUST include:**
   1. `.scene-header-strip`: Scene number badge, Act phase badge, **⏰ Thời Gian Trong Ngày (Diurnal Time)**, **🌡️ Ánh Sáng & Tông Màu (Lighting Tone & Color Temperature)**.
@@ -1529,7 +1640,7 @@ To guarantee standardized implementation across projects, use these exact DOM co
         ⏰ Thời Gian Trong Ngày: [HH:MM] [AM/PM] (Diurnal Phase) <!-- e.g. 05:30 PM (Dusk) or 01:00 AM (Late Night) -->
       </span>
       <span style="color: var(--cyan); background: rgba(56, 189, 248, 0.15); padding: 3px 8px; border-radius: 4px; border: 1px solid rgba(56, 189, 248, 0.3);">
-        🌡️ [XXXX]K • [Lighting Description]
+        🌡️ [Natural Lighting Color Tone — Zero Kelvin] • [Lighting Description]
       </span>
       <span class="scene-timestamp">10.0s (Clip A + Clip B)</span>
     </div>
@@ -1603,20 +1714,19 @@ sec_close = len(re.findall(r"</section>", html))
 assert sec_open == sec_close, f"Section Tag Mismatch: Open={sec_open}, Close={sec_close}"
 assert sec_open == 10, f"Expected exactly 10 sections, found {sec_open}"
 
-# 2. Complete 48-Scene Count
+# 2. Dynamic Scene & Episode Storyline Coverage (Act-Scaled: 6–14 scenes/ep)
 scene_cards = len(re.findall(r'class="scene-master-card"', html))
-assert scene_cards == 48, f"Expected 48 scenes, found {scene_cards}"
+assert scene_cards >= 6, f"Expected at least 6 storyline cards in Section 5, found {scene_cards}"
 
 # 3. Complete Diurnal Tracking with Mandatory 12-Hour AM/PM Notation
 diurnal_badges = len(re.findall(r"⏰ <strong>Thời Gian Trong Ngày:</strong>", html))
-assert diurnal_badges == 48, f"Expected 48 diurnal timestamps, found {diurnal_badges}"
 ampm_badges = len(re.findall(r"⏰ <strong>Thời Gian Trong Ngày:</strong>[^<]*(?:AM|PM)", html))
-assert ampm_badges == 48, f"Expected 48 explicit AM/PM timestamps, found {ampm_badges}"
+assert ampm_badges == diurnal_badges, f"Expected all {diurnal_badges} diurnal timestamps to carry explicit AM/PM, found {ampm_badges}"
 
 # 4. Kinetic Bridges Coverage in Section 5
 sec5_html = html[html.find('id="sec-5"'):html.find('id="sec-6"')]
 bridges = len(re.findall(r"🔗 Mắt Xích Kế Thừa &amp; Cầu Nối Động Năng", sec5_html))
-assert bridges == 48, f"Expected 48 kinetic bridges in Section 5, found {bridges}"
+assert bridges == scene_cards, f"Expected {scene_cards} kinetic bridges in Section 5, found {bridges}"
 
 # 5. English Spoken Dialogue Default
 en_quotes = len(re.findall(r'class="dia-en-quote"', html))
@@ -1634,10 +1744,10 @@ print("✓ All 5 Master Setting Compliance Tests (including strict AM/PM notatio
 2. **Spoken Dialogue Language (`workflow.md` §2.2 Layer 3):** The primary quote (`.dia-en-quote`) is in English by default; when the user targets a country or language, spoken dialogue switches 100% to that language and dialect. Vietnamese is used for subtitles (`.dia-vn-dub`) and acting notes (`.dia-parenthetical-text`).
 3. **Density Cap (Gate 4B):** ≤ 32 words for a single speaker, ≤ 15 words per speaker in a two-shot; dialogue must fit within the 10s audio window (`0b` §2).
 4. **Zero Continuity Gaps:** Diurnal progression (time & natural color tone) and kinetic vectors must connect seamlessly across all scenes and between episodes.
-5. **Mandatory 12-Hour AM/PM Time Notation:** Every timestamp across Section 1, Section 1B, Section 1C, and all 48 scene cards in Section 5 MUST explicitly state **AM** or **PM** (e.g., `05:30 PM`, `10:30 PM`, `01:00 AM`, `04:30 AM`, `05:00 AM`, `06:30 AM`). Ambiguous 24-hour military numbers without AM/PM (e.g. `01:00` or `17:30`) are strictly prohibited.
+5. **Mandatory 12-Hour AM/PM Time Notation:** Every timestamp across Section 1, Section 1B, Section 1C, and all scene cards in Section 5 MUST explicitly state **AM** or **PM** (e.g., `05:30 PM`, `10:30 PM`, `01:00 AM`, `04:30 AM`, `05:00 AM`, `06:30 AM`). Ambiguous 24-hour military numbers without AM/PM (e.g. `01:00` or `17:30`) are strictly prohibited.
 
 
-## 🏛️ PART VI: THE MASTER CINEMATIC VISUAL STYLE CATALOG (39 MASTER STYLES)
+## 🏛️ PART VI: THE MASTER CINEMATIC VISUAL STYLE CATALOG (50 MASTER STYLES)
 
 ## 🏛️ § 1. SYSTEM ARCHITECTURE & PROMPT INJECTION ENGINE
 
@@ -1653,28 +1763,30 @@ When a project or episode selects a **Visual Style**, that choice propagates dow
 └─────────────────────────────────────────────────────────────────────────────────────────────────┘
 ```
 
-### 1.1. Technical Header Architecture (Pure Visual Descriptors — NO, NO 16:9, NO f-stops)
-> ⚠️ **MANDATORY PURGE RULE**: Never include `fluid motion` (software handles framerate), `16:9` (causes black letterbox bars), `film still` (causes static photo freeze), or `lens f-stops` (AI cannot parse apertures). Only use rich visual rendering descriptors:
+### 1.1. Technical Header Architecture (Pure Visual Descriptors — NO 24fps, NO 16:9, NO f-stops)
+> ⚠️ **MANDATORY PURGE RULE**: Never include `fluid motion` / `24fps` (software handles framerate), `16:9` (causes black letterbox bars), `film still` (causes static photo freeze), or `lens f-stops` (AI cannot parse apertures). Only use rich visual rendering descriptors:
 - **Animation Default (Pixar 3D)**:
-  `3D Animation Masterwork in iconic Pixar and DreamWorks studio style, Octane Render, Cinema 4D, Ray-traced global illumination, fluid physical motion, rich cinematic realism. Subsurface scattering skin shading, micro-texture fabrics, tailored armor/clothing.`
+  `3D Animation Masterwork in iconic Pixar and DreamWorks studio style, Octane Render, Cinema 4D, Ray-traced global illumination, dark rich cinematic realism. Subsurface scattering skin shading, micro-texture fabrics, tailored armor and clothing.`
+- **3D Semi-Realistic Animation (Hoạt Hình 3D Bán Chân Thực — High-End Stylized 3D Realism)**:
+  `3D Semi-Realistic Cinematic Animation, high-end stylized 3D realism in the signature style of Light Chaser Animation and Blur Studio, Unreal Engine 5 and Octane Render, ray-traced global illumination, physically based rendering textures, refined subsurface scattering skin shader with smooth natural satin complexion and expressive luminous eyes, strand-based 3D hair grooming, rich volumetric atmospheric lighting.`
 - **Live Action Standard (Theatrical Cinematic)**:
-  `Masterwork Theatrical Cinematography, theatrical feature film aesthetic, shallow depth of field, authentic photorealism. Rich organic film grain, natural skin subsurface tones, true-to-life physical materials, volumetric atmospheric lighting, fluid motion.`
+  `Masterwork Theatrical Cinematography, theatrical feature film aesthetic, shallow depth of field, authentic photorealism. Rich organic film grain, natural skin subsurface tones, true-to-life physical materials, volumetric atmospheric lighting.`
 
 ---
 
-## 🎥 § 2. LIVE ACTION STYLE DIRECTORY (19 MASTER STYLES)
+## 🎥 § 2. LIVE ACTION STYLE DIRECTORY (25 MASTER STYLES)
 
 ---
 
 ### Group A: Theatrical Blockbuster & High-Octane Epic
 
 #### 1. Theatrical Cinematic (Realistic / Premium Standard)
-* **Aesthetic DNA**: High-end Hollywood feature film look, balanced cinematic realism, rich organic skin textures, fine fine organic film grain.
+* **Aesthetic DNA**: High-end Hollywood feature film look, balanced cinematic realism, rich organic skin textures, fine organic film grain.
 * **Camera & Optics**: Theatrical digital cinema aesthetic, shallow depth of field, natural perspective.
 * **Lighting & LUT**: Balanced 3-point cinematic lighting, soft volumetric diffusion, natural contrast, Kodak Vision3 5219 color grading.
 * **Exemplar References**: *Sicario, Heat, The Dark Knight*.
 * **Code Block 1 Header**:
-  `Masterwork Theatrical Cinematography, theatrical feature film aesthetic, shallow depth of field, Panavision 16:9 widescreen, authentic photorealism. Rich organic film grain, natural skin subsurface tones, true-to-life physical materials, volumetric atmospheric lighting.`
+  `Masterwork Theatrical Cinematography, theatrical feature film aesthetic, shallow depth of field, Panavision widescreen framing, authentic photorealism. Rich organic film grain, natural skin subsurface tones, true-to-life physical materials, volumetric atmospheric lighting.`
 
 #### 2. Christopher Nolan Style (Mind-Bending / Grand Scale / Cool Palette)
 * **Aesthetic DNA**: Grand cinematic scale, cool monochrome-leaning palette, crisp architectural lines, monumental practical realism.
@@ -1830,7 +1942,59 @@ When a project or episode selects a **Visual Style**, that choice propagates dow
 
 ---
 
-## 🎨 § 3. ANIMATION STYLE DIRECTORY (20 MASTER STYLES)
+### Group D: Asian Cinema, Tactical Neo-Noir & Vérité Realism
+
+#### 20. Vietnamese Poetic & Tropical Realism (Indochine Nostalgia / Southern Family Warmth)
+* **Aesthetic DNA**: Warm humid tropical sunlight filtering through wooden louvered shutters and lush green banana leaves, weathered yellow plaster walls, polished dark mahogany furniture, rising kitchen hearth smoke, deeply emotional human intimacy.
+* **Camera & Optics**: Gentle observational tracking, intimate shallow depth of field, organic framing past wooden doorways.
+* **Lighting & LUT**: Warm golden-honey sunlight balanced with lush monsoon emerald greens and rich mahogany shadows, Kodak Vision3 250D organic film texture.
+* **Exemplar References**: *The Scent of Green Papaya (Trần Anh Hùng), Dreamy Eyes (Victor Vũ), Cơm Không Chan Nước Mắt*.
+* **Code Block 1 Header**:
+  `Vietnamese Poetic Cinema Style, lush tropical realism, warm honey-golden sunlight filtering through wooden louvered shutters. Weathered ochre plaster and dark mahogany textures, humid monsoon emerald tones, gentle observational camera movement, rich organic film grain.`
+
+#### 21. Oriental Wuxia & Imperial Period Epic (Eastern Martial Arts & Court Intrigue)
+* **Aesthetic DNA**: Misty bamboo forests, sweeping curved palace roofs under falling rain or cherry blossoms, flowing embroidered silk hanfu robes, calligraphic ink-wash color discipline, poetic martial arts grace.
+* **Camera & Optics**: Sweeping crane trajectories, symmetrical imperial framing, dynamic tracking across sword arcs and fluttering silk.
+* **Lighting & LUT**: Desaturated ink-wash slate blues and jade greens contrasted with warm amber palace lantern glow and crimson silk accents.
+* **Exemplar References**: *Hero, House of Flying Daggers, Shadow (Zhang Yimou), Nirvana in Fire*.
+* **Code Block 1 Header**:
+  `Oriental Wuxia and Imperial Period Cinematography in the visionary style of Zhang Yimou, poetic Eastern epic aesthetic. Misty bamboo and carved palace architecture, flowing embroidered silk robes, ink-wash slate and warm lantern chiaroscuro, sweeping dynamic camera work.`
+
+#### 22. Hong Kong Neon Melancholy (Wong Kar-Wai Retro Arthouse)
+* **Aesthetic DNA**: Cramped urban corridors, rain-streaked glass, curling tea and cigarette smoke, aching unspoken romance, nostalgic neon reflections.
+* **Camera & Optics**: Voyeuristic framing through doorframes, mirrors, and window grates, expressive motion cadence, shallow focus.
+* **Lighting & LUT**: Lush tungsten emerald greens, saturated neon crimsons, and warm amber pools in deep nostalgic shadows.
+* **Exemplar References**: *In the Mood for Love, Chungking Express, Fallen Angels*.
+* **Code Block 1 Header**:
+  `Wong Kar-Wai Hong Kong Arthouse Cinematography, nostalgic urban neon melancholy, voyeuristic framing through architectural foregrounds. Lush emerald-green and crimson tungsten lighting, drifting atmospheric smoke, rain-streaked glass reflections, rich vintage film grain.`
+
+#### 23. Hyper-Kinetic Tactical Neo-Noir (Urban Gun-Fu / Close-Quarters Action & Chase)
+* **Aesthetic DNA**: Rain-slicked metropolitan alleys, glass nightclubs, tailored tactical suits, brutal close-quarters martial arts and relentless foot pursuits.
+* **Camera & Optics**: Wide-angle anamorphic clarity holding full-body combat choreography in frame, reactive Steadicam tracking that moves in lockstep with every strike.
+* **Lighting & LUT**: High-contrast sapphire blue, electric violet, and warm amber gold reflecting off wet asphalt and polished marble.
+* **Exemplar References**: *John Wick (Chapters 1–4), The Raid, Extraction*.
+* **Code Block 1 Header**:
+  `Hyper-Kinetic Tactical Neo-Noir Cinematography, John Wick and The Raid action aesthetic, wide anamorphic optical clarity. High-contrast sapphire blue and amber gold neon reflections on wet asphalt, razor-sharp close-quarters combat staging, reactive Steadicam tracking.`
+
+#### 24. Asian Folk Occult & Misty Suspense (Spiritual Mystery & Ancestral Curse)
+* **Aesthetic DNA**: Moss-covered ancestral shrines, red paper lanterns swaying in dense mountain river fog, weathered wooden effigies, suffocating karmic dread.
+* **Camera & Optics**: Slow creeping push-ins, unsettling low-angle framing, foreground occlusion behind banyan roots and incense smoke.
+* **Lighting & LUT**: Flickering crimson lantern and beeswax candle warmth fighting against cold slate-blue twilight mist and ash-grey shadows.
+* **Exemplar References**: *Exhuma, The Wailing, Tết Ở Làng Địa Ngục*.
+* **Code Block 1 Header**:
+  `Asian Folk Occult Suspense Cinematography, atmospheric Eastern mystery aesthetic, dense mountain river mist. Flickering crimson paper lanterns and candle chiaroscuro against cold slate-blue twilight, weathered ancestral wood and moss textures, creeping suspenseful framing.`
+
+#### 25. Handheld Vérité & Workplace Mockumentary (Grounded Everyday Comedy & Realism)
+* **Aesthetic DNA**: Authentic lived-in offices, apartments, and street corners, spontaneous comedic reaction glances, unpolished documentary immediacy.
+* **Camera & Optics**: Naturalistic handheld observational camera, snappy whip-pans and quick reaction reframing onto deadpan facial expressions.
+* **Lighting & LUT**: Naturalistic balanced indoor daylight and practical office lighting, clean true-to-life color rendition.
+* **Exemplar References**: *The Office, Modern Family, Abbott Elementary*.
+* **Code Block 1 Header**:
+  `Handheld Cinema Verite and Mockumentary Style, naturalistic observational cinematography, authentic lived-in environment textures. Balanced practical daylight illumination, responsive handheld camera reframing, crisp comedic facial reaction clarity, true-to-life color grading.`
+
+---
+
+## 🎨 § 3. ANIMATION STYLE DIRECTORY (25 MASTER STYLES)
 
 ---
 
@@ -1841,9 +2005,17 @@ When a project or episode selects a **Visual Style**, that choice propagates dow
 * **Rendering Engine**: Octane Render, Cinema 4D, ray-traced global illumination, rich physical shaders.
 * **Lighting & Atmosphere**: Soft luminous 3-point lighting, warm ambient bounce, gentle cinematic depth of field.
 * **Code Block 1 Header**:
-  `3D Animation Masterwork in iconic Pixar and DreamWorks studio style, Octane Render, Cinema 4D, Ray-traced global illumination. Cinematic 16:9 widescreen, dark rich cinematic realism. Subsurface scattering skin shading, micro-texture fabrics, tailored armor/clothing.`
+  `3D Animation Masterwork in iconic Pixar and DreamWorks studio style, Octane Render, Cinema 4D, Ray-traced global illumination, dark rich cinematic realism. Subsurface scattering skin shading, micro-texture fabrics, tailored armor and clothing.`
 
-#### 2. Cinematic 3D (Game CG / Unreal Engine 5 Photorealism)
+#### 2. 3D Semi-Realistic Animation (Stylized 3D Realism — Light Chaser / Blur Studio / High-End 3D CG Drama Style)
+* **Aesthetic DNA**: The golden balance between expressive 3D animation charm and grounded anatomical realism. True-to-life 7.5-to-8-head human anatomical proportions (zero chibi/cartoon big-head distortion), sculpted 3D facial bone structure (refined jawline, nose bridge, cheekbones), expressive semi-realistic luminous eyes with multi-layered iris depth and crisp dual catchlights, and a refined subsurface scattering (SSS) satin skin shader that avoids both uncanny hyper-rough pores and plastic doll sheen.
+* **Rendering Engine**: Unreal Engine 5 and Octane Render hybrid look, ray-traced global illumination, physically based rendering (PBR) fabric/leather/metal shaders, 3D strand-based hair grooming (XGen/Ornatrix silky hair strands with natural flyaway wisps and anisotropic rim sheen).
+* **Lighting & Atmosphere**: Rich dramatic 3-point cinematic lighting, warm subsurface ear/cheek scatter, volumetric atmospheric haze, crisp rim light separation, shallow optical depth of field.
+* **Exemplar References**: *White Snake & New Gods: Yang Jian (Light Chaser Animation), Love, Death + Robots ("Sonnie's Edge", "Bad Traveling" — Blur Studio), Final Fantasy VII Remake CG Cutscenes*.
+* **Code Block 1 Header**:
+  `3D Semi-Realistic Cinematic Animation, high-end stylized 3D realism in the signature style of Light Chaser Animation and Blur Studio, Unreal Engine 5 and Octane Render, ray-traced global illumination, physically based rendering textures, refined subsurface scattering skin shader with smooth natural satin complexion and expressive luminous eyes, strand-based 3D hair grooming, rich volumetric atmospheric lighting.`
+
+#### 3. Cinematic 3D (Game CG / Unreal Engine 5 Photorealism)
 * **Aesthetic DNA**: AAA Game cinematic quality, hyper-realistic facial pores, weathered metal armor, Nanite & Lumen fidelity.
 * **Rendering Engine**: Unreal Engine 5.4, Lumen global illumination, Quixel Megascans physical shaders.
 * **Lighting & Atmosphere**: Dynamic volumetric fog, realistic ray-traced reflections, gritty battlefield atmospheric physics.
@@ -1851,7 +2023,7 @@ When a project or episode selects a **Visual Style**, that choice propagates dow
 * **Code Block 1 Header**:
   `Hyper-Realistic Cinematic 3D Animation, Unreal Engine 5 render, Lumen global illumination, ray-traced reflections. AAA video game cutscene quality, photorealistic micro-pore skin shading, scratched metal armor textures, volumetric fog.`
 
-#### 3. 3D Cyberpunk (Neon / Mechanical / High-Tech 3D)
+#### 4. 3D Cyberpunk (Neon / Mechanical / High-Tech 3D)
 * **Aesthetic DNA**: High-gloss carbon fiber, glowing cybernetic eye implants, neon cityscapes, rainy reflections in 3D.
 * **Rendering Engine**: Redshift Render, Cinema 4D, ray-traced neon emission shaders, metallic chrome anisotropy.
 * **Lighting & Atmosphere**: Vivid magenta, cyan, and amber neon point lights reflecting off wet polished surfaces.
@@ -1863,7 +2035,7 @@ When a project or episode selects a **Visual Style**, that choice propagates dow
 
 ### Group B: 2.5D, Stylized Cel-Shaded & Comic Book
 
-#### 4. Painterly Cel-Shaded (The "Arcane" Style — Masterwork)
+#### 5. Painterly Cel-Shaded (The "Arcane" Style — Masterwork)
 * **Aesthetic DNA**: Hand-painted digital brushstrokes overlaid on complex 3D geometry, high dramatic contrast, raw emotional depth.
 * **Rendering Engine**: Fortiche style, custom hand-painted texture maps, non-photorealistic rendering (NPR).
 * **Lighting & Atmosphere**: Dramatic theatrical spotlighting, visible impasto oil brushmarks, expressive chiaroscuro shadows.
@@ -1871,7 +2043,7 @@ When a project or episode selects a **Visual Style**, that choice propagates dow
 * **Code Block 1 Header**:
   `Masterpiece Painterly Cel-Shaded Animation in the iconic Arcane style, handcrafted digital oil painting textures on 3D geometry. Visible textured brushstrokes, dramatic theatrical rim lighting, rich expressive chiaroscuro, stylized anatomical realism.`
 
-#### 5. Spider-Verse Style (Comic Book / Halftone / Pop Glitch)
+#### 6. Spider-Verse Style (Comic Book / Halftone / Pop Glitch)
 * **Aesthetic DNA**: Dynamic halftone dots, print ink offsets, chromatic aberration glitches, hand-drawn ink hatching on 3D.
 * **Rendering Engine**: Sony Pictures Animation style, animated on twos dynamic stylized animation cadence, dynamic frame rate manipulation.
 * **Lighting & Atmosphere**: Vibrant pop-art colors, CMYK print separation, graphic Ben-Day dot shading.
@@ -1879,15 +2051,15 @@ When a project or episode selects a **Visual Style**, that choice propagates dow
 * **Code Block 1 Header**:
   `Dynamic Comic Book Animation in the groundbreaking Spider-Verse style, halftone Ben-Day dot shading, visible ink line hatching. Vibrant pop-art color palette, dynamic print chromatic aberration, graphic rim lighting, stylized motion.`
 
-#### 6. Next-Gen Cel-Shaded (Genshin / Anime 3D Engine)
+#### 7. Next-Gen Cel-Shaded (Genshin / Anime 3D Engine)
 * **Aesthetic DNA**: Crisp anime line art over smooth 3D cell shading, vibrant gradient hair, sparkling eye highlights.
 * **Rendering Engine**: Unity / Unreal Engine Anime Shader, toon-shading gradient ramps, clean soft ambient occlusion.
 * **Lighting & Atmosphere**: Soft blooming sunlight, clean anime rim lights, floating magical particle effects.
 * **Exemplar References**: *Genshin Impact, Honkai: Star Rail, Zenless Zone Zero*.
 * **Code Block 1 Header**:
-  `Next-Gen Cel-Shaded Anime Animation, high-end MiHoYo production style. Clean crisp line work, smooth vibrant gradient cell shading, expressive luminous eyes, blooming daylight highlights, magical atmospheric particles, fluid motion.`
+  `Next-Gen Cel-Shaded Anime Animation, high-end MiHoYo production style. Clean crisp line work, smooth vibrant gradient cell shading, expressive luminous eyes, blooming daylight highlights, magical atmospheric particles.`
 
-#### 7. Retro 90s Cel-Shaded (Vintage Anime / 90s Classic)
+#### 8. Retro 90s Cel-Shaded (Vintage Anime / 90s Classic)
 * **Aesthetic DNA**: Hand-painted animation cel look, painted acrylic backgrounds, warm vintage VHS/vintage warm film grain.
 * **Rendering Engine**: Traditional hand-drawn 2D cel aesthetic, soft color bleeds, manual shadow hatching.
 * **Lighting & Atmosphere**: Warm nostalgic sunlight, dusky purples and oranges, soft CRT monitor glow.
@@ -1895,7 +2067,7 @@ When a project or episode selects a **Visual Style**, that choice propagates dow
 * **Code Block 1 Header**:
   `Vintage 1990s Cel-Shaded Anime Animation, classic hand-painted cel aesthetic, painted gouache backgrounds. Warm nostalgic film grain, hand-drawn black line weight, soft retro color grading, authentic analog animation feel.`
 
-#### 8. High-Energy Action (Demon Slayer Style / Ufotable VFX)
+#### 9. High-Energy Action (Demon Slayer Style / Ufotable VFX)
 * **Aesthetic DNA**: Thick calligraphic line weight, blistering combat speed, elemental VFX (fire, water, lightning) blending 2D and 3D.
 * **Rendering Engine**: Ufotable hybrid 2D/3D compositing, high-framerate dynamic impact frames, photorealistic particle emitters.
 * **Lighting & Atmosphere**: Extreme elemental illumination, fiery sparks, glowing slashing arcs against pitch darkness.
@@ -1907,7 +2079,7 @@ When a project or episode selects a **Visual Style**, that choice propagates dow
 
 ### Group C: Traditional Ink, Manga & Webtoon
 
-#### 9. Monochrome Manga (Raw Ink / B&W Contrast)
+#### 10. Monochrome Manga (Raw Ink / B&W Contrast)
 * **Aesthetic DNA**: Stark black and white ink contrast, dynamic screentones, cross-hatching, aggressive motion speed lines.
 * **Rendering Engine**: Traditional manga pen & ink aesthetic, G-pen textures, screentone dot matrices.
 * **Lighting & Atmosphere**: Harsh pure white negative space against deep black India ink shadows, zero gray gradients.
@@ -1915,7 +2087,7 @@ When a project or episode selects a **Visual Style**, that choice propagates dow
 * **Code Block 1 Header**:
   `Monochrome Manga Art Animation, stark black and white ink drawing, traditional G-pen line textures. Screentone dot shading, aggressive cross-hatching shadows, explosive speed line dynamics, intense psychological contrast, zero color.`
 
-#### 10. Junji Ito Style (Cosmic & Psychological Horror Manga)
+#### 11. Junji Ito Style (Cosmic & Psychological Horror Manga)
 * **Aesthetic DNA**: Meticulous suffocating line density, grotesque anatomical distortions, claustrophobic spiral patterns.
 * **Rendering Engine**: Hyper-detailed pen-and-ink engraving style, trembling organic line work, oppressive ink density.
 * **Lighting & Atmosphere**: Unsettling flickering grey light, oppressive pitch shadows hiding deformed anatomical horrors.
@@ -1923,7 +2095,7 @@ When a project or episode selects a **Visual Style**, that choice propagates dow
 * **Code Block 1 Header**:
   `Junji Ito Psychological Horror Animation, dense obsessive black ink hatching, disturbing anatomical distortion. Claustrophobic spiral patterns, trembling fine-line detail, eerie monochromatic grey shading, oppressive psychological dread.`
 
-#### 11. Color Ink Wash (Traditional Shuimo / Eastern Watercolor)
+#### 12. Color Ink Wash (Traditional Shuimo / Eastern Watercolor)
 * **Aesthetic DNA**: Flowing Chinese/Eastern ink wash brushwork, translucent watercolor bleeds, calligraphic elegance.
 * **Rendering Engine**: Xuan paper texture diffusion, fluid dynamics brush simulator, organic pigment dispersion.
 * **Lighting & Atmosphere**: Misty mountain air, soft diffused white void lighting, subtle mountain mist silhouettes.
@@ -1931,15 +2103,15 @@ When a project or episode selects a **Visual Style**, that choice propagates dow
 * **Code Block 1 Header**:
   `Traditional Color Ink Wash Animation, flowing Eastern watercolor pigments on textured Xuan paper. Translucent ink bleeds, expressive calligraphic brush strokes, soft misty atmospheric void, poetic ethereal motion.`
 
-#### 12. Chinese Xianxia (3D Donghua / Immortal Fantasy)
+#### 13. Chinese Xianxia (3D Donghua / Immortal Fantasy)
 * **Aesthetic DNA**: Flowing silk robes, ethereal glowing jade accessories, majestic flying swords, immortal elegance.
 * **Rendering Engine**: High-end Chinese 3D Donghua style, cloth simulation physics, sparkling spirit qi particles.
 * **Lighting & Atmosphere**: Luminous pastel clouds, golden celestial dawn rays (amber warmth), shimmering spiritual halos.
 * **Exemplar References**: *A Will Eternal, Soul Land, Perfect World*.
 * **Code Block 1 Header**:
-  `Chinese Xianxia 3D Donghua Animation, ethereal immortal aesthetic, dynamic flowing silk robes. Glowing jade accessories, shimmering spiritual qi particles, celestial pastel sky lighting, elegant martial arts choreography, fluid motion.`
+  `Chinese Xianxia 3D Donghua Animation, ethereal immortal aesthetic, dynamic flowing silk robes. Glowing jade accessories, shimmering spiritual qi particles, celestial pastel sky lighting, elegant martial arts choreography.`
 
-#### 13. Korean Webtoon (Modern Manhwa / Stylized Romance & Action)
+#### 14. Korean Webtoon (Modern Manhwa / Stylized Romance & Action)
 * **Aesthetic DNA**: Long-limbed slender anatomy, high-fashion styling, glossy hair, luminous gradient eyes, vibrant digital lighting.
 * **Rendering Engine**: Clip Studio digital painting style, sharp vector ink lines, clean cell shading with neon ambient rim lights.
 * **Lighting & Atmosphere**: Stylish urban lighting, soft romantic purple/cyan color washes, floating light dust.
@@ -1951,7 +2123,7 @@ When a project or episode selects a **Visual Style**, that choice propagates dow
 
 ### Group D: Handcrafted, Nostalgic & Dark Fantasy
 
-#### 14. Ghibli Style (Hand-Painted Watercolor / Nostalgic Warmth)
+#### 15. Ghibli Style (Hand-Painted Watercolor / Nostalgic Warmth)
 * **Aesthetic DNA**: Lush hand-painted watercolor green landscapes, puffy white cumulonimbus clouds, warm gentle facial expressions.
 * **Rendering Engine**: Traditional hand-drawn Studio Ghibli look, gouache background painting, soft natural pigments.
 * **Lighting & Atmosphere**: Golden summer sunlight filtering through leaves (Komorebi), gentle breezes moving grass and hair.
@@ -1959,7 +2131,7 @@ When a project or episode selects a **Visual Style**, that choice propagates dow
 * **Code Block 1 Header**:
   `Studio Ghibli Hand-Painted Animation Style, lush watercolor backgrounds, puffy cloud formations. Soft gouache textures, gentle warm natural sunlight, nostalgic pastoral color palette, emotional hand-drawn character charm, organic motion.`
 
-#### 15. Clay Stop-Motion (Tactile / Handcrafted Plasticine)
+#### 16. Clay Stop-Motion (Tactile / Handcrafted Plasticine)
 * **Aesthetic DNA**: Visible fingerprints in plasticine clay, tactile material imperfections, physical armature miniature charm.
 * **Rendering Engine**: Stop-motion animation aesthetic, miniature studio lighting, physical shutter blur.
 * **Lighting & Atmosphere**: Warm tungsten miniature desk lamps, physical shadow falloff, macro camera depth of field.
@@ -1967,7 +2139,7 @@ When a project or episode selects a **Visual Style**, that choice propagates dow
 * **Code Block 1 Header**:
   `Tactile Clay Stop-Motion Animation, authentic plasticine clay textures with visible microscopic fingerprints. Miniature physical lighting, shallow macro lens depth of field, handcrafted stop-motion kinetic cadence, charming tactile realism.`
 
-#### 16. Felt Stop-Motion (Wool / Fabric / Soft Tactile)
+#### 17. Felt Stop-Motion (Wool / Fabric / Soft Tactile)
 * **Aesthetic DNA**: Fuzzy needle-felted wool surfaces, visible fabric weave, button eyes, gentle comforting softness.
 * **Rendering Engine**: Physical textile simulation, volumetric fur fuzz rendering, micro-lens focus.
 * **Lighting & Atmosphere**: Soft cozy diffused living room light, warm golden tones, comforting nostalgic glow.
@@ -1975,7 +2147,7 @@ When a project or episode selects a **Visual Style**, that choice propagates dow
 * **Code Block 1 Header**:
   `Handmade Felt Stop-Motion Animation, fuzzy needle-felted wool textures, visible fabric stitches. Soft miniature tabletop lighting, shallow depth of field, warm cozy nostalgic atmosphere, authentic handcrafted textile movement.`
 
-#### 17. Soft Contemporary (Gentle Indie 2D / Modern Slice of Life)
+#### 18. Soft Contemporary (Gentle Indie 2D / Modern Slice of Life)
 * **Aesthetic DNA**: Minimalist clean lines, flat soothing pastel colors, quiet urban spaces, tender emotional pacing.
 * **Rendering Engine**: Indie digital 2D animation, flat matte shading, subtle paper grain texture overlay.
 * **Lighting & Atmosphere**: Soft twilight lilac and dusty rose skies, warm window glows, quiet peaceful atmosphere.
@@ -1983,7 +2155,7 @@ When a project or episode selects a **Visual Style**, that choice propagates dow
 * **Code Block 1 Header**:
   `Soft Contemporary 2D Animation, minimalist clean lines, soothing flat matte pastel tones. Gentle twilight lilac and soft apricot color washes, delicate emotional character expressions, peaceful indie cinematic stillness.`
 
-#### 18. Mature Western Animation (Adult Dark Action / Gritty 2D)
+#### 19. Mature Western Animation (Adult Dark Action / Gritty 2D)
 * **Aesthetic DNA**: Hard angular anatomy, realistic proportions, grim facial scarring, visceral kinetic impact, mature storytelling.
 * **Rendering Engine**: Premium western 2D digital animation, complex dynamic shadow maps, fluid action choreography.
 * **Lighting & Atmosphere**: Heavy desaturated shadows, bloody crimson highlights, harsh cold moonlight.
@@ -1991,7 +2163,7 @@ When a project or episode selects a **Visual Style**, that choice propagates dow
 * **Code Block 1 Header**:
   `Mature Western Action Animation, gritty graphic novel realism, sharp angular character anatomy. Deep dramatic shadow mapping, desaturated color palette with intense blood-red accents, visceral fluid combat physics, cinematic power.`
 
-#### 19. Cthulhu Style (Cosmic Horror / Eldritch Dark Fantasy)
+#### 20. Cthulhu Style (Cosmic Horror / Eldritch Dark Fantasy)
 * **Aesthetic DNA**: Writhing biomechanical tentacles, ancient cyclopean stone ruins, non-Euclidean geometry, cosmic madness.
 * **Rendering Engine**: Dark fantasy 3D/2D hybrid, slimy organic specular highlights, heavy volumetric abyssal fog.
 * **Lighting & Atmosphere**: Sickly bioluminescent green and diseased purple light piercing impenetrable obsidian darkness.
@@ -1999,7 +2171,7 @@ When a project or episode selects a **Visual Style**, that choice propagates dow
 * **Code Block 1 Header**:
   `Eldritch Cosmic Horror Animation in the haunting style of Bloodborne, cyclopean ruined stone architecture. Writhing organic tentacle textures, sickly bioluminescent emerald and obsidian shadows, thick abyssal fog, psychological dread.`
 
-#### 20. Thriller Folklore (Gloomy Folk Horror / Muted Myth)
+#### 21. Thriller Folklore (Gloomy Folk Horror / Muted Myth)
 * **Aesthetic DNA**: Pagan wooden effigies, twisted root forests, worn burlap and bone ornaments, unsettling folk rituals.
 * **Rendering Engine**: Earthy textured 2D/3D hybrid, charcoal dust overlays, muted desaturated tones.
 * **Lighting & Atmosphere**: Cold autumn fog, dying bonfire embers (amber warmth), pale sickly twilight.
@@ -2007,9 +2179,41 @@ When a project or episode selects a **Visual Style**, that choice propagates dow
 * **Code Block 1 Header**:
   `Gloomy Folklore Thriller Animation, weathered bone and burlap textures, twisted ancient forest setting. Charcoal dust atmosphere, dying bonfire ember lighting against pale autumn mist, eerie pagan mystery, slow tense cinematic pacing.`
 
+#### 22. Hyper-Luminous Photoreal 2D Anime (Makoto Shinkai Style — Poetic Sky & Light)
+* **Aesthetic DNA**: Breathtaking photorealistic 2D backgrounds, towering iridescent cumulonimbus clouds, sparkling rain droplets, emotional youth and time-crossing romance.
+* **Rendering Engine**: CoMix Wave Films multi-plane digital painting, hyper-detailed wet urban reflections, optical lens flare and god-ray compositing.
+* **Lighting & Atmosphere**: Radiant golden-violet twilight gradients, dazzling sunlight piercing cloudbanks, glowing city lights reflecting on wet asphalt.
+* **Exemplar References**: *Your Name (Kimi no Na wa), Weathering With You, Suzume*.
+* **Code Block 1 Header**:
+  `Hyper-Luminous 2D Anime Masterwork in the signature Makoto Shinkai style, photorealistic painted backgrounds, towering iridescent clouds. Dazzling god rays, sparkling rain and wet asphalt reflections, vibrant twilight violet and golden-amber color grading, emotional character clarity.`
+
+#### 23. 3D Eastern Mythic Ink-and-Gold (Kim Bích Sơn Thủy / Particle Mural Fantasy)
+* **Aesthetic DNA**: Swirling Eastern mineral pigments, liquid gold leaf (`Kim Bích`) and turquoise ink particles fusing seamlessly with expressive 3D character geometry.
+* **Rendering Engine**: Particle-fluid 3D/2.5D hybrid shader, dynamic ink-and-gold vortex simulation, luminous oriental mural textures.
+* **Lighting & Atmosphere**: Bioluminescent mineral blues, vermilion reds, and radiant gold dust swirling through ethereal dreamscapes.
+* **Exemplar References**: *Deep Sea (Thâm Hải), Chang An, Black Myth: Wukong (Chapter Paintings)*.
+* **Code Block 1 Header**:
+  `3D Eastern Mythic Ink-and-Gold Animation in the visionary Deep Sea style, swirling mineral turquoise and liquid gold-leaf particle shaders on 3D geometry. Luminous oriental mural textures, bioluminescent vermilion and azure lighting, poetic fluid vortex motion.`
+
+#### 24. Gothic Puppet Stop-Motion (Laika & Tim Burton Handcrafted Miniature)
+* **Aesthetic DNA**: Precision 3D-printed mechanical puppet faces with subtle seam lines, real miniature woven fabric costumes, tactile wood and brass props, dark fairy-tale wonder.
+* **Rendering Engine**: High-end physical puppet stop-motion aesthetic, miniature studio cinematography, tactile surface micro-textures.
+* **Lighting & Atmosphere**: Dramatic theatrical chiaroscuro, warm candlelit amber against deep midnight indigo shadows, volumetric miniature mist.
+* **Exemplar References**: *Coraline, Kubo and the Two Strings, Guillermo del Toro's Pinocchio, Corpse Bride*.
+* **Code Block 1 Header**:
+  `Masterwork Gothic Puppet Stop-Motion Animation in the signature Laika and Tim Burton style, handcrafted miniature mechanical puppets and real woven micro-fabrics. Dramatic theatrical chiaroscuro lighting, midnight indigo and candlelit amber palette, tactile stop-motion charm.`
+
+#### 25. Hard-Surface 3D Mecha & Sci-Fi (Tactical Cyber-Armor & Planetary Warfare)
+* **Aesthetic DNA**: Heavy articulated titanium armor plating, micro-hydraulic pistons, glowing optical visors, scorched carbon-fiber wear, colossal industrial scale.
+* **Rendering Engine**: Unreal Engine 5 / Octane hard-surface PBR metal shaders, anisotropic brushed titanium reflections, volumetric thruster plasma and spark emitters.
+* **Lighting & Atmosphere**: Harsh planetary sunlight or hangar spotlighting, cyan HUD luminescence, dense battlefield smoke and ember showers.
+* **Exemplar References**: *Love, Death + Robots ("Suits", "Snow in the Desert"), Armored Core VI, Mobile Suit Gundam Hathaway*.
+* **Code Block 1 Header**:
+  `Hard-Surface 3D Mecha and Sci-Fi Animation, Unreal Engine 5 and Octane PBR metallic rendering. Weathered titanium armor plating with micro-hydraulic pistons, glowing cyan optical sensors, volumetric thruster plasma and sparks, gritty planetary atmospheric lighting.`
+
 ---
 
-## 📚 § 4. MASTER DRAMATIC GENRE DIRECTORY (22 GENRES)
+## 📚 § 4. MASTER DRAMATIC GENRE DIRECTORY (30 GENRES)
 
 | # | Genre Name | Core Dramatic Dynamic & Conflict | Pacing & Tone |
 |---|---|---|---|
@@ -2031,14 +2235,22 @@ When a project or episode selects a **Visual Style**, that choice propagates dow
 | 16 | **Entertainment Industry** | Ruthless agencies, fake dating contracts, public scandal management. | Fast, cutthroat, glamorous veneer. |
 | 17 | **Medical Drama** | Life-or-death operating room decisions clashing with hospital politics. | Urgent, clinical, ethical crisis. |
 | 18 | **Legal / Crime** | Corrupt legal system challenged by an unyielding solitary attorney. | Cerebral, combative, razor-sharp dialogue. |
-| 19 | **Thriller Mystery** | Locked-room murder, unreliable narrators, ticking countdown clock. | Paranoiac, breathless, disorienting twists. |
+| 19 | **Thriller Mystery** | Locked-room mystery, unreliable narrators, ticking countdown clock. | Paranoiac, breathless, disorienting twists. |
 | 20 | **Urban Fantasy** | Ancient magical underworld operating beneath modern subway lines. | Gritty, neon-lit, secretive conflict. |
 | 21 | **Survival Adventure** | Man vs. unforgiving wilderness or deadly competitive arena. | Visceral, physical exhaustion, primal will. |
 | 22 | **Light Comedy** | Absurd misunderstandings, escalating chaos, warm comedic resolution. | Bouncy, playful timing, joyful physical comedy. |
+| 23 | **Time-Travel & Portal Isekai** | Modern/future intellect hurled across eras or dimensional gates (`TH3`) to rewrite fate. | High-concept reversals, fish-out-of-water tension, kinetic chases. |
+| 24 | **Eastern Fantasy & Xianxia Myth** | Mortal or sealed immortal defying sect tyranny and heavenly tribulations. | Ethereal, sweeping silk & aura clashes, epic 3D Semi-Real grandeur. |
+| 25 | **Sci-Fi Cyberpunk & AI Dystopia** | Rogue human consciousness vs. megacorporate cybernetic control in a neon metropolis. | High-tech noir, existential dread, kinetic neon pursuits. |
+| 26 | **Asian Folklore & Spiritual Mystery** | Eerie ancestral rituals and folk omens masking human greed and 20-year karmic sins. | Misty, atmospheric, chilling psychological suspense. |
+| 27 | **High-Stakes Heist & Mind-Game Con** | Master strategists executing split-second sleight-of-hand swaps and double-crosses. | Slick, cerebral, ticking-clock adrenaline. |
+| 28 | **Post-Apocalyptic & Monster Survival** | Fractured survivors defending a sanctuary against apex creatures and internal betrayal. | Gritty, claustrophobic siege tension, explosive escape sprints. |
+| 29 | **Martial Arts Wuxia / Jianghu** | Chivalrous code, sect blood feuds, and Tier-1 legendary weapons clashing in the martial world. | Kinetic `2.3x` blade choreography, poetic honor vs. vengeance. |
+| 30 | **Historical Political & War Strategy** | Imperial succession chess, covert espionage, and battlefield gambits where one misstep costs a dynasty. | Regal, suffocating mind-games, grand tactical scale. |
 
 ---
 
-## 🏛️ § 5. PRIMARY BACKGROUND ENVIRONMENT DIRECTORY (13 ARENAS)
+## 🏛️ § 5. PRIMARY BACKGROUND ENVIRONMENT DIRECTORY (18 ARENAS)
 
 1. **Modern City**: Wet asphalt, towering glass skyscrapers, neon street crossings, taxi headlights, industrial steel bridges.
 2. **Luxury Mansion**: Polished Italian marble, spiral grand staircases, private wine cellars, manicured rain gardens.
@@ -2053,10 +2265,15 @@ When a project or episode selects a **Visual Style**, that choice propagates dow
 11. **Historical Palace**: Intricate carved lattice windows, stone courtyards with koi ponds, incense burners, tiled roofs.
 12. **Mafia Underworld**: Dimly lit warehouse docks, rusted shipping containers, flickering yellow industrial lamps, dripping water.
 13. **Supernatural Realm**: Floating fractured stone islands, bioluminescent flora, perpetual purple eclipse sky, swirling mist.
+14. **Ancient Jianghu & Sect Mountain**: Cloud-piercing cliff pavilions, bamboo sword forests, stone martial arenas, lantern-lit riverside inns.
+15. **Cyberpunk Megacity & Underground Lab**: Holographic rain-slicked alleyways, chrome server vaults, neon sky-bridges, subterranean stasis chambers.
+16. **Misty Folklore Village & Ancient Temple**: Moss-covered stone gates, weathered wooden ancestral halls, red paper lanterns in dense river fog, banyan root shrines.
+17. **Post-Apocalyptic Ruined Metropolis**: Overgrown highway overpasses, fortified scrap-metal bunkers, dust-choked subway tunnels, rusted steel towers.
+18. **Dimensional Portal & Pocket Dungeon**: Fractured obsidian monoliths, glowing runic subterranean caverns, suspended crystal bridges over abyssal voids.
 
 ---
 
-## 🔄 § 6. MASTER TROPE LIBRARY (18 NARRATIVE ENGINES)
+## 🔄 § 6. MASTER TROPE LIBRARY (24 NARRATIVE ENGINES)
 
 1. **Contract Marriage**: Two rivals enter a legal marriage for money/power; physical cohabitation sparks authentic mutual passion.
 2. **Secret Baby**: A concealed pregnancy from a past one-night stand reappears 5 years later, upending a powerful dynasty.
@@ -2072,7 +2289,13 @@ When a project or episode selects a **Visual Style**, that choice propagates dow
 12. **Fake Relationship**: Pretending to date to thwart overbearing parents or provoke jealousy, until the boundary dissolves.
 13. **Fated Mates**: An irresistible, cosmic/biological soul bond that defies clan enmity and personal logic.
 14. **Amnesia**: Loss of memory forces the protagonist to fall in love with their enemy anew, unaware of a looming dark truth.
-15. **Time Travel**: Hurled back into the past with full memory of their tragic death, racing to alter the timeline.
-16. **Rebirth**: Second life granted after brutal murder; calculating every step to systematically outplay past killers.
+15. **Time Travel**: Hurled back into the past with full memory of their tragic betrayal, racing to alter the timeline.
+16. **Rebirth**: Second life granted after a fatal conspiracy; calculating every step to systematically outplay past destroyers.
 17. **Found Family**: Broken loners banded together by shared trauma, forming a bond stronger than blood royalty.
 18. **Redemption Arc**: A cold, villainous enforcer sacrifices their power and pride to protect the one innocent soul they harmed.
+19. **System / Bloodline Awakening**: An underestimated outcast unlocks a dormant supernatural bloodline or tactical progression interface under mortal peril.
+20. **Portal / Era Shift (`TH3`)**: A Tier-1 ancestral relic or spatial rift links two eras/worlds, allowing characters and danger to cross between realms mid-action.
+21. **Mastermind Heist / Double Agent**: A covert operative or con artist plays two warring factions against each other where every apparent defeat is a planted trap.
+22. **Sealed Ancient Power Unbound**: A protagonist bound by an oath or spiritual seal is pushed past the moral red line, breaking the seal at a devastating cost.
+23. **Karmic Folk Retribution**: A seemingly supernatural haunting or folk curse is unmasked as a meticulously staged reckoning for a buried collective crime.
+24. **Survival Lockout / Ticking Contagion**: Trapped inside a sealed facility or quarantined zone where hidden betrayers (`B-Judas`) are unmasked as the clock runs down.

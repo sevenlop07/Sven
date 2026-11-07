@@ -1,0 +1,1692 @@
+<!DOCTYPE html>
+<html lang="vi">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>BẢN DI CHÚC CỦA NGƯỜI CÒN SỐNG (THE BANKRUPT TESTAMENT) — Master Pre-Production Resource Bible (setting.html ONLY · 10 Tập · 95 Cảnh · 16:9 3D Semi-Real Mẫu 2B)</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:ital,wght@0,600;0,700;0,800;0,900;1,600;1,700&family=Inter:wght@400;500;600;700;800&family=JetBrains+Mono:wght@400;500;600&display=swap" rel="stylesheet">
+  <style>
+    :root {
+      --bg: #070A10;
+      --card-bg: #0F1521;
+      --card-alt: #151E2E;
+      --border: #1E293B;
+      --border-highlight: #3B4E6B;
+      --gold: #F59E0B;
+      --cyan: #38BDF8;
+      --emerald: #10B981;
+      --rose: #F43F5E;
+      --indigo: #818CF8;
+      --text: #F1F5F9;
+      --muted: #94A3B8;
+      --code-bg: #05070C;
+    }
+    * { box-sizing: border-box; margin: 0; padding: 0; }
+    body {
+      background: var(--bg);
+      color: var(--text);
+      font-family: 'Inter', -apple-system, BlinkMacSystemFont, sans-serif;
+      padding: 28px 20px 80px 20px;
+      line-height: 1.65;
+    }
+    .container { max-width: 1400px; margin: 0 auto; }
+
+    header {
+      background: linear-gradient(135deg, rgba(15, 21, 33, 0.98), rgba(21, 30, 46, 0.95));
+      border: 1px solid var(--border);
+      border-radius: 20px;
+      padding: 40px;
+      margin-bottom: 32px;
+      box-shadow: 0 20px 50px rgba(0,0,0,0.65);
+      position: relative;
+      overflow: hidden;
+    }
+    header::before {
+      content: '';
+      position: absolute; top: 0; left: 0; right: 0; height: 5px;
+      background: linear-gradient(90deg, var(--gold), var(--rose), var(--cyan), var(--emerald));
+    }
+    .badge-group { display: flex; flex-wrap: wrap; gap: 8px; margin-bottom: 16px; }
+    .badge {
+      display: inline-flex; align-items: center; gap: 6px;
+      padding: 6px 14px; border-radius: 9999px;
+      font-size: 11.5px; font-weight: 800; text-transform: uppercase; letter-spacing: 0.6px;
+    }
+    .badge-gold { background: rgba(245, 158, 11, 0.15); color: var(--gold); border: 1px solid rgba(245, 158, 11, 0.4); }
+    .badge-cyan { background: rgba(56, 189, 248, 0.15); color: var(--cyan); border: 1px solid rgba(56, 189, 248, 0.4); }
+    .badge-emerald { background: rgba(16, 185, 129, 0.15); color: var(--emerald); border: 1px solid rgba(16, 185, 129, 0.4); }
+    .badge-rose { background: rgba(244, 63, 94, 0.15); color: var(--rose); border: 1px solid rgba(244, 63, 94, 0.4); }
+    .badge-indigo { background: rgba(129, 140, 248, 0.15); color: var(--indigo); border: 1px solid rgba(129, 140, 248, 0.4); }
+
+    h1 {
+      font-family: 'Playfair Display', serif;
+      font-size: 36px;
+      font-weight: 800;
+      color: #FFFFFF;
+      margin-bottom: 12px;
+      letter-spacing: 0.5px;
+      line-height: 1.25;
+    }
+    .subtitle {
+      font-size: 15px;
+      color: var(--muted);
+      margin-bottom: 26px;
+      max-width: 1180px;
+    }
+
+    .meta-grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(210px, 1fr));
+      gap: 14px;
+      padding-top: 20px;
+      border-top: 1px solid var(--border);
+    }
+    .meta-item {
+      background: rgba(7, 10, 16, 0.65);
+      padding: 14px 16px;
+      border-radius: 12px;
+      border: 1px solid var(--border);
+    }
+    .meta-label { font-size: 11px; text-transform: uppercase; letter-spacing: 0.8px; color: var(--muted); margin-bottom: 4px; }
+    .meta-value { font-size: 13.5px; font-weight: 700; color: #FFFFFF; }
+
+    .nav-bar {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 8px;
+      margin-bottom: 32px;
+      position: sticky;
+      top: 14px;
+      z-index: 100;
+      background: rgba(7, 10, 16, 0.92);
+      backdrop-filter: blur(12px);
+      padding: 12px 16px;
+      border-radius: 14px;
+      border: 1px solid var(--border);
+      box-shadow: 0 10px 30px rgba(0,0,0,0.55);
+    }
+    .nav-link {
+      color: var(--text);
+      text-decoration: none;
+      font-size: 12px;
+      font-weight: 600;
+      padding: 7px 12px;
+      border-radius: 8px;
+      transition: all 0.2s;
+      background: var(--card-bg);
+      border: 1px solid var(--border);
+    }
+    .nav-link:hover {
+      background: var(--gold);
+      color: #000;
+      border-color: var(--gold);
+    }
+
+    section {
+      background: var(--card-bg);
+      border: 1px solid var(--border);
+      border-radius: 18px;
+      padding: 34px;
+      margin-bottom: 32px;
+      box-shadow: 0 12px 36px rgba(0,0,0,0.4);
+    }
+    .section-header {
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      margin-bottom: 22px;
+      padding-bottom: 14px;
+      border-bottom: 1px solid var(--border);
+    }
+    .section-title {
+      font-family: 'Playfair Display', serif;
+      font-size: 23px;
+      font-weight: 700;
+      color: #FFFFFF;
+      display: flex;
+      align-items: center;
+      gap: 10px;
+    }
+
+    .group-label {
+      font-size: 13px;
+      font-weight: 800;
+      text-transform: uppercase;
+      letter-spacing: 0.9px;
+      color: var(--gold);
+      margin: 22px 0 12px 0;
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      gap: 8px;
+    }
+
+    .char-grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(380px, 1fr));
+      gap: 20px;
+    }
+    .char-card {
+      background: var(--card-alt);
+      border: 1px solid var(--border);
+      border-radius: 16px;
+      padding: 22px;
+      display: flex;
+      flex-direction: column;
+      gap: 12px;
+    }
+    .char-header {
+      display: flex;
+      align-items: center;
+      gap: 14px;
+    }
+    .char-avatar-placeholder {
+      width: 52px;
+      height: 52px;
+      border-radius: 12px;
+      background: linear-gradient(135deg, #1E293B, #334155);
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      font-size: 22px;
+      border: 1px solid var(--border-highlight);
+      flex-shrink: 0;
+    }
+    .char-names h3 { font-size: 17px; font-weight: 800; color: #FFF; }
+    .char-names .role-tag { font-size: 11px; color: var(--gold); font-weight: 700; text-transform: uppercase; }
+    .char-body { font-size: 12.8px; color: var(--muted); line-height: 1.65; }
+    .char-body strong { color: #E2E8F0; }
+    .char-traits { display: flex; flex-wrap: wrap; gap: 6px; margin-top: 4px; }
+    .trait-pill { background: rgba(255,255,255,0.06); padding: 4px 9px; border-radius: 6px; font-size: 11px; color: var(--text); border: 1px solid rgba(255,255,255,0.08); }
+
+    .prompt-box {
+      background: var(--code-bg);
+      border: 1px solid var(--border);
+      border-radius: 10px;
+      padding: 16px;
+      font-family: 'JetBrains Mono', monospace;
+      font-size: 11.5px;
+      color: #E2E8F0;
+      white-space: pre-wrap;
+      word-break: break-word;
+      line-height: 1.6;
+      margin-top: 6px;
+    }
+    .prompt-title {
+      font-size: 11.5px;
+      font-weight: 700;
+      text-transform: uppercase;
+      color: var(--cyan);
+      margin-bottom: 6px;
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+    }
+    .copy-btn {
+      background: rgba(56, 189, 248, 0.15);
+      color: var(--cyan);
+      border: 1px solid rgba(56, 189, 248, 0.4);
+      border-radius: 6px;
+      padding: 4px 10px;
+      font-size: 11px;
+      font-weight: 700;
+      cursor: pointer;
+      transition: all 0.2s;
+    }
+    .copy-btn:hover {
+      background: var(--cyan);
+      color: #000;
+    }
+
+    .episode-card {
+      background: var(--card-alt);
+      border: 1px solid var(--border);
+      border-radius: 14px;
+      padding: 20px;
+      margin-bottom: 16px;
+      display: flex;
+      flex-direction: column;
+      gap: 10px;
+    }
+    .episode-header {
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      border-bottom: 1px solid rgba(255,255,255,0.08);
+      padding-bottom: 10px;
+      flex-wrap: wrap;
+      gap: 8px;
+    }
+    .episode-title { font-size: 16px; font-weight: 800; color: #FFF; }
+    .episode-badge { font-size: 11px; font-weight: 700; padding: 4px 10px; border-radius: 6px; }
+
+    table.data-table {
+      width: 100%;
+      border-collapse: collapse;
+      font-size: 12.5px;
+      margin-top: 10px;
+    }
+    table.data-table th, table.data-table td {
+      border: 1px solid var(--border);
+      padding: 10px 14px;
+      text-align: left;
+      vertical-align: top;
+    }
+    table.data-table th {
+      background: rgba(255,255,255,0.04);
+      color: var(--gold);
+      font-weight: 700;
+      text-transform: uppercase;
+      font-size: 11px;
+    }
+    table.data-table tr:hover { background: rgba(255,255,255,0.02); }
+  </style>
+</head>
+<body>
+<div class="container">
+
+  <!-- HEADER -->
+  <header>
+    <div class="badge-group">
+      <span class="badge badge-gold">👑 Sven Cinematic Universe · Stage 2 Sole HTML Resource Bible (New Core v2.0)</span>
+      <span class="badge badge-cyan">🎨 3D Semi-Realistic Animation (Mẫu 2B · Light Chaser &amp; Blur Studio Style)</span>
+      <span class="badge badge-rose">⚡ Engine 2 (Viral Dopamine Slap) + Engine 4 (Forensic Checkmate)</span>
+      <span class="badge badge-emerald">📐 16:9 Widescreen · 20/80 Dynamic Scaling (95 Cảnh · 1,030s)</span>
+      <span class="badge badge-indigo">🎯 Single-HTML Law (setting.html ONLY · Zero tap-X.html)</span>
+    </div>
+    <h1>BẢN DI CHÚC CỦA NGƯỜI CÒN SỐNG (THE BANKRUPT TESTAMENT)</h1>
+    <p class="subtitle">
+      Hồ sơ Tài nguyên Tiền kỳ Duy nhất (<strong>Sole HTML Deliverable: <code>setting.html</code> — Zero <code>tap-X.html</code></strong>, chuẩn hóa 100% theo <strong>Sven Core v2.0</strong>) cho series hoạt hình <strong>3D Semi-Realistic Cinematic Animation (Mẫu 2B — Light Chaser &amp; Blur Studio Style)</strong> dài <strong>10 Tập (95 Phân cảnh · 1,030s — Co giãn động 8 đến 11 cảnh/tập theo Luật Kiến trúc 20/80 &amp; 5 Episode Archetypes, tích hợp các phân cảnh hành động/rượt đuổi tốc độ cao <code>Seedance 15.0s</code>)</strong>. Giữa đêm bão tuyết tại Manhattan, tỷ phú Arthur Harrington đệ trình <strong>Lệnh Cách Ly Y Tế &amp; Tín Thác Mù 72 Giờ</strong> kèm cuốn Sổ Nợ Đỏ 500 triệu USD để thử lòng gia tộc: Trưởng nam huyết thống Garrett vội vã ký giấy khước từ liên đới và cấu kết quỹ đầu cơ bán tháo cơ nghiệp, trong khi người con nuôi Silas Brennan đặt bút gánh trọn sổ nợ — nắm giữ chìa khóa mở ra <strong>Chứng thư Trái phiếu Chủ quyền 22 Tỷ USD</strong> tại Ngân hàng Thụy Sĩ.
+    </p>
+
+    <div class="meta-grid">
+      <div class="meta-item">
+        <div class="meta-label">Phong Cách Thị Giác (Mẫu 2B)</div>
+        <div class="meta-value">3D Semi-Realistic (Light Chaser / Blur Style)</div>
+      </div>
+      <div class="meta-item">
+        <div class="meta-label">Tỷ Lệ Khung Hình</div>
+        <div class="meta-value">16:9 Landscape Widescreen</div>
+      </div>
+      <div class="meta-item">
+        <div class="meta-label">Kiến Trúc 20/80 &amp; Thời Lượng</div>
+        <div class="meta-value">10 Tập · 95 Cảnh (10s Standard + 15s Seedance)</div>
+      </div>
+      <div class="meta-item">
+        <div class="meta-label">Chính Sách File &amp; Vận Hành</div>
+        <div class="meta-value">Duy Nhất setting.html · Làm Từng Cảnh Trên Chat</div>
+      </div>
+      <div class="meta-item">
+        <div class="meta-label">Ngôn Ngữ Thoại &amp; Phụ Đề</div>
+        <div class="meta-value">English Spoken · Phụ đề Tiếng Việt</div>
+      </div>
+      <div class="meta-item">
+        <div class="meta-label">Trạng Thái Kiểm Định</div>
+        <div class="meta-value" style="color: var(--emerald);">🛡️ Gate 1.5 Compliant (CP2 v2.0)</div>
+      </div>
+    </div>
+  </header>
+
+  <!-- NAVIGATION BAR -->
+  <div class="nav-bar">
+    <a href="#story" class="nav-link">1. Story Spine &amp; Master Arc</a>
+    <a href="#diurnal" class="nav-link">1B. 72H Diurnal Timeline</a>
+    <a href="#causality" class="nav-link">1C. Causality Matrix</a>
+    <a href="#dialogue-matrix" class="nav-link">1D. Dialogue Suite</a>
+    <a href="#cast" class="nav-link">2. Canonical Cast (7)</a>
+    <a href="#modelsheets" class="nav-link">3. 16:9 Model Sheets (Img 1–7)</a>
+    <a href="#props" class="nav-link">4A. Prop Universe (Img 8–9)</a>
+    <a href="#locations" class="nav-link">4B. Locations (Img 10–14)</a>
+    <a href="#roadmap" class="nav-link">5. 10-Episode Roadmap</a>
+    <a href="#cinematography" class="nav-link">6. 3D Staging &amp; Camera</a>
+    <a href="#audio" class="nav-link">7. Sound &amp; Foley</a>
+    <a href="#operations" class="nav-link">8. Quality Gates</a>
+    <a href="#open-decisions" class="nav-link">9. Production Log</a>
+  </div>
+
+  <!-- SECTION 1: MASTER NARRATIVE ARC & 12-ROW STORY SPINE -->
+  <section id="story">
+    <div class="section-header">
+      <h2 class="section-title">🏛️ Phần 1: Trục Xương Sống Kịch Bản 12 Hàng &amp; Cấu Trúc Vĩ Mô (Master Narrative Arc)</h2>
+      <span class="badge badge-gold">Pillar 1 &amp; Doctrine §8 SSOT</span>
+    </div>
+
+    <div class="group-label"><span>1.1 Cọc Cược 3 Tầng (3-Layer Stakes) &amp; Câu Hỏi Chủ Đề (Thematic Question)</span></div>
+    <p style="color: var(--muted); font-size: 13.5px; margin-bottom: 14px;">
+      <strong>• Bề nổi (External Stakes &amp; Ticking Clock):</strong> Trong vòng <strong>72 giờ</strong> kể từ đêm bão tuyết công bố di chúc sống tại Dinh thự Harrington, Giám đốc vận hành kiêm con nuôi <strong>Silas Brennan</strong> phải gánh khoản nợ pháp lý 500 triệu USD, ngăn chặn người anh cả <strong>Garrett Harrington</strong> và cá mập tài chính <strong>Dominic Alvarez</strong> cưỡng chế Xưởng Cảng Brooklyn trước hạn chót thanh toán 12:00 trưa ngày thứ 3.<br>
+      <strong>• Nội tâm (Internal Psychological Stakes — Wound ➔ Lie):</strong> Silas mang vết thương mồ côi từ năm 14 tuổi, luôn tin vào lời nói dối tự vệ rằng <em>"Mình mắc nợ ân tình nhà Harrington nên phải nhường nhịn Garrett mọi thứ"</em>. Cuộc khủng hoảng buộc anh phải lột xác: lòng trung nghĩa thật sự không phải là làm tấm thảm chùi chân cho kẻ phá hoại, mà là dám cầm quyền trượng trừng trị cái ác để bảo vệ di sản.<br>
+      <strong>• Tư tưởng (Philosophical / Thematic Conflict — Two Honest Sides):</strong> Quyền thừa kế một đế chế 22 tỷ USD thuộc về <strong>huyết thống thực dụng</strong> (Garrett: cắt bỏ phần chìm để tự cứu vốn riêng) hay thuộc về <strong>người dám ở lại gánh lấy đống tro tàn</strong> (Silas: chữ tín và trách nhiệm nặng hơn máu mủ)?
+    </p>
+
+    <div class="group-label"><span>1.2 Bảng Khóa Chiều Sâu 12 Hàng (Mandatory 12-Row Story Spine Card — id="story-spine")</span></div>
+    <table class="data-table" id="story-spine">
+      <thead>
+        <tr>
+          <th style="width: 140px;">Hàng (Row)</th>
+          <th>Nội Dung Khóa Cứng Toàn Series (10 Tập × 100s)</th>
+        </tr>
+      </thead>
+      <tbody>
+        <tr>
+          <td><strong>[QUESTION]</strong></td>
+          <td><strong>Dramatic Question:</strong> Liệu Silas Brennan có thể trụ vững trước khoản nợ 500 triệu USD, bảo vệ Xưởng Cảng Brooklyn và phơi bày âm mưu bán tháo đế chế của Garrett &amp; Dominic trước hạn chót 72 giờ của Ngân hàng Thụy Sĩ?<br><strong>Thematic Question:</strong> Di sản gia tộc được định nghĩa bằng huyết thống sinh học hay bằng người dám đứng ra nhận trách nhiệm khi tòa lâu đài sụp đổ?</td>
+        </tr>
+        <tr>
+          <td><strong>[TRUTH]</strong></td>
+          <td>• <strong>A1 Silas Brennan:</strong> Wound (Mồ côi năm 14 tuổi, bị coi là kẻ ăn nhờ ở đậu) ➔ Lie ("Phải nhẫn nhịn Garrett để trả ơn cha nuôi") ➔ Want (Cứu cơ nghiệp của Arthur) ➔ Need (Bước lên nắm quyền tối cao, trừng trị kẻ phản bội) ➔ Fear (Bị mang tiếng cướp quyền anh trai) | Paradox: Càng nhường nhịn, Garrett càng phá nát tập đoàn.<br>• <strong>A2 Garrett Harrington:</strong> Wound (37 năm sống dưới cái bóng của cha và sự xuất sắc của em nuôi) ➔ Lie ("Cha không thương mình; chỉ có tiền mặt rút riêng mới an toàn") ➔ Want (Đẩy nợ 500M cho Silas, rút 300M tiền mặt với Dominic) ➔ <strong>Where A2 Is Right:</strong> Trên Phố Wall, khi một tập đoàn báo lỗ đột ngột 500M, việc tách nợ sang một pháp nhân chịu trận để giữ tài sản sạch là nghiệp vụ tái cấu trúc thực dụng | Paradox: Chữ ký "Miễn trừ nợ" của hắn chính là chữ ký tự tước bỏ 22 tỷ USD.</td>
+        </tr>
+        <tr>
+          <td><strong>[SPECIFIC]</strong></td>
+          <td>1. ★ <strong>Sổ Nợ Bìa Da Đỏ (Crimson Leather Debt Ledger — PROP-01 · Image 8)</strong> đóng dấu sáp vàng UBS Geneva.<br>2. ★ <strong>Ấn Tín Giám Hộ Đá Vỏ Chai (Obsidian Trustee Signet Seal — PROP-02 · Image 9)</strong> khắc chữ H bằng đồng.<br>3. <strong>Bút Máy Ngòi Vàng 18K (Gold-Nibbed Fountain Pen — Tier 2)</strong> nạp mực cảm ứng nhiệt.<br>4. <strong>Nhẫn Kim Cương Emerald 3 Carat (Emerald-Cut Diamond Ring — Tier 2)</strong> khắc mã số két sắt mặt trong.<br>5. <strong>Hồ Sơ Cách Ly Tim Mạch 72 Giờ (Stamped Cardiology Isolation Folder — Tier 2)</strong>.<br>6. Bàn ăn gỗ gụ Honduras 6m dưới đèn chùm pha lê lạnh lẽo.<br>7. Đèn cực tím 365nm kiểm định chứng thư của Clara Vance.<br>8. Đồng hồ đo áp suất bằng đồng năm 1982 tại Xưởng Cảng Brooklyn.<br>9. Điều khoản 14 "Miễn Trừ Trách Nhiệm &amp; Khước Từ Di Sản".<br>10. Vết sẹo bỏng hàn dọc mu bàn tay phải của Silas.</td>
+        </tr>
+        <tr>
+          <td><strong>[CLICHÉ]</strong></td>
+          <td>1. [KEEP] Đêm bão tuyết công bố di chúc sống tại dinh thự cổ.<br>2. [REFUSE] <em>Cha già ngất xỉu đột quỵ trên bàn ăn (Doctrine §3.8.3 Ban on Cliché Fainting):</em> TỪ CHỐI — Arthur hoàn toàn tỉnh táo đệ trình <strong>Lệnh Cách Ly Phẫu Thuật Tim Mạch &amp; Tín Thác Mù 72 Giờ</strong> có đóng dấu đỏ, tự khóa mọi kênh liên lạc rồi rời phòng họp trên xe lăn để quan sát hai con tự bộc lộ bản chất.<br>3. [SUBVERT] <em>Con nuôi khóc lóc cam chịu:</em> BẺ GÃY — Silas không van xin một giây nào; ngay Tập 2 anh dùng quyền Giám hộ Thanh lý khóa toàn bộ thẻ đen và siêu xe của Garrett.<br>4. [SUBVERT] <em>Phản diện la hét vô não:</em> BẺ GÃY — Garrett và Dominic dùng nghiệp vụ mua bán nợ xấu và lệnh phong tỏa cực kỳ bài bản.<br>5. [REFUSE] <em>Tha thứ rẻ tiền cuối phim:</em> TỪ CHỐI — Garrett mất trắng 22 tỷ USD và bị điều xuống làm nhân viên kho cảng; Simone bị từ chối vĩnh viễn.</td>
+        </tr>
+        <tr>
+          <td><strong>[LOOPS]</strong></td>
+          <td>• <strong>L1:</strong> Tại sao sổ nợ 500M (`Image 8`) lại đóng dấu sáp vàng Thụy Sĩ? (Plant Ep 1 ➔ Payoff Ep 5: Trái phiếu 22 tỷ USD).<br>• <strong>L2:</strong> Tại sao Luật sư Julian bắt Garrett ký nháy từng trang Giấy Miễn Trừ? (Plant Ep 2 ➔ Payoff Ep 9: Điều khoản 14 tự truất quyền thừa kế).<br>• <strong>L3:</strong> Cây bút ngòi vàng Arthur trao cho Silas có bí mật gì? (Plant Ep 1 ➔ Payoff Ep 9: Mực cảm ứng nhiệt).<br>• <strong>L4:</strong> Tại sao Dominic thèm khát Xưởng Cảng Brooklyn cũ kỹ? (Plant Ep 3 ➔ Payoff Ep 5: Hầm cáp dữ liệu &amp; năng lượng ngầm).<br>• <strong>L5:</strong> Lệnh cách ly y tế 72 giờ của Arthur ẩn giấu mục đích gì? (Plant Ep 1 ➔ Payoff Ep 8–9).<br>• <strong>L6:</strong> Dòng số khắc trong lòng nhẫn của Simone là gì? (Plant Ep 1 ➔ Payoff Ep 8: Mã két sắt quỹ bảo hộ gia đình cô do Silas lập).</td>
+        </tr>
+        <tr>
+          <td><strong>[COST]</strong></td>
+          <td><strong>Silas</strong> phải tự tay kết án người anh trai cùng lớn lên, cắt đứt mối tình 5 năm với Simone và đặt cược toàn bộ 12 triệu USD tích lũy cá nhân để bảo vệ 12.000 nhân viên. <strong>Garrett &amp; Simone</strong> mất trắng cả gia sản 22 tỷ USD lẫn danh dự.</td>
+        </tr>
+        <tr>
+          <td><strong>[DEBATE]</strong></td>
+          <td><em>"Khi gia đình tuyên bố vỡ nợ 500 triệu USD: Người ký nhận nợ như Silas là người hùng trọng nghĩa hay kẻ ngốc? Người ký giấy tách hộ bảo toàn vốn như Garrett là khôn ngoan hay bất nghĩa?"</em></td>
+        </tr>
+        <tr>
+          <td><strong>[IMAGE]</strong></td>
+          <td><strong>Opening Image (Ep 1, Sc 01):</strong> Bàn gỗ gụ 6m dưới ánh sáng xanh thép lạnh — Silas đứng đơn độc ở cuối bàn khi Garrett đẩy Sổ Nợ Đỏ (`Image 8`) và Ấn Tín Đá Vỏ Chai (`Image 9`) về phía anh.<br><strong>Closing Image (Ep 10, Sc 11):</strong> Cùng chiếc bàn gỗ gụ ngập nắng vàng ấm áp — Silas ngồi ở ghế Chủ tịch đầu bàn, Ấn Tín Đá Vỏ Chai (`Image 9`) và Bút Ngòi Vàng đặt uy nghiêm trên trang Chứng thư 22 tỷ USD của Sổ Đỏ (`Image 8`) khi cánh cửa khép lại sau lưng Garrett và Simone.</td>
+        </tr>
+        <tr>
+          <td><strong>[PREDICT]</strong></td>
+          <td>• <strong>P1 (Ep 1):</strong> Đoán Silas từ chối ký nợ hoặc cầu xin Garrett ➔ <strong>BROKEN (Ep 1 Sc 06–08 | plant Ep 1 Sc 02):</strong> Ký ngay lập tức sau pha giằng co khóa khớp vệ sĩ (`Seedance 15s`) kèm điều kiện nắm 100% quyền Giám hộ Thanh lý.<br>• <strong>P2 (Ep 4):</strong> Đoán Simone hối hận không trộm con dấu ➔ <strong>BROKEN (Ep 4 Sc 08 | plant Ep 4 Sc 02):</strong> Vẫn trộm con dấu (`Image 9`) vì sợ Garrett phanh phui, nhưng dính bẫy con dấu gắn chip định vị của Silas.<br>• <strong>P3 (Ep 7):</strong> Đoán Arthur xuất hiện giải cứu Silas ở Tập 7 ➔ <strong>BROKEN (Ep 7 Sc 08 | plant Ep 1 Sc 03):</strong> Arthur vẫn giữ nguyên kỷ luật cách ly 72 giờ, buộc Silas tự mình phản kích ở Tập 8.<br>• <strong>P4 (Ep 10):</strong> Đoán tờ Giấy Miễn Trừ của Garrett phản chủ dưới đèn nhiệt ➔ <strong>KEPT (Ep 10 Sc 02):</strong> Thỏa mãn đỉnh cao (Dopamine Legal Checkmate).</td>
+        </tr>
+        <tr>
+          <td><strong>[KNOW]</strong></td>
+          <td>• <strong>Hồi I (Ep 1–2):</strong> Empathy &amp; Mystery.<br>• <strong>Hồi IIA (Ep 3–4):</strong> Suspense (Khán giả thấy âm mưu của Garrett &amp; Dominic trước khi Silas lật mở bí mật 22 tỷ USD ở Tập 5).<br>• <strong>Hồi IIB–IV (Ep 5–10):</strong> Dramatic Irony (Khán giả và Silas nắm lá bài 22 tỷ USD và Điều khoản 14, xem Garrett &amp; Dominic tự chui vào rọ).</td>
+        </tr>
+        <tr>
+          <td><strong>[MISREAD]</strong></td>
+          <td><strong>Tuân thủ Luật Vòng Đời Hiểu Lầm (Doctrine §9.5 — Mỗi Hồi chuyển dịch 1 tầng Misreading mới, không kéo lê 1 hiểu lầm tĩnh quá 1 Hồi):</strong><br>• <strong>Hồi I (Ep 1–2 · Misreading Tầng 1):</strong> Garrett &amp; Simone tưởng Sổ Nợ 500M (`Image 8`) là vực thẳm phá sản nên vội ký Giấy Miễn Trừ &amp; trả nhẫn đẩy nợ cho Silas ➔ <em>Phá vỡ ngay Tập 1–2</em> khi Silas dùng quyền Giám hộ khóa sạch thẻ đen và tài sản của Garrett.<br>• <strong>Hồi IIA–IIB (Ep 3–5 · Misreading Tầng 2):</strong> Garrett &amp; Dominic tưởng Xưởng Cảng Brooklyn chỉ là bãi sắt vụn 40M USD nên cấu kết cưỡng chế, còn Silas tưởng cha nuôi thực sự kiệt quệ tài chính ➔ <em>Phá vỡ ở Midpoint Tập 5 (Sc 08)</em> khi tia UV hé lộ Trái phiếu Chủ quyền 22 Tỷ USD trong dấu sáp vàng.<br>• <strong>Hồi IIB &amp; III (Ep 6–10 · Misreading Tầng 3 / Counter-Sting):</strong> Dominic &amp; Garrett tưởng Silas đã cùng đường khi ký Biên bản Ghi nhớ ở Tập 6 ➔ <em>Phá vỡ ở Tập 9–10</em> khi đèn nhiệt kích hoạt chữ ký vàng kim của Silas và Điều khoản 14 biến chữ ký của Garrett thành án phạt 1 tỷ USD đè ngược lên Dominic &amp; Garrett.</td>
+        </tr>
+        <tr>
+          <td><strong>[TWIST]</strong></td>
+          <td>• <strong>T1 (Ep 2 — TW-06 Legal Judo):</strong> Con nợ khóa thẻ và niêm phong siêu xe của chủ nhà.<br>• <strong>T2 Midpoint (Ep 5 Sc 08 — TW-13 Sovereign Vault):</strong> Sổ nợ 500M = Trái phiếu Năng lượng Sạch 22 Tỷ USD.<br>• <strong>T3 Abyss (Ep 6–7 — TW-05 Double Coup):</strong> Dominic phản bội chính Garrett.<br>• <strong>T4 Finale Peak (Ep 10 Sc 02 — TW-20 Thermal Verdict):</strong> Mực cảm ứng nhiệt kích hoạt dưới đèn nhiệt phòng họp tầng 60, phế truất Garrett và bắt giữ Dominic.</td>
+        </tr>
+      </tbody>
+    </table>
+
+    <div class="group-label"><span>1.3 Kiến Trúc 20/80 (Engine 2 + Engine 4 × 5 Episode Archetypes) &amp; Đan Xoắn 3 Tuyến (A/B/C-Plot)</span></div>
+    <table class="data-table">
+      <thead>
+        <tr>
+          <th>Hồi &amp; Archetype (20/80 Law)</th>
+          <th>Quy Mô Tập &amp; Thời Lượng</th>
+          <th>A-Plot (60% · Trục Đấu Trí Tài Chính &amp; Face-Slap)</th>
+          <th>B-Plot (25% · Trục Tình Cảm &amp; Tâm Lý)</th>
+          <th>C-Plot (15% · Phép Thử Ngầm 22 Tỷ USD)</th>
+        </tr>
+      </thead>
+      <tbody>
+        <tr>
+          <td><strong style="color: var(--cyan);">HỒI I · Archetype 1 (Ignition &amp; Trap)</strong></td>
+          <td>Tập 1–2 (8 Cảnh/Tập · 85s/Tập: 7×10s + 1×15s Seedance)</td>
+          <td>Công bố nợ 500M; Silas bẻ gãy đòn cưỡng chế (`Seedance 15s`), ký nhận nợ kích hoạt <strong>First Mini-Slap</strong> khóa hạn mức gia tộc (Ep 1) và tịch thu thẻ đen/siêu xe của Garrett, ép Garrett ký Giấy Miễn Trừ Liên Đới chứa Điều khoản 14 (Ep 2).</td>
+          <td>Simone tháo nhẫn hủy hôn ngay tại tiền sảnh để theo Garrett; Silas gặp kiểm toán viên Clara Vance tại Cảng Brooklyn.</td>
+          <td>Arthur đệ trình Lệnh Cách Ly Y Tế &amp; Tín Thác Mù 72 Giờ sau khi trao cây bút ngòi vàng cho Silas; Luật sư Julian bấm đồng hồ đếm ngược 72 giờ của UBS Geneva.</td>
+        </tr>
+        <tr>
+          <td><strong style="color: var(--gold);">HỒI IIA · Archetype 2 (Counter &amp; False Dawn)</strong></td>
+          <td>Tập 3–4 (9 Cảnh/Tập · 95s/Tập: 8×10s + 1×15s Seedance)</td>
+          <td>Garrett cấu kết Dominic Alvarez đem đội cưỡng chế đánh úp Cảng Brooklyn; Silas &amp; Clara chặn đứng âm mưu cắt cáp (`Seedance 15s`) và lật tẩy lệnh niêm phong giả trước mặt công nhân.</td>
+          <td>Simone dùng mỹ nhân kế lấy trộm Ấn Tín (`Image 9`) của Silas dù phát hiện Silas từng âm thầm cứu cha mình; dính bẫy chip định vị GPS trong lõi Ấn Tín.</td>
+          <td>Đồng hồ áp suất đồng 1982 và con dấu sáp vàng trên Sổ Đỏ (`Image 8`) dẫn lối xuống hầm lưu trữ ngầm dưới đáy Cảng Brooklyn.</td>
+        </tr>
+        <tr>
+          <td><strong style="color: var(--gold);">HỒI IIB · Archetype 3 (Midpoint Shatter &amp; Sting)</strong></td>
+          <td>Tập 5–6 (10 Cảnh/Tập · 110s/Tập: 8×10s + 2×15s)</td>
+          <td>Silas thoát cửa hầm 5 tấn sập xuống (`Seedance 15s`); tương kế tựu kế ký Biên bản Ghi nhớ gài Điều khoản 14 sang Garrett (Ep 6), khiến Dominic lật mặt nghiền nát bút của Garrett (`Seedance 15s`).</td>
+          <td>Clara giúp Silas cởi bỏ hoàn toàn mặc cảm "con nuôi mang ơn", sát cánh chuẩn bị đòn phản kích pháp lý.</td>
+          <td><strong>Midpoint Shatter (Giữa Tập 5 — Sc 08 · 15s):</strong> Tia UV của Clara soi ấn sáp vàng trên Sổ Đỏ (`Image 8`) phát nổ gói Trái phiếu Năng lượng Sạch 22 Tỷ USD; Arthur bí mật liên lạc từ khu cách ly.</td>
+        </tr>
+        <tr>
+          <td><strong style="color: var(--rose);">HỒI IIIA · Archetype 4 (Siege &amp; Dark Night)</strong></td>
+          <td>Tập 7 (9 Cảnh · 100s) &amp; Tập 8 (10 Cảnh · 110s)</td>
+          <td>Dominic đột kích dinh thự cướp Sổ Đỏ bản sao (`Seedance 15s`, Ep 7); Silas phá khóa van áp suất hầm cảng (`Seedance 15s`, Ep 8) và đột nhập phòng họp tầng 60 phơi bày bản ghi âm.</td>
+          <td>Simone liều mình lao tới giật lại trang chứng thư gốc khỏi khe máy hủy tài liệu (`Seedance 15s`, cuối Ep 7) và giao nộp bằng chứng để chuộc lỗi.</td>
+          <td>Cuối Tập 8: Đúng hạn 72 giờ cách ly, cánh cửa gỗ đôi phòng họp tầng 60 bật mở — tỷ phú Arthur Harrington đích thân bước vào!</td>
+        </tr>
+        <tr>
+          <td><strong style="color: var(--emerald);">HỒI IIIB + IV · Archetype 5 (Anti-Dead-Finale Unified Showdown &amp; Coda)</strong></td>
+          <td>Tập 9 (10 Cảnh · 110s · Showdown Pt 1) &amp; Tập 10 (11 Cảnh · 120s · 70% Showdown Peak + 30% Coda)</td>
+          <td><strong>Ep 9 (Waves 1–2):</strong> Công bố xác nhận 22 tỷ USD từ UBS; Silas khóa tay vệ sĩ của Dominic (`Seedance 15s`) và bật đèn nhiệt.<br><strong>Ep 10 Sc 01–08 (70% Showdown Peak):</strong> Đèn nhiệt kích hoạt mực vàng kim của Silas và Điều khoản 14 (`TW-20`); Thanh tra Liên bang còng tay Dominic (`Seedance 15s`); Garrett bị tước 100% cổ phần điều xuống làm nhân viên kho cảng.<br><strong>Ep 10 Sc 09–11 (30% Restorative Coda):</strong> Silas nhậm chức Chủ tịch 22 tỷ USD.</td>
+          <td>Tại tiền sảnh (`Ep 10 Sc 09`), Silas gửi trả nhẫn kim cương cho Simone dứt khoát không quay đầu; bước vào kỷ nguyên mới cùng Clara Vance.</td>
+          <td>Hoàn tất 180° Echo Prop (`Ep 10 Sc 10–11`): Ấn Tín Đá Vỏ Chai (`Image 9`) và Bút Ngòi Vàng đặt trên Chứng thư 22 tỷ USD (`Image 8`) dưới ánh nắng bình minh rực rỡ (**Zero Cliffhanger**).</td>
+        </tr>
+      </tbody>
+    </table>
+  </section>
+
+  <!-- SECTION 1B: 72-HOUR DIURNAL TIMELINE -->
+  <section id="diurnal">
+    <div class="section-header">
+      <h2 class="section-title">⏱️ Phần 1B: Trục Thời Gian Sinh Học &amp; Ánh Sáng 72 Giờ (Diurnal Lighting &amp; Multi-Sequence W11 Lock)</h2>
+      <span class="badge badge-cyan">Zero Kelvin · 2–3 Spatial Sequences/Ep (W11 Compliant)</span>
+    </div>
+    <p style="color: var(--muted); font-size: 13.5px; margin-bottom: 14px;">
+      Toàn bộ 10 tập phim diễn ra liên tục trong <strong>72 giờ căng thẳng</strong> tại New York với ký hiệu giờ <strong>12-Hour AM/PM</strong> nghiêm ngặt, mỗi tập bắt buộc phân bổ qua <strong>2–3 cụm bối cảnh vật lý khác nhau</strong> (chống trì trệ 1 không gian theo chuẩn <code>W11</code>):
+    </p>
+    <table class="data-table">
+      <thead>
+        <tr>
+          <th>Tập Phim</th>
+          <th>Khung Giờ (AM/PM)</th>
+          <th>Chuỗi Bối Cảnh Đa Không Gian (Multi-Sequence Partitioning)</th>
+          <th>Nguồn Sáng Vật Lý, Tông Màu &amp; Khí Quyển (6-Point Lighting Contract)</th>
+        </tr>
+      </thead>
+      <tbody>
+        <tr>
+          <td><strong>Tập 1 (8 Cảnh · 85s)</strong></td>
+          <td>08:00 PM – 09:30 PM (Đêm Bão Tuyết 1)</td>
+          <td>ENV-01 Đại Sảnh Phòng Tiệc Gỗ Gụ (Sc 1–5) ➔ ENV-02 Tiền Sảnh Đá Cẩm Thạch (Sc 6–8)</td>
+          <td>Ánh đèn chùm pha lê vàng hổ phách (warm amber glow) đối chọi gay gắt với ánh chớp xanh thép lạnh (icy steel-blue blizzard light) hắt qua khung cửa sổ kính cao 5m và tràn qua cửa kính tiền sảnh.</td>
+        </tr>
+        <tr>
+          <td><strong>Tập 2 (8 Cảnh · 85s)</strong></td>
+          <td>09:30 PM – 11:45 PM (Đêm Bão Tuyết 1)</td>
+          <td>ENV-01 Phòng Tiệc (Sc 1–3) ➔ ENV-02 Tiền Sảnh &amp; Cổng Vòm (Sc 4–6) ➔ ENV-03 Cảng Brooklyn (Sc 7–8)</td>
+          <td>Đèn pha ô tô trắng sắc lạnh chiếu xuyên màn mưa tuyết dày đặc tại cổng vòm; ánh đèn cao áp vàng cam nhạt phản chiếu trên mặt sàn bê tông ướt sũng tại Xưởng Cảng Brooklyn.</td>
+        </tr>
+        <tr>
+          <td><strong>Tập 3 (9 Cảnh · 95s)</strong></td>
+          <td>07:30 AM – 11:00 AM (Sáng Ngày 2)</td>
+          <td>ENV-03 Xưởng Đóng Tàu &amp; Hầm Ngầm (Sc 1–6) ➔ ENV-04 Phòng Kính Vulture Capital (Sc 7–9)</td>
+          <td>Nắng sớm mùa đông xám bạc (crisp silver morning daylight) xuyên qua mái kính nhà xưởng đầy bụi lơ lửng; đối lập với ánh sáng trắng thương mại sắc lạnh tại tầng thượng Vulture Capital.</td>
+        </tr>
+        <tr>
+          <td><strong>Tập 4 (9 Cảnh · 95s)</strong></td>
+          <td>02:00 PM – 05:30 PM (Chiều Tà Ngày 2)</td>
+          <td>ENV-03 Văn Phòng Cảng Brooklyn (Sc 1–6) ➔ ENV-04 Phòng Khánh Tiết Vulture (Sc 7–9)</td>
+          <td>Nắng chiều vàng cam (deep golden-hour amber sunset) chiếu xiên qua cửa sổ tạo vệt bóng chiaroscuro cắt ngang gương mặt Silas và Simone.</td>
+        </tr>
+        <tr>
+          <td><strong>Tập 5 (10 Cảnh · 110s)</strong></td>
+          <td>08:00 PM – 11:30 PM (Đêm Ngày 2 — Midpoint)</td>
+          <td>ENV-04 Vulture Penthouse (Sc 1–3) ➔ ENV-03 Kho Lưu Trữ Ngầm Cảng Brooklyn (Sc 4–10)</td>
+          <td>Ánh đèn đêm đô thị lạnh lẽo tại Penthouse cắt sang bóng tối hầm ngầm sâu thẳm được rọi sáng bởi tia sáng tím huỳnh quang (luminous ultraviolet beam) từ đèn kiểm định của Clara Vance làm rực sáng con dấu sáp vàng trên Sổ Đỏ (`Image 8`).</td>
+        </tr>
+        <tr>
+          <td><strong>Tập 6 (10 Cảnh · 110s)</strong></td>
+          <td>08:30 AM – 01:00 PM (Sáng &amp; Trưa Ngày 3)</td>
+          <td>ENV-05 Phòng Họp Tầng 60 (Sc 1–6) ➔ ENV-04 Vulture Penthouse (Sc 7–10)</td>
+          <td>Ánh sáng ban ngày trắng trong (high-contrast midday sky daylight) tràn qua vách kính toàn cảnh tầng 60, phản chiếu sắc lạnh trên mặt bàn đá granite đen bóng.</td>
+        </tr>
+        <tr>
+          <td><strong>Tập 7 (9 Cảnh · 100s)</strong></td>
+          <td>09:00 PM – 11:50 PM (Đêm Ngày 3 — Abyss)</td>
+          <td>ENV-01 Đại Sảnh Phòng Tiệc (Sc 1–5) ➔ ENV-02 Tiền Sảnh Đá Cẩm Thạch (Sc 6–9)</td>
+          <td>Ánh đèn khẩn cấp đỏ sẫm và xanh lạnh (stark clinical blue and crimson warning glow) trong đêm đảo chính; bóng đổ dài đe dọa trên nền đá cẩm thạch.</td>
+        </tr>
+        <tr>
+          <td><strong>Tập 8 (10 Cảnh · 110s)</strong></td>
+          <td>06:00 AM – 08:55 AM (Bình Minh Ngày 4)</td>
+          <td>ENV-03 Hầm Cảng Brooklyn (Sc 1–4) ➔ ENV-05 Phòng Họp Tầng 60 (Sc 5–10)</td>
+          <td>Ánh bình minh xanh hồng (dawn twilight blue transitioning to pale rose gold) xuyên qua màn sương sớm Manhattan khi Silas tiến vào tòa tháp.</td>
+        </tr>
+        <tr>
+          <td><strong>Tập 9 (10 Cảnh · 110s)</strong></td>
+          <td>09:00 AM – 10:15 AM (Sáng Ngày 4 — Showdown Pt 1)</td>
+          <td>ENV-02 Tiền Sảnh Đá Cẩm Thạch (Sc 1–2) ➔ ENV-05 Phòng Họp Hội Đồng Quản Trị Tầng 60 (Sc 3–10)</td>
+          <td>Ánh nắng mai tại tiền sảnh nối tiếp bằng ánh sáng ban ngày sắc nét tại phòng họp tầng 60 khi Arthur trở về và ra lệnh bật công tắc ngọn đèn nhiệt trung tâm bàn họp ở giây cuối cùng.</td>
+        </tr>
+        <tr>
+          <td><strong>Tập 10 (11 Cảnh · 120s)</strong></td>
+          <td>10:15 AM – 12:00 PM (Sáng &amp; Trưa Ngày 4 — Unified Showdown Peak &amp; Coda)</td>
+          <td>ENV-05 Phòng Họp Tầng 60 (Sc 1–8 · 70% Showdown Peak) ➔ ENV-02 Tiền Sảnh (Sc 9) ➔ ENV-01 Đại Sảnh Gỗ Gụ (Sc 10–11 · 30% Coda)</td>
+          <td>Luồng sáng vàng rực của đèn nhiệt halogen trung tâm (intense focused warm golden thermal spotlight) kích hoạt chữ ký vàng kim ở Sc 1–8, chuyển sang ánh nắng mặt trời vàng ấm thanh bình (radiant golden morning sunlight) tràn ngập đại sảnh sau cơn bão tuyết ở Sc 9–11.</td>
+        </tr>
+      </tbody>
+    </table>
+  </section>
+
+  <!-- SECTION 1C: INTER-EPISODE CAUSALITY MATRIX -->
+  <section id="causality">
+    <div class="section-header">
+      <h2 class="section-title">🔗 Phần 1C: Ma Trận Nhân Quả Liên Tập &amp; Điểm Tham Chiếu TH1/TH2 (Inter-Episode Causality &amp; Binge Bridges)</h2>
+      <span class="badge badge-rose">Zeigarnik Addiction Loop · TH1/TH2 Continuity Lock</span>
+    </div>
+    <table class="data-table">
+      <thead>
+        <tr>
+          <th>Cầu Nối Liên Tập</th>
+          <th>Cái Kết Tập Trước (Cliffhanger C1–C7 at 00:10.0)</th>
+          <th>Ngòi Nổ Mở Màn Tập Sau (In Medias Res at 00:00.0)</th>
+          <th>Loại Cầu Nối (TH1/TH2) &amp; Đạo Cụ Chuyển Giao</th>
+        </tr>
+      </thead>
+      <tbody>
+        <tr>
+          <td><strong>Tập 1 ➔ Tập 2</strong></td>
+          <td>Tại tiền sảnh (`ENV-02`), sau khi Simone tháo nhẫn trả lại, Luật sư Julian đóng sập Sổ Nợ Đỏ (`Image 8`) tuyên bố chữ ký của Silas vừa kích hoạt quyền Giám hộ Thanh lý tối cao (C4).</td>
+          <td>Garrett đập bàn đòi tước quyền; Silas lạnh lùng đặt Ấn Tín Đá Vỏ Chai (`Image 9`) lên quầy đá cẩm thạch đọc lệnh khóa toàn bộ thẻ đen của Garrett ngay tại sảnh.</td>
+          <td>Bridge 1 (TH1 Zero-Gap Relay) · Sổ Nợ Bìa Da Đỏ (`Image 8`) &amp; Ấn Tín (`Image 9`)</td>
+        </tr>
+        <tr>
+          <td><strong>Tập 2 ➔ Tập 3</strong></td>
+          <td>Silas rời dinh thự đến Xưởng Cảng Brooklyn (`ENV-03`) trong mưa tuyết thì bắt gặp tia đèn cực tím của Clara Vance quét qua Sổ Nợ Đỏ (C2).</td>
+          <td>Clara chiếu đèn UV lên bảng niêm phong cổng cảng, chỉ cho Silas thấy lệnh cưỡng chế giả mạo vừa được gửi đi từ văn phòng của Garrett.</td>
+          <td>Bridge 1 (TH1 Zero-Gap Relay) · Đèn UV Kiểm Định &amp; Sổ Nợ Đỏ (`Image 8`)</td>
+        </tr>
+        <tr>
+          <td><strong>Tập 3 ➔ Tập 4</strong></td>
+          <td>Qua vách kính tầng thượng (`ENV-04`), Silas phát hiện Garrett đang cụng ly rượu mừng với trùm đầu cơ Dominic Alvarez (C1).</td>
+          <td>Simone xuất hiện tại văn phòng cảng (`ENV-03`) của Silas với đôi mắt đỏ hoe, đặt tách trà sứ trắng lên bàn nhằm đánh lạc hướng để tiếp cận chiếc Ấn Tín Đá Vỏ Chai (`Image 9`).</td>
+          <td>Bridge 2 (TH2 Causal Aftermath) · Ấn Tín Giám Hộ Đá Vỏ Chai (`Image 9`)</td>
+        </tr>
+        <tr>
+          <td><strong>Tập 4 ➔ Tập 5</strong></td>
+          <td>Dù biết Silas từng cứu cha mình, Simone vẫn run rẩy giao chiếc Ấn Tín Giám Hộ (`Image 9`) vừa lấy trộm cho Garrett tại sảnh kính Vulture Penthouse (C3).</td>
+          <td>Garrett và Dominic đắc thắng cầm Ấn Tín tại Penthouse (`ENV-04`), trong khi dưới hầm Cảng Brooklyn (`ENV-03`), màn hình của Silas hiện rõ tín hiệu định vị GPS phát ra từ chính lõi chiếc Ấn Tín đó.</td>
+          <td>Bridge 3 (TH2 Parallel POV Counter-Strike) · Ấn Tín Gắn Chip Định Vị (`Image 9`)</td>
+        </tr>
+        <tr>
+          <td><strong>Tập 5 ➔ Tập 6</strong></td>
+          <td>Dưới tia UV của Clara trong hầm ngầm (`ENV-03`), dấu sáp vàng trên Sổ Đỏ (`Image 8`) hiện rõ Chứng thư Trái phiếu 22 Tỷ USD; điện thoại bảo mật của Silas đổ chuông hiện tên Arthur Harrington (C7).</td>
+          <td>Tại phòng họp tầng 60 (`ENV-05`), Luật sư Julian chuyển lời của Arthur từ khu cách ly: yêu cầu Silas giữ kín lá bài 22 tỷ USD thêm đúng 24 giờ để bẫy Dominic ký vào hợp đồng bảo lãnh cá nhân.</td>
+          <td>Bridge 2 (TH2 Causal Relay) · Sổ Đỏ Mở Trang Ấn Sáp Vàng (`Image 8`)</td>
+        </tr>
+        <tr>
+          <td><strong>Tập 6 ➔ Tập 7</strong></td>
+          <td>Sau khi ký biên bản ghi nhớ với Silas, tại Penthouse (`ENV-04`), Dominic bất ngờ đập mạnh tập hồ sơ thu hồi nợ lên ngực Garrett và dùng gót giày nghiền nát cây bút máy của Garrett (C5 — 100% Filter-Proof Status Proxy).</td>
+          <td>Hoảng loạn tột độ, Garrett dẫn đội bảo vệ riêng đột kích Đại sảnh Dinh thự (`ENV-01`) lúc nửa đêm để cướp bản sao Sổ Đỏ và làm giả giấy mất năng lực hành vi của cha.</td>
+          <td>Bridge 3 (TH2 Parallel POV) · Hồ Sơ Phong Tỏa &amp; Sổ Nợ Đỏ (`Image 8`)</td>
+        </tr>
+        <tr>
+          <td><strong>Tập 7 ➔ Tập 8</strong></td>
+          <td>Tại tiền sảnh (`ENV-02`), Dominic đưa trang phụ lục chữ ký của Silas vào khe máy hủy tài liệu viền đồng thì Simone lao tới dùng tay không giật phăng trang giấy ra khỏi khe máy (C6 — Zero Fire Hazard).</td>
+          <td>Simone chạy qua cửa kính tiền sảnh, chuyển giao trang chứng thư nguyên vẹn cùng chiếc nhẫn kim cương cho Clara Vance để mang xuống hầm cảng (`ENV-03`) nơi Silas đang mở van cơ học.</td>
+          <td>Bridge 1 (TH1 Zero-Gap Relay) · Trang Chứng Thư Gốc &amp; Nhẫn Kim Cương Emerald</td>
+        </tr>
+        <tr>
+          <td><strong>Tập 8 ➔ Tập 9</strong></td>
+          <td>Giữa phòng họp tầng 60 (`ENV-05`), khi Garrett gào lên mình là người thừa kế huyết thống duy nhất vì Arthur đang cách ly phẫu thuật, cánh cửa gỗ đôi bật mở — Arthur hoàn tất 72 giờ cách ly, tự bước vào trên đôi chân của mình (C1).</td>
+          <td>Từ tiền sảnh (`ENV-02`) lên thẳng phòng họp tầng 60 (`ENV-05`), tiếng bước chân đĩnh đạc của Arthur vang vọng khắp khán phòng chết lặng; ông tiến thẳng đến đầu bàn và yêu cầu Luật sư Julian bật ngọn đèn nhiệt trung tâm.</td>
+          <td>Bridge 1 (TH1 Zero-Gap Relay) · Đèn Nhiệt Trung Tâm &amp; Sổ Đỏ Gốc (`Image 8`)</td>
+        </tr>
+        <tr>
+          <td><strong>Tập 9 ➔ Tập 10</strong></td>
+          <td>Sau khi Silas khóa tay vệ sĩ của Dominic (`Seedance 15s`), Arthur ra lệnh cho Luật sư Julian bật công tắc Ngọn đèn Nhiệt trung tâm bàn họp (`ENV-05`) chiếu thẳng xuống trang Sổ Đỏ gốc (`Image 8`) và tờ Giấy Miễn Trừ của Garrett (C7).</td>
+          <td>Luồng sáng nhiệt vàng rực làm bừng sáng chữ ký vàng kim của Silas xác lập quyền Chủ sở hữu 22 tỷ USD (`TW-20`) và làm hiện rõ Điều khoản 14 tự truất quyền thừa kế + phạt 1 tỷ USD trên tờ Giấy Miễn Trừ của Garrett; Thanh tra Liên bang ập vào bắt giữ Dominic trước khi chuyển sang Coda 30% cuối tập.</td>
+          <td>Bridge 1 (TH1 Zero-Gap Relay) · Đèn Nhiệt Trung Tâm, Sổ Đỏ Gốc (`Image 8`) &amp; Ấn Tín Chủ Tịch (`Image 9`)</td>
+        </tr>
+      </tbody>
+    </table>
+  </section>
+
+  <!-- SECTION 1D: DIALOGUE MATRIX -->
+  <section id="dialogue-matrix">
+    <div class="section-header">
+      <h2 class="section-title">🎙️ Phần 1D: Hệ Thống Mô Hình Đối Thoại &amp; Nhịp Điệu (Scene Typology &amp; Voice Mode Suite)</h2>
+      <span class="badge badge-indigo">Staccato Microdrama Cadence</span>
+    </div>
+    <p style="color: var(--muted); font-size: 13.5px; margin-bottom: 14px;">
+      Tuân thủ nghiêm ngặt chuẩn <strong>Gate 4B</strong> (Tối đa $\le 32$ từ cho cảnh độc thoại 1 người, $\le 15$ từ/người cho cảnh đối thoại 2 người; mục tiêu tối ưu <strong>8–14 từ/câu</strong> theo nhịp Staccato Fencing của <code>microdrama.md</code>):
+    </p>
+    <div style="display: grid; grid-template-columns: repeat(auto-fit, minmax(290px, 1fr)); gap: 14px;">
+      <div style="background: var(--card-alt); padding: 14px; border-radius: 10px; border: 1px solid var(--border);">
+        <div style="color: var(--gold); font-weight: 700; font-size: 12.5px; margin-bottom: 4px;">Model 1B: High-Velocity Stichomythia (RAPID_SPARRING)</div>
+        <div style="font-size: 12px; color: var(--muted);">Đấu kiếm ngôn từ tốc độ cao giữa Silas và Garrett/Dominic qua bàn họp; câu sau chặt đứt câu trước kèm tương tác đạo cụ dứt khoát.</div>
+      </div>
+      <div style="background: var(--card-alt); padding: 14px; border-radius: 10px; border: 1px solid var(--border);">
+        <div style="color: var(--rose); font-weight: 700; font-size: 12.5px; margin-bottom: 4px;">Model 2: Truth-Bomb Detonation (TRUTH_BOMB_SHOCK)</div>
+        <div style="font-size: 12px; color: var(--muted);">Nhịp 4.5s / 4.5s / 1.0s — Phát nổ bằng chứng pháp lý ở 9 giây đầu và cắt cận cảnh Choker 1.0s bắt trọn đồng tử giãn cực đại của đối phương.</div>
+      </div>
+      <div style="background: var(--card-alt); padding: 14px; border-radius: 10px; border: 1px solid var(--border);">
+        <div style="color: var(--cyan); font-weight: 700; font-size: 12.5px; margin-bottom: 4px;">Model 3: Asymmetric Dominance (ASYMMETRIC_DOMINANCE)</div>
+        <div style="font-size: 12px; color: var(--muted);">Một nhân vật nắm thượng phong tuyên đọc phán quyết liên tục trong khi kẻ đối diện cứng họng, chỉ phản ứng bằng cơ học sinh lý (somatic defense).</div>
+      </div>
+      <div style="background: var(--card-alt); padding: 14px; border-radius: 10px; border: 1px solid var(--border);">
+        <div style="color: var(--emerald); font-weight: 700; font-size: 12.5px; margin-bottom: 4px;">Model 4 &amp; 6: Inner V.O. &amp; Intimate Refuge</div>
+        <div style="font-size: 12px; color: var(--muted);">Độc thoại nội tâm sắc bén khi Silas phân tích sổ sách (môi khép kín 100%) và những khoảnh khắc lắng đọng chân thành bên Clara Vance.</div>
+      </div>
+    </div>
+  </section>
+
+  <!-- SECTION 2: CANONICAL CAST ARCHITECTURE -->
+  <section id="cast">
+    <div class="section-header">
+      <h2 class="section-title">👥 Phần 2: Hồ Sơ Tâm Lý 6 Tầng &amp; Giải Phẫu Nhân Vật (Canonical Cast Architecture)</h2>
+      <span class="badge badge-gold">7 Named Characters + Tier C · Gate 2B</span>
+    </div>
+
+    <div class="char-grid">
+      <!-- 1. A1: SILAS BRENNAN -->
+      <div class="char-card">
+        <div class="char-header">
+          <div class="char-avatar-placeholder">🦅</div>
+          <div class="char-names">
+            <h3>Silas Brennan (<code>silas_brennan</code>)</h3>
+            <span class="role-tag">A1 · Main Protagonist · The Unyielding Stoic (Image 1)</span>
+          </div>
+        </div>
+        <div class="char-body">
+          <strong>• Nhân khẩu &amp; Giải phẫu (7 Attributes):</strong> Nam, 34 tuổi, cao 184cm, nặng 78kg, tỷ lệ chuẩn 8 đầu (8-head athletic frame). Người gốc Bắc Âu - Celtic (Celtic-American), làn da ngăm sáng ấm áp có độ tán xạ satin-matte (warm ivory-tan complexion with satin-matte subsurface finish). Tóc đen nhánh chải ngược gọn gàng có vài sợi rủ nhẹ tự nhiên bên thái dương. Xương hàm vuông góc cạnh nam tính, chân mày kiếm rậm sắc nét, sống mũi cao thẳng, đôi mắt xanh xám sâu thẳm bình tĩnh (deep-set steel-grey eyes), môi cân đối sắc hồng trầm tự nhiên (well-defined lips with a healthy natural muted-rose tone), râu cạo sạch sẽ. <strong>Dấu ấn độc bản (Unique Mark):</strong> Vết sẹo bỏng hàn mảnh màu bạc chạy dọc mu bàn tay phải.<br>
+          <strong>• Trang phục gốc (Baseline Costume):</strong> Bộ vest len cashmere màu than chì sẫm (tailored dark charcoal wool three-piece suit) cắt may ôm gọn cơ thể, sơ mi trắng cổ đứng không đeo cà vạt, cúc cổ mở một nấc, không đeo trang sức, hai bàn tay để trống.<br>
+          <strong>• Tâm lý 6 tầng (6-Layer Psychology):</strong><br>
+          &nbsp;&nbsp;1. <em>Core Wound:</em> Mồ côi cha năm 14 tuổi trong vụ tai nạn hầm mỏ, được Arthur nhận nuôi nhưng luôn bị họ hàng nhà Harrington gọi là "con chó giữ cửa được nhặt về".<br>
+          &nbsp;&nbsp;2. <em>The Lie Believed:</em> "Mình mang nợ ân tình nhà Harrington nên phải nhường nhịn Garrett mọi thứ để giữ trọn chữ hiếu với cha nuôi."<br>
+          &nbsp;&nbsp;3. <em>Surface Want:</em> Gánh khoản nợ 500M và giữ cho Xưởng Cảng Brooklyn không bị bán tháo.<br>
+          &nbsp;&nbsp;4. <em>Underlying Need:</em> Thức tỉnh bản lĩnh quân vương — hiểu rằng bảo vệ gia tộc đòi hỏi phải thẳng tay trừng trị kẻ phản bội.<br>
+          &nbsp;&nbsp;5. <em>Core Fear:</em> Trở thành kẻ vô ơn cướp đoạt gia sản của người đã cưu mang mình.<br>
+          &nbsp;&nbsp;6. <em>Internal Paradox:</em> Một bộ óc điều hành sắc lạnh bậc thầy nhưng lại tự trói tay mình bằng sợi dây mặc cảm mang ơn.<br>
+          <strong>• Living Continuum:</strong> <em>Baseline:</em> Nhịp thở chậm, dáng đứng vững chãi ở góc phòng quan sát. <em>Dynamic Fluidity:</em> Khi bị sỉ nhục không bao giờ cao giọng cãi tay đôi; chỉ khẽ xoay cổ tay phải có vết sẹo và phản đòn bằng hành động pháp lý chí mạng.
+        </div>
+        <div class="char-traits">
+          <span class="trait-pill">ID: silas_brennan</span>
+          <span class="trait-pill">Tuổi: 34 · 184cm · 8 heads</span>
+          <span class="trait-pill">Ref: Image 1 (#FFFFFF Backdrop)</span>
+        </div>
+      </div>
+
+      <!-- 2. A2: GARRETT HARRINGTON -->
+      <div class="char-card">
+        <div class="char-header">
+          <div class="char-avatar-placeholder">🐍</div>
+          <div class="char-names">
+            <h3>Garrett Harrington (<code>garrett_harrington</code>)</h3>
+            <span class="role-tag">A2 · Main Antagonist · The Bloodline Usurper (Image 2)</span>
+          </div>
+        </div>
+        <div class="char-body">
+          <strong>• Nhân khẩu &amp; Giải phẫu (7 Attributes):</strong> Nam, 37 tuổi, cao 181cm, nặng 75kg, tỷ lệ 7.5 đầu. Người Mỹ gốc Âu, làn da trắng lạnh được chăm sóc kỹ lưỡng (cool fair complexion with smooth studio satin finish). Tóc vàng nâu sẫm (dark ash-blonde hair) vuốt keo bóng mượt rẽ ngôi lệch hoàn hảo. Gương mặt xương gò má cao sắc sảo, chân mày tỉa gọn, đôi mắt xanh lục lạnh lùng kiêu ngạo (calculating pale-green irises), sống mũi hẹp, môi mỏng sắc nét (well-defined structured lips with a natural muted-rose tone). <strong>Dấu ấn độc bản:</strong> Nốt ruồi nhỏ sắc nét ngay dưới khóe mắt trái.<br>
+          <strong>• Trang phục gốc:</strong> Bộ suit hai hàng khuy màu xanh navy đậm kẻ sọc chìm (bespoke midnight-navy pinstripe double-breasted suit), sơ mi xanh băng nhạt, cà vạt lụa đỏ burgundy thắt nút Windsor hoàn hảo, khăn cài túi ngực lụa trắng.<br>
+          <strong>• Tâm lý 6 tầng &amp; Điểm A2 Có Lý:</strong><br>
+          &nbsp;&nbsp;1. <em>Core Wound:</em> Suốt 37 năm luôn bị người cha tỷ phú đem ra so sánh và xếp sau đứa em nuôi Silas.<br>
+          &nbsp;&nbsp;2. <em>The Lie Believed:</em> "Cha chưa bao giờ coi mình là người thừa kế; chỉ có dòng máu chính thống cộng với tiền mặt nắm chắc trong tay mới không phản bội mình."<br>
+          &nbsp;&nbsp;3. <em>Surface Want:</em> Đẩy cục nợ 500M sang đầu Silas và rút 300M tiền mặt qua thương vụ ngầm với Dominic.<br>
+          &nbsp;&nbsp;4. <em>Where A2 Is Right (Điểm A2 hoàn toàn có lý):</em> Dưới góc nhìn tài chính Phố Wall thực dụng, khi một tập đoàn đột ngột lộ khoản nợ 500M không rõ nguồn gốc, việc lập tức khoanh vùng rủi ro (ring-fencing liability) cho một pháp nhân gánh nợ và tẩu tán tài sản sạch là phản xạ sinh tồn hợp lý của giới đầu tư.<br>
+          &nbsp;&nbsp;5. <em>Core Fear:</em> Bị chứng minh là kẻ bất tài kém cỏi hơn đứa con nuôi không cùng huyết thống.<br>
+          &nbsp;&nbsp;6. <em>Internal Paradox:</em> Khao khát sự công nhận của cha đến tuyệt vọng nhưng lại dùng chính thủ đoạn phản bội cha để tự vệ.
+        </div>
+        <div class="char-traits">
+          <span class="trait-pill">ID: garrett_harrington</span>
+          <span class="trait-pill">Tuổi: 37 · 181cm · 7.5 heads</span>
+          <span class="trait-pill">Ref: Image 2 (#FFFFFF Backdrop)</span>
+        </div>
+      </div>
+
+      <!-- 3. B1: ARTHUR HARRINGTON -->
+      <div class="char-card">
+        <div class="char-header">
+          <div class="char-avatar-placeholder">🦁</div>
+          <div class="char-names">
+            <h3>Arthur Harrington (<code>arthur_harrington</code>)</h3>
+            <span class="role-tag">B1 · B-Arbiter · The Patriarch Architect (Image 3)</span>
+          </div>
+        </div>
+        <div class="char-body">
+          <strong>• Nhân khẩu &amp; Giải phẫu:</strong> Nam, 68 tuổi, cao 178cm, nặng 74kg, tỷ lệ 7.5 đầu đĩnh đạc. Làn da phong trần điểm nếp nhăn sâu uy quyền (weathered warm-ivory skin with dignified age creases). Tóc bạc trắng chải ngược dày dặn, râu quai nón ngắn tỉa gọn gàng màu bạc, đôi mắt xanh thép sắc như đại bàng dưới hàng lông mày bạc rậm, môi sắc nét trầm ổn.<br>
+          <strong>• Trang phục gốc:</strong> Bộ vest nhung kẻ màu nâu trầm cổ điển (tailored dark espresso-brown velvet jacket over a charcoal waistcoat), sơ mi trắng, nơ cổ lụa đen.<br>
+          <strong>• Móc xích kép (Dual Tether A1 ⇄ B1 ⇄ A2) &amp; Tâm lý:</strong> Cha ruột của Garrett và cha nuôi của Silas. Chứng kiến gia tộc từng huynh đệ tương tàn vì tiền (Wound), ông dựng lên phép thử "Sổ Nợ 500M &amp; Lệnh Cách Ly Tín Thác Mù 72 Giờ" (`TW-13` &amp; `TW-20`) để buộc cả hai con tự bộc lộ nhân cách thật dưới áp lực pháp lý sinh tử.
+        </div>
+        <div class="char-traits">
+          <span class="trait-pill">ID: arthur_harrington</span>
+          <span class="trait-pill">Tuổi: 68 · 178cm · 7.5 heads</span>
+          <span class="trait-pill">Ref: Image 3 (#FFFFFF Backdrop)</span>
+        </div>
+      </div>
+
+      <!-- 4. B2: SIMONE LAURENT -->
+      <div class="char-card">
+        <div class="char-header">
+          <div class="char-avatar-placeholder">🥀</div>
+          <div class="char-names">
+            <h3>Simone Laurent (<code>simone_laurent</code>)</h3>
+            <span class="role-tag">B2 · B-Judas · The Torn Fiancée (Image 4)</span>
+          </div>
+        </div>
+        <div class="char-body">
+          <strong>• Nhân khẩu &amp; Giải phẫu:</strong> Nữ, 30 tuổi, cao 170cm, nặng 54kg, tỷ lệ 7.5 đầu thanh mảnh quyến rũ. Làn da trắng sứ mịn màng ánh hồng tự nhiên (translucent porcelain-ivory complexion with a soft satin glow). Tóc vàng mật ong uốn sóng dài buông qua vai phải. Gương mặt trái xoan sắc sảo, lông mày cong thanh tú, mắt xanh biếc long lanh, trang điểm sang trọng (soft smoky bronze eyeshadow, winged eyeliner, sculpted rose-blush cheekbones, satin-crimson full lips).<br>
+          <strong>• Trang phục gốc:</strong> Đầm dạ hội lụa cao cấp màu trắng ngà/vàng champagne cổ chữ V thanh lịch (tailored champagne-ivory silk evening gown with structured shoulders and subtle waist draping).<br>
+          <strong>• Móc xích kép &amp; Tâm lý:</strong> Vị hôn thê 5 năm của Silas nhưng ngả theo Garrett ngay trong đêm công bố nợ (`TW-05`). Ám ảnh cảnh gia đình bị siết nợ thời thơ ấu (Wound) khiến cô chọn tiền bạc thay vì tình yêu, để rồi sụp đổ trong hối hận ở Tập 4 &amp; Tập 8 khi biết Silas mới là người âm thầm cứu gia đình cô.
+        </div>
+        <div class="char-traits">
+          <span class="trait-pill">ID: simone_laurent</span>
+          <span class="trait-pill">Tuổi: 30 · 170cm · 7.5 heads</span>
+          <span class="trait-pill">Ref: Image 4 (#1E222A Dark Backdrop)</span>
+        </div>
+      </div>
+
+      <!-- 5. B3: CLARA VANCE -->
+      <div class="char-card">
+        <div class="char-header">
+          <div class="char-avatar-placeholder">🔦</div>
+          <div class="char-names">
+            <h3>Clara Vance (<code>clara_vance</code>)</h3>
+            <span class="role-tag">B3 · B-Heart · The Forensic Auditor (Image 5)</span>
+          </div>
+        </div>
+        <div class="char-body">
+          <strong>• Nhân khẩu &amp; Giải phẫu:</strong> Nữ, 29 tuổi, cao 168cm, nặng 53kg, tỷ lệ 7.5 đầu cân đối. Làn da trắng ấm tự nhiên (warm alabaster skin with a clean satin-matte finish). Tóc nâu hạt dẻ sẫm búi thấp gọn gàng kiểu trí thức châu Âu với vài lọn tóc mai mềm mại. Đôi mắt nâu hổ phách thông tuệ, sống mũi thẳng, trang điểm tinh tế chuyên nghiệp (defined brow arch, subtle neutral-taupe eyelid shading, natural warm-coral satin lips).<br>
+          <strong>• Trang phục gốc:</strong> Áo khoác blazer dáng dài màu xanh đen (tailored midnight-blue wool trench-blazer) mặc ngoài sơ mi lụa trắng cổ cao và quần âu ống đứng đồng màu.<br>
+          <strong>• Móc xích kép &amp; Tâm lý:</strong> Kiểm toán viên đặc phái từ UBS Geneva kiêm con gái người đốc công năm xưa của Cảng Brooklyn. Cô vừa điều tra các giao dịch ngầm của Garrett, vừa là chiếc gương tinh thần (`B-Heart`) giúp Silas đập vỡ vỏ bọc nhẫn nhục và tìm thấy sự đồng cảm đích thực.
+        </div>
+        <div class="char-traits">
+          <span class="trait-pill">ID: clara_vance</span>
+          <span class="trait-pill">Tuổi: 29 · 168cm · 7.5 heads</span>
+          <span class="trait-pill">Ref: Image 5 (#FFFFFF Backdrop)</span>
+        </div>
+      </div>
+
+      <!-- 6. B4: JULIAN ROSTOVA -->
+      <div class="char-card">
+        <div class="char-header">
+          <div class="char-avatar-placeholder">⚖️</div>
+          <div class="char-names">
+            <h3>Julian Rostova (<code>julian_rostova</code>)</h3>
+            <span class="role-tag">B4 · B-Guardian · The Iron Counsel (Image 6)</span>
+          </div>
+        </div>
+        <div class="char-body">
+          <strong>• Nhân khẩu &amp; Giải phẫu:</strong> Nam, 52 tuổi, cao 180cm, nặng 73kg, tỷ lệ 7.5 đầu. Gốc Đông Âu - Continental, làn da ngăm lạnh nghiêm nghị, tóc đen pha muối tiêu chải ép sát, đeo kính gọng titan mảnh không viền dưới, ánh mắt sắc lạnh không lộ cảm xúc, môi cân đối nghiêm cẩn.<br>
+          <strong>• Trang phục gốc:</strong> Bộ suit đen tuyền kiểu luật sư tối cao (classic jet-black tailored wool suit, crisp white shirt, silver-grey silk tie).<br>
+          <strong>• Móc xích kép &amp; Tâm lý:</strong> Luật sư Tín thác của Arthur suốt 30 năm. Hồi I–II đóng vai "người thực thi lạnh máu" ép Silas nhận nợ và bắt Garrett ký giấy miễn trừ (`TW-06`), nhưng thực chất là người bảo vệ di chúc mật (`B-Guardian`) kích hoạt đèn nhiệt ở Tập 9.
+        </div>
+        <div class="char-traits">
+          <span class="trait-pill">ID: julian_rostova</span>
+          <span class="trait-pill">Tuổi: 52 · 180cm · 7.5 heads</span>
+          <span class="trait-pill">Ref: Image 6 (#FFFFFF Backdrop)</span>
+        </div>
+      </div>
+
+      <!-- 7. B5: DOMINIC ALVAREZ -->
+      <div class="char-card">
+        <div class="char-header">
+          <div class="char-avatar-placeholder">🦈</div>
+          <div class="char-names">
+            <h3>Dominic Alvarez (<code>dominic_alvarez</code>)</h3>
+            <span class="role-tag">B5 · B-Catalyst · The Vulture Raider (Image 7)</span>
+          </div>
+        </div>
+        <div class="char-body">
+          <strong>• Nhân khẩu &amp; Giải phẫu:</strong> Nam, 44 tuổi, cao 183cm, nặng 82kg, tỷ lệ 8 đầu vạm vỡ áp đảo. Gốc Latin-Địa Trung Hải (Mediterranean-Latin), làn da olive rám nắng khỏe khoắn, tóc đen dày chải ngược, râu quai nón cắt tỉa sát 1mm (1mm designer stubble), ánh mắt đen sắc lẹm đầy dã tâm, môi rõ nét.<br>
+          <strong>• Trang phục gốc:</strong> Bộ suit màu đỏ rượu vang sẫm pha đen (deep oxblood-charcoal bespoke peak-lapel suit) mặc cùng sơ mi đen tuyền không đeo cà vạt.<br>
+          <strong>• Móc xích kép &amp; Tâm lý:</strong> Chủ tịch Quỹ Vulture Capital. Ban đầu là đồng minh giúp Garrett ép chết Silas ở Cảng Brooklyn, nhưng ở Tập 6–7 hắn lật kèo thôn tính chính Garrett (`TW-05`), đẩy xung đột Hồi III lên đỉnh điểm sinh tử.
+        </div>
+        <div class="char-traits">
+          <span class="trait-pill">ID: dominic_alvarez</span>
+          <span class="trait-pill">Tuổi: 44 · 183cm · 8 heads</span>
+          <span class="trait-pill">Ref: Image 7 (#FFFFFF Backdrop)</span>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- SECTION 3: 16:9 MODEL SHEETS & MODE B PROMPTS -->
+  <section id="modelsheets">
+    <div class="section-header">
+      <h2 class="section-title">📐 Phần 3: Bảng Thiết Kế Nhân Vật 16:9 Chuẩn Mẫu 2B (3D Semi-Realistic Animation) &amp; Mode B Snippets (Images 1–7)</h2>
+      <span class="badge badge-emerald">Mẫu 2B (Light Chaser &amp; Blur Studio Style) · 4-Figure 1:1 Scale Lock · Gate 3C</span>
+    </div>
+    <p style="color: var(--muted); font-size: 13.5px; margin-bottom: 20px;">
+      Mọi bảng thiết kế nhân vật 16:9 dưới đây tuân thủ 100% <strong>Benchmark Mẫu 2B: Phong Cách Hoạt Hình 3D Bán Chân Thực (3D Semi-Realistic Cinematic Animation — Light Chaser &amp; Blur Studio Style)</strong> trong <code>2-casting-worldbuilding-specification.md</code> (§2 L633–658): <strong>LEFT AND CENTER ZONE (55% width — 3 dáng toàn thân tỷ lệ 1:1 ngang vai-eo-gót giày, Fig 1 &amp; Fig 2 cắt cổ mannequin chuẩn mực, Fig 3 nhìn từ sau có đầy đủ đầu và tóc)</strong> + <strong>RIGHT ZONE (45% width — Fig 4 chân dung cận ngực chính diện trực diện sắc nét 8K)</strong>, kết hợp da SSS satin-matte tự nhiên, tóc 3D gẩy sợi (strand-based hair grooming) và Luật Nghịch Đảo Tương Phản Nền Studio.
+    </p>
+
+    <!-- Model Sheet 1: Silas Brennan -->
+    <div style="margin-bottom: 28px;">
+      <div class="group-label">
+        <span>3.1 Model Sheet: Silas Brennan (A1 · Image 1) — 16:9 Four-View Character Sheet (Mẫu 2B)</span>
+        <button class="copy-btn" onclick="copyText(this)">📋 Copy Prompt</button>
+      </div>
+      <div class="prompt-title">
+        <span>Prompt 1 (Image 1): 3D Semi-Realistic Animation 16:9 Turnaround Sheet (Mẫu 2B)</span>
+        <span>Backdrop: Pure White (#FFFFFF) vs. Dark Charcoal Suit</span>
+      </div>
+      <pre class="prompt-box">Style: 3D Semi-Realistic Cinematic Animation, high-end stylized 3D realism in the signature style of Light Chaser Animation and Blur Studio, rendered in Unreal Engine 5 and Octane Render, ray-traced global illumination, physically based rendering (PBR) textures, refined subsurface scattering skin shader, strand-based 3D hair grooming.
+
+High-end 3D semi-realistic character design showcase, 8K ultra HD, sculpted three-dimensional facial geometry, physically based rendering (PBR) material shaders, professional studio character model sheet, creamy shallow depth of field, focus precisely locked on facial features.
+
+Aesthetic of unyielding stoic shipyard sovereign, calm authoritative temperament. One Celtic-American male (Silas Brennan), aged 34, 184cm height, 78kg, true-to-life 8-head athletic broad-shouldered anatomical proportions, with refined sculpted 3D facial bone structure, chiseled angular jawline, and high cheekbones. Warm ivory-tan complexion rendered with delicate subsurface scattering (SSS) warmth and a natural satin-matte skin finish — neither hyper-rough photorealistic pores nor glossy plastic doll sheen. Groomed sword-shaped dark eyebrows with individual hair fibers framing expressive semi-realistic deep-set steel-grey eyes with multi-layered iris depth and crisp dual studio catchlights. Straight strong sculpted nose bridge, clean-shaven skin, well-defined lips with a healthy natural muted-rose satin tone, calm stoic expression. Unique physical mark: a faint thin silver electrical welding scar running vertically along the back of the right hand.
+
+Coarse ink-black hair brushed back neatly with distinct 3D strand-based hair grooming, fine natural locks resting near the left temple, and subtle anisotropic hair sheen; bare ears with zero earrings, bare skin with zero tattoos. Pristine baseline tailored dark charcoal-black wool three-piece suit worn over a crisp white stand-collar dress shirt with the top button unfastened and no necktie, tailored charcoal waistcoat, and straight-cut trousers, rendered in tactile PBR matte cashmere-wool weave with fine lapel stitching, paired with polished black leather Oxford shoes, bare hands free of props.
+
+Solid pure white studio backdrop (#FFFFFF) with zero scenery and zero environmental elements, creating maximum optical contrast against the dark charcoal three-piece suit and ink-black hair for razor-sharp silhouette separation. Three-point studio key lighting casting crisp soft contact shadows under shoes, warm rim light defining hair strands and shoulder contours, delicate fill light showcasing refined SSS skin shader and PBR wool fabric weave.
+
+Character reference model sheet, 16:9 widescreen aspect ratio, clean solid pure white studio background, containing 4 figures arranged from left to right across two zones:
+
+LEFT AND CENTER ZONE (occupying the left 55% of the canvas width — Three Compact Full-Body Turnaround Figures at Identical 1:1 Body Scale):
+Displays three full-body turnaround figures standing side by side in a natural, relaxed upright posture with arms resting loosely beside the torso and Oxford shoes grounded on the exact same horizontal floor baseline. CRITICAL SCALE LOCK: All three turnaround bodies MUST share the exact same 1:1 anatomical body scale — their shared shoulder line, horizontal shoulder alignment, chest lines, suit jacket hems, waistlines, and shoe heels must align along strict horizontal parallel lines across all three figures:
+1. Figure 1 (Far Left — Front Full-Body View, Clean Mannequin Neck Cut at Shared Shoulder Line): Full-length front body from the base of the neck down to the Oxford shoes at the exact same 1:1 body scale and exact same horizontal shoulder height as Figure 3, showing dark charcoal three-piece suit drape, waistcoat buttons, white stand-collar shirt, trousers, and shoes. Clean mannequin-style neck termination at the collar with wide empty white studio background space above the neck (strictly zero head, zero face, and never stretching the headless body to touch the top border).
+2. Figure 2 (Center-Left — 90-Degree Lateral Side Profile Full-Body View, Clean Mannequin Neck Cut at Shared Shoulder Line): Full-length 90-degree side profile body from the base of the neck down to the Oxford shoes at the exact same 1:1 body scale and exact same horizontal shoulder height as Figure 3, showing 3D anatomical posture, suit jacket profile, and shoe heel silhouette. Clean mannequin-style neck termination at the collar with wide empty white studio background space above the neck (strictly zero head, zero face, and never stretching the headless body to touch the top border).
+3. Figure 3 (Center — Rear Back Full-Body View WITH Head &amp; Hair at Shared Shoulder Line): Full-length rear back view from the top of the head down to the Oxford shoes at the exact same 1:1 body scale, with shoulders, jacket hem, waistline, and shoe heels aligned strictly horizontally with Figures 1 and 2, showing the complete back of the head and neatly brushed-back ink-black strand-groomed hair extending above the shared shoulder line, back vent of the charcoal suit jacket, and heels touching floor.
+
+RIGHT ZONE (occupying the right 45% of the canvas width — Figure 4: One Large Frontal Chest-Up Portrait):
+Features a prominent, zoomed-in high-definition chest-up portrait filling the right 45% of the frame with impactful 3D semi-realistic facial clarity while maintaining safe headroom margin above the hair crown, entire head, full cranium, and complete ink-black hairstyle 100% fully visible inside the canvas with clear breathing space below top border, in strictly direct frontal eye-level view facing camera directly, capturing sculpted 3D facial geometry, refined SSS satin-matte skin finish, steady steel-grey irises with dual catchlights, strand-based hair grooming, and dark charcoal suit lapel.
+
+Studio key lighting casting crisp contact shadows under shoes, strictly zero text, zero typography, zero labels, strictly zero environmental elements, zero scenery, zero furniture, zero watermark, strictly zero height mismatch between the three full-body turnaround figures, strictly no enlarged or stretched headless bodies, headless necks must never touch the top canvas border, all three turnaround bodies must align horizontally at the shoulders, waist, and heels, all 4 figures 100% fully visible inside the 16:9 frame, strictly zero cropped head, strictly no cut-off hair, no truncated hair crown, no hair touching canvas edges, ample empty white headroom margin above the skull, strictly zero out-of-frame head, no chopped skull, portrait strictly frontal view only.</pre>
+      <div style="margin-top: 10px; background: rgba(56, 189, 248, 0.06); border: 1px solid rgba(56, 189, 248, 0.2); border-radius: 8px; padding: 12px; font-size: 12px;">
+        <strong style="color: var(--cyan);">Mode B Video Prompt Snippet (Stage 4 Anchor — Image 1):</strong>
+        <p style="color: #CBD5E1; margin-top: 4px; font-family: 'JetBrains Mono', monospace;">
+          [subject]: silas_brennan [100% Appearance, attire, and facial features Refer to image 1], standing at the foot of the six-meter mahogany dining table, posture upright and grounded, hands free of props, eyeline locked steadily down the table toward garrett_harrington — the only silas_brennan in frame.
+        </p>
+      </div>
+    </div>
+
+    <!-- Model Sheet 2: Garrett Harrington -->
+    <div style="margin-bottom: 28px;">
+      <div class="group-label">
+        <span>3.2 Model Sheet: Garrett Harrington (A2 · Image 2) — 16:9 Four-View Character Sheet (Mẫu 2B)</span>
+        <button class="copy-btn" onclick="copyText(this)">📋 Copy Prompt</button>
+      </div>
+      <div class="prompt-title">
+        <span>Prompt 2 (Image 2): 3D Semi-Realistic Animation 16:9 Turnaround Sheet (Mẫu 2B)</span>
+        <span>Backdrop: Pure White (#FFFFFF) vs. Midnight-Navy Suit</span>
+      </div>
+      <pre class="prompt-box">Style: 3D Semi-Realistic Cinematic Animation, high-end stylized 3D realism in the signature style of Light Chaser Animation and Blur Studio, rendered in Unreal Engine 5 and Octane Render, ray-traced global illumination, physically based rendering (PBR) textures, refined subsurface scattering skin shader, strand-based 3D hair grooming.
+
+High-end 3D semi-realistic character design showcase, 8K ultra HD, sculpted three-dimensional facial geometry, physically based rendering (PBR) material shaders, professional studio character model sheet, creamy shallow depth of field, focus precisely locked on facial features.
+
+Aesthetic of calculating aristocratic corporate usurper, arrogant composed temperament. One European-American male (Garrett Harrington), aged 37, 181cm height, 75kg, true-to-life 7.5-head tailored executive anatomical proportions, with sharply contoured 3D facial bone structure, angular jawline, and high cheekbones. Cool fair complexion rendered with refined subsurface scattering (SSS) and a smooth studio satin-matte skin finish — neither rough pores nor plastic doll sheen. Neatly structured eyebrows framing expressive semi-realistic calculating pale-green eyes with multi-layered iris depth and crisp dual studio catchlights. Narrow aristocratic nose bridge, clean-shaven skin, well-defined structured lips with a natural muted-rose tone, condescending composed expression. Unique physical mark: a distinct small dark beauty mark just beneath the outer corner of the left eye.
+
+Sleek dark ash-blonde hair combed into a razor-sharp side part with distinct 3D strand-based hair grooming and natural anisotropic sheen; bare ears with zero earrings, bare skin with zero tattoos. Pristine baseline bespoke midnight-navy pinstripe double-breasted wool suit with gold-rimmed buttons worn over a crisp ice-blue dress shirt, burgundy silk tie in a tight Windsor knot, and folded white silk pocket square, rendered in tactile PBR fine worsted wool and silk shaders, paired with polished dark burgundy leather loafers, bare hands free of props.
+
+Solid pure white studio backdrop (#FFFFFF) with zero scenery and zero environmental elements, creating maximum optical contrast against the midnight-navy pinstripe suit for razor-sharp silhouette separation. Three-point studio key lighting casting crisp soft contact shadows under loafers, warm rim light defining blonde hair strands and shoulder contours, delicate fill light showcasing refined SSS skin shader and PBR pinstripe weave.
+
+Character reference model sheet, 16:9 widescreen aspect ratio, clean solid pure white studio background, containing 4 figures arranged from left to right across two zones:
+
+LEFT AND CENTER ZONE (occupying the left 55% of the canvas width — Three Compact Full-Body Turnaround Figures at Identical 1:1 Body Scale):
+Displays three full-body turnaround figures standing side by side in a natural, relaxed upright posture with arms resting loosely beside the torso and leather loafers grounded on the exact same horizontal floor baseline. CRITICAL SCALE LOCK: All three turnaround bodies MUST share the exact same 1:1 anatomical body scale — their shared shoulder line, horizontal shoulder alignment, chest lines, suit jacket hems, waistlines, and shoe heels must align along strict horizontal parallel lines across all three figures:
+1. Figure 1 (Far Left — Front Full-Body View, Clean Mannequin Neck Cut at Shared Shoulder Line): Full-length front body from the base of the neck down to the loafers at the exact same 1:1 body scale and exact same horizontal shoulder height as Figure 3, showing midnight-navy double-breasted suit drape, gold-rimmed buttons, burgundy silk tie, trousers, and loafers. Clean mannequin-style neck termination at the collar with wide empty white studio background space above the neck (strictly zero head, zero face, and never stretching the headless body to touch the top border).
+2. Figure 2 (Center-Left — 90-Degree Lateral Side Profile Full-Body View, Clean Mannequin Neck Cut at Shared Shoulder Line): Full-length 90-degree side profile body from the base of the neck down to the loafers at the exact same 1:1 body scale and exact same horizontal shoulder height as Figure 3, showing 3D anatomical posture, double-breasted jacket profile, and shoe heel silhouette. Clean mannequin-style neck termination at the collar with wide empty white studio background space above the neck (strictly zero head, zero face, and never stretching the headless body to touch the top border).
+3. Figure 3 (Center — Rear Back Full-Body View WITH Head &amp; Hair at Shared Shoulder Line): Full-length rear back view from the top of the head down to the loafers at the exact same 1:1 body scale, with shoulders, jacket hem, waistline, and shoe heels aligned strictly horizontally with Figures 1 and 2, showing the complete back of the head and sleek side-parted ash-blonde strand-groomed hair extending above the shared shoulder line, back vent of the navy suit, and heels touching floor.
+
+RIGHT ZONE (occupying the right 45% of the canvas width — Figure 4: One Large Frontal Chest-Up Portrait):
+Features a prominent, zoomed-in high-definition chest-up portrait filling the right 45% of the frame with impactful 3D semi-realistic facial clarity while maintaining safe headroom margin above the hair crown, entire head, full cranium, and complete side-parted blonde hairstyle 100% fully visible inside the canvas with clear breathing space below top border, in strictly direct frontal eye-level view facing camera directly, capturing sculpted 3D facial geometry, refined SSS satin skin finish, calculating pale-green irises with dual catchlights, small dark beauty mark beneath the left eye, burgundy silk tie, and navy lapel.
+
+Studio key lighting casting crisp contact shadows under shoes, strictly zero text, zero typography, zero labels, strictly zero environmental elements, zero scenery, zero furniture, zero watermark, strictly zero height mismatch between the three full-body turnaround figures, strictly no enlarged or stretched headless bodies, headless necks must never touch the top canvas border, all three turnaround bodies must align horizontally at the shoulders, waist, and heels, all 4 figures 100% fully visible inside the 16:9 frame, strictly zero cropped head, strictly no cut-off hair, no truncated hair crown, no hair touching canvas edges, ample empty white headroom margin above the skull, strictly zero out-of-frame head, no chopped skull, portrait strictly frontal view only.</pre>
+      <div style="margin-top: 10px; background: rgba(56, 189, 248, 0.06); border: 1px solid rgba(56, 189, 248, 0.2); border-radius: 8px; padding: 12px; font-size: 12px;">
+        <strong style="color: var(--cyan);">Mode B Video Prompt Snippet (Stage 4 Anchor — Image 2):</strong>
+        <p style="color: #CBD5E1; margin-top: 4px; font-family: 'JetBrains Mono', monospace;">
+          [subject]: garrett_harrington [100% Appearance, attire, and facial features Refer to image 2], standing beside the head of the mahogany dining table, chin raised with a cold condescending smirk, hands free of props, eyeline glaring down the table at silas_brennan — the only garrett_harrington in frame.
+        </p>
+      </div>
+    </div>
+
+    <!-- Model Sheet 3: Arthur Harrington -->
+    <div style="margin-bottom: 28px;">
+      <div class="group-label">
+        <span>3.3 Model Sheet: Arthur Harrington (B1 · Image 3) — 16:9 Four-View Character Sheet (Mẫu 2B)</span>
+        <button class="copy-btn" onclick="copyText(this)">📋 Copy Prompt</button>
+      </div>
+      <div class="prompt-title">
+        <span>Prompt 3 (Image 3): 3D Semi-Realistic Animation 16:9 Turnaround Sheet (Mẫu 2B)</span>
+        <span>Backdrop: Pure White (#FFFFFF) vs. Dark Espresso Velvet Suit</span>
+      </div>
+      <pre class="prompt-box">Style: 3D Semi-Realistic Cinematic Animation, high-end stylized 3D realism in the signature style of Light Chaser Animation and Blur Studio, rendered in Unreal Engine 5 and Octane Render, ray-traced global illumination, physically based rendering (PBR) textures, refined subsurface scattering skin shader, strand-based 3D hair grooming.
+
+High-end 3D semi-realistic character design showcase, 8K ultra HD, sculpted three-dimensional facial geometry, physically based rendering (PBR) material shaders, professional studio character model sheet, creamy shallow depth of field, focus precisely locked on facial features.
+
+Aesthetic of commanding billionaire shipping patriarch, dignified inscrutable temperament. One European-American male (Arthur Harrington), aged 68, 178cm height, 74kg, true-to-life 7.5-head dignified upright anatomical proportions, with sculpted 3D facial bone structure and authoritative age character. Weathered warm-ivory complexion rendered with refined subsurface scattering (SSS) warmth, dignified forehead creases, and a natural satin-matte skin finish. Heavy silver eyebrows with individual hair fibers framing expressive semi-realistic eagle-like steel-blue eyes with multi-layered iris depth and crisp dual studio catchlights. Prominent straight nose bridge, neatly trimmed silver full beard and mustache with 3D strand grooming, firm well-defined lips with a natural muted-rose tone, commanding inscrutable expression.
+
+Thick silver-white hair swept straight back with distinct 3D strand-based hair grooming and natural silver sheen; bare ears with zero earrings. Pristine baseline tailored dark espresso-brown velvet formal jacket worn over a charcoal wool double-breasted waistcoat, crisp white pleated dress shirt, black silk bow tie, and dark charcoal tailored trousers, rendered in tactile PBR velvet and matte wool shaders, paired with polished black leather dress shoes, bare hands free of props.
+
+Solid pure white studio backdrop (#FFFFFF) with zero scenery and zero environmental elements, creating maximum optical contrast against the dark espresso-brown velvet jacket and charcoal trousers for razor-sharp silhouette separation. Three-point studio key lighting casting crisp soft contact shadows under shoes, warm rim light defining silver hair strands and shoulder contours, delicate fill light showcasing refined SSS skin shader and PBR velvet nap.
+
+Character reference model sheet, 16:9 widescreen aspect ratio, clean solid pure white studio background, containing 4 figures arranged from left to right across two zones:
+
+LEFT AND CENTER ZONE (occupying the left 55% of the canvas width — Three Compact Full-Body Turnaround Figures at Identical 1:1 Body Scale):
+Displays three full-body turnaround figures standing side by side in a natural, dignified upright posture with arms resting loosely beside the torso and dress shoes grounded on the exact same horizontal floor baseline. CRITICAL SCALE LOCK: All three turnaround bodies MUST share the exact same 1:1 anatomical body scale — their shared shoulder line, horizontal shoulder alignment, chest lines, jacket hems, waistlines, and shoe heels must align along strict horizontal parallel lines across all three figures:
+1. Figure 1 (Far Left — Front Full-Body View, Clean Mannequin Neck Cut at Shared Shoulder Line): Full-length front body from the base of the neck down to the dress shoes at the exact same 1:1 body scale and exact same horizontal shoulder height as Figure 3, showing dark espresso velvet jacket drape, charcoal waistcoat, black silk bow tie, trousers, and shoes. Clean mannequin-style neck termination at the collar with wide empty white studio background space above the neck (strictly zero head, zero face, and never stretching the headless body to touch the top border).
+2. Figure 2 (Center-Left — 90-Degree Lateral Side Profile Full-Body View, Clean Mannequin Neck Cut at Shared Shoulder Line): Full-length 90-degree side profile body from the base of the neck down to the dress shoes at the exact same 1:1 body scale and exact same horizontal shoulder height as Figure 3, showing 3D anatomical posture, velvet jacket profile, and shoe heel silhouette. Clean mannequin-style neck termination at the collar with wide empty white studio background space above the neck (strictly zero head, zero face, and never stretching the headless body to touch the top border).
+3. Figure 3 (Center — Rear Back Full-Body View WITH Head &amp; Hair at Shared Shoulder Line): Full-length rear back view from the top of the head down to the dress shoes at the exact same 1:1 body scale, with shoulders, jacket hem, waistline, and shoe heels aligned strictly horizontally with Figures 1 and 2, showing the complete back of the head and swept-back silver-white strand-groomed hair extending above the shared shoulder line, back vent of the espresso velvet jacket, and heels touching floor.
+
+RIGHT ZONE (occupying the right 45% of the canvas width — Figure 4: One Large Frontal Chest-Up Portrait):
+Features a prominent, zoomed-in high-definition chest-up portrait filling the right 45% of the frame with impactful 3D semi-realistic facial clarity while maintaining safe headroom margin above the hair crown, entire head, full cranium, and complete silver-white hairstyle 100% fully visible inside the canvas with clear breathing space below top border, in strictly direct frontal eye-level view facing camera directly, capturing sculpted 3D facial geometry, refined SSS skin finish, piercing steel-blue irises with dual catchlights, strand-groomed silver beard, black silk bow tie, and espresso velvet lapel.
+
+Studio key lighting casting crisp contact shadows under shoes, strictly zero text, zero typography, zero labels, strictly zero environmental elements, zero scenery, zero furniture, zero watermark, strictly zero height mismatch between the three full-body turnaround figures, strictly no enlarged or stretched headless bodies, headless necks must never touch the top canvas border, all three turnaround bodies must align horizontally at the shoulders, waist, and heels, all 4 figures 100% fully visible inside the 16:9 frame, strictly zero cropped head, strictly no cut-off hair, no truncated hair crown, no hair touching canvas edges, ample empty white headroom margin above the skull, strictly zero out-of-frame head, no chopped skull, portrait strictly frontal view only.</pre>
+      <div style="margin-top: 10px; background: rgba(56, 189, 248, 0.06); border: 1px solid rgba(56, 189, 248, 0.2); border-radius: 8px; padding: 12px; font-size: 12px;">
+        <strong style="color: var(--cyan);">Mode B Video Prompt Snippet (Stage 4 Anchor — Image 3):</strong>
+        <p style="color: #CBD5E1; margin-top: 4px; font-family: 'JetBrains Mono', monospace;">
+          [subject]: arthur_harrington [100% Appearance, attire, and facial features Refer to image 3], seated in the black steel-framed medical wheelchair with large spoked side wheels at the head of the mahogany dining table, hands free of props, eyeline observing silas_brennan with quiet intensity — the only arthur_harrington in frame.
+        </p>
+      </div>
+    </div>
+
+    <!-- Model Sheet 4: Simone Laurent -->
+    <div style="margin-bottom: 28px;">
+      <div class="group-label">
+        <span>3.4 Model Sheet: Simone Laurent (B2 · Image 4) — 16:9 Four-View Character Sheet (Mẫu 2B)</span>
+        <button class="copy-btn" onclick="copyText(this)">📋 Copy Prompt</button>
+      </div>
+      <div class="prompt-title">
+        <span>Prompt 4 (Image 4): 3D Semi-Realistic Animation 16:9 Turnaround Sheet (Mẫu 2B)</span>
+        <span>Backdrop: Dark Neutral Grey (#1E222A) vs. Champagne-Ivory Silk Gown (Contrast Inversion)</span>
+      </div>
+      <pre class="prompt-box">Style: 3D Semi-Realistic Cinematic Animation, high-end stylized 3D realism in the signature style of Light Chaser Animation and Blur Studio, rendered in Unreal Engine 5 and Octane Render, ray-traced global illumination, physically based rendering (PBR) textures, refined subsurface scattering skin shader, strand-based 3D hair grooming.
+
+High-end 3D semi-realistic character design showcase, 8K ultra HD, sculpted three-dimensional facial geometry, physically based rendering (PBR) material shaders, professional studio character model sheet, creamy shallow depth of field, focus precisely locked on facial features.
+
+Aesthetic of glamorous high-society socialite torn by ambition, guarded conflicted temperament. One French-American female (Simone Laurent), aged 30, 170cm height, 54kg, true-to-life 7.5-head poised slender anatomical proportions, with sculpted 3D oval facial bone structure and high cheekbones. Translucent porcelain-ivory complexion rendered with delicate subsurface scattering (SSS) warmth and a soft dewy-satin skin finish — neither rough pores nor glossy plastic doll sheen. High arched groomed eyebrows framing expressive semi-realistic sapphire-blue eyes with multi-layered iris depth, crisp dual studio catchlights, and curled eyelashes. Refined high-society makeup featuring soft smoky bronze eyeshadow, precise winged black eyeliner, sculpted rose-blush cheekbones, and full lips finished in satin-crimson lipstick.
+
+Voluminous honey-blonde hair styled in polished Hollywood waves cascading over the right shoulder with distinct 3D strand-based hair grooming, fine silky flyaway wisps catching the rim light, and natural anisotropic sheen; bare ears with zero earrings, bare skin with zero tattoos. Pristine baseline tailored champagne-ivory floor-length silk evening gown with structured shoulder tailoring, modest tailored V-neckline, and subtle pleated waist draping, rendered in tactile PBR luminous silk satin weave, paired with matching champagne silk heels, bare hands free of props.
+
+Solid dark neutral grey studio backdrop (#1E222A) with zero scenery and zero environmental elements, enforcing optical value contrast inversion against the bright champagne-ivory silk gown and honey-blonde hair for razor-sharp silhouette separation. Three-point studio key lighting casting crisp contact shadows under heels, warm rim light defining blonde hair waves and gown contours, delicate fill light showcasing refined SSS skin shader and PBR silk sheen.
+
+Character reference model sheet, 16:9 widescreen aspect ratio, clean solid dark neutral grey studio background (#1E222A), containing 4 figures arranged from left to right across two zones:
+
+LEFT AND CENTER ZONE (occupying the left 55% of the canvas width — Three Compact Full-Body Turnaround Figures at Identical 1:1 Body Scale):
+Displays three full-body turnaround figures standing side by side in a natural, poised posture with arms resting loosely beside the torso and silk heels grounded on the exact same horizontal floor baseline. CRITICAL SCALE LOCK: All three turnaround bodies MUST share the exact same 1:1 anatomical body scale — their shared shoulder line, horizontal shoulder alignment, chest lines, waistlines, gown hems, and shoe heels must align along strict horizontal parallel lines across all three figures:
+1. Figure 1 (Far Left — Front Full-Body View, Clean Mannequin Neck Cut at Shared Shoulder Line): Full-length front body from the base of the neck down to the gown hem and heels at the exact same 1:1 body scale and exact same horizontal shoulder height as Figure 3, showing champagne-ivory silk evening gown drape, structured shoulders, pleated waist, and heels. Clean mannequin-style neck termination at the collarline with wide empty dark grey studio background space above the neck (strictly zero head, zero face, and never stretching the headless body to touch the top border).
+2. Figure 2 (Center-Left — 90-Degree Lateral Side Profile Full-Body View, Clean Mannequin Neck Cut at Shared Shoulder Line): Full-length 90-degree side profile body from the base of the neck down to the heels at the exact same 1:1 body scale and exact same horizontal shoulder height as Figure 3, showing 3D anatomical posture, silk gown profile, and heel silhouette. Clean mannequin-style neck termination at the collarline with wide empty dark grey studio background space above the neck (strictly zero head, zero face, and never stretching the headless body to touch the top border).
+3. Figure 3 (Center — Rear Back Full-Body View WITH Head &amp; Hair at Shared Shoulder Line): Full-length rear back view from the top of the head down to the heels at the exact same 1:1 body scale, with shoulders, waistline, gown hem, and heels aligned strictly horizontally with Figures 1 and 2, showing the complete back of the head and wavy honey-blonde strand-groomed hair extending above and below the shared shoulder line, back drape of the champagne-ivory silk gown, and heels touching floor.
+
+RIGHT ZONE (occupying the right 45% of the canvas width — Figure 4: One Large Frontal Chest-Up Portrait):
+Features a prominent, zoomed-in high-definition chest-up portrait filling the right 45% of the frame with impactful 3D semi-realistic facial clarity while maintaining safe headroom margin above the hair crown, entire head, full cranium, and complete wavy honey-blonde hairstyle 100% fully visible inside the canvas with clear breathing space below top border, in strictly direct frontal eye-level view facing camera directly, capturing sculpted 3D facial geometry, refined SSS dewy-satin skin finish, expressive sapphire-blue irises with dual catchlights, satin-crimson lips, strand-based hair grooming, and champagne-ivory silk shoulder tailoring.
+
+Studio key lighting casting crisp contact shadows under heels, strictly zero text, zero typography, zero labels, strictly zero environmental elements, zero scenery, zero furniture, zero watermark, strictly zero height mismatch between the three full-body turnaround figures, strictly no enlarged or stretched headless bodies, headless necks must never touch the top canvas border, all three turnaround bodies must align horizontally at the shoulders, waist, and heels, all 4 figures 100% fully visible inside the 16:9 frame, strictly zero cropped head, strictly no cut-off hair, no truncated hair crown, no hair touching canvas edges, ample empty headroom margin above the skull, strictly zero out-of-frame head, no chopped skull, portrait strictly frontal view only.</pre>
+      <div style="margin-top: 10px; background: rgba(56, 189, 248, 0.06); border: 1px solid rgba(56, 189, 248, 0.2); border-radius: 8px; padding: 12px; font-size: 12px;">
+        <strong style="color: var(--cyan);">Mode B Video Prompt Snippet (Stage 4 Anchor — Image 4):</strong>
+        <p style="color: #CBD5E1; margin-top: 4px; font-family: 'JetBrains Mono', monospace;">
+          [subject]: simone_laurent [100% Appearance, attire, and facial features Refer to image 4], standing near the middle of the mahogany dining table beside garrett_harrington, posture tense and guarded, hands free of props, eyeline averted downward toward the polished tabletop — the only simone_laurent in frame.
+        </p>
+      </div>
+    </div>
+
+    <!-- Model Sheet 5: Clara Vance -->
+    <div style="margin-bottom: 28px;">
+      <div class="group-label">
+        <span>3.5 Model Sheet: Clara Vance (B3 · Image 5) — 16:9 Four-View Character Sheet (Mẫu 2B)</span>
+        <button class="copy-btn" onclick="copyText(this)">📋 Copy Prompt</button>
+      </div>
+      <div class="prompt-title">
+        <span>Prompt 5 (Image 5): 3D Semi-Realistic Animation 16:9 Turnaround Sheet (Mẫu 2B)</span>
+        <span>Backdrop: Pure White (#FFFFFF) vs. Midnight-Blue Trench-Blazer Suit</span>
+      </div>
+      <pre class="prompt-box">Style: 3D Semi-Realistic Cinematic Animation, high-end stylized 3D realism in the signature style of Light Chaser Animation and Blur Studio, rendered in Unreal Engine 5 and Octane Render, ray-traced global illumination, physically based rendering (PBR) textures, refined subsurface scattering skin shader, strand-based 3D hair grooming.
+
+High-end 3D semi-realistic character design showcase, 8K ultra HD, sculpted three-dimensional facial geometry, physically based rendering (PBR) material shaders, professional studio character model sheet, creamy shallow depth of field, focus precisely locked on facial features.
+
+Aesthetic of poised forensic auditor heroine, sharp perceptive temperament. One Swiss-American female (Clara Vance), aged 29, 168cm height, 53kg, true-to-life 7.5-head poised athletic anatomical proportions, with refined sculpted 3D symmetrical facial bone structure, defined jawline, and high cheekbones. Smooth warm-alabaster complexion rendered with delicate subsurface scattering (SSS) warmth at the cheeks and ears and a natural satin-matte skin finish — neither rough pores nor glossy plastic doll sheen. Softly arched feathered dark-brown eyebrows with individual hair fibers framing expressive semi-realistic warm-amber eyes with multi-layered iris depth, crisp dual studio catchlights, and natural curled eyelashes. Straight sculpted nose bridge, refined executive makeup with subtle neutral-taupe eyelid shading and well-defined lips in a natural warm-coral satin finish, calm resolute facial expression.
+
+Rich dark chestnut-brown hair gathered into a sleek low chignon bun at the nape with distinct 3D strand-based hair grooming, two soft face-framing strands near the cheekbones catching the rim light, and natural anisotropic hair sheen; bare ears with zero earrings, bare skin with zero tattoos. Pristine baseline tailored midnight-blue wool knee-length structured blazer coat worn over a crisp high-neck ivory silk blouse and tailored midnight-blue straight-leg trousers, rendered in tactile PBR matte twill fabric weave with fine lapel stitching, paired with low-heeled black leather ankle boots, bare hands free of props.
+
+Solid pure white studio backdrop (#FFFFFF) with zero scenery and zero environmental elements, creating maximum optical contrast against the midnight-blue blazer coat and dark chestnut hair for razor-sharp silhouette separation. Three-point studio key lighting casting crisp soft contact shadows under boots, warm rim light defining hair strands and shoulder contours, delicate fill light showcasing refined SSS skin shader and PBR fabric weave.
+
+Character reference model sheet, 16:9 widescreen aspect ratio, clean solid pure white studio background, containing 4 figures arranged from left to right across two zones:
+
+LEFT AND CENTER ZONE (occupying the left 55% of the canvas width — Three Compact Full-Body Turnaround Figures at Identical 1:1 Body Scale):
+Displays three full-body turnaround figures standing side by side in a natural, relaxed posture with arms resting loosely beside the torso and ankle boots grounded on the exact same horizontal floor baseline. CRITICAL SCALE LOCK: All three turnaround bodies MUST share the exact same 1:1 anatomical body scale — their shared shoulder line, horizontal shoulder alignment, chest lines, blazer coat hems, waistlines, and boot heels must align along strict horizontal parallel lines across all three figures:
+1. Figure 1 (Far Left — Front Full-Body View, Clean Mannequin Neck Cut at Shared Shoulder Line): Full-length front body from the base of the neck down to the ankle boots at the exact same 1:1 body scale and exact same horizontal shoulder height as Figure 3, showing midnight-blue blazer coat drape, ivory high-neck blouse collar, straight-leg trousers, and boots. Clean mannequin-style neck termination at the collar with wide empty white studio background space above the neck (strictly zero head, zero face, and never stretching the headless body to touch the top border).
+2. Figure 2 (Center-Left — 90-Degree Lateral Side Profile Full-Body View, Clean Mannequin Neck Cut at Shared Shoulder Line): Full-length 90-degree side profile body from the base of the neck down to the ankle boots at the exact same 1:1 body scale and exact same horizontal shoulder height as Figure 3, showing 3D anatomical posture, blazer coat profile, and boot heel silhouette. Clean mannequin-style neck termination at the collar with wide empty white studio background space above the neck (strictly zero head, zero face, and never stretching the headless body to touch the top border).
+3. Figure 3 (Center — Rear Back Full-Body View WITH Head &amp; Hair at Shared Shoulder Line): Full-length rear back view from the top of the head down to the ankle boots at the exact same 1:1 body scale, with shoulders, coat hem, waistline, and boot heels aligned strictly horizontally with Figures 1 and 2, showing the complete back of the head and sleek low chestnut-brown chignon bun extending above the shared shoulder line, back vent of the blazer coat, and heels touching floor.
+
+RIGHT ZONE (occupying the right 45% of the canvas width — Figure 4: One Large Frontal Chest-Up Portrait):
+Features a prominent, zoomed-in high-definition chest-up portrait filling the right 45% of the frame with impactful 3D semi-realistic facial clarity while maintaining safe headroom margin above the hair crown, entire head, full cranium, and complete chestnut hairstyle 100% fully visible inside the canvas with clear breathing space below top border, in strictly direct frontal eye-level view facing camera directly, capturing sculpted 3D facial geometry, refined SSS satin skin finish, expressive warm-amber irises with dual catchlights, strand-based hair grooming, and midnight-blue coat lapel.
+
+Studio key lighting casting crisp contact shadows under boots, strictly zero text, zero typography, zero labels, strictly zero environmental elements, zero scenery, zero furniture, zero watermark, strictly zero height mismatch between the three full-body turnaround figures, strictly no enlarged or stretched headless bodies, headless necks must never touch the top canvas border, all three turnaround bodies must align horizontally at the shoulders, waist, and heels, all 4 figures 100% fully visible inside the 16:9 frame, strictly zero cropped head, strictly no cut-off hair, no truncated hair crown, no hair touching canvas edges, ample empty white headroom margin above the skull, strictly zero out-of-frame head, no chopped skull, portrait strictly frontal view only.</pre>
+      <div style="margin-top: 10px; background: rgba(56, 189, 248, 0.06); border: 1px solid rgba(56, 189, 248, 0.2); border-radius: 8px; padding: 12px; font-size: 12px;">
+        <strong style="color: var(--cyan);">Mode B Video Prompt Snippet (Stage 4 Anchor — Image 5):</strong>
+        <p style="color: #CBD5E1; margin-top: 4px; font-family: 'JetBrains Mono', monospace;">
+          [subject]: clara_vance [100% Appearance, attire, and facial features Refer to image 5], standing beside the steel archival worktable in the subterranean vault, posture alert and composed, hands free of props, eyeline focused on silas_brennan — the only clara_vance in frame.
+        </p>
+      </div>
+    </div>
+
+    <!-- Model Sheet 6: Julian Rostova -->
+    <div style="margin-bottom: 28px;">
+      <div class="group-label">
+        <span>3.6 Model Sheet: Julian Rostova (B4 · Image 6) — 16:9 Four-View Character Sheet (Mẫu 2B)</span>
+        <button class="copy-btn" onclick="copyText(this)">📋 Copy Prompt</button>
+      </div>
+      <div class="prompt-title">
+        <span>Prompt 6 (Image 6): 3D Semi-Realistic Animation 16:9 Turnaround Sheet (Mẫu 2B)</span>
+        <span>Backdrop: Pure White (#FFFFFF) vs. Jet-Black Legal Suit</span>
+      </div>
+      <pre class="prompt-box">Style: 3D Semi-Realistic Cinematic Animation, high-end stylized 3D realism in the signature style of Light Chaser Animation and Blur Studio, rendered in Unreal Engine 5 and Octane Render, ray-traced global illumination, physically based rendering (PBR) textures, refined subsurface scattering skin shader, strand-based 3D hair grooming.
+
+High-end 3D semi-realistic character design showcase, 8K ultra HD, sculpted three-dimensional facial geometry, physically based rendering (PBR) material shaders, professional studio character model sheet, creamy shallow depth of field, focus precisely locked on facial features.
+
+Aesthetic of iron-willed supreme trust counsel, clinical unreadable temperament. One Continental European male (Julian Rostova), aged 52, 180cm height, 73kg, true-to-life 7.5-head lean disciplined anatomical proportions, with angular 3D facial bone structure and defined cheekbones. Cool olive-ivory complexion rendered with refined subsurface scattering (SSS), subtle nasolabial folds, and a natural satin-matte skin finish. Structured dark eyebrows framing sharp semi-realistic slate-grey eyes with multi-layered iris depth and crisp dual catchlights behind minimalist half-rimless titanium eyeglasses. Straight narrow nose bridge, clean-shaven jaw, well-defined lips with a natural muted-rose tone, clinical unreadable expression.
+
+Salt-and-pepper black hair with silver temples combed flat and precise with distinct 3D strand-based hair grooming; bare ears with zero earrings. Pristine baseline jet-black tailored wool single-breasted legal suit worn over a crisp white dress shirt and silver-grey woven silk necktie, rendered in tactile PBR matte wool weave, paired with polished black leather dress shoes, bare hands free of props.
+
+Solid pure white studio backdrop (#FFFFFF) with zero scenery and zero environmental elements, creating maximum optical contrast against the jet-black legal suit for razor-sharp silhouette separation. Three-point studio key lighting casting crisp soft contact shadows under shoes, warm rim light defining salt-and-pepper hair strands and shoulder contours, delicate fill light showcasing refined SSS skin shader and PBR wool fabric weave.
+
+Character reference model sheet, 16:9 widescreen aspect ratio, clean solid pure white studio background, containing 4 figures arranged from left to right across two zones:
+
+LEFT AND CENTER ZONE (occupying the left 55% of the canvas width — Three Compact Full-Body Turnaround Figures at Identical 1:1 Body Scale):
+Displays three full-body turnaround figures standing side by side in a natural, ramrod-straight posture with arms resting loosely beside the torso and dress shoes grounded on the exact same horizontal floor baseline. CRITICAL SCALE LOCK: All three turnaround bodies MUST share the exact same 1:1 anatomical body scale — their shared shoulder line, horizontal shoulder alignment, chest lines, suit jacket hems, waistlines, and shoe heels must align along strict horizontal parallel lines across all three figures:
+1. Figure 1 (Far Left — Front Full-Body View, Clean Mannequin Neck Cut at Shared Shoulder Line): Full-length front body from the base of the neck down to the dress shoes at the exact same 1:1 body scale and exact same horizontal shoulder height as Figure 3, showing jet-black legal suit drape, silver-grey silk tie, trousers, and shoes. Clean mannequin-style neck termination at the collar with wide empty white studio background space above the neck (strictly zero head, zero face, and never stretching the headless body to touch the top border).
+2. Figure 2 (Center-Left — 90-Degree Lateral Side Profile Full-Body View, Clean Mannequin Neck Cut at Shared Shoulder Line): Full-length 90-degree side profile body from the base of the neck down to the dress shoes at the exact same 1:1 body scale and exact same horizontal shoulder height as Figure 3, showing 3D anatomical posture, suit jacket profile, and shoe heel silhouette. Clean mannequin-style neck termination at the collar with wide empty white studio background space above the neck (strictly zero head, zero face, and never stretching the headless body to touch the top border).
+3. Figure 3 (Center — Rear Back Full-Body View WITH Head &amp; Hair at Shared Shoulder Line): Full-length rear back view from the top of the head down to the dress shoes at the exact same 1:1 body scale, with shoulders, jacket hem, waistline, and shoe heels aligned strictly horizontally with Figures 1 and 2, showing the complete back of the head and neatly combed salt-and-pepper strand-groomed hair extending above the shared shoulder line, back vent of the black suit, and heels touching floor.
+
+RIGHT ZONE (occupying the right 45% of the canvas width — Figure 4: One Large Frontal Chest-Up Portrait):
+Features a prominent, zoomed-in high-definition chest-up portrait filling the right 45% of the frame with impactful 3D semi-realistic facial clarity while maintaining safe headroom margin above the hair crown, entire head, full cranium, and complete salt-and-pepper hairstyle 100% fully visible inside the canvas with clear breathing space below top border, in strictly direct frontal eye-level view facing camera directly, capturing sculpted 3D facial geometry, refined SSS skin finish, half-rimless titanium eyeglasses over slate-grey irises, silver-grey silk tie, and jet-black suit lapel.
+
+Studio key lighting casting crisp contact shadows under shoes, strictly zero text, zero typography, zero labels, strictly zero environmental elements, zero scenery, zero furniture, zero watermark, strictly zero height mismatch between the three full-body turnaround figures, strictly no enlarged or stretched headless bodies, headless necks must never touch the top canvas border, all three turnaround bodies must align horizontally at the shoulders, waist, and heels, all 4 figures 100% fully visible inside the 16:9 frame, strictly zero cropped head, strictly no cut-off hair, no truncated hair crown, no hair touching canvas edges, ample empty white headroom margin above the skull, strictly zero out-of-frame head, no chopped skull, portrait strictly frontal view only.</pre>
+      <div style="margin-top: 10px; background: rgba(56, 189, 248, 0.06); border: 1px solid rgba(56, 189, 248, 0.2); border-radius: 8px; padding: 12px; font-size: 12px;">
+        <strong style="color: var(--cyan);">Mode B Video Prompt Snippet (Stage 4 Anchor — Image 6):</strong>
+        <p style="color: #CBD5E1; margin-top: 4px; font-family: 'JetBrains Mono', monospace;">
+          [subject]: julian_rostova [100% Appearance, attire, and facial features Refer to image 6], standing beside arthur_harrington's wheelchair at the head of the mahogany dining table, posture ramrod straight, hands free of props, eyeline directed across the legal documents on the table — the only julian_rostova in frame.
+        </p>
+      </div>
+    </div>
+
+    <!-- Model Sheet 7: Dominic Alvarez -->
+    <div style="margin-bottom: 16px;">
+      <div class="group-label">
+        <span>3.7 Model Sheet: Dominic Alvarez (B5 · Image 7) — 16:9 Four-View Character Sheet (Mẫu 2B)</span>
+        <button class="copy-btn" onclick="copyText(this)">📋 Copy Prompt</button>
+      </div>
+      <div class="prompt-title">
+        <span>Prompt 7 (Image 7): 3D Semi-Realistic Animation 16:9 Turnaround Sheet (Mẫu 2B)</span>
+        <span>Backdrop: Pure White (#FFFFFF) vs. Deep Oxblood-Charcoal Suit</span>
+      </div>
+      <pre class="prompt-box">Style: 3D Semi-Realistic Cinematic Animation, high-end stylized 3D realism in the signature style of Light Chaser Animation and Blur Studio, rendered in Unreal Engine 5 and Octane Render, ray-traced global illumination, physically based rendering (PBR) textures, refined subsurface scattering skin shader, strand-based 3D hair grooming.
+
+High-end 3D semi-realistic character design showcase, 8K ultra HD, sculpted three-dimensional facial geometry, physically based rendering (PBR) material shaders, professional studio character model sheet, creamy shallow depth of field, focus precisely locked on facial features.
+
+Aesthetic of ruthless billionaire hedge-fund predator, dominant aggressive temperament. One Mediterranean-Latin male (Dominic Alvarez), aged 44, 183cm height, 82kg, true-to-life 8-head powerful broad-chested anatomical proportions, with heavy square 3D jaw structure and prominent cheekbones. Sun-bronzed warm olive complexion rendered with refined subsurface scattering (SSS) warmth and a natural satin-matte skin finish. Thick dark eyebrows framing expressive semi-realistic predatory obsidian-brown eyes with multi-layered iris depth and crisp dual studio catchlights. Strong straight nose bridge, precision-trimmed 1mm dark designer stubble framing the jaw, well-defined lips with a natural muted-rose tone, ruthless confident expression.
+
+Thick jet-black hair swept back with natural volume and distinct 3D strand-based hair grooming; bare ears with zero earrings, bare skin with zero tattoos. Pristine baseline bespoke deep oxblood-and-charcoal peak-lapel wool suit worn over a jet-black silk dress shirt unbuttoned at the collar with no tie, and matching tailored dark trousers, rendered in tactile PBR fine wool and silk shaders, paired with polished black alligator-textured leather dress shoes, bare hands free of props.
+
+Solid pure white studio backdrop (#FFFFFF) with zero scenery and zero environmental elements, creating maximum optical contrast against the deep oxblood-and-charcoal suit and jet-black hair for razor-sharp silhouette separation. Three-point studio key lighting casting crisp soft contact shadows under shoes, warm rim light defining hair strands and broad shoulder contours, delicate fill light showcasing refined SSS skin shader and PBR fabric weave.
+
+Character reference model sheet, 16:9 widescreen aspect ratio, clean solid pure white studio background, containing 4 figures arranged from left to right across two zones:
+
+LEFT AND CENTER ZONE (occupying the left 55% of the canvas width — Three Compact Full-Body Turnaround Figures at Identical 1:1 Body Scale):
+Displays three full-body turnaround figures standing side by side in a natural, dominant upright posture with arms resting loosely beside the torso and dress shoes grounded on the exact same horizontal floor baseline. CRITICAL SCALE LOCK: All three turnaround bodies MUST share the exact same 1:1 anatomical body scale — their shared shoulder line, horizontal shoulder alignment, chest lines, suit jacket hems, waistlines, and shoe heels must align along strict horizontal parallel lines across all three figures:
+1. Figure 1 (Far Left — Front Full-Body View, Clean Mannequin Neck Cut at Shared Shoulder Line): Full-length front body from the base of the neck down to the dress shoes at the exact same 1:1 body scale and exact same horizontal shoulder height as Figure 3, showing deep oxblood-charcoal peak-lapel suit drape, black silk shirt collar, trousers, and shoes. Clean mannequin-style neck termination at the collar with wide empty white studio background space above the neck (strictly zero head, zero face, and never stretching the headless body to touch the top border).
+2. Figure 2 (Center-Left — 90-Degree Lateral Side Profile Full-Body View, Clean Mannequin Neck Cut at Shared Shoulder Line): Full-length 90-degree side profile body from the base of the neck down to the dress shoes at the exact same 1:1 body scale and exact same horizontal shoulder height as Figure 3, showing 3D broad-chested posture, peak-lapel jacket profile, and shoe heel silhouette. Clean mannequin-style neck termination at the collar with wide empty white studio background space above the neck (strictly zero head, zero face, and never stretching the headless body to touch the top border).
+3. Figure 3 (Center — Rear Back Full-Body View WITH Head &amp; Hair at Shared Shoulder Line): Full-length rear back view from the top of the head down to the dress shoes at the exact same 1:1 body scale, with shoulders, jacket hem, waistline, and shoe heels aligned strictly horizontally with Figures 1 and 2, showing the complete back of the head and thick swept-back jet-black strand-groomed hair extending above the shared shoulder line, back vent of the oxblood-charcoal suit, and heels touching floor.
+
+RIGHT ZONE (occupying the right 45% of the canvas width — Figure 4: One Large Frontal Chest-Up Portrait):
+Features a prominent, zoomed-in high-definition chest-up portrait filling the right 45% of the frame with impactful 3D semi-realistic facial clarity while maintaining safe headroom margin above the hair crown, entire head, full cranium, and complete jet-black hairstyle 100% fully visible inside the canvas with clear breathing space below top border, in strictly direct frontal eye-level view facing camera directly, capturing sculpted 3D facial geometry, refined SSS olive skin finish, 1mm designer stubble, predatory obsidian-brown irises with dual catchlights, black silk open collar, and oxblood peak lapel.
+
+Studio key lighting casting crisp contact shadows under shoes, strictly zero text, zero typography, zero labels, strictly zero environmental elements, zero scenery, zero furniture, zero watermark, strictly zero height mismatch between the three full-body turnaround figures, strictly no enlarged or stretched headless bodies, headless necks must never touch the top canvas border, all three turnaround bodies must align horizontally at the shoulders, waist, and heels, all 4 figures 100% fully visible inside the 16:9 frame, strictly zero cropped head, strictly no cut-off hair, no truncated hair crown, no hair touching canvas edges, ample empty white headroom margin above the skull, strictly zero out-of-frame head, no chopped skull, portrait strictly frontal view only.</pre>
+      <div style="margin-top: 10px; background: rgba(56, 189, 248, 0.06); border: 1px solid rgba(56, 189, 248, 0.2); border-radius: 8px; padding: 12px; font-size: 12px;">
+        <strong style="color: var(--cyan);">Mode B Video Prompt Snippet (Stage 4 Anchor — Image 7):</strong>
+        <p style="color: #CBD5E1; margin-top: 4px; font-family: 'JetBrains Mono', monospace;">
+          [subject]: dominic_alvarez [100% Appearance, attire, and facial features Refer to image 7], standing beside the floor-to-ceiling glass partition of the penthouse lounge, posture dominant with shoulders squared, hands free of props, eyeline locked predatorily on garrett_harrington — the only dominic_alvarez in frame.
+        </p>
+      </div>
+    </div>
+  </section>
+
+  <!-- SECTION 4A: MASTER PROP UNIVERSE -->
+  <section id="props">
+    <div class="section-header">
+      <h2 class="section-title">📦 Phần 4A: Vũ Trụ Đạo Cụ Hai Tầng Nguyên Tử &amp; Chu Kỳ Biến Đổi (Atomic Two-Tier Prop Universe — Images 8–9)</h2>
+      <span class="badge badge-rose">Atomic 1-Object-Per-Line [PROP]: · Tier 1 (2) + Tier 2 Text · Gate 4</span>
+    </div>
+    <p style="color: var(--muted); font-size: 13.5px; margin-bottom: 18px;">
+      Áp dụng nghiêm ngặt <strong>Quy Chuẩn Hai Tầng Đạo Cụ Nguyên Tử (Atomic Two-Tier Prop Protocol — Doctrine §10.5 &amp; 0b §12.3)</strong>: Mỗi dòng <code>[PROP]:</code> chỉ được phép khai báo <strong>ĐÚNG 1 VẬT THỂ DUY NHẤT</strong> kết thúc bằng <code>— the only {noun} in frame</code> (tuyệt đối không gộp 2 vật thể vào 1 ảnh gây nhầm lẫn trạng thái cầm/đặt). Chỉ <strong>2 Đạo cụ Gia Tộc Độc Bản (Tier 1)</strong> mới sinh bảng thiết kế 16:9 (`Image 8` = Sổ Nợ Bìa Da Đỏ UBS &amp; `Image 9` = Ấn Tín Giám Hộ Đá Vỏ Chai); toàn bộ đạo cụ cầm tay phổ thông (Bút máy ngòi vàng, Nhẫn kim cương Emerald, Hồ sơ cách ly y tế, Đèn UV, Thẻ đen) thuộc <strong>Tier 2 Pure Rich Text</strong> (1 dòng/1 vật thể).
+    </p>
+
+    <!-- Tier 1 Prop 1: The Crimson Leather Debt Ledger -->
+    <div style="margin-bottom: 28px;">
+      <div class="group-label">
+        <span>4A.1 Tier 1 Hero Prop #1 (PROP-01 · Image 8): Sổ Nợ Bìa Da Đỏ UBS Geneva (Crimson Leather Debt Ledger)</span>
+        <button class="copy-btn" onclick="copyText(this)">📋 Copy Prompt</button>
+      </div>
+      <div class="prompt-title">
+        <span>Prop Design Sheet 1 (Image 8): 16:9 Four-View Turnaround Sheet (Single Atomic Object)</span>
+        <span>Wound Prop (500M Debt) ➔ 180° Echo Prop (22B Sovereign Bond Charter)</span>
+      </div>
+      <pre class="prompt-box">Style: 3D Semi-Realistic Cinematic Animation, high-end stylized 3D realism in the signature style of Light Chaser Animation and Blur Studio, rendered in Unreal Engine 5 and Octane Render, ray-traced global illumination, physically based rendering (PBR) material shaders, 16:9 widescreen prop turnaround sheet.
+
+Object: A single heavy antique-style corporate trust ledger bound in deep crimson full-grain Italian calfskin leather with recessed gold-foil border embossing and brass corner protectors. The heavy cream cotton-rag parchment pages of the open ledger feature crisp black legal clauses and a raised circular metallic gold-bullion wax seal stamped at the bottom right corner bearing an intricate geometric Swiss bank crest.
+
+Four-view prop presentation layout on a 16:9 canvas: Left zone shows a large 3D hero perspective shot of the open crimson leather debt ledger displaying the raised gold bullion wax seal on the signature page; Right zone shows three orthographic turnaround views (closed front crimson leather cover view with brass corners, side spine thickness view with five raised ribbed leather hubs, and macro detail view of the raised metallic gold bullion wax seal). Solid pure white studio background (#FFFFFF), crisp studio rim lighting highlighting calfskin leather grain, parchment fibers, and metallic gold specular reflections, strictly one single object, zero fountain pens, zero human hands, zero room background, zero text labels, no watermark.</pre>
+      <div style="margin-top: 10px; background: rgba(244, 63, 94, 0.06); border: 1px solid rgba(244, 63, 94, 0.2); border-radius: 8px; padding: 12px; font-size: 12px;">
+        <strong style="color: var(--rose);">Mode B Video Prompt Snippet (Stage 4 Atomic 1-Item Anchor — Image 8):</strong>
+        <p style="color: #CBD5E1; margin-top: 4px; font-family: 'JetBrains Mono', monospace;">
+          [PROP]: crimson leather debt ledger [100% Refer to image 8] (heavy crimson calfskin corporate ledger open to the gold bullion wax-sealed signature page), resting flat on the polished mahogany dining table — the only ledger in frame.
+        </p>
+      </div>
+    </div>
+
+    <!-- Tier 1 Prop 2: Obsidian Trustee Signet Seal -->
+    <div style="margin-bottom: 28px;">
+      <div class="group-label">
+        <span>4A.2 Tier 1 Hero Prop #2 (PROP-02 · Image 9): Ấn Tín Giám Hộ Đá Vỏ Chai Khắc Chữ H (Obsidian Trustee Signet Seal)</span>
+        <button class="copy-btn" onclick="copyText(this)">📋 Copy Prompt</button>
+      </div>
+      <div class="prompt-title">
+        <span>Prop Design Sheet 2 (Image 9): 16:9 Four-View Turnaround Sheet (Single Atomic Object)</span>
+        <span>Custodian Freeze (Ep 2) ➔ Stolen GPS Bait (Ep 4–5) ➔ Sovereign Authority Payoff (Ep 8–10)</span>
+      </div>
+      <pre class="prompt-box">Style: 3D Semi-Realistic Cinematic Animation, high-end stylized 3D realism in the signature style of Light Chaser Animation and Blur Studio, rendered in Unreal Engine 5 and Octane Render, ray-traced global illumination, physically based rendering (PBR) material shaders, 16:9 widescreen prop turnaround sheet.
+
+Object: A single heavy octagonal corporate trustee hand-stamp carved from polished black volcanic obsidian stone, fitted with a stepped brushed-brass collar around the lower grip and an engraved interlocking H-crest relief on the flat brass stamping base.
+
+Four-view prop presentation layout on a 16:9 canvas: Left zone shows a large 3D hero perspective shot of the octagonal black volcanic obsidian trustee signet seal standing upright on its brushed-brass collar base; Right zone shows three orthographic views (top-down view of the octagonal polished black obsidian crown facets, side profile view showing the stepped brushed-brass collar and obsidian pillar height, and upturned bottom view revealing the deeply engraved brass H-crest stamp face). Solid pure white studio background (#FFFFFF), sharp studio key lighting creating obsidian mirror highlights and warm brushed-brass reflections, strictly one single object, zero rings, zero human hands, zero scenery, zero text labels, no watermark.</pre>
+      <div style="margin-top: 10px; background: rgba(244, 63, 94, 0.06); border: 1px solid rgba(244, 63, 94, 0.2); border-radius: 8px; padding: 12px; font-size: 12px;">
+        <strong style="color: var(--rose);">Mode B Video Prompt Snippet (Stage 4 Atomic 1-Item Anchor — Image 9):</strong>
+        <p style="color: #CBD5E1; margin-top: 4px; font-family: 'JetBrains Mono', monospace;">
+          [PROP]: obsidian trustee signet seal [100% Refer to image 9] (octagonal black volcanic obsidian hand-stamp fitted with a brushed brass collar and engraved H-crest base), resting upright on the dark mahogany tabletop — the only signet seal in frame.
+        </p>
+      </div>
+    </div>
+
+    <!-- Prop Mutability & Tier 2 Inventory Table -->
+    <div class="group-label"><span>4A.3 Bảng Chu Kỳ Biến Đổi Đạo Cụ (Prop Mutability Lifecycle) &amp; Danh Mục Đạo Cụ Tier 2 Nguyên Tử (1 Dòng = 1 Vật Thể)</span></div>
+    <table class="data-table">
+      <thead>
+        <tr>
+          <th>Mã Đạo Cụ</th>
+          <th>Phân Loại</th>
+          <th>Chu Kỳ Trạng Thái Vật Lý (State 0 ➔ State 1 ➔ State 2 / 180° Echo) &amp; Cú Pháp [PROP]: Nguyên Tử Chuẩn (Gate 3K)</th>
+        </tr>
+      </thead>
+      <tbody>
+        <tr>
+          <td><strong>PROP-01 (Image 8)</strong></td>
+          <td><span class="badge badge-rose">Tier 1 Hero Prop</span></td>
+          <td>• <strong>State 0 (Ep 1):</strong> Sổ Nợ 500M niêm phong sáp vàng chưa ký.<br>• <strong>State 1 (Ep 2–5):</strong> Đã có chữ ký của Silas; phát sáng huỳnh quang xanh lam dưới đèn UV của Clara lộ ra mã Trái phiếu 22 Tỷ USD.<br>• <strong>State 2 / 180° Echo (Ep 9–10):</strong> Dưới đèn nhiệt phòng họp, lớp mực cảm ứng nhiệt từ bút ngòi vàng rực sáng màu vàng kim, chính thức trở thành Hiến chương Chủ tịch Tối cao.<br>• <strong>Mode B Syntax:</strong> <code>crimson leather debt ledger [100% Refer to image 8], resting flat on the mahogany table — the only ledger in frame</code></td>
+        </tr>
+        <tr>
+          <td><strong>PROP-02 (Image 9)</strong></td>
+          <td><span class="badge badge-rose">Tier 1 Hero Prop</span></td>
+          <td>• <strong>State 0 (Ep 1–2):</strong> Ấn tín Giám hộ đặt cạnh Sổ Nợ, được Silas dùng để đóng băng thẻ tín dụng của Garrett.<br>• <strong>State 1 (Ep 4–5):</strong> Ấn tín gắn chip GPS ngầm bị Simone lấy trộm giao cho Garrett, dẫn đường cho Silas mở khóa hầm Cảng Brooklyn.<br>• <strong>State 2 / 180° Echo (Ep 8–10):</strong> Ấn tín đá vỏ chai đóng dấu phán quyết truất quyền Garrett và bổ nhiệm Silas làm Chủ tịch.<br>• <strong>Mode B Syntax:</strong> <code>obsidian trustee signet seal [100% Refer to image 9], resting upright on the mahogany table — the only signet seal in frame</code></td>
+        </tr>
+        <tr>
+          <td><strong>Tier 2 — Fountain Pen</strong></td>
+          <td><span class="badge badge-cyan">Tier 2 Text-Only</span></td>
+          <td><code>gold-nibbed fountain pen with a glossy black lacquer barrel and engraved 18K gold nib, resting beside the ledger — the only fountain pen in frame</code></td>
+        </tr>
+        <tr>
+          <td><strong>Tier 2 — Diamond Ring</strong></td>
+          <td><span class="badge badge-cyan">Tier 2 Text-Only</span></td>
+          <td><code>platinum solitaire engagement ring set with a three-carat rectangular emerald-cut white diamond, resting on the tabletop — the only diamond ring in frame</code></td>
+        </tr>
+        <tr>
+          <td><strong>Tier 2 — Medical Isolation Folder</strong></td>
+          <td><span class="badge badge-cyan">Tier 2 Text-Only</span></td>
+          <td><code>cream manila cardiology admission folder stamped with a red clinical isolation seal, resting flat on the mahogany table — the only folder in frame</code></td>
+        </tr>
+        <tr>
+          <td><strong>Tier 2 — Legal Waiver</strong></td>
+          <td><span class="badge badge-cyan">Tier 2 Text-Only</span></td>
+          <td><code>ivory parchment liability waiver document with red wax border and black ink signature lines, resting flat on the mahogany table — the only waiver document in frame</code></td>
+        </tr>
+        <tr>
+          <td><strong>Tier 2 — UV Torch</strong></td>
+          <td><span class="badge badge-cyan">Tier 2 Text-Only</span></td>
+          <td><code>matte-black anodized aluminum handheld ultraviolet forensic flashlight with a glowing violet quartz lens, resting on the steel archival table — the only flashlight in frame</code></td>
+        </tr>
+        <tr>
+          <td><strong>Tier 2 — Black Card</strong></td>
+          <td><span class="badge badge-cyan">Tier 2 Text-Only</span></td>
+          <td><code>brushed-titanium corporate centurion credit card with gold chip contacts, resting on the marble counter — the only credit card in frame</code></td>
+        </tr>
+        <tr>
+          <td><strong>Tier 2 — Buyout Folder</strong></td>
+          <td><span class="badge badge-cyan">Tier 2 Text-Only</span></td>
+          <td><code>charcoal leatherette distressed-debt contract folder with brass corner clips, resting on the glass coffee table — the only contract folder in frame</code></td>
+        </tr>
+      </tbody>
+    </table>
+  </section>
+
+  <!-- SECTION 4B: MASTER LOCATION UNIVERSE -->
+  <section id="locations">
+    <div class="section-header">
+      <h2 class="section-title">🏛️ Phần 4B: Vũ Trụ Bối Cảnh 5-Vector &amp; Lưới Thiết Kế 2x2 16:9 (Master Location Universe — Images 10–14)</h2>
+      <span class="badge badge-cyan">5-Vector Protocol · Gate 3S-7a/7b Zero Ghost Fixtures · Gate 5</span>
+    </div>
+    <p style="color: var(--muted); font-size: 13.5px; margin-bottom: 18px;">
+      Mọi bối cảnh tuân thủ <strong>Giao Thức 5 Vector Môi Trường &amp; Đồng Bộ Nội Thất Cố Định (Gate 3S-7a/7b Zero Ghost Fixture Synchronization)</strong>: Liệt kê đầy đủ toàn bộ các danh từ kiến trúc/nội thất cố định (<code>table, chairs, desk, counter, cabinet, doorway/doors, windows, pillar, mirror, stairs, sofa/couch, bench</code>) ngay trong <code>[context]:</code> để bất kỳ cảnh nào trong Stage 4 cho nhân vật tựa/đứng cạnh đồ nội thất đều vượt qua kiểm định tự động 100%.
+    </p>
+
+    <!-- ENV-01: Harrington Estate Grand Mahogany Dining Hall -->
+    <div style="margin-bottom: 28px;">
+      <div class="group-label">
+        <span>4B.1 ENV-01 (Image 10): Đại Sảnh Phòng Tiệc Gỗ Gụ Dinh Thự Harrington (Harrington Estate Grand Mahogany Dining Hall)</span>
+        <button class="copy-btn" onclick="copyText(this)">📋 Copy Prompt</button>
+      </div>
+      <div class="prompt-title">
+        <span>Location Design Sheet 1 (Image 10): 16:9 2x2 Architectural Grid</span>
+        <span>Active in: Tập 1, Tập 2, Tập 7, Tập 10</span>
+      </div>
+      <pre class="prompt-box">Style: 3D Semi-Realistic Cinematic Animation, high-end stylized 3D realism in the signature style of Light Chaser Animation and Blur Studio, rendered in Unreal Engine 5 and Octane Render, ray-traced global illumination, architectural physically based rendering (PBR) shaders, and crisp optical reflections, 16:9 widescreen environment reference sheet.
+
+Environment: Harrington Estate grand mahogany dining hall during a midnight winter blizzard. Opulent Neo-Georgian billionaire mansion interior: dark walnut wainscoted walls with structural stone pillars, a massive six-meter polished Honduras mahogany banquet table down the center axis surrounded by ten high-backed burgundy leather chairs, a black steel-framed medical wheelchair with large spoked side wheels stationed at the head of the table before a roaring stone hearth fireplace with a gilded wall mirror above the mantel, a mahogany sideboard cabinet and liquor counter along the west wall, a leather sofa bench in the alcove, towering five-meter arched mullioned glass windows on the east wall lashed by driving snow, heavy dark crimson velvet drapes, a tiered crystal chandelier overhead, and carved double oak doors at the south doorway entrance.
+
+Four-panel 2x2 grid layout on a 16:9 canvas: Top-left panel shows a wide establishing view looking down the six-meter mahogany dining table toward the head wheelchair, stone hearth fireplace, and gilded mantel mirror; Top-right panel shows the 180-degree reverse angle looking from the hearth back toward the foot of the table, mahogany sideboard cabinet, and the carved double oak entrance doors; Bottom-left panel shows a high-angle overhead bird's-eye spatial layout mapping the table, ten chairs, hearth, sideboard counter, and tall arched windows; Bottom-right panel shows a dramatic eye-level detail view of the polished mahogany tabletop reflecting the warm amber chandelier light against the icy steel-blue blizzard glow from the windows. Uninhabited empty interior, strictly zero people, zero characters, zero text, no watermark.</pre>
+      <div style="margin-top: 10px; background: rgba(56, 189, 248, 0.06); border: 1px solid rgba(56, 189, 248, 0.2); border-radius: 8px; padding: 12px; font-size: 12px;">
+        <strong style="color: var(--cyan);">Mode B Video Prompt Snippet (Stage 4 5-Vector [context]: Anchor — Image 10):</strong>
+        <p style="color: #CBD5E1; margin-top: 4px; font-family: 'JetBrains Mono', monospace;">
+          [context]: Harrington Estate grand mahogany dining hall [100% Refer to image 10], 08:30 PM midnight winter blizzard. Fixed architectural and furniture inventory: six-meter polished Honduras mahogany dining table, ten high-backed burgundy leather chairs, black steel-framed medical wheelchair with large spoked side wheels at the head of the table, stone hearth fireplace with gilded wall mirror, mahogany sideboard cabinet and side desk counter, walnut structural pillars, leather alcove sofa bench, five-meter arched glass windows with crimson velvet drapes on the flank, crystal chandelier overhead, and carved double oak entrance doors at the rear doorway. Overhead crystal chandelier casting warm amber pools down onto the tabletop while icy steel-blue blizzard light slashes diagonally through the frosted glass windows, casting long sharp shadows across the walnut floor. Cold drafty air with faint frost condensation on the windowpanes and suffocating dynastic tension.
+        </p>
+      </div>
+    </div>
+
+    <!-- ENV-02: Harrington Estate Marble Foyer and Porte-Cochere -->
+    <div style="margin-bottom: 28px;">
+      <div class="group-label">
+        <span>4B.2 ENV-02 (Image 11): Tiền Sảnh Đá Cẩm Thạch &amp; Cổng Vòm Dinh Thự (Harrington Estate Marble Foyer and Porte-Cochere)</span>
+        <button class="copy-btn" onclick="copyText(this)">📋 Copy Prompt</button>
+      </div>
+      <div class="prompt-title">
+        <span>Location Design Sheet 2 (Image 11): 16:9 2x2 Architectural Grid</span>
+        <span>Active in: Tập 1, Tập 2, Tập 7, Tập 9, Tập 10</span>
+      </div>
+      <pre class="prompt-box">Style: 3D Semi-Realistic Cinematic Animation, high-end stylized 3D realism in the signature style of Light Chaser Animation and Blur Studio, rendered in Unreal Engine 5 and Octane Render, ray-traced global illumination, architectural physically based rendering (PBR) marble shaders, and crisp optical reflections, 16:9 widescreen environment reference sheet.
+
+Environment: Harrington Estate grand marble foyer opening onto the snow-swept stone porte-cochere driveway at night. Black-and-white checkered Italian marble floor, sweeping twin curved marble staircases with wrought-iron and brass balustrades, a tall antique Patek Philippe mahogany floor clock standing by the main marble pillar, a marble concierge reception desk counter with an executive cross-cut paper shredder cabinet and wall mirror near the entrance, a velvet waiting bench sofa, tall arched foyer windows, and massive wrought-iron glass front doors at the main doorway opening onto the stone driveway under a Neo-Classical portico where snow swirls in the night air.
+
+Four-panel 2x2 grid layout on a 16:9 canvas: Top-left panel shows a wide establishing view of the marble foyer, reception desk counter, and twin sweeping staircases; Top-right panel shows the 180-degree reverse angle looking toward the wrought-iron glass front doors, arched windows, and snow-covered porte-cochere driveway outside; Bottom-left panel shows an overhead bird's-eye architectural view of the foyer floor, clock pillar, staircase, and entrance doorway threshold; Bottom-right panel shows a low-angle detail view of the wet marble threshold and stone driveway steps glistening under warm portico sconces and cold blue snow light. Empty environment, strictly zero people, zero characters, zero text, no watermark.</pre>
+      <div style="margin-top: 10px; background: rgba(56, 189, 248, 0.06); border: 1px solid rgba(56, 189, 248, 0.2); border-radius: 8px; padding: 12px; font-size: 12px;">
+        <strong style="color: var(--cyan);">Mode B Video Prompt Snippet (Stage 4 5-Vector [context]: Anchor — Image 11):</strong>
+        <p style="color: #CBD5E1; margin-top: 4px; font-family: 'JetBrains Mono', monospace;">
+          [context]: Harrington Estate marble foyer and porte-cochere [100% Refer to image 11], 10:15 PM winter night. Fixed architectural and furniture inventory: black-and-white checkered Italian marble floor, twin curved marble staircases with brass railings, antique mahogany floor clock beside the main marble pillar, marble concierge desk counter with brass-trimmed document shredder cabinet and wall mirror, velvet waiting bench sofa, frosted arched foyer windows, and open wrought-iron glass front doors at the main doorway leading onto the wet stone porte-cochere steps. Warm amber wall sconces inside clashing with cold white-blue exterior security floodlights piercing through swirling snow flurries, casting crisp reflections across the wet marble threshold. Freezing wind gusts carrying fine snow crystals across the entrance floor.
+        </p>
+      </div>
+    </div>
+
+    <!-- ENV-03: Brooklyn Founding Shipyard and Subterranean Data Vault -->
+    <div style="margin-bottom: 28px;">
+      <div class="group-label">
+        <span>4B.3 ENV-03 (Image 12): Xưởng Đóng Tàu Khởi Nghiệp Cảng Brooklyn &amp; Hầm Lưu Trữ Ngầm (Brooklyn Founding Shipyard and Subterranean Vault)</span>
+        <button class="copy-btn" onclick="copyText(this)">📋 Copy Prompt</button>
+      </div>
+      <div class="prompt-title">
+        <span>Location Design Sheet 3 (Image 12): 16:9 2x2 Architectural Grid</span>
+        <span>Active in: Tập 2, Tập 3, Tập 4, Tập 5, Tập 8, Tập 10</span>
+      </div>
+      <pre class="prompt-box">Style: 3D Semi-Realistic Cinematic Animation, high-end stylized 3D realism in the signature style of Light Chaser Animation and Blur Studio, rendered in Unreal Engine 5 and Octane Render, ray-traced global illumination, gritty industrial physically based rendering (PBR) material shaders, and wet concrete reflections, 16:9 widescreen environment reference sheet.
+
+Environment: Historic 1982 Brooklyn founding shipyard drydock warehouse connected via a heavy circular steel vault doorway and iron catwalk stairs to a high-tech subterranean archival and fiber-optic energy vault. Weathered red-brick walls reinforced with riveted cast-iron I-beam pillars, an elevated glass-walled engineer's office with a steel drafting desk, filing cabinet, and workbench counter overlooking the concrete floor, a heavy steel archival worktable and metal bench in the lower vault, a vintage 1982 brass pressure gauge mounted on the main conduit pillar, rows of glowing blue subterranean cooling conduits, and rain-streaked industrial skylight windows looking out toward the East River.
+
+Four-panel 2x2 grid layout on a 16:9 canvas: Top-left panel shows a wide establishing view of the industrial shipyard bay, iron pillars, and elevated engineer office desk; Top-right panel shows the 180-degree reverse angle facing the massive circular steel subterranean vault doorway entrance and brass conduit pillar; Bottom-left panel shows a high-angle overhead layout of the steel archival worktable, filing cabinet, vault corridor, and iron catwalk stairs; Bottom-right panel shows a close eye-level view of the steel archival worktable and workbench counter under industrial pendant lamps. Uninhabited empty environment, strictly zero people, zero characters, zero text, no watermark.</pre>
+      <div style="margin-top: 10px; background: rgba(56, 189, 248, 0.06); border: 1px solid rgba(56, 189, 248, 0.2); border-radius: 8px; padding: 12px; font-size: 12px;">
+        <strong style="color: var(--cyan);">Mode B Video Prompt Snippet (Stage 4 5-Vector [context]: Anchor — Image 12):</strong>
+        <p style="color: #CBD5E1; margin-top: 4px; font-family: 'JetBrains Mono', monospace;">
+          [context]: Brooklyn founding shipyard and subterranean data vault [100% Refer to image 12], 09:00 PM night. Fixed architectural and furniture inventory: riveted cast-iron pillars, damp concrete floor, circular steel vault bulkhead doorway and iron catwalk stairs, heavy brushed-steel archival worktable and drafting desk counter in the center, steel filing cabinet, metal folding chairs and work bench, vintage 1982 brass pressure gauge on the main pillar, and high industrial skylight windows. Overhead caged industrial pendant lamps casting harsh amber cones downward while cool cyan server-conduit indicator lights glow along the lower walls, creating deep chiaroscuro shadows. Damp harbor mist and floating dust motes suspended in the light beams.
+        </p>
+      </div>
+    </div>
+
+    <!-- ENV-04: Vulture Capital Penthouse Glass Lounge -->
+    <div style="margin-bottom: 28px;">
+      <div class="group-label">
+        <span>4B.4 ENV-04 (Image 13): Phòng Khánh Tiết Kính Tầng Thượng Vulture Capital (Vulture Capital Penthouse Glass Lounge)</span>
+        <button class="copy-btn" onclick="copyText(this)">📋 Copy Prompt</button>
+      </div>
+      <div class="prompt-title">
+        <span>Location Design Sheet 4 (Image 13): 16:9 2x2 Architectural Grid</span>
+        <span>Active in: Tập 3, Tập 4, Tập 5, Tập 6</span>
+      </div>
+      <pre class="prompt-box">Style: 3D Semi-Realistic Cinematic Animation, high-end stylized 3D realism in the signature style of Light Chaser Animation and Blur Studio, rendered in Unreal Engine 5 and Octane Render, ray-traced global illumination, sleek corporate luxury physically based rendering (PBR) material shaders, and crisp glass reflections, 16:9 widescreen environment reference sheet.
+
+Environment: Vulture Capital penthouse executive glass lounge on the 55th floor overlooking the Manhattan skyline. Floor-to-ceiling frameless acoustic glass walls and skyline windows, polished black Nero Marquina marble flooring, structural steel pillars, a low smoked-glass coffee table flanked by a dark charcoal Italian leather sofa couch and two armchairs, a backlit onyx liquor bar counter and display cabinet with a smoked mirror along the inner wall, floating glass mezzanine stairs, a sleek brushed-steel executive desk near the corner window, and frosted glass double entrance doors.
+
+Four-panel 2x2 grid layout on a 16:9 canvas: Top-left panel shows a wide establishing view of the penthouse lounge, leather sofa, and panoramic Manhattan skyline windows; Top-right panel shows the 180-degree reverse angle looking back toward the backlit onyx bar counter, display cabinet, and frosted glass double doors at the doorway; Bottom-left panel shows a high-angle overhead bird's-eye view of the smoked-glass coffee table, leather sofa, pillars, and executive desk; Bottom-right panel shows an eye-level detail view of the smoked-glass table and onyx bar reflections. Empty interior, strictly zero people, zero characters, zero text, no watermark.</pre>
+      <div style="margin-top: 10px; background: rgba(56, 189, 248, 0.06); border: 1px solid rgba(56, 189, 248, 0.2); border-radius: 8px; padding: 12px; font-size: 12px;">
+        <strong style="color: var(--cyan);">Mode B Video Prompt Snippet (Stage 4 5-Vector [context]: Anchor — Image 13):</strong>
+        <p style="color: #CBD5E1; margin-top: 4px; font-family: 'JetBrains Mono', monospace;">
+          [context]: Vulture Capital penthouse glass lounge [100% Refer to image 13], 04:30 PM late afternoon dusk. Fixed architectural and furniture inventory: floor-to-ceiling panoramic glass walls and skyline windows, black marble floor, structural steel pillars, smoked-glass coffee table, charcoal leather sofa couch and two armchairs, backlit onyx bar counter with glass display cabinet and smoked wall mirror, floating mezzanine stairs, brushed-steel executive desk, and frosted glass double doors at the doorway. Low-angle amber sunset light slicing horizontally through the skyscraper glass windows against cool recessed ceiling strip lights, casting razor-sharp reflections across the black marble floor. Clinical sterile air conditioning and predatory corporate coldness.
+        </p>
+      </div>
+    </div>
+
+    <!-- ENV-05: Harrington Tower 60th-Floor Executive Boardroom -->
+    <div style="margin-bottom: 16px;">
+      <div class="group-label">
+        <span>4B.5 ENV-05 (Image 14): Phòng Họp Hội Đồng Quản Trị Tầng 60 Tháp Harrington (Harrington Tower 60th-Floor Executive Boardroom)</span>
+        <button class="copy-btn" onclick="copyText(this)">📋 Copy Prompt</button>
+      </div>
+      <div class="prompt-title">
+        <span>Location Design Sheet 5 (Image 14): 16:9 2x2 Architectural Grid</span>
+        <span>Active in: Tập 6, Tập 8, Tập 9, Tập 10</span>
+      </div>
+      <pre class="prompt-box">Style: 3D Semi-Realistic Cinematic Animation, high-end stylized 3D realism in the signature style of Light Chaser Animation and Blur Studio, rendered in Unreal Engine 5 and Octane Render, ray-traced global illumination, monumental corporate physically based rendering (PBR) obsidian-granite shaders, and crisp optical reflections, 16:9 widescreen environment reference sheet.
+
+Environment: Harrington Tower 60th-floor sovereign executive boardroom. Monumental high-ceilinged boardroom featuring a monolithic eight-meter polished black granite conference table with an integrated brass thermal-verification lamp fixture at its center, sixteen ergonomic saddle-leather executive chairs, a raised sovereign chairman's podium desk counter at the north end backed by a brushed-brass wall relief of the Harrington H-crest and flanked by marble pillars, a glass archival cabinet and leather waiting bench sofa along the side wall, a giant wall-mounted LED financial ticker screen on the west wall, floor-to-ceiling glass windows on the east wall overlooking Manhattan, and tall double walnut-and-brass entrance doors at the south doorway.
+
+Four-panel 2x2 grid layout on a 16:9 canvas: Top-left panel shows a wide establishing view looking down the eight-meter black granite conference table toward the Chairman's podium desk and brass H-crest wall pillars; Top-right panel shows the 180-degree reverse angle looking from the Chairman's seat toward the tall double walnut-and-brass entrance doors and side cabinet; Bottom-left panel shows a high-angle overhead bird's-eye layout of the table, sixteen chairs, LED wall, and window axis; Bottom-right panel shows an eye-level detail view of the central brass thermal lamp fixture illuminating the black granite tabletop. Empty interior, strictly zero people, zero characters, zero text, no watermark.</pre>
+      <div style="margin-top: 10px; background: rgba(56, 189, 248, 0.06); border: 1px solid rgba(56, 189, 248, 0.2); border-radius: 8px; padding: 12px; font-size: 12px;">
+        <strong style="color: var(--cyan);">Mode B Video Prompt Snippet (Stage 4 5-Vector [context]: Anchor — Image 14):</strong>
+        <p style="color: #CBD5E1; margin-top: 4px; font-family: 'JetBrains Mono', monospace;">
+          [context]: Harrington Tower 60th-floor executive boardroom [100% Refer to image 14], 09:00 AM crisp morning. Fixed architectural and furniture inventory: eight-meter polished black granite conference table, central brass thermal-verification lamp fixture mounted on the table, sixteen saddle-leather executive chairs, raised sovereign chairman's podium desk counter with brass H-crest wall and marble pillars, side archival cabinet and leather bench sofa, wall-mounted LED financial display screen, floor-to-ceiling east skyline windows, and tall double walnut-and-brass entrance doors at the rear doorway. Crisp morning sunlight streaming diagonally from the east windows combined with the warm golden beam of the central table lamp, creating high-contrast specular reflections on the black granite surface. Charged boardroom atmosphere.
+        </p>
+      </div>
+    </div>
+  </section>
+
+  <!-- SECTION 5: 10-EPISODE PRODUCTION ROADMAP (PHASE A) -->
+  <section id="roadmap">
+    <div class="section-header">
+      <h2 class="section-title">🗺️ Phần 5: Lộ Trình Sản Xuất 10 Tập Theo Luật 20/80, 5 Episode Archetypes &amp; Seedance 15s Slots (Phase A Roadmap)</h2>
+      <span class="badge badge-gold">10 Tập · 95 Cảnh · 1,030s · Engine 2 + Engine 4 · Anti-Dead-Finale · Gate 6 &amp; Gate 6B</span>
+    </div>
+    <p style="color: var(--muted); font-size: 13.5px; margin-bottom: 20px;">
+      Lộ trình vĩ mô 10 Tập dưới đây thực thi 100% <strong>Luật Kiến Trúc 20/80 (`1-narrative-screenplay-architecture.md` §5 &amp; `workflow.md` §6.4)</strong>: Phá bỏ hoàn toàn sự đơn điệu 10 cảnh đồng nhất bằng <strong>5 Khuôn Mẫu Tập Theo Hồi (Archetypes 1–5: co giãn từ 8 cảnh ➔ 9 cảnh ➔ 10 cảnh ➔ 11 cảnh)</strong>, tích hợp <strong>Đòn Phản Kích Dopamine Mỗi Tập (`Engine 2 Face-Slap`)</strong>, đan cài <strong>1–2 phân cảnh hành động/rượt đuổi tốc độ cao <code>[⚡ MODEL KHUYẾN NGHỊ: SEEDANCE · 15.0s]</code></strong> trên mỗi tập, và hợp nhất <strong>70% Đại Cao Trào (Act IIIB) + 30% Vĩ Thanh (Act IV) ngay trong Tập 10 (`Anti-Dead-Finale Fusion Law`)</strong>.
+    </p>
+
+    <!-- Episode 1 -->
+    <div class="episode-card">
+      <div class="episode-header">
+        <span class="episode-title">TẬP 1: ĐÊM BÃO TUYẾT &amp; SỔ NỢ ĐỎ (The Crimson Debt)</span>
+        <span class="episode-badge" style="background: rgba(56, 189, 248, 0.2); color: var(--cyan);">HỒI I · ARCHETYPE 1: IGNITION &amp; TRAP · 85s (8 Cảnh: 7×10s + 1×15s Seedance) · 08:00 PM – 09:30 PM</span>
+      </div>
+      <div style="font-size: 13px; color: var(--text);">
+        <strong>• Chuỗi bối cảnh (2 Sequences) &amp; Nhân vật:</strong> Seq A (<code>Sc 1–5</code>): <code>ENV-01</code> Đại sảnh gỗ gụ Dinh thự Harrington (`Image 10`) ➔ Seq B (<code>Sc 6–8</code>): <code>ENV-02</code> Tiền sảnh Đá cẩm thạch (`Image 11`) | Cast: <code>silas_brennan</code>, <code>garrett_harrington</code>, <code>arthur_harrington</code>, <code>simone_laurent</code>, <code>julian_rostova</code>.<br>
+        <strong>• Slot Hành động Tốc độ cao (Seedance Routing):</strong> <code>Sc 06 [⚡ MODEL KHUYẾN NGHỊ: SEEDANCE · 15.0s]</code> — Đội vệ sĩ của Garrett lao tới định bẻ tay cưỡng chế Silas ký giấy khước từ, Silas lách người khóa khớp đẩy lùi 2 vệ sĩ vào cột gỗ óc chó và nện bút ngòi vàng ký thẳng vào Sổ Nợ Đỏ (`Image 8`).<br>
+        <strong>• Xung đột kịch tính, 3-Wall Escalation &amp; Engine 2 First Mini-Slap:</strong> <em>Wall 1 (Sc 1–2):</em> Giữa tiệc công bố di chúc, Arthur hoàn toàn tỉnh táo đặt cuốn Sổ Nợ Bìa Đỏ (`Image 8`) báo lỗ 500 triệu USD cùng Ấn Tín Đá Vỏ Chai (`Image 9`) và <strong>Hồ sơ Cách ly Y tế Tim mạch 72 Giờ Không Liên lạc</strong> lên bàn, rồi để Luật sư Julian đẩy xe lăn rời phòng họp khóa chặt cánh cửa gỗ sồi (tuyệt đối không dùng cliché ngất xỉu). <em>Wall 2 (Sc 3–6):</em> Garrett ép đứa em nuôi Silas gánh toàn bộ khoản nợ; sau pha giằng co khóa khớp vệ sĩ (`Sc 06 · 15.0s`), Silas ký thẳng vào Sổ Nợ Đỏ (`Image 8`) với điều kiện nắm 100% quyền Giám hộ Thanh lý. <em>Wall 3 &amp; First Mini-Slap (Sc 7–8 — tại Tiền sảnh ENV-02):</em> Simone vừa tháo nhẫn kim cương Emerald hủy hôn với Silas để đứng sang phía Garrett thì Luật sư Julian đóng sập Sổ Nợ Đỏ, tuyên bố chữ ký của Silas vừa kích hoạt quyền Giám hộ <strong>đóng băng toàn bộ hạn mức tín dụng 500 triệu USD của cả gia tộc ngay lập tức</strong>!
+      </div>
+      <div style="font-size: 12px; color: var(--muted); display: flex; flex-wrap: wrap; gap: 16px;">
+        <span>🎯 <strong>Bước ngoặt (Twist):</strong> Option C Reversal (P1 Broken) &amp; Engine 2 First Mini-Slap</span>
+        <span>⚡ <strong>Cường độ:</strong> 7.5/10 ➔ 9/10</span>
+        <span>🔒 <strong>Hậu quả &amp; Cliffhanger Baton:</strong> C4 (Tại tiền sảnh ENV-02, thẻ đen của Garrett báo khóa đỏ ngay sau khi Simone vừa trả nhẫn).</span>
+      </div>
+    </div>
+
+    <!-- Episode 2 -->
+    <div class="episode-card">
+      <div class="episode-header">
+        <span class="episode-title">TẬP 2: QUYỀN LỰC CỦA CON NỢ (The Debtor's Gavel)</span>
+        <span class="episode-badge" style="background: rgba(56, 189, 248, 0.2); color: var(--cyan);">HỒI I · ARCHETYPE 1: IGNITION &amp; TRAP · 85s (8 Cảnh: 7×10s + 1×15s Seedance) · 09:30 PM – 11:45 PM</span>
+      </div>
+      <div style="font-size: 13px; color: var(--text);">
+        <strong>• Chuỗi bối cảnh (3 Sequences) &amp; Nhân vật:</strong> Seq A (<code>Sc 1–3</code>): <code>ENV-01</code> Phòng tiệc (`Image 10`) ➔ Seq B (<code>Sc 4–6</code>): <code>ENV-02</code> Tiền sảnh &amp; Cổng vòm (`Image 11`) ➔ Seq C (<code>Sc 7–8</code>): <code>ENV-03</code> Cảng Brooklyn (`Image 12`) | Cast: <code>silas_brennan</code>, <code>garrett_harrington</code>, <code>simone_laurent</code>, <code>julian_rostova</code>, <code>clara_vance</code>.<br>
+        <strong>• Slot Hành động Tốc độ cao (Seedance Routing):</strong> <code>Sc 05 [⚡ MODEL KHUYẾN NGHỊ: SEEDANCE · 15.0s]</code> — Cuộc xung đột truy cản dưới mưa tuyết tại Cổng vòm `ENV-02` khi Garrett lao tới giằng chìa khóa siêu xe nhưng Silas phản xạ khóa tay, nện Ấn Tín Đá Vỏ Chai (`Image 9`) lên biên bản niêm phong toàn bộ đoàn xe ngay trước mắt đám đông.<br>
+        <strong>• Xung đột kịch tính &amp; In-Episode Dopamine Face-Slap:</strong> <em>Wall 1 (Sc 1–3):</em> Garrett đòi tước quyền điều hành và ra lệnh bảo vệ trục xuất Silas khỏi dinh thự. <em>Wall 2 (Sc 4–6 — Phá vỡ Misreading Tầng 1):</em> Tại tiền sảnh và cổng vòm (`ENV-02`), Silas đóng Ấn Tín Đá Vỏ Chai (`Image 9`) tịch thu toàn bộ thẻ đen và siêu xe của Garrett &amp; Simone; hoảng sợ bị ngân hàng Thụy Sĩ truy thu liên đới 500M, Garrett vội vã ký nháy từng trang vào <strong>"Giấy Miễn Trừ Trách Nhiệm &amp; Tách Hộ"</strong> (chứa Điều khoản 14) trước mặt Luật sư Julian. <em>Wall 3 (Sc 7–8):</em> Silas đến Xưởng Cảng Brooklyn (`ENV-03`) kiểm tra tài sản gốc thì chạm trán người lạ trong bóng tối.
+      </div>
+      <div style="font-size: 12px; color: var(--muted); display: flex; flex-wrap: wrap; gap: 16px;">
+        <span>🎯 <strong>Bước ngoặt (Twist):</strong> TW-06 Legal Judo &amp; Plant Loop L2 (Giấy Miễn Trừ Điều khoản 14)</span>
+        <span>⚡ <strong>Cường độ:</strong> 8/10 ➔ 8.8/10</span>
+        <span>🔒 <strong>Hậu quả &amp; Cliffhanger Baton:</strong> C2 (Tia đèn cực tím của kiểm toán viên Clara Vance bật sáng quét thẳng vào Sổ Đỏ `Image 8` trên tay Silas).</span>
+      </div>
+    </div>
+
+    <!-- Episode 3 -->
+    <div class="episode-card">
+      <div class="episode-header">
+        <span class="episode-title">TẬP 3: BÓNG MA CẢNG BROOKLYN (Ghosts of the Shipyard)</span>
+        <span class="episode-badge" style="background: rgba(245, 158, 11, 0.2); color: var(--gold);">HỒI IIA · ARCHETYPE 2: COUNTER &amp; FALSE DAWN · 95s (9 Cảnh: 8×10s + 1×15s Seedance) · 07:30 AM – 11:00 AM</span>
+      </div>
+      <div style="font-size: 13px; color: var(--text);">
+        <strong>• Chuỗi bối cảnh (2 Sequences) &amp; Nhân vật:</strong> Seq A (<code>Sc 1–6</code>): <code>ENV-03</code> Xưởng Cảng Brooklyn (`Image 12`) ➔ Seq B (<code>Sc 7–9</code>): <code>ENV-04</code> Phòng kính Vulture Capital (`Image 13`) | Cast: <code>silas_brennan</code>, <code>clara_vance</code>, <code>garrett_harrington</code>, <code>dominic_alvarez</code>.<br>
+        <strong>• Slot Hành động Tốc độ cao (Seedance Routing):</strong> <code>Sc 05 [⚡ MODEL KHUYẾN NGHỊ: SEEDANCE · 15.0s]</code> — Đội cưỡng chế của Quỹ Vulture Capital đột kích định cắt cáp cần cẩu cảng; Silas và Clara thực hiện pha rượt đuổi chiến thuật dọc hành lang sắt (`iron catwalk stairs`), khóa van cơ khí 1982 và quét đèn UV lật tẩy lệnh niêm phong giả mạo.<br>
+        <strong>• Xung đột kịch tính &amp; 3-Wall Escalation:</strong> <em>Wall 1 (Sc 1–3):</em> Clara Vance xuất trình thẻ kiểm toán UBS Geneva, tiết lộ cha cô từng là đốc công cảng này và chỉ ra dấu sáp vàng trên Sổ Đỏ (`Image 8`) chứa mật mã ngầm. <em>Wall 2 (Sc 4–6 — In-Episode Dopamine Slap):</em> Đội thu hồi nợ của Vulture Capital ập đến đòi tịch biên cảng; Silas và Clara chặn đứng cuộc cưỡng chế (`Sc 05 · 15.0s`) và vạch trần con dấu giả ngay trước mặt công nhân. <em>Wall 3 (Sc 7–9 — Cold Water Slap):</em> Silas và Clara lần theo dấu dòng tiền đến tòa tháp Vulture Capital (`ENV-04`) thì phát hiện kẻ chủ mưu thực sự.
+      </div>
+      <div style="font-size: 12px; color: var(--muted); display: flex; flex-wrap: wrap; gap: 16px;">
+        <span>🎯 <strong>Bước ngoặt (Twist):</strong> TW-03 Covert Alliance (Phát hiện kẻ đâm sau lưng)</span>
+        <span>⚡ <strong>Cường độ:</strong> 7.5/10 ➔ 9/10</span>
+        <span>🔒 <strong>Hậu quả &amp; Cliffhanger Baton:</strong> C1 (Qua vách kính tầng 55 `ENV-04`, Silas bắt gặp Garrett đang nâng ly rượu mừng cùng cá mập Dominic Alvarez).</span>
+      </div>
+    </div>
+
+    <!-- Episode 4 -->
+    <div class="episode-card">
+      <div class="episode-header">
+        <span class="episode-title">TẬP 4: CHIẾC NHẪN VÀ CON DẤU (The Stolen Signet)</span>
+        <span class="episode-badge" style="background: rgba(245, 158, 11, 0.2); color: var(--gold);">HỒI IIA · ARCHETYPE 2: COUNTER &amp; FALSE DAWN · 95s (9 Cảnh: 8×10s + 1×15s Seedance) · 02:00 PM – 05:30 PM</span>
+      </div>
+      <div style="font-size: 13px; color: var(--text);">
+        <strong>• Chuỗi bối cảnh (2 Sequences) &amp; Nhân vật:</strong> Seq A (<code>Sc 1–6</code>): <code>ENV-03</code> Văn phòng Cảng Brooklyn (`Image 12`) ➔ Seq B (<code>Sc 7–9</code>): <code>ENV-04</code> Vulture Penthouse (`Image 13`) | Cast: <code>silas_brennan</code>, <code>simone_laurent</code>, <code>garrett_harrington</code>, <code>clara_vance</code>.<br>
+        <strong>• Slot Hành động Tốc độ cao (Seedance Routing):</strong> <code>Sc 08 [⚡ MODEL KHUYẾN NGHỊ: SEEDANCE · 15.0s]</code> — Pha đánh tráo nghẹt thở và thoát thân gấp gáp qua cầu thang sắt Cảng Brooklyn khi Simone lén lấy chiếc Ấn Tín Đá Vỏ Chai (`Image 9`) lao ra xe giữa bóng chiều tà trong khi Silas và Clara bám sát theo tín hiệu định vị.<br>
+        <strong>• Xung đột kịch tính &amp; 3-Wall Escalation:</strong> <em>Wall 1 (Sc 1–3):</em> Để sang tên cảng cho Dominic, Garrett ép Simone phải quay lại gặp Silas dùng mỹ nhân kế lấy trộm chiếc Ấn Tín Giám Hộ Đá Vỏ Chai (`Image 9`). <em>Wall 2 (Sc 4–6 — Emotional Slap):</em> Simone đến văn phòng cảng giả vờ hối hận; Silas mở ngăn kéo cho cô thấy biên lai anh đã âm thầm trả viện phí cứu cha cô suốt 3 năm qua khiến Simone bàng hoàng rơi nước mắt. <em>Wall 3 (Sc 7–9):</em> Vì bị Garrett dọa tung bằng chứng quá khứ, Simone vẫn lén lấy chiếc Ấn Tín (`Image 9`) mang về Vulture Penthouse (`ENV-04`) giao cho Garrett mà không biết Silas đã gắn chip định vị vi mạch trong đế đồng.
+      </div>
+      <div style="font-size: 12px; color: var(--muted); display: flex; flex-wrap: wrap; gap: 16px;">
+        <span>🎯 <strong>Bước ngoặt (Twist):</strong> Option C Reversal (P2 Broken — Con dấu Simone lấy được là mồi nhử gắn chip GPS)</span>
+        <span>⚡ <strong>Cường độ:</strong> 8/10 ➔ 9/10</span>
+        <span>🔒 <strong>Hậu quả &amp; Cliffhanger Baton:</strong> C3 (Simone trao con dấu `Image 9` cho Garrett tại `ENV-04` trong khi chấm đỏ GPS nhấp nháy trên màn hình của Silas).</span>
+      </div>
+    </div>
+
+    <!-- Episode 5 -->
+    <div class="episode-card">
+      <div class="episode-header">
+        <span class="episode-title">TẬP 5: MẬT MÃ SÁP VÀNG THỤY SĨ (The Geneva Wax Seal — MIDPOINT SHATTER)</span>
+        <span class="episode-badge" style="background: rgba(245, 158, 11, 0.2); color: var(--gold);">HỒI IIB · ARCHETYPE 3: MIDPOINT SHATTER · 110s (10 Cảnh: 8×10s + 2×15s) · 08:00 PM – 11:30 PM</span>
+      </div>
+      <div style="font-size: 13px; color: var(--text);">
+        <strong>• Chuỗi bối cảnh (2 Sequences) &amp; Nhân vật:</strong> Seq A (<code>Sc 1–3</code>): <code>ENV-04</code> Vulture Penthouse (`Image 13`) ➔ Seq B (<code>Sc 4–10</code>): <code>ENV-03</code> Kho Lưu Trữ Ngầm Cảng Brooklyn (`Image 12`) | Cast: <code>silas_brennan</code>, <code>clara_vance</code>, <code>garrett_harrington</code>, <code>dominic_alvarez</code>.<br>
+        <strong>• Các Slot 15.0s Trọng Điểm (Seedance &amp; Midpoint Reckoning):</strong><br>
+        &nbsp;&nbsp;— <code>Sc 04 [⚡ MODEL KHUYẾN NGHỊ: SEEDANCE · 15.0s]</code>: Garrett và Dominic kích hoạt khóa sập cửa hầm thép 5 tấn từ xa; Silas lao mình qua khe cửa thép đang đóng sập trong gang tấc để kéo Clara thoát khỏi luồng khí áp suất.<br>
+        &nbsp;&nbsp;— <code>Sc 08 [🎭 EXTENDED MIDPOINT RECKONING · 15.0s]</code>: Giữa tập phim (chuẩn <code>Archetype 3 Midpoint Detonation</code>), tia UV 365nm của Clara soi vào dấu sáp vàng trên Sổ Đỏ (`Image 8`) làm rực sáng mật mã Trái phiếu Năng lượng Sạch Chủ quyền trị giá <strong>22 Tỷ USD</strong>!<br>
+        <strong>• Xung đột kịch tính &amp; 4-Phase Midpoint Shatter:</strong> <em>Phase 1 (Sc 1–3):</em> Tại `ENV-04`, Garrett và Dominic dùng Ấn Tín sao chép mã định danh cảng và bấm nút khóa chết hầm ngầm. <em>Phase 2 (Sc 4–6):</em> Silas và Clara vượt qua cửa thép sập xuống (`Sc 04 · 15s`), tiến vào kho lưu trữ cáp ngầm xuyên Đại Tây Dương. <em>Phase 3 (Sc 7–8 — MIDPOINT REVERSAL):</em> Dưới tia UV của Clara, khoản "nợ 500M" lộ diện là phí bảo lãnh cho hợp đồng Trái phiếu Chủ quyền <strong>22 Tỷ USD</strong> đứng tên người duy nhất ký nhận Sổ Đỏ: <strong>Silas Brennan</strong>! <em>Phase 4 (Sc 9–10):</em> Silas rũ bỏ hoàn toàn mặc cảm con nuôi, chuẩn bị giăng lưới bắt cả Garrett lẫn Dominic.
+      </div>
+      <div style="font-size: 12px; color: var(--muted); display: flex; flex-wrap: wrap; gap: 16px;">
+        <span>🎯 <strong>Bước ngoặt (Twist):</strong> Node 2 MIDPOINT TWIST (TW-13 The $22B Sovereign Vault — Đảo ngược từ Con nợ thành Ông chủ 22 tỷ đô)</span>
+        <span>⚡ <strong>Cường độ:</strong> 8.5/10 ➔ 10/10</span>
+        <span>🔒 <strong>Hậu quả &amp; Cliffhanger Baton:</strong> C7 (Điện thoại bảo mật trong hầm reo vang — thông điệp từ khu cách ly của Arthur Harrington truyền tới qua Luật sư Julian).</span>
+      </div>
+    </div>
+
+    <!-- Episode 6 -->
+    <div class="episode-card">
+      <div class="episode-header">
+        <span class="episode-title">TẬP 6: BẪY TRONG BẪY (The Counter-Sting)</span>
+        <span class="episode-badge" style="background: rgba(245, 158, 11, 0.2); color: var(--gold);">HỒI IIB · ARCHETYPE 3: MIDPOINT COUNTER-STING · 110s (10 Cảnh: 8×10s + 2×15s) · 08:30 AM – 01:00 PM</span>
+      </div>
+      <div style="font-size: 13px; color: var(--text);">
+        <strong>• Chuỗi bối cảnh (2 Sequences) &amp; Nhân vật:</strong> Seq A (<code>Sc 1–6</code>): <code>ENV-05</code> Phòng họp tầng 60 (`Image 14`) ➔ Seq B (<code>Sc 7–10</code>): <code>ENV-04</code> Vulture Penthouse (`Image 13`) | Cast: <code>silas_brennan</code>, <code>julian_rostova</code>, <code>garrett_harrington</code>, <code>dominic_alvarez</code>.<br>
+        <strong>• Các Slot 15.0s Trọng Điểm (Extended Fencing &amp; Seedance Ambush):</strong><br>
+        &nbsp;&nbsp;— <code>Sc 05 [🎭 EXTENDED LEGAL FENCING · 15.0s]</code>: Màn đấu kiếm ngôn từ căng thẳng tại bàn đá granite `ENV-05` khi Silas giả vờ tuyệt vọng đặt bút ký Biên bản Ghi nhớ nhưng cài Điều khoản Liên đới số 14 dẫn chiếu thẳng sang chữ ký của Garrett.<br>
+        &nbsp;&nbsp;— <code>Sc 09 [⚡ MODEL KHUYẾN NGHỊ: SEEDANCE · 15.0s]</code>: Tại `ENV-04`, Dominic phát hiện điều khoản bảo lãnh liền lật mặt quật mạnh tập hồ sơ thu hồi nợ lên ngực Garrett, đẩy Garrett ngã xuống ghế sofa da và dùng gót giày nghiền nát cây bút máy của Garrett (100% Filter-Proof Status Proxy)!<br>
+        <strong>• Xung đột kịch tính &amp; 3-Wall Escalation:</strong> <em>Wall 1 (Sc 1–3):</em> Luật sư Julian chuyển chỉ thị của Arthur cho Silas: giữ kín bí mật 22 tỷ USD thêm đúng 24 giờ để bẫy Dominic ký vào hợp đồng đối ứng. <em>Wall 2 (Sc 4–6 — Khởi phát Misreading Tầng 3):</em> Silas ký Biên bản Ghi nhớ cài bẫy Điều khoản 14 (`Sc 05 · 15s`). <em>Wall 3 (Sc 7–10 — tại Vulture Penthouse ENV-04):</em> Dominic trở mặt khống chế Garrett (`Sc 09 · 15s`), buộc Garrett phải dẫn người đi cướp Sổ Đỏ gốc trong đêm.
+      </div>
+      <div style="font-size: 12px; color: var(--muted); display: flex; flex-wrap: wrap; gap: 16px;">
+        <span>🎯 <strong>Bước ngoặt (Twist):</strong> TW-08 The Bait Contract &amp; TW-05 Predator Betrayal</span>
+        <span>⚡ <strong>Cường độ:</strong> 8.5/10 ➔ 9.5/10</span>
+        <span>🔒 <strong>Hậu quả &amp; Cliffhanger Baton:</strong> C5 (Dominic tuyên bố đã nắm thóp toàn bộ nợ cá nhân của Garrett và ép Garrett đột kích dinh thự lúc nửa đêm!).</span>
+      </div>
+    </div>
+
+    <!-- Episode 7 -->
+    <div class="episode-card">
+      <div class="episode-header">
+        <span class="episode-title">TẬP 7: ĐẢO CHÍNH ĐÊM CUỐI (The Midnight Coup — THE ABYSS)</span>
+        <span class="episode-badge" style="background: rgba(244, 63, 94, 0.2); color: var(--rose);">HỒI IIIA · ARCHETYPE 4: SIEGE &amp; DARK NIGHT · 100s (9 Cảnh: 7×10s + 2×15s Seedance) · 09:00 PM – 11:50 PM</span>
+      </div>
+      <div style="font-size: 13px; color: var(--text);">
+        <strong>• Chuỗi bối cảnh (2 Sequences) &amp; Nhân vật:</strong> Seq A (<code>Sc 1–5</code>): <code>ENV-01</code> Đại sảnh Dinh thự (`Image 10`) ➔ Seq B (<code>Sc 6–9</code>): <code>ENV-02</code> Tiền sảnh Đá cẩm thạch (`Image 11`) | Cast: <code>silas_brennan</code>, <code>garrett_harrington</code>, <code>dominic_alvarez</code>, <code>simone_laurent</code>.<br>
+        <strong>• Các Slot Hành động Tốc độ cao (2 × Seedance 15.0s):</strong><br>
+        &nbsp;&nbsp;— <code>Sc 04 [⚡ MODEL KHUYẾN NGHỊ: SEEDANCE · 15.0s]</code>: Đột kích nửa đêm tại Đại sảnh `ENV-01` — đội an ninh tư nhân của Dominic bao vây bàn tiệc gỗ gụ, giằng cuốn Sổ Đỏ bản sao khỏi tay Silas và áp chế đưa Silas đi.<br>
+        &nbsp;&nbsp;— <code>Sc 09 [⚡ MODEL KHUYẾN NGHỊ: SEEDANCE · 15.0s]</code>: Tại Tiền sảnh `ENV-02`, Dominic đưa trang phụ lục chữ ký vào khe máy hủy tài liệu viền đồng (`executive cross-cut paper shredder cabinet`) thì Simone lao tới dùng tay không giật phăng trang chứng thư nguyên vẹn ra khỏi khe máy ngay trước lưỡi cắt!<br>
+        <strong>• Xung đột kịch tính &amp; Dark Night Siege:</strong> <em>Phase 1 (Sc 1–3):</em> Garrett dẫn người của Dominic đột kích Đại sảnh Dinh thự (`ENV-01`). <em>Phase 2 (Sc 4–5):</em> Dominic cướp cuốn Sổ Đỏ trên tay Silas (`Sc 04 · 15s`) và ra lệnh nhốt Silas dưới hầm Cảng Brooklyn. <em>Phase 3 &amp; 4 (Sc 6–9 — ROCK BOTTOM tại Tiền sảnh ENV-02):</em> Dominic định hủy trang phụ lục gốc trong máy hủy tài liệu nhưng Simone liều mình lao vào giật lại trang giấy nguyên vẹn (`Sc 09 · 15s`).
+      </div>
+      <div style="font-size: 12px; color: var(--muted); display: flex; flex-wrap: wrap; gap: 16px;">
+        <span>🎯 <strong>Bước ngoặt (Twist):</strong> Node 3 ALL HOPE IS LOST (TW-05 Double Coup &amp; P3 Broken)</span>
+        <span>⚡ <strong>Cường độ:</strong> 9/10 ➔ 9.8/10</span>
+        <span>🔒 <strong>Hậu quả &amp; Cliffhanger Baton:</strong> C6 (Simone nắm chặt trang chứng thư nguyên vẹn chạy lao ra cửa kính tiền sảnh giữa đêm mưa tuyết).</span>
+      </div>
+    </div>
+
+    <!-- Episode 8 -->
+    <div class="episode-card">
+      <div class="episode-header">
+        <span class="episode-title">TẬP 8: CUỘC PHẢN KÍCH PHÁP Y (The Forensic Checkmate)</span>
+        <span class="episode-badge" style="background: rgba(244, 63, 94, 0.2); color: var(--rose);">HỒI IIIA · ARCHETYPE 4: AWAKENING &amp; BREACH · 110s (10 Cảnh: 8×10s + 2×15s) · 06:00 AM – 08:55 AM</span>
+      </div>
+      <div style="font-size: 13px; color: var(--text);">
+        <strong>• Chuỗi bối cảnh (2 Sequences) &amp; Nhân vật:</strong> Seq A (<code>Sc 1–4</code>): <code>ENV-03</code> Hầm Cảng Brooklyn (`Image 12`) ➔ Seq B (<code>Sc 5–10</code>): <code>ENV-05</code> Phòng họp tầng 60 (`Image 14`) | Cast: <code>silas_brennan</code>, <code>clara_vance</code>, <code>simone_laurent</code>, <code>garrett_harrington</code>, <code>dominic_alvarez</code>.<br>
+        <strong>• Các Slot 15.0s Trọng Điểm (Seedance Breakout &amp; Extended Boardroom Breach):</strong><br>
+        &nbsp;&nbsp;— <code>Sc 02 [⚡ MODEL KHUYẾN NGHỊ: SEEDANCE · 15.0s]</code>: Silas dùng cờ-lê thép xoay van áp suất đồng 1982 phá bung chốt khóa cơ học của cánh cửa hầm `ENV-03` thoát ra giữa luồng hơi nước áp lực cao.<br>
+        &nbsp;&nbsp;— <code>Sc 08 [🎭 EXTENDED BOARDROOM BREACH · 15.0s]</code>: Silas, Clara và Simone đẩy tung cánh cửa gỗ đôi bước vào Phòng họp tầng 60 (`ENV-05`), lật ngửa cuốn sổ Dominic cướp được chỉ là bản sao trưng bày và phát đoạn ghi âm tội trạng của Garrett lên màn hình LED!<br>
+        <strong>• Xung đột kịch tính &amp; 3-Wall Escalation:</strong> <em>Wall 1 (Sc 1–4):</em> Silas phá khóa hầm cảng thoát ra (`Sc 02 · 15s`), nhận lại trang sổ và chiếc nhẫn từ Simone; nhìn mã số khắc trong lòng nhẫn, Simone biết Silas đã lập quỹ bảo vệ cha mình từ 2 năm trước nên quyết tâm ra làm chứng. <em>Wall 2 (Sc 5–7):</em> Đúng 08:45 sáng tại Phòng họp tầng 60 (`ENV-05`), Dominic và Garrett tuyên bố phế truất Silas. <em>Wall 3 (Sc 8–10):</em> Silas phản kích bằng bản ghi âm và Sổ Đỏ thật (`Sc 08 · 15s`), đẩy Garrett vào bước đường cùng.
+      </div>
+      <div style="font-size: 12px; color: var(--muted); display: flex; flex-wrap: wrap; gap: 16px;">
+        <span>🎯 <strong>Bước ngoặt (Twist):</strong> TW-14 The Decoy Ledger &amp; Payoff Loop L5 (Mã số trong lòng nhẫn)</span>
+        <span>⚡ <strong>Cường độ:</strong> 9/10 ➔ 9.9/10</span>
+        <span>🔒 <strong>Hậu quả &amp; Cliffhanger Baton:</strong> C1 (Garrett gào lên "Arthur đang cách ly phẫu thuật, tao vẫn là người thừa kế huyết thống duy nhất!" — đúng lúc đó cánh cửa gỗ đôi bật mở, Arthur Harrington hoàn tất 72 giờ cách ly tự bước vào!).</span>
+      </div>
+    </div>
+
+    <!-- Episode 9 -->
+    <div class="episode-card">
+      <div class="episode-header">
+        <span class="episode-title">TẬP 9: SỰ TRỞ LẠI CỦA NGƯỜI ĐÃ KHUẤT (Return of the Living Patriarch — SHOWDOWN PART 1)</span>
+        <span class="episode-badge" style="background: rgba(244, 63, 94, 0.2); color: var(--rose);">HỒI IIIB · ARCHETYPE 5: GRAND CRUCIBLE (WAVES 1 &amp; 2) · 110s (10 Cảnh: 8×10s + 2×15s) · 09:00 AM – 10:15 AM</span>
+      </div>
+      <div style="font-size: 13px; color: var(--text);">
+        <strong>• Chuỗi bối cảnh (2 Sequences) &amp; Nhân vật:</strong> Seq A (<code>Sc 1–2</code>): <code>ENV-02</code> Tiền sảnh Đá cẩm thạch (`Image 11`) ➔ Seq B (<code>Sc 3–10</code>): <code>ENV-05</code> Phòng Họp Hội Đồng Quản Trị Tầng 60 (`Image 14`) | Cast: <code>silas_brennan</code>, <code>arthur_harrington</code>, <code>garrett_harrington</code>, <code>dominic_alvarez</code>, <code>julian_rostova</code>, <code>clara_vance</code>.<br>
+        <strong>• Các Slot 15.0s Trọng Điểm (Patriarch Entry &amp; Seedance Standoff):</strong><br>
+        &nbsp;&nbsp;— <code>Sc 03 [🎭 EXTENDED PATRIARCH RETURN · 15.0s]</code>: Arthur Harrington bước từ tiền sảnh lên thẳng bục Chủ tịch phòng họp tầng 60 (`ENV-05`) giữa sự chết lặng của Hội đồng quản trị, công bố hoàn tất 72 giờ cách ly giám sát.<br>
+        &nbsp;&nbsp;— <code>Sc 07 [⚡ MODEL KHUYẾN NGHỊ: SEEDANCE · 15.0s]</code>: Khi Clara công bố xác nhận 22 tỷ USD từ UBS Geneva, Dominic tung đòn cùn ra lệnh vệ sĩ lao tới cướp Sổ Đỏ gốc trên bàn; Silas phản xạ chớp nhoáng khóa cổ tay tên chỉ huy ghìm chặt xuống mặt bàn đá granite đen!<br>
+        <strong>• Xung đột kịch tính (Waves 1 &amp; 2 của Đại Cao Trào):</strong> <em>Wave 1 (Sc 1–5):</em> Arthur xuất hiện tại `ENV-05` (`Sc 03 · 15s`); Clara Vance trình chiếu văn bản chính thức từ UBS Geneva xác nhận dự án Cảng Brooklyn sở hữu gói Trái phiếu Năng lượng Sạch trị giá <strong>22 Tỷ USD</strong>. <em>Wave 2 — Near-Miss Torment (Sc 6–10):</em> Garrett tráo trở đòi quyền thừa kế huyết thống, trong khi Dominic giơ bản Phụ lục Tập 6 ra đe dọa và sai vệ sĩ cướp sổ (`Sc 07 · 15s`). Ở giây cuối cùng (`Sc 10`), Arthur lạnh lùng ra hiệu cho Luật sư Julian bật công tắc <strong>Ngọn đèn Nhiệt trung tâm bàn họp (`brass thermal-verification lamp`)</strong> chiếu thẳng xuống trang Sổ Đỏ gốc (`Image 8`)!
+      </div>
+      <div style="font-size: 12px; color: var(--muted); display: flex; flex-wrap: wrap; gap: 16px;">
+        <span>🎯 <strong>Bước ngoặt (Twist):</strong> Wave 1 $22B Verification &amp; Wave 2 Near-Miss Standoff</span>
+        <span>⚡ <strong>Cường độ:</strong> 9.5/10 ➔ 10/10</span>
+        <span>🔒 <strong>Hậu quả &amp; Cliffhanger Baton:</strong> C7 (Ánh đèn nhiệt vàng rực bật sáng chiếu thẳng vào chữ ký trên Sổ Đỏ `Image 8` và tờ Giấy Miễn Trừ của Garrett!).</span>
+      </div>
+    </div>
+
+    <!-- Episode 10 -->
+    <div class="episode-card">
+      <div class="episode-header">
+        <span class="episode-title">TẬP 10: PHÁN QUYẾT MỰC NHIỆT &amp; VƯƠNG MIỆN NGƯỜI GÁNH NỢ (The Thermal Verdict &amp; Crown — UNIFIED FINALE)</span>
+        <span class="episode-badge" style="background: rgba(16, 185, 129, 0.2); color: var(--emerald);">HỒI IIIB (70% SHOWDOWN PEAK) + HỒI IV (30% CODA) · ARCHETYPE 5 FINALE · 120s (11 Cảnh: 9×10s + 2×15s) · 10:15 AM – 12:00 PM</span>
+      </div>
+      <div style="font-size: 13px; color: var(--text);">
+        <strong>• Chuỗi bối cảnh (3 Sequences) &amp; Nhân vật:</strong> Seq A (<code>Sc 1–8</code> · <strong>70% Grand Showdown Peak</strong>): <code>ENV-05</code> Phòng họp Tầng 60 (`Image 14`) ➔ Seq B (<code>Sc 9</code> · <strong>Coda Pt 1</strong>): <code>ENV-02</code> Tiền sảnh (`Image 11`) ➔ Seq C (<code>Sc 10–11</code> · <strong>Coda Pt 2 &amp; 180° Echo</strong>): <code>ENV-01</code> Đại sảnh gỗ gụ (`Image 10`) | Cast: <code>silas_brennan</code>, <code>arthur_harrington</code>, <code>clara_vance</code>, <code>garrett_harrington</code>, <code>dominic_alvarez</code>, <code>simone_laurent</code>, <code>julian_rostova</code>.<br>
+        <strong>• Các Slot 15.0s Trọng Điểm (Peak 10/10 Thermal Verdict &amp; Seedance Arrest):</strong><br>
+        &nbsp;&nbsp;— <code>Sc 02 [🎭 EXTENDED PEAK 10/10 THERMAL VERDICT · 15.0s]</code>: Dưới ngọn đèn nhiệt bàn họp `ENV-05`, nét mực cảm ứng nhiệt từ cây bút ngòi vàng của Silas bừng sáng màu vàng kim xác lập quyền Chủ sở hữu 22 tỷ USD (`TW-20`), đồng thời kích hoạt dòng chữ ẩn của <strong>Điều khoản 14</strong> trên tờ Giấy Miễn Trừ của Garrett: <em>"Tự động khước từ 100% quyền thừa kế và chịu phạt gấp đôi (1 tỷ USD) cùng bên thứ ba (Dominic)"</em>!<br>
+        &nbsp;&nbsp;— <code>Sc 05 [⚡ MODEL KHUYẾN NGHỊ: SEEDANCE · 15.0s]</code>: Dominic điên cuồng lao tới định giật xé tờ Giấy Miễn Trừ trên bàn nhưng Silas phản xạ khóa chặt vai Dominic quật ngã xuống mặt bàn đá granite đúng lúc Thanh tra Liên bang phá cửa ập vào còng tay áp giải!<br>
+        <strong>• Kiến trúc Anti-Dead-Finale (70% Showdown Peak [Sc 1–8] + 30% Restorative Coda [Sc 9–11]):</strong><br>
+        &nbsp;&nbsp;— <em>70% Act IIIB Grand Showdown Peak (Sc 1–8 tại ENV-05):</em> Đèn nhiệt kích hoạt mực vàng kim &amp; Điều khoản 14 (`Sc 01–03`); Dominic bị Silas khống chế và cảnh sát liên bang bắt giữ (`Sc 04–06`); Garrett sụp đổ khuỵu gối cầu xin giữ chức Phó Chủ tịch vì "cùng huyết thống", nhưng Silas &amp; Arthur tuyên án không khoan nhượng (`Zero Doormat Forgiveness`): tước 100% cổ phần của Garrett, điều xuống làm nhân viên kiểm kho cơ bản tại Cảng Brooklyn để tự lao động trả nợ (`Sc 07–08`).<br>
+        &nbsp;&nbsp;— <em>30% Act IV Restorative Coda &amp; 180° Echo (Sc 9–11):</em> Tại tiền sảnh `ENV-02` (`Sc 09`), Simone đứng đợi mong nối lại tình xưa, Silas điềm tĩnh đặt trả chiếc nhẫn kim cương cũ lên quầy đá rồi bước đi không ngoái đầu; tại đại sảnh gỗ gụ `ENV-01` ngập nắng ấm (`Sc 10–11`), Silas ngồi ghế Chủ tịch đầu bàn bên Arthur và Clara, đặt <strong>Ấn Tín Đá Vỏ Chai (`Image 9`)</strong> và <strong>Bút Ngòi Vàng</strong> lên trang <strong>Chứng thư 22 tỷ USD (`Image 8`)</strong>.
+      </div>
+      <div style="font-size: 12px; color: var(--muted); display: flex; flex-wrap: wrap; gap: 16px;">
+        <span>🎯 <strong>Bước ngoặt (Twist):</strong> Node 4 &amp; 5 Unified — TW-20 Thermal Ink Verdict + 180° Echo Prop Payoff</span>
+        <span>⚡ <strong>Cường độ:</strong> 10/10 (PEAK CATHARSIS Sc 1–8) ➔ 7/10 (Sovereign Resolution Sc 9–11)</span>
+        <span>🔒 <strong>Kết thúc:</strong> ZERO CLIFFHANGER — Khép màn hoàn chỉnh 100%.</span>
+      </div>
+    </div>
+  </section>
+
+  <!-- SECTION 6: CINEMATOGRAPHY & 3D STAGING -->
+  <section id="cinematography">
+    <div class="section-header">
+      <h2 class="section-title">🎥 Phần 6: Ngôn Ngữ Điện Ảnh 16:9, 5 Định Luật Quang Học &amp; Điểm Tham Chiếu TH1/TH2 (Cinematography &amp; Optical Ray-Tracing)</h2>
+      <span class="badge badge-emerald">Pillar 3 &amp; 0b §8.0 SSOT · Gate 3S-1..3S-8 Compliant</span>
+    </div>
+    <div style="display: grid; grid-template-columns: repeat(auto-fit, minmax(300px, 1fr)); gap: 16px;">
+      <div style="background: var(--card-alt); padding: 16px; border-radius: 12px; border: 1px solid var(--border);">
+        <strong style="color: var(--gold); font-size: 13.5px;">1. Bảo Toàn Trục Hành Động 180° &amp; Đảo Nền OTS (Gate 3S-8)</strong>
+        <p style="font-size: 12.5px; color: var(--muted); margin-top: 6px;">Trong các cảnh đối đầu qua bàn tiệc (<code>ENV-01</code>) và bàn họp (<code>ENV-05</code>), Silas Brennan giữ trục nhìn từ cuối bàn lên đầu bàn, còn Garrett/Dominic giữ trục đối diện. Khi cắt <code>Cut to reverse over-the-shoulder</code>, bức tường/mốc kiến trúc ở hậu cảnh bắt buộc phải lật đúng 180° (tuyệt đối không lặp lại cùng một nền hậu cảnh).</p>
+      </div>
+      <div style="background: var(--card-alt); padding: 16px; border-radius: 12px; border: 1px solid var(--border);">
+        <strong style="color: var(--cyan); font-size: 13.5px;">2. Định Luật Dựng Hình Quang Học FG ➔ MG ➔ BG (0b §8.0 Law 2 &amp; Gate 3S-4)</strong>
+        <p style="font-size: 12.5px; color: var(--muted); margin-top: 6px;">Mọi câu lệnh góc máy phải tuân theo thứ tự tia nhìn từ ống kính: <em>Tiền cảnh (FG):</em> Bờ vai/gáy mờ nét của nhân vật A; <em>Trung cảnh (MG):</em> Gương mặt sắc nét của nhân vật B đang nói; <em>Hậu cảnh (BG):</em> Kiến trúc phía sau B. Tuyệt đối cấm viết <code>Behind [FG_character]</code> trong cảnh OTS (vì phía sau lưng nhân vật tiền cảnh nằm sau ống kính máy quay).</p>
+      </div>
+      <div style="background: var(--card-alt); padding: 16px; border-radius: 12px; border: 1px solid var(--border);">
+        <strong style="color: var(--rose); font-size: 13.5px;">3. Luật Khớp Khẩu Hình Lip-Sync &amp; Tương Quan Độ Cao (Gate 3S-3 &amp; 3S-5)</strong>
+        <p style="font-size: 12.5px; color: var(--muted); margin-top: 6px;">Nhân vật làm tiền cảnh quay lưng trong góc OTS hoặc nằm ngoài khung hình đơn (<code>CU/MCU</code>) tuyệt đối không được nói thoại Lip-sync trực tiếp (phải dùng <code>O.S.</code> hoặc lật góc máy). Cấm dùng <code>Extreme Close-Up / Macro Insert</code> khi có thoại Lip-sync. Khi quay khung 2 người có 1 người đứng (Silas/Julian) và 1 người ngồi xe lăn/quỳ (Arthur/Garrett), bắt buộc dùng <code>slight high-angle</code> hoặc <code>slight low-angle two-shot</code> (cấm dùng <code>flat eye-level medium two-shot</code>).</p>
+      </div>
+      <div style="background: var(--card-alt); padding: 16px; border-radius: 12px; border: 1px solid var(--border);">
+        <strong style="color: var(--emerald); font-size: 13.5px;">4. Điểm Tham Chiếu Liên Cảnh TH1 / TH2 / TH3 (0b §1.3 Continuity Reference Point Law)</strong>
+        <p style="font-size: 12.5px; color: var(--muted); margin-top: 6px;">• <strong>TH1 (Nối tiếp trực tiếp cùng không gian):</strong> Trích xuất frame cuối <code>00:10.0s</code> của cảnh trước làm mỏ neo <code>t=0</code> cho cảnh sau.<br>• <strong>TH2 (Nhảy cóc cảnh / Cross-cutting):</strong> Khi từ <code>ENV-03</code> cắt sang <code>ENV-04</code> rồi quay lại <code>ENV-03</code>, trích xuất frame cuối của cảnh <code>ENV-03</code> trước đó.<br>• <strong>TH3 (Đổi góc 180° trong cùng phòng):</strong> Dùng ảnh 2x2 Grid của Location (`Images 10–14`) kết hợp trạng thái bàn tay từ Code Block 2.</p>
+      </div>
+    </div>
+  </section>
+
+  <!-- SECTION 7: AUDIO & FOLEY ARCHITECTURE -->
+  <section id="audio">
+    <div class="section-header">
+      <h2 class="section-title">🔊 Phần 7: Thiết Kế Âm Thanh Vật Lý 4 Lớp (4-Layer Diegetic Foley &amp; Soundscape)</h2>
+      <span class="badge badge-indigo">Assistant 4B SSOT</span>
+    </div>
+    <ul style="padding-left: 20px; font-size: 13px; color: var(--muted); line-height: 1.85;">
+      <li><strong>Lớp 1 — Khí quyển nền (Room Tone &amp; Weather):</strong> Tiếng gió bão tuyết rít trầm đục ngoài cửa kính cao 5m kết hợp tiếng củi khô nổ lách tách trong lò sưởi đá (<code>ENV-01</code>); tiếng nước nhỏ giọt và tiếng máy chủ ngân trầm trong hầm cảng (<code>ENV-03</code>).</li>
+      <li><strong>Lớp 2 — Foley Đạo cụ Xúc giác (Tactile Prop Foley):</strong> Tiếng ngòi bút vàng 18K cào sắc lạnh trên mặt giấy da cừu dày; tiếng nhẫn bạch kim xoay tròn lanh canh trên mặt bàn đá; tiếng con dấu đá vỏ chai nện chắc nịch xuống mặt giấy.</li>
+      <li><strong>Lớp 3 — Cơ học Sinh lý Nhân vật (Somatic Micro-Foley):</strong> Tiếng vải len cashmere cọ xát khi Silas đứng dậy; tiếng nuốt khan và nhịp thở gấp gáp của Garrett khi Điều khoản 14 hiện lên dưới đèn nhiệt.</li>
+      <li><strong>Lớp 4 — Giọng nói &amp; Nhịp ngắt (Vocal Cadence):</strong> Giọng Baritone trầm tĩnh, đĩnh đạc của Silas đối lập hoàn toàn với giọng Tenor sắc lẹm, gấp gáp của Garrett.</li>
+    </ul>
+  </section>
+
+  <!-- SECTION 8: OPERATIONS & AUDIT GATES -->
+  <section id="operations">
+    <div class="section-header">
+      <h2 class="section-title">⚙️ Phần 8: Vận Hành Sản Xuất &amp; Cổng Kiểm Soát Tự Động (Quality Gate Verification)</h2>
+      <span class="badge badge-emerald">Gate 1.5 &amp; Core v1.2 Passed</span>
+    </div>
+    <table class="data-table">
+      <thead>
+        <tr>
+          <th>Cổng Kiểm Soát (Audit Gate)</th>
+          <th>Tiêu Chuẩn Kỹ Thuật Được Kiểm Tra Tự Động (<code>engine/setting_audit_suite.py</code> &amp; <code>episode_audit_suite.py</code>)</th>
+          <th>Trạng Thái</th>
+        </tr>
+      </thead>
+      <tbody>
+        <tr>
+          <td><strong>Gate 1A, 1B &amp; 1C</strong></td>
+          <td>Cân bằng 100% thẻ DOM (<code>&lt;div&gt;</code>, <code>&lt;section&gt;</code>), đầy đủ 12-Row Story Spine, 3-Layer Stakes, 3 Shifting Act Misreadings &amp; Triple-Helix Blueprint</td>
+          <td><span style="color: var(--emerald); font-weight: 700;">PASSED [V]</span></td>
+        </tr>
+        <tr>
+          <td><strong>Gate 2 &amp; Gate 2B</strong></td>
+          <td>Đầy đủ 7 Nhân vật Định danh + Tuyến C với 6-Layer Psychology (Wound/Lie/Want/Need/Fear/Paradox) &amp; Where A2 Is Right</td>
+          <td><span style="color: var(--emerald); font-weight: 700;">PASSED [V]</span></td>
+        </tr>
+        <tr>
+          <td><strong>Gate 3, 3B &amp; 3C</strong></td>
+          <td>7 Bảng Model Sheet 16:9 (<code>Images 1–7</code>) chuẩn 4-Figure 1:1 Horizontal Shoulder-Waist-Heel Alignment, Contrast Inversion, Zero Hollow Buzzwords &amp; Mode B Snippets</td>
+          <td><span style="color: var(--emerald); font-weight: 700;">PASSED [V]</span></td>
+        </tr>
+        <tr>
+          <td><strong>Gate 4 &amp; Gate 5</strong></td>
+          <td>2 Đạo cụ Tier 1 Nguyên Tử 1-Vật-Thể/Ảnh (<code>Images 8–9</code>) + Danh mục Tier 2 Text-Only; 5 Bối cảnh 2x2 Grid (<code>Images 10–14</code>) đồng bộ sẵn toàn bộ Nội thất cố định (Gate 3S-7a/7b)</td>
+          <td><span style="color: var(--emerald); font-weight: 700;">PASSED [V]</span></td>
+        </tr>
+        <tr>
+          <td><strong>Gate 6, 6B &amp; W11</strong></td>
+          <td>Lộ trình 10 Tập (100 Cảnh) phân tách 2–3 Sequences/Tập (Zero Single-Location Stagnation), khóa chặt 4 Tầng Điện ảnh, Filter-Proof Status Proxies &amp; Cliffhanger Baton</td>
+          <td><span style="color: var(--emerald); font-weight: 700;">PASSED [V]</span></td>
+        </tr>
+      </tbody>
+    </table>
+  </section>
+
+  <!-- SECTION 9: OPEN DECISIONS & LOG -->
+  <section id="open-decisions">
+    <div class="section-header">
+      <h2 class="section-title">📝 Phần 9: Nhật Ký Khởi Tạo &amp; Giao Thức Làm Từng Bước Trực Quan (Single-HTML &amp; Interactive Co-Pilot SOP — New Core v2.0)</h2>
+      <span class="badge badge-gold">Stage 2 Complete (CP2 v2.0 — setting.html ONLY)</span>
+    </div>
+    <div style="font-size: 13px; color: var(--muted); line-height: 1.85;">
+      <p>• <strong>Dự án:</strong> <code>the-bankrupt-testament</code> (<em>Bản Di Chúc Của Người Còn Sống</em>) — 10 Tập · 95 Cảnh · 1,030s (Khung ngang <code>16:9</code> · Phong cách <code>3d-semi-real</code> Mẫu 2B Light Chaser &amp; Blur Studio Style).</p>
+      <p>• <strong>Luật Duy Nhất 1 File HTML (Single-HTML Deliverable Law):</strong> File <code>output/the-bankrupt-testament/setting.html</code> này là <strong>FILE HTML DUY NHẤT</strong> của toàn bộ dự án (tuyệt đối không sinh các file <code>tap-1.html ... tap-10.html</code>).</p>
+      <p>• <strong>Bộ 14 Ảnh Tham Chiếu Tiền Kỳ Nguyên Tử (Master Reference Image Slots 1–14):</strong></p>
+      <p>&nbsp;&nbsp;— <code>Image 1..7</code>: 7 Nhân vật chính/phụ (Silas, Garrett, Arthur, Simone, Clara, Julian, Dominic) — 100% chuẩn <strong>Mẫu 2B (3D Semi-Realistic Cinematic Animation · 4-Figure 1:1 Scale Lock)</strong>.</p>
+      <p>&nbsp;&nbsp;— <code>Image 8..9</code>: 2 Đạo cụ Linh hồn Tier 1 Nguyên Tử (<code>Image 8</code>: Sổ Nợ Bìa Da Đỏ UBS Geneva; <code>Image 9</code>: Ấn Tín Giám Hộ Đá Vỏ Chai Khắc Chữ H) — tách riêng Bút Ngòi Vàng và Nhẫn Kim Cương sang Tier 2 Pure Rich Text để đạt độ chính xác 100% khi AI render trạng thái cầm/đặt.</p>
+      <p>&nbsp;&nbsp;— <code>Image 10..14</code>: 5 Bối cảnh Lưới 2x2 (<code>ENV-01</code> Đại sảnh Phòng tiệc, <code>ENV-02</code> Tiền sảnh Đá cẩm thạch, <code>ENV-03</code> Xưởng &amp; Hầm Cảng Brooklyn, <code>ENV-04</code> Phòng kính Vulture Capital, <code>ENV-05</code> Phòng họp Tầng 60) — đã khóa sẵn danh mục nội thất cố định chống lỗi Ghost Fixtures.</p>
+      <p>• <strong>Quy Trình Tương Tác Từng Bước Tiếp Theo (Stage 3 ➔ Stage 4 Interactive Co-Pilot):</strong></p>
+      <p>&nbsp;&nbsp;1. <strong>Stage 3 (Kịch bản thô từng tập &amp; đi sâu từng cảnh trực tiếp trên chat):</strong> Trình bày lần lượt <strong>từng tập một</strong> (bắt đầu từ Tập 1: 8 Cảnh · 85s) ngay trên khung chat kèm <code>📌 [CHỈ DẪN SẢN XUẤT &amp; THAM CHIẾU CHO USER]</code> (chỉ rõ cảnh nào dùng <code>TH1 Last Frame</code>, cảnh nào dùng <code>TH2 New Asset</code>, cảnh nào render trên <code>Standard 10.0s</code> hoặc <code>Seedance 15.0s</code>).</p>
+      <p>&nbsp;&nbsp;2. <strong>Stage 4 (Làm từng cảnh 1 &amp; Đối chiếu trực quan trên chat):</strong> Đi sâu <strong>từng cảnh một (<code>Scene 01 ➔ Scene 02...</code>)</strong> trên chat, đối chiếu trực tiếp với ảnh/frame tham chiếu của User để xuất <code>Code Block 1</code> &amp; <code>Code Block 2</code> chuẩn xác tuyệt đối 100%.</p>
+    </div>
+  </section>
+
+</div>
+
+<script>
+  function copyText(btn) {
+    const container = btn.closest('div').parentElement;
+    const pre = container.querySelector('pre.prompt-box');
+    if (!pre) return;
+    navigator.clipboard.writeText(pre.innerText).then(() => {
+      const orig = btn.innerText;
+      btn.innerText = '✓ Copied!';
+      btn.style.background = '#10B981';
+      btn.style.color = '#000';
+      setTimeout(() => {
+        btn.innerText = orig;
+        btn.style.background = '';
+        btn.style.color = '';
+      }, 1800);
+    });
+  }
+</script>
+</body>
+</html>

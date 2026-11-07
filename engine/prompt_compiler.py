@@ -34,8 +34,9 @@ class WPSCalculator:
     CLIP_DURATION = 10.0
 
     @classmethod
-    def calculate_timings(cls, dialogue_text: str, wps: float = None) -> dict:
+    def calculate_timings(cls, dialogue_text: str, wps: float = None, clip_duration: float = None) -> dict:
         rate = wps if wps and wps > 0 else cls.DEFAULT_WPS
+        target_clip_dur = clip_duration if clip_duration and clip_duration in (10.0, 15.0, 30.0) else cls.CLIP_DURATION
         
         # Clean dialogue text to get pure spoken words (strip quotes & parentheticals)
         cleaned = re.sub(r'[\(（].*?[\)）]', '', dialogue_text or '')
@@ -44,21 +45,23 @@ class WPSCalculator:
         word_count = len(words)
 
         if word_count == 0:
+            mid_pt = round(target_clip_dur * 0.45, 1)
+            settle_pt = round(target_clip_dur - 1.5, 1)
             return {
                 "word_count": 0,
                 "duration": 0.0,
                 "has_dialogue": False,
-                "lead_in_range": "00:00–00:04.5",
-                "action_range": "00:04.5–00:10.0",
-                "settle_range": "00:08.0–00:10.0",
+                "lead_in_range": f"00:00–00:{mid_pt:04.1f}",
+                "action_range": f"00:{mid_pt:04.1f}–00:{target_clip_dur:04.1f}",
+                "settle_range": f"00:{settle_pt:04.1f}–00:{target_clip_dur:04.1f}",
                 "dialogue_range": None
             }
 
         raw_duration = round(word_count / rate, 1)
-        max_dialogue_time = cls.CLIP_DURATION - cls.MIN_SETTLE_SECONDS - 0.5
+        max_dialogue_time = target_clip_dur - cls.MIN_SETTLE_SECONDS - 0.5
         duration = min(raw_duration, max_dialogue_time)
 
-        lead_in_dur = round(max(0.8, min(2.0, cls.CLIP_DURATION - duration - cls.MIN_SETTLE_SECONDS)), 1)
+        lead_in_dur = round(max(0.8, min(2.0, target_clip_dur - duration - cls.MIN_SETTLE_SECONDS)), 1)
         dialogue_start = lead_in_dur
         dialogue_end = round(dialogue_start + duration, 1)
         settle_start = dialogue_end
@@ -74,8 +77,8 @@ class WPSCalculator:
             "dialogue_end": dialogue_end,
             "dialogue_range": f"00:{dialogue_start:04.1f}–00:{dialogue_end:04.1f}",
             "settle_start": settle_start,
-            "settle_end": cls.CLIP_DURATION,
-            "settle_range": f"00:{settle_start:04.1f}–00:10.0"
+            "settle_end": target_clip_dur,
+            "settle_range": f"00:{settle_start:04.1f}–00:{target_clip_dur:04.1f}"
         }
 
 class PromptSanitizer:
@@ -97,14 +100,14 @@ class PromptSanitizer:
     MINOR_SAFETY_MAP = {
         r'\bboyish\b': 'youthful',
         r'\bgirlish\b': 'youthful',
-        r'\bboy\b': 'young man',
-        r'\bgirl\b': 'young woman',
-        r'\bkid\b': 'young adult',
-        r'\bkids\b': 'young adults',
-        r'\bchild\b': 'young adult',
-        r'\bchildren\b': 'young adults',
-        r'\bteenager\b': 'young adult',
-        r'\bteen\b': 'young adult',
+        r'\bboy\b': 'young schoolboy',
+        r'\bgirl\b': 'young schoolgirl',
+        r'\bkid\b': 'young student',
+        r'\bkids\b': 'young students',
+        r'\bchild\b': 'young student',
+        r'\bchildren\b': 'young students',
+        r'\bteenager\b': 'adolescent student',
+        r'\bteen\b': 'adolescent student',
         r'\bbaby\b': '',
         r'\bbabies\b': '',
         r'\binfant\b': '',
@@ -157,11 +160,11 @@ class PromptSanitizer:
         r'\bthe\s+frame\s+holds\s+still\b': 'motion continues fluidly',
         r'\bframe\s+holds\s+still\b': 'motion continues fluidly',
         r'\bholds?\s+still\b': 'maintains living posture and respiratory rhythm',
-        r'\bstands?\s+rigid\s+through\s+00:10(?:\.0)?\b': 'chest rising and falling with tense shallow breath through 00:10.0',
-        r'\bsits?\s+rigid\s+through\s+00:10(?:\.0)?\b': 'shoulders trembling with restrained breathing through 00:10.0',
-        r'\bweeping\s+in\s+(?:the\s+)?background\s+through\s+00:10(?:\.0)?\b': 'fingers clenching and wiping tears in the background through 00:10.0',
-        r'\bstanding\s+still\s+through\s+00:10(?:\.0)?\b': 'maintains defensive posture with subtle shifting weight through 00:10.0',
-        r'\bblinks?\s+(?:quietly|in\s+mild\s+surprise)\s+through\s+00:10(?:\.0)?\b': 'adjusts posture with subtle breathing through 00:10.0'
+        r'\bstands?\s+rigid\s+through\s+00:(10|15|30)(?:\.0)?\b': r'chest rising and falling with tense shallow breath through 00:\1.0',
+        r'\bsits?\s+rigid\s+through\s+00:(10|15|30)(?:\.0)?\b': r'shoulders trembling with restrained breathing through 00:\1.0',
+        r'\bweeping\s+in\s+(?:the\s+)?background\s+through\s+00:(10|15|30)(?:\.0)?\b': r'fingers clenching and wiping tears in the background through 00:\1.0',
+        r'\bstanding\s+still\s+through\s+00:(10|15|30)(?:\.0)?\b': r'maintains defensive posture with subtle shifting weight through 00:\1.0',
+        r'\bblinks?\s+(?:quietly|in\s+mild\s+surprise)\s+through\s+00:(10|15|30)(?:\.0)?\b': r'adjusts posture with subtle breathing through 00:\1.0'
     }
 
     @classmethod
@@ -178,8 +181,9 @@ class PromptSanitizer:
             else:
                 p = part
 
-                # 0. Purge Cartesian Coordinates (Gate 3H) & Cross-Scene References (Gate 3I)
+                # 0. Purge Cartesian Coordinates, Frame-Edge Tokens (Gate 3H) & Cross-Scene References (Gate 3I)
                 p = re.sub(r'\(?\s*[XYZ]\s*:\s*[\+\-]?\d+(\.\d+)?m?.*?\)?', '', p, flags=re.IGNORECASE)
+                p = re.sub(r'\b(screen-left|screen-right|frame-left|frame-right)\b', '', p, flags=re.IGNORECASE)
                 p = re.sub(r' from\s+Scene\s+\d+ ', '', p, flags=re.IGNORECASE)
 
                 # 1. Purge Hardware Jargon
@@ -207,10 +211,13 @@ class PromptSanitizer:
 
                 # 6. Purge Personal Pronouns in narrative prose
                 speaker = primary_speaker if primary_speaker else "the subject"
+                pair = f"{primary_speaker} and {secondary_speaker}" if (primary_speaker and secondary_speaker) else speaker
                 p = re.sub(r'\b(he|she)\b', speaker, p, flags=re.IGNORECASE)
                 p = re.sub(r'\b(his|her)\b', f"{speaker}'s", p, flags=re.IGNORECASE)
-                p = re.sub(r'\b(herself|himself)\b', speaker, p, flags=re.IGNORECASE)
-                p = re.sub(r'\b(their|them)\b', "the actors'", p, flags=re.IGNORECASE)
+                p = re.sub(r'\b(herself|himself|themselves)\b', speaker, p, flags=re.IGNORECASE)
+                p = re.sub(r'\bthey\b', pair, p, flags=re.IGNORECASE)
+                p = re.sub(r'\bthem\b', pair, p, flags=re.IGNORECASE)
+                p = re.sub(r'\btheir\b', f"{speaker}'s", p, flags=re.IGNORECASE)
 
                 # 7. Purge Mode B numeric age in narrative prose (Gate 3A)
                 p = re.sub(r'\b(\d{1,2}-year-old|aged \d{1,2})\b', 'youthful', p, flags=re.IGNORECASE)
@@ -246,10 +253,10 @@ class PromptBuilder:
         negative_clause: str = "Do not generate subtitles, dialogue text, titles, timestamps, or written text anywhere in the video. Do not render duplicate characters or extra props."
     ) -> str:
         """
-        Builds a 100% compliant Code Block 1 Video Prompt following Gate 3J, 3K, 3L, 3M, 3N standards.
-        Enforces the 3-Block Label Standard, double newline spacing, and the 4-Part Sovereign Subject Protocol.
+        Builds a 100% compliant Code Block 1 Video Prompt following Gate 3J, 3K, 3L, 3M, 3N, 3R, 3S standards.
+        Enforces the 3-Block Label Standard, double newline spacing, and the 5-Part Sovereign Subject Protocol.
         """
-        clean_header = PromptSanitizer.sanitize(style_header).strip() if style_header else "Masterwork Cinematic Realism, 8K ultra HD, fine organic film grain, natural optical depth."
+        clean_header = PromptSanitizer.sanitize(style_header).strip() if style_header else "Style: Masterwork cinematic realism, fine organic film grain, natural optical depth."
         clean_header = re.sub(r'\bDaVinci\s+Resolve(\s+color\s+grading)?,?\s*', '', clean_header, flags=re.IGNORECASE).strip()
         if not clean_header.startswith(cls.MASTER_PREFIX):
             clean_header = f"{cls.MASTER_PREFIX} {clean_header}"
@@ -264,7 +271,7 @@ class PromptBuilder:
         if clean_context.lower().startswith("[context]:"):
             clean_context = clean_context[len("[context]:"):].strip()
 
-        # Subject block: Enforce 4-Part Sovereign Formula and Anti-Duplication Seal
+        # Subject block: Enforce 5-Part Sovereign Formula and Anti-Duplication Seal
         clean_subjects = PromptSanitizer.sanitize(subjects_block).strip()
         if clean_subjects.lower().startswith("[subject]:"):
             clean_subjects = clean_subjects[len("[subject]:"):].strip()
@@ -276,7 +283,7 @@ class PromptBuilder:
             if not line_str:
                 continue
             if "— the only" not in line_str and "in frame" not in line_str:
-                m = re.match(r'^([a-zA-Z0-9_\s\[\]]+?)\s*\[Appearance', line_str, re.IGNORECASE)
+                m = re.match(r'^([a-zA-Z0-9_\s\[\]]+?)\s*\[(?:100%\s*)?Appearance', line_str, re.IGNORECASE)
                 if m:
                     char_name = re.sub(r'[\[\]]', '', m.group(1)).strip()
                     line_str = f"{line_str.rstrip('.,;')} — the only {char_name} in frame."
@@ -287,11 +294,15 @@ class PromptBuilder:
         clean_props = PromptSanitizer.sanitize(props_block).strip()
         if clean_props.lower().startswith("[prop]:") or clean_props.lower().startswith("[prop] :"):
             clean_props = re.sub(r'^\[prop\]\s*:\s*', '', clean_props, flags=re.IGNORECASE).strip()
+        if not clean_props:
+            clean_props = "(none — hands free of handheld props)"
 
         # Acoustics block
         clean_acoustics = PromptSanitizer.sanitize(room_acoustics).strip()
         if clean_acoustics.lower().startswith("diegetic room acoustics:"):
             clean_acoustics = clean_acoustics[len("diegetic room acoustics:"):].strip()
+        if not clean_acoustics:
+            clean_acoustics = "natural room tone, subtle cloth friction, and respiratory rhythm"
 
         # Timeline shots
         shots_text = "\n\n".join(PromptSanitizer.sanitize(shot).strip() for shot in timeline_shots)
@@ -303,7 +314,7 @@ class PromptBuilder:
             f"[PROP]:\n{clean_props}\n\n"
             f"Diegetic room acoustics: {clean_acoustics}\n\n"
             f"{shots_text}\n\n"
-            f"Continuous fluid motion, realistic physics, zero morphing. Spatial positions anchored across cuts.\n"
+            f"Continuous fluid motion, realistic physics, zero morphing. Spatial positions anchored to the architecture; characters move only where the action says they move.\n"
             f"{negative_clause.strip()}"
         )
 
@@ -321,48 +332,37 @@ class PromptBuilder:
         settle_description: str = "",
         negative_clause: str = "Strictly zero violence, zero blood, zero weapons, zero harm to minors, zero self-harm, zero graphic trauma. Do not generate subtitles, dialogue text, titles, timestamps, or written text."
     ) -> str:
-        # 1. Clean style header with mandatory prefix
-        clean_header = PromptSanitizer.sanitize(style_atmosphere).strip() if style_atmosphere else "Masterwork Cinematic Realism, 8K ultra HD, fine organic film grain, natural optical depth."
-        clean_header = re.sub(r'\bDaVinci\s+Resolve(\s+color\s+grading)?,?\s*', '', clean_header, flags=re.IGNORECASE).strip()
-        if not clean_header.startswith(cls.MASTER_PREFIX):
-            clean_header = f"{cls.MASTER_PREFIX} {clean_header}"
-
-        # 2. Timing analysis via WPS physics
+        """
+        Routes fluid single-scene inputs through the canonical 3-Block Label architecture (Gate 3J/3K/3L/3M/3N compliant).
+        """
         timings = WPSCalculator.calculate_timings(dialogue_line)
-
-        # 3. Paragraph 1: World, Lighting & 00:00 Staged Geometry (Track 1)
-        clean_env = PromptSanitizer.sanitize(env_context).strip()
-        clean_staging = PromptSanitizer.sanitize(subject_staging_00, primary_speaker=dialogue_speaker).strip()
-        p1 = f"{clean_header} {clean_env} At 00:00, {clean_staging}"
-
-        # 4. Paragraph 2: Kinetic Progression & Dynamic Dialogue Delivery (Track 2)
+        timeline_shots = []
         if timings["has_dialogue"]:
             clean_action = PromptSanitizer.sanitize(action_camera, primary_speaker=dialogue_speaker).strip()
             verb = dialogue_verb.strip() if dialogue_verb else "says"
             dia_block = f'{dialogue_speaker} {verb} : “{dialogue_line}” ({dialogue_voice_profile})'
-            p2 = (
-                f"{timings['lead_in_range']} {clean_action}\n\n"
-                f"{timings['dialogue_range']} {dia_block}"
-            )
+            timeline_shots.append(f"[{timings['lead_in_range']}] {clean_action}")
+            timeline_shots.append(f"[{timings['dialogue_range']}] {dia_block}")
+            if settle_description and settle_description.strip():
+                clean_settle = PromptSanitizer.sanitize(settle_description, primary_speaker=dialogue_speaker).strip()
+                timeline_shots.append(f"[{timings['settle_range']}] {clean_settle}")
         else:
             clean_action = PromptSanitizer.sanitize(action_camera, primary_speaker=dialogue_speaker).strip()
-            p2 = f"{timings['action_range']} {clean_action}"
+            timeline_shots.append(f"[{timings['lead_in_range']}] {clean_action}")
+            if settle_description and settle_description.strip():
+                clean_settle = PromptSanitizer.sanitize(settle_description, primary_speaker=dialogue_speaker).strip()
+                timeline_shots.append(f"[{timings['action_range']}] {clean_settle}")
 
-        # 5. Paragraph 3: Terminal Sequence & Clean Safeguards
-        if settle_description and settle_description.strip():
-            clean_settle = PromptSanitizer.sanitize(settle_description, primary_speaker=dialogue_speaker).strip()
-            p3 = (
-                f"{timings.get('settle_range', '')} {clean_settle}\n\n"
-                f"Continuous fluid motion, realistic physics, zero morphing. Spatial positions anchored across cuts.\n"
-                f"{negative_clause.strip()}"
-            )
-        else:
-            p3 = (
-                f"Continuous fluid motion, realistic physics, zero morphing. Spatial positions anchored across cuts.\n"
-                f"{negative_clause.strip()}"
-            )
-
-        return f"{p1}\n\n{p2}\n\n{p3}".strip()
+        return cls.build_canonical_prompt(
+            style_header=style_atmosphere,
+            track_declaration="",
+            context_block=env_context,
+            subjects_block=subject_staging_00,
+            props_block="(none — hands free of handheld props)",
+            room_acoustics="natural room tone, subtle cloth friction, and respiratory rhythm",
+            timeline_shots=timeline_shots,
+            negative_clause=negative_clause
+        )
 
     @classmethod
     def build_omni_prompt(
@@ -376,51 +376,18 @@ class PromptBuilder:
         negative_clause: str = "Strictly zero violence, zero blood, zero weapons, zero harm to minors, zero self-harm, zero graphic trauma. Do not generate subtitles, dialogue text, titles, timestamps, or written text."
     ) -> str:
         """
-        Backwards-compatible builder upgraded to emit organic cinematic prose.
+        Backwards-compatible builder that delegates directly to build_canonical_prompt.
         """
-        if style_header and style_header.strip():
-            clean_header = PromptSanitizer.sanitize(style_header).strip()
-            clean_header = re.sub(r'\bDaVinci\s+Resolve(\s+color\s+grading)?,?\s*', '', clean_header, flags=re.IGNORECASE).strip()
-            if not clean_header.startswith(cls.MASTER_PREFIX):
-                clean_header = f"{cls.MASTER_PREFIX} {clean_header}"
-        else:
-            clean_header = f"{cls.MASTER_PREFIX} Masterwork Cinematic Realism, 8K ultra HD, fine organic film grain, natural optical depth."
-
-        clean_env = PromptSanitizer.sanitize(env_context).strip()
-        clean_subjects = PromptSanitizer.sanitize(subjects_staging).strip()
-        clean_props = PromptSanitizer.sanitize(props_list).strip()
-        clean_acoustics = PromptSanitizer.sanitize(acoustics).strip()
-
-        # Check if caller is passing 3-block labels
-        if "[context]:" in clean_env or "[subject]:" in clean_subjects:
-            return cls.build_canonical_prompt(
-                style_header=clean_header,
-                track_declaration="",
-                context_block=clean_env,
-                subjects_block=clean_subjects,
-                props_block=clean_props,
-                room_acoustics=clean_acoustics,
-                timeline_shots=timeline_shots,
-                negative_clause=negative_clause
-            )
-
-        p1 = f"{clean_header} {clean_env}"
-        if clean_acoustics:
-            p1 += f" Room acoustics: {clean_acoustics}."
-        p1 += f" At 00:00, {clean_subjects}"
-        if clean_props:
-            p1 += f" {clean_props}"
-
-        shots_text = "\n\n".join(timeline_shots)
-
-        raw_prompt = f"""{p1}
-
-{shots_text.strip()}
-
-Continuous fluid motion, realistic physics, zero morphing. Spatial positions anchored across cuts.
-{negative_clause.strip()}"""
-
-        return raw_prompt.strip()
+        return cls.build_canonical_prompt(
+            style_header=style_header,
+            track_declaration="",
+            context_block=env_context,
+            subjects_block=subjects_staging,
+            props_block=props_list,
+            room_acoustics=acoustics,
+            timeline_shots=timeline_shots,
+            negative_clause=negative_clause
+        )
 
 def compile_and_validate_episode(html_content: str, output_path: str) -> bool:
     os.makedirs(os.path.dirname(os.path.abspath(output_path)), exist_ok=True)

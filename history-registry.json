@@ -1,14 +1,21 @@
 {
   "version": "3.0",
-  "last_updated": "2026-10-07T21:42:00+07:00",
-  "total_stories_produced": 0,
-  "active_series_id": "mat-an-ky-thi-dinh",
+  "last_updated": "2026-11-04T16:07:00+07:00",
+  "total_stories_produced": 1,
+  "active_series_id": "the-bankrupt-testament",
   "anti_repetition_14_axes": {
     "axis_1_character_names_en": [
       "Nguyen Truc",
       "Ton Trieu",
       "Vu Bien",
-      "Tran Dac Luong"
+      "Tran Dac Luong",
+      "Silas Brennan",
+      "Garrett Harrington",
+      "Arthur Harrington",
+      "Simone Laurent",
+      "Clara Vance",
+      "Julian Rostova",
+      "Dominic Alvarez"
     ],
     "axis_2_character_names_vn": [
       "Nguyễn Trực",
@@ -16,52 +23,107 @@
       "Trần Đắc Lương",
       "Tôn Triều"
     ],
-    "axis_3_karma_direction": [],
-    "axis_4_story_tracks": [],
+    "axis_3_karma_direction": [
+      "Sacrificial Burden-Bearer to Sovereign Heir"
+    ],
+    "axis_4_story_tracks": [
+      "Track B-Kinetic & Track A/B Harmonic"
+    ],
     "axis_5_symbolic_props_and_groups": [
       "Dragon-Eye Inkstone with Jade Signet Seal / Nghiên Mực Đá Mắt Rồng",
-      "Lotus Cinnabar Imperial Exam Scroll / Bài Thi Hương Chu Sa Hoa Sen"
+      "Lotus Cinnabar Imperial Exam Scroll / Bài Thi Hương Chu Sa Hoa Sen",
+      "Crimson Leather Debt Ledger & 18K Gold-Nibbed Thermal Fountain Pen",
+      "Emerald-Cut Diamond Ring & Obsidian Trustee Signet Seal"
     ],
-    "axis_6_hook_techniques": [],
+    "axis_6_hook_techniques": [
+      "Hook #9 Moral Trap & Status Betrayal"
+    ],
     "axis_7_visual_styles": [
-      "Pixar 3D Masterwork Animation"
+      "Pixar 3D Masterwork Animation",
+      "Cinematic 3D UE5 Stylized Realism (Semi-3D / Semi-Real 70:30)"
     ],
     "axis_8_genres_and_backgrounds": [
       "Courtroom Mystery / Historical Integrity Drama",
-      "15th Century Dai Viet / Imperial Examination Grounds & Han Lam Vien"
+      "15th Century Dai Viet / Imperial Examination Grounds & Han Lam Vien",
+      "Billionaire & Inheritance Viral Microdrama",
+      "Modern Manhattan Billionaire Estate, Brooklyn Founding Shipyard & 60th-Floor Boardroom"
     ],
-    "axis_9_escalation_variants": [],
-    "axis_10_twist_and_revelation_types": [],
-    "axis_11_cliffhanger_types": [],
+    "axis_9_escalation_variants": [
+      "3-Wall Progressive Complication + 72-Hour Swiss Blind Trust Stress-Test"
+    ],
+    "axis_10_twist_and_revelation_types": [
+      "TW-06 Legal Judo",
+      "TW-13 The $22B Sovereign Vault",
+      "TW-05 Double Coup",
+      "TW-20 Thermal Ink Verdict"
+    ],
+    "axis_11_cliffhanger_types": [
+      "C4 Irreversible Document Detonation",
+      "C2 Threshold Ambush",
+      "C1 Identity Unmasking",
+      "C3 Treasonous Betrayal",
+      "C7 The Ghost's Signal",
+      "C5 Catastrophic Ultimatum",
+      "C6 The Suspended Strike"
+    ],
     "axis_12_tropes_stacked": [
       "Courtroom Procedural / Exam Rigging Conspiracy",
-      "Restorative Justice / Redemption Arc"
+      "Restorative Justice / Redemption Arc",
+      "MD-06 The Unspoken Counter-Sting",
+      "MD-04 Heir Reveal / MD-05 Underdog Phoenix"
     ],
-    "axis_13_time_of_day_and_lighting": [],
+    "axis_13_time_of_day_and_lighting": [
+      "72-Hour Continuous Diurnal Progression (Blizzard Night Amber/Steel-Blue to Radiant Morning Gold)"
+    ],
     "axis_14_narrative_mode": [
       "Dialogue-Driven Drama Mode (Voice Palette On)"
     ]
   },
   "session_log": {
-    "recent_hooks": [],
+    "recent_hooks": [
+      "Hook #9: 500M Bankruptcy Ledger & Fiancée Ring Return on 6m Mahogany Table"
+    ],
     "recent_character_names": [
       "Nguyễn Trực",
       "Vũ Biền",
       "Trần Đắc Lương",
-      "Tôn Triều"
+      "Tôn Triều",
+      "Silas Brennan",
+      "Garrett Harrington",
+      "Arthur Harrington",
+      "Simone Laurent",
+      "Clara Vance",
+      "Julian Rostova",
+      "Dominic Alvarez"
     ],
     "recent_props": [
       "Nghiên Mực Đá Mắt Rồng",
-      "Bài Thi Hương Chu Sa Hoa Sen"
+      "Bài Thi Hương Chu Sa Hoa Sen",
+      "Crimson Leather Debt Ledger & Gold-Nibbed Fountain Pen",
+      "Emerald-Cut Diamond Ring & Obsidian Trustee Signet Seal"
     ],
     "recent_locations": [
       "Trường Thi Thăng Long Nửa Đêm Mưa Bão",
-      "Tàng Kinh Các Hàn Lâm Viện"
+      "Tàng Kinh Các Hàn Lâm Viện",
+      "Harrington Estate Grand Mahogany Dining Hall",
+      "Harrington Estate Marble Foyer and Porte-Cochere",
+      "Brooklyn Founding Shipyard and Subterranean Data Vault",
+      "Vulture Capital Penthouse Glass Lounge",
+      "Harrington Tower 60th-Floor Executive Boardroom"
     ],
     "recent_visual_styles": [
-      "Pixar 3D"
+      "Pixar 3D",
+      "Cinematic 3D UE5 Stylized Realism"
     ],
-    "recent_cliffhangers": []
+    "recent_cliffhangers": [
+      "C4",
+      "C2",
+      "C1",
+      "C3",
+      "C7",
+      "C5",
+      "C6"
+    ]
   },
   "story_history": [
     {
@@ -74,6 +136,17 @@
       "date": "2026-10-07",
       "visual_style": "Pixar 3D",
       "status": "draft"
+    },
+    {
+      "slug": "the-bankrupt-testament",
+      "title": "Bản Di Chúc Của Người Còn Sống (The Bankrupt Testament)",
+      "format": "Series",
+      "theme": "Quyền thừa kế đế chế tỷ đô thuộc về người dám gánh trách nhiệm trong hoạn nạn chứ không thuộc về huyết thống ích kỷ.",
+      "lesson": "Chữ tín và lòng dũng cảm gánh vác tạo nên vị quân vương thực sự; kẻ trốn chạy trách nhiệm sẽ tự tước bỏ vương miện của chính mình.",
+      "episodes": 10,
+      "date": "2026-11-04",
+      "visual_style": "Cinematic 3D UE5 Stylized Realism (Semi-3D / Semi-Real 70:30)",
+      "status": "stage-2-cp2-approved"
     }
   ]
 }

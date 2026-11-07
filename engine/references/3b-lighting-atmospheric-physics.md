@@ -29,11 +29,11 @@ Every scene's lighting profile must satisfy the **6-Point Physical Lighting Cont
   - *Vehicular/Environmental*: `single sweeping halogen motorcycle headlight from off-screen alley`.
 
 ### Point 2: Direction & Elevation Vector
-- Ban vague directions ("from the side").
-- Declare spatial vector:
-  - `steep 60-degree downward overhead key light accentuating brow ridges and collarbones`
-  - `low-grazing 15-degree lateral rim light sculpting jawline and cheek cheekbones`
-  - `45-degree oblique cross-light separating subject from dark background wall`
+- Ban vague directions ("from the side") and raw numeric degree angles in video prompts.
+- Declare spatial vector in natural descriptive prose:
+  - `steep overhead downward key light accentuating brow ridges and collarbones`
+  - `low-grazing lateral rim light sculpting jawline and cheekbones`
+  - `diagonal oblique cross-light separating subject from dark background wall`
 
 ### Point 3: Descriptive Color Tone (Kelvin Number Ban)
 - **STRICT PROHIBITION**: Never use numeric Kelvin ratings (`3200K`, `5600K`, `6500K`) in video prompts; diffusion models often interpret numbers as literal text or camera hardware.
@@ -68,8 +68,8 @@ Every scene's lighting profile must satisfy the **6-Point Physical Lighting Cont
 
 ### Archetype A: Intimate Domestic Melodrama (Trầm Uất Gia Đình)
 ```text
-Key: Single warm-tungsten 40-watt bare bulb hanging off-center at head height.
-Direction: 45-degree downward cross-key, creating pronounced chiaroscuro on speaking character.
+Key: Single warm-tungsten bare bulb hanging off-center at head height.
+Direction: Diagonal downward cross-key, creating pronounced chiaroscuro on speaking character.
 Tone: Warm dusty amber with muddy brown midtones.
 Atmosphere: Stagnant domestic air filled with suspended microscopic dust motes.
 Shadows: Long, dense shadows stretching across faded walls, leaving room corners plunged in gloom.
@@ -79,7 +79,7 @@ Dynamics: Faint electrical filament hum causing nearly imperceptible micro-vibra
 ### Archetype B: Tense Confrontation / Viral Microdrama (Xung Đột Đốp Chát)
 ```text
 Key: Harsh overhead commercial fluorescent fixture with cold high-key spill.
-Direction: Steep 75-degree top-down light accentuating tense brow muscles and clenched jawlines.
+Direction: Steep top-down overhead light accentuating tense brow muscles and clenched jawlines.
 Tone: Sterile icy cyan-white with desaturated skin tones and clinical starkness.
 Atmosphere: Bone-dry conditioned air, pristine and razor-sharp with zero softening haze.
 Shadows: Heavy cavernous eye-socket shadows and sharp, brutal chin cutoffs.
@@ -89,7 +89,7 @@ Dynamics: Steady uncompromising brilliance with zero diffusion.
 ### Archetype C: Nostalgic Healing / Rural Morning (Chữa Lành Buổi Sớm)
 ```text
 Key: Low horizontal early dawn sunlight breaking over distant foliage.
-Direction: 15-degree grazing side-light skimming across weathered wooden surfaces.
+Direction: Low-grazing side-light skimming across weathered wooden surfaces.
 Tone: Soft buttery gold blending into lilac-grey ambient bounce.
 Atmosphere: Heavy morning dew mist rising from soil with golden ray shafts (god rays).
 Shadows: Elongated, ultra-soft blue-tinted shadows rippling over textured ground.

@@ -60,8 +60,8 @@ Before launching screenplay production, the Screenwriter gathers the following p
 
 ### 1.1 The 1-Topic Seed Engine (Đề xuất hướng đi từ chủ đề thô)
 If the user provides only a broad subject (e.g., *"Viết phim về áp lực học đường và khoảng cách cha con"*), the Screenwriter immediately pitches **2–3 divergent narrative trajectories** (each complete with logline, core dilemma, and earned ending):
-- **Direction A (The Quiet Rebellion & Shared Silence)**: Focus on academic burnout, non-verbal father-son communication, an antique motorcycle project as a bridge, ending in an emotional breakdown over a bowl of midnight noodles.
-- **Direction B (The Vocational Fracture & Public Showdown)**: Focus on societal prestige vs. artisanal passion (carpentry/cooking), culminating in the father secretly attending his son's craft exhibition.
+- **Direction A (The Quiet Rebellion & Shared Silence)**: Focus on institutional/family pressure, non-verbal parent-child tension, and a high-stakes personal secret that forces an honest reckoning at midnight.
+- **Direction B (The Dynasty Fracture & Ethical Showdown)**: Focus on dynastic ambition vs. professional/moral integrity (corporate succession, clinical medicine, federal law, or scientific whistleblowing), culminating in a public boardroom or courtroom truth-bomb.
 - **Direction C (The Generational Echo & Medical Alert)**: Focus on the father repeating his own father's mistakes until a minor health scare forces an honest conversation on a hospital bench.
 
 ---

@@ -1,7 +1,73 @@
 {
-  "_schema_version": "1.1.0",
+  "_schema_version": "1.2.0",
   "description": "Sven Cinematic Universe — Master Production Presets & Runbooks Catalog. Governs 1-click project initialization, automated parameter locking, model targeting, and audit thresholds for Antigravity IDE. NOTE: Aspect ratio is ALWAYS 100% user-governed and never rigidly fixed.",
   "aspect_ratio_sovereignty_law": "The aspect ratio (16:9 horizontal, 9:16 vertical, 4:3, 1:1, or 2.39:1 anamorphic) is ALWAYS governed by the user's explicit choice. Presets provide default baseline recommendations, but the Director and Screenwriter must seamlessly adapt staging to ANY aspect ratio chosen by the user.",
+  "default_stage4_delivery_mode": "interactive-scene-by-scene-copilot",
+  "html_deliverable_policy": "SINGLE-HTML RESOURCE RULE: Output ONLY output/<slug>/setting.html (Stage 2) to prepare Character/Prop/Location reference images. Strictly ZERO tap-1.html ... tap-N.html files. Stage 1 (Master Storyline), Stage 3 (Episode-by-Episode Rough Script & 7-Point Cross-Check), and Stage 4 (Scene-by-Scene 4-Part Interactive Scene Card & Reference Cross-Check) execute 100% interactively in chat.",
+  "continuity_reference_protocol": "3-Case Continuity Reference Point Law: TH1 (Same Time & Location -> Mandatory Last-Frame Static Reference) | TH2 (Different Location/Time/Cast -> No Previous Frame Reference, Use New Location & Character Refs) | TH3 (Supernatural / Time-Travel Spatial Shift -> Keep Character Posture/Momentum/Prop from Last Frame + Replace Context with New Location Ref)",
+  "cross_genre_action_chase_routing": "Every episode across narrative genres weaves >= 1-2 high-tension kinetic action, chase, pursuit, physical struggle, or combat scenes (10.0s or 15.0s) explicitly flagged as [⚡ MODEL KHUYẾN NGHỊ: SEEDANCE · 10.0s / 15.0s].",
+  "visual_style_presets": {
+    "3d-semi-real": {
+      "name": "3D Semi-Realistic Animation (Hoạt Hình 3D Bán Chân Thực — Light Chaser & Blur Studio Style)",
+      "code_block_1_header": "3D Semi-Realistic Cinematic Animation, high-end stylized 3D realism in the signature style of Light Chaser Animation and Blur Studio, Unreal Engine 5 and Octane Render, ray-traced global illumination, physically based rendering textures, refined subsurface scattering skin shader with smooth natural satin complexion and expressive luminous eyes, strand-based 3D hair grooming, rich volumetric atmospheric lighting.",
+      "model_sheet_template": "MẪU 2B (3D Semi-Realistic Animation — True 7.5-8 Head Proportions, Sculpted 3D Facial Bone Structure, Refined SSS Satin Skin, Expressive Semi-Real Eyes, Strand-Based Hair Grooming, PBR Wardrobe)"
+    },
+    "pixar-3d": {
+      "name": "Pixar 3D Animation (Pixar / DreamWorks Studio Style)",
+      "code_block_1_header": "3D Animation Masterwork in iconic Pixar and DreamWorks studio style, Octane Render, Cinema 4D, Ray-traced global illumination, dark rich cinematic realism. Subsurface scattering skin shading, micro-texture fabrics, tailored armor and clothing.",
+      "model_sheet_template": "MẪU 2 (Stylized 3D Character Model Sheet)"
+    },
+    "theatrical-live-action": {
+      "name": "Theatrical Live-Action (Realistic Hollywood Feature Film)",
+      "code_block_1_header": "Masterwork Theatrical Cinematography, theatrical feature film aesthetic, shallow depth of field, authentic photorealism. Rich organic film grain, natural skin subsurface tones, true-to-life physical materials, volumetric atmospheric lighting.",
+      "model_sheet_template": "MẪU 1A / 1B (Live-Action Photorealistic Model Sheet)"
+    },
+    "unreal-game-cg": {
+      "name": "Cinematic 3D Game CG (Unreal Engine 5 Photorealism)",
+      "code_block_1_header": "Hyper-Realistic Cinematic 3D Animation, Unreal Engine 5 render, Lumen global illumination, ray-traced reflections. AAA video game cutscene quality, photorealistic micro-pore skin shading, scratched metal armor textures, volumetric fog.",
+      "model_sheet_template": "MẪU 2 (3D Game CG Hollywood Model Sheet)"
+    },
+    "arcane-painterly": {
+      "name": "Painterly Cel-Shaded 3D (Arcane / Fortiche Style)",
+      "code_block_1_header": "Masterpiece Painterly Cel-Shaded Animation in the iconic Arcane style, handcrafted digital oil painting textures on 3D geometry. Visible textured brushstrokes, dramatic theatrical rim lighting, rich expressive chiaroscuro, stylized anatomical realism.",
+      "model_sheet_template": "MẪU 2B adapted with Fortiche Hand-Painted Brushstroke Textures"
+    },
+    "xianxia-3d-donghua": {
+      "name": "Chinese Xianxia 3D Donghua (Immortal Fantasy 3D)",
+      "code_block_1_header": "Chinese Xianxia 3D Donghua Animation, ethereal immortal aesthetic, dynamic flowing silk robes. Glowing jade accessories, shimmering spiritual qi particles, celestial pastel sky lighting, elegant martial arts choreography.",
+      "model_sheet_template": "MẪU 2B (3D Semi-Realistic / Donghua Immortal Proportions & Flowing Silk PBR)"
+    },
+    "vietnamese-poetic": {
+      "name": "Vietnamese Poetic & Tropical Realism (Điện Ảnh Việt Nam Hoài Niệm & Bản Địa)",
+      "code_block_1_header": "Vietnamese Poetic Cinema Style, lush tropical realism, warm honey-golden sunlight filtering through wooden louvered shutters. Weathered ochre plaster and dark mahogany textures, humid monsoon emerald tones, gentle observational camera movement, rich organic film grain.",
+      "model_sheet_template": "MẪU 1A / 1B (Live-Action Photorealistic Model Sheet)"
+    },
+    "oriental-wuxia": {
+      "name": "Oriental Wuxia & Imperial Period Epic (Điện Ảnh Cổ Trang & Kiếm Hiệp Phương Đông)",
+      "code_block_1_header": "Oriental Wuxia and Imperial Period Cinematography in the visionary style of Zhang Yimou, poetic Eastern epic aesthetic. Misty bamboo and carved palace architecture, flowing embroidered silk robes, ink-wash slate and warm lantern chiaroscuro, sweeping dynamic camera work.",
+      "model_sheet_template": "MẪU 1A / 1B (Live-Action Period Attire Model Sheet)"
+    },
+    "tactical-neo-noir": {
+      "name": "Hyper-Kinetic Tactical Neo-Noir (John Wick / The Raid Urban Action Style)",
+      "code_block_1_header": "Hyper-Kinetic Tactical Neo-Noir Cinematography, John Wick and The Raid action aesthetic, wide anamorphic optical clarity. High-contrast sapphire blue and amber gold neon reflections on wet asphalt, razor-sharp close-quarters combat staging, reactive Steadicam tracking.",
+      "model_sheet_template": "MẪU 1A (Live-Action Tactical Suited Hunter Model Sheet)"
+    },
+    "asian-folk-suspense": {
+      "name": "Asian Folk Occult & Misty Suspense (Điện Ảnh Linh Dị Dân Gian Á Đông)",
+      "code_block_1_header": "Asian Folk Occult Suspense Cinematography, atmospheric Eastern mystery aesthetic, dense mountain river mist. Flickering crimson paper lanterns and candle chiaroscuro against cold slate-blue twilight, weathered ancestral wood and moss textures, creeping suspenseful framing.",
+      "model_sheet_template": "MẪU 1A / 1B (Live-Action Folk / Period Model Sheet)"
+    },
+    "shinkai-2d-anime": {
+      "name": "Hyper-Luminous Photoreal 2D Anime (Makoto Shinkai Style)",
+      "code_block_1_header": "Hyper-Luminous 2D Anime Masterwork in the signature Makoto Shinkai style, photorealistic painted backgrounds, towering iridescent clouds. Dazzling god rays, sparkling rain and wet asphalt reflections, vibrant twilight violet and golden-amber color grading, emotional character clarity.",
+      "model_sheet_template": "2D Anime 4-Figure Turnaround + Frontal Portrait Model Sheet"
+    },
+    "eastern-ink-gold-3d": {
+      "name": "3D Eastern Mythic Ink-and-Gold (Deep Sea / Kim Bích Sơn Thủy Style)",
+      "code_block_1_header": "3D Eastern Mythic Ink-and-Gold Animation in the visionary Deep Sea style, swirling mineral turquoise and liquid gold-leaf particle shaders on 3D geometry. Luminous oriental mural textures, bioluminescent vermilion and azure lighting, poetic fluid vortex motion.",
+      "model_sheet_template": "MẪU 2B adapted with Ink-and-Gold Particle Shaders"
+    }
+  },
   "runbooks": [
     {
       "slug": "microdrama-vertical",
@@ -9,12 +75,14 @@
       "genre_module": "engine/genres/microdrama.md",
       "default_aspect_ratio": "9:16",
       "supported_aspect_ratios": ["9:16", "16:9", "1:1", "4:3"],
-      "target_video_models": ["Kling 1.6", "Hailuo Minimax", "Wan 2.1"],
-      "prompt_grammar_mode": "Track B-Kinetic (High Velocity)",
+      "target_video_models": ["Seedance 2.5 Pro", "Kling 1.6", "Hailuo Minimax", "Wan 2.1"],
+      "prompt_grammar_mode": "Track B-Kinetic (High Velocity) + Seedance 10s/15s Action/Chase Peaks",
       "default_episode_scenes": 9,
       "default_scene_duration_s": 10.0,
+      "allowed_scene_durations_s": [10.0, 15.0],
       "total_runtime_target_s": 90.0,
-      "max_characters_per_episode": 3,
+      "max_active_characters_per_10s_clip": 3,
+      "max_characters_per_episode": 6,
       "screenplay_constraints": {
         "max_words_per_line": 12,
         "cadence_style": "Staccato Dialogue Fencing (≤ 12 words per line)",
@@ -46,12 +114,14 @@
       "genre_module": "engine/genres/drama.md",
       "default_aspect_ratio": "16:9",
       "supported_aspect_ratios": ["16:9", "9:16", "2.39:1", "4:3"],
-      "target_video_models": ["Sora", "Wan 2.1", "Runway Gen-3"],
-      "prompt_grammar_mode": "Track A/B Harmonic (Cinematic Living Settle)",
+      "target_video_models": ["Seedance 2.5 Pro", "Sora", "Wan 2.1", "Runway Gen-3"],
+      "prompt_grammar_mode": "Track A/B Harmonic (Cinematic Living Settle) + Seedance 10s/15s Tension Peaks",
       "default_episode_scenes": 8,
       "default_scene_duration_s": 10.0,
+      "allowed_scene_durations_s": [10.0, 15.0],
       "total_runtime_target_s": 80.0,
-      "max_characters_per_episode": 3,
+      "max_active_characters_per_10s_clip": 3,
+      "max_characters_per_episode": 6,
       "screenplay_constraints": {
         "max_words_per_line": 14,
         "cadence_style": "Subtext-Dense, Vulnerable, Costly Moral Choice (The Lie ➔ The Truth)",
@@ -87,7 +157,8 @@
       "default_episode_scenes": 12,
       "default_scene_duration_s": 10.0,
       "total_runtime_target_s": 120.0,
-      "max_characters_per_episode": 4,
+      "max_active_characters_per_10s_clip": 3,
+      "max_characters_per_episode": 6,
       "screenplay_constraints": {
         "max_words_per_line": 16,
         "cadence_style": "Rapid Verbal Ping-Pong, Comedic Timing, Status Inversion",
@@ -118,12 +189,14 @@
       "genre_module": "engine/references/1-narrative-screenplay-architecture.md",
       "default_aspect_ratio": "16:9",
       "supported_aspect_ratios": ["16:9", "9:16", "2.39:1", "4:3"],
-      "target_video_models": ["Sora", "Wan 2.1", "Kling 1.6"],
-      "prompt_grammar_mode": "Mode B Dual-Block Hollywood Architecture",
+      "target_video_models": ["Seedance 2.5 Pro", "Sora", "Wan 2.1", "Kling 1.6"],
+      "prompt_grammar_mode": "Mode B Dual-Block Hollywood Architecture + Seedance 10s/15s Action/Chase Peaks",
       "default_episode_scenes": 9,
       "default_scene_duration_s": 10.0,
+      "allowed_scene_durations_s": [10.0, 15.0],
       "total_runtime_target_s": 90.0,
-      "max_characters_per_episode": 3,
+      "max_active_characters_per_10s_clip": 3,
+      "max_characters_per_episode": 6,
       "screenplay_constraints": {
         "max_words_per_line": 18,
         "cadence_style": "High-Tension Interpersonal Fencing, Psychological Trauma, Moral Dilemma",
@@ -134,7 +207,7 @@
       "camera_and_staging": {
         "track_a_locked_quota": "1-2 scenes max (~15-20%) Gravitational Anchor",
         "track_b_kinetic_quota": "80-85% dynamic optical transitions",
-        "framing_bias": "14 Shot Scales, 6 Camera Angles, 7 Combos, 3D Cartesian Coordinate Staging",
+        "framing_bias": "14 Shot Scales, 4-Axis Camera Angles, 7 Combos, Observable 3D Spatial Staging (Zero Coordinate Math)",
         "forbidden_optics": ["Frozen motionless mannequins", "Tripod keyword in prompts"]
       },
       "soundscape_directives": {
@@ -181,6 +254,122 @@
         "showrunner": "AGENT.md",
         "screenwriter": ".agents/SCREENWRITER.md (Visual Narrative & Poetry)",
         "director": ".agents/DIRECTOR.md (Music Video Architecture & Rhythmic Montage)",
+        "growth_architect": ".agents/skills/youtube-growth-architect"
+      }
+    },
+    {
+      "slug": "action-combat-thriller",
+      "title": "High-Stakes Action, Martial Arts, Chase & Supernatural Combat (Phim Hành Động, Võ Thuật, Truy Đuổi & Dị Năng)",
+      "genre_module": "engine/genres/action.md",
+      "default_aspect_ratio": "16:9",
+      "supported_aspect_ratios": ["16:9", "9:16", "2.39:1", "4:3"],
+      "target_video_models": ["Seedance 2.5 Pro", "Kling 2.0", "Veo", "Sora", "Wan 2.1"],
+      "prompt_grammar_mode": "Dual-Speed Hybrid: 1.0x Drama Setup + 2.3x/10x Micro-Timeline Kinetic Arrow (→) Combat Engine",
+      "default_episode_scenes": 10,
+      "default_scene_duration_s": 10.0,
+      "total_runtime_target_s": 100.0,
+      "max_active_characters_per_10s_clip": 3,
+      "max_characters_per_episode": 6,
+      "screenplay_constraints": {
+        "max_words_per_line": 14,
+        "cadence_style": "3-Zone Hybrid (40% Emotional Pressure Cooker 1.0x ➔ 40% High-Velocity Chase/Combat Climax 2.3x-10x ➔ 20% Aftermath & Cliffhanger 1.0x)",
+        "hook_mandate": "In Medias Res Threat / Restraint Vow Under Siege",
+        "combat_mechanics": "Momentum Seesaw (Zero Turn-Based Waiting), Zero Ground-Time Rebounds, Pre-Planted Destructible Arena, Combat-Sovereign [subject] (Martial Style + Weapon/Aura + Story Stake, Zero Mode B Costume Leaks)",
+        "structure": "Scenes 01-04 Drama Setup (@Director) ➔ Scenes 05-08 Pursuit & Combat Climax (@CombatDirector) ➔ Scenes 09-10 Aftermath/Cliffhanger (@Director)"
+      },
+      "camera_and_staging": {
+        "track_a_locked_quota": "0-1 scene max (Scene 09 Post-Combat Somatic Aftermath)",
+        "track_b_kinetic_quota": "90-100% hyper-reactive Steadicam tracking, sweeping circular Steadicam orbit, whip-pan camera lag, and close impact shake",
+        "framing_bias": "Medium Two-Shot (M2S) and Medium-Wide full-body readability during combat exchanges; Low-Angle power framing; Compact Camera Clauses (≤ 12 words) in combat phases",
+        "forbidden_optics": ["Extreme close-ups hiding limb exchanges during combat", "Slow-motion that weakens impact weight", "Turn-based static waiting poses"]
+      },
+      "soundscape_directives": {
+        "foley_profile": "100% Diegetic Combat Acoustics (WHAM-THUD-CRACK flesh-and-bone impacts, rapid footwork friction, ragged breathing, cloth air-whip, cracking wood/shattering glass, strictly zero background music)",
+        "voice_mode_palette": ["fierce_confrontation", "pre_combat_one_liner", "silence", "breathless_aftermath"]
+      },
+      "active_crew": {
+        "showrunner": "AGENT.md",
+        "screenwriter": ".agents/SCREENWRITER.md (Action-Drama Engine)",
+        "director": ".agents/DIRECTOR.md (Zones 1 & 3 Drama Staging)",
+        "combat_director": ".agents/skills/combat-director/SKILL.md (Zone 2 High-Velocity Chase & Combat Engine)",
+        "growth_architect": ".agents/skills/youtube-growth-architect"
+      }
+    },
+    {
+      "slug": "thriller-mystery-crime",
+      "title": "Psychological Thriller, Detective Mystery, Folk Suspense & Survival Mind-Games (Phim Trinh Thám, Đấu Trí, Linh Dị Dân Gian & Sinh Tồn)",
+      "genre_module": "engine/genres/thriller.md",
+      "default_aspect_ratio": "16:9",
+      "supported_aspect_ratios": ["16:9", "9:16", "2.39:1", "4:3"],
+      "target_video_models": ["Seedance 2.5 Pro", "Sora", "Wan 2.1", "Kling 2.0", "Runway Gen-3"],
+      "prompt_grammar_mode": "Suspense-Mystery Knowledge Switching & Chiaroscuro Staging + Seedance 10s/15s Pursuit/Ambush Peaks",
+      "default_episode_scenes": 10,
+      "default_scene_duration_s": 10.0,
+      "allowed_scene_durations_s": [10.0, 15.0],
+      "total_runtime_target_s": 100.0,
+      "max_active_characters_per_10s_clip": 3,
+      "max_characters_per_episode": 6,
+      "screenplay_constraints": {
+        "max_words_per_line": 14,
+        "cadence_style": "Loaded One-Sentence Scalpels, Suffocating Silences, O.S. Auditory Intrusions (70% Suspense Visuals / 30% Dialogue)",
+        "hook_mandate": "In Medias Res Anomaly / Crime Scene Contradiction",
+        "cliffhanger_mandate": "Clue Reversal Cliffhanger (Trusted Ally Unmasked or Alibi Shattered)",
+        "structure": "Knowledge Matrix Switch (Suspense ➔ Mystery ➔ The Prestige Reveal) + Triple-Helix A/B/C-Plot Weave"
+      },
+      "camera_and_staging": {
+        "track_a_locked_quota": "1-2 scenes max (Claustrophobic Interrogation Standoff)",
+        "track_b_kinetic_quota": "80-85% slow creeping push-ins, rack focus onto planted clues, OTS interrogation cuts",
+        "framing_bias": "Chiaroscuro High-Contrast Lighting, Tight Eye-Line Singles, Foreground Architectural Occlusion, Incidental Foreshadowing Inserts",
+        "forbidden_optics": ["Flat high-key comedy lighting", "Characters pointing at or verbally explaining planted visual clues"]
+      },
+      "soundscape_directives": {
+        "foley_profile": "amplified clock ticks, creaking floorboards, off-screen footsteps, ragged held breath, metallic latch clicks",
+        "voice_mode_palette": ["interrupted_speech", "off_screen_intrusion", "proximity_whisper", "counterpoint_inner_vo", "silence"]
+      },
+      "active_crew": {
+        "showrunner": "AGENT.md",
+        "screenwriter": ".agents/SCREENWRITER.md (Thriller & Mystery Engine)",
+        "director": ".agents/DIRECTOR.md (Suspense & Chiaroscuro Staging)",
+        "combat_director": ".agents/skills/combat-director/SKILL.md (Seedance 10s/15s Pursuit & Escape Sequences)",
+        "growth_architect": ".agents/skills/youtube-growth-architect"
+      }
+    },
+    {
+      "slug": "fantasy-time-travel-isekai",
+      "title": "Time-Travel, Portal Isekai, Cultivation & Supernatural Fantasy (Phim Xuyên Không, Trùng Sinh, Huyền Huyễn & Đô Thị Dị Năng)",
+      "genre_module": "engine/genres/fantasy.md",
+      "default_aspect_ratio": "16:9",
+      "supported_aspect_ratios": ["16:9", "9:16", "2.39:1", "4:3"],
+      "target_video_models": ["Seedance 2.5 Pro", "Kling 2.0", "Veo", "Sora", "Wan 2.1"],
+      "prompt_grammar_mode": "3D Semi-Real Speculative Engine + TH3 Spatial-Temporal Shift Continuity + Seedance 10s/15s Action/Chase Climax",
+      "default_episode_scenes": 10,
+      "default_scene_duration_s": 10.0,
+      "allowed_scene_durations_s": [10.0, 15.0],
+      "total_runtime_target_s": 100.0,
+      "max_active_characters_per_10s_clip": 3,
+      "max_characters_per_episode": 6,
+      "screenplay_constraints": {
+        "max_words_per_line": 14,
+        "cadence_style": "Asymmetric Knowledge / Awakened Power Reversals + Ticking World-Law Cost",
+        "hook_mandate": "Terminal Betrayal Before Rebirth OR Sudden Portal/Relic Anomaly In Medias Res",
+        "cliffhanger_mandate": "Butterfly-Effect Timeline Anomaly OR Higher-Realm Apex Threat Reveal (C1-C7)",
+        "structure": "3 Hard World Rules + Tier-1 Relic 3-State Evolution + TH3 Spatial/Time Shift + Triple-Helix A/B/C-Plot Weave"
+      },
+      "camera_and_staging": {
+        "track_a_locked_quota": "1 scene max (Somatic Aftermath / Spiritual Toll)",
+        "track_b_kinetic_quota": "85-90% dynamic tracking, TH3 spatial-shift match cuts, and Seedance pursuit/combat sequences",
+        "framing_bias": "3D Semi-Realistic (Mẫu 2B) PBR & SSS Lighting, Volumetric Portal/Qi Particles, Sweeping Low-Angle Hero Staging",
+        "forbidden_optics": ["Unexplained costume teleports without TH3 transition", "Static turn-based spell/sword casting"]
+      },
+      "soundscape_directives": {
+        "foley_profile": "Resonant relic hums, silk robe air-whip, temporal ripple bass drop, crisp blade/aura collisions, strictly zero background music",
+        "voice_mode_palette": ["calculated_counter_strike", "inner_timeline_vo", "fierce_confrontation", "silence"]
+      },
+      "active_crew": {
+        "showrunner": "AGENT.md",
+        "screenwriter": ".agents/SCREENWRITER.md (Fantasy, Time-Travel & Isekai Engine)",
+        "director": ".agents/DIRECTOR.md (TH3 Spatial Shift & 3D Semi-Real Staging)",
+        "combat_director": ".agents/skills/combat-director/SKILL.md (Seedance 10s/15s Supernatural & Martial Climax)",
         "growth_architect": ".agents/skills/youtube-growth-architect"
       }
     }

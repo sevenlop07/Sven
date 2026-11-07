@@ -41,7 +41,12 @@ def main():
                 tool_call = data.get("toolCall", {})
                 tool_name = tool_call.get("name")
                 args = tool_call.get("args", {})
-                target_file = args.get("TargetFile") or args.get("target_file")
+                target_file = (
+                    args.get("Path")
+                    or args.get("path")
+                    or args.get("TargetFile")
+                    or args.get("target_file")
+                )
         except Exception as e:
             log(f"[!] Error parsing hook input: {e}")
 

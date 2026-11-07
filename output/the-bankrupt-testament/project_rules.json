@@ -1,0 +1,300 @@
+{
+  "_schema_version": "2.0.0",
+  "project_slug": "the-bankrupt-testament",
+  "project_title_vi": "Bản Di Chúc Của Người Còn Sống",
+  "project_title_en": "The Bankrupt Testament",
+  "runbook_preset": "microdrama-widescreen-16x9",
+  "genre_module": "engine/genres/microdrama.md",
+  "genre_structural_engine": "Engine 2 (Viral Microdrama 3-Tier Dopamine & Every-Episode Face-Slap Engine) + Engine 4 (Forensic Checkmate & Prestige Reveal)",
+  "visual_style_id": "3d-semi-real",
+  "visual_style_name": "3D Semi-Realistic Cinematic Animation (Mẫu 2B — Light Chaser & Blur Studio Style)",
+  "visual_style_header": "Style: 3D Semi-Realistic Cinematic Animation, high-end stylized 3D realism in the signature style of Light Chaser Animation and Blur Studio, Unreal Engine 5 and Octane Render, ray-traced global illumination, physically based rendering textures, refined subsurface scattering skin shader with smooth natural satin complexion and expressive luminous eyes, strand-based 3D hair grooming, rich volumetric atmospheric lighting.",
+  "aspect_ratio": "16:9",
+  "format": "Series",
+  "episode_count": 10,
+  "total_series_scenes": 95,
+  "total_series_duration_s": 1030.0,
+  "html_deliverable_policy": "setting.html ONLY (Zero tap-X.html files)",
+  "stage_3_execution_mode": "interactive-episode-by-episode-in-chat",
+  "stage_4_execution_mode": "mode-copilot (strictly 1 scene at a time in chat with TH1/TH2/TH3 visual cross-check)",
+  "episode_architecture": [
+    {
+      "episode": 1,
+      "title_vi": "Đêm Bão Tuyết & Sổ Nợ Đỏ",
+      "title_en": "The Crimson Debt",
+      "act": "Act I",
+      "archetype": "Archetype 1: The Ignition & Trap Episode",
+      "total_scenes": 8,
+      "duration_s": 85.0,
+      "scene_mix": "7 x 10.0s Standard + 1 x 15.0s Seedance (Sc 06)",
+      "seedance_slots": ["Sc 06 (15.0s): High-tension boardroom physical struggle as Silas breaks security's grip and signs the Crimson Ledger"]
+    },
+    {
+      "episode": 2,
+      "title_vi": "Quyền Lực Của Con Nợ",
+      "title_en": "The Debtor's Gavel",
+      "act": "Act I",
+      "archetype": "Archetype 1: The Ignition & Trap Episode",
+      "total_scenes": 8,
+      "duration_s": 85.0,
+      "scene_mix": "7 x 10.0s Standard + 1 x 15.0s Seedance (Sc 05)",
+      "seedance_slots": ["Sc 05 (15.0s): Porte-cochere blizzard confrontation as Silas slams the Obsidian Signet to seize Garrett's fleet and freeze all corporate black cards"]
+    },
+    {
+      "episode": 3,
+      "title_vi": "Bóng Ma Cảng Brooklyn",
+      "title_en": "Ghosts of the Shipyard",
+      "act": "Act IIA",
+      "archetype": "Archetype 2: The Escalation & False Dawn Episode",
+      "total_scenes": 9,
+      "duration_s": 95.0,
+      "scene_mix": "8 x 10.0s Standard + 1 x 15.0s Seedance (Sc 05)",
+      "seedance_slots": ["Sc 05 (15.0s): Tactical pursuit across the Brooklyn shipyard iron catwalks as Silas and Clara intercept Vulture Capital's demolition crew"]
+    },
+    {
+      "episode": 4,
+      "title_vi": "Chiếc Nhẫn Và Con Dấu",
+      "title_en": "The Stolen Signet",
+      "act": "Act IIA",
+      "archetype": "Archetype 2: The Escalation & False Dawn Episode",
+      "total_scenes": 9,
+      "duration_s": 95.0,
+      "scene_mix": "8 x 10.0s Standard + 1 x 15.0s Seedance (Sc 08)",
+      "seedance_slots": ["Sc 08 (15.0s): High-stakes stealth infiltration and catwalk pursuit as Simone flees the shipyard with the GPS-tagged Obsidian Signet"]
+    },
+    {
+      "episode": 5,
+      "title_vi": "Mật Mã Sáp Vàng Thụy Sĩ",
+      "title_en": "The Geneva Wax Seal",
+      "act": "Act IIB (Midpoint)",
+      "archetype": "Archetype 3: The Midpoint Shatter & Betrayal Episode",
+      "total_scenes": 10,
+      "duration_s": 110.0,
+      "scene_mix": "8 x 10.0s Standard + 2 x 15.0s (Sc 04 Seedance + Sc 08 Extended Midpoint)",
+      "seedance_slots": ["Sc 04 (15.0s): Subterranean bulkhead lockdown escape as Silas dives through the closing 5-ton steel vault door to pull Clara to safety", "Sc 08 (15.0s): Extended UV forensic revelation of the $22B Sovereign Clean-Energy Bond inside the Geneva wax seal"]
+    },
+    {
+      "episode": 6,
+      "title_vi": "Bẫy Trong Bẫy",
+      "title_en": "The Counter-Sting",
+      "act": "Act IIB",
+      "archetype": "Archetype 3: The Midpoint Shatter & Betrayal Episode",
+      "total_scenes": 10,
+      "duration_s": 110.0,
+      "scene_mix": "8 x 10.0s Standard + 2 x 15.0s (Sc 05 Extended + Sc 09 Seedance)",
+      "seedance_slots": ["Sc 05 (15.0s): High-voltage boardroom contract fencing as Silas embeds Clause 14 into the buyout memorandum", "Sc 09 (15.0s): Penthouse ambush as Dominic slams the foreclosure dossier onto Garrett's chest and crushes Garrett's fountain pen under his heel"]
+    },
+    {
+      "episode": 7,
+      "title_vi": "Đảo Chính Đêm Cuối",
+      "title_en": "The Midnight Coup",
+      "act": "Act IIIA (Dark Night)",
+      "archetype": "Archetype 4: The Siege & Dark Night of the Soul Episode",
+      "total_scenes": 9,
+      "duration_s": 100.0,
+      "scene_mix": "7 x 10.0s Standard + 2 x 15.0s Seedance (Sc 04 & Sc 09)",
+      "seedance_slots": ["Sc 04 (15.0s): Midnight raid in the mahogany dining hall as Dominic's security team wrestles the decoy ledger from Silas", "Sc 09 (15.0s): Visceral shredder rescue in the marble foyer as Simone lunges to yank the original signature page out of the cross-cut shredder blades"]
+    },
+    {
+      "episode": 8,
+      "title_vi": "Cuộc Phản Kích Pháp Y",
+      "title_en": "The Forensic Checkmate",
+      "act": "Act IIIA",
+      "archetype": "Archetype 4: The Siege & Dark Night of the Soul Episode",
+      "total_scenes": 10,
+      "duration_s": 110.0,
+      "scene_mix": "8 x 10.0s Standard + 2 x 15.0s (Sc 02 Seedance + Sc 08 Extended)",
+      "seedance_slots": ["Sc 02 (15.0s): High-pressure mechanical breakout from the locked Brooklyn subterranean vault via the 1982 brass pressure valve", "Sc 08 (15.0s): Boardroom breach and live LED broadcast of Garrett's covert conspiracy audio"]
+    },
+    {
+      "episode": 9,
+      "title_vi": "Sự Trở Lại Của Người Đã Khuất",
+      "title_en": "Return of the Living Patriarch",
+      "act": "Act IIIB (Showdown Part 1)",
+      "archetype": "Archetype 5: The Grand Crucible (Waves 1 & 2)",
+      "total_scenes": 10,
+      "duration_s": 110.0,
+      "scene_mix": "8 x 10.0s Standard + 2 x 15.0s (Sc 03 Extended + Sc 07 Seedance)",
+      "seedance_slots": ["Sc 03 (15.0s): Arthur Harrington's commanding return into the 60th-floor boardroom after completing the 72-hour isolation protocol", "Sc 07 (15.0s): Boardroom physical standoff as Silas disarms Dominic's bodyguard and locks the original Crimson Ledger under the central thermal lamp"]
+    },
+    {
+      "episode": 10,
+      "title_vi": "Phán Quyết Mực Nhiệt & Vương Miện Người Gánh Nợ",
+      "title_en": "The Thermal Verdict & Crown of the Burden-Bearer",
+      "act": "Act IIIB (70% Showdown Peak) + Act IV (30% Restorative Coda)",
+      "archetype": "Archetype 5: Anti-Dead-Finale Unified Showdown & 180° Echo Coda",
+      "total_scenes": 11,
+      "duration_s": 120.0,
+      "scene_mix": "9 x 10.0s Standard + 2 x 15.0s (Sc 02 Extended Thermal Verdict + Sc 05 Seedance Arrest)",
+      "seedance_slots": ["Sc 02 (15.0s): Peak 10/10 Thermal Ink Verdict (TW-20) illuminating Silas's gold-ink signature and Garrett's Clause 14 self-disinheritance", "Sc 05 (15.0s): Dominic's desperate lunge for the ledger intercepted by Silas and federal marshals in a kinetic takedown"]
+    }
+  ],
+  "spoken_language": "English",
+  "subtitle_language": "Vietnamese",
+  "project_voice_mode": "Dialogue-Driven Drama",
+  "cast_registry": [
+    {
+      "tier": "A1",
+      "display_name": "Silas Brennan",
+      "prompt_token": "silas_brennan",
+      "age": 34,
+      "gender": "male",
+      "image_slot": "image 1",
+      "reference_file": "char_silas_brennan_4view.jpg"
+    },
+    {
+      "tier": "A2",
+      "display_name": "Garrett Harrington",
+      "prompt_token": "garrett_harrington",
+      "age": 37,
+      "gender": "male",
+      "image_slot": "image 2",
+      "reference_file": "char_garrett_harrington_4view.jpg"
+    },
+    {
+      "tier": "B1",
+      "display_name": "Arthur Harrington",
+      "prompt_token": "arthur_harrington",
+      "age": 68,
+      "gender": "male",
+      "image_slot": "image 3",
+      "reference_file": "char_arthur_harrington_4view.jpg"
+    },
+    {
+      "tier": "B2",
+      "display_name": "Simone Laurent",
+      "prompt_token": "simone_laurent",
+      "age": 30,
+      "gender": "female",
+      "image_slot": "image 4",
+      "reference_file": "char_simone_laurent_4view.jpg"
+    },
+    {
+      "tier": "B3",
+      "display_name": "Clara Vance",
+      "prompt_token": "clara_vance",
+      "age": 29,
+      "gender": "female",
+      "image_slot": "image 5",
+      "reference_file": "char_clara_vance_4view.jpg"
+    },
+    {
+      "tier": "B4",
+      "display_name": "Julian Rostova",
+      "prompt_token": "julian_rostova",
+      "age": 52,
+      "gender": "male",
+      "image_slot": "image 6",
+      "reference_file": "char_julian_rostova_4view.jpg"
+    },
+    {
+      "tier": "B5",
+      "display_name": "Dominic Alvarez",
+      "prompt_token": "dominic_alvarez",
+      "age": 44,
+      "gender": "male",
+      "image_slot": "image 7",
+      "reference_file": "char_dominic_alvarez_4view.jpg"
+    }
+  ],
+  "tier_1_hero_props": [
+    {
+      "prop_id": "PROP-01",
+      "name": "crimson leather debt ledger",
+      "canonical_noun": "ledger",
+      "image_slot": "image 8",
+      "reference_file": "prop_crimson_debt_ledger_4view.jpg"
+    },
+    {
+      "prop_id": "PROP-02",
+      "name": "obsidian trustee signet seal",
+      "canonical_noun": "signet seal",
+      "image_slot": "image 9",
+      "reference_file": "prop_obsidian_trustee_signet_4view.jpg"
+    }
+  ],
+  "tier_2_text_props": [
+    {
+      "name": "gold-nibbed fountain pen",
+      "canonical_noun": "fountain pen",
+      "mode_b_line": "gold-nibbed fountain pen with a glossy black lacquer barrel and engraved 18K gold nib, [resting/held state] — the only fountain pen in frame"
+    },
+    {
+      "name": "emerald-cut diamond ring",
+      "canonical_noun": "diamond ring",
+      "mode_b_line": "platinum solitaire engagement ring set with a three-carat rectangular emerald-cut white diamond, [resting/held state] — the only diamond ring in frame"
+    },
+    {
+      "name": "stamped cardiology admission folder",
+      "canonical_noun": "folder",
+      "mode_b_line": "cream manila cardiology admission folder stamped with a red clinical isolation seal, [resting/held state] — the only folder in frame"
+    },
+    {
+      "name": "ivory parchment liability waiver document",
+      "canonical_noun": "waiver document",
+      "mode_b_line": "ivory parchment liability waiver document with red wax border and black ink signature lines, [resting/held state] — the only waiver document in frame"
+    },
+    {
+      "name": "handheld ultraviolet forensic flashlight",
+      "canonical_noun": "flashlight",
+      "mode_b_line": "matte-black anodized aluminum handheld ultraviolet forensic flashlight with a glowing violet quartz lens, [resting/held state] — the only flashlight in frame"
+    },
+    {
+      "name": "brushed-titanium corporate centurion credit card",
+      "canonical_noun": "credit card",
+      "mode_b_line": "brushed-titanium corporate centurion credit card with gold chip contacts, [resting/held state] — the only credit card in frame"
+    },
+    {
+      "name": "distressed-debt contract folder",
+      "canonical_noun": "contract folder",
+      "mode_b_line": "charcoal leatherette distressed-debt contract folder with brass corner clips, [resting/held state] — the only contract folder in frame"
+    }
+  ],
+  "locations": [
+    {
+      "env_id": "ENV-01",
+      "name": "Harrington Estate grand mahogany dining hall",
+      "image_slot": "image 10",
+      "reference_file": "location_harrington_dining_hall_4view.jpg"
+    },
+    {
+      "env_id": "ENV-02",
+      "name": "Harrington Estate marble foyer and porte-cochere",
+      "image_slot": "image 11",
+      "reference_file": "location_harrington_marble_foyer_4view.jpg"
+    },
+    {
+      "env_id": "ENV-03",
+      "name": "Brooklyn founding shipyard and subterranean data vault",
+      "image_slot": "image 12",
+      "reference_file": "location_brooklyn_shipyard_vault_4view.jpg"
+    },
+    {
+      "env_id": "ENV-04",
+      "name": "Vulture Capital penthouse glass lounge",
+      "image_slot": "image 13",
+      "reference_file": "location_vulture_penthouse_lounge_4view.jpg"
+    },
+    {
+      "env_id": "ENV-05",
+      "name": "Harrington Tower 60th-floor executive boardroom",
+      "image_slot": "image 14",
+      "reference_file": "location_harrington_boardroom_4view.jpg"
+    }
+  ],
+  "title_phrases": [
+    "bankrupt testament",
+    "bản di chúc của người còn sống"
+  ],
+  "bookish_terms": [
+    "furthermore",
+    "nevertheless",
+    "henceforth",
+    "notwithstanding",
+    "inasmuch as",
+    "heretofore",
+    "in accordance with the aforementioned"
+  ],
+  "minor_characters": [],
+  "zero_fatality_verified": true
+}

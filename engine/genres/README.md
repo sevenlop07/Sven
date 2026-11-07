@@ -28,9 +28,14 @@ The **Genre Library** (`engine/genres/`) serves as the modular repository of str
 │  - No episodic reset         │                              │    Comedy Engine)            │
 │  (e.g., Cơm Không Chan Nước  │                              │  ► drama.md (Social & Healing│
 │   Mắt)                       │                              │    Drama Engine)             │
-└──────────────────────────────┘                              │  ► thriller.md (Planned)     │
-                                                              │  ► rom-com.md (Planned)      │
-                                                              │  ► mockumentary.md (Planned) │
+└──────────────────────────────┘                              │  ► microdrama.md (Viral      │
+                                                              │    Microdrama Engine)        │
+                                                              │  ► action.md (Action, Chase  │
+                                                              │    & Combat Engine)          │
+                                                              │  ► fantasy.md (Time-Travel,  │
+                                                              │    Isekai & Xianxia Engine)  │
+                                                              │  ► thriller.md (Thriller,    │
+                                                              │    Mystery & Folk Suspense)  │
                                                               └──────────────────────────────┘
 ```
 
@@ -43,10 +48,10 @@ The **Genre Library** (`engine/genres/`) serves as the modular repository of str
 | **Sitcom (Situation Comedy)** | [`sitcom.md`](file:///d:/Project/Sven/engine/genres/sitcom.md) | Trapped Characters + Escalating Petty Conflict + Character-Flaw Comedy | Cold Open + 3 Acts (or 2 Acts) + Tag; Multi-Plot A/B/C Weave | **100% Status Quo Reset** (End of episode returns to baseline) |
 | **Social & Healing Drama** | [`drama.md`](file:///d:/Project/Sven/engine/genres/drama.md) | Real Societal Pain + Internal Metamorphosis Arc + Costly Moral Choice | 3-Act Feature (25/25/25/25%) or Puzzle-Piece Episodic Arc | **Permanent Moral Metamorphosis** (Earned resolution, sweet-and-bitter balance) |
 | **Viral Microdrama (Vi Đoản Kịch)** | [`microdrama.md`](file:///d:/Project/Sven/engine/genres/microdrama.md) | Hyper-Concentrated Stakes + Rapid Escalation + Dopamine Face-Slap Reversal | Asymmetrical 13-Beat Retention Curve; 10s Scene Atoms; Invariant Closing Cliffhanger (C1–C7) | **Zero Reset** (Addictive binge loop across 40–100+ episodes) |
+| **Action, Martial Arts, Chase & Combat** | [`action.md`](file:///d:/Project/Sven/engine/genres/action.md) | Suppressed Emotional Compression (`1.0x`) + High-Velocity Chase/Combat Climax (`2.3x–10x`) + Moral Resolution | 3-Zone Hybrid Episode (40% Drama Setup / 40% Micro-Timeline Combat & Chase / 20% Aftermath); Kinetic Arrow (`→`) Syntax via `@CombatDirector` | **Zero Reset** (Irreversible stakes, physical & moral transformation) |
+| **Time-Travel, Portal Isekai & Supernatural Fantasy** | [`fantasy.md`](file:///d:/Project/Sven/engine/genres/fantasy.md) | Asymmetric Knowledge/Awakened Power + `TH3` Spatial-Temporal Shifts + Ticking Cost + `Seedance` Climax | 10-Scene Speculative Arc; 3 Hard World Rules; Tier-1 Relic 3-State Evolution; Native `3D Semi-Real (Mẫu 2B)` & `TH3` Integration | **Zero Reset** (Timeline/Realm progression with butterfly-effect cliffhangers) |
+| **Psychological Thriller, Mystery & Folk Suspense** | [`thriller.md`](file:///d:/Project/Sven/engine/genres/thriller.md) | Knowledge Matrix Switch (`Suspense ➔ Mystery ➔ Prestige Reveal`) + Fair-Play Visual Clues + Chiaroscuro Staging | 10-Scene Investigative/Survival Arc; $\ge 2$ Non-Verbal Clue Plants; 70% Visual/Acoustic Tension + `Seedance` Pursuit Peaks | **Zero Reset** (Irreversible unmaskings & escalating mastermind conspiracy) |
 | **Serial Melodrama / Family Epic** | [`1-narrative-screenplay-architecture.md`](file:///d:/Project/Sven/engine/references/1-narrative-screenplay-architecture.md) | Cumulative Psychological Trauma + Generational Conflict + Moral Transformation | 4-Act Macro Arc (20% / 45% / 25% / 10%); 10s Scene Breakdown | **Zero Reset** (Serial progression with persistent cliffhangers) |
-| **Romantic Comedy (Rom-Com)** | *(Planned)* | Mutual Obstacle / Dislike + Shared Mission + Inevitable Vulnerability | 3-Act Meet Cute, False Compatibility, All Hope Lost, Grand Gesture | Relational Advancement |
-| **Psychological Thriller** | *(Planned)* | Asymmetric Information + Looming Catastrophe + Paranoia Spiral | 8-Beat Showdown, Multiple False Dawns, Russian-Doll Twists | Irreversible Revelations |
-| **Workplace Mockumentary** | *(Planned)* | Institutional Absurdity + Talking Head Asides + Cringe Comedy | Single-Camera, Documentary Realism, Rapid Glances to Lens | Dynamic Equilibrium |
 
 ---
 

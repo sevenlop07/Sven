@@ -12,124 +12,99 @@
 
 | Item | Status |
 |---|---|
-| Dialogue Word Cap (Gate 4B): Single-Speaker hard cap ≤ 32 words (craft target 8–14w; Microdrama ≤ 12w); Two-Shot exchange ≤ 15 words per speaker (total ≤ 32w) | Hard Constraint |
-| Phases contiguous, non-overlapping, start at 00:00, end at the clip duration 10s / 15s / 30s (Gate 3M) | Hard Constraint |
-| **Zero Cumulative Timestamps**: Every scene prompt MUST start at 00:00 for third-party AI generators; NEVER use cumulative episode timestamps like [00:10–00:20] in prompts (Gate 3M) | Hard Constraint |
-| **Zero Dead Air Law**: continuous micro-action density spanning 100% of the clip duration; zero "holds still", "stands rigid", or idle buffers (Gate 3O) | Hard Constraint |
-| Clip duration strictly 10s, 15s, or 30s per scene (Gate 3M accepts 10 / 15 / 30) | Hard Constraint |
-| No lip-synced line during a downward POV; no lip-sync while the camera is in fast travel (whip, crane travel, fast orbit) | Hard Constraint |
-| **Subject-to-Scale Invariance (Frame Capacity Law)**: Single-subject scales (MCU, CU, Choker, Head-On, ECU) strictly direct ONLY the primary in-frame subject; secondary characters MUST NOT have facial biomechanics, expressions, or physical reactions described within that phase (Gate 3P) | Hard Constraint |
-| Canonical prompt syntax (§8) | Hard Constraint for new deliverables (the audit warns on legacy syntax) |
-| Speech rates, lip-sync windows, move durations, density tables | Craft Defaults; break them with a `BREAK:` line |
+| **5-Tier Dialogue Word Cap & Calm Understatement Law (`~2.5 words/s` Safe AI Lip-Sync Standard)**: **Default `10s` clip (`@Director`)** = `3–4 Shots` (`3s–2s–3s–2s`), `1–2` spoken lines (`12–22 words total`); **Exclusive `15s` Action/Chase/Combat clip (`@CombatDirector`)** = `5–6 Shots` (`3s–3s–4s–3s–2s`), `0` spoken words during chase/VFX shots (`Shot 3 & Shot 4`) and **Calm Understatement Closing Line (`2–6 words`)** | Hard Constraint |
+| Shots contiguous, non-overlapping, start at `00:00`, end at the clip duration `10s / 15s / 30s` (`Shot 1 (00:00-00:03)` ... `Shot N`) | Hard Constraint |
+| **Zero Cumulative Timestamps**: Every scene prompt MUST start at `00:00` for third-party AI generators; NEVER use cumulative episode timestamps like `(00:10-00:20)` in prompts | Hard Constraint |
+| **Single `<<<Image X>>>` Declaration Law**: Declare `<<<Image X>>>` **ONLY ONCE** inside `[context]:` and `[subject]:`. **NEVER repeat `<<<Image X>>>` inside `Shot 1..N`** | Hard Constraint |
+| **Zero-Costume & Zero-Age Law (`Gates 3A & 3E`)**: Strictly ZERO clothing/garment words (`in a black jacket`, `in a dark suit`, `skirt`) and ZERO numeric ages or age/hair/beard words (`32-year-old`, `young blonde`, `silver-bearded`) anywhere in the video prompt; voice maturity and emotion are encoded in **ONE single parenthetical (`[Proper_Name] ([vocal timbre/maturity], [tone]): "..."`)** | Hard Constraint |
+| **1–2 Short Natural Sentences per Shot (`15–30w`)**: Each `Shot N` describes 1 clear state transition (`A ➔ B`) in natural prose; strictly zero mechanical `→` arrows | Hard Constraint |
+| Canonical Unified Multi-Shot Storyboard syntax (§8) | Hard Constraint |
 
 ---
 
-## §1 — CINEMATIC MENTAL MODEL & COUNTING UNITS
+## §1 — CINEMATIC MENTAL MODEL & DYNAMIC SHOT PACING ARCHITECTURE
 
-### 1.1 The Invariant 10-Second Shot Mental Model (10s Là Một Cú Máy / Shot, Không Phải Một Cảnh)
-- **A 10-second clip is a SHOT (cú máy), not an entire scene.** A dramatic scene consists of multiple shots stitched together (e.g., 9 shots = 90s sequence).
-- **Primary Rule: One Speaker Per Shot via Shot - Reverse Shot**:
-  - In cinema, dialogue is edited via shot-reverse-shot across consecutive shots:
-    - *Shot 1 (10s)*: Character A speaks (Camera on A; medium close-up or close-up).
-    - *Shot 2 (10s)*: Character B speaks or reacts (Camera on B; reverse angle or over-the-shoulder).
-    - *Shot 3 (10s)*: Returns to Character A.
-  - *Why this is essential for AI Video (Veo, Sora, Kling)*: Each shot features only one active speaking face. Lip-sync, facial coherence, and vocal timbre remain 100% stable with zero voice bleeding or cross-talk morphing.
-- **The Two-Shot Exception (When 2 Speakers Are Allowed in a Single 10s Shot)**:
-  - Allowed ONLY when:
-    1. Each person speaks at most 1–2 short volleys (**5–10 words each**) for rapid Q&A, snappy bickering, or urgent interruptions.
-    2. Framed as a **Two-shot / Three-shot** (both in frame simultaneously) to deliberately evoke high tension, frantic bickering, or raw everyday realism.
-    3. **The 15-Word Shot-Split Law**: If any single speaker speaks **> 15 words** in that shot $\to$ **MUST SPLIT THE SHOT**.
+### 1.1 Dynamic Shot Pacing by Dramatic Intent (`10.0s @Director` vs. `15.0s @CombatDirector` — Zero Cookie-Cutter Grids)
+> **ANTI-FORMULA MANDATE**: A master film editor NEVER cuts every `10.0s` scene into the exact same `3s–2s–3s–2s` grid! Shot count (`1 to 4 shots` in `10s`; `3 to 6 shots` in `15s`) and shot duration (`1.5s to 10.0s`) MUST be chosen organically from the **emotional and dramatic purpose of each specific scene**:
+
+| Scene Dramatic Archetype (`10.0s @Director`) | Optimal Shot Count & Rhythm | Why This Rhythm Serves the Scene (Directorial Expertise) |
+|---|---|---|
+| **1. Deep Intimacy, Grief, Confession, or Unbroken Tension** | **`1 Continuous Shot (`00:00-00:10`)` OR `2 Slow Shots (`5s–5s` / `6s–4s`)`** | Cutting rapidly during a heartfelt confession, quiet grief, or a suffocating 1-on-1 stare breaks emotional immersion. Let the camera hold or push in slowly (`4s–6s` per shot) so the viewer feels every breath and micro-expression. |
+| **2. Escalating Confrontation or Action ➔ Reaction ➔ Turn** | **`3 Shots (`4s–3.5s–2.5s` or `3s–4s–3s`)`** | `Shot 1 (3–4s)` establishes the interpersonal action and opening line $\to$ `Shot 2 (3.5–4s)` captures the counterpart's counter-move or emotional shift $\to$ `Shot 3 (2.5–3s)` lands the decisive turn or parting shot. |
+| **3. Sudden Disruption / Shock Opening ➔ Lingering Aftermath** | **`3 Shots (`2s–5s–3s`)`** | `Shot 1 (2s)` opens with a sudden physical disruption (door bursts open, glass shatters, hand grabs a wrist) $\to$ `Shot 2 (5s)` tracks the character stepping into the space and absorbing the revelation $\to$ `Shot 3 (3s)` settles on the emotional fallout. |
+| **4. Tactical Clue / Prop Insert & Psychological Reversal** | **`4 Shots (`3s–2s–3s–2s` or `2.5s–2s–3s–2.5s`)`** | Used **specifically** when the scene turns on a hidden tactile detail (`Shot 2: 2s` macro insert of a brass keyring, deadbolt lock, hidden fangs, or trembling hand) paired with an Off-Screen `L-Cut` line, followed by `Shot 3` realization and `Shot 4` checkmate. |
+
+- **Exclusive `15.0s` Action/Chase/Ambush/Combat Scenes (`00:00–00:15` on `@CombatDirector` — Flexible `3–6 Shots`)**:
+  * Vary shot lengths based on **Kinetic Contrast**: use **longer `3.5s–5.0s` tracking shots** for uninterrupted full-speed sprints or continuous martial exchanges (`0` dialogue), **`2.0s–3.0s` fixed-frame wide shots** when ground VFX or heavy environmental impacts trigger, and **`1.5s–2.5s` tight close-ups** for sudden freezes, parries, or the final boss checkmate (`e.g., 3s–3s–4s–3s–2s`, `4s–5s–3s–3s`, or `3s–3s–2s–2s–3s–2s`).
 
 ### 1.2 Counting Units
 - **Vietnamese** dialogue is counted in **syllables** (every whitespace token is one syllable: `Em mệt quá anh ơi` = 5 syllables).
 - **English** dialogue is counted in **words**.
 - Plan lines in **seconds and dramatic beats**, not just raw mechanical tokens.
 
-### 1.3 The 4 Cinematic Continuity Locks for Stitching 10s Shots (Bộ Tứ Khóa Xuyên Suốt)
-When assembling discrete 10-second AI video shots into a seamless cinematic sequence on an NLE timeline (Premiere, DaVinci, CapCut), four mandatory continuity locks guarantee that cuts feel natural, fluid, and coherent rather than fragmented or jarring:
+### 1.3 The 4 Cinematic Continuity Locks & The 3-Case Continuity Reference Point Law (`TH1 / TH2 / TH3`)
+When assembling discrete `10.0s` or `15.0s` AI video shots into a seamless cinematic sequence, every scene transition (`Sc K-1 ➔ Sc K`) is governed first by the **3-Case Continuity Reference Point Law (`workflow.md` §2.10, §8.3, §9.2)**:
+- **Case 1 (`TH1 — CẦN THAM CHIẾU Khung Hình Cuối Cảnh Trước`: Same Continuous Moment in Time + Same Physical Location)**:
+  Scene $K$ uses the extracted **Static Terminal Frame (`Last Frame @00:10.0` or `@00:15.0`)** from Scene $K-1$ as its exact `00:00.0` visual continuity point. In Code Block 1, `[context]:` retains the canonical `<<<Image X>>>` tag from `setting.html`, while `[subject]:` locks **100% verbatim** to the exact physical posture, hand-prop grip, eyeline, and architectural landmark visible in Scene $K-1$'s terminal frame.
+- **Case 2 (`TH2 — KHÔNG THAM CHIẾU Khung Hình Cảnh Trước`: Different Location, Time Jump, or Character Lineup Switch)**:
+  Scene $K$ does **NOT** reference Scene $K-1$'s spatial frame; it re-anchors `[context]:` and `[subject]:` to the **New Location Reference Image (`<<<Image X>>>`)** and **Character Reference Sheets (`<<<Image Y>>>`)**, bridged via a Mode B Sequence Bridge (Match-Cut, Question Hook, Prop/Emotional Carry-Over, or Parallel Cross-Cut).
+- **Case 3 (`TH3 — THAM CHIẾU NGOẠI LỆ Siêu Nhiên / Xuyên Không / Dịch Chuyển Không Gian`: Same Continuous Moment in Time + Instant Spatial Shift)**:
+  In supernatural, portal, or time-travel (`xuyên không`) transitions, `[subject]:` at `00:00.0` preserves 100% of the character's exact body posture, mid-step momentum, and hand grip from Scene $K-1$'s terminal frame, while `[context]:` switches completely to the **New World/Era Location Reference Image (`<<<Image X>>>`)**.
+
+Within any **Case 1 (`TH1`)** same-location sequence, four mandatory continuity locks guarantee that cuts feel natural, fluid, and coherent:
 
 1. **Lock 1: Spatial & 180° Axis Gaze Vector Lock (Khóa Trục Không Gian & Đường Mắt Bất Biến)**:
-   - *Screen-Direction Invariance*: If Character A is framed on Screen-Left looking toward Screen-Right, and Character B is on Screen-Right looking toward Screen-Left, this geometry **must never flip** across shot-reverse-shot cuts unless the camera physically orbits across the axis on screen. Record it in the Audit Card; inside Code Block 1 express it through architecture and eyelines (e.g. `ho_ten_A by the window facing ho_ten_B at the doorway`).
-   - *Ground & Architectural Anchor*: Every shot within the same sequence must cite the identical floor/surface noun phrase (`encaustic cement tiles`, `packed earthen floor`) and directional key light source to prevent AI latent background hallucinations.
-2. **Lock 2: Kinetic Momentum Baton Relay (Gậy Tiếp Sức Động Năng & Action Match-Cut)**:
-   - *The Relay Principle*: In the final 1.0s–1.5s of Shot N (`[00:08.5–00:10.0]`), the active character begins an observable physical movement (raising a hand to wipe a tear, turning a head toward the door, letting a utensil slip).
-   - *The Catch*: In the opening 1.0s–1.5s of Shot N+1 (`[00:00–00:01.5]`), from the new camera angle or reverse shot, that physical movement is **caught in mid-motion and completed**, or its impact lands on the counterpart's reaction.
-   - *Result*: When cut on action in the edit, the cut point disappears completely, creating an unbroken ribbon of physical kinetic energy. Zero action restarts; zero frozen frames.
-3. **Lock 3: Auditory Suture & Continuity Bridges (Cầu Nối Âm Thanh Điện Ảnh: L-Cut, J-Cut & Room Tone)**:
-   - Cinema uses sound to suture visual cuts together so the audience perceives one continuous world.
-   - *L-Cut (Split Audio Tail)*: Character A's final spoken words or a decisive sound in Shot N spill 1.0s–1.5s into Shot N+1 over Character B's silent reaction face.
-   - *J-Cut (Pre-Lap Sound)*: An approaching footstep, door opening creak, or urgent breath from Shot N+1 begins 1.0s before the visual cut occurs.
-   - *Diegetic Room Tone Suture*: The atmospheric background sound (rain on corrugated tin, steady ceiling fan thrum, distant wind) remains uniform across all contiguous shots within the space.
+   - *Screen-Direction Invariance*: If Character A is framed on Screen-Left looking toward Screen-Right, and Character B is on Screen-Right looking toward Screen-Left, this geometry **must never flip** across shot-reverse-shot cuts unless the camera physically orbits across the axis on screen. Record it in the Audit Card; inside Code Block 1 express it through architecture and eyelines (e.g. `Bradley at the side of the table facing Harold at the head chair`).
+   - *Ground & Architectural Anchor*: Every shot within the same sequence must cite the identical floor/surface noun phrase and directional key light source to prevent AI latent background hallucinations.
+2. **Lock 2: Kinetic Momentum Baton Relay & Clean Terminal Keyframe Landing (`Shot 4 / Shot 5`)**:
+   - *The Relay & Clean Landing Principle*: In the final shot of the clip (`00:08-00:10` or `00:13-00:15`), the active character settles into a **Clean Dynamic Landing Pose** (clear orientation, grounded hand/prop contact, zero wild mid-swing motion blur) so the user can extract a razor-sharp terminal frame for Scene $K+1$ (`Case 1` or `Case 3`).
+3. **Lock 3: Auditory Suture & Off-Screen `L-Cut` Dialogue**:
+   - *Off-Screen `L-Cut` Dialogue Over Visual Inserts*: An off-screen speaker (`[Name] (outside the door / across the table / from behind, [tone])`) can deliver a short line over an interior tracking shot or a `2s` prop/lock close-up (`Shot 2`), suturing shots seamlessly.
 4. **Lock 4: Physical Handover Ledger (Sổ Bàn Giao Trạng Thái Vật Lý & Đạo Cụ)**:
-   - Recorded strictly in Code Block 2: Character 3D positions, facial expression at `00:10.0`, prop physical states (held in left hand, placed on shelf, shattered into fragments) transfer 1:1 into the opening frame of Shot N+1.
+   - Recorded strictly in Code Block 2: Character 3D positions, facial expression at `00:10.0` (or `00:15.0`), prop physical states transfer 1:1 into the opening frame of Scene $K+1$.
 
 ### 1.4 Multi-Spatial Sequence Architecture (Giải Thoát Khỏi Chiếc Hộp Một Phòng)
-- **The Anti-Box Mandate**: Sticking 10 consecutive shots into a single cramped room to maintain easy continuity destroys cinematic scale and creates stagey, sterile melodrama.
-- **Cinematic Sequence Breakdown**: A 100s–120s production must be organized into **2 to 3 dynamic physical or psychological Sequences**:
-  - *Sequence 1 (Shots 1–3 — Atmospheric Setup & Compressed Tension)*: Intimate tactile space (hallway, quiet room corner, balcony, kitchen hearth) where the protagonist's dilemma is established through physical action and visual metaphor with minimal or zero dialogue.
-  - *Sequence Boundary Transition*: Connected to Sequence 2 via a **Sensory Match-Cut** (sound bridge, door threshold crossing, or visual graphic match), moving the narrative forward in space and time.
-  - *Sequence 2 (Shots 4–7 — High-Stakes Collision Core)*: The central clash or revelation in the main narrative space, alternating dominant shots and reaction shots.
-  - *Sequence 3 (Shots 8–10 — Aftermath & Transformative Resonance)*: A shift in perspective, isolation, or the morning light settling over the consequence, leaving the audience with an unforgettable cinematic image.
+- **The Anti-Box Mandate**: Sticking 10 consecutive scenes into a single cramped room destroys cinematic scale. Partition every episode into **2 to 3 dynamic physical Sequences** connected by Sensory Match-Cuts or Question Hooks.
 
 ---
 
-## §2 — SPEECH RATE & 10S WORD BUDGET BY GENRE
+## §2 — SPEECH RATE & `10S / 15S` WORD BUDGET (`~2.5 WORDS/S` + CALM UNDERSTATEMENT CLOSING LINE)
 
-| Delivery Mode | Vietnamese (syl / s) | English (words / s) | 10s Single-Speaker Word Budget | Target Genres & Pacing |
+Safe speech for AI video lip-sync operates at **`~2.5 words/second`**, leaving `~1.0s` buffer for facial acting (`Image Speaks First, Dialogue Speaks Second`):
+
+| Clip Duration & Owner | Storyboard Structure | Sentence Count | Total Word Budget (Whole Clip) | Closing Line Law |
 |---|---|---|---|---|
-| **Sitcom / Comedy / Fast Banter** | 3.8 – 5.0 | 2.2 – 2.8 | **14 – 24 words** (Single speaker, cap ≤ 32w) or **14–24w total** (Two-shot split 5–10w each; cap ≤ 15w/speaker) | High-energy, snappy pacing. Structure: Setup ➔ Reaction ➔ Punchline in final 2–3s. |
-| **Calm Conversation / Everyday Slice-of-Life** | 3.5 – 4.5 | 2.0 – 2.5 | **12 – 20 words** (Single speaker, craft target 8–14w) | Natural conversational cadence with breathing room (5.0s – 7.0s speech). |
-| **Psychological Drama / Heavy Emotion / Melodrama** | 2.5 – 3.5 | 1.3 – 1.8 | **8 – 14 words** (Microdrama ≤ 12w; cap ≤ 20w) | The unspoken matters more than the spoken. 4–5s pregnant pauses, trembling breaths, eye shifts. |
-| **Panic / Emergency Command / Stichomythia** | 4.5 – 6.0 | 2.5 – 3.3 | **14 – 24 words** (staccato volleys, cap ≤ 32w) | Rapid adrenaline pacing, clipped consonants, urgent interruptions. |
+| **Default `10.0s` Scene (`@Director`)** | **`3 – 4 Shots`** (`3s–2s–3s–2s`) | **`0 – 2 sentences`** (up to 3 short lines with `L-Cut`) | **`12 – 22 words total`** (`6–10w` setup + `2–6w` closing line; `0w` for silent scenes) | **Calm Understatement (`2–6 words`)** in `Shot 4` |
+| **Exclusive `15.0s` Scene (`@CombatDirector`)** | **`5 – 6 Shots`** (`3s–3s–4s–3s–2s`) | **`0 – 3 ultra-short lines`** (`0w` during `Shot 3` chase & `Shot 4` VFX) | **`6 – 18 words total`** (`0w` in pure combat) | **Ice-Cold Checkmate (`2–5 words`)** in `Shot 5/6` |
 
-**Buffer Law for 10s Shots**:
-- Always leave **0.5s – 1.0s buffer at the head** of the shot (establishing subject, breath intake before speech).
-- Always leave **0.5s – 1.5s buffer at the tail** of the shot (clean mouth closure, living somatic reaction/settle before cut).
-
----
-
-## §3 — LIP-SYNC WINDOWS & THE 3 CINEMATIC DIALOGUE CONTINUITY TECHNIQUES
-
-### 3.1 Lip-Sync Timing Windows
-- A spoken line **starts ≥ 0.5 s** after its phase begins (face established, breath drawn).
-- A spoken line **ends ≥ 0.8 s – 1.0 s** before the shot ends (mouth closes cleanly on screen).
-- A phase that carries a line lasts **≥ line duration + 1.0 s**.
-
-### 3.2 The 3 Advanced Techniques for Seamless Multi-Shot Dialogue Continuity
-1. **L-Cut (Split Audio Tail)**:
-   - Visual cuts to Character B, but Character A's voice continues for 1.0s – 2.0s into the new shot.
-   - The audience hears A finish the line while observing B's immediate somatic reaction (hurt, guilt, shock). This is the hallmark of professional cinema editing.
-2. **J-Cut (Pre-Lap Dialogue)**:
-   - Character B's voice ignites 0.5s – 1.5s BEFORE the visual cut to Character B occurs.
-   - Creates fluid narrative propulsion, pulling the audience into the next shot.
-3. **The Reaction Shot (Shot Phản Ứng — Zero Words Spoken)**:
-   - Character B speaks strictly ZERO words.
-   - The shot is dedicated entirely to silence, breathing, moistening eyes, a tightening jaw, or an averted gaze. In drama, silence is often far more devastating than a spoken line.
-4. **Voice-Over (V.O.) / Internal Monologue**:
-   - Character on screen remains physically silent with sealed lips, while internal thought audio plays. Perfect for 10s shots without lip-sync stress.
-
-### 3.3 Genre Execution: Sitcom vs. Psychological Drama
-- **Sitcom Architecture**:
-  - Pacing is rapid; two-shots and three-shots are encouraged.
-  - Setup ➔ Reaction ➔ Punchline: Deliver the punchline in the last 2–3s and cut immediately on the laugh. Never let visual dead air linger after the punchline.
-  - The Reaction Shot (looking at camera, breaking 4th wall, deadpan eye-roll) is the primary engine of comedy.
-- **Psychological Drama Architecture**:
-  - Subtext over exposition: What is unsaid is paramount.
-  - Stick strictly to one speaker per 10s shot (15–20 words), leaving generous space for hesitation, broken sentences, and swallows.
-  - Pair with L-cuts to let devastating accusations linger over the victim's silent face.
+**Buffer & Psychological Subversion Spoken Rules**:
+- **Enter in the middle of the situation (*In medias res*)**: Zero greetings, zero plot-summary exposition.
+- **Micro-Visual Reveal Over Verbal Exposition**: Never let characters explain their secret identity, power, or scheme in words; reveal it via **1 close-up visual detail (`Shot 2 / Shot 4`)**.
+- **Calm Understatement Closing Line (`2–6 words`)**: At the decisive turn (`Shot 4` in 10s or `Shot 5/6` in 15s), the dominant/predator/authority character speaks the **shortest, calmest, most understated line in the scene (`2–6 words`)** (*`"I'm sorry."`*, *`"Miss, you seem lost."`*, *`"Because you secretly sold Warehouse Four."`*).
 
 ---
 
-## §4 — ACTION CAPACITY PER SECOND
+## §3 — LIP-SYNC WINDOWS & OFF-SCREEN `L-CUT` DIALOGUE
 
-| Window | Body capacity | Visible emotion | Spoken capacity |
+### 3.1 Lip-Sync Timing Windows, Clean Terminal Frame Mouth-Closure & Action Vocal Economy
+- A spoken line **starts ≥ 0.5 s** after its shot begins and **ends ≥ 0.8 s** before the shot ends so lips close cleanly before the cut.
+- **Zero Dialogue During High-Speed Locomotion & VFX Shots (`Shot 3 & Shot 4` in `15s` `@CombatDirector` Scenes)**: Never place spoken dialogue inside a `3–4s` long tracking chase shot (`Shot 3`) or a wide-to-fixed hard-stop/VFX trap shot (`Shot 4`). Keep speech strictly in the calm setup (`Shot 1`), the snap-freeze realization (`Shot 2`: `"I'm sorry."`), and the final boss confrontation (`Shot 5`: `"Miss, you seem lost."`).
+
+### 3.2 Off-Screen `L-Cut` & Selective Face Obscuration
+1. **Off-Screen `L-Cut` Audio (`[Name] (outside the door / across the table / from behind, [tone])`)**:
+   - Allows a character outside the current shot's frame to speak while the camera stays on a `2s` prop/lock close-up (`Shot 2`) or tracks the protagonist's movement (`Shot 1`), maintaining tension without unnecessary face cuts.
+2. **Selective Face Obscuration (Lower-Face / Back Silhouette Shots)**:
+   - Using `The camera avoids [Name]'s full face, showing only [Name]'s lower face, jawline, firm mouth, and hand...` or `showing only his back and shoulders in silhouette` prevents multi-character face-blending and amplifies mystery.
+
+---
+
+## §4 — SHOT CAPACITY BY WINDOW (`2s` · `3s` · `4s`)
+
+| Shot Window | Typical Role in Storyboard | Action Capacity (`1–2 Short Natural Sentences`) | Spoken Capacity |
 |---|---|---|---|
-| 1.0 – 2.0 s (micro-beat, insert, reaction) | One micro-action: head turn, jolt, hand slam, grip | Pupil, swallow, nostril, lip | 0–5 counted words |
-| 2.5 – 4.5 s (standard beat) | One primary move: 3 steps and stop, hand an object across, turn around | Jaw clench, throat swallow, breath change | One line (VN ≤ 14 syl, EN ≤ 9 words) |
-| 5.0 – 7.0 s (extended beat) | One cause-and-effect chain: walk, meet obstacle, stop, face | Two-stage shift (shock → resolve) | One full line + reaction, or two short lines |
-| 1.0 – 2.5 s (terminal settle) | No gross motor movement; contact points hold | Breathing, eye moisture, drifting air | 0 words |
-
-**One primary move + one reaction per phase** remains a Hard Constraint (limb morphing otherwise).
+| **`2.0 s` Shot** (`00:03-00:05`, `00:08-00:10`, `00:13-00:15`) | Prop/Lock Insert (`Shot 2`), Micro-Visual Reveal (fangs, black nails, keyring tap), or Terminal Payoff (`Shot 4 / Shot 5/6`) | **1 crisp micro-action or state flip** (`15–25 words` of natural prose; zero `→` arrows) | `0 words` OR `2–6 words` calm understatement / `L-Cut` line |
+| **`3.0 s` Shot** (`00:00-00:03`, `00:05-00:08`, `00:10-00:13`) | Opening Setup/Mask (`Shot 1`), Snap-Freeze Close-Up (`Shot 2` in 15s), OTS Reaction (`Shot 3`), or Hard-Stop + VFX (`Shot 4` in 15s) | **1 clear state transition `A ➔ B`** (`18–30 words` of natural prose: e.g., gentle smile freezes into pure panic; runner stops sharply as runes glow beneath feet) | `1 short line` (`3–10 words`) OR `0 words` in VFX/reaction shot |
+| **`4.0 s` Shot** (`00:06-00:10` in 15s) | Full-Speed Flight / Pursuit / Tracking Action (`Shot 3` in 15s) | **1 continuous locomotion trajectory** (`Exterior, long tracking follow shot` — turns and flees through empty alleyways) | **Strictly `0 words`** (100% kinetic motion & footsteps Foley) |
 
 ---
 
@@ -162,273 +137,146 @@ Limits:
 
 ---
 
-## §6 — SHOTS AND CUTS
+## §6 — SHOTS AND CUTS (`10.0s` DEFAULT ON `@DIRECTOR` VS. `15.0s` ACTION/COMBAT ON `@COMBATDIRECTOR`)
 
-| Clip | Track B shots | Track A phases | Track AB (hybrid) |
+| Clip Duration & Owner | Canonical Multi-Shot Storyboard Structure | Shot Timing Breakdown | Key Camera & Action Rhythm |
 |---|---|---|---|
-| 10 s | 2 – 4 | 2 – 4 | 2 – 3 shots, one of them a take ≥ 5 s holding 2+ phases |
-| 15 s | 2 – 5 | 3 – 5 | 2 – 4 shots, take ≥ 7 s |
-| 30 s | 4 – 8 | 5 – 8 | 3 – 6 shots, take ≥ 10 s |
+| **10.0 s (Default for ALL Standard Dialogue / Drama / Twist Scenes — `@Director`)** | **`3 – 4 Shots`** (`Shot 1` .. `Shot 4`) | **`3s – 2s – 3s – 2s`**<br>(`00:00-00:03`, `00:03-00:05`, `00:05-00:08`, `00:08-00:10`)<br>or **`3s – 4s – 3s`** | • `Shot 1 (3s)`: Setup / Social Mask + Line 1<br>• `Shot 2 (2s)`: Close-up Prop/Lock/Micro-Detail Insert (+ optional Off-Screen `L-Cut` line)<br>• `Shot 3 (3s)`: OTS / Reaction / State-Transition (`A ➔ B`)<br>• `Shot 4 (2s)`: Selective Face / Lower-Face / Payoff Close-up + Calm `2–6w` Closing Line |
+| **15.0 s (Reserved EXCLUSIVELY for High-Motion Action / Chase / Ambush / Combat — `@CombatDirector` `[⚡ SEEDANCE · 15.0s]`)** | **`5 – 6 Shots`** (`Shot 1` .. `Shot 5/6`) | **`3s – 3s – 4s – 3s – 2s`** (5 shots)<br>or **`3s – 3s – 2s – 2s – 3s – 2s`** (6 shots) | • **Kinetic Contrast Curve**: `Shot 1 (3s)` Calm/Setup $\to$ `Shot 2 (3s)` Snap Freeze / Threat Spotted $\to$ `Shot 3 (4s)` Full-Speed Long Tracking Follow Shot (**0 dialogue**) $\to$ `Shot 4 (3s)` Hard Stop + VFX/Trap on Fixed Frame (**0 dialogue**) $\to$ `Shot 5 (2s)` Rear-Angle Spin into Boss Ambush + `2–5w` Checkmate Line |
+| **30.0 s (Explicit User Request Only)** | **`8 – 10 Shots`** (`Shot 1` .. `Shot 10`) | `2.5s – 4.0s` per shot across 3 mini-acts | Full 3-act sequence inside a single storyboard prompt |
 
-- Minimum shot length: **≥ 2.0 s**, or **≥ line duration + 1.0 s** when the shot carries a line. Inserts ≥ 1.5 s. Reactions ≥ 1.5 s.
-- Never cut between two identical scales of the same character without changing the angle by ≥ 30°.
-- Cut on a change: a line landing, a look, an action completing (the Blinking Eye Law).
-- Change scale or angle where power changes (Doctrine §2.2).
-
-### 6.1 Choosing the track (A / B / AB)
-
-| Track | Choose it when… | Shape inside 10 s |
-|---|---|---|
-| **A — one continuous take** | The viewer must stay inside one breath, one body, one unbroken pressure (confession, realization, intimacy, dread, a fall). | 2–4 phases, zero cuts; scale and angle change only through camera movement. |
-| **A-Locked — locked-off static take** | The acting reaches maximum emotional truth; camera motion would dilute empathy (wordless weeping, razor confession, truth-bomb shock). | 2–3 phases in one fixed setup; camera is 100% stationary with zero camera movement; 100% of motion comes from somatic micro-acting and living atmosphere. |
-| **B — multi-shot** | The viewer must see both sides of a collision: whose move lands, who absorbs it. | 2–4 shots (1–3 cuts) on the 180° axis; each later shot opens with `Cut to`. |
-| **AB — hybrid take + cut** | Pressure accumulates in one breath, **but the landing must be seen through another eye** — the witness, the prop, the reverse. The cut is the punctuation mark of the take. | One take ≥ 5 s carrying 2+ phases, plus 1–2 cuts. |
-
-Hybrid shapes (illustrative, not templates):
-- **Take → Button** — a moving take builds the beat (0–7 s), then one cut to a reaction or insert lands it (7–10 s).
-- **Trigger → Take** — a short insert or reaction fires the scene (0–2 s), then a cut into one continuous take lets the pressure accumulate (2–10 s).
-- **Take → Cut → Take** — two takes, one cut placed exactly on the power shift.
-
-Each added cut raises the risk of identity and costume drift in AI generation, so a hybrid keeps the cut count low and every shot fully re-anchored in prose (names, positions, light).
+- Minimum shot length: **≥ 2.0 s** (`2s` for crisp prop inserts, micro-reveals, and terminal payoff shots; `3s–4s` for dialogue, tracking locomotion, and state transitions).
+- Never repeat the exact same shot scale and angle in two consecutive shots; alternate smoothly between `medium close-up`, `close-up, fixed shot`, `over-the-shoulder perspective`, `long tracking follow shot`, `wide shot transitioning to fixed frame`, and `medium shot, rear camera angle`.
+- **1–2 Short Natural Sentences per Shot (`15–30 words`)**: Each `Shot N` describes **1 clear state transition (`State A ➔ State B`)** in natural cinematic prose. Strictly ban mechanical `→` arrows and `[00:00–00:05.0] —` single-paragraph walls.
 
 ---
 
-## §7 — DENSITY PER 10S SHOT (BY GENRE & VOICE MODE)
+## §7 — DENSITY PER CLIP (BY DURATION & OWNER)
 
-| Shot Type & Genre | Mode | Spoken Word Budget (VN) | Spoken Word Budget (EN) | Speech Share (% of 10s) |
+| Clip Type & Owner | Total Shots | Spoken Lines | Total Spoken Word Budget | Closing Line Law |
 |---|---|---|---|---|
-| **Single-Speaker (Sitcom / Slice-of-Life)** | 1 Active Speaker | **18 – 28 syllables** | 10 – 14 words (cap ≤ 32w) | ~50 % – 60 % (up to 75% max) |
-| **Single-Speaker (Psychological Drama / Heavy)** | 1 Active Speaker | **12 – 18 syllables** | 6 – 10 words (craft target 8–14w) | ~30 % – 45 % |
-| **Two-Shot / Multi-Speaker (Sitcom Fast Banter)** | 2 Speakers (Two-Shot) | **18 – 28 syllables total** (5–10w each; cap ≤ 15w/speaker) | 10 – 14 words total | ~50 % – 60 % |
-| **Reaction Shot / Pure Physical Silence** | Model 0 (Silence) | **0 syllables** | 0 words | 0 % (100% Visual) |
-| **Voice-Over (V.O.) / Inner Monologue** | V.O. (Sealed Lips) | **15 – 25 syllables** | 8 – 12 words | ~40 % – 60 % |
-
-The upper bounds preserve the 0.5s–1.0s lead-in breath and 0.5s–1.5s mouth closure / reaction settle. Lower bounds apply to scenes that use dialogue; silent reaction scenes (Model 0) and pure visual action shots are 100% first-class citizens. The linter permits up to 75% speech share for single-speaker 10s shots.
+| **Default `10.0s` Drama / Dialogue / Twist (`@Director`)** | `3 – 4 Shots` (`3s–2s–3s–2s`) | `1 – 2` lines (or `3` short lines with `L-Cut`) | **`12 – 22 words total`** (`~6–10w` setup line + `2–6w` closing line) | **Calm Understatement (`2–6 words`)** |
+| **Exclusive `15.0s` Action / Chase / Ambush / Combat (`@CombatDirector`)** | `5 – 6 Shots` (`3s–3s–4s–3s–2s`) | `1 – 3` ultra-short lines (`0` words during `Shot 3` chase & `Shot 4` VFX) | **`6 – 18 words total`** (`0w` in pure combat, or brief setup + `2–5w` boss checkmate line) | **Ice-Cold Checkmate (`2–5 words`)** |
+| **Silent Reaction / Pure Visual Scene (`Model 0`)** | `3 – 4 Shots` (`10s`) | `0` lines | **`0 words`** (100% visual micro-reveal & Foley) | Pure visual payoff |
 
 ---
 
-## §8 — CANONICAL PROMPT SYNTAX (ONE SYNTAX FOR ALL DURATIONS)
+## §8 — CANONICAL UNIFIED MULTI-SHOT STORYBOARD PROMPT SYNTAX (`100% PHƯƠNG ÁN MỚI` — DOUBLE-LOCK `<<<Image X>>> (100% ...)` & `[prop]:` BLOCK)
 
-```
-Master-level cinematography and composition, fast-paced shot variation, atmospheric sound design. Style: [visual style header]. [Track A — one continuous take, zero cuts | Track B — multi-shot sequence cut on the 180-degree axis | Track AB — one continuous take punctuated by a cut on the 180-degree axis].
+### 8.1 Template A — Default `10.0s` Scene (`@Director` · Dynamic `1–4 Shots` Chosen by Dramatic Intent)
+```text
+[Time of Day] · [Interior / Exterior] · [Location Title]
+Style: [Visual Style Specification — e.g., 3D Semi-Realistic Cinematic Animation, Unreal Engine 5 and Octane Render style, detailed skin shaders, soft subsurface scattering, volumetric lighting].
 
 [context]:
-[Location Name in English] [100% Refer to image <location_ref_4view.jpg>], [time of day]. [Complete physical architectural specification: full fixed furniture inventory, in-scene textiles/bedding, key lighting direction, and continuous environmental micro-motion: dust motes dancing in sunbeams, steam curling steadily].
+[Evocative Location Name in Natural English] <<<Image 1>>> (100% architectural layout, furniture, and lighting strictly refer to this reference image), [time of day]. [5-Vector Environmental Specification: architectural layout & full fixed furniture inventory, key lighting source & direction without Kelvin, shadow behavior, and atmospheric mood].
 
 [subject]:
-[ho_ten_a] [100% Appearance, attire, and facial features Refer to image 1], [initial spatial anchor to in-scene architectural fixture], [initial physical posture], hands free of props, [eyeline toward ho_ten_b or a landmark] — the only [ho_ten_a] in frame.
-[ho_ten_b] [100% Appearance, attire, and facial features Refer to image 2], [initial spatial anchor to in-scene architectural fixture], [initial physical posture], hands free of props, [eyeline toward ho_ten_a or a landmark] — the only [ho_ten_b] in frame.
+[Proper_Name_A] <<<Image 2>>> (100% facial features, beauty/handsome appearance, hairstyle, body proportions, and exact outfit strictly refer to this reference image): [Initial 3D architectural anchor and posture], [hand/prop contact state at 00:00 — strictly ZERO clothing/garment words and ZERO numeric ages or age/hair/beard words], [eyeline toward Proper_Name_B or landmark] — the only [Proper_Name_A] in frame.
+[Proper_Name_B] <<<Image 3>>> (100% facial features, beauty/handsome appearance, hairstyle, body proportions, and exact outfit strictly refer to this reference image): [Initial 3D architectural anchor and posture], [hand/prop contact state at 00:00 — strictly ZERO clothing/garment words and ZERO numeric ages or age/hair/beard words], [eyeline toward Proper_Name_A or landmark] — the only [Proper_Name_B] in frame.
 
-[PROP]:
-[hero prop in natural English] [100% Refer to image <prop_ref.jpg>], [physical state], [resting place independent of character hands] — the only [prop noun] in frame.
-(Tier 2 everyday handheld items: same line without the image tag. If no handheld item in scene: "none (pure environmental and somatic staging)". Furniture/fixtures/bedding stay in [context]:.)
+[prop]:
+[Canonical Tier-1 Prop/Weapon Name] <<<Image 4>>> (100% shape, material, engravings, proportions, and visual details strictly refer to this reference image): [Exact 00:00 resting placement OR character hand-grip state] — the only [Canonical Tier-1 Prop/Weapon Name] in frame. *(Omit `[prop]:` if the scene has no Tier-1 Hero Prop/Weapon)*
 
-Diegetic room acoustics: [room tone and Foley].
+[sound]:
+[Ambient room/outdoor tone, synchronized tactile Foley sounds tied to shots, and acoustic tension].
 
-[00:00–00:03.5] [Scale framing name_a], [angle], [camera move / optical focal depth (e.g. shallow depth of field holding sharp optical focus on name_a's face with background softly falling into bokeh)] — [Directing participating characters across the 4 Vectors: (1) State/Posture, (2) Action, (3) Emotion/Expression, (4) Spatial Location].
-[name_a] says : “ [line] ”（Voice of a [N]-year-old [man/woman] from [region]; [vocal timbre], [cảm xúc khi nói]）
+Shot 1 (00:00-00:03) - [Interior/Exterior], [shot scale], [camera angle / movement]
+[1–2 short natural sentences (15–30w) describing Proper_Name_A's initial action/mask and micro-expression — NO <<<Image X>>> tag repeated here, NO clothing/age words].
+[Proper_Name_A] ([vocal timbre/maturity], [delivery tone]): "[Line 1: 4–10 words]"
 
-[00:03.5–00:07.0] Cut to [scale framing name_b], [angle], [move / optical focal depth] — [Directing participating characters across 4 Vectors: State, Action, Emotion, Spatial Location].
+Shot 2 (00:03-00:05) - [Close-up / Insert], [fixed shot / subtle movement]
+[1–2 short natural sentences describing the decisive prop action, lock/latch, or micro-visual reveal].
+[Proper_Name_A] ([spatial anchor if off-screen], [vocal timbre/maturity], [delivery tone]): "[Optional short reaction/question: 4–8 words]"
 
-[00:07.0–00:10.0] [Scale], [angle], [move] — [terminal beat: 4 Vectors for characters in frame, breathing, micro-expression, deceleration; never a frozen frame].
+Shot 3 (00:05-00:08) - [Interior/Exterior], [shot scale], [over-the-shoulder perspective / tracking / angle]
+[1–2 short natural sentences describing the state transition from False Calm to Freeze/Shock: e.g., "Seen past Proper_Name_B's shoulder in the foreground, Proper_Name_A freezes mid-action. Proper_Name_A's polite smile fades into a tense stare..."].
 
-Continuous fluid motion, realistic physics, zero morphing. Spatial positions anchored to the architecture; characters move only where the action says they move.
-Do not generate subtitles, dialogue text, titles, timestamps, or written text anywhere in the video. Do not render duplicate characters or extra props.
+Shot 4 (00:08-00:10) - [Medium close-up / Close-up], [side slider shot / low angle / fixed frame]
+[1–2 short natural sentences using Selective Face Obscuration or Full-Face Emotional Acting payoff: e.g., "The camera avoids Proper_Name_B's full face, showing only Proper_Name_B's lower face, jawline, firm mouth, and index finger tapping twice on the tarnished brass truck keyring. A cold, knowing half-smile tugs at the corner of Proper_Name_B's lips."].
+[Proper_Name_B] ([vocal timbre/maturity], [calm understated tone]): "[Closing Line: 2–6 words]"
+
+Master-level cinematography and composition, smooth dynamic camera pacing, atmospheric sound design.
+Strict visual consistency: maintain 100% identical facial features, beauty, hairstyle, exact outfit, and exact weapon/prop design from the reference images across all shots without morphing or wardrobe changes.
+Do not generate subtitles, dialogue text, titles, timestamps, or any written text anywhere in the video.
 ```
 
-Rules:
-- A phase line = `[start–end]` + **one short camera clause** (scale, angle, move, optical framing & focal depth) + `—` + prose. Track B phases after the first start with `Cut to`. In Track AB, only a phase that begins a new shot starts with `Cut to`; a phase that continues the take starts with `In the same take`.
-- **The Optical Camera Clause Law (Quy Chuẩn Quang Học Camera — Banning Dangling "Focus on [name]")**:
-  * Mọi thông số về chủ thể được đóng khung (Subject Framing), mặt phẳng tiêu cự (Focal plane), và độ sâu trường ảnh (Depth of field / bokeh) BẮT BUỘC được khai báo trực tiếp trong phần Camera Clause (trước dấu gạch ngang `—`).
-  * Ví dụ: `Medium close-up framing name_a at eye level, shallow depth of field holding sharp optical focus on name_a's facial features with background softly falling into bokeh, slow push-in — [action]`.
-  * Hoặc trong cảnh qua vai (OTS): `Over-the-shoulder medium shot framing name_b past name_a's soft-focus foreground shoulder, razor-sharp optical focus locked on name_b at eye level, static camera — [action]`.
-- **Subject-to-Scale Invariance & Frame Capacity Law (Single-Subject Framing Constraint)**: Single-person scales (`Medium close-up`, `Close-up`, `Choker`, `Head-on`, `Extreme close-up`) strictly frame and direct **ONE human subject**. Secondary characters are spatially Off-Screen (`O.S.`) and MUST NOT have their actions, gestures, breathing, or facial expressions described within that phase (doing so triggers severe AI spatial hallucinations and mutant anatomy). To direct two interacting characters simultaneously, the shot MUST be declared as a `Medium two-shot (M2S)` or `Over-the-shoulder (OTS)`. Non-character inserts (`Macro insert`) strictly forbid facial acting and dialogue.
-- **The Two-Shot Profile Stagnation Law (Luật Chống Bẫy Nhìn Nhau Bất Động Trong Two-Shot Profile)**:
-  * Hai nhân vật đối đầu ngang 90° (Two-Shot Profile) **TUYỆT ĐỐI BỊ CẤM giữ tĩnh quá 2.5–3.0 giây** trong video 10s. Nếu để 2 nhân vật đứng ngang nhìn nhau suốt 5–10s, AI diffusion models sẽ cạn kiệt động lực vật lý, dẫn đến việc đứng đờ đẫn nhìn nhau vô hồn ("ngồi nhìn nhau chết lặng"), đồng thời góc nghiêng 90° làm biến dạng khẩu hình lip-sync và triệt tiêu chiều sâu cảm xúc trên gương mặt.
-  * Two-Shot Profile CHỈ ĐƯỢC PHÉP xuất hiện dưới 3 điều kiện ngặt nghèo:
-    1. *Nhịp thiết lập ngắn chuyển tiếp (< 3.0s)*: Mở đầu cảnh trong Track B để xác lập sự đối đầu không gian rồi lập tức cắt (`Cut to`) sang OTS hoặc CU trên trục 180°.
-    2. *Va chạm vật lý liên tục (Continuous Physical Collision)*: Hai nhân vật đang giằng co đạo cụ, xô đẩy, giữ chặt tay nhau — động lực cơ học diễn ra liên tục từng giây không có khoảng dừng.
-    3. *Cú lượn động học chuyển góc (In-Camera Orbital Glide)*: Máy quay không đứng vuông góc tĩnh mà thực hiện cú lướt vòng cung (Arc/Tracking) từ profile 90° vòng qua bờ vai một người để biến thành góc 3/4 trực diện sống động.
-- **Somatic Action-Speech Fusion Standard (Organic Speech Action)**: Dialogue is an organic physical action, never a detached mechanical block. While `says :` is supported, dialogue lines are encouraged to dynamically incorporate bodily prelude and expressive speech-action verbs: `[name] [bodily prelude / emotional physical action], [expressive action-verb] : “ [line] ”（Voice of [demographic]; [vocal timbre: trầm hay bổng], [cảm xúc khi nói], [inferred paralinguistic acoustic emotion tags: e.g. sharp staccato delivery, strained rasp, explosive consonants]）`. Examples of expressive verbs: `furiously snapping :`, `breathlessly pleading :`, `harshly barking :`, `bitterly hissing :`, `softly murmuring :`, `icily retorting :`. This binds facial micro-muscles, chest respiration, and vocal articulation into a single unified physical tensor for DiT diffusion models, eliminating rigid "puppet mouth" artifacts.
-- **STRICT PROHIBITION OF LITERAL PLACEHOLDERS**: NEVER write the literal string `"audio tag"` or `"cảm xúc khi nói"` into prompts. The system must always infer authentic paralinguistic acoustic tags (e.g. `[commanding harsh bark, impatient ragged breath, sharp staccato delivery]`).
-- **No** `△`, **no** `|` pipes, **no** `Shot 1` / `Phase 1` labels inside Code Block 1. The audit warns on legacy syntax.
-- The track is declared in the style line; the same track appears on the scene badge and in the `[TIMELINE SHOTS]` card. **Label must match content:** Track A contains no `Cut to`; Track B and Track AB contain at least one; Track AB also contains one take of ≥ 5 s holding 2+ phases.
-- Use the generator's vocabulary for moves: `slow push-in`, `slow pull-out`, `lateral glide`, `90-degree arc`, `pedestal up`, `rack focus`, `static camera`. Never lens millimeters, f-stops, fps, brands, Kelvin, or coordinates.
-
-### 8.1 Worked Examples across Action Dynamics Archetypes (Track B, Vietnamese)
-
-> ⚡ **CRITICAL DIRECTORIAL MANDATE**: Track B multi-shot cuts MUST NOT be treated as a rigid 3-phase template ending in an automatic silent reaction shot. The phase layout and timing are strictly governed by the **Tier 2 Action Dynamic Archetype** (Doctrine §3.3):
-
-#### Example 1: High-Velocity Stichomythia (Dạng 1: Đấu kiếm leo thang 3 nhịp — Zero Dead Air)
-*Cadence: Rapid Sparring. Verbal and physical clash volleys continuously up to 00:09.5. STRICTLY ZERO IDLE BUFFER.*
+### 8.2 Template B — Exclusive `15.0s` Action / Chase / Ambush / Combat Scene (`@CombatDirector` · `5–6 Shots`)
 ```text
-[00:00–00:03.5] Over-the-shoulder medium shot framing ma_ba past minh_khang's foreground shoulder, shallow depth of field holding razor-sharp optical focus on ma_ba, slight low angle, fast track-in — ma_ba steps forward aggressively, thrusting a crumpled hospital receipt into the air inches from his face.
-ma_ba harshly barks : “ Mầy nói cho rõ, tiền nằm ở đâu?! ”（Voice of a 56-year-old Southern Vietnamese woman; sharp piercing shout, impatient ragged breath, explosive consonants）
+[Time of Day] · [Interior / Exterior] · [Location Title]
+Style: [Visual Style Specification].
 
-[00:03.5–00:07.0] Cut to reverse over-the-shoulder shot framing minh_khang past ma_ba's foreground silhouette, sharp optical focus locked on minh_khang at eye level, static camera — minh_khang snatches the receipt mid-air, ripping it in half with trembling violent hands.
-minh_khang bitterly snarls : “ Tiền con trả viện phí cho vợ con hết rồi! ”（Voice of a 27-year-old Southern Vietnamese man; breathless fierce defense, strained rasp, desperate defiance）
+[context]:
+[Evocative Location Name in Natural English] <<<Image 1>>> (100% architectural layout, furniture, and lighting strictly refer to this reference image), [time of day]. [5-Vector Tactical Environment: architectural corridor/street/arena layout, lighting, shadows, and interactive/VFX surface details].
 
-[00:07.0–00:10.0] Cut to close-up on ma_ba, low angle, fast push-in — ma_ba’s palm whips across in a sharp slap gesture that halts inches from minh_khang’s cheek; chest heaving violently, eyes blazing.
-ma_ba furiously hisses : “ Mầy muốn chọc chết tao hả?! ”（Voice of a 56-year-old Southern Vietnamese woman; venomous breathless whisper, trembling rage）
+[subject]:
+[Proper_Name_A] <<<Image 2>>> (100% facial features, beauty/handsome appearance, hairstyle, body proportions, and exact outfit strictly refer to this reference image): [Initial spatial anchor and posture at 00:00 — ZERO clothing/age words] — the only [Proper_Name_A] in frame.
+[Proper_Name_B] <<<Image 3>>> (100% facial features, beauty/handsome appearance, hairstyle, body proportions, and exact outfit strictly refer to this reference image): [Initial spatial anchor and posture at 00:00 — ZERO clothing/age words] — the only [Proper_Name_B] in frame.
+[Proper_Name_C] <<<Image 4>>> (100% facial features, beauty/handsome appearance, hairstyle, body proportions, and exact outfit strictly refer to this reference image): [Staged at the ambush/interception point, (No objects should appear in the character's hands) if unarmed OR holding Tier-1 weapon in right hand with left hand empty — ZERO clothing/age words] — the only [Proper_Name_C] in frame.
+
+[prop]:
+[Canonical Tier-1 Weapon/Artifact Name] <<<Image 5>>> (100% shape, material, engravings, proportions, and visual details strictly refer to this reference image): [Exact 00:00 hand-grip state (e.g., gripped firmly in Proper_Name_A's right hand while left hand remains empty) or resting placement] — the only [Canonical Tier-1 Weapon/Artifact Name] in frame. *(Omit `[prop]:` if unarmed)*
+
+[sound]:
+[Ambient night/interior tone, rapid footsteps, sudden stop friction, low energy/rune hum, and cold vocal resonance].
+
+Shot 1 (00:00-00:03) - [Exterior/Interior], [medium close-up], [slight handheld camera shake / slow push-in]
+[1–2 short natural sentences establishing the calm or tense opening beat between Proper_Name_A and Proper_Name_B].
+[Proper_Name_A] ([vocal timbre/maturity], [soft tone]): "[Short setup line: 3–6 words]"
+
+Shot 2 (00:03-00:06) - [Close-up], [side face shot / fixed shot]
+[1–2 short natural sentences executing the Snap Freeze: Proper_Name_A wears a gentle smile, then her expression freezes abruptly. She glances past Proper_Name_B's shoulder toward behind them, all warmth fading from her eyes, replaced by pure panic].
+[Proper_Name_A] ([vocal timbre/maturity], [low abrupt tone]): "[2–4 words, e.g., I'm sorry.]"
+
+Shot 3 (00:06-00:10) - [Exterior/Interior], [long tracking follow shot]
+[1–2 short natural sentences of full-speed locomotion/flight/pursuit with 0 spoken dialogue: Proper_Name_A turns and hurries away, looking frantic. She flees through the empty alley, evading the danger she spotted].
+
+Shot 4 (00:10-00:13) - [Wide shot transitioning to fixed frame], [middle of the street / corridor]
+[1–2 short natural sentences executing the Hard Stop + VFX/Trap activation with 0 spoken dialogue: Proper_Name_A stops sharply, her body going rigid. Faint pale red ancient rune patterns glow faintly and flow across the empty road beneath her feet].
+
+Shot 5 (00:13-00:15) - [Medium shot], [rear camera angle]
+[1–2 short natural sentences revealing the Hunter/Boss blockade: Proper_Name_A instantly spins around to run back, only to find Proper_Name_C standing silently in the middle of the road (No objects should appear in the character's hands), shrouded in shadows with overwhelming oppressive aura].
+[Proper_Name_C] ([vocal timbre/maturity], [deep calm tone]): "[2–5 words checkmate line, e.g., Miss, you seem lost.]"
+
+Master-level cinematography and composition, smooth dynamic camera pacing, atmospheric sound design.
+Strict visual consistency: maintain 100% identical facial features, beauty, hairstyle, exact outfit, and exact weapon/prop design from the reference images across all shots without morphing or wardrobe changes.
+Do not generate subtitles, dialogue text, titles, timestamps, or any written text anywhere in the video.
 ```
-*Timing check: Line 1 ≈ 2.5s (inside 3.5s phase); Line 2 ≈ 3.0s (inside 3.5s phase); Line 3 ≈ 2.4s (inside 3.0s phase). Speech fills active beats without dead air; physical action carries every cut.*
 
-#### Example 2: The Somatic Snap Shock (Dạng 3: Cú sốc tung sự thật & Phản ứng giật 1 giây — 4.5s / 4.5s / 1.0s)
-*Cadence: Truth Bomb Shock. High-velocity tension: Shot 1 setup (4.5s) ➔ Shot 2 decisive truth counter-strike (4.5s) ➔ Shot 3 SNAP-CUT CHOKER STRICTLY 1.0S (00:09.0–00:10.0). Banning sluggish 3-second reaction settles.*
-```text
-[00:00–00:04.5] Over-the-shoulder medium shot framing ma_ba past minh_khang's foreground shoulder, shallow depth of field holding sharp optical focus on ma_ba, slight low angle, static camera — ma_ba sets the folded steel hammock frame onto the floor tiles with a sharp metallic clang, standing tall with assertive authority; inside the pine crib a soft blanket rustles.
-ma_ba says : “ Võng này ba thằng Khang nằm lớn đó, để đây cho cháu tao! ”（Voice of a 56-year-old woman from the Mekong Delta; proud unhurried tone, firm traditional claim staking family history）
-
-[00:04.5–00:09.0] Cut to an over-the-shoulder shot framing minh_khang past ma_ba along the 180-degree axis, sharp optical focus locked on minh_khang at eye level, static camera — minh_khang steps in firmly, crouches to grip the hammock frame with both hands, lifting it decisively off the tiles as his voice tightens with calm defiance.
-minh_khang says : “ Bác sĩ dặn nôi phẳng mới tốt, con mang ra sau hè má nằm nghen! ”（Voice of a 27-year-old Southern Vietnamese man; warm low firm baritone, polite but unyielding filial pushback）
-
-[00:09.0–00:10.0] Snap-cut to an intimate close-up framing ma_ba along the 180-degree axis, shallow depth of field holding razor-sharp optical focus on ma_ba's contracting pupils with background falling into soft blur, eye level, static camera — ma_ba's jaw drops slightly, pupils contracting as her assertive smirk instantly freezes, taking in a sharp ragged breath at 00:10.0.
-```
-*Timing check: Line 1 ≈ 2.8s (inside 4.5s phase); Line 2 ≈ 3.5s (inside 4.5s phase, finishing by 00:08.5); Shot 3 is strictly 1.0s (00:09.0–00:10.0) of sudden visceral paralysis without dragging down pacing.*
-
-#### Example 3: Track A-Locked — The Locked-Off Performance Take (Diễn Hoạt Tĩnh Siêu Đậm Đặc, Zero Camera Move)
-*Cadence: Intimate Confession / Somatic Agony. The camera is 100% stationary on a fixed static mount; 100% of the movement is driven by micro-acting, tear physics, and dancing sunbeams.*
-*(Special Syntax Rule Exclusive to Track A-Locked: Because shot scale, angle, and camera position remain 100% constant across the entire take, the camera setup is declared directly in natural prose once at the start of the action block with full optical framing and focal depth, without any `[camera]:` tag and strictly banning the word "tripod". The timeline brackets are dedicated 100% to character somatic performance and living environmental physics, with ZERO dangling `Focus on [name]` tags).*
-```text
-Eye-level medium close-up framing my_duyen, shallow depth of field holding razor-sharp optical focus on my_duyen's face with background softly falling into cinematic bokeh, static camera.
-
-[00:00–00:03.5] my_duyen kneels motionless beside the pine crib, right hand gripping the top wooden rail until knuckles whiten; shallow rapid breaths heave her chest as her gaze fixes downward on the woven blanket; microscopic dust motes drift lazily through the warm diagonal sunbeam.
-
-[00:03.5–00:07.0] my_duyen swallows hard against a tight throat, her jaw quivering; she lifts her gaze slowly toward the doorway, tears catching the golden morning light, and whispers with trembling defiance.
-my_duyen softly whispers : “ Má ơi, con tự ráng gượng được mà má... má bận lòng làm chi... ”（Voice of a 24-year-old Southern Vietnamese woman; choked fragile whisper, strained breathy rasp, suppressed weeping）
-
-[00:07.0–00:10.0] Lips seal tightly as a single tear spills silently down her left cheek; her head lowers two inches, shoulders slumping as she curls her trembling fingers inward against the wooden bar; in the background, sheer window curtains ripple faintly in a gentle draft.
-```
-*Directorial check: Zero cuts, zero camera translation. High-density somatic verbs (knuckles whitening, throat swallowing, jaw quivering, tear spilling, head lowering) and environmental motion (drifting dust motes, rippling sheer curtains) prevent the DiT diffusion model from freezing into a still mannequin.*
+### 8.3 The 9 Non-Negotiable Technical Laws of the Unified Multi-Shot Storyboard Format
+1. **Double-Lock 100% Reference & Single `<<<Image X>>>` Declaration Law**: Keep `<<<Image X>>>` intact and place `(100% ... strictly refer to this reference image)` immediately after it in `[context]:`, `[subject]:`, and `[prop]:`. Declare `<<<Image X>>>` **ONLY ONCE** in the headers — **NEVER repeat `<<<Image X>>>` inside `Shot 1..N` or speaker headers**, and seal the prompt with the `Strict visual consistency: ...` footer.
+2. **Dedicated `[prop]: <<<Image X>>>` Block for Tier-1 Hero Props, Weapons & Key Artifacts**: Whenever a Tier-1 weapon, heirloom, seal, or key contract appears in a scene, bind its isolated 4-view reference sheet (`prop-[name].jpg` $\to$ `<<<Image X>>>`) inside `[prop]:` with its exact `00:00` resting placement or hand-grip (`right hand` with `left hand empty`, or `spaced two-handed grip`).
+3. **Proper Character Names Only**: Never use generic labels (`Woman`, `Man`, `Girl`, `Boy`, `the father`, `the hunter`) as subject headers or speakers. Every character uses their fixed proper name from `setting.html`.
+4. **Zero-Costume, Zero-Age & Single Vocal-Timbre Tag Law (`Gates 3A & 3E`)**: Because `<<<Image X>>>` locks wardrobe and physical appearance 100%, **strictly ZERO clothing/garment words (`in a black leather jacket`, `in a dark suit`, `skirt`, `coat`) and ZERO numeric ages or age/hair/beard adjectives (`32-year-old`, `young blonde`, `silver-bearded`, `aged weathered hand`)** anywhere in the prompt. Encode vocal maturity and emotion inside **ONE single compact parenthetical right after `[Proper_Name]`**:
+   - *Young Adult Female*: `Elena (soft airy soprano, breathless tone): "..."` / `Sophia (clear youthful alto, low steely tone): "..."`
+   - *Young Adult Male*: `Bradley (smooth tenor, confident warm tone): "..."` / `Kael (crisp tenor, calm steady tone): "..."`
+   - *Mature / Elder Female*: `Martha (warm maternal alto, soft affectionate tone): "..."`
+   - *Mature / Elder Male*: `Harold (deep weathered baritone, calm unhurried tone): "..."` / `Dante (deep resonant baritone, calm tone): "..."`
+5. **1–2 Short Natural Sentences per Shot (`15–30 Words`)**: Express **1 clear state transition (`State A ➔ State B`)** per shot in natural cinematic English. Strictly ban mechanical `→` arrows, clinical muscle jargon (`masseter`, `orbicularis`), and bloated multi-clause paragraphs.
+6. **Selective Face Obscuration (Deploy When Mystery or Tactile Focus Calls For It)**:
+   - *Back/Silhouette*: `The camera avoids [Name]'s full face, showing only his back and shoulders in silhouette.`
+   - *Lower-Face / Hand Micro-Acting*: `The camera avoids [Name]'s full face, showing only [Name]'s lower face, jawline, Adam's apple, and index finger tapping twice on the brass keyring.`
+7. **Off-Screen `L-Cut` Dialogue Over Visual Inserts**: Allow an off-screen character (`[Name] (outside the door / across the table / from behind, [vocal timbre], [tone])`) to speak over an interior tracking shot or a `2s` prop/lock close-up (`Shot 2`), keeping pacing tight without wasting a cut.
+8. **Empty-Hand Anti-Glitch Lock**: Whenever an unarmed character or hunter stands/moves empty-handed in a tense or action shot, append `(No objects should appear in the character's hands)` so the AI video model never hallucinates random weapons or props.
+9. **Kinetic Contrast in `15.0s` Action/Chase (`@CombatDirector`)**: Alternate camera and body velocity across `Shot 1..5`: *Intimate Handheld (`Shot 1`) ➔ Fixed Snap-Freeze Close-Up (`Shot 2`) ➔ 4s Long Tracking Follow Shot with 0 Dialogue (`Shot 3`) ➔ Wide-to-Fixed Hard Stop + Ground/Environmental VFX (`Shot 4`) ➔ Rear-Angle Spin into Immovable Boss (`Shot 5`)*.
 
 ---
 
-## §9 — DURATION MODES: 10s, 15s, 30s
-> **Core Principle**: A scene's macro architecture (`[context]`, `[subject]`, `[PROP]`, acoustics, closing stability) is **100% INVARIANT** across 10s, 15s, and 30s.
-> Extending duration from 10s to 15s or 30s is simply **adding shots (Track B/AB) or phases (Track A)** within the same single prompt.
->
-> ⚠️ **THE THIRD-PARTY AI RENDER ENGINE LAW (ZERO CUMULATIVE TIMESTAMPS)**:
-> In generative video tools (Runway, Kling, Sora, Hailuo, Wan 2.1), **EVERY SCENE IS AN INDEPENDENT RENDER ATOM**.
-> The prompt submitted to the third-party AI tool MUST ALWAYS START AT `00:00` (e.g., `[00:00–00:03.5]`, `[00:03.5–00:07.0]`, `[00:07.0–00:10.0]`).
-> **NEVER write cumulative episode timestamps** (such as `[00:10–00:20]` or `[00:20–00:30]`) inside the Video Prompt (Code Block 1) or its directing phases! Third-party AI video models render each clip from second 0, and cumulative offsets will confuse the model and destroy temporal coherence.
+## §9 — DURATION MODES: `10.0s` (`@DIRECTOR`) VS. `15.0s` (`@COMBATDIRECTOR`) VS. `30.0s`
 
-| Mode | When | How |
+| Mode | Owner & When | Storyboard Shot Count & Timing |
 |---|---|---|
-| **10 s (standard default)** | Standard scene atom. Contiguous 10.0s clip | One prompt, 2–4 phases (Track B: 2–4 shots), internal timeline `00:00–00:10` |
-| **15 s** | Extended dramatic scene atom | One prompt, 3–5 phases (Track B: 2–5 shots), internal timeline `00:00–00:15` |
-| **30 s** | Commercial / Master long-form scene atom | One prompt, 5–8 phases (Track B: 4–8 shots), internal timeline `00:00–00:30`, built as 3 mini acts (§9.2) |
-| **30 s chained** | ONLY if the user specifically requests chaining or generator limits | Three 10 s scenes joined through Code Block 2 handovers |
-
-### 9.1 15 s shape (Single Prompt, expanded shots)
-`[00:00–00:04.0]` establish + first move → `[00:04.0–00:09.0]` main exchange / action → `[00:09.0–00:12.5]` turn (the value shift lands) → `[00:12.5–00:15.0]` settle.
-Density: Vietnamese 18–36 syllables, English 12–21 words (SSOT: §7). Track A ≤ 3 chained moves.
-
-### 9.2 30 s shape (Single Prompt, expanded shots) — a mini three-act scene
-Authored as a single prompt with 5–8 shots/phases, keeping the exact same scene structure as 10s:
-- **Act I `[00:00–00:08]`**: arrival and trigger (1–2 shots).
-- **Act II `[00:08–00:22]`**: 2–3 exchanges where power shifts at least once (2–4 shots, changing scale or angle on each shift).
-- **Act III `[00:22–00:30]`**: the reveal or decision, close shot, then a living settle ≥ 2 s (1–2 shots).
-
-Density: Vietnamese 35–70 syllables, English 25–38 words, ≤ 55 % speech (SSOT: §7).
-
-### 9.2b The Universal Multi-Duration Scaling Law for Confrontational & Reversal Cadences (Quy Luật Co Giãn Theo Thời Lượng 10s, 15s, 30s)
-
-> ⚡ **THE 5%–10% SHOCKWAVE LANDING STANDARD (ĐỊNH LUẬT ĐIỂM RƠI GIẬT SỐC ĐUÔI CẢNH)**:  
-> Trong mọi phân cảnh đối kháng, nổ bom sự thật, lật mặt nạ hoặc bẻ gãy uy quyền (`CADENCE: TRUTH_BOMB_SHOCK`), shot cận cảnh phản ứng cuối cùng (Shot 3 hoặc cú cắt hạ màn) **TUYỆT ĐỐI KHÔNG BAO GIỜ là một khoảng lặng đơ hình lê thê kéo dài 3–5 giây**.  
-> Cú cắt cuối cùng LUÔN LUÔN là một cú **Snap-Cut Choker dứt khoát chiếm đúng 5% đến 10% tổng thời lượng cảnh**. 90%–95% thời lượng trước đó dành trọn vẹn cho hành động công kích thể chất (Setup) và cú phản đòn tung chứng cứ sắc lẹm (Truth Bomb Counter-strike).
-
-| Clip Duration | Setup Phase (Shot 1) | Counter-Strike / Truth Bomb (Shot 2) | Final Snap-Cut Shockwave (Shot 3) | Target Ratio & Pacing |
-|:---:|:---|:---|:---|:---:|
-| **10.0s (Default)** | `[00:00–00:04.5]` (4.5s) | `[00:04.5–00:09.0]` (4.5s, thoại dứt ở 00:08.5) | `[00:09.0–00:10.0]` (**Đúng 1.0s**) | 10% Shockwave Landing. Zero dead air. |
-| **15.0s (Extended)** | `[00:00–00:06.5]` (6.5s) | `[00:06.5–00:13.5]` (7.0s, thoại dứt ở 00:13.0) | `[00:13.5–00:15.0]` (**Đúng 1.5s**) | 10% Shockwave Landing. Visceral sucker-punch. |
-| **30.0s (Mini-Act)** | `[00:00–00:11.0]` (11.0s, 1–2 shots) | `[00:11.0–00:28.0]` (17.0s, 2–3 shots, thoại dứt ở 00:27.5) | `[00:28.0–00:30.0]` (**Đúng 2.0s**) | 6.7% Shockwave Landing. Maximum retention. |
-
-### 9.3 30 s chained (Alternative fallback only)
-- Used only if the user explicitly asks for chaining or generator engine limits prevent 30s single-clip rendering.
-
-### 9.4 Engine support
-- `episode_audit_suite.py` reads each prompt's duration from its last time bracket and accepts 10, 15, or 30 s. It checks that phases are contiguous from 00:00 to that duration.
-- Show the duration on the scene card (`00:00 – 00:15`).
+| **`10.0 s` (Default Standard)** | **`@Director`**: All standard dialogue, psychological drama, confrontation, and twist scenes (`[🎭 MODEL TIÊU CHUẨN · 10.0s]`) | **`3 – 4 Shots`** (`00:00-00:03`, `00:03-00:05`, `00:05-00:08`, `00:08-00:10`), `1–2` short sentences/shot, `12–22w` dialogue total, `2–6w` closing line |
+| **`15.0 s` (Exclusive Action / Chase / Ambush / Combat)** | **`@CombatDirector`**: All high-motion action, chase, pursuit, supernatural trap, and combat scenes (`[⚡ MODEL KHUYẾN NGHỊ: SEEDANCE · 15.0s]`) | **`5 – 6 Shots`** (`00:00-00:03`, `00:03-00:06`, `00:06-00:10`, `00:10-00:13`, `00:13-00:15` or `3s-3s-2s-2s-3s-2s`), `1–2` short sentences/shot, `0` dialogue in chase/VFX shots, `2–5w` checkmate line |
+| **`30.0 s` (Explicit User Request Only)** | **`@Director` / `@CombatDirector`**: Extended 3-act sequence when explicitly requested | **`8 – 10 Shots`** across `00:00-00:30` |
 
 ---
 
-## §10 — QUICK TIMING CHECKLIST (PER SCENE)
+## §10 — QUICK PRE-FLIGHT CHECKLIST (PER SCENE)
 
-1. Duration mode chosen (§9) and stated on the card.
-2. Each line timed with §2; each line's phase passes the §3 window.
-3. Each camera move ≥ its §5 minimum; motive named.
-4. Shot count within §6; no shot under its minimum.
-5. Speech share ≤ the §7 limit.
-6. Syntax matches §8 (no `△`, no pipes, track in the style line).
-
----
-
-## §11 — CALIBRATION LOG
-
-Record every real generation that disagrees with a number above:
-
-| Date | Generator + version | Clip | Observation | Number changed (old → new) |
-|---|---|---|---|---|
-| — | — | — | — | — |
-
----
-
-## §12 — THE 10-SECOND SCENE BLUEPRINT (ONE PAGE)
-
-The whole scene on one page. Decide in this order; each step feeds the next.
-
-### 12.1 Order of decisions
-1. **Intent** (Doctrine §1): what flips between 00:00 and 00:10? No shift, no scene.
-2. **Voice mode** (Doctrine §4): dialogue, solo, silence, V.O., … — per scene, with a reason.
-3. **Track** (§6.1): A, B, or AB.
-4. **Beats → phases**: one phase per beat (trigger, turn, landing). Split points come from the beats, never from a fixed pattern.
-5. **Lines → seconds** (§2, §12.4): time every line; size each phase to its line + 1.0 s.
-6. **Action per phase** (§4, §12.5): one primary move + one reaction.
-7. **Camera per phase**: scale, angle, move — each with a reason (Pillar 3 §1.0, §3.0, §3.2.0).
-8. **Ending**: a living settle (held emotion) or momentum handed to the next scene (Code Block 2).
-
-### 12.2 Common 10 s shapes (illustrative, not templates)
-| Shape | Phases | Typical use |
-|---|---|---|
-| Exchange | 2 (line → counter-line) | Two wants collide; each line gets its own window |
-| Trigger → Collision → Landing | 3 | A cause, the blow, where the blow lands in someone |
-| Long build → Release | 2 (≈ 6–7 s + 3–4 s) | Slow pressure, then one short decisive beat |
-| Staccato | 4 (each ≥ 2 s) | Rapid volleys, panic, a chain of consequences |
-| Silent arc | 2–3 | Peak or aftermath carried by action alone |
-
-### 12.3 Description blocks in Code Block 1
-| Block | Must contain | Must not contain |
-|---|---|---|
-| **Style line** | Mandatory prefix, visual style, track declaration | Lens millimeters, f-stops, fps, brands |
-| **[context]** | Location id + `[100% Refer to image …]`, time of day, key light source and direction, natural color tone, atmospheric medium | Kelvin numbers, coordinates, a second location (unless a declared threshold space) |
-| **[subject]** | **Prop-Free Sovereign Formula** (Pillar 4 §6.1): one line per framed character — `ho_ten` + Mode B reference anchor (e.g. `my_duyen [100% Appearance, attire, and facial features Refer to image 1]`), architectural anchor, posture with hands free of props, eyeline toward a character or landmark, then `— the only {ho_ten} in frame`. | Handheld props, frame-left / frame-right or screen directions, metre figures, costume/age descriptors (Mode B), pronouns, actions beyond the opening posture. |
-| **[PROP]** | **Two-Tier handheld props only**: one item per line in natural English without underscores, each with a resting place independent of character hands, ending `— the only {noun} in frame`. Tier 1 hero props (max 1–2 per series) carry `[100% Refer to image …]`; Tier 2 everyday items are text only. | Furniture, fixtures, and bedding (they live in `[context]:`), semicolon lists, underscored names. |
-| **Diegetic line** | Room tone + 2–4 specific Foley sounds tied to the actions | Music cues, sound effects with no on-screen cause |
-| **Phases** | `[start–end]` + camera clause + 4-Vector Directing prose (Physical state, action, emotion, 3D blocking ONLY for characters framed in that shot); lines in `name says : “ … ”` or `name replies : “ … ”` syntax | Naked `name:`, dummy tags (`[TRẠNG THÁI]`), characters outside the camera frame, pipes, `△` |
-| **Closing lines** | Stability line + no-text / no-duplicate directive | — |
-
-### 12.4 Seconds ↔ syllables (Vietnamese), per phase
-Maximum syllables a phase can carry = (phase length − 1.4 s) × speech rate. The 1.4 s covers the 0.3 s lip-sync start, the 0.3 s breath, and the 0.8 s mouth-close before the cut.
-
-| Phase length | Grief / whisper (3.0 syl/s) | Calm (4.0) | Audit estimate (4.5) | Firm / anger (5.0–5.5) |
-|---|---|---|---|---|
-| 2.5 s | 3 | 4 | 4 | 5–6 |
-| 3.0 s | 4 | 6 | 7 | 8 |
-| 3.5 s | 6 | 8 | 9 | 10–11 |
-| 4.0 s | 7 | 10 | 11 | 13–14 |
-| 4.5 s | 9 | 12 | 13 | 15–17 |
-| 5.0 s | 10 | 14 | 16 | 18 |
-| 5.5 s | 12 | 16 | 18 | 18 |
-| 6.0 s+ | 13+ | 18 | 18 | 18 (Gate 4B cap) |
-
-Whole clip: ≤ ~24 syllables of speech in 10 s (§7). English: divide by roughly 2 (calm ≈ 2.3 w/s): a 4.0 s phase carries about 6 words.
-
-### 12.5 Action capacity per window
-| Window | Body | Face | Words |
-|---|---|---|---|
-| 1.0–2.0 s | One micro-action (head turn, jolt, grip) | Pupil, swallow, lip | 0–5 |
-| 2.5–4.5 s | One primary move (3 steps and stop, hand an object across, turn around) | Jaw, throat, breath change | One line |
-| 5.0–7.0 s | One cause → effect chain (walk, obstacle, stop, face) | Two-stage shift (shock → resolve) | One line + reaction, or two short lines |
-| 1.0–2.5 s terminal | No gross movement; contact points hold | Breathing, eye moisture, drifting air | 0 |
-
-Pairing rule: inside a phase that carries a line, the action declares its relationship to the line — reinforce, contradict, replace, or reveal (Doctrine §3.3). An action that merely illustrates the line is filler.
+1. **Header & Style**: Opens with `[Time] · [Interior/Exterior] · [Location Title]` and `Style: ...`?
+2. **Single `<<<Image X>>>` Lock**: Are `<<<Image X>>>` tags declared **ONLY ONCE** in `[context]:` and `[subject]:` and **0 times** inside `Shot 1..N`?
+3. **Zero-Costume & Zero-Age**: Are all clothing words (`jacket`, `suit`, `skirt`, `dress`) and age/hair/beard words (`young`, `blonde`, `silver-bearded`) 100% purged from `[subject]:` and `Shot 1..N`?
+4. **Shot Format & Economy**: Does each shot follow `Shot N (00:XX-00:YY) - [Interior/Exterior], [scale], [angle/move]` with **1–2 short natural sentences (`15–30w`)** and separated speaker dialogue block?
+5. **Psychological Subversion & Closing Line**: Does the scene follow the *Mask ➔ Crack/Micro-Visual Reveal ➔ Role Reversal* curve and end on a calm **`2–6 word` understatement line**?
+6. **Footer Lock**: Ends with `Master-level cinematography and composition, fast-paced shot variation, atmospheric sound design.` + `Do not generate subtitles, dialogue text, titles, timestamps, or any written text anywhere in the video.`?

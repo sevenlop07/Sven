@@ -65,6 +65,39 @@ LITERAL_PLACEHOLDER_RX = re.compile(
     r'\b(audio tag|cảm xúc khi nói|TRẠNG THÁI|LÀM GÌ|CẢM XÚC RA SAO|Ở ĐÂU)\b',
     re.IGNORECASE,
 )
+# Gate 3R: Banned Action Compounding / Verb Stacking patterns that cause AI limb morphing & latent space collapse
+COMPOUND_ACTION_PATTERNS = [
+    (re.compile(r'\b(snatch\w*|grab\w*|pick\w*\s+up)\b[^.;→\n]{0,80}\b(wip\w*|rubb\w*|step\w*|walk\w*|throw\w*|threw)\b', re.IGNORECASE),
+     "Juggling prop acquisition with wiping/walking/throwing"),
+    (re.compile(r'\b(wip\w*|dry\w*)\b[^.;→\n]{0,80}\b(step\w*|walk\w*|throw\w*|threw|slam\w*|grab\w*|snatch\w*)\b', re.IGNORECASE),
+     "Chaining wiping with walking/throwing/slamming"),
+    (re.compile(r'\b(rush\w*|sprint\w*|charg\w*|dash\w*)\b[^.;→\n]{0,80}\b(throw\w*|threw|slam\w*|sweep\w*|hurl\w*|snatch\w*)\b', re.IGNORECASE),
+     "Chaining high-speed locomotion with violent throwing/slamming/sweeping"),
+    (re.compile(r'\b(strik\w*|struck|light\w*|lit)\b[^.;→\n]{0,80}\b(slam\w*|sweep\w*|throw\w*|smash\w*)\b', re.IGNORECASE),
+     "Chaining ignition/match striking with slamming/sweeping"),
+    (re.compile(r'\b(slam\w*|smash\w*)\b[^.;→\n]{0,80}\b(sweep\w*|swept|hurl\w*|scatter\w*|fling\w*|flung)\b', re.IGNORECASE),
+     "Chaining slamming with sweeping/scattering papers"),
+    (re.compile(r'\b(throw\w*|threw|toss\w*)\b[^.;→\n]{0,80}\b(sweep\w*|swept|step\w*|walk\w*|rush\w*)\b', re.IGNORECASE),
+     "Chaining throwing with sweeping/walking"),
+    (re.compile(r'\bleaving\s+the\s+[^.;\n]{1,50}\bclear\b', re.IGNORECASE),
+     "Redundant surface-clearance phrase ('leaving the ... clear') violates Minimal Prop Interaction Law (Principle #5)"),
+    (re.compile(r'\b([a-z]+_[a-z]+)\s+(?:sits?\s+down|stands?\s+up|walks?|steps?|pulls?\s+out|places?|sets?|raises?)\b[^.;\n]{0,140}\bas\s+\1\s+(?:sits?|stands?)\s+still\b', re.IGNORECASE),
+     "Intra-Sentence State Clash: Same character performs an active movement AND is described as 'as [name] sits/stands still' in the same sentence"),
+]
+# Gate 3S: Semantic Confusion & Angle Conflict Patterns
+SEMANTIC_CONFUSION_PATTERNS = [
+    (re.compile(r'(?<!low-)(?<!high-)(?<!dutch-)(?<!canted-)\b(?:camera\s+)?angle\s*(?:is|:)\s*(?:a\s+)?(close-up|wide\s+shot|medium\s+shot|medium\s+close-up|full\s+shot|choker)\b', re.IGNORECASE),
+     "Semantic Confusion: Calling a Shot Scale an 'angle'"),
+    (re.compile(r'\b(?:camera\s+)?scale\s*(?:is|:)\s*(?:a\s+)?(low-angle|high-angle|dutch\s+angle|eye-level|overhead)\b', re.IGNORECASE),
+     "Semantic Confusion: Calling a Camera Angle a 'scale'"),
+    (re.compile(r'\b(three-shot|four-shot|five-shot|m3s|m4s)\b', re.IGNORECASE),
+     "Non-Standard Shot Scale: 'three-shot / four-shot / M3S / M4S' is not in the 14 Classical Shot Scales (use Wide shot, Full shot, Medium shot, or Medium two-shot)"),
+]
+CONFLICTING_ANGLES = [
+    (re.compile(r'\blow[- ]angle\b[^.;—\n]{0,80}\bhigh[- ]angle\b', re.IGNORECASE), "Conflicting angles: low-angle and high-angle in same camera clause"),
+    (re.compile(r'\bhigh[- ]angle\b[^.;—\n]{0,80}\blow[- ]angle\b', re.IGNORECASE), "Conflicting angles: high-angle and low-angle in same camera clause"),
+    (re.compile(r'\btop[- ]down\b[^.;—\n]{0,80}\blow[- ]angle\b', re.IGNORECASE), "Conflicting angles: top-down and low-angle in same camera clause"),
+]
 # Timing estimates for warnings (see engine/references/0b-temporal-camera-grammar.md §2–§3).
 # Deliberately on the fast side so only clearly over-packed phases are flagged.
 RATE_VI_SYL = 4.5
@@ -210,9 +243,9 @@ def audit_episode_html(file_path):
     if scene_count < min_scenes:
         errors.append(f"Gate 2 Fail: Found only {scene_count} scenes (Minimum {min_scenes} required for episode/commercial)")
     else:
-        time_tags = re.findall(r'00:\d{2}\s*[–\-]\s*00:\d{2}|01:\d{2}\s*[–\-]\s*01:\d{2}|10\.0s|10 Giây', html)
+        time_tags = re.findall(r'0\d:\d{2}(?:\.\d+)?\s*[–\-]\s*0\d:\d{2}(?:\.\d+)?|(?:10|15|30)(?:\.0)?\s*(?:s|Giây|giây)\b', html, re.IGNORECASE)
         if len(time_tags) < scene_count:
-            errors.append(f"Gate 2 Fail: Only {len(time_tags)}/{scene_count} scenes explicitly state their clip duration (00:00 – 00:10 / 00:15 / 00:30)")
+            errors.append(f"Gate 2 Fail: Only {len(time_tags)}/{scene_count} scenes explicitly state their clip duration (00:00 – 00:10 / 00:15 / 00:30 or 10.0s / 15.0s / 30.0s)")
         else:
             print(f"[+] Gate 2 Passed: Exactly {scene_count} Scenes with stated clip durations (10 s default; 15 / 30 s allowed)")
     # Scene count vs. the project's approved episode length (workflow.md §2.4; non-blocking)
@@ -220,8 +253,32 @@ def audit_episode_html(file_path):
     if not is_30s_commercial:
         if expected_scenes and scene_count != int(expected_scenes):
             warnings.append(f"Scene count: {scene_count} scenes, but project_rules.json sets episode_scenes = {expected_scenes} (workflow §2.4)")
-        elif not expected_scenes and scene_count not in (6, 9, 12):
-            warnings.append(f"Scene count: {scene_count} scenes is not a default episode length (6 / 9 / 12) — record the user-approved count as episode_scenes in project_rules.json (workflow §2.4)")
+        elif not expected_scenes and scene_count not in (6, 8, 9, 10, 12):
+            warnings.append(f"Scene count: {scene_count} scenes is not a default episode length (6 / 8 / 9 / 10 / 12) — record the user-approved count as episode_scenes in project_rules.json (workflow §2.4)")
+
+    # 2B. Mandatory Story Spine Card Lock (Creative Doctrine §1.2 Law 6, §8.10 & workflow.md §2.9)
+    spine_open_m = re.search(r'<div[^>]*id="story-spine"[^>]*>', html, re.IGNORECASE)
+    spine_rows_parsed = {}
+    if not spine_open_m:
+        errors.append("Gate 2B Fail: Missing mandatory Story Spine Card (<div id=\"story-spine\">) — write and publish the Story Spine before scenes (Doctrine §8.10 & workflow.md §2.9)")
+    else:
+        depth_sp, pos_sp = 1, spine_open_m.end()
+        for tag in re.finditer(r'<(/?)div\b[^>]*>', html[pos_sp:], re.IGNORECASE):
+            depth_sp += -1 if tag.group(1) else 1
+            if depth_sp == 0:
+                pos_sp = spine_open_m.end() + tag.start()
+                break
+        spine_raw_text = _norm(re.sub(r'<[^>]+>', ' ', html[spine_open_m.end():pos_sp]))
+        spine_rows_parsed = dict(
+            (m.group(1).upper().replace('É', 'E'), m.group(2).strip())
+            for m in re.finditer(r'\[([A-ZÉ]+)\]\s*(.*?)(?=\[[A-ZÉ]+\]|$)', spine_raw_text, re.DOTALL)
+        )
+        required_core_rows = ['QUESTION', 'TRUTH', 'LOOPS', 'PREDICT']
+        missing_core_rows = [r for r in required_core_rows if r not in spine_rows_parsed or not spine_rows_parsed[r]]
+        if missing_core_rows:
+            errors.append(f"Gate 2B Fail: Story Spine Card (id=\"story-spine\") is missing mandatory core rows {missing_core_rows} (Requires at minimum [QUESTION], [TRUTH], [LOOPS], [PREDICT])")
+        else:
+            print(f"[+] Gate 2B Passed: Story Spine Card (id=\"story-spine\") present with {len(spine_rows_parsed)} narrative/plot row(s)")
 
     # 3. AI Video Execution Prompts & Rigorous Skill Compliance
     prompt_matches = re.findall(PROMPT_RX, html, re.DOTALL | re.IGNORECASE)
@@ -269,17 +326,18 @@ def audit_episode_html(file_path):
         freeze_rx = re.compile(r'\b(freeze\s+frame|freeze\s+hold|frozen\s+frame|zero-velocity)\b', re.IGNORECASE)
 
         for p_id, p_text in prompt_matches:
-            # Check forbidden freeze holds (continuous natural motion, script-driven pacing)
-            v_fz = freeze_rx.findall(p_text)
-            if v_fz:
-                freeze_violations.append(f"{p_id}: {v_fz}")
-
-            # Strip spoken lines (with their acting parentheticals) to inspect visual narrative prose only.
-            # Only the dialogue line itself is removed; the surrounding action prose is still checked.
+            # Strip spoken lines (with their acting parentheticals) and standard stability/negative footers
+            # to inspect visual narrative prose only.
             narrative_prose = DIALOGUE_STRIP_RX.sub('', html_lib.unescape(p_text))
             narrative_prose = re.sub(r'[\(（]\s*Voice of a \d{1,2}-year-old.*?[\)）]', '', narrative_prose, flags=re.DOTALL | re.IGNORECASE)
+            narrative_prose = re.sub(r'Spatial positions anchored to the architecture;\s*characters move only where the action says they move\.?', '', narrative_prose, flags=re.IGNORECASE)
             narrative_prose = re.sub(r'Strictly zero violence.*?zero harm to minors.*', '', narrative_prose, flags=re.IGNORECASE)
-            narrative_prose = re.sub(r'Do not generate.*', '', narrative_prose, flags=re.DOTALL | re.IGNORECASE)
+            narrative_prose = re.sub(r'Do not (?:generate|render).*', '', narrative_prose, flags=re.DOTALL | re.IGNORECASE)
+
+            # Check forbidden freeze holds (continuous natural motion, script-driven pacing)
+            v_fz = freeze_rx.findall(narrative_prose)
+            if v_fz:
+                freeze_violations.append(f"{p_id}: {v_fz}")
 
             # Check age
             v_age = age_rx.findall(narrative_prose)
@@ -370,14 +428,38 @@ def audit_episode_html(file_path):
         else:
             print("[+] Gate 3G Passed: 100% Prompts begin with Master Cinematography & Sound Prefix")
 
-        # Gate 3H: The Total Mathematical Purge Law (Zero Cartesian Math Document-Wide)
-        # Strictly bans raw coordinate math in Tier 1 Audit Cards, Video Prompts, and Code Block 2 Handovers
+        # Gate 3H: The Total Mathematical Purge Law & Zero Frame-Edge / Raw [timeline]: Meta-Tags
+        # Strictly bans raw coordinate math in Tier 1 Audit Cards, Video Prompts, and Code Block 2 Handovers,
+        # plus bans screen-left/screen-right/frame-left/frame-right, raw [timeline]: tags, and numeric degree/metric math inside Code Block 1.
         coord_rx = re.compile(r'(?<!z-)(?<![a-zA-Z0-9_])[XYZ]\s*:\s*[-+]?\d', re.IGNORECASE)
         all_coord_matches = coord_rx.findall(html)
+        frame_edge_rx = re.compile(r'\b(screen-left|screen-right|frame-left|frame-right)\b', re.IGNORECASE)
+        compass_indoor_rx = re.compile(
+            r'\b(north|south|east|west)\s+(?:end|side|wall|entrance|door|doors|chair|head|foot|edge|corner|window|windows)\b',
+            re.IGNORECASE,
+        )
+        raw_timeline_tag_rx = re.compile(r'^\s*\[timeline\]\s*:', re.MULTILINE | re.IGNORECASE)
+        degree_metric_rx = re.compile(r'\b(\d{1,3}-degree(?!\s+axis)|\d+\s*(?:meters?|centimeters?))\b', re.IGNORECASE)
+        gate_3h_violations = []
         if all_coord_matches:
-            errors.append(f"Gate 3H Fail: Raw Cartesian Coordinates detected document-wide: {all_coord_matches[:10]} (Math coordinates strictly banned; must use Observable Physical Architecture)")
+            gate_3h_violations.append(f"Raw Cartesian Coordinates: {all_coord_matches[:10]}")
+        for p_id, p_text in prompt_matches:
+            fe_hits = frame_edge_rx.findall(p_text)
+            if fe_hits:
+                gate_3h_violations.append(f"{p_id}: forbidden frame-edge tokens {sorted(set(fe_hits))} in Code Block 1 (use architectural landmarks instead)")
+            comp_hits = compass_indoor_rx.findall(p_text)
+            if comp_hits:
+                gate_3h_violations.append(f"{p_id}: forbidden indoor compass directions {sorted(set(comp_hits))} in Code Block 1 (AI has no compass; use visible architectural landmarks like 'head of the table in front of the fireplace' or 'foot of the table near the double doors')")
+            if raw_timeline_tag_rx.search(p_text):
+                gate_3h_violations.append(f"{p_id}: forbidden raw '[timeline]:' tag in Code Block 1 (use 'Diegetic room acoustics:' followed directly by '[00:00–...]')")
+            prose_3h = DIALOGUE_STRIP_RX.sub('', html_lib.unescape(p_text))
+            dm_hits = degree_metric_rx.findall(prose_3h)
+            if dm_hits:
+                gate_3h_violations.append(f"{p_id}: forbidden numeric degree/metric math {sorted(set(dm_hits))} in Code Block 1 (use natural physical descriptions instead)")
+        if gate_3h_violations:
+            errors.append(f"Gate 3H Fail: Observable Physical Architecture / Clean Syntax violated: {gate_3h_violations}")
         else:
-            print("[+] Gate 3H Passed: ZERO Cartesian Math Coordinates Document-Wide (100% Observable Physical Architecture)")
+            print("[+] Gate 3H Passed: ZERO Cartesian Math, Degree/Metric Math, Frame-Edge Tokens, or Raw [timeline]: Meta-Tags (100% Observable Physical Architecture)")
 
         # Gate 3I: The Stateless Prompt Law (Zero Cross-Scene Dependencies in Code Block 1)
         cross_scene_rx = re.compile(r'\b(from Scene \d+|in Scene \d+|previous scene|next scene)\b', re.IGNORECASE)
@@ -405,20 +487,81 @@ def audit_episode_html(file_path):
         else:
             print("[+] Gate 3J Passed: 100% Video Prompts enforce the 3-Block Label Standard ([context]:, [subject]:, [Pro] :)")
 
-        # Gate 3K: Multi-Modal Reference Anchor Syntax
-        # Characters: [100% Appearance, attire, and facial features Refer to image X]
-        # Context & Props: [100% Refer to image ...]
-        ref_subject_rx = re.compile(r'\[100%\s*Appearance,\s*attire,\s*and\s*facial\s*features\s*Refer\s*to\s*image\s*[^\]]+\]', re.IGNORECASE)
+        # Gate 3K: Multi-Modal Reference Anchor & Sovereign [context]: / [subject]: / Two-Tier [PROP]: Completeness in Code Block 1
+        # Context: [Location Name] [100% Refer to image <location_ref>], [time]. [>= 20 words of 5-Vector environmental inventory].
+        # Characters: [ho_ten] [100% Appearance, attire, and facial features Refer to image X], [architectural anchor & posture], [hand state], [eyeline] — the only [ho_ten] in frame.
+        # Props: Two-Tier [PROP]: lines ending with '— the only ... in frame' (strictly banning fixed furniture as prop heads).
+        ref_subject_rx = re.compile(r'\[100%\s*Appearance,\s*attire,(?:\s*skin\s*complexion,)?\s*and\s*facial\s*features\s*Refer\s*to\s*image\s*[^\]]+\]', re.IGNORECASE)
         ref_general_rx = re.compile(r'\[100%\s*Refer\s*to\s*image\s*[^\]]+\]', re.IGNORECASE)
+        posture_anchor_rx = re.compile(
+            r'\b(standing|stands|sitting|sits|seated|kneeling|kneels|crouching|crouched|crouches|coiled|planted|towering|advancing|poised|grounded|sprinting|running|hovering|airborne|braced|unarmed|slumped|resting|rests|lying|lies|leaning|leans|propped|positioned|striding|walking|perched|huddled|cradled|held|framed|anchored|holding|clutching|gripping|hands\s+free)\b',
+            re.IGNORECASE,
+        )
+        only_in_frame_rx = re.compile(r'(?:—|--|-)\s*the\s+only\s+[^.\n]+?\s+in\s+frame', re.IGNORECASE)
+        fixed_furniture_head_rx = re.compile(r'\b(bed|crib|doorway|window|wardrobe|cabinet|stairs|balcony|couch|sofa)\b', re.IGNORECASE)
 
         ref_syntax_violations = []
         for p_id, p_text in prompt_matches:
-            if not ref_subject_rx.search(p_text) or not ref_general_rx.search(p_text):
-                ref_syntax_violations.append(p_id)
+            p_unesc = html_lib.unescape(p_text).replace("\r\n", "\n")
+            is_env_only = bool(re.search(r'\[subject\]\s*:\s*\n\s*\(?none\b', p_unesc, re.IGNORECASE))
+            if (not is_env_only and not ref_subject_rx.search(p_unesc)) or not ref_general_rx.search(p_unesc):
+                ref_syntax_violations.append(f"{p_id}: missing [100% ... Refer to image ...] anchor")
+                continue
+            # Inspect [context]: block for dedicated location image anchor & 5-Vector depth (>= 20 words)
+            ctx_block_m = re.search(
+                r'^\s*\[context\]\s*:\s*(.*?)(?=^\s*\[subject\]\s*:|\Z)',
+                p_unesc,
+                re.MULTILINE | re.IGNORECASE | re.DOTALL,
+            )
+            if ctx_block_m:
+                ctx_txt = ctx_block_m.group(1).strip()
+                if not ref_general_rx.search(ctx_txt):
+                    ref_syntax_violations.append(f"{p_id}: [context]: block is missing its own [100% Refer to image <location_ref>] anchor")
+                elif len(ctx_txt.split()) < 20:
+                    ref_syntax_violations.append(f"{p_id}: [context]: block is too shallow ({len(ctx_txt.split())}w < 20w minimum for 5-Vector environmental inventory)")
+            # Inspect [subject]: lines for Sovereign 5-part completeness (banning stripped bare tags)
+            subj_block_m = re.search(
+                r'^\s*\[subject\]\s*:\s*\n(.*?)(?=^\s*\[Pro(?:p)?\]\s*:|\Z)',
+                p_unesc,
+                re.MULTILINE | re.IGNORECASE | re.DOTALL,
+            )
+            if subj_block_m and not is_env_only:
+                subj_lines = [ln.strip() for ln in subj_block_m.group(1).strip().split("\n") if ln.strip()]
+                for s_ln in subj_lines:
+                    if s_ln.lower().startswith(("none", "(none")):
+                        continue
+                    if not only_in_frame_rx.search(s_ln) or not posture_anchor_rx.search(s_ln):
+                        ref_syntax_violations.append(
+                            f"{p_id}: stripped/incomplete [subject]: line '{s_ln[:65]}...' (must include architectural anchor, vertical posture, t=0 hand state, eyeline, and '— the only <name> in frame')"
+                        )
+            # Inspect [PROP]: lines for Two-Tier completeness & Fixed Furniture Exclusion
+            prop_block_m = re.search(
+                r'^\s*\[Pro(?:p)?\]\s*:\s*(.*?)(?=\n\s*\n|\n\s*(?:Diegetic|\[timeline\]|\[00:00)|\Z)',
+                p_unesc,
+                re.MULTILINE | re.IGNORECASE | re.DOTALL,
+            )
+            if prop_block_m:
+                prop_lines = [ln.strip() for ln in prop_block_m.group(1).strip().split("\n") if ln.strip()]
+                for pr_ln in prop_lines:
+                    if pr_ln.lower().startswith(("none", "(none")):
+                        continue
+                    pr_head = pr_ln.split("[")[0].split(",")[0].strip()
+                    if fixed_furniture_head_rx.search(pr_head):
+                        ref_syntax_violations.append(
+                            f"{p_id}: fixed furniture/architecture '{pr_head}' declared inside [PROP]: (beds, cribs, doorways, windows, cabinets belong 100% to [context]:)"
+                        )
+                    if ";" in pr_ln and re.search(r'\[100%\s*Refer\s*to\s*image', pr_ln, re.IGNORECASE):
+                        ref_syntax_violations.append(
+                            f"{p_id}: semicolon-packed [PROP]: line '{pr_ln[:65]}...' (must list one handheld prop per line in natural English with resting state + '— the only <noun> in frame')"
+                        )
+                    elif not only_in_frame_rx.search(pr_ln):
+                        ref_syntax_violations.append(
+                            f"{p_id}: incomplete [PROP]: line '{pr_ln[:65]}...' (missing resting/held placement and '— the only <noun> in frame')"
+                        )
         if ref_syntax_violations:
-            errors.append(f"Gate 3K Fail: Multi-Modal Reference Anchor Syntax missing in: {ref_syntax_violations}")
+            errors.append(f"Gate 3K Fail: Sovereign [context]: / [subject]: / Two-Tier [PROP]: Completeness violated in Code Block 1: {ref_syntax_violations}")
         else:
-            print("[+] Gate 3K Passed: 100% Video Prompts enforce Multi-Modal Reference Anchor Syntax")
+            print("[+] Gate 3K Passed: 100% Video Prompts enforce Sovereign [context]:, [subject]: & Two-Tier [PROP]: Completeness")
 
         # Gate 3L: Block Spacing Integrity (Empty line separation between blocks)
         spacing_violations = []
@@ -462,7 +605,7 @@ def audit_episode_html(file_path):
             print("[+] Gate 3M Passed: Phases contiguous from 00:00 to a 10 / 15 / 30 s clip end (Track A & Track B)")
 
         # Gate 3N: Standard Diffusion Stability & Negative Directives
-        stability_rx = re.compile(r'Continuous fluid motion,\s*realistic physics,.*?\bzero morphing\b', re.IGNORECASE)
+        stability_rx = re.compile(r'Continuous fluid(?:\s+[\w\.\-]+)*\s+motion,.*?realistic physics,.*?\bzero morphing\b', re.IGNORECASE)
         subtitle_rx = re.compile(r'Do not generate subtitles,\s*dialogue text,\s*titles,\s*timestamps,\s*or written text', re.IGNORECASE)
         neg_missing = [p_id for p_id, p_text in prompt_matches if not stability_rx.search(p_text) or not subtitle_rx.search(p_text)]
         if neg_missing:
@@ -506,6 +649,286 @@ def audit_episode_html(file_path):
             errors.append(f"Gate 3Q Fail: Dangling 'Focus on [name]' detected in prompts: {dangling_focus_violations} (Optical framing, focal plane, and depth of field must be declared inside the Camera Clause before '—', never as a dangling sentence)")
         else:
             print("[+] Gate 3Q Passed: ZERO Dangling 'Focus on [name]' Phrases (100% Optical Camera Clause Compliant)")
+
+        # Gate 3R: The Single Focal Action Law & Action Compounding Purge
+        # Strictly bans chaining multiple sequential macro-actions (verb stacking, prop-juggling) inside a single phase to prevent AI limb morphing and latent collision.
+        compound_violations = []
+        for p_id, p_text in prompt_matches:
+            phases = _phases(p_text)
+            for start, end, chunk in phases:
+                prose = DIALOGUE_STRIP_RX.sub(' ', chunk)
+                for pat, desc in COMPOUND_ACTION_PATTERNS:
+                    m = pat.search(prose)
+                    if m:
+                        compound_violations.append(f"{p_id} [{start:g}–{end:g}s] ({desc}): '{m.group(0).strip()}'")
+        if compound_violations:
+            errors.append(
+                f"Gate 3R Fail: Action Compounding / Verb Stacking detected in prompt phases "
+                f"(Standard 10s scenes allow 1 primary macro action per phase; for Seedance 10s/15s Action/Chase scenes, "
+                f"separate sequential action nodes with the Kinetic Arrow '→'): {compound_violations}"
+            )
+        else:
+            print("[+] Gate 3R Passed: Single Focal Action Law & Seedance Kinetic Arrow (→) Syntax 100% Compliant")
+
+        # Gate 3S: Optical Ray-Tracing, Scale, Angle & 'Cut to' Cross-Reference Gate (3S-1 to 3S-6)
+        scale_angle_violations = []
+        ots_fg_rx = re.compile(
+            r"(?:past|behind)\s+([a-z0-9_]+)'s(?:\s+[\w\-]+){0,3}\s+(?:shoulder|nape|silhouette|back)",
+            re.IGNORECASE,
+        )
+        single_tight_scale_rx = re.compile(
+            r'\b(extreme\s+close-up|choker(?:\s+shot)?|medium\s+close-up|close-up)\b',
+            re.IGNORECASE,
+        )
+        multi_scale_rx = re.compile(
+            r'\b(two-shot|over-the-shoulder|wide\s+shot|full\s+shot|cowboy\s+shot|medium\s+shot)\b',
+            re.IGNORECASE,
+        )
+        scale_extract_rx = re.compile(
+            r'\b(extreme\s+wide\s+shot|wide\s+two-shot|wide\s+shot|full\s+shot|cowboy\s+shot|medium\s+two-shot|two-shot|over-the-shoulder(?:\s+medium\s+close-up|\s+medium\s+shot|\s+shot)?|medium\s+close-up|medium\s+shot|extreme\s+close-up|choker(?:\s+shot)?|close-up|macro\s+insert(?:\s+shot)?|insert\s+shot)\b',
+            re.IGNORECASE,
+        )
+        angle_extract_rx = re.compile(
+            r'\b(slight\s+low[\s\-]angle|low[\s\-]angle|slight\s+high[\s\-]angle|high[\s\-]angle|eye[\s\-]level|dutch\s+angle|overhead|worm\'s[\s\-]eye|ground[\s\-]level)\b',
+            re.IGNORECASE,
+        )
+        # Collect all character ho_ten declared across the episode's [subject]: blocks
+        episode_chars = set()
+        for _, p_txt_all in prompt_matches:
+            for m_ec in re.finditer(r'^\s*([a-z0-9_]+)\s*\[100%\s*Appearance', html_lib.unescape(p_txt_all), re.MULTILINE | re.IGNORECASE):
+                episode_chars.add(m_ec.group(1).lower())
+
+        for p_id, p_text in prompt_matches:
+            p_unesc = html_lib.unescape(p_text).replace("\r\n", "\n")
+            # Detect Track A-Locked (where camera setup is declared once before [00:00)
+            pre_timeline = p_unesc.split("[00:00")[0] if "[00:00" in p_unesc else p_unesc
+            is_track_a_locked = bool(
+                re.search(r'Track\s+A\s*[—\-].*static\s+camera', pre_timeline, re.IGNORECASE)
+                or re.search(r'\n\n[^\n\[\]]+\bstatic\s+camera\.\s*$', pre_timeline.strip(), re.IGNORECASE)
+            )
+            # Extract [context]: block and character names declared in [subject]:
+            ctx_block_m = re.search(
+                r'^\s*\[context\]\s*:\s*(.*?)(?=^\s*\[subject\]\s*:|\Z)',
+                p_unesc,
+                re.MULTILINE | re.IGNORECASE | re.DOTALL,
+            )
+            ctx_text_3s = ctx_block_m.group(1).strip() if ctx_block_m else ""
+            subj_block_m = re.search(
+                r'^\s*\[subject\]\s*:\s*\n(.*?)(?=^\s*\[Pro(?:p)?\]\s*:|\Z)',
+                p_unesc,
+                re.MULTILINE | re.IGNORECASE | re.DOTALL,
+            )
+            subj_text_3s = subj_block_m.group(1).strip() if subj_block_m else ""
+            declared_chars = []
+            if subj_block_m:
+                for s_ln in subj_text_3s.split("\n"):
+                    m_ch = re.match(r'\s*([a-z0-9_]+)\s*\[100%\s*Appearance', s_ln, re.IGNORECASE)
+                    if m_ch:
+                        declared_chars.append(m_ch.group(1).lower())
+
+            # 3S-7a: [context]: <-> [subject]: Architectural Fixture Synchronization (Zero Ghost Fixture Law)
+            np_prefix = r"(?:the|a|an|wooden|pine|dark|light|ceramic|stone|marble|kitchen|bathroom|porcelain|metal|steel|iron|glass|open|closed|front|back|side|bedroom|classroom|hallway|queen|student|tall|polished|carved)\s+(?:[\w\-]+\s+){0,2}"
+            arch_fixtures = (
+                ("crib", rf"\b{np_prefix}cribs?\b", r"\bcribs?\b"),
+                ("bed", rf"\b{np_prefix}beds?\b", r"\bbeds?\b"),
+                ("doorway/doorframe", rf"\b{np_prefix}door(?:way|frame|s)?\b", r"\bdoor(?:way|frame|s)?\b"),
+                ("window", rf"\b{np_prefix}windows?\b", r"\bwindows?\b"),
+                ("desk", rf"\b{np_prefix}desks?\b", r"\bdesks?\b"),
+                ("counter", rf"\b{np_prefix}counters?\b", r"\bcounters?\b"),
+                ("bench", rf"\b{np_prefix}bench(?:es)?\b", r"\bbench(?:es)?\b"),
+                ("pillar", rf"\b{np_prefix}pillars?\b", r"\bpillars?\b"),
+                ("altar", rf"\b{np_prefix}altars?\b", r"\baltars?\b"),
+                ("stove", rf"\b{np_prefix}stoves?\b", r"\bstoves?\b"),
+                ("sink", rf"\b{np_prefix}sinks?\b", r"\bsinks?\b"),
+                ("mirror", rf"\b{np_prefix}mirrors?\b", r"\bmirrors?\b"),
+                ("cabinet", rf"\b{np_prefix}cabinets?\b", r"\bcabinets?\b"),
+                ("wardrobe", rf"\b{np_prefix}wardrobes?\b", r"\bwardrobes?\b"),
+                ("stairs", rf"\b{np_prefix}(?:stairs|staircase|stairway)\b", r"\b(?:stairs|staircase|stairway)\b"),
+                ("balcony", rf"\b{np_prefix}balcon(?:y|ies)\b", r"\bbalcon(?:y|ies)\b"),
+                ("couch/sofa", rf"\b{np_prefix}(?:couch(?:es)?|sofas?)\b", r"\b(?:couch(?:es)?|sofas?)\b"),
+            )
+            for fx_label, fx_np_pat, fx_ctx_pat in arch_fixtures:
+                if re.search(fx_np_pat, subj_text_3s, re.IGNORECASE) and not re.search(fx_ctx_pat, ctx_text_3s, re.IGNORECASE):
+                    scale_angle_violations.append(
+                        f"{p_id} 3S-7a Ghost Architectural Fixture in [subject]: '{fx_label}' is anchored in [subject]: but missing from [context]:"
+                    )
+
+            phases = _phases(p_text)
+            prev_shot_sig = None
+            prev_ots_bg = None
+            for start, end, chunk in phases:
+                has_em_dash = '—' in chunk
+                clause = chunk.split('—')[0] if has_em_dash else chunk.split(':')[0]
+                prose_after = chunk.split('—', 1)[1] if has_em_dash else chunk
+                prose_no_dia = DIALOGUE_STRIP_RX.sub(' ', prose_after)
+                prose_no_dia = re.sub(r'[\(（]\s*Voice of.*?[\)）]', ' ', prose_no_dia, flags=re.DOTALL | re.IGNORECASE)
+
+                # 3S-7b: [context]: <-> [timeline] Architectural Fixture Synchronization (Zero Ghost Fixture Law)
+                for fx_label, fx_np_pat, fx_ctx_pat in arch_fixtures:
+                    if re.search(fx_np_pat, prose_no_dia, re.IGNORECASE) and not re.search(fx_ctx_pat, ctx_text_3s, re.IGNORECASE):
+                        scale_angle_violations.append(
+                            f"{p_id} [{start:g}–{end:g}s] 3S-7b Ghost Architectural Fixture in Timeline: '{fx_label}' appears in timeline action but is missing from [context]:"
+                        )
+
+                # 3S-4d: Undeclared On-Screen Character Acting in Timeline Phase
+                # Exempt explicit Off-Screen (O.S.) / Voice-Over (V.O.) speakers and off-screen eyeline targets so off-frame characters are not forced into [subject]:
+                prose_onscreen = re.sub(
+                    r'(?:from\s+off[\s\-]screen[^.;]*|off[\s\-]screen\s+voice\s+of\s+[a-z0-9_]+|toward\s+(?:the\s+)?off[\s\-]screen\s+[a-z0-9_]+|[a-z0-9_]+\s*\(\s*(?:O\.S\.|V\.O\.|off[\s\-]screen|voice[\s\-]over)\s*\))',
+                    ' ',
+                    prose_no_dia,
+                    flags=re.IGNORECASE,
+                )
+                for ep_ch in sorted(episode_chars):
+                    if ep_ch not in declared_chars and re.search(rf'\b{re.escape(ep_ch)}\b', prose_onscreen, re.IGNORECASE):
+                        if not re.search(rf'\b(?:off[\s\-]screen|O\.S\.|V\.O\.|voice[\s\-]over|memory\s+voice)\b[^.;]*\b{re.escape(ep_ch)}\b|\b{re.escape(ep_ch)}\b[^.;]*\b(?:off[\s\-]screen|O\.S\.|V\.O\.|voice[\s\-]over)\b', chunk, re.IGNORECASE):
+                            scale_angle_violations.append(
+                                f"{p_id} [{start:g}–{end:g}s] 3S-4d Undeclared Subject in Timeline: '{ep_ch}' acts visibly on screen in timeline phase but is missing from this scene's [subject]: block"
+                            )
+
+                # 3S-1: Semantic confusion & conflicting angles
+                for pat, desc in SEMANTIC_CONFUSION_PATTERNS:
+                    hit = pat.search(clause)
+                    if hit:
+                        scale_angle_violations.append(f"{p_id} [{start:g}–{end:g}s] 3S-1 {desc}: '{hit.group(0)}'")
+                for pat, desc in CONFLICTING_ANGLES:
+                    hit = pat.search(clause)
+                    if hit:
+                        scale_angle_violations.append(f"{p_id} [{start:g}–{end:g}s] 3S-1 {desc}: '{hit.group(0)}'")
+
+                # 3S-2: Canonical em-dash camera clause separator '—' (except Track A-Locked)
+                if not is_track_a_locked and not has_em_dash:
+                    scale_angle_violations.append(
+                        f"{p_id} [{start:g}–{end:g}s] 3S-2 Missing canonical em-dash ('—') separating camera clause from action prose"
+                    )
+
+                # 3S-3: OTS Foreground Back-of-Head / Single-Subject Off-Screen / ECU Lip-Sync Violations
+                phase_spoken = [spk.lower() for spk, _, _, kind in _prompt_lines(chunk) if kind == 'spoken']
+                ots_fg_m = ots_fg_rx.search(clause)
+                if ots_fg_m and re.search(r'over-the-shoulder', clause, re.IGNORECASE):
+                    fg_char = ots_fg_m.group(1).lower()
+                    # Check that fg_char is NOT the framed target and camera does not arc/move to frame fg_char's face
+                    frames_fg = bool(re.search(rf'(?:framing|of|on|faces?)\s+{re.escape(fg_char)}\b', clause, re.IGNORECASE))
+                    arcs_to_face = bool(re.search(r'\b(arc|orbit|turns?\s+to\s+face\s+camera)\b', chunk, re.IGNORECASE))
+                    if not frames_fg and not arcs_to_face and fg_char in phase_spoken:
+                        scale_angle_violations.append(
+                            f"{p_id} [{start:g}–{end:g}s] 3S-3a OTS Back-of-Head Lip-Sync Violation: '{fg_char}' is the foreground OTS shoulder silhouette (back to camera, mouth invisible) yet delivers spoken lip-synced dialogue"
+                        )
+                # 3S-3b: Single-subject tight scale (CU / MCU / Choker) framing only Character A while Character B speaks lip-synced dialogue
+                if phase_spoken and single_tight_scale_rx.search(clause) and not multi_scale_rx.search(clause):
+                    framed_chars = [ch for ch in declared_chars if re.search(rf'\b{re.escape(ch)}\b', clause, re.IGNORECASE)]
+                    reframes_to_other = bool(re.search(r'\b(pan|tilt|rack\s+focus|arc|orbit|track|shift)\b', chunk, re.IGNORECASE))
+                    if len(framed_chars) == 1 and not reframes_to_other:
+                        for spk_ch in phase_spoken:
+                            if spk_ch != framed_chars[0]:
+                                scale_angle_violations.append(
+                                    f"{p_id} [{start:g}–{end:g}s] 3S-3b Single-Subject Lip-Sync Mismatch: camera clause frames only '{framed_chars[0]}' in a tight single shot, yet '{spk_ch}' delivers lip-synced dialogue (must frame '{spk_ch}' or mark as off-screen O.S.)"
+                                )
+                # 3S-3c: Extreme Close-Up (ECU) / Macro Insert Lip-Sync Ban
+                if phase_spoken and re.search(r'\b(extreme\s+close-up|macro\s+insert)\b', clause, re.IGNORECASE) and not re.search(r'\b(settles?\s+into\s+a\s+medium|pulls?\s+back\s+to)\b', clause, re.IGNORECASE):
+                    scale_angle_violations.append(
+                        f"{p_id} [{start:g}–{end:g}s] 3S-3c ECU / Macro Insert Lip-Sync Ban: spoken lip-sync dialogue ({phase_spoken}) is forbidden inside an Extreme Close-Up or Macro Insert shot (DIRECTOR.md §3b.1)"
+                    )
+
+                # 3S-4a: OTS Behind-the-Lens Optical Inversion
+                if ots_fg_m and re.search(r'over-the-shoulder', clause, re.IGNORECASE):
+                    fg_char = ots_fg_m.group(1).lower()
+                    if re.search(rf'\bbehind\s+{re.escape(fg_char)}\b', prose_after, re.IGNORECASE):
+                        scale_angle_violations.append(
+                            f"{p_id} [{start:g}–{end:g}s] 3S-4a Behind-the-Lens Optical Inversion: OTS shot looks forward past '{fg_char}', so anything 'Behind {fg_char}' is behind the camera lens and optically invisible"
+                        )
+
+                # 3S-4b: Single-Subject Tight Scale Multi-Character / FG-BG Overcrowding
+                if single_tight_scale_rx.search(clause) and not multi_scale_rx.search(clause):
+                    candidate_chars = sorted(episode_chars | set(declared_chars))
+                    chars_acting = []
+                    for ch in candidate_chars:
+                        if re.search(
+                            rf"\b{re.escape(ch)}\b(?:'s\s+\w+)?\s+(?:stands|sits|kneels|steps|walks|turns|freezes|flinches|recoils|smiles|frowns|glares|nods|shakes|lifts|sets|places|reaches|grips|clutches|slides|watches|weeps|gasps|swallows|says|replies|snaps|whispers|barks|hisses)",
+                            prose_no_dia,
+                            re.IGNORECASE,
+                        ):
+                            chars_acting.append(ch)
+                    if len(chars_acting) >= 3:
+                        scale_angle_violations.append(
+                            f"{p_id} [{start:g}–{end:g}s] 3S-4b Single-Subject Scale Overcrowding: '{single_tight_scale_rx.search(clause).group(0)}' frames 1 subject but directs 3 active characters {chars_acting} simultaneously across foreground/background"
+                        )
+
+                # 3S-4c: Reverse-Angle Frontal Face Contradiction ("C stands between A and B" facing A, shot faces C with B in background, yet describes A's gaze/face)
+                between_m = re.search(
+                    r'\b([a-z0-9_]+)\s+stands\s+(?:firmly\s+)?between\s+([a-z0-9_]+)\s+and\s+([a-z0-9_]+)',
+                    chunk,
+                    re.IGNORECASE,
+                )
+                if between_m and not re.search(r'over-the-shoulder|two-shot|wide|full\s+shot|medium\s+shot', clause, re.IGNORECASE):
+                    c_mid, c_front, c_back = between_m.group(1).lower(), between_m.group(2).lower(), between_m.group(3).lower()
+                    if (
+                        re.search(rf'(?:facing|framing)\s+{re.escape(c_mid)}\b', clause, re.IGNORECASE)
+                        and re.search(rf'\bbackground\b[^.;]*\b{re.escape(c_back)}\b', prose_after, re.IGNORECASE)
+                        and re.search(rf"\b{re.escape(c_front)}'s\s+(?:gaze|eyes|face|expression)\b", prose_after, re.IGNORECASE)
+                    ):
+                        scale_angle_violations.append(
+                            f"{p_id} [{start:g}–{end:g}s] 3S-4c Optical FG/BG Contradiction: camera faces '{c_mid}' with '{c_back}' in background, placing '{c_front}' behind the lens/back-to-camera, so '{c_front}'s gaze/face cannot be seen"
+                        )
+
+                # 3S-5: Standing vs. Floor-Seated/Kneeling Flat Eye-Level Two-Shot Mismatch
+                if re.search(r'\beye[\s\-]level\s+medium\s+two-shot\b', clause, re.IGNORECASE):
+                    prose_no_dia = DIALOGUE_STRIP_RX.sub(' ', prose_after)
+                    has_standing = bool(re.search(r'\b(?:stands|standing)\b', prose_no_dia, re.IGNORECASE))
+                    has_floor_posture = bool(
+                        re.search(
+                            r'\b(?:on\s+(?:the\s+)?floor(?:\s+tiles)?[^.;]*\b(?:sits|sitting|kneels|kneeling|slumped|propped)|(?:sits|sitting|kneels|kneeling|slumped)\s+(?:on\s+(?:the\s+)?floor|propped\s+against\s+the\s+wooden\s+crib))',
+                            prose_no_dia,
+                            re.IGNORECASE,
+                        )
+                    )
+                    if has_standing and has_floor_posture:
+                        scale_angle_violations.append(
+                            f"{p_id} [{start:g}–{end:g}s] 3S-5 Vertical Posture-to-Angle Mismatch: flat 'eye-level medium two-shot' cannot frame a standing character and a floor-seated/kneeling character together (use low-angle or high-angle two-shot)"
+                        )
+
+                # 3S-6: Unmotivated Jump Cut (Consecutive 'Cut to' with identical single character, scale, and angle)
+                sc_m = scale_extract_rx.search(clause)
+                an_m = angle_extract_rx.search(clause)
+                tgt_m = re.search(r'(?:framing|of|on)\s+([a-z0-9_]+)\b', clause, re.IGNORECASE)
+                curr_scale = re.sub(r'\s+', ' ', sc_m.group(1).lower()) if sc_m else None
+                curr_angle = re.sub(r'[\s\-]+', '-', an_m.group(1).lower()) if an_m else None
+                curr_target = tgt_m.group(1).lower() if (tgt_m and tgt_m.group(1).lower() in declared_chars) else None
+                is_cut = bool(re.search(r'^\s*(?:Snap-)?Cut\s+to\b', clause, re.IGNORECASE))
+                is_reverse = bool(re.search(r'\breverse\b', clause, re.IGNORECASE))
+                curr_sig = (curr_target, curr_scale, curr_angle)
+                if (
+                    is_cut
+                    and not is_reverse
+                    and prev_shot_sig
+                    and curr_target
+                    and curr_scale
+                    and curr_angle
+                    and not multi_scale_rx.search(curr_scale)
+                    and curr_sig == prev_shot_sig
+                ):
+                    scale_angle_violations.append(
+                        f"{p_id} [{start:g}–{end:g}s] 3S-6 Jump Cut Violation: 'Cut to' repeats identical subject ('{curr_target}'), scale ('{curr_scale}'), and angle ('{curr_angle}') without a >=30° angle or scale shift"
+                    )
+                prev_shot_sig = curr_sig
+
+                # 3S-8: 180-Degree Reverse OTS Background Flip Invariance
+                bg_wall_m = re.search(
+                    r'\bin\s+the\s+background\s+behind\s+[a-z0-9_]+\s+(?:is|are|stands?|sits?)\s+([^.;,\n]+)',
+                    prose_no_dia,
+                    re.IGNORECASE,
+                )
+                curr_ots_bg = bg_wall_m.group(1).strip().lower() if bg_wall_m else None
+                if is_reverse and re.search(r'over-the-shoulder', clause, re.IGNORECASE) and prev_ots_bg and curr_ots_bg and curr_ots_bg == prev_ots_bg:
+                    scale_angle_violations.append(
+                        f"{p_id} [{start:g}–{end:g}s] 3S-8 Reverse OTS Background Contradiction: 'Cut to reverse OTS' repeats identical background ('{curr_ots_bg}') instead of flipping to the opposite 180° wall"
+                    )
+                if re.search(r'over-the-shoulder', clause, re.IGNORECASE) and curr_ots_bg:
+                    prev_ots_bg = curr_ots_bg
+
+        if scale_angle_violations:
+            errors.append(f"Gate 3S Fail: Optical Ray-Tracing, Scale, Angle & 'Cut to' Gate violated: {scale_angle_violations}")
+        else:
+            print("[+] Gate 3S Passed: Optical Ray-Tracing, Scale, Angle & 'Cut to' Gate 100% Compliant (3S-1 to 3S-8)")
 
     # Per-scene model: card quotes + Code Block 1 lines (used by Gates 4–4F and monotony warnings)
     raw_scenes = re.findall(SCENE_SPLIT_RX, html, re.DOTALL | re.IGNORECASE)
@@ -589,7 +1012,7 @@ def audit_episode_html(file_path):
         print(f"[+] Gate 4B Passed: 100% Dialogue Lines adhere to word cap (Single-speaker <= 32w, Two-Shot <= 15w/speaker; Total lines: {dia_spoken})")
 
     # Gate 4C: Line Causality (warning only)
-    # Monologue, solo lines, and V.O. are valid voice modes. Address words are NOT required.
+    # Monologue, solo lines, and V.O. are valid voice modes. Spoken lines preserve relational pronouns while varying sentence openings.
     # Warn when one speaker delivers back-to-back spoken lines with no intervening reaction or V.O.
     causality_notes = []
     for sc in scenes:
@@ -736,7 +1159,7 @@ def audit_episode_html(file_path):
         rep2 = [f"'{k}' x{v}" for k, v in two_word.items() if v >= 3]
         rep1 = [f"'{k}' x{v}" for k, v in one_word.items() if v >= 4]
         if rep2 or rep1:
-            warnings.append(f"W2 Reply openers repeat across scenes: {rep2 + rep1} — address words are optional; vary the attack of each reply")
+            warnings.append(f"W2 Reply openers repeat across scenes: {rep2 + rep1} — preserve full relational/kinship pronouns (bố/mẹ–con, chồng–vợ, anh–em) inside the line while varying their placement (head, mid-clause, or tail)")
 
         # W3: same voice mode in >= 3 consecutive scenes; uniform turn counts
         modes = [_voice_mode(sc['lines']) for sc in scenes]
@@ -832,21 +1255,29 @@ def audit_episode_html(file_path):
         warnings.append(f"W9 Title spoken in dialogue: {title_notes} — the title is a promise kept by images, not by a line (Doctrine §8.8)")
     if emotion_notes:
         warnings.append(f"W9 Lines label a feeling: {emotion_notes} — play it through an action, memory or request, or justify with a BREAK line (Doctrine §8.9)")
-    if not re.search(r'id="story-spine"', html):
-        warnings.append("W9 No Story Spine Card (id=\"story-spine\") — write the Spine before the scenes (Doctrine §8.10)")
+    if spine_open_m:
+        canonical_12_rows = ['QUESTION', 'TRUTH', 'SPECIFIC', 'CLICHE', 'LOOPS', 'COST', 'DEBATE', 'IMAGE', 'PREDICT', 'KNOW', 'MISREAD', 'TWIST']
+        missing_12 = [r for r in canonical_12_rows if r not in spine_rows_parsed or not spine_rows_parsed[r]]
+        if missing_12:
+            warnings.append(f"W9 Incomplete Story Spine Card: missing {len(missing_12)}/12 canonical depth rows {missing_12} — full 12-row Spine required per Doctrine §8.10 & §9.9")
+
+    # W11. Single-location stagnation across episode (Creative Doctrine §1.2 Law 5 & workflow.md §8.2)
+    if scene_count >= 6 and not re.search(r'\bBREAK\s*:', html):
+        loc_anchors = []
+        for sc in scenes:
+            pm_clean = _norm(re.sub(r'<[^>]+>', ' ', sc['prompt']))
+            ctx_m = re.search(r'\[context\]\s*:\s*([^\.\n]+)', pm_clean, re.IGNORECASE)
+            if ctx_m:
+                loc_head = re.sub(r'\[100%[^\]]*\]', '', ctx_m.group(1)).split(',')[0].strip().lower()
+                if loc_head:
+                    loc_anchors.append(loc_head)
+        unique_locs = sorted(set(loc_anchors))
+        if len(loc_anchors) >= 6 and len(unique_locs) == 1:
+            warnings.append(f"W11 Single-location stagnation: all {scene_count} scenes are confined to one space ('{unique_locs[0]}') — partition 6–12 scene episodes into 2–4 spatial/temporal sequences (Doctrine §1.2 Law 5 & workflow.md §8.2), or declare a BREAK reason")
 
     # W10. Plot engine (Creative Doctrine §9.2, §9.7, §8.7): prediction ledger and plant-before-payoff order
-    spine_m = re.search(r'<div[^>]*id="story-spine"[^>]*>', html)
-    if spine_m:
-        depth, pos = 1, spine_m.end()
-        for tag in re.finditer(r'<(/?)div\b[^>]*>', html[pos:], re.I):
-            depth += -1 if tag.group(1) else 1
-            if depth == 0:
-                pos = spine_m.end() + tag.start()
-                break
-        spine_text = _norm(re.sub(r'<[^>]+>', ' ', html[spine_m.end():pos]))
-        rows = dict((m.group(1).upper(), m.group(2)) for m in
-                    re.finditer(r'\[([A-ZÉ]+)\]\s*(.*?)(?=\[[A-ZÉ]+\]|$)', spine_text, re.S))
+    if spine_open_m:
+        rows = spine_rows_parsed
         plot_notes = []
         ledger = rows.get('PREDICT')
         if ledger is None:
@@ -872,6 +1303,33 @@ def audit_episode_html(file_path):
                 plot_notes.append(f"loop '{seg.strip()[:40]}…' pays at s{pays[0]} before or at its plant s{max(plants):02d}")
         if plot_notes:
             warnings.append(f"W10 Plot engine: {plot_notes} — plant earlier, break ≥ 2 predictions (Doctrine §9.2, §9.7)")
+
+    # W12. Cross-Stage World Bible & Tier-1 Audit Card Sync (setting.html #locations <-> tap-N.html [context]:)
+    setting_sibling = os.path.join(os.path.dirname(file_path), "setting.html")
+    if os.path.exists(setting_sibling):
+        try:
+            with open(setting_sibling, "r", encoding="utf-8") as sf:
+                setting_raw = sf.read()
+            setting_loc_refs = {
+                m.group(1).strip()
+                for m in re.finditer(r'\[100%\s*Refer\s*to\s*image\s+([^\]]+)\]', setting_raw, re.IGNORECASE)
+            }
+            ep_ctx_refs = set()
+            for sc in scenes:
+                p_unesc = html_lib.unescape(sc['prompt'])
+                ctx_m = re.search(r'^\s*\[context\]\s*:\s*(.*?)(?=^\s*\[subject\]\s*:|\Z)', p_unesc, re.M | re.I | re.S)
+                if ctx_m:
+                    for rm in re.finditer(r'\[100%\s*Refer\s*to\s*image\s+([^\]]+)\]', ctx_m.group(1), re.IGNORECASE):
+                        ref_token = rm.group(1).strip()
+                        if not re.search(r'(?:last_frame|first_frame|keyframe|terminal_frame)', ref_token, re.IGNORECASE):
+                            ep_ctx_refs.add(ref_token)
+            unsynced_loc_refs = sorted(ep_ctx_refs - setting_loc_refs)
+            if unsynced_loc_refs:
+                warnings.append(
+                    f"W12 Cross-Stage Location Reference Desync: [context]: references {unsynced_loc_refs} not found in sibling setting.html Mode B snippets (workflow.md §7.4 & §8.4)"
+                )
+        except Exception:
+            pass
 
     # Summary
     print("-" * 70)

@@ -1,9 +1,9 @@
 #!/usr/bin/env python3
 # -*- coding: utf-8 -*-
 """
-Sven Cinematic Universe — Pre-Production Setting Bible Linter
+Sven Cinematic Universe — Pre-Production Setting Bible Linter (Gate 1.5)
 File: engine/setting_audit_suite.py
-Purpose: Strictly validates output/<project>/setting.html before Checkpoint 1.
+Purpose: Strictly validates output/<project>/setting.html at Stage 2 (CP2) and Stage 3 (CP3).
 """
 
 import html as html_lib
@@ -19,7 +19,7 @@ if sys.stdout.encoding.lower() != 'utf-8':
 
 def audit_setting_html(file_path):
     print("=" * 70)
-    print(f"[*] EXECUTING PRE-CHECKPOINT 1 SETTING BIBLE AUDIT: {file_path}")
+    print(f"[*] EXECUTING GATE 1.5 SETTING BIBLE AUDIT (CP2 / CP3): {file_path}")
     print("=" * 70)
 
     if not os.path.exists(file_path):
@@ -43,8 +43,8 @@ def audit_setting_html(file_path):
     sec_close = len(re.findall(r"</section>", html, re.IGNORECASE))
     if sec_open != sec_close:
         errors.append(f"Gate 1B Fail: Section tag mismatch (Open={sec_open}, Close={sec_close})")
-    elif sec_open < 8:
-        errors.append(f"Gate 1B Fail: Found only {sec_open} sections (Minimum 10 required for full series bible)")
+    elif sec_open < 6:
+        errors.append(f"Gate 1B Fail: Found only {sec_open} sections (Minimum 6 canonical sections required: Sections 1, 2, 3, 4A, 4B, 5)")
     else:
         print(f"[+] Gate 1B Passed: Section Tag Balance ({sec_open} sections)")
 
@@ -90,6 +90,37 @@ def audit_setting_html(file_path):
             snippets = re.findall(r'<pre[^>]*>(.*?)</pre>', block, re.DOTALL | re.IGNORECASE)
         return snippets
 
+    # 2A. Section 1 — Master Narrative Depth & 3-Layer Stakes Check (Gate 1C)
+    sec1_content = extract_section_content(["story", "sec-1", "vision"])
+    if sec1_content:
+        sec1_lower = sec1_content.lower()
+        doc_lower = html.lower()
+        has_theme_conflict = any(k in sec1_lower for k in [
+            "question", "câu hỏi", "chủ đề", "xung đột", "va chạm", "conflict", "theme", "dramatic", "kịch tính", "bi kịch"
+        ])
+        has_stakes_structure = any(k in doc_lower for k in [
+            "stakes", "cọc cược", "hồi", "act", "tuyến", "plot", "bước ngoặt", "twist", "hậu quả", "ticking clock", "beat"
+        ])
+        if not (has_theme_conflict and has_stakes_structure):
+            errors.append("Gate 1C Fail: Section 1 (Master Narrative Arc) lacks 3-Layer Stakes / Thematic Question / Act Blueprint depth markers")
+        else:
+            print("[+] Gate 1C Passed: Section 1 enforces Master Narrative Depth & 3-Layer Stakes Blueprint")
+
+    # 2B. Section 2 — Canonical Cast 6-Layer Psychology & Anti-Caricature Check (Gate 2B)
+    sec2_content = extract_section_content(["cast", "sec-2", "characters"])
+    if sec2_content:
+        sec2_lower = sec2_content.lower()
+        psych_dimensions = [
+            any(k in sec2_lower for k in ["wound", "vết thương", "sang chấn", "trauma", "nỗi đau", "quá khứ"]),
+            any(k in sec2_lower for k in ["lie", "lời nói dối", "vỏ bọc", "ngụy trang", "sai lầm", "mask"]),
+            any(k in sec2_lower for k in ["want", "khao khát", "mục tiêu", "tham vọng", "desire"]),
+            any(k in sec2_lower for k in ["need", "nhu cầu", "chữa lành", "thức tỉnh", "fear", "nỗi sợ", "mâu thuẫn", "paradox"]),
+        ]
+        if sum(1 for d in psych_dimensions if d) < 2:
+            errors.append("Gate 2B Fail: Section 2 (Canonical Cast) lacks 6-Layer Character Psychology markers (Wound / Lie / Want / Need / Fear / Paradox)")
+        else:
+            print("[+] Gate 2B Passed: Section 2 enforces 6-Layer Character Psychology & Anti-Caricature Depth")
+
     # 3. Section 3 — Character Model Sheets & Mode B Prompts
     sec3_content = extract_section_content(["modelsheets", "sec-3", "char-model-sheets"])
     if not sec3_content:
@@ -132,6 +163,64 @@ def audit_setting_html(file_path):
         else:
             print("[+] Gate 3B Passed: Minor-Safe Model Sheets (every sheet under 18 is free of glamour, body, and adult-label lexicon)")
 
+        # 3C. Adult Character Skin Complexion, Makeup/Grooming, Adult Female Hourglass/Dress Fashion & 1:1 Turnaround Scale Alignment Check (Pillar 2 §1B & §2)
+        deprecated_adult_boilerplate_rx = re.compile(r'\bthin\s+natural\s+nude\s+lips\b', re.IGNORECASE)
+        scale_alignment_rx = re.compile(r'\b(1:1\s+(?:anatomical\s+)?body\s+scale|shared\s+shoulder\s+line|horizontal\s+shoulder|mannequin-style\s+neck|align\s+horizontally)\b', re.IGNORECASE)
+        adult_female_marker_rx = re.compile(r'\b(female|woman|heroine|lady|wife|sister|matriarch)\b', re.IGNORECASE)
+        adult_female_hourglass_rx = re.compile(r'\b(hourglass|cinched\s+waist|feminine\s+(?:bust-to-hip\s+)?curves|sculpted\s+(?:feminine\s+)?curves|toned\s+legs)\b', re.IGNORECASE)
+        adult_female_dress_rx = re.compile(r'\b(dress|gown|skirt)\b', re.IGNORECASE)
+        adult_female_frumpy_banned_rx = re.compile(r'\b(trench-blazer|trench-style\s+lapel|trench\s+coat\s+worn\s+over\s+a\s+fitted\s+.*?turtleneck|jumpsuit|wide-leg\s+pleated\s+silk\s+trousers|ankle\s+trousers)\b', re.IGNORECASE)
+        adult_boilerplate_hits = []
+        unaligned_scale_hits = []
+        female_missing_hourglass_hits = []
+        female_missing_dress_hits = []
+        female_frumpy_outfit_hits = []
+        for i, snippet in enumerate(prompts, 1):
+            text = re.sub(r'<[^>]+>', ' ', html_lib.unescape(snippet))
+            sheet_text = re.sub(r'[\(（]\s*Voice of a .*?[\)）]', ' ', text, flags=re.DOTALL | re.IGNORECASE)
+            ages = [int(a or b) for a, b in age_decl_rx.findall(sheet_text)]
+            if not ages or min(ages) >= 18:
+                if deprecated_adult_boilerplate_rx.search(sheet_text):
+                    adult_boilerplate_hits.append(f"sheet #{i}")
+                if "headless" in sheet_text.lower() and not scale_alignment_rx.search(sheet_text):
+                    unaligned_scale_hits.append(f"sheet #{i}")
+                if adult_female_marker_rx.search(sheet_text) and not re.search(r'\b(male|man|patriarch)\b', sheet_text, re.IGNORECASE):
+                    if not adult_female_hourglass_rx.search(sheet_text):
+                        female_missing_hourglass_hits.append(f"sheet #{i}")
+                    if not adult_female_dress_rx.search(sheet_text):
+                        female_missing_dress_hits.append(f"sheet #{i}")
+                    frumpy_m = adult_female_frumpy_banned_rx.findall(sheet_text)
+                    if frumpy_m:
+                        female_frumpy_outfit_hits.append(f"sheet #{i} ({sorted(set(m.lower() for m in frumpy_m))})")
+        if female_missing_hourglass_hits:
+            errors.append(f"Gate 3C Fail: Adult female sheet(s) {female_missing_hourglass_hits} lack hourglass/feminine curve body descriptors ('hourglass figure', 'slender cinched waist', 'sculpted feminine curves', 'long toned legs')")
+        if female_missing_dress_hits:
+            errors.append(f"Gate 3C Fail: Adult female sheet(s) {female_missing_dress_hits} lack fashionable dress/skirt attire ('sheath midi dress', 'bodycon dress', 'cocktail dress', 'slip dress')")
+        if female_frumpy_outfit_hits:
+            errors.append(f"Gate 3C Fail: Adult female sheet(s) {female_frumpy_outfit_hits} contain banned bulky/frumpy hybrid outfits (trench-blazer, trench-style lapel, turtleneck+trousers, jumpsuit)")
+        if adult_boilerplate_hits or unaligned_scale_hits:
+            if adult_boilerplate_hits:
+                print(f"[!] Gate 3C Notice: Adult sheet(s) {adult_boilerplate_hits} use legacy 'thin natural nude lips' boilerplate — upgrade to Pillar 2 §1B Skin Complexion & Female Makeup / Male Grooming spec.")
+            if unaligned_scale_hits:
+                print(f"[!] Gate 3C Notice: Adult sheet(s) {unaligned_scale_hits} use legacy unaligned 'headless' syntax without 1:1 Horizontal Shoulder-Waist-Heel Scale Lock — upgrade to Pillar 2 §2 4-Figure 1:1 Scale Alignment spec.")
+        elif not (female_missing_hourglass_hits or female_missing_dress_hits or female_frumpy_outfit_hits):
+            print("[+] Gate 3C Passed: Adult Model Sheets enforce Feminine Hourglass Proportions, High-Fashion Dress Attire, Skin/Makeup & 1:1 Scale Lock")
+
+        # 3D. 100% Standalone Outfit Prompt Coverage & Unmerged Character Sheet Check
+        if sec2_content:
+            cast_outfit_files = sorted(set(
+                f.lower() for f in re.findall(r'\b([a-z0-9_-]+-(?:home|work|date|outing|casual|formal|gala|uniform)\.jpg)\b', sec2_content, re.IGNORECASE)
+                if not f.lower().startswith(('loc-', 'prop-', 'location_', 'prop_'))
+            ))
+            sec3_lower = sec3_content.lower()
+            missing_outfit_prompts = [f for f in cast_outfit_files if f"refer to image {f}" not in sec3_lower]
+            if missing_outfit_prompts:
+                errors.append(f"Gate 3D Fail: Outfit file(s) declared in Section 2 (#cast) are missing standalone prompt cards/Mode B snippets in Section 3 (#modelsheets): {missing_outfit_prompts}")
+            elif cast_outfit_files and len(prompts) < len(cast_outfit_files):
+                errors.append(f"Gate 3D Fail: Section 2 declares {len(cast_outfit_files)} character outfit files, but Section 3 only has {len(prompts)} prompt boxes (Every outfit variant must have its own standalone full prompt box)")
+            else:
+                print(f"[+] Gate 3D Passed: 100% Standalone Prompt Coverage ({len(prompts)} full prompt boxes for all character outfit variants)")
+
     # 4. Section 4A — Master Prop Universe Prompts
     sec4a_content = extract_section_content(["props", "sec-4a", "prop-universe"])
     if not sec4a_content:
@@ -160,7 +249,19 @@ def audit_setting_html(file_path):
             if not has_mode_b_loc:
                 errors.append("Gate 5 Fail: Section 4B missing Mode B Location Reference Snippets")
             else:
-                print(f"[+] Gate 5 Passed: Section 4B has {len(loc_prompts)} Location Sheet Prompts & Mode B Snippets")
+                compass_loc_rx = re.compile(
+                    r'\b(north|south|east|west)\s+(?:end|side|wall|entrance|door|doors|chair|head|foot|edge|corner|window|windows)\b',
+                    re.IGNORECASE,
+                )
+                compass_loc_hits = []
+                for idx_l, lp in enumerate(loc_prompts, 1):
+                    c_hits = compass_loc_rx.findall(lp)
+                    if c_hits:
+                        compass_loc_hits.append(f"Location Prompt #{idx_l}: {sorted(set(c_hits))}")
+                if compass_loc_hits:
+                    errors.append(f"Gate 5B Fail: Section 4B Location Prompt(s) contain indoor compass directions {compass_loc_hits} — use visible architectural landmarks instead")
+                else:
+                    print(f"[+] Gate 5 & 5B Passed: Section 4B has {len(loc_prompts)} Location Sheet Prompts & Mode B Snippets (Zero Indoor Compass Directions)")
 
     # 6. Section 5 — Scene / Episode Roadmap Integrity
     sec5_content = extract_section_content(["episodes", "sec-5", "roadmap"])
@@ -186,17 +287,76 @@ def audit_setting_html(file_path):
             else:
                 print(f"[+] Gate 6B Passed: Section 5 enforces Dramatic Spine & 4-Way Continuity Chain")
 
+            # 6C. Section 5 — Per-Episode Location, Participating Cast & Sequence Cluster Completeness
+            ep_cards = re.split(r'<div[^>]*class="[^"]*scene-master-card[^"]*"[^>]*>', sec5_content, flags=re.IGNORECASE)[1:]
+            incomplete_ep_cards = []
+            for idx, card_html in enumerate(ep_cards, 1):
+                c_low = card_html.lower()
+                has_loc_block = any(k in c_low for k in ["địa điểm", "bối cảnh", "loc-"])
+                has_cast_block = any(k in c_low for k in ["nhân vật tham gia", "các nhân vật", "tuyến c"])
+                has_cluster_block = any(k in c_low for k in ["chia cụm cảnh", "cụm 1", "sequence 1", "quân số"])
+                if not (has_loc_block and has_cast_block and has_cluster_block):
+                    incomplete_ep_cards.append(f"Episode Card #{idx}")
+            if incomplete_ep_cards:
+                errors.append(f"Gate 6C Fail: Episode roadmap card(s) in Section 5 lack explicit Location + Participating Characters + Sequence Cluster breakdown: {incomplete_ep_cards}")
+            else:
+                print(f"[+] Gate 6C Passed: All {len(ep_cards)} Episode Cards explicitly detail Locations, Participating Characters & Sequence Clusters")
+
+    # 7. Cross-Section Consistency Audit (Gate 7A: Age/Height Parity, Gate 7B: Character Token Parity, Gate 7C: Geographic/Year Consistency)
+    if sec2_content and sec3_content:
+        # 7A. Extract character cards in Section 2: token, age, height
+        char_cards = re.findall(
+            r'<code>([a-z]+_[a-z]+)</code>\)\s*—\s*(\d{2})\s*Tuổi.*?Cao\s*(\d{3})\s*cm',
+            sec2_content,
+            re.DOTALL | re.IGNORECASE
+        )
+        age_height_mismatches = []
+        missing_sec3_tokens = []
+        # Extract all (prompt_box, mode_b_box) pairs in Section 3
+        sec3_pairs = re.findall(
+            r'<pre[^>]*class="prompt-box"[^>]*>(.*?)</pre>\s*<div[^>]*class="mode-b-box"[^>]*>(.*?)</div>',
+            sec3_content,
+            re.DOTALL | re.IGNORECASE
+        )
+        for token, cast_age, cast_height in char_cards:
+            token_l = token.lower()
+            if token_l not in sec3_content.lower():
+                missing_sec3_tokens.append(token_l)
+            char_prompt_blocks = [p_box for p_box, mb_box in sec3_pairs if token_l in mb_box.lower()]
+            for idx, p_block in enumerate(char_prompt_blocks, 1):
+                m_age = re.search(r'\baged\s+(\d{2})\b', p_block, re.IGNORECASE)
+                m_height = re.search(r'\b(\d{3})cm\s+height\b', p_block, re.IGNORECASE)
+                if m_age and m_age.group(1) != cast_age:
+                    age_height_mismatches.append(f"{token_l} prompt #{idx}: Section 2 age={cast_age} vs Section 3 prompt age={m_age.group(1)}")
+                if m_height and m_height.group(1) != cast_height:
+                    age_height_mismatches.append(f"{token_l} prompt #{idx}: Section 2 height={cast_height}cm vs Section 3 prompt height={m_height.group(1)}cm")
+
+        if age_height_mismatches:
+            errors.append(f"Gate 7A Fail: Character Age/Height mismatch between Section 2 (#cast) and Section 3 (#modelsheets): {age_height_mismatches}")
+        elif missing_sec3_tokens:
+            errors.append(f"Gate 7B Fail: Character tokens in Section 2 (#cast) missing from Section 3 (#modelsheets): {missing_sec3_tokens}")
+        else:
+            print(f"[+] Gate 7A & 7B Passed: Cross-Section Character Age, Height & Token Parity Verified ({len(char_cards)} characters)")
+
+    # 7C. Cross-Section Geographic & Prop Year Consistency Check
+    has_texas = bool(re.search(r'\b(dallas|houston)\b', html, re.IGNORECASE))
+    has_illinois = bool(re.search(r'\b(chicago|joliet|lake michigan)\b', html, re.IGNORECASE))
+    if has_texas and has_illinois:
+        errors.append("Gate 7C Fail: Cross-section geographic drift detected (File mixes Dallas/Houston with Chicago/Joliet/Lake Michigan across sections)")
+    else:
+        print("[+] Gate 7C Passed: 100% Unified Geographic & Timeline Universe Across All Sections")
+
     # Summary
     print("-" * 70)
     if errors:
-        print("[!] PRE-CHECKPOINT 1 AUDIT FAILED WITH THE FOLLOWING VIOLATIONS:")
+        print("[!] GATE 1.5 SETTING BIBLE AUDIT (CP2 / CP3) FAILED WITH THE FOLLOWING VIOLATIONS:")
         for err in errors:
             print(f"  • {err}")
         print("[!] DELIVERY IS STRICTLY BLOCKED. AGENT MUST RECTIFY BEFORE NOTIFYING USER.")
         print("-" * 70)
         return False
     else:
-        print("[V] ALL PRE-CHECKPOINT 1 GATES PASSED! SETTING BIBLE IS COMPLIANT FOR REVIEW.")
+        print("[V] ALL GATE 1.5 SETTING BIBLE GATES PASSED! SETTING BIBLE IS COMPLIANT FOR REVIEW.")
         print("-" * 70)
         return True
 

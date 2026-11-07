@@ -133,7 +133,7 @@ Cỡ cảnh không phải là việc phóng to hay thu nhỏ màn hình đơn th
 
 #### Pair 3: Over-The-Shoulder (OTS) vs. First-Person P.O.V vs. SnorriCam (Body-Mount)
 * **Over-The-Shoulder (OTS / Qua Vai)**: Khán giả đứng **sau lưng nhân vật A** để chứng kiến biểu cảm của B. Tạo chiều sâu 3D đối thoại và thế trận hai bên.
-* **Point-Of-View (P.O.V / Mắt Nhân Vật)**: Khán giả **chính là nhân vật**, ống kính là mắt nhân vật. Bắt buộc 20% mép dưới có bàn tay/vũ khí (Định luật mỏ neo tiền cảnh).
+* **Point-Of-View (P.O.V / Mắt Nhân Vật)**: Khán giả **chính là nhân vật**, ống kính là mắt nhân vật; 20% mép dưới có bàn tay/vũ khí (Định luật mỏ neo tiền cảnh).
 * **SnorriCam (Body-Mounted Chest Rig)**: Máy gắn chặt vào ngực nhân vật chĩa ngược vào mặt. Gương mặt bất động ở tâm màn hình, toàn bộ thế giới phía sau quay cuồng dập dềnh (dành cho sốc thuốc, say xỉn, sang chấn tâm lý cực đoan).
 
 ---
@@ -276,7 +276,7 @@ Before specifying shot scales or camera angles, the director must select the mac
      - `Microscopic dust motes floating and dancing lazily through the diagonal morning sunbeam`.
      - `A delicate curl of steam rising steadily from a teacup on the table`.
      - `Loose wisps of hair fluttering gently against the temple in a subtle domestic draft`.
-  4. **Tactile Prop Friction & Internal Staging**: The character MUST maintain tactile contact with an architectural fixture declared in `[context]:` or with their own body (clutching the bedframe, pressing a thumb against a bandaged wrist, gripping a wooden armrest). Handheld items start at their declared `[PROP]:` resting place and are lifted only inside the timeline. Movement is internal (leaning forward slightly, head lowering, gaze sweeping upward).
+  4. **Tactile Prop Friction & Internal Staging**: The character MUST maintain tactile contact with an architectural fixture declared in `[context]:`, with their own body, or with a prop declared in `[PROP]:` (clutching the bedframe, pressing a thumb against a bandaged wrist, gripping a wooden armrest, or holding a bowl/cup). Handheld items either start on a declared surface in `[PROP]:` (with `hands free of props` in `[subject]:`) and are lifted during the timeline, or start already held in hand at $t=0.0\text{s}$ (synchronized across `[subject]:` and `[PROP]:`). Movement is internal (leaning forward slightly, head lowering, gaze sweeping upward).
   5. **Clean Single-Subject Frame**: Single-subject framing (CU, MCU, or Dirty Single). Background characters, if present, are soft-blurred and purely reactive.
 
 ---
@@ -468,19 +468,62 @@ The matrix below is a **vocabulary, not a lookup table**. A shot scale is never 
 >    - **Optical Reality**: Camera cuts tightly at mid-chest, neck, or chin. Shallow depth of field blurs everything behind the subject into soft bokeh.
 >    - **FATAL ERROR TO AVOID**: NEVER describe the physical actions, trembling, eye movements, or expressions of a secondary character who is "two paces behind" or "in the background" inside a single-person Close-Up or Medium Close-Up!
 >    - *Why this causes failure*: The diffusion model attempts to squeeze both faces into a single portrait crop, resulting in **grotesque facial morphing, phantom double heads, or warped floating limbs**.
->    - *Correct Directorial Handling*: Secondary characters are spatially **Off-Screen (`O.S.`)** in this shot. Direct ONLY the primary framed character.
+>    - *Correct Directorial Handling*: Secondary characters are spatially **Off-Screen (`O.S.`)** in this shot. Direct ONLY the primary framed character (though their eyeline may lock onto the counterpart). **STRICTLY FORBIDDEN**: Never use a 1-person `CU / MCU` for an interpersonal physical strike or tactile contact with another character (e.g., knocking a bowl from someone's hands, slapping, grabbing a wrist, stepping on a hand) — doing so causes the AI to render the character standing alone punching empty air!
 > 
 > 2. **Two-Subject Scales (`Medium Two-Shot [M2S]`, `Cowboy 2S`, `Two-Shot Profile`, `Over-the-Shoulder [OTS]`)**:
 >    - **Subject Capacity**: Strictly **2 Interacting Subjects**.
->    - *M2S / Cowboy 2S*: Both characters are framed waist-up or mid-thigh-up, explicitly anchored to opposite sides of a physical tension gap (e.g. on either side of the table; one by the doorway, one by the window). Anchors are architectural; screen direction is recorded only in the Audit Card. This is the ONLY shot scale where both characters can be directed reacting simultaneously in the same frame!
+>    - *M2S / Cowboy 2S / Low-Angle Two-Character Medium Shot*: Both characters are framed waist-up or mid-thigh-up. **When 2 characters have direct physical contact or prop collision** (handing a bowl, knocking a bowl from hands, slapping, stepping on a hand), they **MUST be anchored together at the EXACT SAME architectural landmark within arm's reach** looking directly at each other (never split onto two distant landmarks like doorway vs. window). Only when they are in a non-contact verbal standoff across a gap are they anchored to opposite sides of a shared landmark (e.g., either side of a table). Every interpersonal physical strike or contact phase MUST frame both the striker and the target (`M2S`, `Low-angle medium shot framing A towering directly over kneeling B`, `OTS`, or `Ground-level close-up framing A's boot slamming onto B's hand`)!
 >    - *OTS*: 1 character's shoulder/nape sits blurred in the foreground outer 1/3 (spatial anchor, never looking into lens); the opposing character occupies the central 2/3 in razor-sharp focus.
 > 
-> 3. **Multi-Subject Scales (`Three-Shot`, `Group Master`, `Establishing Wide [WS]`)**:
->    - **Subject Capacity**: 3+ Characters.
+> 3. **Multi-Subject Scales (`Three-Shot`, `Medium Four-Shot [M4S]`, `Group Master Shot`, `Establishing Wide [WS]`)**:
+>    - **Subject Capacity**: **3 to 4 Named Characters (`Line A & Line B` cap = max 4 per scene) + Flexible `Line C` Background Chorus**. Requires triangular or diamond 3D spatial staging across Foreground (`FG`), Middleground (`MG`), and Background (`BG`); when cutting into a `Two-Shot` or `Single Shot (CU/MCU)` for a specific phase, direct ONLY the 1 or 2 characters optically framed in that phase.
 >    - Requires triangular staging and 3 distinct planes of depth: Foreground (FG), Middleground (MG), Background (BG).
 > 
 > 4. **Non-Human Scales (`Macro Insert`, `ECU`)**:
 >    - Strictly dedicated to inanimate props or isolated micro-anatomy (pupil, scar). Strictly ZERO facial acting or spoken dialogue.
+
+### 1.0c. The Optical Ray-Tracing & Foreground / Midground / Background (`FG / MG / BG`) Law
+
+> [!CRITICAL]
+> **OPTICAL RAY-TRACING IS MANDATORY FOR EVERY SHOT AND EVERY `Cut to` TRANSITION.**
+> Before describing who or what sits in the Foreground (`FG`), Midground (`MG`), or Background (`BG`) of a shot, the Director MUST trace a straight line from the **Camera Lens** through the **Framed Subject** to the **Architectural Wall behind that Subject**, strictly cross-referencing `[context]:` and `[subject]:`.
+
+```
+====================================================================================================
+CASE 1: TWO CHARACTERS FACING EACH OTHER (A stands in front of B, facing B)
+Room Geography in [context] & [subject]:
+  [Doorway Wall]  <--- (behind A's back) ---  [A]  --- (faces B) ---> <--- (faces A) ---  [B]  --- (behind B's back) ---> [Window / Bed Wall]
+
+  * SHOT 1 (Camera looks from A's side toward B's front face):
+    [Camera] ──► [FG: A's shoulder / or A is Off-Screen behind lens] ──► [MG: B's front face (IN FOCUS)] ──► [BG: Window / Bed Wall behind B]
+    ❌ FATAL OPTICAL ERROR: Writing "In a frontal shot of B, A stands in the background / behind B" or describing A's front facial expression!
+    ✅ OPTICAL TRUTH      : When B faces A and the camera shoots B's front face, A is IN FRONT OF B (either in FG with back to camera in an OTS shot, or Off-Screen behind the lens). Only the Window / Bed Wall behind B's back can appear in the background!
+
+  * SHOT 2 (`Cut to` Reverse Angle — Camera looks from B's side toward A's front face):
+    [Camera] ──► [FG: B's shoulder / or B is Off-Screen behind lens] ──► [MG: A's front face (IN FOCUS)] ──► [BG: Doorway Wall behind A]
+====================================================================================================
+CASE 2: THREE-POINT INTERPOSITION (C stands between A at Doorway and B on Bed, C facing A)
+Room Geography in [context] & [subject]:
+  [Doorway: A (facing C)]  <──────  [Room Center: C (facing A, shielding B)]  ...... (behind C's back) ......  [Bed & Crib: B]
+
+  * SHOT 1 (OTS past C's shoulder looking toward A at the Doorway):
+    [Bed & Crib: B (BEHIND CAMERA LENS — 100% INVISIBLE)]  ||  [Camera] ──► [FG: C's shoulder] ──► [MG: A at Doorway] ──► [BG: Hallway]
+    ❌ FATAL OPTICAL ERROR: Writing "Over-the-shoulder past C toward A at the doorway... Behind C, B flinches against the bed; beside the bed, the crib stands steady."
+    ✅ OPTICAL TRUTH      : Because the camera is behind C looking toward the doorway, everything behind C's back (B, the bed, the crib) is BEHIND THE CAMERA LENS and 100% outside the optical field of view!
+
+  * SHOT 2 (`Cut to` Reverse OTS past A's shoulder looking toward C):
+    [Camera at Doorway] ──► [FG: A's shoulder (back to lens)] ──► [MG: C's front face] ──► [BG: B propped against the Bed & Crib behind C]
+    ✅ OPTICAL TRUTH      : Looking from the doorway toward C's front face places B and the bed optically in the soft-focus background behind C, while A's back/shoulder is in the foreground (so A's front face/eyes are NOT visible in this shot unless framed as a profile two-shot).
+====================================================================================================
+```
+
+#### The 4 Non-Negotiable Optical Cross-Referencing Rules:
+1. **"In Front Of" Never Becomes "Behind" in a Frontal Shot**: If `[subject]:` anchors Character A in front of Character B facing B, then in any frontal or three-quarter shot of B, Character A is positioned toward the camera lens (`FG` shoulder or `O.S.` behind the lens)—**NEVER in the background (`BG`) behind B**.
+2. **Behind-the-Lens Exclusion Law**: Any character, bed, crib, or fixture situated behind the camera's optical position is **100% invisible (`Off-Screen`)** for that shot. Never copy-paste background descriptions of an infant in a crib or a third character into a reverse angle that points away from that landmark.
+3. **OTS Foreground Silhouette vs. Midground Target Law**: In an Over-the-Shoulder (`OTS`) shot (`Over-the-shoulder medium shot framing [Target_B] past [Foreground_A]'s shoulder`), `Foreground_A`'s back/nape faces the lens (`mouth invisible`), while `Target_B`'s face faces the lens (`mouth visible`). Therefore:
+   - **Only `Target_B` can deliver on-screen lip-synced dialogue in that shot.**
+   - **`Foreground_A` is strictly forbidden from delivering on-screen lip-synced dialogue while the camera is behind `Foreground_A`'s shoulder** (to have `Foreground_A` speak on screen, frame `Foreground_A` as the target facing the lens or cut to the reverse OTS).
+4. **Sovereign `[subject]:` & `[PROP]:` Parity in Code Block 1**: Code Block 1 MUST retain the complete 5-part `[subject]:` specification (reference tag + architectural anchor + vertical posture + $t=0.0\text{s}$ hand state + eyeline + `— the only {name} in frame`) and complete Two-Tier `[PROP]:` lines so the Director and AI model can ray-trace every shot without spatial ambiguity.
 
 ### 1.1. The 14 Shot Scales Category & Hierarchy Matrix
 
@@ -571,16 +614,34 @@ The matrix below is a **vocabulary, not a lookup table**. A shot scale is never 
   `[00:00–00:03] Eye-Level Medium Two-Shot, balanced focal plane, Slow forward push-in: [Subject A] on the hearth side of the rough-hewn oak table faces [Subject B] on the window side, both with palms planted firmly on the grain...`
 * 🚫 **Strict Prohibition**: Never let one character block the face of the other unless intentionally executing a foreground occlusion wipe.
 
-#### 7. Over-The-Shoulder Shot (OTS / Góc Qua Bờ Vai Đối Thoại)
-* **Framing Boundaries**: The outer shoulder, nape, or ear of Character A occupies the outer 1/3 foreground; Character B occupies the central 2/3 and is framed from chest or waist up.
-* **Optical Depth**: Shallow depth of field on foreground shoulder; razor-sharp focus on the listening/speaking subject.
-* **Lens Perspective Equivalent**: Portrait focal length (`cinematic shallow depth of field, soft foreground shoulder blur, crisp facial focus`).
-* **Psychological Pressure Level**: `7/10` to `9/10` (Interrogation pressure).
-* **Story Beat Alignment**: **Beat 3 (Adversarial Ping-Pong Dialogue Exchanges)**.
-* **Spoken Dialogue Safety**: ✅ *100% Safe*. Standard workhorse for Track B Cut 1 and Cut 2.
-* **Prompt Syntax**:
-  `[00:00–00:04] Over-The-Shoulder Shot, cinematic shallow depth, looking past [Subject A]'s dark blurred shoulder at [Subject B]'s tightening expression as dialogue lands...`
-* 🚫 **Strict Prohibition**: Do not use in single-person monologue scenes where no second person is physically present.
+#### 7. Over-The-Shoulder Shot (OTS / Cảnh Quay Qua Vai — Tiêu Chuẩn Điện Ảnh Cốt Lõi)
+* **Cinematic Definition & Heritage**:
+  - Cú máy đặt từ phía sau một nhân vật, nhìn qua bờ vai và đường viền hàm của họ để hướng về nhân vật đối diện. Đây là **bộ khung chuẩn mực (standard coverage)** cho toàn bộ nghệ thuật đối thoại Hollywood xuyên suốt kỷ nguyên kinh điển đến hiện đại, kiến tạo mối quan hệ không gian chân thực và đặt khán giả vào ngay bên trong vòng tròn hội thoại.
+  - **Trường phái David Fincher (*The Social Network*, *Zodiac*)**: Căn chỉnh vi tế từng góc độ và độ sâu tiêu cự để kiểm soát áp lực tâm lý, sự đối đầu lý trí sắc lạnh, và cán cân quyền lực cân bằng qua trục 180°.
+  - **Trường phái Wong Kar-wai (Vương Gia Vệ — *In the Mood for Love*)**: Đảo nghịch kỹ thuật truyền thống bằng các khung hình **Tight Over-the-Shoulder** ép sát, gợi tả sự ngột ngạt, khoảng cách gần gũi đầy nhục cảm, khát khao thầm kín bị kìm nén và cảm giác nhìn lén (voyeuristic intimacy) qua những góc khuất chật hẹp.
+* **When To Use (Khi Nào Sử Dụng)**:
+  - Sử dụng khi muốn kiểm soát cách khán giả liên hệ vật lý với bối cảnh: thể hiện **Quyền lực (Power)**, **Sự thân mật (Intimacy)**, hoặc **Mối quan hệ không gian đối kháng (Spatial Tension)**.
+  - Cực kỳ hiệu quả để thiết lập tâm trạng điện ảnh (cinematic mood) xuyên suốt các thể loại: tâm lý xã hội, gia đình đối kháng, điều tra căng thẳng, hoặc lãng mạn dồn nén.
+* **3-Plane Spatial Architecture (Kiến Trúc 3 Mặt Phẳng Không Gian Chống Lỗi AI)**:
+  1. **Plane 1 (Foreground Anchor — 20%–25% mép khung hình)**: Bờ vai và đường viền hàm của nhân vật gần camera (**"the near figure's shoulder and jaw soft and dark in the foreground"**). cần ở trạng thái tối (dark silhouette/umber shadow) và mờ nhòe quang học (soft-focus bokeh). Điều này tạo "mỏ neo không gian" vững chắc, triệt tiêu 100% lỗi AI sinh thêm ngón tay ma hoặc biến vai thành khuôn mặt dị tật.
+  2. **Plane 2 (Mid-ground Focal Subject — 75% trung tâm)**: Nhân vật đối diện (**[Subject]**) hiển thị nét căng (razor-sharp focus), đóng khung từ ngực hoặc thắt lưng trở lên, nhận diện trọn vẹn biểu cảm mắt, cơ hàm và khẩu hình nhép lời.
+  3. **Plane 3 (Background Atmospheric Depth)**: Không gian phía sau rơi vào độ mờ mềm mại (creamy background falloff), với ánh sáng tương phản giàu tính hội họa (rich chiaroscuro lighting, deep umber shadows, warm golden highlights).
+* **The 180° Action Axis & Height Delta Law**:
+  - **Khóa Trục 180°**: Nếu Cú máy 1 nhìn qua vai phải của A sang B (B nhìn sang trái), thì Cú máy 2 (Reverse OTS) luôn nhìn qua vai trái của B sang A (A nhìn sang phải).
+  - **Chênh Lệch Chiều Cao (Vertical Height Delta)**:
+    * *Đứng nhìn Ngồi/Quỳ (Dominance)*: **High-angle OTS** (máy đặt ngang vai người đứng, chúc xuống 15° nhìn người ngồi để khắc họa sự dồn ép, yếu thế).
+    * *Ngồi/Quỳ nhìn Đứng (Defiance/Vulnerability)*: **Low-angle OTS** (máy đặt ngang vai người ngồi, ngước lên 15° nhìn người đứng để khắc họa sự áp đảo hoặc tinh thần quật khởi).
+* **Spoken Dialogue Safety & Lip-Sync Rule**:
+  - ✅ **Chỉ nhân vật ở Trung cảnh (Mid-ground Subject) đối diện camera mới được giao thoại chính diện có khẩu hình**.
+  - 🚫 **TUYỆT ĐỐI CẤM** gán lời thoại dài cho nhân vật quay lưng (Near Figure) vì AI sẽ cố nhép môi từ sau gáy, gây ra hiện tượng quay ngược đầu 180 độ quái thai (Exorcist head twist) hoặc loạn khẩu hình.
+* **Master Prompt Formula (Công Thức Chuẩn Cho Prompt AI)**:
+  ```text
+  Over-the-shoulder shot with the near figure's shoulder and jaw soft and dark in the foreground, [Subject] sharply in focus in the mid-ground, the spatial depth between the two figures loaded with tension, [camera angle: eye-level / low-angle / high-angle], shallow depth of field, rich chiaroscuro lighting with deep umber shadows and warm golden highlights, static camera — [Subject] [somatic posture and facial expression], [speech-verb] : “ [line] ” (Voice directing parenthetical); the near figure's dark foreground shoulder remains tense and motionless through 00:10.0.
+  ```
+* 🚫 **Strict Prohibitions**:
+  - Không dùng trong cảnh độc thoại 1 người khi không có nhân vật thứ hai hiện diện.
+  - Không để bờ vai tiền cảnh chiếm quá 30% diện tích làm che khuất mặt chủ thể.
+  - Không gán chuyển động tay chân phức tạp cho nhân vật tiền cảnh (giữ bờ vai cố định làm mỏ neo).
 
 #### 8. Medium Shot (MS / Trung Cảnh Thao Tác)
 * **Framing Boundaries**: Frames character from the **waist up** to the crown of the head.
@@ -734,6 +795,19 @@ Shot scale decides **how close** the audience stands; the angle decides **from w
 
 > **Worked angle arc (illustrative):** An early scene shoots the antagonist from floor level, looking up (the couple's fear), and the husband from above (pinned). Mid-episode, when the antagonist breaks, her reverse drops to eye level — power has levelled. In the finale the same low angle returns, now making her a shield for the family. One angle, three meanings, earned by story. Project-specific angle arcs live in `output/<project>/project_staging_rules.md`.
 
+### 3.0b. The Vertical Posture-to-Angle Cross-Reference Matrix (Standing vs. Seated / Kneeling / Floor-Level)
+
+> [!IMPORTANT]
+> **CAMERA VERTICAL PITCH ANGLE MUST ALWAYS CROSS-REFERENCE THE SUBJECTS' PHYSICAL POSTURES IN `[subject]:` AND THE TIMELINE.**
+> A recurring amateur directing bug is defaulting to flat `eye level` when two interacting characters occupy radically different vertical elevations (e.g., Character A `standing` upright while Character B is `sitting at a desk`, `kneeling`, or `slumped on the floor tiles`).
+
+| Character A Posture | Character B Posture | Two-Character Shared Framing (`Two-Shot`) | Single / OTS Framing on Standing A (from B's side) | Single / OTS Framing on Lower B (from A's side) | Strictly Forbidden Optical Mismatch |
+|---|---|---|---|---|---|
+| **Standing** | **Standing** | `Eye-level medium two-shot` (or `slight low-angle two-shot` for tension) | `Eye-level` or `slight low-angle OTS / MCU` | `Eye-level` or `slight high-angle OTS / MCU` | Unmotivated extreme overhead or nadir |
+| **Standing** | **Seated on Chair / Desk / Bed** | `Three-quarter medium-full two-shot` or `low-angle two-shot` framing standing A above seated B | `Slight low-angle OTS / MCU` looking up from seated B's eyeline toward standing A | `Slight high-angle OTS / MCU` looking down from standing A's eyeline toward seated B | ❌ Flat `eye-level` on both A and B without vertical eyeline tilt |
+| **Standing** | **Kneeling / Sitting on Floor / Crouching** | `Low-angle medium two-shot framing A towering over kneeling B` OR `Full two-shot` | `Low-angle OTS / MCU` tilting up from floor-level B toward towering A | `High-angle OTS / MCU` tilting down from standing A toward kneeling/floor-seated B | ❌ **BANNED**: `Eye-level medium two-shot` (optically impossible: a waist-up crop of standing A cuts off floor-seated B completely!) |
+| **Kneeling / Seated** | **Kneeling / Seated** | `Eye-level medium two-shot` (camera lowered to seated/kneeling eye height) | `Eye-level OTS / MCU` (at kneeling/seated eye height) | `Eye-level OTS / MCU` (at kneeling/seated eye height) | ❌ Standing-height camera labeled `eye-level` |
+
 ### 3.1. The Universal 4-Axis Camera Angle Architecture (Hệ Thống 4 Trục Góc Quay Toàn Diện)
 
 Camera angles operate on a 3D spatial coordinate system defined across **4 independent geometric axes**:
@@ -779,7 +853,7 @@ Camera angles operate on a 3D spatial coordinate system defined across **4 indep
 
 > 🚨 **CẢNH BÁO SỐNG CÒN — BẪY ĐỨNG NHÌN NHAU CHẾT LẶNG TRONG TWO-SHOT PROFILE (90° DEAD-AIR STARE TRAP)**:
 > Trong video AI 10 giây, việc xếp 2 nhân vật đứng ngang đối đầu 90° nhìn sang hai mép khung hình rồi để máy quay tĩnh chạy suốt 5–10s là một sai lầm chết người. Nhân vật nói xong 1 câu (2–3s) sẽ rơi vào trạng thái "hết việc để làm", dẫn đến 7 giây sau đứng đờ đẫn nhìn nhau vô hồn như hai khúc gỗ, đồng thời góc nghiêng 90° làm biến dạng khẩu hình lip-sync và che mất 50% cơ mặt.
-> **Quy định bất khả xâm phạm**: Two-Shot Profile TUYỆT ĐỐI KHÔNG ĐƯỢC chạy tĩnh quá 3 giây. Bắt buộc phải: (1) Cắt góc (Track B Cut to OTS/CU), hoặc (2) Có va chạm vật lý giằng co cơ học liên tục từng giây, hoặc (3) Máy quay chuyển động lượn vòng cung (Camera Arc) đổi trục sang góc 3/4.
+> **Nguyên tắc xử lý**: Two-Shot Profile không giữ tĩnh quá 3 giây; đạo diễn xử lý bằng một trong ba cách: (1) Cắt góc (Track B Cut to OTS/CU), hoặc (2) Có va chạm vật lý giằng co cơ học liên tục từng giây, hoặc (3) Máy quay chuyển động lượn vòng cung (Camera Arc) đổi trục sang góc 3/4.
 
 ---
 
@@ -939,16 +1013,16 @@ To eliminate visual monotony and generic formulaic shot repetition (e.g. repetit
 ### 4.1. Deep Dive: In-Camera Transitions (Zero-Cut 10s Takes)
 1. **The Kinetic Prop Bridge (Tracking Pan via Prop)**:
    - *Mechanics*: Character A hurls, slides, or drops a physical object; camera tracks the prop's momentum, panning across the floor/table until it strikes Character B's boots or hands.
-   - *Prompt Syntax*: `Kaelen hurls the bronze signet across the flagstones; camera executes a fluid tracking pan following the spinning bronze disc as it sparks against stone and clatters into Tarik's iron boots.`
+   - *Prompt Syntax*: `Low-angle tracking shot following the flagstones, sharp optical focus on the spinning bronze signet, fluid lateral tracking pan — kaelen hurls the bronze signet across the flagstones as the disc sparks against stone and clatters into tarik's iron boots.`
 2. **Steadicam Arc Pivot (90°–180° Orbital Glide)**:
    - *Mechanics*: Camera begins behind Character A's shoulder, glides smoothly in a semi-circular arc around the table, descending to frame Character B's face directly.
-   - *Prompt Syntax*: `Steadicam executes a descending 120-degree orbital arc pivot around Kaelen's shoulder, sweeping across the tabletop to reframe tightly on Tarik rising from shadow.`
+   - *Prompt Syntax*: `Over-the-shoulder medium shot past kaelen's foreground shoulder, sharp optical focus shifting to tarik, slight high angle descending into a smooth orbital arc — tarik rises from the shadowed side of the timber table, palms pressing flat against the wood.`
 3. **Optical Rack Focus (Focus Pull)**:
    - *Mechanics*: Static camera shifts optical focal plane from Subject A's trembling knuckles in the foreground to Subject B's cold smirk in the blurred background.
-   - *Prompt Syntax*: `Static locked camera; optical rack focus shifts sharpness from the leaking poison vial on the foreground table to the Duchess's unblinking cold gaze in the blurred background.`
+   - *Prompt Syntax*: `Medium close-up with foreground table depth, optical rack focus shifting sharpness from the leaking poison vial in the foreground to duchess_vael's unblinking cold gaze in the background, eye level, static camera — duchess_vael's fingers release the glass stopper as a dark drop beads along the rim.`
 4. **Vertical Elevation Tilt (Dais to Floor)**:
    - *Mechanics*: Camera tilts smoothly down a vertical axis (e.g. from queen on high throne down to kneeling general).
-   - *Prompt Syntax*: `Low-angle vertical tilt descends smoothly from the Queen seated on the high golden throne down the marble steps to land tightly on the kneeling General bound in chains.`
+   - *Prompt Syntax*: `Wide shot framing queen_sera on the high golden throne, deep depth of field, high-to-low vertical tilt descending down the marble steps to reframe on kneeling general_korr — queen_sera raises a gauntleted hand while general_korr strains against the iron chains at the base of the dais.`
 
 ---
 
@@ -1054,7 +1128,7 @@ When a falling character (diminutive juvenile dragon cub) strikes a catching sur
                            (Apex of Tension)
 ```
 
-1. **Horizontal Plane Anchor:** The web is NOT a wall; it is a **`vast horizontal circular hammock spanning the X-Z plane, anchored between 4 cedar boughs directly underneath Faelen's descent vector`**.
+1. **Horizontal Plane Anchor:** The web is NOT a wall; it is a **`vast horizontal circular hammock stretched flat across the open chasm, anchored between four ancient cedar boughs directly underneath faelen's descent path`**.
 2. **Impact Apex & Funnel Sag:** Upon impact at $00:02.5$, the center of the web does not stay rigid; it **`deforms elastically, sinking deeply downward into a funnel shape under Faelen's falling mass`**.
 3. **Radial Tensile Vibration:** The supporting anchor anchor-threads **`quiver violently in high-frequency harmonic vibration, flinging dew and purple venom beads outward in radial rings`**.
 4. **Viscous Adhesive Anchoring:** **`Thick translucent purple venom strands wrap and adhere around Faelen's thrashing limbs and emerald chest scales, arresting downward momentum instantly`**.
@@ -1152,16 +1226,16 @@ Instead, ALL positions and blocking MUST be defined through concrete, observable
 | `[140Hz thud], [2.5kHz snap]` | `deep resonant wooden thud, crisp snapping sound of splintering wood` | Text encoders cannot parse Hertz sound frequencies |
 | `Metric Height/Weight: 85cm vs 195cm, 200kg` *(STRICTLY BANNED)* | **Visual Relative Scale & Mass Contrast:** `tiny fragile juvenile cub, dwarfed by the massive towering panther; immense physical weight crushing down` | AI has no ruler or scale; metric numbers default to average human size, destroying size disparity! |
 
-### 3. The 4-Vector Character Directing Protocol in Timeline Shots (`[00:00–00:XX]`):
-Direct characters **ONLY within the timeline shot/phase where they are physically framed by the camera**. Never direct off-screen characters in a shot where they do not appear. For every character on screen, weave four physical vectors into seamless English cinematic prose (zero literal placeholder tags like `[TRẠNG THÁI]` or `[Ở ĐÂU]`):
-1. **Trạng thái (Physical State / Posture / Condition)**: Explicit posture and physical condition (e.g., `sitting propped up against wooden headboard`, `standing rigid with stiff spine`, `slumped forward in exhaustion`, `kneeling upright`).
-2. **Làm gì (Action / Kinetic Movement)**: Specific kinetic action and physical interaction (e.g., `pulling linen sheet up over waist`, `placing soft bolster pillow`, `handing congee bowl with both hands`, `averting face`).
-3. **Cảm xúc ra sao (Emotion / Facial Expression / Somatic Reaction)**: Vivid facial expression and somatic physiological response (e.g., `lips trembling in wounded vulnerability`, `eyes wide with stunned hurt pride`, `brow furrowing with maternal anxiety`, `jaw tightening in resolute defense`).
-4. **Ở đâu (Spatial Location / 3D Blocking)**: Precise 3D position in the set and relative to other characters and fixed architectural fixtures (e.g., `on the queen bed mattress beside the headboard, facing the doorway`, `framed in the wooden doorway, facing the bed`, `standing in the open floor between the bed and the window`). Never use screen-left / screen-right / frame-left / frame-right.
+### 3. The State-Delta Character Directing Protocol in Timeline Shots (`[00:00–00:XX]` — Zero `[subject]:` Position Repetition & Zero State Contradiction):
+Direct characters **ONLY within the timeline shot/phase where they are physically framed by the camera**. Because `[subject]:` already locks every character's initial architectural position, posture, hand contact, and eyeline at `00:00.0`, timeline shots `[00:00–00:XX]` must **NEVER repeat static positions or initial postures already declared in `[subject]:`**:
+1. **Hành động biến thiên (Delta Action / Kinetic Movement)**: Write **1 primary visible verb** per lead character (or speech + at most 1 simple micro-gesture), chained sequentially with `"then"` / `"right after"` when two beats occur in turn. Never re-execute a posture or hand contact already established at `00:00.0` in `[subject]:` (e.g., if `[subject]:` declares `seated`, do not write `sits down` or `walks in from the door`; if `[subject]:` declares `hands resting on the chair back`, do not write `rests one hand on the chair back` in `Action`).
+2. **Biểu cảm nhìn thấy được (Observable Facial / Somatic Shift)**: Render emotion strictly via visible facial or somatic change (`smile freezes into a cold stare`, `jaw clenches tight`, `brows draw together`).
+3. **Trạng thái tĩnh cho nhân vật phụ khác người vừa cử động (Distinct Supporting Character Still State)**: Keep non-acting framed characters in a simple still state (`as [other_supporting_char] sits still, watching [lead_char]`). **Strict Non-Overlap Rule**: The character in `as [char] sits/stands still` MUST be a **different character** from any character who performed a movement or speech earlier in that same sentence (never write `nora_jennings sits down ... as nora_jennings sits still`).
+4. **Chỉ ghi vị trí khi có di chuyển sang điểm mới (Spatial Anchor ONLY on Location Change)**: Omit static `"at the head chair"` / `"at the foot of the table"` repetitions in Camera Clauses and Action prose; state a spatial destination ONLY when a character physically moves from Point A (declared in `[subject]:`) to Point B during the shot.
 
 ### 4. The Location Reference Fidelity Law:
 Every prompt referencing a 4-View Location Sheet (`[100% Refer to image location_X_4view.jpg]`) must accurately reflect all fixed spatial fixtures and architectural landmarks (e.g. pine crib beside queen bed, doorframe, patterned floor tiles, hearth) established in that location sheet.
-- **Fixed vs Dynamic**: Fixed architectural furniture belongs 100% to `[context]:` and must NEVER be declared in `[PROP]:`. Handheld items follow the Two-Tier `[PROP]:` law (Tier 1 hero prop with image, max 1–2 per series; Tier 2 everyday item as text only), each with a resting place independent of character hands.
+- **Fixed vs Dynamic**: Fixed architectural furniture belongs 100% to `[context]:` and must NEVER be declared in `[PROP]:`. Handheld items follow the Two-Tier `[PROP]:` law (Tier 1 hero prop with image, max 1–2 per series; Tier 2 everyday item as text only), each declaring its $t=0.0\text{s}$ state (resting on a surface when unheld at $0.0\text{s}$, or held in `[ho_ten]`'s hands when already held at $0.0\text{s}$, synchronized with `[subject]:`).
 - **Zero Spatial Drift**: Characters interact directly with in-scene fixtures (`leaning against the queen bed frame`, `gripping the vertical pine balusters of the in-scene crib`) to anchor diffusion models to the reference image and eliminate background hallucination.
 
 ---
@@ -1184,7 +1258,7 @@ Every prompt referencing a 4-View Location Sheet (`[100% Refer to image location
    - The camera follows the character's walking gait: gentle vertical bobbing (a slight rise and fall) and subtle rotational yaw with every step.
 2. **The Zero-Device Axiom (Không vẽ thiết bị)**:
    - Never define the recording phone or camera as a physical prop in front of the lens! The entire frame IS the camera lens.
-   - Describe: `Authentic self-recorded handheld vlog viewpoint, recorded continuously by the subject holding the camera with her right hand just out of frame.`
+   - Describe: `Authentic self-recorded handheld vlog viewpoint, recorded continuously by the subject holding the camera with the extended right hand just out of frame.`
 3. **The Single-Arm Continuous Lock (1 tay luôn giữ máy)**:
    - One hand (right hand) is permanently locked into holding and directing the camera off-screen throughout all beats.
    - The character's free hand (left hand) executes all communicative gestures, pointing, and environmental interactions.
@@ -1225,7 +1299,7 @@ A clip should begin at a defined state (State A) and end at a different, recogni
 Each clip's End State becomes the next clip's Start State — the handoff is unambiguous because each clip only changed one thing.
 
 ### Intra-Clip Mechanics: The 10-Second Kinetic Unit
-While this document governs **inter-clip continuity** (Clip N ➔ Clip N+1), the internal structure of each individual 10-second clip is governed by the **10-Second Kinetic Unit (Single Dynamic Organism)**. A 10-second clip is NOT three disconnected paragraphs. It executes the **3-Phase Causal Triad** (Inhale: Tension Ignition `[00–03s]` ➔ Hold: Kinetic Collision `[03–07s]` ➔ Exhale: Kinetic Arrest `[07–10s]`) bound by the **4 Continuity Bridges** (Spatial Vector & 180° Lock, Kinetic Momentum Handoff with Strict Zero Action Repetition, Chekhov Prop State Machine, and Cinematic Scale Progression). See [4-ai-video-prompt-compiler.md](file:///d:/Project/Sven/engine/references/4-ai-video-prompt-compiler.md) for full specification.
+While this document governs **inter-clip continuity** (Clip N ➔ Clip N+1), the internal structure of each individual 10-second clip is governed by the **10-Second Kinetic Unit (Single Dynamic Organism)**. A 10-second clip is NOT three disconnected paragraphs. It executes the **3-Phase Causal Triad** (Inhale: Tension Ignition ➔ Hold: Kinetic Collision ➔ Exhale: Kinetic Arrest, with dynamic beat-driven timestamps tailored to each scene's dramatic cadence per `0b-temporal-camera-grammar.md` §3) bound by the **4 Continuity Bridges** (Spatial Vector & 180° Lock, Kinetic Momentum Handoff with Strict Zero Action Repetition, Chekhov Prop State Machine, and Cinematic Scale Progression). See [4-ai-video-prompt-compiler.md](file:///d:/Project/Sven/engine/references/4-ai-video-prompt-compiler.md) for full specification.
 
 ---
 
@@ -1354,9 +1428,11 @@ To depict a character approaching, unlocking, and entering a small house or cave
 >
 > **THE 4 PILLARS OF GHOST-PROP ERADICATION**:
 > 1. **Single Instance Lock**: Exactly ONE physical instance of any interactive prop exists in the story universe.
-> 2. **Explicit Resting Surface Clearance**: Whenever a character picks up or shifts a prop, the prompt MUST explicitly declare that the resting surface is clear (e.g., `lifts the wrench, leaving the floor tiles completely clear and empty`).
+> 2. **Minimal Prop Interaction, Fixed Naming & Zero Redundant Surface-Clearance Clutter**: Each small prop has at most **1 interaction per clip** (either setting down OR lifting — never both in the same clip), repeats **1 fixed short noun phrase**, and **NEVER includes auxiliary surface-clearance phrases such as `"leaving the floor tiles/tabletop clear"`**.
 > 3. **Stationary Spatial Anchor Law for Heavy Fixtures**: Heavy furniture, large fixtures, and major architectural elements (Pine Crib, Bed, Dining Table, Ancestral Altar) are permanently locked to their designated room/space coordinates across all scenes. They CANNOT teleport between rooms across scenes (e.g., if a pine crib is anchored beside the master bed, subsequent family interactions must occur in the bedroom or respect its stationary placement).
-> 4. **Scene-to-Scene Chain of Custody**: The resting state of every prop at `00:10.0` of Scene N is the exact physical opening state at `00:00.0` of Scene N+1. Because every clip opens with hands free of props (Pillar 4 §6.1), a prop still in hand at the end of Scene N should be set down before `00:10.0`; if it cannot be, Scene N+1 declares it in `[PROP]:` at a resting place within arm's reach and the first phase re-engages it. The Ledger records the transfer.
+> 4. **Scene-to-Scene Chain of Custody & Initial Prop State Bifurcation (`Unheld at T0` vs. `Actively Held at T0`)**: The physical state of every prop at `00:10.0` of Scene N is the exact physical opening state at `00:00.0` of Scene N+1:
+>    - **Case A — Unheld at $00:00.0$ (Prop rests on a surface)**: `[subject]:` declares `hands free of props` (or hands resting on architecture), and `[PROP]:` declares its resting surface (`resting on the wooden dining table`).
+>    - **Case B — Actively Held at $00:00.0$ (Prop inherited in-hand from Scene N's handover at `00:10.0`, or opening *in medias res* with the character already offering a bowl, holding a cane, or clutching a document)**: `[subject]:` **MUST explicitly declare that character's hand-grip on the prop at $00:00.0$** (e.g., `both gnarled hands holding up the chipped white ceramic rice bowl at chest height toward lok`), and `[PROP]:` **MUST synchronize 100% by declaring the prop held in that character's hands at $00:00.0$** (`chipped white ceramic rice bowl, held in both of keth's hands at chest height — the only rice bowl in frame`). **NEVER force a character who is actively offering/holding a prop at the scene boundary to artificially set it down or open empty-handed (`hands free of props`) while the timeline strikes or manipulates that prop in their hands!**
 
 This is the digitized version of a film production's **continuity bible** (traditionally kept by the script supervisor). It is the single most important structural artifact for multi-clip generation, because clips are usually generated somewhat independently and nothing "remembers" state automatically the way a live film shoot does.
 

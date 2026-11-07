@@ -11,15 +11,25 @@ description: >
 
 > 🧭 **CREATIVE DOCTRINE FIRST**: read [`0-creative-doctrine.md`](file:///d:/Project/Sven/engine/references/0-creative-doctrine.md) before any scene work. Intent first, tool second, reason always. Fixed timings, word budgets, and "always / strictly" craft mandates in the linked specifications are Craft Defaults (`workflow.md` §2.10) and yield to the Doctrine; Hard Constraints never yield.
 >
-> ⚡ **THE 4 SOVEREIGN ANTI-STAGNATION LAWS** (Doctrine §0.1): Screenplays must banish the "Breathing Mannequin Syndrome" through 4 unbreakable laws: (1) Purge hollow beauty buzzwords; (2) Replace passive adjectives with purposeful kinetic action verbs; (3) Mandate tactile prop & environmental friction in every scene; (4) Architect scenes >10s as dynamic multi-shot sequences with distinct editing rhythm.
+> ⚡ **THE 4 SOVEREIGN ANTI-STAGNATION LAWS & 5 PSYCHOLOGICAL SUBVERSION LAWS** (Doctrine §0.1 & `workflow.md` §2.9): Screenplays must banish "Breathing Mannequin Syndrome" and flat exposition through:
+> 1. **Law 1 — The Mask & Role-Reversal Curve (`Mặt Nạ Ngụy Trang ➔ Vết Nứt ➔ Đảo Chiều Vai Trò`)**: Every scene follows a 3-beat psychological curve: *False Calm / Disguise (`0–3s`) ➔ Crack / Threat Trigger (`3–6s`) ➔ Role Reversal / Double Twist (`6–10s / 10–15s`)*.
+> 2. **Law 2 — Micro-Visual Reveal Over Verbal Exposition**: Never let characters explain their secret identity, power, or scheme in dialogue; reveal hidden truths exclusively through **1 sharp close-up visual detail** (*two fangs flashing during an embrace*, *black-painted nails revealed while unwinding hand wraps*, *faint red runes glowing under a runner's feet*, *an index finger tapping twice on a tarnished brass keyring blocking a contract*).
+> 3. **Law 3 — Calm Understatement Dialogue (`2–6 Words` Closing Line)**: At the decisive turn, the dominant/predator/authority character ALWAYS speaks the **shortest, calmest, most polite or understated line in the scene (`2–6 words`)** (*`"I'm sorry."`*, *`"Miss, you seem lost."`*, *`"Alright. I'll grant you salvation."`*, *`"Because you secretly sold Warehouse Four."`*).
+> 4. **Law 4 — Curiosity Gap & Delayed Threat Reveal**: Withhold what startled a character (`Shot 2`) or hide a dangerous character's full face (`showing only his back and shoulders in silhouette` / `showing only lower face and jawline`) until the payoff shot.
+> 5. **Law 5 — Strict 1–2 Active Characters per Shot Window**: Design scenes so that at any given shot window (`Shot 1..N`), only **`1–2` characters** interact directly in frame.
 >
-> 📜 **STORY SPINE BEFORE SCENES** (Doctrine §8): write the Story Spine Card first — dramatic + thematic question with two honest sides; Wound → Lie → Want → Need → Fear → Paradox for every principal; 10 specific-truth details (≥ 5 on screen); cliché audit (≥ 2 expected choices subverted or refused); open-loop ledger (every late reversal planted); cost of the ending; debate seed; opening ↔ closing image. Publish it in the episode HTML as `id="story-spine"`. Line tests: no line labels a feeling, argues the theme, or speaks the title without a `BREAK:` reason (audit W9).
+> 🛡️ **THE 6 ROOT-CAUSE ANTI-SHALLOW SCRIPT LAWS** ([Doctrine §1.2](file:///d:/Project/Sven/engine/references/0-creative-doctrine.md) & [`workflow.md` §2.9](file:///d:/Project/Sven/workflow.md)): (1) **3-Layer Stakes (`External × Internal × Philosophical`)**: ban zero-stake chit-chat premises; (2) **Micro-Beat Sequence Unpacking (`1 Clip 10s = 3–4 Storyboard Shots; 3–4 Clips = 1 Dramatic Situation`) & 3-Wall Escalation**: never cram 7–8 macro plot events into one episode where each 10s clip is a flat plot summary; unpack each dramatic situation across a 3–4 clip psychological curve; (3) **Iceberg Subtext, Velvet-Dagger Mask & Anti-Spoiler Law**: zero verbal self-diagnosis of wounds/insecurities or early master-twist spoilers in Episode 1; antagonists attack via polite hypocrisy (`Dao Găm Bọc Mật`) while protagonists counter with specific lived-in details (`Chi Tiết Đời Thực Chạm Tim Đen`); (4) **Anti-Caricature & Forensic Antagonist Logic**: `A1` has an active flaw/Lie; `A2`'s scheme passes forensic common sense and holds a grain of truth (`Where A2 Is Right`); ban 5-second moral sermon conversions; (5) **Multi-Sequence Spatial Breathing (`W11`)**: partition every 12–18 scene episode into 2–4 sequences across distinct spaces/times; (6) **Mandatory 12-Row Story Spine Lock (`Gate 2B` & `W9`)**.
+>
+> 📜 **STORY SPINE BEFORE SCENES** (Doctrine §8): write the Story Spine Card first — dramatic + thematic question with two honest sides; Wound → Lie → Want → Need → Fear → Paradox for every principal; 10 specific-truth details (≥ 5 on screen); cliché audit (≥ 2 expected choices subverted or refused); open-loop ledger (every late reversal planted); cost of the ending; debate seed; opening ↔ closing image. Line tests: no line labels a feeling, argues the theme, or speaks the title without a `BREAK:` reason (audit W9).
 >
 > 🎲 **PLOT ENGINE** (Doctrine §9): Audience Prediction Ledger (`P# sNN | viewer predicts … | → KEPT` or `→ BROKEN sMM | plant sAA, sBB`; ≥ 2 BROKEN, plants strictly earlier, some KEPT, prefer Option C); Knowledge Matrix (switch suspense / mystery / empathy at least once); misunderstandings meet the 6 conditions and the idiot-plot test; camera withholds, never lies; twist budget 1 major + 1–2 minor per ~100 s, each passing rewatch / character / moral tests; cold water caused by a plant or choice, at genre scale. Add PREDICT / KNOW / MISREAD / TWIST rows to the Spine (audit W10).
 >
-> 🎭 **HOLISTIC STORYTELLING ENGINE & 4 CINEMA TIERS** (Doctrine §10): Never deploy storytelling devices as a mechanical checklist. Screenwriters must orchestrate across the 4 Architectural Tiers: (1) Macro-Timeline (Non-Linear, Parallel Storylines, Frame Narrative); (2) Temporal & Tension Hinges (In Medias Res, Flashback, Flashforward, Cliffhanger); (3) Perspective & Meta-Voices (Counterpoint V.O., Fourth Wall); (4) Visual Semiotics (Foreshadowing, Transforming Motif, Spatial Symbolism). Enforce the 3-step orchestration: Macro Selection ➔ Multi-Sequence Partitioning (break free from single-room talking-head traps with sensory Match-Cuts) ➔ Embedding Visual Semiotics with at least one pure visual sequence.
+> 🎭 **HOLISTIC STORYTELLING ENGINE, 4 CINEMA TIERS & 12-HOOK MASTER LIBRARY** ([Doctrine §10](file:///d:/Project/Sven/engine/references/0-creative-doctrine.md) & [`1-narrative-screenplay-architecture.md` §1.1](file:///d:/Project/Sven/engine/references/1-narrative-screenplay-architecture.md)): Never deploy storytelling devices as a mechanical checklist or default every opening to loud `In Medias Res` shock. Screenwriters select from the **12-Hook Master Library (`#1–#12`)** paired with one of **5 `Hook➔Setup Bridges`** (*Object Bridge*, *Person Bridge*, *Spatial Bridge*, *Reverse Angle Bridge*, *Atmospheric Bridge*).
 >
-> ⏱️ **LINE TIMING** — Time every line in seconds with [`0b-temporal-camera-grammar.md`](file:///d:/Project/Sven/engine/references/0b-temporal-camera-grammar.md) §2 (calm speech ≈ 3.5–4.5 Vietnamese syllables/s or 2.0–2.5 English words/s). 18 counted words per line is a hard cap, not a target.
+> ⏱️ **5-TIER SERIES & 5-TIER DIALOGUE ARCHITECTURE (`2.5 words/s` Safe AI Lip-Sync Standard & `10.0s` Default vs. `15.0s` Combat Routing)** — Every series and episode deploys top-down across **5 Narrative Tiers (`Series ➔ Episode ➔ Inter-Episode Links ➔ Scene Rough Prose ➔ Inter-Scene Links`)** and **5 Dialogue Tiers (`Voice Profile [Blind Test] ➔ Episode Dialogue ➔ Inter-Episode Echo/Promise Ledger ➔ 10s Scene Dialogue ➔ Inter-Scene Word/Question Hooks`)**:
+> - **Default `10.0s` Scene (ALL Standard Dialogue, Psychological Drama, Confrontation & Twist Beats — Routed to `@Director` `[🎭 MODEL TIÊU CHUẨN · 10.0s · 3–4 Shots]`)**: `0–2` sentences, **`12–22 words total`** across the entire clip, closing on a **Calm Understatement line (`2–6 words`)**.
+> - **Exclusive `15.0s` Scene (High-Motion Action, Chase, Ambush, Physical Struggle & Combat ONLY — Routed to `@CombatDirector` `[⚡ MODEL KHUYẾN NGHỊ: SEEDANCE · 15.0s · 5–6 Shots]`)**: **`0` spoken words during high-speed chase (`Shot 3`) & VFX trap (`Shot 4`)**, paired with a brief setup (`Shot 1–2`) and an **Ice-Cold Boss Checkmate closing line (`2–5 words`)** in `Shot 5/6`. Never assign `15.0s` to standard conversational scenes.
+> - **Core Spoken Laws**: Image speaks first, dialogue speaks second; Micro-Visual Reveal replaces verbal exposition; enter directly in the middle of conflict (*zero greetings*); **the closing line of a scene is the shortest, calmest understatement line in that scene** (`2–6 words`).
 
 > **LEVEL 2 OPERATIONAL SPECIFICATION: MASTER SCREENWRITER & NARRATIVE ARCHITECT**  
 > **Direct Report**: Sven-Agent (`d:\Project\Sven\AGENT.md` — Level 1 Executive Producer & Showrunner)  
@@ -49,27 +59,27 @@ description: >
     5. *Anagnorisis & Moral Epiphany (Khoảnh Khắc Bừng Tỉnh Chân Lý & Sự tha thứ/chuộc tội)*
     6. *Transcendence & Restorative Catharsis (Siêu việt hóa & Tái sinh nhân cách mới)*
 
-### 1. The Dual-Format Architectural Separation Law (Cấu Trúc Tách Biệt 2 Định Dạng)
+### 1. The Dual-Format Architectural Separation Law
 The Screenwriter must NEVER confuse the micro beat sheet of a standalone clip with the macro act progression of an episodic series:
 
 ```text
 ┌────────────────────────────────────────────────────────────────────────────────────────────────────────┐
 │                        DUAL-FORMAT ARCHITECTURAL SEPARATION LAW                                        │
 ├────────────────────────────────────────┬───────────────────────────────────────────────────────────────┤
-│ FORMAT A: STANDALONE SHORT FILM        │ FORMAT B: MULTI-EPISODE SERIES (SERIES DÀI TẬP)               │
-│ (1 Tập đơn lẻ · Thời lượng 60s–120s)   │ (N Tập phim · Chuỗi kịch tính liên hoàn)                      │
+│ FORMAT A: STANDALONE SHORT FILM        │ FORMAT B: MULTI-EPISODE SERIES                                │
+│ (Single Standalone Film · 60s–120s)    │ (N Episodes · Continuous Serialized Arc)                      │
 ├────────────────────────────────────────┼───────────────────────────────────────────────────────────────┤
-│ • Cấu trúc vi mô: 6 BEATS & 18 SUB-BEATS│ • Cấu trúc vĩ mô: 4 HỒI (ACTS) TOÁN HỌC (20% / 45% / 25% / 10%)│
-│ • Vòng đời khép kín: Có Hook, Setup,   │ • Vòng đời mở rộng: MỖI TẬP CHỈ ĐÓNG VAI TRÒ CHUYÊN BIỆT THEO │
-│   Drama, Climax, Release, và Echo.     │   HỒI. Tuyệt đối KHÔNG tự giải quyết mâu thuẫn trong 1 tập.   │
-│ • Giải tỏa cảm xúc ngay trong tập.     │ • Giữ căng thẳng bằng Cliffhanger (C1–C7) và Gáo Nước Lạnh.   │
+│ • Micro-Structure: 6 BEATS & 18 SUBS   │ • Macro-Structure: 4 MATHEMATICAL ACTS (20% / 45% / 25% / 10%)│
+│ • Closed Lifecycle: Hook, Setup,       │ • Extended Lifecycle: EACH EPISODE SERVES AN ACT-BOUND ROLE.  │
+│   Drama, Climax, Release, and Echo.    │   Never prematurely resolve the core conflict in Acts 1–2.    │
+│ • Full emotional catharsis in 1 film.  │ • Sustains tension via Cliffhangers (C1–C7) & Cold Water.     │
 └────────────────────────────────────────┴───────────────────────────────────────────────────────────────┘
 ```
 
 #### A. Format A: Standalone Short Film (60s–120s) — The Invariant 10-Second Scene Atom Mapping
 > [!CAUTION]
-> **INVARIANT LAW: ZERO FRACTIONAL SECONDS — EVERY SCENE IS EXACTLY 10.0 SECONDS**.
-> Total duration $T = N \times 10.0$s. All dramatic beats map to **WHOLE 10-SECOND SCENE ATOMS**:
+> **INVARIANT LAW: ZERO FRACTIONAL SECONDS — EVERY SCENE IS EXACTLY 10.0 SECONDS** (or `15.0s`/`30.0s` when declared).
+> Total duration $T = N \times 10.0$s. All dramatic beats map to **WHOLE SCENE ATOMS**:
 > - **Standard 60s (6 Scenes × 10s = 60s)**:
 >   • `Scene 01 [00:00–00:10]` (10s): **Beat 1 (Hook)** — Visual Paradox & Cognitive Gap (3s hook).
 >   • `Scene 02 [00:10–00:20]` (10s): **Beat 2 (Setup)** — Root Wound & Wound Prop Plant.
@@ -78,7 +88,15 @@ The Screenwriter must NEVER confuse the micro beat sheet of a standalone clip wi
 >   • `Scene 05 [00:40–00:50]` (10s): **Beat 4 (Climax)** — 3-Wave Truth Bomb ➔ Rock Bottom ➔ Ego Death (Peak 10/10).
 >   • `Scene 06 [00:50–01:00]` (10s): **Beat 5 & 6 (Release & Echo)** — Thermal Shock, 180° Echo Prop Payoff & Closing Image (no spoken moral, Doctrine §8.8).
 > - **Standard 120s (12 Scenes × 10s = 120s / 2m00s)**:
->   • `Scene 01` (10s): Beat 1 (Hook) | `Scenes 02–03` (20s): Beat 2 (Setup) | `Scenes 04–07` (40s): Beat 3 (Drama, ≥60% Dialogue) | `Scenes 08–10` (30s): Beat 4 (Climax Peak 10/10) | `Scene 11` (10s): Beat 5 (Release) | `Scene 12` (10s): Beat  - **12 eps**: Ep 1, 2 (Act 1) | Ep 3, 4, 5, 6, 7 (Act 2 · Midpoint Ep 6) | Ep 8, 9, 10, 11 (Act 3) | Ep 12 (Act 4).
+>   • `Scene 01` (10s): Beat 1 (Hook) | `Scenes 02–03` (20s): Beat 2 (Setup) | `Scenes 04–07` (40s): Beat 3 (Drama, ≥60% Dialogue) | `Scenes 08–10` (30s): Beat 4 (Climax Peak 10/10) | `Scene 11` (10s): Beat 5 (Release) | `Scene 12` (10s): Beat 6 (Echo).
+
+#### B. Format B: Multi-Episode Series (N Episodes) — The 4-Act Macro Allocation (`20% / 45% / 25% / 10%`)
+* **Act Allocation Lookup Matrix**:
+  - **4 eps**: Ep 1 (Act 1) | Ep 2 (Act 2 · Midpoint) | Ep 3 (Act 3) | Ep 4 (Act 4).
+  - **6 eps**: Ep 1 (Act 1) | Ep 2, 3, 4 (Act 2 · Midpoint Ep 3) | Ep 5 (Act 3) | Ep 6 (Act 4).
+  - **8 eps**: Ep 1, 2 (Act 1) | Ep 3, 4, 5 (Act 2 · Midpoint Ep 4) | Ep 6, 7 (Act 3) | Ep 8 (Act 4).
+  - **10 eps**: Ep 1, 2 (Act 1) | Ep 3, 4, 5, 6 (Act 2 · Midpoint Ep 5) | Ep 7, 8, 9 (Act 3) | Ep 10 (Act 4).
+  - **12 eps**: Ep 1, 2 (Act 1) | Ep 3, 4, 5, 6, 7 (Act 2 · Midpoint Ep 6) | Ep 8, 9, 10, 11 (Act 3) | Ep 12 (Act 4).
   - **16 eps**: Ep 1, 2, 3 (Act 1) | Ep 4–10 (Act 2 · Midpoint Ep 8) | Ep 11–14 (Act 3) | Ep 15–16 (Act 4).
   - **20 eps**: Ep 1–4 (Act 1) | Ep 5–13 (Act 2 · Midpoint Ep 11) | Ep 14–18 (Act 3) | Ep 19–20 (Act 4).
 
@@ -90,34 +108,17 @@ The Screenwriter must NEVER confuse the micro beat sheet of a standalone clip wi
 
 * **Anti-Sitcom / Anti-Vignette Continuum Law**: A multi-episode series is NEVER a sequence of disconnected "Problem-of-the-Week" sketches where characters fight over an arbitrary folk myth and make up 100 seconds later. Characters possess unbroken psychological continuity: their relationships permanently alter at each checkpoint, and core emotional wounds escalate across acts rather than resetting.
 
-* **Anti-Stiffness & Modal Particle Law (Luật Chống Thoại Cộc Lốc & Bắt Buộc Trợ Từ Tình Thái)**:
-  - Spoken dialogue in dramatic domestic conflict MUST NEVER be written as curt, robotic, or literary declarations devoid of exclamations and emotional particles (e.g., *"Con tự lo được... má đừng bận lòng thêm"* or *"Tay mầy... mầy đi truyền nước biển hồi nào sao hổng nói tao hay?!"*).
-  - Screenwriters MUST inject authentic regional exclamations (*Trời ơi, Trời đất quỷ thần ơi, Mèn đéc ơi, Má ơi con lạy má, Anh ơi...*) and sentence-ending modal particles (*...hả trời, ...hả mầy, ...nè má, ...nè con, ...chớ bộ, ...đâu hà, ...nghen con, ...hết trơn, ...đặng*) while strictly respecting the `<= 18 words` hard cap.
-  - **Strict Cultural Taboo Ban**: NEVER use death-wishing or gloating slang like *"Chết chưa"* or *"Đáng đời"* when a family member collapses or is sick. Real maternal panic uses immediate protective shouts: *"Duyên ơi coi chừng té! Khang ơi, vô đỡ vợ mầy lẹ lên con!"*
+* **Character Voice Differentiation (`Blind Voice Test` — Tầng 1 Đối Thoại) & Spoken Cadence Law (`2.5 words/s` Safe Standard)**:
+  - Before writing dialogue, lock each character's **Voice Card** across 5 axes: (1) *Sentence rhythm & length* (short & decisive vs. calm & observant vs. sharp & probing); (2) *Word choice & imagery* (tied to profession/background); (3) *Kinship address & shift threshold* (`Bố – Con`, `Anh – Em`, `Tôi – Ông`, plus the emotional breaking point where address flips); (4) ***What They Never Say Straight*** (the hidden wound/need masked behind action or indirect talk); and (5) *Single Vocal-Timbre + Tone Tag (`Cách 1` — Zero Numeric Age)*: `([vocal timbre/maturity], [baseline tone])` (e.g., `(deep weathered baritone, calm unhurried tone)`, `(warm maternal alto, soft affectionate tone)`, `(clear youthful alto, low steely tone)`).
+  - **Safe `2.5 words/s` Word Budgets & `10.0s` Default vs. `15.0s` Combat Routing**:
+    * **Default `10.0s` Scene (ALL Standard Dialogue, Drama, Confrontation & Twist Beats — Routed to `@Director` `[🎭 MODEL TIÊU CHUẨN · 10.0s · Dynamic 1–4 Shots]`)**: `0–2` sentences, **`12–22 words total`** across the entire clip.
+    * **Exclusive `15.0s` Scene (High-Motion Action, Chase, Ambush, Physical Struggle & Combat ONLY — Routed to `@CombatDirector` `[⚡ MODEL KHUYẾN NGHỊ: SEEDANCE · 15.0s · 3–6 Shots]`)**: `0` spoken words during high-speed chase (`Shot 3`) & VFX trap (`Shot 4`), paired with a brief setup (`Shot 1–2`) and an **Ice-Cold Boss Checkmate closing line (`2–5 words`)** in `Shot 5/6`.
+    * **The Calm Understatement Closing Line Rule**: In confrontation/twist scenes, the final line is the **shortest, calmest understatement line in that scene** (`2–6 words`), delivered after the close-up visual reveal.
+  - **Strict Cultural Taboo Ban**: NEVER use death-wishing or gloating slang like *"Chết chưa"* or *"Đáng đời"* when a family member collapses or is sick; use protective shouts instead (*"Coi chừng té! Vô đỡ lẹ lên!"*).
 
-* **The Two-Tier Action Framework & Mandatory Directorial Cadence Handshake (Doctrine §3.3)**:
-  - Every scene authored by the Screenwriter MUST orchestrate Action across two tiers: **[Tier 1: Relationship] + [Tier 2: 10s Dynamic]**, declaring its CADENCE: and ACTION DYNAMIC: in the Scene Intent Card or Scene Header to explicitly instruct @Director on camera pacing and eradicate mechanical 3-shot defaults:
-    * **Dạng 1: High-Velocity Stichomythia (CADENCE: RAPID_SPARRING)**: High-tempo verbal clash, rapid volley exchanges, zero idle buffer. Directs Director to use Track B 2-Shot (5s/5s) or 3-Phase rapid cuts along 180° axis. STRICTLY FORBIDS 3-second silent reaction shots.
-    * **Dạng 2: Single-Speaker Dominance (CADENCE: ASYMMETRIC_DOMINANCE)**: Asymmetrical power clash. One character speaks continuously across 1–2 sequential volleys (20–30 words) while the listener is trapped in silent physical defense.
-    * **Dạng 3: The Somatic Snap Shock (CADENCE: TRUTH_BOMB_SHOCK)**: Cú sốc tung sự thật & Điểm rơi giật sốc đuôi cảnh. Áp dụng cho: Lật kèo/Tát mặt nạ, Bẻ gãy uy quyền/Lần đầu dám phản kháng, Nổ bom sự thật trước cửa tử, và Cảnh chốt đuôi tập (Cliffhanger). CẤM dùng cho cảnh yêu thương nương náu hoặc tang thương sụp đổ. Tuân thủ **Định Luật Co Giãn Theo Thời Lượng (Multi-Duration Scaling Law — 5%–10% Shockwave Landing)**:
-      - *10s (Chuẩn)*: `4.5s / 4.5s / 1.0s` ➔ Shot 3 Snap-cut chấn động ĐÚNG 1.0S DUY NHẤT (`00:09.0–00:10.0`).
-      - *15s (Mở rộng)*: `6.5s / 7.0s / 1.5s` ➔ Shot 3 Snap-cut chấn động ĐÚNG 1.5S DUY NHẤT (`00:13.5–00:15.0`).
-      - *30s (Mini-Act)*: Setup 11s ➔ Truth Bomb 17s (thoại dứt ở 00:28.0) ➔ Snap-cut Choker ĐÚNG 2.0S DUY NHẤT (`00:28.0–00:30.0`).
-      - *CẤM TUYỆT ĐỐI* để Shot phản ứng cuối kéo dài 3–5 giây làm chết nhịp và loãng mạch cảm xúc.
-* **Dạng 4: Pure Covert Action (CADENCE: PURE_VISUAL_STEALTH)**: Covert, tactical, or investigative action. Spoken dialogue = 0 words. Directs Director to use Track A continuous take or macro insert.
-    * **Dạng 5: False Dawn to Cold Water (CADENCE: COLD_WATER_CLIFFHANGER)**: False Dawn (00:00–00:07.5) shattered by brutal complication (00:07.5–00:10.0). Directs Director to use Track AB snap-cut to black.
-    * **Dạng 6: The Intimate Sanctuary / Tender Aftermath (CADENCE: INTIMATE_REFUGE)**: Tender care, whispered comfort, domestic warmth, shared rhythmic breathing. Directs Director to deploy `Track A-Locked (Static Performance Take)` with `static camera` (zero cuts, camera completely static) focusing 100% on somatic tenderness and voice exhalation.
-    * **Dạng 7: The Vulnerability Breakdown / Ego Collapse (CADENCE: VULNERABILITY_BREAKDOWN)**: Emotional climax, tearful confession, moral surrender, unmasked vulnerability. Directs Director to deploy `Track A-Locked` with `static camera` to capture unbroken facial tears, trembling lips, and internal psychological collapse.
-    * **Dạng 8: The Claustrophobic Standoff (CADENCE: CLAUSTROPHOBIC_STANDOFF)**: Tense psychological confrontation, paralyzed deadlock, locked hostile glares, breathing in silence. Directs Director to deploy `Track A-Locked` with `static camera` to build unbearable pressure without visual distraction.
-    * **Dạng 9: The Somatic Shockwave Silence (CADENCE: SOMATIC_AFTERSHOCK)**: Post-trauma stillness, numb disbelief, stunned eye movement. Directs Director to deploy `Track A-Locked` with `static camera` with zero spoken lines (Model 0 silence).
-    * **Track A-Locked Gravitational Anchor Quota (Định Mức Nhịp Điệu Cú Máy Tĩnh Trong Tập Phim)**:
-      - **Tỷ lệ vàng**: Khống chế NGHIÊM NGẶT tối đa **1–2 cảnh mỗi tập 9–10 cảnh (~15–20% thời lượng tập)**.
-      - **Bản chất điện ảnh**: Cú máy tĩnh (Track A-Locked) là **Mỏ neo trọng lực cảm xúc (Gravitational Anchor)** — một điểm dừng tĩnh lặng cực đoan để thẩm thấu nỗi đau, sự tha thứ hoặc sự bế tắc tột cùng. Tuyệt đối KHÔNG lạm dụng biến toàn bộ tập phim thành một chuỗi cảnh tĩnh buồn ngủ. 80–85% các cảnh còn lại của tập phim BẮT BUỘC phải sử dụng chuyển động và cắt cảnh linh hoạt (Track B đa góc hoặc Track A/AB vận động động học).
-* **Breaking the Dual-Turn Dialogue Trap (Asymmetrical Combat & Single-Speaker Dominance)**:
-  - Screenwriters must eliminate the mechanical impulse to write every scene as an alternating 1-line-A / 1-line-B tennis match:
-    * *Single-Speaker Dominance (20–30 words)*: In aggressive confrontations or interrogations, one character speaks continuously across 1–2 sequential volleys while the listener is trapped in silent physical defense.
-    * *Interruption & Stichomythia*: Rapid overlapping sentences where Speaker B cuts Speaker A off mid-sentence.
-    * *Physical Resistance Over Verbal Ping-Pong*: The listener parries an accusation with an immediate physical action (ripping a paper, turning away, slamming a drawer) rather than a verbal reply.
+* **Unified Multi-Shot Storyboard (`Dynamic 1–4 Shots` on `@Director` `10s` vs. `3–6 Shots` on `@CombatDirector` `15s`)**:
+  - In Stage 3, write each scene (`10s` default or `15s` action/combat) as **continuous present-tense rough prose (`văn xuôi liền mạch, không chia giây`)** with `1 job per scene` and explicit Tier-1 Prop / Weapon tracking (`prop-[name].jpg` $\to$ `<<<Image X>>>`).
+  - In Stage 4, `@Director` compiles all default `10s` scenes (`1–4 Shots` chosen organically by dramatic intent: `6s–4s`, `5s–5s`, `2s–5s–3s`, `4s–3.5s–2.5s`, or `3s–2s–3s–2s`), while `@CombatDirector` compiles all `15s` Action/Chase/Combat scenes (`3–6 Shots: 3s–3s–4s–3s–2s` or `3s–3s–2s–2s–3s–2s`).
 
 ---
 
@@ -139,8 +140,9 @@ The Screenwriter must NEVER confuse the micro beat sheet of a standalone clip wi
 │ TIER 2: MESO LEVEL (BETWEEN EPISODES) — THE BROKEN MESO-LOOP & CLIFFHANGER ANATOMY                    │
 │ • The Invariant Binge Law: Ending (Beat 5–6) of Episode N ≡ Detonation Trigger (Beat 1) of Episode N+1.│
 │ • The 3-Second Cold Water Slap: False Dawn in final 10s shattered at 00:09 by a ruthless complication. │
-│ • Zero Temporal Gap (Real-Time Handover): Terminal frame at 00:10 of Ep N IS opening frame at 00:00    │
-│   of Ep N+1. Same physical momentum, lighting, coordinates, and bio-respiration.                       │
+│ • 4 Flexible Episode Bridges: Zero-Gap Cliffhanger Relay, Causal Aftermath Ellipsis (Time-Jump),       │
+│   Parallel/POV Counter-Strike, or Episodic Reset (`sitcom.md`), bound by 3 Cross-Episode Threads.      │
+
 ├────────────────────────────────────────────────────────────────────────────────────────────────────────┤
 │ TIER 3: MICRO LEVEL (BETWEEN 10.0s SCENE ATOMS) — THE "THEREFORE / BUT" CAUSALITY CHAIN                │
 │ • The Anti-"And Then" Law: Scenes NEVER link by "And then...". Every scene link MUST BE:               │
@@ -154,13 +156,19 @@ The Screenwriter must NEVER confuse the micro beat sheet of a standalone clip wi
 └────────────────────────────────────────────────────────────────────────────────────────────────────────┘
 ```
 
-#### 1. Tier 1 (Macro): The Irreversible Escalation Ladder Across Episodes
-In a multi-episode narrative (4 to 20 episodes), each episode occupies an irreversible tier of conflict. A script that repeats the same level of stakes is dead:
-1. **Tier 1 (Personal Survival & Inciting Trap)**: Direct physical/financial need. The protagonist accepts a dangerous compromise to survive.
-2. **Tier 2 (Relational Crisis & Betrayal)**: The compromise drags loved ones into mortal danger. Subordinate satellites cross lines (`TW-05 Judas Kiss`).
-3. **Tier 3 (Institutional / Communal Isolation)**: Society, law, or public mob (Tier C) turns aggressively against the protagonist. Exits sealed.
-4. **Tier 4 (Existential Crucible & Ego Death)**: The false armor crumbles completely. Total rock bottom (`PEAK 10/10`). Discovery of the devastating truth.
-5. **Tier 5 (Transcendent Grace & Communal Restoration)**: Resolution achieved through moral sacrifice and unconditional pardon, inspiring collective healing.
+#### 1. Tier 1 (Macro): The 20/80 Structural Architecture Law (`6 Genre Act Engines` × `5 Act-Specific Episode Archetypes`)
+In a multi-episode narrative (3 to 20+ episodes), **NEVER force every genre or every episode into a uniform internal structure or uniform `10 scenes × 10s` duration** (`1-narrative-screenplay-architecture.md` Part II §5 & `workflow.md` §6.4 / §8.1):
+1. **The 3 Universal Directorial Pacing Laws (20% Invariant Core)**:
+   - *4-Beat Episode Allocation (`12–18 Scenes` per ~3m Episode)*: Every ~3-minute episode comprises **`12–18 scenes`** of `10.0s` (`75–80%` connecting/reaction beats) and `15.0s` (`20–25%`, `3–4 scenes` reserved for turning points, revelations, and climaxes), structured across **4 Beats**: **Open/Hook (`15–20%`, `2–3 scenes`)** $\to$ **Develop (`40–50%`, `6–8 scenes`)** $\to$ **Climax (`20–25%`, `3–4 scenes`)** $\to$ **Close/Cliffhanger (`10%`, `1–2 scenes`)**.
+   - *Anti-Dead-Finale Fusion Law*: For all series with $N \le 12$, **Act IV (`Resolution / Coda`) NEVER stands alone as a separate full episode**. The **Finale Episode ALWAYS fuses `70–75% Act IIIB (The 3-Wave Grand Showdown)` + `25–30% Act IV (Earned Cost, 180° Echo Prop & Bookend Closing Image)`** (`1–3 final scenes`).
+   - *Elastic Dual-Atom Scaling (`10.0s` vs. `15.0s`)*: Dynamically vary the ratio of `10.0s` Standard clips and `15.0s` Extended clips (`Seedance` action/chase in Regimes 2–4 or unbroken dramatic turning points/climaxes in Regime 1) according to the Act's pressure and the Genre's engine.
+2. **The 6 Genre-Specific Macro Act & Meso Episode Engines (80% Genre Architecture)**:
+   - **Engine 1 — Social, Family, Historical & Palace Drama (`Pressure-Cooker 4-Act Engine`)**: Full 5-Archetype progression (`Act I Ignition` ➔ `Act IIA False Dawn` ➔ `Act IIB Midpoint Betrayal` ➔ `Act IIIA Dark Night` ➔ `Act IIIB+IV Showdown & Restorative Coda`; `75% 10s : 25% 15s`).
+   - **Engine 2 — Viral Microdrama, CEO, Rebirth & Revenge (`3-Tier Dopamine & Every-Episode Face-Slap Engine`)**: `Act I (Ep 1)` ends with a **Mandatory First Mini-Slap**; **every `Act II` episode** executes an internal `Spring Compression (30%) ➔ Baiting (30%) ➔ In-Episode Dopamine Face-Slap (30%) ➔ Higher Boss Arrival (10%)` loop; `Act III+IV Finale` delivers total public unmasking + a crisp 1-scene sovereign walk-away (`90% 10s : 10% 15s`).
+   - **Engine 3 — Action, Martial Arts, Wuxia, Xianxia & Survival (`4-Act Gauntlet & Breakthrough Engine`)**: `Act I` Ambush/Heavy Loss ➔ `Act IIA` Gauntlet Trials (`40% Drama : 40% Seedance Combat/Chase : 20% Fallout`) ➔ `Act IIB Midpoint` Broken Weapon (`State 2`) & Martial/Tactical Epiphany ➔ `Act III+IV Finale` (`60–70%` continuous `15.0s Seedance` Apex Boss Showdown + `1–2` scene Coda; `60% 10s : 40% 15s`).
+   - **Engine 4 — Detective Mystery, Crime Thriller & Horror (`4-Act Onion-Peel & Checkmate Engine`)**: `Act I` Impossible Crime & $\ge 2$ silent visual clues ➔ `Act IIA` Red Herring alibi collapse ➔ `Act IIB Midpoint` Hunter Becomes Hunted (`Mystery ➔ Suspense` switch) ➔ `Act III+IV Finale` Prestige Flashback Montage + Forensic Checkmate (`75% 10s : 25% 15s`).
+   - **Engine 5 — Situation Comedy, Rom-Com & School Comedy (`Episodic 4-Phase Snowball Farce & Reset Engine`)**: Crisp `6–8 scene (60s–80s)` self-contained loop (`Petty Spark ➔ Cover-Up Lie ➔ Farce Collision ➔ Status Quo Reset & Punchline Button`; `90% 10s : 10% 15s`).
+   - **Engine 6 — Healing, Slice-of-Life, Poetic Romance & Spiritual (`4-Movement Kishōtenketsu Engine`)**: Zero cartoon villains; progresses across `Ki (Quiet Solitude)` ➔ `Shō (Warm Connection)` ➔ `Ten (Sudden Rainstorm/Test)` ➔ `Ketsu (Wordless Resonance)` (`65% 10s : 35% 15s` with rich Foley & `Model 0 / 3A`).
 
 #### 2. Tier 2 (Meso): The Inter-Episode Binge Loop Engine
 To eliminate episode-to-episode fragmentation and engineer addictive binge retention:
@@ -168,11 +176,26 @@ To eliminate episode-to-episode fragmentation and engineer addictive binge reten
   - `00:00–00:07.5` of Episode N's Final Scene: Hero achieves temporary success or breathes a sigh of relief (False Dawn).
   - `00:07.5–00:09.5`: Hard shock disruption strikes (Cold Water Slap: an arrest warrant slammed onto table, a fire alarm screaming, a weapon cocked behind the door).
   - `00:09.5–00:10.0`: Immediate cut to black on the hero's paralyzed, breathless face.
-- **Zero Temporal Gap Standard**:
-  - Episode N+1 does NOT begin "the next morning" or "meanwhile elsewhere".
-  - Episode N+1 Scene 1 opens at the exact microsecond and camera angle where Episode N froze: the shock wave traveling, the hand trembling on the door handle, the breath caught in the throat.
+- **The 3 Cross-Episode Threads & 4 Flexible Episode-to-Episode Bridges (`Ep N ↔ Ep N+1`)**: Select `Bridge 1 (Zero-Gap Cliffhanger Relay)`, `Bridge 2 (Causal Aftermath Ellipsis / Time-Jump)`, `Bridge 3 (Parallel / POV Counter-Strike)`, or `Bridge 4 (Episodic Reset for Sitcom)` per PART VI §3 below.
 
-#### 3. Tier 3 (Micro): The Intra-Episode "Therefore / But" Causality Matrix
+
+
+#### 3. Tier 3 (Micro): The Intra-Episode "Therefore / But" Causality Matrix, The 3-Case Continuity Reference Point Law & `10.0s` Default (`@Director`) vs. `15.0s` Combat Routing (`@CombatDirector`)
+- **`10.0s` Default (`@Director`) vs. `15.0s` Exclusive Action/Combat (`@CombatDirector`) (`4-Regime Genre Authenticity Firewall`)**:
+  All standard dialogue, psychological drama, confrontation, and reaction scenes across all genres default strictly to **`10.0s` (`[🎭 MODEL TIÊU CHUẨN / LIP-SYNC · 10.0s]` — compiled by `@Director`)**. **`15.0s` scenes (`[⚡ MODEL KHUYẾN NGHỊ: SEEDANCE · 15.0s]`) are reserved EXCLUSIVELY for high-motion action, chase, physical struggle, or combat scenes and MUST be routed to `@CombatDirector` (`combat-director/SKILL.md`)**. In `Regime 1 (Grounded Realistic Drama)`, **NEVER force artificial spy break-ins, parkour chases, or martial arts fights**; only route a scene to `15.0s` (`@CombatDirector`) if the plot naturally involves a grounded physical struggle or commotion.
+- **Mandatory Per-Scene User Production & Reference Header (`[📌 CHỈ DẪN SẢN XUẤT & THAM CHIẾU CHO USER]`)**:
+  In the Episode Rough Script (`Kịch bản thô từng tập & đi sâu từng cảnh`), explicitly declare at the top of **every scene**:
+  1. **The 3-Case Continuity Reference Point Law (`Điểm Nối Tham Chiếu Giữa 2 Cảnh`)**:
+     - **Case 1 (`TH1 — CẦN THAM CHIẾU Khung Hình Cuối Cảnh Trước`: Same Time + Same Location)**: Flag `[TH1 — CẦN THAM CHIẾU: Dùng Ảnh Tĩnh Cuối Cảnh K-1 (@00:10.0 / @00:15.0) làm điểm nối 00:00.0 cho Cảnh K]`.
+     - **Case 2 (`TH2 — KHÔNG THAM CHIẾU Khung Hình Cảnh Trước`: Different Location, Time Jump, or Character Lineup Switch)**: Flag `[TH2 — KHÔNG THAM CHIẾU khung hình cảnh trước: Đổi bối cảnh/thời gian — User cung cấp Ảnh Tham Chiếu Bối Cảnh Mới <location_ref> + Ảnh Nhân Vật <char_ref>]`.
+     - **Case 3 (`TH3 — THAM CHIẾU NGOẠI LỆ Siêu Nhiên / Xuyên Không / Dịch Chuyển Không Gian`: Same Continuous Moment in Time + Instant Spatial Shift)**: Flag `[TH3 — THAM CHIẾU NGOẠI LỆ XUYÊN KHÔNG / SIÊU NHIÊN: Cùng thời điểm liên tục nhưng đổi không gian — Giữ nguyên tư thế cơ thể/quán tính/đạo cụ trên tay từ cuối Cảnh K-1 + Kết hợp Ảnh Tham Chiếu Bối Cảnh Thế Giới/Thời Đại Mới <new_location_ref>]`.
+  2. **AI Video Model, Duration & Agent Routing Tag (`Phân Loại Cảnh, Thời Lượng & Agent Phụ Trách`)**:
+     - **`[🎭 MODEL TIÊU CHUẨN / LIP-SYNC · 10.0s · @Director]`** (Default) for all dramatic dialogue, confrontation, and reaction scenes (`1.0x`).
+     - **`[⚡ MODEL KHUYẾN NGHỊ: SEEDANCE (High-Motion Action Engine) · 15.0s (hoặc 10.0s) · @CombatDirector]`** for all `15.0s` scenes and high-velocity action, chase, pursuit, struggle, ambush, or supernatural combat scenes.
+- **The 3 Screenplay Optimization Laws for Visual-Grounded Production (`workflow.md` §8.2)**:
+  1. *Smart Sequence Clustering (Gom Cụm Bối Cảnh Thông Minh)*: Partition each 6–12 scene episode into **2–3 cohesive Location Sequences**, grouping **2–4 consecutive scenes inside the same physical location** before moving to the next location. Never jump erratically across locations every 10s; clustering maximizes **Case 1 Static-Frame Continuation** (where Scene $K+1$ builds directly from Scene $K$'s extracted terminal frame).
+  2. *Clean Terminal Keyframe Landing (`@00:08.5–00:10.0` I2V-Ready Pose)*: Engineer the final `1.0s–1.5s` (`00:08.5–00:10.0`) of every scene so characters settle into a **Clean Dynamic Landing Pose (Điểm Đỗ Khung Hình Tĩnh Sắc Nét)** — clear facial orientation, grounded hand/prop contact, zero wild mid-swing motion blur (with living breathing/gaze tension; zero freeze-frame violation) — ready to be extracted by the user as Scene $K+1$'s exact First Frame (`00:00.0`).
+  3. *10-Second Micro-Action Economy*: Focus each 10s scene on **1 razor-sharp psychological turn + 1 grounded physical/tactile interaction + 1–2 high-subtext spoken volleys**; ban multi-corner room traversal clutter.
 Within any single episode, 10-second Scene Atoms must be forged together through relentless causality:
 - **Rule of Causality**:
   - ❌ *Banned ("And then")*: Scene 1 shows hero baking bread. Scene 2 shows hero walking in street. Scene 3 shows hero talking to merchant. (Disjointed slideshow).
@@ -196,15 +219,13 @@ Within any single episode, 10-second Scene Atoms must be forged together through
   - Zero expository chatter or reciting facts both characters already know. The spoken text is merely the tip of the iceberg; subtext carries the real lethal payload.
 * **Law 1: The Action-Reaction Chain (Gate 4C, warning)**: In an exchange, Speaker 2 answers, counters, deflects, or is changed by Speaker 1's line or action. Two characters stating parallel positions is a debate, not a scene. Single-speaker modes (solo line + silent listener, direct monologue, inner V.O.) are valid when the Intent Card states why (Doctrine §4).
 * **Law 2: The Keyword Handoff Relay (Gate 4C)**: The core noun/verb/concept of Scene N or Line 1 must be seized and weaponized in Scene N+1 or Line 2.
-* **Law 3: The Pronoun Shift Ladder & Post-Reconciliation Protocol (Gate 4D)**:
-  - *Setup*: Intimate Kinship (`Má - Con`, `Anh - Em`, `Mẹ - Con`).
-  - *Friction*: Sarcastic Distance (`Tôi - Chị/Cô`, stripping family status).
-  - *Climax*: Visceral Fury (`Tao - Mày`, primal territory defense).
-  - *Resolution & Catharsis*: Reclaimed maternal kinship (`Má - Con`, `con Duyên`, `con dâu`).
-  - **Post-Reconciliation Protocol (Project Rule, Gate 4D)**: Once reconciliation occurs, elders stop using alienating address terms. The scene number and the banned terms are declared per project in `output/<slug>/project_rules.json` (`kinship_ladder`); project example: from scene 6, Má Ba never uses `Chị`/`tui` and locks into `má - con`.
-* **Law 4: The 18-Word Acoustic Breath Limit & Anti-Bookish Grammar (Gates 4B & 4F)**:
-  - Hard cap <= 18 words per line — a ceiling, not a target. Most lines are far shorter, and lines shrink as stakes rise (Doctrine §3.4). Time each line with `0b-temporal-camera-grammar.md` §2.
-  - Spoken lines must use authentic Southern particles (`nghen`, `dạ`, `hà`, `hén`, `thiệt`, `hổng`, `vầy`, `dữ nghen`).
+* **Law 3: Character Voice Card (`Blind Voice Test`), Kinship Shift Threshold & Natural Spoken Syntax (`Tầng 1 Đối Thoại` & Gate 4D)**:
+  - **Voice Card (`Blind Voice Test`)**: Every character has a distinct sentence rhythm, profession-rooted word choice, kinship address pair (`Bố/Ba/Mẹ/Má – Con`, `Anh/Chị – Em`, `Tôi – Ông/Anh/Cô`, plus the emotional breaking point where address flips), ***What They Never Say Straight***, and fixed AI Voice Spec. Natural spoken phrasing (including short, elliptical spoken sentences and **shortest closing lines of 4–7 words**) is encouraged — never force unnatural full-pronoun-pair sentences on every line.
+  - **Post-Reconciliation Protocol (Project Rule, Gate 4D)**: In family/healing dramas, once reconciliation occurs, characters stop using alienating address terms as defined in `output/<slug>/project_rules.json` (`kinship_ladder`).
+* **Law 4: The 5-Tier Safe `2.5 words/s` Lip-Sync Word Budget & `10.0s` Default vs. `15.0s` Combat Routing (Gates 4B & 4F)**:
+  - **Default `10.0s` Scene (`@Director` — All Standard Dialogue, Drama, Confrontation & Reaction Beats)**: **`0–2 sentences`**, **`15–22 words total`** across the entire clip (`8–11 words` per 5s beat), max `2` turns (`1 speaker per 5s beat`).
+  - **Exclusive `15.0s` Scene (`@CombatDirector` `[⚡ SEEDANCE · 15.0s]` — High-Motion Action, Chase, Struggle & Combat Only)**: **`0` spoken words** (or max `1` clinch vow `≤ 5–6 words`).
+  - **Shortest Closing Line**: The closing line of a scene is the shortest line in that scene (`4–7 words`), finishing $\ge 1.0\text{s}$ before the clip ends.
   - Zero bookish written conjunctions (`bởi vì`, `cho nên`, `tuy nhiên`, `mặc dù`).
 * **Law 5: The Domestic Prop & Biological Meal Continuity Standard (Gate 4E)**:
   - Continuous timeline scenes must maintain 100% biological and culinary continuity. A postpartum dish prepared in the kitchen (`canh bồ ngót thịt bằm`) must be the exact dish served and eaten in the bedroom.
@@ -226,7 +247,7 @@ Within any single episode, 10-second Scene Atoms must be forged together through
 ### 7C. Universal 4-View Visual Reference Asset Standard (Quy Chuẩn Ảnh Tham Chiếu 4 Góc)
 * **Characters (Sovereign 16:9 Multi-Angle Standard — Human & Non-Human Classification)**:
   - Formal 16:9 Midjourney/Flux Model Sheet Prompt with Multi-Angle Composition (Zero-Text Standard): Strictly zero text, zero typography, zero metadata card on canvas (100% visual imagery); Optical Value Contrast Inversion Law (Pure White vs Dark Charcoal backdrop; zero background scenery):
-    1. **Adult Human (Core Standard)**: Left-Center Area (~55–60% width) Three-Angle Full-Body Turnaround in natural relaxed standing posture with arms resting loosely beside torso, feet naturally grounded on floor: 1) Headless neck-down front view (strictly zero head and zero face); 2) Headless neck-down 90-degree lateral side profile view (strictly zero head and zero face); 3) Full-length rear back view INCLUDING complete back of head and rear hairstyle; and Right-Area Prominent Zoomed-In Direct Frontal Full-Head Portrait (~40–45% width in strictly direct frontal eye-level view facing camera directly for razor-sharp facial bone structure, eyes, hair, spectacles, and collar hardware). **The Headroom & Full-Cranial Retention Law**: Portrait MUST be framed with safe headroom breathing space above the hair crown, ensuring the entire head, complete hairstyle volume, and cranial curve are 100% visible inside the frame without touching or clipping canvas borders;
+    1. **Adult Human (Core Standard & 1:1 Horizontal Shoulder-Waist-Heel Alignment Law)**: Must explicitly declare `4 figures arranged from left to right across two zones` (`Left & Center Zone = 55% width` for 3 compact full-body turnaround figures at identical 1:1 body scale + `Right Zone = 45% width` for Figure 4 large frontal chest-up portrait). In the Left-Center Zone (55% width), all 3 turnaround bodies stand in a natural relaxed posture on the exact same horizontal floor baseline and **MUST share the exact same 1:1 anatomical body size with strictly aligned horizontal shoulder lines, chest lines, garment hems, waistlines, and shoe heels**: 1) Figure 1 (Far Left — Front full-body view from base of neck to shoes at the exact same horizontal shoulder height as Figure 3, with a clean mannequin-style neck termination at the collar and wide empty studio background space above the neck; strictly zero head, zero face, and never stretching the headless body to touch the top border); 2) Figure 2 (Center-Left — 90-degree lateral side profile full-body view from base of neck to shoes at the exact same horizontal shoulder height as Figure 3, with a clean mannequin-style neck termination and wide empty studio background space above the neck; strictly zero head, zero face); 3) Figure 3 (Center — Full-length rear back view INCLUDING complete back of head and rear hairstyle extending into the upper space above the shared shoulder line, aligned strictly horizontally with Figures 1 & 2 at the shoulders, waist, and heels). In the Right Zone (45% width), Figure 4 is a Prominent Zoomed-In Direct Frontal Full-Head Portrait in strictly direct frontal eye-level view facing camera directly for razor-sharp facial bone structure, **skin complexion finish, persona-calibrated female makeup [brows, eyeliner/eyeshadow, blush/contour, lip tint/matte color] or male grooming [chiseled jaw contour, groomed brows, clean-shaven or 1mm designer stubble, healthy natural lip tone] per Pillar 2 §1B**, eyes, hair, spectacles, and collar hardware — strictly banning generic `"no heavy makeup, thin natural nude lips"` boilerplate. **The Headroom & Full-Cranial Retention Law**: Portrait MUST be 100% visible inside the right 45% of the frame with safe headroom breathing space above the hair crown;
     2. **Human Minor (< 18 years old — Minor-Safe Mẫu 0B)**: Three full-length views with head intact + head-and-shoulders portrait, neutral casting, zero glamour/beauty, zero adult labels;
     3. **Non-Human Entity (Robot, Mecha, Creature, Beast — Mẫu 3)**: Anatomical structures (head, snout, horns, visor, crest) are organically tied to the body (strictly NO headless cut); Three full-body turnaround views WITH COMPLETE HEAD (front, 90° lateral side profile, rear back view) + Right-Area Prominent High-Definition Upper Torso to Head Medium Shot capturing full head, cranial features, optical sensors/eyes, horns/mandibles, surface wear, and safe headroom margin.
 * **Locations (Architectural 4-Panel Grid & Natural English Naming)**:
@@ -238,12 +259,13 @@ Within any single episode, 10-second Scene Atoms must be forged together through
     4. *Bottom-Right*: Ground-Level Key Landmark View (the fixture where the main action happens: bedside, altar, crib, dining table).
   - Lighting stays uniform across all 4 panels; time of day is set per scene in `[context]:`.
   - Prompts must maintain strict architectural and material continuity across all 4 panels.
-* **Key Props & The Two-Tier Implementation Standard (Doctrine §10.5)**:
-  - **Tier 1: Đạo Cụ Linh Hồn & Phương Tiện Bất Ly Thân (Signature Hero Props & Vehicles — CẦN ẢNH THAM CHIẾU / Max 1–2 per series)**: Vũ khí, thanh kiếm, súng lục, xe máy, xe hơi, kỷ vật gia truyền, bản di chúc, hợp đồng chứng cứ sống còn (`blood wax seal`, `ancestral sword`, `worn leather ledger`). **MANDATORY 16:9 4-VIEW MODEL SHEET (Mode B)** trong `setting.html` Section 4A và gắn thẻ neo `[100% Refer to image <ref>]` trong `[PROP]:` của prompt video để chống biến dạng hoặc mất trí nhớ thị giác giữa các cảnh. Khống chế tối đa 1–2 món cốt lõi mỗi series.
-  - **Tier 2: Đồ Đạc Sinh Hoạt Căn Bản (Everyday Living Items — CHỈ CẦN TEXT CHI TIẾT LÀ ĐỦ)**: Bát cơm, đôi đũa, muỗng inox, ly nước, chổi quét nhà, sổ ghi chép (`chipped ceramic rice bowl`, `steel soup spoon`, `clear water glass`). **100% PURE RICH TEXT DESCRIPTION (Mode A)** với ZERO image turnaround generation (tiết kiệm 80% thời gian tiền kỳ). Mô tả bằng văn bản chi tiết, giàu chất liệu trong `[PROP]:`, mỗi món một dòng kèm vị trí đặt tĩnh độc lập với tay nhân vật.
-  - **The Two-Tier `[PROP]:` Scope Law (mirrors DIRECTOR.md §1c & §5b)**: Thẻ `[PROP]:` chứa MỌI vật cầm tay nhân vật sẽ nhấc, cầm, di chuyển trong cảnh (Tier 1 có thẻ ảnh, Tier 2 chỉ mô tả văn bản), mỗi món một dòng kèm vị trí đặt tĩnh. Đồ nội thất, vật cố định và set dressing (chăn gối nệm, bàn ghế, tủ giường, nôi, rèm cửa, quạt máy, đèn ngủ...) **TUYỆT ĐỐI CẤM ĐƯA VÀO `[PROP]:`**; chúng thuộc 100% về `[context]:`. Nếu cảnh không có vật cầm tay nào, khai báo `[PROP]: none (pure environmental and somatic staging)`.
-  - **Comprehensive In-Context Setting Inventory & The Zero Ghost Object Law (Kiểm Kê Bối Cảnh Toàn Diện & Chống Vật Thể Ma)**: Khi biên soạn bối cảnh trong `setting.html` và kịch bản cảnh, biên kịch BẮT BUỘC liệt kê đầy đủ đồ đạc, chăn màn, bề mặt vật lý của không gian ("có cái gì ở đó": ví dụ giường gỗ gụ trải đệm bông, tấm chăn len thô gấp ở đuôi giường, bàn trà gỗ, rèm vải, cửa sổ mở hờ, hơi nước bốc lên từ chậu gốm). Mọi vật dụng được nhân vật chạm vào, kéo lên hay tương tác trong diễn hoạt kịch bản (ví dụ kéo chăn, bám thành giường) BẮT BUỘC phải hiện diện trước trong mô tả `[context]:`. Tuyệt đối cấm tạo ra "vật thể ma" (ghost objects) đột ngột xuất hiện ở phần hành động mà bối cảnh không có.
-  - **Triad Naming Standard (mirrors DIRECTOR.md §7)**: Tên bối cảnh và đạo cụ trong prompt viết bằng tiếng Anh tự nhiên có nghĩa, KHÔNG dấu gạch dưới (`rustic wooden bedroom`, `townhouse living room`, `steaming ceramic ginger bowl`, `worn leather ledger`). Tên file ảnh tham chiếu được giữ gạch dưới (`rustic_bedroom_4view.jpg`, `ginger_tea_bowl.jpg`). Tuyệt đối CẤM phiên âm bồi tiếng Việt (`phong_ngu_01`, `tam_chan_len`, `bat_tra_gung`, `nha_bep`). Riêng tên nhân vật giữ chuẩn `ho_ten` không dấu (`my_duyen`, `minh_khang`).
+* **Key Props, Weapons & The End-to-End Two-Tier Consistency Standard (`Stage 1 ➔ Stage 2 setting.html ➔ Stage 3 Rough Script ➔ Stage 4 [prop]: <<<Image X>>>`)**:
+  - **Tier 1: Signature Hero Props, Weapons & Key Artifacts (`Mandatory 16:9 4-View Isolated Prop Model Sheet in setting.html` + Dedicated `[prop]: <<<Image X>>>` Header)**: Any weapon (`silver dragon-hilted longsword`, `tactical dagger`), heirloom/seal (`imperial white jade seal`, `tarnished brass truck keyring`), or decisive legal/forensic artifact (`leather-bound transfer contract`, `black debt ledger`) that **(a) recurs across multiple scenes/episodes**, OR **(b) is featured in a `Shot 2` macro close-up reveal**, OR **(c) undergoes a 3-state physical transformation (`State 0 Intact ➔ State 1 Activated/Glowing/Cracked ➔ State 2 Shattered/Reforged`)**.
+  - **100% Isolated Zero-Hand / Zero-Text Prop Sheet Law (`prop-[short_noun].jpg`)**: In `setting.html` Section 4A (`#props`), every Tier-1 Weapon/Prop prompt renders `4 orthogonal & macro views` (`Front, 90° Side, Top/Back, 45° Macro Detail`) on a clean `#FFFFFF` (or dark neutral charcoal) studio backdrop, **100% isolated with ZERO human hands, fingers, or arms attached and ZERO text/labels** so `<<<Image X>>>` never causes extra phantom hands in AI video generation.
+  - **Double-Lock `[prop]:` Header in Stage 4**: `[Canonical Prop/Weapon Name] <<<Image 4>>> (100% shape, material, engravings, proportions, and visual details strictly refer to this reference image): [Exact 00:00 placement or hand-grip state] — the only [Canonical Prop/Weapon Name] in frame.`
+  - **Tier 2: Everyday Single-Scene Items (`Zero Image Sheet` | Pure Rich Text)**: Common single-use items (`crystal red wine glass`, `ceramic teacup`, `smartphone`) described directly inside `[context]:` and `[subject]:` initial hand/table states without separate image sheets.
+  - **Comprehensive In-Context Setting Inventory & Zero Ghost Object Law**: Every fixed fixture touched, leaned on, or gripped by a character MUST be pre-declared in `[context]:`, and every Tier-1 prop/weapon MUST be pre-declared in `[prop]:` and Stage 3 per-scene headers.
+  - **Triad Naming Standard**: Character names use fixed **Proper Names** (`Bradley`, `Harold`, `Elena`, `Dante`, `Kael`, `Martha` — never `snake_case` `ho_ten` or generic `Woman/Man`). Location and prop names in prompts are written in meaningful natural English without underscores (`grand mansion mahogany dining room`, `silver dragon-hilted longsword`, `tarnished brass truck keyring`). Reference image filenames use clean hyphenated names (`[name]-home/work/date/outing.jpg`, `loc-*.jpg`, `prop-*.jpg`).
 
 ### 2. The 6-Level Cinematic Structural Hierarchy & Narrative Glossary
 1. **Level 6: Feature Film / Full Series** (Complete Character Transformation Arc).
@@ -346,6 +368,27 @@ Characters never operate in isolation. Both camps possess symmetric humanizing s
   - `B-V2 (The Antagonist's Heart / Achilles' Heel)`: Sick daughter, blind mother — the secret motive for A2's greed. When A1 saves B-V2 instead of taking revenge, A2's ego collapses (*Anagnorisis*).
   - `B-V3 (The Corrupting Whisperer)`: Toxic counselor preventing A2 from redeeming themselves.
 
+* **Dynamic Cast Sizing Law (Episode-Scaled Cast Quotas)**:
+  - *Short Film (1 Episode / 6–12 scenes)*: **3–4 named characters** (`A1–A2` axis, 1 Companion, 1–2 `Tier C` Chorus). Serves 1 central reversal twist.
+  - *Mini-Series (3–5 Episodes / 30–50 scenes)*: **5–6 named characters** (`A1–A2` axis, 2 `A1` Allies, 1 Gray-Zone/Judas Lever, 1 `A2` Dragon/Achilles' Heel). Serves a 3–4 twist chain.
+  - *Full Series (6–10+ Episodes / 60–100 scenes)*: **7–9 named characters** (`A1–A2` axis, 3 `A1` Satellites, 2–3 `A2` Satellites, 1–2 Cross-Faction Levers, `Tier C` Chorus). Serves multi-layered subplots, generational conflict, and faction reversals.
+  - *Mega Series (12–20+ Episodes / 120–200 scenes)*: **10–14 named characters** (2 Major Factions, 3 Thematic Mirror Pairs, institutional/dynastic web). Weaves 3 independent plotlines (`A-Plot`, `B-Plot`, `C-Plot`).
+  - *The Twist-Driven Casting Mandate*: Strictly FORBID adding any named character who does not carry an explicit twist function (`TW-01..20`), an independent moral dilemma, and direct gravitational leverage on `A1`'s transformation.
+
+* **The Subplot Weaving Architecture ("Every Secondary Character Is the Protagonist of Their Own Story")**:
+  - *Core Principle*: Secondary characters are NEVER authorial mouthpieces or mechanical plot-delivery robots. Every Tier B character possesses an independent psychological profile: (1) Root `Wound`, (2) Active `Want`, and (3) Moral Dilemma.
+  - *The Triple-Helix Plot Weave (`A-Plot / B-Plot / C-Plot`)*:
+    * **A-Plot (55–65% — Master Spine)**: The primary external/existential conflict between `A1` and `A2` (investigation, survival, inheritance, institutional battle).
+    * **B-Plot (25–30% — Relationship & Thematic Mirror)**: The intimate bond between `A1` and the Moral Anchor (`B-A1`) or the Antagonist's Heart (`B-V2`), directly testing `A1`'s `Wound` and `Lie`.
+    * **C-Plot (10–15% — Satellite Betrayal, Temptation, or Parallel Pressure)**: The independent trajectory of the compromised satellite (`B-Cross 2 Judas`), turncoat defector (`B-Cross 3`), or ticking institutional audit.
+  - *The Thematic Mirror Law*: The entire series revolves around ONE Central Thematic Question. Each secondary character's subplot represents a contrasting lived answer to that question, reflecting and pressuring `A1`'s flawed belief (`The Lie`).
+  - *The Domino Ripple Law*: Subplots NEVER run in isolated parallel tracks. Every flawed tactical choice made by `A1` in the `A-Plot` MUST strike a collateral blow to the companion in the `B-Plot` and inadvertently trigger the betrayal or counter-move in the `C-Plot`.
+  - *The 4-Act Macro Weaving Matrix (`20% – 45% – 25% – 10%`)*:
+    * **Act 1 (20% — Setup & Inciting Trap)**: Establish `A1`, `A2`, and activate each secondary character's independent `Want`.
+    * **Act 2A/2B (45% — Crucible & Midpoint Reversal)**: Subplots collide fiercely with `A1`; the compromised ally strikes (`Judas Kiss`); hidden identity/motive secrets detonate at the Midpoint.
+    * **Act 3 (25% — Abyss & All Hope Is Lost)**: ALL principal and secondary characters hit personal rock bottom and face a **Costly Moral Choice**.
+    * **Act 4 (10% — Convergence & Earned Resolution)**: `A-Plot`, `B-Plot`, and `C-Plot` converge into a single climactic crucible where `A1` breaks their `Lie` and resolves the central conflict with `A2`.
+
 ---
 
 ### 6. The Master Cinematic Prop Architecture & 3 AI Video Iron Laws (Nghệ Thuật Đạo Cụ)
@@ -359,8 +402,8 @@ In masterclass cinema, **props are never background clutter or decorative furnit
    - `Function 5: The MacGuffin vs. The Truth Bomb` — Objects fought over by factions to test human greed vs. virtue, or the decisive forensic catalyst that shatters deception.
 
 2. **The 3 Iron Laws of Props in Generative AI Video**:
-   - **Law 1: Single Focal Prop Law**: STRICTLY MAXIMUM 1 interactive prop per scene to prevent diffusion model finger warping and floating artifacts.
-   - **Law 2: Simple Geometry Law**: Mandatory solid, clearly textured geometries with tactile wear (frayed leather ledger, wax-sealed envelope, tarnished heavy brass key, rustic ceramic tea bowl) — BAN on complex glassy/liquid/multi-gear objects.
+   - **Law 1: Single Focal Action Per Phase Law (`Gate 3R`)**: Keep each scene focused on 1–2 primary interactive props (e.g., a bowl + spoon, or a contract + pen), and limit each character to **1 primary macro prop action per phase** to prevent diffusion model finger warping and floating artifacts.
+   - **Law 2: Simple Geometry Law**: Mandatory solid, clearly textured geometries with tactile wear (frayed leather ledger, wax-sealed envelope, tarnished heavy brass key, rustic ceramic tea bowl) — BAN on complex multi-gear clutter.
    - **Law 3: Tactile Locking Syntax**: Prompts MUST declare anatomical contact mechanics (e.g., `"dirt-crusted thumb and scarred index finger press firmly into the worn leather edge, knuckles blanching with physical tension"`).
 
 3. **The Prop Mutability Lifecycle & Mandatory Entity Re-Naming Law (Quy Luật Đổi Tên Thực Thể Sau Phá Hủy)**:
@@ -373,7 +416,7 @@ In masterclass cinema, **props are never background clutter or decorative furnit
      - Retaining the intact noun (`The book falls`) causes generative diffusion models to hallucinate an intact book.
      - **Surface Alterations vs Structural Fractures**:
        - *Surface Alterations* (`soot-stained sleeve`, `mud-splattered ledger cover`): Retain canonical entity noun + surface texture adjectives.
-       - *Structural Fractures* (torn, broken, shattered, burnt): BẮT BUỘC ĐỔI TÊN THÀNH THỰC THỂ MẢNH VỠ MỚI.
+       - *Structural Fractures* (torn, broken, shattered, burnt): cần ĐỔI TÊN THÀNH THỰC THỂ MẢNH VỠ MỚI.
 
 4. **Minimalist Prop Law (Luật Tối Giản Đạo Cụ)**:
    - Strictly 1–2 Primary Conflict Anchor Props per 100s episode. Zero background clutter.
@@ -383,9 +426,9 @@ In masterclass cinema, **props are never background clutter or decorative furnit
    - Heavy furniture, fixtures, and major architectural elements (Pine Crib, Dining Table, Bed, Altar) are permanently locked to their designated room/space coordinates across all scenes.
    - Heavy fixtures CANNOT teleport between rooms across scenes (e.g. pine crib in bedroom stays in bedroom across all 10 scenes).
 
-6. **Anti-Ghost Prop Law & Single Instance Lock (Chống Nhân Bản Đạo Cụ)**:
-   - In generative diffusion models (Kling, Runway, Sora), every active prop exists as strictly **ONE physical instance**.
-   - **Explicit Resting Surface Clearance**: When a prop is lifted/moved from a surface, the screenplay and prompt MUST explicitly declare that the resting surface is clear (e.g., `leaving the tiled floor completely clear`), preventing diffusion text encoders from rendering duplicate ghost props.
+6. **Anti-Ghost Prop Law & Minimal Prop Interaction (Chống Nhân Bản & Chống Méo Đạo Cụ)**:
+   - In generative diffusion models (Kling, Runway, Sora), every active prop exists as strictly **ONE physical instance** (`— the only [prop] in frame`).
+   - **Single Interaction & Fixed Noun Phrase**: Each small prop has at most **1 interaction per clip** (either setting down OR lifting) using **1 fixed short noun phrase**, and **NEVER adds redundant auxiliary phrases like `"leaving the floor/table clear"`**.
    - **Master Prop Continuity Ledger**: Screenwriter and Director must maintain an unbroken chain-of-custody log from Scene 01 to Scene N.
 
 ---
@@ -396,44 +439,179 @@ In masterclass cinema, **props are never background clutter or decorative furnit
 
 ---
 
-### 7. Universal Dialogue Architecture & WPS Physics Law
-* **The 8 Master Dialogue Models**:
-  - `Model 1`: Symmetrical Binary Exchange (5s–4s–1s · ~16–18w · Multi-Shot 2-Cut).
-  - `Model 1B`: Rapid-Fire Staccato Volleys (2s–2s–2s–3s–1s · ~16–18w · Multi-Shot 4-Cut).
-  - `Model 2`: Group/Ensemble Exchange (3-Way Triangular · ~15–18w · Multi-Shot 3-Cut).
-  - `Model 3`: Solo Lead & Shock Retort (4s–5s–1s · ~7–9w · Single-Shot Push or Multi-Shot).
-  - `Model 4`: Internal Monologue V.O. (Lips 100% SEALED · ~12–16w · Single-Shot Static).
-  - `Model 5`: Off-Screen Authority O.S. (Intercom / Afar · ~14–18w · Single-Shot or Multi-Shot).
-  - `Model 6`: Proximity Whisper (Hushed intimacy · ~10–13w · Single-Shot Glide).
-  - `Model 7`: Kinetic Cut-Off Collision (Sentence slammed shut by physical impact · ~12–15w).
-  - `Model 8`: Subjective P.O.V. Direct Address (Breaking 4th wall / Rescue gaze · ~14–18w).
-  - `Model 0`: Pure Physical Kinetic Action (Zero dialogue · purely audio-visual).
-* **WPS Physics Cadence**: 1.1–2.4 Words Per Second. Max 14–18 English words per 10s clip.
-* **Dialogue Word Count Hard Cap (Gate 4B)**: STRICTLY MAXIMUM 18 WORDS per spoken dialogue line across ALL languages (Vietnamese, English, etc.). Any line exceeding 18 words causes lip-sync failure, pacing collapse, and subtitle overflow.
-* **Vietnamese Subtitle Ceiling**: $\le 18$ words / $\le 120$ characters per spoken line (~1.8–2.4 WPS matching the 2-line subtitle reading limit), distributed dynamically across the 10.0s scene atom.
-* **Script-Driven Dialogue Pacing & Strict Ban on Cutoff Dogma**: In every 10.0s scene atom, dialogue word count is capped at <= 18 words per line to guarantee realistic lip-sync and breathing room. Shot timing, pauses, and reactions are shaped organically by the screenplay rather than rigid formulas. Strictly BAN dogmatic claims like "tuyệt đối không thoại sau 00:08.5" or forced 1.5s silence buffers; dialogue can occur at any second in the scene based on dramatic beats.
-* **Authentic Southern Vietnamese Colloquial Standard**: For domestic Southern family dramas, use authentic Southern particles and vocabulary (`nghen`, `dạ`, `hén`, `thiệt`, `hổng`, `sao`, `trời`, `má`, `con`, `ba`) instead of stiff, northern/formal or literary phrasing.
-* **4-in-1 Directing Parenthetical Syntax**: Every dialogue line must feature `(Tone, Gesture, Gaze, Respiration)`.
-
----
-
-### 7B. Mandatory Setting Bible Assembly Law (`setting.html` & Gate 1.5)
-The Screenwriter is the primary author of the Master Pre-Production Bible (`setting.html`).
+### 7B. Mandatory Setting Bible Assembly Law (`setting.html` ONLY & Gate 1.5)
+The Screenwriter is the primary author of the **SOLE HTML file in the project: `output/<slug>/setting.html`**.
 * **The "No Prompt Code, No Pass" Law**:
-  - Every character (Tier A1, B1, B2, B3, B4), prop, and location MUST feature:
-    1. A formal 16:9 Midjourney/Flux Model Sheet Prompt adhering to the Sovereign Multi-Angle Composition (Zero-Text Standard, Three-Angle Full-Body Turnaround in Natural Stance, Dominant Right-Half Cinematic Frontal Portrait) and Optical Value Contrast Inversion Law.
+  - Every character (Tier A1, B1, B2, B3, B4), Tier-1 hero prop, and location MUST feature:
+    1. A formal 16:9 Midjourney/Flux/Imagen Model Sheet Prompt adhering to the Sovereign Multi-Angle Composition (`Mẫu 1A/1B` Live-Action, `Mẫu 2` Game CG, `Mẫu 2B` 3D Semi-Realistic Animation, `Mẫu 0B` Minor, or `Mẫu 3` Non-Human) and Optical Value Contrast Inversion Law.
     2. A clean Mode B Video Reference Prompt Snippet adhering to the **Zero-Costume & Zero-Age Law**.
-  - **Strictly FORBIDDEN**: Summarizing characters with text descriptions only without compiling technical prompt blocks.
 * **Gate 1.5 Self-Verification**:
-  - The Screenwriter must verify that `setting.html` passes `python engine/setting_audit_suite.py` before signaling Level 1 Sven-Agent for Checkpoint 1 review.
+  - Verify that `setting.html` passes `python engine/setting_audit_suite.py` before presenting Checkpoint 2 (`✋ CP2`) so the user can prepare reference images.
 
 ---
 
-### 8. Absolute Humanitarian Mandate: Positive Ending & Zero-Fatality Law
-* **Zero Killings / Zero Executions / Zero Bloodshed as a Solution**:
-  - Violence is strictly rejected as a moral resolution.
-  - A2 faces accountability through **Moral Epiphany (Anagnorisis), legal disarmament, and restorative restitution**.
-  - A1 rejects vengeance, breaks generational trauma, and achieves spiritual transcendence.
-  - When the story has a Tier C chorus, it reconciles through what it witnessed, not through a speech.
-  - The ending costs someone something and answers the thematic question with an action or image (Doctrine §8.8).
-  - Because the viewer knows the ending will be good, surprise lives in how, at what cost and who changes; make the bad outcome feel possible for at least one scene (Doctrine §9.3).
+### 8. Zero-Fatality Platform Safety Guardrail & Genre-Calibrated Resolution Law (`1-narrative-screenplay-architecture.md` §0.1 & §1)
+* **Zero Killings / Zero Executions / Zero Gore System-Wide** (platform safety guardrail), while **Climax & Resolution calibrate strictly by Genre** (never force sentimental forgiveness onto Crime Thrillers, Revenge Microdramas, or Martial Arts Action):
+  - **Social, Family & Healing Drama (`drama.md`)**: `A2` faces accountability through **Moral Epiphany (`Anagnorisis`), legal disarmament, and restorative forgiveness**; `A1` breaks generational trauma.
+  - **Action, Martial Arts & Supernatural Combat (`action.md`)**: Resolves via **Martial/Tactical Breakthrough, Weapon Shattering, Non-Lethal Knockout & Lawful Restraint**.
+  - **Time-Travel, Portal Isekai & Cultivation Fantasy (`fantasy.md`)**: Resolves via **Realm/Tactical Breakthrough, Artifact Evolution & Sovereign Destiny Fulfillment**.
+  - **Thriller, Mystery & Crime (`thriller.md`)**: Resolves via **Forensic/Intellectual Checkmate & Cold Legal Arrest** (zero sentimental forgiveness).
+  - **Viral Microdrama (`microdrama.md`)**: Resolves via **Total Status Reversal, Public Unmasking & Decisive Severing of Toxic Ties** (zero cheap forgiveness).
+  - **Situation Comedy (`sitcom.md`)**: Resolves via **Comedic Snowball Collapse & Status Quo Reset**.
+* The ending always costs someone something real and answers the thematic question with an action or image (Doctrine §8.8).
+
+---
+
+## 🎬 PART IV: 5-TIER SERIES DEPLOYMENT & 5-TIER DIALOGUE ARCHITECTURE (TOP-DOWN MASTER FRAMEWORK)
+
+Deploy every series and episode top-down from macro to micro: **Series ➔ Episode ➔ Inter-Episode Links ➔ Scene Rough Prose ➔ Inter-Scene Links**. Lock the upper tier before writing the lower tier so no single scene or line drifts from the master story.
+
+### 1. The 5-Tier Series Architecture (Quy Tắc Triển Khai Phim Dài Tập 5 Tầng)
+- **Tier 1 — Series Core (Locked Once at Stage 1 & `setting.html`)**:
+  1. **Logline**: Who wants what, obstructed by what, and the cost of failure.
+  2. **Central Question**: The core question keeping the audience watching across the entire series.
+  3. **Protagonist Goal**: External **Want** vs. Internal **Need** (in tension).
+  4. **Antagonist / Opposing Force**: Holds their own autonomous goal and logic, not merely obstructing for the sake of obstructing.
+  5. **Master Secret**: What is hidden and the exact reveal point (**~2/3 of the series** — never spoiled in Episode 1).
+  6. **Transformation Arc**: Protagonist shifts from State A (opening) to State B (finale).
+  7. **Episode & Act Allocation**: e.g., 12 episodes across 4 acts (`3 eps / act`).
+  8. **Ending**: Known upfront before writing Episode 1.
+  *Rule*: Every episode advances either the **Central Question** or the **Transformation Arc**; if it advances neither, cut it.
+- **Tier 2 — Episode Core (`12–18 Scenes` of `10s / 15s` ≈ 3 Minutes)**:
+  1. **Episode Goal**: What the protagonist wants to achieve *in this episode*.
+  2. **Obstacle**: What blocks them *in this episode*.
+  3. **One Main Shift (Irreversible Change)**: By episode end, the situation, relationship, or knowledge is permanently different from the start.
+  4. **One New Layer of the Master Secret**: Peels back one new layer without exposing everything.
+  5. **4-Beat Structure**: **Open/Hook (`15–20%`, 2–3 scenes)** $\to$ **Develop (`40–50%`, 6–8 scenes)** $\to$ **Climax (`20–25%`, 3–4 scenes)** $\to$ **Close/Cliffhanger (`10%`, 1–2 scenes)**.
+  6. **One Memorable Visual Detail or Prop**: Carried forward as an inter-episode link.
+- **Tier 3 — Inter-Episode Links (Use $\ge 2$ of 4 Link Types per Episode)**:
+  1. **Cliffhanger**: Write the cliffhanger *before* writing the next episode; Episode $N+1$ opens directly with its visible consequence.
+  2. **Setup & Payoff (`Mồi & Trả`)**: Plant in Ep $N$, pay off in Ep $N+2$ or later.
+  3. **Consequence**: Action in Ep $N$ produces a concrete visible consequence in Ep $N+1$.
+  4. **Recurring Motif**: An image, sound, or phrase (`vintage brass truck keyring`) returning with new meaning each time.
+  *Mandatory Tracking Table*: `| Tập | Mục tiêu | Chuyển biến | Mồi cài | Trả mồi | Cliffhanger |`.
+- **Tier 4 — Scene Rough Prose (`Mặc Định 10s @Director — Cảnh 15s Chuyển Qua @CombatDirector`)**:
+  - **Each scene (`10s` default or `15s` action/combat) has ONE job (`1 việc duy nhất`)**: **Default `10s` (`@Director`)** = all standard dialogue, psychological drama, confrontation, and reaction beats; **Exclusive `15s` (`@CombatDirector` `[⚡ SEEDANCE · 15.0s]`)** = high-motion action, chase, physical struggle, and combat beats.
+  - Write each scene in **continuous present-tense prose** (never chop rough screenplay prose into seconds): (1) *Scene Purpose* (1 sentence), (2) *Location, Characters Present (max 2–3 active in frame), Time*, (3) *Observable Physical Action*, (4) *Dialogue (`0–2` short lines, `15–22w` total for `10s` `@Director`; `0–6w` max for `15s` `@CombatDirector`)*, (5) *End-of-Scene Change*.
+- **Tier 5 — Inter-Scene Links (`"Vì vậy" / "Nhưng"` Causality Chain — Zero `"Và rồi"`)**:
+  - Link every consecutive scene via **"Therefore (`Vì vậy`)"** or **"But (`Nhưng`)"** — if the link is *"And then (`Và rồi`)"*, the scene is redundant and gets cut or merged.
+  - Apply 4 micro-bridges: (1) *Action $\to$ Reaction*, (2) *Visual / Sound Bridge* (repeat last image/object/sound in the first second of the next scene), (3) *Unfinished Question*, and (4) *Rhythm Contrast* (tense $\leftrightarrow$ quiet, crowded $\leftrightarrow$ 2-person, dialogue $\leftrightarrow$ silent).
+
+---
+
+## 💬 PART V: 5-TIER DIALOGUE ARCHITECTURE (`2.5 WORDS/S` SAFE AI LIP-SYNC STANDARD)
+
+- **Tier 1 — Character Voice Profile (`Blind Voice Test` — Cover the Name and Still Know Who Speaks)**:
+  1. **Sentence Rhythm**: Short & decisive vs. roundabout & polite vs. dry & observant.
+  2. **Vocabulary & Imagery**: Rooted in background/profession (trucking/freight vs. finance vs. domestic warmth).
+  3. **Kinship Address & Shift Threshold**: How they address each person (`Bố – Con`, `Anh – Em`, `Tôi – Ông`) and the exact emotional threshold where address shifts.
+  4. ***What They Never Say Straight***: The core insecurity or truth they always deflect or express through objects/actions.
+  5. **Single Vocal-Timbre + Tone Tag (`Cách 1` — Zero Numeric Age)**: `([vocal timbre/maturity], [baseline tone])` (e.g., `(deep weathered baritone, calm unhurried tone)`, `(warm maternal alto, soft affectionate tone)`, `(clear youthful alto, low steely tone)`).
+- **Tier 2 — Episode Dialogue Rules**:
+  - **One Core Conversational Axis** + **1–2 Memorably Sharp Lines per Episode**.
+  - **At Least 1 Silent or Near-Silent Scene per Episode** (action and expression carry 100% of the weight).
+  - **Image Speaks First, Dialogue Speaks Second**: Never repeat in words what the camera already shows (*if a hand trembles, never say "I'm scared"*).
+- **Tier 3 — Inter-Episode Dialogue Ledger (`Sổ Thoại`)**:
+  - Track: (1) **Echo Lines** (repeated later with inverted power), (2) **Promises / Threats**, (3) **Planted Lies**, and (4) **Kinship Address Shifts**.
+- **Tier 4 — Scene Dialogue (`10s` Default `@Director` vs. `15s` Action/Combat `@CombatDirector` — Safe `2.5 words/s` Budget)**:
+  - **Default `10.0s` Scene (`@Director`)**: **`0–2` sentences, `15–22 words total`** across the entire clip (`8–11 words` per 5s beat), max `2` turns (`1 speaker per 5s beat`).
+  - **Exclusive `15.0s` Scene (`@CombatDirector` `[⚡ SEEDANCE · 15.0s]`)**: **`0` spoken words** (or max `1` clinch vow `≤ 5–6 words`).
+  - **4 Iron Dialogue Rules**: (1) **Indirect Subtext** (*Father asks "Con vẫn đi chiếc xe tải cũ đó à?" instead of "Ta thương con vất vả"*); (2) **Enter in the Middle of Conflict** (*zero greetings like "Chào bố con về rồi"*); (3) **Action First, Speech Second**; (4) **Shortest Closing Line** (*the final line in the scene is the shortest — `4–7 words`, leaving $\ge 1.0\text{s}$ at clip end*).
+  - **4 Strict Dialogue Bans**: Ban (1) repeating what the camera shows, (2) "As you know..." audience exposition, (3) direct emotion labels (*"I'm jealous"*), and (4) uniform voice across characters.
+- **Tier 5 — Inter-Scene Dialogue Links**:
+  - Connect across cuts via: (1) **Question in Scene $N$ $\to$ Action/Answer in Scene $N+1$**, (2) **Word Hook** (Scene $N+1$ seizes the last keyword of Scene $N$), (3) **Cut Before the Answer**, and (4) **Volume/Tempo Contrast**.
+
+---
+
+## 🛠️ PART VI: THE 7-STEP EPISODE SCREENWRITING WORKFLOW (STAGE 3 EXECUTION)
+
+Execute every episode in Stage 3 strictly in this 7-step sequence:
+1. **Step 1**: Write `1 sentence` for the Episode Goal and `1 sentence` for the End-of-Episode Irreversible Shift (`Tier 2`).
+2. **Step 2**: Fill the **Inter-Episode Tracking Table** (`Cliffhanger / Setup / Payoff` — `Tier 3`) and check **Character Voice Cards + Dialogue Ledger** (`Dialogue Tiers 1–3`).
+3. **Step 3**: List **`12–18 scenes`, 1 line per scene**, and verify every link with **`"Vì vậy" / "Nhưng"`** (`Tier 5`).
+4. **Step 4**: Default all standard dialogue/drama scenes to **`10.0s` (`@Director`)**; mark any high-motion Action/Chase/Combat scenes as **`15.0s` (`[⚡ SEEDANCE · 15.0s]`, routed exclusively to `@CombatDirector`)**.
+5. **Step 5**: Expand each scene into **Continuous Present-Tense Rough Prose (`văn xuôi liền mạch, không chia giây`)** (`Tier 4`).
+6. **Step 6**: Write and trim dialogue to **`15–22w` (`10s` `@Director`)**, ensuring the closing line is the shortest (`Dialogue Tier 4–5`).
+7. **Step 7**: Update the **Continuity & Dialogue Bible** (*Who knows what*, *Prop custody*, *Echo lines / Promises / Lies*) before handing off to Stage 4 Prompt Compilation.
+
+---
+
+## 📋 PART VII: 10-POINT MASTER SCREENWRITER PRE-FLIGHT CHECKLIST
+
+```markdown
+========================================================================================================
+📋 MASTER SCREENWRITER 5-TIER PRE-FLIGHT CHECKLIST (10 GATES)
+========================================================================================================
+[ ] 1. TIER 1 SERIES CORE LOCK (LOGLINE, CENTRAL QUESTION, WANT VS. NEED, SECRET @ 2/3, ARC A→B)
+        Does the episode advance either the Central Question or the Protagonist's Transformation Arc (A→B)?
+        Is the Master Secret protected until ~2/3 of the series (zero early spoilers in Episode 1)?
+
+[ ] 2. TIER 2 EPISODE CORE (GOAL, OBSTACLE, 1 IRREVERSIBLE SHIFT, 1 SECRET LAYER, 4 BEATS, 1 MOTIF)
+        Does the episode lock 1 clear Goal, 1 Obstacle, 1 Irreversible Shift, 1 New Secret Layer,
+        and 1 Memorable Visual/Prop Motif across the 4 Beats (Open 15-20% ➔ Develop 40-50% ➔ Climax 20-25% ➔ Close 10%)?
+
+[ ] 3. TIER 3 INTER-EPISODE LINKS & TRACKING TABLE (≥ 2 OF 4 LINK TYPES)
+        Is the Episode Tracking Table (`Mục tiêu | Chuyển biến | Mồi cài | Trả mồi | Cliffhanger`) filled?
+        Does Episode N+1 open directly with the visible consequence of Episode N's cliffhanger?
+
+[ ] 4. DIALOGUE TIER 1 VOICE PROFILES (BLIND VOICE TEST & "WHAT THEY NEVER SAY STRAIGHT")
+        If character names are covered, can you distinguish every speaker by sentence rhythm, vocabulary,
+        kinship address, and what they never say straight? Is each character's AI Voice Spec fixed?
+
+[ ] 5. TIER 4 SCENE ROUGH PROSE & 10s (@DIRECTOR) / 15s (@COMBATDIRECTOR) ROUTING
+        Are all standard dialogue/drama scenes defaulted to `10.0s` (`@Director`) and any `15.0s` scene reserved
+        exclusively for Action/Chase/Combat (`@CombatDirector` `[⚡ SEEDANCE · 15.0s]`)?
+        Is each scene written in continuous present-tense prose with 1 clear purpose and zero second-splitting?
+
+[ ] 6. DIALOGUE TIER 4 WORD BUDGET (2.5 WORDS/S SAFE RATE) & SHORTEST CLOSING LINE
+        - Default `10s` Scene (`@Director`): 0–2 sentences, 15–22 words total, max 2 turns (1 speaker per 5s beat).
+        - Exclusive `15s` Action/Combat Scene (`@CombatDirector`): 0 spoken words (or ≤ 5–6w clinch vow).
+        - Is the final line of every scene the shortest line in that scene (finishing ≥ 1.0s before clip end)?
+
+[ ] 7. IMAGE SPEAKS FIRST, INDIRECT SUBTEXT & IN-MEDIAS-RES ENTRY
+        Does physical action/expression precede speech ("Image speaks first, dialogue speaks second")?
+        Are greetings ("Chào bố con về rồi"), plot-explaining lines ("Như bố biết 6 năm trước..."),
+        direct emotion labels ("Tôi ghen tị"), and repeating what the camera shows 100% purged?
+
+[ ] 8. TIER 5 "THEREFORE / BUT" CAUSALITY & INTER-SCENE BRIDGES
+        Do all scenes connect via "Therefore (Vì vậy)" or "But (Nhưng)" (zero "And then / Và rồi")?
+        Are scenes linked by Action→Reaction, Visual/Sound Bridges, Word Hooks, and alternating rhythm
+        (at least 1 silent/sparse scene per episode)?
+
+[ ] 9. CONTINUITY & DIALOGUE BIBLE SYNC (SỔ LIÊN TỤC & SỔ THOẠI)
+        Are Character/Location/Prop tags synced 1:1 with setting.html (`TH1 / TH2 / TH3` declared per scene,
+        ≤ 2–3 active characters per 10s continuous shot)?
+        Is the Post-Episode State Ledger updated ("Who knows what", Echo lines, Promises/Threats, Lies,
+        Prop custody)?
+
+[ ] 10. ZERO-FATALITY & EARNED RESOLUTION GUARDRAIL
+        Is the script 100% free of fatalities/gore and cheap 5-second moral sermon conversions?
+========================================================================================================
+```
+
+---
+
+## 🔄 PART VIII: PRODUCER-SCREENWRITER-DIRECTOR HANDSHAKE WORKFLOW (`workflow.md` §4 — Single-HTML `setting.html` + 100% Interactive Step-by-Step)
+> **Canonical Pipeline Mapping (`workflow.md` §4 & `AGENT.md` §3 — Single-HTML Resource Rule & Interactive Step-by-Step Law)**:
+> - **SOLE HTML DELIVERABLE**: `output/<slug>/setting.html` (Stage 2 Pre-Production World Bible for user asset generation, including Isolated Zero-Hand 16:9 4-View Tier-1 Prop/Weapon Sheets). **Strictly ZERO `tap-1.html ... tap-N.html` files.**
+> - **100% Interactive Step-by-Step Execution**: `Stage 0` (Concepts in Chat → CP0) ➔ `Stage 1` (Master Storyline: 12-Row Story Spine + Dynamic Cast + Tier-1 Prop/Weapon Lock + Series 4-Act `A/B/C-Plot` Master Blueprint in Chat → CP1) ➔ `Stage 2` (`output/<slug>/setting.html` ONLY + Gate 1.5 → CP2) ➔ `Stage 3` (Interactive **One Episode at a Time** in Chat: 5-Tier Episode Core + Voice Profiles [`Cách 1`] + 1-Line Scene List [`Vì vậy / Nhưng` + `prop-*.jpg`] + Continuous Present-Tense Rough Prose [`10s = 12–22w` `@Director` / `15s` Action `@CombatDirector` + Per-Scene Tier-1 Prop & Hand-Grip Spec] + Continuity & Dialogue Bible → CP3) ➔ `Stage 4` (Interactive **One Scene at a Time** (`Cảnh 01 ➔ Cảnh M`) in Chat: Cross-check `TH1/TH2/TH3` Reference Image + Unified Storyboard Prompt Card with Double-Lock `<<<Image X>>> (100% ...)` & `[prop]:` → CP4) ➔ `Stage 5` (Interactive SEO Package + Registry Sync → CP5).
+
+```text
+  Sven-Agent (Level 1 Producer)   Screenwriter (Level 2)                   Director / CombatDirector (Level 2)
+  ─────────────────────────────   ──────────────────────────────────────   ──────────────────────────────────────
+  Stage 0: Concept Greenlight     Authors 5 Deep Concepts in Chat          ──▶ Validates cinematic scope & VFX/Combat
+  Stage 1: Master Storyline       Authors 12-Row Spine + A/B/C Blueprint   ──▶ Reviews sequence spaces, Tier-1 Props,
+           & Blueprint (Chat)     + Tier-1 Props + `10s / 15s` Slots           motif arcs & `Seedance` action peaks
+  Stage 2: SOLE HTML DELIVERABLE  Compiles ONLY `output/<slug>/setting.html`──▶ Audits 5-vector planes, 180° axes &
+           (`setting.html` ONLY)  (Gates 1–7) + Zero-Hand Prop Sheets          Isolated 4-View Prop Sheets
+  Stage 3: Interactive Episode N  Works 1 Episode at a time in Chat:       ──▶ Audits Dynamic Storyboard pacing (`1–4`
+           Rough Script (Chat)    5-Tier Core + Voice Cards (`Cách 1`) +       shots in `10s`, `3–6` shots in `15s`),
+                                  1-Line Scene List + Continuous Rough         `TH1/TH2/TH3` handoffs & `[prop]:` grip
+                                  Prose + Per-Scene `prop-*.jpg` & Grip
+  Stage 4: Interactive Scene K    Cross-checks verbatim dialogue parity    ──▶ Works 1 Scene at a time (`Cảnh 01 ➔ M`)
+           Co-Pilot (Chat Only ·  & prop state per scene (`Gate 2`)            in Chat: Double-Lock `<<<Image X>>> (...)`
+           ZERO `tap-X.html`)                                                  + `[prop]:` + Dynamic `Shot 1..N`
+  Stage 5: Distribution Package   Supplies Debate Seed & core twist hooks  ──▶ Supplies climax frame anchors for CTR
+```
+
+With this architecture, the Screenwriter operates at true masterclass Hollywood caliber, directly feeding the Director with unshakeable narrative depth, biological dialogue rhythms, and seamless multi-scene continuity.

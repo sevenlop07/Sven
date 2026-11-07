@@ -82,7 +82,7 @@ To guarantee seamless match-cuts and acoustic continuity between Scene N and Sce
 ### Example A: Domestic Heartbreak & Tense Silence
 ```text
 [Diegetic Foley Soundscape]:
-Continuous low drone of humid afternoon room tone punctured by the rhythmic ticking of an unseen mechanical pendulum clock on the back wall. At [00:01.5], the dry scrape of coarse cotton trousers as he shifts his weight on the wooden stool, followed by the sharp ceramic click of a rice bowl placed firmly on unvarnished pine. A ragged, trembling breath catches in her throat at [00:04.2], audible through tight lips. Her whisper at [00:05.5] is breathy, choked, and intimate with dry sibilance, deadened by the surrounding bed curtains. In the wake of her words, only the faint flutter of her uneven exhalation remains until [00:10.0].
+Continuous low drone of humid afternoon room tone punctured by the rhythmic ticking of an unseen mechanical pendulum clock on the back wall. At [00:01.5], the dry scrape of coarse cotton trousers as minh_khang shifts weight on the wooden stool, followed by the sharp ceramic click of a rice bowl placed firmly on unvarnished pine. A ragged, trembling breath catches in linh_dan's throat at [00:04.2], audible through tight lips. linh_dan's whisper at [00:05.5] is breathy, choked, and intimate with dry sibilance, deadened by the surrounding bed curtains. In the wake of linh_dan's words, only the faint flutter of uneven exhalation remains until [00:10.0].
 
 [HANDOVER STATE]:
 Audio carries forward the dying resonance of the ceramic bowl impact and the lingering intake of breath into Scene 02. Camera framing handoff: close-up, eye gaze locked downward toward the shattered bowl on the tiles, ready for the reverse shot.
@@ -91,7 +91,7 @@ Audio carries forward the dying resonance of the ceramic bowl impact and the lin
 ### Example B: Viral Microdrama Staccato Confrontation
 ```text
 [Diegetic Foley Soundscape]:
-Sterile, deadened boardroom acoustic bed with faint air conditioning hiss. At [00:00.5], a violent, concussive slap of palm against polished mahogany, sending an acoustic shockwave through the room. At [00:02.0], papers rustle sharply under trembling fingertips. His barked line at [00:03.2] is harsh, resonant, and clipped, accompanied by a sharp click of teeth on consonants. At [00:07.5], the metallic scrape of chair legs skidding 2 inches backward on linoleum floor, cutting off abruptly into heavy, panting nasal breaths.
+Sterile, deadened boardroom acoustic bed with faint air conditioning hiss. At [00:00.5], a violent, concussive slap of palm against polished mahogany, sending an acoustic shockwave through the room. At [00:02.0], papers rustle sharply under trembling fingertips. minh_khang's barked line at [00:03.2] is harsh, resonant, and clipped, accompanied by a sharp click of teeth on consonants. At [00:07.5], the metallic scrape of chair legs skidding backward on the linoleum floor, cutting off abruptly into heavy, panting nasal breaths.
 
 [HANDOVER STATE]:
 Vibrating mahogany tabletop and tense heavy breathing bridge directly into Scene 02 reaction shot.
