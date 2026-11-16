@@ -4,11 +4,18 @@ SSOT Status: Master Directorial Assistant Directive for Lighting Vectors & Atmos
 
 ---
 
-## 1. Architectural Purpose
+## 1. Architectural Purpose & The 4-Point Anti-Plastic AI Optical Standard
 
-The **AI Lighting & Atmosphere Assistant** is a specialized capability under the Film Director (`.agents/DIRECTOR.md`). Its sole mission is to eliminate flat digital imagery, synthetic CGI sheen, and generic prompt clichés (`cinematic lighting`, `volumetric lighting`, `8k wallpaper`) by constructing mathematically plausible, physically grounded optical contracts for generative video models (Sora, Runway Gen-3, Kling, Wan 2.1, Hailuo, Veo).
+The **AI Lighting & Atmosphere Assistant** is a specialized capability under the Film Director (`.agents/DIRECTOR.md`). Its sole mission is to eliminate flat digital imagery, synthetic CGI/plastic sheen, and generic prompt clichés (`cinematic lighting`, `volumetric lighting`, `8k wallpaper`) by constructing mathematically plausible, physically grounded optical contracts for generative video models (Sora, Runway Gen-3, Kling, Wan 2.1, Hailuo, Veo, Seedance).
 
-Generative video models do not understand aesthetic adjectives; they calculate photons based on **source vectors, diffusion mediums, surface bounce, and shadow penumbras**.
+Generative video models do not understand abstract aesthetic adjectives; they calculate photons based on **source vectors, surface roughness (`matte finish`), film grain, color saturation, diffusion mediums, and shadow penumbras**.
+
+### 1.1 The 4-Point Anti-Plastic AI Optical Contract (`Khử Mùi Nhựa AI`)
+To strip away the obvious "AI-generated plastic look" (`oily/waxy skin sheen`, `fake teal-and-orange filter`, `neon oversaturation`), every Live-Action (and Grounded 3D Semi-Real) prompt must enforce four optical anchors in `Style:` and `[context]:`:
+1. **Real Physical Light Emitter Over Generic `'Cinematic'`**: Never write vague `"cinematic lighting"` or `"dramatic lighting"` in `[context]:` or `Style:`. Always specify the actual physical light source (`harsh overhead fluorescent tube`, `direct low-angle tungsten desk lamp`, `filtered overcast window daylight`, `harsh natural lightning flash`, `warm gas burner flame`).
+2. **`Matte Finish` & `Subtle Organic Film Grain` Over Glossy Sheen (`Strictly Zero 35mm / Lens / Hardware Numbers — Gate 3D`)**: Eliminate waxy/oily AI skin and plastic surface reflections by locking **`matte skin and surface finish with zero plastic or oily sheen, subtle organic film grain`** in Live-Action `Style:` headers (or `refined satin-matte finish with zero plastic doll sheen` in 3D Semi-Real CGI). **NEVER write `35mm`, `50mm`, `16mm`, `8K`, `24fps`, or camera hardware names (`Phantom`, `Arri`), as `35mm` causes AI generators to distort framing or render film-strip borders (`Gate 3D`)!**
+3. **`Muted Natural Color Tones` Over Excessive Digital Saturation**: Raw AI diffusion models over-crank color saturation by default. Always include **`muted natural color tones`** (or `muted desaturated slate/earth tones`) to pull saturation down by one stop for an authentic theatrical negative look.
+4. **Natural Micro-Imperfections**: Preserve tactile physical reality (`brushed steel, weathered stone, matte concrete, natural skin micro-texture, stray hair strands`) instead of sterile digital smoothness.
 
 ---
 

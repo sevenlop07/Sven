@@ -72,22 +72,23 @@ If you cannot tell which kind a rule is, treat it as a Craft Default and give a 
 > 🎬 **MASTER CREATIVE MANDATE**: The downfall of amateur AI filmmaking is **"Breathing Mannequin Syndrome"** and **"Aesthetic Monotony"**. When prompts are loaded with generic aesthetic buzzwords while characters lack physical friction and purposeful action, AI video models generate stagnant, lifeless shots where actors merely blink, drift, or tilt their heads 5 degrees.
 > To build vibrant, dynamic, and gripping cinema, EVERY screenplay scene and AI prompt MUST strictly enforce the **6 Sovereign Anti-Stagnation Laws**:
 
-### 1. Purge Hollow Beauty Buzzwords
-- **The Stagnation Trap**: Stacking decorative buzzwords (`photorealistic`, `cinematic 8k`, `masterpiece`, `dramatic lighting`, `moody atmospheric`, `hyperrealistic`, `unreal engine 5`, `shallow depth of field`). When every frame is forced to be "dramatic", visual impact is nullified. The generative model defaults to a blurry, slow-motion cosmetic filter with zero narrative pulse.
-- **The Core Law**: **ZERO HOLLOW AESTHETIC BUZZWORDS.**
-- **The Directorial Fix**: Replace empty descriptors with **Physical Optical Reality & Genre-True Lighting Contracts**:
-  - Specify the precise physical light source (`low-angle morning sun piercing through dust-caked louvers`, `single flickering 40W ceiling bulb casting harsh shadows`).
-  - Specify the physical atmospheric medium (`suspended microscopic kitchen flour particles`, `damp morning river mist`).
-  - Specify tactile surface imperfections (`scratched enamel paint`, `sweat beading along collarbones`, `frayed cotton seams`).
+### 1. Purge Hollow Beauty Buzzwords & Enforce the 4-Point Anti-Plastic AI Optical Standard
+- **The Stagnation & "Fake AI Look" Trap**: Stacking decorative buzzwords (`photorealistic`, `cinematic 8k`, `cinematic lighting`, `masterpiece`, `dramatic lighting`, `moody atmospheric`, `vibrant`, `hyperrealistic`, `shallow depth of field`). When prompts rely on `"cinematic"` or `"vibrant"`, AI models default to an over-saturated teal-and-orange filter with waxy, oily plastic skin sheen (`"AI 뻔한 티"`).
+- **The Core Law**: **ZERO HOLLOW AESTHETIC BUZZWORDS — LOCK REAL PHYSICAL LIGHT, MATTE FINISH, FINE GRAIN & MUTED TONES (`3b-lighting-atmospheric-physics.md` §1.1).**
+- **The Directorial Fix**:
+  1. **Real Physical Light Source Over `'Cinematic'`**: Specify the actual physical light emitter (`low-angle morning sun piercing through dust-caked louvers`, `harsh overhead fluorescent tube`, `direct warm tungsten desk lamp`, `overcast window daylight`).
+  2. **Matte Surface Finish & Subtle Film Grain (`Zero 35mm / Lens / Hardware Numbers — Gate 3D`)**: In Live-Action `Style:`, lock **`matte skin and surface finish with zero plastic or oily sheen, subtle organic film grain`** (in 3D Semi-Real, lock `satin-matte finish with zero plastic doll sheen`) to eradicate waxy specular glare. **Strictly NEVER write `35mm`, `50mm`, `24fps`, or camera hardware names (`Phantom`, `Arri`), which cause AI framing defects!**
+  3. **Muted Natural Color Tones**: Pull excessive AI saturation down one stop with **`muted natural color tones`** / `muted desaturated palette`.
+  4. **Tactile Micro-Imperfections & Selective Speed-Ramp Slow-Motion**: Specify lived-in surface textures (`weathered oak, brushed steel, matte stone`). Keep **`zero slow-motion`** as the default for conversational and rapid-cut scenes, while unlocking **Speed-Ramped Slow-Motion (`Real-Time Launch ➔ Ultra-Slow-Motion Suspension [0 dialogue] ➔ Real-Time Settle`)** selectively when directing artistic fluid/particle/culinary suspension shots.
 
 ### 2. Targeted Action Verbs Over Passive Adjectives
 - **The Stagnation Trap**: Describing internal feelings with static adjectives (`she looks heartbroken`, `he is furious and terrified`, `tense atmosphere`). AI video diffusion models cannot parse abstract psychological labels; they freeze the subject into an immobile mannequin with an unconvincing grimace.
 - **The Core Law**: **ZERO ABSTRACT EMOTIONAL ADJECTIVES IN PROMPT PROSE.**
 - **The Directorial Fix**: Every micro-phase must be driven by **Verbs of Kinetic Purpose and Somatic Disruption**:
   - *Instead of:* "He looks angry and betrayed."
-  - *Write:* `minh_khang slams both flat palms downward onto the damp wooden table, sending the chipped ceramic cup skidding across the surface, jaw muscles bulging tight as minh_khang's gaze bores into the counterpart.`
+  - *Write:* `Marcus slams both flat palms downward onto the damp wooden table, sending the chipped ceramic cup skidding across the surface, jaw muscles bulging tight as Marcus's gaze bores into Elena.`
   - *Instead of:* "She is anxious and waiting."
-  - *Write:* `my_duyen relentlessly picks at a torn thumb cuticle until a red bead wells up, breath hitching as my_duyen's head whips toward the unlatched doorway.`
+  - *Write:* `Elena relentlessly picks at a torn thumb cuticle until a red bead wells up, breath hitching as Elena's head whips toward the unlatched doorway.`
   - Every action must possess an observable kinetic vector, measurable physical force, and an explicit target.
 
 ### 3. Minimal Prop Interaction & Clean Spatial Anchoring
@@ -95,7 +96,7 @@ If you cannot tell which kind a rule is, treat it as a Craft Default and give a 
 - **The Core Law**: **ANCHOR BODIES TO ARCHITECTURE IN `[subject]:`, AND LIMIT EACH PROP TO AT MOST ONE CLEAN INTERACTION PER CLIP.**
 - **The Directorial Fix**:
   - Small props (keys, glasses, pens, documents) are the easiest elements for AI video models to deform. Each prop should have at most **1 interaction in a clip** (either setting down OR lifting — never both in the same clip), repeat **1 fixed short noun phrase**, and **NEVER include redundant auxiliary phrases such as `"leaving the spot on the table clear"`**.
-  - Supporting characters who do not manipulate a prop in a phase simply hold a **clean static state** anchored to the furniture (`monica_thornton sits still with eyes fixed on harold_thornton`).
+  - Supporting characters who do not manipulate a prop in a phase simply hold a **clean static state** anchored to the furniture (`Monica sits still with eyes fixed on Harold`).
 
 ### 4. Dynamic Editing Rhythm & Sequence Assembly Over Monolithic Takes
 - **The Stagnation Trap**: Attempting to resolve a complex 20s–30s emotional scene or dialogue confrontation inside a single, continuous, static wide prompt. AI models degrade, hallucinate, and lose momentum after 5–8 seconds without a cut.
@@ -248,6 +249,11 @@ Move the camera only when you can name the motive:
 
 ### 2.4 Action = The Want Expressed Through the Body
 - Every primary action is a tactic: the character *does* something to get what they want (hands the bowl over to win favor, turns the crib away to refuse).
+
+### 2.5 Target-First Camera Grammar & Optical Prop Vector Law (Quay Khóa Mục Tiêu Vào Đối Tượng Chính — Không Quay Theo Góc Nhìn Khán Giả)
+- **Target-Subject Identification Over Audience-Spectator Framing**: Never place the camera in a passive "theater spectator" seat lining characters up flat side-by-side (`medium two-shot` / `side slider`). Every shot MUST answer **"Who is the Primary Target Subject receiving or delivering the psychological/physical force right now?"** and lock the camera axis directly onto that target (`over-the-shoulder perspective from behind [A] targeting [B]`, `reverse over-the-shoulder perspective from behind [B] targeting [A]`, or `tight medium two-shot angled toward [Target] with focus locked on [Target]'s face`).
+- **Optical Prop Vector Law (`Đạo Cụ Hướng Vào Đối Tượng Mục Tiêu`)**: When Character A confronts Character B with a handheld prop (a compact mirror, a store receipt, a phone screen, a contract), both Character A's eyeline AND the active face of the prop MUST point physically at Character B — **never rotate or cheat a mirror/receipt/screen flat toward the audience/lens** (which creates optical reflection paradoxes and breaks spatial reality).
+- **Full-Face Target Lock vs. Optional Selective Obscuration**: Keep full faces and eyes clearly visible on the Target Axis in comedy, sitcom, romance, and direct interpersonal showdowns so the clash between the Trigger's piercing gaze and the Target's stunned/flinching expression lands directly. Use *Selective Face Obscuration* (`showing only lower face, jawline...`) only when hiding a mysterious thriller predator's expression is the specific dramatic goal.
 - **One primary action per phase** keeps AI motion clean; the reaction of the other body is the second layer.
 - Prefer actions that **change the state of the world** (a door closed, an object moved, a distance crossed). Actions that only illustrate a line ("nods while agreeing") are filler.
 - Small, tactile, readable actions beat big choreography in domestic drama (Hard Constraint for Minors: zero fights, chases, or danger involving minors per Gate 3F; for adult characters, high-velocity martial arts, chases, and supernatural combat are governed by [`engine/genres/action.md`](file:///d:/Project/Sven/engine/genres/action.md) and [`@CombatDirector`](file:///d:/Project/Sven/.agents/skills/combat-director/SKILL.md)).
@@ -263,6 +269,18 @@ Before compiling, every shot carries a rationale the Director could defend aloud
 Shot 2 — OTS past Má Ba, eye level, cut on the axis — power passes to Khang; the viewer must see her face receive it.
 ```
 If the only reason is "looks cinematic", "adds variety" or "the model blueprint says so", change the choice.
+
+### 2.7 Scene Action Structural Intelligence & Episode-Level Storytelling Symphony
+1. **Structure Over Fixed Timeline Numbers (`5 Core Scene Action Flows`)**:
+   - Never reduce scene directing to a single mechanical timestamp grid. Design the `Action / Shots` flow of each `10.0s` or `15.0s` clip according to its dramatic job (see [`0b-temporal-camera-grammar.md` §1.1](file:///d:/Project/Sven/engine/references/0b-temporal-camera-grammar.md)):
+     * **Opening / Hook Scene**: *In Medias Res Motion ➔ Anomaly / Focus Narrowing ➔ Open Curiosity Hook*.
+     * **Storytelling / Narrative / `V.O.` Scene**: *Visual Emotion Leads First ➔ Vocal / Inner Thought Lands on Ocular Shift ➔ Tactile Settle*.
+     * **Dialogue / Confrontation Scene**: *Opening Probe/Mask ➔ Counter-Action / Evidence on Target Axis ➔ Checkmate Turn ➔ Wordless Somatic Payoff*.
+     * **Clue Discovery / Micro-Visual Twist Scene**: *Normal Facade ➔ Macro / Close-Up Tactile Insert (Show, Don't Tell) ➔ Attitude Reversal*.
+     * **High-Velocity Action / Combat Scene (`@CombatDirector`)**: *Tension Ignition / Snap Freeze ➔ Pure Kinetic Tracking/Clash (0 Dialogue) ➔ Hard Stop / Impact / Trap ➔ Dominance & Fallout*.
+   - Inside every individual `Shot`, write a **3-Layer Causal Micro-Structure**: `(1) Target-Locked Camera Header` $\to$ `(2) State-Delta Initiating Action + Immediate Visible Reaction/Shift` $\to$ `(3) Matched Vocal Line (when speech is present, sized to the shot's duration)`.
+2. **Episode-Level Storytelling Symphony (`How Scenes Form a Great Episode`)**:
+   - An episode is a complete emotional journey, never 12 identical scenes strung together. Orchestrate the 5 Scene Structures across the **4-Stage Episode Arc** (*Stage I: Opening Hook + V.O./Atmosphere ➔ Stage II: Alternating Dialogue Probe ↔ Clue Discovery ➔ Stage III: 10s/15s Climax Showdown or Action Burst ➔ Stage IV: Emotional Settle + Cliffhanger*), governed by **Rhythmic Contrast (`Compress ↔ Release`, `Dense Dialogue ↔ Visual/Silent`)** and **Causal Baton Relay (`"Therefore / But"` from Scene $K$ tail to Scene $K+1$ head)**.
 
 ### 2.7 Spatial Geometry of Power & Proxemics (Blocking as Subtext)
 Blocking (the placement and movement of bodies in 3D space) tells 80% of the story before anyone speaks:
@@ -827,22 +845,21 @@ In cinematic generative AI production, **props must be strategically bifurcated 
 │   already possess deep semantic weights│   or ornamental precision; without an image reference,        │
 │   for standard items; zero drift risk. │   diffusion models drift uncontrollably between scenes.       │
 │ • Production Rule: BAN on generating   │ • Production Rule: Reference asset generated in Step 1C       │
-│   16:9 Model Sheets or visual assets.  │   and strictly bound in prompts: `[100% Refer to image <ref>]`.│
+│   16:9 Model Sheets or visual assets.  │   and strictly bound in prompts: `<<<Image X>>> (fully_preserved - ...)`.│
 └────────────────────────────────────────┴───────────────────────────────────────────────────────────────┘
 ```
 
 #### 1. Tier 2 (Everyday Handheld Items) — Mode A (Pure Text Specification)
 - **Zero Pre-Production Visual Burden**: Never generate a 16:9 turnaround sheet or Midjourney/Flux image prompt for everyday domestic items (rice bowl, water glass, chopsticks, wrench, envelope, hospital bill). Furniture and fixtures (beds, cribs, folding hammocks, chairs) are never props; describe them in `[context]:`. AI generative models possess vast pre-trained weights for these objects.
 - **In-Prompt Anchor Formula**:
-  Line inside `[PROP]:`: `{material/surface texture} {canonical noun}, {current physical state/wear}, {resting place independent of character hands} — the only {canonical noun} in frame`  
-  *Example*: `chipped white ceramic rice bowl, steaming with hot jasmine rice, resting on the worn mahogany table beside my_duyen's left wrist — the only rice bowl in frame`
+  Integrated directly into `[context]:` (Vector 3 inventory) and `[subject]:` (initial hand/table state at `00:00`, e.g., `chipped white ceramic rice bowl steaming with hot jasmine rice resting on the worn mahogany table beside Elena's left wrist`) without a separate `<<<Image X>>>` sheet.
 - **Mechanical Continuity Invariance**: The Single Instance Lock, Resting Surface Clearance, and Prop Mutability Lifecycle (Intact ➔ Kinetic Fracture ➔ Inert Fragments) apply identically to Tier 2 items via pure text cues.
 
 #### 2. Tier 1 (Signature Hero / Soul / Weapon Props) — Mode B (Image-Anchored Specification)
-- **Mandatory Pre-Production Visual Asset (Step 1C)**: At most 1–2 master hero props per series. Rendered as a standardized 16:9 Four-View Turnaround Model Sheet (Hero 3D perspective + 3 orthographic views: front, side profile, back) on a pure white `#FFFFFF` studio backdrop.
+- **Mandatory Pre-Production Visual Asset (Step 1C)**: At most 1–2 master hero props per series. Rendered as a standardized 16:9 Four-View Turnaround Model Sheet (Hero 3D perspective + 3 orthographic views: front, side profile, back) on a pure white `#FFFFFF` studio backdrop with zero human hands.
 - **In-Prompt Anchor Formula**:
-  Line inside `[PROP]:`: `{Prop Name in natural English} [100% Refer to image <prop_ref>], {current physical state}, {resting place independent of character hands} — the only {canonical noun} in frame`  
-  *Example*: `obsidian phoenix hairpin [100% Refer to image prop_hairpin_4view.jpg], intricate carved black obsidian with blood-red jade eye, resting on the lacquered dressing table — the only hairpin in frame`
+  Line inside `[prop]:`: `[Canonical Prop/Weapon Name] <<<Image 4>>> (fully_preserved - same shape, material, surface finish and proportions throughout): [Exact 00:00 resting placement or character hand-grip state] — the only [Canonical Prop/Weapon Name] in frame.`
+  *Example*: `Obsidian phoenix hairpin <<<Image 4>>> (fully_preserved - same shape, material, surface finish and proportions throughout): Resting on the lacquered dressing table at 00:00 — the only obsidian phoenix hairpin in frame.`
 
 ---
 
