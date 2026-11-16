@@ -37,9 +37,9 @@ Once the Phase A Storyboard Grid Image is rendered, it is fed into the video gen
    - **NEVER lump panels into vague summaries (`Panels 4–9`)!** Write out **every single `Shot 1` through `Shot N` (`Shot 1..9 / 12 / 15 / 25`) individually** with its own contiguous `(00:XX-00:YY)` timestamp, explicit `Panel K ([Grid Position])` reference, dynamic camera move, and 5-Tier `[Shot Speed]`:
      `Shot K (00:XX-00:YY) - Panel K ([Grid Position]), [Shot Scale], [Camera Angle & Move Targeting Subject/Prop], [Shot Speed]`
      `[1 concise sentence (12–22w) describing how that panel's static keyframe animates across (00:XX-00:YY)]`
-     `[Proper_Name] ([vocal timbre/maturity], [delivery tone]): "[Spoken Line — on speaking shots only]"`
-2. **Elastic Timestamp Allocation Across `Shot 1..N`**:
+     `[Proper_Name] (expressive female/male voice, [active vocal behavior: scoffing / gasping / chuckling / breath hitching] in a [delivery tone]): "[Native Interjection Trigger]! [Spoken Line — on speaking shots only]"`
+2. **Elastic Timestamp Allocation & The 5 Golden Dialogue Laws (`Law D1–D5`) Across `Shot 1..N`**:
    - **Pure Action / Craft / Combat Clips (`0 Spoken Words`)**: e.g., `6 × 1.5s + 3 × 2.0s = 15.0s` across `Shot 1..9`.
-   - **Dialogue / Drama Clips (`With Lip-Sync`)**: Size any speaking shot (`e.g., Shot 3 - Panel 3`) to a full **`3.5s–4.0s` window at `natural real-time speed`**, while sizing silent action/insert panels (`Shot 1, 2, 4..8`) to `1.2s–1.5s` each, and keeping the **final shot (`Shot 9`) wordless (`0 spoken words`, `natural real-time speed`)** per the Zero Tail-Cut Law.
+   - **Dialogue / Drama Clips (`With Lip-Sync`)**: Lock `static camera` (`Law D1`) and size any speaking shot (`e.g., Shot 3 - Panel 3`) to a full **`3.2s–4.5s` window at `natural real-time speed` (`Law D4`)**, opening spoken lines with a native vocal interjection (`Law D2`) and expressive vocal-behavior tag (`Law D3`, zero `alto/baritone`), while sizing silent action/insert panels (`Shot 1, 2, 4..8`) to `1.2s–1.5s` each, and keeping the **final shot (`Shot 9`) either wordless (`0 spoken words`, `Terminal Mode 1`) or sized to `3.6s–4.5s` with a `0.8s–1.0s` silent closed-lip tail buffer (`Terminal Mode 2`, `Law D5`)**.
 3. **Mandatory Anti-Split-Screen & Anti-Badge Footer**:
    - Always include: `Render strictly as sequential full-screen video shots. Do not show the 3x3 grid layout, panel borders, corner number badges, split-screen mosaic, oily sweat shine, greasy forehead glare, waxy plastic skin, subtitles, text overlays, or watermarks in the video.`

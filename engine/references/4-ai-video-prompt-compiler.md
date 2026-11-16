@@ -177,15 +177,15 @@ For **each Scene**, before writing the Shot breakdown, determine:
   - **Characters (Fixed Proper Names)**: Written as clean proper names (`Bradley`, `Harold`, `Marcus`, `Elena`) to bind `<<<Image X>>>` reference sheets and enforce the singularity seal (`— the only [Proper_Name] in frame`).
   - **Locations (Evocative Natural English — Zero Underscores `_`)**: Written in descriptive natural English without underscores (`Professional restaurant open kitchen`, `Grand mansion mahogany dining room`, `Narrow brick alley and urban street`). Banned: Vietnamese pinyin (`phong_cu`, `nha_bep`) and programmer `snake_case` (`modern_townhouse_kitchen`).
   - **Props (Natural English Prose — Zero Underscores `_`)**: Written in natural English words without underscores (`Damascus steel chef knife`, `tarnished brass truck keyring`, `silver dragon-hilted longsword`, `matte black cast-iron skillet`).
-- **Atomic Entity Lock, Gender-Calibrated Skin/Makeup Sub-Lock & Singularity (`Single <<<Image X>>> Declaration & fully_preserved Law`)**:
-  - Declaration in `[subject]:` (declared **ONLY ONCE** in `[subject]:`, never repeated in `Shot 1..N`; include `makeup` in Line 1 for Female and omit `makeup` for Male, followed immediately by Line 2 `<Name>'s skin (and makeup): fully_preserved - ...`):
+- **Atomic Entity Lock, 4-Layer Gender & Hand/Limb Anatomy Lock, Skin/Makeup Sub-Lock & Singularity (`Single <<<Image X>>> Declaration & fully_preserved Law`)**:
+  - Declaration in `[subject]:` (declared **ONLY ONCE** in `[subject]:`, never repeated in `Shot 1..N`; include explicit gender, limb/hand anatomy, and `makeup` in Line 1 for Female and omit `makeup` for Male, followed immediately by Line 2 `<Name>'s skin, hands (and makeup): fully_preserved - ...`):
     * *Male Example (`Bradley` — School M2 Grounded Dry Matte)*:
-      `Bradley <<<Image 2>>> (fully_preserved - same face, hair color and outfit throughout; only his head, eyes, mouth, hands and expressions move.): Seated at the side of the polished walnut dining table, right hand holding a crystal red wine glass, eyeline toward Harold — the only Bradley in frame.`
-      `Bradley's skin: fully_preserved - real unretouched dry matte masculine skin throughout with natural fine pores, crisp eyebrows and eyelashes, natural moisture in his eyes, and natural matte lips; no oily sweat shine, no greasy highlights on the nose or forehead, not plastic, not waxy.`
+      `Bradley <<<Image 2>>> (fully_preserved - same male face, masculine body proportions, broad shoulders, well-defined masculine hands, hair color and outfit throughout; only his head, eyes, mouth, hands and expressions move.): A composed man seated at the side of the polished walnut dining table, right hand holding a crystal red wine glass, eyeline toward Harold — the only Bradley in frame.`
+      `Bradley's skin and hands: fully_preserved - real unretouched dry matte masculine skin across his face, jawline, and strong well-defined masculine hands, with natural fine pores, crisp eyebrows and eyelashes, natural moisture in his eyes, and natural matte lips; no oily sweat shine, no greasy highlights on the nose or forehead, not plastic, not waxy.`
     * *Female Example (`Elena` — School F1 Douyin Velvet-Porcelain)*:
-      `Elena <<<Image 2>>> (fully_preserved - same face, hair color, makeup and outfit throughout; only her head, eyes, mouth and expressions move.): Seated in the dark velvet armchair beside the window, hands resting calmly on the armrest, eyeline toward Marcus — the only Elena in frame.`
-      `Elena's skin and makeup: fully_preserved - flawless porcelain velvet-matte skin throughout with soft rosy blush on the cheeks and nose tip, crisp wispy eyelashes, natural watery eye reflection, and soft gradient rose lips; no oily sweat shine, no greasy highlights on the nose or forehead, not plastic, not waxy.`
-  - Action prose in `Shot 1..N`: `Seen past Harold's shoulder in the foreground, Bradley raises his crystal red wine glass toward the head of the table with a polite, confident smile.`
+      `Elena <<<Image 2>>> (fully_preserved - same female face, slender feminine body proportions, delicate wrists, long tapering fingers, hair color, makeup and outfit throughout; only her head, eyes, mouth, hands and expressions move.): A graceful woman seated in the dark velvet armchair beside the window, slender hands resting calmly on the armrest, eyeline toward Marcus — the only Elena in frame.`
+      `Elena's skin, hands and makeup: fully_preserved - flawless porcelain velvet-matte skin across her face, neck, arms, and slender feminine hands, with delicate wrists, long tapering fingers, clean manicured nails, soft rosy blush on the cheeks and nose tip, crisp wispy eyelashes, natural watery eye reflection, and soft gradient rose lips; no rough masculine hands, no thick knuckles, no oily sweat shine, no greasy highlights on the nose or forehead, not plastic, not waxy.`
+  - Action prose in `Shot 1..N` (always qualifying close-up hands as `slender feminine hands / long tapering fingers` for Female or `strong masculine hands` for Male): `Seen past Harold's shoulder in the foreground, Bradley raises his crystal red wine glass toward the head of the table with a polite, confident smile.`
   - Spoken dialogue vector (`Single Vocal-Timbre Tag — Cách 1`): `Bradley (smooth tenor, warm overly polite tone): "Rest easy, Dad. The company is safe with me."`
 
 
@@ -267,43 +267,43 @@ To anchor character identity, eliminate AI duplicate clones, and prevent spatial
 
 ---
 
-#### TRACK 2: SINGLE VOCAL-TIMBRE DIALOGUE TAG (`CÁCH 1`) & SPOKEN SHOT ARCHITECTURE (`3.5s–4.5s`)
-> **MANDATORY SINGLE VOCAL-TIMBRE & TONE TAG (`CÁCH 1` — `Gates 3A & 3E`)**:
-> Every spoken line in `Shot 1..N-1` is placed on its own line below the shot's action prose using **ONE single compact parenthetical (`4–6 words`) immediately after `[Proper_Name]`** (strictly zero numeric ages like `24-year-old` and zero trailing `(Voice of a ...)` tags):
-> - **Canonical Spoken Line Formula**:
->   `[Proper_Name] ([vocal timbre/maturity], [delivery tone]): "[Spoken Line]"`
+#### TRACK 2: THE 5 GOLDEN DIALOGUE LAWS (`LAW D1–D5`), EXPRESSIVE VOCAL-BEHAVIOR TAGS & SPOKEN SHOT ARCHITECTURE (`3.2s–4.5s`)
+> **MANDATORY EXPRESSIVE VOCAL-BEHAVIOR TAG + NATIVE EXCLAMATION TRIGGER (`LAWS D2 & D3` — `Gates 3A & 3E`)**:
+> Every spoken line in `Shot 1..N` is placed on its own line below the shot's action prose using **ONE single compact parenthetical immediately after `[Proper_Name]`** (strictly zero numeric ages like `24-year-old` and **strictly ZERO dry musical register terms like `alto`, `baritone`, `tenor`, `soprano`**, which cause flat robotic newsreader TTS):
+> - **Canonical Spoken Line Formula (`Laws D2 & D3`)**:
+>   `[Proper_Name] (expressive female/male voice, [active vocal behavior: scoffing playfully / gasping in panic and stammering / chuckling in disbelief / breath hitching with choked tears / whining pitifully / speaking with calm icy authority] in a [delivery tone]): "[Native Interjection Trigger: Huh?... / Whoa! Uh... / Hah!... / Hửm?... / Á! Ối trời...] [Spoken Line]"`
 >   *Examples*:
->   - `Bradley (smooth tenor, warm overly polite tone): "Rest easy, Dad. The company is safe with me."`
->   - `Harold (deep weathered baritone, calm unhurried tone): "Because you secretly sold Warehouse Four."`
->   - `Elena (soft airy soprano, low abrupt whisper): "I'm sorry."`
-> - **Mandatory Timing & Speed Rules for Spoken Shots (`0b-temporal-camera-grammar.md` §2 & §4.2)**:
->   1. **Shot Window**: Every shot containing spoken dialogue MUST be sized to **`3.5s–4.5s`** ($\mathbf{T_{shot}} = 0.4\text{s} + \frac{\text{Words}}{2.5} + 0.6\text{s}$) and paired with **1 simple primary gesture (`One-Move Rule`)**.
->   2. **Shot Speed**: Every shot containing spoken dialogue MUST lock **`natural real-time speed`** in its `Shot N` header (never speak during `blistering whip-fast speed` or `ultra-slow-motion suspension`).
->   3. **Zero Tail-Cut Law**: **Strictly `0 spoken words` in the final `2.0s–3.0s` shot of every clip!**
+>   - `Bradley (expressive male voice, chuckling smugly in a warm overly polite tone): "Hah... Rest easy, Dad. The company is safe."`
+>   - `Harold (expressive male voice, speaking with calm icy authority in a low unhurried tone): "Hmm... Then why sell Warehouse Four?"`
+>   - `Elena (expressive female voice, breath hitching with choked emotion in a soft aching whisper): "Oh god... I'm sorry."`
+> - **Mandatory Camera, Timing & Tail-Buffer Rules for Spoken Shots (`0b-temporal-camera-grammar.md` §2 & §3)**:
+>   1. **100% Static Camera for Continuous Dialogue (`Law D1`)**: Lock **`static camera`** (`static over-the-shoulder camera`, `static reverse over-the-shoulder camera`, `static eye-level camera`) across speaking shots (`In a locked static frame...`) so 100% of latent motion capacity goes to lip-sync and 4-Zone Facial Micro-Expressions (`brows, eyes/moisture, lips, jaw`).
+>   2. **Shot Window & Speed (`Law D4`)**: Every shot containing spoken dialogue MUST be sized to **`3.2s–4.5s`** ($\mathbf{T_{shot}} = 0.4\text{s} + \frac{\text{Words}}{2.5} + 0.5\text{s}–0.8\text{s}$, max `3` spoken shots in `10s`, max `4` spoken shots in `15s`) with **`natural real-time speed`** and paired with **1 simple primary gesture (`One-Move Rule`)**.
+>   3. **Two Valid Terminal Modes & Mandatory `0.5s–1.0s` Tail Buffer (`Law D5`)**: Either **(Mode 1)** finish all dialogue in `Shot 1..N-1` and keep the final `2.0s–3.0s` shot wordless (`0 spoken words`), OR **(Mode 2: 100%-Dialogue Ping-Pong)** keep `Shot 1..N-1` lines to `7–8 EN words` (`8–10 VN syllables`) inside `3.2s–3.5s` windows (`0.5s` buffer/shot to prevent cumulative delay) and give the final `Shot N` a wider window (`3.6s` in `10s`; `4.2s–4.5s` in `15s`) with a short `6–8 word/syllable` line so a **mandatory `0.5s–1.0s` (`~0.8s`) silent closed-lip tail buffer** (`holding a silent closed-lip expression for the final 0.8 seconds`) remains at the end of the clip!
 
 **Directing Syntax for the 4 Master Cinematic Dialogue Modes in Storyboard Shots (`Shot 1..N`):**
-1. **Standard On-Screen Spoken Shot (`Shot - Reverse Shot` — `3.5s–4.5s` Window)**:
+1. **Standard On-Screen Spoken Shot (`Static Shot - Reverse Shot` — `3.2s–4.5s` Window)**:
    ```text
-   Shot 1 (00:00-00:04) - Tight close-up, over-the-shoulder perspective from behind Marcus targeting Elena's face, natural real-time speed
-   Elena tilts her chin up slightly toward Marcus, a bittersweet half-smile touching her lips as her eyes glisten with held-back emotion.
-   Elena (clear velvety alto, soft aching tone): "You really thought walking away would make me forget everything?"
+   Shot 1 (00:00-00:04) - Tight close-up, static over-the-shoulder camera from behind Marcus targeting Elena's face, natural real-time speed
+   In a locked static frame, Elena tilts her chin up slightly toward Marcus, a bittersweet half-smile touching her lips as her eyes glisten with held-back emotion and her breath hitches softly.
+   Elena (expressive female voice, breath hitching with bittersweet emotion in a soft aching tone): "Huh... You really thought I'd forget everything?"
    ```
-2. **Wordless Terminal Reaction / Settle Shot (`Model 0` — `0 Spoken Words`, Final `2.0s–3.0s` Shot)**:
+2. **Wordless Terminal Reaction / Settle Shot (`Model 0 / Terminal Mode 1` — `0 Spoken Words`, Final `2.0s–3.0s` Shot)**:
    ```text
-   Shot 3 (00:08-00:10) - Extreme close-up, slow push-in targeting Marcus's eyes and composed expression, natural real-time speed
-   Marcus's lips close naturally as he lets out a slow, silent breath, the warm side light catching the quiet emotion in his eyes without a trace of shine on his forehead or nose.
+   Shot 3 (00:08-00:10) - Extreme close-up, static eye-level camera targeting Marcus's eyes and composed expression, natural real-time speed
+   In a locked static frame, Marcus's lips close naturally as he lets out a slow, silent breath, the warm side light catching the quiet emotion in his eyes without a trace of shine on his forehead or nose.
    ```
 3. **Off-Screen `L-Cut` Dialogue Over Visual Insert or Listener Reaction (`Model 5 O.S.`)**:
    ```text
-   Shot 2 (00:04-00:08) - Medium close-up, focus locked on Bradley's face as he stares at the brass keyring, natural real-time speed
-   Bradley's fingers freeze on the crystal glass stem as his eyes drop to the carved tag on the tarnished brass truck keyring.
-   Harold (off-screen, deep weathered baritone, calm unhurried tone): "Because you secretly sold Warehouse Four."
+   Shot 2 (00:04-00:08) - Medium close-up, static camera with focus locked on Bradley's face as he stares at the brass keyring, natural real-time speed
+   In a locked static frame, Bradley's strong fingers freeze on the crystal glass stem as his eyes drop to the carved tag on the tarnished brass truck keyring.
+   Harold (off-screen, expressive male voice, speaking with calm icy authority in a low unhurried tone): "Hmm... Then why sell Warehouse Four?"
    ```
 4. **Internal Monologue / Voice-Over (`Model 4 V.O.` — Lips 100% Closed On Screen)**:
    ```text
-   Shot 1 (00:00-00:04.5) - Close-up, slow push-in targeting Elena's eyes beside the rain-streaked glass, natural real-time speed
-   Elena gazes silently through the rain-streaked glass with her lips softly closed, her fingers resting lightly against the cool windowpane.
-   Elena (voice-over, clear velvety alto, hushed reflective tone): "If I turn back now, there will be nothing left to save."
+   Shot 1 (00:00-00:04.5) - Close-up, static camera targeting Elena's eyes beside the rain-streaked glass, natural real-time speed
+   In a locked static frame, Elena gazes silently through the rain-streaked glass with her lips softly closed, her slender fingers resting lightly against the cool windowpane.
+   Elena (voice-over, expressive female voice, speaking in a hushed reflective tone): "Sigh... If I turn back now, nothing will remain."
    ```
 
 ### Master 16:9 Multi-Angle Character Model Sheet Prompt Architecture (Step 1B — Zero-Text Standard)

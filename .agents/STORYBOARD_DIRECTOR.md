@@ -68,10 +68,10 @@ Style: Cinematic 9-panel storyboard grid sheet arranged in a strict 3x3 matrix (
 [Evocative Location Name in Natural English] <<<Image 1>>> (fully_preserved - same architectural layout, furniture, props and lighting throughout all 9 panels), [time of day]. [5-Vector Environmental Specification: architectural layout & full fixed furniture/prop inventory, physical key light source & direction without Kelvin, shadow falloff, and atmospheric mood].
 
 [subject]:
-[Proper_Name_Female] <<<Image 2>>> (fully_preserved - same face, hair color, makeup and outfit throughout all 9 panels): [Baseline architectural station in the scene — ZERO specific clothing/age words] — the only [Proper_Name_Female] in each panel.
-[Proper_Name_Female]'s skin and makeup: fully_preserved - [School F1–F4 / A1–A3 matching Style:]; no oily sweat shine, no greasy highlights on the nose or forehead, not plastic, not waxy.
-[Proper_Name_Male] <<<Image 3>>> (fully_preserved - same face, hair color and outfit throughout all 9 panels): [Baseline architectural station in the scene — ZERO specific clothing/age words] — the only [Proper_Name_Male] in each panel.
-[Proper_Name_Male]'s skin: fully_preserved - [School M1–M3 / A1–A3 matching Style: with natural matte lips]; no oily sweat shine, no greasy highlights on the nose or forehead, not plastic, not waxy.
+[Proper_Name_Female] <<<Image 2>>> (fully_preserved - same female face, slender feminine body proportions, delicate wrists, long tapering fingers, hair color, makeup and outfit throughout all 9 panels): A graceful woman [Baseline architectural station in the scene — ZERO specific clothing/age words] — the only [Proper_Name_Female] in each panel.
+[Proper_Name_Female]'s skin, hands and makeup: fully_preserved - [School F1–F4 / A1–A3 matching Style:, including slender feminine hands, delicate wrists, and long tapering fingers]; no rough masculine hands, no thick knuckles, no oily sweat shine, no greasy highlights on the nose or forehead, not plastic, not waxy.
+[Proper_Name_Male] <<<Image 3>>> (fully_preserved - same male face, masculine body proportions, broad shoulders, well-defined masculine hands, hair color and outfit throughout all 9 panels): A composed man [Baseline architectural station in the scene — ZERO specific clothing/age words] — the only [Proper_Name_Male] in each panel.
+[Proper_Name_Male]'s skin and hands: fully_preserved - [School M1–M3 / A1–A3 matching Style: with strong well-defined masculine hands and natural matte lips]; no oily sweat shine, no greasy highlights on the nose or forehead, not plastic, not waxy.
 
 [prop]:
 [Canonical Tier-1 Prop/Weapon Name] <<<Image 4>>> (fully_preserved - same shape, material, surface finish and proportions throughout all 9 panels): [Baseline prop identity] — the only [Canonical Tier-1 Prop/Weapon Name] in each panel. *(Omit `[prop]:` if no Tier-1 Prop/Weapon is present)*
@@ -106,14 +106,14 @@ Once the user generates the Storyboard Grid Image in Phase A, that grid image be
      `Shot K (00:XX-00:YY) - Panel K ([Grid Position]), [Shot Scale], [Camera Angle & Dynamic Movement Targeting Subject/Prop], [Shot Speed]`
 2. **Law B2 — Convert Each Static Panel Into Living Motion (`1 Concise Sentence per Shot K`)**:
    - Under each `Shot K` header, write **1 concise sentence (`12–22 words`)** describing how that specific panel comes to life across its `(00:XX-00:YY)` window (the active hand/body transition, facial micro-expression shift, and flame/fluid/rain physics).
-3. **Law B3 — Elastic Timestamp Allocation for Dialogue vs. Action Shots**:
+3. **Law B3 — Elastic Timestamp Allocation & The 5 Golden Dialogue Laws (`Law D1–D5`) for Speaking Shots in Phase B**:
    - **In Pure Action / Culinary / Combat Clips (`0 Spoken Words`)**: Distribute timestamps by kinetic rhythm (e.g., `6 × 1.5s + 3 × 2.0s = 15.0s` for `9 Shots`, using `blistering whip-fast speed`, `snappy real-time speed`, `explosive real-time speed`, `ultra-slow-motion suspension`, and `natural real-time speed` on `Shot 9`).
    - **In Dialogue / Dramatic Clips (`With Spoken Lines`)**:
-     * Allocate a full **`3.5s–4.0s` window (`natural real-time speed`)** to the specific `Shot K (Panel K)` where a character speaks on-screen (or split across 2 consecutive close-up panels via `L-Cut`), while sizing the silent action/insert panels to `1.2s–1.5s` each so the total clip lands cleanly at `15.0s` (or `10.0s` / `20.0s` / `30.0s`)!
-     * Place the spoken dialogue line on its own dedicated line directly below that speaking `Shot K`:
-       `[Proper_Name] ([vocal timbre/maturity], [delivery tone]): "[Spoken Line]"`
-4. **Law B4 — Zero Tail-Cut Law (`Final Shot N = Strictly 0 Spoken Words`)**:
-   - The final shot (`Shot 9` / `Shot 12` / `Shot 15` / `Shot 25`) MUST have **`0 spoken words`** and **`natural real-time speed`** so lips close naturally and audio is never truncated.
+     * **Allocate a full `3.2s–4.5s` window (`natural real-time speed`)** and lock **`static camera`** (`Law D1`) on the specific `Shot K (Panel K)` where a character speaks on-screen (or split across 2 consecutive close-up panels via `L-Cut`), while sizing the silent action/insert panels to `1.2s–1.5s` each so the total clip lands cleanly at `15.0s` (or `10.0s` / `20.0s` / `30.0s`)!
+     * **Expressive Vocal-Behavior Tag + Native Interjection Trigger (`Laws D2 & D3`)**: Place the spoken dialogue line on its own dedicated line directly below that speaking `Shot K`, opening with a native vocal interjection (`"Huh?..."`, `"Whoa! Uh..."`, `"Hửm?..."`, `"Á!..."`) and using an active vocal-behavior tag (`zero alto/baritone/tenor/soprano`):
+       `[Proper_Name] (expressive female/male voice, [scoffing playfully / gasping in panic / chuckling coldly / breath hitching with choked tears] in a [delivery tone]): "[Interjection]! [Spoken Line]"`
+4. **Law B4 — Zero Tail-Cut Law & Mandatory `0.5s–1.0s` Tail Buffer on Final `Shot N` (`Law D5`)**:
+   - The final shot (`Shot 9` / `Shot 12` / `Shot 15` / `Shot 25`) MUST either have **`0 spoken words`** with **`natural real-time speed`** and closed lips (`Terminal Mode 1`), OR if the final panel is a speaking shot (`Terminal Mode 2`), be sized to `3.6s–4.5s` with a short `6–8 word/syllable` line that finishes **`0.8s–1.0s` early (`holding a silent closed-lip expression for the final 0.8 seconds`)** so audio is never truncated.
 5. **Law B5 — Synchronized Sequential `[sound]:`**:
    - Write `[sound]:` in the exact chronological order of `Shot 1 (Panel 1) ➔ Shot N (Panel N)` (`Strictly zero background music`).
 6. **Law B6 — Mandatory Anti-Split-Screen Footer (`Cấm Render Khung Chia Ô Lên Video`)**:
@@ -132,43 +132,43 @@ Style: Realistic Live-Action Film, flawless velvet-matte skin finish with zero o
 <<<Image 1>>> (fully_preserved - strictly follow the exact 9-shot sequential storyboard progression from top-left Panel 1 to bottom-right Panel 9 in chronological order, preserving the exact room architecture, furniture, props, lighting, camera angles, and shot scales of each panel, rendered as seamless full-screen video shots).
 
 [subject]:
-Elena <<<Image 2>>> (fully_preserved - same face, hair color, makeup and outfit throughout; natural head, eye, expression, hand and body movement.): Anchored to the exact positions and postures across Panel 1 to Panel 9 of <<<Image 1>>> — the only Elena in frame.
-Elena's skin and makeup: fully_preserved - flawless porcelain velvet-matte skin throughout with soft rosy blush on the cheeks and nose tip, crisp wispy eyelashes, natural watery eye reflection, and soft gradient rose lips; no oily sweat shine, no greasy highlights on the nose or forehead, not plastic, not waxy.
+Elena <<<Image 2>>> (fully_preserved - same female face, slender feminine body proportions, delicate wrists, long tapering fingers, hair color, makeup and outfit throughout; natural head, eye, expression, hand and body movement.): A graceful woman anchored to the exact positions and postures across Panel 1 to Panel 9 of <<<Image 1>>> — the only Elena in frame.
+Elena's skin, hands and makeup: fully_preserved - flawless porcelain velvet-matte skin across her face, neck, arms, and slender feminine hands, with delicate wrists, long tapering fingers, clean manicured nails, soft rosy blush on the cheeks and nose tip, crisp wispy eyelashes, natural watery eye reflection, and soft gradient rose lips; no rough masculine hands, no thick knuckles, no oily sweat shine, no greasy highlights on the nose or forehead, not plastic, not waxy.
 
 [sound]:
 Continuous nocturnal rain pattering against window glass, crisp tearing sound of thick paper fibers, a quiet breath intake, soft emotional voice resonance, metallic flick and spark of a brass lighter, warm crackling flame consuming paper, soft ash settling into a brass ashtray, and gentle clink of a crystal wine glass. Strictly zero background music.
 
 Shot 1 (00:00-00:01.3) - Panel 1 (Top-Left), Medium wide shot, subtle push-in targeting Elena in the velvet armchair, natural real-time speed
-Elena gazes down in cold silence as her right hand lifts the unopened ivory wedding invitation envelope from the black marble table.
+Elena sits with graceful feminine posture in the dark velvet armchair, gazing down in cold silence as her slender right hand lifts the unopened ivory wedding invitation envelope from the black marble table.
 
-Shot 2 (00:01.3-00:02.5) - Panel 2 (Top-Center), Extreme close-up, high-angle targeting Elena's hands above the marble table, snappy real-time speed
-Both of Elena's slender hands tear the ivory wedding invitation envelope cleanly in half under the warm golden lamp light.
+Shot 2 (00:01.3-00:02.5) - Panel 2 (Top-Center), Extreme close-up, high-angle targeting Elena's slender feminine hands above the marble table, snappy real-time speed
+Both of Elena's delicate porcelain hands with long tapering fingers tear the ivory wedding invitation envelope cleanly in half under the warm golden lamp light.
 
-Shot 3 (00:02.5-00:06.5) - Panel 3 (Top-Right), Close-up, slow push-in targeting Elena's face, natural real-time speed
-Elena's inner brows draw subtly together as glistening moisture wells along her lower lash line and she speaks with aching poise.
-Elena (clear velvety alto, soft aching Southern Vietnamese tone): "Anh tưởng bỏ đi vậy... là em quên được anh thiệt hả?"
+Shot 3 (00:02.5-00:06.5) - Panel 3 (Top-Right), Close-up, static eye-level camera targeting Elena's face, natural real-time speed
+In a locked static frame, Elena's inner brows draw subtly together as glistening moisture wells along her lower lash line and her breath hitches softly before she speaks with aching poise.
+Elena (expressive female voice, breath hitching softly with choked emotion in a soft aching Southern Vietnamese tone): "Hơ... Anh tưởng bỏ đi vậy... là em quên được anh thiệt hả?"
 
-Shot 4 (00:06.5-00:07.8) - Panel 4 (Middle-Left), Tight close-up, low-angle side shot targeting Elena's hands, snappy real-time speed
-Elena's left hand holds the torn ivory envelope corner while her right thumb strikes the brass lighter, sparking a bright golden flame.
+Shot 4 (00:06.5-00:07.8) - Panel 4 (Middle-Left), Tight close-up, low-angle side shot targeting Elena's delicate hands, snappy real-time speed
+Elena's slender left fingers hold the torn ivory envelope corner while her delicate right thumb strikes the brass lighter, sparking a bright golden flame.
 
 Shot 5 (00:07.8-00:09.3) - Panel 5 (Middle-Center), Medium close-up, subtle low-angle targeting Elena, natural real-time speed
-Warm amber flame licks upward from the torn envelope in Elena's right hand as a bitter, defiant half-smile curves her soft rose lips.
+Warm amber flame licks upward from the torn envelope held in Elena's slender right hand as a bitter, defiant half-smile curves her soft rose lips.
 
 Shot 6 (00:09.3-00:10.8) - Panel 6 (Middle-Right), Extreme close-up, macro focus locked on Elena's eyes, natural real-time speed
 Golden firelight dances inside Elena's luminous watery eyes as her unblinking gaze hardens into icy resolve under crisp wispy eyelashes.
 
 Shot 7 (00:10.8-00:12.1) - Panel 7 (Bottom-Left), High-angle close-up, top-down view targeting the brass ashtray, crisp real-time speed
-Elena's right fingers release the burning ivory envelope as curling black ash and glowing embers drop into the brass ashtray.
+Elena's long tapering right fingers gently release the burning ivory envelope as curling black ash and glowing embers drop into the brass ashtray.
 
 Shot 8 (00:12.1-00:13.5) - Panel 8 (Bottom-Center), Medium waist-up shot, eye-level angle targeting Elena, natural real-time speed
-Elena rises gracefully from the dark velvet armchair, her right hand lifting the crystal red wine glass to her collarbone in calm composure.
+Elena rises with slender feminine grace from the dark velvet armchair, her delicate right hand lifting the crystal red wine glass to her collarbone in calm composure.
 
 Shot 9 (00:13.5-00:15.0) - Panel 9 (Bottom-Right), Wide shot, three-quarter rear angle targeting Elena beside the rain-streaked window, natural real-time speed
-Elena stands tall facing the glowing city skyline with her head turned in sharp side profile and her lips softly closed in unshakable poise.
+Elena stands tall with an elegant feminine silhouette facing the glowing city skyline, her head turned in sharp side profile and her lips softly closed in unshakable poise.
 
-Master-level cinematography and composition, seamless full-screen 9-shot editing matching Panel 1 to Panel 9 of <<<Image 1>>>, accurate lip-sync on Shot 3, natural biological facial and hand movements.
-Strict visual consistency: maintain 100% identical facial features, porcelain velvet-matte skin, Douyin makeup, hair color, and exact outfit from <<<Image 2>>> and exact room architecture from <<<Image 1>>> across all 9 shots without morphing or wardrobe changes.
-Render strictly as sequential full-screen video shots. Do not show the 3x3 grid layout, panel borders, corner number badges, split-screen mosaic, oily sweat shine, greasy forehead glare, waxy plastic skin, subtitles, text overlays, or watermarks in the video.
+Master-level cinematography and composition, seamless full-screen 9-shot editing matching Panel 1 to Panel 9 of <<<Image 1>>>, accurate lip-sync on Shot 3, natural biological facial movements and slender feminine hand anatomy.
+Strict visual consistency: maintain 100% identical female facial features, slender feminine hands and wrists, porcelain velvet-matte skin, Douyin makeup, hair color, and exact outfit from <<<Image 2>>> and exact room architecture from <<<Image 1>>> across all 9 shots without morphing or wardrobe changes.
+Render strictly as sequential full-screen video shots. Do not show the 3x3 grid layout, panel borders, corner number badges, split-screen mosaic, rough masculine hands on female characters, thick knuckles, oily sweat shine, greasy forehead glare, waxy plastic skin, subtitles, text overlays, or watermarks in the video.
 ```
 
 ---
