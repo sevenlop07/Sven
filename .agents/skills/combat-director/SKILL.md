@@ -122,8 +122,8 @@ Dante's skin and hands: fully_preserved - clean 3D satin-matte masculine skin sh
 Diegetic nocturnal street acoustics: distant city wind hum, soft cloth rustle, sudden sharp intake of breath, rapid frantic footsteps echoing on wet asphalt, a low resonant arcane hum as ground runes ignite, and heavy oppressive silence. Strictly zero background music.
 
 Shot 1 (00:00-00:03.5) - Close-up, side face shot targeting Elena, natural real-time speed
-Elena opens her eyes and her gentle smile freezes abruptly as she glances past Marcus's shoulder toward the dark alley behind them, all warmth vanishing into pure panic.
-Elena (soft airy soprano, low abrupt whisper): "I'm sorry."
+Elena opens her eyes and her gentle smile freezes abruptly as she glances past Marcus's shoulder toward the dark alley behind them, her breath catching in sudden panic.
+Elena (expressive female voice, breath catching in a low abrupt whisper): "Oh god... I'm sorry."
 
 Shot 2 (00:03.5-00:07.5) - Wide tracking shot, long follow shot targeting Elena, blistering whip-fast speed
 Elena pushes off Marcus's shoulder and bolts down the wet brick alley, her frantic footsteps splashing across the puddles as she flees into the night.
@@ -133,7 +133,7 @@ Elena skids to a sharp halt in the middle of the street, her body going rigid as
 
 Shot 4 (00:10.0-00:13.0) - Medium shot, rear camera angle targeting Dante, natural real-time speed
 Elena spins around to run back, only to find Dante standing silently in the middle of the road (No objects should appear in the character's hands), shrouded in shadows with an overwhelming oppressive aura.
-Dante (deep resonant baritone, calm tone): "Miss, you seem lost."
+Dante (expressive male voice, speaking with calm icy authority in a low steady tone): "Hmm... Miss, you seem lost."
 
 Shot 5 (00:13.0-00:15.0) - Medium close-up, over-the-shoulder perspective from behind Dante targeting Elena, natural real-time speed
 Seen past Dante's shadowed shoulder, Elena stumbles back half a step as the glowing crimson rune ring seals around her boots, her breath catching in silent terror.
@@ -178,8 +178,8 @@ Shot 5 (00:06.0-00:08.5) - Wide shot transitioning to fixed frame, warehouse exi
 Kael traps Vance's extended right wrist with his free left hand and pivots on his heel, hurling Vance back-first into the rusted steel rolling shutter.
 
 Shot 6 (00:08.5-00:12.5) - Low-angle medium close-up, slow push-in targeting Kael, natural real-time speed
-Kael steps calmly into the overhead light above the fallen Vance, holding the silver dragon-hilted longsword steady in his right hand with an ice-cold gaze.
-Kael (crisp tenor, calm steady tone): "The door stays locked."
+Kael steps calmly into the overhead light above the fallen Vance, holding the silver dragon-hilted longsword steady in his strong right hand with an ice-cold gaze.
+Kael (expressive male voice, speaking with cold unhurried authority in a calm steady tone): "Hmph... The door stays locked."
 
 Shot 7 (00:12.5-00:15.0) - Medium shot, high-angle over-the-shoulder perspective from behind Kael targeting Vance, natural real-time speed
 Seen past Kael's shoulder and gleaming silver dragon-hilted longsword, Vance slumps against the dented steel shutter clutching his bruised ribs in silent defeat.
@@ -245,7 +245,7 @@ Do not generate oily sweat shine, greasy forehead or nose glare, waxy plastic sk
 Before delivering any `15.0s` (or `10.0s` Seedance) action/chase/combat/rapid-cut prompt, verify:
 1. **Gate C1 (Double-Lock 100% Reference, Single `<<<Image X>>>` Declaration & Zero Ghost Objects)**: Are `<<<Image X>>>` tags declared ONLY ONCE inside `[context]:`, `[subject]:`, and `[prop]:`, **strictly ZERO `<<<Image X>>>` tags inside `Shot 1..N`**, and is every tool/ingredient/prop touched across all shots pre-declared in `[context]:`?
 2. **Gate C2 (Proper Character Names Only)**: Are fixed proper names (`Elena`, `Marcus`, `Dante`, `Kael`) used everywhere (zero generic `Woman`, `Man`, `the hunter`, `the chef`)?
-3. **Gate C3 (Zero-Costume, Zero-Age & Single Vocal-Timbre Tag Law)**: Does the prompt mention any clothing (`jacket`, `coat`, `apron`, `suit`, `skirt`), hair color (`blonde`), or numeric age? $\to$ **PURGE IMMEDIATELY**, and encode vocal maturity + delivery tone inside **ONE single compact parenthetical (`[Proper_Name] ([vocal timbre/maturity], [tone]): "..."`)**.
+3. **Gate C3 (Zero-Costume, Zero-Age & Expressive Vocal-Behavior Tag Law — `Laws D2 & D3`)**: Does the prompt mention any clothing (`jacket`, `coat`, `apron`, `suit`, `skirt`), hair color (`blonde`), numeric age, or dry musical register jargon (`alto`, `baritone`, `tenor`, `soprano`)? $\to$ **PURGE IMMEDIATELY**, and encode vocal behavior + delivery tone inside **ONE single compact parenthetical (`[Proper_Name] (expressive female/male voice, [vocal behavior] in a [tone]): "[Interjection]! ..."`)**.
 4. **Gate C4 (`5–9 Shot` High-Velocity Rapid-Cut Density in `15.0s` · `4–6 Shots` in `10.0s`)**: Does the clip scale shot count up to **`7–9 Shots` (`1.5s–2.0s / shot`)** for rapid-cut craft/martial montages (or `5–7 Shots` when combining a tracking chase with rapid cuts), jumping camera scale/angle by `> 45°` at every cut?
 5. **Gate C5 (`1 Crisp Micro-Strike Sentence [12–22w] per Rapid Shot` — Zero `→` Arrows, Zero Static Repetition)**: Is every `1.5s–2.0s` rapid `Shot N` written as **1 single punchy sentence (`12–22w`) executing 1 single kinetic micro-strike**, with **strictly ZERO `→` arrows** and zero repetition of `[subject]:` posture?
 6. **Gate C6 (Zero Dialogue in All `1.5s–2.5s` Rapid Cuts & Final Settle Shot)**: Are all rapid action/craft/combat cuts and the final `1.5s–2.0s` terminal settle shot strictly **`0` spoken words**?

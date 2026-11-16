@@ -58,7 +58,7 @@ description: >
 > 4. **Inviolable Technical Guardrails Across All Rhythms**:
 >    - **Double-Lock `fully_preserved` Reference, Gender Skin/Makeup Sub-Lock & Single `<<<Image X>>>` Declaration Law**: Keep `<<<Image X>>>` intact and place `(fully_preserved - ...)` immediately after it in `[context]:`, `[subject]:`, and `[prop]:`, plus Line 2 `[Proper_Name]'s skin (and makeup): fully_preserved - ...` inside `[subject]:`; declare `<<<Image X>>>` **ONLY ONCE** in the headers (never repeat inside `Shot 1..N`) and seal with the `Strict visual consistency: ...` footer.
 >    - **Proper Character Names Only**: Always use fixed proper names (`Bradley`, `Harold`, `Elena`, `Dante`, `Sven`, `Lena`) — never generic `Woman`, `Man`.
->    - **Zero-Costume, Zero-Age & Single Vocal-Timbre Tag Law (`Gates 3A & 3E`)**: Strictly ZERO clothing/garment words and ZERO numeric ages or age/hair/beard words anywhere in the prompt; encode voice maturity and emotion inside **ONE single compact parenthetical (`[Proper_Name] ([vocal timbre/maturity], [tone]): "..."`)**.
+>    - **Zero-Costume, Zero-Age & Expressive Vocal-Behavior Tag Law (`Laws D2 & D3` · `Gates 3A & 3E`)**: Strictly ZERO clothing/garment words, ZERO numeric ages or age/hair/beard words, and ZERO dry musical register labels (`alto/baritone/tenor/soprano`) anywhere in the prompt; encode vocal behavior and emotion inside **ONE single compact parenthetical (`[Proper_Name] (expressive female/male voice, [vocal behavior] in a [tone]): "[Native Interjection]! ..."`)**.
 >    - **1–2 Short Natural Sentences per Shot (`15–30 Words`)**: Express 1 clear observable action/state shift per shot in natural prose (zero `→` arrows, zero static repetition, zero meta-instructions).
 >    - **High-Velocity `15.0s` Action/Chase/Combat/Rapid-Cut Montage Scenes Route Exclusively to `@CombatDirector` (`[⚡ SEEDANCE · 15.0s · 5–9 Shots with 1.5s–2.0s Rapid Cuts]`)**.
 
@@ -283,7 +283,7 @@ Whenever the Director outputs scene directions and video prompts, outputs must s
 | `[SUBJECT]` | **Line 1 (Identity + Explicit Gender + Hand/Limb Proportions + Motion-Scope Lock)**:<br>• **Female**: `[Proper_Name] <<<Image 2>>> (fully_preserved - same female face, slender feminine body proportions, delicate wrists, long tapering fingers, hair color, makeup and outfit throughout; only her head, eyes, mouth and expressions move.): A graceful woman [Initial 3D architectural anchor & posture], [initial hand/prop contact state at 00:00 — strictly ZERO specific clothing/age words], [eyeline] — the only [Proper_Name] in frame.`<br>• **Male**: `[Proper_Name] <<<Image 3>>> (fully_preserved - same male face, masculine body proportions, broad shoulders, well-defined masculine hands, hair color and outfit throughout; only his head, eyes, mouth and expressions move.): A composed man [Initial 3D architectural anchor & posture], [initial hand/prop contact state at 00:00], [eyeline] — the only [Proper_Name] in frame.`<br>**Line 2 (Mandatory Skin, Hands & Makeup/Shader Sub-Lock Matched to `Style:`)**:<br>• **Live-Action Female (`F1–F4`)**: `[Proper_Name]'s skin, hands and makeup: fully_preserved - [F1 Douyin Velvet-Porcelain / F2 K-Drama Clean Satin-Matte / F3 Classical Jade-Porcelain / F4 Western Real Unretouched Matte across face, neck, arms, and slender feminine hands with delicate wrists and long tapering fingers]; no rough masculine hands, no thick knuckles, no oily sweat shine, no greasy highlights on the nose or forehead, not plastic, not waxy.`<br>• **Live-Action Male (`M1–M3`)**: `[Proper_Name]'s skin and hands: fully_preserved - [M1 Asian CEO Clean Velvet-Matte / M2 Grounded Dry Matte / M3 Rugged Mature Matte across face, jawline, and strong well-defined masculine hands with natural matte lips]; no oily sweat shine, no greasy highlights on the nose or forehead, not plastic, not waxy.`<br>• **Animation (`A1–A3` when `Style:` is 3D CGI, Pixar, or 2D Anime)**: Use **`A1`**, **`A2`**, or **`A3`** across face and gender-accurate hands. |
 | `[PROP]` *(When Tier-1 Prop/Weapon is Present)* | `[Canonical Prop/Weapon Name] <<<Image 4>>> (fully_preserved - same shape, material, surface finish and proportions throughout): [Exact 00:00 resting placement or character hand-grip state] — the only [Canonical Prop/Weapon Name] in frame.` |
 | `[SOUND]` | Ambient room/outdoor tone, synchronized tactile Foley sounds tied to `Shot 1..N`, and acoustic tension. |
-| `[STORYBOARD SHOTS]` | Dynamic `Shot 1..N` (`1–4 shots` in `10s/15s @Director`; `5–9 shots` in `15s @CombatDirector`), 1–2 short natural sentences per shot (`1 single sentence [12–22w]` for `1.5s–2.0s` rapid cuts) + separated speaker dialogue block (`[Proper_Name] ([vocal timbre/maturity], [tone]): "..."`). *(Always qualify close-up hands as `slender feminine hands / long tapering fingers` for Female or `strong masculine hands` for Male).* |
+| `[STORYBOARD SHOTS]` | Dynamic `Shot 1..N` (`1–4 shots` in `10s/15s @Director`; `5–9 shots` in `15s @CombatDirector`), 1–2 short natural sentences per shot (`1 single sentence [12–22w]` for `1.5s–2.0s` rapid cuts) + separated speaker dialogue block (`[Proper_Name] (expressive female/male voice, [vocal behavior] in a [tone]): "[Interjection]! ..."`). *(Always qualify close-up hands as `slender feminine hands / long tapering fingers` for Female or `strong masculine hands` for Male).* |
 
 ---
 
@@ -354,14 +354,15 @@ Before releasing any scene direction or video prompt, the Director must run this
        Are "24fps", "18mm", "35mm", "50mm", "f/1.4", "ISO", "Arri", and raw Kelvin ratings ("3200K")
        completely purged from Code Block 1?
 
-[ ] 3. ZERO CLOTHING, ZERO AGE & SINGLE VOCAL-TIMBRE TAG (GATES 3A & 3E)
-       Are ALL clothing/garment words ("in a black leather jacket", "in a dark suit", "skirt", "dress")
-       and ALL numeric ages or age/hair/beard words ("32-year-old", "young blonde", "silver-bearded") 100% purged
-       from the entire prompt, with voice maturity and emotion encoded in ONE single parenthetical (`[Proper_Name] ([vocal timbre/maturity], [tone]): "..."`)?
+[ ] 3. ZERO CLOTHING, ZERO AGE & EXPRESSIVE VOCAL-BEHAVIOR TAG (`LAWS D2 & D3` · GATES 3A & 3E)
+       Are ALL clothing/garment words ("in a black leather jacket", "in a dark suit", "skirt", "dress"),
+       ALL numeric ages or age/hair/beard words ("32-year-old", "young blonde", "silver-bearded"), and ALL
+       dry musical register terms ("alto", "baritone", "tenor", "soprano") 100% purged from the entire prompt,
+       with vocal behavior encoded in ONE single parenthetical (`[Proper_Name] (expressive female/male voice, [vocal behavior] in a [tone]): "[Interjection]! ..."`)?
 
-[ ] 4. DOUBLE-LOCK `fully_preserved` REFERENCE, GENDER SKIN/MAKEUP SUB-LOCK & SINGLE `<<<Image X>>>` DECLARATION LAW
+[ ] 4. DOUBLE-LOCK `fully_preserved` REFERENCE, 4-LAYER GENDER/HAND ANATOMY LOCK, SKIN/MAKEUP SUB-LOCK & SINGLE `<<<Image X>>>` DECLARATION LAW
        Are `<<<Image X>>>` tags declared ONLY ONCE inside `[context]:`, `[subject]:`, and `[prop]:` with the
-       explicit `(fully_preserved - ...)` parenthetical right after each tag + Line 2 `<Name>'s skin (and makeup): fully_preserved - ...`, strictly
+       explicit `(fully_preserved - same female/male face, slender feminine / masculine body proportions...)` parenthetical right after each tag + Line 2 `<Name>'s skin, hands (and makeup): fully_preserved - ...`, strictly
        NEVER repeated inside `Shot 1..N`, and sealed with the `Strict visual consistency: ...` footer?
 
 [ ] 5. PROPER CHARACTER NAMES ONLY
@@ -381,10 +382,11 @@ Before releasing any scene direction or video prompt, the Director must run this
        without mechanical `→` arrows, without repeating `[subject]:`'s static 00:00 posture, without
        meta-instructions ("speaking immediately from the opening second"), and with 100% active occupancy?
 
-[ ] 9. TEMPORAL-KINETIC-VOCAL EQUILIBRIUM (`3.5s–4.5s` SPOKEN SHOTS) & ZERO TAIL-CUT LAW
-       Is every shot containing spoken dialogue sized to `3.5s–4.5s` (`One-Move Rule`), and does the final
-       `2.0s–3.0s` shot (`00:08-00:10` in `10s`; `00:12-00:15` in `15s`) contain STRICTLY ZERO SPOKEN WORDS
-       (reserved 100% for the wordless Visual Payoff / Physical Comedy Button / Somatic Reaction Settle)?
+[ ] 9. THE 6 GOLDEN DIALOGUE LAWS (`LAWS D1–D6`: STATIC CAMERA, `3.2s–4.5s` SPOKEN SHOTS & TWO VALID TERMINAL MODES)
+       Are continuous dialogue shots locked to `static camera` (`Law D1`), sized to `3.2s–4.5s` (`One-Move Rule`, `Law D4`),
+       and does the final shot obey `Law D5` — either **(Terminal Mode 1)** `0 spoken words` in the final `2.0s–3.0s` shot
+       OR **(Terminal Mode 2: 100%-Dialogue Ping-Pong)** a short `6–8 word/syllable` line in a `3.6s–4.5s` window with a
+       mandatory `0.5s–1.0s` (`~0.8s`) silent closed-lip tail buffer so the last 1–2 words are never cut off?
 
 [ ] 10. UNIFIED STORYBOARD HEADER & FOOTER STRUCTURE (ZERO REDUNDANT TOP SLUGLINE)
         Does Code Block 1 open directly with `Style:` ➔ `[context]:` ➔ `[subject]:` ➔ `[prop]:` (when Tier-1) ➔
