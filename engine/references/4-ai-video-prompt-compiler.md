@@ -260,10 +260,11 @@ To anchor character identity, eliminate AI duplicate clones, and prevent spatial
    - **Tiên đề 3: Luật Phân Tách Shot Cảm Xúc 1 Mình vs. Shot Va Chạm Vật Lý 2 Người**:
      * **Shot Cảm Xúc 1 Mình (`CU`, `MCU`)**: Chỉ chỉ đạo cơ thể, nhịp thở, ánh mắt và môi của nhân vật được đóng khung.
      * **Shot Va Chạm Vật Lý 2 Người**: Khung hình BẮT BUỘC phải chứa cả người tác động lẫn mục tiêu bị tác động (`Medium two-shot`, `OTS`, `Tight close-up`).
-   - **Tiên đề 4: Cầu Nối Động Lượng Xuyên Cảnh (`TH1 / TH2 / TH3` Continuity Protocol)**:
-     * Dưới `TH1` (cùng thời điểm & cùng bối cảnh), `[subject]:` của Cảnh $N+1$ kế thừa 100% từ **Khung hình tĩnh cuối cảnh $N$ (`Last Frame @00:10.0 / @00:15.0`)** và **`[HANDOVER STATE]`** của Code Block 2 Cảnh $N$.
+   - **Tiên đề 4: Cầu Nối Động Lượng & Hội Thoại Xuyên Cảnh (`TH1 / TH2 / TH3` & `Law D6` 4-Point Cross-Scene Handover Protocol)**:
+     * Dưới `TH1` (cùng thời điểm & cùng bối cảnh), `[subject]:` tại `00:00.0` của Cảnh $N+1$ kế thừa **100% trạng thái tay, đạo cụ và biểu cảm khép môi tại `00:10.0 / 00:15.0` của Cảnh $N$** (ví dụ: nếu cuối Cảnh $N$ đã rút tờ hóa đơn giơ lên trước ngực thì `[subject]:` đầu Cảnh $N+1$ phải neo tay đang cầm tờ hóa đơn ở trước ngực — tuyệt đối không reset về tư thế đầu Cảnh $N$!).
+     * **Luật Lật Trục 180° & Trao Gậy Từ Khóa Qua Biên Cảnh (`Law D6`)**: Nếu `Shot cuối` của Cảnh $N$ quay Nhân vật A nói câu chốt (`OTS targeting A`), thì `Shot 1` của Cảnh $N+1$ BẮT BUỘC lật trục 180° sang quay Nhân vật B (`Reverse OTS targeting B`) bật thán từ và lặp lại/phản박 đúng từ khóa ở cuối Cảnh $N$ (tránh Jump-Cut và tránh thoại rời rạc).
      * Dưới `TH2` (chuyển bối cảnh mới hoặc nhảy thời gian), Agent đọc trực tiếp thông số từ `output/<slug>/setting.html` mà không yêu cầu User gửi ảnh tham chiếu vào chat.
-     * **Clean Terminal Keyframe Landing Mandate (`Final Shot — 0 Spoken Words`)**: Shot cuối cùng của mọi clip (`00:08-00:10` trong `10s`; `00:12-00:15` / `00:13-00:15` trong `15s`) bắt buộc có **`0 spoken words`** và tốc độ **`natural real-time speed` / `crisp real-time speed`** để nhân vật khép miệng tự nhiên, đứng/ngồi ổn định không nhòe chuyển động, sẵn sàng trích xuất `Last Frame`.
+     * **Clean Terminal Keyframe Landing & `0.8s` Closed-Lip Buffer Mandate (`Law D5`)**: Cuối mọi clip (`00:08-00:10` ở `Mode 1`, hoặc `0.8s` cuối `00:09.2-00:10.0` / `00:14.0-00:15.0` ở `Mode 2`) nhân vật bắt buộc khép môi tự nhiên (`holding a silent closed-lip expression for the final 0.8 seconds`) ở tốc độ `natural real-time speed` để tạo cầu nối nhịp thở `~1.2s` sang Cảnh $N+1$ và trích xuất `Last Frame` không bị há miệng.
 
 ---
 

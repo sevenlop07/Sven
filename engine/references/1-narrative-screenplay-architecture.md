@@ -1973,19 +1973,19 @@ $$\mathbf{DRAMATIC\ SPINE} = \mathbf{Super\text{-}Objective\ (Want)} + \mathbf{D
 
 ---
 
-### 2. The 4-Way Cross-Scene Dialogue Relay (Gậy Tiếp Sức Thoại 4 Chiều)
-Dialogue between Scene $N$ and Scene $N+1$ must never start from scratch. Scene $N+1$ MUST receive a "baton" handed off from Scene $N$ across at least one of four structural vectors:
+### 2. The 4-Way Cross-Scene Dialogue & Posture Relay (`Law D6 — Scene N ➔ Scene N+1` Seamless Suture)
+Dialogue and physical state between Scene $N$ and Scene $N+1$ must never start from scratch or collide at the clip boundary. Scene $N+1$ MUST receive a "baton" handed off from Scene $N$ across all four structural and physical vectors:
 
 ```
-[SCENE N: EXIT ANCHOR]
+[SCENE N: EXIT ANCHOR (@00:10.0 / @00:15.0 — Closed-Lip 0.8s Tail Buffer)]
   │
-  ├─► Vector 1: CAUSE-AND-EFFECT CHAIN  ──► (Action/Ultimatum in Scene N forces instant reaction in Scene N+1)
-  ├─► Vector 2: KEYWORD ECHO & INVERSION ──► (Crucial word from Scene N echoed with bitter/ironic meaning in Scene N+1)
-  ├─► Vector 3: EMOTIONAL INERTIA       ──► (Physiological adrenaline/respiration/tremor inherited across the cut)
-  └─► Vector 4: PROP & SPATIAL ANCHOR   ──► (Physical item contested in Scene N dictates tactile focus in Scene N+1)
+  ├─► Vector 1: KEYWORD ECHO & INVERSION ──► (Crucial word/question from Scene N echoed with Native Interjection in Shot 1 of Scene N+1)
+  ├─► Vector 2: SPEAKER & 180° AXIS FLIP ──► (If Scene N ends on Speaker A speaking, Scene N+1 opens on Speaker B answering — Zero Jump-Cut)
+  ├─► Vector 3: EMOTIONAL & VOCAL INERTIA──► (Physiological breath/stammer/tears + ~1.2s Golden Breath Bridge inherited across the cut)
+  └─► Vector 4: 100% [subject]: HANDOVER ──► (Exact terminal hand/prop state at 00:10 of Scene N copied into [subject]: at 00:00 of Scene N+1)
   │
   ▼
-[SCENE N+1: ENTRY BATON]
+[SCENE N+1: ENTRY BATON (@00:00.0 — 0.4s Native Interjection Lead-In)]
 ```
 
 1. **Vector 1: Cause-and-Effect Chain (Mắt Xích Nhân - Quả — "Therefore / But")**:

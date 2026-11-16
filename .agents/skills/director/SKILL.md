@@ -126,8 +126,12 @@ description: >
      Do not generate rough masculine hands on female characters, thick knuckles, oily sweat shine, greasy forehead or nose glare, waxy plastic skin, subtitles, dialogue text, titles, timestamps, or any written text anywhere in the video.
      ```
 
-7. **Cross-Scene Continuity Reference Protocol (`TH1 / TH2 / TH3` — User ONLY Sends `Last Frame` for `TH1 / TH3`)**:
-   - **🟢 Case 1 (`TH1` — Same Time & Same Location)**: Inspect the user-supplied **Static Terminal Frame (`Last Frame @00:10.0` or `@00:15.0`)** from Scene $K-1$ to lock `[subject]:` and `[prop]:` at `00:00` of Scene $K$ with 100% physical fidelity.
+7. **Cross-Scene Continuity Reference Protocol (`TH1 / TH2 / TH3` — User ONLY Sends `Last Frame` for `TH1 / TH3`) & `Law D6` 4-Point Cross-Scene Dialogue/Posture Handover**:
+   - **🟢 Case 1 (`TH1` — Same Time & Same Location + `Law D6` 4-Point Handover)**:
+     * **(1) 100% `[subject]:` Posture & Prop Inheritance**: Lock `[subject]:` and `[prop]:` at `00:00` of Scene $K$ 100% verbatim to the updated hand-prop state (e.g., receipt held at chest level) and closed-lip facial expression from Scene $K-1$'s terminal `@00:10.0 / @00:15.0` state (never resetting to Scene $K-1$'s initial `00:00` posture).
+     * **(2) `~1.2s` Golden Breath Bridge**: `0.8s` closed-lip tail buffer at the end of Scene $K-1$ + `0.4s` native vocal interjection at `00:00` of Scene $K$ prevents audio clashing and open-mouth `Last Frame` glitches.
+     * **(3) Cross-Scene Speaker & 180° Axis Flip (`Anti-Jump-Cut`)**: If Scene $K-1$ ends on Speaker A speaking (`OTS targeting A`), `Shot 1` of Scene $K$ flips the 180° axis to Speaker B (`Reverse OTS targeting B`) responding.
+     * **(4) Keyword Baton & Vocal Inertia Relay**: `Shot 1` of Scene $K$ echoes/inverts the key word or answers the cliffhanger question from Scene $K-1$'s final line.
    - **🔵 Case 2 (`TH2` — Scene 01, Different Location, Different Time, or New Character Lineup)**: Read all 5-Vector location, character, and Tier-1 prop specifications **directly from `output/<slug>/setting.html`** to write `[context]:`, `[subject]:`, and `[prop]:` (`<<<Image X>>>`) immediately — **NEVER ask the user to upload location/character reference images in chat for `TH2`!**
    - **🟣 Case 3 (`TH3` — Supernatural / Time-Travel / Spatial Shift)**: Lock character posture and hand-grip from Scene $K-1$'s user-supplied terminal frame at `00:00`, while reading the New World/Era Location's `[context]:` directly from `output/<slug>/setting.html`.
 
