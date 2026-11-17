@@ -20,15 +20,25 @@ function findStudioMCP() {
   }
   if (process.platform === "win32") {
     const localAppData = process.env.LOCALAPPDATA || path.join(process.env.USERPROFILE || "C:\\Users\\Default", "AppData", "Local");
-    const versionsDir = path.join(localAppData, "Roblox", "Versions");
-    if (fs.existsSync(versionsDir)) {
-      const candidates = fs.readdirSync(versionsDir)
-        .map((d) => path.join(versionsDir, d, "StudioMCP.exe"))
-        .filter((p) => fs.existsSync(p))
-        .sort((a, b) => fs.statSync(b).mtimeMs - fs.statSync(a).mtimeMs);
-      if (candidates.length > 0) return candidates[0];
+    const progFiles = process.env.ProgramFiles || "C:\\Program Files";
+    const progFiles86 = process.env["ProgramFiles(x86)"] || "C:\\Program Files (x86)";
+    const searchRoots = [
+      path.join(progFiles, "Roblox", "Versions"),
+      path.join(progFiles86, "Roblox", "Versions"),
+      path.join(localAppData, "Roblox", "Versions"),
+    ];
+    const candidates = [];
+    for (const versionsDir of searchRoots) {
+      if (fs.existsSync(versionsDir)) {
+        for (const d of fs.readdirSync(versionsDir)) {
+          const p = path.join(versionsDir, d, "StudioMCP.exe");
+          if (fs.existsSync(p)) candidates.push(p);
+        }
+      }
     }
-    return path.join(versionsDir, "StudioMCP.exe");
+    candidates.sort((a, b) => fs.statSync(b).mtimeMs - fs.statSync(a).mtimeMs);
+    if (candidates.length > 0) return candidates[0];
+    return path.join(progFiles, "Roblox", "Versions", "StudioMCP.exe");
   }
   return "/Applications/RobloxStudio.app/Contents/MacOS/StudioMCP";
 }
