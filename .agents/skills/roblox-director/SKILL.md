@@ -43,3 +43,15 @@ Always execute in this strict step-by-step order with user approval at each gate
 
 When generating Roblox visuals via AI image/video generators (`Seedance`, `Kling`, `Midjourney`, or `@RefVideoDirector`) without Roblox Studio, enforce **School A4 (`Roblox Blocky R6/R15 & ABS Plastic Shader Lock`)**:
 - Lock `cylindrical rounded-top head with bold 2D printed decal face (thick black outlines, large expressive eyes, heavy brows, zero 3D human nose), blocky R15/R6 torso and limbs with curved C-shaped blocky claw hands (strictly NO five human fingers), smooth satin-matte ABS toy plastic shader with realistic global illumination`.
+
+---
+
+## 🛠️ 3. TRACK R3 WORKFLOW — HEADLESS BLENDER 5.x ANIMATION & ROBLOX EXPORT SUITE (`28 blender-* SKILLS`)
+
+Always start any Blender or custom 3D animation/rigging task with [`blender-core/SKILL.md`](file:///d:/Project/Sven/.agents/skills/blender-core/SKILL.md):
+- **Headless Execution**: `python .agents/skills/blender-core/scripts/run_in_blender.py [--blend in.blend] <script.py> -- <args>`
+- **Key Skills for Roblox & 3D Machinima**:
+  * `blender-character-rigging` + `blender-animation` (`retarget.py`, `bake_action.py`, `loop_check.py`): Build R15/custom rigs, retarget mocap/Mixamo/BVH, and author 30fps Bezier/Quaternion character animations.
+  * `blender-export-pipelines` (`export_asset.py --preset roblox` / `roblox_gltf` + `references/roblox.md`): Export R15 avatars (`15 _Geo parts`, `≤10,742 tris`), layered clothing (`_InnerCage` / `_OuterCage`), accessories (`≤4k tris`), MeshParts (`≤20k tris`), and animation clips into Roblox Studio.
+  * `blender-lighting-lookdev` + `blender-time-of-day` + `blender-weather-fx` + `blender-rendering` (`render_batch.py`): Render 30–60fps EEVEE/Cycles animations in the background.
+  * `blender-asset-qa` (`qa_check.py --profile roblox` + `review_shots.py`): Verify zero z-fighting, zero floating parts, and clean normals/weights before delivery.

@@ -21,13 +21,16 @@ description: >
 
 ---
 
-## 🎯 1. TWO EXECUTION TRACKS OF `@RobloxDirector`
+## 🎯 1. THREE EXECUTION TRACKS OF `@RobloxDirector`
 
-`@RobloxDirector` operates across **2 Complementary Production Tracks** depending on the user's goal:
+`@RobloxDirector` operates across **3 Complementary Production Tracks** depending on the user's goal:
 1. **TRACK R1 — Native Roblox Studio MCP Pipeline (`Free 4K Vertical Video Capture` — Driving Roblox Studio on the User's PC)**:
-   - Writes viral `"In this town..."` / `"In this world..."` story scripts (`20s` / `60s` / `150s`), plans word timings & shot lists (`~1 shot/s`), connects directly to **Roblox Studio's built-in MCP Server**, builds 3D maps from free Creator Store models, spawns R6/R15 cast with custom clothes and 24 bold face decals, checks every shot via screenshots, and captures native `1080×1920` (HD) or `2160×3840` (4K) vertical video frames for **$0 video generation cost**.
+   - Writes viral `"In this town..."` / `"In this world..."` story scripts (`20s` / `60s` / `150s`), plans word timings & shot lists (`~1 shot/s`), connects directly to **Roblox Studio's built-in MCP Server**, builds 3D maps from free Creator Store models (`search.py` + `ins.py`), spawns R6/R15 cast with custom clothes (`make_clothes.py`), 24 bold face decals (`faces.lua`), and multi-frame `MT.frame(id, f)` / `StepAnimations(1/30)` character motion, checks every shot via screenshots, and captures native `1080×1920` (HD) or `2160×3840` (4K) vertical video frames for **$0 video generation cost**.
 2. **TRACK R2 — AI Image & AI Video Roblox GFX Pipeline (`School A4 — Roblox Blocky / Blender Cycles GFX Shader` on Seedance / Kling / Midjourney / `@RefVideoDirector`)**:
    - Generates Roblox-style character sheets, keyframes, or motion-swapped videos (`@RefVideoDirector`) using generative AI models without opening Roblox Studio, enforcing the **Roblox Blocky Anatomy & ABS Plastic Shader Lock (`School A4`)** so AI never mutates Roblox characters with human fingers or 3D noses.
+3. **TRACK R3 — Headless Blender 5.x 3D Rigging, Keyframe Animation & Roblox Export Pipeline (`28 blender-* Skills` in `.agents/skills/blender-*`)**:
+   - Powered by the 28 **Blender Agent Skills** (`blender-core/scripts/run_in_blender.py`, `blender-character-rigging`, `blender-animation`, `blender-facial-shapekeys`, `blender-clothing`, `blender-hair-grooming`, `blender-export-pipelines` [`--preset roblox` / `roblox_gltf` + `references/roblox.md`], `blender-rendering`, `blender-lighting-lookdev`, `blender-time-of-day`, `blender-weather-fx`, `blender-asset-qa`, and `blender-workflow-recipes`).
+   - Runs headless Blender in the background (`python .agents/skills/blender-core/scripts/run_in_blender.py <script.py> -- <args>`) to build, rig, animate (`30–60 fps` quaternion actions, walk/run cycles, Mixamo/BVH retargeting via `retarget.py`, loop checks via `loop_check.py`), QA (`qa_check.py --profile roblox`), and either render directly via EEVEE/Cycles (`render_batch.py`) or export R15/FBX/glTF assets and animations into Roblox Studio (`export_asset.py --preset roblox`).
 
 ---
 
