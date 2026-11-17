@@ -17,6 +17,18 @@ description: >
 
 ---
 
+## 🧠 0. LAW R0 — THE 6-PILLAR AI-VIDEO-PROMPT-TO-3D-ENGINE ISOMORPHISM
+
+Every Roblox Studio (`Track R1`) or Blender 5.3 (`Track R3`) video MUST physically implement all **6 Pillars of Sven's Unified AI Video Prompt Architecture (`Style:` ➔ `[context]:` ➔ `[subject]:` ➔ `[prop]:` ➔ `[sound]:` ➔ `Shot 1..N`)**:
+1. **`Style:`**: Realistic lighting (`LightingStyle = Realistic` / Blender EEVEE `AgX`), `Atmosphere`, `Bloom`, `ColorCorrection` mood shifts on the `TWIST` cut, `DepthOfField` on close-ups, and zero Studio selection outlines (`Selection:Set({})`).
+2. **`[context]:` (3 Depth Planes)**: Always populate **Foreground** (fences, lamps, trees, car edges for parallax), **Midground** (detailed house/interior, porch, lit windows), and **Background** (neighboring houses across the street, tree line, clouds) so no empty baseplate edge or black void is ever seen.
+3. **`[subject]:` (Full Rig, 3D Hair, Clothes, 4-Zone Face & 180° Axis Pose)**: Characters must have 3D hair (`hairParts`/`hair.lua`), clothes/shoes (`lib.lua`/`make_clothes.py`), expressive eyes/brows/mouth (`faces.lua`), and orient toward their counterpart/target (`faceTo`) in active poses—never standing in frozen T/I-poses facing the street.
+4. **`[prop]:` (Hand-Welded Props & Physical Causality)**: Weld held props to `armR`/`armL` (`rig.extra`) and animate the full `State A ➔ State B` physical trajectory (`held` $\to$ `parabolic throw MT.toss` $\to$ `scatter/impact`).
+5. **`[sound]:` (4-Layer Audio)**: Combine Narrator VO + Character Dialogue + Timestamped Diegetic Foley SFX at every physical beat + Dynamic BGM (`roblox-story-bg.mp3` with `TWIST` silence drop and `-14 LUFS` mix).
+6. **`Shot 1..N (00:XX-00:YY)` (`Target-First Camera` + `30 fps` `State A ➔ State B` Animation)**: Enforce `>45°` scale/angle jumps (`WS` $\to$ `MCU OTS` $\to$ `Reverse OTS` $\to$ `CU Insert` $\to$ `Low-Angle CU Dolly-Zoom`) and multi-frame character animation (`MT.walk`, head turns, pointing/throwing gestures, breathing sway, blinking, and `2–3/s` mouth flaps)—never a single static screenshot per shot.
+
+---
+
 ## 🚀 1. TRACK R1 WORKFLOW — NATIVE ROBLOX STUDIO MCP (`FREE 4K VERTICAL VIDEO`)
 
 Always execute in this strict step-by-step order with user approval at each gate:
