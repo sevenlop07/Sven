@@ -1,0 +1,32 @@
+# skeletons.txt - story skeletons of the golds and the refs, for the skeleton no-copy check (script.md §9.4).
+# A new episode writes its own skeleton in the sheet header ("Skeleton": slot=value; ...) using the values below.
+# script_check.py fails it if it shares the same value with any one row here on 5 or more of the 12 slots (HYPOTHESIS),
+# or if its `signature` (a ref's trademark story move) equals any row's signature, whatever else differs.
+# Ref rows are derived from team/script-beats.json beat lines (a judgment, not a measurement). Data, not a menu.
+#
+# slots and allowed values (pick the nearest; "other:<word>" is allowed and never matches):
+# family   : 1-11 (script.md §4)
+# sign     : on-everyone | on-narrator | at-narrator-home | on-one-person | place-or-world | silent-sign-activates
+# belief   : intruder-threat | villain-person | bad-luck-person | status-envy | worthless-empty | no-love | danger-outside | rejection
+# reaction : mock | fear-defend | avoid | accept | report
+# discovery: follow-person | follow-trail | close-look-object | told | rule-test | record-screen
+# subject  : parent-child | grandparent-partner | grandparent-child | sibling | friend-narrator | classmate-parent | stranger-family | self | pet-family | authority-all
+# outcome  : reunion | romance | friendship | sacrifice-revealed | protection | loss | dread | freedom | exposure
+# climax   : night-visit | public-stand | use-rule | give-up | confession | sit-with | break-free
+# ending   : family-meal | rule-object-changed | two-together | keepsake | open-door | empty-space
+# lastline : callback-image | sound-callback | rule-object-state | dark-open | small-action-motif
+# reveal   : whose-sign | what-i-was | i-caused-it | rule-works-otherwise | authority-lied | outsider-right | when | cost-shift | hidden-cost
+#            (the QUESTION the twist line answers: whose sign was it / what was I / who caused it / how does the rule really work / ...)
+# signature: none | silent-device-fires | hidden-cost-paid | i-was-the-cause | sacrifice-for-sick-relative | sold-for-someone | rule-was-a-lie
+#            (the refs' trademark moves: bell's sign that never worked fires at the end, town's dad secretly paid with his tears,
+#             monster's "I was the door", the 4/6 secret sacrifice for a sick or dying relative. A new episode uses "none".)
+
+name | family | sign | belief | reaction | discovery | subject | outcome | climax | ending | lastline | reveal | signature
+gold-1 | 2 | at-narrator-home | intruder-threat | fear-defend | follow-trail | parent-child | reunion | night-visit | family-meal | callback-image | i-caused-it | none
+gold-2 | 6 | on-everyone | worthless-empty | mock | close-look-object | friend-narrator | friendship | use-rule | two-together | small-action-motif | outsider-right | none
+bell | 1 | silent-sign-activates | status-envy | mock | follow-person | classmate-parent | sacrifice-revealed | sit-with | rule-object-changed | rule-object-state | hidden-cost | silent-device-fires
+memories | 1 | on-everyone | worthless-empty | mock | told | sibling | sacrifice-revealed | give-up | keepsake | callback-image | hidden-cost | sold-for-someone
+town | 1 | on-everyone | villain-person | avoid | close-look-object | parent-child | sacrifice-revealed | use-rule | rule-object-changed | sound-callback | hidden-cost | hidden-cost-paid
+dog | 1 | on-everyone | no-love | accept | told | pet-family | sacrifice-revealed | use-rule | keepsake | callback-image | hidden-cost | sacrifice-for-sick-relative
+monster | 3 | on-narrator | status-envy | accept | told | self | dread | give-up | two-together | dark-open | what-i-was | i-was-the-cause
+train | 5 | place-or-world | danger-outside | accept | record-screen | authority-all | freedom | break-free | open-door | rule-object-state | authority-lied | rule-was-a-lie

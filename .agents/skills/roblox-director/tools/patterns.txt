@@ -1,0 +1,94 @@
+# patterns.txt - data for script_check.py (script.md §0.1 voice, §9.4 no-copy). One rule per line:
+#   regex | source or label | hint        (regex is Python, case-insensitive, matched per sentence)
+# Edit here, not in the tool. Lines starting with # are comments; [section] starts a section.
+
+[copy-shapes]
+# line shapes, act-1 frames, callbacks and endings already used by the golds or the refs. A new script uses none of them.
+\btold (his|her) (wife|husband|mom|dad|boss|teacher) (he|she)\b | gold-1 | "[Neighbour] told his wife [lie]" act-1 frame
+\bthis time\b | gold-1, bell | "this time" ending / callback frame
+\b(stopped|quit) laughing\b | bell | "I stopped laughing" turn
+\bnobody laughed\b | bell | bell's laugh ladder
+^\W*i lied\W*$ | gold-1 | "I lied." climax line
+\bthe (most|least|biggest|smallest|poorest|richest|best|worst|only|oldest|loudest) \w+( \w+)? in (town|school|the world|the city)\b | town, monster | "the [poorest] X in town" stake frame
+\bwalk(ed|s)? (\d+ steps |three steps |ten steps |a few steps )?(ahead of|behind|right next to|next to) (him|her|me|mine|them)\b | gold-1 | walk-ahead → walk-beside callback
+\bwalked me home\b | gold-1 | "he walked me home" turn
+\b(41|2045)\b | gold-2 | the gold numbers 41 and 2045
+\bbr(oke|eaks?) (it|his|her|my|the|one|a) ?(\w+ )?in half\b | gold-2 | cookie-in-half motif
+\bturn(s|ed)? gold\b | gold-2 | "the date turns gold" mechanic
+\bstopped at (the|our) gate\b | gold-1 | gold-1 motif
+\bpizza day\b | gold-2 | gold-2 twist callback
+\bi mean, (he|she|whoever)\b.*\b(getting|get|wanted|wants) in\b | gold-1 | "I mean, whoever it was, he was getting in." misread peak
+^\W*honestly, i \w+( \w+)?\W*$ | gold-1, gold-2 | "Honestly, I meant it." flaw-admission beat ("honestly" stays a marker anywhere else)
+\bliterally always\b | gold-1 | "My mom literally always knows…" act-1 frame
+\b(already wearing|still in|still wearing) (his|her) (shoes|slippers|boots|coat)\b | gold-1 | eager-person footwear beat
+\b(three plates|dinner with us every|(eats|ate|has) (dinner|breakfast) with us)\b | gold-1 | family-meal resolution
+\bbro\b.*\bwants? you\b | gold-1 | joke-clue shape ("bro" + "wants you")
+\bnever (\w+ed|rung|rang|cried|lit|buzzed|rang)\b.*\bnot once\b | bell, town | "never rung. Not once." stake ladder
+^\W*not once\W*$ | bell, town | "Not once." ladder step
+\b(not even )?(on|since) (my|his|her|their) birthday\b | bell | "Not even on my birthday." ladder end
+\bwalk(ed|ing|s)? (her|him|me|you) (home|to school)\b | gold-1 | escort-as-love motif ("he walked me home")
+
+[banned-regex]
+# forms of §9.1 phrases a literal search misses
+\bfirst \w+ ever\b | "for the first time" in any form ("her first text ever")
+\bfor the (very )?first time\b | "for the first time"
+\bnever \w+( \w+)? in (my|his|her|our) (whole )?life\b | "never heard in my whole life" (bell)
+
+[narrator-tone]
+# written-English and narrator/trailer patterns. Each hit needs a rewrite in the user's register (script.md §0.1).
+\b\w+ (close|heal|grow|fade|win|come back|matter|break)s?( up)? when you\b | aphorism | "[Abstract] [verb] when you…" is a moral; say a concrete fact instead
+\bwhen you (make|tell|love|give|let|believe)\b.*\b(true|real|go|right)\b | aphorism | a moral dressed as a reason
+\bnever let (go|him go|her go)\b | cliché | say what the hands did: "I didn't let go of his hand once."
+\bheld out (his|her|my) hand\b | literary | say the action: "he asked me to dance"
+^\W*in it,\b | written English | "In the photo, …"
+\bwho (won't|wouldn't|will never) (laugh|judge|leave|lie)\b | movie line | a plain ask: "Come on, kid. Just one song."
+\bhalf as (long|big|bad|wide)\b | stiff | "half gone"
+\bthat's when\b | narrator tone | cut it, start on the action
+\b(i|he|she) (realized|understood|knew) (that|then|it)\b | narrator tone | show the action that proves it
+\bdeep down\b | cliché | cut
+\bsomehow\b | narrator tone | say how, or cut
+\bas if\b | written English | "like"
+\b(a|the) (feeling|sense) of\b | named feeling | show the action
+\bmy heart\b | named feeling | show the action
+\b(little|tiny) did\b | cliché | cut
+\btook (you|him|her) long enough\b | movie line | something only this character would say
+\bi've been waiting (for you|for this|my whole)\b | movie line | a concrete fact instead
+\b(you|he|she) came back for me\b | movie line | show the action
+\bit's been (a long time|forever|years)\b | movie line | a concrete fact instead
+\bwe('ll| will) always have\b | movie line | cut
+\bwasn't (just )?the \w+est\b.*\. \w+ was (just )?the\b | staged contrast | "He wasn't the X. He was the Y." (§9.2)
+
+[uncontracted]
+# pairs a kid says contracted. Flag them unless the line stresses the word on purpose.
+\b(i am|do not|did not|does not|could not|would not|was not|is not|were not|have not|has not|it is|that is|he is|she is|there is|i will|cannot|let us|you are|they are|we are)\b | written English | contract it ("didn't", "it's")
+
+[casual-markers]
+# the user's register: raw, casual, told to a friend. Target about 1 per 15 s of narration (HYPOTHESIS), never 2 in one sentence.
+\bkinda\b | marker
+\bsorta\b | marker
+\bbro\b | marker
+\bdude\b | marker
+\bi mean\b | marker
+\bliterally\b | marker
+\bhonestly\b | marker
+\bbasically\b | marker
+\bpretty much\b | marker
+\bso yeah\b | marker
+\bwhatever\b | marker
+\bgonna\b | marker
+\bwanna\b | marker
+\bgotta\b | marker
+(?<!so )\byeah\b | marker
+\bokay\b | marker
+\bsuper (?=\w)(?!man\b|hero)\w+ | marker
+\btotally\b | marker
+\bfor real\b | marker
+\bno way\b | marker
+\bi guess\b | marker
+\bi figured\b | marker
+\bway (too|more|past|over|better|worse)\b | marker
+\blike,|, like,|\blike (\d+|a few|totally|so|super|the whole|every)\b | marker
+
+[similes]
+# count, cap about 1 per 30 s
+\blike (a|an|the) (?!few\b|whole\b|lot\b)\w+|\bas \w+ as (a|an)\b | simile

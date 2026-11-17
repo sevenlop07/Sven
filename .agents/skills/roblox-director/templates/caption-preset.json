@@ -1,0 +1,88 @@
+{
+  "_doc": "Machine-readable twin of captions.md. Each *_tag is REF-RANGE (measured in 6 refs) or HYPOTHESIS (bet). No view data exists for the refs.",
+  "canvas": {"width": 1080, "height": 1920, "fps": 30},
+  "chunking": {
+    "mode": "one_word",
+    "words_per_caption": 1,
+    "phrase_mode": {"allowed": "only at 245+ wpm", "words_per_caption": [1, 3], "font": "Anton", "pop": false},
+    "tag": "REF-RANGE (4/6 refs 1.00-1.05 tokens per caption; town/dog 1.62-1.69)"
+  },
+  "font": {
+    "family": "Montserrat ExtraBold",
+    "fallbacks": ["Poppins ExtraBold", "Arial Black"],
+    "size_px": 104,
+    "size_px_light_variant": 72,
+    "text_extent_height_pct": 5.25,
+    "tag": "REF-RANGE for size (101 px extent); family is a GUESS from glyph shapes"
+  },
+  "position": {
+    "anchor": "center",
+    "x_pct": 50,
+    "y_center_pct": 70.0,
+    "y_center_px": 1344,
+    "y_tolerance_pct": 0.5,
+    "max_width_pct": 65,
+    "shrink_to_fit_up_to_pct": 80,
+    "tag": "REF-RANGE (bell/memories 70.0, monster/train 70.6, town/dog 61.7)"
+  },
+  "fill": {"color": "#FFFFFF"},
+  "outline": {"color": "#000000", "width_px": 12, "light_variant_px": [7, 9], "join": "round", "position": "outside", "tag": "REF-RANGE"},
+  "shadow": {"color": "#000000", "opacity": 1.0, "offset_x_px": 0, "offset_y_px": 6, "blur_px": [0, 4], "tag": "REF-RANGE"},
+  "pop": {
+    "enabled": true,
+    "scale_by_frame": [1.25, 1.18, 1.10, 1.04, 1.00],
+    "duration_frames": 4,
+    "duration_ms": 133,
+    "fade_out": false,
+    "tag": "REF-RANGE (bell, memories); monster/train have no pop"
+  },
+  "timing": {
+    "onset_offset_frames": [-2, 0],
+    "default_onset_offset_frames": -1,
+    "pct_within_100ms_min": 75,
+    "gap_max_frames": 1,
+    "pct_gap_le_1_frame_min": 85,
+    "min_duration_s": 0.1,
+    "typical_duration_s": [0.2, 0.3],
+    "hold_until_next_word": true,
+    "last_caption_stays_in_pause": true,
+    "tag": "REF-RANGE window; exact -54..-81 ms lead was not independently reproduced, calibrate by eye on 1-2 words"
+  },
+  "highlight": {
+    "accent_colors": {"yellow": "#FEDD30", "red": "#FD3433", "lime_all_words_alt": "#E2FD00"},
+    "default_accent": "#FEDD30",
+    "one_accent_per_video": true,
+    "hook_sentence_accented": {"default": true, "covers": "the whole first sentence, however long (2.0-4.5 s)", "refs_s": [3.7, 4.07], "rotate_on_off": true},
+    "after_hook_share_pct_max": 13,
+    "category_rule_first": "names, rule words, 1-2 peak words only; a lower share is fine",
+    "words_per_100s_max": 18,
+    "eligible": ["character names", "rule object", "emotional words/states", "twist noun"],
+    "never": ["function words"],
+    "max_accents_per_sentence": 1,
+    "max_consecutive_accent_words": 2,
+    "tag": "HYPOTHESIS inside ref range (bell ~19 % of later words, memories ~5 %; others none)"
+  },
+  "safe_zone": {
+    "box_px": {"x_min": 60, "x_max": 900, "y_min": 250, "y_max": 1550},
+    "avoid": {"bottom_pct": 20, "right_pct": 12},
+    "tag": "HYPOTHESIS (general platform UI convention, not measured; verify on a real upload)"
+  },
+  "watermark": {
+    "default": "none",
+    "optional_handle": {"x_px": 40, "y_px": 130, "text_height_px": 33, "weight": "bold", "fill": "#FFFFFF", "outline": "dark", "static": true},
+    "never": ["Roblox logo", "classic/noob avatar as icon"],
+    "tag": "REF-RANGE n=1 for position (bell); 4/6 refs had none"
+  },
+  "qa": {
+    "caption_center_y_pct": [69.5, 70.5],
+    "text_height_pct": [5.0, 5.5],
+    "gap_le_1_frame_pct_min": 85,
+    "onset_within_100ms_pct_min": 75,
+    "first_caption_s_max": 0.2,
+    "accent_function_words": 0
+  },
+  "rotation": {
+    "may_vary_per_episode": ["accent color", "hook accented on/off", "phrase vs one-word mode"],
+    "fixed": ["font", "position", "outline", "pop"]
+  }
+}
