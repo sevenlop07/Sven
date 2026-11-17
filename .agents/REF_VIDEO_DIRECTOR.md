@@ -76,17 +76,22 @@ print("Saved contact sheet:", sheet_path)
 ```
 - **Why Law V1 Is Non-Negotiable**: Inspecting the labeled `0.5s/frame` Contact Sheet guarantees 100% accuracy on **(a) total shot count (`Shot 1..N`)**, **(b) exact cut timestamps (`00:00.0–00:02.3`, `00:02.3–00:04.8`, etc., including rapid `1.0s` close-up inserts)**, and **(c) true physical movement direction** (never hallucinating chest-beating or reversed actions).
 
-### Law V2 — Single Reference Declaration & Zero Token Cross-Contamination (`Khai Báo <<<Video 1>>> & <<<Image X>>> Đúng 1 Lần — Cấm Trộn <<<Video 1>>> Vào Dòng Của Nhân Vật Mới`)
-1. **Declare `<<<Video 1>>>` ONLY ONCE inside `[video reference]:`**:
-   - Format:
-     ```text
-     [video reference]:
-     <<<Video 1>>> (fully_preserved - replicate the exact [N]-shot camera angles, shot scales, cut timings, [environment if Mode V1], and physical motion trajectories across all shots, while replacing the [female/male] subject with [Proper_Name]).
-     ```
+### Law V2 — Single Reference Declaration, Source-Target Visual Identification in `[video reference]:` & Zero Token Cross-Contamination in `[subject]:`
+1. **Declare `<<<Video 1>>>` ONLY ONCE at the start of `[video reference]:` & Explicitly Describe the Source Target(s) Being Replaced**:
+   - When a source video contains 1 or multiple characters, the AI model MUST know **which specific person in `<<<Video 1>>>` is being replaced** and **which new Proper Name (`Elena`, `Marcus`) replaces them**, plus **which old garments/accessories must be stripped**!
+   - Therefore, inside `[video reference]: <<<Video 1>>> (...)`, **explicitly identify each source person to be replaced by their visual appearance, clothing, accessories, and spatial position in the source video**, map them to their new `[Proper_Name]`, and command the removal of their old face/wardrobe/accessories — **without repeating `<<<Video 1>>>` or `<<<Image X>>>` tags inside the parenthetical**:
+     * **Single-Character Swap Formula**:
+       ```text
+       [video reference]:
+       <<<Video 1>>> (motion_and_camera_reference_only - strictly follow the exact [N]-shot cut timings, camera angles, shot scales, [environment if Mode V1], and physical movement trajectories, while performing a 100% full-body character and wardrobe replacement of the original [woman/man + distinct source outfit/accessories/position, e.g., woman wearing black sunglasses and a dark floral slip dress] with [Proper_Name]; completely remove the original [woman's/man's] face, [old accessories/garments], retain [Retained_Entity_Names if any], and replace the original background music with realistic diegetic sound effects).
+       ```
+     * **Multi-Character Swap Formula (`When 2+ People Appear in <<<Video 1>>>`)**:
+       ```text
+       [video reference]:
+       <<<Video 1>>> (motion_and_camera_reference_only - strictly follow the exact [N]-shot cut timings, camera angles, shot scales, and physical movement trajectories, while performing a 100% full-body character and wardrobe replacement of (1) the original [person A's appearance, outfit & left/right/center position in source video] with [Proper_Name_A], and (2) the original [person B's appearance, outfit & position in source video] with [Proper_Name_B]; completely remove their original faces, outfits, and accessories, and replace the original audio with realistic diegetic sound effects).
+       ```
 2. **Declare `<<<Image X>>>` ONLY ONCE at its entity header (`[context]:`, `[subject]:`, or `[prop]:`)**:
-   - **CRITICAL ANTI-BLEEDING RULE**: Inside `[Proper_Name] <<<Image X>>> (...)` in `[subject]:`, **STRICTLY NEVER write `<<<Video 1>>>` and NEVER mention the old character's clothing or accessories from the source video** (e.g., never write *"replace the woman in the dark floral slip dress and black sunglasses in <<<Video 1>>>"* inside `Elena`'s `[subject]:` line!).
-   - *Why?* Because if `Elena`'s `[subject]:` line contains the tokens `<<<Video 1>>>`, `floral slip dress`, or `sunglasses`, the multimodal text encoder binds the source video's old clothing and sunglasses directly onto `Elena`!
-   - Keep `Elena <<<Image X>>>`'s `[subject]:` block 100% pure (identical to the standard Sven 4-Layer Gender, Hand/Limb Anatomy & Skin/Makeup Sub-Lock), and place any ban on old accessories (such as `Do not generate sunglasses on Elena`) strictly in the final **Negative Footer**!
+   - **CRITICAL ANTI-BLEEDING RULE IN `[subject]:`**: While `[video reference]:` identifies and strips the old character's appearance/clothing, inside `[Proper_Name] <<<Image X>>> (...)` in `[subject]:`, **STRICTLY NEVER write `<<<Video 1>>>` and NEVER mention the old character's clothing** (keep `[subject]:` 100% focused on the new character `Elena <<<Image 1>>>` so `[subject]:` embeddings stay 100% pure!).
 
 ### Law V3 — 100% Proper / Canonical Entity Naming Consistency Across the Entire Prompt (`Đặt Tên Thực Thể Rõ Ràng Ở [subject]: / [prop]: Rồi Gọi Đúng Tên Đó Xuyên Suốt Shot 1..N`)
 1. Every active entity in the video — both **newly swapped characters (`Elena <<<Image 1>>>`)** AND **retained creatures/characters from the source video (`V-Rex`, `Kong`, `Guard`)** — MUST be explicitly named and defined inside `[subject]:` (and `[prop]:` for Tier-1 weapons/props):
@@ -128,7 +133,7 @@ When replacing the background with a new Location Reference (`[context]: [New Lo
 Style: Realistic Live-Action Blockbuster Film, high-contrast cinematic color grading with deep rich blacks, crisp highlights, vibrant micro-contrast, and enhanced shadow depth across rock textures and skin, flawless velvet-matte female skin finish with zero oily or plastic glare, subtle organic film grain, zero washed-out milky haze, crisp real-time motion.
 
 [video reference]:
-<<<Video 1>>> (fully_preserved - replicate the exact 7-shot camera angles, shot scales, cut timings, environment, and physical combat motion trajectories across all shots, while replacing the female subject with Elena).
+<<<Video 1>>> (motion_and_camera_reference_only - strictly follow the exact 7-shot cut timings, camera angles, shot scales, environment, and physical dinosaur-wrestling movement trajectories, while performing a 100% full-body character and wardrobe replacement of the original woman wearing black sunglasses and a dark floral slip dress with Elena; completely remove the original woman's face, black sunglasses, and dark floral slip dress, retain V-Rex and Kong, and replace the original electronic background music with realistic diegetic combat sound effects).
 
 [context]:
 Prehistoric jungle cliffside gorge, overcast daytime. A rocky dirt ledge with green grass tufts, towering moss-covered limestone cliffs with hanging jungle vines, and a misty mountain valley under a dramatic overcast sky, rendered with deep high-contrast shadows, rich dark blacks, and crisp rock surface detail.
