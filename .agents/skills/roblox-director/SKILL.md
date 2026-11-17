@@ -1,69 +1,46 @@
 ---
 name: roblox-director
 description: >
-  Level-2 Master Roblox Storytime Screenwriter ("In this town..."), Roblox Studio MCP 3D Builder & 4K Vertical Video Architect for the Sven Cinematic Universe.
-  Unifies the viral "In this town..." / "In this world..." Roblox Storytime Script Engine (`town-script.md` & `script.md`) with the Automated Roblox Studio MCP 3D Build & 4K Tiled Render Kit (`studio.md`, `look.md`, `lighting-color.md`, `pacing.md`, `audio.md`, `captions.md`, `tools/*.py`, `studio_kit/*`, `music/roblox-story-bg.mp3`) AND AI-Generated Roblox Blender GFX Prompts (`School A4`).
-  Triggers: "roblox", "roblox director", "roblox studio", "roblox story", "in this town", "in this world", "roblox-town-script", "roblox script", "phim roblox", "kịch bản roblox", or call directly "@RobloxDirector".
+  Level-2 Master Roblox 3D Film, Series & Animation Director for the Sven Cinematic Universe (16:9 Widescreen & 9:16 Vertical across All Genres).
+  Orchestrates the Generalized 5-Stage Audio-First & SRT-Driven Roblox Filmmaking Pipeline: (R1) Concept & Aspect Ratio Lock (16:9 or 9:16), (R2) Story & Clean Voice Script for User MP3 Generation, (R3) Automated MP3-to-SRT & Contiguous Shot Timeline Extraction (`tools/audio_to_srt.py`), (R4) SRT-to-Sven-Core 6-Pillar 3D Scene Breakdown & Preview Check Sheet (Creator Store 3D Assets + R6/R15 Cast + 30fps `State A -> State B` Animation via Roblox Studio MCP & Headless Blender 5.3 RTX 3060), and (R5) Final 30fps 16:9/9:16 Master Render + 4-Layer Audio/SFX/SRT Mix.
+  Triggers: "roblox", "roblox director", "roblox studio", "phim roblox", "kịch bản roblox", "video roblox", "blender roblox", or call directly "@RobloxDirector".
 ---
 
-# RobloxDirector — Master Roblox Storytime & Roblox Studio MCP Architect (Level 2)
+# RobloxDirector — Generalized Master Roblox 3D Film, Series & Animation Architect (Level 2)
 
-> **COMPLETE SPECIFICATION**: Read [`d:\Project\Sven\.agents\ROBLOX_DIRECTOR.md`](file:///d:/Project/Sven/.agents/ROBLOX_DIRECTOR.md) for the Dual-Track Master Architecture (`Track R1: Native Roblox Studio MCP 4K Pipeline` + `Track R2: AI Video/Image Roblox GFX School A4`).
-> **Detailed Sub-Specs in This Folder (`d:\Project\Sven\.agents\skills\roblox-director\`)**:
-> - **Story Ideas & `"In this town..."` Script Rules**: [`town-script.md`](file:///d:/Project/Sven/.agents/skills/roblox-director/town-script.md) & [`script.md`](file:///d:/Project/Sven/.agents/skills/roblox-director/script.md)
-> - **Roblox Studio MCP Build & 4K Tiled Capture**: [`studio.md`](file:///d:/Project/Sven/.agents/skills/roblox-director/studio.md), [`look.md`](file:///d:/Project/Sven/.agents/skills/roblox-director/look.md), [`lighting-color.md`](file:///d:/Project/Sven/.agents/skills/roblox-director/lighting-color.md)
-> - **Pacing, Audio, Captions & QA**: [`pacing.md`](file:///d:/Project/Sven/.agents/skills/roblox-director/pacing.md), [`audio.md`](file:///d:/Project/Sven/.agents/skills/roblox-director/audio.md), [`captions.md`](file:///d:/Project/Sven/.agents/skills/roblox-director/captions.md), [`checklist.md`](file:///d:/Project/Sven/.agents/skills/roblox-director/checklist.md)
-> - **Tools, Studio Kit & Music**: `tools/*.py`, `studio_kit/*` (Windows & macOS `bridge.mjs` + `rb.py`), `templates/*`, `examples/*`, and `music/roblox-story-bg.mp3`.
+> **COMPLETE SPECIFICATION**: Read [`d:\Project\Sven\.agents\ROBLOX_DIRECTOR.md`](file:///d:/Project/Sven/.agents/ROBLOX_DIRECTOR.md) for the Generalized 5-Stage Audio-First / SRT-Driven Architecture (`Stage R1–R5`), the 6-Pillar Sven Core Isomorphism (`Law R0`), Universal `16:9` & `9:16` Aspect Ratio Support across all genres, and the 3 Execution Engines (`Engine E1: Roblox Studio MCP`, `Engine E2: Headless Blender 5.3 RTX 3060`, `Engine E3: AI Roblox GFX School A4`).
 
 ---
 
-## 🧠 0. LAW R0 — THE 6-PILLAR AI-VIDEO-PROMPT-TO-3D-ENGINE ISOMORPHISM
-
-Every Roblox Studio (`Track R1`) or Blender 5.3 (`Track R3`) video MUST physically implement all **6 Pillars of Sven's Unified AI Video Prompt Architecture (`Style:` ➔ `[context]:` ➔ `[subject]:` ➔ `[prop]:` ➔ `[sound]:` ➔ `Shot 1..N`)**:
-1. **`Style:`**: Realistic lighting (`LightingStyle = Realistic` / Blender EEVEE `AgX`), `Atmosphere`, `Bloom`, `ColorCorrection` mood shifts on the `TWIST` cut, `DepthOfField` on close-ups, and zero Studio selection outlines (`Selection:Set({})`).
-2. **`[context]:` (3 Depth Planes)**: Always populate **Foreground** (fences, lamps, trees, car edges for parallax), **Midground** (detailed house/interior, porch, lit windows), and **Background** (neighboring houses across the street, tree line, clouds) so no empty baseplate edge or black void is ever seen.
-3. **`[subject]:` (Full Rig, 3D Hair, Clothes, 4-Zone Face & 180° Axis Pose)**: Characters must have 3D hair (`hairParts`/`hair.lua`), clothes/shoes (`lib.lua`/`make_clothes.py`), expressive eyes/brows/mouth (`faces.lua`), and orient toward their counterpart/target (`faceTo`) in active poses—never standing in frozen T/I-poses facing the street.
-4. **`[prop]:` (Hand-Welded Props & Physical Causality)**: Weld held props to `armR`/`armL` (`rig.extra`) and animate the full `State A ➔ State B` physical trajectory (`held` $\to$ `parabolic throw MT.toss` $\to$ `scatter/impact`).
-5. **`[sound]:` (4-Layer Audio)**: Combine Narrator VO + Character Dialogue + Timestamped Diegetic Foley SFX at every physical beat + Dynamic BGM (`roblox-story-bg.mp3` with `TWIST` silence drop and `-14 LUFS` mix).
-6. **`Shot 1..N (00:XX-00:YY)` (`Target-First Camera` + `30 fps` `State A ➔ State B` Animation)**: Enforce `>45°` scale/angle jumps (`WS` $\to$ `MCU OTS` $\to$ `Reverse OTS` $\to$ `CU Insert` $\to$ `Low-Angle CU Dolly-Zoom`) and multi-frame character animation (`MT.walk`, head turns, pointing/throwing gestures, breathing sway, blinking, and `2–3/s` mouth flaps)—never a single static screenshot per shot.
-
----
-
-## 🚀 1. TRACK R1 WORKFLOW — NATIVE ROBLOX STUDIO MCP (`FREE 4K VERTICAL VIDEO`)
+## 🚀 THE 5-STAGE GENERALIZED AUDIO-FIRST & SRT-DRIVEN WORKFLOW (`STAGE R1 ➔ R5`)
 
 Always execute in this strict step-by-step order with user approval at each gate:
-1. **Step 1 — 10 `"In This Town..."` Story Ideas (`town-script.md` §1)**:
-   - Pitch 10 visible world-rule ideas (`In this town, [everyday thing] [does one strange thing] [when/for whom]`) spanning **≥ 6 of the 9 Rule Lanes** (*Market, Town event, Broken world, Living giant, Body, Law as order, Limit, Swap, Detector [max 1]*).
-   - Every idea includes **`Rule + What You See (System/Shop/Law) + Twist (from 11 Twist Families) + Last Line (Next Danger) + Comment Debate Question`**, scored on the 12-Point Rubric (`≥ 9/12`).
-2. **Step 2 — Full Script Sheet (`script.md` + `tools/script_check.py` & `tools/plan_timing.py`)**:
-   - Write in first-person kid narrator voice (`A1–A2 English`, `mean 6–8w/sentence`, `~220 wpm`, `20s / 60s / 150s`), following the **11-Beat % Map**, planting `P1 / P2 / P3`, placing `Pause A (0.8–1.3s)` after the twist and `Pause B (0.6–1.0s)` before the last line, and ending on a **Next-Danger Cliffhanger** (never a moral).
-   - Run `python .agents/skills/roblox-director/tools/script_check.py` and `plan_timing.py`. **Stop for user approval before voice/Studio work.**
-3. **Step 3 — Voice & Word Timestamps (`audio.md`)**:
-   - Generate or load `voice.mp3` (ask before spending paid ElevenLabs credits) and extract word-level timestamps (`words.json`).
-4. **Step 4 — Shot List (`look.md`, `pacing.md` + `tools/shotlist_check.py`)**:
-   - Build `shot-list.md` (`~1 shot/s`, cuts on sentence starts leading by `0–2 frames`, `CU/MCU ≥ 25%`, `Rule Object in Shot 1 & ≥ 50% of shots`, `in-engine camera moves ≥ 70%`, `1 Dolly-Zoom or Rack Focus on Twist`).
-5. **Step 5 — Roblox Studio MCP Build (`studio.md` + `studio_kit/`)**:
-   - Connect to Roblox Studio MCP (`Enable Studio as MCP server` in Studio; use direct MCP tools or run `node .agents/skills/roblox-director/studio_kit/bridge.mjs` + `python .agents/skills/roblox-director/studio_kit/rb.py`).
-   - Build **Grey Blockout** first (show screenshots) $\to$ **World & Realistic Lighting (`templates/lighting-presets.lua`)** $\to$ **R6/R15 Cast with Custom Clothes (`make_clothes.py`) & 24 Bold Face Decals (`make_faces_v2.py`)** $\to$ **Zero-Clipping Check (`MT.resolve`, `MT.clips()`)** $\to$ **Check Sheet of All Shots**.
-6. **Step 6 — 4K Tiled Vertical Render, Captions & Final Mix (`captions.md`, `checklist.md`)**:
-   - Render via 2-tile (`1080×1920` HD) or 4-tile (`2160×3840` 4K) stitched capture (`render2.py` / `render4k.py` + `stitch.py` / `stitch4k.py`).
-   - Generate popped word captions (`tools/make_caps.py` or `make_caps_toon.py`), mix with `music/roblox-story-bg.mp3` to `-14 LUFS`, and pass the 6-Area QA Checklist (`checklist.md` `≥ 8/10`).
 
----
+1. **STAGE R1 — Concept Pitch, Genre & Aspect Ratio Lock (`16:9` Widescreen or `9:16` Vertical ➔ `✋ GATE R1`)**:
+   - Support **ALL Genres** (*Drama, Family/Karma, Mystery/Thriller, Sci-Fi/Alien, Horror/Supernatural, Action/Adventure, Sitcom/Comedy*, and optional *Storytime*).
+   - Lock **Aspect Ratio** (`16:9` for YouTube long-form/series or `9:16` for Shorts/Reels/TikTok) and **Target Duration**.
+   - Pitch 5 high-retention story concepts using Sven Core narrative architecture (`0–3s Hook`, `3-Layer Stakes`, `Planted Clues P1/P2/P3`, `Option C Twist`, `Cliffhanger/Payoff`). Stop for user selection.
 
-## 🎨 2. TRACK R2 WORKFLOW — AI IMAGE & AI VIDEO ROBLOX GFX PROMPTS (`SCHOOL A4`)
+2. **STAGE R2 — Full Story & Clean Voice Script for User `.mp3` Generation (`Viết Câu Chuyện Để User Tạo File .mp3` ➔ `✋ GATE R2`)**:
+   - Write the full story/dialogue script and present:
+     * **Block 2A (`Clean Copy-Paste Voice Script`)**: Pure spoken text formatted for the user to copy-paste directly into ElevenLabs / TTS to generate their `.mp3` audio file.
+     * **Block 2B (`3D Asset Manifest`)**: Characters (`[subject]`), 3D Locations (`[context]`), and Interactive Props (`[prop]`).
+   - Stop and wait for the user to provide the `.mp3` audio file (or request local TTS generation).
 
-When generating Roblox visuals via AI image/video generators (`Seedance`, `Kling`, `Midjourney`, or `@RefVideoDirector`) without Roblox Studio, enforce **School A4 (`Roblox Blocky R6/R15 & ABS Plastic Shader Lock`)**:
-- Lock `cylindrical rounded-top head with bold 2D printed decal face (thick black outlines, large expressive eyes, heavy brows, zero 3D human nose), blocky R15/R6 torso and limbs with curved C-shaped blocky claw hands (strictly NO five human fingers), smooth satin-matte ABS toy plastic shader with realistic global illumination`.
+3. **STAGE R3 — Automated MP3-to-SRT & Contiguous Shot Timeline Extraction (`tools/audio_to_srt.py`)**:
+   - Run `python .agents/skills/roblox-director/tools/audio_to_srt.py <audio.mp3> --script <story.txt> --out-dir <out_dir>` to extract:
+     * `<stem>.srt`: Exact sentence-by-sentence SRT timestamps (`00:00:XX,XXX --> 00:00:YY,YYY`) snapped to the verbatim script.
+     * `words.json`: Word-level timestamps for `2–3 swaps/s` lip-sync mouth flaps (`talk`) and captions.
+     * `srt_shots.json`: Contiguous `Shot 1..N` timeline windows (`0.00s` $\to$ `runtime_sec`, zero dead gaps).
 
----
+4. **STAGE R4 — SRT-to-Core 6-Pillar 3D Scene Breakdown & Preview Check Sheet (`Law R0` ➔ `✋ GATE R4`)**:
+   - Translate every SRT block in `srt_shots.json` (`Shot 1..N`) into a **6-Pillar 3D Scene Specification (`Style:` ➔ `[context]:` ➔ `[subject]:` ➔ `[prop]:` ➔ `[sound]:` ➔ `Shot K [State A ➔ State B @ 30fps]`)**:
+     * **`[context]:`**: 3 Depth Planes (`Foreground + Midground + Background`) populated with free Creator Store 3D models (`search.py` + `ins.py` + `lib3.lua` `MT.put` & `MT.clean`) or Blender 3D sets, lit with `Realistic` / `EEVEE AgX` moods (`normalDay`, `sadWarm`, `scaryNight`, `twistNight`) and `DepthOfField`.
+     * **`[subject]:`**: Articulated R6/R15 rigs (`MT.make` / `MT.who` or Blender R15 armature) with 3D hair (`hair.lua`), custom clothes (`make_clothes.py`), 24 expressive faces (`faces.lua`), oriented along the **180° interpersonal axis (`faceTo`)** in active poses.
+     * **`[prop]:`**: Held props welded to hands (`rig.extra` on `armR`/`armL`) executing physical trajectories (`MT.toss`, `MT.drop`).
+     * **`Shot K (SRT Window)`**: Target-First Camera with `>45°` scale/angle jumps (`WS` $\to$ `MCU OTS` $\to$ `Reverse OTS` $\to$ `CU Insert` $\to$ `Low-Angle CU Dolly-Zoom`) + continuous `30 fps` character animation (`MT.frame(id, f)`, `MT.walk`, head turns, arm gestures, breathing, blinking, and `words.json`-synced mouth flaps).
+   - Run zero-clipping QA (`MT.resolve`, `MT.clips()`, `qa_check.py --profile roblox`) and capture a **Preview Check Sheet** of all shots (`s01..sN`) for user approval before full rendering.
 
-## 🛠️ 3. TRACK R3 WORKFLOW — HEADLESS BLENDER 5.x ANIMATION & ROBLOX EXPORT SUITE (`28 blender-* SKILLS`)
-
-Always start any Blender or custom 3D animation/rigging task with [`blender-core/SKILL.md`](file:///d:/Project/Sven/.agents/skills/blender-core/SKILL.md):
-- **Headless Execution**: `python .agents/skills/blender-core/scripts/run_in_blender.py [--blend in.blend] <script.py> -- <args>`
-- **Key Skills for Roblox & 3D Machinima**:
-  * `blender-character-rigging` + `blender-animation` (`retarget.py`, `bake_action.py`, `loop_check.py`): Build R15/custom rigs, retarget mocap/Mixamo/BVH, and author 30fps Bezier/Quaternion character animations.
-  * `blender-export-pipelines` (`export_asset.py --preset roblox` / `roblox_gltf` + `references/roblox.md`): Export R15 avatars (`15 _Geo parts`, `≤10,742 tris`), layered clothing (`_InnerCage` / `_OuterCage`), accessories (`≤4k tris`), MeshParts (`≤20k tris`), and animation clips into Roblox Studio.
-  * `blender-lighting-lookdev` + `blender-time-of-day` + `blender-weather-fx` + `blender-rendering` (`render_batch.py`): Render 30–60fps EEVEE/Cycles animations in the background.
-  * `blender-asset-qa` (`qa_check.py --profile roblox` + `review_shots.py`): Verify zero z-fighting, zero floating parts, and clean normals/weights before delivery.
+5. **STAGE R5 — Full 30fps Master Render (`16:9` or `9:16`) + 4-Layer Audio/SFX/SRT Mix (`✋ GATE R5`)**:
+   - Render all shots at `30 fps` via Roblox Studio MCP (`render.py` for `16:9`; `render2.py`+`stitch.py` or `render4k.py`+`stitch4k.py` for `9:16`) or Headless Blender 5.3 GPU (`RTX 3060` `render_batch.py`).
+   - Mix User `.mp3` + Timestamped Diegetic Foley SFX + Dynamic BGM (`-14 LUFS`) and burn in `.srt` (for `16:9`) or `.ass` popped captions (`make_caps.py` / `make_caps_toon.py` for `9:16`) into the final `.mp4`.
