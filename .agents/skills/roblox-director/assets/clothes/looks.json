@@ -1,0 +1,139 @@
+{
+ "shirts": {
+  "me": [
+   "hoodie",
+   "#F5D66E",
+   "#FFFFFF"
+  ],
+  "diddy": [
+   "tee_stripe",
+   "#45B5AA",
+   "#FAFAF7"
+  ],
+  "mom": [
+   "blouse",
+   "#B7A3E6",
+   "#FFFFFF"
+  ],
+  "dad": [
+   "collar",
+   "#2F3E63",
+   "#FFFFFF"
+  ],
+  "may": [
+   "tee_heart",
+   "#F6A6C1",
+   "#EE6F5E"
+  ],
+  "mayor": [
+   "suit",
+   "#3A3F4A",
+   "#D94848"
+  ],
+  "teacher": [
+   "cardigan",
+   "#A8E0C0",
+   "#FAFAF7"
+  ],
+  "c1": [
+   "tee",
+   "#EE6F5E",
+   "#FAFAF7"
+  ],
+  "c2": [
+   "hoodie",
+   "#8FC9F0",
+   "#FAFAF7"
+  ],
+  "c3": [
+   "collar",
+   "#A8E0C0",
+   "#FAFAF7"
+  ],
+  "c4": [
+   "tee_stripe",
+   "#F6A6C1",
+   "#FAFAF7"
+  ],
+  "c5": [
+   "tee",
+   "#FAFAF7",
+   "#FAFAF7"
+  ],
+  "c6": [
+   "hoodie",
+   "#B98A5E",
+   "#FAFAF7"
+  ],
+  "c7": [
+   "collar",
+   "#2C7A78",
+   "#FAFAF7"
+  ],
+  "c8": [
+   "tee_stripe",
+   "#E88FB0",
+   "#FAFAF7"
+  ],
+  "c9": [
+   "tee",
+   "#8FC1E8",
+   "#FAFAF7"
+  ],
+  "c10": [
+   "hoodie",
+   "#F2B66B",
+   "#FAFAF7"
+  ]
+ },
+ "pants": {
+  "me": [
+   "#3D4A6B",
+   "#F4F4F0"
+  ],
+  "diddy": [
+   "#2E3138",
+   "#F4F4F0"
+  ],
+  "mom": [
+   "#5A4A7A",
+   "#FAFAF7"
+  ],
+  "dad": [
+   "#2B2B33",
+   "#1A1A1E"
+  ],
+  "may": [
+   "#8FB3E0",
+   "#EE6F5E"
+  ],
+  "mayor": [
+   "#3A3F4A",
+   "#1A1A1E"
+  ],
+  "teacher": [
+   "#6B5B4A",
+   "#4A3020"
+  ],
+  "p1": [
+   "#3D4A6B",
+   "#F4F4F0"
+  ],
+  "p2": [
+   "#2E3138",
+   "#F4F4F0"
+  ],
+  "p3": [
+   "#6B5B4A",
+   "#F4F4F0"
+  ],
+  "p4": [
+   "#5A4A7A",
+   "#F4F4F0"
+  ],
+  "p5": [
+   "#4A5A4A",
+   "#F4F4F0"
+  ]
+ }
+}

@@ -16,8 +16,14 @@ p.add_argument("--max-words", type=int, default=4); p.add_argument("--max-chars"
 p.add_argument("--fs", type=int, default=56); p.add_argument("--y", type=int, default=1357)
 p.add_argument("--outline", type=int, default=6); p.add_argument("--font", default="Poppins ExtraBold")
 p.add_argument("--lead", type=float, default=1 / 30); p.add_argument("--gap", type=float, default=0.3)
+p.add_argument("--aspect", choices=["9:16", "16:9"], default="9:16")
 a = p.parse_args()
-d = json.load(open(a.words))
+res_x, res_y = (1920, 1080) if a.aspect == "16:9" else (1080, 1920)
+if a.aspect == "16:9":
+    if a.y == 1357: a.y = 950
+    if a.fs == 56: a.fs = 50
+    if a.outline == 6: a.outline = 5
+d = json.load(open(a.words, encoding="utf-8"))
 if isinstance(d, dict):
     d = d.get("words") or [w for s in d.get("segments", []) for w in s.get("words", [])]
 W = [(float(w.get("start", w.get("s"))), float(w.get("end", w.get("e"))), (w.get("w") or w.get("word") or w.get("text") or "").strip()) for w in d]
@@ -47,8 +53,8 @@ def ts(t):
     t = max(0.0, t); return f"{int(t // 3600)}:{int(t % 3600 // 60):02d}:{t % 60:05.2f}"
 hdr = f"""[Script Info]
 ScriptType: v4.00+
-PlayResX: 1080
-PlayResY: 1920
+PlayResX: {res_x}
+PlayResY: {res_y}
 WrapStyle: 2
 ScaledBorderAndShadow: yes
 
@@ -72,8 +78,8 @@ for i, ph in enumerate(phr):
     n_col += used
     txt = " ".join(parts)
     width = sum(len(show(w[2])) + 1 for w in ph) * 0.62 * a.fs
-    sc = min(100, int(100 * 0.82 * 1080 / max(1, width)))
-    ev.append(f"Dialogue: 0,{ts(start)},{ts(max(end, start + 0.2))},Cap,,0,0,0,,{{\\an5\\pos(540,{a.y})\\fad(66,0)\\blur0.6\\fscx{sc}\\fscy{sc}}}{txt}")
+    sc = min(100, int(100 * 0.82 * res_x / max(1, width)))
+    ev.append(f"Dialogue: 0,{ts(start)},{ts(max(end, start + 0.2))},Cap,,0,0,0,,{{\\an5\\pos({res_x // 2},{a.y})\\fad(66,0)\\blur0.6\\fscx{sc}\\fscy{sc}}}{txt}")
 open(a.out, "w", encoding="utf-8").write(hdr + "\n".join(ev) + "\n")
 nw = sum(len(x) for x in phr)
 print(f"{len(ev)} captions, {nw / len(ev):.2f} words each, {len(ev) / max(1e-9, W[-1][1]) :.2f} per second; coloured key word in {100 * n_col / len(ev):.0f} % (target 40-60 %) -> {a.out}")

@@ -372,6 +372,43 @@
         "combat_director": ".agents/skills/combat-director/SKILL.md (Seedance 10s/15s Supernatural & Martial Climax)",
         "growth_architect": ".agents/skills/youtube-growth-architect"
       }
+    },
+    {
+      "slug": "roblox-3d-story",
+      "title": "Roblox 3D Film, Series & Short Animation (R15 Articulated + UGC Anime Faces + Blender 5.3 / Studio MCP)",
+      "genre_module": "engine/genres/drama.md",
+      "default_aspect_ratio": "9:16",
+      "supported_aspect_ratios": ["9:16", "16:9", "1:1", "4:3"],
+      "target_video_models": ["Headless Blender 5.3 EEVEE (RTX 3060)", "Roblox Studio MCP", "Seedance 2.5 Pro (School A4 GFX)"],
+      "prompt_grammar_mode": "Generalized 5-Stage Audio-First & SRT-Driven 3D Pipeline (Stage R1-R5, Law R0)",
+      "default_episode_scenes": 8,
+      "default_scene_duration_s": 3.0,
+      "allowed_scene_durations_s": [1.5, 3.0, 5.0, 10.0, 15.0],
+      "total_runtime_target_s": 60.0,
+      "max_active_characters_per_10s_clip": 4,
+      "max_characters_per_episode": 8,
+      "screenplay_constraints": {
+        "max_words_per_line": 12,
+        "cadence_style": "Clean spoken narration/dialogue (6-10 words/sentence) synced verbatim via tools/audio_to_srt.py",
+        "hook_mandate": "0-3s Visible Rule / Anomaly / Kinetic Motion at Frame 1",
+        "cliffhanger_mandate": "Final Twist / Cliffhanger Cut on Rule State Change",
+        "structure": "5-Stage Audio-First & SRT-Driven Pipeline (R1 Concept -> R2 Clean MP3 Script -> R3 audio_to_srt.py -> R4 3D R15 + Preview Check Sheet -> R5 compile_video.py)"
+      },
+      "camera_and_staging": {
+        "track_a_locked_quota": "0-10% (deliberate comedic/suspense freeze only)",
+        "track_b_kinetic_quota": ">=70% in-engine camera moves + >45 deg scale/angle cuts between SRT shots",
+        "framing_bias": "R15 articulated rigs (elbows & knees) + UGC Anime-Stylized 4x faces (35-deg UV arc) + 3D accessories + Wet Reflective PBR ground + 3-Depth-Plane sets",
+        "forbidden_optics": ["Centre-cropping landscape Studio screenshots to 9:16", "Classic Noob avatar in off-platform films", "Skipping Step-by-Step Preview PNG inspection via read_file"]
+      },
+      "soundscape_directives": {
+        "foley_profile": "4-Layer Audio: User MP3 voiceover + character vocal lines + timestamped diegetic Foley SFX + ducked BGM (-14 LUFS, <= -1.0 dBTP)",
+        "voice_mode_palette": ["first_person_storyteller", "dialogue_fencing", "shocked_exclamation", "dramatic_pause"]
+      },
+      "active_crew": {
+        "showrunner": "AGENT.md",
+        "roblox_director": ".agents/ROBLOX_DIRECTOR.md",
+        "growth_architect": ".agents/skills/youtube-growth-architect"
+      }
     }
   ]
 }

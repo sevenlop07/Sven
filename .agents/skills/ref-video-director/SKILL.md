@@ -32,8 +32,8 @@ description: >
    - **Mode V4 (`Full Total Reskin`)**: Keep only camera cuts & motion from `<<<Video 1>>>`; swap environment (`<<<Image 1>>>`), characters (`<<<Image 2, 3>>>`), and props (`<<<Image 4>>>`).
 5. **Law V5 — Pure Direct Action Prose in `Shot 1..N` (`1:1 Cut Matching & Zero Meta-Fluff`)**:
    - Write out every `Shot 1` through `Shot N` matching the exact cut timestamps of `<<<Video 1>>>`. Describe direct physical actions (`State A ➔ State B`) performed by the named entities without meta-commentary (*"Replicating <<<Video 1>>>..."*, *"Wearing her outfit from <<<Image 1>>>..."*).
-6. **Law V6 — Timestamped Diegetic `[sound]:` & Open-Mouth Vocal Sync**:
-   - Map diegetic Foley in `[sound]:` to the exact timestamp windows of `Shot 1..N` (`Strictly zero background music`).
-   - Any shot where a character opens their mouth to roar, scream, or speak MUST include a dedicated separated vocal line (`[Proper_Name] (expressive female/male voice, [vocal behavior] in a [tone]): "..."`) right below that shot so open mouths never render mute.
+6. **Law V6 — Timestamped Diegetic `[sound]:` vs. Song / Music Lip-Sync Preservation**:
+   - **Action / Dialogue Swap**: Map diegetic Foley in `[sound]:` to the exact timestamp windows of `Shot 1..N` (`Strictly zero background music`) and attach a separated vocal line (`[Proper_Name] (expressive female/male voice, ...): "..."`) to any shot where a character opens their mouth to roar or speak.
+   - **Song / Music Performance Swap (`Giữ Nguyên Nhạc, Âm Thanh & Nhép Lời Theo Video Gốc`)**: When `<<<Video 1>>>` is a song or singing performance, lock **100% preservation of the original music, vocals, and audio track with frame-accurate lip-sync** in `[video reference]:` and `[sound]:`, write **1 simple continuous action block** following the reference performance's gestures and mouth movements, and **strictly omit `"..."` TTS quote lines** (so the AI never reads lyrics as spoken text over the song).
 7. **Law V7 — High-Contrast Optical Boost & Watermark Purge**:
    - Enforce `high-contrast cinematic color grading with deep rich blacks, crisp highlights, vibrant micro-contrast, zero washed-out milky haze` and ban `corner watermarks` (`AI生成`, `剪映AI`).

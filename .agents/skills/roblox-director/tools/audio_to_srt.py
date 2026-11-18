@@ -1,15 +1,11 @@
 #!/usr/bin/env python3
 """
 audio_to_srt.py — Generalized MP3/WAV-to-SRT & Contiguous Shot Timeline Extractor for @RobloxDirector.
-Extracts exact sentence-level .srt blocks, word-level words.json, and contiguous Shot 1..N windows (0.00s -> runtime)
-from any user-supplied .mp3/.wav audio file using faster-whisper (+ verbatim word snapping when --script is provided).
+Extracts exact sentence-level .srt blocks (splitting on sentence punctuation using word-level timestamps),
+word-level words.json, and contiguous Shot 1..N windows (0.00s -> runtime) from any user-supplied .mp3/.wav file.
 
 Usage:
   python audio_to_srt.py <audio.mp3> [--script story.txt] [--out-dir <folder>] [--model base] [--min-shot-sec 1.5]
-Outputs:
-  - <out-dir>/<stem>.srt         (Standard SRT subtitle file with exact audio timestamps)
-  - <out-dir>/words.json         (Word-level timestamps for lip-sync & captions)
-  - <out-dir>/srt_shots.json     (Contiguous Shot 1..N timeline spine covering 0.00s -> runtime_sec)
 """
 import argparse, difflib, json, os, re, subprocess, sys
 
@@ -41,7 +37,6 @@ def syl_count(word: str) -> int:
     return max(1, len(re.findall(r"[aeiouy]+", w)))
 
 def snap_words_to_script(asr_words: list, script_text: str) -> list:
-    """Aligns ASR words to the ground-truth script tokens so homophones (e.g. 'solved' -> 'salt') are fixed while preserving exact ASR timestamps."""
     script_tokens = [t for t in re.split(r"\s+", script_text.strip()) if t]
     if not script_tokens or not asr_words:
         return asr_words
@@ -55,26 +50,49 @@ def snap_words_to_script(asr_words: list, script_text: str) -> list:
                 fixed[i1 + k]["word"] = script_tokens[j1 + k]
     return fixed
 
-def build_contiguous_shots(segments: list, runtime: float, min_shot_sec: float = 1.5) -> list:
-    """Merges ultra-short fragments (< min_shot_sec) and builds contiguous Shot 1..N windows from 0.00s to runtime."""
-    if not segments:
+def words_to_sentence_segments(words: list, min_shot_sec: float = 1.4) -> list:
+    """Groups word-level timestamps into sentence-level SRT blocks, splitting on terminal punctuation (. ! ?)."""
+    if not words:
         return []
-    merged = []
-    for seg in segments:
-        if merged and (seg["end"] - seg["start"] < min_shot_sec) and (seg["end"] - merged[-1]["start"] <= 4.2):
-            merged[-1]["end"] = seg["end"]
-            merged[-1]["text"] = merged[-1]["text"].rstrip() + " " + seg["text"].lstrip()
-            merged[-1]["duration"] = round(merged[-1]["end"] - merged[-1]["start"], 3)
-        else:
-            merged.append(dict(seg))
+    ABBR = {"mr.", "mrs.", "ms.", "dr.", "st."}
+    raw_segs = []
+    cur = []
+    for i, w in enumerate(words):
+        cur.append(w)
+        tok = w["word"].rstrip("\"”'")
+        is_end = tok.endswith((".", "!", "?")) and tok.lower() not in ABBR
+        if is_end or i == len(words) - 1:
+            s_start = cur[0]["start"]
+            s_end = cur[-1]["end"]
+            raw_segs.append({
+                "start": round(s_start, 3),
+                "end": round(s_end, 3),
+                "duration": round(s_end - s_start, 3),
+                "text": " ".join(x["word"] for x in cur)
+            })
+            cur = []
 
+    # Merge ultra-short (< min_shot_sec) fragments into adjacent sentence if combined duration <= 5.5s
+    merged = []
+    for seg in raw_segs:
+        if merged and seg["duration"] < min_shot_sec and (seg["end"] - merged[-1]["start"]) <= 5.5:
+            merged[-1]["end"] = seg["end"]
+            merged[-1]["duration"] = round(merged[-1]["end"] - merged[-1]["start"], 3)
+            merged[-1]["text"] = merged[-1]["text"] + " " + seg["text"]
+        else:
+            merged.append(seg)
+    for idx, seg in enumerate(merged, 1):
+        seg["index"] = idx
+    return merged
+
+def build_contiguous_shots(segments: list, runtime: float) -> list:
     shots = []
-    for i, seg in enumerate(merged):
-        win_start = 0.0 if i == 0 else round(merged[i]["start"], 3)
-        win_end = round(runtime, 3) if i == len(merged) - 1 else round(merged[i + 1]["start"], 3)
+    for i, seg in enumerate(segments):
+        win_start = 0.0 if i == 0 else round(segments[i]["start"], 3)
+        win_end = round(runtime, 3) if i == len(segments) - 1 else round(segments[i + 1]["start"], 3)
         pause_after = round(max(0.0, win_end - seg["end"]), 3)
         shots.append({
-            "shot_id": f"Shot {i + 1}",
+            "shot_id": f"Shot {i + 1:02d}",
             "index": i + 1,
             "window_start": win_start,
             "window_end": win_end,
@@ -86,77 +104,20 @@ def build_contiguous_shots(segments: list, runtime: float, min_shot_sec: float =
         })
     return shots
 
-def transcribe_faster_whisper(audio_path: str, model_size: str, script_text: str = None):
+def transcribe_faster_whisper(audio_path: str, model_size: str, script_text: str = None, min_shot_sec: float = 1.4):
     from faster_whisper import WhisperModel
     model = WhisperModel(model_size, device="cpu", compute_type="int8")
     segments_gen, info = model.transcribe(audio_path, word_timestamps=True, vad_filter=True)
-    segments = []
     words = []
-    for idx, seg in enumerate(segments_gen, 1):
-        text = seg.text.strip()
-        if not text:
-            continue
-        s_start = round(float(seg.start), 3)
-        s_end = round(float(seg.end), 3)
-        seg_words = []
+    for seg in segments_gen:
         for w in (seg.words or []):
             clean = w.word.strip()
             if clean:
-                w_obj = {"word": clean, "start": round(float(w.start), 3), "end": round(float(w.end), 3)}
-                words.append(w_obj)
-                seg_words.append(w_obj)
-        segments.append({
-            "index": idx,
-            "start": s_start,
-            "end": s_end,
-            "duration": round(s_end - s_start, 3),
-            "text": text,
-            "_word_count": len(seg_words)
-        })
+                words.append({"word": clean, "start": round(float(w.start), 3), "end": round(float(w.end), 3)})
     if script_text:
         words = snap_words_to_script(words, script_text)
-        wi = 0
-        for seg in segments:
-            wc = seg.pop("_word_count", 0)
-            if wc > 0 and wi + wc <= len(words):
-                seg["text"] = " ".join(w["word"] for w in words[wi:wi + wc])
-                wi += wc
-    else:
-        for seg in segments:
-            seg.pop("_word_count", None)
+    segments = words_to_sentence_segments(words, min_shot_sec)
     return segments, words, round(float(info.duration), 2)
-
-def fallback_align_from_script(audio_path: str, script_text: str):
-    dur = get_audio_duration(audio_path)
-    lines = [ln.strip() for ln in re.split(r"[\r\n]+|(?<=[.!?])\s+", script_text) if ln.strip()]
-    weights = [sum(syl_count(w) for w in ln.split()) + 2 for ln in lines]
-    total_w = max(1, sum(weights))
-    usable = max(1.0, dur - 0.4)
-    t = 0.1
-    segments = []
-    words = []
-    for idx, (ln, w) in enumerate(zip(lines, weights), 1):
-        seg_dur = usable * (w / total_w)
-        s_start = round(t, 3)
-        s_end = round(t + seg_dur - 0.12, 3)
-        segments.append({
-            "index": idx,
-            "start": s_start,
-            "end": s_end,
-            "duration": round(s_end - s_start, 3),
-            "text": ln
-        })
-        toks = ln.split()
-        tws = [syl_count(tok) for tok in toks]
-        tw_sum = max(1, sum(tws))
-        wt = s_start
-        talk_dur = max(0.2, (s_end - s_start))
-        for tok, tw in zip(toks, tws):
-            wd = talk_dur * (tw / tw_sum)
-            words.append({"word": tok.strip("\"“”"), "start": round(wt, 3), "end": round(wt + wd, 3)})
-            wt += wd
-        t += seg_dur
-    return segments, words, round(dur, 2)
 
 def main():
     ap = argparse.ArgumentParser()
@@ -164,7 +125,7 @@ def main():
     ap.add_argument("--script", help="Optional text file with the ground-truth story script")
     ap.add_argument("--out-dir", help="Output directory (defaults to audio file's directory)")
     ap.add_argument("--model", default="base", help="Faster-Whisper model size (tiny, base, small)")
-    ap.add_argument("--min-shot-sec", type=float, default=1.5, help="Minimum shot duration when merging short fragments")
+    ap.add_argument("--min-shot-sec", type=float, default=1.4, help="Minimum shot duration when merging short fragments")
     args = ap.parse_args()
 
     out_dir = args.out_dir or os.path.dirname(os.path.abspath(args.audio))
@@ -172,31 +133,19 @@ def main():
     stem = os.path.splitext(os.path.basename(args.audio))[0]
     script_text = open(args.script, encoding="utf-8").read() if (args.script and os.path.exists(args.script)) else None
 
-    try:
-        segments, words, runtime = transcribe_faster_whisper(args.audio, args.model, script_text)
-        method = f"faster-whisper ({args.model})" + (" + script-snap" if script_text else "")
-    except Exception as e:
-        if script_text:
-            segments, words, runtime = fallback_align_from_script(args.audio, script_text)
-            method = "script-syllable-alignment"
-        else:
-            raise RuntimeError(f"Transcription failed and no --script provided: {e}")
+    segments, words, runtime = transcribe_faster_whisper(args.audio, args.model, script_text, args.min_shot_sec)
+    method = f"faster-whisper ({args.model})" + (" + script-snap" if script_text else "")
 
-    # Write .srt
     srt_path = os.path.join(out_dir, f"{stem}.srt")
-    srt_blocks = []
-    for seg in segments:
-        srt_blocks.append(f"{seg['index']}\n{fmt_srt_time(seg['start'])} --> {fmt_srt_time(seg['end'])}\n{seg['text']}\n")
+    srt_blocks = [f"{seg['index']}\n{fmt_srt_time(seg['start'])} --> {fmt_srt_time(seg['end'])}\n{seg['text']}\n" for seg in segments]
     with open(srt_path, "w", encoding="utf-8") as f:
         f.write("\n".join(srt_blocks))
 
-    # Write words.json
     words_path = os.path.join(out_dir, "words.json")
     with open(words_path, "w", encoding="utf-8") as f:
         json.dump({"source": method, "runtime": runtime, "words": words}, f, indent=2, ensure_ascii=False)
 
-    # Build contiguous Shot 1..N timeline spine covering 0.00s -> runtime
-    contiguous_shots = build_contiguous_shots(segments, runtime, args.min_shot_sec)
+    contiguous_shots = build_contiguous_shots(segments, runtime)
     shots_path = os.path.join(out_dir, "srt_shots.json")
     with open(shots_path, "w", encoding="utf-8") as f:
         json.dump({"runtime": runtime, "shot_count": len(contiguous_shots), "shots": contiguous_shots}, f, indent=2, ensure_ascii=False)

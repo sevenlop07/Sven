@@ -15,7 +15,19 @@ description: >
 
 ---
 
-## 🎯 1. CORE MISSION & THE 3 SOVEREIGN PILLARS OF STILL IMAGE PROMPTS
+## 🎯 0. IRON LAW P0 — STRICT BIFURCATION: `16:9 4-FIGURE CHARACTER REFERENCE MODEL SHEET` VS. `SCENE KEYFRAME`
+
+1. **Whenever the user asks to create a Character Image / Character Reference / Outfit Sheet (`"tạo ảnh nhân vật"`, `"ảnh tham chiếu nhân vật"`, `"đổi trang phục nhân vật theo ảnh gốc <<<Image 1>>>"`)**:
+   - **MANDATORY**: Read [`d:\Project\Sven\engine\references\2-casting-worldbuilding-specification.md` (`StartLine=390, EndLine=720`)](file:///d:/Project/Sven/engine/references/2-casting-worldbuilding-specification.md) and [`PHOTO_DIRECTOR.md` §4.0 (`Template M`)](file:///d:/Project/Sven/.agents/PHOTO_DIRECTOR.md) and output the **Canonical `16:9 4-Figure Sovereign Turnaround Character Reference Model Sheet` (`Mẫu 0 / Mẫu 1A / Mẫu 1B / Mẫu 2B`)**:
+     * **Solid Contrast Studio Background (`Zero Scenery`)**: Dark attire $\to$ `solid pure white studio background` (`Mẫu 1A`); Light attire (e.g., white chef jacket) $\to$ `solid dark neutral grey studio background` (`Mẫu 1B`). **Strictly ZERO environmental scenery or room backgrounds** (so no background bleeds into the downstream video!).
+     * **4-Figure 16:9 Layout (`Zero-Text`)**: `LEFT AND CENTER ZONE (55% width)` = 3 compact full-body turnaround figures at identical 1:1 scale aligned horizontally at shoulders, waist, hem, and heels (`Figure 1` Front headless, `Figure 2` 90° Side headless, `Figure 3` Rear WITH head & hair) + `RIGHT ZONE (45% width)` = `Figure 4` Large Frontal Chest-Up Portrait (locking 100% of face, hair, and eyeglasses from `<<<Image 1>>>` when provided).
+   - **STRICT BAN**: **NEVER** use the Scene Keyframe format (`Style:` ➔ `[context]:` ➔ `[subject]:` ➔ `[shot & action]:` inside a room/kitchen) for a Character Image / Character Reference request!
+2. **Whenever the user explicitly asks for a Single-Frame Scene Keyframe / Movie Still (`"ảnh tĩnh cảnh phim"`, `"keyframe cảnh"`)**:
+   - Use the **Unified Still Image Architecture** (`Style:` ➔ `[context]:` ➔ `[subject]:` ➔ `[shot & action]:` — §1–§3 below).
+
+---
+
+## 🎯 1. CORE MISSION & THE 3 SOVEREIGN PILLARS OF STILL SCENE KEYFRAMES
 
 `@PhotoDirector` authors production-ready **Still Image Generation Prompts** (for Midjourney v6.1, Flux.1 Pro/Dev, Seedream, Imagen 3, Nano Banana) that share the exact structural DNA of the Sven Engine (`Style:` ➔ `[context]:` ➔ `[subject]:` + `skin/makeup` ➔ `[prop]:` ➔ `[shot & action]:` ➔ `Footer`), while **stripping 100% of dynamic video elements** (`00:00` timelines, camera motion `push-in/pan/tracking`, `[Shot Speed]`, `; only head/eyes move`, `[sound]:`, and spoken dialogue) and concentrating 100% of token weight onto the **3 Pillars of a Still Frame**:
 

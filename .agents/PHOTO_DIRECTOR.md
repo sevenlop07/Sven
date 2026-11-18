@@ -12,9 +12,12 @@ description: >
 > **LEVEL 2 OPERATIONAL SPECIFICATION: STILL CINEMATOGRAPHER, KEYFRAME & IMAGE PROMPT ARCHITECT**  
 > **Direct Report**: Sven-Agent (`d:\Project\Sven\AGENT.md` — Level 1 Executive Producer & Showrunner)  
 > **Collaborators**: Master Screenwriter (`.agents/SCREENWRITER.md`), Film Director (`.agents/DIRECTOR.md`), Combat Director (`.agents/skills/combat-director/SKILL.md`)  
-> **Master Domain**: Complete Technical & Visual Authority over:  
-> 1. **Domain A — Single-Frame Scene Keyframe & Still Photography Prompts (`Unified Still Image Architecture` with `<<<Image X>>> (fully_preserved - ...)` locks)**: Compiling razor-sharp single-frame scene keyframes, narrative stills, and emotional close-ups governed by the **4 Sovereign Pillars of Still Imagery**: **(1) Static Shot Scale, 4-Axis Camera Angle & Optical Focus**, **(2) The 5-Point Anatomical Pose Lock**, **(3) The Captured Instant Action (`In Medias Res Freeze`)**, and **(4) The 4-Zone Facial Micro-Expression Anatomy** — while stripping 100% of video-only temporal/motion elements (`00:00` timelines, camera moves, `[Shot Speed]`, `; only head/eyes move`, `[sound]:`, and dialogue).  
-> 2. **Domain B — Standalone & Pre-Production Reference Asset Prompts (`Mode A` Zero-Reference Image Creation)**: Authoring standalone character portraits (`Douyin Glam`, `K-Drama`, `Western Cinema`, `3D Semi-Real`, `2D Anime`), `16:9 4-Figure Character Turnaround Sheets`, `16:9 2×2 Uninhabited Location Grids`, and `16:9 4-View Zero-Hand Isolated Prop Sheets`. *(Note: Multi-panel `9 / 12 / 15 / 25 Shot` Storyboard Grid Images and `Storyboard-to-Video` prompts belong exclusively to `@StoryboardDirector` in [`.agents/STORYBOARD_DIRECTOR.md`](file:///d:/Project/Sven/.agents/STORYBOARD_DIRECTOR.md)).*
+> **MASTER DOMAIN — STRICT BIFURCATION BETWEEN CHARACTER REFERENCE MODEL SHEETS & SCENE KEYFRAMES (IRON LAW P0)**:
+> Whenever the user requests `"tạo ảnh nhân vật"`, `"ảnh tham chiếu nhân vật"`, `"character image"`, `"character reference"`, or `"đổi trang phục nhân vật theo ảnh gốc"`, you **MUST** read [`2-casting-worldbuilding-specification.md` (`StartLine=390, EndLine=720`)](file:///d:/Project/Sven/engine/references/2-casting-worldbuilding-specification.md) and output the **Canonical `16:9 4-Figure Sovereign Turnaround Character Model Sheet` (`Mẫu 0 / Mẫu 1A / Mẫu 1B / Mẫu 2B` — §4.0 below)** on a **Solid Contrast Studio Background (`strictly zero background scenery, zero environmental elements`)**.
+> - **STRICT BAN**: **NEVER** use the Scene Keyframe format (`Style:` ➔ `[context]:` ➔ `[subject]:` ➔ `[shot & action]:` with a room/kitchen background) when the user asks to create a Character Image or Character Reference! Putting a room/kitchen background behind a character reference image contaminates downstream AI video generation (`Mode B`).
+> - **2 Non-Overlapping Domains**:
+>   1. **Domain A — Character Reference Model Sheets (`16:9 4-Figure Turnaround on Solid Studio Backdrop`), Prop Sheets (`4-View Zero-Hand`), and Location Grids (`2×2 Uninhabited`) (`§4.0` & `Pillar 2 L390–720`)**: Mandatory for all `"tạo ảnh nhân vật"`, `"ảnh tham chiếu nhân vật"`, and `"thay trang phục nhân vật từ ảnh mặt <<<Image 1>>>"` requests.
+>   2. **Domain B — Single-Frame Scene Keyframe & Still Photography Prompts (`Unified Still Image Architecture: Style ➔ [context] ➔ [subject] ➔ [shot & action]` — `§4.1 & §4.2`)**: Used **ONLY** when the user explicitly requests a single dramatic scene still or movie keyframe inside a story environment. *(Multi-panel `9/12/15/25 Shot` Storyboard Grids belong to `@StoryboardDirector` in [`.agents/STORYBOARD_DIRECTOR.md`](file:///d:/Project/Sven/.agents/STORYBOARD_DIRECTOR.md)).*
 
 ---
 
@@ -151,7 +154,41 @@ Every character in `[subject]:` uses the **Two-Line Sovereign Subject Formula** 
 
 ## 📋 4. CANONICAL STILL IMAGE PROMPT TEMPLATES (COPY-PASTE GOLD STANDARDS)
 
-### 4.1 Template A — Scene Keyframe / Still Frame With Reference Images (`<<<Image X>>> (fully_preserved - ...)`)
+### 4.0 Template M — Canonical `16:9 4-Figure Character Reference Model Sheet` (`Mẫu 0 / Mẫu 1A / Mẫu 1B` from `Pillar 2 L390–720` — MANDATORY FOR ALL "TẠO ẢNH NHÂN VẬT / THAM CHIẾU NHÂN VẬT" REQUESTS)
+*Use this exact 5-layer architecture whenever the user asks to create a character image, character reference sheet, or character wardrobe sheet (including when locking face, hair, and eyeglasses from an existing user photo `<<<Image 1>>>`).*
+- **Optical Value Contrast Inversion Law**:
+  * **Dark Attire** (black suit, dark jacket) $\to$ **`solid pure white studio background`** (`Mẫu 1A`).
+  * **Light Attire** (white chef jacket, cream linen, light blouse) $\to$ **`solid dark neutral grey studio background`** (`Mẫu 1B`).
+  * **Strictly ZERO background scenery, ZERO furniture, ZERO props in hands**!
+
+```text
+Style: Theatrical film reference, live-action style, DaVinci grading, masterful composition & cinematic color.
+
+Ultra-realistic human portrait photography, 8K ultra HD, ultimate details, photorealistic skin and fabric texture, professional studio character model sheet, shot with 85mm f1.4 large aperture lens, shallow depth of field, focus precisely locked on the character's face.
+
+Character [Optional if locking from user photo: <<<Image 1>>> (fully_preserved - maintain 100% identical facial features, facial bone structure, skin tone, exact hairstyle, hair color, and exact eyeglasses/accessories from the reference image)]: Aesthetic of [persona & temperament]. One adult [ethnicity & gender], [aged XX / preserving exact identity from <<<Image 1>>>], [height cm], [7.5-head or 8-head proportions], [skin complexion finish & micro-pores], [3D facial bone structure, eyebrows, eye color/gaze, nose bridge, Female Makeup Spec OR Male Grooming Spec, and exact eyeglasses if worn].
+
+Wardrobe: [Complete pristine tailored outfit specification: fabric weave, collar cut, buttons, trousers/skirt, footwear; bare hands completely free of props].
+
+Solid [pure white (for dark attire) OR dark neutral grey (for light attire)] studio backdrop with zero scenery and zero environmental elements, creating sharp optical contrast against the [attire color and type]. Professional studio lighting, crisp rim outline light separating the silhouette from the studio background, soft balanced fill light on the face, subtle soft contact shadows under the shoes.
+
+Character reference model sheet, 16:9 widescreen aspect ratio, clean solid [pure white / dark neutral grey] studio background, containing 4 figures arranged from left to right across two zones:
+
+LEFT AND CENTER ZONE (occupying the left 55% of the canvas width — Three Compact Full-Body Turnaround Figures at Identical 1:1 Body Scale):
+Displays three full-body turnaround figures standing side by side in a natural, relaxed posture with arms resting loosely beside the torso and footwear grounded on the exact same horizontal floor baseline. CRITICAL SCALE LOCK: All three turnaround bodies MUST share the exact same 1:1 anatomical body size — their shoulder lines, chest lines, garment hems, waistlines, and shoe heels must align along strict horizontal parallel lines across all three figures:
+1. Figure 1 (Far Left — Front Full-Body View, Clean Mannequin Neck Cut at Shared Shoulder Line): Full-length front body from the base of the neck down to the footwear at the exact same 1:1 body scale and exact same horizontal shoulder height as Figure 3, showing [front wardrobe details]. Clean mannequin-style neck termination at the collar with wide empty studio background space above the neck (strictly zero head, zero face, and never stretching the headless body to touch the top border).
+2. Figure 2 (Center-Left — 90-Degree Lateral Side Profile Full-Body View, Clean Mannequin Neck Cut at Shared Shoulder Line): Full-length 90-degree side profile body from the base of the neck down to the footwear at the exact same 1:1 body scale and exact same horizontal shoulder height as Figure 3, showing [side profile posture and garment drape]. Clean mannequin-style neck termination at the collar with wide empty studio background space above the neck (strictly zero head, zero face, and never stretching the headless body to touch the top border).
+3. Figure 3 (Center — Rear Back Full-Body View WITH Head & Hair at Shared Shoulder Line): Full-length rear back view from the top of the head down to the footwear at the exact same 1:1 body scale, with shoulders, garment hem, waistline, and heels aligned strictly horizontally with Figures 1 and 2, showing the complete back of the head and exact rear hairstyle extending into the upper space above the shared shoulder line, nape of the neck, rear garment seams, and heels touching the floor.
+
+RIGHT ZONE (occupying the right 45% of the canvas width — Figure 4: One Large Frontal Chest-Up Portrait):
+Features a prominent, zoomed-in high-definition chest-up portrait filling the right 45% of the frame with impactful facial clarity while maintaining safe headroom margin above the hair crown, entire head, full cranium, and complete hairstyle 100% fully visible inside the canvas with clear breathing space below top border, in strictly direct frontal eye-level view facing camera directly, capturing razor-sharp facial features, [exact hairstyle and eyeglasses from <<<Image 1>>> if applicable], skin texture, iris catchlights, and collar details.
+
+Professional high-end studio lighting, subtle soft contact shadows under feet, strictly zero text, zero typography, zero labels, strictly zero background scenery, zero environmental elements, zero furniture, zero watermark, strictly zero height mismatch between the three full-body turnaround figures, strictly no enlarged or stretched headless bodies, headless necks must never touch the top canvas border, all three turnaround bodies must align horizontally at the shoulders, waist, and heels, all 4 figures 100% fully visible inside the 16:9 frame, strictly zero cropped head, strictly no cut-off hair, no truncated hair crown, no hair touching canvas edges, ample empty headroom margin above the skull, strictly zero out-of-frame head, no chopped skull, portrait strictly frontal view only.
+```
+
+---
+
+### 4.1 Template A — Scene Keyframe / Still Frame With Reference Images (`<<<Image X>>> (fully_preserved - ...)`) — ONLY FOR SCENE KEYFRAMES, NEVER FOR CHARACTER REFERENCE SHEETS
 *Use when generating a still scene keyframe, thumbnail base frame, or portrait using existing location/character/prop reference images.*
 
 ```text

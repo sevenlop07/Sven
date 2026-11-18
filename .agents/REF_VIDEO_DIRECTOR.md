@@ -110,12 +110,14 @@ print("Saved contact sheet:", sheet_path)
 - Each `Shot K (00:XX-00:YY) - [Shot Scale], [Camera Angle & Move targeting Subject], [Shot Speed]` block is followed by **1–2 concise natural sentences (`12–28 words`)** describing the **direct physical action (`State A ➔ State B`)** of the named characters (`Elena`, `V-Rex`, `Kong`) during that exact time window.
 - **STRICTLY BAN** meta-phrases inside `Shot 1..N` such as *"Replicating the exact opening struggle of <<<Video 1>>>"*, *"Matching the mid-clip climax of <<<Video 1>>>"*, or *"Wearing her exact outfit from <<<Image 1>>>"*.
 
-### Law V5 — Timestamped Diegetic `[sound]:` & Open-Mouth Vocal Synchronization (`Khớp Âm Thanh Theo Giây & Gắn Vocal Cho Mọi Shot Há Miệng`)
-1. **Timestamped `[sound]:` Block**: Map diegetic Foley and vocal sounds chronologically to the exact timestamp windows of `Shot 1..N` (`Strictly zero background music` when replacing noisy TikTok/EDM audio).
-2. **Open-Mouth Vocal Sync**: Check the `0.5s/frame` Contact Sheet for any shot where a subject's mouth opens wide to roar, scream, gasp, or speak:
-   - If the character roars or shouts (e.g., `Shot 6`), attach a separated vocal line right below that shot:
-     `Elena (expressive female voice, roaring at the top of her lungs in a fierce, triumphant primal battle cry): "Haaah! — Raaah!"`
-   - If the scene is a continuous dialogue swap, apply the **6 Golden Dialogue Laws (`Law D1–D6`)**: `static camera`, native vocal interjection triggers (`"Huh?..."`, `"Whoa!..."`, `"Hửm?..."`), expressive vocal-behavior tags (`zero alto/baritone`), and a `0.5s–1.0s` closed-lip tail buffer.
+### Law V5 — Timestamped Diegetic `[sound]:`, Open-Mouth Vocal Sync vs. Song / Music Lip-Sync Preservation (`Phân Biệt Cảnh Hành Động/Thoại vs. Cảnh Hát/Nhép Lời Theo Video Gốc`)
+1. **Case A — Action / Combat / Dramatic Scene Swap (Replacing Noisy BGM with Diegetic Foley)**:
+   - Map diegetic Foley and vocal sounds chronologically to the exact timestamp windows of `Shot 1..N` (`Strictly zero background music` when replacing noisy TikTok/EDM audio).
+   - Check the `0.5s/frame` Contact Sheet for any shot where a subject's mouth opens wide to roar, scream, gasp, or speak, and attach a separated vocal line right below that shot (`Elena (expressive female voice, roaring at the top of her lungs in a fierce, triumphant primal battle cry): "Haaah! — Raaah!"`).
+2. **Case B — Song / Music Performance / Original Lip-Sync Video Swap (`Giữ Nguyên Nhạc, Âm Thanh & Nhép Lời Theo Video Gốc — Mô Tả Hành Động Đơn Giản Làm Theo`)**:
+   - When `<<<Video 1>>>` is a **song, singing performance, or lip-sync video** where the user wants to **preserve the original music, audio, and lip-sync**:
+     * **100% Original Audio & Lip-Sync Lock in `[video reference]:` and `[sound]:`**: Explicitly command `preserve 100% of the original music, instrumental accompaniment, and singing vocal audio track with exact frame-by-frame lip-sync matching the original performance` (never ban background music in the footer for a song!).
+     * **Simple Unified Action Following & ZERO TTS Quote Lines (`"..."`)**: Do **NOT** split a single-take song into multiple shot blocks with `"..."` dialogue quotes (which triggers the AI's spoken TTS voice reader and ruins the song!). Instead, write **1 clean, simple Shot block** instructing `[Proper_Name]` to follow the exact instrument playing, natural head sway, facial expressions, and frame-accurate singing mouth/lip movements of the reference performance.
 
 ### Law V6 — Spatial Contact-Point Mapping When Swapping Locations (`Mode V3 & V4`)
 When replacing the background with a new Location Reference (`[context]: [New Location Name] <<<Image 1>>>`), map every physical surface touched by the character in `<<<Video 1>>>` (e.g., sitting on a chair, slamming a hand on a table, leaning against a wall) to the corresponding architectural landmark in `<<<Image 1>>>` so the body kinematics remain 100% grounded in 3D space.

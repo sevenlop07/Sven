@@ -1,0 +1,62 @@
+[Script Info]
+ScriptType: v4.00+
+PlayResX: 1080
+PlayResY: 1920
+WrapStyle: 2
+ScaledBorderAndShadow: yes
+
+[V4+ Styles]
+Format: Name,Fontname,Fontsize,PrimaryColour,SecondaryColour,OutlineColour,BackColour,Bold,Italic,Underline,StrikeOut,ScaleX,ScaleY,Spacing,Angle,BorderStyle,Outline,Shadow,Alignment,MarginL,MarginR,MarginV,Encoding
+Style: Cap,Poppins ExtraBold,56,&H00FFFFFF&,&H00FFFFFF&,&H00000000&,&H00000000&,0,0,0,0,100,100,-1,0,1,6,3,5,60,60,0,1
+
+[Events]
+Format: Layer,Start,End,Style,Name,MarginL,MarginR,MarginV,Effect,Text
+Dialogue: 0,0:00:00.00,0:00:01.27,Cap,,0,0,0,,{\an5\pos(540,1357)\fad(66,0)\blur0.6\fscx100\fscy100}ĐÚNG 8 GIỜ TỐI
+Dialogue: 0,0:00:01.27,0:00:02.09,Cap,,0,0,0,,{\an5\pos(540,1357)\fad(66,0)\blur0.6\fscx100\fscy100}CẢ XÓM TÔI {\1c&H005BD9EA&}TẮT{\1c&H00FFFFFF&}
+Dialogue: 0,0:00:02.09,0:00:03.07,Cap,,0,0,0,,{\an5\pos(540,1357)\fad(66,0)\blur0.6\fscx100\fscy100}{\1c&H005BD9EA&}PHỤT{\1c&H00FFFFFF&} HẾT ĐÈN
+Dialogue: 0,0:00:03.47,0:00:04.29,Cap,,0,0,0,,{\an5\pos(540,1357)\fad(66,0)\blur0.6\fscx100\fscy100}TRỪ ĐÚNG CĂN PHÒNG
+Dialogue: 0,0:00:04.29,0:00:04.77,Cap,,0,0,0,,{\an5\pos(540,1357)\fad(66,0)\blur0.6\fscx100\fscy100}CUỐI DÃY
+Dialogue: 0,0:00:04.77,0:00:05.89,Cap,,0,0,0,,{\an5\pos(540,1357)\fad(66,0)\blur0.6\fscx100\fscy100}VẪN SÁNG RỰC MÀU
+Dialogue: 0,0:00:05.89,0:00:06.59,Cap,,0,0,0,,{\an5\pos(540,1357)\fad(66,0)\blur0.6\fscx100\fscy100}{\1c&H005BD9EA&}XANH{\1c&H00FFFFFF&} LÁ
+Dialogue: 0,0:00:07.67,0:00:08.53,Cap,,0,0,0,,{\an5\pos(540,1357)\fad(66,0)\blur0.6\fscx100\fscy100}TÔI ĐANG GÕ DỞ
+Dialogue: 0,0:00:08.53,0:00:09.45,Cap,,0,0,0,,{\an5\pos(540,1357)\fad(66,0)\blur0.6\fscx100\fscy100}MÁY TÍNH THÌ {\1c&H005E5DDB&}SẬP{\1c&H00FFFFFF&}
+Dialogue: 0,0:00:09.45,0:00:10.55,Cap,,0,0,0,,{\an5\pos(540,1357)\fad(66,0)\blur0.6\fscx100\fscy100}{\1c&H005E5DDB&}NGUỒN{\1c&H00FFFFFF&} TỐI OM
+Dialogue: 0,0:00:11.21,0:00:12.05,Cap,,0,0,0,,{\an5\pos(540,1357)\fad(66,0)\blur0.6\fscx100\fscy100}NHÓM CHAT KHU PHỐ
+Dialogue: 0,0:00:12.05,0:00:13.15,Cap,,0,0,0,,{\an5\pos(540,1357)\fad(66,0)\blur0.6\fscx100\fscy100}LẬP TỨC {\1c&H005BD9EA&}NỔ{\1c&H00FFFFFF&} TUNG
+Dialogue: 0,0:00:13.63,0:00:14.47,Cap,,0,0,0,,{\an5\pos(540,1357)\fad(66,0)\blur0.6\fscx100\fscy100}AI CŨNG HỎI SAO
+Dialogue: 0,0:00:14.47,0:00:15.35,Cap,,0,0,0,,{\an5\pos(540,1357)\fad(66,0)\blur0.6\fscx100\fscy100}MẤT ĐIỆN HẾT MÀ
+Dialogue: 0,0:00:15.35,0:00:16.19,Cap,,0,0,0,,{\an5\pos(540,1357)\fad(66,0)\blur0.6\fscx100\fscy100}NHÀ CUỐI VẪN SÁNG
+Dialogue: 0,0:00:16.19,0:00:17.03,Cap,,0,0,0,,{\an5\pos(540,1357)\fad(66,0)\blur0.6\fscx100\fscy100}{\1c&H005BD9EA&}XANH{\1c&H00FFFFFF&} LÈ?
+Dialogue: 0,0:00:18.07,0:00:18.83,Cap,,0,0,0,,{\an5\pos(540,1357)\fad(66,0)\blur0.6\fscx100\fscy100}CÔ HÀNG XÓM BẾ
+Dialogue: 0,0:00:18.83,0:00:19.63,Cap,,0,0,0,,{\an5\pos(540,1357)\fad(66,0)\blur0.6\fscx100\fscy100}CON MÈO CHẠY RA
+Dialogue: 0,0:00:19.63,0:00:20.19,Cap,,0,0,0,,{\an5\pos(540,1357)\fad(66,0)\blur0.6\fscx100\fscy100}NGÕ
+Dialogue: 0,0:00:20.31,0:00:21.03,Cap,,0,0,0,,{\an5\pos(540,1357)\fad(66,0)\blur0.6\fscx100\fscy100}MẶT {\1c&H005E5DDB&}CẮT{\1c&H00FFFFFF&} KHÔNG CÒN
+Dialogue: 0,0:00:21.03,0:00:21.91,Cap,,0,0,0,,{\an5\pos(540,1357)\fad(66,0)\blur0.6\fscx100\fscy100}GIỌT {\1c&H005E5DDB&}MÁU{\1c&H00FFFFFF&}
+Dialogue: 0,0:00:22.53,0:00:23.51,Cap,,0,0,0,,{\an5\pos(540,1357)\fad(66,0)\blur0.6\fscx100\fscy100}MẤY NHÀ KÉO NHAU
+Dialogue: 0,0:00:23.51,0:00:24.35,Cap,,0,0,0,,{\an5\pos(540,1357)\fad(66,0)\blur0.6\fscx100\fscy100}RÓN RÉN ĐI TỚI
+Dialogue: 0,0:00:24.35,0:00:25.77,Cap,,0,0,0,,{\an5\pos(540,1357)\fad(66,0)\blur0.6\fscx100\fscy100}TRƯỚC CỬA CĂN PHÒNG ĐÓ
+Dialogue: 0,0:00:26.55,0:00:27.97,Cap,,0,0,0,,{\an5\pos(540,1357)\fad(66,0)\blur0.6\fscx100\fscy100}CỬA VỪA HÉ MỞ
+Dialogue: 0,0:00:28.11,0:00:28.85,Cap,,0,0,0,,{\an5\pos(540,1357)\fad(66,0)\blur0.6\fscx100\fscy100}CẢ ĐÁM {\1c&H005BD9EA&}ĐỨNG{\1c&H00FFFFFF&} HÌNH
+Dialogue: 0,0:00:28.85,0:00:29.39,Cap,,0,0,0,,{\an5\pos(540,1357)\fad(66,0)\blur0.6\fscx100\fscy100}LUÔN
+Dialogue: 0,0:00:29.97,0:00:30.81,Cap,,0,0,0,,{\an5\pos(540,1357)\fad(66,0)\blur0.6\fscx100\fscy100}MỘT GÃ TÓC DỰNG
+Dialogue: 0,0:00:30.81,0:00:31.83,Cap,,0,0,0,,{\an5\pos(540,1357)\fad(66,0)\blur0.6\fscx100\fscy100}{\1c&H005BD9EA&}ĐỨNG{\1c&H00FFFFFF&} ĐANG CẮM DÂY
+Dialogue: 0,0:00:31.83,0:00:32.69,Cap,,0,0,0,,{\an5\pos(540,1357)\fad(66,0)\blur0.6\fscx100\fscy100}THẲNG TỪ TRẦN NHÀ
+Dialogue: 0,0:00:32.69,0:00:33.71,Cap,,0,0,0,,{\an5\pos(540,1357)\fad(66,0)\blur0.6\fscx100\fscy100}VÀO CỤC PIN PHÁT
+Dialogue: 0,0:00:33.71,0:00:34.55,Cap,,0,0,0,,{\an5\pos(540,1357)\fad(66,0)\blur0.6\fscx100\fscy100}SÁNG TO BẰNG CÁI
+Dialogue: 0,0:00:34.55,0:00:35.43,Cap,,0,0,0,,{\an5\pos(540,1357)\fad(66,0)\blur0.6\fscx100\fscy100}{\1c&H005BD9EA&}NỒI{\1c&H00FFFFFF&} CƠM
+Dialogue: 0,0:00:36.27,0:00:37.09,Cap,,0,0,0,,{\an5\pos(540,1357)\fad(66,0)\blur0.6\fscx100\fscy100}HẮN GIẬT MÌNH QUAY
+Dialogue: 0,0:00:37.09,0:00:37.65,Cap,,0,0,0,,{\an5\pos(540,1357)\fad(66,0)\blur0.6\fscx100\fscy100}LẠI
+Dialogue: 0,0:00:37.87,0:00:38.99,Cap,,0,0,0,,{\an5\pos(540,1357)\fad(66,0)\blur0.6\fscx100\fscy100}CƯỜI GƯỢNG RỒI {\1c&H005E5DDB&}RÚT{\1c&H00FFFFFF&}
+Dialogue: 0,0:00:38.99,0:00:40.19,Cap,,0,0,0,,{\an5\pos(540,1357)\fad(66,0)\blur0.6\fscx100\fscy100}{\1c&H005E5DDB&}PHỊCH{\1c&H00FFFFFF&} DÂY ĐIỆN RA
+Dialogue: 0,0:00:40.87,0:00:41.81,Cap,,0,0,0,,{\an5\pos(540,1357)\fad(66,0)\blur0.6\fscx100\fscy100}NGAY LẬP TỨC
+Dialogue: 0,0:00:42.09,0:00:42.91,Cap,,0,0,0,,{\an5\pos(540,1357)\fad(66,0)\blur0.6\fscx100\fscy100}ĐÈN CẢ KHU PHỐ
+Dialogue: 0,0:00:42.91,0:00:44.21,Cap,,0,0,0,,{\an5\pos(540,1357)\fad(66,0)\blur0.6\fscx100\fscy100}BẬT SÁNG RỰC RỠ
+Dialogue: 0,0:00:44.89,0:00:45.87,Cap,,0,0,0,,{\an5\pos(540,1357)\fad(66,0)\blur0.6\fscx100\fscy100}CẢ XÓM CÒN CHƯA
+Dialogue: 0,0:00:45.87,0:00:46.75,Cap,,0,0,0,,{\an5\pos(540,1357)\fad(66,0)\blur0.6\fscx100\fscy100}KỊP VỖ TAY
+Dialogue: 0,0:00:46.95,0:00:47.67,Cap,,0,0,0,,{\an5\pos(540,1357)\fad(66,0)\blur0.6\fscx100\fscy100}HẮN ĐÃ VƠ LẸ
+Dialogue: 0,0:00:47.67,0:00:48.37,Cap,,0,0,0,,{\an5\pos(540,1357)\fad(66,0)\blur0.6\fscx100\fscy100}HAI Ổ {\1c&H005BD9EA&}BÁNH{\1c&H00FFFFFF&} MÌ
+Dialogue: 0,0:00:48.37,0:00:49.15,Cap,,0,0,0,,{\an5\pos(540,1357)\fad(66,0)\blur0.6\fscx100\fscy100}TRÊN BÀN
+Dialogue: 0,0:00:49.95,0:00:50.83,Cap,,0,0,0,,{\an5\pos(540,1357)\fad(66,0)\blur0.6\fscx100\fscy100}CẢM ƠN HÀNG XÓM
+Dialogue: 0,0:00:50.83,0:00:51.53,Cap,,0,0,0,,{\an5\pos(540,1357)\fad(66,0)\blur0.6\fscx100\fscy100}NHÉ
+Dialogue: 0,0:00:51.53,0:00:52.31,Cap,,0,0,0,,{\an5\pos(540,1357)\fad(66,0)\blur0.6\fscx100\fscy100}TÔI BAY VỀ {\1c&H005BD9EA&}HÀNH{\1c&H00FFFFFF&}
+Dialogue: 0,0:00:52.31,0:00:52.95,Cap,,0,0,0,,{\an5\pos(540,1357)\fad(66,0)\blur0.6\fscx100\fscy100}{\1c&H005BD9EA&}TINH{\1c&H00FFFFFF&} ĐÂY!

@@ -1,0 +1,12 @@
+{
+  "camera_audit": {
+    "shots": 21,
+    "close_pct": 61.9,
+    "ms_pct": 23.8,
+    "non_eye_pct": 81.0,
+    "move_pct": 81.0,
+    "adjacent_repeat_warnings": 0
+  },
+  "collision_violations": 0,
+  "collision_details": []
+}

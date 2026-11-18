@@ -14,8 +14,14 @@ p.add_argument("--color", default="FEDD30"); p.add_argument("--lead", type=float
 p.add_argument("--y", type=int, default=1344); p.add_argument("--fs", type=int, default=104)
 p.add_argument("--outline", type=int, default=12); p.add_argument("--font", default="Montserrat ExtraBold")
 p.add_argument("--sheet"); p.add_argument("--accent-at", default="")
+p.add_argument("--aspect", choices=["9:16", "16:9"], default="9:16")
 a = p.parse_args()
-d = json.load(open(a.words))
+res_x, res_y = (1920, 1080) if a.aspect == "16:9" else (1080, 1920)
+if a.aspect == "16:9":
+    if a.y == 1344: a.y = 940
+    if a.fs == 104: a.fs = 76
+    if a.outline == 12: a.outline = 8
+d = json.load(open(a.words, encoding="utf-8"))
 if isinstance(d, dict):
     d = d.get("words") or [w for s in d.get("segments", []) for w in s.get("words", [])]
 W = [(float(w["start"]), float(w["end"]), (w.get("word") or w.get("text") or "").strip()) for w in d]
@@ -53,8 +59,8 @@ def ts(t):
     return f"{h}:{m:02d}:{s:05.2f}"
 hdr = f"""[Script Info]
 ScriptType: v4.00+
-PlayResX: 1080
-PlayResY: 1920
+PlayResX: {res_x}
+PlayResY: {res_y}
 WrapStyle: 2
 ScaledBorderAndShadow: yes
 
@@ -71,11 +77,11 @@ for i, (s, e, w) in enumerate(W):
     nxt = W[i + 1][0] - a.lead if i + 1 < len(W) else e + 0.3
     end = max(nxt, start + 0.10)
     txt = show(w)
-    scale = min(1.0, 0.80 * 1080 / max(1, len(txt) * 0.66 * a.fs))   # shrink long words to <=80% width
+    scale = min(1.0, 0.80 * res_x / max(1, len(txt) * 0.66 * a.fs))   # shrink long words to <=80% width
     hot = (s < a.hook_until) or (norm(w) in acc) or (i in lit)
     n_acc += hot
     col = bgr(a.color) if hot else "&H00FFFFFF&"
-    tags = (f"{{\\an5\\pos(540,{a.y})\\1c{col}\\bord{a.outline}\\xshad0\\yshad6\\blur1"
+    tags = (f"{{\\an5\\pos({res_x // 2},{a.y})\\1c{col}\\bord{a.outline}\\xshad0\\yshad6\\blur1"
             f"\\fscx{125*scale:.0f}\\fscy{125*scale:.0f}\\t(0,133,\\fscx{100*scale:.0f}\\fscy{100*scale:.0f})}}")
     ev.append(f"Dialogue: 0,{ts(start)},{ts(end)},Cap,,0,0,0,,{tags}{txt}")
 open(a.out, "w", encoding="utf-8").write(hdr + "\n".join(ev) + "\n")

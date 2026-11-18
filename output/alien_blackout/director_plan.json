@@ -1,0 +1,739 @@
+{
+  "runtime": 52.85,
+  "fps": 30,
+  "aspect": "9:16",
+  "beat_count": 21,
+  "audit": {
+    "close_pct": 66.7,
+    "ms_pct": 19.0,
+    "non_eye_pct": 81.0,
+    "move_pct": 81.0,
+    "adjacent_repeat_warnings": 0
+  },
+  "beats": [
+    {
+      "beat_index": 1,
+      "parent_shot": "Shot 01",
+      "sub": "full",
+      "t_start": 0.0,
+      "t_end": 3.5,
+      "dur_sec": 3.5,
+      "fs": 1,
+      "fe": 105,
+      "speech_fs": 1,
+      "speech_fe": 85,
+      "pause_fs": 86,
+      "pause_fe": 105,
+      "scale": "WS",
+      "angle": "eye",
+      "move": "push_in",
+      "move_amt": 0.09,
+      "axis_side": 1,
+      "emotion": "happy",
+      "camera_shake_suggested": false,
+      "accent_frames": [
+        {
+          "frame": 1,
+          "word": "Đúng",
+          "heavy": false
+        },
+        {
+          "frame": 22,
+          "word": "tối,",
+          "heavy": true
+        },
+        {
+          "frame": 65,
+          "word": "phụt",
+          "heavy": false
+        }
+      ],
+      "srt_text": "Đúng 8 giờ tối, cả xóm tôi tắt phụt hết đèn."
+    },
+    {
+      "beat_index": 2,
+      "parent_shot": "Shot 02",
+      "sub": "part_A",
+      "t_start": 3.5,
+      "t_end": 5.6,
+      "dur_sec": 2.1,
+      "fs": 106,
+      "fe": 168,
+      "speech_fs": 106,
+      "speech_fe": 168,
+      "pause_fs": null,
+      "pause_fe": null,
+      "scale": "MCU",
+      "angle": "low",
+      "move": "static",
+      "move_amt": 0.08,
+      "axis_side": 1,
+      "emotion": "happy",
+      "camera_shake_suggested": false,
+      "accent_frames": [
+        {
+          "frame": 113,
+          "word": "đúng",
+          "heavy": false
+        },
+        {
+          "frame": 131,
+          "word": "cuối",
+          "heavy": false
+        },
+        {
+          "frame": 156,
+          "word": "sáng",
+          "heavy": false
+        }
+      ],
+      "srt_text": "Trừ đúng căn phòng cuối dãy, vẫn sáng rực"
+    },
+    {
+      "beat_index": 3,
+      "parent_shot": "Shot 02",
+      "sub": "part_B",
+      "t_start": 5.6,
+      "t_end": 7.7,
+      "dur_sec": 2.1,
+      "fs": 169,
+      "fe": 231,
+      "speech_fs": 169,
+      "speech_fe": 190,
+      "pause_fs": 191,
+      "pause_fe": 231,
+      "scale": "CU",
+      "angle": "high",
+      "move": "push_in",
+      "move_amt": 0.08,
+      "axis_side": 1,
+      "emotion": "happy",
+      "camera_shake_suggested": false,
+      "accent_frames": [
+        {
+          "frame": 179,
+          "word": "xanh",
+          "heavy": false
+        }
+      ],
+      "srt_text": "màu xanh lá."
+    },
+    {
+      "beat_index": 4,
+      "parent_shot": "Shot 03",
+      "sub": "full",
+      "t_start": 7.7,
+      "t_end": 11.24,
+      "dur_sec": 3.53,
+      "fs": 232,
+      "fe": 337,
+      "speech_fs": 232,
+      "speech_fe": 309,
+      "pause_fs": 310,
+      "pause_fe": 337,
+      "scale": "MCU",
+      "angle": "low",
+      "move": "truck",
+      "move_amt": 0.08,
+      "axis_side": 1,
+      "emotion": "happy",
+      "camera_shake_suggested": false,
+      "accent_frames": [
+        {
+          "frame": 241,
+          "word": "đang",
+          "heavy": false
+        },
+        {
+          "frame": 266,
+          "word": "tính",
+          "heavy": false
+        },
+        {
+          "frame": 285,
+          "word": "nguồn",
+          "heavy": false
+        },
+        {
+          "frame": 331,
+          "word": "Nhóm",
+          "heavy": false
+        }
+      ],
+      "srt_text": "Tôi đang gõ dở máy tính thì sập nguồn tối om."
+    },
+    {
+      "beat_index": 5,
+      "parent_shot": "Shot 04",
+      "sub": "full",
+      "t_start": 11.24,
+      "t_end": 13.66,
+      "dur_sec": 2.43,
+      "fs": 338,
+      "fe": 410,
+      "speech_fs": 338,
+      "speech_fe": 387,
+      "pause_fs": 388,
+      "pause_fe": 410,
+      "scale": "MS",
+      "angle": "low",
+      "move": "pull_out",
+      "move_amt": 0.08,
+      "axis_side": 1,
+      "emotion": "angry",
+      "camera_shake_suggested": false,
+      "accent_frames": [
+        {
+          "frame": 338,
+          "word": "Nhóm",
+          "heavy": false
+        },
+        {
+          "frame": 381,
+          "word": "tung.",
+          "heavy": true
+        }
+      ],
+      "srt_text": "Nhóm chat khu phố lập tức nổ tung."
+    },
+    {
+      "beat_index": 6,
+      "parent_shot": "Shot 05",
+      "sub": "part_A",
+      "t_start": 13.66,
+      "t_end": 15.84,
+      "dur_sec": 2.17,
+      "fs": 411,
+      "fe": 475,
+      "speech_fs": 411,
+      "speech_fe": 475,
+      "pause_fs": null,
+      "pause_fe": null,
+      "scale": "INSERT",
+      "angle": "dutch",
+      "move": "orbit_arc",
+      "move_amt": 0.08,
+      "axis_side": 1,
+      "emotion": "happy",
+      "camera_shake_suggested": false,
+      "accent_frames": [
+        {
+          "frame": 416,
+          "word": "cũng",
+          "heavy": false
+        },
+        {
+          "frame": 441,
+          "word": "điện",
+          "heavy": false
+        },
+        {
+          "frame": 467,
+          "word": "cuối",
+          "heavy": false
+        }
+      ],
+      "srt_text": "Ai cũng hỏi sao mất điện hết mà nhà cuối"
+    },
+    {
+      "beat_index": 7,
+      "parent_shot": "Shot 05",
+      "sub": "part_B",
+      "t_start": 15.84,
+      "t_end": 18.1,
+      "dur_sec": 2.27,
+      "fs": 476,
+      "fe": 543,
+      "speech_fs": 476,
+      "speech_fe": 503,
+      "pause_fs": 504,
+      "pause_fe": 543,
+      "scale": "CU",
+      "angle": "dutch",
+      "move": "static",
+      "move_amt": 0.08,
+      "axis_side": 1,
+      "emotion": "shocked",
+      "camera_shake_suggested": false,
+      "accent_frames": [
+        {
+          "frame": 476,
+          "word": "cuối",
+          "heavy": false
+        },
+        {
+          "frame": 494,
+          "word": "lè?",
+          "heavy": true
+        }
+      ],
+      "srt_text": "vẫn sáng xanh lè?"
+    },
+    {
+      "beat_index": 8,
+      "parent_shot": "Shot 06",
+      "sub": "part_A",
+      "t_start": 18.1,
+      "t_end": 20.14,
+      "dur_sec": 2.03,
+      "fs": 544,
+      "fe": 604,
+      "speech_fs": 544,
+      "speech_fe": 604,
+      "pause_fs": null,
+      "pause_fe": null,
+      "scale": "OTS",
+      "angle": "low",
+      "move": "static",
+      "move_amt": 0.08,
+      "axis_side": 1,
+      "emotion": "happy",
+      "camera_shake_suggested": false,
+      "accent_frames": [
+        {
+          "frame": 548,
+          "word": "hàng",
+          "heavy": false
+        },
+        {
+          "frame": 580,
+          "word": "chạy",
+          "heavy": false
+        }
+      ],
+      "srt_text": "Cô hàng xóm bế con mèo chạy ra ngõ,"
+    },
+    {
+      "beat_index": 9,
+      "parent_shot": "Shot 06",
+      "sub": "part_B",
+      "t_start": 20.14,
+      "t_end": 22.56,
+      "dur_sec": 2.43,
+      "fs": 605,
+      "fe": 677,
+      "speech_fs": 605,
+      "speech_fe": 650,
+      "pause_fs": 651,
+      "pause_fe": 677,
+      "scale": "CU",
+      "angle": "high",
+      "move": "push_in",
+      "move_amt": 0.08,
+      "axis_side": 1,
+      "emotion": "happy",
+      "camera_shake_suggested": false,
+      "accent_frames": [
+        {
+          "frame": 621,
+          "word": "không",
+          "heavy": false
+        },
+        {
+          "frame": 639,
+          "word": "máu.",
+          "heavy": true
+        }
+      ],
+      "srt_text": "mặt cắt không còn giọt máu."
+    },
+    {
+      "beat_index": 10,
+      "parent_shot": "Shot 07",
+      "sub": "part_A",
+      "t_start": 22.56,
+      "t_end": 24.58,
+      "dur_sec": 2.0,
+      "fs": 678,
+      "fe": 737,
+      "speech_fs": 678,
+      "speech_fe": 737,
+      "pause_fs": null,
+      "pause_fe": null,
+      "scale": "MCU",
+      "angle": "high",
+      "move": "truck",
+      "move_amt": 0.08,
+      "axis_side": 1,
+      "emotion": "smirk",
+      "camera_shake_suggested": false,
+      "accent_frames": [
+        {
+          "frame": 699,
+          "word": "nhau",
+          "heavy": false
+        },
+        {
+          "frame": 731,
+          "word": "trước",
+          "heavy": false
+        }
+      ],
+      "srt_text": "Mấy nhà kéo nhau rón rén đi tới trước"
+    },
+    {
+      "beat_index": 11,
+      "parent_shot": "Shot 07",
+      "sub": "part_B",
+      "t_start": 24.58,
+      "t_end": 26.58,
+      "dur_sec": 2.0,
+      "fs": 738,
+      "fe": 797,
+      "speech_fs": 738,
+      "speech_fe": 766,
+      "pause_fs": 767,
+      "pause_fe": 797,
+      "scale": "CU",
+      "angle": "low",
+      "move": "push_in",
+      "move_amt": 0.08,
+      "axis_side": 1,
+      "emotion": "smirk",
+      "camera_shake_suggested": false,
+      "accent_frames": [
+        {
+          "frame": 738,
+          "word": "trước",
+          "heavy": false
+        },
+        {
+          "frame": 758,
+          "word": "đó.",
+          "heavy": true
+        }
+      ],
+      "srt_text": "cửa căn phòng đó."
+    },
+    {
+      "beat_index": 12,
+      "parent_shot": "Shot 08",
+      "sub": "full",
+      "t_start": 26.58,
+      "t_end": 30.0,
+      "dur_sec": 3.43,
+      "fs": 798,
+      "fe": 900,
+      "speech_fs": 798,
+      "speech_fe": 874,
+      "pause_fs": 875,
+      "pause_fe": 900,
+      "scale": "CU",
+      "angle": "dutch",
+      "move": "orbit_arc",
+      "move_amt": 0.08,
+      "axis_side": 1,
+      "emotion": "smirk",
+      "camera_shake_suggested": false,
+      "accent_frames": [
+        {
+          "frame": 822,
+          "word": "mở,",
+          "heavy": true
+        },
+        {
+          "frame": 856,
+          "word": "đứng",
+          "heavy": false
+        }
+      ],
+      "srt_text": "Cửa vừa hé mở, cả đám đứng hình luôn."
+    },
+    {
+      "beat_index": 13,
+      "parent_shot": "Shot 09",
+      "sub": "part_A",
+      "t_start": 30.0,
+      "t_end": 33.22,
+      "dur_sec": 3.23,
+      "fs": 901,
+      "fe": 997,
+      "speech_fs": 901,
+      "speech_fe": 997,
+      "pause_fs": null,
+      "pause_fe": null,
+      "scale": "MS",
+      "angle": "eye",
+      "move": "push_in",
+      "move_amt": 0.08,
+      "axis_side": 1,
+      "emotion": "smirk",
+      "camera_shake_suggested": false,
+      "accent_frames": [
+        {
+          "frame": 918,
+          "word": "dựng",
+          "heavy": false
+        },
+        {
+          "frame": 957,
+          "word": "thẳng",
+          "heavy": false
+        }
+      ],
+      "srt_text": "Một gã tóc dựng đứng đang cắm dây thẳng từ trần nhà vào cục"
+    },
+    {
+      "beat_index": 14,
+      "parent_shot": "Shot 09",
+      "sub": "part_B",
+      "t_start": 33.22,
+      "t_end": 36.3,
+      "dur_sec": 3.07,
+      "fs": 998,
+      "fe": 1089,
+      "speech_fs": 998,
+      "speech_fe": 1055,
+      "pause_fs": 1056,
+      "pause_fe": 1089,
+      "scale": "CU",
+      "angle": "low",
+      "move": "push_in",
+      "move_amt": 0.08,
+      "axis_side": 1,
+      "emotion": "smirk",
+      "camera_shake_suggested": false,
+      "accent_frames": [
+        {
+          "frame": 1008,
+          "word": "phát",
+          "heavy": false
+        },
+        {
+          "frame": 1028,
+          "word": "bằng",
+          "heavy": false
+        }
+      ],
+      "srt_text": "pin phát sáng to bằng cái nồi cơm."
+    },
+    {
+      "beat_index": 15,
+      "parent_shot": "Shot 10",
+      "sub": "part_A",
+      "t_start": 36.3,
+      "t_end": 38.56,
+      "dur_sec": 2.27,
+      "fs": 1090,
+      "fe": 1157,
+      "speech_fs": 1090,
+      "speech_fe": 1157,
+      "pause_fs": null,
+      "pause_fe": null,
+      "scale": "MCU",
+      "angle": "eye",
+      "move": "push_in",
+      "move_amt": 0.08,
+      "axis_side": 1,
+      "emotion": "shocked",
+      "camera_shake_suggested": false,
+      "accent_frames": [
+        {
+          "frame": 1095,
+          "word": "giật",
+          "heavy": false
+        },
+        {
+          "frame": 1115,
+          "word": "lại,",
+          "heavy": true
+        },
+        {
+          "frame": 1138,
+          "word": "cười",
+          "heavy": false
+        }
+      ],
+      "srt_text": "Hắn giật mình quay lại, cười gượng"
+    },
+    {
+      "beat_index": 16,
+      "parent_shot": "Shot 10",
+      "sub": "part_B",
+      "t_start": 38.56,
+      "t_end": 40.9,
+      "dur_sec": 2.33,
+      "fs": 1158,
+      "fe": 1227,
+      "speech_fs": 1158,
+      "speech_fe": 1198,
+      "pause_fs": 1199,
+      "pause_fe": 1227,
+      "scale": "CU",
+      "angle": "low",
+      "move": "static",
+      "move_amt": 0.08,
+      "axis_side": 1,
+      "emotion": "smirk",
+      "camera_shake_suggested": false,
+      "accent_frames": [
+        {
+          "frame": 1158,
+          "word": "gượng",
+          "heavy": false
+        },
+        {
+          "frame": 1185,
+          "word": "điện",
+          "heavy": false
+        },
+        {
+          "frame": 1221,
+          "word": "Ngay",
+          "heavy": false
+        }
+      ],
+      "srt_text": "rồi rút phịch dây điện ra."
+    },
+    {
+      "beat_index": 17,
+      "parent_shot": "Shot 11",
+      "sub": "part_A",
+      "t_start": 40.9,
+      "t_end": 42.94,
+      "dur_sec": 2.03,
+      "fs": 1228,
+      "fe": 1288,
+      "speech_fs": 1228,
+      "speech_fe": 1288,
+      "pause_fs": null,
+      "pause_fe": null,
+      "scale": "WS",
+      "angle": "low",
+      "move": "pull_out",
+      "move_amt": 0.08,
+      "axis_side": 1,
+      "emotion": "angry",
+      "camera_shake_suggested": false,
+      "accent_frames": [
+        {
+          "frame": 1228,
+          "word": "Ngay",
+          "heavy": false
+        }
+      ],
+      "srt_text": "Ngay lập tức, đèn cả khu phố"
+    },
+    {
+      "beat_index": 18,
+      "parent_shot": "Shot 11",
+      "sub": "part_B",
+      "t_start": 42.94,
+      "t_end": 44.92,
+      "dur_sec": 2.0,
+      "fs": 1289,
+      "fe": 1348,
+      "speech_fs": 1289,
+      "speech_fe": 1319,
+      "pause_fs": 1320,
+      "pause_fe": 1348,
+      "scale": "CU",
+      "angle": "low",
+      "move": "push_in",
+      "move_amt": 0.08,
+      "axis_side": 1,
+      "emotion": "smirk",
+      "camera_shake_suggested": false,
+      "accent_frames": [
+        {
+          "frame": 1296,
+          "word": "sáng",
+          "heavy": false
+        }
+      ],
+      "srt_text": "bật sáng rực rỡ."
+    },
+    {
+      "beat_index": 19,
+      "parent_shot": "Shot 12",
+      "sub": "part_A",
+      "t_start": 44.92,
+      "t_end": 47.46,
+      "dur_sec": 2.53,
+      "fs": 1349,
+      "fe": 1424,
+      "speech_fs": 1349,
+      "speech_fe": 1424,
+      "pause_fs": null,
+      "pause_fe": null,
+      "scale": "OTS",
+      "angle": "eye",
+      "move": "push_in",
+      "move_amt": 0.08,
+      "axis_side": 1,
+      "emotion": "smirk",
+      "camera_shake_suggested": false,
+      "accent_frames": [
+        {
+          "frame": 1372,
+          "word": "chưa",
+          "heavy": false
+        }
+      ],
+      "srt_text": "Cả xóm còn chưa kịp vỗ tay, hắn đã vơ"
+    },
+    {
+      "beat_index": 20,
+      "parent_shot": "Shot 12",
+      "sub": "part_B",
+      "t_start": 47.46,
+      "t_end": 49.98,
+      "dur_sec": 2.5,
+      "fs": 1425,
+      "fe": 1499,
+      "speech_fs": 1425,
+      "speech_fe": 1467,
+      "pause_fs": 1468,
+      "pause_fe": 1499,
+      "scale": "CU",
+      "angle": "low",
+      "move": "push_in",
+      "move_amt": 0.08,
+      "axis_side": 1,
+      "emotion": "smirk",
+      "camera_shake_suggested": false,
+      "accent_frames": [
+        {
+          "frame": 1443,
+          "word": "bánh",
+          "heavy": false
+        }
+      ],
+      "srt_text": "lẹ hai ổ bánh mì trên bàn."
+    },
+    {
+      "beat_index": 21,
+      "parent_shot": "Shot 13",
+      "sub": "full",
+      "t_start": 49.98,
+      "t_end": 52.85,
+      "dur_sec": 2.9,
+      "fs": 1500,
+      "fe": 1586,
+      "speech_fs": 1500,
+      "speech_fe": 1581,
+      "pause_fs": null,
+      "pause_fe": null,
+      "scale": "WS",
+      "angle": "high",
+      "move": "pull_out",
+      "move_amt": 0.1,
+      "axis_side": 1,
+      "emotion": "laugh",
+      "camera_shake_suggested": false,
+      "accent_frames": [
+        {
+          "frame": 1514,
+          "word": "hàng",
+          "heavy": false
+        },
+        {
+          "frame": 1566,
+          "word": "hành",
+          "heavy": false
+        }
+      ],
+      "srt_text": "\"Cảm ơn hàng xóm nhé, tôi bay về hành tinh đây!\""
+    }
+  ]
+}
