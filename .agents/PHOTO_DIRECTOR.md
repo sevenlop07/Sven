@@ -229,7 +229,7 @@ Professional high-end studio lighting, subtle soft contact shadows under footwea
 Style: [Visual Style Specification — e.g., Realistic Live-Action Film Still Photography, flawless velvet-matte or natural matte skin finish with zero oily or plastic glare, subtle organic film grain, rich natural color tones, soft physical light falloff].
 
 [context]:
-[Evocative Location Name in Natural English] <<<Image 1>>> (fully_preserved - same architectural layout, furniture, props and lighting throughout), [time of day]. [5-Vector Environmental Specification: architectural layout & full fixed furniture/prop inventory, physical key light source & direction without Kelvin, shadow behavior, and atmospheric mood].
+[Evocative Location Name in Natural English] <<<Image 1>>> (fully_preserved - same architectural layout, fixed furniture and lighting throughout), [time of day]. [5-Vector Environmental Specification: architectural layout & permanent fixed furniture and fixture inventory (no character-handled props), physical key light source & direction without Kelvin, shadow behavior, and atmospheric mood].
 
 [subject]:
 [Proper_Name_Female] <<<Image 2>>> (fully_preserved - same female face, slender feminine body proportions, delicate wrists, long tapering fingers, hair color, makeup and outfit throughout): A graceful woman [5-Point Anatomical Pose Lock anchored to architecture: ① Torso/Weight posture + ② Head/Chin tilt + ③ Shoulder/Elbow grounding + ④ Exact Left/Right slender feminine hand & long tapering finger articulation + ⑤ Gaze vector & facial micro-expression — ZERO specific clothing/age words] — the only [Proper_Name_Female] in frame.

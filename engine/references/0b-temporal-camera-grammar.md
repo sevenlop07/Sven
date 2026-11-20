@@ -258,7 +258,7 @@ Limits:
 Style: [Visual Style Specification — e.g., Realistic Live-Action Film, flawless velvet-matte or natural matte skin finish with zero plastic or oily sheen, subtle organic film grain, muted natural color tones, physical light falloff, crisp real-time motion, zero slow-motion].
 
 [context]:
-[Evocative Location Name in Natural English] <<<Image 1>>> (fully_preserved - same architectural layout, furniture, props and lighting throughout), [time of day]. [5-Vector Environmental Specification: architectural layout & full fixed furniture inventory, physical key lighting source & direction without Kelvin, shadow behavior, and atmospheric mood].
+[Evocative Location Name in Natural English] <<<Image 1>>> (fully_preserved - same architectural layout, fixed furniture and lighting throughout), [time of day]. [5-Vector Environmental Specification: architectural layout & full fixed furniture inventory, physical key lighting source & direction without Kelvin, shadow behavior, and atmospheric mood].
 
 [subject]:
 [Proper_Name_Female] <<<Image 2>>> (fully_preserved - same female face, slender feminine body proportions, delicate wrists, long tapering fingers, hair color, makeup and outfit throughout; only her head, eyes, mouth and expressions move.): A graceful woman [Initial 3D architectural anchor and posture], [hand/prop contact state at 00:00 — strictly ZERO specific clothing/garment words and ZERO numeric ages or specific hair/beard words], [eyeline toward counterpart or landmark] — the only [Proper_Name_Female] in frame.
@@ -339,7 +339,7 @@ Do not generate rough masculine hands on female characters, thick knuckles, oily
 Style: [Visual Style Specification].
 
 [context]:
-[Evocative Location Name in Natural English] <<<Image 1>>> (fully_preserved - same architectural layout, furniture, props and lighting throughout), [time of day]. [5-Vector Environmental Specification].
+[Evocative Location Name in Natural English] <<<Image 1>>> (fully_preserved - same architectural layout, fixed furniture and lighting throughout), [time of day]. [5-Vector Environmental Specification].
 
 [subject]:
 [Proper_Name_Female] <<<Image 2>>> (fully_preserved - same female face, slender feminine body proportions, delicate wrists, long tapering fingers, hair color, makeup and outfit throughout; only her head, eyes, mouth, hands and expressions move.): A graceful woman [Initial 3D architectural anchor, posture, hand state, and eyeline at 00:00 — ZERO specific clothing/age words] — the only [Proper_Name_Female] in frame.
@@ -370,7 +370,7 @@ Do not generate camera cuts, camera movement, zooming, rough masculine hands on 
 Style: [Visual Style Specification].
 
 [context]:
-[Evocative Location Name in Natural English] <<<Image 1>>> (fully_preserved - same architectural layout, furniture, props and lighting throughout), [time of day]. [5-Vector Environmental Specification].
+[Evocative Location Name in Natural English] <<<Image 1>>> (fully_preserved - same architectural layout, fixed furniture and lighting throughout), [time of day]. [5-Vector Environmental Specification].
 
 [subject]:
 [Proper_Name_Female] <<<Image 2>>> (fully_preserved - same female face, slender feminine body proportions, delicate wrists, long tapering fingers, hair color, makeup and outfit throughout; only her head, eyes, mouth, hands and expressions move.): A graceful woman [Initial 3D architectural anchor, posture, hand state, and eyeline at 00:00 — ZERO specific clothing/age words] — the only [Proper_Name_Female] in frame.
@@ -407,7 +407,7 @@ Do not generate rough masculine hands on female characters, thick knuckles, oily
 Style: [Visual Style Specification].
 
 [context]:
-[Evocative Location Name in Natural English] <<<Image 1>>> (fully_preserved - same architectural layout, furniture, props and lighting throughout), [time of day]. [5-Vector Tactical Environment: architectural corridor/street/arena layout, lighting, shadows, and interactive/VFX surface details].
+[Evocative Location Name in Natural English] <<<Image 1>>> (fully_preserved - same architectural layout, fixed furniture and lighting throughout), [time of day]. [5-Vector Tactical Environment: architectural corridor/street/arena layout, lighting, shadows, and interactive/VFX surface details].
 
 [subject]:
 [Proper_Name_Female] <<<Image 2>>> (fully_preserved - same female face, slender feminine body proportions, delicate wrists, long tapering fingers, hair color, makeup and outfit throughout; natural head, eye, expression and body movement.): A graceful woman [Initial spatial anchor and posture at 00:00 — ZERO specific clothing/age words] — the only [Proper_Name_Female] in frame.
@@ -451,7 +451,7 @@ Do not generate oily sweat shine, greasy forehead or nose glare, waxy plastic sk
    - **`Law D1` (100% Static Camera for Continuous Dialogue — Mode D1-A Single Shared Fixed-Camera Header vs. Mode D1-B Multi-Cut Static Scale Escalation)**: Lock **`static camera`** across speaking scenes so 100% of latent motion capacity goes to lip-sync, expressive gestures, and 4-zone facial acting. In **`Mode D1-A` (Fixed-Camera, Fixed-Angle & Fixed-Scale Continuous Dialogue)**, declare Camera, Shot Scale, and Angle **ONLY ONCE** at `Shot 1 (00:00-00:10/15)` and write `3–4` contiguous `(00:XX-00:YY)` Action + Dialogue turns underneath; in **`Mode D1-B` (Multi-Cut Static Scale Escalation)**, step closer across distinct static cuts (`Static MCU OTS` $\to$ `Static Reverse MCU` $\to$ `Static Tight CU`).
    - **`Law D2` (Rationed Native Exclamation Trigger at Line Start)**: Open emotional/comedic/confrontational spoken lines with a native biological interjection (`"Huh?..."`, `"Whoa! Uh..."`, `"Hah! Really?..."`, `"Hửm?..."`, `"Á! Ối trời..."`, `"Hơ!..."`) followed by `?`, `!`, or `...` to prevent monotone text-reading. **Ration it** (`0c` §2): at most 1 in 3 spoken lines per clip, never the same interjection twice in a row, never on calm/authority checkmate lines — an interjection on every line sounds formulaic.
    - **`Law D3` (Expressive Vocal-Behavior Tags Over Musical Jargon)**: Purge dry musical labels (`alto`, `baritone`, `tenor`, `soprano`) and use active vocal-behavior tags (`[Proper_Name] (expressive female/male voice, [scoffing playfully / gasping in panic and stammering / chuckling in disbelief / breath hitching with choked tears / speaking with calm icy authority] in a [tone]): "..."`), synchronized with `[sound]:` and `Shot K` action.
-   - **`Law D4` (`3.2s–4.5s` Spoken Turn Window — Ban `< 3.0s` Spoken Cuts)**: Maximum spoken turn density is **`3 Turns` in `10.0s` (`3.2s–3.2s–3.6s`)** and **`4 Turns` in `15.0s` (`3.5s–3.5s–3.5s–4.5s`)**.
+   - **`Law D4` (`3.2s–4.5s` Spoken Turn Window — Ban `< 3.0s` Spoken Cuts)**: Maximum spoken turn density is **`3 Turns` in `10.0s` (`3.2s–3.2s–3.6s`)** and **`4 Turns` in `15.0s` (`3.5s–3.5s–3.5s–4.5s`)**. **Mode 2 exception** (`0c` §2): in 100%-dialogue ping-pong, a turn of `≤ 8` EN words / `≤ 10` VN syllables fits a `3.2s–3.5s` window, and the final turn of `6–8` words fits `≥ 3.4s` with its `~0.8s` closed-lip tail — the formula applies to every other spoken shot.
    - **`Law D5` (Two Valid Terminal Modes & Mandatory `0.5s–1.0s` Final Tail Buffer)**: Either **(Mode 1)** finish all dialogue in `Turn/Shot 1..N-1` and keep the final `2.0s–3.0s` window wordless (`0 spoken words`), OR **(Mode 2: 100%-Dialogue Ping-Pong)** keep `Turn/Shot 1..N-1` lines to `7–8 EN words` (`8–10 VN syllables`) inside `3.2s–3.5s` windows (`0.5s` buffer/turn to prevent cumulative delay) and give the final `Turn/Shot N` a wider window (`3.6s` in `10s`; `4.2s–4.5s` in `15s`) with a short `6–8 word/syllable` line so a **mandatory `0.5s–1.0s` (`~0.8s`) silent closed-lip tail buffer** (`holding a silent closed-lip expression for the final 0.8 seconds`) remains at the end of the clip.
 3. **Zero Dead Air & State-Delta Directing Law**: Maintain 100% active physical or vocal occupancy across every shot/turn (`Zero Dead Air`). `[subject]:` locks the static `00:00` posture; `Shot 1..N` (or `(00:XX-00:YY)` turns under `Shot 1` in `Mode D1-A`) describes strictly the **state transition (`State A ➔ State B`)** in 1–2 short natural sentences (`12–30w`), never repeating `[subject]:`'s static posture and strictly banning meta-instructions (*"speaking immediately from the opening second"*, *"finishes his sentence early"*).
 4. **Dedicated `[prop]: <<<Image X>>>` Block for Tier-1 Hero Props, Weapons & Key Artifacts**: Whenever a Tier-1 weapon, heirloom, seal, or key contract appears in a scene, bind its isolated 4-view reference sheet (`prop-[name].jpg` $\to$ `<<<Image X>>>`) inside `[prop]:` with its exact `00:00` resting placement or hand-grip.

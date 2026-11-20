@@ -199,13 +199,13 @@ Elena's slender right hand slams the chilled silver citrus sparkling can onto th
 Shot 2 (00:01.5-00:03.0) - Extreme close-up, high-angle diagonal macro locked on the metallic pull-tab, blistering whip-fast speed
 Elena's long tapering right index finger hooks the metallic pull-tab and snaps it open in a pressurized burst of fine sparkling mist and fizzing golden micro-bubbles clinging to the silver rim.
 
-Shot 3 (00:03.0-00:04.4) - Top-down overhead close-up, rapid whip-pan across fresh orange halves hitting the marble board, blistering whip-fast speed
+Shot 3 (00:03.0-00:04.4) - Top-down overhead close-up, rapid whip-pan targeting the fresh orange halves hitting the marble board, blistering whip-fast speed
 A gleaming chef blade in Elena's slender right hand slices cleanly through a fresh orange with strong directional motion blur, launching vibrant citrus juice droplets upward toward the chilled silver citrus sparkling can.
 
 Shot 4 (00:04.4-00:05.8) - Macro side shot, low-angle inertial push-in targeting the can's embossed citrus emblem, explosive real-time speed
 Crystal-clear ice cubes and golden citrus splashes collide directly against the chilled silver citrus sparkling can, wrapping tightly around its brushed metallic curvature under bright morning sunlight.
 
-Shot 5 (00:05.8-00:07.2) - Extreme close-up, orbital macro camera rotating around the colliding liquid crown, ultra-slow-motion suspension
+Shot 5 (00:05.8-00:07.2) - Extreme close-up, orbital macro camera targeting the colliding liquid crown, ultra-slow-motion suspension
 Suspended in mid-air time dilation, individual sparkling amber droplets and frosted ice shards hang like glistening diamonds inches from the condensation-beaded silver can surface.
 
 Shot 6 (00:07.2-00:08.6) - High-angle close-up, rapid tilt-down tracking the golden sparkling pour into a crystal glass, blistering whip-fast speed
@@ -218,12 +218,12 @@ Shot 8 (00:10.0-00:11.5) - Close-up, low-angle crisp settle frame targeting the 
 Elena sets the chilled silver citrus sparkling can cleanly onto the sunlit marble beside the fizzing crystal glass as a final bead of cold condensation rolls down its silver emblem.
 
 Shot 9 (00:11.5-00:15.0) - Medium close-up, static eye-level camera targeting Elena holding the chilled silver citrus sparkling can beside her face, natural real-time speed
-In a locked static frame, Elena raises the chilled silver citrus sparkling can in her slender right hand as her brows lift in refreshed delight, her eyes sparkle with satisfaction, and she speaks with vibrant energy before holding a silent closed-lip confident smile for the final 0.8 seconds.
+In a locked static frame, Elena raises the chilled silver citrus sparkling can beside her face in her slender right hand, her brows lifting in refreshed delight.
 Elena (expressive female voice, exclaiming with refreshed delight in an upbeat confident Vietnamese tone): "Ái chà! Mát lạnh bùng nổ... thử ngay nhé!"
 
 Master-level commercial cinematography and composition, razor-sharp 9-shot rapid-cut pacing transitioning cleanly into a locked static CTA close-up on Shot 9, accurate lip-sync, natural biological facial movements and slender feminine hand anatomy.
 Strict visual consistency: maintain 100% identical female facial features, slender feminine hands, porcelain velvet-matte skin, hair color, makeup, and exact outfit from <<<Image 2>>>, exact kitchen counter architecture from <<<Image 1>>>, and 100% identical shape, silver finish, and embossed citrus emblem of the chilled silver citrus sparkling can from <<<Image 3>>> across all 9 shots without morphing.
-Do not generate product morphing, deformed labels, floating detached VFX, rough masculine hands on female characters, oily sweat shine, greasy forehead or nose glare, waxy plastic skin, subtitles, dialogue text, titles, timestamps, or watermarks anywhere in the video.
+Do not generate duplicate props or utensils, product morphing, deformed labels, floating detached VFX, rough masculine hands on female characters, oily sweat shine, greasy forehead or nose glare, waxy plastic skin, subtitles, dialogue text, titles, timestamps, or watermarks anywhere in the video.
 ```
 
 ---
@@ -266,7 +266,7 @@ The sleek matte-black cordless floor washer stands upright on its minimal chargi
 
 Master-level commercial cinematography and composition, crisp 6-shot conversion pacing with accurate lip-sync on Shot 5 and a clean hero packshot on Shot 6.
 Strict visual consistency: maintain 100% identical male facial features, strong masculine hands, natural matte skin, hair color, and exact outfit from <<<Image 2>>>, exact living room floor from <<<Image 1>>>, and 100% identical shape, matte-black body, and roller head of the matte-black cordless floor washer from <<<Image 3>>> across all 6 shots without morphing.
-Do not generate product morphing, deformed handles, floating detached VFX, oily sweat shine, greasy forehead or nose glare, waxy plastic skin, subtitles, dialogue text, titles, timestamps, or watermarks anywhere in the video.
+Do not generate duplicate props or utensils, product morphing, deformed handles, floating detached VFX, oily sweat shine, greasy forehead or nose glare, waxy plastic skin, subtitles, dialogue text, titles, timestamps, or watermarks anywhere in the video.
 ```
 
 ---
@@ -310,7 +310,7 @@ Shot 7 (00:08.4-00:09.8) - Extreme close-up, eye-level macro targeting Liam's st
 Liam's strong masculine thumb and forefinger slide firmly across the top ridge of the matte-crimson craft zip-pouch of spiced beef jerky, sealing the package airtight with a crisp snap as light catches its gold foil crest.
 
 Shot 8 (00:09.8-00:13.0) - Medium close-up, static eye-level camera targeting Liam holding the matte-crimson craft zip-pouch of spiced beef jerky and tasting a glazed strip, natural real-time speed
-In a locked static frame, Liam holds the sealed matte-crimson craft zip-pouch of spiced beef jerky at chest height with his left hand while tasting a tender glazed strip from his right hand, his brows lifting in savory delight as he nods and speaks with warm enthusiasm.
+In a locked static frame, Liam bites a tender glazed strip held in his right hand, the sealed jerky pouch at chest height in his left, his brows lifting in savory delight.
 Liam (expressive male voice, exclaiming with savory delight in a warm enthusiastic Vietnamese tone): "Ái chà! Thịt tươi chuẩn vị... thử ngay!"
 
 Shot 9 (00:13.0-00:15.0) - Tight close-up, low-angle hero packshot targeting the matte-crimson craft zip-pouch of spiced beef jerky standing upright on the dark slate counter, crisp real-time speed
@@ -319,7 +319,7 @@ The sealed matte-crimson craft zip-pouch of spiced beef jerky stands upright in 
 Master-level culinary and packaged product commercial cinematography, seamless 9-shot raw-to-packaged progression with accurate lip-sync on Shot 8 and a pristine retail hero packshot on Shot 9.
 Strict visual consistency: maintain 100% identical male facial features, strong masculine hands, natural matte skin, hair color, and exact outfit from <<<Image 2>>>, exact kitchen counter architecture from <<<Image 1>>>, and 100% identical pouch geometry, matte-crimson finish, transparent window, and gold foil emblem of the matte-crimson craft zip-pouch of spiced beef jerky from <<<Image 3>>> across Shots 6 to 9 without morphing.
 Strict raw-to-packaged chronological progression: raw unsteamed ingredients in Shots 1-2, active thermal cooking and spice glazing in Shots 3-5, clean filling and sealing into the exact packaged product from <<<Image 3>>> in Shots 6-7, and final tasting satisfaction and hero packshot in Shots 8-9; never place packaging inside cooking pans.
-Do not generate product or label morphing, premature cooked meat at 00:00, floating detached VFX, oily sweat shine, greasy forehead or nose glare, waxy plastic skin, subtitles, dialogue text, titles, timestamps, or watermarks anywhere in the video.
+Do not generate duplicate props or utensils, product or label morphing, premature cooked meat at 00:00, floating detached VFX, oily sweat shine, greasy forehead or nose glare, waxy plastic skin, subtitles, dialogue text, titles, timestamps, or watermarks anywhere in the video.
 ```
 
 ---

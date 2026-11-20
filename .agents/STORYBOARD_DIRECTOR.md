@@ -67,7 +67,7 @@ description: >
 Style: Cinematic 9-panel storyboard grid sheet arranged in a strict 3x3 matrix (3 rows by 3 columns of 9 equal rectangular frames separated by thin clean black borders, reading sequentially left-to-right from top-left Shot 1 to bottom-right Shot 9, with a small clean rounded badge in the top-left corner of each panel displaying its sequential number 1 through 9), Realistic Live-Action Film Still Photography, flawless velvet-matte or natural matte skin finish with zero oily or plastic glare, subtle organic film grain, rich natural color tones, soft physical light falloff.
 
 [context]:
-[Evocative Location Name in Natural English] <<<Image 1>>> (fully_preserved - same architectural layout, furniture, props and lighting throughout all 9 panels), [time of day]. [5-Vector Environmental Specification: architectural layout & full fixed furniture/prop inventory, physical key light source & direction without Kelvin, shadow falloff, and atmospheric mood].
+[Evocative Location Name in Natural English] <<<Image 1>>> (fully_preserved - same architectural layout, fixed furniture and lighting throughout all 9 panels), [time of day]. [5-Vector Environmental Specification: architectural layout & permanent fixed furniture and fixture inventory (no character-handled props), physical key light source & direction without Kelvin, shadow falloff, and atmospheric mood].
 
 [subject]:
 [Proper_Name_Female] <<<Image 2>>> (fully_preserved - same female face, slender feminine body proportions, delicate wrists, long tapering fingers, hair color, makeup and outfit throughout all 9 panels): A graceful woman [Baseline architectural station in the scene — ZERO specific clothing/age words] — the only [Proper_Name_Female] in each panel.
@@ -148,7 +148,7 @@ Both of Elena's delicate porcelain hands with long tapering fingers tear the ivo
 
 Shot 3 (00:02.5-00:06.5) - Panel 3 (Top-Right), Close-up, static eye-level camera targeting Elena's face, natural real-time speed
 In a locked static frame, Elena's inner brows draw subtly together as glistening moisture wells along her lower lash line and her breath hitches softly before she speaks with aching poise.
-Elena (expressive female voice, breath hitching softly with choked emotion in a soft aching Southern Vietnamese tone): "Hơ... Anh tưởng bỏ đi vậy... là em quên được anh thiệt hả?"
+Elena (expressive female voice, breath hitching softly with choked emotion in a soft aching Southern Vietnamese tone): "Hơ... Anh tưởng em quên được anh hả?"
 
 Shot 4 (00:06.5-00:07.8) - Panel 4 (Middle-Left), Tight close-up, low-angle side shot targeting Elena's delicate hands, snappy real-time speed
 Elena's slender left fingers hold the torn ivory envelope corner while her delicate right thumb strikes the brass lighter, sparking a bright golden flame.
@@ -170,6 +170,7 @@ Elena stands tall with an elegant feminine silhouette facing the glowing city sk
 
 Master-level cinematography and composition, seamless full-screen 9-shot editing matching Panel 1 to Panel 9 of <<<Image 1>>>, accurate lip-sync on Shot 3, natural biological facial movements and slender feminine hand anatomy.
 Strict visual consistency: maintain 100% identical female facial features, slender feminine hands and wrists, porcelain velvet-matte skin, Douyin makeup, hair color, and exact outfit from <<<Image 2>>> and exact room architecture from <<<Image 1>>> across all 9 shots without morphing or wardrobe changes.
+Do not generate duplicate props or utensils, rough masculine hands on female characters, thick knuckles, oily sweat shine, greasy forehead or nose glare, waxy plastic skin, subtitles, dialogue text, titles, timestamps, or any written text anywhere in the video.
 Render strictly as sequential full-screen video shots. Do not show the 3x3 grid layout, panel borders, corner number badges, split-screen mosaic, rough masculine hands on female characters, thick knuckles, oily sweat shine, greasy forehead glare, waxy plastic skin, subtitles, text overlays, or watermarks in the video.
 ```
 

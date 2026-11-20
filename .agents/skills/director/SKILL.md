@@ -96,7 +96,7 @@ description: >
      Style: [Visual Style Name — e.g., Realistic Live-Action Film, matte skin and surface finish with zero plastic sheen, subtle organic film grain, muted natural color tones / Realistic 3D Semi-Real CGI with satin-matte finish].
 
      [context]:
-     [Evocative English Location Name] <<<Image 1>>> (fully_preserved - same architectural layout, furniture, props and lighting throughout), [time of day]. [5-Vector Specification: architectural layout & full fixed furniture/prop inventory, key lighting source & direction without Kelvin, shadow behavior, atmospheric medium & mood].
+     [Evocative English Location Name] <<<Image 1>>> (fully_preserved - same architectural layout, fixed furniture and lighting throughout), [time of day]. [5-Vector Specification: architectural layout & permanent fixed furniture and fixture inventory (no character-handled props), key lighting source & direction without Kelvin, shadow behavior, atmospheric medium & mood].
 
      [subject]:
      [Proper_Name_Female] <<<Image 2>>> (fully_preserved - same female face, slender feminine body proportions, delicate wrists, long tapering fingers, hair color, makeup and outfit throughout; only her head, eyes, mouth and expressions move.): A graceful woman [Initial 3D architectural anchor & posture], [initial hand/prop state OR (No objects should appear in the character's hands)], [eyeline] — the only [Proper_Name_Female] in frame.

@@ -8,6 +8,7 @@ Runs after a file write/edit and audits it:
   * setting.html  -> engine/setting_audit_suite.py
   * tap-N.html    -> engine/episode_audit_suite.py (tap files are banned by the Single-HTML law anyway)
   * ep-NN-script.md (saved Stage 3 script) -> engine/screenplay_audit.py (workflow.md §8.4)
+  * ep-NN-scene-KK.md (saved Stage 4 scene prompt) -> engine/prompt_audit.py (workflow.md §9.3)
   * core docs (workflow.md, AGENT(S).md, .agents/*.md, engine/references/0*.md, engine/genres/*.md)
     -> engine/doc_range_check.py (JIT line ranges must stay inside the referenced files)
   * Roblox Law R-ANIM lint (ROBLOX_DIRECTOR.md §4) on Python/Lua files under output/ or the roblox kit:
@@ -156,6 +157,8 @@ def main():
             problems.append(run_audit(os.path.join("engine", "setting_audit_suite.py"), target, "Setting Audit Suite"))
         elif re.search(r"ep-\d+-script\.md$", filename):
             problems.append(run_audit(os.path.join("engine", "screenplay_audit.py"), target, "Screenplay Audit"))
+        elif re.search(r"ep-\d+-scene-\d+\.md$", filename):
+            problems.append(run_audit(os.path.join("engine", "prompt_audit.py"), target, "Scene Prompt Audit"))
         problems.append(lint_r_anim(target))
         problems.append(lint_roblox_docs(target))
         problems.append(lint_doc_ranges(target))

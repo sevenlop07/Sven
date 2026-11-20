@@ -188,7 +188,7 @@ Style: [Visual Style Specification — e.g., Realistic Live-Action Film, flawles
 <<<Video 1>>> (fully_preserved - replicate the exact [N]-shot camera angles, shot scales, cut timings, camera movements, and physical body and hand motion trajectories across all shots, while replacing the environment with [Location Name], the subject with [Proper_Name], and the handheld weapon/prop with [Prop Name]).
 
 [context]:
-[Evocative English Location Name] <<<Image 1>>> (fully_preserved - same architectural layout, furniture, props and lighting throughout), [time of day]. [5-Vector Specification mapping the physical contact surfaces of the motion to the landmarks of <<<Image 1>>>].
+[Evocative English Location Name] <<<Image 1>>> (fully_preserved - same architectural layout, fixed furniture and lighting throughout), [time of day]. [5-Vector Specification mapping the physical contact surfaces of the motion to the landmarks of <<<Image 1>>>].
 
 [subject]:
 [Proper_Name] <<<Image 2>>> (fully_preserved - same female/male face, slender feminine / masculine body proportions, delicate wrists, long tapering fingers / well-defined masculine hands, hair color, makeup [Female only] and outfit throughout; natural head, eye, expression, hand and body movement.): A graceful woman / A composed man [00:00 spatial anchor in <<<Image 1>>> & initial grip on [Prop Name]] — the only [Proper_Name] in frame.

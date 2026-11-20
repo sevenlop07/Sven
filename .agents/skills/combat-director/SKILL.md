@@ -159,7 +159,7 @@ Lin slides to a balanced halt in the foreground with her silver longsword lowere
 
 Master-level cinematography and composition, unbroken AAA action-game camera inertia, crisp internal time-ramped combat pacing, atmospheric sound design.
 Strict visual consistency: maintain 100% identical facial features, slender feminine hand proportions, jade-porcelain matte skin shader, hair color, makeup, exact outfit, and exact weapon design from the reference images across all shots without morphing or wardrobe changes.
-Do not generate rough masculine hands on female characters, floating detached VFX, sluggish unintentional slow-motion, glossy plastic doll sheen, subtitles, dialogue text, titles, timestamps, or any written text anywhere in the video. Do not generate spoken dialogue, lip movement matching speech, or voiceover.
+Do not generate duplicate props or utensils, rough masculine hands on female characters, floating detached VFX, sluggish unintentional slow-motion, glossy plastic doll sheen, subtitles, dialogue text, titles, timestamps, or any written text anywhere in the video. Do not generate spoken dialogue, lip movement matching speech, or voiceover.
 ```
 
 ### Example 2 — Topology 2 (`5-Shot Asymmetric Chase, Hard Trap Stop & Ambush` · `15.0s: 3.5s–4.0s–2.5s–3.0s–2.0s`)

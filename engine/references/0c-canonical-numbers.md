@@ -23,7 +23,7 @@
 | Item | Value | Kind |
 |---|---|---|
 | Safe speech rate | `~2.5 EN words/s` · `~3.0 VN syllables/s` (0b §2). | HC |
-| Spoken shot / turn window | `3.2s–4.5s`; no spoken window under `3.0s`. $T = 0.4s + words/2.5 + 0.5–0.8s$. | HC (Law D4) |
+| Spoken shot / turn window | `3.2s–4.5s`; no spoken window under `3.0s`. $T = 0.4s + words/2.5 + 0.5–0.8s$ (VN: syllables/3.0). **Mode 2 exception**: ping-pong turns of `≤ 8` EN words / `≤ 10` VN syllables fit `3.2s–3.5s`; the final `6–8`-word turn fits `≥ 3.4s` incl. the `~0.8s` tail (also CTA-A/CTA-B commercial windows). | HC (Law D4/D5) |
 | Max spoken shots | `3` in `10.0s` · `4` in `15.0s`. | HC (Law D4) |
 | Words per `10.0s` clip | `0–22` words total, `0–3` turns. | HC |
 | Words per `15.0s` dialogue clip | `18–32` words total, `2–4` turns. | HC |
