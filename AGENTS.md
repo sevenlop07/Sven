@@ -1,5 +1,12 @@
 # SVEN ENGINE — MANDATORY STARTUP BOOTSTRAP RULE (ALWAYS-ON)
 
+> **Runtime mapping (any AI agent):** `read_file(Path, StartLine, EndLine)` below means *your* file-read tool with a line range
+> (Antigravity/Gemini: `read_file`; Claude Code: `Read` with `offset`/`limit`; others: equivalent). Specialist roles live in
+> `.agents/*.md` + `.agents/skills/*/SKILL.md` (shared by every runtime). **Claude Code extras:** `.claude/agents/roblox-director.md`
+> is a real `@RobloxDirector` subagent (delegate R3–R5 stage work to it; the main thread keeps every user gate),
+> `.claude/skills/roblox-director/` is the `/roblox-director` entry point, and `.claude/settings.json` runs the shared quality-gate
+> hook (`.agents/hooks/quality_gate_hook.py`, also wired for Antigravity in `.agents/hooks.json`) after every Write/Edit.
+
 ## 1. Zero-Inference Startup Mandate (Turn 1 Hard Lock)
 Before responding to ANY filmmaking, scriptwriting, story concept, character design, scene breakdown, or video prompt request in this workspace (`d:\Project\Sven`), you **MUST** execute the following `read_file` calls on Turn 1 if they are not already loaded in the current turn context:
 
