@@ -1,6 +1,6 @@
 # look.md: shots, camera, faces, bodies, sets
 
-> **v2 note (2026-11-14):** the rules and numbers here still apply. Roblox Studio tools named here (Luau CFrame/Motor6D poses, Animation Editor, Moon Animator, FieldOfView, BillboardGui) are replaced by the Blender kit — acting now comes from `studio_kit/blender_roblox_anim.py` (Law R-ANIM, `ROBLOX_DIRECTOR.md` §4; mocap/RoMixamo retired).
+> **Engines:** every rule and number here applies to both engines. Blender (default) implements them with `studio_kit/` (cameras `kit.place_shot_camera`, acting `blender_roblox_anim.py` — Law R-ANIM, faces/decals in the head material); the Studio route uses `Camera.FieldOfView`, decals/SurfaceGuis and official R15 animations. Mocap/RoMixamo is retired (`ROBLOX_DIRECTOR.md` §4).
 
 
 Tags: **REF-RANGE** = measured in the 6 reference reels (bell, memories, town, dog, monster, train; 458 shots). **HYPOTHESIS** = a beat-the-refs bet, not proven; A/B it on the user's own analytics.
@@ -55,7 +55,7 @@ Sizes used in the shot list: EWS, WS, MS, MCU, CU, ECU, OTS, INS (insert).
 
 - **Non-eye-level ≥35 %** (L6, HYPOTHESIS). Low angle (camera 1–2 studs below eye line, tilted up 10–20°) for threat, power and the rule object looming. High angle (2–4 studs above, tilted down 20–35°) for isolation and smallness. Top-down for "everyone at once" shots. Keep eye level for honest dialogue.
 - **Dutch tilt**: ≤5° roll, only on chaos beats, never two shots in a row (scene-rules: roll is 0 otherwise).
-- **Lens** (Roblox `Camera.FieldOfView` is the vertical FOV; HYPOTHESIS from the Moon Animator guide's 20–50 range): CU/MCU 30–40°, MS/OTS 40–55°, WS 55–70°, EWS 60–70°. The default 70° on a close-up bends blocky heads and shows too much set.
+- **Lens** (vertical FOV — Roblox `Camera.FieldOfView`, Blender camera with `sensor_fit='VERTICAL'`; HYPOTHESIS: common 20–50° range): CU/MCU 30–40°, MS/OTS 40–55°, WS 55–70°, EWS 60–70°. The default 70° on a close-up bends blocky heads and shows too much set.
 - OTS: the near shoulder fills 15–30 % of the frame width and is out of focus if DOF is on; the far face is readable. The camera stays on one side of the line between two talkers for the whole scene (scene-rules 180° rule).
 
 ## 3. Camera moves: in-engine vs edit zoom
@@ -83,13 +83,13 @@ Sizes used in the shot list: EWS, WS, MS, MCU, CU, ECU, OTS, INS (insert).
 | every emotional push-in on a face (the background should slide behind the head) | rescuing a take that came out static: ≤ +5 % over the whole shot |
 | | stills made with `screen_capture` (they can only move in the edit) |
 
-- **Edit-zoom limit: ≤ +5 % total** on a 1080×1920 capture (HYPOTHESIS: more than that softens the image). If the viewport can be captured bigger than the output (see pipeline.md step 0), the limit rises to output-size ÷ capture-size, for example +33 % for 1440×2560.
+- **Edit-zoom limit: ≤ +5 % total** on a 1080×1920 capture (HYPOTHESIS: more than that softens the image). If the viewport can be captured bigger than the output (see pipeline.md §0.3), the limit rises to output-size ÷ capture-size, for example +33 % for 1440×2560.
 - **FOV zoom in-engine** (changing `FieldOfView` without moving the camera) is optically the same flat zoom as an edit zoom, but without softness. Use it for punches; use a physical move (dolly) for everything else.
 - Edit-zoom-only shots ≤20 %, fully static shots ≤10 % (L8). A static shot must be a choice ("everything freezes before the scare"), written in the shot list notes.
 
 ### 3.3 The twist move (pick one per episode, rotate)
 One move on the twist line that no ref uses (U8, HYPOTHESIS):
-- **Dolly-zoom**: move the camera back while narrowing the FOV so the face stays the same size. Keep *d* × tan(FOV/2) constant: FOV₂ = 2·atan((d₁/d₂)·tan(FOV₁/2)). Example: from 6 studs at 40° to 10 studs → 24.6°, over 1.0–1.5 s. In scene data: `dolly = { at = 0.3, dur = 1.2, to = 10 }` on the shot (pipeline.md Appendix A); the runner does the math inside the shot. `camFn` is the general per-shot override for any other move.
+- **Dolly-zoom**: move the camera back while narrowing the FOV so the face stays the same size. Keep *d* × tan(FOV/2) constant: FOV₂ = 2·atan((d₁/d₂)·tan(FOV₁/2)). Example: from 6 studs at 40° to 10 studs → 24.6°, over 1.0–1.5 s. Author it inside the shot's camera function as `{at = 0.3, dur = 1.2, to = 10}` (pipeline.md §3); any other move is just another per-frame camera function.
 - **Rack focus**: DOF `FocusDistance` tweens from the near object's distance to the face's distance (or the reverse) over 0.4–0.8 s, starting on the twist word: `P.rack(from, to, secs)` in the lighting module, or `rack = {at, from, to, secs}` on the shot in scene data. This shot is the one DOF exception: DOF is on even if the mood has it off, `NearIntensity` ≤0.5, `FarIntensity` ≤0.5; the next cut restores the mood's DOF.
 Alternate the two between consecutive episodes.
 
@@ -113,11 +113,11 @@ Alternate the two between consecutive episodes.
 
 ### 6.1 Abstract rule objects: shadows, light, sounds, invisible marks
 
-Roblox can't make a shadow show anything but its caster, can't show a sound, and can't show what's invisible. Fake them cheaply, and **count every distinct image or state against the build caps** (pipeline.md: ≤12 rule-object images; the first system you build is 1 special build, reused for free after).
+Roblox can't make a shadow show anything but its caster, can't show a sound, and can't show what's invisible. Fake them cheaply, and **count every distinct image or state against the build caps** (pipeline.md §1: ≤12 rule-object images; the first system you build is 1 special build, reused for free after).
 
 | rule object | cheapest method | notes |
 |---|---|---|
-| **story shadows / silhouettes** | black PNG silhouettes (soft 4-8 px edge baked in, ImageTransparency ~0.3) on a SurfaceGui (or Decal) on a thin non-colliding, CanQuery-off part 0.02-0.05 studs off the wall, ground or curtain. Move them with TweenService (an ImageLabel sliding inside a `ClipsDescendants` frame), change them with the ShotRunner's `shadows` events (`setShadow`, images in a `ShadowLibrary` module) | test `LightInfluence` 0 vs 1 on the first set (UNVERIFIED which reads better). A lamp "erasing" a shadow = ImageTransparency 0.3 → 1 over about 6 frames. A shadow across road and wall is two parts split at the kerb seam, lined up per shot with `screen_capture` |
+| **story shadows / silhouettes** | black PNG silhouettes (soft 4-8 px edge baked in, ImageTransparency ~0.3) on a SurfaceGui (or Decal) on a thin non-colliding, CanQuery-off part 0.02-0.05 studs off the wall, ground or curtain. Move them with TweenService (an ImageLabel sliding inside a `ClipsDescendants` frame), change them with the scene lib's per-frame code (Studio `T.frame`, Blender keyframes) — `shadows` events (`setShadow`, images in a `ShadowLibrary` module) | test `LightInfluence` 0 vs 1 on the first set (UNVERIFIED which reads better). A lamp "erasing" a shadow = ImageTransparency 0.3 → 1 over about 6 frames. A shadow across road and wall is two parts split at the kerb seam, lined up per shot with `screen_capture` |
 | real shadow puppet (one test) | an opaque cut-out part outside the frame, between a shadow-casting SpotLight and the wall; Realistic lighting casts it for free | UNVERIFIED; a Transparency-1 part casts no shadow, so the puppet must be opaque and off-frame |
 | real cast shadows | keep `CastShadow` on for rigs, and turn it off only on shots where a story shadow shares the surface, or add a dark contact-blob decal under the feet | rigs with no shadow float in sunlit wides |
 | long shadows | the light sits low and behind the caster (headlights, a porch light); a streetlight overhead makes a short shadow at the feet | the real set shadows must agree with the fake ones |
@@ -137,7 +137,7 @@ Minimum kit per character (HYPOTHESIS: enough for the refs' range of emotions):
 - Brows: neutral, sad, angry, raised
 - Mouth: closed-neutral, smile, frown, open-small, open-big, O, gritted
 
-**Rules that live on the body** (a crack, a mark, a glowing date, tears that stay) get a 4th Decal on the Head named for the rule (`Mark`, ZIndex 4, same canvas, 1024 px if it is seen in ECU) and drawn **inside the front face area** (a Front decal can't reach the ear) with staged states: forming 25 / 50 / 75 / 100 %, then any shrink or gone states the story needs. The ShotRunner's `setFace(rig, "Mark", state)` swaps any named decal on the Head, so a forming mark is a run of `faces` events 1 frame apart; a mark on another body part is set from an `events` fn.
+**Rules that live on the body** (a crack, a mark, a glowing date, tears that stay) get a 4th Decal on the Head named for the rule (`Mark`, ZIndex 4, same canvas, 1024 px if it is seen in ECU) and drawn **inside the front face area** (a Front decal can't reach the ear) with staged states: forming 25 / 50 / 75 / 100 %, then any shrink or gone states the story needs. The scene lib's per-frame code (Studio `T.frame`, Blender keyframes) — `setFace(rig, "Mark", state)` swaps any named decal on the Head, so a forming mark is a run of `faces` events 1 frame apart; a mark on another body part is set from an `events` fn.
 
 8 × 4 × 7 = 224 combinations from 19 PNGs. Store the asset IDs in a `FaceLibrary` ModuleScript (`FaceLibrary.Hero.Mouth.O = "rbxassetid://…"`). **Run the 2-minute decal test in templates/mcp-setup.md before drawing the full kit.**
 
@@ -151,13 +151,11 @@ Minimum kit per character (HYPOTHESIS: enough for the refs' range of emotions):
 ## 8. Body animation
 - **Stiff idle ≤40 % of shots; posed or animated ≥35 %** (L15). Nobody stands frozen in an MS while they talk (bell #10 "Everyone laughed": nobody moves).
 - Everyone not acting gets a breathing idle: torso bob 0.05 studs on a 2–3 s cycle, head turn 5–10° toward the speaker (HYPOTHESIS, craft note).
-- **R6 tools** (rigs are R6, like the refs):
-  - Built-in Animation Editor: free, enough for simple acting.
-  - **Luau CFrame poses**: Claude writes poses as `Motor6D.C0` offsets on the R6 joints (Neck, Right/Left Shoulder, Right/Left Hip, RootJoint) and tweens between them. Cheapest route through the MCP. The joint axes differ per joint; test each new pose once with `screen_capture` and save it in a `PoseLibrary` module.
-  - **Moon Animator 2**: about $30 one-time. Multi-rig timeline, camera track, marker-driven face swaps in Edit mode. **Ask the user before buying.** Buy it only if the free routes fail the first test.
-  - ~~RoMixamo~~ — retired. Human mocap does not read as Roblox (see `ROBLOX_DIRECTOR.md` §4 Law R-ANIM). Studio: official R15 animation ids; Blender: `studio_kit/blender_roblox_anim.py`.
-  - **Not** the MCP's `generate_animation`: it makes R15 animations only, up to 10 s. Useless for R6 acting.
-- Starter pose library (8 poses, HYPOTHESIS): point, hand-to-face, head-drop slump, flinch, hug/hold, hands-on-head, kneel, reach-out. Each has a 6–12-frame ease in and holds ≥0.4 s on emotional beats.
+- **Acting tools (Law R-ANIM, `ROBLOX_DIRECTOR.md` §4):**
+  - **Blender (default):** `studio_kit/blender_roblox_anim.py` — `RobloxAnimator` with 27 states (walk/run/jump/talk/emotions/combat…), distance-locked gait, crossfades, head-look layer, hit-stop; custom holds via the `pose` state. Check every beat on the `render_pose_qa` sheet.
+  - **Studio:** official R15 animation ids stepped with `TimePosition` + `Animator:StepAnimations(0)`, procedural layers (root path, head turn via `AnimationConstraint.Transform`) on top. The legacy MT R6 kit (`lib*.lua`, `MT.frame`) still works for R6 scenes.
+  - **Never** human mocap (Mixamo/BVH/FBX/RoMixamo) — it does not read as Roblox. Don't buy paid animation plugins without the user's OK.
+- Starter pose set (HYPOTHESIS): point, think (hand to chin), sad slump, scared cower, shock, hug/hold, kneel (`crouch`), reach-out (`pickup`). Ease in over 6–12 frames (`fade` 0.2–0.4 s) and hold ≥0.4 s on emotional beats.
 - Turn before walking (≥0.3 s, scene-rules). Feet on the floor; held props welded to the hand.
 
 ## 9. Sets and cast
@@ -165,7 +163,7 @@ Minimum kit per character (HYPOTHESIS: enough for the refs' range of emotions):
 - **Dress every free map with 2–3 story props** (signs, labels, the rule object, a UI screen, a handwritten note).
 - **Avoid the shared free school map** (blue-locker hallway, the classroom with the bulletin board and grey lockers): bell and memories both use it. If the story needs a school, use another map and change wall colours, materials and 3 props.
 - **No setup more than twice** (L17): a setup is set + size + angle family. The checker counts repeats.
-- **Hero = a custom avatar** (L19, HARD). Built on a Rig Builder R6 rig with the user's own face PNGs, own shirt and pants textures, and **one saturated signature colour that reads at EWS size** (benchmark: monster's bee stripes + orange backpack). Lock him in a cast file (`reels-shorts/cast/<name>.md`: name, signature colour, outfit, face-kit decal IDs, signature prop) and reuse him across episodes. A recurring original cast also counts against YouTube's "inauthentic content" templating rule. **If no cast file exists yet** (or you can't see that folder), describe the hero in the shot list with those 5 fields, mark it "new: needs the user's OK", and write the cast file after he approves; never invent a second hero when one exists.
+- **Hero = a custom avatar** (L19, HARD). Built on the R15 kit rig (Blender `kit.build_roblox_character`, or Studio `HumanoidDescription`) with the user's own face PNGs, own shirt and pants textures, and **one saturated signature colour that reads at EWS size** (benchmark: monster's bee stripes + orange backpack). Lock the hero in a cast file (`output/<series-slug>/cast/<name>.md`, template `templates/hero-cast.md`: name, signature colour, outfit, face-kit decal IDs, signature prop) and reuse him across episodes. A recurring original cast also counts against YouTube's "inauthentic content" templating rule. **If no cast file exists yet** (or you can't see that folder), describe the hero in the shot list with those 5 fields, mark it "new: needs the user's OK", and write the cast file after he approves; never invent a second hero when one exists.
 - Each supporting character owns one costume colour that reads at WS size. Captions keep the episode's one accent colour (captions.md §1.1); a character's colour shows on their costume and speech bubble, not in the captions.
 - Hair and accessories from the Creator Store are the same grey zone as free maps (fine to record in Studio). The hero's look should not depend on one of them (keep it portable).
 
@@ -212,18 +210,18 @@ Minimum kit per character (HYPOTHESIS: enough for the refs' range of emotions):
 ## 14. Rotate between episodes (anti-template)
 Whip intro, mirrored bookend and prop deaths (each at most every other episode), the twist move (dolly-zoom ↔ rack focus), lead location type and where the rule object lives rotate between episodes. Rules: `templates/rotation-log.md` (optional rows 13-18). Hold placement is in pacing.md.
 
-## 15. Self-checks (zero tokens, on the user's Mac)
+## 15. Self-checks (zero tokens, local)
 
-- **Shot list:** `python3 tools/shotlist_check.py shotlist.md` (format in `templates/shot-list.md`) before anything is built. It checks L1-L11, L15-L18 and the mood names, and prints L12 / L14 counts. On a partial list (a 15 s test scene) L16 and L18 are informational only.
-- **Move check on a recorded take** (did each shot really move?): `python3 tools/move_check.py take.mp4 cuts.txt`, where `cuts.txt` holds one shot start per line, starting at 0. It cannot tell an in-engine move from an edit zoom (both fit the same 2D model); the shot list says which is which. Tested on the bell reference: it reads bell #19–#23 as +13 to +21 %/s zoom-ins, matching the look analysis.
+- **Shot list:** `python tools/shotlist_check.py shotlist.md` (format in `templates/shot-list.md`) before anything is built. It checks L1-L11, L15-L18 and the mood names, and prints L12 / L14 counts. On a partial list (a 15 s test scene) L16 and L18 are informational only.
+- **Move check** (did each shot really move?): in Blender, `kit.render_playblast_qa(...)` (~10 fps half-res motion pass) and compare first/last frame of every shot on the contact sheet; in Studio, preview first/middle/last frame of each shot. The shot list says which moves are in-engine and which are edit zooms.
 
 ## 16. Roblox limits (check before writing a shot)
 
 | limit | so | tag |
 |---|---|---|
 | No real reflections (no mirror rendering; glass and water show only the sky and lights) | write mirrors, shop windows and puddles so the reflection is never needed, or fake a mirror: the camera sits where the mirror is, behind a thin glass part, and the actor looks into the lens (the one other allowed look into the lens, §7.2) | craft note, HYPOTHESIS until a capture |
-| R6 limbs are blocks: no feet, no fingers | no foot inserts ("his shoes on my sneakers"), no finger or hand-detail inserts; show the whole body instead | fact (R6 rig) |
-| Contact between two rigs (hand-holding, a hand on a cheek, stepping on feet) is the hardest pose work in the pipeline | ≤3 contact poses per episode (pipeline.md Build budget) | HYPOTHESIS |
+| Roblox limbs are blocks: no fingers, no real feet | no foot inserts ("his shoes on my sneakers"), no finger or hand-detail inserts; show the whole body instead | fact (R6/R15 block rigs) |
+| Contact between two rigs (hand-holding, a hand on a cheek, stepping on feet) is the hardest pose work in the pipeline | ≤3 contact poses per episode (pipeline.md §1 Build budget) | HYPOTHESIS |
 | DOF works off depth; whether a mostly transparent part (Transparency ~0.85) counts as a focus target is UNVERIFIED | rack-focus targets are opaque parts (a toothbrush, a photo frame); test the rack with `screen_capture` before building the twist around it, and keep a dolly-zoom as the fallback | UNVERIFIED |
 | A BillboardGui bubble sits above the head | speech bubbles only on MS or wider; in a CU it is off frame or over the face, so let the narration carry the line | fact |
 | Images upload at most 1024 px | decals seen in ECU on a 1024 canvas; even then an ECU of a small decal area is soft, so keep marks large and simple | fact (upload cap) |

@@ -44,7 +44,7 @@ Slow punch lines: 1-3 word lines at about 0.6x the video's median syllable rate,
 | parent, friendly adult | narrator pitch, +-3 st | REF-RANGE (mom -0.4 to +2.0, cosine >0.92) |
 | yell | short-term loudness **+3 to +5 LU** over integrated (about -10 to -11 LUFS short-term) | REF-RANGE (town -9.4, dog -10.5 vs -14.2) |
 
-Free pitch shift on the user's Mac: `ffmpeg -i in.wav -af "rubberband=pitch=F" out.wav` with F = 2^(st/12): +4 st 1.260, +6 1.414, +8 1.587, +10 1.782, -4 0.794, -5 0.749, -6 0.707. Listen to every shifted line once; if it sounds like a cartoon, drop 2 st. Cast at most 3 voices besides the narrator's clone (HYPOTHESIS: casting and listening work); any other speaker is a narrated quote with a speech bubble (script.md §7).
+Free pitch shift (local ffmpeg): `ffmpeg -i in.wav -af "rubberband=pitch=F" out.wav` with F = 2^(st/12): +4 st 1.260, +6 1.414, +8 1.587, +10 1.782, -4 0.794, -5 0.749, -6 0.707. Listen to every shifted line once; if it sounds like a cartoon, drop 2 st. Cast at most 3 voices besides the narrator's clone (HYPOTHESIS: casting and listening work); any other speaker is a narrated quote with a speech bubble (script.md §7).
 
 ---
 
@@ -100,7 +100,7 @@ Sounds the refs do not use (none of the 6 had a comedic or meme event): record-s
 | Loudness range | 3-6 LU | REF-RANGE 2.2-4.8, a little wider to make room for the silence beat |
 | Ending | bed +2 to +4 dB vs the opening, tail 0.5-1.5 s | see section 2 |
 
-Free check on the user's Mac (zero tokens): `ffmpeg -i final.mp4 -af ebur128=peak=true -f null - 2>&1 | tail -12` gives integrated LUFS, LRA and true peak. Measure voice and music buses by exporting them separately. Final normalise: `ffmpeg -i in.wav -af loudnorm=I=-14:TP=-1.5:LRA=7 out.wav` (run twice, or use measured values, to hit the target).
+Free check (local ffmpeg, zero tokens): `ffmpeg -i final.mp4 -af ebur128=peak=true -f null -` (read the summary at the end) gives integrated LUFS, LRA and true peak. Measure voice and music buses by exporting them separately. Final normalise: `ffmpeg -i in.wav -af loudnorm=I=-14:TP=-1.5:LRA=7 out.wav` (run twice, or use measured values, to hit the target).
 
 Optional ducking in ffmpeg: `[music][voice]sidechaincompress=threshold=0.05:ratio=3:attack=30:release=300[ducked]`. Tune the threshold until the gain reduction measured under speech is 3-4 dB; the numbers above set the target, not the filter parameters.
 
@@ -141,7 +141,7 @@ the user's mood labels are **HYPOTHESIS**: guessed from titles and Kevin MacLeod
 | door bang / slam | **gap** | Freesound CC0: "door slam", "gym door push bar" |
 | crowd / walla bed (gym, cafeteria) | **gap** | Freesound CC0: "school cafeteria ambience", "crowd walla indoor" |
 
-The library folders and `studio/timing.py` are on the user's Mac, outside the skill. When you can't see them, list each needed file as "confirm in library" with a free-source search term as the fallback.
+Music/SFX libraries live outside the repo (`.agents/skills/roblox-director/music/` holds the core BGM); timing comes from `tools/plan_timing.py`. When you can't see a needed file, list each needed file as "confirm in library" with a free-source search term as the fallback.
 
 ### 5.3 Licensing (verified from the audio report's sources, 2026-11-14)
 - **incompetech (Kevin MacLeod)**: CC BY 4.0, monetization allowed, credit required in the description: `Title Kevin MacLeod (incompetech.com) / Licensed under Creative Commons: By Attribution 4.0 / https://creativecommons.org/licenses/by/4.0/` . If a Content ID claim appears, reply with the track's ISRC. https://incompetech.com/music/royalty-free/faq.html

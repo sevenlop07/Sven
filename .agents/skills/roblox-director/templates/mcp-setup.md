@@ -1,9 +1,9 @@
 # Roblox Studio MCP + Claude Code: setup and first tests
 
-> **v2 note (2026-11-14):** old Roblox Studio route, reference only. Blender setup is in `../SETUP.md`.
+> **Studio route (Engine E1).** Blender is the default engine; Studio setup facts and limits are summarised in `../pipeline.md` §0.2 and `../../../ROBLOX_DIRECTOR.md` §4.6–4.7.
 
 
-Source: Roblox's MCP docs (create.roblox.com/docs/studio/mcp, checked 2026-11-14) and the production research. The MCP server is **built into Roblox Studio**. Transport is **stdio**, so Claude Code must run **locally on the same Mac**: the Terminal CLI or the desktop app's Code tab, never a cloud session. Don't install the archived `studio-rust-mcp-server` (archived Apr 2026) or community servers; they aren't needed.
+Source: Roblox's MCP docs (create.roblox.com/docs/studio/mcp, checked 2026-11-14) and the production research. The MCP server is **built into Roblox Studio**. Transport is **stdio**, so the agent must run **locally on the same machine as Studio** (Windows here; any local agent runtime), never in a cloud session. In this repo the agent talks to it through `studio_kit/bridge.mjs` (own console window) + `rb.py`. Don't install the archived `studio-rust-mcp-server` (archived Apr 2026) or community servers; they aren't needed.
 
 ## Setup (about 10 minutes, once)
 1. Update Roblox Studio (Creator Dashboard). Check Activity Monitor: Studio's **Kind** must be **Apple**.
@@ -19,7 +19,7 @@ Source: Roblox's MCP docs (create.roblox.com/docs/studio/mcp, checked 2026-11-14
 8. In Claude Code, first message: *"Call list_roblox_studios and tell me the studio_id."* Every MCP call needs that id.
 9. Studio → File → Studio Settings → Rendering: **Editor Quality Level 21**, **Mesh Detail Level00** (effects may not show otherwise).
 
-What it can and can't do: pipeline.md step 0.2. The two limits that matter most: **no video recording** (OBS records) and **`generate_animation` is R15-only, max 10 s** (no use for R6 acting).
+What it can and can't do: pipeline.md §0.2. The limits that matter most: **frames come from `screen_capture` (no frame-exact video recording)** and **the window must stay visible** while capturing.
 
 ---
 
@@ -68,13 +68,13 @@ Use the Roblox Studio MCP (same studio_id). Keep replies short.
 4. Report: the pixel size of each capture, seconds per capture, and whether screen_capture used the FieldOfView
    I set (the FOV 35 shot should show much less background than the FOV 70 shot).
 ```
-Pass: both captures show the hero centred; you now know the capture size, the speed and whether FOV carries over. Write all three numbers into pipeline.md (they replace UNVERIFIED notes).
+Pass: both captures show the hero centred; you now know the capture size, the speed and whether FOV carries over. Write all three numbers into pipeline.md §0.2 (they replace the MEASURED values if your machine differs).
 
 ---
 
 ## The 2-minute decal test (critic §4c): pass / fail and what to do
 
-Why: Roblox migrated Classic Heads and Faces to Dynamic Heads in early 2026 (with a partial walk-back: a toggle to turn off face animation, and a promise to make classic-look heads easier for creators). A plain Decal with the user's own image on a Studio-built R6 rig is ordinary part texturing and should still render, but nobody has checked it on his Mac yet. The whole face system (look.md §7) depends on it.
+Why: Roblox migrated Classic Heads and Faces to Dynamic Heads in early 2026 (with a partial walk-back: a toggle to turn off face animation, and a promise to make classic-look heads easier for creators). A plain Decal with the user's own image on a Studio-built R6 rig is ordinary part texturing and should still render, and on R15 heads with `FaceControls` a decal swap may be ignored (seen 2026-11-20) — check a CU frame. The whole face system (look.md §7) depends on it.
 
 | result | meaning | do this |
 |---|---|---|

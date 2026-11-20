@@ -1,6 +1,6 @@
 # captions.md: word-by-word captions at 1080x1920
 
-> **Toon style (the default now): use style-toon.md §6 instead of this spec.** Phrases of 2–4 words, ALL CAPS, about 56 px, one coloured key word, fade-in, made with `tools/make_caps_toon.py`. The one-word spec below is the older moody-ref style.
+> **Toon style (the default now): `tools/make_caps_toon.py` (see its header for the spec).** Phrases of 2–4 words, ALL CAPS, about 56 px, one coloured key word, fade-in, made with `tools/make_caps_toon.py`. The one-word spec below is the older moody-ref style.
 
 Tags: **REF-RANGE** = measured in the 6 refs (4/6 use one word per caption: bell, memories, monster, train; town and dog use 1-3 word phrases); **HYPOTHESIS** = beat-the-refs bet or an unmeasured platform convention. Machine-readable twin: `templates/caption-preset.json`.
 Limits: no view data. Font names are GUESSES from glyph shapes. The caption-onset lead (-54 to -81 ms) was not independently reproduced (the check was inconclusive), so the timing rule below is a window to aim for, verified by hand on 1-2 words per video.
@@ -44,13 +44,13 @@ Reels, Shorts and TikTok overlay a caption/handle block and an action-button col
 | accent words after the hook | names, rule words, 1-2 peaks only; ≤13 %; at most one per sentence; none on function words |
 | caption contrast | renders must be caption-free for the colour tests used elsewhere (white captions clip at 255) |
 
-## 3. Generating captions automatically (zero tokens, on the user's Mac)
+## 3. Generating captions automatically (zero tokens, local)
 
 Pipeline: narration audio (final voice track) -> word-timestamp transcript JSON -> caption events (ASS file) -> ffmpeg/libass burn-in, or import the ASS into the NLE.
 
 1. **Word timestamps.** Preferred (HYPOTHESIS): force-align the known script to the voice take, which avoids mis-heard words: WhisperX `whisperx voice.wav --model small --align_model WAV2VEC2_ASR_BASE_960H --output_format json` or `stable-ts` alignment. Alternatives: `faster-whisper` with `word_timestamps=True`, or Parakeet. Known issue: Parakeet word timestamps sit on an 80 ms grid with zero-length gaps, so use captions' `--lead` to calibrate and verify by eye. ElevenLabs `creative_transcribe_audio` also works but costs credits, so do not use it unless the user says yes.
 2. **Accents.** Preferred: `--sheet script-sheet.md` lights exactly the word in each row's `caption highlight` cell, inside that row only, so a rule word or a name that repeats is not lit everywhere ("whole line" lights the hook row). Old way: `--accent "Chloe,bell"` lights every occurrence of those words. Matching is case-insensitive with punctuation stripped.
-3. **Run** `python3 tools/make_caps.py words.json caps.ass --sheet script-sheet.md` to produce `caps.ass`, then:
+3. **Run** `python tools/make_caps.py words.json caps.ass --sheet script-sheet.md` to produce `caps.ass`, then:
    `ffmpeg -i video.mp4 -vf "ass=caps.ass:fontsdir=fonts" -c:a copy out.mp4` with `Montserrat-ExtraBold.ttf` in `./fonts/`. Use a caption-free export for colour and clipping tests. It prints the accent share after the hook separately (ceiling 13 %). To light one occurrence by time instead, use `--accent-at "31.0,97.4"`. On a plan, run it on `plan_timing.py`'s `words_planned.json` to check the highlight plan.
 4. Spot-check 1-2 words per video against the waveform (onset -2 to 0 frames); adjust `--lead` once.
 

@@ -105,6 +105,22 @@ def lint_r_anim(target):
             "Use studio_kit/blender_roblox_anim.py (RobloxAnimator) and gate with render_pose_qa.\n" + "\n".join(hits[:10]))
 
 
+def lint_roblox_docs(target):
+    """Roblox doc edits must keep every referenced file/function real (tools/doc_link_check.py)."""
+    norm = target.replace("\\", "/").lower()
+    if not norm.endswith(".md"):
+        return None
+    if "roblox-director" not in norm and not norm.endswith("roblox_director.md"):
+        return None
+    checker = os.path.join(AGENTS_DIR, "skills", "roblox-director", "tools", "doc_link_check.py")
+    if not os.path.exists(checker):
+        return None
+    res = subprocess.run([sys.executable, checker, "--quiet"], capture_output=True, text=True, encoding="utf-8")
+    if res.returncode != 0:
+        return "Roblox doc link check failed (fix or remove these references):\n" + res.stdout.strip()[:2000]
+    return None
+
+
 def main():
     try:
         sys.stderr.reconfigure(encoding="utf-8")
@@ -119,6 +135,7 @@ def main():
         elif filename == "setting.html":
             problems.append(run_audit(os.path.join("engine", "setting_audit_suite.py"), target, "Setting Audit Suite"))
         problems.append(lint_r_anim(target))
+        problems.append(lint_roblox_docs(target))
     problems = [p for p in problems if p]
 
     if runtime == "antigravity":

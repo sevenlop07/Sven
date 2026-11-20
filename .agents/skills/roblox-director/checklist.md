@@ -7,7 +7,7 @@ Each item is tagged **[plan]** (checkable on the script sheet + shot list + cue 
 - **(a) Plan score** = points earned ÷ points checkable now × 10. [cut] items, and [read] items not yet done (an UNCHECKED guess test, the user's read), are left out of both. **Plan gate: every area (a) ≥ 8 and no HARD fail.** Every [plan] item must be checked: it is never "plan-only".
 - **(b) Strict score** = points earned out of 10; anything unchecked scores 0. **Final gate, after recording and before posting: every area (b) ≥ 8.** So every [read] and [cut] item has to be checked by then.
 - Report both: `Script (a) 9.0 / (b) 7`. A self-judged pass on a [read] item (an author or critic who knows the twist "guessing" it) counts as unchecked.
-Numbers come from the tools where possible: `script_check.py` (area 1, pauses, highlights), `plan_timing.py` → `shotlist_check.py` + `pacing_check.py` (areas 2, 5), `measure.py`, `move_check.py`, ffmpeg loudness (cut).
+Numbers come from the tools where possible: `script_check.py` (area 1, pauses, highlights), `plan_timing.py` → `shotlist_check.py` + `pacing_check.py` (areas 2, 5), `measure.py`, `rba.render_pose_qa` + `kit.render_playblast_qa` (motion), ffmpeg loudness (cut).
 
 ## 1. Script /10 (script.md)
 HARD [plan]: rule stated in the first sentence, starting ≤0.2 s · no banned phrase (§9.1) · no moral as the last line and no twist told by a side character (§9.2) · the core rotation fields pass (no family, primary or secondary, in the last 5; emotional outcome and subject pair not in the last 3; reveal move not the last episode's) · no copied line shape (refs' included: bell's "never… not once… birthday" ladder), no 5-word overlap, no skeleton sharing ≥5 of 12 slots and no signature move shared with a gold or ref (§9.4)
@@ -29,11 +29,11 @@ HARD: custom hero avatar (no noob or classic) [plan] · no Roblox logo [cut] · 
 - (1) [plan] Close shots ≥25 %; readable face on every key line
 - (1) [plan] Posed or animated body on ≥35 % of shots; nobody frozen in a medium shot while they talk
 - (1) [cut] Face-decal swaps hit the key word (±0.1 s); lip flaps on dialogue
-- (1) [plan] Real in-engine camera move on ≥70 % of shots, no move type on >40 % of shots, ≥3 types; one rack focus or dolly-zoom on the twist line ([cut]: `move_check.py` confirms)
+- (1) [plan] Real in-engine camera move on ≥70 % of shots, no move type on >40 % of shots, ≥3 types; one rack focus or dolly-zoom on the twist line ([cut]: playblast / first-vs-last frame per shot confirms — look.md §15)
 - (1) [plan] 5–8 locations; 2–3 story props per set; no setup (set + size + angle family) used more than twice
 - (1) [plan] A mood per scene with practicals in interiors, a visible lighting or palette shift on the twist cut ([cut]: `measure.py --compare` Δ ≥0.10)
 - (1) [cut] Colour targets: median saturation 0.35–0.50, ≤10 % of shots over 0.6, p99 ≥240 in ≥25 % of shots, p1 10–25
-- (1) [plan] Build scope inside the caps of pipeline.md "Build budget" (sets, rigs, face PNGs, poses, contact poses, special builds, VFX), with the build-cost block filled in the shot list, and nothing on look.md §16's Roblox-limits list
+- (1) [plan] Build scope inside the caps of pipeline.md §1 "Build budget" (sets, rigs, face PNGs, poses, contact poses, special builds, VFX), with the build-cost block filled in the shot list, and nothing on look.md §16's Roblox-limits list
 - (1) [plan] Final shot ≥3 s on the rule object's final state
 
 ## 3. Audio /10 (audio.md)
@@ -59,9 +59,9 @@ HARD [plan]: captions never cover a face or the rule object (both stay above 55 
 - (2) [plan] First 3 s: rule spoken, first cut by 2.5 s, frame 1 already moving
 - (2) [plan] Runtime within ±5 % of the target runtime in the script sheet header (60–180 s), with the beats placed by % (script.md §3.2)
 
-## 6. Beats the refs (upgrades.md)
+## 6. Beats the refs (`examples/gold-1.md`, `examples/gold-2.md`)
 - Count upgrades U1–U14 met. **Needs ≥10.** (a) counts the ones a plan can show, out of those it can check; (b) counts all 14.
 
-## Scoring log (add to `reels-shorts/projects/<episode>/QA.md`)
+## Scoring log (add to `output/<slug>/qa.md`)
 | area | score | failed items | fix |
 |---|---|---|---|

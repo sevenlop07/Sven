@@ -1,48 +1,50 @@
 ---
 name: roblox-director
 description: >
-  Level-2 Master Roblox 3D Film, Series & Animation Director for the Sven Cinematic Universe (16:9 Widescreen & 9:16 Vertical across All Genres).
-  Orchestrates the Generalized 5-Stage Audio-First & SRT-Driven Roblox Filmmaking Pipeline: (R1) Concept & Aspect Ratio Lock (16:9 or 9:16), (R2) Story & Clean Voice Script for User MP3 Generation, (R3) Automated MP3-to-SRT & Contiguous Shot Timeline Extraction (`tools/audio_to_srt.py`), (R4) SRT-to-Sven-Core 6-Pillar 3D Scene Breakdown & Preview Check Sheet (Creator Store 3D Assets + R6/R15 Cast + 30fps `State A -> State B` Animation via Roblox Studio MCP & Headless Blender 5.3 RTX 3060), and (R5) Final 30fps 16:9/9:16 Master Render + 4-Layer Audio/SFX/SRT Mix.
-  Triggers: "roblox", "roblox director", "roblox studio", "phim roblox", "kịch bản roblox", "video roblox", "blender roblox", or call directly "@RobloxDirector".
+  Roblox 3D films, series and animations (16:9 or 9:16, any genre) for the Sven repo, built in Blender 5.3 (default) or
+  Roblox Studio MCP: R1 concept → R2 TTS voice script → R3 mp3→SRT shot timeline → R4 3D scene with code-rigged Roblox
+  acting (Law R-ANIM, no mocap) + pose QA → R5 render + audio/caption mix. Use for "roblox", "phim roblox",
+  "video roblox", "kịch bản roblox", "roblox studio", "blender roblox", or "@RobloxDirector".
 ---
 
-# RobloxDirector — Generalized Master Roblox 3D Film, Series & Animation Architect (Level 2)
+# Roblox Director — stage router
 
-> **COMPLETE SPECIFICATION**: Read [`d:\Project\Sven\.agents\ROBLOX_DIRECTOR.md`](file:///d:/Project/Sven/.agents/ROBLOX_DIRECTOR.md) for the Generalized 5-Stage Audio-First / SRT-Driven Architecture (`Stage R1–R5`), the 6-Pillar Sven Core Isomorphism (`Law R0`), Universal `16:9` & `9:16` Aspect Ratio Support across all genres, and the 3 Execution Engines (`Engine E1: Roblox Studio MCP`, `Engine E2: Headless Blender 5.3 RTX 3060`, `Engine E3: AI Roblox GFX School A4`).
+**Spec & laws:** `.agents/ROBLOX_DIRECTOR.md` (read lines 1–260: pipeline R1–R5 + §4 Law R-ANIM quality core).
+This file only tells you *what to open and run at each stage*. Stop at every gate for the user's approval.
+Runtime-neutral: "view an image" = use your runtime's image-reading tool; never claim a check you did not do.
 
----
+## Stage map
+| Stage | Read (JIT) | Run | Gate deliverable |
+|---|---|---|---|
+| **R1** concept | `ROBLOX_DIRECTOR.md` §2 R1; genre rules from `.agents/SCREENWRITER.md` / `engine/genres/*.md`; `town-script.md` only for "In this town/world…" reels | — | genre, 16:9 or 9:16, duration, 5 concepts → user picks (GATE R1) |
+| **R2** script | `pacing.md`; `audio.md` §1 (voice); `script.md` only for world-rule storytime | `tools/script_check.py` (storytime), `tools/plan_timing.py script-sheet.md` | Block 2A clean TTS text + Block 2B cast/location/prop manifest; wait for the user's `.mp3` (GATE R2) |
+| **R3** timeline | `ROBLOX_DIRECTOR.md` §2 R3 | `tools/audio_to_srt.py <audio.mp3> --script <story.txt> --out-dir output/<slug>` → `tools/srt_to_director_plan.py output/<slug>/srt_shots.json --aspect 16:9\|9:16` | `<stem>.srt`, `words.json`, `srt_shots.json`, `director_plan.json` |
+| **R4** build | `pipeline.md` (engine facts, build budget, run order); `ROBLOX_DIRECTOR.md` §4; `look.md`, `lighting-color.md`; Blender: `studio_kit/blender_roblox_anim.py` docstring; Studio: `studio.md`, `templates/mcp-setup.md` | Blender via `tools/run_roblox_blender.py --slug <slug> <script.py> -- …`; Studio via `studio_kit/bridge.mjs` + `rb.py` | pose-QA sheet + preview contact sheet (viewed), `scene_built.blend`, frame count → user picks render mode (GATE R4) |
+| **R5** render & mix | `audio.md` §4 (mix), `captions.md`, `checklist.md` | `tools/render_dispatcher.py --slug <slug> --target local\|pack\|external\|studio`; `tools/make_caps.py` / `make_caps_toon.py`; `tools/compile_video.py` | `final.mp4` (−14 LUFS, ≤ −1 dBTP, captions burned) + QA score (GATE R5) |
 
-## 🚀 THE 5-STAGE GENERALIZED AUDIO-FIRST & SRT-DRIVEN WORKFLOW (`STAGE R1 ➔ R5`)
+Reference implementation of R4–R5 for both engines: `output/test_action20/` (`blender/build_scene.py`,
+`studio/scene.lua`, `studio/studio_capture.py`, `make_videos.py`).
 
-Always execute in this strict step-by-step order with user approval at each gate:
+## Rules you must not skip (details: `ROBLOX_DIRECTOR.md` §4)
+1. **Acting:** Blender = `RobloxAnimator` (27 states, distance-locked gait, material-baked faces). Studio = official R15
+   animation ids. **No Mixamo/BVH/FBX mocap** (the quality-gate hook flags it).
+2. **QA before render:** `rba.render_pose_qa(...)` sheet + keyframe previews at final framing, both viewed; `kit.audit_scene_collisions`,
+   `kit.audit_camera_plan`. Never launch a full render without the user's render-mode choice.
+3. **Assets:** core `assets/` first, official catalog ids second, Creator Store only after stripping scripts/remotes/GUIs.
+4. **Studio capture:** bridge in its own console, window visible (minimised = white frames), white-frame guard + resume.
+5. **Budget:** stay inside `pipeline.md` §1 caps; distinct silhouette per character.
 
-1. **STAGE R1 — Concept Pitch, Genre & Aspect Ratio Lock (`16:9` Widescreen or `9:16` Vertical ➔ `✋ GATE R1`)**:
-   - Support **ALL Genres** (*Drama, Family/Karma, Mystery/Thriller, Sci-Fi/Alien, Horror/Supernatural, Action/Adventure, Sitcom/Comedy*, and optional *Storytime*).
-   - Lock **Aspect Ratio** (`16:9` for YouTube long-form/series or `9:16` for Shorts/Reels/TikTok) and **Target Duration**.
-   - Pitch 5 high-retention story concepts using Sven Core narrative architecture (`0–3s Hook`, `3-Layer Stakes`, `Planted Clues P1/P2/P3`, `Option C Twist`, `Cliffhanger/Payoff`). Stop for user selection.
-
-2. **STAGE R2 — Full Story & Clean Voice Script for User `.mp3` Generation (`Viết Câu Chuyện Để User Tạo File .mp3` ➔ `✋ GATE R2`)**:
-   - Write the full story/dialogue script and present:
-     * **Block 2A (`Clean Copy-Paste Voice Script`)**: Pure spoken text formatted for the user to copy-paste directly into ElevenLabs / TTS to generate their `.mp3` audio file.
-     * **Block 2B (`3D Asset Manifest`)**: Characters (`[subject]`), 3D Locations (`[context]`), and Interactive Props (`[prop]`).
-   - Stop and wait for the user to provide the `.mp3` audio file (or request local TTS generation).
-
-3. **STAGE R3 — Automated MP3-to-SRT & Sven Core Director Blueprint (`tools/audio_to_srt.py` + `tools/srt_to_director_plan.py`)**:
-   - Run `python .agents/skills/roblox-director/tools/audio_to_srt.py <audio.mp3> --script <story.txt> --out-dir <out_dir>` to extract `<stem>.srt`, word-level `words.json`, and contiguous `srt_shots.json`.
-   - Immediately run `python .agents/skills/roblox-director/tools/srt_to_director_plan.py <out_dir>/srt_shots.json --aspect 16:9|9:16` to generate **`director_plan.json`** (auto sub-cuts `>3.6s` SRT blocks on `words.json` clauses, splits Speech vs. Pause reaction windows, extracts stressed `accent_frames`, assigns `scale/angle/move/axis_side` with zero adjacent repeats, and audits thresholds).
-
-4. **STAGE R4 — SRT-to-Core 6-Pillar 3D Scene Breakdown & Preview Check Sheet (`Law R0` ➔ `✋ GATE R4`)**:
-   - Translate every beat in `director_plan.json` / `srt_shots.json` into a **6-Pillar 3D Scene Specification (`Style:` ➔ `[context]:` ➔ `[subject]:` ➔ `[prop]:` ➔ `[sound]:` ➔ `Shot K [State A ➔ State B @ 30fps]`)**:
-     * **`[context]:` & Lighting**: Never use flat untextured boxes or washed-out front floodlights! Use [`studio_kit/blender_env_lighting.py`](file:///d:/Project/Sven/.agents/skills/roblox-director/studio_kit/blender_env_lighting.py) (`apply_cinematic_mood` with `MULTIPLE_SCATTERING` sky, directional Key/SkyFill/HeroRim, Blender 5.3 Compositor Aerial Mist + `Fog Glow` bloom; `build_suburban_street_set` / `build_hero_house` textured clapboard houses, pitched roofs, shuttered glowing windows, picket fences, paving slabs, streetlamps, and horizon trees covering all OTS/wide sightlines), [`studio_kit/blender_auto_director.py`](file:///d:/Project/Sven/.agents/skills/roblox-director/studio_kit/blender_auto_director.py) (`build_blockout_scene` structured JSON-to-3D layout builder + `build_camera_path` 20-preset bounding-box camera solver + `capture_views_sheet` multi-angle/frame contact sheet QA), core assets in `assets/`, or **sanitized** Creator Store 3D models (`search.py` + `ins.py` + `MT.put`; strip every script/remote/GUI after insert — `ROBLOX_DIRECTOR.md` §4.5).
-     * **`[subject]:`**: Unique **R15** silhouettes (`blender_roblox_kit.py`: 6 `body_profile` presets + 10 faceted UGC ribbon `hair_style`s with `make_stylized_hair_mat` + 4 sculpted color-matched facial hair options [`mustache`, `goatee`, `full_beard`, `stubble_scruff`] + accessories + `add_scarf_3d`), `585×559` clothes, shader-baked **11 UGC Anime & Comedy Face Archetypes** (`make_faces_ugc_anime.py` at `35°` UV arc + vowel/punctuation-aware `build_lipsync_schedule(words.json)`), oriented along the **180° interpersonal axis**.
-     * **`[prop]:` & Impact VFX Triad**: Held props strictly bone-tracked to hands (`kit.bake_prop_follow` with `CONSTANT` hold keyframes before pickup) + parabolic gravity & multi-bounce floor settle (`kit.animate_toss_physics` / `kit.animate_drop_physics` at `g=18–20 m/s²`) + **Impact Synchronization Triad (`kit.trigger_physical_impact` in Blender / `MT.vfxImpact` + `MT.recoil` in Studio)**: synchronizing `VECTOR` strike arrival, `1–3f` Hit-Stop freeze, staggered victim recoil & knockback slide, 3D emissive sparks (`spawn_impact_sparks`), fast-out cubic shockwave rings & dust puffs (`spawn_dust_shockwave`), crescent energy slash waves (`spawn_energy_slash_arc`), interactive point-light flash (`spawn_impact_light_flash`), Compositor Bloom (`enable_compositor_bloom`), and damped `add_camera_shake` on `impact_frame`.
-     * **`Shot K (SRT Beat)`**: Target-First Camera Rig (`kit.place_shot_camera` + `audit_camera_plan`: `>= 25%` Close `48–58mm`, `<= 40%` `MS`, `>= 35%` non-eye-level, `>45°` cuts, `OTS` $\to$ `Reverse OTS` on 180° axis, `y < 55%` Caption Safe, Clear Camera Sightline Corridors, `orbit_arc`/`crane_up`/`crane_down`/`dolly_zoom`) + **Code-Rigged Roblox Acting (Law R-ANIM — `studio_kit/blender_roblox_anim.py`, NO MOCAP)**: author each character as a `RobloxAnimator` timeline (`root_keys` path in metres → `add(state, t0, t1, fade, **params)` over 27 Roblox-style states: idle/walk/run/sprint/jump/fall/land/crouch/sit/lie/pickup/cheer/wave/point/clap/talk/shock/scared/sad/angry/think/punch/kick/hit/dance/look_around/pose → `look()` head layer → `face()` / `face_schedule(kit.build_lipsync_schedule(...))` → `hit_stop()` → `bake()`), distance-locked gait (zero foot slide), joint limits, material-baked faces; then **`rba.render_pose_qa(...)` front+side sheet, viewed and passed (§4.4) before any render**. Optional: `bake_secondary_overlap` (`Sec_Pony`/`Sec_Scarf`), `kit.bake_prop_follow`. Mixamo/BVH/FBX retargeting is banned for Roblox films.
-   - **Mandatory Collision Audit, Camera Audit, Playblast QA, Portable `scene_built.blend` Lock & Render Target Gate (`[GATE R4]`)**: Maintain `>= 0.76m–0.85m` character separation, run `kit.audit_scene_collisions(...)` (`0` penetrations) + `kit.audit_camera_plan(...)` (`0` repeats), call `kit.pack_all_textures()` and save a self-contained `output/<slug>/scene_built.blend`, inspect Preview PNGs (`checks.py` / `capture_views_sheet`) + fast `10fps` motion playblast (`kit.render_playblast_qa`) via `read_file` BEFORE full 30fps rendering, and at **`✋ [GATE R4]`** ask the user to choose the Stage R5 Render Mode (`Mode R5-A: Local GPU Direct Render` vs. `Mode R5-B: Third-Party External / Cloud GPU Offload`).
-
-5. **STAGE R5 — 30fps Master Render Dispatch (`Phương Án 1: Roblox Studio Local` vs. `Phương Án 2: Blender 5.3 [Local GPU hoặc Bên Thứ 3]` via `tools/render_dispatcher.py`) + 4-Layer Audio/SFX/SRT Mix (`✋ GATE R5`)**:
-   - Route strictly through [`tools/render_dispatcher.py`](file:///d:/Project/Sven/.agents/skills/roblox-director/tools/render_dispatcher.py) based on the user's chosen option:
-     * **Phương Án 1 — `Roblox Studio MCP` (`--target studio` — 100% Máy Local)**: Runs 100% on the local PC (`python .agents/skills/roblox-director/tools/render_dispatcher.py --slug <slug> --target studio --studio-quality hd|4k|1x`, invoking `render.py` for `16:9` or `render2.py`+`stitch.py` / `render4k.py`+`stitch4k.py` for `9:16`).
-     * **Phương Án 2 — `Blender 5.3` (`User chọn 1 trong 2 chế độ Render tại Gate R4`)**:
-       - **🟢 Mode R5-A (`--target local`)**: When the user's workstation is free/powerful enough and the user chooses local rendering, run `python .agents/skills/roblox-director/tools/render_dispatcher.py --slug <slug> --target local --samples 16`.
-       - **☁️ Mode R5-B (`--target pack` / `--target external --provider bundle_only|http_tunnel|ssh`)**: When the scene is heavy or the user wants to offload rendering to a third-party GPU provider (detailed by the user when needed), package `<slug>_render_bundle.zip` (`scene_built.blend` + standalone `universal_render_worker.py`) and dispatch to the user's chosen third-party provider.
-   - Generate subtitles via `make_caps.py` / `make_caps_toon.py` (`--aspect 9:16|16:9`) and run `python tools/compile_video.py --project-dir output/<slug> --voice voice.mp3 --shots srt_shots.json --frames-dir shots --subs caps.ass --aspect 9:16|16:9 --out final.mp4` (`-14 LUFS` mix + `.mp4` master).
+## Doc map
+| File | Use it for |
+|---|---|
+| `pipeline.md` | engine capabilities & measured speeds, build budget, R4→R5 run order, scene-data conventions |
+| `look.md` | shot sizes, lenses, camera moves, faces, bodies, sets, self-checks |
+| `lighting-color.md` | moods (`mood@clock`), colour script, practicals, measurement (`tools/measure.py`) |
+| `pacing.md` | cut rules, hook, holds, pacing check |
+| `audio.md` | voice/TTS settings, music per beat, SFX, mix targets |
+| `captions.md` | caption spec (toon style via `tools/make_caps_toon.py`) |
+| `checklist.md` | final QA score before the user posts |
+| `studio.md` | Studio MCP driving, capture quality, R6/R15 characters, collision rules |
+| `script.md`, `town-script.md` | optional "In this world/town…" storytime preset |
+| `templates/` | shot list, script sheet, cue sheet, hero cast, rotation log, MCP setup, lighting presets |
+| `tools/doc_link_check.py` | run after editing any of these docs (0 problems required) |

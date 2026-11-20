@@ -1,6 +1,6 @@
 # lighting-color.md: renderer, moods, colour script, measurement
 
-> **v2 note (2026-11-14):** colour targets, moods, twist shift and measurement (§2–6) still apply. Roblox renderer settings (§1, `LightingStyle`, Studio quality, `lighting-presets.lua`) are replaced by `k.apply_look()` in Blender — see `blender.md` §1.
+> **v2 note (2026-11-14):** colour targets, moods, twist shift and measurement (§2–6) still apply. Roblox renderer settings (§1, `LightingStyle`, Studio quality, `lighting-presets.lua`) map to `env.apply_cinematic_mood(col, mood=…)` in Blender (`studio_kit/blender_env_lighting.py`) — see `pipeline.md` §3.
 
 
 Tags: **REF-RANGE** = measured in the 6 reference reels. **HYPOTHESIS** = a beat-the-refs bet; A/B it on the user's own analytics.
@@ -48,11 +48,11 @@ Key values below; every preset also sets Atmosphere Color/Decay, Bloom Size, CC 
 
 All preset values are HYPOTHESIS; the targets are REF-RANGE (measured on the matched shots).
 
-**Time of day is separate from mood.** Write a mood as `mood@clock` in the shot list and scene data (`normalDay@21` = the normalDay look at 9 pm, `twistReveal@21` = the twist grade with no sun in the window); `P.apply` and the ShotRunner read the same string, and `P.setTime(clock)` changes only the clock. A night clock on a day mood is an interior lit by practicals: re-measure it, and fix a dark room with practicals or Ambient (§1), not Brightness. Anything else (a warmer Ambient, a tint) is a variant: `P.variant("sad", "sad_bathroom", {lighting = {...}})`, defined in a ModuleScript `ReplicatedStorage.EpisodeMoods` that RunScenes requires before playing (pipeline.md Appendix A), so the variant exists in Play mode too.
+**Time of day is separate from mood.** Write a mood as `mood@clock` in the shot list and scene data (`normalDay@21` = the normalDay look at 9 pm, `twistReveal@21` = the twist grade with no sun in the window); Studio: `P.apply("mood@clock")` from `templates/lighting-presets.lua` (`P.setTime(clock)` changes only the clock); Blender: `env.apply_cinematic_mood(col, mood=…)` + the sun elevation for the clock (pipeline.md §3). A night clock on a day mood is an interior lit by practicals: re-measure it, and fix a dark room with practicals or Ambient (§1), not Brightness. Anything else (a warmer Ambient, a tint) is a variant: `P.variant("sad", "sad_bathroom", {lighting = {...}})`, registered in the scene lib before the first frame (pipeline.md §3), so the variant exists in Play mode too.
 
 **Night versions of sad moods.** At night C9 (sat ≥0.40, one coloured glow) beats a preset's day saturation: use `sad_night` / `sadWarm_night` (in the module, HYPOTHESIS values), not `sad` at sat 0.28–0.34.
 
-**Rack focus and per-shot DOF.** `P.rack(from, to, secs)` turns DOF on for one shot (Near/Far ≤0.5) and tweens the focus; in scene data write `rack = { at = 0.4, from = 1.2, to = 4.0, secs = 0.6 }` on the shot and the ShotRunner restores the mood's DOF on the next cut. Focus targets are opaque parts (look.md §16).
+**Rack focus and per-shot DOF.** `P.rack(from, to, secs)` turns DOF on for one shot (Near/Far ≤0.5) and tweens the focus; in scene data write `rack = { at = 0.4, from = 1.2, to = 4.0, secs = 0.6 }` on the shot and the shot's camera code restores the mood's DOF on the next cut (Blender: key `dof.focus_distance` / f-stop per shot). Focus targets are opaque parts (look.md §16).
 Changes from the team draft, per the critic: night saturation stays at −0.05 (never −0.3); DOF `FarIntensity` is capped at 0.5 everywhere (dreamMemory was 0.8); no vignette in the module.
 
 ## 4. The colour script of an episode
@@ -77,10 +77,10 @@ Changes from the team draft, per the critic: night saturation stays at −0.05 (
 
 Delete per-shot lights after the take: `P.clearShotLights()`.
 
-## 6. Measuring a test capture (zero tokens, on the Mac)
+## 6. Measuring a test capture (zero tokens, local)
 
 1. Record the shots caption-free (captions are added in the edit anyway).
-2. Grab one still per shot, at mid-shot, from the OBS take: `python3 measure.py --video take.mov --times 1.05,2.60,3.90 …` (the times come from the shot list). Or save stills by hand and name interior shots `int_….png`.
+2. Grab one still per shot, at mid-shot, from the rendered take: `python tools/measure.py --video take.mp4 --times 1.05,2.60,3.90 …` (the times come from the shot list). Or save stills by hand and name interior shots `int_….png`.
    Avoid paying tokens for this: `screen_capture` returns images to Claude, so use it for framing checks, not for measuring.
 3. Read the PASS/FAIL lines. Fix in this order, one lever at a time, then re-measure:
    - brightness → `ExposureCompensation` (start with ±0.3 per 0.05 of bright; HYPOTHESIS, re-measure);
@@ -88,7 +88,7 @@ Delete per-shot lights after the take: `P.clearShotLights()`.
    - warmth → `ColorCorrection.TintColor` or `Atmosphere.Color`;
    - dull highlights (p99) → a practical or the rule object in Neon, or Bloom Threshold down 0.05; **not** global exposure;
    - crushed blacks (p1, crush) → raise `Ambient` 10–15 per channel, or a key light; not exposure.
-4. Twist shift: grab stills from the 4 s before and after the twist cut into two folders and run `python3 measure.py --compare "before/*.png" "after/*.png"`.
+4. Twist shift: grab stills from the 4 s before and after the twist cut into two folders and run `python tools/measure.py --compare "before/*.png" "after/*.png"`.
 5. Write the calibrated values back into `M.MOODS` in the Luau module, so the next episode starts from them.
 
 Tested on the references: memories' reveal (shots #40–44 vs #46–49) reads +0.365 bright, +0.250 warm, PASS; town fails C1–C5, train passes C1–C3 and C5. That matches the colour analysis.

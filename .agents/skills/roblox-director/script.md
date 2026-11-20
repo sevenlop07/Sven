@@ -2,7 +2,7 @@
 
 Read this before writing any episode script. (The `team/` evidence files cited below live outside the skill; every number you need is in this file.) It covers the rule, title and hook, beat map, twist, motif, sentences, dialogue, ending, banned list and the workflow. The production sheet format is in `templates/script-sheet.md`. **Don't open `examples/` until your rule, skeleton and first draft exist** (§10): the golds are for a quality comparison after drafting, never a starting point. In round 2 an agent that read them first rebuilt gold-1 beat for beat.
 
-**Evidence.** Every number comes from the 6 reference reels (bell 79 s, memories 179 s, town 158 s, dog 111 s, monster 170 s, train 131 s) as measured in `team/script-analyst.md`, `team/script-beats.json`, `team/audio-analyst.md` and `team/pacing-caption-analyst.md`, with `team/critic.md` rulings on top. No view or retention data exists for any ref. So a ref range shows what the refs did, not what works.
+**Evidence.** Every number comes from the 6 reference reels (bell 79 s, memories 179 s, town 158 s, dog 111 s, monster 170 s, train 131 s) as measured in the original reference analysis (script, audio and pacing/caption analysts plus a critic pass; not kept in this repo — the numbers below are its distilled result). No view or retention data exists for any ref. So a ref range shows what the refs did, not what works.
 
 Tags used on every rule:
 - **REF-RANGE**: measured from the 6 refs. Stay inside it.
@@ -236,7 +236,7 @@ For a story with windows, walls or a street, draw a top-down diagram (who is whe
 
 Two families that share a mechanism count as the same family for rotation (round 3: "my bad things were really my sister's", labelled 3, is 3 + 10, and ep3 was 10). The reveal move (`reveal` in `tools/skeletons.txt`: whose-sign, what-i-was, i-caused-it …) is a core log field too: never the same as the last episode.
 
-**Rotation log (POLICY).** YouTube's YPP policy does not monetize "templated storylines" or "**videos where characters are put in the same situation over and over again with the same outcome**" (`team/critic.md` §4d, verified on the live policy page). The refs' 4/6 hidden-sacrifice twist matches that line almost word for word.
+**Rotation log (POLICY).** YouTube's YPP policy does not monetize "templated storylines" or "**videos where characters are put in the same situation over and over again with the same outcome**" (verified on the live YPP policy page by the original critic pass). The refs' 4/6 hidden-sacrifice twist matches that line almost word for word.
 
 Log every episode in the rotation log (`templates/rotation-log.md`). **7 core fields are mandatory**: twist family (primary + secondary), twist subject (who → whom, e.g. grandparent → partner), emotional outcome (reunion, romance, friendship, sacrifice revealed, protection, loss, dread, freedom, exposure), tone, reveal % (twist line), music-event-1 type and reveal move, all in the controlled words of `tools/skeletons.txt`. Before picking a twist, read the last rows (`script_check.py --log` does it):
 1. The twist family is not in the last 5 episodes. Hidden sacrifice at most once in any 5; never for a sick or dying relative; no dead or dying mom (3/6 refs).
@@ -350,7 +350,7 @@ Yells sit +3 to +5 LU above the narration short-term (`audio.md`).
 
 ### 9.3 Self-check (all 16 must pass before the user sees the script)
 
-Run `python3 tools/script_check.py script-sheet.md --last-reveal <last episode's reveal %>`. It computes items 2, 3, 5, 8-13, the voice tests (§0.1), the mechanism and last-line tests and the caption-highlight share from the sheet (banned phrases are read from §9.1 above); lines marked CHECK and items 1, 4, 6, 7, 14, 15 are yours.
+Run `python tools/script_check.py script-sheet.md --last-reveal <last episode's reveal %>`. It computes items 2, 3, 5, 8-13, the voice tests (§0.1), the mechanism and last-line tests and the caption-highlight share from the sheet (banned phrases are read from §9.1 above); lines marked CHECK and items 1, 4, 6, 7, 14, 15 are yours.
 
 1. Rule rubric ≥9/12 with tests 1 and 2 at 2 and test 6 ≥1. Score written at the top of the sheet.
 2. Line 1 = title rule, 8-15 words, starts "In this world," or "In this town,".
@@ -387,6 +387,6 @@ Never reuse a line shape, act-1 example frame, callback or ending frame from the
 6. **Draft.** Write line by line into `templates/script-sheet.md`, one sentence per row (two very short sentences may share a row). A row is a timing unit, not a shot: most rows start a cut (57-78 % of ref cuts land on a sentence start), but the shot list splits 10+-word rows and may merge ≤4-word rows (`pacing.md` rule 5). Write the ending's final 3 lines (§8) before act 2.
 6b. **Now, and only now, open `examples/`.** Compare quality (clue tables, beat tables, register). Never take a line, a beat order or an ending from a gold; if one comes back to you, change it.
 7. **Humanize.** Run the `humanizer` skill on the narration. **No humanizer skill:** do the pass by hand, line by line: (1) staged contrasts out ("It wasn't X. It was Y." beyond §9.2's one); (2) triplets and list-of-three rhythm out; (3) trailer fragments ("6 weeks in a cast.") into kid sentences ("I was in a cast for like 6 weeks."); (4) evidence-arranging lines ("Both times, Lulu was right there.") into talk; (5) no 3 sentences opening the same way; (6) written words out ("own", "in it", "theirs", dashes, semicolons). Then put it in the user's register (§0.1: casual markers, contractions, no narrator tone) and run `script_check.py`.
-8. **Timing check.** `python3 tools/plan_timing.py script-sheet.md --rewrite-times` fills the time column (spoken words / 3.67 / rate, pause rows, first word at 0.1 s, 1.2 s tail) and writes a planned `words_planned.json` + `cuts.txt` for the shot-list and pacing checks. Check every beat against §3. Then read it aloud once with a stopwatch; if the stopwatch is >5 % off, fix the script, not the speed.
+8. **Timing check.** `python tools/plan_timing.py script-sheet.md --rewrite-times` fills the time column (spoken words / 3.67 / rate, pause rows, first word at 0.1 s, 1.2 s tail) and writes a planned `words_planned.json` + `cuts.txt` for the shot-list and pacing checks. Check every beat against §3. Then read it aloud once with a stopwatch; if the stopwatch is >5 % off, fix the script, not the speed.
 9. **Fill the sheet.** Shot, camera, lighting preset, music cue, SFX and caption highlight for every row (`templates/script-sheet.md`).
 10. **Self-check.** Run §9.3 (`tools/script_check.py --log … --pretwist …`) and the blind guess test. Draft the rotation-log row. Write 3 titles (formats A, B, C) and 3 cover texts. Hand to the user.

@@ -1,6 +1,6 @@
 # Shot list template (one per episode)
 
-Save as `reels-shorts/projects/<episode>/shotlist.md`. Build it **after** the voice is timed: every row's time comes from `words.json`, and every cut sits on a sentence start, 1 frame before the first word (pacing.md), unless the notes say why not.
+Save as `output/<slug>/shotlist.md`. Build it **after** the voice is timed: every row's time comes from `words.json`, and every cut sits on a sentence start, 1 frame before the first word (pacing.md), unless the notes say why not.
 For a plan with no voice yet, use `tools/plan_timing.py`'s `words_planned.json` and rebuild every time from the real `words.json` later. Check it with `tools/shotlist_check.py` before building anything. The checker reads the columns by position, so keep all 12 columns and the codes below.
 
 ## Codes (the checker depends on them)
@@ -16,7 +16,7 @@ For a plan with no voice yet, use `tools/plan_timing.py`'s `words_planned.json` 
 | **subject + face decal** | `Name (F): eyes / brows / mouth` and swaps with the word: `→ mouth-O on "Friday"`. **(F)** = face readable in this shot. No (F) = face not readable |
 | **pose/anim** | pose or clip name (`kneel + pinky promise`, `walk` (RobloxAnimator state)). Write **`idle`** first if the body is stiff idle (counts against L15). Add `flap 2.5/s` for on-camera dialogue |
 | **set** | location name, the same spelling every time (the checker counts them) |
-| **lighting mood** | one of `normalDay`, `sad`, `sadWarm`, `scaryNight`, `twistReveal`, `dreamMemory`, optionally `@clock` (`normalDay@21`), or a variant from `EpisodeMoods`; then practicals in brackets. Changes on a scene cut or the twist cut (hard), or inside a scene as a tween written in the notes (lighting-color.md §4) |
+| **lighting mood** | one of `normalDay`, `sad`, `sadWarm`, `scaryNight`, `twistReveal`, `dreamMemory`, optionally `@clock` (`normalDay@21`), or a registered variant (`P.variant` in Studio, a custom mood dict in Blender); then practicals in brackets. Changes on a scene cut or the twist cut (hard), or inside a scene as a tween written in the notes (lighting-color.md §4) |
 | **props/signs** | what is dressed in. Write **RULE** when the rule object is in frame and readable (L11: a mark on the body only at MS or tighter) and **RULE-CHANGE** when its state changes in this shot (L12) |
 | **notes** | holds, whip or bookend choice, SFX hit, anything that breaks a default and why |
 
@@ -27,7 +27,7 @@ For a plan with no voice yet, use `tools/plan_timing.py`'s `words_planned.json` 
 | 1 |  |  |  |  |  |  |  |  |  |  |  |
 
 ## Filled example: first 15 s of a fictional episode (shape only, do not reuse the story)
-Rule: "In this world, every promise you make lights a lantern over your door." 53 words in 15.0 s = 212 wpm. Capture 1080×1920 at 60 fps, delivered at 30 fps. This is also the scene for the first end-to-end test in pipeline.md.
+Rule: "In this world, every promise you make lights a lantern over your door." 53 words in 15.0 s = 212 wpm. Capture 1080×1920 at 60 fps, delivered at 30 fps. Use it as the scene for a first end-to-end test (pipeline.md §2).
 
 | # | time | line | size | angle | camera move | subject + face decal | pose/anim | set | lighting mood | props/signs | notes |
 |---|---|---|---|---|---|---|---|---|---|---|---|
@@ -42,7 +42,7 @@ Rule: "In this world, every promise you make lights a lantern over your door." 5
 
 What the checker says about this example: close shots 25 %, MS 38 %, readable face 62 % (both ★ lines have one), non-eye angles 75 %, in-engine moves 100 %, static 0 %, stiff idle 0 %, no setup repeated more than twice, rule object in shot 1 and in 88 % of shots. On this 8-shot opening, L4 (1 insert = 12.5 %), L16 (4 locations) and L18 (final shot 1.7 s) read FAIL, which is expected for a partial list: it is an opening, not an episode.
 
-## Build cost (fill before the build; caps in pipeline.md "Build budget")
+## Build cost (fill before the build; caps in pipeline.md §1 "Build budget")
 
 | item | new | reused | cap | over? why |
 |---|---|---|---|---|

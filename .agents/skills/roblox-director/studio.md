@@ -5,7 +5,7 @@
 ## 1. How the Agent drives Studio (free, local, Windows & macOS)
 - Studio has a built-in MCP server (`StudioMCP.exe` on Windows; `/Applications/RobloxStudio.app/Contents/MacOS/StudioMCP` on macOS). Tools used: `execute_luau` (Edit), `screen_capture`, `upload_image`, `search_asset`, `insert_asset`, `list_roblox_studios`.
 - `studio_kit/bridge.mjs` automatically locates `StudioMCP.exe` on Windows or `StudioMCP` on macOS. It reads `queue/*.json` jobs and writes `done/*.json`. Its `render` job loops frames: execute a template with `{{F}}`, then `screen_capture` to `<out>/<frame>.png` (the data is JPEG).
-- `rb.py lua file.lua` runs Luau. `rb.py cap out.png` captures.
+- `rb.py lua <file>.lua` runs Luau. `rb.py cap out.png` captures.
 - **Studio can close by itself**, for example when an update installs. On "No Roblox Studio instances are connected": reopen Studio (Baseplate template), write the new id to `studio_id.txt`, re-insert the library with `ins.py`, run `MT.cleanLib`, and reload the libs in order: faces, lib, lib2, lib3, hair, lib4, lib5, lib6, cloth, lib7, lib8, times, shots. Keep the asset list (name:id) in the project notes.
 - After `screen_capture`, the camera is `Fixed`. **Set `CameraType = Scriptable` before every camera move**, or the move is ignored.
 
@@ -33,7 +33,7 @@ Real objects can't share space. `lib8.lua` enforces it automatically, and every 
    - Then push characters apart (the crowd moves for the cast; cast against cast moves half each) and away from props. A lying character is lifted out of the bed or floor.
    - Caps: crowd 3 studs, cast 1.5 studs. Bigger moves mean the shot itself is wrong; fix the shot.
 2. **Per frame (`MT.frame` guard):** if idle sway pushes an arm into something, that arm keeps its clean base pose.
-3. **QA scan before render (`_c.lua` pattern):** every shot at its first, middle and last frame, with `MT.clips()` (each body part shrunk by 0.15 studs, so touching is OK and passing through is not). Hair-handle boxes are ignored, because mesh boxes are bigger than the hair. Fix whatever is left by hand.
+3. **QA scan before render (a small clip-scan Luau script):** every shot at its first, middle and last frame, with `MT.clips()` (each body part shrunk by 0.15 studs, so touching is OK and passing through is not). Hair-handle boxes are ignored, because mesh boxes are bigger than the hair. Fix whatever is left by hand.
 - **Spacing:** R6/R15 shoulders are 4 studs (`~0.75 m` in scaled Blender units). Side-by-side people need `>= 4.4 studs` (`>= 0.85 m` in Blender) between centres, and rows `>= 3.3 studs` apart. In Blender 5.3, run `kit.audit_scene_collisions(char_infos, obstacles, frames)` across every shot checkpoint and assert **zero** `CHAR_CHAR` or `CHAR_OBSTACLE` intersections before rendering.
 - **R6 arms can't cross the chest** (no elbows). Hug-self is arms forward (75°, 5° across); cover-face is (110°, 5°, 20° out). Hugs between two people are arms around the shoulders, never through the torso.
 - Feet on the floor: `MT.floating()` reports anyone standing more than 0.15 studs above or below the surface under them.

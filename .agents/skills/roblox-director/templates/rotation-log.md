@@ -1,6 +1,6 @@
 # Rotation log (one row per episode; the only place rotation is defined)
 
-The live log is `reels-shorts/projects/ROTATION-LOG.md`; a log supplied in a brief replaces it. Copy the header below into it once, then add one row per episode **when the plan is written**, and update it after the cut. Every file that says "rotate" points here. `tools/script_check.py sheet.md --log ROTATION-LOG.md --ep 4` checks the core fields and skips the plan's own row.
+The live log is `output/ROTATION-LOG.md`; a log supplied in a brief replaces it. Copy the header below into it once, then add one row per episode **when the plan is written**, and update it after the cut. Every file that says "rotate" points here. `tools/script_check.py sheet.md --log ROTATION-LOG.md --ep 4` checks the core fields and skips the plan's own row.
 
 **Controlled words.** The `subject`, `outcome` and `reveal move` cells use only the words in `tools/skeletons.txt`, and `family` is numbers (`3 + 10`). `--log` fails any other word and suggests a mapping. Free-text notes go in `notes`. Mapping hints: dad/mom/son → `parent-child`; grandpa or grandma + their partner → `grandparent-partner`; grandparent + the narrator → `grandparent-child`; neighbour → `stranger-family`; "lifelong love" → `romance`; "reconnects" → `reunion`; "kept her safe" → `protection`.
 

@@ -54,7 +54,7 @@ Hold placement, ending pace and mean shot length rotate between episodes; the ru
 
 ## 7. Pacing self-check (zero tokens)
 
-`python3 tools/pacing_check.py cuts.txt words.json duration_seconds`. `cuts.txt` = one cut time in seconds per line, excluding 0 (export from the NLE or `ffmpeg scdet`); `words.json` = the word-timestamp transcript (captions.md §3). Sentence starts come from the punctuation in the tokens; wpm is speech only (designed pauses taken out). **On a plan** (no voice yet), make both files with `python3 tools/plan_timing.py script-sheet.md --shots shotlist.md` and use the runtime it prints.
+`python tools/pacing_check.py cuts.txt words.json duration_seconds`. `cuts.txt` = one cut time in seconds per line, excluding 0 (export from the NLE or `ffmpeg scdet`); `words.json` = the word-timestamp transcript (captions.md §3). Sentence starts come from the punctuation in the tokens; wpm is speech only (designed pauses taken out). **On a plan** (no voice yet), make both files with `python tools/plan_timing.py script-sheet.md --shots shotlist.md` and use the runtime it prints.
 
 Fail handling: fix the picture timing first (move cuts to sentence starts), then add or remove words per shot. Do not re-generate voice for a pacing failure unless wpm is out of range.
 
