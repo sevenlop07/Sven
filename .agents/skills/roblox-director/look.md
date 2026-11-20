@@ -1,6 +1,6 @@
 # look.md: shots, camera, faces, bodies, sets
 
-> **v2 note (2026-11-14):** the rules and numbers here still apply. Roblox Studio tools named here (Luau CFrame/Motor6D poses, Animation Editor, Moon Animator, RoMixamo, FieldOfView, BillboardGui) are replaced by the Blender kit — see `blender.md` §1 for the mapping.
+> **v2 note (2026-11-14):** the rules and numbers here still apply. Roblox Studio tools named here (Luau CFrame/Motor6D poses, Animation Editor, Moon Animator, FieldOfView, BillboardGui) are replaced by the Blender kit — acting now comes from `studio_kit/blender_roblox_anim.py` (Law R-ANIM, `ROBLOX_DIRECTOR.md` §4; mocap/RoMixamo retired).
 
 
 Tags: **REF-RANGE** = measured in the 6 reference reels (bell, memories, town, dog, monster, train; 458 shots). **HYPOTHESIS** = a beat-the-refs bet, not proven; A/B it on the user's own analytics.
@@ -155,7 +155,7 @@ Minimum kit per character (HYPOTHESIS: enough for the refs' range of emotions):
   - Built-in Animation Editor: free, enough for simple acting.
   - **Luau CFrame poses**: Claude writes poses as `Motor6D.C0` offsets on the R6 joints (Neck, Right/Left Shoulder, Right/Left Hip, RootJoint) and tweens between them. Cheapest route through the MCP. The joint axes differ per joint; test each new pose once with `screen_capture` and save it in a `PoseLibrary` module.
   - **Moon Animator 2**: about $30 one-time. Multi-rig timeline, camera track, marker-driven face swaps in Edit mode. **Ask the user before buying.** Buy it only if the free routes fail the first test.
-  - RoMixamo Lite (free, R6 since Sep 2025) for walks, runs and falls.
+  - ~~RoMixamo~~ — retired. Human mocap does not read as Roblox (see `ROBLOX_DIRECTOR.md` §4 Law R-ANIM). Studio: official R15 animation ids; Blender: `studio_kit/blender_roblox_anim.py`.
   - **Not** the MCP's `generate_animation`: it makes R15 animations only, up to 10 s. Useless for R6 acting.
 - Starter pose library (8 poses, HYPOTHESIS): point, hand-to-face, head-drop slump, flinch, hug/hold, hands-on-head, kneel, reach-out. Each has a 6–12-frame ease in and holds ≥0.4 s on emotional beats.
 - Turn before walking (≥0.3 s, scene-rules). Feet on the floor; held props welded to the hand.

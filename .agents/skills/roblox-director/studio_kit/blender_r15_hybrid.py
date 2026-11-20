@@ -548,8 +548,13 @@ def retarget_mocap_to_r15(
     target_fe: int = None,
     push_nla: bool = True,
     repeat: float = 1.0,
+    limb_swing: bool = True,
 ):
     """
+    DEPRECATED FOR ROBLOX FILMS (Law R-ANIM, ROBLOX_DIRECTOR.md §4): human mocap does not read as Roblox on the
+    blocky R15 rig — use studio_kit/blender_roblox_anim.py (RobloxAnimator) instead. Kept for non-Roblox projects.
+    limb_swing=True (default) aims limbs by direction only (no source twist), which stops offset box-limbs flinging out.
+
     Import a Mixamo .fbx or .bvh mocap clip, map cleanly onto Roblox R15 (LowerTorso/UpperTorso/limbs),
     automatically align T-pose / A-pose rest differences (so Mixamo arms don't cross inward through torso),
     scale hips motion by hip-height ratio, write a Blender 5.3 Slotted Action, and optionally push onto NLA.
@@ -615,6 +620,7 @@ def retarget_mocap_to_r15(
         t_hips_rest = tgt.matrix_world @ tgt.data.bones[hips].head_local
         ratio = t_hips_rest.z / s_hips_rest.z if abs(s_hips_rest.z) > 1e-6 else 1.0
 
+    limb_bones = {n for n in bmap if any(k in n for k in ("UpperArm", "LowerArm", "UpperLeg", "LowerLeg", "Hand", "Foot"))}
     keys = {b: [] for b in bmap}
     locs = []
     err = 0.0
@@ -629,9 +635,20 @@ def retarget_mocap_to_r15(
                 continue
             s = bmap[b.name]
             sw = _rot(src.matrix_world @ src.pose.bones[s].matrix)
-            dw = sw @ s_rest_w[s].inverted() @ t_rest_w[b.name]
-            da = tw_rot.inverted() @ dw
-            lq = _rot(base).inverted() @ da
+            if limb_swing and b.name in limb_bones:
+                # Swing-only: aim the bone along the source limb direction with zero extra twist.
+                # Mixamo twist on blocky R15 limbs (boxes offset from the bone axis) flings arms/legs outward.
+                spb = src.pose.bones[s]
+                d_src = ((src.matrix_world @ spb.tail) - (src.matrix_world @ spb.head))
+                d_src_a = (tw_rot.inverted() @ d_src).normalized()
+                br = _rot(base)
+                d_base = (br @ Vector((0.0, 1.0, 0.0))).normalized()
+                swing = d_base.rotation_difference(d_src_a)
+                lq = br.inverted() @ swing @ br
+            else:
+                dw = sw @ s_rest_w[s].inverted() @ t_rest_w[b.name]
+                da = tw_rot.inverted() @ dw
+                lq = _rot(base).inverted() @ da
             prev = keys[b.name][-1][1] if keys[b.name] else None
             if prev is not None and lq.dot(prev) < 0:
                 lq.negate()
@@ -644,8 +661,12 @@ def retarget_mocap_to_r15(
                 locs.append((f, loc.copy()))
             pose[b.name] = base @ Matrix.Translation(loc) @ lq.to_matrix().to_4x4()
             keys[b.name].append((f, lq))
-            got = tw_rot @ _rot(pose[b.name])
-            ang = (got @ t_rest_w[b.name].inverted()).rotation_difference(sw @ s_rest_w[s].inverted()).angle
+            if limb_swing and b.name in limb_bones:
+                got_dir = (tw_rot @ _rot(pose[b.name])) @ Vector((0.0, 1.0, 0.0))
+                ang = got_dir.angle(d_src.normalized(), 0.0)
+            else:
+                got = tw_rot @ _rot(pose[b.name])
+                ang = (got @ t_rest_w[b.name].inverted()).rotation_difference(sw @ s_rest_w[s].inverted()).angle
             err = max(err, math.degrees(min(ang, 2.0 * math.pi - ang)))
 
     cname = clip_name or os.path.splitext(os.path.basename(anim_filepath))[0]
