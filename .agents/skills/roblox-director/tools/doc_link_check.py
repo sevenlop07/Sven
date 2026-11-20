@@ -24,6 +24,7 @@ RUNTIME_OUTPUTS = {
     "audio.json", "shots.json", "words.json", "words_planned.json", "srt_shots.json", "director_plan.json",
     "cloth_ids.json", "fov.json", "script-beats.json", "audit_report.json", "story.txt", "voice.mp3",
     "scene_built.blend", "qa.md", "notes.md", "shotlist.md", "sheet.md", "rotation.md", "final.mp4",
+    "ep-nn-script.md", "ep-nn-scene-kk.md", "seo-package.md",
 }
 FILE_RE = re.compile(r"(?<![\w.<-])([\w\-]+\.(?:py|lua|md|mjs|json|glb|fbx|ipynb))\b(?!>)")
 FN_RE = re.compile(r"\b(kit|rba|hyb|env)\.([A-Za-z_]\w*)\s*\(")

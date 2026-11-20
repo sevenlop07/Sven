@@ -38,6 +38,9 @@ WHOLE_FILE_REFS = {"0c-canonical-numbers.md", "2b-character-lines.md", "3c-camer
                    "3b-lighting-atmospheric-physics.md", "4b-diegetic-foley-sound-design.md"}
 
 
+STARTUP_END_ANCHOR = "§5"   # workflow.md startup read = §0–§4, ending before "## §5 — STAGE 0"
+
+
 def core_docs():
     pats = ["AGENTS.md", "AGENT.md", "CLAUDE.md", "workflow.md", ".agents/*.md", ".agents/rules/*.md",
             ".agents/skills/*/SKILL.md", ".claude/skills/*/SKILL.md", ".claude/agents/*.md",
@@ -148,6 +151,21 @@ def check(fix=False):
                     whole_file = ("/.agents/" in tnorm or "/.claude/" in tnorm or tnorm.endswith("/agent.md")
                                   or "/engine/genres/" in tnorm
                                   or os.path.basename(tnorm) in WHOLE_FILE_REFS)
+                    # the workflow "startup read" (L1-…) must end exactly before the first stage section (§5)
+                    if not anchor and a == 1 and tnorm.endswith("/workflow.md"):
+                        h5 = _find_heading(tl, STARTUP_END_ANCHOR)
+                        want = None
+                        if h5:
+                            want = h5 - 1
+                            while want > 1 and tl[want - 1].strip() in ("", "---"):
+                                want -= 1
+                        if want and b != want:
+                            if fix:
+                                fixes.setdefault((doc, i), []).append((m.start(2), m.end(2), str(want)))
+                                b = want
+                            else:
+                                problems.append(f"{rel}:{i}: workflow startup range L1-{b} should end at L{want} (before {STARTUP_END_ANCHOR}) — run with --fix")
+                        continue
                     if not anchor and a == 1 and 0 < real_n - b and (whole_file or real_n - b <= 40):
                         # a whole-file read that the file has outgrown by a few lines
                         if fix:
