@@ -17,6 +17,7 @@
 | Shots per action clip (`@CombatDirector`) | Topology by intent: `1–2` inertial long-take · `3–5` asymmetric exchange · `6–9` rapid-cut blitz (`1.5–2.0s` per cut). | Default |
 | Shots per product commercial (`@CommercialDirector`) | `10.0s = 6` · `15.0s = 9`. | HC |
 | Visual prose per shot / per timed turn | `1–2` natural sentences, `12–30` words, one state change `A ➔ B`, zero `→` arrows. | HC (Gate 3R) |
+| **Motion density** (primary actions per shot) | dialogue / drama: `≈ duration ÷ 3–4s` (min `1`) · rapid cut `1.5–2.0s`: exactly `1` action + `1` consequence · inertial long take: a causal chain of `≤ 3` linked moves per `~4s` · product cut: `1` product action · keyframe / storyboard panel: `1` frozen instant · source-video swap: exactly the source's actions · Roblox: `1` animation clip per SRT beat + idle loop. Every shot also carries `1` biological reaction and continuous micro-motion. | HC (Motion Density Law, `workflow.md` §2.5) |
 
 ## §2 — Speech & Dialogue Budgets
 

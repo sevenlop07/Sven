@@ -54,6 +54,34 @@ AGE_RX = re.compile(r"\b\d{1,2}[- ]year[- ]old\b|\byears old\b|\b(young|elderly|
 HAIR_RX = re.compile(r"\b(blonde?|brunette|redhead|silver-haired|grey-haired|gray-haired|black-haired|silver-bearded)\b", re.I)
 META_RX = re.compile(r"speaking immediately|finishes (?:his|her|their) sentence|holds still|from the opening second", re.I)
 REGISTER_RX = re.compile(r"\b(alto|baritone|tenor|soprano)\b", re.I)
+# Motion Density Law (workflow.md §2.5, 0c §1): primary actions vs. duration
+PRIMARY_VERBS = ["sets", "places", "puts", "lays", "lifts", "raises", "lowers", "picks", "grabs", "snatches", "seizes",
+                 "takes", "hands", "passes", "gives", "throws", "tosses", "drops", "slams", "stands", "rises", "sits",
+                 "kneels", "walks", "steps", "strides", "runs", "sprints", "dashes", "jumps", "leaps", "vaults", "climbs",
+                 "turns", "spins", "pivots", "whirls", "reaches", "opens", "closes", "shuts", "unlocks", "pushes", "pulls",
+                 "drags", "swings", "slashes", "strikes", "punches", "kicks", "blocks", "parries", "lunges", "dodges",
+                 "pours", "cuts", "slices", "chops", "stirs", "flips", "tilts", "taps", "knocks", "hugs", "embraces",
+                 "kisses", "slaps", "tears", "rips", "folds", "writes", "signs", "dials", "types", "wipes", "bites",
+                 "sips", "drinks", "eats", "crosses", "enters", "exits", "leaves", "approaches", "retreats", "backs",
+                 "points", "shoves", "catches", "skids", "brakes", "drifts", "slides", "crouches", "bends"]
+MICRO_RX = re.compile(r"\b(breath\w*|breath(?:es|ing)|exhal\w*|inhal\w*|blink\w*|gaze|glanc\w*|eyes?|brows?|jaw|lips?|"
+                      r"finger\w*|tremb\w*|trembl\w*|flicker\w*|drift\w*|rain|smoke|steam\w*|mist|wind|sway\w*|ripple\w*|"
+                      r"lingering|slowly|a beat|settl\w*|fog\w*|dust|sparks?|embers?|foam\w*|fizz\w*|condensation)\b", re.I)
+PRIMARY_RX = re.compile(r"\b(" + "|".join(PRIMARY_VERBS) + r")\b", re.I)
+FAST_TAGS = ["snappy real-time speed", "crisp real-time speed", "explosive real-time speed",
+             "blistering whip-fast speed"]
+
+
+def density_limit(dur, hdr):
+    """Allowed primary actions for one shot (0c §1 Motion density)."""
+    h = hdr.lower()
+    if any(t in h for t in FAST_TAGS):
+        if dur <= 2.5:
+            return 1
+        return max(2, math.ceil(dur / 4.0) * 3)      # inertial long take: <= 3 linked moves per ~4s
+    return max(1, int((dur + 0.5) // 3.5))         # dialogue / drama: one primary action per 3–4s
+
+
 SHOT_RX = re.compile(r"^Shot\s+(\d+)\s*\((\d{1,2}):(\d{2}(?:\.\d+)?)\s*-\s*(\d{1,2}):(\d{2}(?:\.\d+)?)\)\s*-\s*(.+)$")
 DIALOGUE_RX = re.compile(r'^\s*([A-ZÀ-Ỹ][\wÀ-ỹ\'\- ]{0,40}?)\s*\(([^)]*)\)\s*:\s*["“](.+?)["”]\s*$')
 TURN_RX = re.compile(r"^\s*\((\d{1,2}):(\d{2}(?:\.\d+)?)\s*-\s*(\d{1,2}):(\d{2}(?:\.\d+)?)\)")
@@ -211,6 +239,17 @@ def audit_prompt(p):
             E.append(f"Shot {s['n']}: '→' arrows are banned in prompts")
         if META_RX.search(prose):
             E.append(f"Shot {s['n']}: meta-instruction in prose")
+        # ---- Motion Density Law: action overload / time underload ----
+        dur = s["b"] - s["a"]
+        acts = PRIMARY_RX.findall(prose)
+        limit = density_limit(dur, hdr)
+        if s["turns"] == 0 and len(acts) > limit:
+            W.append(f"Shot {s['n']}: {len(acts)} primary actions {sorted(set(a.lower() for a in acts))} in {dur:.1f}s "
+                     f"(allowed {limit}) — action overload; keep one primary action per beat (Motion Density Law)")
+        if s["turns"] == 0 and not s["lines"] and dur >= 4.5 and len(acts) <= 1 and not MICRO_RX.search(prose) \
+                and "ultra-slow-motion" not in hdr.lower():
+            W.append(f"Shot {s['n']}: {dur:.1f}s wordless shot with {len(acts)} primary action and no micro-motion — "
+                     f"time underload; stretch the action (prep ➔ execution ➔ after-beat) and add breath / gaze / environment motion")
         if s["turns"] == 0:
             wc = words(prose)
             cap = PROSE_MAX * max(1.0, (s["b"] - s["a"]) / 4.0)   # long takes carry proportionally more beats

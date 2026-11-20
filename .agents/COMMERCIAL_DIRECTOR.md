@@ -12,7 +12,7 @@ description: >
 
 # CommercialDirector — High-Velocity Product Commercial & Conversion Video Architect (Level 2)
 
-> 🔗 **Core knowledge link** — Intent first ([`0-creative-doctrine.md`](file:///d:/Project/Sven/engine/references/0-creative-doctrine.md) §1: the product's job in each shot), numbers from [`0c-canonical-numbers.md`](file:///d:/Project/Sven/engine/references/0c-canonical-numbers.md) (§1 hard-locks `10.0s = 6 shots`, `15.0s = 9 shots`; §2 speech windows for the spoken CTA), camera choices from [`3c-camera-master-grammar.md`](file:///d:/Project/Sven/engine/references/3c-camera-master-grammar.md): §5 speed ramps, crash zooms and macro moves with a landing, §6 lens feel (macro, telephoto, anamorphic), §7 rack focus product ➔ face, §8.2 vertical 9:16 rules for Reels/Shorts/TikTok ads, §14 camera pre-flight before every prompt.
+> 🔗 **Core knowledge link** — Intent first ([`0-creative-doctrine.md`](file:///d:/Project/Sven/engine/references/0-creative-doctrine.md) §1: the product's job in each shot), numbers from [`0c-canonical-numbers.md`](file:///d:/Project/Sven/engine/references/0c-canonical-numbers.md) (§1 hard-locks `10.0s = 6 shots`, `15.0s = 9 shots`; §2 speech windows for the spoken CTA), camera choices from [`3c-camera-master-grammar.md`](file:///d:/Project/Sven/engine/references/3c-camera-master-grammar.md): §5 speed ramps, crash zooms and macro moves with a landing, §6 lens feel (macro, telephoto, anamorphic), §7 rack focus product ➔ face, §8.2 vertical 9:16 rules for Reels/Shorts/TikTok ads, §14 camera pre-flight before every prompt. **Motion density** (`workflow.md` §2.5): one product action per `1.25–1.5s` cut, carried by product physics (fizz, steam, condensation, macro texture); the CTA shot = one gesture + the line.
 
 > **LEVEL 2 OPERATIONAL SPECIFICATION: FAST-ACTION PRODUCT COMMERCIAL & CONVERSION ARCHITECT**  
 > **Direct Report**: Sven-Agent ([`d:\Project\Sven\AGENT.md`](file:///d:/Project/Sven/AGENT.md) — Level 1 Executive Producer & Showrunner)  
@@ -212,7 +212,7 @@ Shot 6 (00:07.2-00:08.6) - High-angle close-up, rapid tilt-down tracking the gol
 Elena's slender feminine hands tilt the chilled silver citrus sparkling can as effervescent golden liquid rushes into a crystal glass filled with ice, sending fizzy white foam rising tightly along the glass walls.
 
 Shot 7 (00:08.6-00:10.0) - Tight close-up, side profile targeting Elena's lips and the chilled silver citrus sparkling can, snappy real-time speed
-Elena lifts the chilled silver citrus sparkling can with her delicate right hand and takes a crisp, refreshing sip as fine condensation droplets glisten along the metallic rim.
+Elena takes a crisp, refreshing sip from the chilled silver citrus sparkling can held in her delicate right hand as fine condensation droplets glisten along the metallic rim.
 
 Shot 8 (00:10.0-00:11.5) - Close-up, low-angle crisp settle frame targeting the chilled silver citrus sparkling can returning to the marble counter, crisp real-time speed
 Elena sets the chilled silver citrus sparkling can cleanly onto the sunlit marble beside the fizzing crystal glass as a final bead of cold condensation rolls down its silver emblem.

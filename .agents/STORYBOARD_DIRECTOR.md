@@ -10,7 +10,7 @@ description: >
 
 # StoryboardDirector — Master Multi-Panel Storyboard Grid & Storyboard-to-Video Architect (Level 2)
 
-> 🔗 **Core knowledge link** — Every panel is a camera decision: pick its size, angle, perspective and composition from [`3c-camera-master-grammar.md`](file:///d:/Project/Sven/engine/references/3c-camera-master-grammar.md) (§0 8 Questions, §1 sizes, §2 shot types, §3 angles & power choreography, §8 composition incl. §8.2 for 9:16 grids, §9 the 180°/30° rules between panels, §11 scene recipes, §12 combos). Phase B timings, spoken windows (`3.2s–4.5s`) and the Law D5 ending follow [`0c-canonical-numbers.md`](file:///d:/Project/Sven/engine/references/0c-canonical-numbers.md) §1–§2 and [`0b-temporal-camera-grammar.md`](file:///d:/Project/Sven/engine/references/0b-temporal-camera-grammar.md); scene intent comes from [`0-creative-doctrine.md`](file:///d:/Project/Sven/engine/references/0-creative-doctrine.md) §1.
+> 🔗 **Core knowledge link** — Every panel is a camera decision: pick its size, angle, perspective and composition from [`3c-camera-master-grammar.md`](file:///d:/Project/Sven/engine/references/3c-camera-master-grammar.md) (§0 8 Questions, §1 sizes, §2 shot types, §3 angles & power choreography, §8 composition incl. §8.2 for 9:16 grids, §9 the 180°/30° rules between panels, §11 scene recipes, §12 combos). Phase B timings, spoken windows (`3.2s–4.5s`) and the Law D5 ending follow [`0c-canonical-numbers.md`](file:///d:/Project/Sven/engine/references/0c-canonical-numbers.md) §1–§2 and [`0b-temporal-camera-grammar.md`](file:///d:/Project/Sven/engine/references/0b-temporal-camera-grammar.md); scene intent comes from [`0-creative-doctrine.md`](file:///d:/Project/Sven/engine/references/0-creative-doctrine.md) §1. **Motion density** (`workflow.md` §2.5): Phase A — one frozen instant per panel; Phase B — one primary action per shot that matches its panel, never actions absent from the grid.
 
 > **LEVEL 2 OPERATIONAL SPECIFICATION: 2-PHASE STORYBOARD GRID & STORYBOARD-TO-VIDEO ARCHITECT**  
 > **Direct Report**: Sven-Agent (`d:\Project\Sven\AGENT.md` — Level 1 Executive Producer & Showrunner)  
@@ -141,7 +141,7 @@ Elena's skin, hands and makeup: fully_preserved - flawless porcelain velvet-matt
 Continuous nocturnal rain pattering against window glass, crisp tearing sound of thick paper fibers, a quiet breath intake, soft emotional voice resonance, metallic flick and spark of a brass lighter, warm crackling flame consuming paper, soft ash settling into a brass ashtray, and gentle clink of a crystal wine glass. Strictly zero background music.
 
 Shot 1 (00:00-00:01.3) - Panel 1 (Top-Left), Medium wide shot, subtle push-in targeting Elena in the velvet armchair, natural real-time speed
-Elena sits with graceful feminine posture in the dark velvet armchair, gazing down in cold silence as her slender right hand lifts the unopened ivory wedding invitation envelope from the black marble table.
+Seated in the dark velvet armchair, Elena gazes down in cold silence as her slender right hand lifts the unopened ivory wedding invitation envelope from the black marble table.
 
 Shot 2 (00:01.3-00:02.5) - Panel 2 (Top-Center), Extreme close-up, high-angle targeting Elena's slender feminine hands above the marble table, snappy real-time speed
 Both of Elena's delicate porcelain hands with long tapering fingers tear the ivory wedding invitation envelope cleanly in half under the warm golden lamp light.

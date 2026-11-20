@@ -296,6 +296,7 @@ Focus is a pointer: whatever is sharp is what the viewer must think about.
 3. **Prefer plain film vocabulary** (push-in, pull-out, pan, tilt, tracking, static) over invented poetry; add the motive in a clause.
 4. **Avoid compound moves** ("orbit while zooming and tilting"); split them across shots.
 5. **Keep subject motion and camera motion simple**: if two people move, lock the camera; if the camera travels, one subject moves.
+5b. **Motion density** (`workflow.md` §2.5, `0c` §1): fill each shot's duration with one primary action stretched across preparation ➔ execution ➔ after-beat, one biological reaction and continuous micro-motion (breath, fingers, fabric, rain, steam, light flicker). A long shot with a one-second action invites the model to improvise; a short shot with three actions makes it morph. A static camera on a still subject is fine only when the subject breathes, blinks and reacts.
 6. **Lip-sync shots**: FS to CU, static or very slow push, face unobstructed, frontal or three-quarter.
 7. **Fast moves** (whip, crash zoom, FPV) belong in non-dialogue shots and need a stillness landing after.
 8. **Commonly failing requests** — rewrite them:

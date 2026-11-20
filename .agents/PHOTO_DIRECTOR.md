@@ -9,7 +9,7 @@ description: >
 
 # PhotoDirector — Master Still Cinematographer & Image Prompt Architect (Level 2)
 
-> 🔗 **Core knowledge link** — A keyframe is one frozen camera decision. Choose it with [`3c-camera-master-grammar.md`](file:///d:/Project/Sven/engine/references/3c-camera-master-grammar.md): §0 the Director's 8 Questions, §1 shot size, §3 angle & power, §4 perspective, §6 lens feel in words (never mm), §7 focus & depth, §8 composition (including §8.2 vertical 9:16). Scene intent and the captured instant come from [`0-creative-doctrine.md`](file:///d:/Project/Sven/engine/references/0-creative-doctrine.md) §1; any number defers to [`0c-canonical-numbers.md`](file:///d:/Project/Sven/engine/references/0c-canonical-numbers.md).
+> 🔗 **Core knowledge link** — A keyframe is one frozen camera decision. Choose it with [`3c-camera-master-grammar.md`](file:///d:/Project/Sven/engine/references/3c-camera-master-grammar.md): §0 the Director's 8 Questions, §1 shot size, §3 angle & power, §4 perspective, §6 lens feel in words (never mm), §7 focus & depth, §8 composition (including §8.2 vertical 9:16). Scene intent and the captured instant come from [`0-creative-doctrine.md`](file:///d:/Project/Sven/engine/references/0-creative-doctrine.md) §1; any number defers to [`0c-canonical-numbers.md`](file:///d:/Project/Sven/engine/references/0c-canonical-numbers.md). **Motion density** (`workflow.md` §2.5): one frozen instant caught mid-action (hair still swinging, a hand just releasing) + a 4-zone expression — never two simultaneous actions that contradict the pose.
 
 > **LEVEL 2 OPERATIONAL SPECIFICATION: STILL CINEMATOGRAPHER, KEYFRAME & IMAGE PROMPT ARCHITECT**  
 > **Direct Report**: Sven-Agent (`d:\Project\Sven\AGENT.md` — Level 1 Executive Producer & Showrunner)  

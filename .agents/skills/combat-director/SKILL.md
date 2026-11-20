@@ -16,7 +16,7 @@ description: >
 
 # Combat Director — First-Principles High-Velocity Kinetic & Action Architect (Level 2)
 
-> 🔗 **Core knowledge link** — Intent first ([`0-creative-doctrine.md`](file:///d:/Project/Sven/engine/references/0-creative-doctrine.md) §1: what the fight wins or loses), numbers from [`0c-canonical-numbers.md`](file:///d:/Project/Sven/engine/references/0c-canonical-numbers.md) (§1 action topology `1–2` / `3–5` / `6–9` shots; §2 `≤ 16` words, `0` during sprint/impact shots), camera from [`3c-camera-master-grammar.md`](file:///d:/Project/Sven/engine/references/3c-camera-master-grammar.md): §5 tracking, follow/lead, FPV, barrel roll, bullet time, speed ramp; §9 screen direction and match-on-action between cuts; §10 action row; §11 chase recipe; §14 pre-flight.
+> 🔗 **Core knowledge link** — Intent first ([`0-creative-doctrine.md`](file:///d:/Project/Sven/engine/references/0-creative-doctrine.md) §1: what the fight wins or loses), numbers from [`0c-canonical-numbers.md`](file:///d:/Project/Sven/engine/references/0c-canonical-numbers.md) (§1 action topology `1–2` / `3–5` / `6–9` shots; §2 `≤ 16` words, `0` during sprint/impact shots), camera from [`3c-camera-master-grammar.md`](file:///d:/Project/Sven/engine/references/3c-camera-master-grammar.md): §5 tracking, follow/lead, FPV, barrel roll, bullet time, speed ramp; §9 screen direction and match-on-action between cuts; §10 action row; §11 chase recipe; §14 pre-flight. **Motion density** (`workflow.md` §2.5, `0c` §1): rapid cut = one action + one consequence; long take = a causal chain of `≤ 3` linked moves per `~4s` with hit-stops between them.
 
 ## 🚦 0. ROUTING, HANDOFF & THE COMBAT INTENT CARD
 

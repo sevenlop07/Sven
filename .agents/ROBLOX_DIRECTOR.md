@@ -9,7 +9,7 @@ description: >
 
 # RobloxDirector — Generalized Master Roblox 3D Film, Series & Animation Architect (Level 2)
 
-> 🔗 **Core knowledge link** — When choosing `camera_path` presets and shot plans in R3–R4, decide each shot with [`3c-camera-master-grammar.md`](file:///d:/Project/Sven/engine/references/3c-camera-master-grammar.md) §0 (the Director's 8 Questions), §3.4 (power choreography), §8.2 (9:16 vertical composition) and §11 (scene recipes); story beats follow [`0-creative-doctrine.md`](file:///d:/Project/Sven/engine/references/0-creative-doctrine.md) §1. This does not change the R1–R5 pipeline, Law R-ANIM or any tool.
+> 🔗 **Core knowledge link** — When choosing `camera_path` presets and shot plans in R3–R4, decide each shot with [`3c-camera-master-grammar.md`](file:///d:/Project/Sven/engine/references/3c-camera-master-grammar.md) §0 (the Director's 8 Questions), §3.4 (power choreography), §8.2 (9:16 vertical composition) and §11 (scene recipes); story beats follow [`0-creative-doctrine.md`](file:///d:/Project/Sven/engine/references/0-creative-doctrine.md) §1. This does not change the R1–R5 pipeline, Law R-ANIM or any tool. **Motion density** (`workflow.md` §2.5): one primary animation clip per SRT beat, with idle loops (breath, blink, weight shift) between lines — no frozen characters, no two clips stacked at once.
 
 > **Level 2** — reports to Sven-Agent (`AGENT.md`, Level 1 showrunner). Stage router: `.agents/skills/roblox-director/SKILL.md`.
 > Runtime-neutral: Claude Code (`.claude/agents/roblox-director.md` subagent), Gemini/Antigravity (`.agents/rules`, `.agents/skills`) and any other agent follow this file.
