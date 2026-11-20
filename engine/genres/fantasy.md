@@ -12,6 +12,7 @@ Governed by: Screenwriter (Level 2), Director (Level 2) & Combat Director (`@Com
 | **Regime** | 3 — Supernatural, Fantasy, Xianxia & Time-Travel |
 | **Genre Engine** | 3 (cultivation / portal) or 1 (court intrigue) as the sub-genre dictates |
 | **Audience payoff** | Wonder + asymmetric knowledge/power paying off against a ticking cost |
+| **Cast topology** (`2b-character-lines.md` §2) | A1 with an edge and its price + the world's power holder + the world law; mentor, rival, relic keeper |
 | **Default episode shape** | default sketch `~10` scenes `100–110s`, flex per 0c §4 |
 | **Preferred hooks** | #1 Visual Paradox, #8 Overlapping Time Traces, #3 Strange Object/Sign |
 | **Preferred cliffhangers** | C7 Ghost's Arrival, C1 Identity Unmasking, C5 Ultimatum |

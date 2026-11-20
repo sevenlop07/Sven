@@ -98,6 +98,9 @@
 | Full series (6–10+ episodes) | `7–9` |
 | Mega series (12–20+ episodes) | `10–14` |
 
+- **New named characters on screen**: Episode 1 `≤ 3–4`; every later episode `≤ 1–2` (`2b-character-lines.md` §6).
+- **Absence**: no named character absent more than `2` consecutive episodes without a planted reason; A1 in `≥ 60%` of an episode's scenes unless a declared POV episode (`2b` §5).
+
 ## §7 — Macro Structure
 
 - Plot weave: `A-Plot 55–65%` · `B-Plot 25–30%` · `C-Plot 10–15%`.

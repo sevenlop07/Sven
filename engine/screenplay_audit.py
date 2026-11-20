@@ -35,6 +35,10 @@ WORDS_15S_ACTION = 16
 SCORE_PASS = 12
 SCORE_MAX = 16
 MAX_SAME_TYPE_RUN = 2          # never 3 consecutive scenes with the same structure
+NEW_CHARS_EP1 = 4              # 0c §6 / 2b §6: new named characters on screen in Episode 1
+NEW_CHARS_LATER = 2            # ... and in every later episode
+MAX_ABSENT_EPISODES = 2        # 2b §5 rule 2
+A1_MIN_SHARE = 0.6             # 2b §5 rule 4
 PATTERN_SHIFT_EVERY = 3        # shift at least every 2–3 scenes
 
 DEFAULT_EMOTION_TERMS = [
@@ -80,6 +84,29 @@ def section(text, start_pat, end_pats):
     ends = [re.search(e, rest, re.I) for e in end_pats]
     cut = min([e.start() for e in ends if e] or [len(rest)])
     return rest[:cut]
+
+
+CAST_RX = re.compile(r'Nhân vật trong tập[^:]*:\s*(.*)', re.I)
+CAST_ITEM_RX = re.compile(r'([^,()\[\]]+?)\s*\(([^)]*)\)\s*(\((?:mới|new)\))?', re.I)
+
+
+def parse_cast(text):
+    """Return ([{'name','role','new'}], [absent names]) from the '9. Nhân vật trong tập' line."""
+    m = CAST_RX.search(text)
+    if not m:
+        return [], []
+    line = m.group(1)
+    parts = re.split(r'—\s*(?:vắng|absent)\s*:?', line, maxsplit=1, flags=re.I)
+    present = parts[0]
+    gone = parts[1] if len(parts) > 1 else ''
+    cast = []
+    for name, role, new in CAST_ITEM_RX.findall(present):
+        name = norm(name.strip(' []:'))
+        if name and not name.startswith('Tên'):
+            cast.append({'name': name, 'role': norm(role), 'new': bool(new)})
+    gone = re.sub(r'\([^)]*\)', '', gone)
+    absent = [norm(n.strip(' []')) for n in gone.split(',') if n.strip(' []') and not n.strip().startswith('Tên')]
+    return cast, [a for a in absent if a and a.lower() not in ('không', 'none', 'không có')]
 
 
 def scene_refs(s):
@@ -331,6 +358,49 @@ def audit(path):
             warns.append("PHẦN 5: no 'Ai biết gì' ledger")
         if not re.search(r'Sổ vòng lặp|Loop ledger', text, re.I):
             warns.append("PHẦN 5: no loop ledger")
+
+    # ---------- character lines (2b-character-lines.md §5–§6, 0c §6) ----------
+    cast, absent = parse_cast(text)
+    ep_no = int(m_ep.group(1)) if m_ep else None
+    if not cast:
+        warns.append("No episode cast line ('• 9. Nhân vật trong tập: Tên (vai · mã), … — vắng: …') — 2b §5")
+    else:
+        new = [c['name'] for c in cast if c['new']]
+        limit = NEW_CHARS_EP1 if ep_no == 1 else NEW_CHARS_LATER
+        if len(new) > limit and not has_break('nhân vật|character'):
+            errors.append(f"{len(new)} new named characters {new} > {limit} allowed in {'Episode 1' if ep_no == 1 else 'a later episode'} (2b §6, 0c §6)")
+        a1 = [c['name'] for c in cast if re.match(r'A1', c['role'])]
+        if a1 and scenes and not has_break('pov'):
+            hit = [s for s in scenes if any(n.lower() in s['desc'].lower() for n in a1)]
+            share = len(hit) / len(scenes)
+            if share < A1_MIN_SHARE:
+                warns.append(f"A1 ({', '.join(a1)}) appears in {len(hit)}/{len(scenes)} scene-list lines ({share:.0%}) < {A1_MIN_SHARE:.0%} — 2b §5 rule 4, or declare a POV episode with BREAK")
+        if pass_b:
+            arc = section(text, r'Bản đồ hành trình nhân vật|Character Arc Map', [r'\n\s*📊', r'\n\s*={5,}', r'\n\s*•\s*\d+\.'])
+            rows = {norm(r.split('(')[0]).lower() for r in re.findall(r'^\s*\|\s*([^|\n]+?)\s*\|', arc, re.M)
+                    if not re.match(r'\s*(Nhân vật|Character|-{2,})', r)}
+            missing = [c['name'] for c in cast if c['name'].lower() not in rows]
+            if not arc:
+                warns.append("PHẦN 5: no Character Arc Map column for this episode (2b §5)")
+            elif missing:
+                warns.append(f"Characters on screen without an Arc Map row: {missing} (2b §5)")
+    if m_ep and ep_no and ep_no > 2 and absent:
+        streak = []
+        for name in absent:
+            gone = 1
+            for back in (1, 2):
+                prev = os.path.join(os.path.dirname(path), f"ep-{ep_no - back:0{len(m_ep.group(1))}d}-script.md")
+                if not os.path.exists(prev):
+                    break
+                _, prev_absent = parse_cast(open(prev, encoding='utf-8').read())
+                if name.lower() in [a.lower() for a in prev_absent]:
+                    gone += 1
+                else:
+                    break
+            if gone > MAX_ABSENT_EPISODES:
+                streak.append(f"{name} ({gone} episodes)")
+        if streak:
+            warns.append(f"Named characters absent more than {MAX_ABSENT_EPISODES} consecutive episodes: {streak} — bring them back changed or plant the reason (2b §5 rule 2)")
 
     # ---------- scorecard ----------
     scores = SCORE_RX.findall(text)

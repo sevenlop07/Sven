@@ -12,6 +12,7 @@ Governed by: Screenwriter (Level 2) & Director (Level 2) under Showrunner (Level
 | **Regime** | 1 (realistic) or 3 (rebirth / system) |
 | **Genre Engine** | 2 — Every-Episode Face-Slap |
 | **Audience payoff** | Dopamine status reversal on every episode |
+| **Cast topology** (`2b-character-lines.md` §2) | A1 with hidden status + a ladder of oppressors (rising power) + main oppressor; ally, betrayer, witness who holds proof; mocking crowd that turns |
 | **Default episode shape** | `~10` scenes `~100s`, `90:10` |
 | **Preferred hooks** | #1 Visual Paradox, #9 Consequence First, #6 Body Detail |
 | **Preferred cliffhangers** | C1–C7 rotated, never the same twice in a row |

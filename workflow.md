@@ -28,6 +28,7 @@
 ─── THE 4 MASTER PILLARS & SPECIALIZED DIRECTORIAL ASSISTANTS ───
 [8]   engine/references/1-narrative-screenplay-architecture.md   ← Pillar 1 SSOT: Narrative, Twist Catalog (TW-01..20) & 8 Dialogue Models
 [9]   engine/references/2-casting-worldbuilding-specification.md ← Pillar 2 SSOT: Cast Topology, 16:9 Model Sheets, setting.html Spec
+[9b]  engine/references/2b-character-lines.md                ← Character Lines: role vocabulary, satellite crosswalk, genre cast topologies, arcs, Arc Map, introductions
 [10]  engine/references/3-cinematography-3d-staging.md           ← Pillar 3 SSOT: 14 Shot Scales, 4-Axis Angles, 3D Staging, 180° Axis
 [10b] engine/references/3b-lighting-atmospheric-physics.md       ← Assistant 3B: 6-Point Lighting Contract & Atmospheric Mediums
 [10c] engine/references/3c-camera-master-grammar.md          ← Camera Master Grammar: 8 Questions, 15 sizes, angles & power, moves, lens, focus, 9:16 composition, cuts, genre & scene recipes
@@ -40,12 +41,12 @@
 > 1. **Self-Contained `< 700-Line` Execution Cores First**: All mandatory execution rules, decision matrices, and output schemas are consolidated inside **`workflow.md` (read by stage slice)**, **`.agents/SCREENWRITER.md`**, **`.agents/DIRECTOR.md`**, **`.agents/PHOTO_DIRECTOR.md`**, **`.agents/STORYBOARD_DIRECTOR.md`**, **`0b-temporal-camera-grammar.md`** and **`0c-canonical-numbers.md`** (each read in full in one call). Line counts are not written here because they drift; `python engine/doc_range_check.py` verifies every range below and `--map <file>` prints current section lines.
 > 2. **Exact `StartLine–EndLine` Coordinates for Large Catalog Pillars**: Whenever consulting a Pillar catalog (`1–4`), ALWAYS pass the exact `StartLine` and `EndLine` listed below (never read blindly from line 1 to 3000):
 >    - **Startup (`K0–K3`)**: `workflow.md` (`StartLine: 1, EndLine: 375`) + `AGENT.md` (`StartLine: 1, EndLine: 86`) + `engine/runbooks.json` + `history-registry.json`
->    - **Stage 0 (`Concepts → CP0`)**: `workflow.md` (`StartLine: 378, EndLine: 454 · §5`) + `.agents/SCREENWRITER.md` (`StartLine: 1, EndLine: 133`) + `0c-canonical-numbers.md` (`StartLine: 1, EndLine: 135`) + `0-creative-doctrine.md` (`StartLine: 175, EndLine: 222 · §1.2` & `StartLine: 503, EndLine: 677 · §8–§9`)
->    - **Stage 1 (`Master Storyline & Blueprint → CP1`)**: `workflow.md` (`StartLine: 458, EndLine: 570 · §6`) + `0c-canonical-numbers.md` (`StartLine: 1, EndLine: 135`) + `1-narrative-screenplay-architecture.md` (`StartLine: 850, EndLine: 1055` — **20/80 Structural Law: 6 Genre Engines & 5 Episode Archetypes**; `StartLine: 1445, EndLine: 1515` — **20 Twists Catalog**) + active `engine/genres/*.md` (`100% read in 1 call`)
->    - **Stage 2 (`Pre-Production Resource File setting.html → CP2`)**: `workflow.md` (`StartLine: 574, EndLine: 645 · §7`) + `2-casting-worldbuilding-specification.md` (`StartLine: 390, EndLine: 720` — **16:9 Model Sheets Mẫu 1A/1B/2/2B/3**; `StartLine: 1410, EndLine: 1746` — **`setting.html` 10-Section Spec**; `StartLine: 1770, EndLine: 2215` — **50 Master Visual Styles**)
->    - **Stage 3 (`Episode N Rough Script & Deep Per-Scene Breakdown in Chat → CP3`)**: `workflow.md` (`StartLine: 649, EndLine: 822 · §8`) + `.agents/SCREENWRITER.md` (`StartLine: 1, EndLine: 133`) + `0c-canonical-numbers.md` (`StartLine: 1, EndLine: 135`) + `0-creative-doctrine.md` (`StartLine: 130, EndLine: 149 · §1` & `StartLine: 503, EndLine: 677 · §8–§9`) + `0b-temporal-camera-grammar.md` (`StartLine: 1, EndLine: 282`) + `1-narrative-screenplay-architecture.md` (`StartLine: 1307, EndLine: 1415` — **12 Hooks & 5 Bridges**; `StartLine: 1865, EndLine: 2265` — **WPS, 3-Layer Cadence & 9 Voice Modes**)
->    - **Stage 4 (`Interactive Scene-by-Scene Prompt Production & Visual Cross-Check in Chat → CP4`) & Turn-1 Direct Prompt Shortcut**: `workflow.md` (`StartLine: 826, EndLine: 946 · §9`) + `.agents/DIRECTOR.md` (`StartLine: 1, EndLine: 452`) + `3c-camera-master-grammar.md` (`StartLine: 1, EndLine: 320`) + `0c-canonical-numbers.md` (`StartLine: 1, EndLine: 135`) + `0-creative-doctrine.md` (`StartLine: 1, EndLine: 150` — **Scene Intent & Directing from Intent**) + `0b-temporal-camera-grammar.md` (`StartLine: 1, EndLine: 282` — **Speech Physics, One-Move Rule, Zero Tail-Cut Law & 10s/15s Templates**) + `4-ai-video-prompt-compiler.md` (`StartLine: 160, EndLine: 285` & `StartLine: 630, EndLine: 715` — **Temporal-Kinetic-Vocal Equilibrium, `3.2s–4.5s` Spoken Shot Formula & Terminal Settle**) + `1-narrative-screenplay-architecture.md` (`StartLine: 1865, EndLine: 2150` — **WPS & 3-Layer Vietnamese Relational Dialogue**) + (`combat-director/SKILL.md` for `Seedance` Action/Chase/Combat scenes; `.agents/PHOTO_DIRECTOR.md` for Single-Frame Still Images/Keyframes; `.agents/STORYBOARD_DIRECTOR.md` for `9/12/15/25-Shot` Storyboard Grids & `Storyboard-to-Video`)
->    - **Stage 5 (`Distribution Packaging → CP5`)**: `workflow.md` (`StartLine: 950, EndLine: 980 · §10–§11`) + `.agents/skills/youtube-growth-architect/SKILL.md` (`StartLine: 1, EndLine: 482`)
+>    - **Stage 0 (`Concepts → CP0`)**: `workflow.md` (`StartLine: 379, EndLine: 455 · §5`) + `.agents/SCREENWRITER.md` (`StartLine: 1, EndLine: 133`) + `0c-canonical-numbers.md` (`StartLine: 1, EndLine: 138`) + `0-creative-doctrine.md` (`StartLine: 175, EndLine: 222 · §1.2` & `StartLine: 503, EndLine: 677 · §8–§9`)
+>    - **Stage 1 (`Master Storyline & Blueprint → CP1`)**: `workflow.md` (`StartLine: 459, EndLine: 572 · §6`) + `0c-canonical-numbers.md` (`StartLine: 1, EndLine: 138`) + `2b-character-lines.md` (`StartLine: 1, EndLine: 156`) + `1-narrative-screenplay-architecture.md` (`StartLine: 850, EndLine: 1055` — **20/80 Structural Law: 6 Genre Engines & 5 Episode Archetypes**; `StartLine: 1445, EndLine: 1515` — **20 Twists Catalog**) + active `engine/genres/*.md` (`100% read in 1 call`)
+>    - **Stage 2 (`Pre-Production Resource File setting.html → CP2`)**: `workflow.md` (`StartLine: 576, EndLine: 647 · §7`) + `2-casting-worldbuilding-specification.md` (`StartLine: 390, EndLine: 720` — **16:9 Model Sheets Mẫu 1A/1B/2/2B/3**; `StartLine: 1410, EndLine: 1746` — **`setting.html` 10-Section Spec**; `StartLine: 1770, EndLine: 2215` — **50 Master Visual Styles**)
+>    - **Stage 3 (`Episode N Rough Script & Deep Per-Scene Breakdown in Chat → CP3`)**: `workflow.md` (`StartLine: 651, EndLine: 829 · §8`) + `.agents/SCREENWRITER.md` (`StartLine: 1, EndLine: 133`) + `0c-canonical-numbers.md` (`StartLine: 1, EndLine: 138`) + `0-creative-doctrine.md` (`StartLine: 130, EndLine: 149 · §1` & `StartLine: 503, EndLine: 677 · §8–§9`) + `0b-temporal-camera-grammar.md` (`StartLine: 1, EndLine: 282`) + `1-narrative-screenplay-architecture.md` (`StartLine: 1307, EndLine: 1415` — **12 Hooks & 5 Bridges**; `StartLine: 1865, EndLine: 2265` — **WPS, 3-Layer Cadence & 9 Voice Modes**)
+>    - **Stage 4 (`Interactive Scene-by-Scene Prompt Production & Visual Cross-Check in Chat → CP4`) & Turn-1 Direct Prompt Shortcut**: `workflow.md` (`StartLine: 833, EndLine: 953 · §9`) + `.agents/DIRECTOR.md` (`StartLine: 1, EndLine: 452`) + `3c-camera-master-grammar.md` (`StartLine: 1, EndLine: 320`) + `0c-canonical-numbers.md` (`StartLine: 1, EndLine: 138`) + `0-creative-doctrine.md` (`StartLine: 1, EndLine: 150` — **Scene Intent & Directing from Intent**) + `0b-temporal-camera-grammar.md` (`StartLine: 1, EndLine: 282` — **Speech Physics, One-Move Rule, Zero Tail-Cut Law & 10s/15s Templates**) + `4-ai-video-prompt-compiler.md` (`StartLine: 160, EndLine: 285` & `StartLine: 630, EndLine: 715` — **Temporal-Kinetic-Vocal Equilibrium, `3.2s–4.5s` Spoken Shot Formula & Terminal Settle**) + `1-narrative-screenplay-architecture.md` (`StartLine: 1865, EndLine: 2150` — **WPS & 3-Layer Vietnamese Relational Dialogue**) + (`combat-director/SKILL.md` for `Seedance` Action/Chase/Combat scenes; `.agents/PHOTO_DIRECTOR.md` for Single-Frame Still Images/Keyframes; `.agents/STORYBOARD_DIRECTOR.md` for `9/12/15/25-Shot` Storyboard Grids & `Storyboard-to-Video`)
+>    - **Stage 5 (`Distribution Packaging → CP5`)**: `workflow.md` (`StartLine: 957, EndLine: 987 · §10–§11`) + `.agents/skills/youtube-growth-architect/SKILL.md` (`StartLine: 1, EndLine: 482`)
 
 ---
 
@@ -419,7 +420,7 @@ STAGE 5  Distribution & SEO Packaging (Interactive in Chat + Finalize Registry) 
    |---|---|---|---|
    | **A1 (Chính diện)** | [Tên — Nghề nghiệp] | [Quan hệ với A2 & Tuyến B] | [Wound ➔ Lie + Đòn phản công chủ động] |
    | **A2 (Đối đầu)** | [Tên — Nghề nghiệp] | [Quan hệ với A1] | [Mục tiêu + "Điểm A2 hoàn toàn có lý" (Where A2 Is Right)] |
-   | **B[n] ([Vai chọn từ menu: B-Heart / B-Judas / B-Guardian / B-Blackmailed / B-Shadow / B-Arbiter / vai riêng của thể loại])** | [Tên — Nghề nghiệp] | [Móc xích kép A1 ⇄ B ⇄ A2] | [Muốn gì / Bí mật / Chức năng twist] |
+   | **B[n] ([Vai + mã B-01…B-20 + phe, theo bảng quy đổi `2b-character-lines.md` §1 — ví dụ B-Judas = B-01; hoặc vai riêng của thể loại theo `2b` §2])** | [Tên — Nghề nghiệp] | [Móc xích kép A1 ⇄ B ⇄ A2] | [Muốn gì / Bí mật / Chức năng twist] |
    | *(thêm hàng B cho đến đủ quota — phim ngắn thường chỉ 1–2 hàng B)* | | | |
    | **Tuyến C (Chorus linh động)** | [Nhóm phù hợp bối cảnh: hàng xóm / đồng nghiệp / khách quen / đám đông mạng ...] | [Áp lực xã hội quanh A1] | [Đổi chiều thế nào ở kết] |
 
@@ -503,7 +504,8 @@ Every episode in the series must connect to surrounding episodes using **at leas
 3. **Story-Bound Locations & Episode/Context Wardrobe Matrix (`Bối Cảnh & Trang Phục Gắn Chặt Cốt Truyện`)**:
    - **Locations (`Ở nhà / Công việc / Đi chơi / Hẹn hò / Sự kiện...`)**: Every location in the input (`Stage 1 ➔ Stage 2 ➔ Stage 3`) must be deeply designed and directly tied to the plot conflict—never generic filler backdrops.
    - **Wardrobe Progression Across Episodes & Arenas**: Characters change outfits naturally across episodes and social arenas (*at home, at work, casual outing, romantic date, crisis/rain*) while preserving 100% identical facial and bodily identity across their 16:9 Outfit Model Sheets.
-4. **Twist-Driven Casting Mandate**: Zero ornamental characters. Every Tier B character holds an explicit plot/twist function (`TW-01..20`), dual relationships (`A1 ⇄ B ⇄ A2`), and an independent moral dilemma.
+4. **Twist-Driven Casting Mandate**: Zero ornamental characters. Every Tier B character holds an explicit plot/twist function (`TW-01..20`), dual relationships (`A1 ⇄ B ⇄ A2`) when A2 is a person, and an independent moral dilemma.
+5. **Character Lines (`2b-character-lines.md`)**: use one role vocabulary (`A1` protagonist, `A2` always the antagonistic force, `B# · B-XX · side`, `C` chorus — §0–§1), pick the cast topology for the genre (§2), declare each principal's arc type (§3), and lock **series arc points + the Character Arc Map** (episodes × characters: want, knows, relationship, Lie status, present/absent — §4–§5) at `CP1`. Introduce characters per §6.
 
 ### 6.3 Format A Blueprint — Standalone Short Film (`65s–135s` Closed Arc · `6–12 Scenes`)
 For a 1-episode standalone film, lock:
@@ -729,6 +731,7 @@ TẬP [N]: [Tên Tập] | CUNG CHIA: [Hồi I/II/III/IV · Archetype 1–5] | EN
   KNOW    | Khán giả so với từng nhân vật chính; chỗ đổi chế độ (hồi hộp ↔ bí ẩn ↔ đồng cảm) ở Cảnh [NN] vì [...]
   MISREAD | [Ai hiểu lầm ai, qua Lời nói dối nào; điều gì chặn câu nói làm rõ; kết thúc ở cảnh nào] — hoặc "Không có"
   TWIST   | Lớn: Cảnh [NN], TW-[xx], cài ở Cảnh [..] · Nhỏ: Cảnh [NN], TW-[xx] · Gáo nước lạnh: Cảnh [NN], do cài ở Cảnh [..]
+• 9. Nhân vật trong tập (2b §5–§6): [Tên (vai · mã)], [Tên (vai · mã)], [Tên (vai · mã) (mới)] — vắng: [Tên (lý do đã cài)]
 
 🎙️ PHẦN 2 — HỒ SƠ GIỌNG NÓI & THẺ XƯNG HÔ TRONG TẬP (CHE TÊN VẪN NHẬN RA):
 | Nhân vật (Proper Name & Ảnh) | Cách nói & Nhịp câu | Từ vựng & Thẻ xưng hô (kèm điểm đổi) | Điều KHÔNG BAO GIỜ nói thẳng | Câu mẫu (Blind Test) | Thẻ Hành Vi Giọng Nói (`Laws D2 & D3` — không số tuổi, không `alto/baritone`) |
@@ -777,6 +780,10 @@ TẬP [N]: [Tên Tập] | CUNG CHIA: [Hồi I/II/III/IV · Archetype 1–5] | EN
 • 2. Bàn giao Đạo cụ Tier-1 & trạng thái nhân vật: [State 0/1/2, ai giữ; trang phục / thương tích / quan hệ đã đổi]
 • 3. Sổ thoại (Echo line, Lời hứa, Lời đe dọa, Lời nói dối & tập cần trả): [...]
 • 4. Sổ vòng lặp: L1 [câu hỏi] mở Cảnh [..] → trả Cảnh [..] / còn mở sang Tập [N+1]
+• 5. Bản đồ hành trình nhân vật — cột Tập [N] (2b §5):
+  | Nhân vật (vai · mã) | Muốn | Biết | Quan hệ | Lời nói dối | Có mặt |
+  |---|---|---|---|---|---|
+  | [Tên] | [...] | [...] | [...] | [nguyên / nứt / vỡ / chấp nhận sự thật] | [có / vắng: lý do] |
 
 📊 BẢNG CHẤM ĐỘ CUỐN (chấm lại sau khi viết văn xuôi) = [ ]/16
 ```
@@ -809,7 +816,7 @@ TẬP [N]: [Tên Tập] | CUNG CHIA: [Hồi I/II/III/IV · Archetype 1–5] | EN
 python engine/screenplay_audit.py output/<slug>/ep-NN-script.md
 ```
 
-The audit checks the Retention Map, the scene-list columns, `Vì vậy / Nhưng` links, the PREDICT ledger (`≥ 2` BROKEN with earlier plants — W10), loop plants before payoffs, feeling-label lines (W9), single-location stagnation (W11), word budgets, interjection rationing and hook/twist/cliffhanger repetition against the previous episode's script. Fix every `ERROR`; justify or fix every `WARN` before `CP3b`.
+The audit checks the Retention Map, the scene-list columns, `Vì vậy / Nhưng` links, the PREDICT ledger (`≥ 2` BROKEN with earlier plants — W10), loop plants before payoffs, feeling-label lines (W9), single-location stagnation (W11), word budgets, interjection rationing, hook/twist/cliffhanger repetition against the previous episode's script, and the character lines (`2b`): new named characters per episode, A1 presence, Arc Map rows for every character on screen, and characters absent more than 2 episodes in a row. Fix every `ERROR`; justify or fix every `WARN` before `CP3b`.
 
 **4. Checkpoints** — present in chat:
 ```text
@@ -1037,6 +1044,7 @@ d:\Project\Sven\
 │       ├── 0c-canonical-numbers.md                       ← Canonical Numbers: every count, duration, word & engagement budget
 │       ├── 1-narrative-screenplay-architecture.md        ← Pillar 1: Narrative Structure, 20 Twists & 8 Dialogue Models
 │       ├── 2-casting-worldbuilding-specification.md      ← Pillar 2: Cast Topology, 16:9 Sheets (Mẫu 1–3, 2B), 50 Styles, 30 Genres
+│       ├── 2b-character-lines.md                         ← Character Lines (canonical cast system: roles, topologies, arcs, Arc Map)
 │       ├── 3-cinematography-3d-staging.md                ← Pillar 3: 14 Scales, 4-Axis Angles & 3D Spatial Staging
 │       ├── 3b-lighting-atmospheric-physics.md            ← Assistant 3B: 6-Point Lighting Contract & Atmosphere
 │       ├── 3c-camera-master-grammar.md                   ← Camera Master Grammar (Director's working reference, read in full at Stage 4)

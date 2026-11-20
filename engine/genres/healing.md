@@ -12,6 +12,7 @@ Governed by: Screenwriter (Level 2), Director (Level 2) under Showrunner (Level 
 | **Regime** | 1 — Grounded |
 | **Genre Engine** | 6 — Kishōtenketsu (four movements) |
 | **Audience payoff** | Quiet recognition: "that is my life" — warmth and a small inner change that lingers after the last frame |
+| **Cast topology** (`2b-character-lines.md` §2) | A1 only, no villain — life, time, illness or loss is the obstacle; the people who enter A1's routine |
 | **Default episode shape** | 0c §4; `65:35` `10s:15s` (long 15s holds, rich ambient sound) |
 | **Preferred hooks** | #5 Atmospheric Contrast, #6 Body/Expression Detail, #11 Diegetic Sound |
 | **Preferred cliffhangers** | Gentle open questions: a letter not yet opened, a visitor at the gate, a recipe missing one step |

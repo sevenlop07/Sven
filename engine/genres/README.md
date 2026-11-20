@@ -61,7 +61,7 @@ The **Genre Library** (`engine/genres/`) serves as the modular repository of str
 
 ## 2b. Genre Card Schema (every module, new or old)
 Each module opens with a compact **Genre Card** so the Screenwriter can calibrate scorecards without reading the whole file:
-`Regime (1–4)` · `Genre Engine (1–6)` · `Audience payoff` · `Default episode shape (cite 0c §4)` · `Preferred hook types (#1–#12)` · `Preferred cliffhangers (C1–C7)` · `Favoured twist codes (TW-xx) & budget` · `Dialogue : visual ratio` · `Default ending_mode / fatality_policy` · `Signature bans` · `Scorecard criteria that must score 2`.
+`Regime (1–4)` · `Genre Engine (1–6)` · `Audience payoff` · `Cast topology (2b §2)` · `Default episode shape (cite 0c §4)` · `Preferred hook types (#1–#12)` · `Preferred cliffhangers (C1–C7)` · `Favoured twist codes (TW-xx) & budget` · `Dialogue : visual ratio` · `Default ending_mode / fatality_policy` · `Signature bans` · `Scorecard criteria that must score 2`.
 Pacing tables inside modules are **default sketches** that flex with the Act Archetype and the locked runtime (`0c-canonical-numbers.md` §4); they never override it.
 
 ## 2c. Mastery Playbook Schema (every module)

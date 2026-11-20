@@ -12,6 +12,7 @@ Governed by: Screenwriter (Level 2), Director (Level 2) & Combat Director (`@Com
 | **Regime** | 1 (grounded action only when the story is real-world) · 3 (supernatural) · 4 (martial / crime) |
 | **Genre Engine** | 3 — Gauntlet & Breakthrough |
 | **Audience payoff** | Kinetic adrenaline + tactical victory earned by character |
+| **Cast topology** (`2b-character-lines.md` §2) | A1 + boss + opponent ladder (each exposes one weakness); mentor, ally, traitor |
 | **Default episode shape** | 0c §4 Archetypes; `60:40` `10s:15s`; 3-Zone `40% drama : 40% action : 20% fallout` |
 | **Preferred hooks** | #2 In Medias Res, #4 Suspended Kinetic Moment, #9 Consequence First |
 | **Preferred cliffhangers** | C2 Threshold Ambush, C6 Suspended Strike, C3 Betrayal |

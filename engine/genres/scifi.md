@@ -12,6 +12,7 @@ Governed by: Screenwriter (Level 2), Director (Level 2) & Combat Director (`@Com
 | **Regime** | 2 — Speculative Sci-Fi (`workflow.md` §2.4) |
 | **Genre Engine** | 4 — Onion-Peel & Checkmate (mystery-led) or 3 — Gauntlet (survival-led) |
 | **Audience payoff** | The thrill of a "What if?" taken seriously: a rule of the new world turns into the human dilemma |
+| **Cast topology** (`2b-character-lines.md` §2) | A1 + the system and those who run it; insider, victim of the system, ally |
 | **Default episode shape** | 0c §4 Archetypes; `70:30` `10s:15s` |
 | **Preferred hooks** | #1 Visual Paradox, #10 Scale Contrast, #12 Cognitive Silence / Glitch |
 | **Preferred cliffhangers** | C1 Identity Unmasking (who/what is human), C5 Catastrophic Ultimatum, C4 Document Detonation (the log, the code) |

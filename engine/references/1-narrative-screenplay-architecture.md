@@ -1107,7 +1107,7 @@ Because different genres run on fundamentally different audience neurotransmitte
 * **A2 (Main Antagonist — Phản diện chính)**:
   - **MANDATORY INDEPENDENT SUBPLOT & BACKSTORY**: A2 is the primary nemesis and ideological counterweight to A1.
   - A2 is never evil for the sake of evil; A2 has an unyielding personal wound, a clear philosophy, and **is objectively right about something** (e.g., exposing the fragility of A1's naive idealism).
-  - **Shared Past Anchor**: A1 and A2 are two sides of the same coin, forged in the same historical crucible or traumatic event, but having made divergent moral choices.
+  - **Shared Past Anchor (strong option, not a requirement — `2b-character-lines.md` §8)**: A1 and A2 are two sides of the same coin, forged in the same historical crucible or traumatic event, but having made divergent moral choices.
 
 ---
 
@@ -1218,9 +1218,9 @@ Every character interaction MUST be constructed across 3 distinct psychological 
 
 | Format & Scope | Optimal Named Cast Size | Faction Allocation & Roles | Twist Servicing Engine |
 |---|:---:|---|---|
-| **Short Film**<br>*(1 Ep · 60s–120s)* | **3 – 4 Characters**<br>+ Active Tier C | • **A1** (Protagonist)<br>• **A2** (Allied Anchor / Mirror)<br>• **B1** (Main Antagonist)<br>• **Tier C** (1-2 speaking crowd witnesses) | Services **1–2 focused Twists** (e.g., `TW-10 Hidden Kindness` or `TW-08 Misunderstanding`). Fast, punchy, zero wasted screen time. |
-| **Mini-Series**<br>*(3 – 5 Episodes)* | **5 – 6 Characters**<br>+ Active Tier C | • **Phe A**: A1 + A2 (Partner) + A3 (Jealous Traitor)<br>• **Phe B**: B1 + B2 (Reluctant Enforcer / Secret Benefactor)<br>• **Tier C** (Gossip mob in Ep 2–3) | Services **3–4 chained Twists** across episodes (`TW-05 Judas Kiss` in mid-season ➔ `TW-16 Secret Benefactor` ➔ `TW-15 Moral Awakening`). |
-| **Full Series**<br>*(6 – 10+ Episodes)* | **7 – 9 Characters**<br>+ Active Tier C | • **Phe A**: A1 + A2 (Spouse) + A3 (Traitor) + A4 (Apprentice)<br>• **Phe B**: B1 + B2 (Benefactor) + B3 (Loved one B1 shields)<br>• **Mid-line**: Opportunistic double-dealer broker<br>• **Tier C**: Comprehensive living society & chorus | Services multi-layered **sub-plots, generational tethers, and false flags** (`TW-02 Decoy`, `TW-05`, `TW-08`, `TW-13`, `TW-11 Full Circle`). |
+| **Short Film**<br>*(1 Ep · 60s–120s)* | **3 – 4 Characters**<br>+ Active Tier C | • **A1** (Protagonist)<br>• **A2** (Antagonistic force — a person or a non-person obstacle)<br>• **B1** (Satellite, often an ally or mirror of A1)<br>• **Tier C** (1-2 speaking crowd witnesses) | Services **1–2 focused Twists** (e.g., `TW-10 Hidden Kindness` or `TW-08 Misunderstanding`). Fast, punchy, zero wasted screen time. |
+| **Mini-Series**<br>*(3 – 5 Episodes)* | **5 – 6 Characters**<br>+ Active Tier C | • **A1** + **A2**<br>• **Satellites**: B1 (partner, side A1 · B-15/B-05) + B2 (jealous traitor, cross · B-01) + B3 (reluctant enforcer or secret benefactor, side A2 · B-14/B-05)<br>• **Tier C** (gossip mob in Ep 2–3, microdrama/drama) | Services **3–4 chained Twists** across episodes (`TW-05 Judas Kiss` in mid-season ➔ `TW-16 Secret Benefactor` ➔ `TW-15 Moral Awakening`). |
+| **Full Series**<br>*(6 – 10+ Episodes)* | **7 – 9 Characters**<br>+ Active Tier C | • **A1** + **A2**<br>• **Side A1**: spouse (B-12/B-20) + apprentice (B-16)<br>• **Side A2**: benefactor/enforcer (B-05/B-14) + A2's loved one (B-10)<br>• **Cross**: traitor (B-01) + opportunistic double-dealer (B-03)<br>• **Tier C**: living society & chorus | Services multi-layered **sub-plots, generational tethers, and false flags** (`TW-02 Decoy`, `TW-05`, `TW-08`, `TW-13`, `TW-11 Full Circle`). Labels follow `2b-character-lines.md` §0–§1; sizes follow `0c` §6. |
 
 * **The Twist-Driven Casting Law**: Never introduce a satellite character without assigning them an explicit **Twist Function**. If a character does not advance a specific twist, trigger a moral choice, or serve as an Achilles' heel lever, **CUT THEM**.
 

@@ -80,8 +80,8 @@
 >    - *Matrix 6 (Continental & Slavic)*: `Julian Laurent`, `Simone Moreau`, `Nikolai Rostova`.
 > 3. **Full Name Format & Triad Entity Naming Law (`workflow.md` §2.7)**:
 >    - **Display Name (`setting.html` & Screenplay)**: Culturally authentic full name (`[First Name] [Last Name]` for Western/Global matrices, or native Vietnamese/East Asian order when set in Vietnam/Asia).
->    - **Prompt Character ID Token (`tap-X.html`)**: Unaccented `snake_case` format **`ho_ten`** (e.g., `minh_khang`, `hoang_nam`, `finn_gallagher`) to prevent AI twin-cloning and enforce unique subject identity (`— the only [ho_ten] in frame`).
->    - **Props & Locations in Prompts**: Natural English noun phrases **strictly without underscores** (e.g., `carved mahogany walking cane`, `sunlit townhouse open kitchen`). Reference image filenames retain underscores (`char_minh_khang.jpg`, `location_open_kitchen_4view.jpg`).
+> - **Prompt Character Name (`[subject]:`, `Shot 1..N`, speaker headers)**: the fixed **Proper Name** (`Lan`, `Bradley`) — never `snake_case` tokens such as `ho_ten` (`workflow.md` §2.2; `2b-character-lines.md` §8). Singularity seal: `— the only [Proper Name] in frame`.
+> - **Props & Locations in Prompts**: Natural English noun phrases **strictly without underscores** (e.g., `carved mahogany walking cane`, `sunlit townhouse open kitchen`). Reference image files use short hyphenated names: `[first_name]-home.jpg`, `loc-home.jpg`, `prop-cane.jpg` (`workflow.md` §2.2).
 
 ---
 
@@ -91,7 +91,7 @@
 Before creating any character profile, establish:
 1. **Central Emotional Wound & Thematic Question** of the narrative.
 2. **Earned Life Lesson ($L\text{-}XX$) & Narrative Format** (Short, Mini-Series, Full Series).
-3. **Dynamic Cast Scaling Law (`workflow.md` §2.4 & `1-narrative-screenplay-architecture.md` §0)**:
+3. **Dynamic Cast Scaling Law** — numbers live in `0c-canonical-numbers.md` §6; role labels, genre cast topologies, arc map and introduction rules live in `2b-character-lines.md` (it wins on any conflict):
    - **Short Film / Single Episode (1 episode)**: **3–4 named characters** (`A1` Protagonist + `A2` Antagonist/Counter-pole + `1–2 Tier B` Satellites) + `Tier C Chorus`.
    - **Mini-Series (3–5 episodes)**: **5–6 named characters** (`A1` + `A2` + `3–4 Tier B` Satellites) + `Tier C Chorus` (2–3 multi-layered twists across acts).
    - **Full Series (6–10+ episodes)**: **7–9 named characters** (`A1` + `A2` + `5–7 Tier B` Satellites across faction webs) + `Tier C Chorus`.
@@ -99,16 +99,16 @@ Before creating any character profile, establish:
    - **Per-Scene Character Rule (`Line A & B: 1–4 Max per Scene` | `Line C: Flexible`) & Context-Matched Multi-Outfit System**:
      * In the Stage 3 Rough Script, each scene stages **`1 to maximum 4 named characters` from Line A (`A1/A2`) and Line B (`Tier B`)**, while **Line C (`Tier C Chorus`) scales flexibly (`linh động`)** according to the location and plot beat.
      * **Story-Driven Locations & Multi-Outfit Progression**: Every location (*Ở nhà, Công việc, Đi chơi, Hẹn hò, Sự kiện...*) is engineered with deep narrative purpose. Characters retain 100% invariant facial/physical DNA while switching **Outfit Model Sheets (`Home / Work / Outing / Date / Event`)** across episodes and settings to match the story timeline.
-   - **Short-Form Viral (15s–60s / 1–3 episodes / <1,800w)**:
-     - `A1` (Protagonist) + `A2` (Antagonist) + **1–2 Tier B Satellites** (`B1`, `B2`) + `Tier C Chorus`.
-     - 1 Primary Twist detonator (`Judas Kiss`, `Karma Twist`, or `Perspective Twist`).
-   - **Mini-Series (4–8 episodes / 2,000–3,500w)**:
-     - `A1` + `A2` + **3–4 Tier B Satellites** (`B1` to `B4`) + `Tier C Chorus`.
-     - 2–3 Multi-layered Twists across acts.
-   - **Full Series (9–15+ episodes / 4,000–6,000+w)**:
-     - `A1` + `A2` + **5–6 Tier B Satellites** (`B1` to `B6`) + `Tier C Chorus`.
-     - Full cross-faction web (Betrayal, Secret Guardian, Legal Enforcer, Healer).
-4. **Zero-Fatality Verification**: Confirm that the climax and resolution resolve via moral awakening, legal justice, or reconciliation with ZERO casualties.
+   - **Retired duplicate table**: the second sizing list that stood here (short-form / 4–8 / 9–15 episodes) conflicted with the list above and is replaced by `0c` §6.
+   - **Role vocabulary**: `A1` is always the protagonist, `A2` always the antagonistic force (a person, a hidden person, or a non-person force) — never an ally or spouse (`2b` §0).
+   - **Satellite codes**: record every satellite as `B# · B-XX · side` using the crosswalk in `2b` §1 (B-Heart, B-Judas, B-A1, B-V1, B-Cross ➔ B-01…B-20).
+   - **Genre topology first**: choose the cast shape for the genre (ensemble, co-leads, hidden culprit, oppressor ladder, no-villain healing…) from `2b` §2 before filling profiles.
+   - **Arc map**: every named character gets series arc points and a row in the Character Arc Map (`2b` §4–§5), locked at `CP1` and updated after each episode.
+   - **Introductions**: Episode 1 introduces at most `3–4` named characters, later episodes at most `1–2` new ones, each introduced by an action that shows want and flaw (`2b` §6).
+   - **Twist-driven casting** still applies: no named character without a plot or twist function and an independent want.
+   - **Chorus by genre**: the mockery ➔ shame ➔ celebration arc is for microdrama and public-injustice drama only (`2b` §7).
+   - **Minors**: under-18 characters follow the Minor Protection Protocol (`workflow.md` §2.7); adult leads may be any age `≥ 18`.
+4. **Ending & Fatality Policy**: Confirm the resolution fits the project's `ending_mode` / `fatality_policy` (positive and zero fatalities by default; zero gore always — `workflow.md` §2.11).
 
 ---
 
@@ -131,11 +131,11 @@ Before creating any character profile, establish:
 ━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━
 TIER A1 — MAIN PROTAGONIST (NHÂN VẬT CHÍNH)
 ━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━
-Archetype:      [A1-01 The Quiet Carrier / A1-02 The Indispensable Provider / A1-03 The Unyielding Stoic / A1-04 The Late Bloomer / A1-05 The Returning Exile]
+Archetype:      [A1-01 The Quiet Carrier / A1-02 The Indispensable Provider / A1-03 The Unyielding Stoic / A1-04 The Late Bloomer / A1-05 The Returning Exile / active-flaw archetypes A1-06…A1-13 in `2b-character-lines.md` §3]
 Name:               [First Name Last Name — strictly 2 words]
-Age:                [Specific — 25–70, for 16:9 Model Sheet Image Generation only]
+Age:                [Specific adult age ≥ 18 (minors per Minor Protection Protocol) — for 16:9 Model Sheet Image Generation only]
 Gender:             [Specific]
-Occupation:         [High-Precision, Arena-Calibrated Vocation — e.g., "Wall Street M&A Restructuring Attorney", "Forensic Trust & Offshore Auditor", "Quantitative Hedge Fund Strategist", "Chief Neurosurgeon", "Aerospace Systems Architect", "Federal Prosecutor". STRICT BAN on defaulting to manual/artisan/handicraft/carpentry/blue-collar trades unless explicitly requested by the user]
+Occupation:         [Arena-true vocation that gives leverage in this story's conflict — never the same vocation set as previous projects; avoid defaulting to manual/artisan/handicraft trades unless the user asks (`workflow.md` §5.1)]
 Setting:            [Specific sensory locale and socio-economic milieu]
 
 CHARACTER ANATOMICAL & STYLING ATTRIBUTES (MANDATORY EXPLICIT DECLARATION):
@@ -187,13 +187,13 @@ Core Fear:               [The terrifying state they are desperately fleeing]
 The Lie Believed:        [False internal narrative keeping them defensive]
 INTERNAL CONTRADICTION:  [MANDATORY — unyielding contradiction making them deeply human]
 
-STORY ARC (6-BEAT CINEMATIC)
+STORY ARC (6-BEAT for a short film — for a series use `2b` §4 arc points + §5 Arc Map)
 ──────────────────────
 Beat 1 (Hook):    [Rupture of normalcy; exposed to A2's escalating pressure]
 Beat 3 (Crisis):  [Trapped by A2's scheme; condemned by Tier C gossip; betrayed or tested by Tier B]
-Beat 4 (Climax):  [Sacrificial decision or moral revelation; refuses vengeance]
+Beat 4 (Climax):  [Crisis choice — the costly decision that breaks (or, in a fall arc, confirms) the Lie]
 Beat 6 (Echo):    [Restored dignity, reconciled community, peaceful closure]
-Arc Type:         [Transformational / Steadfast Moral Beacon]
+Arc Type:         [Positive change / Steadfast / Corrupt-then-redeem / Fall (only if ending_mode allows) — `2b` §3]
 ━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━
 ```
 
@@ -232,7 +232,7 @@ FORMAT: Single continuous prose paragraph, max ~120 words, 9 fields:
 [Full Name] is a [Age]-year-old [Gender], [Height]cm tall, [Weight]kg, with a [Head-to-body ratio] frame. [Ethnicity + skin tone/undertone + surface finish]. [Build + posture: distinct silhouette from A1]. [Hair: color + styling]. [Facial features + Female Makeup OR Male Grooming] featuring [UNIQUE MARK: distinct from A1]. [Pristine baseline costume: fabrics, colors, bare hands]. [Micro-expression: cold calculation or tension habit].
 
 UNIQUE MARK:     [Sole physical identifier]
-Lighting Note:   [Scenes featuring A2 MUST use cooler, higher-contrast, or harsher directional lighting]
+Lighting Note:   [Optional mood cue (e.g., cooler, harder light) — never for a hidden A2, where it would give the twist away]
 
 BASELINE PRESENCE & DYNAMIC FLUIDITY (KHÍ CHẤT & DÒNG CHẢY ĐỘNG)
 ──────────────────────────────────────────────────────────────────
@@ -248,7 +248,7 @@ Sympathy Hook:           [The quiet vulnerable detail making the audience unders
 INTERNAL CONTRADICTION:  [MANDATORY]
 Voice Sample:            [One cutting, memorable line of dialogue]
 Climactic Defeat:        [Exposure of deception, moral awakening (Anagnorisis), lawful disarmament]
-Zero-Fatality Resolution:[Yields pride, faces lawful penance, accepts restorative redemption]
+Resolution:              [Per ending_mode / fatality_policy — e.g., yields pride, faces lawful penance, restorative redemption]
 ━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━
 ```
 
@@ -257,13 +257,13 @@ Zero-Fatality Resolution:[Yields pride, faces lawful penance, accepts restorativ
 ### STEP 3 — BUILD TIER B SATELLITES (The Interdependent Cross-Axis Network)
 
 > [!IMPORTANT]
-> **THE DUAL-RELATIONSHIP MANDATE (BẮT BUỘC QUAN HỆ KÉP)**:
+> **THE DUAL-RELATIONSHIP MANDATE (BẮT BUỘC QUAN HỆ KÉP — when A2 is a person; other genres use the topology in `2b` §2)**:
 > Tier B characters (`B1, B2, B3...`) must **NEVER exist in an isolated bubble**. Every Tier B satellite MUST explicitly document:
 > 1. Relationship to **A1** (Allied, indebted, romantic, mentor, or victim).
 > 2. Relationship to **A2** (Blackmailed, employed, family kin, infiltrator, or rival).
 > 3. Psychological motive & internal conflict.
 > 4. Designated **Twist Payload (`TW-01` to `TW-20`)**.
-> 5. **Zero-Fatality Resolution** path.
+> 5. **Resolution path** under the project's `ending_mode` / `fatality_policy`, plus a **mini-arc** (start ➔ turn ➔ end, with episodes — `2b` §5).
 
 #### Master Reference: 20 Tier B Satellite Archetypes across 6 Domains
 Select satellite roles directly from Section 3 (Master Character Archetypes) below:
@@ -298,7 +298,7 @@ DUAL-RELATIONSHIP MANDATE (QUAN HỆ KÉP) ⭐
 2. Relationship to A2:  [Exact connection: e.g. Indebted gambler whose debt note is held by A2]
 3. Psychological Motive: [e.g. Paralyzed between love for brother and terror of family ruination]
 4. Twist Trigger:       [Specific Twist Code: e.g. TW-08 Misunderstanding / TW-05 Judas Kiss]
-5. Zero-Fatality Fate:  [e.g. Debt cancelled by legal exposure; reconciled with A1 in tears]
+5. Resolution Fate:  [e.g. Debt cancelled by legal exposure; reconciled with A1 in tears]
 
 VISUAL ANCHOR ⭐ (Mandatory for all Tier B appearing in >= 2 scenes)
 ──────────────────────────────────────────────────────────────────
@@ -317,7 +317,7 @@ DRAMATIC PROFILE
 Thematic Function:      [Catalyst / Trap / Moral Mirror / Bridge]
 What They Conceal:      [The hidden secret or prop kept from A1 or A2]
 Voice Sample:           [One distinctive line illustrating their internal agony or dilemma]
-Key Scenes:             [Scene # where they interact with A1, Scene # with A2, Scene # of Twist Revelation]
+Key Scenes & Mini-Arc:  [Episode/scene with A1, with A2, of the Twist Revelation; mini-arc start ➔ turn ➔ end (`2b` §5)]
 ━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━
 ```
 
@@ -326,7 +326,7 @@ Key Scenes:             [Scene # where they interact with A1, Scene # with A2, S
 ### STEP 4 — BUILD TIER C (Active Living Society & Greek Chorus — Quần Chúng & Dư Luận)
 
 > [!IMPORTANT]
-> **TIER C IS AN ACTIVE DRAMATIC ENGINE (NOT A SILENT BACKDROP)**:
+> **TIER C IS AN ACTIVE DRAMATIC ENGINE (NOT A SILENT BACKDROP)** — the mob arc below is the microdrama / public-injustice pattern; other genres use `2b` §7:
 > Tier C represents the living community, market crowds, and public opinion.
 > - **Active Dialogue**: Participates in casual, realistic dialogue (asking directions, bartering goods, serving tea).
 > - **Greek Chorus & Mob Dynamics**: When A1 is framed or humiliated by A2, Tier C **actively gossips, mocks, points fingers, and jumps to wrongful conclusions** (e.g. *"Look at him! What a shameless hypocrite!"*).
@@ -357,7 +357,7 @@ Sensory Costume & Atmosphere:   [Era-appropriate fabrics: dusty linen smocks, wo
 ━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━
 MASTER CROSS-AXIS BINDING MATRIX
 ━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━
-| Tier & Name | Archetype | Dual Relation: A1 | Dual Relation: A2 | Core Motive | Twist Code | Zero-Fatality Fate | Model Sheet? |
+| Tier & Name | Archetype | Dual Relation: A1 | Dual Relation: A2 | Core Motive | Twist Code | Resolution Fate | Model Sheet? |
 |---|---|---|---|---|---|---|:---:|
 | **A1** [Name] | [A1-XX] | Central Hero | Primary Antagonist | Redemption / Truth | Core Arc | Restored & Healed | **MANDATORY** |
 | **A2** [Name] | [A2-XX] | Primary Counter-pole | Central Villain | Preservation of Pride | Downfall | Lawful Restitution | **MANDATORY** |
@@ -605,6 +605,33 @@ RIGHT ZONE (occupying the right 45% of the canvas width — Figure 4: One Large 
 Features a prominent, zoomed-in high-definition chest-up portrait filling the right 45% of the frame with impactful facial clarity while maintaining safe headroom margin above the hair crown, entire head, full cranium, and complete wavy walnut-brown hairstyle 100% fully visible inside the canvas with clear breathing space below top border, in strictly direct frontal eye-level view facing camera directly, capturing razor-sharp facial features, dewy-satin skin texture, hazel iris catchlights, coral-rose gradient lips, styled walnut-brown hair strands, and organic neckline.
 
 Professional studio lighting, subtle soft grounding shadows under footwear, strictly zero text, zero typography, zero labels, strictly zero background scenery, zero environmental elements, zero furniture, zero watermark, strictly zero height mismatch between the three full-body turnaround figures, strictly no enlarged or stretched headless bodies, headless necks must never touch the top canvas border, all three turnaround bodies must align horizontally at the shoulders, waist, and heels, all 4 figures 100% fully visible inside the 16:9 frame, strictly zero cropped head, strictly no cut-off hair, no truncated hair crown, no hair touching canvas edges, ample empty dark headroom margin above the skull, strictly zero out-of-frame head, no chopped skull, portrait strictly frontal view only.
+```
+
+##### 👗 MẪU 1C: THAM CHIẾU KÉP — KHÓA MẶT NHÂN VẬT GỐC (`<<<Image 1>>>`) + KHÓA TRANG PHỤC / VÁY MẪU (`<<<Image 2>>>`) TRÊN BẢNG THAM CHIẾU 16:9 4-FIGURE (`MODE R-C DUAL-REFERENCE WARDROBE SWAP SHEET`)
+*(Chuẩn bắt buộc khi User đã có sẵn ảnh mặt/nhân vật gốc `<<<Image 1>>>` và 1 hoặc nhiều ảnh trang phục/váy rời `<<<Image 2>>>` cần mặc lên người nhân vật để tạo bộ ảnh tham chiếu `16:9 4-Figure Turnaround Model Sheet` chuẩn cho video biến hình trang phục, lookbook thời trang hoặc đổi đồ theo tập. Áp dụng linh hoạt nền trắng `solid pure white studio background` cho váy/đồ tối màu và nền xám tối `solid dark neutral grey studio background` cho váy/đồ sáng màu)*
+```text
+Style: Theatrical film reference, high-end live-action fashion and cinematic portraiture, DaVinci color grading, pristine digital finish.
+
+Ultra-realistic human character reference sheet, 8K ultra HD, ultimate details, photorealistic skin and fabric texture, professional studio character model sheet, shot with 85mm f1.4 large aperture lens, shallow depth of field, focus precisely locked on the character's face.
+
+Character <<<Image 1>>> (fully_preserved - maintain 100% identical female face, three-dimensional facial bone structure, eyes, nose bridge, lips, skin tone, exact hairstyle, hair color, and exact eyeglasses/accessories if present from <<<Image 1>>>): Aesthetic of high-fashion glamorous lead, poised magnetic temperament. One young adult woman, 168cm height, 8-head high-fashion proportions, graceful hourglass figure with slender cinched waist, sculpted feminine bust-to-hip curves, delicate collarbones, slender feminine hands with delicate wrists and long tapering fingers, and long slender toned legs. Translucent porcelain velvet-matte skin with soft rosy undertones and fine natural micro-pores; softly arched feathered eyebrows, subtle tightline eyeliner, delicately curled wispy lashes, soft apricot-rose blush on the cheekbones, and plump hydrated lips with a soft rosewood-coral gradient tint.
+
+Wardrobe <<<Image 2>>> (fully_preserved - replicate 100% exact dress design, silhouette, neckline cut, waist structure, skirt hem length, fabric weave texture, and exact color from <<<Image 2>>>): Tailored high-fashion dress from <<<Image 2>>> fitted naturally to her hourglass silhouette, paired with sleek matching high-heeled stiletto sandals; bare hands resting naturally beside the torso completely free of props.
+
+Solid [pure white (for dark dress) / dark neutral grey (for light dress)] studio backdrop with zero scenery and zero environmental elements, creating sharp optical contrast against the dress from <<<Image 2>>> and highlighting crisp fabric edge separation. Professional studio lighting, crisp rim outline light separating the silhouette from the studio background, soft balanced fill light on the face, subtle soft contact shadows under the heels.
+
+Character reference model sheet, 16:9 widescreen aspect ratio, clean solid [pure white / dark neutral grey] studio background, containing 4 figures arranged from left to right across two zones:
+
+LEFT AND CENTER ZONE (occupying the left 55% of the canvas width — Three Compact Full-Body Turnaround Figures at Identical 1:1 Body Scale):
+Displays three full-body turnaround figures standing side by side in a natural, relaxed posture with arms resting loosely beside the torso and high-heeled sandals grounded on the exact same horizontal floor baseline. CRITICAL SCALE LOCK: All three turnaround bodies MUST share the exact same 1:1 anatomical body size — their shoulder lines, chest lines, waistlines, dress hems, and shoe heels must align along strict horizontal parallel lines across all three figures:
+1. Figure 1 (Far Left — Front Full-Body View, Clean Mannequin Neck Cut at Shared Shoulder Line): Full-length front body from the base of the neck down to the high-heeled sandals at the exact same 1:1 body scale and exact same horizontal shoulder height as Figure 3, showing the complete front dress design, neckline, waist fit, skirt drape, and heels from <<<Image 2>>>. Clean mannequin-style neck termination at the collar line with wide empty studio background space above the neck (strictly zero head, zero face, and never stretching the headless body to touch the top border).
+2. Figure 2 (Center-Left — 90-Degree Lateral Side Profile Full-Body View, Clean Mannequin Neck Cut at Shared Shoulder Line): Full-length 90-degree side profile body from the base of the neck down to the high-heeled sandals at the exact same 1:1 body scale and exact same horizontal shoulder height as Figure 3, showing the lateral hourglass silhouette, side seam drape of the dress from <<<Image 2>>>, and heel profile. Clean mannequin-style neck termination at the collar line with wide empty studio background space above the neck (strictly zero head, zero face, and never stretching the headless body to touch the top border).
+3. Figure 3 (Center — Rear Back Full-Body View WITH Head & Hair at Shared Shoulder Line): Full-length rear back view from the top of the head down to the high-heeled sandals at the exact same 1:1 body scale, with shoulders, waistline, dress hem, and heels aligned strictly horizontally with Figures 1 and 2, showing the complete back of the head and exact rear hairstyle from <<<Image 1>>> extending into the upper space above the shared shoulder line, nape of the neck, rear back cut and seams of the dress from <<<Image 2>>>, and heels touching the floor.
+
+RIGHT ZONE (occupying the right 45% of the canvas width — Figure 4: One Large Frontal Chest-Up Portrait):
+Features a prominent, zoomed-in high-definition chest-up portrait filling the right 45% of the frame with impactful facial clarity while maintaining safe headroom margin above the hair crown, entire head, full cranium, and complete hairstyle 100% fully visible inside the canvas with clear breathing space below top border, in strictly direct frontal eye-level view facing camera directly, capturing razor-sharp facial features from <<<Image 1>>>, porcelain velvet-matte skin texture, iris catchlights, gradient rose lips, and the upper neckline of the dress from <<<Image 2>>>.
+
+Professional high-end studio lighting, subtle soft contact shadows under heels, strictly zero text, zero typography, zero labels, strictly zero background scenery, zero environmental elements, zero furniture, zero watermark, strictly zero height mismatch between the three full-body turnaround figures, strictly no enlarged or stretched headless bodies, headless necks must never touch the top canvas border, all three turnaround bodies must align horizontally at the shoulders, waist, dress hem, and heels, all 4 figures 100% fully visible inside the 16:9 frame, strictly zero cropped head, strictly no cut-off hair, no truncated hair crown, no hair touching canvas edges, ample empty headroom margin above the skull, strictly zero out-of-frame head, no chopped skull, portrait strictly frontal view only.
 ```
 
 ##### 🎮 MẪU 2: PHONG CÁCH 3D GAME CG HOLLYWOOD (UNREAL ENGINE & OCTANE RENDER • SOLID STUDIO BACKDROP)
