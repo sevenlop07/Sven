@@ -6,12 +6,12 @@ description: >
   (1) Keyword-Driven Niche Discovery & Validation (Seed-to-Micro-Niche hierarchy, 5-point niche viability scorecard, Outlier Ratio >= 5x, RPM benchmarks, Blue-Ocean content gap analysis).
   (2) Semantic Entity Cluster & Knowledge Graph Engine (Competitor outlier scans, Entity Triples [Subject-Object-Action], AI transcript mining, Incognito Wildcard autocomplete sweep, 10-video cluster skeleton, Mandatory Canonical Root Entity Law, and Cluster Health Scoring).
   (3) High-CTR Packaging Velocity (50–65 char titles via 4 Universal Formulas, Narrative POV Invariance Standard, Packaging Synergy Law [Bình Thông Nhau], and 4 Sovereign Thumbnail Pillars [Suspended Catastrophe, Extreme Duality & Somatic Delta, Embedded 3D Cinematic Text, Mobile Safe Zones]).
-  (4) Multi-Modal YouTube SEO & Physical OS Metadata (4-Tier NLP descriptions inside copy-paste blocks, 7-Cluster Audience Tags <= 500 chars, 141 wpm spoken transcript indexing, <= 49 char filename standard, Python Mutagen ID3 USLT lyrics injection, ExifTool commands, and Sven Two-Tier Omnibus/Episodic deliverable seo-youtube.html).
+  (4) Multi-Modal YouTube SEO & Physical OS Metadata (4-Tier NLP descriptions inside copy-paste blocks, 7-Cluster Audience Tags <= 500 chars, 141 wpm spoken transcript indexing, <= 49 char filename standard, Python Mutagen ID3 USLT lyrics injection, ExifTool commands, and Sven Two-Tier Omnibus/Episodic deliverable seo-package.md).
   (5) Audience Retention Engineering (AVD > 50%, 0–5s in medias res visual hook, 5–30s cognitive disruption, 15–30s sensory pattern interrupts, 20s binge-loop kinetic bridge).
   (6) 48-Hour Studio Analytics Emergency Troubleshooting Matrix.
 
   Trigger phrases include: "keyword research", "tim kiem ngach", "youtube niche", "entity cluster",
-  "cum thuc the", "youtube seo", "optimize youtube", "seo-youtube.html", "suggested video",
+  "cum thuc the", "youtube seo", "optimize youtube", "seo-package.md", "suggested video",
   "youtube tags", "youtube description", "thumbnail visual tension", "universal title matrix",
   "avd retention", "outlier scan", "youtube growth", "youtube algorithm", "binge loop",
   "canonical root entity", "niche discovery", "fix low ctr", "co-recommendation".
@@ -43,7 +43,7 @@ Every deliverable produced by this engine is immediately actionable, mathematica
 │ • Complete 10-Video Entity Cluster│ • Tier 1: Full Movie Omnibus       │
 │ • Title/Thumbnail/SEO Package     │ • Tier 2: Episodic Serial Funnel   │
 │ • Troubleshooting Studio Telemetry│ • Output:                          │
-│                                   │   output/<project>/seo-youtube.html│
+│                                   │   output/<project>/seo-package.md  │
 └───────────────────────────────────┴────────────────────────────────────┘
 ```
 
@@ -411,10 +411,10 @@ Action Hook  Disruption   (Every 15–30s Cadence)             Kinetic Bridge
 
 ---
 
-## STEP 9 — SVEN TWO-TIER DELIVERABLE SPECIFICATION (`seo-youtube.html`)
+## STEP 9 — SVEN TWO-TIER DELIVERABLE SPECIFICATION (`seo-package.md`)
 
-For all Sven production projects, generate the interactive Two-Tier SEO Package at:
-`output/<project-name>/seo-youtube.html`
+For all Sven production projects, deliver the Two-Tier SEO Package in chat as copy-paste blocks and save it as Markdown at:
+`output/<project-name>/seo-package.md` (never an HTML file — `setting.html` is the project's only HTML deliverable, `workflow.md` §2.10)
 
 ```
 ┌────────────────────────────────────────────────────────────────────────┐

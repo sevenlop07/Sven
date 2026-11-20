@@ -61,3 +61,60 @@ High-velocity containment breaches, pursuits or zero-gravity struggles go to `@C
 2. Was the deciding rule planted at least twice before it decided anything?
 3. Is the episode's crisis choice impossible without the premise?
 4. Does any line explain the technology that an insert could show instead?
+
+---
+
+## Mastery Playbook — Sci-Fi (README §2c)
+
+### P1. The promise and the three killers
+- **Promise**: one "What if?" taken seriously until it becomes a human dilemma the viewer cannot stop arguing about.
+- **Killer 1 — the gadget that wins**: technology never resolves the climax; a person's choice does.
+- **Killer 2 — jargon walls**: if a line explains the mechanism, replace it with an insert.
+- **Killer 3 — too many novelties**: one premise explored deeply beats five stacked inventions.
+
+### P2. Series architecture
+| Act | Job |
+|---|---|
+| I The rule | The world working normally; one glitch pulls the hero in; the 3 hard rules shown in use |
+| IIA Exploit | The hero uses or hides the rule; it starts charging its human cost |
+| IIB Midpoint | The failure limit is discovered — the system is not what everyone believed |
+| IIIA Collapse | The cost compounds; institutions close in; allies chose the system |
+| IIIB+IV The choice | The hero decides what the technology is for, at a personal price; the world-state changes permanently |
+- **Rule ledger**: mechanism, failure limit, human cost — each with the scene it is first shown and the scene it decides.
+
+### P3. Episode architecture (default ~10 scenes)
+| Scenes | Function |
+|---|---|
+| 01 | The rule seen in an ordinary moment, then a glitch |
+| 02–03 | Who benefits and who pays |
+| 04 | An insert shows the cost (a gauge, a memory gap, a missing file) |
+| 05–06 | The opposing side uses the same rule better |
+| 07 | Breach or pursuit only if the plot produces it |
+| 08 | The failure limit hits at the worst moment |
+| 09 | Crisis choice priced by the human cost |
+| 10 | A reframe of who controls the system |
+
+### P4. Signature scene: the cost made visible
+- One tactile object shows what the technology takes: a child who no longer recognises a parent's voice, a door that refuses a fingerprint after a memory sale.
+- Keep the scale human: one family, one crew, one block.
+
+### P5. Dialogue
+- People talk about their lives, not the technology; the tech appears in how they speak.
+- Example:
+  > *Trên cổ tay Hà, đồng hồ ký ức chỉ còn 12%.*
+  > **Kỹ thuật viên:** "Bán thêm một ký ức nữa là đủ tiền viện phí."
+  > **Hà:** "Ký ức nào rẻ nhất?"
+  > **Kỹ thuật viên:** "Ngày cưới. Ai cũng nghĩ sẽ nhớ mãi."
+  > *Hà nhìn chiếc nhẫn. Cô không trả lời.*
+
+### P6. Hooks, twists, cliffhangers
+- Hooks: #1 Visual Paradox, #10 Scale Contrast, #12 Cognitive Glitch.
+- Twists: TW-04 Perspective, TW-17 Illusion, TW-18 Time Shift, TW-16 Secret Connection.
+- Cliffhangers: C1 (who is human), C5 Ultimatum, C4 the log/code.
+
+### P7. Mastery checklist
+1. Can each hard rule be stated in one sentence and pointed to on screen?
+2. Was the deciding rule planted at least twice?
+3. Is the crisis choice impossible without the premise?
+4. Is the climax won by a choice, not a gadget?
+5. Is no mechanism explained that an insert could show?

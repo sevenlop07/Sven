@@ -119,3 +119,17 @@
 | Next-episode click-through (series) | `≥ 25%` |
 
 Record actuals per episode in `history-registry.json → performance` (`workflow.md` §11).
+
+## §10 — Known Superseded Numbers & Legacy Sections in the Pillars
+
+The Pillars are large catalogs written before this table. Where they disagree with `0c`, **`0c` wins** (`workflow.md` §2.1). Known spots:
+
+| Where | Legacy text | Use instead |
+|---|---|---|
+| Pillar 4 § 2 (Dual Scene Paradigm) and § 6 item 9; § Part VI Gate 4B notes | Single-speaker `10s` budgets `14–24w`, "cap ≤ 32w" | `0c` §2: `≤ 22` words per `10s` clip, `18–32` per `15s` dialogue clip |
+| Pillar 4 Part VI (`tap-X.html` specification) and `episode_audit_suite.py` | Per-episode HTML files and their audit | Retired by the Single-HTML Law; Stage 3 scripts are `ep-NN-script.md` audited by `engine/screenplay_audit.py` |
+| Doctrine §3.3 Tier 2, Pillar 4 § 1.2 | "One continuous camera shot per clip" | `0c` §1: one dramatic beat per clip; shot topology by intent (`1–4` dialogue, `1–9` action) |
+| Any file | "`3.5s–4.5s` spoken window", "Zero Tail-Cut = 0 words in the final shot" | `0c` §2: `3.2s–4.5s`; Law D5 Mode 1 or Mode 2 |
+| Any file | "`12–18` scenes per ~3-min episode" as the default | `0c` §4: scene count from the Act Archetype or the locked runtime |
+| Any file | Zero fatality / positive ending as Hard Constraints | `workflow.md` §2.11: Craft Defaults set per project (`ending_mode`, `fatality_policy`); zero gore stays hard |
+

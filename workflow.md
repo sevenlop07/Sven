@@ -39,11 +39,11 @@
 > 1. **Self-Contained `< 700-Line` Execution Cores First**: All mandatory execution rules, decision matrices, and output schemas are consolidated inside **`workflow.md` (read by stage slice)**, **`.agents/SCREENWRITER.md`**, **`.agents/DIRECTOR.md`**, **`.agents/PHOTO_DIRECTOR.md`**, **`.agents/STORYBOARD_DIRECTOR.md`**, **`0b-temporal-camera-grammar.md`** and **`0c-canonical-numbers.md`** (each read in full in one call). Line counts are not written here because they drift; `python engine/doc_range_check.py` verifies every range below and `--map <file>` prints current section lines.
 > 2. **Exact `StartLine–EndLine` Coordinates for Large Catalog Pillars**: Whenever consulting a Pillar catalog (`1–4`), ALWAYS pass the exact `StartLine` and `EndLine` listed below (never read blindly from line 1 to 3000):
 >    - **Startup (`K0–K3`)**: `workflow.md` (`StartLine: 1, EndLine: 375`) + `AGENT.md` (`StartLine: 1, EndLine: 86`) + `engine/runbooks.json` + `history-registry.json`
->    - **Stage 0 (`Concepts → CP0`)**: `workflow.md` (`StartLine: 377, EndLine: 453 · §5`) + `.agents/SCREENWRITER.md` (`StartLine: 1, EndLine: 132`) + `0c-canonical-numbers.md` (`StartLine: 1, EndLine: 121`) + `0-creative-doctrine.md` (`StartLine: 175, EndLine: 222 · §1.2` & `StartLine: 503, EndLine: 677 · §8–§9`)
->    - **Stage 1 (`Master Storyline & Blueprint → CP1`)**: `workflow.md` (`StartLine: 457, EndLine: 569 · §6`) + `0c-canonical-numbers.md` (`StartLine: 1, EndLine: 121`) + `1-narrative-screenplay-architecture.md` (`StartLine: 850, EndLine: 1055` — **20/80 Structural Law: 6 Genre Engines & 5 Episode Archetypes**; `StartLine: 1445, EndLine: 1515` — **20 Twists Catalog**) + active `engine/genres/*.md` (`100% read in 1 call`)
+>    - **Stage 0 (`Concepts → CP0`)**: `workflow.md` (`StartLine: 377, EndLine: 453 · §5`) + `.agents/SCREENWRITER.md` (`StartLine: 1, EndLine: 133`) + `0c-canonical-numbers.md` (`StartLine: 1, EndLine: 135`) + `0-creative-doctrine.md` (`StartLine: 175, EndLine: 222 · §1.2` & `StartLine: 503, EndLine: 677 · §8–§9`)
+>    - **Stage 1 (`Master Storyline & Blueprint → CP1`)**: `workflow.md` (`StartLine: 457, EndLine: 569 · §6`) + `0c-canonical-numbers.md` (`StartLine: 1, EndLine: 135`) + `1-narrative-screenplay-architecture.md` (`StartLine: 850, EndLine: 1055` — **20/80 Structural Law: 6 Genre Engines & 5 Episode Archetypes**; `StartLine: 1445, EndLine: 1515` — **20 Twists Catalog**) + active `engine/genres/*.md` (`100% read in 1 call`)
 >    - **Stage 2 (`Pre-Production Resource File setting.html → CP2`)**: `workflow.md` (`StartLine: 573, EndLine: 644 · §7`) + `2-casting-worldbuilding-specification.md` (`StartLine: 390, EndLine: 720` — **16:9 Model Sheets Mẫu 1A/1B/2/2B/3**; `StartLine: 1410, EndLine: 1746` — **`setting.html` 10-Section Spec**; `StartLine: 1770, EndLine: 2215` — **50 Master Visual Styles**)
->    - **Stage 3 (`Episode N Rough Script & Deep Per-Scene Breakdown in Chat → CP3`)**: `workflow.md` (`StartLine: 648, EndLine: 821 · §8`) + `.agents/SCREENWRITER.md` (`StartLine: 1, EndLine: 132`) + `0c-canonical-numbers.md` (`StartLine: 1, EndLine: 121`) + `0-creative-doctrine.md` (`StartLine: 130, EndLine: 149 · §1` & `StartLine: 503, EndLine: 677 · §8–§9`) + `0b-temporal-camera-grammar.md` (`StartLine: 1, EndLine: 282`) + `1-narrative-screenplay-architecture.md` (`StartLine: 1307, EndLine: 1415` — **12 Hooks & 5 Bridges**; `StartLine: 1865, EndLine: 2265` — **WPS, 3-Layer Cadence & 9 Voice Modes**)
->    - **Stage 4 (`Interactive Scene-by-Scene Prompt Production & Visual Cross-Check in Chat → CP4`) & Turn-1 Direct Prompt Shortcut**: `workflow.md` (`StartLine: 825, EndLine: 945 · §9`) + `.agents/DIRECTOR.md` (`StartLine: 1, EndLine: 452`) + `0c-canonical-numbers.md` (`StartLine: 1, EndLine: 121`) + `0-creative-doctrine.md` (`StartLine: 1, EndLine: 150` — **Scene Intent & Directing from Intent**) + `0b-temporal-camera-grammar.md` (`StartLine: 1, EndLine: 282` — **Speech Physics, One-Move Rule, Zero Tail-Cut Law & 10s/15s Templates**) + `4-ai-video-prompt-compiler.md` (`StartLine: 160, EndLine: 285` & `StartLine: 630, EndLine: 715` — **Temporal-Kinetic-Vocal Equilibrium, `3.2s–4.5s` Spoken Shot Formula & Terminal Settle**) + `1-narrative-screenplay-architecture.md` (`StartLine: 1865, EndLine: 2150` — **WPS & 3-Layer Vietnamese Relational Dialogue**) + (`combat-director/SKILL.md` for `Seedance` Action/Chase/Combat scenes; `.agents/PHOTO_DIRECTOR.md` for Single-Frame Still Images/Keyframes; `.agents/STORYBOARD_DIRECTOR.md` for `9/12/15/25-Shot` Storyboard Grids & `Storyboard-to-Video`)
+>    - **Stage 3 (`Episode N Rough Script & Deep Per-Scene Breakdown in Chat → CP3`)**: `workflow.md` (`StartLine: 648, EndLine: 821 · §8`) + `.agents/SCREENWRITER.md` (`StartLine: 1, EndLine: 133`) + `0c-canonical-numbers.md` (`StartLine: 1, EndLine: 135`) + `0-creative-doctrine.md` (`StartLine: 130, EndLine: 149 · §1` & `StartLine: 503, EndLine: 677 · §8–§9`) + `0b-temporal-camera-grammar.md` (`StartLine: 1, EndLine: 282`) + `1-narrative-screenplay-architecture.md` (`StartLine: 1307, EndLine: 1415` — **12 Hooks & 5 Bridges**; `StartLine: 1865, EndLine: 2265` — **WPS, 3-Layer Cadence & 9 Voice Modes**)
+>    - **Stage 4 (`Interactive Scene-by-Scene Prompt Production & Visual Cross-Check in Chat → CP4`) & Turn-1 Direct Prompt Shortcut**: `workflow.md` (`StartLine: 825, EndLine: 945 · §9`) + `.agents/DIRECTOR.md` (`StartLine: 1, EndLine: 452`) + `0c-canonical-numbers.md` (`StartLine: 1, EndLine: 135`) + `0-creative-doctrine.md` (`StartLine: 1, EndLine: 150` — **Scene Intent & Directing from Intent**) + `0b-temporal-camera-grammar.md` (`StartLine: 1, EndLine: 282` — **Speech Physics, One-Move Rule, Zero Tail-Cut Law & 10s/15s Templates**) + `4-ai-video-prompt-compiler.md` (`StartLine: 160, EndLine: 285` & `StartLine: 630, EndLine: 715` — **Temporal-Kinetic-Vocal Equilibrium, `3.2s–4.5s` Spoken Shot Formula & Terminal Settle**) + `1-narrative-screenplay-architecture.md` (`StartLine: 1865, EndLine: 2150` — **WPS & 3-Layer Vietnamese Relational Dialogue**) + (`combat-director/SKILL.md` for `Seedance` Action/Chase/Combat scenes; `.agents/PHOTO_DIRECTOR.md` for Single-Frame Still Images/Keyframes; `.agents/STORYBOARD_DIRECTOR.md` for `9/12/15/25-Shot` Storyboard Grids & `Storyboard-to-Video`)
 >    - **Stage 5 (`Distribution Packaging → CP5`)**: `workflow.md` (`StartLine: 949, EndLine: 979 · §10–§11`) + `.agents/skills/youtube-growth-architect/SKILL.md` (`StartLine: 1, EndLine: 482`)
 
 ---
@@ -104,7 +104,7 @@ When rules appear to conflict, resolve them strictly in this order and report an
 1. **Language Separation**:
    - **User Communication**: Always Vietnamese; direct, decisive, executive tone.
    - **System Documentation & Codebase** (`.md` rules, skills, references, Python scripts): **100% standard professional English**.
-   - **Deliverable Files (`setting.html`, `seo-youtube.html`) & Interactive Chat Outputs**:
+   - **Deliverable Files (`setting.html`, `seo-package.md`) & Interactive Chat Outputs**:
      * *Layer 1 — UI, Analysis & Handover Cards*: Vietnamese (titles, Story Spine display, Scene Audit Cards, dialogue breakdown notes, buttons, toasts, and Code Block 2 handover summaries).
      * *Layer 2 — Visual Prompt Prose (Code Block 1)*: Technical cinematic English.
      * *Layer 3 — Spoken Dialogue*: English by default; switches 100% to the target language and regional dialect when specified by the user or preset (e.g., Southern or Northern Vietnamese).
@@ -946,11 +946,11 @@ Tóm tắt Tập [N]: [Bảng 1 dòng/cảnh: Cảnh | Bối cảnh | TH1/TH2/TH
 
 ---
 
-## §10 — STAGE 5: DISTRIBUTION & PACKAGING (`seo-youtube.html` — `✋ CP5`)
+## §10 — STAGE 5: DISTRIBUTION & PACKAGING (`seo-package.md` — `✋ CP5`)
 
 > **JIT Load**: `.agents/skills/youtube-growth-architect/SKILL.md`. Mandatory for every completed project.
 
-Compile `output/<slug>/seo-youtube.html` containing:
+Deliver the package **in chat as copy-paste blocks** and save the same content to `output/<slug>/seo-package.md` (Markdown working file — the project's only HTML file remains `setting.html`, §2.10) containing:
 - **Tier 1 — Omnibus (Full Movie / Series Compilation)**:
   1. **5 High-CTR Title Variants** (`50–65` characters) using the 4 Universal Title Formulas + Narrative POV Invariance.
   2. **4 Sovereign Thumbnail Prompts** enforcing the 4 Pillars: *Suspended Catastrophe*, *Extreme Duality & Somatic Delta*, *Embedded 3D Text ($\le 4$ words)*, and *Mobile Safe Zones*.
@@ -958,7 +958,7 @@ Compile `output/<slug>/seo-youtube.html` containing:
   4. **7-Cluster Audience Tag String** ($\le 500$ characters) + Polarizing Debate Pinned Comment (seeded from the Story Spine `[DEBATE]` row).
 - **Tier 2 — Per-Episode Packaging**: Dedicated `[Ep N/T]` cliffhanger titles, episode thumbnail prompts, episode chapters, and next-episode binge-funnel pinned comments.
 
-✋ **CHECKPOINT 5**: Present `output/<slug>/seo-youtube.html`, finalize `history-registry.json` (§11), and conclude production (`🎬 DONE`).
+✋ **CHECKPOINT 5**: Present the package in chat (saved as `output/<slug>/seo-package.md`), finalize `history-registry.json` (§11), and conclude production (`🎬 DONE`).
 
 ### 10.1 Post-Release Performance Feedback Loop (`Vòng Phản Hồi Số Liệu Thật`)
 Retention data is the only honest judge of the Engagement Scorecard. After each episode has been public for `48–72h`, ask the user for its analytics (YouTube Studio / TikTok / Facebook — the user reads them; the agent never logs in) and record them:

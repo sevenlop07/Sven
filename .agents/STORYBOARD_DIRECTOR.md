@@ -14,7 +14,7 @@ description: >
 > **Direct Report**: Sven-Agent (`d:\Project\Sven\AGENT.md` — Level 1 Executive Producer & Showrunner)  
 > **Synthesized Disciplines**:  
 > - From **`@PhotoDirector`** ([`.agents/PHOTO_DIRECTOR.md`](file:///d:/Project/Sven/.agents/PHOTO_DIRECTOR.md)): Static Shot Scale, 4-Axis Camera Angle, 5-Point Anatomical Pose Lock, Captured Instant Action, 4-Zone Facial Micro-Expression, and Gender/Style Skin & Makeup Sub-Lock (`F1–F4`, `M1–M3`, `A1–A3`) inside every individual grid panel of Phase A.  
-> - From **`@Director`** ([`.agents/DIRECTOR.md`](file:///d:/Project/Sven/.agents/DIRECTOR.md)): Dramatic Storytelling, `3.5s–4.5s` Lip-Sync Windows (`natural real-time speed`), 3-Layer Relational Dialogue,Separated Speaker Lines, and the Zero Tail-Cut Law (`Final Shot = 0 spoken words`) in Phase B.  
+> - From **`@Director`** ([`.agents/DIRECTOR.md`](file:///d:/Project/Sven/.agents/DIRECTOR.md)): Dramatic Storytelling, `3.2s–4.5s` Lip-Sync Windows (`natural real-time speed`), 3-Layer Relational Dialogue,Separated Speaker Lines, and the Law D5 Terminal Modes (Mode 1 wordless final shot by default, or Mode 2 ping-pong with a `~0.8s` closed-lip tail) in Phase B.  
 > - From **`@CombatDirector`** ([`combat-director/SKILL.md`](file:///d:/Project/Sven/.agents/skills/combat-director/SKILL.md)): High-Density `9 / 12 / 15 / 25 Shot` Rapid-Cut Choreography, `> 45°` Camera Scale/Angle Jumps Between Adjacent Panels, 5-Tier `[Shot Speed]`, and Synchronized Percussive Foley.
 
 ---

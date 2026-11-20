@@ -137,6 +137,14 @@ def check(fix=False):
                                 a, b = new_a, new_b
                             else:
                                 problems.append(f"{rel}:{i}: anchored range L{a}-{b} {anchor} is now L{new_a}-{new_b} in {tname} — run with --fix")
+                    real_n = n - 1 if n and tl[-1] == "" else n
+                    if not anchor and a == 1 and 0 < real_n - b <= 40:
+                        # a whole-file read that the file has outgrown by a few lines
+                        if fix:
+                            fixes.setdefault((doc, i), []).append((m.start(2), m.end(2), str(real_n)))
+                            b = real_n
+                        else:
+                            problems.append(f"{rel}:{i}: whole-file range L1-{b} under-reads {tname} ({real_n} lines) — run with --fix")
                     if a > b:
                         problems.append(f"{rel}:{i}: inverted range L{a}-{b} for {tname}")
                     if b > n + 1:

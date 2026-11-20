@@ -103,3 +103,60 @@ When a character travels between two distinct eras (e.g., Modern City $\leftrigh
 | **08** | **The Prestige Face-Slap / Truth Unmasking**: `A1` exposes `B-Judas` or shatters `A2`'s scheme in front of witnesses (`Tier C`). | `TH1` (Continuous) | `Standard 10.0s` |
 | **09** | **Somatic Aftermath & Intimate Cost**: Quiet emotional breath (`Track A-Locked` or slow push-in); the physical/karmic toll surfaces. | `TH2` or `TH1` | `Standard 10.0s` |
 | **10** | **Cold-Water Cliffhanger (`C1–C7`)**: A deeper butterfly-effect anomaly or higher-realm apex threat (`A2`) appears at `00:08.0`. | `TH1` or `TH3` | `Standard 10.0s` |
+
+---
+
+## Mastery Playbook — Fantasy, Time-Travel & Rebirth (README §2c)
+
+### P1. The promise and the three killers
+- **Promise**: a person thrown into a bigger world (another era, a cultivation realm, a second life) who uses what only they know or can do — and pays a price the old world never charged.
+- **Killer 1 — power without cost**: every ability has a trigger, a ceiling and a price (World-Law Contract); an ability that solves everything ends the story.
+- **Killer 2 — the world explained instead of shown**: rules appear through a near-miss, a ritual or an object, never through a lecture or a system window full of text.
+- **Killer 3 — the future-knowledge cheat**: in rebirth/time-travel, knowledge of the future must start failing by the midpoint (butterfly effect), or there is no suspense.
+
+### P2. Series architecture
+| Act | Job |
+|---|---|
+| I Crossing | The crossing or awakening in the first episode; the hero's edge (future knowledge, a hidden talent, a relic) and its first price |
+| IIA Rising | The edge wins small battles; enemies notice; allies form; the relic evolves `State 0 ➔ 1` |
+| IIB Midpoint | The edge breaks: the future changes, the talent backfires, the relic cracks (`State 2`); a secret about the hero's origin |
+| IIIA Fall | The cost comes due (a loved one, memory, lifespan, status); the hero must fight without the edge |
+| IIIB+IV Ascension | Victory through a choice the old self would not make; the world-law is honoured, not cheated; closing image across eras/realms |
+- **Power ledger**: each ability — trigger, ceiling, price, scene where each is first shown.
+- **Divergence ledger** (rebirth/time-travel): what the hero knows will happen, and the episode where it stops happening.
+
+### P3. Episode architecture (default ~10 scenes)
+| Scenes | Function |
+|---|---|
+| 01 | A visual paradox of the world (a modern habit in an ancient court, a relic pulsing) |
+| 02–03 | The hero uses the edge on a small problem; the price shows |
+| 04 | A rule of the world revealed in a near-miss |
+| 05–06 | An opponent counters with the same world's rules |
+| 07 | Clash: kinetic only if the plot produces it; otherwise a court/strategic duel |
+| 08 | Reversal in front of witnesses |
+| 09 | The cost lands on the body or a relationship |
+| 10 | A higher threat or a divergence from the known future |
+
+### P4. Signature scene: the knowledge duel
+- The hero says something only someone from "outside" could know; the court/sect/family freezes. The camera holds on whoever understands what that implies.
+- Pair it with a tactile tell of the price (a nosebleed, a fading tattoo, a cracked relic) so the win is never free.
+
+### P5. Dialogue
+- Period or sect speech register stays consistent; the hero's modern slips are rare and deliberate.
+- Example:
+  > *Lăng Vân rót trà, tay trái vô thức xoay chiếc nhẫn ngọc vừa nứt thêm một vệt.*
+  > **Hoàng hậu:** "Muội biết trước cả việc đê vỡ ở Giang Nam?"
+  > **Lăng Vân:** "Thần thiếp chỉ biết nước sông dâng."
+  > *Hoàng hậu đặt chén xuống. Vệt nứt trên nhẫn lan thêm một chút.*
+
+### P6. Hooks, twists, cliffhangers
+- Hooks: #1 Visual Paradox, #8 Overlapping Time Traces, #3 Strange Object/Sign.
+- Twists: TW-18 Time Shift, TW-16 Secret Connection, TW-19 Symbolic, TW-05 Identity.
+- Cliffhangers: C7 Ghost's Arrival (someone from the "other" life), C1 Identity Unmasking, divergence from the known future.
+
+### P7. Mastery checklist
+1. Did every power used this episode show its price on screen?
+2. Was the world rule that decided the scene shown before it decided it?
+3. Has the hero's edge started to fail by the midpoint of the series?
+4. Is the relic's state the hero's inner state?
+5. Is no rule explained in dialogue that an object or ritual could show?
