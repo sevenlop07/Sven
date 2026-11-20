@@ -5,6 +5,26 @@ Governed by: Screenwriter (Level 2) & Director (Level 2) under Showrunner (Level
 
 ---
 
+## Genre Card (README §2b)
+
+| Field | Value |
+|---|---|
+| **Regime** | 1 (realistic) or 3 (rebirth / system) |
+| **Genre Engine** | 2 — Every-Episode Face-Slap |
+| **Audience payoff** | Dopamine status reversal on every episode |
+| **Default episode shape** | `~10` scenes `~100s`, `90:10` |
+| **Preferred hooks** | #1 Visual Paradox, #9 Consequence First, #6 Body Detail |
+| **Preferred cliffhangers** | C1–C7 rotated, never the same twice in a row |
+| **Favoured twists & budget** | TW-12 Reversal, TW-05 Identity, TW-02 Karma; 1 mini-slap per episode |
+| **Dialogue : visual** | `40 : 60` (status proxies : staccato fencing ≤ 12 words/strike) |
+| **Default `ending_mode` / `fatality_policy`** | positive / none |
+| **Signature bans** | episodes with no payoff; oppression with no counter-move; gore or slaps (use status proxies) |
+| **Scorecard criteria that must score 2** | Hook, Cliffhanger, Value shift |
+
+Numbers defer to `engine/references/0c-canonical-numbers.md`; pacing tables below are default sketches.
+
+---
+
 ## 0. Core Principles & Dramatic Philosophy
 
 The objective of the **Viral Microdrama Genre Engine** (Vi Đoản Kịch Cao Tần) is to engineer hyper-addictive, emotionally electrifying, short-format episodic series (typically 60s–120s per episode across 40–100+ episodes). It targets the dopamine pathways of modern mobile-first audiences (TikTok, YouTube Shorts, Reels, ReelShort, DramaBox) by maximizing dramatic density, eliminating narrative throat-clearing, and delivering visceral emotional payoffs—while upholding Sven's strict **Zero-Fatality & Humanitarian Standards**.
@@ -37,7 +57,8 @@ $$\text{Viral Microdrama} = \text{Hyper-Concentrated Injustice/Stakes} + \text{H
 
 ## 2. The 5 Sovereign Optimization Pillars for Microdrama
 
-### Pillar 1: The Asymmetrical 13-Beat Retention Curve
+### Pillar 1: The Asymmetrical Retention Curve (6-Phase Episode View of the Pillar 1 Part X 13-Beat Map)
+> The 6 phases below are the per-episode condensation of the 13-Beat Map in `1-narrative-screenplay-architecture.md` Part X (which spans a whole series or long episode). Scene count and runtime: `0c-canonical-numbers.md` §4.
 Uniform pacing destroys mobile retention. Microdramas must distribute narrative weight asymmetrically across the episode run:
 
 ```text

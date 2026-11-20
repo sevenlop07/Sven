@@ -51,9 +51,17 @@ The **Genre Library** (`engine/genres/`) serves as the modular repository of str
 | **Action, Martial Arts, Chase & Combat** | [`action.md`](file:///d:/Project/Sven/engine/genres/action.md) | Suppressed Emotional Compression (`1.0x`) + High-Velocity Chase/Combat Climax (`2.3x–10x`) + Moral Resolution | 3-Zone Hybrid Episode (40% Drama Setup / 40% Micro-Timeline Combat & Chase / 20% Aftermath); Kinetic Arrow (`→`) Syntax via `@CombatDirector` | **Zero Reset** (Irreversible stakes, physical & moral transformation) |
 | **Time-Travel, Portal Isekai & Supernatural Fantasy** | [`fantasy.md`](file:///d:/Project/Sven/engine/genres/fantasy.md) | Asymmetric Knowledge/Awakened Power + `TH3` Spatial-Temporal Shifts + Ticking Cost + `Seedance` Climax | 10-Scene Speculative Arc; 3 Hard World Rules; Tier-1 Relic 3-State Evolution; Native `3D Semi-Real (Mẫu 2B)` & `TH3` Integration | **Zero Reset** (Timeline/Realm progression with butterfly-effect cliffhangers) |
 | **Psychological Thriller, Mystery & Folk Suspense** | [`thriller.md`](file:///d:/Project/Sven/engine/genres/thriller.md) | Knowledge Matrix Switch (`Suspense ➔ Mystery ➔ Prestige Reveal`) + Fair-Play Visual Clues + Chiaroscuro Staging | 10-Scene Investigative/Survival Arc; $\ge 2$ Non-Verbal Clue Plants; 70% Visual/Acoustic Tension + `Seedance` Pursuit Peaks | **Zero Reset** (Irreversible unmaskings & escalating mastermind conspiracy) |
+| **Speculative Sci-Fi** | [`scifi.md`](file:///d:/Project/Sven/engine/genres/scifi.md) | One "What If?" + 3 Hard World Rules (Mechanism – Failure Limit – Human Cost) + a dilemma only this world could pose | Engine 4 (mystery-led) or 3 (survival-led); 0c §4 | **Permanent world-state change**
+| **Horror & Folk Dread** | [`horror.md`](file:///d:/Project/Sven/engine/genres/horror.md) | Rules of the haunting + withheld information + a human secret the haunting exposes; zero gore | Engine 4 dread variant; build ➔ false release ➔ shock | **Haunting not finished (serial)**
+| **Romance & Romantic Drama** | [`romance.md`](file:///d:/Project/Sven/engine/genres/romance.md) | Attraction × an obstacle inside each lover + rising cost of admitting it | Engine 1 or 6; emotional distance must change every episode | **Earned declaration / union**
 | **Serial Melodrama / Family Epic** | [`1-narrative-screenplay-architecture.md`](file:///d:/Project/Sven/engine/references/1-narrative-screenplay-architecture.md) | Cumulative Psychological Trauma + Generational Conflict + Moral Transformation | 4-Act Macro Arc (20% / 45% / 25% / 10%); 10s Scene Breakdown | **Zero Reset** (Serial progression with persistent cliffhangers) |
 
 ---
+
+## 2b. Genre Card Schema (every module, new or old)
+Each module opens with a compact **Genre Card** so the Screenwriter can calibrate scorecards without reading the whole file:
+`Regime (1–4)` · `Genre Engine (1–6)` · `Audience payoff` · `Default episode shape (cite 0c §4)` · `Preferred hook types (#1–#12)` · `Preferred cliffhangers (C1–C7)` · `Favoured twist codes (TW-xx) & budget` · `Dialogue : visual ratio` · `Default ending_mode / fatality_policy` · `Signature bans` · `Scorecard criteria that must score 2`.
+Pacing tables inside modules are **default sketches** that flex with the Act Archetype and the locked runtime (`0c-canonical-numbers.md` §4); they never override it.
 
 ## 3. Operational Protocol for Sven Agents
 

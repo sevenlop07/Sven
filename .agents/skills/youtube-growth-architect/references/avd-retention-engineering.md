@@ -55,4 +55,19 @@ Action Hook  Disruption   (Every 15–30s Cadence)             Kinetic Bridge
   * **BANNED (Zero Tolerance):** "Thank you for watching", "Please subscribe", "Let me know what you think in the comments below", closing credit crawl.
   * **The Kinetic Bridge:** In the final 20 seconds, deliver the serene life lesson and smoothly bridge the concept to a related moral dilemma:
     * *Example:* *"And just as Robert learned that gold cannot warm a cold house, another man in the same village discovered what happens when you build a wall instead of a bridge..."*
-  * **End Screen Trigger:** Simultaneously pop the End Screen card of the recommended video at the exact moment the kinetic bridge begins.\n
+  * **End Screen Trigger:** Simultaneously pop the End Screen card of the recommended video at the exact moment the kinetic bridge begins.
+
+---
+
+## 5. Short-Form Series Calibration (60–180s episodes — Sven Stage 3 & Stage 5)
+
+The blueprint above is written for 10–15 minute videos. Sven series episodes are `60–180s` built from `10s / 15s` clips, so the same four stages compress:
+
+| Long-form stage | Short-form equivalent | Where it is enforced |
+|---|---|---|
+| Visual Action Hook (0–5s) | Hook inside the first `3s` of Scene 01 | Retention Map, Scorecard criterion 1 (`workflow.md` §8.3–§8.4) |
+| Cognitive Disruption (5–30s) | Scenes 01–03 raise the episode question and the stakes | Episode question line + loops opened in Scenes 01–02 |
+| Pattern Interrupts every 15–30s | A change of scene structure, voice mode, tempo or space every `2–3` scenes | Scorecard criterion 5, `screenplay_audit.py` rhythm checks |
+| Binge-Loop Kinetic Bridge (final 20s) | A cliffhanger that opens a new layer + next-episode funnel comment | Scorecard criterion 8; Stage 5 per-episode packaging |
+
+Targets and the post-release feedback loop: `engine/references/0c-canonical-numbers.md` §9 and `workflow.md` §10.1 (`history-registry.json → performance_log`).

@@ -5,6 +5,26 @@ Governed by: Screenwriter (Level 2), Director (Level 2) & Combat Director (`@Com
 
 ---
 
+## Genre Card (README §2b)
+
+| Field | Value |
+|---|---|
+| **Regime** | 1 (grounded action only when the story is real-world) · 3 (supernatural) · 4 (martial / crime) |
+| **Genre Engine** | 3 — Gauntlet & Breakthrough |
+| **Audience payoff** | Kinetic adrenaline + tactical victory earned by character |
+| **Default episode shape** | 0c §4 Archetypes; `60:40` `10s:15s`; 3-Zone `40% drama : 40% action : 20% fallout` |
+| **Preferred hooks** | #2 In Medias Res, #4 Suspended Kinetic Moment, #9 Consequence First |
+| **Preferred cliffhangers** | C2 Threshold Ambush, C6 Suspended Strike, C3 Betrayal |
+| **Favoured twists & budget** | TW-05 Identity, TW-12 Reversal, TW-09 Reverse Rescue; 1 major + 1–2 minor |
+| **Dialogue : visual** | `40 : 60` dialogue : visual |
+| **Default `ending_mode` / `fatality_policy`** | positive / none (knockout or disarmament, never on-screen death) |
+| **Signature bans** | fights without psychological compression; fights that change nothing; Regime-1 professionals forced into combat |
+| **Scorecard criteria that must score 2** | Hook, Rhythm, Active character |
+
+Numbers defer to `engine/references/0c-canonical-numbers.md`; pacing tables below are default sketches.
+
+---
+
 ## 0. Core Principles & Dramatic Philosophy
 
 The objective of the **Action, Martial Arts, Chase & Supernatural Combat Genre Engine** is to architect high-adrenaline, emotionally grounded action cinema (short films, 10-scene episodic series, Wuxia/Xianxia vertical dramas, urban martial arts thrillers, and supernatural awakened-bloodline series).
@@ -16,9 +36,13 @@ $$\text{Cinematic Action-Drama} = \text{Suppressed Emotional Compression (1.0x S
 
 1. **The Restraint-to-Detonation Law (Nén Tâm Lý Trước Khi Nổ Vật Lý)**:
    - The audience must ache for the protagonist to fight back before the first punch is thrown. Early scenes establish a powerful restraint (an oath of non-violence, a hostage/loved one at risk, a sealed bloodline, or a desire for peace) that the antagonist ruthlessly tramples until the moral red line is crossed.
-2. **Dual-Speed Temporal Orchestration (`1.0x` Drama vs. `2.3x–10x` Combat/Chase)**:
-   - Dramatic setup and aftermath scenes operate at natural human tempo (`1.0x`, `2–3 phases` per 10s clip) governed by `@Screenwriter` and `@Director`.
-   - Chase and combat scenes switch immediately to `@CombatDirector` high-velocity micro-timelines (`2.3x` martial arts or `10x` superhuman blink-speed, `5–8 phases` per 10s clip or `12–15 phases` per 30s clip) driven by **Kinetic Arrow Chains (`→`)**.
+2. **Dual-Speed Temporal Orchestration (`@Director` Static-Camera Dialogue vs. `@CombatDirector` First-Principles Kinetic Physics & Flexible Shot Topology)**:
+   - Dramatic setup and aftermath scenes operate at natural human conversational tempo (`1–4 Shots` per `10.0s / 15.0s` clip with `static camera` per `Law D1`) governed by `@Screenwriter` and `@Director`.
+   - Chase, combat, vehicle drift, split-second rescue, sports climax, and high-velocity craft scenes switch immediately to `@CombatDirector` (`combat-director/SKILL.md`), which **never forces a fixed shot count onto every scene**, instead choosing the **Shot Topology** organically from scene intent (**`Topology 1`: `1–2 Shot` Unbroken 3A Inertial Long-Take**; **`Topology 2`: `3–5 Shot` Asymmetric Dynamic Exchange**; or **`Topology 3`: `6–9 Shot` Staccato Rapid-Cut Blitz**) and driving velocity through the **4 Core Kinetic Physics Levers**:
+     1. **Surface-Bound Material & VFX Physics (`死死贴附`)**: Anchoring elemental auras/slash streaks, real-world fire/smoke/sparks/water, or pure tactile deformation directly to host surfaces rather than floating overlays.
+     2. **Camera Inertia & Relative Velocity**: Pairing `AAA action-game inertial whip-follow camera work` with sharp impact recoil so speed is felt even inside a single unbroken take.
+     3. **Directional Motion Blur & Trajectory Release**: Allowing `strong directional motion blur` on fast extremities/weapons to eradicate sluggish AI slow-motion.
+     4. **Time-Ramp Modulation & Hit-Stop Weight (`变速卡点`)**: Contrasting rapid acceleration (`blistering whip-fast speed`) with crisp impact compression (`explosive real-time speed` hit-stop snaps) and selective suspension only when dramatically earned.
 3. **100% Filter-Safe Physical Brutality & Adult-Only Combat Ethics**:
    - Upholds Sven's **Zero-Fatality, Zero-Gore & Minor Protection Mandate**: Combat and chases involve adult characters only (minors are strictly protected and never placed in violence or danger per Pillar 4 §[10d]).
    - Brutality is communicated 100% through **velocity, biomechanical momentum transfer, somatic pain reactions, and visible environmental destruction** (cracking timber tables, shattering tempered glass, bending iron railings, splintering tree bark, exploding water splashes)—strictly zero blood splatters, zero gore, and zero executions.
@@ -68,49 +92,45 @@ An action-drama episode (`100s–120s` across 10–12 scenes) weaves dramatic ac
 └──────────────────────────────────────────────────────────────────────────────────────────┘
 ```
 
-### Pillar 2: High-Velocity Chase & Parkour Mechanics (Truy Đuổi & Vượt Địa Hình)
-When a scene involves a chase (foot chase, urban parkour, forest pursuit, or blink-speed hunt), enforce three kinetic laws:
-1. **Obstacle Pre-Planting & Tactile Vaulting**: `[context]:` must inventory physical obstacles along the pursuit vector (market stalls, narrow alley crates, rooftop air ducts, ancient tree trunks, wet concrete corridors). In the timeline, runners must physically interact with them (`vaults one-handed over a wooden crate → slides beneath a low steel pipe → kicks off a brick wall to round the corner`).
-2. **Predator-Prey Distance Compression**: Express chase tension through closing spatial proximity within the same frame (`Medium-wide tracking shot framing prey sprinting in foreground as hunter closes from three paces behind to point-blank lunging reach`).
-3. **Blink-Speed Pursuit & Camera Reaction Lag**: For supernatural chases, combine spatial wake cues (`purple-black motion streaks`, `decaying afterimages`, `leaves sucked into the slipstream`, `vertical tree-trunk running`) with **Camera Reaction Lag** (`camera momentarily loses weka_2 for a split-second before whip-panning to catch weka_2 landing across the clearing`).
+### Pillar 2: High-Velocity Chase, Vehicle Drift & Parkour Mechanics (Truy Đuổi, Đua Xe Drift & Vượt Địa Hình)
+When a scene involves a chase (foot chase, urban parkour, vehicle drift, forest pursuit, or supernatural hunt), enforce three kinetic laws:
+1. **Obstacle Pre-Planting & Tactile Interaction (Zero `→` Arrows)**: `[context]:` must inventory physical obstacles along the pursuit vector (market stalls, narrow alley crates, rooftop air ducts, wet asphalt corners, ancient tree trunks). Across sequential `1.5s–2.0s` rapid cuts (`Shot 1..N`), each shot depicts 1 clean obstacle interaction in a single punchy sentence (e.g., vaulting one-handed over a wooden crate in `Shot 2`, sliding beneath a low steel pipe in `Shot 3`, or drifting past an apex in `Shot 4` with white tire smoke and golden friction sparks tightly clinging to the spinning rear tire tread).
+2. **Predator-Prey Distance Compression**: Express chase tension through closing spatial proximity along the Target Axis (`Wide inertial tracking follow shot targeting Elena as Dante closes from three paces behind to point-blank reach`).
+3. **Inertial Whip-Camera & Surface-Adhered Slipstream Cues**: Combine surface-adhered wake physics (`cyan-white electric arcs and cold-white calligraphic slash streaks tightly clinging to garment hems and blade edge`) with **`AAA action-game inertial whip-follow camera work`** and **`strong directional motion blur`**.
 
-### Pillar 3: The Momentum Seesaw, Micro-Timeline Arrow Syntax (`→`) & Slow-Motion Decision Matrix
+### Pillar 3: The Momentum Seesaw, Flexible Shot Topology (1-Shot Inertial Take ↔ 3–5 Shot Dynamic Exchange ↔ Multi-Shot Rapid-Cut Blitz) & Time-Ramp Decision Matrix
 Governed by `@CombatDirector` ([`SKILL.md`](file:///d:/Project/Sven/.agents/skills/combat-director/SKILL.md)):
-- **Zero Turn-Based Waiting**: Every `1.5s–2.5s` phase chains `4–6 anatomical action nodes` with arrows (`→`): `[Attack Combo] → [Parry / Head-Slip / Duck] → [Instant Counter-Strike] → [Fixture Impact]`.
-- **Zero Ground-Time & Terrain Rebounds**: Knocked-down fighters never lie flat (`→ hits the floor and rolls straight back onto both feet with zero ground delay` or `uses the wooden bar counter as a springboard to launch an explosive counter-kick`).
-- **Simultaneous Cross-Counters**: Highlight equal power by directing both fighters to land hooks/strikes at the exact same instant, jolting half a step back before re-colliding.
-- **The Slow-Motion Decision Matrix (3 Banned Zones vs. 5 Golden Speed-Ramp Moments)**:
-  - *Strictly Banned (`0% Slow-Motion`)* in: (1) Grounded close-quarters hand-to-hand combos (Muay Thai, MMA, street brawls), (2) Pure blink-speed perception blitzes, and (3) Knockback trajectories / falling bodies (slow-motion makes falling bodies look floaty and weightless).
-  - *Allowed ONLY as a **`Fast Velocity → 0.5s Brief Slow-Motion ECU → Instant Snap Back to Extreme Speed` Sandwich** (max 1–2 times per clip)* at **5 Golden Moments**:
-    1. **Mid-Air Lethal Catch** (hand snatching an incoming ankle, fist, or blade inches from the face with sparks and shocked eyes).
-    2. **Razor-Thin Near-Miss** (blade or heel slicing centimeters past the nose/throat, whipping loose hair strands).
-    3. **Aerial Split / 360-Rotation Apex** (exact instant an acrobatic kick or split double-kick connects with the targets' jaws).
-    4. **Eye-of-the-Storm Grapple Lock** (faces inches apart mid-air or in a weapon bind with opposing auras crackling).
-    5. **Final Blow Contact Frame** (exact millisecond the finishing strike compresses into the boss's chest before snapping back to extreme speed for the ground crash).
-- **Advanced Aerial & Supernatural Timeline Mechanics**:
-  - *Vertical Altitude Axis Choreography*: Vary height continuously across phases (low dust layer $\leftrightarrow$ mid-air clash $\leftrightarrow$ high moonlight apex $\leftrightarrow$ downward crater slam) to prevent static hovering.
-  - *Dual-Energy Collision Geometry*: Direct opposing auras as reactive physical matter (sparks on block, double-helix tornado vortex during spinning throws, meteor vs. lightning bolt during dives).
-  - *Mid-Trajectory Pursuit Combos*: Launch opponent skyward $\to$ godspeed dash to overtake them mid-air $\to$ slam them into the crater.
+- **Flexible Shot Topology Over Fixed Shot Counts (`Strictly Zero → Arrows`)**: Never chain 4–6 disconnected actions with `→` arrows, and never force every fight into a single fixed shot count! Choose the shot topology that serves the scene:
+  * **Topology 1 (`1–2 Shots` — Unbroken 3A Inertial Long-Take)**: A continuous `8s–12s` dynamic camera trajectory (`AAA inertial chase camera whipping behind the launch, snapping into a split-second time-ramp impact pause on the blade lock, and orbiting the counter-flurry`) followed by a `2s–3s` composed settle.
+  * **Topology 2 (`3–5 Shots` — Asymmetric Dynamic Exchange)**: Combining a sustained `4s–5s` tracking sprint/exchange with sharp impact cuts and a reversal/checkmate.
+  * **Topology 3 (`6–9 Shots` — Staccato Multi-Shot Rapid-Cut Blitz)**: Used when fracturing a high-frequency multi-angle clash or multi-step craft montage into `1.5s–2.0s` cuts on peak action (`1 focused action per short cut` + `> 45°` angle jumps).
+- **Zero Ground-Time & Terrain Rebounds**: Knocked-back fighters use pre-declared fixtures (stone parapets, iron pillars, wooden crates) to rebound or absorb impact on a dedicated `explosive real-time speed` shot.
+- **Simultaneous Cross-Counters & Cross-Dashes**: Highlight equal power by directing both fighters to streak past each other or clash blades in an `explosive real-time speed` impact snap that detonates surface-adhered embers and lightning arcs.
+- **The Time-Ramp Speed-Ramping Decision Matrix (Eradicating Unintentional Slow-Motion)**:
+  - *Strictly Banned (`0% Unintentional Slow-Motion`)* during rapid punches, sword flurries, knife mincing, or sprinting shots (`blistering whip-fast speed` with `strong directional motion blur`).
+  - *Selective Time-Ramp Apex (`1 Shot of 2.0s–2.5s` at `ultra-slow-motion suspension`, max 1 per `15.0s` clip)*: Placed strictly between a `blistering whip-fast speed` launch shot and a `blistering whip-fast speed` / `crisp real-time speed` follow-through shot at **1 Peak Visual Apex** (e.g., mid-air vault amidst suspended raindrops and crackling cyan electric arcs, mid-air flambé fire ribbons clinging to a rotating steak, a car mirror grazing concrete 2cm away with suspended sparks, or an aerial kick apex).
+- **Advanced Aerial & Supernatural Surface-Adhered VFX Mechanics**:
+  - *Surface-Adhered VFX Contrast (`死死贴附`)*: Always anchor contrasting elemental signatures directly onto each fighter's clothing/armor and blade (`silver-white moonlight luminescence, cyan-white electric arcs, and cold-white calligraphic dry-brush slash streaks tightly clinging and physically adhered to Lin's garment hems and sword blade` vs. `thick black-crimson miasma aura and dark-gold embers tightly coiled and physically adhered across Mei's armor plates and heavy saber blade`).
 
-### Pillar 4: Combat-Sovereign `[subject]:` & `[PROP]:` Protocol + Hand-Grip Biomechanics Lock
-- **Strict Mode B Compliance**: Zero clothing, footwear, hair, height, or age descriptions in `[subject]:` or action prose (`[100% Appearance, attire, and facial features Refer to image X]` locks all visual appearance).
-- **Mandatory Combat & Story Identity in `[subject]:`**: Every fighter's `[subject]:` line declares:
-  1. Initial spatial anchor & coiled guard posture at `00:00.0`
-  2. Specific **Martial Arts Style & Biomechanical Specialty** (e.g., *explosive street counter-boxing*, *underground Muay Thai clinch-and-elbow*, *swift Wudang circular swordplay*)
-  3. **Unarmed Guard / Tier-1 Weapon Grip / Supernatural Aura Signature** (e.g., *crackling purple-pink-black blink-speed aura*, *frost-infused silver longsword*)
-  4. **Narrative Combat Stake** tied to the main plot (e.g., *desperate resolve to shield the younger sister behind the door*).
+### Pillar 4: Combat-Sovereign `[subject]:` & `[prop]:` Protocol + Hand-Grip Biomechanics Lock
+- **Double-Lock `fully_preserved` Reference, 4-Layer Gender/Hand Anatomy Lock & Zero-Costume/Zero-Age Law**: Every fighter is declared by a fixed **Proper Character Name** (`Kael`, `Vance`, `Lin`, `Mei`, `Elena`) with `<<<Image X>>> (fully_preserved - same female/male face, slender feminine / masculine body proportions...)` in Line 1 and `<Name>'s skin, hands (and makeup): fully_preserved - ...` in Line 2. Strictly zero clothing/garment words and zero age/hair/beard words in `[subject]:` or `Shot 1..N`.
+- **Mandatory Combat & Surface-Adhered Physics Identity in `[subject]:`**: Every fighter's `[subject]:` line declares:
+  1. Initial 3D architectural anchor & coiled stance at `00:00`
+  2. Exact weapon/tool hand-grip state (or `(No objects should appear in the character's hands)` if unarmed)
+  3. **Surface-Adhered VFX / Physical Matter Lock** (`tightly clinging and physically adhered to...`)
+  4. Eyeline locked on the opponent + singularity seal (`— the only [Proper_Name] in frame`).
 - **The 5 Biomechanical Hand-Grip Laws (Eradicating Weapon & Prop Glitches)**:
   1. **Single-Handed vs. Two-Handed Hilt Classification**:
-     - *1-Handed Weapons (`Kunai, Tanto, Straight Sword, Baton`)*: Lock to ONE specific hand (`gripped in forward/reverse hold in right hand`) and explicitly declare the other hand empty (`left hand completely empty`). Never put two hands on a short hilt (causes Fused-Fist glitches).
-     - *2-Handed Weapons (`Heavy Broadsword, Greatsword, Katana 2-Hand, Spear, Staff`)*: Explicitly space both hands along the handle (`right hand below crossguard, left hand anchored at pommel` or `hands spaced shoulder-width apart on the shaft`).
-  2. **Weapon-Hand vs. Empty Off-Hand Action Partition**: The hand holding a weapon ONLY executes blade slashes, thrusts, and parries; all punches, wrist grabs, floor-posts, and one-handed seals MUST be explicitly assigned to the **`empty left hand`** (or legs/knees).
-  3. **Explicit Two-to-One Hand Release**: A fighter holding a 2-handed weapon cannot grab, punch, or post on the floor unless the prompt first states: `releases left hand from the pommel, shifting the blade to a single right-handed hold` (prevents 3rd-arm hallucinations).
-  4. **Zero Unannounced Hand-Swapping**: Keep the weapon in the same declared hand from `00:00` to `00:10.0`, re-anchoring `right-hand blade` in each phase.
-  5. **Disarm State Tracking**: If disarmed, explicitly state where the weapon lands AND that the hand is now empty (`leaving ryuji's right hand empty`) to prevent ghost weapon respawning.
+     - *1-Handed Weapons/Tools (`Straight Sword, Saber, Dagger, Chef Knife, Baton`)*: Lock to ONE specific hand (`gripped in her slender right hand` / `his strong right hand`) and explicitly declare the other hand empty (`while her/his left hand remains empty`). Never put two hands on a short hilt.
+     - *2-Handed Weapons (`Heavy Greatsword, Two-Handed Katana, Spear, Staff`)*: Explicitly space both hands along the handle (`right hand below crossguard, left hand anchored at pommel` or `hands spaced shoulder-width apart on the shaft`).
+  2. **Weapon-Hand vs. Empty Off-Hand Action Partition**: The hand holding a weapon ONLY executes blade slashes, thrusts, and parries; all wrist grabs, pushes, and off-hand actions MUST be explicitly assigned to the **`free left hand`**.
+  3. **Tool/Weapon Switch Strictly on a Shot Cut**: When switching tools (e.g., setting a knife aside to twist a pepper mill), transition cleanly at the start of a new `Shot N` (`With the knife set aside, both of Marcus's strong masculine hands twist...`).
+  4. **Zero Unannounced Hand-Swapping**: Keep the weapon in the same declared hand from `00:00` to `00:15.0`.
+  5. **Disarm State Tracking**: If disarmed, explicitly state where the weapon lands AND that the hand is now empty (`leaving Vance's right hand empty`).
 
-### Pillar 5: Multi-Clip 3-Slot Continuity Chaining & 100% Diegetic Combat Acoustics
-- **100% Diegetic Foley (`Strictly zero background music`)**: Synchronize rapid footwork friction, ragged breathing, cloth air-whip, visceral flesh-and-bone impacts (`WHAM-THUD-CRACK`), blade clashes, and structural destruction.
-- **Chaining Consecutive Fight/Chase Clips (`10s + 10s + 10s`)**: End Scene N at `00:10.0` on a **Mid-Lunge Cut Point** (`both fighters plant both feet and lunge furiously back at each other at 00:10.0`) so Scene N+1 ignites at full velocity at `00:00.0`.
+### Pillar 5: Multi-Clip Continuity Chaining (`Law D6` & Clean Terminal Landing) & 100% Diegetic Combat Acoustics
+- **100% Diegetic Foley (`Strictly zero background music`)**: Synchronize rapid footwork friction, razor-sharp blade wind-whistles, crackling electric arcs, metallic blade clashes, and structural impacts across `Shot 1..N`.
+- **Clean Terminal Keyframe Landing (`Final Shot @00:13.0–00:15.0`)**: The final shot of every `@CombatDirector` clip (`natural real-time speed`, `0 spoken words`) settles both characters into a **Clean Composed Landing Pose free of wild mid-swing motion blur** so the extracted `Last Frame @00:15.0` is razor-sharp for `TH1 / TH3` handover into Scene $N+1$.
 
 ---
 

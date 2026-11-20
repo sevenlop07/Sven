@@ -4,6 +4,7 @@
 > **READ THIS BEFORE ANY PILLAR, AT STAGES 0, 1, 2, 3, AND 4.** Story level first (§8 Story Spine Card + §9 plot engine, once per project at Stage 1 and refreshed per episode at Stage 3), scene level second (§1 Intent Card, once per scene).
 > The Pillars are catalogs: scales, angles, combos, dialogue models, timings, word budgets, examples. This doctrine decides **which tool a scene needs and why**. When a Pillar number (seconds, words, shot counts, "always", "strictly") collides with the dramatic need of a specific scene, the dramatic need wins — unless the number is a **Hard Constraint** listed in `workflow.md` §2.
 > Rule of thumb: **understand the scene first, then choose the tools, then state the reason in one clause.** A choice without a reason is decoration; decoration is cut.
+> **Examples are illustrations, not templates.** Most examples in the engine come from a few sample projects (a patriarch with a brass keyring, a postpartum family drama, a boardroom inheritance fight). Never reuse their names, props, premises or lines in a new project — the registry (K1) treats them as already used. Build every new story from its own Specific Truth Inventory (§8.5).
 
 ---
 
@@ -11,8 +12,8 @@
 
 | Kind | What it is | Examples | How to treat it |
 |---|---|---|---|
-| **Hard Constraint** | A technical limit of AI video generation, a safety rule, or a delivery format rule | Zero Dead Air (no "holds still", continuous micro-actions); Zero Cumulative Timestamps (prompts MUST start at 00:00 for third-party AI generators); clip duration 10s / 15s / 30s; no freeze frames; no camera hardware/Kelvin; no clothing in prose; image references; Dialogue Word Cap: Single-Speaker Shot target 25–30w (hard cap ≤ 32w), Two-Shot exchange ≤ 15w/speaker; no pronouns in visual prose; minor safety; no lip-sync during a downward POV; ≥ 2 contiguous time phases; positive ending | **Never break.** The linter blocks delivery. |
-| **Craft Default** | A habit that usually produces good results | Thermal shock cold→warm in Release; Wound Prop → Echo Prop; cast rotation per beat; conflict-dense Beat 3; ~14–18 spoken words per clip; the timing blueprints of the 8 dialogue models; the 3-phase "breath" (lead-in → peak → settle) | **Use by default. Break when the scene needs it**, and write a one-line reason (`BREAK: <default> — <why>`). |
+| **Hard Constraint** | A technical limit of AI video generation, a safety rule, or a delivery format rule | Zero Dead Air (no "holds still", continuous micro-actions); Zero Cumulative Timestamps (prompts MUST start at 00:00 for third-party AI generators); clip duration 10s / 15s / 30s; no freeze frames; no camera hardware/Kelvin; no clothing in prose; image references; Dialogue word caps and spoken windows exactly as listed in `0c-canonical-numbers.md` §2; no pronouns in visual prose; minor safety; no lip-sync during a downward POV; ≥ 2 contiguous time phases; zero gore / on-screen death | **Never break.** The linter blocks delivery. |
+| **Craft Default** | A habit that usually produces good results | Earned positive ending & zero fatalities (project `ending_mode` / `fatality_policy` may change them); Thermal shock cold→warm in Release; Wound Prop → Echo Prop; cast rotation per beat; conflict-dense Beat 3; ~14–18 spoken words per clip; the timing blueprints of the 8 dialogue models; the 3-phase "breath" (lead-in → peak → settle) | **Use by default. Break when the scene needs it**, and write a one-line reason (`BREAK: <default> — <why>`). |
 | **Project Rule** | A rule that belongs to one film, not to the system | A family's kinship-address ladder; a recurring meal; a dialect lexicon | Lives in `output/<slug>/project_rules.json` and in that project's `setting.html`. Never hard-code it into the engine or the Pillars. |
 
 If you cannot tell which kind a rule is, treat it as a Craft Default and give a reason when you deviate.
@@ -31,7 +32,7 @@ If you cannot tell which kind a rule is, treat it as a Craft Default and give a 
    - **Specific Truth Inventory (§8.5) & Subtext-First Action↔Line Synergy (§3.3)**: Concrete, lived-in details over generic explanation; speech paired with physical action (`Reinforce`, `Contradict`, `Replace`, `Reveal`).
 2. **Tier II — Core of a Great Film (Lõi Bộ Phim Hay)**:
    - **Dialogue-Driven Somatic Fusion (§0.1.5)**: Emotion deforms physical matter under the character's hands; zero motionless talking mannequins; strictly **1 primary macro physical action per phase** (Single Focal Action Law, Gate 3R).
-   - **3D Spatial Geometry of Power (§2.7)**: Blocking tells 80% of the story (doorway thresholds, vertical posture shifts, proxemic breaches).
+   - **3D Spatial Geometry of Power (§2.7b)**: Blocking tells 80% of the story (doorway thresholds, vertical posture shifts, proxemic breaches).
    - **Intent-Driven Camera & Dynamic Editing Rhythm (§2 & §0.1.6)**: `Shot Scale = Psychological Distance`, `Camera Angle = Power at This Instant`, `Camera Move = Motive (a/b/c)`. Alternate Track A, Track B 2-phase, Track B 3-phase rapid sparring, Track AB sudden fracture, and Track A-Locked gravitational anchor (≤ 1–2 scenes/ep).
    - **Earned Ending & Opening↔Closing Image Symmetry (§8.8)**: Resolution costs someone something real (a mask, pride, status, sacrifice) and answers the opening image visually without preachy dialogue.
 3. **Tier III — Core of a Great Multi-Episode Series (Lõi Phim Dài Tập Hay)**:
@@ -43,17 +44,17 @@ If you cannot tell which kind a rule is, treat it as a Craft Default and give a 
    - **Causal Chain (`Therefore / But`) + Expectation↔Result Gap + Value Shift (§1 & §9.1)**: Every scene flips a value (`+` to `-` or `-` to `+`) because a character's tactic backfires or escalates.
    - **Audience Prediction Ledger & Option C (§9.2)**: Break ≥ 2 viewer predictions per episode using a planted **Option C** (surprising at first, inevitable on rewatch).
    - **Knowledge Matrix Switching (`Suspense ↔ Mystery ↔ Empathy` — §9.4)**: Switch who knows what at least once per episode.
-   - **Multi-Sequence Spatial Partitioning (§10.3)**: Partition each episode into `3–4 distinct spatial/temporal sequences` connected by Sensory Match-Cuts or Parallel Cross-Cutting to eradicate the "trapped in one room" disease.
+   - **Multi-Sequence Spatial Partitioning (§10.3)**: Partition each episode into `2–4 distinct spatial/temporal sequences` (`0c` §4) connected by Sensory Match-Cuts or Parallel Cross-Cutting to eradicate the "trapped in one room" disease.
    - **Genre-Calibrated Episode Tail, Kinetic/Dramatic `10s`/`15s` Peaks & The 3-Case Scene Continuity Reference Law (`workflow.md` §2.4, §2.5, §8.2, §8.3)**:
      * *Genre-Calibrated `10.0s` / `15.0s` Peaks & The 4-Regime Genre Authenticity Firewall (`Zero Cross-Genre Contamination`)*:
-       1. **Regime 1 — Grounded Real-World Drama (`Gia đình, Thừa kế, Tỷ phú đời thực, Hôn nhân, Thương trường, Pháp lý, Chữa lành`)**: Strictly obeys 100% real-world human psychology, real legal/financial mechanics (`$50M–$800M` realistic enterprise scale), and everyday physical reality. **STRICT BAN** on sci-fi gadgets (*biometric brain watches, AI protocols*), supernatural powers, or forcing doctors/lawyers/executives into spy break-ins, parkour chases, or martial arts fights! In Realistic Drama, `15.0s` clips are primarily routed to **`[🎭 RECOMMENDED MODEL: STANDARD / LIP-SYNC · 15.0s]`** for high-voltage boardroom/courtroom showdowns, truth-bomb reckonings, and unbroken emotional acting takes (`Seedance` is used ONLY when a grounded physical commotion naturally occurs, such as security escorting a character out or rushing into the rain).
+       1. **Regime 1 — Grounded Real-World Drama (`Gia đình, Thừa kế, Tỷ phú đời thực, Hôn nhân, Thương trường, Pháp lý, Chữa lành`)**: Strictly obeys 100% real-world human psychology, real legal/financial mechanics (realistic enterprise scale per `0c` §8), and everyday physical reality. **STRICT BAN** on sci-fi gadgets (*biometric brain watches, AI protocols*), supernatural powers, or forcing doctors/lawyers/executives into spy break-ins, parkour chases, or martial arts fights! In Realistic Drama, `15.0s` clips are primarily routed to **`[🎭 RECOMMENDED MODEL: STANDARD / LIP-SYNC · 15.0s]`** for high-voltage boardroom/courtroom showdowns, truth-bomb reckonings, and unbroken emotional acting takes (`Seedance` is used ONLY when a grounded physical commotion naturally occurs, such as security escorting a character out or rushing into the rain).
        2. **Regime 2 — Speculative Sci-Fi (`Khoa học viễn tưởng, Công nghệ tương lai, AI, Đột biến sinh học, Hậu tận thế`)**: Built on a clear speculative *"What If?"* premise governed by **3 Hard Scientific/System Rules** (*Mechanism – Failure Limit – Ethical/Survival Cost*). High-tech devices, automated protocols, containment breaches, and tactical pursuits (`[⚡ RECOMMENDED MODEL: SEEDANCE · 10s/15s]`) drive the plot.
        3. **Regime 3 — Supernatural, Fantasy, Xianxia & Time-Travel (`Siêu nhiên, Huyền huyễn, Tu tiên, Xuyên không, Trùng sinh, Linh dị`)**: Governed by the **Concrete World-Law Contract (`Trigger – Ceiling – Somatic/Karmic Cost`)**, **3-State Tier-1 Soul Relic Evolution (`State 0 ➔ 1 ➔ 2`)**, native **`TH3` Spatial-Temporal Continuity**, and high-velocity martial/supernatural clashes (`2.3x–10x` on `Seedance 10s/15s`) directed via `@CombatDirector`.
        4. **Regime 4 — Action, Martial Arts & Crime/Detective Thriller (`Hành động võ thuật, Trinh thám hình sự, Đấu trí mật thất`)**: Driven by life-or-death stakes, **$\ge 2$ Fair-Play Non-Verbal Visual Clues**, `Suspense ↔ Mystery` switches, and the `3-Zone (40% Setup ➔ 40% Seedance Pursuit/Combat ➔ 20% Fallout)` architecture.
      * *Between Episodes (`Ep N ↔ Ep N+1`)*: Driven by 3 Cross-Episode Threads (*Question Escalation Relay $Q_1 \to Q_2$*, *Irreversible Relationship/Power Ledger*, *Physical & Prop State Ledger*) and connected via 1 of **4 Flexible Episode Bridges**: (1) *Zero-Gap Cliffhanger / Chase Relay* (`00:10.0`/`00:15.0` of Ep N = `00:00.0` of Ep N+1, launching directly into a tense pursuit, ambush, or confrontation), (2) *Causal Aftermath Ellipsis* (hours/days later inside the consequence), (3) *Parallel/POV Counter-Strike* (opening Ep N+1 in `A2`/`B1`'s space), or (4) *Episodic Reset* (`sitcom.md`).
      * *Between Scenes Inside an Episode (`Sc K ↔ Sc K+1`) — The 3-Case Continuity Reference Point Law (`Điểm Nối Tham Chiếu Giữa 2 Cảnh`)*: Every Scene Rough Script MUST explicitly declare its **Continuity Reference Point Status** for the user before prompt writing begins:
        1. **🟢 CASE 1 — SAME TIME & SAME LOCATION (`[ĐIỂM NỐI THAM CHIẾU: CÓ — Nối Trực Tiếp Khung Hình Cuối Cảnh Trước]`)**: When Scene $K$ and Scene $K+1$ occur at the **exact same continuous time and physical location**, the terminal state (`00:10.0` / `00:15.0`) of Scene $K$ is the **mandatory Continuity Reference Point** for `00:00.0` of Scene $K+1$. The user supplies the **Static Terminal Frame (`Last Frame`)** of Scene $K$, and Scene $K+1$'s prompt locks 100% to that frame's character positions, postures, hand-prop grips, and room state.
-       2. **🔵 CASE 2 — DIFFERENT LOCATION, DIFFERENT TIME, OR CHARACTER SWITCH (`[ĐIỂM NỐI THAM CHIẾU: KHÔNG NỐI KHÔNG GIAN CŨ — Dùng Ảnh Bối Cảnh / Nhân Vật Mới]`)**: When Scene $K+1$ moves to a **new physical location**, **jumps in time**, or **switches to a different character group** (including a multi-zone chase crossing from an interior room out into an alley/street), do NOT reference Scene $K$'s spatial frame. The user supplies the **New Location & Character Reference Images** to establish fresh spatial positions at `00:00.0` (preserving only held props and running/emotional momentum if the same character just crossed into the new space).
+       2. **🔵 CASE 2 — DIFFERENT LOCATION, DIFFERENT TIME, OR CHARACTER SWITCH (`[ĐIỂM NỐI THAM CHIẾU: KHÔNG NỐI KHÔNG GIAN CŨ — Dùng Ảnh Bối Cảnh / Nhân Vật Mới]`)**: When Scene $K+1$ moves to a **new physical location**, **jumps in time**, or **switches to a different character group** (including a multi-zone chase crossing from an interior room out into an alley/street), do NOT reference Scene $K$'s spatial frame. The Agent reads the **new location, character and prop specifications directly from `setting.html`** (the user does not upload images in chat — `workflow.md` §2.10) to establish fresh spatial positions at `00:00.0` (preserving only held props and running/emotional momentum if the same character just crossed into the new space).
        3. **🟣 CASE 3 — SUPERNATURAL, TIME-TRAVEL, PORTAL, OR REALITY SHIFT (`[ĐIỂM NỐI ĐẶC BIỆT: SIÊU NHIÊN / XUYÊN KHÔNG — Giữ Đà Nhân Vật, Thay Mới Toàn Bộ Không Gian]`)**: In supernatural, time-travel (`xuyên không`), teleportation, illusion-shattering, or dimension-shift scenes where the character's action is continuous in time (e.g., stepping through a portal or unleashing a space-shattering strike at the end of Scene $K$), **preserve the character's exact body posture, kinetic vector, and held weapon/prop from Scene $K$'s terminal point, while completely discarding Scene $K$'s background and anchoring `[context]:` to the New World/Era Location Reference Image**.
 
 ### Layer 2: The Dynamic Genre & Cultural Adapter Matrix
@@ -67,63 +68,61 @@ If you cannot tell which kind a rule is, treat it as a Craft Default and give a 
 
 ---
 
-## §0.1 — THE 6 SOVEREIGN LAWS OF THE VIVID CINEMATIC ENGINE (ANTI-MANNEQUIN & ANTI-MONOTONY MANDATE)
+## §0.1 — THE 6 SOVEREIGN FIRST-PRINCIPLES LAWS OF THE SVEN CORE ENGINE (UNIVERSAL ACROSS ALL AGENTS & GENRES)
 
-> 🎬 **MASTER CREATIVE MANDATE**: The downfall of amateur AI filmmaking is **"Breathing Mannequin Syndrome"** and **"Aesthetic Monotony"**. When prompts are loaded with generic aesthetic buzzwords while characters lack physical friction and purposeful action, AI video models generate stagnant, lifeless shots where actors merely blink, drift, or tilt their heads 5 degrees.
-> To build vibrant, dynamic, and gripping cinema, EVERY screenplay scene and AI prompt MUST strictly enforce the **6 Sovereign Anti-Stagnation Laws**:
+> 🎬 **MASTER FIRST-PRINCIPLES MANDATE (`KNOWLEDGE OVER TEMPLATES · ZERO FIXED SHOT QUOTAS`)**:
+> The downfall of amateur AI filmmaking is **"Breathing Mannequin Syndrome"**, **"Cheap Floating Overlays"**, **"Unintentional Slow-Motion"**, and **"Cookie-Cutter Template Monotony"**.
+> Across **100% of agents (`@Screenwriter`, `@Director`, `@CombatDirector`, `@PhotoDirector`, `@StoryboardDirector`, `@RefVideoDirector`, `@RobloxDirector`) and all genres**, every scene and prompt is governed by **6 Universal First-Principles Laws**:
 
-### 1. Purge Hollow Beauty Buzzwords & Enforce the 4-Point Anti-Plastic AI Optical Standard
-- **The Stagnation & "Fake AI Look" Trap**: Stacking decorative buzzwords (`photorealistic`, `cinematic 8k`, `cinematic lighting`, `masterpiece`, `dramatic lighting`, `moody atmospheric`, `vibrant`, `hyperrealistic`, `shallow depth of field`). When prompts rely on `"cinematic"` or `"vibrant"`, AI models default to an over-saturated teal-and-orange filter with waxy, oily plastic skin sheen (`"AI 뻔한 티"`).
-- **The Core Law**: **ZERO HOLLOW AESTHETIC BUZZWORDS — LOCK REAL PHYSICAL LIGHT, MATTE FINISH, FINE GRAIN & MUTED TONES (`3b-lighting-atmospheric-physics.md` §1.1).**
-- **The Directorial Fix**:
-  1. **Real Physical Light Source Over `'Cinematic'`**: Specify the actual physical light emitter (`low-angle morning sun piercing through dust-caked louvers`, `harsh overhead fluorescent tube`, `direct warm tungsten desk lamp`, `overcast window daylight`).
-  2. **Matte Surface Finish & Subtle Film Grain (`Zero 35mm / Lens / Hardware Numbers — Gate 3D`)**: In Live-Action `Style:`, lock **`matte skin and surface finish with zero plastic or oily sheen, subtle organic film grain`** (in 3D Semi-Real, lock `satin-matte finish with zero plastic doll sheen`) to eradicate waxy specular glare. **Strictly NEVER write `35mm`, `50mm`, `24fps`, or camera hardware names (`Phantom`, `Arri`), which cause AI framing defects!**
-  3. **Muted Natural Color Tones**: Pull excessive AI saturation down one stop with **`muted natural color tones`** / `muted desaturated palette`.
-  4. **Tactile Micro-Imperfections & Selective Speed-Ramp Slow-Motion**: Specify lived-in surface textures (`weathered oak, brushed steel, matte stone`). Keep **`zero slow-motion`** as the default for conversational and rapid-cut scenes, while unlocking **Speed-Ramped Slow-Motion (`Real-Time Launch ➔ Ultra-Slow-Motion Suspension [0 dialogue] ➔ Real-Time Settle`)** selectively when directing artistic fluid/particle/culinary suspension shots.
+### 1. The Anti-Plastic Optical Standard & Host-Surface Physical Attachment Law (`Khử Mùi Nhựa AI & Định Luật Vật Lý Bám Dính Vật Chủ [死死贴附]`)
+- **The Root Cause of "Fake AI Look" & "Cheap VFX/Details"**:
+  1. When prompts stack hollow buzzwords (`photorealistic`, `cinematic 8k`, `cinematic lighting`, `vibrant`, `masterpiece`), AI models default to an over-saturated filter with waxy, oily plastic skin sheen.
+  2. When any visual detail — whether a supernatural aura, fire, smoke, rain, sweat, tears, or light reflection — is described as a loose ambient noun (*"tears fall"*, *"lightning surrounds her"*, *"fire fills the pan"*), the AI renders a detached 2D screen-space overlay floating in front of the subject.
+- **The First-Principle Core Law**:
+  1. **Real Physical Light, Matte Finish, Fine Grain & Muted Tones (`Zero 35mm / Hardware Jargon — Gate 3D`)**: Lock a real physical light emitter in `[context]:` (`harsh overhead fluorescent tube`, `direct warm tungsten desk lamp`, `overcast window daylight`), and lock **`matte skin and surface finish with zero plastic or oily sheen, subtle organic film grain, muted natural color tones`** in `Style:` (or `satin-matte finish with zero plastic doll sheen` in 3D Semi-Real). Strictly ban `35mm`, `50mm`, `24fps`, `Kelvin`, or camera brand names.
+  2. **Host-Surface Physical Attachment (`Surface-Bound Material & Somatic Physics`)**: Every secondary detail, emotion, fluid, particle, or aura across ALL genres MUST be physically bound to its **host surface** so the AI computes real interactive lighting, reflection, and material deformation:
+     * *Drama / Romance / Sitcom / Still Portraits (`@Director` & `@PhotoDirector`)*: Bind moisture, light, and touch directly to anatomy and materials (`tears clinging to her lower lashes and tracing down her cheek`, `cold sweat adhering to his temple`, `warm chandelier light catching the bridge of her nose`, `fingertips pressing into the paper edge / gripping the condensation-beaded crystal glass`).
+     * *Weather & Environment (`[context]:`)*: Bind rain, mist, neon reflections, and dust to architectural surfaces (`rain droplets clinging to the glass pane`, `neon reflections sliding across the wet asphalt`).
+     * *Action, Combat, Culinary & Vehicles (`@CombatDirector`)*: Bind elemental energy, slash streaks, fire, foam, smoke, or sparks directly to the moving host (`silver-white moonlight, cyan electric arcs, and cold-white calligraphic dry-brush slash streaks tightly clinging and physically adhered to her garment hems and sword blade`; `amber flambé fire and foaming herb butter clinging to the seared steak crust and skillet rim`; `white tire smoke and sparks hugging the spinning rear tire tread`). In pure grounded physical scenes without VFX, apply surface-bound physics via **tactile deformation** (knuckles compressing ribs, cloth pulling taut, boots skidding on wet stone) — never invent fake sparks where none belong.
 
-### 2. Targeted Action Verbs Over Passive Adjectives
-- **The Stagnation Trap**: Describing internal feelings with static adjectives (`she looks heartbroken`, `he is furious and terrified`, `tense atmosphere`). AI video diffusion models cannot parse abstract psychological labels; they freeze the subject into an immobile mannequin with an unconvincing grimace.
-- **The Core Law**: **ZERO ABSTRACT EMOTIONAL ADJECTIVES IN PROMPT PROSE.**
-- **The Directorial Fix**: Every micro-phase must be driven by **Verbs of Kinetic Purpose and Somatic Disruption**:
-  - *Instead of:* "He looks angry and betrayed."
-  - *Write:* `Marcus slams both flat palms downward onto the damp wooden table, sending the chipped ceramic cup skidding across the surface, jaw muscles bulging tight as Marcus's gaze bores into Elena.`
-  - *Instead of:* "She is anxious and waiting."
-  - *Write:* `Elena relentlessly picks at a torn thumb cuticle until a red bead wells up, breath hitching as Elena's head whips toward the unlatched doorway.`
-  - Every action must possess an observable kinetic vector, measurable physical force, and an explicit target.
+### 2. The Latent Pixel-Budget & Motion-Release Law (`Định Luật Bảo Toàn Ngân Sách Pixel & Giải Phóng Chuyển Động`)
+- **The Root Cause of "Warped Mouths During Speech" & "Sluggish Slow-Motion During Fast Action"**:
+  Generative video diffusion models have a finite per-frame pixel-detail budget. If a prompt forces the AI to render **100% razor-sharp detail on a moving camera, a speaking mouth, rapidly swinging limbs, and a shifting background all at the same time**, the model either warps the face/lips OR automatically stretches time into sluggish slow-motion to keep fast objects sharp!
+- **The First-Principle Core Law**:
+  1. **When Prioritizing Vocal Lip-Sync & Facial/Hand Acting (`@Director` Continuous Dialogue — `Law D1`)**: Lock **`static camera`** so 100% of the latent motion budget is dedicated to **accurate lip-sync, expressive hand/body gestures, and 4-Zone Facial Micro-Expressions (`brows, eyes/moisture, lips, jaw`)**. In **`Mode D1-A` (`Fixed-Camera, Fixed-Angle & Fixed-Scale Continuous Dialogue — Ghi Chung Camera, Cỡ Cảnh & Góc Quay 1 Lần`)**, declare the Camera, Shot Scale, and Angle **ONLY ONCE** at the top (`Shot 1 (00:00-00:15) - [Fixed Shot Scale], [Fixed Static Camera & Angle], natural real-time speed`) without repeating camera headers, and underneath write purely the turn-by-turn **Action/Emotion + Dialogue exchange (`A acts & speaks ➔ B waves hand / reacts & replies ➔ A counters ➔ B answers`)**. In **`Mode D1-B` (`Multi-Cut Static Scale Escalation`)**, step closer across distinct static cuts (`Static MCU OTS` $\to$ `Static Reverse MCU` $\to$ `Static Tight CU`).
+  2. **When Prioritizing High-Velocity Physical Motion (`@CombatDirector` & Sudden Physical Impulses in `@Director`)**: Release the AI from rendering sharp mid-trajectory extremities by explicitly authorizing **`strong directional motion blur`** (and trajectory streaks such as `calligraphic dry-brush slash streaks` in blade combat) on fast-moving hands, weapons, tools, or wheels, and **suspend spoken dialogue (`0 spoken words`) during the high-velocity burst**.
 
-### 3. Minimal Prop Interaction & Clean Spatial Anchoring
-- **The Stagnation Trap**: Either floating "talking statues" unanchored to the room, OR overloading small props with multiple interactions and redundant surface-clearance clauses that warp AI hands and objects.
-- **The Core Law**: **ANCHOR BODIES TO ARCHITECTURE IN `[subject]:`, AND LIMIT EACH PROP TO AT MOST ONE CLEAN INTERACTION PER CLIP.**
-- **The Directorial Fix**:
-  - Small props (keys, glasses, pens, documents) are the easiest elements for AI video models to deform. Each prop should have at most **1 interaction in a clip** (either setting down OR lifting — never both in the same clip), repeat **1 fixed short noun phrase**, and **NEVER include redundant auxiliary phrases such as `"leaving the spot on the table clear"`**.
-  - Supporting characters who do not manipulate a prop in a phase simply hold a **clean static state** anchored to the furniture (`Monica sits still with eyes fixed on Harold`).
+### 3. The Time-Ramp Contrast & Dramatic Hit-Stop Law (`Định Luật Biến Tốc Tương Phản & Điểm Khựng Trọng Lượng [变速卡点]`)
+- **The Root Cause of "Floaty Action" & "Flat Monotone Drama"**:
+  When a clip runs at a uniform, unvarying tempo from `00:00` to `00:10 / 00:15` — whether in a sword fight or a living-room confrontation — movements feel weightless and emotional turns feel robotic.
+- **The First-Principle Core Law (`Velocity ↔ Hit-Stop Compression ↔ Release`)**:
+  True physical force and true emotional weight both require a **Hit-Stop / Micro-Pause at the exact point of impact or realization**:
+  * **In Physical & Kinetic Scenes (`@CombatDirector`)**: Contrast rapid acceleration (`blistering whip-fast speed`) with a sharp **`time-ramp impact snap / hit-stop pause`** (`explosive real-time speed`) at the exact millisecond blades lock, a punch lands, or a steak hits hot iron, plus selective `ultra-slow-motion suspension` only when a mid-air apex genuinely earns it.
+  * **In Dramatic, Sitcom & Thriller Scenes (`@Director` & `@Screenwriter`)**: Build **Dramatic Hit-Stops (`Snap-Freeze Realizations`)** into the acting flow — e.g., a character is moving or smiling naturally $\to$ **freezes dead for a split-second (`abrupt micro-pause / breath catching in the throat`) the instant their eyes hit the incriminating evidence or hear the fatal keyword** $\to$ before pivoting into the counter-action or checkmate line.
 
-### 4. Dynamic Editing Rhythm & Sequence Assembly Over Monolithic Takes
-- **The Stagnation Trap**: Attempting to resolve a complex 20s–30s emotional scene or dialogue confrontation inside a single, continuous, static wide prompt. AI models degrade, hallucinate, and lose momentum after 5–8 seconds without a cut.
-- **The Core Law**: **STRICT BAN ON MONOLITHIC RUN-ON SHOTS.** Any scene spanning beyond 10s MUST be architected as a **Multi-Shot Sequence (Track B Cut Sequence)** with deliberate tempo variation and distinct scale shifts (>30° axis progression):
-  * **Shot 1 (In Medias Res Action / Establishing Kinetic Vector - 4s–6s)**: Opens with action already underway; establishes spatial power geometry.
-  * **Cut to Shot 2 (Reverse Reaction / Somatic Impact - 6s–8s)**: Cuts on action across the 180° line (>30° shift). Captures the listener's physical shockwave, counter-tactic, or micro-acting response.
-  * **Cut to Shot 3 (Tactile Prop Detail / Extreme Close-Up / Cutaway - 3s–5s)**: Isolates an expressive physical object that carries the subtext (hands shredding a document, steaming kettle, trembling fingers dropping a key).
-  * **Cut to Shot 4 (Resolving Climax / Power Shift - 6s–10s)**: Reversal of power or psychological aftermath settling into the next narrative beat.
-- Narrative vitality lives in the cut, not in the waiting.
+### 4. The Embodied Camera Inertia & Target-First Axis Law (`Định Luật Quán Tính Máy Quay Có Trọng Lượng & Khóa Trục Mục Tiêu`)
+- **The Root Cause of "Passive Surveillance Camera" Framing**:
+  Lining characters up side-by-side facing the viewer or floating the camera at a uniform, unmotivated glide makes scenes feel staged and slow.
+- **The First-Principle Core Law**:
+  1. **Target-First Camera Axis & Optical Prop Vector**: Every shot locks its camera axis and optical focus onto the **Primary Target Subject (`targeting [Proper_Name]` / `with focus locked on [Proper_Name]'s face`)** along the 180° interpersonal line of force. Handheld props (mirrors, receipts, phones, contracts) held up in confrontation MUST physically face the Target Character looking at them — never rotate a prop flat toward the audience.
+  2. **Embodied Camera Inertia (Whenever the Camera Moves)**: When a shot is static (`Law D1`), the frame is an unshakable witness. Whenever a scene calls for camera movement (an opening hook push-in, a clue reveal whip-pan, a shocked pull-back, or a 3A action chase), the camera moves with **physical mass and inertia (`AAA inertial whip-follow / inertial push-in`)** — accelerating with the directional force of the subject and **snapping to a locked focus (`impact recoil / hard stop`)** at the exact point of discovery or collision.
 
-### 5. Speech Motion-Budget Priority & Sequential Action Ordering (`then`)
-- **The Stagnation Trap**: Two extremes ruin AI video drama: (1) "Pantomime Syndrome" where scenes are stripped of dialogue; (2) "Motion Overload" where the speaking character is forced to perform complex multi-step chores while speaking and 3 characters move in parallel.
-- **The Core Law**: **SPEECH IS THE HEAVIEST MOTION BUDGET; CHAIN ACTIONS SEQUENTIALLY (`then`) WITH `≤ 2` MOVING BODIES PER PHASE.**
-- **The Directorial & Screenplay Fix**:
-  * **80%–90% of scenes in a drama episode MUST have active, high-tension spoken dialogue** (Model 1 Status Duel, Model 1B Rapid Fencing, Model 2 Ensemble Overlap, Model 3 Asymmetric Confession). Model 0 (Pure Silence) is strictly capped at **maximum 0–1 scene per 10-scene episode**, reserved exclusively for post-catastrophe shock.
-  * **Speech Is the Heaviest Motion Budget (Never Stack Complex Gestures on the Speaker)**: Lip-sync consumes a large share of the AI model's motion capacity. The speaking character should pair speech with at most **1 simple gesture** (raising a glass, nodding, looking at the counterpart), while listeners remain still or show a simple facial reaction.
-  * **The 10 Natural AI Video Action Laws (Gate 3R)**: (1) Active character performs **1 concrete observable verb** (`~1.5–2.0s` budget) while supporting characters hold a **static state** (`sits still with eyes fixed on...`); (2) Chain actions **sequentially (`then`, `after`, `as soon as`)** rather than running parallel movements; (3) Keep **`≤ 2` moving characters per phase**; (4) **Front-load the story-critical action** immediately after `—` so the model never drops the key beat.
+### 5. Targeted Action Verbs, Clean Prop Economy & State-Delta Directing (`100% Active Occupancy — Zero Dead Air`)
+- **The Stagnation Trap**: Abstract emotional adjectives (`she looks sad`, `tense atmosphere`), repeating `[subject]:`'s static `00:00` posture inside `Shot 1..N`, or leaving characters standing idle waiting out the clock.
+- **The First-Principle Core Law**:
+  1. **Observable Verbs Over Adjectives**: Translate every emotion into concrete anatomical and material verbs (`slams`, `clenches`, `recoils`, `taps`, `whips`).
+  2. **State-Delta Directing (`State A ➔ State B`)**: `[subject]:` anchors the initial `00:00` posture and hand state; each `Shot N` describes strictly the **state transition (`Initiating Action ➔ Immediate Visible Reaction/Shift`)** in natural cinematic prose (strictly zero mechanical `→` arrows, zero static repetition, and zero meta-instructions).
 
-### 6. Dynamic Structural Diversity & Anti-Monolithic Pacing
-- **The Stagnation Trap**: Copy-pasting the exact same phase duration (e.g. forcing every 10s scene into `4.5s / 4.5s / 1.0s` with Shot 1 OTS ➔ Shot 2 CU ➔ Shot 3 Choker). This turns an episode into an assembly-line conveyor belt.
-- **The Core Law**: **STRICT BAN ON FORMULAIC TIMELINE REPETITION.** An episode must breathe with dynamic structural variety:
-  * *Track A-Moving Take (0 Cut)*: Camera glides continuously, following characters moving through physical tasks while delivering continuous dialogue.
-  * *Track B 2-Phase Asymmetric Cut*: E.g., `6.5s / 3.5s` or `7.0s / 3.0s` — one character dominates the space and dialogue, the other responds with a sharp physical action.
-  * *Track B 3-Phase Rapid Sparring*: E.g., `3.5s / 4.5s / 2.0s` — rapid verbal fencing volleys and kinetic collisions.
-  * *Track AB Sudden Fracture*: E.g., `7.5s` dialogue tension ➔ `2.5s` violent mechanical fracture/cut to black.
-  * *Track A-Locked Static Take*: Quota 1–2 scenes per episode max, reserved for pure micro-acting vulnerability peaks.
-- **Zero Dead Air at Scene Boundaries**: Dialogue or kinetic action runs actively up to the final second. The final beat is an immediate shockwave or kinetic handoff into the cut — strictly zero lingering empty pauses!
+### 6. Topology Follows Intent — Total Abolition of Fixed Shot Quotas (`Cấu Trúc Shot Sinh Ra Từ Ý Đồ — Xóa Bỏ Mọi Con Số Đóng Khung`)
+- **The Formulaic Trap**: Forcing every dialogue scene into `3 shots (4s–4s–2s)` or forcing every fast action scene into `7–9 shots × 1.5s`.
+- **The First-Principle Core Law**: **Shot count and shot durations are NEVER a fixed quota.** Both `@Director` and `@CombatDirector` select the **Shot Topology** organically from the specific scene's dramatic, spatial, and kinetic intent:
+  1. **Topology 1 — The Unbroken Continuous / Inertial Long-Take (`1 to 2 Shots` across `10.0s` or `15.0s`)**:
+     * *In `@Director`*: A single unbroken push-in on an intimate confession, an atmospheric opening hook, or a 3–4 character table scene where cutting would break spatial unity.
+     * *In `@CombatDirector`*: An unbroken **3A Action-Game Inertial Long-Take** (*Black Myth / Sekiro / The Raid* style) where the inertial camera whips behind the launch, snaps into an internal time-ramp hit-stop on blade impact, orbits the counter-flurry, and settles without cutting every 1.5 seconds.
+  2. **Topology 2 — Asymmetric Dynamic Contrast (`2 to 5 Shots` across `10.0s` or `15.0s`)**:
+     * Contrasting a sustained take (`4s–6s` of building pressure, dialogue probing, or full-speed tracking pursuit) with a sharp `1.5s–2.5s` macro clue insert, trap activation, or checkmate reversal.
+  3. **Topology 3 — Staccato Multi-Shot Rapid-Cut Blitz (`6 to 9 Shots` in `15.0s` / `4 to 6 Shots` in `10.0s`)**:
+     * Chosen specifically when fracturing a multi-step high-velocity skill sequence (*The Bear / Edgar Wright* culinary, trauma surgery, mechanical assembly) or a multi-angle chaotic crisis/blitz into `1.5s–2.0s` peak-action cuts with `>45°` angle jumps.
 
 
 ---
@@ -184,17 +183,17 @@ LINK    | Action↔Line: [reinforce / contradict / replace / reveal] — [which 
   2. **Internal Stakes (Wound & Identity Threat)**: What cherished relationship, dignity, or protective mask (`The Lie`) is on the verge of being shattered?
   3. **Philosophical Stakes (Two Honest Sides)**: What clash of valid human values (`Duty vs. Truth`, `Protection vs. Autonomy`, `Survival vs. Integrity`, `Justice vs. Mercy`) makes reasonable viewers debate who is right?
 
-### 2. Law 2: The Micro-Beat Sequence Architecture & 3-Wall Escalation Law (`1 Clip 10s = 1 Psychological Shot; 3–4 Clips = 1 Dramatic Situation`)
+### 2. Law 2: The Micro-Beat Sequence Architecture & 3-Wall Escalation Law (`1 Clip = 1 Psychological Beat; 3–4 Clips = 1 Dramatic Situation`)
 - **The Two Shallow Traps**:
   1. *The Padding Trap*: Taking a single trivial beat and stretching it across 8–10 scenes of polite small talk.
-  2. *The 10-Second Plot-Summary Trap*: Treating a `10.0s` AI clip (`1 Continuous Camera Shot`) as an entire macro plot scene, cramming 7–8 massive plot events (reunion, bank foreclosure, betrayal, company mortgage, secret trust reveal) into one 120-second episode so every 10s clip becomes a rushed, superficial summary with zero psychological buildup.
+  2. *The 10-Second Plot-Summary Trap*: Treating a `10.0s` AI clip (one psychological beat) as an entire macro plot scene, cramming 7–8 massive plot events (reunion, bank foreclosure, betrayal, company mortgage, secret trust reveal) into one 120-second episode so every 10s clip becomes a rushed, superficial summary with zero psychological buildup.
 - **The Core Fix (`Micro-Beat Sequence Unpacking`)**:
-  - Because each `10.0s` clip is **one continuous camera shot (`1 Shot`)**, **one Dramatic Situation must be unpacked across a 3–4 Shot Psychological Sequence (`30s–40s`)** so the audience experiences genuine tension, subtext, and emotional resonance:
+  - Because each `10.0s` clip carries **one psychological beat** (its internal shot topology follows §0.1.6 and `0c` §1), **one Dramatic Situation must be unpacked across a 3–4 Shot Psychological Sequence (`30s–40s`)** so the audience experiences genuine tension, subtext, and emotional resonance:
     * **Shot/Clip 1 (`10s — 3-Second Curiosity Hook & Veiled Power Push`)**: Open with a visual anomaly, a tactile prop anchor, or a polite-on-the-surface power probe that makes the viewer immediately suspect a hidden agenda.
     * **Shot/Clip 2 (`10s — Perspective Shift / Threshold POV & Atmosphere`)**: Use a purposeful angle shift (such as a doorway POV or over-the-shoulder reveal) to let the audience feel the room's unspoken hostility and power geometry before the collision.
     * **Shot/Clip 3 (`10s — Velvet-Dagger Probe vs. Specific Human Detail`)**: The antagonist strikes using a polite social mask (`dao găm bọc mật`), while the protagonist counters not with a preachy slogan, but with a hyper-specific lived detail (`chi tiết chạm tim đen`) that quietly pierces the emotional core.
     * **Shot/Clip 4 (`10s — Somatic Betrayal & Irreversible Value Shift`)**: A concrete prop action or involuntary physical leak exposes the truth beneath the mask and locks an irreversible shift (`+` to `-` or `-` to `+`).
-  - Across any 6–12 scene episode, these sequences escalate through **3 Distinct Walls of Progressive Complication** (*Wall 1: Opening Tactic & Veiled Friction ➔ Wall 2: B/C-Plot Pressure & Mask Crack ➔ Wall 3: Costly Choice & Point-of-No-Return Hook*).
+  - Across every episode, these sequences escalate through **3 Distinct Walls of Progressive Complication** (*Wall 1: Opening Tactic & Veiled Friction ➔ Wall 2: B/C-Plot Pressure & Mask Crack ➔ Wall 3: Costly Choice & Point-of-No-Return Hook*).
 
 ### 3. Law 3: The Iceberg Subtext, Velvet-Dagger Mask & Anti-Spoiler Law
 - **The Three Shallow Traps**:
@@ -216,11 +215,11 @@ LINK    | Action↔Line: [reinforce / contradict / replace / reveal] — [which 
 
 ### 5. Law 5: The Multi-Sequence Spatial Breathing Law (`W11`)
 - **The Shallow Trap**: Trapping 8–10 consecutive scenes inside a single static room or corner where characters merely stand around talking.
-- **The Core Fix**: Every episode of 6–12 scenes MUST partition into **2–4 Sequences** across distinct architectural spaces, sub-zones, or temporal beats (`Mode B Inter-Sequence Cuts`: *Sensory Match-Cut*, *Question-to-Answer Hook Cut*, or *Parallel Cross-Cut*), unless the premise is an explicit locked-room thriller survival test declared with a `BREAK:` reason.
+- **The Core Fix**: Every episode MUST partition into **2–4 Sequences** (`0c` §4) across distinct architectural spaces, sub-zones, or temporal beats (`Mode B Inter-Sequence Cuts`: *Sensory Match-Cut*, *Question-to-Answer Hook Cut*, or *Parallel Cross-Cut*), unless the premise is an explicit locked-room thriller survival test declared with a `BREAK:` reason.
 
 ### 6. Law 6: Mandatory 12-Row Story Spine Lock (`Gate 2B` & `W9`)
 - **The Shallow Trap**: Skipping Stage 1 (`CP1`) or writing a superficial 4-row Story Spine that omits specific lived-in details, cliché subversions, ending cost, and misread mechanics.
-- **The Core Fix**: Every episode MUST be anchored by the **complete 12-Row Story Spine Card** (§8.10 + §9.9: `QUESTION`, `TRUTH`, `SPECIFIC`, `CLICHÉ`, `LOOPS`, `COST`, `DEBATE`, `IMAGE`, `PREDICT`, `KNOW`, `MISREAD`, `TWIST`). Both `setting.html` (`Gate 1C` / `Gate 2B`) and `tap-X.html` (`Gate 2B` + `W9`) enforce these depth anchors.
+- **The Core Fix**: Every episode MUST be anchored by the **complete 12-Row Story Spine Card** (§8.10 + §9.9: `QUESTION`, `TRUTH`, `SPECIFIC`, `CLICHÉ`, `LOOPS`, `COST`, `DEBATE`, `IMAGE`, `PREDICT`, `KNOW`, `MISREAD`, `TWIST`). `setting.html` (`Gate 1C` / `Gate 2B`) and each saved Stage 3 script `output/<slug>/ep-NN-script.md` (`engine/screenplay_audit.py`: `W9`, `W10`) enforce these depth anchors.
 
 ---
 
@@ -258,7 +257,7 @@ Move the camera only when you can name the motive:
 - Prefer actions that **change the state of the world** (a door closed, an object moved, a distance crossed). Actions that only illustrate a line ("nods while agreeing") are filler.
 - Small, tactile, readable actions beat big choreography in domestic drama (Hard Constraint for Minors: zero fights, chases, or danger involving minors per Gate 3F; for adult characters, high-velocity martial arts, chases, and supernatural combat are governed by [`engine/genres/action.md`](file:///d:/Project/Sven/engine/genres/action.md) and [`@CombatDirector`](file:///d:/Project/Sven/.agents/skills/combat-director/SKILL.md)).
 
-### 2.5 Track A or Track B — Decide by Question, Not by Habit
+### 2.5b Track A or Track B — Decide by Question, Not by Habit
 - **Track A (one continuous take):** the viewer must stay inside one breath, one body, one unbroken pressure — confessions, realization, intimacy, dread.
 - **Track B (cuts on the 180° axis):** the viewer must see both sides of a collision — whose move lands, who absorbs it.
 - The number of phases and where they split come from the scene's beats. A scene may be 2 phases or 4; one line may take 6 seconds while the silence after it takes 4.
@@ -282,7 +281,7 @@ If the only reason is "looks cinematic", "adds variety" or "the model blueprint 
 2. **Episode-Level Storytelling Symphony (`How Scenes Form a Great Episode`)**:
    - An episode is a complete emotional journey, never 12 identical scenes strung together. Orchestrate the 5 Scene Structures across the **4-Stage Episode Arc** (*Stage I: Opening Hook + V.O./Atmosphere ➔ Stage II: Alternating Dialogue Probe ↔ Clue Discovery ➔ Stage III: 10s/15s Climax Showdown or Action Burst ➔ Stage IV: Emotional Settle + Cliffhanger*), governed by **Rhythmic Contrast (`Compress ↔ Release`, `Dense Dialogue ↔ Visual/Silent`)** and **Causal Baton Relay (`"Therefore / But"` from Scene $K$ tail to Scene $K+1$ head)**.
 
-### 2.7 Spatial Geometry of Power & Proxemics (Blocking as Subtext)
+### 2.7b Spatial Geometry of Power & Proxemics (Blocking as Subtext)
 Blocking (the placement and movement of bodies in 3D space) tells 80% of the story before anyone speaks:
 - **The Topography of Power**:
   - *The Threshold / Doorway*: Represents dominance, external intrusion, or the power to trap/exit. The character commanding the doorway controls access to the outside world.
@@ -324,14 +323,14 @@ Every spoken line or character exchange MUST select exactly one of these four fu
 | **3. REPLACE (Câm lặng tuyệt đối / Thay thế)** | **Complete deletion of speech**. Tactile friction with props, spatial repositioning, and somatic shock carry 100% of the narrative weight. | *Best for*: Climax peaks (Anagnorisis), devastating truth bombs where spoken words would diminish the gravity of trauma. E.g., standing frozen, swallowing hard, picking up a torn slip, walking away in silence. |
 | **4. REVEAL (Bóc trần / Lật tẩy bí mật)** | Covert physical action unmasks a secret that the spoken line is actively trying to camouflage. | *Best for*: Deception, investigation, conspiracy, betrayal. E.g., speaking cheerfully on the phone with a spouse while quietly sliding an DNA test envelope under the sofa cushion. |
 
-#### Tier 2: The Five 10s / 15s Scene Rhythms (One Continuous Shot per Clip — Image Speaks First, Dialogue Speaks Second)
-Depending on dramatic tension and narrative role, each `10.0s` scene (1 moment, 1 emotion, `0–2` lines, `15–22 words total`) or `15.0s` key turning-point/climax scene (1 moment + 1 small shift, `0–3` lines, `25–35 words total`) is directed as **one continuous camera shot** in one of these 5 rhythms:
+#### Tier 2: The Five 10s / 15s Scene Rhythms (One Dramatic Beat per Clip — Image Speaks First, Dialogue Speaks Second)
+Depending on dramatic tension and narrative role, each `10.0s` scene (1 moment, 1 emotion, `0–22 words total`) or `15.0s` key turning-point/climax scene (1 moment + 1 small shift, `18–32 words total`; budgets per `0c` §2) is directed as **one dramatic beat** — its shot topology chosen by intent (§0.1.6) — in one of these 5 rhythms:
 
 | Rhythm | Mechanism & Physical Action | Dialogue Economy (`~2.5 words/s` + `1.0s` Buffer) |
 |---|---|---|
 | **1. In-Medias-Res Probe & Counter (`10s` — 2 Beats: `00:00–00:05.0` & `00:05.0–00:10.0`)** | Enters directly in the middle of conflict (zero greetings). Beat 1: Character A performs a concrete tactile action and delivers a veiled probe. Beat 2: Character B reacts physically first, then lands the shortest closing line. | `1–2` lines (`15–22 words total`). Max 1 speaker per 5s beat. Final line is the **shortest line in the scene** (`4–7 words`), ending by `00:08.8`. |
 | **2. Authority Verdict / Single-Speaker Weight (`10s`)** | High-status character or emotional lead performs 1 decisive prop action and speaks 1 weighty line while the counterpart absorbs in visible somatic silence (`jaw clench, fingers tightening on glass`). | `1` line (`8–15 words total`). Listener speaks `0 words` — physical reaction replaces speech. |
-| **3. Turning-Point & Subtext Reversal (`15s` — 3 Beats: `0–5s`, `5–10s`, `10–15s`)** | Reserved for key turning points and climaxes (`20–25%` of episode). Beat 1: Provocation/obstacle. Beat 2: Unexpected specific detail or prop reveal shifts leverage. Beat 3: Shortest closing line + irreversible somatic fallout. | `2–3` lines (`25–35 words total`). Max 1 speaker per 5s beat. Finishes speech by `00:13.8`. |
+| **3. Turning-Point & Subtext Reversal (`15s` — 3 Beats: `0–5s`, `5–10s`, `10–15s`)** | Reserved for key turning points and climaxes (`20–25%` of episode). Beat 1: Provocation/obstacle. Beat 2: Unexpected specific detail or prop reveal shifts leverage. Beat 3: Shortest closing line + irreversible somatic fallout. | `2–3` lines (`18–32 words total`). Max 1 speaker per 5s beat. Finishes speech by `00:13.8`. |
 | **4. Pure Visual & Tactile Silence (`10s` — `Model 0`)** | Every episode includes at least 1 silent or near-silent scene so dialogue-heavy scenes hit harder. Pure action, prop friction, and facial transition carry 100% of the turn. | `0 words spoken`. 100% visual storytelling and diegetic Foley. |
 | **5. False Dawn to Cliffhanger Hook (`10s` or `15s`)** | First two-thirds appear to settle the beat; final beat introduces an unexpected visual/auditory clue or unfinished question that propels directly into the next scene or episode. | `1–2` lines (`15–22 words`), ending on a sharp hook or interrupted revelation. |
 
@@ -355,7 +354,7 @@ Lines shorten as stakes rise. High-power characters speak less than low-power ch
    - Track **Echo Lines (`Câu lặp` returning 2–3 episodes later with inverted meaning)**, **Promises & Threats**, **Spoken Lies**, **Unfinished Lines**, and **Who Knows What (`Ai biết gì`)** after each episode.
    - Bridge consecutive scenes via **Question in Scene N → Answer/Action in Scene N+1**, **Word Hooks (`Cầu nối bằng chữ` — repeating a key word from the end of Scene N at the start of Scene N+1)**, and **Rhythmic Alternation** (dense dialogue scene followed by a quiet or silent scene).
 
-### 3.11 The Three Analytical Tiers of Dialogue
+### 3.6 The Three Analytical Tiers of Dialogue
 1. **Tier 1: Optical & Acoustic Source**:
    - *Spoken In-Frame*: Mouth moves with synchronous lip-sync; requires visible lips and frontal-to-three-quarter camera angle.
    - *Voice-Over (V.O.)*: Internal subconscious voice; **lips remain 100% sealed** while eyes/hands betray internal conflict.
@@ -402,9 +401,8 @@ The Screenwriter chooses the voice mode for **each scene** from the dramatic nee
 - **V.O.**: same `Name says : “ line ” (...)` (or `inner voice`) syntax; the parenthetical states `inner voice-over, lips remain sealed` and still begins with `Voice of a [N]-year-old ...`. The prose shows the face doing something the voice does not say.
 - **Silent scene**: no quoted lines in that prompt; the dialogue card for that scene states the silence.
 
-### 4.3 One Continuous Camera Shot per 10s / 15s Scene (Zero Shot-Splitting Inside a 10s Clip)
-Every `10.0s` scene is directed as **one continuous camera shot (`[00:00–00:05.0]` & `[00:05.0–00:10.0]`, zero `Cut to` shot-splitting inside the clip)** framing the `1–3` active characters of that scene, and every `15.0s` turning-point/climax scene is directed across three `5.0s` beats (`[00:00–00:05.0]`, `[00:05.0–00:10.0]`, `[00:10.0–00:15.0]`). When a new camera angle (such as a doorway POV or a reverse focus) is needed, separate it into the next `10.0s` scene rather than chopping a single 10s clip into multiple sub-shots.
-
+### 4.3 One Dramatic Beat per 10s / 15s Clip (Topology Follows Intent)
+Every `10.0s` clip carries **one dramatic beat** and every `15.0s` clip one beat plus one small shift. Whether that beat is shot as one continuous take (`Track A`, `Mode D1-A` shared fixed-camera header) or as `2–4` static cuts (`Mode D1-B / D1-C / D1-D`) is decided by intent (§0.1.6) within the shot counts of `0c-canonical-numbers.md` §1. When a scene needs a second beat (a new want, a new reveal), give it its own clip instead of cramming it into this one.
 ---
 
 ## §5 — CREATIVE REVIEW (SELF-CHECK BEFORE COMPILE)
@@ -553,7 +551,7 @@ One yes/no question the viewer holds from the hook to the climax ("Will Duyên s
 - **Debate seed** — one moral question on which reasonable viewers take opposite sides ("Should she have hidden her pain to keep the peace?"). It drives comments; never settle it with a lecture.
 
 ### 8.8 The Earned Ending
-- The positive ending (Hard Constraint) must **cost someone something**: who gives up what — a role, a certainty, a mask.
+- The ending (positive by default; bittersweet or tragic when the project's `ending_mode` says so) must **cost someone something**: who gives up what — a role, a certainty, a mask.
 - The ending answers the thematic question with an **action or image**.
 - **The title is a promise kept by images, not spoken by characters.** Pair an opening image with a closing image that answers it (tears falling into cold congee ↔ a hot spoonful with no tear).
 
@@ -588,18 +586,11 @@ It is written at Stage 1 (series or short-film Spine, `CP1`), embedded in `setti
   - **Episode 1 (The Inciting Trap & Silent Fracture)**: Duyên’s postpartum exhaustion and dry pump trigger Má Ba’s deep-seated fear of obsolescence. When Má Ba brings the steel hammock, Khang’s gentle refusal lands as rejection. As Duyên’s trembling hands spill the congee and expose the hidden, bruised IV needle marks, Má Ba does NOT deliver a therapeutic confession or offer a warm hug. She freezes in stunned, choking disbelief: *"Tay mầy... mầy vô nước biển hồi nào sao hổng nói tao hay?..."*. The episode cuts to black on the unresolved shockwave—no easy answers, no lullabies, forcing the viewer to binge Episode 2.
   - **Episodes 2–4 (Escalation & Hardening)**: The wound is exposed, but defense mechanisms harden before they soften. Khang is torn between duty and love. Healing is earned across the full multi-act architecture, culminating in the unified Finale.
 
-### 8.12 The 20/80 Structural Law: Standalone Short Film vs. Multi-Episode Series (`6 Genre Engines × 5 Act-Specific Episode Archetypes`)
-1. **Format A (Standalone Short Film, `65s–135s` · `6–12 Scenes`)**:
-   - A closed narrative lifecycle where the complete 6-beat transformation (`Hook ➔ Setup ➔ 3-Wall Escalation ➔ 3-Wave Climax [15s peaks] ➔ Release ➔ 180° Echo`) completes inside a single runtime, with Beats 5 & 6 capped at `1–2 scenes (15–20%)`.
-2. **Format B (Multi-Episode Series, $N$ Episodes)**:
-   - **Strict Ban on Uniform Episode Templates & Uniform `10 × 10s` Lengths**: An individual episode in a series NEVER repeats a closed 6-beat film structure or a mechanical `10 scenes × 10.0s` length.
-   - **6 Genre Structural Engines (`Pillar 1 §5.4` & `workflow.md` §6.4)**: Every series locks its Genre Engine (*Engine 1 Drama Pressure-Cooker*, *Engine 2 Microdrama Every-Episode Dopamine Face-Slap*, *Engine 3 Action 40/40/20 Gauntlet*, *Engine 4 Thriller Onion-Peel & Checkmate*, *Engine 5 Sitcom 4-Phase Snowball Reset*, or *Engine 6 Healing Kishōtenketsu*).
-   - **5 Act-Specific Episode Archetypes & Unified Finale Law (`Pillar 1 §5.3`)**:
-     * `Archetype 1 (Act I Ignition & Trap · 6–8 Sc · 65s–85s)`: Fast hook, wound/prop plant, inciting assault, Point-of-No-Return cliffhanger (or First Mini-Slap in `Engine 2`).
-     * `Archetype 2 (Act IIA Counter & False Dawn · 8–9 Sc · 85s–100s)`: Counter-tactic, `B/C-Plot` cross-cut, False Dawn / Mid-Boss Slap / Gauntlet Clash, Cold Water Slap.
-     * `Archetype 3 (Act IIB Midpoint Shatter · 9–11 Sc · 100s–125s)`: Mid-episode `B-Judas` betrayal (`15s`) + `Seedance 15s` chase/clash + permanent pronoun/status shift.
-     * `Archetype 4 (Act IIIA Siege & Dark Night · 8–10 Sc · 95s–115s)`: Exits sealed, `State 2 Prop Fracture`, `15s Track A-Locked` Dark Night, Option C discovery.
-     * `Archetype 5 (Act IIIB + IV Unified Finale · 10–14 Sc · 115s–155s)`: Fuses **`70–75% Act IIIB (3-Wave Grand Showdown)` + `25–30% Act IV (Earned Cost, 180° Echo Prop & Bookend Closing Image)`** so Act IV is never isolated as a sagging post-climax episode.
+### 8.12 The 20/80 Structural Law: Standalone Short Film vs. Multi-Episode Series
+The structure catalog lives in one place: **Pillar 1 Part II §5** (6 Genre Engines × 5 Act-Specific Episode Archetypes) and its stage instructions in **`workflow.md` §6.3–§6.4**; scene counts and runtimes in **`0c-canonical-numbers.md` §4**. The doctrine only adds the thinking rules:
+1. **Format A (standalone short film)** completes the whole 6-beat transformation inside one runtime; Release + Echo stay short (`15–20%`).
+2. **Format B (series)** never repeats a closed 6-beat film per episode and never uses a uniform `10 scenes × 10s` length: each episode takes the shape of its Act Archetype, and the finale fuses showdown and coda so Act IV never sags as a separate episode.
+3. Choose the Genre Engine from what the audience came for (catharsis, dopamine reversal, adrenaline, intellectual shock, laughter, quiet resonance — §0.05 Layer 2), not from habit.
 
 ---
 
@@ -624,8 +615,8 @@ P# sNN | viewer predicts … | → BROKEN sMM | plant sAA, sBB
 - **Option C rule:** when the viewer is choosing between A and B ("will she obey or rebel?"), the strongest break is a C that was on screen all along and that both A and B ignored. A or B wearing a surprise costume is not a twist.
 - Break predictions about **what a character will do or reveal**, not about physics or tone. A broken tone (a slapstick beat in a grief scene) is a mistake, not a twist.
 
-### 9.3 Surprise Under the Positive-Ending Mandate
-The viewer of a short drama knows the ending will be good (Hard Constraint). Surprise therefore lives in:
+### 9.3 Surprise Under a Positive-Ending Default
+When the project keeps the default positive `ending_mode`, the viewer of a short drama senses the ending will be good. Surprise therefore lives in:
 1. **How** — the route to the ending is not the expected route (not a collapse, not a lecture, not a stranger's intervention).
 2. **At what cost** — someone pays something the viewer did not expect them to pay (§8.8).
 3. **Who changes** — the character expected to change stays; the one expected to stay changes.

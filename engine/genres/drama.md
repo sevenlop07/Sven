@@ -5,6 +5,26 @@ Governed by: Screenwriter (Level 2) & Director (Level 2) under Showrunner (Level
 
 ---
 
+## Genre Card (README §2b)
+
+| Field | Value |
+|---|---|
+| **Regime** | 1 — Grounded Real-World Drama |
+| **Genre Engine** | 1 — Pressure-Cooker (Engine 6 for healing / slice-of-life) |
+| **Audience payoff** | Catharsis and earned empathy |
+| **Default episode shape** | 0c §4 Archetypes; `75:25` |
+| **Preferred hooks** | #6 Body/Expression Detail, #9 Consequence First, #7 Disrupted Order |
+| **Preferred cliffhangers** | False Dawn ➔ Cold Water; C4 Document Detonation, C7 Ghost's Arrival |
+| **Favoured twists & budget** | TW-04 Perspective, TW-08 Misunderstanding, TW-10 Hidden Kindness, TW-13 Sacrifice; 1 major + 1 minor |
+| **Dialogue : visual** | `50 : 50` (subtext dialogue : tactile labor) |
+| **Default `ending_mode` / `fatality_policy`** | positive and costly / none (bittersweet on request) |
+| **Signature bans** | sci-fi gadgets, magic, spy action, inflated money (0c §8), 5-second sermon conversions |
+| **Scorecard criteria that must score 2** | Active character, Natural dialogue, Prediction breaks |
+
+Numbers defer to `engine/references/0c-canonical-numbers.md`; pacing tables below are default sketches.
+
+---
+
 ## 0. Core Principles & Dramatic Philosophy
 
 The objective of the Social & Healing Drama Genre Engine is to create emotionally resonant, grounded stories that confront the genuine psychological and societal struggles of human life, leaving audiences with profound emotional catharsis, renewed hope, and an ending that feels undeniably **earned**—strictly rejecting unearned, artificial "fairy-tale happy endings."
@@ -32,6 +52,11 @@ $$\text{Earned Healing Drama} = \text{Unflinching Reality of Pain} + \text{Inter
 6. **Decisive Lean Intake Protocol**:
    - When core project parameters are underspecified, bundle inquiries into **maximum 3–4 concise questions** in a single pass.
    - If the user desires rapid execution, autonomously adopt robust, culturally authentic defaults and explicitly state what was chosen.
+
+### 0.2 Grounded Realism for Family, Inheritance & Corporate Drama (Regime 1)
+- **Believable enterprises and money**: anchor family businesses to tangible industries (hotel & resort chains, commercial real estate, private hospitals, logistics/shipping, retail/food groups, investment firms) and keep figures relatable per `0c-canonical-numbers.md` §8 — never `$50B+` fantasy numbers, never sci-fi gadgets (neuro-watches, AI brain protocols) in a family drama.
+- **Real legal and financial friction of the story's country**: contested wills and undue influence, prenuptial and morality clauses, guardianship of an ailing parent, embezzlement of company or pension funds, tax audits, board votes. Use the law of the country where the story is set (e.g., US probate for an American family, Vietnamese inheritance and land-use rules for a Vietnamese family) — never import one country's legal furniture into another's story.
+- **Real human betrayals over spectacle**: the drama lives in parents, siblings and in-laws choosing between love, duty and money — not in break-ins, chases or fights (Regime 1 firewall, `workflow.md` §2.4).
 
 ---
 

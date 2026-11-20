@@ -1,8 +1,8 @@
 {
   "version": "3.0",
-  "last_updated": "2026-11-04T16:07:00+07:00",
-  "total_stories_produced": 1,
-  "active_series_id": "the-bankrupt-testament",
+  "last_updated": "2026-11-20T15:28:34+07:00",
+  "total_stories_produced": 2,
+  "active_series_id": "sven-and-leo-culinary-sabotage",
   "anti_repetition_14_axes": {
     "axis_1_character_names_en": [
       "Nguyen Truc",
@@ -15,47 +15,69 @@
       "Simone Laurent",
       "Clara Vance",
       "Julian Rostova",
-      "Dominic Alvarez"
+      "Dominic Alvarez",
+      "Sven",
+      "Leo"
     ],
     "axis_2_character_names_vn": [
       "Nguyễn Trực",
       "Vũ Biền",
       "Trần Đắc Lương",
-      "Tôn Triều"
+      "Tôn Triều",
+      "Sven",
+      "Leo"
     ],
     "axis_3_karma_direction": [
-      "Sacrificial Burden-Bearer to Sovereign Heir"
+      "Sacrificial Burden-Bearer to Sovereign Heir",
+      "Perfectionist Chef Hubris to Feline Sabotage Humiliation (Comedic Status Quo Reset)"
     ],
     "axis_4_story_tracks": [
-      "Track B-Kinetic & Track A/B Harmonic"
+      "Track B-Kinetic & Track A/B Harmonic",
+      "Topology 3: 15.0s 9-Shot Staccato Rapid-Cut Physical Comedy Blitz"
     ],
     "axis_5_symbolic_props_and_groups": [
       "Dragon-Eye Inkstone with Jade Signet Seal / Nghiên Mực Đá Mắt Rồng",
       "Lotus Cinnabar Imperial Exam Scroll / Bài Thi Hương Chu Sa Hoa Sen",
       "Crimson Leather Debt Ledger & 18K Gold-Nibbed Thermal Fountain Pen",
-      "Emerald-Cut Diamond Ring & Obsidian Trustee Signet Seal"
+      "Emerald-Cut Diamond Ring & Obsidian Trustee Signet Seal",
+      "ALREADY PRODUCED / BANNED FROM REPETITION: Pan-Seared Butter Beef Steak (Bo ap chao bo), Honey Roast Chicken/Poultry (Ga nuong mat ong), Butter-Fried Shrimp/Lobster (Tom chien bo)",
+      "Ep01: Electric Hand Mixer (Turbo Switch) & Glass Bowl of Fluffy Whipped Cream (Strawberry Cake)",
+      "Ep02: Stainless Steel Sauce Ladle Catapult & Red Bolognese Spaghetti",
+      "Ep03: Hand-Tossed Pizza Dough Face-Mask & Dry White Flour Bowl",
+      "Ep04: Salmon Nigiri Sushi & Golf-Ball-Sized Green Wasabi Lump",
+      "Ep05: 10-Layer Syrup Buttermilk Pancake Stack (Jenga Bottom Pull)",
+      "Ep06: Copper Pot of White Truffle Cream Soup & Dropped Blue Rubber Fish Toy",
+      "Ep07: Sunny-Side-Up Eggs & Pop-Up Stainless Steel Toaster Artillery",
+      "Ep08: Flowing Warm Chocolate Fondue Fountain & Pink Yarn Ball Clog",
+      "Ep09: Steaming Tonkotsu Ramen Bowl & Elastic Noodle Slingshot Snap",
+      "Ep10: Giant Puffed Golden Cheese Souffle & Feline Paw Deflation Pop"
     ],
     "axis_6_hook_techniques": [
-      "Hook #9 Moral Trap & Status Betrayal"
+      "Hook #9 Moral Trap & Status Betrayal",
+      "ASMR High-Precision Culinary Flex into Split-Second Feline Sabotage"
     ],
     "axis_7_visual_styles": [
       "Pixar 3D Masterwork Animation",
-      "Cinematic 3D UE5 Stylized Realism (Semi-3D / Semi-Real 70:30)"
+      "Cinematic 3D UE5 Stylized Realism (Semi-3D / Semi-Real 70:30)",
+      "Realistic Live-Action Film (Natural Matte Skin & Surface-Bound Culinary Physics)"
     ],
     "axis_8_genres_and_backgrounds": [
       "Courtroom Mystery / Historical Integrity Drama",
       "15th Century Dai Viet / Imperial Examination Grounds & Han Lam Vien",
       "Billionaire & Inheritance Viral Microdrama",
-      "Modern Manhattan Billionaire Estate, Brooklyn Founding Shipyard & 60th-Floor Boardroom"
+      "Modern Manhattan Billionaire Estate, Brooklyn Founding Shipyard & 60th-Floor Boardroom",
+      "Non-Verbal Physical Slapstick Culinary Sitcom / Sunlit Modern Open Kitchen"
     ],
     "axis_9_escalation_variants": [
-      "3-Wall Progressive Complication + 72-Hour Swiss Blind Trust Stress-Test"
+      "3-Wall Progressive Complication + 72-Hour Swiss Blind Trust Stress-Test",
+      "4-Act 9-Shot Micro-Comedy Curve (Chef Hubris -> Stealth Saboteur -> Chain-Reaction Mess -> Snap-Freeze & Deadpan Feline Button)"
     ],
     "axis_10_twist_and_revelation_types": [
       "TW-06 Legal Judo",
       "TW-13 The $22B Sovereign Vault",
       "TW-05 Double Coup",
-      "TW-20 Thermal Ink Verdict"
+      "TW-20 Thermal Ink Verdict",
+      "High-RPM Electric Hand Mixer Turbo Whipped-Cream Explosion (Ep01)"
     ],
     "axis_11_cliffhanger_types": [
       "C4 Irreversible Document Detonation",
@@ -64,24 +86,29 @@
       "C3 Treasonous Betrayal",
       "C7 The Ghost's Signal",
       "C5 Catastrophic Ultimatum",
-      "C6 The Suspended Strike"
+      "C6 The Suspended Strike",
+      "Sitcom Deadpan Status Quo Reset Button (Sven Snap-Freeze vs. Leo Unbothered Victory)"
     ],
     "axis_12_tropes_stacked": [
       "Courtroom Procedural / Exam Rigging Conspiracy",
       "Restorative Justice / Redemption Arc",
       "MD-06 The Unspoken Counter-Sting",
-      "MD-04 Heir Reveal / MD-05 Underdog Phoenix"
+      "MD-04 Heir Reveal / MD-05 Underdog Phoenix",
+      "Polar Odd-Couple Friction (Perfectionist Chef vs. Deadpan Saboteur Cat) + Reaction Delta"
     ],
     "axis_13_time_of_day_and_lighting": [
-      "72-Hour Continuous Diurnal Progression (Blizzard Night Amber/Steel-Blue to Radiant Morning Gold)"
+      "72-Hour Continuous Diurnal Progression (Blizzard Night Amber/Steel-Blue to Radiant Morning Gold)",
+      "Crisp Warm Morning Daylight & Overhead Kitchen Pendant Light"
     ],
     "axis_14_narrative_mode": [
-      "Dialogue-Driven Drama Mode (Voice Palette On)"
+      "Dialogue-Driven Drama Mode (Voice Palette On)",
+      "Silent / Non-Verbal Physical Slapstick + Diegetic ASMR & Feline Meow (Model 0)"
     ]
   },
   "session_log": {
     "recent_hooks": [
-      "Hook #9: 500M Bankruptcy Ledger & Fiancée Ring Return on 6m Mahogany Table"
+      "Hook #9: 500M Bankruptcy Ledger & Fiancée Ring Return on 6m Mahogany Table",
+      "Ep01 Hook: ASMR Electric Hand Mixer Whipped Cream into Feline Paw Turbo Switch & 360-Degree Cream Splatter"
     ],
     "recent_character_names": [
       "Nguyễn Trực",
@@ -94,13 +121,22 @@
       "Simone Laurent",
       "Clara Vance",
       "Julian Rostova",
-      "Dominic Alvarez"
+      "Dominic Alvarez",
+      "Sven",
+      "Leo"
     ],
     "recent_props": [
       "Nghiên Mực Đá Mắt Rồng",
       "Bài Thi Hương Chu Sa Hoa Sen",
       "Crimson Leather Debt Ledger & Gold-Nibbed Fountain Pen",
-      "Emerald-Cut Diamond Ring & Obsidian Trustee Signet Seal"
+      "Emerald-Cut Diamond Ring & Obsidian Trustee Signet Seal",
+      "EXCLUDED PRIOR DISHES: Bo ap chao bo, Ga nuong mat ong, Tom chien bo",
+      "Electric Hand Mixer (Turbo Switch), Clear Glass Mixing Bowl of Whipped Cream & Fresh Strawberries (Ep01 completed)",
+      "Stainless Steel Soup Ladle Catapult, Copper Saucepan, Fresh Basil Sprig & Completed Spaghetti Bolognese Plate (Ep02 completed)",
+      "Raw Pizza Dough Ball, Wooden Rolling Pin, Dry White Flour Bowl, Mozzarella Cheese, Stainless Steel Pizza Cutter & Completed Baked Margherita Pizza (Ep03 completed)",
+      "Long Stainless Steel Sashimi Knife, Raw Salmon Fillet, Wooden Hangiri Rice Bowl, Green Wasabi Paste Dish & Completed Black Wooden Platter of Salmon Nigiri Sushi (Ep04 completed)",
+      "Stainless Steel Wire Whisk, Glass Bowl of Raw Pancake Batter, Flat Griddle Pan, Glass Pitcher of Golden Honey Syrup, Butter Pat & Completed 10-Layer Honey Pancake Stack (Ep05 completed)",
+      "Chef Knife, Raw Brown Mushrooms, Copper Soup Pot, Immersion Blender, Black Truffle Shavings & Completed Royal White Truffle Cream Soup Bowl (Ep06 completed)"
     ],
     "recent_locations": [
       "Trường Thi Thăng Long Nửa Đêm Mưa Bão",
@@ -109,11 +145,13 @@
       "Harrington Estate Marble Foyer and Porte-Cochere",
       "Brooklyn Founding Shipyard and Subterranean Data Vault",
       "Vulture Capital Penthouse Glass Lounge",
-      "Harrington Tower 60th-Floor Executive Boardroom"
+      "Harrington Tower 60th-Floor Executive Boardroom",
+      "Sunlit Modern Open Kitchen with Marble Island"
     ],
     "recent_visual_styles": [
       "Pixar 3D",
-      "Cinematic 3D UE5 Stylized Realism"
+      "Cinematic 3D UE5 Stylized Realism",
+      "Realistic Live-Action Film"
     ],
     "recent_cliffhangers": [
       "C4",
@@ -122,7 +160,8 @@
       "C3",
       "C7",
       "C5",
-      "C6"
+      "C6",
+      "Sitcom Deadpan Feline Victory Button"
     ]
   },
   "story_history": [
@@ -147,6 +186,18 @@
       "date": "2026-11-04",
       "visual_style": "Cinematic 3D UE5 Stylized Realism (Semi-3D / Semi-Real 70:30)",
       "status": "stage-2-cp2-approved"
+    },
+    {
+      "slug": "sven-and-leo-culinary-sabotage",
+      "title": "Con mèo khốn nạn - Seri Ẩm Thực Hài Hước Sven & Leo (10 Tập)",
+      "format": "10-Episode Non-Verbal Culinary Comedy Micro-Series (15.0s / 9 Shots per Episode)",
+      "theme": "Video ẩm thực ASMR kết hợp hài hình thể: Đầu bếp Sven chế biến và hoàn thành trọn vẹn món ăn bắt mắt ở mỗi tập, trong khi chú mèo Leo phá hoại ở bước cuối khiến Sven lãnh đủ hậu quả lên mặt nhưng món ăn vẫn hoàn thành hoàn hảo 100% (Đã loại trừ vĩnh viễn 3 món cũ: Bò áp chảo bơ, Gà nướng mật ong, Tôm chiên bơ).",
+      "lesson": "Quy luật bất biến: (1) Tiêu đề chuẩn từ Tập 1-10: 'CON MÈO KHỐN NẠN TẬP [X]: [TÊN MÓN ĂN VIẾT HOA] #cat #funny #cooking #funnycats #asmrcooking #[mon_an] #naughtycat #shorts'; (2) BẮT BUỘC QUAY ĐẦY ĐỦ QUY TRÌNH NẤU ĂN TỪ NGUYÊN LIỆU SỐNG ĐẾN THÀNH PHẨM (Shot 1 Sơ chế nguyên liệu sống & Mèo phá đợt 1 -> Shot 2-4 Chế biến/Nấu/Nắn -> Shot 5 Mèo tung đòn phá đám đỉnh điểm làm Sven dính chưởng -> Shot 6 Sven vẫn kiên cường hoàn tất trình bày món ăn -> Shot 7 Cận cảnh thành phẩm hoàn chỉnh 100% -> Shot 8-9 Sven tả tơi bên món ăn hoàn hảo & Leo tỉnh bơ); (3) LUẬT PHÂN ĐỊNH ĐẠO CỤ BỐI CẢNH [context]: vs. ĐẠO CỤ NHÂN VẬT [subject]: [context]: chỉ mô tả kiến trúc/nội thất cố định của căn bếp <<<Image 1>>>; mọi dụng cụ cầm tay và nguyên liệu nấu ăn phải gắn trực tiếp cho nhân vật ở [subject]: và Shot 1..9.",
+      "episodes": 10,
+      "date": "2026-11-20",
+      "visual_style": "Realistic Live-Action Film",
+      "status": "ep-01-in-production"
     }
-  ]
+  ],
+  "performance_log": []
 }

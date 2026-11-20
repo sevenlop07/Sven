@@ -5,6 +5,26 @@ Governed by: Screenwriter (Level 2) & Director (Level 2) under Showrunner (Level
 
 ---
 
+## Genre Card (README §2b)
+
+| Field | Value |
+|---|---|
+| **Regime** | 1 — Grounded (comic register) |
+| **Genre Engine** | 5 — Snowball Farce & Reset |
+| **Audience payoff** | Laughter from character-flaw collisions |
+| **Default episode shape** | `6–8` scenes `60–80s`, `90:10` |
+| **Preferred hooks** | #7 Disrupted Order, #2 In Medias Res, #11 Diegetic Acoustic Stimulus |
+| **Preferred cliffhangers** | Comic scene button or a reset with one new itch (C-codes optional) |
+| **Favoured twists & budget** | TW-08 Misunderstanding, TW-14 Irony; snowball lie collapse |
+| **Dialogue : visual** | `30 : 70` (physical slapstick : rapid ping-pong) |
+| **Default `ending_mode` / `fatality_policy`** | positive with status-quo reset |
+| **Signature bans** | heavy tragedy, lectures, jokes that need explanation, cruelty to the weak |
+| **Scorecard criteria that must score 2** | Rhythm, Natural dialogue, Value shift |
+
+Numbers defer to `engine/references/0c-canonical-numbers.md`; pacing tables below are default sketches.
+
+---
+
 ## 0. Core Principles & Comedic Philosophy
 
 The objective of the Sitcom Genre Engine is to guide creators seamlessly from a raw conceptual premise to a fully formatted, production-ready sitcom episode script featuring authentic character-driven laughter, rapid comedic pacing, and consistent emotional dynamics.

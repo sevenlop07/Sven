@@ -7,6 +7,9 @@ File: .agents/hooks/quality_gate_hook.py
 Runs after a file write/edit and audits it:
   * setting.html  -> engine/setting_audit_suite.py
   * tap-N.html    -> engine/episode_audit_suite.py (tap files are banned by the Single-HTML law anyway)
+  * ep-NN-script.md (saved Stage 3 script) -> engine/screenplay_audit.py (workflow.md §8.4)
+  * core docs (workflow.md, AGENT(S).md, .agents/*.md, engine/references/0*.md, engine/genres/*.md)
+    -> engine/doc_range_check.py (JIT line ranges must stay inside the referenced files)
   * Roblox Law R-ANIM lint (ROBLOX_DIRECTOR.md §4) on Python/Lua files under output/ or the roblox kit:
     mocap retargeting (Mixamo/BVH/FBX/RoMixamo, retarget_mocap_to_r15, retarget_humanoid_action) is banned for Roblox films.
 
@@ -121,6 +124,23 @@ def lint_roblox_docs(target):
     return None
 
 
+def lint_doc_ranges(target):
+    """Core doc edits must keep every JIT line range valid (engine/doc_range_check.py)."""
+    norm = target.replace("\\", "/").lower()
+    if not norm.endswith(".md") or "/output/" in norm:
+        return None
+    core = ("/workflow.md", "/agent.md", "/agents.md", "/.agents/", "/engine/references/0", "/engine/genres/")
+    if not any(k in norm for k in core):
+        return None
+    checker = os.path.join(WORKSPACE_ROOT, "engine", "doc_range_check.py")
+    if not os.path.exists(checker):
+        return None
+    res = subprocess.run([sys.executable, checker, "--quiet"], capture_output=True, text=True, encoding="utf-8")
+    if res.returncode != 0:
+        return "Doc line-range check failed (update the StartLine/EndLine maps):\n" + res.stdout.strip()[:2000]
+    return None
+
+
 def main():
     try:
         sys.stderr.reconfigure(encoding="utf-8")
@@ -134,8 +154,11 @@ def main():
             problems.append(run_audit(os.path.join("engine", "episode_audit_suite.py"), target, "Episode Audit Suite"))
         elif filename == "setting.html":
             problems.append(run_audit(os.path.join("engine", "setting_audit_suite.py"), target, "Setting Audit Suite"))
+        elif re.search(r"ep-\d+-script\.md$", filename):
+            problems.append(run_audit(os.path.join("engine", "screenplay_audit.py"), target, "Screenplay Audit"))
         problems.append(lint_r_anim(target))
         problems.append(lint_roblox_docs(target))
+        problems.append(lint_doc_ranges(target))
     problems = [p for p in problems if p]
 
     if runtime == "antigravity":

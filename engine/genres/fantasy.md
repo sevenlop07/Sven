@@ -5,6 +5,26 @@ Governed by: Screenwriter (Level 2), Director (Level 2) & Combat Director (`@Com
 
 ---
 
+## Genre Card (README §2b)
+
+| Field | Value |
+|---|---|
+| **Regime** | 3 — Supernatural, Fantasy, Xianxia & Time-Travel |
+| **Genre Engine** | 3 (cultivation / portal) or 1 (court intrigue) as the sub-genre dictates |
+| **Audience payoff** | Wonder + asymmetric knowledge/power paying off against a ticking cost |
+| **Default episode shape** | default sketch `~10` scenes `100–110s`, flex per 0c §4 |
+| **Preferred hooks** | #1 Visual Paradox, #8 Overlapping Time Traces, #3 Strange Object/Sign |
+| **Preferred cliffhangers** | C7 Ghost's Arrival, C1 Identity Unmasking, C5 Ultimatum |
+| **Favoured twists & budget** | TW-18 Time Shift, TW-16 Secret Connection, TW-19 Symbolic; 1 major + 1–2 minor |
+| **Dialogue : visual** | `45 : 55` |
+| **Default `ending_mode` / `fatality_policy`** | positive / none by default; off-screen death allowed for war arcs on request |
+| **Signature bans** | power without Trigger–Ceiling–Cost; magic leaking into Regime 1; bureaucratic filler |
+| **Scorecard criteria that must score 2** | Hook, Prediction breaks, Cliffhanger |
+
+Numbers defer to `engine/references/0c-canonical-numbers.md`; pacing tables below are default sketches.
+
+---
+
 ## 0. Core Principles & Dramatic Philosophy
 
 The **Time-Travel, Portal Isekai, Cultivation & Supernatural Fantasy Genre Engine** is engineered to power high-retention, visually breathtaking speculative cinema — particularly tailored for **`3D Semi-Realistic Animation (Hoạt Hình 3D Bán Chân Thực — Mẫu 2B)`**, **`Chinese Xianxia 3D Donghua`**, and high-concept live-action fantasy.
@@ -20,8 +40,8 @@ $$\text{Addictive Fantasy Drama} = \text{Asymmetric Knowledge / Awakened Power A
 2. **Native Integration of the `TH3` Continuity Reference Protocol (`Điểm Nối Tham Chiếu Xuyên Không / Biến Đổi Không Gian`)**:
    - Fantasy and Time-Travel stories frequently execute **instant spatial or dimensional transitions** mid-action (stepping through a portal, triggering an ancestral jade talisman, shattering an illusion array, or leaping from a modern rooftop into an ancient battlefield).
    - At every spatial shift boundary (`Scene K-1 ➔ Scene K`), enforce **Case 3 (`TH3` — Split Subject-Context Continuity)**:
-     * **`[subject]:` & `[PROP]:` (Continuous Somatic & Momentum Lock from Scene $K-1$ Last Frame `@00:10.0`)**: Lock `A1`'s exact body posture, forward momentum vector, facial micro-expression, and active hand-grip (`Case B` if holding the relic/weapon) from the **Static Terminal Frame of Scene $K-1$** alongside the Character Reference Sheet (`[100% Appearance, attire, and facial features Refer to image X]`).
-     * **`[context]:` (Instant New World / Era Anchor)**: Discard the old room's environment completely and anchor `[context]:` 100% to the **New Era / Realm / Dungeon Location Reference Sheet (`Refer to image L_new`)**, adding observable environmental transition physics in `[00:00.0–00:03.5]` (e.g., dissipating golden temporal ripples, swirling mist, or portal shockwaves).
+     * **`[subject]:` & `[prop]:` (Continuous Somatic & Momentum Lock from Scene $K-1$ Last Frame `@00:10.0 / @00:15.0`)**: Lock `A1`'s exact body posture, forward momentum vector, facial micro-expression,active hand-grip, and **Surface-Adhered VFX (`tightly clinging and physically adhered to garment hems and blade edge`)** from the **Static Terminal Frame of Scene $K-1$** alongside the Character Reference Sheet (`<<<Image 2>>> (fully_preserved - same female/male face, slender feminine / masculine body proportions...)` + Line 2 `<Name>'s skin, hands (and makeup): fully_preserved - ...`).
+     * **`[context]:` (Instant New World / Era Anchor)**: Discard the old room's environment completely and anchor `[context]:` 100% to the **New Era / Realm / Dungeon Location Reference Sheet (`<<<Image 1>>> (fully_preserved - same architectural layout...)`)**, adding observable environmental transition physics in `Shot 1` (e.g., dissipating golden temporal ripples, swirling mist, or portal shockwaves).
 3. **First-Class Synergy with `3D Semi-Realistic Animation (Mẫu 2B)`**:
    - Unless overridden by the user, default visual styling to **`3d-semi-real`** (*Light Chaser Animation / Blur Studio style*): true `7.5–8 head` proportions, sculpted 3D facial bone structure, refined subsurface scattering (SSS) satin skin, expressive luminous eyes, strand-based 3D hair grooming, and PBR silk/armor/relic shaders.
 
@@ -53,8 +73,8 @@ Every fantasy/time-travel series anchors its visual identity around **1–2 Tier
 - **State 1 (Awakened / Resonance Active)**: Emits observable physical light/particle physics (`faint cyan spiritual runes glowing along the blade fuller`, `golden temporal dust orbiting the open watch dial`).
 - **State 2 (Overdrive / Shattered Transformation)**: Renamed entity state when pushed past the limit (`Shattered Jade Core Fragments`, `Blazing Crimson Lotus Greatsword`).
 
-### Rule 3: Mandatory Cross-Genre Kinetic Action & Chase Integration (`Seedance 10.0s / 15.0s`)
-Even in court-intrigue `Trùng Sinh` or romance-heavy `Xuyên Không`, every episode MUST weave **$\ge 1\text{–}2$ high-tension kinetic action, chase, ambush, or supernatural clash scenes (`10.0s` or `15.0s`)** explicitly tagged in Stage 3 as:
+### Rule 3: Kinetic Action & Chase Peaks When the Story Earns Them (`Seedance 10.0s / 15.0s`)
+Action-led sub-genres (cultivation, portal survival) usually carry **`1–2` kinetic action, chase, ambush or supernatural clash scenes (`10.0s` or `15.0s`)** per episode. Court-intrigue `Trùng Sinh` or romance-heavy `Xuyên Không` episodes use them only when the plot produces the clash — never as a quota. Tag them in Stage 3 as:
 - **`[⚡ MODEL KHUYẾN NGHỊ: SEEDANCE · 10.0s / 15.0s]`**
 - Examples: Rooftop tile pursuit across a lantern-lit palace, escaping a collapsing dimensional rift, carriage/steed ambush in a bamboo forest, or a `2.3x–10x` martial/supernatural duel directed with `@CombatDirector`.
 
@@ -69,6 +89,7 @@ When a character travels between two distinct eras (e.g., Modern City $\leftrigh
 ---
 
 ## 3. Episode Pacing Blueprint (10-Scene / 100s–110s Fantasy & Time-Travel Arc)
+> Default sketch only — scene count and runtime flex with the Act Archetype and the project's locked runtime (`0c-canonical-numbers.md` §4).
 
 | Scene | Role & Beat | Continuity Case (`TH1/TH2/TH3`) | Target Model & Tempo |
 |:-:|---|:-:|---|
