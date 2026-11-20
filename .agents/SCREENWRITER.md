@@ -22,7 +22,7 @@ description: >
 | Catalogs: genre engines & archetypes, hooks, twists, dialogue models, Vietnamese dialects | [`1-narrative-screenplay-architecture.md`](file:///d:/Project/Sven/engine/references/1-narrative-screenplay-architecture.md) Part II §5, Part III, Part IV, Parts V–VI, Part XI |
 | Speech physics and the dialogue laws D1–D6 | [`0b-temporal-camera-grammar.md`](file:///d:/Project/Sven/engine/references/0b-temporal-camera-grammar.md), `workflow.md` §2.5 |
 | Model sheets, prop sheets, location grids, `setting.html` spec | [`2-casting-worldbuilding-specification.md`](file:///d:/Project/Sven/engine/references/2-casting-worldbuilding-specification.md), [`.agents/PHOTO_DIRECTOR.md`](file:///d:/Project/Sven/.agents/PHOTO_DIRECTOR.md) |
-| Genre conventions | [`engine/genres/`](file:///d:/Project/Sven/engine/genres/README.md) (one module per project, mounted at K2) |
+| Genre conventions | [`engine/genres/`](file:///d:/Project/Sven/engine/genres/README.md) (one module per project, mounted at K2) — read its **Genre Card** and **Mastery Playbook** (P1–P7) before Stage 0 |
 
 **Rule kinds** (doctrine §0): fixed timings, word budgets and "always / strictly" craft mandates are **Craft Defaults** — break them with a `BREAK: <default> — <reason>` line when the scene needs it. **Hard Constraints** (`workflow.md` §2.11: clip format, reference locks, platform safety, minor protection) never yield.
 

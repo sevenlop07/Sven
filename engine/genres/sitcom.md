@@ -369,3 +369,53 @@ Before any sitcom screenplay is delivered to the user or compiled for production
 
 ### 6.3 Copyright & Originality Mandate
 Under no circumstances may scripts copy dialogue, characters, or specific story beats from existing copyrighted television shows (e.g., *Friends, The Office, Brooklyn Nine-Nine, Gia Đình Là Số 1*). All characters, situations, cultural references, and punchlines must be 100% original creations engineered specifically for the project.
+
+---
+
+## Mastery Playbook — Sitcom (README §2c)
+
+### P1. The promise and the three killers
+- **Promise**: characters we love trapped together, making a small problem enormous because of who they are — and everything back to normal by the end, so we can do it again next week.
+- **Killer 1 — jokes instead of situations**: laughs must come from character flaws colliding, not from one-liners anyone could say.
+- **Killer 2 — real tragedy**: stakes feel huge to the characters and small to us; nobody is truly hurt.
+- **Killer 3 — no escalation**: the lie or plan must get worse three times before it collapses.
+
+### P2. Series architecture (Engine 5 — Snowball & Reset)
+- **The ensemble map**: 3–5 regulars, each with one fixed flaw and one fixed want that clash (the perfectionist vs. the slob, the miser vs. the show-off). Write the **clash grid** once; every episode is a cell of that grid.
+- **Episodes are self-contained**; only small threads carry over (a running gag, a slow romance, a recurring rival). A light season arc may peak at the midpoint and finale without breaking the reset.
+- **Running gags**: plan 2–3 that recur with a variation each time and pay off in the finale (rule of three across the season).
+
+### P3. Episode architecture (6–8 scenes, 60–80s)
+| Phase | Scenes | Job |
+|---|---|---|
+| Petty spark | 1–2 | A tiny want or mishap, hook in 3s |
+| Cover-up | 2–3 | A character lies or schemes to avoid a small consequence |
+| Snowball | 3–5 | Each attempt to fix the lie needs a bigger lie; a second character gets dragged in |
+| Farce collision | 5–6 | All threads meet in one place at the worst moment |
+| Reset + button | 7–8 | The truth spills, the status quo returns, and a final visual button (a callback, a reaction) gets the last laugh |
+
+### P4. Signature scene: the farce collision
+- Same room, everyone with a different secret, every entrance at the worst time.
+- **Reaction delta**: the laugh is on the face of the person who just understood; give that face the hold.
+- Physical comedy uses one tactile prop that changes hands (cake, phone, wig) — track its custody.
+
+### P5. Dialogue
+- Rapid ping-pong, 3–6 words a turn; the joke word lands **last** in the line.
+- Each character's flaw shows in how they speak (the know-it-all corrects, the coward agrees with everyone).
+- Example (10s):
+  > **Hưng** (giấu chiếc bánh cháy sau lưng): "Bánh hả? Bánh… đang nghỉ."
+  > **Vợ:** "Bánh mà cũng nghỉ?"
+  > **Hưng:** "Nó làm việc vất vả lắm em."
+  > *Khói bốc lên từ sau lưng anh.*
+
+### P6. Hooks, twists, buttons
+- Hooks: #7 Disrupted Order, #2 In Medias Res, #11 Diegetic Sound.
+- Twists: TW-08 Misunderstanding, TW-14 Irony.
+- Episode end: a **button** (callback, a deadpan reaction, the running gag) instead of a cliffhanger.
+
+### P7. Mastery checklist
+1. Is the problem small to us and enormous to them?
+2. Does the lie escalate exactly three times?
+3. Does every laugh come from a character's fixed flaw?
+4. Are all threads in one place at the collision?
+5. Is the world back to normal — with one new tiny itch — at the end?

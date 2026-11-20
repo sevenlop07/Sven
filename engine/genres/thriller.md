@@ -97,3 +97,62 @@ When the plot naturally produces a pursuit, escape or struggle, break the quiet 
 | **08** | **The Prestige Unmasking (`Option C`)**: `A1` connects Clues #1 and #2 to shatter the culprit's alibi (`CADENCE: TRUTH_BOMB_SHOCK`). | `TH2` or `TH1` | `Standard 10.0s` |
 | **09** | **Chilling Aftermath & Moral Price**: `Track A-Locked` static hold on the unmasked truth and its devastating emotional cost. | `TH1` (Continuous) | `Standard 10.0s` |
 | **10** | **Clue Reversal Cliffhanger (`C1–C7`)**: A newly uncovered detail reveals a higher mastermind or turns a trusted ally into the next target. | `TH1` or `TH3` | `Standard 10.0s` |
+
+---
+
+## Mastery Playbook — Thriller & Mystery (README §2c)
+
+### P1. The promise and the three killers
+- **Promise**: a puzzle the viewer can solve in theory and doesn't — then, at the reveal, every clue was on screen.
+- **Killer 1 — cheating clues**: a clue shown only after the reveal, or a culprit with no screen time.
+- **Killer 2 — luck**: the detective wins by coincidence or a confession.
+- **Killer 3 — talk instead of tension**: interrogations that recap facts; silence and sound do the work.
+
+### P2. Series architecture (Engine 4 — Onion-Peel & Checkmate)
+| Act | Job |
+|---|---|
+| I Impossible situation | A crime or anomaly that seems impossible; `≥ 2` silent visual clues planted; 3–4 suspects with motives |
+| IIA Red herrings | The obvious suspect collapses; each episode clears one suspect and plants one new clue |
+| IIB Midpoint switch | **Hunter becomes hunted**: the investigator is now a target (mystery ➔ suspense) |
+| IIIA Trap | The true culprit closes in; a trusted ally looks guilty |
+| IIIB+IV Checkmate | A trap set by the investigator springs; flashback montage shows the planted clues; the price of the truth |
+- Keep a **clue ledger**: clue, scene planted, how it is disguised, scene where it pays. The master twist needs `≥ 3` plants.
+- Decide per episode what the **audience knows vs. the investigator** and switch it at least once.
+
+### P3. Episode architecture (~10 scenes)
+| Scenes | Function |
+|---|---|
+| 01 | Anomaly in the first 3s (an object, a sound, a body language glitch) |
+| 02 | Silent inspection: clue #1 in frame, not commented |
+| 03 | Interrogation duel: a micro-expression leaks |
+| 04 | Covert probe: audience sees the threat the investigator doesn't (suspense) + clue #2 |
+| 05 | A theory collapses; exits close |
+| 06–07 | Pursuit or struggle **only if the plot produces it**; otherwise a second interrogation that turns |
+| 08 | Two clues connect: partial reveal |
+| 09 | The cost of knowing |
+| 10 | Clue reversal cliffhanger: a trusted face, a new victim, a forged proof |
+
+### P4. Signature scene: the interrogation that turns
+- The interrogator lays out **one object**, says almost nothing, and lets the suspect talk themselves into the contradiction.
+- Camera withholds, never lies: frame the hands, the pause, the eyes that move to the door.
+
+### P5. Dialogue & confrontation
+- Scalpel lines: short, precise, a question that contains the accusation.
+- Example (15s):
+  > *Thanh tra Lâm đặt chiếc ô ướt lên bàn thẩm vấn.*
+  > **Lâm:** "Tối đó anh nói anh không ra khỏi nhà."
+  > **Phong:** "Đúng. Mưa to thế cơ mà."
+  > **Lâm:** "Ô này có tên anh. Nó ở hiện trường."
+  > *Phong nhìn chiếc ô, rồi nhìn cửa sổ. Anh không nói nữa.*
+
+### P6. Hooks, twists, cliffhangers
+- Hooks: #3 Strange Object, #12 Cognitive Silence/Glitch, #9 Consequence First.
+- Twists: TW-04 Perspective, TW-05 Identity, TW-16 Secret Connection.
+- Cliffhangers: C1 Identity Unmasking, C3 Betrayal, clue reversal.
+
+### P7. Mastery checklist
+1. Is every clue used in the solution visible on screen before it is used?
+2. Did the investigator win by reasoning or a trap, never by luck?
+3. Does the culprit appear early, innocently, more than once?
+4. Does each episode clear one suspect and plant one clue?
+5. Does the knowledge mode switch at least once this episode?

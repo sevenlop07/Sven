@@ -10,7 +10,7 @@ Governed by: Screenwriter (Level 2) & Director (Level 2) under Showrunner (Level
 | Field | Value |
 |---|---|
 | **Regime** | 1 — Grounded Real-World Drama |
-| **Genre Engine** | 1 — Pressure-Cooker (Engine 6 for healing / slice-of-life) |
+| **Genre Engine** | 1 — Pressure-Cooker (villain-free healing / slice-of-life stories use `healing.md`, Engine 6) |
 | **Audience payoff** | Catharsis and earned empathy |
 | **Default episode shape** | 0c §4 Archetypes; `75:25` |
 | **Preferred hooks** | #6 Body/Expression Detail, #9 Consequence First, #7 Disrupted Order |
@@ -385,3 +385,61 @@ Before delivering any dramatic script, treatment, or outline, the Screenwriter r
 
 ### 6.3 Originality & Copyright Mandate
 All characters, backstories, family dynamics, and dramatic resolutions must be 100% original creations. While classical narrative archetypes may inform the structure, copying characters, scenes, or dialogue from existing works (*e.g., Parasite, Reply 1988, The Father, Manchester by the Sea*) is strictly prohibited.
+
+---
+
+## Mastery Playbook — Family Drama (README §2c)
+
+### P1. The promise and the three killers
+- **Promise**: the viewer watches people who love each other hurt each other for reasons the viewer understands on both sides — and waits for the moment someone finally pays the price of the truth.
+- **Killer 1 — early reconciliation**: a hug or apology in Acts I–II drains every remaining episode. Defences harden before they soften.
+- **Killer 2 — the cartoon villain**: the opposing relative must be "love pointed the wrong way"; write their Wound first.
+- **Killer 3 — the sermon**: nobody explains the moral; the ending answers with an action or an image.
+
+### P2. Series architecture (Engine 1 — Pressure-Cooker)
+| Act | Share | What happens in a family drama |
+|---|---|---|
+| I Ignition | 20% | A concrete trigger (illness, will, debt, return of an absent member) forces the family into one room; `A1` makes the first protective lie |
+| IIA False Dawn | ~22% | `A1`'s tactic seems to work; a cosy scene the audience distrusts; the C-plot relative quietly moves |
+| IIB Midpoint | ~23% | The lie is half-exposed by an object, not a speech; one address shift (`"bố"` ➔ `"ông"`) marks the rupture |
+| IIIA Dark Night | 25% | The family splits into camps; `A1` loses the person they were protecting; the old wound is named for the first time — through a memory, not a label |
+| IIIB+IV Finale | 10% + coda | Public or ritual setting (death anniversary, wedding, hospital, court); `A1` gives up the mask; the opposing relative's Wound is touched; closing image answers the opening image |
+- **Master secret**: a family fact (who paid for what, who is whose child, who signed) peeled one layer per episode, fully revealed at ~2/3.
+- **B-plot**: the relationship that suffers from `A1`'s lie (spouse, child). **C-plot**: the quiet relative who profits or protects.
+
+### P3. Episode architecture (8–11 scenes, default)
+| Scenes | Function | Scene type |
+|---|---|---|
+| 01 | Ritual of daily life with one wrong detail | Hook |
+| 02–03 | Who wants what at the table; first velvet-dagger line | Dialogue |
+| 04 | An object reveals more than anyone says | Clue discovery |
+| 05 | One character alone: the cost shows on the body | Storytelling / V.O. or silent |
+| 06–08 | Confrontation that escalates in three walls | Dialogue / confrontation (one `15s`) |
+| 09 | The crisis choice — `A1` protects the lie or the person | Dialogue, `15s` |
+| 10–11 | Quiet aftermath, then the cold-water cliffhanger caused by a plant | Silent ➔ hook |
+
+### P4. Signature scene: the family-meal confrontation
+- Everyone has a **job with their hands** (pouring tea, peeling fruit, serving rice). The fight happens *through* the task: who serves whom first, who refuses the bowl.
+- Power is spatial: who sits at the head, who stands, who leaves the table.
+- Never more than 2 people actively fighting in a shot window; the others react without speaking.
+
+### P5. Dialogue & confrontation
+- Kinship pronouns are weapons: the moment someone changes how they address a parent or sibling is a plot event — plan it in the voice profile.
+- Attack with care, defend with detail: the antagonist "worries" (`"Mẹ chỉ lo cho sức khoẻ của em thôi"`); the protagonist answers with one specific lived memory, not a slogan.
+- Example (10s, two turns):
+  > *Chị dâu xới cơm vào bát em chồng, gạt bớt thịt sang bát mình.*
+  > **Chị dâu:** "Em ăn chay mấy năm rồi mà, quên à?"
+  > **Em chồng** (đặt đũa xuống): "Em ăn chay từ ngày chị dọn vào."
+  > *Cả bàn im. Bố gắp miếng thịt bỏ lại vào bát cô.*
+
+### P6. Hooks, twists, cliffhangers
+- Hooks: #6 Body/Expression Detail, #7 Disrupted Order, #9 Consequence First.
+- Twists: TW-04 Perspective (the cruel one was protecting), TW-10 Hidden Kindness, TW-08 Misunderstanding (≤ 1 act), TW-13 Sacrifice.
+- Cliffhangers: an object returns, an overheard sentence, an address that changes, a signature discovered.
+
+### P7. Mastery checklist (add to the Scorecard)
+1. Could the opposing relative's view win a family vote? If not, deepen it.
+2. Is every confrontation conducted through a domestic task?
+3. Has no one apologised or reconciled before the Dark Night?
+4. Does each episode move one kinship address or one family secret?
+5. Is the ending a gesture or image the opening promised?

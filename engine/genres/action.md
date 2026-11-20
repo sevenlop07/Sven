@@ -162,3 +162,55 @@ Inside a standard **100-Second Action-Drama Episode (10 Scenes $\times$ 10.0s, w
 - **Scene 08 `[01:10–01:20]` (Combat Wave 3: Decisive Climax — `@CombatDirector` `2.3x–10x`)**: Simultaneous cross-counters, terrain springboard rebound, and the final devastating strike that disarms/defeats the adversary.
 - **Scene 09 `[01:20–01:30]` (Release & Somatic Aftermath — `@Director` `1.0x`)**: Wrecked arena preserved in `[context]:`; heavy breathing, moral mercy, and embracing the rescued loved one (`Track A-Locked` or slow push-in).
 - **Scene 10 `[01:30–01:40]` (Echo Resolution OR Zeigarnik Cliffhanger — `@Director` `1.0x`)**: Earned restorative peace (Standalone) OR a `00:07.5–00:10.0` Cold-Water reveal of a deadlier threat (Series).
+
+---
+
+## Mastery Playbook — Action & Martial Arts (README §2c)
+
+### P1. The promise and the three killers
+- **Promise**: a hero pushed past their limit, fights where every move means something, and victory earned by a choice — not just stronger punches.
+- **Killer 1 — fights that change nothing**: every fight must win or lose something (a person, a weapon, a secret, a position).
+- **Killer 2 — no compression**: action hits only after tension is built; 40% of the episode builds the pressure.
+- **Killer 3 — an invincible hero**: the hero must lose badly at least twice in the series.
+
+### P2. Series architecture (Engine 3 — Gauntlet & Breakthrough)
+| Act | Job |
+|---|---|
+| I Ambush & loss | The hero loses someone or something; the enemy is clearly stronger |
+| IIA Gauntlet | Trials against rising opponents; each teaches one lesson; allies gained and tested |
+| IIB Midpoint | The signature weapon breaks (State 2) or the hero's style fails; a tactical or inner epiphany |
+| IIIA Siege | Allies fall back; the hero must choose between revenge and protecting someone |
+| IIIB+IV Showdown | Boss fight won by the epiphany and a sacrifice, not raw power; short coda |
+- **Opponent ladder**: list each opponent with the specific weakness of the hero they expose.
+- **Rule of the weapon**: the Tier-1 weapon evolves `State 0 ➔ 1 ➔ 2`; its state is the hero's inner state.
+
+### P3. Episode architecture (3 zones)
+| Zone | Share | Scenes |
+|---|---|---|
+| Compression | ~40% | Stakes, a threat, a choice; dialogue and silence (`10s`) |
+| Action | ~40% | `1–3` kinetic scenes (`@CombatDirector`, Seedance); each with a turn in the middle |
+| Fallout | ~20% | The cost on bodies and relationships; a cliffhanger (stronger enemy, broken weapon) |
+
+### P4. Signature scene: the fight with a turn
+- Every fight has **three beats**: the hero's plan ➔ the plan fails (enemy adapts) ➔ the hero improvises using the terrain, an earlier lesson or a planted object.
+- Terrain matters: stairs, rain, narrow corridor, kitchen — choose a space that changes the fight.
+- Zero on-screen death; victory is knockout, disarmament or escape.
+
+### P5. Dialogue
+- Almost none during the fight; one line before (a threat or a vow) and one after (a verdict, `2–6` words).
+- Example:
+  > *Khải lau vết máu ở khoé môi, nhặt nửa thanh kiếm gãy.*
+  > **Thủ lĩnh:** "Kiếm gãy rồi, còn đánh gì nữa?"
+  > **Khải:** "Đủ dài để tới tim ông."
+
+### P6. Hooks, twists, cliffhangers
+- Hooks: #2 In Medias Res, #4 Suspended Kinetic Moment, #9 Consequence First.
+- Twists: TW-05 Identity (the master/traitor), TW-12 Reversal, TW-09 Reverse Rescue.
+- Cliffhangers: C2 Threshold Ambush, C6 Suspended Strike, C3 Betrayal.
+
+### P7. Mastery checklist
+1. Does every fight have a plan, a failure and an improvised turn?
+2. Does every fight change something irreversibly?
+3. Is ~40% of the episode compression before the first strike?
+4. Does the weapon's state mirror the hero's state?
+5. Is the final victory won by a choice the hero could not make in Ep 1?

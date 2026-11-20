@@ -145,3 +145,58 @@ Inside a standard **100-Second Microdrama Episode (10 Scenes $\times$ 10.0s)**:
 2. **Precedence**:
    - When active, `microdrama.md` enforces high-frequency pacing, Staccato dialogue, and persistent cliffhangers over the slow-burn contemplative pacing of `drama.md`.
    - Core constraints (`workflow.md §2`: Zero Dead Air, Zero Cumulative Timestamps, 10s atoms, Safe Metaphors) remain universally binding.
+
+---
+
+## Mastery Playbook — Microdrama (README §2c)
+
+### P1. The promise and the three killers
+- **Promise**: injustice the viewer feels in the first 3 seconds, and a payoff — a status reversal — **in every single episode**, with a bigger one always looming.
+- **Killer 1 — oppression without a counter**: an episode where the hero only suffers loses the swipe.
+- **Killer 2 — the payoff that costs nothing**: the reversal must use something planted earlier (a document, a skill, a witness), never a random rescuer.
+- **Killer 3 — slow talk**: any line over ~12 words in a strike, any greeting, any explanation.
+
+### P2. Series architecture (Engine 2 — Every-Episode Face-Slap)
+| Block | Episodes (of 30–80) | Job |
+|---|---|---|
+| Hook block | 1–3 | Maximum humiliation + the hidden identity/skill the viewer knows and the oppressors don't (dramatic irony) + the first mini-slap at the end of Ep 1 |
+| Ladder block | 4 – ~60% | Each episode: a bigger oppressor arrives (the "higher boss"), is baited, and is slapped; each slap reveals one more layer of the hero's real status |
+| Betrayal block | ~60–80% | The ally or the person the hero protected switches side; the hero loses publicly once — the viewer must doubt |
+| Crown block | last ~20% | Total public unmasking of the main oppressor in front of the community that mocked the hero; a short sovereign walk-away |
+- Plan a **slap ladder**: list every oppressor in rising power and the planted proof that defeats each one.
+
+### P3. Episode architecture (~10 scenes, ~100s)
+| Scenes | Function |
+|---|---|
+| 01 | Cold hook: humiliation or shock in progress, no explanation |
+| 02–03 | Squeeze: oppressor seals the exits (status proxies: contract, seat, badge, title) |
+| 04 | The hero's quiet counter-move or a plant the camera catches |
+| 05–06 | Bait: the oppressor overreaches in public |
+| 07–08 | The slap: proof revealed, crowd turns |
+| 09 | Fallout on faces; the hero says almost nothing |
+| 10 | Zeigarnik cliffhanger: the higher boss arrives or a new threat lands (C1–C7, rotate) |
+
+### P4. Signature scene: the public reversal
+- Always in front of witnesses (board, wedding, family, livestream comments). The crowd is the scoreboard.
+- Reversal = an **object** (seal, contract, bank screen, ID) placed on the table, not a speech.
+- The beaten party's face gets the longest hold; the hero gets the shortest line.
+
+### P5. Dialogue & confrontation
+- Strike cadence: provocation ➔ `1.5s` gaze ➔ fatal reversal, `≤ 12` words per strike.
+- The oppressor talks a lot; the hero answers in `2–6` words.
+- Example (10s):
+  > **Trưởng phòng** (ném tập hồ sơ): "Loại thực tập như cô, mai khỏi đến."
+  > **Ngân** (đặt thẻ nhân viên lên bàn, mặt sau hướng về anh ta): "Mai anh đọc kỹ chữ ký sếp mới."
+  > *Hắn lật thẻ: chức danh Tổng giám đốc. Tay hắn khựng giữa không trung.*
+
+### P6. Hooks, twists, cliffhangers
+- Hooks: #1 Visual Paradox, #9 Consequence First, #6 Body Detail.
+- Twists: TW-12 Reversal, TW-05 Identity, TW-02 Karma.
+- Cliffhangers: rotate C1–C7; never the same code twice in a row.
+
+### P7. Mastery checklist
+1. Does this episode contain one complete slap, and does it set up a bigger one?
+2. Was the proof used in the slap planted at least one episode earlier?
+3. Is every humiliation shown through status proxies, not violence?
+4. Does the hero's real status rise by exactly one visible step?
+5. Is the last frame a new, more powerful threat?

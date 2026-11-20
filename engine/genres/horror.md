@@ -55,3 +55,58 @@ $$\text{Horror} = \text{A Rule of the Haunting} + \text{Withheld Information} + 
 2. Can the haunting's rules be stated, and were they shown before they mattered?
 3. What human secret does the haunting expose, and does the ending answer it?
 4. Is every frightening beat free of gore, graphic death and minors in danger?
+
+---
+
+## Mastery Playbook — Horror (README §2c)
+
+### P1. The promise and the three killers
+- **Promise**: a slow tightening of dread in an ordinary place, a few shocks that land because they were earned, and a human secret the haunting drags into the light.
+- **Killer 1 — showing the monster early**: what is not seen frightens more; full reveal only at the climax.
+- **Killer 2 — shocks with no build**: every shock needs a build and a false alarm before it.
+- **Killer 3 — no human story**: without a guilt, promise or secret, the haunting is noise.
+
+### P2. Series architecture
+| Act | Job |
+|---|---|
+| I Arrival | Characters enter the place/ritual; one rule of the haunting is broken without anyone knowing |
+| IIA Signs | Small wrong details escalate; near-misses teach the rules to the audience |
+| IIB Midpoint | The haunting is confirmed and connected to a family/community secret |
+| IIIA Siege | The rules close in; trusted people turn out to be hiding the secret |
+| IIIB+IV Confrontation | The secret is confessed or the debt is paid; the haunting ends or transforms — leave one sign it is not over |
+- **Rules ledger**: trigger, what it cannot do, its price — every rule seen in a near-miss before it matters.
+
+### P3. Episode architecture
+| Scenes | Function |
+|---|---|
+| 01 | A normal ritual + one wrong detail (hook by sound or absence) |
+| 02–04 | Build: sound before image, empty frames, a character alone |
+| 05 | False alarm (a cat, a neighbour) — release |
+| 06–07 | The secret leaks through a person; tension rises again |
+| 08 | The real shock (one per episode, two at most) |
+| 09 | Silence after; someone lies about what they saw |
+| 10 | A sign that it is closer (cliffhanger) |
+
+### P4. Signature scene: the empty frame
+- Hold a `15s` clip on a doorway, mirror or dark corridor while a character does something mundane in the foreground. Let the viewer search.
+- Sound first: footsteps upstairs when everyone is downstairs; a voice calling a name only one character knows.
+
+### P5. Dialogue
+- Little dialogue; whispers; unfinished sentences; people refuse to say the name of the dead.
+- Example:
+  > *Bà nội đặt thêm một đôi đũa lên mâm cơm, dù cả nhà chỉ có ba người.*
+  > **Vy:** "Bà ơi, bà đặt thừa rồi."
+  > **Bà nội** (không nhìn cháu): "Không thừa đâu."
+  > *Trên tầng hai, có tiếng kéo ghế.*
+
+### P6. Hooks, twists, cliffhangers
+- Hooks: #12 Cognitive Silence, #11 Diegetic Sound, #7 Disrupted Order.
+- Twists: TW-04 Perspective, TW-17 Illusion, TW-16 Secret Connection, TW-11 Full Circle.
+- Cliffhangers: C2 Threshold Ambush, C7 Ghost's Arrival.
+
+### P7. Mastery checklist
+1. Is every shock preceded by build and a false release?
+2. Is the entity still not fully shown before the climax?
+3. Is a human secret advanced this episode?
+4. Are all frights free of gore, graphic death and minors in danger?
+5. Does sound carry at least one beat before the image?

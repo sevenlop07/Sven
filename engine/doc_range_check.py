@@ -14,6 +14,7 @@ silently point at the wrong section. This script finds every range that is attac
   python engine/doc_range_check.py                 # check the core docs, exit 1 on problems
   python engine/doc_range_check.py --quiet         # print problems only
   python engine/doc_range_check.py --map workflow.md   # print the headings of a file with line numbers
+  python engine/doc_range_check.py --fix               # move anchored ranges to where their heading now is
 
 Run it after editing workflow.md, AGENT.md, AGENTS.md, .agents/*.md or any reference file.
 """
@@ -26,8 +27,8 @@ ROOT = os.path.normpath(os.path.join(os.path.dirname(os.path.abspath(__file__)),
 
 FILE_RE = re.compile(r"([\w\-./]+\.md)\b")
 RANGE_RES = [
-    re.compile(r"StartLine\s*[:=]\s*(\d+)\s*,\s*EndLine\s*[:=]\s*(\d+)(?:\s*[·—-]\s*(§[\w.]+))?"),
-    re.compile(r"\bL(\d+)\s*[–-]\s*(\d+)(?:\s+(§[\w.]+))?"),
+    re.compile(r"StartLine\s*[:=]\s*(\d+)\s*,\s*EndLine\s*[:=]\s*(\d+)(?:\s*[·—-]\s*(§[\w.]+(?:[–-]§[\w.]+)?))?"),
+    re.compile(r"\bL(\d+)\s*[–-]\s*(\d+)(?:\s+(§[\w.]+(?:[–-]§[\w.]+)?))?"),
 ]
 
 
@@ -72,9 +73,38 @@ def lines_of(path):
     return _cache[path]
 
 
-def check():
+def _anchor_rx(anchor):
+    return re.compile(re.escape(anchor) + r"(?![\w.])")
+
+
+def _find_heading(lines, anchor):
+    rx = _anchor_rx(anchor)
+    for k, l in enumerate(lines):
+        if l.lstrip().startswith("#") and rx.search(l):
+            return k + 1
+    return None
+
+
+def _section_end(lines, start):
+    """Last line of the section that begins at heading line `start` (1-based): the line before the next heading of the
+    same or higher level, minus trailing blank lines and `---` separators."""
+    level = len(lines[start - 1]) - len(lines[start - 1].lstrip("#"))
+    end = len(lines)
+    for k in range(start, len(lines)):
+        s = lines[k]
+        if s.startswith("#"):
+            lv = len(s) - len(s.lstrip("#"))
+            if lv <= level:
+                end = k
+                break
+    while end > start and lines[end - 1].strip() in ("", "---"):
+        end -= 1
+    return end
+
+
+def check(fix=False):
     idx = index_md()
-    problems = []
+    problems, fixes = [], {}
     for doc in core_docs():
         rel = os.path.relpath(doc, ROOT)
         for i, line in enumerate(lines_of(doc), 1):
@@ -90,16 +120,41 @@ def check():
                     a, b, anchor = int(m.group(1)), int(m.group(2)), m.group(3)
                     if target is None:
                         continue
-                    n = len(lines_of(target))
+                    tl = lines_of(target)
+                    n = len(tl)
                     tname = os.path.relpath(target, ROOT)
+                    if anchor:
+                        first, _, last = re.sub(r"[–-]§", "|§", anchor).partition("|")
+                        new_a = _find_heading(tl, first)
+                        last_a = _find_heading(tl, last) if last else new_a
+                        new_b = _section_end(tl, last_a) if (new_a and last_a) else None
+                        if new_a is None:
+                            problems.append(f"{rel}:{i}: anchor {anchor} has no heading in {tname}")
+                        elif (a, b) != (new_a, new_b):
+                            if fix:
+                                fixes.setdefault((doc, i), []).append((m.start(1), m.end(1), str(new_a)))
+                                fixes[(doc, i)].append((m.start(2), m.end(2), str(new_b)))
+                                a, b = new_a, new_b
+                            else:
+                                problems.append(f"{rel}:{i}: anchored range L{a}-{b} {anchor} is now L{new_a}-{new_b} in {tname} — run with --fix")
                     if a > b:
                         problems.append(f"{rel}:{i}: inverted range L{a}-{b} for {tname}")
                     if b > n + 1:
                         problems.append(f"{rel}:{i}: range L{a}-{b} exceeds {tname} ({n} lines)")
-                    if anchor:
-                        head = lines_of(target)[a - 1] if a - 1 < n else ""
-                        if not head.lstrip().startswith("#") or anchor not in head:
-                            problems.append(f"{rel}:{i}: anchor {anchor} not found at {tname}:L{a} (found: {head[:70]!r})")
+    if fix and fixes:
+        bydoc = {}
+        for (doc, i), spans in fixes.items():
+            bydoc.setdefault(doc, {})[i] = spans
+        for doc, linemap in bydoc.items():
+            L = open(doc, encoding="utf-8").read().split("\n")
+            for i, spans in linemap.items():
+                ln = L[i - 1]
+                for st, en, val in sorted(spans, reverse=True):
+                    ln = ln[:st] + val + ln[en:]
+                L[i - 1] = ln
+            open(doc, "w", encoding="utf-8", newline="").write("\n".join(L))
+            _cache.pop(doc, None)
+            print(f"[doc_range_check] fixed {len(linemap)} line(s) in {os.path.relpath(doc, ROOT)}")
     return problems
 
 
@@ -123,7 +178,7 @@ def main():
         pass
     if "--map" in sys.argv:
         return print_map(sys.argv[sys.argv.index("--map") + 1])
-    problems = check()
+    problems = check(fix="--fix" in sys.argv)
     for p in problems:
         print(p)
     if "--quiet" not in sys.argv:

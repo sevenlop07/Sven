@@ -56,3 +56,59 @@ $$\text{Romance} = \text{Attraction} \times \text{A Real Obstacle Inside Each Lo
 2. Does each lover act from their own Lie, not only from the external obstacle?
 3. Would one honest sentence end the conflict? If yes, what makes that sentence costly?
 4. Is every romantic beat free of coercion and of minors in romantic physical content?
+
+---
+
+## Mastery Playbook — Romance (README §2c)
+
+### P1. The promise and the three killers
+- **Promise**: two people who are right for each other and wrong for each other at the same time; the viewer aches for them and gets a release only when one of them risks everything.
+- **Killer 1 — confessing too early**: love spoken in Act I has nowhere to go.
+- **Killer 2 — the stupid misunderstanding**: if one honest sentence ends it and nothing makes that sentence costly, the viewer stops caring.
+- **Killer 3 — a lover with no inner obstacle**: external barriers only work if each lover carries a fear the other threatens.
+
+### P2. Series architecture
+| Act | Job |
+|---|---|
+| I Collision | Forced proximity (contract, shared house, shared job); friction with sparks; each lover's Lie shown |
+| IIA Fun & games | Banter, small kindnesses, the first real moment — then a step back |
+| IIB Midpoint | The almost-kiss / almost-confession; the obstacle (family, rival, contract clause, secret) hits |
+| IIIA Break-up | One lover chooses the Lie over love; distance at its maximum |
+| IIIB+IV Grand gesture | The other risks the thing they protected most; earned declaration; closing image echoes the first meeting |
+- **Distance chart**: score the emotional distance (0–10) at the end of every episode; it must move every time, never flat.
+
+### P3. Episode architecture
+| Scenes | Function |
+|---|---|
+| 01 | A body/expression detail that shows longing or friction |
+| 02–04 | Banter with subtext; each wants something they won't admit |
+| 05 | A private moment: one sees the other's wound |
+| 06–07 | The obstacle tightens (rival, family, rule) |
+| 08–09 | The choice: lean in or retreat; a near-miss of a new kind |
+| 10 | Interrupted confession, a revealed clause, or the rival's arrival |
+
+### P4. Signature scene: the near-miss
+- Two people, one small shared object (an umbrella, a scarf, a phone with an unsent message), the distance between hands.
+- Interruption must be **caused** by a plant (a call from the person they protect), never random.
+- Vary near-misses: almost-touch ➔ almost-confession ➔ real moment ➔ cold water.
+
+### P5. Dialogue
+- They argue about trivial things that stand for the real thing; love is never named until it costs.
+- Example:
+  > *Mưa. Khoa nghiêng ô về phía An, vai anh ướt sũng.*
+  > **An:** "Anh ướt hết rồi kìa."
+  > **Khoa:** "Ô của công ty. Phải che khách hàng."
+  > **An:** "Hợp đồng hết hạn tuần trước rồi mà."
+  > *Khoa vẫn không kéo ô về.*
+
+### P6. Hooks, twists, cliffhangers
+- Hooks: #6 Body Detail, #5 Atmospheric Contrast, #9 Consequence First.
+- Twists: TW-10 Hidden Kindness, TW-16 Secret Connection, TW-08 Misunderstanding (≤ 1 act), TW-13 Sacrifice.
+- Cliffhangers: interrupted confession, C7 the ex/rival arrives, C4 the clause or letter.
+
+### P7. Mastery checklist
+1. Did the emotional distance change this episode?
+2. Does each lover act from their own fear, not only the external obstacle?
+3. Is love still unspoken (or spoken at a price)?
+4. Would one honest sentence end the conflict? What makes it costly?
+5. Is every romantic beat free of coercion and possessiveness?

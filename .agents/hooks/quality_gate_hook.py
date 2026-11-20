@@ -135,7 +135,7 @@ def lint_doc_ranges(target):
     checker = os.path.join(WORKSPACE_ROOT, "engine", "doc_range_check.py")
     if not os.path.exists(checker):
         return None
-    res = subprocess.run([sys.executable, checker, "--quiet"], capture_output=True, text=True, encoding="utf-8")
+    res = subprocess.run([sys.executable, checker, "--fix", "--quiet"], capture_output=True, text=True, encoding="utf-8")
     if res.returncode != 0:
         return "Doc line-range check failed (update the StartLine/EndLine maps):\n" + res.stdout.strip()[:2000]
     return None
