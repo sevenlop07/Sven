@@ -16,6 +16,7 @@ Before responding to ANY filmmaking, scriptwriting, story concept, character des
    - `read_file(Path="d:/Project/Sven/engine/references/0-creative-doctrine.md", StartLine=1, EndLine=150)`
    - `read_file(Path="d:/Project/Sven/engine/references/0b-temporal-camera-grammar.md", StartLine=1, EndLine=282)`
    - `read_file(Path="d:/Project/Sven/.agents/DIRECTOR.md", StartLine=1, EndLine=390)`
+   - `read_file(Path="d:/Project/Sven/engine/references/3c-camera-master-grammar.md", StartLine=1, EndLine=320)` (Camera Master Grammar — Director's 8 Questions, sizes, angles & power, moves, 9:16 composition, genre & scene recipes)
    - `read_file(Path="d:/Project/Sven/engine/references/4-ai-video-prompt-compiler.md", StartLine=160, EndLine=285)` and `(StartLine=630, EndLine=715)`
    - `read_file(Path="d:/Project/Sven/engine/references/1-narrative-screenplay-architecture.md", StartLine=1865, EndLine=2150)`
    - **Specialist Agent Conditional Reads on Turn 1**:
