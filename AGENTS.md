@@ -15,12 +15,12 @@ Before responding to ANY filmmaking, scriptwriting, story concept, character des
 3. **Direct Prompt / Stage 4 Shortcut Lock**: Whenever the user directly requests a scene, video prompt, still image prompt, or storyboard grid prompt (bypassing Stages 0–3), you **MUST ALSO** load the Core Directing & Prompt Compiler slices on Turn 1 before writing a single word:
    - `read_file(Path="d:/Project/Sven/engine/references/0-creative-doctrine.md", StartLine=1, EndLine=150)`
    - `read_file(Path="d:/Project/Sven/engine/references/0b-temporal-camera-grammar.md", StartLine=1, EndLine=282)`
-   - `read_file(Path="d:/Project/Sven/.agents/DIRECTOR.md", StartLine=1, EndLine=390)`
+   - `read_file(Path="d:/Project/Sven/.agents/DIRECTOR.md", StartLine=1, EndLine=452)`
    - `read_file(Path="d:/Project/Sven/engine/references/3c-camera-master-grammar.md", StartLine=1, EndLine=320)` (Camera Master Grammar — Director's 8 Questions, sizes, angles & power, moves, 9:16 composition, genre & scene recipes)
    - `read_file(Path="d:/Project/Sven/engine/references/4-ai-video-prompt-compiler.md", StartLine=160, EndLine=285)` and `(StartLine=630, EndLine=715)`
    - `read_file(Path="d:/Project/Sven/engine/references/1-narrative-screenplay-architecture.md", StartLine=1865, EndLine=2150)`
    - **Specialist Agent Conditional Reads on Turn 1**:
-     * If High-Velocity Action / Chase / Combat / Rapid-Cut Montage (`@CombatDirector`): also read `d:/Project/Sven/.agents/skills/combat-director/SKILL.md` (`StartLine=1, EndLine=176`).
+     * If High-Velocity Action / Chase / Combat / Rapid-Cut Montage (`@CombatDirector`): also read `d:/Project/Sven/.agents/skills/combat-director/SKILL.md` (`StartLine=1, EndLine=256`).
      * If Product Commercial / Fast-Action Product Ad / Brand TVC (`"quảng cáo sản phẩm"`, `"video quảng cáo"`, `"tvc"`, `"10s 6 shot"`, `"15s 9 shot"` — `@CommercialDirector`): also read `d:/Project/Sven/.agents/COMMERCIAL_DIRECTOR.md` (`StartLine=1, EndLine=339`).
      * If Character Reference Image / Character Outfit Sheet (`"tạo ảnh nhân vật"`, `"ảnh tham chiếu nhân vật"`, `"thay trang phục nhân vật theo ảnh"`), Single-Frame Still Image, or Keyframe (`@PhotoDirector`): also read `d:/Project/Sven/.agents/PHOTO_DIRECTOR.md` (`StartLine=1, EndLine=290`) **AND** `d:/Project/Sven/engine/references/2-casting-worldbuilding-specification.md` (`StartLine=390, EndLine=720`).
      * If Multi-Panel Storyboard Grid (`9/12/15/25 Shots`) or `Storyboard-to-Video` (`@StoryboardDirector`): also read `d:/Project/Sven/.agents/STORYBOARD_DIRECTOR.md` (`StartLine=1, EndLine=192`).

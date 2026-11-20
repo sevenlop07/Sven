@@ -32,6 +32,12 @@ RANGE_RES = [
 ]
 
 
+# role cards, skills, genre modules and the small reference files are always read in full: a range that starts at
+# line 1 and stops early is a stale whole-file read, however far the file has grown
+WHOLE_FILE_REFS = {"0c-canonical-numbers.md", "2b-character-lines.md", "3c-camera-master-grammar.md",
+                   "3b-lighting-atmospheric-physics.md", "4b-diegetic-foley-sound-design.md"}
+
+
 def core_docs():
     pats = ["AGENTS.md", "AGENT.md", "CLAUDE.md", "workflow.md", ".agents/*.md", ".agents/rules/*.md",
             ".agents/skills/*/SKILL.md", ".claude/skills/*/SKILL.md", ".claude/agents/*.md",
@@ -138,7 +144,11 @@ def check(fix=False):
                             else:
                                 problems.append(f"{rel}:{i}: anchored range L{a}-{b} {anchor} is now L{new_a}-{new_b} in {tname} — run with --fix")
                     real_n = n - 1 if n and tl[-1] == "" else n
-                    if not anchor and a == 1 and 0 < real_n - b <= 40:
+                    tnorm = target.replace("\\", "/").lower()
+                    whole_file = ("/.agents/" in tnorm or "/.claude/" in tnorm or tnorm.endswith("/agent.md")
+                                  or "/engine/genres/" in tnorm
+                                  or os.path.basename(tnorm) in WHOLE_FILE_REFS)
+                    if not anchor and a == 1 and 0 < real_n - b and (whole_file or real_n - b <= 40):
                         # a whole-file read that the file has outgrown by a few lines
                         if fix:
                             fixes.setdefault((doc, i), []).append((m.start(2), m.end(2), str(real_n)))

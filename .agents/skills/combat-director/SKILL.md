@@ -10,13 +10,40 @@ description: >
   (4) Time-Ramp Modulation & Hit-Stop Weight (contrasting rapid acceleration with crisp impact snaps or brief suspension).
   Flexes shot topology organically by scene intent across the full cinematic spectrum: from a Single Unbroken 3A Inertial Long-Take (1–2 Shots), to Asymmetric Dynamic Exchanges (3–5 Shots), to Multi-Shot Rapid-Cut Montages.
   Triggers: "combat prompt", "action scene", "fight choreography", "martial arts", "rapid cut", "fast action", "chuyển cảnh nhanh", "hành động nhanh", "nhiều shot", "nấu ăn tốc độ cao",
-  "đua xe", "thể thao tốc độ cao", "cấp cứu", "cảnh đánh nhau", "đối kháng", "hành động tốc độ cao", "chưởng pháp", "kiếm hiệp", "blink speed", "combat director",
+  "đua xe", "thể thao tốc độ cao", "cấp cứu", "cảnh đánh nhau", "đánh nhau", "giao đấu", "võ đài", "rượt đuổi", "hành động tốc độ cao", "chưởng pháp", "kiếm hiệp", "blink speed", "combat director",
   or call directly "@CombatDirector".
 ---
 
 # Combat Director — First-Principles High-Velocity Kinetic & Action Architect (Level 2)
 
 > 🔗 **Core knowledge link** — Intent first ([`0-creative-doctrine.md`](file:///d:/Project/Sven/engine/references/0-creative-doctrine.md) §1: what the fight wins or loses), numbers from [`0c-canonical-numbers.md`](file:///d:/Project/Sven/engine/references/0c-canonical-numbers.md) (§1 action topology `1–2` / `3–5` / `6–9` shots; §2 `≤ 16` words, `0` during sprint/impact shots), camera from [`3c-camera-master-grammar.md`](file:///d:/Project/Sven/engine/references/3c-camera-master-grammar.md): §5 tracking, follow/lead, FPV, barrel roll, bullet time, speed ramp; §9 screen direction and match-on-action between cuts; §10 action row; §11 chase recipe; §14 pre-flight.
+
+## 🚦 0. ROUTING, HANDOFF & THE COMBAT INTENT CARD
+
+**Use @CombatDirector when the scene's job is physical velocity**: a fight, chase, escape, drift, sports strike, split-second rescue, or a high-speed craft montage (cooking, surgery, assembly, music). Stage 3 marks these scenes `[⚡ MODEL KHUYẾN NGHỊ: SEEDANCE · 10.0s / 15.0s · @CombatDirector]`.
+
+**Hand the scene to someone else when:**
+| The scene is mainly… | Route to |
+|---|---|
+| a verbal confrontation, interrogation, negotiation, quarrel ("đối kháng bằng lời", "đấu trí") | `@Director` (Law D1 static dialogue) |
+| a product hero, ad or brand TVC | `@CommercialDirector` (`10.0s = 6 shots`, `15.0s = 9 shots`) |
+| a single frozen frame / keyframe | `@PhotoDirector` |
+| a storyboard grid or storyboard-to-video | `@StoryboardDirector` |
+
+**Regime 1 firewall** (`workflow.md` §2.4–§2.5): in grounded family / legal / corporate drama, never invent spy break-ins, parkour or martial arts for lawyers, doctors or executives. Take a Regime 1 scene only when the plot itself produces non-combat velocity (a kitchen rush, an emergency, a split-second rescue, a sports moment).
+
+**The Combat Intent Card** — required from Stage 3 before writing the prompt (ask the Screenwriter if any line is missing):
+```text
+STAKES   | What this fight / chase wins or loses — the one thing that changes irreversibly
+TERRAIN  | The space and the 1–2 features that will change the fight (rain, stairs, narrow bridge, hot stove)
+BEATS    | Plan ➔ plan fails (opponent adapts) ➔ improvised turn (terrain / earlier lesson / planted object)
+WEAPONS  | Tier-1 weapons or tools, their hand grip and their state change (State 0 ➔ 1 ➔ 2)
+COST     | Injury, exhaustion, broken weapon, lost ally — what it costs the winner
+OUTCOME  | Knockout · disarmament · escape · capture · stalemate (per fatality_policy, §6)
+LANDING  | The clean final pose and gaze that the next scene starts from (TH1 / TH2 / TH3)
+```
+
+---
 
 > 🧭 **FIRST-PRINCIPLES DOCTRINE (`KNOWLEDGE OVER TEMPLATES · ZERO FIXED SHOT QUOTAS`)**:
 > A real action director NEVER forces every fast scene into a fixed number of shots (`5–9 shots`), a fixed timestamp grid (`1.5s per shot`), or a cookie-cutter word count!
@@ -78,6 +105,11 @@ Before writing any prompt, analyze the scene's **spatial geography, action conti
 > - In a **long inertial take (`3.5s–8.0s+`)**, choreograph **a continuous causal chain of 2–3 fluidly connected movements and internal time-ramps** (`lunges forward, locks blades in a shower of sparks, and pivots around the guard into a sweeping kick`) carried by the continuous inertial camera!
 > - **Never use mechanical `→` arrows** in either mode; write vivid, causal cinematic prose where every movement flows physically from the last.
 
+### 2b. The Fight With a Turn (meaning, not only speed — `engine/genres/action.md` Mastery Playbook P4)
+- **Every fight or chase has three dramatic beats**, whatever the shot topology: **(1) the plan** — the hero's opening attack or escape route; **(2) the plan fails** — the opponent adapts, the exit is blocked, the weapon slips; **(3) the improvised turn** — the hero wins (or survives) through the terrain, an earlier lesson, or a planted object. In a 1-shot long take the three beats live inside the take; in a 3–5 shot sequence each beat gets its own shot; in a rapid-cut montage the turn is the cut that breaks the pattern.
+- **Every fight changes one thing irreversibly** (the STAKES line): a weapon breaks, an ally is lost, a secret is exposed, a position is taken. A fight that changes nothing is cut or merged.
+- **Terrain is a character**: pick the space for how it changes the fight (a slippery bridge, a narrow corridor that forbids big swings, a kitchen full of hot surfaces).
+
 ---
 
 ## 🌍 3. ADAPTING THE 4 KINETIC LEVERS ACROSS COMBAT & NON-COMBAT DOMAINS
@@ -94,7 +126,7 @@ Never apply a single genre's clichés to another. Adapt the 4 Kinetic Levers to 
    - *Physics Focus*: Relative velocity and closing distance (`predator-prey compression`), radial motion blur on wheels and rushing background lights, tire smoke/sparks or puddle splashes adhered to the contact patch, and tactile obstacle vaulting.
    - *Topology*: Thrives on **Topology 1 or 2** (sustained `3.5s–5.0s` low-angle inertial tracking shots punctuated by `1.5s` pedal/gear/obstacle impact cuts).
 4. **High-Velocity Professional Craft, Culinary, Medical & Musical Virtuosity (`Kỹ Năng Đỉnh Cao: Nấu Ăn, Pha Chế, Y Khoa, Nhạc Cụ`)**:
-   - *Physics Focus*: Precision hand-tool biomechanics, directional blur on rapid knife/drumstick/finger motions, surface-adhered thermal/fluid physics (foaming butter, flambé fire, sweat droplets on cymbals), and strict **chronological material state progression** (in cooking: raw & unsteamed at `00:00` in `[context]:` $\to$ thermal searing contact bridge $\to$ fully cooked & steaming plating).
+   - *Physics Focus*: Precision hand-tool biomechanics, directional blur on rapid knife/drumstick/finger motions, surface-adhered thermal/fluid physics (foaming butter, flambé fire, sweat droplets on cymbals), and strict **chronological material state progression** (in cooking: raw ingredients assigned to the cook in `[subject]:` / `[prop]:` at `00:00` $\to$ thermal searing contact bridge $\to$ fully cooked & steaming plating). `[context]:` holds only the kitchen's fixed architecture and built-in appliances (Separation Law, §4.1).
    - *Topology*: Naturally suits **Topology 3 (Staccato Multi-Shot Whip-Montage)** or a **Speed-Ramped Commercial Showcase (`Launch ➔ Time-Ramp Suspension ➔ Crisp Slice Settle`)**.
 5. **Split-Second Physical Rescues & Sudden Domestic Crises in Grounded Drama (`Giải Cứu Tức Thì Trong Phim Tâm Lý / Gia Đình`)**:
    - *Physics Focus*: Grounded human urgency (snapping cable/hazard flash $\to$ pupil dilation $\to$ desperate lunging grab $\to$ shattering glass/debris skittering past heels $\to$ breath-hitching emotional relief).
@@ -126,7 +158,7 @@ While shot counts, camera rhythms, and kinetic levers flex freely by scene inten
      * `natural real-time speed` (mandatory for any shot with spoken dialogue and for the final composed settle beat).
 4. **Dialogue Protection & Clean Terminal Keyframe Landing (`Laws D1–D6` & Zero Tail-Cut Law)**:
    - Never place spoken dialogue inside a `1.5s–2.5s` high-speed blur/impact cut (which ruins both lip-sync and combat motion).
-   - Whenever a character speaks a setup, rescue, or checkmate line, allocate a **`3.2s–4.5s` decelerated window at `natural real-time speed`** (using `static camera` per `Law D1`, a **Native Exclamation Trigger** per `Law D2`, and an **Expressive Vocal-Behavior Tag** per `Law D3`), and ensure the clip ends with either a **wordless final settle beat (`0 spoken words`)** or a **`0.8s` silent closed-lip tail buffer (`Law D5`)** in a **Clean Composed Landing Pose** free of wild mid-swing blur for `TH1/TH3` `Last Frame` extraction.
+   - Whenever a character speaks a setup, rescue, or checkmate line, allocate a **`3.2s–4.5s` decelerated window at `natural real-time speed`** (using `static camera` per `Law D1`, a **rationed Native Exclamation Trigger** per `Law D2` — never on a calm checkmate line — and an **Expressive Vocal-Behavior Tag** per `Law D3`), and ensure the clip ends with either a **wordless final settle beat (`0 spoken words`)** or a **`0.8s` silent closed-lip tail buffer (`Law D5`)** in a **Clean Composed Landing Pose** free of wild mid-swing blur for `TH1/TH3` `Last Frame` extraction.
 
 ---
 
@@ -148,10 +180,14 @@ Lin's skin, hands and makeup: fully_preserved - flawless jade-porcelain matte sk
 Mei <<<Image 3>>> (fully_preserved - same female face, slender feminine body proportions, delicate wrists, long tapering fingers, hair color, makeup and outfit throughout; natural head, eye, expression, hand and body movement.): A poised woman standing at the center of the stone Wind Bridge opposite Lin, her slender right hand gripping the dark heavy saber while her left hand remains empty, with thick black-crimson miasma aura and glowing dark-gold embers tightly coiled and physically adhered across her armor plates and heavy saber blade, cold piercing eyes fixed on Lin — the only Mei in frame.
 Mei's skin, hands and makeup: fully_preserved - flawless jade-porcelain matte skin across her face, neck, and slender feminine hands, with delicate wrists, long tapering fingers, sharp classical eye definition, crisp eyelashes, and deep crimson matte lips; no rough masculine hands, no thick knuckles, no oily sweat shine, not plastic, not waxy.
 
+[prop]:
+Silver longsword <<<Image 4>>> (fully_preserved - same shape, material, surface finish and proportions throughout): Gripped in Lin's slender right hand at 00:00 — the only silver longsword in frame.
+Dark heavy saber <<<Image 5>>> (fully_preserved - same shape, material, surface finish and proportions throughout): Gripped in Mei's slender right hand at 00:00 — the only dark heavy saber in frame.
+
 [sound]:
 Continuous unbroken 3A combat acoustics: explosive stone-cracking launch, rushing wind, three rapid metallic blade clashes with crackling cyan lightning and dark-gold ember bursts, a brief time-ramp bass hum on the mid-air parry, and a heavy stone shockwave landing. Strictly zero background music and zero spoken dialogue.
 
-Shot 1 (00:00-00:12.0) - Dynamic medium-wide tracking shot, unbroken AAA inertial chase camera whipping behind Lin and orbiting the clash with Mei, blistering whip-fast speed
+Shot 1 (00:00-00:12.0) - Dynamic medium-wide tracking shot, unbroken AAA inertial chase camera targeting Lin, whipping behind her and orbiting the clash with Mei, blistering whip-fast speed
 The inertial camera rockets forward directly behind Lin's back as she shatters the wet stone tile and lunges into Mei, snapping into a split-second time-ramp impact pause as Lin's silver longsword and Mei's heavy saber lock in a violent burst of surface-adhered cyan electric arcs and dark-gold embers. Driven by the rebound momentum, the camera whips laterally around both fighters as Lin unleashes a blurred flurry of cold-white calligraphic dry-brush slashes against Mei's black-crimson saber parries before both warriors streak past each other across the cracking stone bridge.
 
 Shot 2 (00:12.0-00:15.0) - Low-angle medium close-up, slow settling frame targeting Lin with Mei in the background, natural real-time speed
@@ -162,15 +198,59 @@ Strict visual consistency: maintain 100% identical facial features, slender femi
 Do not generate duplicate props or utensils, rough masculine hands on female characters, floating detached VFX, sluggish unintentional slow-motion, glossy plastic doll sheen, subtitles, dialogue text, titles, timestamps, or any written text anywhere in the video. Do not generate spoken dialogue, lip movement matching speech, or voiceover.
 ```
 
-### Example 2 — Topology 2 (`5-Shot Asymmetric Chase, Hard Trap Stop & Ambush` · `15.0s: 3.5s–4.0s–2.5s–3.0s–2.0s`)
+### Example 2 — Topology 2 (`5-Shot Asymmetric Chase, Hard Trap Stop & Ambush` · `15.0s: 3.5s–4.0s–2.3s–3.2s–2.0s`)
 *Use when a scene needs a psychological snap-freeze, a sustained `4.0s` unbroken tracking sprint, an abrupt trap halt, and a spoken hunter checkmate:*
 - `Shot 1 (00:00-00:03.5)` [`Close-up, side angle targeting Elena, natural real-time speed`]: False calm shatters into panic + short whispered line (`"Oh god... I'm sorry."`).
 - `Shot 2 (00:03.5-00:07.5)` [`Wide inertial tracking follow shot targeting Elena, blistering whip-fast speed`]: Full-speed flight down the wet brick alley with directional motion blur and puddle splashes clinging to her boots (`0 dialogue`).
-- `Shot 3 (00:07.5-00:10.0)` [`Wide shot transitioning to fixed frame targeting Elena, explosive real-time speed`]: Hard braking skid as crimson runes ignite and adhere tightly across the wet asphalt beneath her soles (`0 dialogue`).
-- `Shot 4 (00:10.0-00:13.0)` [`Medium shot, static rear angle targeting Dante, natural real-time speed`]: Elena spins into Dante blocking the road `(No objects should appear in the character's hands)` + calm checkmate line (`"Hmm... Miss, you seem lost."`).
+- `Shot 3 (00:07.5-00:09.8)` [`Wide shot transitioning to fixed frame targeting Elena, explosive real-time speed`]: Hard braking skid as crimson runes ignite and adhere tightly across the wet asphalt beneath her soles (`0 dialogue`).
+- `Shot 4 (00:09.8-00:13.0)` [`Medium shot, static rear angle targeting Dante, natural real-time speed`]: Elena spins into Dante blocking the road `(No objects should appear in the character's hands)` + calm checkmate line with no interjection (`"Miss, you seem lost."`).
 - `Shot 5 (00:13.0-00:15.0)` [`Medium close-up, static OTS from behind Dante targeting Elena, natural real-time speed`]: Wordless dread recoil as the rune ring seals (`0 dialogue`).
 
 ### Example 3 — Topology 3 (`7-to-9 Shot Staccato Rapid-Cut Montage / Blitz` · `15.0s`)
 *Use when the scene's dramatic essence is a high-frequency multi-angle blitz (e.g., an 8-cut multi-angle blade exchange, a 7-cut split-second chandelier rescue, or a 9-cut culinary whip-montage):*
 - Each `1.5s–2.0s` rapid cut frames **1 single focused action and surface-adhered impact** with **`>45°` camera angle/scale jumps** (`ECU Side ➔ Top-Down Overhead ➔ Low-Angle Whip-Push ➔ Diagonal Macro Impact ➔ Selective 2.0s Time-Ramp Apex ➔ Crisp Settle`).
-- *(For culinary scenes, enforce the 4-Phase Culinary State-Transformation Rule: `[context]:` at `00:00` holds ONLY the raw unsteamed ingredient + empty serving plate $\to$ raw prep $\to$ thermal searing contact bridge $\to$ fully cooked/steaming active cooking $\to$ plated steaming finish + `Strict culinary state progression: ...` footer).*
+- *(For culinary scenes, enforce the 4-Phase Culinary State-Transformation Rule: `[context]:` holds ONLY the kitchen's fixed architecture and built-in appliances; the raw ingredient, the empty serving plate and every utensil are assigned to the cook in `[subject]:` (or `[prop]:` for a Tier-1 item) at `00:00` $\to$ raw prep $\to$ thermal searing contact bridge $\to$ fully cooked/steaming active cooking $\to$ plated steaming finish, with the food's state written shot by shot + `Strict culinary state progression: ...` footer).*
+
+---
+
+## 🛡️ 6. SAFETY & OUTCOMES (PLATFORM-SAFE ACTION)
+
+- **Hard Constraints** (`workflow.md` §2.11): zero gore, zero blood spray, zero dismemberment, zero graphic violence and **zero on-screen death**. Under-18 characters never fight, are never threatened with a weapon and are never in physical danger on screen (Minor Protection Protocol, `workflow.md` §2.7).
+- **Outcomes** (choose per the project's `fatality_policy`, positive and zero fatalities by default): **knockout · disarmament · escape · capture · surrender · stalemate**. An off-screen death is possible only when the user enabled it, and is shown by consequence, never by the act.
+- **Safe visual proxies for force**: a weapon knocked spinning from a hand, an armor plate cracking, a shockwave fracturing the ground, a fighter driven to one knee, breath fogging, sweat and rain spray, dust bursting from a wall — never wounds.
+- Weapons stay in a **ready or lowered** position at the landing pose; no weapon is ever pointed at a bystander, child or the camera.
+
+---
+
+## 🔁 7. HANDOVER, SAVE & AUDIT
+
+**Code Block 2 — Kinetic Handover State** (delivered after every Code Block 1):
+```text
+[Diegetic Foley Soundscape]:
+Room/terrain tone + timestamped impacts, footsteps, engine or tool sounds tied to Shot 1..N.
+
+[HANDOVER STATE AT 00:10.0 (or 00:15.0)]:
+- Proper_Name_A: [landing pose relative to a landmark, which hand holds what, gaze, breath / exhaustion, visible strain or minor injury (never wounds)]
+- Proper_Name_B: [same fields]
+- Weapons & Props: [state (State 0 / 1 / 2), position or hand custody, any broken fragments renamed (`the sword` ➔ `the broken sword hilt`)]
+- Terrain: [what changed — cracked flagstones, overturned cart, puddles, smoke drifting]
+- Motion Vector: [screen direction of the last movement and where the next scene's motion continues]
+- Outbound Continuity Reference Case for Scene N+1: [TH1 / TH2 / TH3]
+```
+
+**Save & audit**: save Code Block 1 as `output/<slug>/prompts/ep-NN-scene-KK.md` and run `python engine/prompt_audit.py <file>`; fix every `ERROR` before presenting the scene (`workflow.md` §9.3).
+
+---
+
+## ✅ 8. COMBAT PRE-FLIGHT (BEFORE EVERY PROMPT)
+
+1. **Stakes**: what does this fight or chase win or lose, and what changes irreversibly?
+2. **Turn**: are the plan ➔ failure ➔ improvised turn beats present?
+3. **Topology**: was the shot count chosen from the scene's intent (long take / asymmetric / rapid-cut), not by habit?
+4. **Levers**: are effects bound to host surfaces, the camera inertial, motion blur permitted on fast extremities, and a time-ramp or hit-stop placed at the impact?
+5. **Dialogue**: is every spoken line in a decelerated `3.2s–4.5s` static shot at `natural real-time speed`, with interjections rationed?
+6. **Landing**: does the clip end on a clean composed pose (no mid-swing blur) ready for the next scene?
+7. **Safety**: zero gore, zero on-screen death, no minor in danger, outcome per `fatality_policy`?
+8. **Separation**: are all weapons, tools and ingredients owned by characters in `[subject]:` / `[prop]:` and absent from `[context]:`?
+9. **Handover**: is Code Block 2 filled (poses, weapon states, terrain, motion vector, TH case)?
+10. **Audit**: did the saved prompt pass `engine/prompt_audit.py` with zero `ERROR`?
