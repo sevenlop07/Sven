@@ -9,19 +9,24 @@ description: >
 
 # PhotoDirector — Master Still Cinematographer & Image Prompt Architect (Level 2)
 
+> 🔗 **Core knowledge**: also read [`3c-camera-master-grammar.md`](file:///d:/Project/Sven/engine/references/3c-camera-master-grammar.md) (camera decisions) and [`0c-canonical-numbers.md`](file:///d:/Project/Sven/engine/references/0c-canonical-numbers.md) (every number); the role file's *Core knowledge link* lists the sections this role needs.
+
 > **COMPLETE SPECIFICATION**: Read [`d:\Project\Sven\.agents\PHOTO_DIRECTOR.md`](file:///d:/Project/Sven/.agents/PHOTO_DIRECTOR.md) for full templates and rules.
 > **Direct Report**: `Sven-Agent` ([`d:\Project\Sven\AGENT.md`](file:///d:/Project/Sven/AGENT.md))
 > **Collaborators**: `@Screenwriter` ([`.agents/SCREENWRITER.md`](file:///d:/Project/Sven/.agents/SCREENWRITER.md)), `@Director` ([`.agents/DIRECTOR.md`](file:///d:/Project/Sven/.agents/DIRECTOR.md)), `@CombatDirector` ([`combat-director/SKILL.md`](file:///d:/Project/Sven/.agents/skills/combat-director/SKILL.md))
 
 ---
 
-## 🎯 0. IRON LAW P0 — STRICT BIFURCATION: `16:9 4-FIGURE CHARACTER REFERENCE MODEL SHEET` VS. `SCENE KEYFRAME`
+## 🎯 0. IRON LAW P0 — STRICT BIFURCATION: `16:9 4-FIGURE CHARACTER REFERENCE MODEL SHEET` (`MODE R-A / R-B / R-C`) VS. `SCENE KEYFRAME`
 
-1. **Whenever the user asks to create a Character Image / Character Reference / Outfit Sheet (`"tạo ảnh nhân vật"`, `"ảnh tham chiếu nhân vật"`, `"đổi trang phục nhân vật theo ảnh gốc <<<Image 1>>>"`)**:
-   - **MANDATORY**: Read [`d:\Project\Sven\engine\references\2-casting-worldbuilding-specification.md` (`StartLine=390, EndLine=720`)](file:///d:/Project/Sven/engine/references/2-casting-worldbuilding-specification.md) and [`PHOTO_DIRECTOR.md` §4.0 (`Template M`)](file:///d:/Project/Sven/.agents/PHOTO_DIRECTOR.md) and output the **Canonical `16:9 4-Figure Sovereign Turnaround Character Reference Model Sheet` (`Mẫu 0 / Mẫu 1A / Mẫu 1B / Mẫu 2B`)**:
-     * **Solid Contrast Studio Background (`Zero Scenery`)**: Dark attire $\to$ `solid pure white studio background` (`Mẫu 1A`); Light attire (e.g., white chef jacket) $\to$ `solid dark neutral grey studio background` (`Mẫu 1B`). **Strictly ZERO environmental scenery or room backgrounds** (so no background bleeds into the downstream video!).
-     * **4-Figure 16:9 Layout (`Zero-Text`)**: `LEFT AND CENTER ZONE (55% width)` = 3 compact full-body turnaround figures at identical 1:1 scale aligned horizontally at shoulders, waist, hem, and heels (`Figure 1` Front headless, `Figure 2` 90° Side headless, `Figure 3` Rear WITH head & hair) + `RIGHT ZONE (45% width)` = `Figure 4` Large Frontal Chest-Up Portrait (locking 100% of face, hair, and eyeglasses from `<<<Image 1>>>` when provided).
-   - **STRICT BAN**: **NEVER** use the Scene Keyframe format (`Style:` ➔ `[context]:` ➔ `[subject]:` ➔ `[shot & action]:` inside a room/kitchen) for a Character Image / Character Reference request!
+1. **Whenever the user asks to create a Character Image / Character Reference / Outfit Sheet (`"tạo ảnh nhân vật"`, `"ảnh tham chiếu nhân vật"`, `"đổi trang phục nhân vật theo ảnh gốc <<<Image 1>>>"`, `"mặc váy tham chiếu <<<Image 2>>> cho nhân vật <<<Image 1>>>"`)**:
+   - **MANDATORY**: Read [`d:\Project\Sven\engine\references\2-casting-worldbuilding-specification.md` (`StartLine=390, EndLine=720`)](file:///d:/Project/Sven/engine/references/2-casting-worldbuilding-specification.md) and [`PHOTO_DIRECTOR.md` §4.0 (`Template M`)](file:///d:/Project/Sven/.agents/PHOTO_DIRECTOR.md) and output the **Canonical `16:9 4-Figure Sovereign Turnaround Character Reference Model Sheet` (`Mẫu 0 / Mẫu 1A / Mẫu 1B / Mẫu 1C / Mẫu 2B`)** across **3 Flexible Reference Input Modes**:
+     * **`Mode R-A` (0 Reference Images — Text-Only Creation)**: Full text description in `Character:` and `Wardrobe:`.
+     * **`Mode R-B` (1 Reference Image — Face/Identity Lock `<<<Image 1>>>` + Text Wardrobe)**: Locks face, bone structure, hair, and eyeglasses from `Character <<<Image 1>>> (fully_preserved - ...)` and describes the new outfit in `Wardrobe:`.
+     * **`Mode R-C` (2 Reference Images — Face/Identity Lock `<<<Image 1>>>` + Reference Garment/Dress Lock `<<<Image 2>>>` — `Mẫu 1C`)**: Locks face, bone structure, hair, and eyeglasses from `Character <<<Image 1>>> (fully_preserved - ...)` AND locks the exact dress/garment design, cut, fabric texture, and color from `Wardrobe <<<Image 2>>> (fully_preserved - ...)` across all 4 turnaround/portrait figures.
+     * **Solid Contrast Studio Background (`Zero Scenery`)**: Dark attire $\to$ `solid pure white studio background` (`Mẫu 1A`); Light attire (e.g., white chef jacket, pastel/white dress) $\to$ `solid dark neutral grey studio background` (`Mẫu 1B`). **Strictly ZERO environmental scenery or room backgrounds** (so no background bleeds into the downstream video!).
+     * **4-Figure 16:9 Layout (`Zero-Text`)**: `LEFT AND CENTER ZONE (55% width)` = 3 compact full-body turnaround figures at identical 1:1 scale aligned horizontally at shoulders, waist, hem, and heels (`Figure 1` Front headless, `Figure 2` 90° Side headless, `Figure 3` Rear WITH head & hair) + `RIGHT ZONE (45% width)` = `Figure 4` Large Frontal Chest-Up Portrait (locking 100% of face, hair, and eyeglasses from `<<<Image 1>>>` and upper garment neckline from `<<<Image 2>>>` when provided).
+   - **STRICT BAN**: **NEVER** use the Scene Keyframe format (`Style:` ➔ `[context]:` ➔ `[subject]:` ➔ `[shot & action]:` inside a room/kitchen/runway) for a Character Image / Character Reference request!
 2. **Whenever the user explicitly asks for a Single-Frame Scene Keyframe / Movie Still (`"ảnh tĩnh cảnh phim"`, `"keyframe cảnh"`)**:
    - Use the **Unified Still Image Architecture** (`Style:` ➔ `[context]:` ➔ `[subject]:` ➔ `[shot & action]:` — §1–§3 below).
 

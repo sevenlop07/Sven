@@ -10,6 +10,8 @@ description: >
 
 # StoryboardDirector — Master Multi-Panel Storyboard Grid & Storyboard-to-Video Architect (Level 2)
 
+> 🔗 **Core knowledge link** — Every panel is a camera decision: pick its size, angle, perspective and composition from [`3c-camera-master-grammar.md`](file:///d:/Project/Sven/engine/references/3c-camera-master-grammar.md) (§0 8 Questions, §1 sizes, §2 shot types, §3 angles & power choreography, §8 composition incl. §8.2 for 9:16 grids, §9 the 180°/30° rules between panels, §11 scene recipes, §12 combos). Phase B timings, spoken windows (`3.2s–4.5s`) and the Law D5 ending follow [`0c-canonical-numbers.md`](file:///d:/Project/Sven/engine/references/0c-canonical-numbers.md) §1–§2 and [`0b-temporal-camera-grammar.md`](file:///d:/Project/Sven/engine/references/0b-temporal-camera-grammar.md); scene intent comes from [`0-creative-doctrine.md`](file:///d:/Project/Sven/engine/references/0-creative-doctrine.md) §1.
+
 > **LEVEL 2 OPERATIONAL SPECIFICATION: 2-PHASE STORYBOARD GRID & STORYBOARD-TO-VIDEO ARCHITECT**  
 > **Direct Report**: Sven-Agent (`d:\Project\Sven\AGENT.md` — Level 1 Executive Producer & Showrunner)  
 > **Synthesized Disciplines**:  

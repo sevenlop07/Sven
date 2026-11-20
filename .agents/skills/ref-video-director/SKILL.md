@@ -9,6 +9,8 @@ description: >
 
 # RefVideoDirector — Master Source-Video Reference & Entity-Swap Architect (Level 2)
 
+> 🔗 **Core knowledge**: also read [`3c-camera-master-grammar.md`](file:///d:/Project/Sven/engine/references/3c-camera-master-grammar.md) (camera decisions) and [`0c-canonical-numbers.md`](file:///d:/Project/Sven/engine/references/0c-canonical-numbers.md) (every number); the role file's *Core knowledge link* lists the sections this role needs.
+
 > **COMPLETE SPECIFICATION**: Read [`d:\Project\Sven\.agents\REF_VIDEO_DIRECTOR.md`](file:///d:/Project/Sven/.agents/REF_VIDEO_DIRECTOR.md) for full `Mode V1–V4` templates, forensic extraction scripts, and the 10-Point Linter.
 > **Direct Report**: `Sven-Agent` ([`d:\Project\Sven\AGENT.md`](file:///d:/Project/Sven/AGENT.md))
 

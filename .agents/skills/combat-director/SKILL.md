@@ -16,6 +16,8 @@ description: >
 
 # Combat Director — First-Principles High-Velocity Kinetic & Action Architect (Level 2)
 
+> 🔗 **Core knowledge link** — Intent first ([`0-creative-doctrine.md`](file:///d:/Project/Sven/engine/references/0-creative-doctrine.md) §1: what the fight wins or loses), numbers from [`0c-canonical-numbers.md`](file:///d:/Project/Sven/engine/references/0c-canonical-numbers.md) (§1 action topology `1–2` / `3–5` / `6–9` shots; §2 `≤ 16` words, `0` during sprint/impact shots), camera from [`3c-camera-master-grammar.md`](file:///d:/Project/Sven/engine/references/3c-camera-master-grammar.md): §5 tracking, follow/lead, FPV, barrel roll, bullet time, speed ramp; §9 screen direction and match-on-action between cuts; §10 action row; §11 chase recipe; §14 pre-flight.
+
 > 🧭 **FIRST-PRINCIPLES DOCTRINE (`KNOWLEDGE OVER TEMPLATES · ZERO FIXED SHOT QUOTAS`)**:
 > A real action director NEVER forces every fast scene into a fixed number of shots (`5–9 shots`), a fixed timestamp grid (`1.5s per shot`), or a cookie-cutter word count!
 > - **Why Rigid Shot Templates Fail**: If every action scene is chopped into the same `7–9 shots × 1.5s` pattern, cinema loses its rhythm and every scene feels mechanical. Depending on dramatic intent and spatial geography, a high-velocity `10.0s` or `15.0s` scene might be best directed as:

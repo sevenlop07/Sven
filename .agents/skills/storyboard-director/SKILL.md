@@ -9,9 +9,11 @@ description: >
 
 # StoryboardDirector — Master Multi-Panel Storyboard Grid & Storyboard-to-Video Architect (Level 2)
 
+> 🔗 **Core knowledge**: also read [`3c-camera-master-grammar.md`](file:///d:/Project/Sven/engine/references/3c-camera-master-grammar.md) (camera decisions) and [`0c-canonical-numbers.md`](file:///d:/Project/Sven/engine/references/0c-canonical-numbers.md) (every number); the role file's *Core knowledge link* lists the sections this role needs.
+
 > **COMPLETE SPECIFICATION**: Read [`d:\Project\Sven\.agents\STORYBOARD_DIRECTOR.md`](file:///d:/Project/Sven/.agents/STORYBOARD_DIRECTOR.md) for full Phase A & Phase B templates and laws.
 > **Direct Report**: `Sven-Agent` ([`d:\Project\Sven\AGENT.md`](file:///d:/Project/Sven/AGENT.md))
-> **Synthesized Core**: Combines `@PhotoDirector` (Static 4-Axis Optics, Pose & 4-Zone Facial Expression per Panel) + `@Director` (`3.5s–4.5s` Lip-Sync Windows, 3-Layer Relational Dialogue & Zero Tail-Cut Law) + `@CombatDirector` (`9 / 12 / 15 / 25 Shot` Rapid-Cut Density, `>45°` Angle Jumps, 5-Tier `[Shot Speed]` & Percussive Foley).
+> **Synthesized Core**: Combines `@PhotoDirector` (Static 4-Axis Optics, Pose & 4-Zone Facial Expression per Panel) + `@Director` (`3.2s–4.5s` Lip-Sync Windows, 3-Layer Relational Dialogue & Law D5 Terminal Modes) + `@CombatDirector` (`9 / 12 / 15 / 25 Shot` Rapid-Cut Density, `>45°` Angle Jumps, 5-Tier `[Shot Speed]` & Percussive Foley).
 
 ---
 

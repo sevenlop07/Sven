@@ -9,6 +9,8 @@ description: >
 
 # PhotoDirector — Master Still Cinematographer & Image Prompt Architect (Level 2)
 
+> 🔗 **Core knowledge link** — A keyframe is one frozen camera decision. Choose it with [`3c-camera-master-grammar.md`](file:///d:/Project/Sven/engine/references/3c-camera-master-grammar.md): §0 the Director's 8 Questions, §1 shot size, §3 angle & power, §4 perspective, §6 lens feel in words (never mm), §7 focus & depth, §8 composition (including §8.2 vertical 9:16). Scene intent and the captured instant come from [`0-creative-doctrine.md`](file:///d:/Project/Sven/engine/references/0-creative-doctrine.md) §1; any number defers to [`0c-canonical-numbers.md`](file:///d:/Project/Sven/engine/references/0c-canonical-numbers.md).
+
 > **LEVEL 2 OPERATIONAL SPECIFICATION: STILL CINEMATOGRAPHER, KEYFRAME & IMAGE PROMPT ARCHITECT**  
 > **Direct Report**: Sven-Agent (`d:\Project\Sven\AGENT.md` — Level 1 Executive Producer & Showrunner)  
 > **Collaborators**: Master Screenwriter (`.agents/SCREENWRITER.md`), Film Director (`.agents/DIRECTOR.md`), Combat Director (`.agents/skills/combat-director/SKILL.md`)  
@@ -32,7 +34,7 @@ While a **Video Prompt (`@Director` / `@CombatDirector`)** directs **temporal st
 | **Temporal & Audio Elements** | `[sound]:`, `Shot 1..N (00:XX-00:YY)`, `[Shot Speed]`, spoken dialogue lines | **100% STRIPPED** — Zero timestamps, zero `[sound]:`, zero `[Shot Speed]`, zero spoken lines, zero camera movement verbs (`push-in`, `dolly`, `pan`, `tilt`, `tracking`, `whip-pan`). |
 | **Camera Specification** | Dynamic move across time (`slow push-in`, `wide tracking shot`) | **AMPLIFIED INTO STATIC 4-AXIS OPTICS (`[shot & action]:`)**: Exact Shot Scale + Static Vertical Pitch + Horizontal Yaw + Relational Target Axis + Optical Focus & Depth of Field (`tack-sharp focus on eyes with soft bokeh`). |
 | **Character Pose** | Initial `00:00` launchpad posture transitioning into action | **AMPLIFIED INTO THE 5-POINT ANATOMICAL POSE LOCK**: ① Torso & Weight Distribution + ② Head/Chin Tilt + ③ Shoulder/Elbow Anchor + ④ Exact Left & Right Hand/Finger Articulation + ⑤ Gaze Vector & Micro-Expression. |
-| **Action & Expression Description** | `State A ➔ State B` over `3.5s–4.5s` | **AMPLIFIED INTO CAPTURED INSTANT ACTION + 4-ZONE FACIAL MICRO-EXPRESSION (`Inside [shot & action]:`)**: Every `[shot & action]:` block MUST explicitly pair the **frozen physical action** with **rich, observable 4-Zone Facial Micro-Expressions (`Brows + Eyes/Ocular Moisture + Lips/Mouth + Jaw Tension`)** so the character's face radiates living emotional depth rather than a blank mannequin stare. |
+| **Action & Expression Description** | `State A ➔ State B` over a `3.2s–4.5s` shot (`0c` §2) | **AMPLIFIED INTO CAPTURED INSTANT ACTION + 4-ZONE FACIAL MICRO-EXPRESSION (`Inside [shot & action]:`)**: Every `[shot & action]:` block MUST explicitly pair the **frozen physical action** with **rich, observable 4-Zone Facial Micro-Expressions (`Brows + Eyes/Ocular Moisture + Lips/Mouth + Jaw Tension`)** so the character's face radiates living emotional depth rather than a blank mannequin stare. |
 
 ---
 
@@ -154,19 +156,24 @@ Every character in `[subject]:` uses the **Two-Line Sovereign Subject Formula** 
 
 ## 📋 4. CANONICAL STILL IMAGE PROMPT TEMPLATES (COPY-PASTE GOLD STANDARDS)
 
-### 4.0 Template M — Canonical `16:9 4-Figure Character Reference Model Sheet` (`Mẫu 0 / Mẫu 1A / Mẫu 1B` from `Pillar 2 L390–720` — MANDATORY FOR ALL "TẠO ẢNH NHÂN VẬT / THAM CHIẾU NHÂN VẬT" REQUESTS)
-*Use this exact 5-layer architecture whenever the user asks to create a character image, character reference sheet, or character wardrobe sheet (including when locking face, hair, and eyeglasses from an existing user photo `<<<Image 1>>>`).*
+### 4.0 Template M — Canonical `16:9 4-Figure Character Reference Model Sheet` (`Mẫu 0 / Mẫu 1A / Mẫu 1B / Mẫu 1C` from `Pillar 2 L390–720` — MANDATORY FOR ALL "TẠO ẢNH NHÂN VẬT / THAM CHIẾU NHÂN VẬT" REQUESTS)
+*Use this exact 5-layer architecture whenever the user asks to create a character image, character reference sheet, or character wardrobe sheet. It supports **3 Flexible Input Modes (`Mode R-A`, `Mode R-B`, `Mode R-C`)** so the user can generate character reference sheets from text alone, from a face photo, or by combining a face photo with a reference dress/outfit photo:*
+- **The 3 Character Reference Model Sheet Input Modes**:
+  1. **`Mode R-A` (Text-Only Creation — Zero Reference Images)**: Creates a brand-new character and outfit from scratch using full text descriptions in `Character:` and `Wardrobe:`.
+  2. **`Mode R-B` (Single Reference Image — Face / Identity Lock `<<<Image 1>>>` + Text-Described Wardrobe)**: Locks 100% of the character's face, bone structure, hair, and eyeglasses from `Character <<<Image 1>>> (fully_preserved - ...)` while dressing them in a new outfit described by text in `Wardrobe:`.
+  3. **`Mode R-C` (Dual Reference Images — Face / Base Character Lock `<<<Image 1>>>` + Reference Garment / Dress Lock `<<<Image 2>>>` — `Mẫu 1C`)**: Locks 100% of the character's face, bone structure, skin tone, hair, and eyeglasses from `Character <<<Image 1>>> (fully_preserved - ...)` AND locks 100% of the exact dress/garment silhouette, neckline, waist cut, hem length, fabric texture, and color from `Wardrobe <<<Image 2>>> (fully_preserved - ...)` across all 4 turnaround/portrait figures (ideal for fashion lookbooks, multi-dress beat transformations, and exact wardrobe virtual try-on sheets).
 - **Optical Value Contrast Inversion Law**:
-  * **Dark Attire** (black suit, dark jacket) $\to$ **`solid pure white studio background`** (`Mẫu 1A`).
-  * **Light Attire** (white chef jacket, cream linen, light blouse) $\to$ **`solid dark neutral grey studio background`** (`Mẫu 1B`).
+  * **Dark Attire** (black suit, dark dress, dark jacket) $\to$ **`solid pure white studio background`** (`Mẫu 1A`).
+  * **Light Attire** (white chef jacket, cream linen, pastel/white dress) $\to$ **`solid dark neutral grey studio background`** (`Mẫu 1B`).
   * **Strictly ZERO background scenery, ZERO furniture, ZERO props in hands**!
 
+#### A. `Mode R-A` & `Mode R-B` Template (`0 Reference Images` OR `1 Face Reference <<<Image 1>>> + Text Wardrobe`):
 ```text
 Style: Theatrical film reference, live-action style, DaVinci grading, masterful composition & cinematic color.
 
 Ultra-realistic human portrait photography, 8K ultra HD, ultimate details, photorealistic skin and fabric texture, professional studio character model sheet, shot with 85mm f1.4 large aperture lens, shallow depth of field, focus precisely locked on the character's face.
 
-Character [Optional if locking from user photo: <<<Image 1>>> (fully_preserved - maintain 100% identical facial features, facial bone structure, skin tone, exact hairstyle, hair color, and exact eyeglasses/accessories from the reference image)]: Aesthetic of [persona & temperament]. One adult [ethnicity & gender], [aged XX / preserving exact identity from <<<Image 1>>>], [height cm], [7.5-head or 8-head proportions], [skin complexion finish & micro-pores], [3D facial bone structure, eyebrows, eye color/gaze, nose bridge, Female Makeup Spec OR Male Grooming Spec, and exact eyeglasses if worn].
+Character [Optional for Mode R-B when locking from user face photo: <<<Image 1>>> (fully_preserved - maintain 100% identical facial features, facial bone structure, skin tone, exact hairstyle, hair color, and exact eyeglasses/accessories from the reference image)]: Aesthetic of [persona & temperament]. One adult [ethnicity & gender], [aged XX / preserving exact identity from <<<Image 1>>>], [height cm], [7.5-head or 8-head proportions], [skin complexion finish & micro-pores], [3D facial bone structure, eyebrows, eye color/gaze, nose bridge, Female Makeup Spec OR Male Grooming Spec, and exact eyeglasses if worn].
 
 Wardrobe: [Complete pristine tailored outfit specification: fabric weave, collar cut, buttons, trousers/skirt, footwear; bare hands completely free of props].
 
@@ -184,6 +191,33 @@ RIGHT ZONE (occupying the right 45% of the canvas width — Figure 4: One Large 
 Features a prominent, zoomed-in high-definition chest-up portrait filling the right 45% of the frame with impactful facial clarity while maintaining safe headroom margin above the hair crown, entire head, full cranium, and complete hairstyle 100% fully visible inside the canvas with clear breathing space below top border, in strictly direct frontal eye-level view facing camera directly, capturing razor-sharp facial features, [exact hairstyle and eyeglasses from <<<Image 1>>> if applicable], skin texture, iris catchlights, and collar details.
 
 Professional high-end studio lighting, subtle soft contact shadows under feet, strictly zero text, zero typography, zero labels, strictly zero background scenery, zero environmental elements, zero furniture, zero watermark, strictly zero height mismatch between the three full-body turnaround figures, strictly no enlarged or stretched headless bodies, headless necks must never touch the top canvas border, all three turnaround bodies must align horizontally at the shoulders, waist, and heels, all 4 figures 100% fully visible inside the 16:9 frame, strictly zero cropped head, strictly no cut-off hair, no truncated hair crown, no hair touching canvas edges, ample empty headroom margin above the skull, strictly zero out-of-frame head, no chopped skull, portrait strictly frontal view only.
+```
+
+#### B. `Mode R-C` Template (`Mẫu 1C` — Dual Reference Lock: Character Face/Identity from `<<<Image 1>>>` + Reference Dress/Garment from `<<<Image 2>>>`):
+*Use when the user has an existing character/face reference image (`<<<Image 1>>>`) AND one or more reference garment/dress images (`<<<Image 2>>>`) and wants to generate a canonical `16:9 4-Figure Turnaround Model Sheet` of the character wearing that exact referenced garment/dress.*
+```text
+Style: Theatrical film reference, high-end live-action fashion and cinematic portraiture, DaVinci color grading, pristine digital finish.
+
+Ultra-realistic human character reference sheet, 8K ultra HD, ultimate details, photorealistic skin and fabric texture, professional studio character model sheet, shot with 85mm f1.4 large aperture lens, shallow depth of field, focus precisely locked on the character's face.
+
+Character <<<Image 1>>> (fully_preserved - maintain 100% identical facial features, three-dimensional facial bone structure, eyes, nose bridge, lips, skin tone, exact hairstyle, hair color, and exact eyeglasses/accessories if present from <<<Image 1>>>): Aesthetic of [persona & temperament, e.g., high-fashion glamorous lead, poised magnetic temperament]. One adult [woman / man], [height cm, e.g., 168cm], [8-head high-fashion proportions], [graceful hourglass figure with slender cinched waist, sculpted feminine curves, delicate collarbones, slender feminine hands with delicate wrists and long tapering fingers, and long slender toned legs / broad-shouldered athletic masculine build], [skin complexion & makeup/grooming archetype F1–F4 / M1–M4].
+
+Wardrobe <<<Image 2>>> (fully_preserved - replicate 100% exact garment/dress design, silhouette, neckline cut, waist structure, sleeve/skirt hem length, fabric weave texture, and exact color from <<<Image 2>>>): Tailored [dress / outfit] from <<<Image 2>>> fitted naturally to her/his silhouette, paired with sleek matching footwear; bare hands resting naturally beside the torso completely free of props.
+
+Solid [pure white (for dark garment) OR dark neutral grey (for light garment)] studio backdrop with zero scenery and zero environmental elements, creating sharp optical contrast against the garment from <<<Image 2>>> and highlighting crisp fabric edge separation. Professional studio lighting, crisp rim outline light separating the silhouette from the studio background, soft balanced fill light on the face, subtle soft contact shadows under the footwear.
+
+Character reference model sheet, 16:9 widescreen aspect ratio, clean solid [pure white / dark neutral grey] studio background, containing 4 figures arranged from left to right across two zones:
+
+LEFT AND CENTER ZONE (occupying the left 55% of the canvas width — Three Compact Full-Body Turnaround Figures at Identical 1:1 Body Scale):
+Displays three full-body turnaround figures standing side by side in a natural, relaxed posture with arms resting loosely beside the torso and footwear grounded on the exact same horizontal floor baseline. CRITICAL SCALE LOCK: All three turnaround bodies MUST share the exact same 1:1 anatomical body size — their shoulder lines, chest lines, waistlines, garment hems, and shoe heels must align along strict horizontal parallel lines across all three figures:
+1. Figure 1 (Far Left — Front Full-Body View, Clean Mannequin Neck Cut at Shared Shoulder Line): Full-length front body from the base of the neck down to the footwear at the exact same 1:1 body scale and exact same horizontal shoulder height as Figure 3, showing the complete front garment/dress design, neckline, waist fit, drape, and footwear from <<<Image 2>>>. Clean mannequin-style neck termination at the collar line with wide empty studio background space above the neck (strictly zero head, zero face, and never stretching the headless body to touch the top border).
+2. Figure 2 (Center-Left — 90-Degree Lateral Side Profile Full-Body View, Clean Mannequin Neck Cut at Shared Shoulder Line): Full-length 90-degree side profile body from the base of the neck down to the footwear at the exact same 1:1 body scale and exact same horizontal shoulder height as Figure 3, showing the lateral silhouette, side seam drape of the garment/dress from <<<Image 2>>>, and footwear profile. Clean mannequin-style neck termination at the collar line with wide empty studio background space above the neck (strictly zero head, zero face, and never stretching the headless body to touch the top border).
+3. Figure 3 (Center — Rear Back Full-Body View WITH Head & Hair at Shared Shoulder Line): Full-length rear back view from the top of the head down to the footwear at the exact same 1:1 body scale, with shoulders, waistline, garment hem, and heels aligned strictly horizontally with Figures 1 and 2, showing the complete back of the head and exact rear hairstyle from <<<Image 1>>> extending into the upper space above the shared shoulder line, nape of the neck, rear back cut and seams of the garment/dress from <<<Image 2>>>, and heels touching the floor.
+
+RIGHT ZONE (occupying the right 45% of the canvas width — Figure 4: One Large Frontal Chest-Up Portrait):
+Features a prominent, zoomed-in high-definition chest-up portrait filling the right 45% of the frame with impactful facial clarity while maintaining safe headroom margin above the hair crown, entire head, full cranium, and complete hairstyle 100% fully visible inside the canvas with clear breathing space below top border, in strictly direct frontal eye-level view facing camera directly, capturing razor-sharp facial features from <<<Image 1>>>, skin texture, iris catchlights, lip tone, and the upper neckline/collar of the garment from <<<Image 2>>>.
+
+Professional high-end studio lighting, subtle soft contact shadows under footwear, strictly zero text, zero typography, zero labels, strictly zero background scenery, zero environmental elements, zero furniture, zero watermark, strictly zero height mismatch between the three full-body turnaround figures, strictly no enlarged or stretched headless bodies, headless necks must never touch the top canvas border, all three turnaround bodies must align horizontally at the shoulders, waist, garment hem, and heels, all 4 figures 100% fully visible inside the 16:9 frame, strictly zero cropped head, strictly no cut-off hair, no truncated hair crown, no hair touching canvas edges, ample empty headroom margin above the skull, strictly zero out-of-frame head, no chopped skull, portrait strictly frontal view only.
 ```
 
 ---
