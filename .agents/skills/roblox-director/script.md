@@ -390,3 +390,37 @@ Never reuse a line shape, act-1 example frame, callback or ending frame from the
 8. **Timing check.** `python tools/plan_timing.py script-sheet.md --rewrite-times` fills the time column (spoken words / 3.67 / rate, pause rows, first word at 0.1 s, 1.2 s tail) and writes a planned `words_planned.json` + `cuts.txt` for the shot-list and pacing checks. Check every beat against §3. Then read it aloud once with a stopwatch; if the stopwatch is >5 % off, fix the script, not the speed.
 9. **Fill the sheet.** Shot, camera, lighting preset, music cue, SFX and caption highlight for every row (`templates/script-sheet.md`).
 10. **Self-check.** Run §9.3 (`tools/script_check.py --log … --pretwist …`) and the blind guess test. Draft the rotation-log row. Write 3 titles (formats A, B, C) and 3 cover texts. Hand to the user.
+
+---
+
+## 11. Vietnamese narration (`--lang vi`)
+
+Every rule above holds for a Vietnamese narrator except the English-only numbers below. `tools/script_check.py` switches to these targets automatically when the sheet is written in Vietnamese (or with `--lang vi`). Tag: **HYPOTHESIS** until Vietnamese episodes have their own retention data in `history-registry.json → performance_log`.
+
+### 11.1 Timing
+- Vietnamese is timed in **syllables**, not words: **~3.2 syllables/s** while reading (170–210 syllables/min for the speech, pauses excluded). `script_check.py` uses 3.2 syllables/s unless `--wpm` is given; pass `--wpm 192` to `plan_timing.py` for Vietnamese sheets.
+- Runtime budget: `60 s ≈ 180` syllables · `90 s ≈ 270` · `120 s ≈ 360` · `150 s ≈ 450`.
+- The same pause rule (§6): 2–3 designed pauses of 0.6–1.3 s, one right after the twist line, one right before the last line.
+
+### 11.2 Sentences
+- Mean **8–12 syllables** per sentence; **35–60 %** of sentences `≤ 8` syllables; **10–25 %** `≤ 4` syllables; never more than **25** syllables.
+- Every short fragment adds a fact (a number, a name, an object, a sound, a place).
+- Fewer than 20 % of sentences start with `Và / Nhưng / Rồi / Thế là / Vậy là`, never 3 in a row.
+
+### 11.3 Voice
+- **One narrator, first person**, telling a friend. Pick the pronoun from the narrator's age and keep it: a child says `mình` / `tớ` (or `tao` for a cheeky kid), an adult says `tôi`; family terms for the others (`bà ngoại`, `ba`, `mẹ`, `anh Hai`).
+- Spoken, not written: short clauses, natural particles where they fit (`á`, `nè`, `nha`, `luôn`, `thôi`), one casual marker every ~15 s (`kiểu`, `thật ra`, `nói chung`, `ờ`). Never two in one sentence, never the same one 4 times.
+- Everyday words: abstract Sino-Vietnamese or literary words (`tuyệt vọng`, `định mệnh`, `vĩnh viễn`, `linh hồn`, `bi thương`, `thấu hiểu`, `vô tận`) only when the character would really say them.
+- Feelings shown through actions (`Mẹ cầm cái muỗng mà không ăn.`), never named (`Mẹ buồn lắm.`).
+- Kinship address changes are plot events: the narrator switching `ba` ➔ `ông ấy` marks a rupture (`engine/references/2b-character-lines.md` §5).
+
+### 11.4 Banned Vietnamese phrases (`script_check.py --lang vi` reads this list)
+- "lần đầu tiên trong đời", "chưa bao giờ trong đời", "bỗng nhiên", "đột nhiên", "không ngờ rằng"
+- "tim tôi như thắt lại", "nước mắt lăn dài", "thời gian như ngừng trôi", "im lặng đến đáng sợ", "tôi không tin vào mắt mình"
+- "một sợi dây vô hình", "hành trình", "bản giao hưởng", "minh chứng cho", "kỷ niệm khó quên"
+- "và đó là lúc tôi hiểu ra", "tôi đã học được rằng", "cuối cùng tôi cũng hiểu", "bài học"
+- "các bạn có bao giờ tự hỏi", "để tôi kể cho bạn nghe", "các bạn biết không"
+- "mãi mãi hạnh phúc", "và họ sống hạnh phúc"
+
+### 11.5 Self-check
+Run `python tools/script_check.py script-sheet.md --lang vi` (`--mode story` unless it is a world-rule storytime). The English-only tests (Flesch-Kincaid, contractions, similes regex, adverb + said) are replaced by the syllable, Sino-Vietnamese and simile checks above; everything else (beats, twist, pauses, no-copy, rotation) is unchanged.

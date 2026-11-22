@@ -1,7 +1,14 @@
 #!/usr/bin/env python3
 """script_check.py - the numbers for script.md §9.3 from a script sheet. Zero tokens.
 usage: python3 script_check.py script-sheet.md [--target 117] [--tail 1.2] [--last-reveal 52] [--wpm 220]
-       [--log ROTATION-LOG.md] [--pretwist pretwist.txt] [--rules ../script.md]
+       [--log ROTATION-LOG.md] [--pretwist pretwist.txt] [--rules ../script.md] [--mode town|story|auto] [--lang en|vi|auto]
+  --mode      town  = "In this world/town…" storytime preset (rule line 1, rule-clear check, town beat windows)
+              story = any other Roblox narration (drama, mystery, horror, series episodes): the rule-line checks are
+                      replaced by a hook check and the beat windows follow story-structure.md (twist 49-85 %).
+              auto (default) = town when line 1 starts "In this world/town," else story
+  --lang      vi = Vietnamese narration (script.md §11): syllable-based sentence stats, syllables/min, Vietnamese
+              stake pronouns, casual markers and banned phrases; English-only tests (FK grade, contractions,
+              similes, adverb+said) are skipped. auto (default) = vi when the lines carry Vietnamese diacritics
   --log       checks the core rotation fields against the last episodes (templates/rotation-log.md). The plan's own
               row is skipped: --ep E04, or the sheet's "Episode" field, or a last row identical to this plan
   --pretwist  writes the lines before the reveal to a file for the blind guess test (script.md §3.3)
@@ -14,15 +21,26 @@ written start is >0.3 s off the model are listed so you can fix the column. Line
 (fragments, specifics that are objects, tense, "sounds like the user"). Banned phrases are read from script.md §9.1."""
 import argparse, os, re, statistics as st
 import sheetlib
+import sys
+try:
+    sys.stdout.reconfigure(encoding="utf-8")
+except Exception:
+    pass
 from sheetlib import load, spoken, syl, sentences
 
 ap = argparse.ArgumentParser()
 ap.add_argument("sheet"); ap.add_argument("--wpm", type=float, default=220); ap.add_argument("--target", type=float); ap.add_argument("--tail", type=float, default=1.2)
 ap.add_argument("--last-reveal", type=float); ap.add_argument("--log"); ap.add_argument("--pretwist"); ap.add_argument("--ep")
+ap.add_argument("--mode", choices=("auto", "town", "story"), default="auto")
+ap.add_argument("--lang", choices=("auto", "en", "vi"), default="auto")
 HERE = os.path.dirname(os.path.abspath(__file__))
 ap.add_argument("--rules", default=os.path.join(HERE, "..", "script.md"))
 a = ap.parse_args()
-sheetlib.WPS = a.wpm / 60
+_RAW = open(a.sheet, encoding="utf-8").read()
+VI_CH = re.compile(r"[ăâđêôơưàáạảãầấậẩẫằắặẳẵèéẹẻẽềếệểễìíịỉĩòóọỏõồốộổỗờớợởỡùúụủũừứựửữỳýỵỷỹ]", re.I)
+LANG = a.lang if a.lang != "auto" else ("vi" if len(VI_CH.findall(_RAW)) > 40 else "en")
+# Vietnamese narration is timed in syllables: ~3.2 syllables/s (script.md §11) unless --wpm was given explicitly
+sheetlib.WPS = (3.2 if LANG == "vi" and a.wpm == 220 else a.wpm / 60)
 D = load(a.sheet, a.tail); R = D["rows"]; RT = D["runtime"]
 L = [r for r in R if r["kind"] == "line"]; P = [r for r in R if r["kind"] == "pause"]
 TXT = open(a.sheet, encoding="utf-8").read()
@@ -52,18 +70,27 @@ for r in L:
         S.append((r["speaker"], s, sum(len(spoken(x)) for x in s.split())))
 lens = [n for _, _, n in S]; N = len(S); W = sum(r["words"] for r in L)
 
-# ---- 2 rule line ----
+# ---- 2 rule line (town) / hook line (story) ----
 r0 = L[0]; t0 = r0["text"]
-row("2", "line 1: 8-15 words, 'In this world/town,'", f"{r0['words']} words", 8 <= r0["words"] <= 15 and bool(re.match(r"in this (world|town),", t0, re.I)))
-row("2", "line 1 spoken in 2.0-4.5 s", f"{r0['end'] - r0['start']:.1f} s", 2.0 <= r0["end"] - r0["start"] <= 4.5)
+MODE = a.mode if a.mode != "auto" else ("town" if re.match(r"in this (world|town),", t0, re.I) else "story")
+out.append(f"INFO      mode {MODE} | lang {LANG} | timing {sheetlib.WPS * 60:.0f} {'syllables' if LANG == 'vi' else 'words'}/min")
+if MODE == "town":
+    row("2", "line 1: 8-15 words, 'In this world/town,'", f"{r0['words']} words", 8 <= r0["words"] <= 15 and bool(re.match(r"in this (world|town),", t0, re.I)))
+    row("2", "line 1 spoken in 2.0-4.5 s", f"{r0['end'] - r0['start']:.1f} s", 2.0 <= r0["end"] - r0["start"] <= 4.5)
+else:
+    cap1 = 18 if LANG == "vi" else 15
+    row("2", f"story hook: line 1 <= {cap1} {'syllables' if LANG == 'vi' else 'words'}, concrete (story-structure §1.1 B1)", f"{r0['words']}: '{t0[:60]}'", r0["words"] <= cap1)
+    row("2", "story hook: line 1 spoken in <= 4.5 s", f"{r0['end'] - r0['start']:.1f} s", r0["end"] - r0["start"] <= 4.5)
 
 # ---- 3 stake + rule clear ----
-stake = next((r["start"] for r in L[1:] if any(re.sub(r"[^\w']", "", x).lower() in ("i", "me", "my", "mine", "i'm", "i'd", "i've")
+ME = ("tôi", "mình", "tớ", "tao", "tui") if LANG == "vi" else ("i", "me", "my", "mine", "i'm", "i'd", "i've")
+stake = next((r["start"] for r in (L[1:] if MODE == "town" else L) if any(re.sub(r"[^\w']", "", x).lower() in ME
                                                for x in r["tokens"])), None)
 row("3", "stake line (first I/me/my/mine) starts by 6 s", f"{stake:.1f} s" if stake is not None else "none", stake is not None and stake <= 6)
 rc = [r for r in L if "rule clear" in r["beat"].lower()]
-if rc: row("3", "rule fully clear <=9 % and <=15 s", f"{rc[-1]['end']:.1f} s = {pct(rc[-1]['end']):.1f} %", pct(rc[-1]["end"]) <= 9 and rc[-1]["end"] <= 15)
-else: row("3", "rule fully clear <=9 % and <=15 s", "tag the row that completes the rule 'rule clear' in the beat column", "CHECK")
+if MODE == "story": pass
+elif rc: row("3", "rule fully clear <=9 % and <=15 s", f"{rc[-1]['end']:.1f} s = {pct(rc[-1]['end']):.1f} %", pct(rc[-1]["end"]) <= 9 and rc[-1]["end"] <= 15)
+elif MODE == "town": row("3", "rule fully clear <=9 % and <=15 s", "tag the row that completes the rule 'rule clear' in the beat column", "CHECK")
 
 # ---- 5 beats ----
 def first(pat, flags=re.I):
@@ -75,15 +102,17 @@ B["twist"] = B["twist"] or B["reveal"]
 def beat(name, r, lo, hi, note=""):
     if not r: row("5", f"{name} {lo}-{hi} %", "no row tagged", "CHECK"); return
     p = pct(r["start"]); row("5", f"{name} {lo}-{hi} %{note}", f"{r['start']:.1f} s = {p:.1f} %", lo <= p <= hi)
-beat("misread plant", B["misread"], 10, 36)
+WIN = dict(misread=(10, 36), reveal=(49, 78), climax=(69, 96), last=(92, 100)) if MODE == "town" else \
+      dict(misread=(10, 40), reveal=(49, 85), climax=(55, 92), last=(90, 100))      # story-structure.md 6-beat spine
+beat("misread plant", B["misread"], *WIN["misread"])
 if B["misread"] and not re.search(r"\b(said|says|say|called|call|thought|think|believed?|knew|everyone|everybody|kids|grown-ups|people|"
                                     r"sign|poster|news|police|teacher|mom|dad|rumou?r)\b|\"", B["misread"]["text"], re.I):
     row("5", "misread row states the belief, attributed", f"'{B['misread']['text'][:50]}' reads as an observation", "CHECK")
-beat("reveal (first truth line)", B["reveal"], 49, 78)
-beat("twist line", B["twist"], 49, 78)
-beat("climax starts", B["climax"], 69, 96)
+beat("reveal (first truth line)", B["reveal"], *WIN["reveal"])
+beat("twist line", B["twist"], *WIN["reveal"])
+beat("climax starts", B["climax"], *WIN["climax"])
 beat("extra payoff", B["payoff"], 85, 100)
-beat("last line starts", B["last"], 92, 100)
+beat("last line starts", B["last"], *WIN["last"])
 if B["doubt"] and B["reveal"]: row("5", "doubt before the reveal", f"{pct(B['doubt']['start']):.1f} %", B["doubt"]["start"] < B["reveal"]["start"])
 if B["turn"] and B["reveal"]: row("5", "turn after the reveal", f"{pct(B['turn']['start']):.1f} %", B["turn"]["start"] > B["reveal"]["start"])
 if a.last_reveal is not None and B["twist"]:
@@ -96,17 +125,26 @@ if B["inciting"] and B["reveal"]:
 # ---- 8 specifics (numbers are objective; named objects are a hand count) ----
 NUMW = set("two three four five six seven eight nine ten eleven twelve thirteen fourteen fifteen sixteen seventeen eighteen "
            "nineteen twenty thirty forty fifty sixty seventy eighty ninety hundred thousand".split())
+NUMW |= set("một hai ba bốn năm sáu bảy tám chín mười mươi trăm nghìn ngàn".split()) if LANG == "vi" else set()
 nums = [x.strip("\"',.!?") for r in L for x in r["tokens"] if re.search(r"\d", x) or x.strip("\"',.!?").lower() in NUMW]
 per100 = len(nums) / RT * 100
 row("8", ">=3 concrete specifics per 100 s (numbers only)", f"{len(nums)} = {per100:.1f}/100 s: {', '.join(nums[:14])}", True if per100 >= 3 else "CHECK")
 
 # ---- 9 sentence stats ----
-row("9", "sentences: mean 6-8 spoken words", f"{N} sentences, mean {st.mean(lens):.1f}", 6 <= st.mean(lens) <= 8)
-p6 = 100 * sum(n <= 6 for n in lens) / N; p3 = 100 * sum(n <= 3 for n in lens) / N
-row("9", "sentences <=6 words 45-65 %", f"{p6:.0f} %", 45 <= p6 <= 65)
-row("9", "sentences <=3 words 15-25 %", f"{p3:.0f} %", 15 <= p3 <= 25)
-row("9", "longest sentence <=20 words", f"{max(lens)}", max(lens) <= 20)
-starts = [bool(re.match(r"^[\"“]?(and|but|so|then)\b", s, re.I)) for _, s, _ in S]
+if LANG == "vi":   # script.md §11: syllables, not words
+    row("9", "câu: mean 8-12 syllables", f"{N} sentences, mean {st.mean(lens):.1f}", 8 <= st.mean(lens) <= 12)
+    p8 = 100 * sum(n <= 8 for n in lens) / N; p4 = 100 * sum(n <= 4 for n in lens) / N
+    row("9", "câu <=8 syllables 35-60 %", f"{p8:.0f} %", 35 <= p8 <= 60)
+    row("9", "câu <=4 syllables 10-25 %", f"{p4:.0f} %", 10 <= p4 <= 25)
+    row("9", "longest sentence <=25 syllables", f"{max(lens)}", max(lens) <= 25)
+else:
+    row("9", "sentences: mean 6-8 spoken words", f"{N} sentences, mean {st.mean(lens):.1f}", 6 <= st.mean(lens) <= 8)
+    p6 = 100 * sum(n <= 6 for n in lens) / N; p3 = 100 * sum(n <= 3 for n in lens) / N
+    row("9", "sentences <=6 words 45-65 %", f"{p6:.0f} %", 45 <= p6 <= 65)
+    row("9", "sentences <=3 words 15-25 %", f"{p3:.0f} %", 15 <= p3 <= 25)
+    row("9", "longest sentence <=20 words", f"{max(lens)}", max(lens) <= 20)
+CONJ = r"(và|nhưng|rồi|thế là|vậy là|xong)" if LANG == "vi" else r"(and|but|so|then)"
+starts = [bool(re.match(r"^[\"“]?" + CONJ + r"\b", s, re.I)) for _, s, _ in S]
 run3 = any(all(starts[i:i + 3]) for i in range(len(starts) - 2))
 row("9", "And/But/So/Then starts <=20 %, never 3 in a row", f"{100 * sum(starts) / N:.0f} %{' (3 in a row!)' if run3 else ''}", sum(starts) / N <= .20 and not run3)
 fw = [re.sub(r"[^\w']", "", s.split()[0]).lower() for _, s, _ in S]
@@ -117,21 +155,27 @@ VERB = re.compile(r"\b(is|are|was|were|be|been|am|has|have|had|do|does|did|can|c
                   r"wore|held|found|heard|gave|kept|fell|stood|wrote|hid|met|brought|bought|slept|woke|lost|won|"
                   r"wants|needs|likes|knows|goes|comes|looks|gets|says|shows|turns|stops|keeps|tells|feels|"
                   r"\w+'(s|re|m|d|ve|ll)|\w+n't|\w+ed)\b|\b(i|you|he|she|it|we|they|who)\s+\w+", re.I)
-frag = [s for _, s, _ in S[1:] if not VERB.search(s)]   # (line 1 is the rule)
-row("9", "verbless fragments 12-25 %, each adds a fact", f"{100 * len(frag) / N:.0f} % candidates: {' | '.join(frag[:8])}", "CHECK")
+if LANG == "en":
+    frag = [s for _, s, _ in S[1:] if not VERB.search(s)]   # (line 1 is the rule)
+    row("9", "verbless fragments 12-25 %, each adds a fact", f"{100 * len(frag) / N:.0f} % candidates: {' | '.join(frag[:8])}", "CHECK")
 
 # ---- 0 voice: FK grade + long words ----
-sw = [w for r in L for x in r["tokens"] for w in spoken(x)]
-sy = [syl(w) for w in sw]
-fk = 0.39 * len(sw) / N + 11.8 * sum(sy) / len(sw) - 15.59
-row("0", "Flesch-Kincaid grade <=2.5 (heuristic syllables)", f"{fk:.1f}", fk <= 2.5)
-long = sorted({w.lower() for w, n in zip(sw, sy) if n >= 3})
-row("0", "3+ syllable words <=5 %, concrete nouns only", f"{100 * sum(n >= 3 for n in sy) / len(sw):.1f} %: {', '.join(long[:14])}", True if sum(n >= 3 for n in sy) / len(sw) <= .05 else False)
+if LANG == "en":
+    sw = [w for r in L for x in r["tokens"] for w in spoken(x)]
+    sy = [syl(w) for w in sw]
+    fk = 0.39 * len(sw) / N + 11.8 * sum(sy) / len(sw) - 15.59
+    row("0", "Flesch-Kincaid grade <=2.5 (heuristic syllables)", f"{fk:.1f}", fk <= 2.5)
+    long = sorted({w.lower() for w, n in zip(sw, sy) if n >= 3})
+    row("0", "3+ syllable words <=5 %, concrete nouns only", f"{100 * sum(n >= 3 for n in sy) / len(sw):.1f} %: {', '.join(long[:14])}", True if sum(n >= 3 for n in sy) / len(sw) <= .05 else False)
+else:
+    hv = [w for r in L for w in r["tokens"] if re.search(r"(?i)\b(tuyệt vọng|định mệnh|vĩnh viễn|linh hồn|bi thương|thấu hiểu|vô tận)\b", w)]
+    row("0", "từ Hán-Việt trừu tượng, văn chương: 0 (script.md §11)", f"{len(hv)} {hv[:6]}", "CHECK" if hv else True)
 
 # ---- 0.1 voice: the user's register (patterns.txt) ----
 NS = [x for x in S if x[0] == "NARR"]
 narr_secs = sum(r["end"] - r["start"] for r in L if r["speaker"] == "NARR")
-mk = [(s, [rx.pattern for rx, _, _ in PAT["casual-markers"] if rx.search(s)]) for _, s, _ in NS]
+VI_CASUAL = [re.compile(r"(?i)(?<!\w)" + x + r"(?!\w)") for x in ("kiểu", "thật ra", "nói chung", "ờ", "ừ", "thì", "á", "luôn", "đó", "nha", "nè", "trời ơi")]
+mk = [(s, [rx.pattern for rx in VI_CASUAL if rx.search(s)] if LANG == "vi" else [rx.pattern for rx, _, _ in PAT["casual-markers"] if rx.search(s)]) for _, s, _ in NS]
 nmk = sum(len(m) for _, m in mk); need = narr_secs / 15
 double = [s for s, m in mk if len(m) > 1]
 used = {}
@@ -140,12 +184,16 @@ for _, m in mk:
 tic = [k for k, v in used.items() if v >= 4]
 row("0.1", "casual markers ~1 per 15 s of narration", f"{nmk} for {narr_secs:.0f} s (need {need:.0f}){' 2 in one: ' + str(double[:2]) if double else ''}{' tic: ' + str(tic) if tic else ''}",
     nmk >= need - 0.5 and not double and not tic)
-tone = list(dict.fromkeys((s, lab) for _, s, _ in S for rx, lab, _ in PAT["narrator-tone"] if rx.search(s)))
-row("0.1", "narrator-tone / written-English patterns: 0", f"{len(tone)} {[f'{l}: {x[:40]}' for x, l in tone[:5]]}", not tone)
-unc = [s for _, s, _ in S if any(rx.search(s) for rx, _, _ in PAT["uncontracted"])]
-row("0.1", "uncontracted pairs (stressed on purpose?)", f"{len(unc)} {[x[:40] for x in unc[:4]]}", True if not unc else "CHECK")
-sim = [s for _, s, _ in S if any(rx.search(s) for rx, _, _ in PAT["similes"])]
-row("0.1", "similes <=1 per 30 s", f"{len(sim)} (max {RT / 30:.0f}) {[x[:30] for x in sim[:3]]}", len(sim) <= RT / 30)
+if LANG == "en":
+    tone = list(dict.fromkeys((s, lab) for _, s, _ in S for rx, lab, _ in PAT["narrator-tone"] if rx.search(s)))
+    row("0.1", "narrator-tone / written-English patterns: 0", f"{len(tone)} {[f'{l}: {x[:40]}' for x, l in tone[:5]]}", not tone)
+    unc = [s for _, s, _ in S if any(rx.search(s) for rx, _, _ in PAT["uncontracted"])]
+    row("0.1", "uncontracted pairs (stressed on purpose?)", f"{len(unc)} {[x[:40] for x in unc[:4]]}", True if not unc else "CHECK")
+    sim = [s for _, s, _ in S if any(rx.search(s) for rx, _, _ in PAT["similes"])]
+    row("0.1", "similes <=1 per 30 s", f"{len(sim)} (max {RT / 30:.0f}) {[x[:30] for x in sim[:3]]}", len(sim) <= RT / 30)
+else:
+    sim = [s for _, s, _ in S if re.search(r"(?i)\b(như thể|tựa như|giống như là)\b", s)]
+    row("0.1", "so sánh văn hoa <=1 per 30 s", f"{len(sim)} (max {RT / 30:.0f}) {[x[:30] for x in sim[:3]]}", len(sim) <= RT / 30)
 
 # ---- 13 no-copy: shapes + n-gram overlap with the refs and the golds (script.md §9.4) ----
 me = os.path.basename(a.sheet).replace(".md", "")
@@ -312,6 +360,9 @@ for q in re.findall(r"\"([^\"]+)\"", sec):
     elif q: phr.append(q)
 m = re.search(r"abstract long adjectives:(.*)", sec)
 if m: phr += [x.strip() for x in m[1].split(",") if x.strip()]
+if LANG == "vi":   # script.md §11.4 banned Vietnamese phrases
+    vsec = txt[txt.find("### 11.4"):txt.find("### 11.5")] if "### 11.4" in txt else ""
+    phr = [q.strip() for q in re.findall(r"\"([^\"]+)\"", vsec) if q.strip()]
 full = " ".join(r["text"] for r in L)
 hits = []
 for p in phr:
@@ -331,12 +382,15 @@ row("11", "narrator questions max 1", f"{len(qv)} {qv[:3]}", len(qv) <= 1)
 dash = sum(full.count(c) for c in ("—", " – ", ";", "...", "…"))
 row("11", "no em dashes / semicolons / ellipses", f"{dash}", dash == 0)
 adv = re.findall(r"\b(?:said|says|asked|whispered|shouted|yelled)\s+\w+ly\b|\b\w+ly\s+(?:said|asked|whispered)\b", full, re.I)
-row("11", "no adverb + said", f"{adv}", not adv)
+if LANG == "en": row("11", "no adverb + said", f"{adv}", not adv)
 
 # ---- 12 timing + pauses (the one pause rule: script.md §6) ----
 speech = sum(r["end"] - r["start"] for r in L)
-lo = 160 if RT <= 80 else 200
-row("12", f"wpm (speech only, slow reads in) {lo}-240", f"{W / speech * 60:.0f} ({W} words / {speech:.1f} s)", lo <= W / speech * 60 <= 240)
+if LANG == "vi":
+    row("12", "syllables/min (speech only) 170-210", f"{W / speech * 60:.0f} ({W} syllables / {speech:.1f} s)", 170 <= W / speech * 60 <= 210)
+else:
+    lo = 160 if RT <= 80 else 200
+    row("12", f"wpm (speech only, slow reads in) {lo}-240", f"{W / speech * 60:.0f} ({W} words / {speech:.1f} s)", lo <= W / speech * 60 <= 240)
 tw = B["twist"] or B["reveal"]
 pa = [p for p in P if tw and 0 <= p["start"] - tw["start"] <= 3 + (tw["end"] - tw["start"]) and 0.8 <= p["secs"] <= 1.3]
 li = R.index(B["last"]); pb = R[li - 1] if li and R[li - 1]["kind"] == "pause" else None

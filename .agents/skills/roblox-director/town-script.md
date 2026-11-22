@@ -9,7 +9,7 @@ This is how to write viral Roblox story shorts. It is built from:
 - 6 viral Instagram/TikTok reels, measured line by line (bell, memories, town, dog, monster, train, plus 2026-11-15 refs like "You have to do whatever Simon says" and "In this town, I'd cry every day")
 - the YouTube breakdown "How I make viral Roblox stories with Claude" (That Guy Animation, youtu.be/YhjjHh6Y2xc)
 
-If the `roblox` skill is installed too, the full detail and the checker tools are in its folder (`script.md`, `tools/script_check.py`, `tools/plan_timing.py`, `templates/script-sheet.md`). This skill wins where they disagree on story shape. `script.md` wins on numbers (timing, sentence lengths).
+If the `roblox` skill is installed too, the full detail and the checker tools are in its folder (`script.md`, `tools/script_check.py`, `tools/plan_timing.py`, `templates/script-sheet.md`). For world-rule storytime this skill wins where they disagree on story shape; `script.md` wins on numbers (timing, sentence lengths). Every other Roblox genre (drama, mystery, series without a world rule) takes its structure from `story-structure.md` and its voice/numbers from `script.md` (see the precedence note at the top of `story-structure.md`).
 
 ## 1. The rule (the whole video lives or dies here)
 **Formula:** `In this town, [an everyday thing] [does one strange thing] [when / for whom].`

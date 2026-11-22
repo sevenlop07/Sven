@@ -64,6 +64,10 @@
 | Thriller / fantasy episode | `~10` (flex with archetype) | `100–110s` |
 | Sitcom episode (Engine 5) | `6–8` | `60–80s` |
 | Opt-in extended episode | `12–18` | `~3 min` |
+| Roblox narrated short (Track S) | `6-beat`, `2–3` zones | `65–150s` |
+| Roblox narrated series episode (Track L) | per archetype | `65–160s+` |
+
+- **Narrated TTS (Roblox, single first-person narrator — no AI lip-sync window applies)**: EN `200–240 wpm` (target `220`), sentences mean `6–8` words, `≤ 20` max; VN `~3.2 syllables/s` (`170–210`/min), sentences mean `8–12` syllables, `≤ 25` max; `2–3` designed pauses of `0.6–1.3s` inserted with `tools/insert_pauses.py` (`.agents/skills/roblox-director/script.md` §6, §11).
 
 - **4-stage episode allocation**: Open/Hook `15–20%` (Scenes 1–2) · Develop `40–50%` · Climax `20–25%` · Close/Cliffhanger `10%`.
 - **Location sequences per episode**: `2–4` (typically `2–3`), each `2–4` consecutive scenes in one space (W11).
@@ -97,7 +101,7 @@
 | Short film (1 episode) | `3–4` |
 | Mini-series (3–5 episodes) | `5–6` |
 | Full series (6–10+ episodes) | `7–9` |
-| Mega series (12–20+ episodes) | `10–14` |
+| Mega series (12–20+ episodes) | `10–14` (Roblox Track L caps a 12-episode season at `8–10` for the 3D build budget) |
 
 - **New named characters on screen**: Episode 1 `≤ 3–4`; every later episode `≤ 1–2` (`2b-character-lines.md` §6).
 - **Absence**: no named character absent more than `2` consecutive episodes without a planted reason; A1 in `≥ 60%` of an episode's scenes unless a declared POV episode (`2b` §5).
