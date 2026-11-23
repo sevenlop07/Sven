@@ -1,0 +1,672 @@
+{
+ "version": 1,
+ "assets": {
+  "Hair_ClassicSpiky_CS": {
+   "path": "hairs/Hair_ClassicSpiky_CS.glb",
+   "category": "hairs",
+   "dims_m": [
+    0.439,
+    0.413,
+    0.355
+   ],
+   "tris": 2664,
+   "materials": 1,
+   "source": "roblox_creator_store",
+   "preview": "_previews/Hair_ClassicSpiky_CS.jpg"
+  },
+  "Hair_CrazyDev_CS": {
+   "path": "hairs/Hair_CrazyDev_CS.glb",
+   "category": "hairs",
+   "dims_m": [
+    0.481,
+    0.452,
+    0.443
+   ],
+   "tris": 1559,
+   "materials": 1,
+   "source": "roblox_creator_store",
+   "preview": "_previews/Hair_CrazyDev_CS.jpg"
+  },
+  "Hair_PinkBangs_CS": {
+   "path": "hairs/Hair_PinkBangs_CS.glb",
+   "category": "hairs",
+   "dims_m": [
+    0.445,
+    0.614,
+    0.601
+   ],
+   "tris": 2332,
+   "materials": 1,
+   "source": "roblox_creator_store",
+   "preview": "_previews/Hair_PinkBangs_CS.jpg"
+  },
+  "Hair_WildMonk_CS": {
+   "path": "hairs/Hair_WildMonk_CS.glb",
+   "category": "hairs",
+   "dims_m": [
+    0.461,
+    0.473,
+    0.341
+   ],
+   "tris": 2426,
+   "materials": 1,
+   "source": "roblox_creator_store",
+   "preview": "_previews/Hair_WildMonk_CS.jpg"
+  },
+  "Nature_BushFlowers": {
+   "path": "nature/Nature_BushFlowers.glb",
+   "category": "nature",
+   "dims_m": [
+    1.33,
+    0.805,
+    0.68
+   ],
+   "tris": 4576,
+   "materials": 6,
+   "source": "unknown",
+   "preview": "_previews/Nature_BushFlowers.jpg"
+  },
+  "Nature_ClassicTree_CS": {
+   "path": "nature/Nature_ClassicTree_CS.glb",
+   "category": "nature",
+   "dims_m": [
+    3.657,
+    3.286,
+    6.304
+   ],
+   "tris": 132,
+   "materials": 2,
+   "source": "roblox_creator_store",
+   "preview": "_previews/Nature_ClassicTree_CS.jpg"
+  },
+  "Nature_OakPinePack_CS": {
+   "path": "nature/Nature_OakPinePack_CS.glb",
+   "category": "nature",
+   "dims_m": [
+    5.88,
+    7.28,
+    8.12
+   ],
+   "tris": 2288,
+   "materials": 2,
+   "source": "roblox_creator_store",
+   "preview": "_previews/Nature_OakPinePack_CS.jpg"
+  },
+  "Nature_PottedMonstera": {
+   "path": "nature/Nature_PottedMonstera.glb",
+   "category": "nature",
+   "dims_m": [
+    0.618,
+    0.625,
+    0.78
+   ],
+   "tris": 884,
+   "materials": 3,
+   "source": "unknown",
+   "preview": "_previews/Nature_PottedMonstera.jpg"
+  },
+  "Nature_QuentyPine_CS": {
+   "path": "nature/Nature_QuentyPine_CS.glb",
+   "category": "nature",
+   "dims_m": [
+    8.093,
+    8.015,
+    8.638
+   ],
+   "tris": 2860,
+   "materials": 2,
+   "source": "roblox_creator_store",
+   "preview": "_previews/Nature_QuentyPine_CS.jpg"
+  },
+  "Nature_SakuraTree": {
+   "path": "nature/Nature_SakuraTree.glb",
+   "category": "nature",
+   "dims_m": [
+    3.425,
+    3.1,
+    3.925
+   ],
+   "tris": 1836,
+   "materials": 3,
+   "source": "unknown",
+   "preview": "_previews/Nature_SakuraTree.jpg"
+  },
+  "Nature_SnowyPine_CS": {
+   "path": "nature/Nature_SnowyPine_CS.glb",
+   "category": "nature",
+   "dims_m": [
+    6.749,
+    7.29,
+    16.041
+   ],
+   "tris": 132,
+   "materials": 3,
+   "source": "roblox_creator_store",
+   "preview": "_previews/Nature_SnowyPine_CS.jpg"
+  },
+  "Nature_StylizedBoulder_Moss": {
+   "path": "nature/Nature_StylizedBoulder_Moss.glb",
+   "category": "nature",
+   "dims_m": [
+    2.499,
+    1.881,
+    0.996
+   ],
+   "tris": 1280,
+   "materials": 1,
+   "source": "unknown",
+   "preview": "_previews/Nature_StylizedBoulder_Moss.jpg"
+  },
+  "Nature_StylizedPine_Hybrid": {
+   "path": "nature/Nature_StylizedPine_Hybrid.glb",
+   "category": "nature",
+   "dims_m": [
+    3.342,
+    3.342,
+    5.92
+   ],
+   "tris": 1196,
+   "materials": 3,
+   "source": "procedural",
+   "preview": "_previews/Nature_StylizedPine_Hybrid.jpg"
+  },
+  "Pet_Bird_Sparrow": {
+   "path": "animals/Pet_Bird_Sparrow.glb",
+   "category": "animals",
+   "dims_m": [
+    0.18,
+    0.437,
+    0.28
+   ],
+   "tris": 1196,
+   "materials": 4,
+   "source": "unknown",
+   "preview": "_previews/Pet_Bird_Sparrow.jpg"
+  },
+  "Pet_Bunny_White": {
+   "path": "animals/Pet_Bunny_White.glb",
+   "category": "animals",
+   "dims_m": [
+    0.245,
+    0.491,
+    0.604
+   ],
+   "tris": 2592,
+   "materials": 5,
+   "source": "unknown",
+   "preview": "_previews/Pet_Bunny_White.jpg"
+  },
+  "Pet_Cat_Tabby": {
+   "path": "animals/Pet_Cat_Tabby.glb",
+   "category": "animals",
+   "dims_m": [
+    0.338,
+    0.853,
+    0.658
+   ],
+   "tris": 2708,
+   "materials": 7,
+   "source": "unknown",
+   "preview": "_previews/Pet_Cat_Tabby.jpg"
+  },
+  "Pet_Cat_Tuxedo": {
+   "path": "animals/Pet_Cat_Tuxedo.glb",
+   "category": "animals",
+   "dims_m": [
+    0.338,
+    0.853,
+    0.658
+   ],
+   "tris": 2708,
+   "materials": 7,
+   "source": "unknown",
+   "preview": "_previews/Pet_Cat_Tuxedo.jpg"
+  },
+  "Pet_Dog_CS": {
+   "path": "animals/Pet_Dog_CS.glb",
+   "category": "animals",
+   "dims_m": [
+    0.628,
+    1.351,
+    1.23
+   ],
+   "tris": 776,
+   "materials": 3,
+   "source": "roblox_creator_store",
+   "preview": "_previews/Pet_Dog_CS.jpg"
+  },
+  "Pet_Dog_Shiba": {
+   "path": "animals/Pet_Dog_Shiba.glb",
+   "category": "animals",
+   "dims_m": [
+    0.372,
+    0.996,
+    0.768
+   ],
+   "tris": 2992,
+   "materials": 7,
+   "source": "unknown",
+   "preview": "_previews/Pet_Dog_Shiba.jpg"
+  },
+  "Pet_Duck_Yellow": {
+   "path": "animals/Pet_Duck_Yellow.glb",
+   "category": "animals",
+   "dims_m": [
+    0.285,
+    0.551,
+    0.41
+   ],
+   "tris": 2008,
+   "materials": 4,
+   "source": "unknown",
+   "preview": "_previews/Pet_Duck_Yellow.jpg"
+  },
+  "Prop_BankersLamp": {
+   "path": "props/Prop_BankersLamp.glb",
+   "category": "props",
+   "dims_m": [
+    0.474,
+    0.332,
+    0.61
+   ],
+   "tris": 2536,
+   "materials": 4,
+   "source": "unknown",
+   "preview": "_previews/Prop_BankersLamp.jpg"
+  },
+  "Prop_BusStop_CS": {
+   "path": "props/Prop_BusStop_CS.glb",
+   "category": "props",
+   "dims_m": [
+    5.018,
+    3.377,
+    4.074
+   ],
+   "tris": 27928,
+   "materials": 6,
+   "source": "roblox_creator_store",
+   "preview": "_previews/Prop_BusStop_CS.jpg",
+   "asset_id": 161094509,
+   "title": "Bus Stop",
+   "creator": "batssz",
+   "extent_studs": [
+    17.925,
+    14.55,
+    12.081
+   ],
+   "mesh_fail": 1,
+   "texture_fail": 0,
+   "unions_as_boxes": 0,
+   "harvested": "2026-11-23"
+  },
+  "Prop_CampfireRing_Hybrid": {
+   "path": "props/Prop_CampfireRing_Hybrid.glb",
+   "category": "props",
+   "dims_m": [
+    1.342,
+    1.365,
+    0.803
+   ],
+   "tris": 1132,
+   "materials": 4,
+   "source": "procedural",
+   "preview": "_previews/Prop_CampfireRing_Hybrid.jpg"
+  },
+  "Prop_Car_RobloxResources": {
+   "path": "props/Prop_Car_RobloxResources.glb",
+   "category": "props",
+   "dims_m": [
+    2.404,
+    5.76,
+    1.741
+   ],
+   "tris": 14654,
+   "materials": 16,
+   "source": "roblox_creator_store",
+   "preview": "_previews/Prop_Car_RobloxResources.jpg"
+  },
+  "Prop_DiningChair": {
+   "path": "props/Prop_DiningChair.glb",
+   "category": "props",
+   "dims_m": [
+    0.483,
+    0.577,
+    1.152
+   ],
+   "tris": 790,
+   "materials": 2,
+   "source": "unknown",
+   "preview": "_previews/Prop_DiningChair.jpg"
+  },
+  "Prop_EntryTable": {
+   "path": "props/Prop_EntryTable.glb",
+   "category": "props",
+   "dims_m": [
+    1.453,
+    1.453,
+    0.872
+   ],
+   "tris": 1954,
+   "materials": 1,
+   "source": "unknown",
+   "preview": "_previews/Prop_EntryTable.jpg"
+  },
+  "Prop_HotDogCart_CS": {
+   "path": "props/Prop_HotDogCart_CS.glb",
+   "category": "props",
+   "dims_m": [
+    3.413,
+    3.874,
+    3.274
+   ],
+   "tris": 3476,
+   "materials": 7,
+   "source": "roblox_creator_store",
+   "preview": "_previews/Prop_HotDogCart_CS.jpg",
+   "asset_id": 160868943,
+   "title": "Hot Dog Cart",
+   "creator": "avaIanches",
+   "extent_studs": [
+    12.202,
+    11.701,
+    13.845
+   ],
+   "mesh_fail": 0,
+   "texture_fail": 0,
+   "unions_as_boxes": 0,
+   "harvested": "2026-11-23"
+  },
+  "Prop_InteriorDoor": {
+   "path": "props/Prop_InteriorDoor.glb",
+   "category": "props",
+   "dims_m": [
+    0.407,
+    1.6,
+    2.481
+   ],
+   "tris": 1028,
+   "materials": 2,
+   "source": "unknown",
+   "preview": "_previews/Prop_InteriorDoor.jpg"
+  },
+  "Prop_KitchenSet": {
+   "path": "props/Prop_KitchenSet.glb",
+   "category": "props",
+   "dims_m": [
+    2.576,
+    1.162,
+    1.469
+   ],
+   "tris": 1184,
+   "materials": 6,
+   "source": "unknown",
+   "preview": "_previews/Prop_KitchenSet.jpg"
+  },
+  "Prop_MedicalStation_CS": {
+   "path": "props/Prop_MedicalStation_CS.glb",
+   "category": "props",
+   "dims_m": [
+    1.07,
+    0.639,
+    1.672
+   ],
+   "tris": 852,
+   "materials": 6,
+   "source": "roblox_creator_store",
+   "preview": "_previews/Prop_MedicalStation_CS.jpg"
+  },
+  "Prop_MudCastle_Hybrid": {
+   "path": "props/Prop_MudCastle_Hybrid.glb",
+   "category": "props",
+   "dims_m": [
+    1.17,
+    0.81,
+    0.706
+   ],
+   "tris": 548,
+   "materials": 1,
+   "source": "procedural",
+   "preview": "_previews/Prop_MudCastle_Hybrid.jpg"
+  },
+  "Prop_OfficeDeskLaptop": {
+   "path": "props/Prop_OfficeDeskLaptop.glb",
+   "category": "props",
+   "dims_m": [
+    3.64,
+    1.96,
+    1.708
+   ],
+   "tris": 1364,
+   "materials": 6,
+   "source": "unknown",
+   "preview": "_previews/Prop_OfficeDeskLaptop.jpg"
+  },
+  "Prop_ParkBenchLamp_Hybrid": {
+   "path": "props/Prop_ParkBenchLamp_Hybrid.glb",
+   "category": "props",
+   "dims_m": [
+    2.459,
+    0.63,
+    3.545
+   ],
+   "tris": 188,
+   "materials": 3,
+   "source": "procedural",
+   "preview": "_previews/Prop_ParkBenchLamp_Hybrid.jpg"
+  },
+  "Prop_ParkLampBench_CS": {
+   "path": "props/Prop_ParkLampBench_CS.glb",
+   "category": "props",
+   "dims_m": [
+    2.977,
+    0.61,
+    4.88
+   ],
+   "tris": 220,
+   "materials": 3,
+   "source": "roblox_creator_store",
+   "preview": "_previews/Prop_ParkLampBench_CS.jpg"
+  },
+  "Prop_PickupTruck_CS": {
+   "path": "props/Prop_PickupTruck_CS.glb",
+   "category": "props",
+   "dims_m": [
+    6.776,
+    2.688,
+    2.604
+   ],
+   "tris": 4592,
+   "materials": 11,
+   "source": "roblox_creator_store",
+   "preview": "_previews/Prop_PickupTruck_CS.jpg"
+  },
+  "Prop_PicnicTable_CS": {
+   "path": "props/Prop_PicnicTable_CS.glb",
+   "category": "props",
+   "dims_m": [
+    1.898,
+    2.447,
+    0.829
+   ],
+   "tris": 836,
+   "materials": 2,
+   "source": "roblox_creator_store",
+   "preview": "_previews/Prop_PicnicTable_CS.jpg"
+  },
+  "Prop_SchoolDeskChair": {
+   "path": "props/Prop_SchoolDeskChair.glb",
+   "category": "props",
+   "dims_m": [
+    0.951,
+    1.011,
+    1.051
+   ],
+   "tris": 2292,
+   "materials": 6,
+   "source": "unknown",
+   "preview": "_previews/Prop_SchoolDeskChair.jpg"
+  },
+  "Prop_TreasureChest_CS": {
+   "path": "props/Prop_TreasureChest_CS.glb",
+   "category": "props",
+   "dims_m": [
+    0.496,
+    0.849,
+    0.642
+   ],
+   "tris": 312,
+   "materials": 3,
+   "source": "roblox_creator_store",
+   "preview": "_previews/Prop_TreasureChest_CS.jpg"
+  },
+  "Prop_WoodenArchBridge_Hybrid": {
+   "path": "props/Prop_WoodenArchBridge_Hybrid.glb",
+   "category": "props",
+   "dims_m": [
+    7.949,
+    2.2,
+    1.611
+   ],
+   "tris": 492,
+   "materials": 2,
+   "source": "procedural",
+   "preview": "_previews/Prop_WoodenArchBridge_Hybrid.jpg"
+  },
+  "Prop_WoodenBridge_CS": {
+   "path": "props/Prop_WoodenBridge_CS.glb",
+   "category": "props",
+   "dims_m": [
+    4.598,
+    12.94,
+    6.384
+   ],
+   "tris": 3256,
+   "materials": 1,
+   "source": "roblox_creator_store",
+   "preview": "_previews/Prop_WoodenBridge_CS.jpg"
+  },
+  "Prop_WoodenFence_Hybrid": {
+   "path": "props/Prop_WoodenFence_Hybrid.glb",
+   "category": "props",
+   "dims_m": [
+    3.6,
+    0.085,
+    0.972
+   ],
+   "tris": 132,
+   "materials": 1,
+   "source": "procedural",
+   "preview": "_previews/Prop_WoodenFence_Hybrid.jpg"
+  },
+  "Set_AlpineChalet_Hybrid": {
+   "path": "sets/Set_AlpineChalet_Hybrid.glb",
+   "category": "sets",
+   "dims_m": [
+    5.4,
+    4.4,
+    5.15
+   ],
+   "tris": 116,
+   "materials": 5,
+   "source": "procedural",
+   "preview": "_previews/Set_AlpineChalet_Hybrid.jpg"
+  },
+  "Set_AlpineChalet_Teal": {
+   "path": "sets/Set_AlpineChalet_Teal.glb",
+   "category": "sets",
+   "dims_m": [
+    5.6,
+    4.6,
+    5.3
+   ],
+   "tris": 140,
+   "materials": 5,
+   "source": "unknown",
+   "preview": "_previews/Set_AlpineChalet_Teal.jpg"
+  },
+  "Set_CampfireTent_CS": {
+   "path": "sets/Set_CampfireTent_CS.glb",
+   "category": "sets",
+   "dims_m": [
+    3.471,
+    3.429,
+    1.417
+   ],
+   "tris": 1056,
+   "materials": 3,
+   "source": "roblox_creator_store",
+   "preview": "_previews/Set_CampfireTent_CS.jpg"
+  },
+  "Set_CampingTent_Hybrid": {
+   "path": "sets/Set_CampingTent_Hybrid.glb",
+   "category": "sets",
+   "dims_m": [
+    2.4,
+    2.93,
+    1.76
+   ],
+   "tris": 32,
+   "materials": 2,
+   "source": "procedural",
+   "preview": "_previews/Set_CampingTent_Hybrid.jpg"
+  },
+  "Set_Classroom": {
+   "path": "sets/Set_Classroom.glb",
+   "category": "sets",
+   "dims_m": [
+    12.347,
+    9.449,
+    4.348
+   ],
+   "tris": 9836,
+   "materials": 18,
+   "source": "unknown",
+   "preview": "_previews/Set_Classroom.jpg"
+  },
+  "Set_LivingRoom": {
+   "path": "sets/Set_LivingRoom.glb",
+   "category": "sets",
+   "dims_m": [
+    6.3,
+    6.09,
+    1.82
+   ],
+   "tris": 5268,
+   "materials": 14,
+   "source": "unknown",
+   "preview": "_previews/Set_LivingRoom.jpg"
+  },
+  "Set_WoodCabin_CS": {
+   "path": "sets/Set_WoodCabin_CS.glb",
+   "category": "sets",
+   "dims_m": [
+    13.28,
+    10.92,
+    11.728
+   ],
+   "tris": 7092,
+   "materials": 15,
+   "source": "roblox_creator_store",
+   "preview": "_previews/Set_WoodCabin_CS.jpg"
+  },
+  "Set_WoodenHut_CS": {
+   "path": "sets/Set_WoodenHut_CS.glb",
+   "category": "sets",
+   "dims_m": [
+    8.198,
+    7.307,
+    4.701
+   ],
+   "tris": 2980,
+   "materials": 9,
+   "source": "roblox_creator_store",
+   "preview": "_previews/Set_WoodenHut_CS.jpg"
+  }
+ },
+ "licence_notes": {
+  "roblox_creator_store": "Roblox Creator Store: licensed for use on Roblox. OK for Studio-captured films; Blender renders outside Roblox need the user's licence call (ROBLOX_DIRECTOR.md §4.5).",
+  "procedural": "Built by Sven code (studio_kit / tools): free to use.",
+  "cc0": "CC0 (e.g. PolyHaven): free to use, credit optional.",
+  "unknown": "Origin not recorded: check before commercial use."
+ }
+}

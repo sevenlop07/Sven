@@ -3,6 +3,7 @@
 build_core_asset_library.py — Batch Converts Roblox Creator Store JSONs + Pre-Baked Stylized-PBR
 Hybrid Cinema Models into Permanent .glb Files inside .agents/skills/roblox-director/assets/
 """
+import glob
 import json
 import math
 import os
@@ -272,54 +273,23 @@ def main():
     stage_dir = os.path.join(tempfile.gettempdir(), "sven_asset_harvest")
     os.makedirs(stage_dir, exist_ok=True)
 
-    step_files = [
-        r"C:\Users\adminb\.gemini\antigravity\brain\2ea277d4-27b9-4329-aed8-f4553ea31a4a\.system_generated\steps\525\output.txt",
-        r"C:\Users\adminb\.gemini\antigravity\brain\2ea277d4-27b9-4329-aed8-f4553ea31a4a\.system_generated\steps\527\output.txt",
-        r"C:\Users\adminb\.gemini\antigravity\brain\2ea277d4-27b9-4329-aed8-f4553ea31a4a\.system_generated\steps\529\output.txt",
-    ]
-    cat_map = {
-        "Nature_QuentyPine_CS": "nature",
-        "Nature_SnowyPine_CS": "nature",
-        "Set_CampfireTent_CS": "sets",
-        "Set_WoodCabin_CS": "sets",
-        "Set_WoodenHut_CS": "sets",
-        "Prop_WoodenBridge_CS": "props",
-        "Prop_ParkLampBench_CS": "props",
-        "Prop_TreasureChest_CS": "props",
-        "Prop_PickupTruck_CS": "props",
-        "Prop_PicnicTable_CS": "props",
-        "Prop_CuteCampfire_CS": "props",
-        "Prop_MedicalStation_CS": "props",
-        "Prop_PoliceCar_CS": "props",
-    }
+    # Creator Store JSONs come from tools/harvest_assets.py (default folder output/_asset_harvest/json; pass another
+    # folder after "--"). The category follows the name prefix (Prop_/Set_/Nature_/Pet_/Hair_).
+    argv = sys.argv[sys.argv.index("--") + 1:] if "--" in sys.argv else []
+    json_dir = argv[0] if argv else os.path.join(HERE, "..", "..", "..", "..", "output", "_asset_harvest", "json")
+    prefix_cat = {"Prop": "props", "Set": "sets", "Nature": "nature", "Pet": "animals", "Hair": "hairs"}
 
     converted = []
-    for sf in step_files:
-        if not os.path.exists(sf):
-            continue
-        raw = open(sf, encoding="utf-8").read().strip()
-        if not raw.startswith("{"):
-            idx = raw.find("{")
-            if idx >= 0:
-                raw = raw[idx:]
-        try:
-            batch = json.loads(raw)
-        except Exception as e:
-            print(f"[WARN] Skipping truncated batch file {os.path.basename(sf)}: {e}", flush=True)
-            continue
-        for mname, mdata in batch.items():
-            json_tmp = os.path.join(stage_dir, f"{mname}.json")
-            with open(json_tmp, "w", encoding="utf-8") as f:
-                json.dump(mdata, f)
-            bpy.ops.wm.read_factory_settings(use_empty=True)
-            col = bpy.context.scene.collection
-            obj = r2g.build_from_json(json_tmp, col)
-            if obj is not None:
-                cat = cat_map.get(mname, "props")
-                dest, sz = _export_active_collection_to_glb(stage_dir, os.path.join(cat, f"{mname}.glb"))
-                dims = tuple(round(v, 2) for v in obj.dimensions)
-                converted.append((f"{cat}/{mname}.glb", sz, dims))
-                print(f"[CreatorStore -> GLB] {cat}/{mname}.glb ({sz / 1024:.1f} KB, dims={dims}m)", flush=True)
+    for jf in sorted(glob.glob(os.path.join(json_dir, "*.json"))):
+        mname = os.path.splitext(os.path.basename(jf))[0]
+        bpy.ops.wm.read_factory_settings(use_empty=True)
+        obj = r2g.build_from_json(jf, bpy.context.scene.collection)
+        if obj is not None:
+            cat = prefix_cat.get(mname.split("_")[0], "props")
+            dest, sz = _export_active_collection_to_glb(stage_dir, os.path.join(cat, f"{mname}.glb"))
+            dims = tuple(round(v, 2) for v in obj.dimensions)
+            converted.append((f"{cat}/{mname}.glb", sz, dims))
+            print(f"[CreatorStore -> GLB] {cat}/{mname}.glb ({sz / 1024:.1f} KB, dims={dims}m)", flush=True)
 
     baked = bake_stylized_hybrid_assets(stage_dir)
     for bname, bsz in baked:

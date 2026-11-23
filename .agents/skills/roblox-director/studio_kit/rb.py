@@ -17,9 +17,9 @@ def send(job, timeout=170):
         time.sleep(0.25)
     for _ in range(40):
         time.sleep(0.15)
-        try: return json.load(open(d))
+        try: return json.load(open(d, encoding="utf-8"))
         except ValueError: pass
-    return json.load(open(d))
+    return json.load(open(d, encoding="utf-8"))
 def text(r):
     res = r.get("res", r)
     if isinstance(res, dict) and "result" in res:

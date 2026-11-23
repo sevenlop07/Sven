@@ -34,3 +34,5 @@ Thumbs.db
 .agents/skills/roblox-director/studio_kit/studio_id.txt
 .agents/skills/roblox-director/studio_kit/tools.json
 .agents/skills/roblox-director/studio_kit/fov.json
+# Asset harvester scratch (raw Studio JSON, search cache, contact sheet; tools/harvest_assets.py)
+output/_asset_harvest/

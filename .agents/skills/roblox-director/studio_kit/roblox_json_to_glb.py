@@ -1,22 +1,21 @@
 #!/usr/bin/env python3
 """
-roblox_json_to_glb.py — Convert extracted Roblox Studio JSON models (Parts, MeshParts, EditableMesh)
-into clean, ground-aligned, PBR-shaded .glb files stored in roblox-director/assets/ for Blender 5.3.
+roblox_json_to_glb.py — Convert models extracted from Roblox Studio (studio_kit/harvest_extract.lua: Parts, MeshParts,
+SpecialMesh FileMeshes via EditableMesh, texture colours baked to vertex colours) into clean, ground-aligned .glb files
+for Blender 5.3. Host-side driver: tools/harvest_assets.py (search → insert → sanitize → extract → convert → catalog).
+
+Blender CLI (run through blender -b --factory-startup -P roblox_json_to_glb.py -- …):
+  convert <model.json> <out.glb> [--preview <png>]     one model → .glb (+ 3/4-view preview render)
+  preview <model.glb> <out.png>                       3/4-view preview of an existing .glb
+  measure <out.json> <a.glb> [<b.glb> …]              write {path: {dims_m, tris, materials}} for the catalog
 """
 import json
 import math
 import os
-import shutil
 import sys
 import bpy
 import bmesh
 from mathutils import Matrix, Vector, Euler
-
-KIT_DIR = os.path.dirname(os.path.abspath(__file__))
-sys.path.insert(0, KIT_DIR)
-import blender_roblox_kit as kit  # noqa: E402
-import blender_env_lighting as env_kit  # noqa: E402
-import blender_roblox_anim as rba  # noqa: E402
 
 STUD = 0.28
 # Rigid +90deg X rotation: (x, y, z)_roblox -> (x, -z, y)_blender (det = +1, keeps winding clean)
@@ -27,10 +26,10 @@ def _srgb_to_lin(c: float) -> float:
     return c / 12.92 if c <= 0.04045 else ((c + 0.055) / 1.055) ** 2.4
 
 
-def _make_roblox_material(name: str, col_rgb, mat_name: str, tr: float = 0.0, ref: float = 0.0):
+def _make_roblox_material(name: str, col_rgb, mat_name: str, tr: float = 0.0, ref: float = 0.0, use_vc: bool = False):
     r, g, b = [c / 255.0 for c in col_rgb]
     lr, lg, lb = _srgb_to_lin(r), _srgb_to_lin(g), _srgb_to_lin(b)
-    key = f"RBX_{mat_name}_{col_rgb[0]}_{col_rgb[1]}_{col_rgb[2]}_{int(tr*100)}"
+    key = f"RBX_{mat_name}_{col_rgb[0]}_{col_rgb[1]}_{col_rgb[2]}_{int(tr*100)}{'_vc' if use_vc else ''}"
     if key in bpy.data.materials:
         return bpy.data.materials[key]
 
@@ -39,6 +38,10 @@ def _make_roblox_material(name: str, col_rgb, mat_name: str, tr: float = 0.0, re
     nt = mat.node_tree
     bsdf = next(n for n in nt.nodes if n.type == "BSDF_PRINCIPLED")
     bsdf.inputs["Base Color"].default_value = (lr, lg, lb, 1.0)
+    if use_vc:  # texture colours baked per vertex (glTF COLOR_0 multiplies the base colour)
+        vc = nt.nodes.new("ShaderNodeVertexColor")
+        vc.layer_name = "Col"
+        nt.links.new(vc.outputs["Color"], bsdf.inputs["Base Color"])
 
     mn = mat_name.lower()
     if "neon" in mn:
@@ -85,6 +88,7 @@ def build_from_json(json_path: str, col):
     meshes_dict = data.get("meshes") or {}
     parts = data["parts"]
 
+    any_vc = any((m or {}).get("c") for m in meshes_dict.values())
     created_objs = []
     for idx, p in enumerate(parts):
         bm = bmesh.new()
@@ -96,14 +100,24 @@ def build_from_json(json_path: str, col):
             verts_flat = mdata["v"]
             faces_flat = mdata["f"]
             ext = mdata["ext"]
-            sx = sz[0] / ext[0] if isinstance(ext[0], (int, float)) and abs(ext[0]) > 1e-5 else 1.0
-            sy = sz[1] / ext[1] if isinstance(ext[1], (int, float)) and abs(ext[1]) > 1e-5 else 1.0
-            sz_s = sz[2] / ext[2] if isinstance(ext[2], (int, float)) and abs(ext[2]) > 1e-5 else 1.0
+            if p.get("ms"):  # SpecialMesh FileMesh: rendered size = mesh units × Scale (independent of part size)
+                sx, sy, sz_s = p["ms"]
+            else:            # MeshPart: mesh bounds are stretched to the part Size
+                sx = sz[0] / ext[0] if isinstance(ext[0], (int, float)) and abs(ext[0]) > 1e-5 else 1.0
+                sy = sz[1] / ext[1] if isinstance(ext[1], (int, float)) and abs(ext[1]) > 1e-5 else 1.0
+                sz_s = sz[2] / ext[2] if isinstance(ext[2], (int, float)) and abs(ext[2]) > 1e-5 else 1.0
+            vcols = mdata.get("c")
+            vc_layer = bm.verts.layers.float_color.new("Col") if vcols else None
             bm_verts = []
             for i in range(0, len(verts_flat), 3):
                 vx, vy, vz = verts_flat[i], verts_flat[i + 1], verts_flat[i + 2]
                 if isinstance(vx, (int, float)) and isinstance(vy, (int, float)) and isinstance(vz, (int, float)):
-                    bm_verts.append(bm.verts.new((vx * sx, vy * sy, vz * sz_s)))
+                    bv = bm.verts.new((vx * sx, vy * sy, vz * sz_s))
+                    if vc_layer is not None:
+                        c = vcols[i // 3] if i // 3 < len(vcols) else 0xFFFFFF
+                        bv[vc_layer] = (_srgb_to_lin(((c >> 16) & 255) / 255.0), _srgb_to_lin(((c >> 8) & 255) / 255.0),
+                                        _srgb_to_lin((c & 255) / 255.0), 1.0)
+                    bm_verts.append(bv)
                 else:
                     bm_verts.append(None)
             bm.verts.ensure_lookup_table()
@@ -168,8 +182,13 @@ def build_from_json(json_path: str, col):
         for poly in mesh_d.polygons:
             poly.use_smooth = True
 
+        has_vc = "Col" in mesh_d.color_attributes
+        if any_vc and not has_vc:  # every joined part needs the layer, else the join fills it with black
+            attr = mesh_d.color_attributes.new("Col", "FLOAT_COLOR", "POINT")
+            for d in attr.data:
+                d.color = (1.0, 1.0, 1.0, 1.0)
         obj = bpy.data.objects.new(f"{model_name}_{idx}_{p['n'][:18]}", mesh_d)
-        mat = _make_roblox_material(p["n"], p["col"], p["mat"], p.get("tr", 0.0), p.get("ref", 0.0))
+        mat = _make_roblox_material(p["n"], p["col"], p["mat"], p.get("tr", 0.0), p.get("ref", 0.0), use_vc=has_vc)
         obj.data.materials.append(mat)
         col.objects.link(obj)
         created_objs.append(obj)
@@ -198,90 +217,125 @@ def build_from_json(json_path: str, col):
     return merged
 
 
-def main():
-    scratch = r"C:\Users\adminb\.gemini\antigravity\brain\aa681843-8fde-4f4e-a614-7b90ca406cf5\scratch"
-    stage_dir = kit.get_stage_dir("roblox_core_showcase")
-    stage_glb = os.path.join(stage_dir, "core_glb")
-    os.makedirs(stage_glb, exist_ok=True)
-    targets = [
-        ("Prop_SchoolDeskChair", "props", os.path.join(kit.CORE_ASSETS_DIR, "props", "Prop_SchoolDeskChair.glb")),
-        ("Prop_Car_RobloxResources", "props", os.path.join(kit.CORE_ASSETS_DIR, "props", "Prop_Car_RobloxResources.glb")),
-        ("Set_LivingRoom", "sets", os.path.join(kit.CORE_ASSETS_DIR, "sets", "Set_LivingRoom.glb")),
-    ]
-    exported = []
-    staged_glbs = {}
-    for name, cat, out_glb in targets:
-        bpy.ops.wm.read_factory_settings(use_empty=True)
-        col = bpy.context.scene.collection
-        obj = build_from_json(os.path.join(scratch, f"{name}.json"), col)
-        tmp_glb = os.path.join(stage_glb, f"{name}.glb")
-        bpy.ops.object.select_all(action="SELECT")
-        bpy.ops.export_scene.gltf(filepath=tmp_glb, use_selection=True, export_format="GLB")
-        staged_glbs[name] = tmp_glb
-        dims = tuple(round(v, 3) for v in obj.dimensions)
-        exported.append({"name": name, "cat": cat, "tmp_glb": tmp_glb, "core_glb": out_glb, "bytes": os.path.getsize(tmp_glb), "dims_m": dims})
+def export_glb(obj, out_glb: str):
+    os.makedirs(os.path.dirname(os.path.abspath(out_glb)), exist_ok=True)
+    bpy.ops.object.select_all(action="DESELECT")
+    obj.select_set(True)
+    bpy.context.view_layer.objects.active = obj
+    bpy.ops.export_scene.gltf(filepath=out_glb, use_selection=True, export_format="GLB")
+    return os.path.getsize(out_glb)
 
-    # Also render a quick Blender 5.3 RTX showcase with R15 cast standing next to the imported Roblox .glb assets!
-    bpy.ops.wm.read_factory_settings(use_empty=True)
-    col_env = bpy.data.collections.new("Environment")
-    bpy.context.scene.collection.children.link(col_env)
+
+def render_preview(obj, out_png: str, size: int = 512):
+    """3/4 view on a neutral floor, fitted to the model bounds (for the catalog contact sheet)."""
     sc = bpy.context.scene
-    sc.render.resolution_x = 1280
-    sc.render.resolution_y = 720
-    sc.render.resolution_percentage = 100
-    sc.render.fps = 30
-    if hasattr(sc, "eevee") and hasattr(sc.eevee, "taa_render_samples"):
-        sc.eevee.taa_render_samples = 12
-
-    env_kit.apply_cinematic_mood(col_env, mood="golden_day", sun_azimuth_deg=135.0)
-    env_kit.build_suburban_street_set(col_env, mood="golden_day", make_wet_road_fn=kit.make_wet_pbr_ground)
-
-    # Import Car onto asphalt street, Desk + LivingRoom on sidewalk/yard
-    bpy.ops.import_scene.gltf(filepath=staged_glbs["Prop_Car_RobloxResources"])
-    car_obj = bpy.context.selected_objects[0]
-    car_obj.location = (-1.1, -1.65, 0.0)
-    car_obj.rotation_euler = Euler((0.0, 0.0, math.radians(-85.0)))
-
-    bpy.ops.import_scene.gltf(filepath=staged_glbs["Prop_SchoolDeskChair"])
-    desk_obj = bpy.context.selected_objects[0]
-    desk_obj.location = (2.35, 1.05, 0.08)
-    desk_obj.rotation_euler = Euler((0.0, 0.0, math.radians(15.0)))
-
-    sigma = kit.build_roblox_character(
-        "Sigma", os.path.join(kit.CORE_CLOTHES_DIR, "shirt_mayor.png"), os.path.join(kit.CORE_CLOTHES_DIR, "pants_mayor.png"),
-        os.path.join(kit.CORE_FACES_STORYBOOK_DIR, "smirk.png"),
-        skin_hex="#ECC094", hair_hex="#1E2028",
-        location_m=(-0.15, 0.65, 0.08), yaw_deg=18,
-        body_profile="boy_athletic", hair_style="slick_part", accessories=["stubble_scruff"],
-    )
-    pony = kit.build_roblox_character(
-        "Pony", os.path.join(kit.CORE_CLOTHES_DIR, "shirt_c1.png"), os.path.join(kit.CORE_CLOTHES_DIR, "pants_p1.png"),
-        os.path.join(kit.CORE_FACES_STORYBOOK_DIR, "happy.png"),
-        skin_hex="#F4C7A1", hair_hex="#8B3A2B",
-        location_m=(1.05, 0.70, 0.08), yaw_deg=-15,
-        body_profile="girl_slim", hair_style="long_ponytail",
-        accessories=[{"acc_type": "glasses_round", "color_hex": "#22252A"}],
-    )
-    rba.RobloxAnimator(sigma, fps=30).add("wave", 0.0, 2.0).bake(frame_start=1, frame_end=30)
-    rba.RobloxAnimator(pony, fps=30).add("clap", 0.0, 2.0).bake(frame_start=1, frame_end=30)
-
-    cam_d = bpy.data.cameras.new("MainCam")
-    cam_d.lens = 34.0
-    cam = bpy.data.objects.new("MainCam", cam_d)
-    col_env.objects.link(cam)
+    engines = {e.identifier for e in sc.render.bl_rna.properties["engine"].enum_items}
+    sc.render.engine = "BLENDER_EEVEE" if "BLENDER_EEVEE" in engines else "BLENDER_EEVEE_NEXT"
+    sc.render.resolution_x = sc.render.resolution_y = size
+    world = bpy.data.worlds.new("PrevWorld")
+    world.use_nodes = True
+    bg = world.node_tree.nodes.get("Background")
+    bg.inputs["Color"].default_value = (0.62, 0.68, 0.76, 1.0)
+    bg.inputs["Strength"].default_value = 0.9
+    sc.world = world
+    dims = obj.dimensions
+    r = max(dims.x, dims.y, dims.z, 0.1)
+    bpy.ops.mesh.primitive_plane_add(size=r * 8, location=(0, 0, 0))
+    floor = bpy.context.active_object
+    fm = bpy.data.materials.new("PrevFloor")
+    fm.use_nodes = True
+    next(n for n in fm.node_tree.nodes if n.type == "BSDF_PRINCIPLED").inputs["Base Color"].default_value = (0.32, 0.33, 0.35, 1)
+    floor.data.materials.append(fm)
+    sun_d = bpy.data.lights.new("PrevSun", "SUN")
+    sun_d.energy = 3.2
+    sun = bpy.data.objects.new("PrevSun", sun_d)
+    sun.rotation_euler = Euler((math.radians(50), 0, math.radians(35)))
+    sc.collection.objects.link(sun)
+    cam_d = bpy.data.cameras.new("PrevCam")
+    cam_d.lens = 50
+    cam = bpy.data.objects.new("PrevCam", cam_d)
+    sc.collection.objects.link(cam)
     sc.camera = cam
-    cam.location = (0.65, -5.6, 1.55)
-    cam.rotation_euler = Euler((math.radians(82), 0.0, math.radians(4)))
-
-    sc.frame_set(9)
-    stage_dir = kit.get_stage_dir("roblox_core_showcase")
-    out_png = os.path.join(stage_dir, "mixamo_test", "roblox_creator_store_auto.png")
-    os.makedirs(os.path.dirname(out_png), exist_ok=True)
+    ctr = Vector((0, 0, dims.z * 0.5))
+    d = Vector((math.cos(math.radians(-55)), math.sin(math.radians(-55)), 0.55)).normalized()
+    cam.location = ctr + d * r * 2.3
+    cam.rotation_euler = (ctr - cam.location).to_track_quat("-Z", "Y").to_euler()
+    os.makedirs(os.path.dirname(os.path.abspath(out_png)), exist_ok=True)
     sc.render.filepath = out_png
     bpy.ops.render.render(write_still=True)
 
-    print("@@JSON@@" + json.dumps({"ok": True, "exported": exported, "preview": out_png}))
+
+def _mesh_stats(objs):
+    tris = sum(sum(len(p.vertices) - 2 for p in o.data.polygons) for o in objs if o.type == "MESH")
+    mats = {m.name for o in objs if o.type == "MESH" for m in o.data.materials if m}
+    xs, ys, zs = [], [], []
+    for o in objs:
+        if o.type != "MESH":
+            continue
+        for c in o.bound_box:
+            w = o.matrix_world @ Vector(c)
+            xs.append(w.x); ys.append(w.y); zs.append(w.z)
+    dims = [round(max(a) - min(a), 3) for a in (xs, ys, zs)] if xs else [0, 0, 0]
+    return {"dims_m": dims, "tris": tris, "materials": len(mats)}
+
+
+def cli(argv):
+    if not argv:
+        print(__doc__)
+        return 2
+    cmd = argv[0]
+    if cmd == "convert":
+        src, out_glb = argv[1], argv[2]
+        preview = argv[argv.index("--preview") + 1] if "--preview" in argv else None
+        bpy.ops.wm.read_factory_settings(use_empty=True)
+        obj = build_from_json(src, bpy.context.scene.collection)
+        if obj is None:
+            print("@@JSON@@" + json.dumps({"ok": False, "error": "no visible parts"}))
+            return 1
+        nbytes = export_glb(obj, out_glb)
+        info = dict(_mesh_stats([obj]), ok=True, glb=out_glb, bytes=nbytes)
+        if preview:
+            render_preview(obj, preview)
+            info["preview"] = preview
+        print("@@JSON@@" + json.dumps(info))
+        return 0
+    if cmd == "preview":  # existing .glb → preview png (catalog --previews)
+        bpy.ops.wm.read_factory_settings(use_empty=True)
+        bpy.ops.import_scene.gltf(filepath=argv[1])
+        meshes = [o for o in bpy.context.scene.objects if o.type == "MESH"]
+        if not meshes:
+            print("@@JSON@@" + json.dumps({"ok": False, "error": "no meshes"}))
+            return 1
+        bpy.ops.object.select_all(action="DESELECT")
+        for o in meshes:
+            o.select_set(True)
+        bpy.context.view_layer.objects.active = meshes[0]
+        bpy.ops.object.parent_clear(type="CLEAR_KEEP_TRANSFORM")
+        if len(meshes) > 1:
+            bpy.ops.object.join()
+        obj = bpy.context.view_layer.objects.active
+        bpy.ops.object.transform_apply(location=False, rotation=True, scale=True)
+        render_preview(obj, argv[2])
+        print("@@JSON@@" + json.dumps({"ok": True, "preview": argv[2]}))
+        return 0
+    if cmd == "measure":
+        out_json, res = argv[1], {}
+        for g in argv[2:]:
+            bpy.ops.wm.read_factory_settings(use_empty=True)
+            try:
+                bpy.ops.import_scene.gltf(filepath=g)
+                res[g] = _mesh_stats(list(bpy.context.scene.objects))
+            except Exception as e:  # keep measuring the rest
+                res[g] = {"error": str(e)[:200]}
+        json.dump(res, open(out_json, "w", encoding="utf-8"), indent=1)
+        print("@@JSON@@" + json.dumps({"ok": True, "measured": len(res)}))
+        return 0
+    print(f"unknown command {cmd}")
+    return 2
 
 
 if __name__ == "__main__":
-    main()
+    _argv = sys.argv[sys.argv.index("--") + 1:] if "--" in sys.argv else []
+    sys.exit(cli(_argv))
+
+

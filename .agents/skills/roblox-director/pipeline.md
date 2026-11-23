@@ -23,6 +23,9 @@ this file is the practical "how much / in which order / what the engines can do"
 - The window must stay visible (minimised ⇒ white frames). The machine is unusable while capturing.
 - `generate_animation` makes R15 clips only (≤ 30 s); prefer the official R15 animation ids (`ROBLOX_DIRECTOR.md` §4.6).
 - Creator Store inserts must be sanitized (`ROBLOX_DIRECTOR.md` §4.5).
+- Asset harvest for Blender: `tools/harvest_assets.py` (search → harvest → catalog → sheet). MEASURED: `execute_luau`
+  returns are capped near 100k chars (the harvester pages at 60k); `_G` persists between calls; `CreateEditableMeshAsync` answers "no permission" for meshes owned by other creators, so only part-built
+  models convert cleanly — older ids (pre-2020) are mostly part-built.
 
 ### 0.3 Capture size vs edit zoom
 The edit-zoom limit in look.md §3 is `output size ÷ render size`: Blender renders at the output size (no headroom — do real
