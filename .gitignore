@@ -24,3 +24,13 @@ Thumbs.db
 .idea/
 *.swp
 *~
+
+# Roblox Studio MCP bridge runtime state (written by studio_kit/bridge.mjs, rb.py and capture scripts)
+.agents/skills/roblox-director/studio_kit/queue/
+.agents/skills/roblox-director/studio_kit/done/
+.agents/skills/roblox-director/studio_kit/caps/
+.agents/skills/roblox-director/studio_kit/frames_rb/
+.agents/skills/roblox-director/studio_kit/bridge_alive.txt
+.agents/skills/roblox-director/studio_kit/studio_id.txt
+.agents/skills/roblox-director/studio_kit/tools.json
+.agents/skills/roblox-director/studio_kit/fov.json

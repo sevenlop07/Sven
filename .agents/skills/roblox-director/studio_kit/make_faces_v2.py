@@ -1,3 +1,5 @@
+# RETIRED (Law R-LOOK): kept for reference only. Use make_faces_expressive.py (storybook_toon / cartoon / rubberhose);
+# the quality-gate hook flags any new script that imports this file (ROBLOX_DIRECTOR.md section 4.1 rule 8).
 # Bold "Roblox story" face set: thick ink outlines, big white eyes, expressive brows and mouths, tears/sweat/blush.
 # 24 faces, 1024x1024 RGBA each (drawn at 4x, downscaled), plus an atlas preview.
 from PIL import Image, ImageDraw

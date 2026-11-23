@@ -58,8 +58,8 @@ Fill the build-cost block of the shot list (`templates/shot-list.md`) and stay i
 4. Full capture (`studio_capture.py render`) with the white-frame guard → `make_videos.py`-style assembly / `compile_video.py`.
 
 ## 3. Scene-data conventions (Appendix A)
-- **Mood**: write `mood@clock` (e.g. `normalDay@18.5`, `twistReveal@21`). Blender: `env.apply_cinematic_mood(col, mood=…)`
-  plus the sun elevation for the clock; Studio: `Lighting.ClockTime = clock` + the mood's look values (`T.look()` pattern).
+- **Mood**: write `mood@clock` (e.g. `normalDay@18.5`, `twistReveal@21`). Blender: `env.apply_cinematic_mood(col, mood="normalDay@18.5")`
+  accepts the same string (aliases + clock → sun elevation, unknown names raise — `lighting-color.md` §3); Studio: `Lighting.ClockTime = clock` + the mood's look values (`T.look()` pattern).
   A night clock on a day mood = an interior lit by practicals; fix darkness with practicals, not global brightness.
 - **Shot**: `{id, fs, fe, V (vertical FOV), target, move}`; one camera function per shot evaluated per frame
   (pattern: `camFor(f)` in `output/test_action20/studio/scene.lua` and `cam_for(f)` in `blender/build_scene.py`).

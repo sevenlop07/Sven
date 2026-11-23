@@ -1,5 +1,8 @@
 #!/usr/bin/env python3
 """
+RETIRED (Law R-LOOK): kept for reference only. Use make_faces_expressive.py (storybook_toon / cartoon / rubberhose);
+the quality-gate hook flags any new script that imports this file (ROBLOX_DIRECTOR.md section 4.1 rule 8).
+
 make_faces_ugc_anime.py — 4x Supersampled (4096->1024) Multi-Archetype Roblox UGC Anime Face Generator.
 Supports 6 distinct facial architectures (boy_youth, cool_rival, girl_heroine, femme_sharp, boss_elder, alien_cute)
 + optional facial marks (freckles, cheek_scar, under_eye_mole, bandaid) so every cast member looks truly unique!

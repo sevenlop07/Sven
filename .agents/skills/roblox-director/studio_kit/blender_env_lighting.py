@@ -603,6 +603,36 @@ def build_stylized_tree(name: str, loc=(0.0, 4.0, 0.08), scale: float = 1.0, col
     return trunk
 
 
+MOOD_KEYS = (
+    "golden_day", "normal_day", "winter_snow", "real_outdoor", "sunset_twist", "scary_night", "sad_overcast",
+    "sad_warm", "twist_reveal", "twist_night", "dream_memory", "sad_night", "sad_warm_night",
+)
+# Studio / lighting-color.md camelCase names -> Blender preset (one mood vocabulary for both engines)
+MOOD_ALIASES = {
+    "normalday": "normal_day", "golden": "golden_day", "goldenday": "golden_day", "winter": "winter_snow",
+    "wintersnow": "winter_snow", "realoutdoor": "real_outdoor", "sunsettwist": "sunset_twist",
+    "sad": "sad_overcast", "sadovercast": "sad_overcast", "sadwarm": "sad_warm", "scarynight": "scary_night",
+    "twistreveal": "twist_reveal", "twistnight": "twist_night", "dreammemory": "dream_memory",
+    "sadnight": "sad_night", "sadwarmnight": "sad_warm_night",
+}
+
+
+def resolve_mood(mood: str):
+    """Return (blender_mood_key, clock_or_None) for 'twistReveal', 'normalDay@18.5', 'sad_overcast', ...
+
+    Raises ValueError on an unknown name instead of silently falling back to a default look.
+    """
+    name, _, clock_txt = str(mood).strip().partition("@")
+    clock = float(clock_txt) if clock_txt.strip() else None
+    key = name.strip()
+    if key not in MOOD_KEYS:
+        key = MOOD_ALIASES.get(key.lower().replace("_", "").replace("-", ""), key)
+    if key not in MOOD_KEYS:
+        raise ValueError(f"Unknown mood '{mood}'. Valid: {', '.join(MOOD_KEYS)} "
+                         f"(Studio names {', '.join(sorted(MOOD_ALIASES))} are accepted as aliases; add '@clock').")
+    return key, clock
+
+
 def apply_cinematic_mood(
     col_env,
     mood: str = "golden_day",
@@ -613,13 +643,22 @@ def apply_cinematic_mood(
     clouds: bool = False,
     use_cycles: bool = False,
     cycles_samples: int = 36,
+    clock: float = None,
 ):
     """
     Configure Blender 5.3 World Sky, 3-Point Directional Sun+Bounce+HeroRim Rig,
     and 5.3 Compositor Aerial Mist + FOG_GLOW Bloom.
-    moods: 'golden_day', 'normal_day', 'sunset_twist', 'scary_night', 'sad_overcast', 'real_outdoor'.
+    moods (MOOD_KEYS): 'golden_day', 'normal_day', 'winter_snow', 'real_outdoor', 'sunset_twist', 'scary_night',
+    'sad_overcast', 'sad_warm', 'twist_reveal', 'twist_night', 'dream_memory', 'sad_night', 'sad_warm_night'.
+    Studio / lighting-color.md names are accepted ('normalDay', 'sad', 'sadWarm', 'scaryNight', 'twistReveal',
+    'twistNight', 'dreamMemory'), as is 'mood@clock' (e.g. 'normalDay@18.5'). The clock sets the sun elevation;
+    a night clock (< 5.5 or > 19) on a day mood dims the sun to 15 % — light that interior with practicals.
+    Unknown names raise ValueError (no silent fallback).
     use_cycles=True activates RTX GPU Cycles + OPTIX/OpenImageDenoise for deep natural GI & puddle reflections.
     """
+    mood, name_clock = resolve_mood(mood)
+    if clock is None:
+        clock = name_clock
     sc = bpy.context.scene
     if use_cycles:
         sc.render.engine = "CYCLES"
@@ -673,7 +712,7 @@ def apply_cinematic_mood(
 
     sc.view_settings.view_transform = "AgX"
     try:
-        sc.view_settings.look = "AgX - Medium High Contrast" if mood != "sad_overcast" else "AgX - Base Contrast"
+        sc.view_settings.look = "AgX - Base Contrast" if mood in ("sad_overcast", "dream_memory") else "AgX - Medium High Contrast"
     except Exception:
         pass
 
@@ -683,10 +722,23 @@ def apply_cinematic_mood(
         "winter_snow":  {"elev": 24.0, "sun_e": 2.1, "sun_k": 6400.0, "fill_e": 9.0,  "fill_col": (0.64, 0.80, 1.0), "rim_e": 30.0, "rim_col": (0.76, 0.90, 1.0), "sky_str": 0.14, "exp": -0.28, "mist_col": (0.68, 0.80, 0.94, 1.0), "mist_mix": 0.24},
         "real_outdoor": {"elev": 30.0, "sun_e": 3.4, "sun_k": 5400.0, "fill_e": 3.2,  "fill_col": (0.62, 0.78, 1.0), "rim_e": 18.0, "rim_col": (0.98, 0.92, 0.82), "sky_str": 0.22, "exp": -0.35, "mist_col": (0.74, 0.82, 0.90, 1.0), "mist_mix": 0.14},
         "sunset_twist": {"elev": 9.0,  "sun_e": 2.4, "sun_k": 3200.0, "fill_e": 9.0,  "fill_col": (0.48, 0.62, 0.95), "rim_e": 48.0, "rim_col": (1.0, 0.56, 0.26), "sky_str": 0.13, "exp": -0.05, "mist_col": (0.94, 0.68, 0.54, 1.0), "mist_mix": 0.24},
-        "scary_night":  {"elev": 32.0, "sun_e": 0.7, "sun_k": 7800.0, "fill_e": 6.0,  "fill_col": (0.28, 0.42, 0.76), "rim_e": 36.0, "rim_col": (0.48, 0.74, 1.0), "sky_str": 0.24, "exp": -0.35, "mist_col": (0.06, 0.10, 0.20, 1.0), "mist_mix": 0.30},
+        "scary_night":  {"elev": 32.0, "sun_e": 0.7, "sun_k": 7800.0, "fill_e": 6.0,  "fill_col": (0.28, 0.42, 0.76), "rim_e": 36.0, "rim_col": (0.48, 0.74, 1.0), "sky_str": 0.24, "exp": -0.35, "mist_col": (0.06, 0.10, 0.20, 1.0), "mist_mix": 0.30, "night": True},
         "sad_overcast": {"elev": 44.0, "sun_e": 1.1, "sun_k": 6800.0, "fill_e": 16.0, "fill_col": (0.74, 0.82, 0.94), "rim_e": 20.0, "rim_col": (0.78, 0.88, 1.0), "sky_str": 0.14, "exp": -0.25, "mist_col": (0.64, 0.70, 0.78, 1.0), "mist_mix": 0.22},
+        # Blender counterparts of the lighting-color.md §3 Studio moods (HYPOTHESIS values; calibrate with measure.py)
+        "sad_warm":     {"elev": 30.0, "sun_e": 3.0, "sun_k": 4400.0, "fill_e": 14.0, "fill_col": (1.0, 0.88, 0.72), "rim_e": 30.0, "rim_col": (1.0, 0.82, 0.60), "sky_str": 0.18, "exp": 0.05,  "mist_col": (0.96, 0.86, 0.72, 1.0), "mist_mix": 0.18},
+        "twist_reveal": {"elev": 16.0, "sun_e": 3.0, "sun_k": 3700.0, "fill_e": 12.0, "fill_col": (0.95, 0.82, 0.62), "rim_e": 44.0, "rim_col": (1.0, 0.70, 0.38), "sky_str": 0.16, "exp": 0.10,  "mist_col": (0.98, 0.80, 0.58, 1.0), "mist_mix": 0.20},
+        "twist_night":  {"elev": 32.0, "sun_e": 0.7, "sun_k": 3400.0, "fill_e": 6.0,  "fill_col": (0.62, 0.42, 0.28), "rim_e": 36.0, "rim_col": (1.0, 0.66, 0.34), "sky_str": 0.22, "exp": -0.30, "mist_col": (0.18, 0.10, 0.06, 1.0), "mist_mix": 0.28, "night": True},
+        "dream_memory": {"elev": 12.0, "sun_e": 1.6, "sun_k": 7200.0, "fill_e": 12.0, "fill_col": (0.60, 0.62, 1.0), "rim_e": 30.0, "rim_col": (1.0, 0.70, 0.85), "sky_str": 0.15, "exp": -0.15, "mist_col": (0.62, 0.62, 0.86, 1.0), "mist_mix": 0.32},
+        "sad_night":    {"elev": 32.0, "sun_e": 0.6, "sun_k": 8200.0, "fill_e": 7.0,  "fill_col": (0.32, 0.46, 0.80), "rim_e": 30.0, "rim_col": (0.56, 0.78, 1.0), "sky_str": 0.22, "exp": -0.30, "mist_col": (0.08, 0.12, 0.22, 1.0), "mist_mix": 0.26, "night": True},
+        "sad_warm_night": {"elev": 32.0, "sun_e": 0.6, "sun_k": 3600.0, "fill_e": 7.0, "fill_col": (0.58, 0.44, 0.34), "rim_e": 32.0, "rim_col": (1.0, 0.72, 0.42), "sky_str": 0.22, "exp": -0.28, "mist_col": (0.16, 0.11, 0.08, 1.0), "mist_mix": 0.26, "night": True},
     }
-    cfg = MOOD_CFG.get(mood, MOOD_CFG["golden_day"])
+    cfg = dict(MOOD_CFG[mood])
+    if clock is not None and not cfg.get("night"):
+        if 5.5 <= clock <= 19.0:  # dawn/dusk clamp to a 3° low sun
+            cfg["elev"] = max(3.0, 62.0 * math.sin(math.pi * (clock - 6.0) / 12.0))
+        else:
+            cfg["sun_e"] *= 0.15
+            print(f"[apply_cinematic_mood] {mood}@{clock}: night clock on a day mood — light the set with practicals")
     sc.view_settings.exposure = cfg["exp"] + exposure
 
     # World sky setup
@@ -698,7 +750,7 @@ def apply_cinematic_mood(
     bg = nt.nodes.new("ShaderNodeBackground")
     bg.inputs["Strength"].default_value = cfg["sky_str"]
 
-    if mood == "scary_night":
+    if cfg.get("night"):
         tc = nt.nodes.new("ShaderNodeTexCoord")
         sep = nt.nodes.new("ShaderNodeSeparateXYZ")
         nt.links.new(tc.outputs["Generated"], sep.inputs["Vector"])
@@ -721,7 +773,7 @@ def apply_cinematic_mood(
         if hasattr(sky, "air_density"):
             sky.air_density = 1.25 if mood == "golden_day" else 1.0
         if hasattr(sky, "dust_density"):
-            sky.dust_density = 1.6 if mood in ("golden_day", "sunset_twist") else 1.0
+            sky.dust_density = 1.6 if mood in ("golden_day", "sunset_twist", "twist_reveal", "sad_warm") else 1.0
         if clouds or mood == "real_outdoor":
             tc = nt.nodes.new("ShaderNodeTexCoord")
             mp = nt.nodes.new("ShaderNodeMapping")
@@ -755,7 +807,7 @@ def apply_cinematic_mood(
     sun_d.energy = cfg["sun_e"]
     sun_d.use_temperature = True
     sun_d.temperature = cfg["sun_k"]
-    sun_d.angle = math.radians(3.5 if mood != "sad_overcast" else 16.0)
+    sun_d.angle = math.radians(16.0 if mood in ("sad_overcast", "dream_memory") else 3.5)
     sun_o = bpy.data.objects.new("KeySun", sun_d)
     # Point from sky sun dir toward origin
     sun_dir = Vector((math.sin(az_rad) * math.cos(el_rad), math.cos(az_rad) * math.cos(el_rad), math.sin(el_rad)))
