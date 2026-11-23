@@ -105,6 +105,15 @@ def audit_setting_html(file_path):
             errors.append("Gate 1C Fail: Section 1 (Master Narrative Arc) lacks 3-Layer Stakes / Thematic Question / Act Blueprint depth markers")
         else:
             print("[+] Gate 1C Passed: Section 1 enforces Master Narrative Depth & 3-Layer Stakes Blueprint")
+        # Gate 1D — Heart & Value North Star (0d-heart-and-value.md §3): the Value Card lives in Section 1 / the Story Spine
+        value_rows = {row: bool(re.search(r'\b' + row + r'\b\s*(?:\||:|</)', sec1_content + html, re.IGNORECASE))
+                      for row in ("VALUE", "HEART", "TAKEAWAY")}
+        missing_value_rows = [r for r, ok in value_rows.items() if not ok]
+        if missing_value_rows:
+            errors.append(f"Gate 1D Fail: Story Spine / Section 1 lacks the Value Card rows {missing_value_rows} "
+                          "(VALUE · HEART · TAKEAWAY · SHADOW — engine/references/0d-heart-and-value.md §3)")
+        else:
+            print("[+] Gate 1D Passed: Value Card (VALUE · HEART · TAKEAWAY) present — the story knows what it gives the viewer")
 
     # 2B. Section 2 — Canonical Cast 6-Layer Psychology & Anti-Caricature Check (Gate 2B)
     sec2_content = extract_section_content(["cast", "sec-2", "characters"])
@@ -163,15 +172,21 @@ def audit_setting_html(file_path):
         else:
             print("[+] Gate 3B Passed: Minor-Safe Model Sheets (every sheet under 18 is free of glamour, body, and adult-label lexicon)")
 
-        # 3C. Adult Character Skin Complexion, Makeup/Grooming, Adult Female Hourglass/Dress Fashion & 1:1 Turnaround Scale Alignment Check (Pillar 2 §1B & §2)
+        # 3C. Adult Character Skin Complexion, Makeup/Grooming, Adult Female Hourglass/Dress Fashion & Master Rear-Anchor Height Scale Lock Check (Pillar 2 §1B & §2)
         deprecated_adult_boilerplate_rx = re.compile(r'\bthin\s+natural\s+nude\s+lips\b', re.IGNORECASE)
-        scale_alignment_rx = re.compile(r'\b(1:1\s+(?:anatomical\s+)?body\s+scale|shared\s+shoulder\s+line|horizontal\s+shoulder|mannequin-style\s+neck|align\s+horizontally)\b', re.IGNORECASE)
+        scale_alignment_rx = re.compile(
+            r'\b(primary\s+height\s+master\s+reference|one\s+full\s+head\s+shorter|scaled\s+strictly\s+from\s+figure\s+3|'
+            r'strictly\s+matching\s+figure\s+3|1:1\s+(?:anatomical\s+)?body\s+scale|shared\s+shoulder\s+line|'
+            r'horizontal\s+shoulder|align\s+horizontally)\b', re.IGNORECASE)
+        headless_conflict_rx = re.compile(
+            r'\b(mannequin(?:-style)?\s+neck|zero\s+height\s+mismatch|no\s+chopped\s+skull|zero\s+cropped\s+head)\b', re.IGNORECASE)
         adult_female_marker_rx = re.compile(r'\b(female|woman|heroine|lady|wife|sister|matriarch)\b', re.IGNORECASE)
         adult_female_hourglass_rx = re.compile(r'\b(hourglass|cinched\s+waist|feminine\s+(?:bust-to-hip\s+)?curves|sculpted\s+(?:feminine\s+)?curves|toned\s+legs)\b', re.IGNORECASE)
         adult_female_dress_rx = re.compile(r'\b(dress|gown|skirt)\b', re.IGNORECASE)
         adult_female_frumpy_banned_rx = re.compile(r'\b(trench-blazer|trench-style\s+lapel|trench\s+coat\s+worn\s+over\s+a\s+fitted\s+.*?turtleneck|jumpsuit|wide-leg\s+pleated\s+silk\s+trousers|ankle\s+trousers)\b', re.IGNORECASE)
         adult_boilerplate_hits = []
         unaligned_scale_hits = []
+        headless_conflict_hits = []
         female_missing_hourglass_hits = []
         female_missing_dress_hits = []
         female_frumpy_outfit_hits = []
@@ -182,8 +197,12 @@ def audit_setting_html(file_path):
             if not ages or min(ages) >= 18:
                 if deprecated_adult_boilerplate_rx.search(sheet_text):
                     adult_boilerplate_hits.append(f"sheet #{i}")
-                if "headless" in sheet_text.lower() and not scale_alignment_rx.search(sheet_text):
-                    unaligned_scale_hits.append(f"sheet #{i}")
+                if "headless" in sheet_text.lower():
+                    if not scale_alignment_rx.search(sheet_text):
+                        unaligned_scale_hits.append(f"sheet #{i}")
+                    conflict_m = headless_conflict_rx.findall(sheet_text)
+                    if conflict_m:
+                        headless_conflict_hits.append(f"sheet #{i} ({sorted(set(m.lower() for m in conflict_m))})")
                 if adult_female_marker_rx.search(sheet_text) and not re.search(r'\b(male|man|patriarch)\b', sheet_text, re.IGNORECASE):
                     if not adult_female_hourglass_rx.search(sheet_text):
                         female_missing_hourglass_hits.append(f"sheet #{i}")
@@ -198,13 +217,15 @@ def audit_setting_html(file_path):
             errors.append(f"Gate 3C Fail: Adult female sheet(s) {female_missing_dress_hits} lack fashionable dress/skirt attire ('sheath midi dress', 'bodycon dress', 'cocktail dress', 'slip dress')")
         if female_frumpy_outfit_hits:
             errors.append(f"Gate 3C Fail: Adult female sheet(s) {female_frumpy_outfit_hits} contain banned bulky/frumpy hybrid outfits (trench-blazer, trench-style lapel, turtleneck+trousers, jumpsuit)")
+        if headless_conflict_hits:
+            errors.append(f"Gate 3C Fail: Headless adult model sheet(s) {headless_conflict_hits} contain self-contradictory triggers ('mannequin neck', 'zero height mismatch', 'no chopped skull', 'zero cropped head') that stretch headless bodies or regrow tiny heads — use Pillar 2 Master Rear-Anchor Height Law (Figure 3 Primary Height Reference + scoped Figure 3 & Figure 4 headroom ONLY)")
         if adult_boilerplate_hits or unaligned_scale_hits:
             if adult_boilerplate_hits:
                 print(f"[!] Gate 3C Notice: Adult sheet(s) {adult_boilerplate_hits} use legacy 'thin natural nude lips' boilerplate — upgrade to Pillar 2 §1B Skin Complexion & Female Makeup / Male Grooming spec.")
             if unaligned_scale_hits:
-                print(f"[!] Gate 3C Notice: Adult sheet(s) {unaligned_scale_hits} use legacy unaligned 'headless' syntax without 1:1 Horizontal Shoulder-Waist-Heel Scale Lock — upgrade to Pillar 2 §2 4-Figure 1:1 Scale Alignment spec.")
-        elif not (female_missing_hourglass_hits or female_missing_dress_hits or female_frumpy_outfit_hits):
-            print("[+] Gate 3C Passed: Adult Model Sheets enforce Feminine Hourglass Proportions, High-Fashion Dress Attire, Skin/Makeup & 1:1 Scale Lock")
+                print(f"[!] Gate 3C Notice: Adult sheet(s) {unaligned_scale_hits} use legacy unaligned 'headless' syntax without Master Rear-Anchor Height Lock — upgrade to Pillar 2 §2 4-Figure Master Rear-Anchor spec.")
+        elif not (female_missing_hourglass_hits or female_missing_dress_hits or female_frumpy_outfit_hits or headless_conflict_hits):
+            print("[+] Gate 3C Passed: Adult Model Sheets enforce Feminine Hourglass Proportions, High-Fashion Dress Attire, Skin/Makeup & Master Rear-Anchor 4-Figure Lock")
 
         # 3D. 100% Standalone Outfit Prompt Coverage & Unmerged Character Sheet Check
         if sec2_content:

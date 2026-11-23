@@ -25,6 +25,7 @@
 [7]   engine/references/0-creative-doctrine.md              ← Creative Doctrine: Two-Layer Core, 6 Anti-Shallow Depth Laws, Spine & Plot Engine
 [7b]  engine/references/0b-temporal-camera-grammar.md       ← Temporal & Camera Grammar: speech rates, lip-sync windows, canonical syntax
 [7c]  engine/references/0c-canonical-numbers.md             ← Canonical Numbers: the ONLY source for counts, durations, word budgets & engagement budgets
+[7d]  engine/references/0d-heart-and-value.md               ← Heart & Value North Star: what every story is FOR (moving, positive, valuable), Value Card, Dignity Firewall, Heart & Value Scorecard /8
 ─── THE 4 MASTER PILLARS & SPECIALIZED DIRECTORIAL ASSISTANTS ───
 [8]   engine/references/1-narrative-screenplay-architecture.md   ← Pillar 1 SSOT: Narrative, Twist Catalog (TW-01..20) & 8 Dialogue Models
 [9]   engine/references/2-casting-worldbuilding-specification.md ← Pillar 2 SSOT: Cast Topology, 16:9 Model Sheets, setting.html Spec
@@ -40,13 +41,13 @@
 > Because the `read_file` tool returns at most **800 lines per call**, calling a blind `read_file` from line 1 on a 2,000–3,000-line Pillar file will truncate the bottom 70% of the file and cause the AI to improvise! Therefore:
 > 1. **Self-Contained `< 700-Line` Execution Cores First**: All mandatory execution rules, decision matrices, and output schemas are consolidated inside **`workflow.md` (read by stage slice)**, **`.agents/SCREENWRITER.md`**, **`.agents/DIRECTOR.md`**, **`.agents/PHOTO_DIRECTOR.md`**, **`.agents/STORYBOARD_DIRECTOR.md`**, **`0b-temporal-camera-grammar.md`** and **`0c-canonical-numbers.md`** (each read in full in one call). Line counts are not written here because they drift; `python engine/doc_range_check.py` verifies every range below and `--map <file>` prints current section lines.
 > 2. **Exact `StartLine–EndLine` Coordinates for Large Catalog Pillars**: Whenever consulting a Pillar catalog (`1–4`), ALWAYS pass the exact `StartLine` and `EndLine` listed below (never read blindly from line 1 to 3000):
->    - **Startup (`K0–K3`)**: `workflow.md` (`StartLine: 1, EndLine: 405`) + `AGENT.md` (`StartLine: 1, EndLine: 88`) + `engine/runbooks.json` + `history-registry.json`
->    - **Stage 0 (`Concepts → CP0`)**: `workflow.md` (`StartLine: 409, EndLine: 485 · §5`) + `.agents/SCREENWRITER.md` (`StartLine: 1, EndLine: 133`) + `0c-canonical-numbers.md` (`StartLine: 1, EndLine: 143`) + `youtube-growth-architect/references/keyword-niche-discovery-matrix.md` (`StartLine: 1, EndLine: 192` — niche & hook validation by `@GrowthArchitect`) + `0-creative-doctrine.md` (`StartLine: 175, EndLine: 222 · §1.2` & `StartLine: 503, EndLine: 677 · §8–§9`)
->    - **Stage 1 (`Master Storyline & Blueprint → CP1`)**: `workflow.md` (`StartLine: 489, EndLine: 602 · §6`) + `0c-canonical-numbers.md` (`StartLine: 1, EndLine: 143`) + `2b-character-lines.md` (`StartLine: 1, EndLine: 156`) + `1-narrative-screenplay-architecture.md` (`StartLine: 850, EndLine: 1055` — **20/80 Structural Law: 6 Genre Engines & 5 Episode Archetypes**; `StartLine: 1445, EndLine: 1515` — **20 Twists Catalog**) + active `engine/genres/*.md` (`100% read in 1 call`)
->    - **Stage 2 (`Pre-Production Resource File setting.html → CP2`)**: `workflow.md` (`StartLine: 606, EndLine: 677 · §7`) + `2-casting-worldbuilding-specification.md` (`StartLine: 390, EndLine: 720` — **16:9 Model Sheets Mẫu 1A/1B/2/2B/3**; `StartLine: 1410, EndLine: 1746` — **`setting.html` 10-Section Spec**; `StartLine: 1770, EndLine: 2215` — **50 Master Visual Styles**)
->    - **Stage 3 (`Episode N Rough Script & Deep Per-Scene Breakdown in Chat → CP3`)**: `workflow.md` (`StartLine: 681, EndLine: 859 · §8`) + `.agents/SCREENWRITER.md` (`StartLine: 1, EndLine: 133`) + `0c-canonical-numbers.md` (`StartLine: 1, EndLine: 143`) + `0-creative-doctrine.md` (`StartLine: 130, EndLine: 149 · §1` & `StartLine: 503, EndLine: 677 · §8–§9`) + `0b-temporal-camera-grammar.md` (`StartLine: 1, EndLine: 282`) + `1-narrative-screenplay-architecture.md` (`StartLine: 1307, EndLine: 1415` — **12 Hooks & 5 Bridges**; `StartLine: 1865, EndLine: 2265` — **WPS, 3-Layer Cadence & 9 Voice Modes**)
->    - **Stage 4 (`Interactive Scene-by-Scene Prompt Production & Visual Cross-Check in Chat → CP4`) & Turn-1 Direct Prompt Shortcut**: `workflow.md` (`StartLine: 863, EndLine: 1005 · §9`) + `.agents/DIRECTOR.md` (`StartLine: 1, EndLine: 452`) + `3c-camera-master-grammar.md` (`StartLine: 1, EndLine: 321`) + `0c-canonical-numbers.md` (`StartLine: 1, EndLine: 143`) + `0-creative-doctrine.md` (`StartLine: 1, EndLine: 150` — **Scene Intent & Directing from Intent**) + `0b-temporal-camera-grammar.md` (`StartLine: 1, EndLine: 282` — **Speech Physics, One-Move Rule, Zero Tail-Cut Law & 10s/15s Templates**) + `4-ai-video-prompt-compiler.md` (`StartLine: 160, EndLine: 285` & `StartLine: 630, EndLine: 715` — **Temporal-Kinetic-Vocal Equilibrium, `3.2s–4.5s` Spoken Shot Formula & Terminal Settle**) + `1-narrative-screenplay-architecture.md` (`StartLine: 1865, EndLine: 2150` — **WPS & 3-Layer Vietnamese Relational Dialogue**) + (`combat-director/SKILL.md` for `Seedance` Action/Chase/Combat scenes; `.agents/PHOTO_DIRECTOR.md` for Single-Frame Still Images/Keyframes; `.agents/STORYBOARD_DIRECTOR.md` for `9/12/15/25-Shot` Storyboard Grids & `Storyboard-to-Video`)
->    - **Stage 5 (`Distribution Packaging → CP5`)**: `workflow.md` (`StartLine: 1009, EndLine: 1039 · §10–§11`) + `.agents/skills/youtube-growth-architect/SKILL.md` (`StartLine: 1, EndLine: 482`)
+>    - **Startup (`K0–K3`)**: `workflow.md` (`StartLine: 1, EndLine: 409`) + `AGENT.md` (`StartLine: 1, EndLine: 90`) + `0c-canonical-numbers.md` (`StartLine: 1, EndLine: 146`) + `0d-heart-and-value.md` (`StartLine: 1, EndLine: 138`) + `engine/runbooks.json` + `history-registry.json`
+>    - **Stage 0 (`Concepts → CP0`)**: `workflow.md` (`StartLine: 413, EndLine: 496 · §5`) + `.agents/SCREENWRITER.md` (`StartLine: 1, EndLine: 135`) + `0c-canonical-numbers.md` (`StartLine: 1, EndLine: 146`) + `youtube-growth-architect/references/keyword-niche-discovery-matrix.md` (`StartLine: 1, EndLine: 192` — niche & hook validation by `@GrowthArchitect`) + `0-creative-doctrine.md` (`StartLine: 177, EndLine: 224 · §1.2` & `StartLine: 505, EndLine: 685 · §8–§9`)
+>    - **Stage 1 (`Master Storyline & Blueprint → CP1`)**: `workflow.md` (`StartLine: 500, EndLine: 614 · §6`) + `0c-canonical-numbers.md` (`StartLine: 1, EndLine: 146`) + `2b-character-lines.md` (`StartLine: 1, EndLine: 156`) + `1-narrative-screenplay-architecture.md` (`StartLine: 850, EndLine: 1055` — **20/80 Structural Law: 6 Genre Engines & 5 Episode Archetypes**; `StartLine: 1445, EndLine: 1515` — **20 Twists Catalog**) + active `engine/genres/*.md` (`100% read in 1 call`)
+>    - **Stage 2 (`Pre-Production Resource File setting.html → CP2`)**: `workflow.md` (`StartLine: 618, EndLine: 689 · §7`) + `2-casting-worldbuilding-specification.md` (`StartLine: 390, EndLine: 720` — **16:9 Model Sheets Mẫu 1A/1B/2/2B/3**; `StartLine: 1410, EndLine: 1746` — **`setting.html` 10-Section Spec**; `StartLine: 1770, EndLine: 2215` — **50 Master Visual Styles**)
+>    - **Stage 3 (`Episode N Rough Script & Deep Per-Scene Breakdown in Chat → CP3`)**: `workflow.md` (`StartLine: 693, EndLine: 887 · §8`) + `.agents/SCREENWRITER.md` (`StartLine: 1, EndLine: 135`) + `0c-canonical-numbers.md` (`StartLine: 1, EndLine: 146`) + `0-creative-doctrine.md` (`StartLine: 132, EndLine: 151 · §1` & `StartLine: 505, EndLine: 685 · §8–§9`) + `0b-temporal-camera-grammar.md` (`StartLine: 1, EndLine: 282`) + `1-narrative-screenplay-architecture.md` (`StartLine: 1307, EndLine: 1415` — **12 Hooks & 5 Bridges**; `StartLine: 1865, EndLine: 2265` — **WPS, 3-Layer Cadence & 9 Voice Modes**)
+>    - **Stage 4 (`Interactive Scene-by-Scene Prompt Production & Visual Cross-Check in Chat → CP4`) & Turn-1 Direct Prompt Shortcut**: `workflow.md` (`StartLine: 891, EndLine: 1033 · §9`) + `.agents/DIRECTOR.md` (`StartLine: 1, EndLine: 452`) + `3c-camera-master-grammar.md` (`StartLine: 1, EndLine: 321`) + `0c-canonical-numbers.md` (`StartLine: 1, EndLine: 146`) + `0-creative-doctrine.md` (`StartLine: 1, EndLine: 152` — **Scene Intent & Directing from Intent**) + `0b-temporal-camera-grammar.md` (`StartLine: 1, EndLine: 282` — **Speech Physics, One-Move Rule, Zero Tail-Cut Law & 10s/15s Templates**) + `4-ai-video-prompt-compiler.md` (`StartLine: 160, EndLine: 285` & `StartLine: 630, EndLine: 715` — **Temporal-Kinetic-Vocal Equilibrium, `3.2s–4.5s` Spoken Shot Formula & Terminal Settle**) + `1-narrative-screenplay-architecture.md` (`StartLine: 1865, EndLine: 2150` — **WPS & 3-Layer Vietnamese Relational Dialogue**) + (`combat-director/SKILL.md` for `Seedance` Action/Chase/Combat scenes; `.agents/PHOTO_DIRECTOR.md` for Single-Frame Still Images/Keyframes; `.agents/STORYBOARD_DIRECTOR.md` for `9/12/15/25-Shot` Storyboard Grids & `Storyboard-to-Video`)
+>    - **Stage 5 (`Distribution Packaging → CP5`)**: `workflow.md` (`StartLine: 1037, EndLine: 1067 · §10–§11`) + `.agents/skills/youtube-growth-architect/SKILL.md` (`StartLine: 1, EndLine: 482`)
 
 ---
 
@@ -95,11 +96,14 @@
 ## §2 — SYSTEM DEFAULTS (THE CONSTITUTION)
 
 > **THE TWO-LAYER ARCHITECTURE (`0-creative-doctrine.md` §0.05)**: Every Sven production locks **Layer 1: The Universal 4-Tier Core (50%)** (Tier I Great Screenplay ➔ Tier II Great Film ➔ Tier III Great Multi-Episode Series ➔ Tier IV Addictive Individual Episodes) and dynamically mounts **Layer 2: The Genre & Cultural Adapter (50%)** (`drama.md`, `action.md` + `@CombatDirector`, `microdrama.md`, `sitcom.md`, or `thriller`). Never force one genre's or one region's conventions onto another.
+>
+> **THE NORTH STAR ABOVE BOTH LAYERS (`0d-heart-and-value.md`)**: every Sven story — film, series, episode, scene, ad or Roblox short — exists to **move the viewer and leave them with something good**: an earned heart moment, a positive human value shown through a costly choice, and an unspoken takeaway they carry into their own life. Engagement (hooks, loops, twists, reversals, cliffhangers) is the vehicle; value is the destination. Every story checkpoint shows the **Engagement Scorecard** and the **Heart & Value Scorecard** (`0d` §8: `≥ 6/8`, no `0`), and every reversal obeys the **Dignity & Value Firewall** (`0d` §5): justice restores, never degrades.
 
 ### 2.1 Rule Precedence Hierarchy
 When rules appear to conflict, resolve them strictly in this order and report any file discrepancy to the user:
 1. **Explicit User Instruction** in the current session (sovereign over aspect ratio, duration, delivery mode, and creative direction).
 2. **`workflow.md` §2 System Defaults** (Hard Constraints in §2.11 never yield to any lower layer).
+2b. **`engine/references/0d-heart-and-value.md` — the Heart & Value North Star**: overrides every engagement craft default below it (hook, face-slap, cold water, cliffhanger, debate seed, genre payoff). When a retention tool collides with the story's heart or value, change the tool, never the value.
 3. **`engine/references/0-creative-doctrine.md`, `0b-temporal-camera-grammar.md` & `0c-canonical-numbers.md`** — `0c-canonical-numbers.md` is the single table of every count, duration and budget (any differing number elsewhere is stale); `0-creative-doctrine.md` governs *how* narrative and directorial tools are chosen from dramatic intent (overriding fixed word budgets, shot quotas, or mechanical templates in Pillars/Skills); `0b-temporal-camera-grammar.md` is the sole authority for speech rates, timing numbers, and canonical prompt syntax.
 4. **Working references, then Master Pillars 1–4 & Active Genre Modules (`engine/genres/*.md`)** — `2b-character-lines.md` wins over Pillar 1–2 cast rules and `3c-camera-master-grammar.md` over Pillar 3 when they disagree; then the domain-specific catalogs and genre conventions.
 5. **Role Specifications (`AGENT.md`, `.agents/SCREENWRITER.md`, `.agents/DIRECTOR.md`)**.
@@ -287,7 +291,7 @@ To permanently eradicate shallow, predictable, or monotonous scripts (`"lỗi k�
 
 | Rule Category | Enforcement | Canonical Scope |
 |---|---|---|
-| **Hard Constraints** *(Never break; enforced by automated Python gates & Pre-Flight Linter)* | **Blocking Error** (`setting_audit_suite.py` & Pre-Flight Linter) | • **Story Depth Anchors (`Gate 2B`)**: Tier 1 Series Core, 6-Layer Character Psychology, 12-Row Story Spine and Tier 1 Voice Profiles (`Blind Voice Test`) exist before scenes are written; Stage 3 scripts pass the Engagement Scorecard (§8.4).<br>• **Clip Duration, Dynamic Storyboard Pacing & Agent Routing (`Gate 3M`)**: **`10.0s` (`1–4 Shots/Turns`) & `15.0s` (`1 Shared Fixed-Camera Header with 3–4 Turns in Mode D1-A` OR `3–4 Cuts in Mode D1-B/D1-C`) for Dialogue/Drama/Sitcom scenes (`@Director`)** and **`15.0s` (`Flexible Topology: 1–2 Shot Inertial Long-Take ↔ 3–5 Shot Asymmetric Exchange ↔ 6–9 Shot Rapid-Cut Blitz`) Reserved Exclusively for High-Motion Action/Chase/Ambush/Combat/Rapid-Cut Montage scenes (`@CombatDirector` `[⚡ SEEDANCE · 15.0s]`)**; every clip starts at `00:00`.<br>• **Double-Lock `fully_preserved` Reference Fidelity, 4-Layer Gender & Hand/Limb Anatomy Lock, Skin/Makeup Sub-Lock & Single `<<<Image X>>>` Declaration Law (`Gates 3J, 3K, 3L`)**: Declare `<<<Image X>>>` **ONLY ONCE** inside `[context]:`, `[subject]:`, and `[prop]:`, immediately followed by the explicit `(fully_preserved - same female/male face, slender feminine / masculine body proportions...)` lock parenthetical + Line 2 `<Name>'s skin, hands (and makeup): fully_preserved - ...`; **strictly NEVER repeat `<<<Image X>>>` inside `Shot 1..N`**; close with the `Strict visual consistency: ...` footer.<br>• **Zero-Costume, Zero-Age & Expressive Vocal-Behavior Tag Law (`Laws D2 & D3` · `Gates 3A, 3E`)**: Strictly **ZERO specific clothing/garment words** (`jacket`, `suit`, `skirt`, `dress`), **ZERO numeric ages or specific hair/beard words** (`32-year-old`, `young`, `blonde`, `silver-bearded`), and **ZERO dry musical register terms (`alto`, `baritone`, `tenor`, `soprano`)** anywhere in the prompt; encode vocal behavior & delivery tone inside **ONE single compact parenthetical (`[Proper_Name] (expressive female/male voice, [vocal behavior] in a [tone]): "[Interjection]! ..."`)**.<br>• **1–2 Short Natural Sentences per Shot/Turn (`Gate 3R`)**: `12–30 words` per shot (`Mode D1-B/C`) or per `(00:XX-00:YY)` turn under a single shared fixed-camera header (`Mode D1-A`) expressing 1 clear state transition `A ➔ B`; strictly zero `→` arrows.<br>• **Minor Protection Protocol (`Gate 3F` & `Setting Gate 3B`)**: Truthful age/band in `setting.html`, zero sexual/body/violence lexicon, `Mẫu 0B` sheets.<br>• **The 6 Golden Dialogue Laws (`Law D1–D6` · `Gates 4, 4B, 4G, 4H`)**: (`D1`) Lock `static camera` across continuous dialogue (`Mode D1-A` Single Shared Fixed-Camera Header `Shot 1 (00:00-00:10/15)` + `(00:XX-00:YY)` turns vs. `Mode D1-B` Multi-Cut Static Scale Escalation); (`D2 & D3`) Open emotional/comedic/confrontational lines with native vocal interjections and expressive vocal-behavior tags; (`D4`) Spoken turns/shots sized to `3.2s–4.5s` (`natural real-time speed`); (`D5`) Final turn/shot obeys either **Mode 1 (`0 spoken words` in final `2.0s–3.0s` window)** OR **Mode 2 (`100%-Dialogue Ping-Pong` with mandatory `0.5s–1.0s` [`~0.8s`] silent closed-lip tail buffer)**; (`D6`) 4-Point Cross-Scene Dialogue & Posture Handover (`~1.2s` Golden Breath Bridge, 100% `[subject]:` posture inheritance, 180° axis flip, and keyword baton relay).<br>• **Platform Safety (§2.9)**: zero gore, zero graphic violence or on-screen death, and the Minor Protection Protocol. |
+| **Hard Constraints** *(Never break; enforced by automated Python gates & Pre-Flight Linter)* | **Blocking Error** (`setting_audit_suite.py` & Pre-Flight Linter) | • **Story Depth Anchors (`Gate 2B`)**: Tier 1 Series Core, 6-Layer Character Psychology, 12-Row Story Spine and Tier 1 Voice Profiles (`Blind Voice Test`) exist before scenes are written; Stage 3 scripts pass the Engagement Scorecard (§8.4).<br>• **Clip Duration, Dynamic Storyboard Pacing & Agent Routing (`Gate 3M`)**: **`10.0s` (`1–4 Shots/Turns`) & `15.0s` (`1 Shared Fixed-Camera Header with 3–4 Turns in Mode D1-A` OR `3–4 Cuts in Mode D1-B/D1-C`) for Dialogue/Drama/Sitcom scenes (`@Director`)** and **`15.0s` (`Flexible Topology: 1–2 Shot Inertial Long-Take ↔ 3–5 Shot Asymmetric Exchange ↔ 6–9 Shot Rapid-Cut Blitz`) Reserved Exclusively for High-Motion Action/Chase/Ambush/Combat/Rapid-Cut Montage scenes (`@CombatDirector` `[⚡ SEEDANCE · 15.0s]`)**; every clip starts at `00:00`.<br>• **Double-Lock `fully_preserved` Reference Fidelity, 4-Layer Gender & Hand/Limb Anatomy Lock, Skin/Makeup Sub-Lock & Single `<<<Image X>>>` Declaration Law (`Gates 3J, 3K, 3L`)**: Declare `<<<Image X>>>` **ONLY ONCE** inside `[context]:`, `[subject]:`, and `[prop]:`, immediately followed by the explicit `(fully_preserved - same female/male face, slender feminine / masculine body proportions...)` lock parenthetical + Line 2 `<Name>'s skin, hands (and makeup): fully_preserved - ...`; **strictly NEVER repeat `<<<Image X>>>` inside `Shot 1..N`**; close with the `Strict visual consistency: ...` footer.<br>• **Zero-Costume, Zero-Age & Expressive Vocal-Behavior Tag Law (`Laws D2 & D3` · `Gates 3A, 3E`)**: Strictly **ZERO specific clothing/garment words** (`jacket`, `suit`, `skirt`, `dress`), **ZERO numeric ages or specific hair/beard words** (`32-year-old`, `young`, `blonde`, `silver-bearded`), and **ZERO dry musical register terms (`alto`, `baritone`, `tenor`, `soprano`)** anywhere in the prompt; encode vocal behavior & delivery tone inside **ONE single compact parenthetical (`[Proper_Name] (expressive female/male voice, [vocal behavior] in a [tone]): "[Interjection]! ..."`)**.<br>• **1–2 Short Natural Sentences per Shot/Turn (`Gate 3R`)**: `12–30 words` per shot (`Mode D1-B/C`) or per `(00:XX-00:YY)` turn under a single shared fixed-camera header (`Mode D1-A`) expressing 1 clear state transition `A ➔ B`; strictly zero `→` arrows.<br>• **Minor Protection Protocol (`Gate 3F` & `Setting Gate 3B`)**: Truthful age/band in `setting.html`, zero sexual/body/violence lexicon, `Mẫu 0B` sheets.<br>• **The 6 Golden Dialogue Laws (`Law D1–D6` · `Gates 4, 4B, 4G, 4H`)**: (`D1`) Lock `static camera` across continuous dialogue (`Mode D1-A` Single Shared Fixed-Camera Header `Shot 1 (00:00-00:10/15)` + `(00:XX-00:YY)` turns vs. `Mode D1-B` Multi-Cut Static Scale Escalation); (`D2 & D3`) Open emotional/comedic/confrontational lines with native vocal interjections and expressive vocal-behavior tags; (`D4`) Spoken turns/shots sized to `3.2s–4.5s` (`natural real-time speed`); (`D5`) Final turn/shot obeys either **Mode 1 (`0 spoken words` in final `2.0s–3.0s` window)** OR **Mode 2 (`100%-Dialogue Ping-Pong` with mandatory `0.5s–1.0s` [`~0.8s`] silent closed-lip tail buffer)**; (`D6`) 4-Point Cross-Scene Dialogue & Posture Handover (`~1.2s` Golden Breath Bridge, 100% `[subject]:` posture inheritance, 180° axis flip, and keyword baton relay).<br>• **Platform Safety (§2.9)**: zero gore, zero graphic violence or on-screen death, and the Minor Protection Protocol.<br>• **Heart & Value North Star (`0d`)**: Value Card in every Spine (`VALUE · HEART · TAKEAWAY · SHADOW`), the Dignity & Value Firewall (no humiliation, cruelty or revenge as the payoff; a door left open; every ending leaves a light), and the Heart & Value Scorecard `≥ 6/8` with no `0` at `CP0`, `CP1`, `CP3a`, `CP3b` (`screenplay_audit.py` blocks a script without it). |
 | **Craft Defaults** *(Use by default; override when dramatic intent requires via `BREAK: <default> — <reason>`)* | **Creative Review & Non-Blocking Warnings (`W1–W11`)** | • **Selective Subversion Toolkit (§2.9)**: *Mask & Role-Reversal Curve*, *Micro-Visual Reveal over Exposition*, *Calm Understatement `2–6w` Line*, *Curiosity Gap* — chosen per scene intent, never stamped onto every confrontation.<br>• **Ending Mode & Fatality Policy (§2.9)**: earned positive ending and zero fatalities by default; a bittersweet/tragic ending or an off-screen death is allowed when the user chooses it or the genre needs it (thriller, horror, war, tragedy), recorded in `project_rules.json` (`ending_mode`, `fatality_policy`).<br>• **4-Beat Episode Allocation (§8.1)**: `Open/Hook 15–20% (in Scenes 1–2) ➔ Develop 40–50% ➔ Climax 20–25% ➔ Close 10%` across `12–18 scenes` (~3 min/ep; default `10.0s` `@Director`, with `15.0s` routed to `@CombatDirector` for Action/Combat).<br>• **Selective Face Obscuration & Off-Screen `L-Cut` Dialogue**: Use partial-face/silhouette shots (`avoids full face, showing only jawline and hand...`) and off-screen `L-Cut` lines over `2s` prop inserts.<br>• **Inter-Scene Causality**: Every pair of scenes connects via `"Therefore (Vì vậy)"` or `"But (Nhưng)"` — never `"And then (Và rồi)"`. |
 | **Project Rules** *(Film-specific rules)* | **Conditional Gates (`Gates 4D, 4E, 4F`)** | Stored exclusively in `output/<slug>/project_rules.json` (`episode_scenes`, `kinship_ladder`, `meal_terms`, `bookish_terms`, `minor_characters`). Never hard-code one film's rules into core engine files. |
 
@@ -421,6 +425,7 @@ STAGE 5  Distribution & SEO Packaging (Interactive in Chat + Finalize Registry) 
 - **Clean, Spacious & Readable Presentation**: Present concepts with generous whitespace, structured tables, short scannable lines, and clear visual hierarchy—never dump dense, cramped walls of text.
 - **Zero Shallow Fables / Zero Triviality**: Every concept must establish **3-Layer Stakes** (External deadline/loss + Internal Wound/Lie + Moral dilemma), an active protagonist whose flawed choice or costly stand drives the plot, an opponent with a real point of truth (`Where A2 Is Right`), and a planted **Option C Reversal**.
 - Resolution must calibrate strictly to the genre (§2.9) and to the project's `ending_mode` / `fatality_policy` (positive, zero-fatality by default).
+- **Heart & Value First (`0d`)**: every concept names the positive value its hero will choose at a cost (`VALUE`) and the takeaway a viewer carries home (`TAKEAWAY`), and its premise promise includes the heart it delivers, not only the reversal. Concepts whose payoff is humiliation, cruelty or revenge for its own sake are reshaped into dignity, truth and repair before they are pitched (`0d` §5–§6).
 
 ### 5.2 Stage 0 Output Template (User-Facing, Vietnamese — Clean & Spacious Layout)
 ```text
@@ -458,7 +463,13 @@ STAGE 5  Distribution & SEO Packaging (Interactive in Chat + Finalize Registry) 
    • Đạo cụ Tier 1: [Tên đạo cụ] ([Trạng thái Hồi 1] ➔ [Biến đổi 180° ở Kết cục])
    • Cái giá phải trả & Câu hỏi tranh luận: [...]
 
-📊 7. ĐỘ CUỐN Ý TƯỞNG: Hook [ ]/2 · Lời hứa [ ]/2 · Mới lạ [ ]/2 · Cọc cược [ ]/2 · Tranh luận [ ]/2 · Muốn xem tập 2 [ ]/2 = [ ]/12
+💗 7. GIÁ TRỊ & ĐIỀU KHÁN GIẢ MANG VỀ (0d §3):
+   • Giá trị tích cực (chọn bằng hành động, có cái giá): [...]
+   • Khoảnh khắc chạm dự kiến: [chi tiết cụ thể sẽ làm người xem rưng rưng]
+   • Điều khán giả mang về (không nhân vật nào nói ra): "[...]"
+
+📊 8. ĐỘ CUỐN Ý TƯỞNG: Hook [ ]/2 · Lời hứa [ ]/2 · Mới lạ [ ]/2 · Cọc cược [ ]/2 · Tranh luận [ ]/2 · Muốn xem tập 2 [ ]/2 = [ ]/12
+💗 9. BẢNG CHẤM GIÁ TRỊ — Giá trị [ ]/2 · Khoảnh khắc chạm [ ]/2 · Phẩm giá [ ]/2 · Mang về [ ]/2 = [ ]/8
 ━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━
 ```
 
@@ -468,7 +479,7 @@ STAGE 5  Distribution & SEO Packaging (Interactive in Chat + Finalize Registry) 
 - **🎵 Music Video (`MV Mode`)**: Maps the 6 narrative beats to song sections (`3% / 12% / 35% / 30% / 12% / 8%` of duration $T$) per Pillar 3.
 
 ### 5.4 Concept Engagement Scorecard & ✋ CHECKPOINT 0
-Score every concept (`0`, `1` or `2` each) and show the score in its card; recommend the top scorer and never present a concept below `7 / 12`:
+Score every concept on **two cards** and show both in its card: the Engagement Scorecard below (`0`, `1` or `2` each; never present a concept below `7 / 12`) and the **Heart & Value Scorecard** (`0d` §8; never below `6 / 8` or with a `0`). Recommend the concept with the best combined score — a gripping concept with no heart is not the winner:
 
 | # | Criterion | 2 points when… |
 |---|---|---|
@@ -500,7 +511,8 @@ Lock the **8 Mandatory Series Foundations**:
 6. **Transformation Arc (`Đường biến đổi A ➔ B`)**: How the protagonist transforms from State A (beginning of series) to State B (end of series).
 7. **Episode Count & Act Division (`Số tập và cung chia`)**: E.g., 10 or 12 episodes divided into 4 Acts (2–3 episodes per Act).
 8. **Known Ending (`Kết`)**: Known in advance, even while details remain open.
-> **Core Rule**: Every episode must serve either the **Central Question** or the **Transformation Arc**. Any episode that advances neither must be cut.
+9. **Value & Takeaway (`Giá trị & Điều mang về` — `0d` §2–§3)**: the positive value the ending affirms through `A1`'s costly choice (usually `A1`'s Need), the heart moment the finale is built around, the unspoken takeaway, and the `SHADOW` the story depicts without glorifying.
+> **Core Rule**: Every episode must serve either the **Central Question** or the **Transformation Arc** — and every episode moves the viewer one step toward the series takeaway. Any episode that advances neither must be cut.
 
 ### 6.1b Tier 1 Dialogue — Series-Wide Character Voice Profiles (`Hồ Sơ Giọng Nói — Lập 1 Lần Cho Cả Bộ`)
 Establish a locked **Voice Card** for every character so any line is recognizable even when speaker names are hidden (**The Blind Voice Test**):
@@ -553,7 +565,7 @@ For a 1-episode standalone film, lock:
 For a multi-episode series ($N$ episodes), **NEVER force every genre or every episode into a uniform structure or uniform `10 scenes × 10s` duration** (`1-narrative-screenplay-architecture.md` Part II §5). Lock:
 1. **Select 1 of the 6 Genre-Specific Macro Act & Meso Episode Engines (`80% Genre Architecture`)**:
    - **Engine 1 — Social, Family, Historical & Palace Drama (`Pressure-Cooker 4-Act Engine`)**: Slow-burn cumulative tension across `Act I Ignition ➔ Act IIA False Dawn ➔ Act IIB Midpoint Betrayal ➔ Act IIIA Dark Night ➔ Act IIIB+IV Showdown & Restorative Coda`. Zero early reconciliation in Acts I–II (`75% 10s : 25% 15s`).
-   - **Engine 2 — Viral Microdrama, CEO, Rebirth & Revenge (`3-Tier Dopamine & Every-Episode Face-Slap Engine`)**: Viewers never wait 4 episodes for a payoff. `Act I (Ep 1)` ends with a **Mandatory First Mini-Slap**; **every `Act II` episode** executes an internal `Spring Compression (30%) ➔ Baiting (30%) ➔ In-Episode Dopamine Face-Slap (30%) ➔ Higher Boss Arrival (10%)` loop; `Act III+IV Finale` delivers total public unmasking + a crisp 1-scene sovereign walk-away (`90% 10s : 10% 15s`).
+   - **Engine 2 — Viral Microdrama, CEO, Rebirth & Second Chance (`3-Tier Every-Episode Dignity Reversal Engine`)**: Viewers never wait 4 episodes for a payoff. `Act I (Ep 1)` ends with a **Mandatory First Mini-Reversal** (the overlooked hero's worth glimpsed); **every `Act II` episode** executes an internal `Spring Compression (30%) ➔ Baiting (30%) ➔ In-Episode Dignity Reversal — truth revealed by planted proof, the hero's worth recognized (30%) ➔ Higher Boss Arrival (10%)` loop; `Act III+IV Finale` delivers the public truth, a fair self-caused consequence for the main wrongdoer and **one act of grace** from the hero (`0d` §5–§6; never kneeling, begging or humiliation as the reward shot) (`90% 10s : 10% 15s`).
    - **Engine 3 — Action, Martial Arts, Wuxia, Xianxia & Survival (`4-Act Gauntlet & Breakthrough Engine`)**: `Act I` Ambush/Heavy Loss ➔ `Act IIA` Gauntlet Trials (`40% Drama : 40% Seedance Combat/Chase : 20% Fallout`) ➔ `Act IIB Midpoint` Broken Weapon (`State 2`) & Martial/Tactical Epiphany ➔ `Act III+IV Finale` (`60–70%` continuous `15.0s Seedance` Apex Boss Showdown + `1–2` scene Coda; `60% 10s : 40% 15s`).
    - **Engine 4 — Detective Mystery, Crime Thriller & Horror (`4-Act Onion-Peel & Checkmate Engine`)**: `Act I` Impossible Crime & $\ge 2$ silent visual clues ➔ `Act IIA` Red Herring alibi collapse ➔ `Act IIB Midpoint` Hunter Becomes Hunted (`Mystery ➔ Suspense` switch) ➔ `Act III+IV Finale` Prestige Flashback Montage + Forensic Checkmate (`75% 10s : 25% 15s`).
    - **Engine 5 — Situation Comedy, Rom-Com & School Comedy (`Episodic 4-Phase Snowball Farce & Reset Engine`)**: Rejects tragic serial acts; every episode is a crisp `6–8 scene (60s–80s)` self-contained loop: `Phase 1 Petty Spark ➔ Phase 2 Cover-Up Lie ➔ Phase 3 Farce Collision ➔ Phase 4 Status Quo Reset & Punchline Button` (`90% 10s : 10% 15s`).
@@ -585,7 +597,7 @@ For a multi-episode series ($N$ episodes), **NEVER force every genre or every ep
      3. **`🎬 3. Chia Cụm Cảnh (Sequences) & Quân Số (≤ 4 Người Định Danh / Cảnh)`**: Group the episode's scenes into `2–3` clear location sequences (`Cụm 1: Cảnh 01–04`, `Cụm 2: Cảnh 05–08`...), explicitly naming the `1–4` characters on screen in each cluster, the central conflict (`Xung đột / Bước ngoặt`), and the ending consequence (`Hậu quả / Cliffhanger`).
 
 ### 6.5 Series Engagement Scorecard & ✋ CHECKPOINT 1
-Before `CP1`, score the series blueprint (`0`, `1` or `2` each; pass `≥ 9 / 12` with no `0`) and show the scores:
+Before `CP1`, score the series blueprint (`0`, `1` or `2` each; pass `≥ 9 / 12` with no `0`) **and** the **Heart & Value Scorecard** for the whole story (`0d` §8; pass `≥ 6 / 8` with no `0`), and show both:
 
 | # | Criterion | 2 points when… |
 |---|---|---|
@@ -597,7 +609,7 @@ Before `CP1`, score the series blueprint (`0`, `1` or `2` each; pass `≥ 9 / 12
 | 6 | **Rotation** | hook types, twist codes and cliffhanger types vary across episodes (no type twice in a row) and differ from the last projects in `history-registry.json` |
 
 ```text
-✋ CHECKPOINT 1 — Story Spine (12 Hàng) & Master Narrative Blueprint hoàn tất — Độ cuốn series: [ ]/12
+✋ CHECKPOINT 1 — Story Spine (12 Hàng) + Thẻ Giá Trị & Master Narrative Blueprint hoàn tất — Độ cuốn series: [ ]/12 · Giá trị: [ ]/8
 → "ok" để sang Stage 2 (Khởi tạo setting.html Pre-Production Bible) | "edit [nội dung]" để chỉnh sửa cấu trúc cốt truyện / nhân vật
 ```
 
@@ -697,6 +709,7 @@ Every episode is **one complete mini-story PLUS one piece of the macro story** (
    - **Climax (`Cao trào`: `20–25%`)**
    - **Close (`Kết`: `10%` — cliffhanger or resonant aftermath)**
 6. **One Memorable Visual or Prop Detail (`Một chi tiết hình ảnh hoặc đạo cụ đáng nhớ`)**: Used as the connector in Tier 3.
+7. **One Heart Moment & One Value Step (`Một khoảnh khắc chạm & một bước giá trị` — `0d` §3–§4)**: at least one planted, specific, restrained moment that moves the viewer (marked `💗` in the scene list), and one step of the series value made visible through a choice. Even a dark episode keeps a seed of hope (`0d` §7).
 
 #### 2. Tier 4 — Per-Scene Rough Prose, 5 Scene Action Structures & Intent-First Routing (`@Director 10.0s & 15.0s` vs. `@CombatDirector 15.0s`)
 An episode is divided into the scene count set by its Act Archetype or locked runtime (`0c` §4 — `12–18` scenes only for an opted-in `~3-minute` episode), written in **continuous present-tense prose (without splitting seconds)** before any video prompt is compiled:
@@ -761,6 +774,10 @@ TẬP [N]: [Tên Tập] | CUNG CHIA: [Hồi I/II/III/IV · Archetype 1–5] | EN
   KNOW    | Khán giả so với từng nhân vật chính; chỗ đổi chế độ (hồi hộp ↔ bí ẩn ↔ đồng cảm) ở Cảnh [NN] vì [...]
   MISREAD | [Ai hiểu lầm ai, qua Lời nói dối nào; điều gì chặn câu nói làm rõ; kết thúc ở cảnh nào] — hoặc "Không có"
   TWIST   | Lớn: Cảnh [NN], TW-[xx], cài ở Cảnh [..] · Nhỏ: Cảnh [NN], TW-[xx] · Gáo nước lạnh: Cảnh [NN], do cài ở Cảnh [..]
+  VALUE   | Giá trị tích cực của tập: [...] — thể hiện qua lựa chọn của [Tên] ở Cảnh [NN], cái giá: [...]
+  HEART   | Khoảnh khắc chạm: Cảnh [NN] — [hành động / đồ vật / khoảnh khắc nhận ra cụ thể] — cài ở Cảnh [AA]
+  TAKEAWAY| Điều khán giả mang về (không nhân vật nào nói ra): "[...]"
+  SHADOW  | Điều tập này có thể hiện nhưng KHÔNG cổ xúy (bẽ mặt, trả thù, lừa dối, bạo lực...) và cách xử lý: [...] — hoặc "Không có"
 • 9. Nhân vật trong tập (2b §5–§6): [Tên (vai · mã)], [Tên (vai · mã)], [Tên (vai · mã) (mới)] — vắng: [Tên (lý do đã cài)]
 
 🎙️ PHẦN 2 — HỒ SƠ GIỌNG NÓI & THẺ XƯNG HÔ TRONG TẬP (CHE TÊN VẪN NHẬN RA):
@@ -778,7 +795,7 @@ TẬP [N]: [Tên Tập] | CUNG CHIA: [Hồi I/II/III/IV · Archetype 1–5] | EN
 • Bài học từ số liệu tập trước (performance_log, §10.1): [1–2 bài học áp dụng cho tập này — hoặc "Chưa có số liệu"]
 
 📋 PHẦN 3B — DANH SÁCH CẢNH 1 DÒNG + CỘT GIỮ CHÂN (Mở 15–20% ➔ Phát triển 40–50% ➔ Cao trào 20–25% ➔ Kết 10%; mỗi cảnh ĐÚNG 1 VIỆC):
-• Cảnh 01 [10s | Hook | @Director | Tier-1: <prop-*.jpg / Không> | TH2]: [Địa điểm, ai, làm gì, để làm gì]
+• Cảnh 01 [10s | Hook | @Director | Tier-1: <prop-*.jpg / Không> | TH2]: [Địa điểm, ai, làm gì, để làm gì]  (thêm 💗 ở cuối dòng nếu là cảnh chạm)
     Giá trị: [tin ➔ ngờ] (−) | Vòng lặp: mở L1 | Khán giả: [bí ẩn] | Cường độ: [7]
   ↳ [NHƯNG / VÌ VẬY]
 • Cảnh 02 [10s | Kể chuyện/V.O. hoặc Đối thoại | @Director | Tier-1: ... | TH1/TH2/TH3]: [...]
@@ -788,6 +805,7 @@ TẬP [N]: [Tên Tập] | CUNG CHIA: [Hồi I/II/III/IV · Archetype 1–5] | EN
   ...
 
 📊 BẢNG CHẤM ĐỘ CUỐN (§8.4) — Hook [ ]/2 · Vòng lặp [ ]/2 · Đổi giá trị [ ]/2 · Bẻ dự đoán [ ]/2 · Nhịp [ ]/2 · Nhân vật chủ động [ ]/2 · Thoại [ ]/2 · Cliffhanger [ ]/2 = [ ]/16
+💗 BẢNG CHẤM GIÁ TRỊ (0d §8) — Giá trị [ ]/2 · Khoảnh khắc chạm [ ]/2 · Phẩm giá [ ]/2 · Mang về [ ]/2 = [ ]/8
 ================================================================================
 ```
 
@@ -816,11 +834,21 @@ TẬP [N]: [Tên Tập] | CUNG CHIA: [Hồi I/II/III/IV · Archetype 1–5] | EN
   | [Tên] | [...] | [...] | [...] | [nguyên / nứt / vỡ / chấp nhận sự thật] | [có / vắng: lý do] |
 
 📊 BẢNG CHẤM ĐỘ CUỐN (chấm lại sau khi viết văn xuôi) = [ ]/16
+💗 BẢNG CHẤM GIÁ TRỊ (chấm lại sau khi viết văn xuôi) — Giá trị [ ]/2 · Khoảnh khắc chạm [ ]/2 · Phẩm giá [ ]/2 · Mang về [ ]/2 = [ ]/8
 ```
 
 ### 8.4 Engagement Scorecard, Stage 3 Pre-Flight & Script Audit (`Chấm Độ Cuốn & Đối Chiếu Trước Khi Viết Prompt`)
 
 **1. Engagement Scorecard (`Bảng Chấm Độ Cuốn`)** — score honestly at the end of Pass A and again at the end of Pass B. Each criterion scores `0`, `1` or `2`. **Pass mark: `≥ 12 / 16` with no criterion at `0`** (`0c` §5). Then answer the 5 questions of the mounted genre's **Mastery Playbook P7** (`engine/genres/<genre>.md`); any "no" is fixed before the checkpoint. Below the mark, rewrite the weakest criteria **before** presenting the checkpoint, and show the scores in chat.
+
+**1b. Heart & Value Scorecard (`Bảng Chấm Giá Trị` — `0d` §8)** — scored at the same two moments. **Pass mark: `≥ 6 / 8` with no criterion at `0`.** Then answer the 5 pre-flight questions of `0d` §9. A script that is gripping but gives the viewer nothing, or whose payoff is humiliation, cruelty or revenge, is rewritten before the checkpoint: change the route, keep the value.
+
+| # | Criterion | 2 points when… |
+|---|---|---|
+| 1 | **Giá trị tích cực qua lựa chọn** | a positive value is shown through a character's costly choice, never stated in dialogue |
+| 2 | **Khoảnh khắc chạm** | `≥ 1` specific, planted, restrained heart moment (`💗`, `0d` §4 H1–H5) |
+| 3 | **Phẩm giá & công bằng** | dignity restored, consequences fair and self-caused, the opponent humanized with a door left open (`0d` §5) |
+| 4 | **Điều mang về & hy vọng** | a clear, unspoken takeaway; the ending or cliffhanger keeps a light of hope (`0d` §7) |
 
 | # | Criterion | 0 | 1 | 2 |
 |---|---|---|---|---|
@@ -834,7 +862,7 @@ TẬP [N]: [Tên Tập] | CUNG CHIA: [Hồi I/II/III/IV · Archetype 1–5] | EN
 | 8 | **Cliffhanger & mồi** | the episode closes everything | an open question of the same kind as last episode | a new-layer question or danger that forces the next episode, different type from the last, `≥ 2` connectors |
 
 **2. Stage 3 Pre-Flight** — verify before each checkpoint:
-1. **Tier 1 & 2**: the episode serves the Central Question / Transformation Arc, reveals **only 1 layer** of the Master Secret, turns on `A1`'s crisis choice, and changes **at least 1 thing irreversibly**.
+1. **Tier 1 & 2**: the episode serves the Central Question / Transformation Arc, reveals **only 1 layer** of the Master Secret, turns on `A1`'s crisis choice, changes **at least 1 thing irreversibly**, and carries its Value Card (`VALUE · HEART · TAKEAWAY`, plus `SHADOW` when it shows cruelty or revenge).
 2. **Tier 3**: at least 2 inter-episode connectors are used, and the episode opens directly on the consequence of Episode $N-1$'s cliffhanger.
 3. **Tier 4 & 5**: each scene does **strictly ONE job**, links via **`"Vì vậy"` / `"Nhưng"`** (zero `"Và rồi"`), and routes `10s/15s` narrative/dialogue scenes to `@Director` and high-velocity scenes to `@CombatDirector`.
 4. **Dialogue**: every line passes the **Blind Voice Test**, obeys **Micro-Visual Reveal Over Verbal Exposition**, stays within `0c` §2 budgets and ends each clip per Law D5.
@@ -846,14 +874,14 @@ TẬP [N]: [Tên Tập] | CUNG CHIA: [Hồi I/II/III/IV · Archetype 1–5] | EN
 python engine/screenplay_audit.py output/<slug>/ep-NN-script.md
 ```
 
-The audit checks the Retention Map, the scene-list columns, `Vì vậy / Nhưng` links, the PREDICT ledger (`≥ 2` BROKEN with earlier plants — W10), loop plants before payoffs, feeling-label lines (W9), single-location stagnation (W11), word budgets, interjection rationing, hook/twist/cliffhanger repetition against the previous episode's script, and the character lines (`2b`): new named characters per episode, A1 presence, Arc Map rows for every character on screen, and characters absent more than 2 episodes in a row. Fix every `ERROR`; justify or fix every `WARN` before `CP3b`.
+The audit checks the Retention Map, the scene-list columns, `Vì vậy / Nhưng` links, the PREDICT ledger (`≥ 2` BROKEN with earlier plants — W10), loop plants before payoffs, feeling-label lines (W9), single-location stagnation (W11), word budgets, interjection rationing, hook/twist/cliffhanger repetition against the previous episode's script, and the character lines (`2b`): new named characters per episode, A1 presence, Arc Map rows for every character on screen, and characters absent more than 2 episodes in a row, and the **Heart & Value** layer (`0d`): the `💗 = N/8` scorecard (pass `≥ 6/8`, no `0`), the `VALUE / HEART / TAKEAWAY` rows, a heart plant before its payoff, and humiliation-as-payoff wording in the climax without a `SHADOW` row. Fix every `ERROR`; justify or fix every `WARN` before `CP3b`.
 
 **4. Checkpoints** — present in chat:
 ```text
-✋ CHECKPOINT 3A — Cấu trúc Tập [N] (Cốt truyện tập, Spine, Bản đồ giữ chân, Danh sách cảnh 1 dòng) — Độ cuốn: [ ]/16
+✋ CHECKPOINT 3A — Cấu trúc Tập [N] (Cốt truyện tập, Spine + Thẻ Giá Trị, Bản đồ giữ chân, Danh sách cảnh 1 dòng) — Độ cuốn: [ ]/16 · Giá trị: [ ]/8
 → "ok" để viết văn xuôi và thoại từng cảnh (Pass B) | "edit [nội dung]" | "cảnh [K]: [yêu cầu]" để chỉnh cấu trúc
 
-✋ CHECKPOINT 3B — Kịch bản thô chi tiết Tập [N] đã lưu output/<slug>/ep-NN-script.md và qua screenplay_audit.py — Độ cuốn: [ ]/16
+✋ CHECKPOINT 3B — Kịch bản thô chi tiết Tập [N] đã lưu output/<slug>/ep-NN-script.md và qua screenplay_audit.py — Độ cuốn: [ ]/16 · Giá trị: [ ]/8
 → "ok" để bắt đầu Stage 4 với Cảnh 01 (Agent tự lấy thông số Bối cảnh / Nhân vật / Đạo cụ từ setting.html; bạn chỉ gửi Ảnh Tĩnh Cuối Cảnh trước ở các cảnh nối tiếp TH1/TH3)
 → "edit [nội dung]" | "cảnh [K]: [yêu cầu]" để tinh chỉnh kịch bản thô trước khi tạo prompt
 ```

@@ -34,7 +34,7 @@ RANGE_RES = [
 
 # role cards, skills, genre modules and the small reference files are always read in full: a range that starts at
 # line 1 and stops early is a stale whole-file read, however far the file has grown
-WHOLE_FILE_REFS = {"0c-canonical-numbers.md", "2b-character-lines.md", "3c-camera-master-grammar.md",
+WHOLE_FILE_REFS = {"0c-canonical-numbers.md", "0d-heart-and-value.md", "2b-character-lines.md", "3c-camera-master-grammar.md",
                    "3b-lighting-atmospheric-physics.md", "4b-diegetic-foley-sound-design.md"}
 
 

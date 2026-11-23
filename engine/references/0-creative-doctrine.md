@@ -23,6 +23,7 @@ If you cannot tell which kind a rule is, treat it as a Craft Default and give a 
 ## §0.05 — THE TWO-LAYER MASTER ARCHITECTURE: UNIVERSAL CORE (50%) + GENRE ADAPTER (50%)
 
 > **CORE OPERATING PRINCIPLE**: Never confuse a genre-specific convention (e.g., Southern domestic family reconciliation, or sitcom episodic reset) with the universal laws of cinema. Every project in Sven is engineered by locking **Layer 1 (The Universal 4-Tier Core — invariant across 100% of films)** and dynamically mounting **Layer 2 (The Genre & Cultural Adapter — calibrated per genre)**.
+> **Layer 0 — the North Star above both ([`0d-heart-and-value.md`](file:///d:/Project/Sven/engine/references/0d-heart-and-value.md))**: Layers 1 and 2 make a story gripping; Layer 0 decides what it is *for*. Every story must move the viewer (an earned, planted heart moment), affirm a positive value through a costly choice, and leave an unspoken takeaway — and every reversal obeys the Dignity & Value Firewall (justice restores, never degrades). When a Layer 1 or Layer 2 tool collides with Layer 0, the tool changes.
 
 ### Layer 1: The Universal 4-Tier Core (Invariant Across All Genres)
 1. **Tier I — Core of a Great Screenplay (Lõi Kịch Bản Hay)**:
@@ -61,10 +62,11 @@ If you cannot tell which kind a rule is, treat it as a Craft Default and give a 
 | Dimension | Social & Family Drama (`drama.md`) | Action, Martial Arts & Chase (`action.md`) | Viral Microdrama (`microdrama.md`) | Thriller, Mystery & Crime (`thriller`) | Situation Comedy (`sitcom.md`) |
 |---|---|---|---|---|---|
 | **Antagonist Nature** | Two Honest Sides (love/duty pointed the wrong way) | Lethal Rival, Syndicate, or Supernatural Threat | Hypocrite, Usurper, or Status Oppressor | Hidden Mastermind or Institutional Trap | Eccentric Flaw Collision (`Odd-Couple`) |
-| **Core Audience Payoff** | Emotional Catharsis & Earned Empathy | Kinetic Adrenaline (`2.3x–10x`) & Tactical Victory | Dopamine Face-Slap & Status Reversal | Intellectual Shock (`The Prestige`) & Dread | Laugh-Out-Loud Escalation & Punchline |
+| **Core Audience Payoff** | Emotional Catharsis & Earned Empathy | Kinetic Adrenaline (`2.3x–10x`) & Tactical Victory | Dignity Reversal: the overlooked hero's worth recognized | Intellectual Shock (`The Prestige`) & Dread | Laugh-Out-Loud Escalation & Punchline |
+| **Heart & Value Payoff (`0d` §6)** | Reconciliation that costs pride; love & responsibility across generations | Courage used to protect; restraint & mercy toward the beaten | Integrity outlasts arrogance; one act of grace in the crown | Truth & justice; protecting the vulnerable; the cost of a lie | Warmth: the group stays a family; a small kindness in the tag |
 | **Action / Dialogue Ratio** | `50% Domestic/Tactile Labor : 50% Subtext Dialogue` | `3-Zone (40% Drama : 40% Pure Combat/Chase : 20% Fallout)` | `40% Status Proxies : 60% Staccato Fencing (≤12w)` | `70% Suspense Visuals & O.S. Sound : 30% Scalpel Lines` | `30% Physical Slapstick : 70% Rapid Ping-Pong` |
 | **Episode Ending** | `False Dawn ➔ Cold Water Cliffhanger` | `Weapon Break / Boss Arrival / Lethal Strike Cut` | `Zeigarnik Unmasking / Seal Reveal` | `Clue Reversal (Trusted Ally = Suspect)` | `Status Quo Reset + Comedic Scene Button` |
-| **Series Climax** | Ego Death & Costly Moral Reconciliation | Martial/Supernatural Breakthrough & Boss Defeat | Public Justice & Total Status Restoration | Mastermind Exposed via Planted Trap | Snowball Lie Collapse & Group Reset |
+| **Series Climax** | Ego Death & Costly Moral Reconciliation | Martial/Supernatural Breakthrough & Boss Defeat (mercy offered) | Public Truth, Fair Consequence & Dignity Restored (+ one act of grace) | Mastermind Exposed via Planted Trap | Snowball Lie Collapse & Warm Group Reset |
 
 ---
 
@@ -508,8 +510,9 @@ Why monologue: this truth can only be said to someone who cannot answer. Why Tra
 1. **What is this story about underneath the plot?** (the thematic question, §8.3)
 2. **Why this family, this place, this object — and not any other?** (the specific truth, §8.5)
 3. **What will viewers argue about after the last frame?** (the debate seed, §8.7)
+4. **What will viewers carry home — and which moment will move them?** (the value, the heart moment and the takeaway, `0d` §2–§4)
 
-If any answer is generic ("family love", "tradition vs. modernity", "it is touching"), keep digging before writing scenes.
+If any answer is generic ("family love", "tradition vs. modernity", "it is touching"), keep digging before writing scenes: "touching" must become one specific planted moment, and "family love" one costly choice.
 
 ### 8.2 The Dramatic Question (plot level)
 One yes/no question the viewer holds from the hook to the climax ("Will Duyên say how much she is hurting before her body says it for her?"). Every scene raises or lowers the odds of the answer. An episode may answer its own question while the series question stays open.
@@ -553,6 +556,7 @@ One yes/no question the viewer holds from the hook to the climax ("Will Duyên s
 ### 8.8 The Earned Ending
 - The ending (positive by default; bittersweet or tragic when the project's `ending_mode` says so) must **cost someone something**: who gives up what — a role, a certainty, a mask.
 - The ending answers the thematic question with an **action or image**.
+- **Every ending leaves a light** (`0d` §7): even a bittersweet or tragic ending hands the viewer something to carry — a lesson owned, a relationship mended, a promise kept. Despair is never the last image.
 - **The title is a promise kept by images, not spoken by characters.** Pair an opening image with a closing image that answers it (tears falling into cold congee ↔ a hot spoonful with no tear).
 
 ### 8.9 Line-Level Depth Tests (on-the-nose)
@@ -575,6 +579,10 @@ LOOPS    | L1 [question] plant sN → pay sM; L2 …
 COST     | Who gives up what at the end
 DEBATE   | The question viewers will argue in the comments
 IMAGE    | Opening image ↔ closing image (how the ending answers without words)
+VALUE    | Positive value affirmed through [Name]'s costly choice (0d §2–§3)
+HEART    | Heart moment: scene, specific act/object/recognition, plant scene (0d §4)
+TAKEAWAY | What the viewer carries home — never spoken on screen
+SHADOW   | What the story depicts but must not glorify, and how (0d §5)
 ```
 It is written at Stage 1 (series or short-film Spine, `CP1`), embedded in `setting.html` (`id="story-spine"`, enforced as a hard blocker by **Gate 2B** and audited across all 12 rows by **W9**), and refreshed per episode in the interactive Stage 3 Rough Script (`CP3`). Scene Intent Cards (§1) inherit from it: each scene's want, subtext, and value shift serve one row of the Spine. §9.9 adds four plot rows (`PREDICT`, `KNOW`, `MISREAD`, `TWIST`).
 

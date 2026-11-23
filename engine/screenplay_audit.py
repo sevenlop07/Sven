@@ -11,7 +11,9 @@ to output/<slug>/ep-NN-script.md and runs:
 It replaces, for chat-based Stage 3, the depth audits that episode_audit_suite.py ran on the retired tap-X.html files
 (W9 feeling labels / title spoken, W10 prediction ledger & plant order, W11 single-location stagnation) and adds
 engagement checks (Retention Map, value shifts, open loops at every cut, rhythm, word budgets, interjection rationing,
-repetition against the previous episode, Engagement Scorecard pass mark).
+repetition against the previous episode, Engagement Scorecard pass mark) and the Heart & Value layer of
+engine/references/0d-heart-and-value.md (Heart & Value Scorecard >= 6/8 with no 0, VALUE / HEART / TAKEAWAY rows,
+heart plant before payoff, a 💗 scene, humiliation-as-payoff wording near the climax without a SHADOW row).
 
 Exit code 1 when any ERROR is found; WARN lines must be fixed or justified with a `BREAK: <rule> — <reason>` line.
 Numbers come from engine/references/0c-canonical-numbers.md; project overrides from output/<slug>/project_rules.json
@@ -58,6 +60,13 @@ LINK_RX = re.compile(r'^\s*↳\s*\[?\s*(NHƯNG|VÌ VẬY|VI VAY|BUT|THEREFORE|V�
 BLOCK_RX = re.compile(r'^\s*-{2,}\s*(?:CẢNH|CANH|SCENE)\s+(\d+)\s*\(([^)]*)\)', re.I)
 DIALOGUE_RX = re.compile(r'([A-ZÀ-Ỹ][\wÀ-ỹ\-]*(?:\s[A-ZÀ-Ỹ][\wÀ-ỹ\-]*)?)\s*(?:\([^)]*\))?\s*:\s*["“]([^"”]+)["”]')
 SCORE_RX = re.compile(r'=\s*\[?\s*(\d{1,2})\s*\]?\s*/\s*16')
+HEART_SCORE_RX = re.compile(r'=\s*\[?\s*(\d)\s*\]?\s*/\s*8\b')
+HEART_PASS = 6                 # 0d-heart-and-value.md §8: >= 6/8, no criterion at 0
+# humiliation-as-payoff wording (0d §5); flagged only in the last ~40% of the episode, where payoffs live
+DEFAULT_HUMILIATION_TERMS = [
+    'quỳ xuống', 'quỳ lạy', 'quỳ gối', 'van xin', 'cầu xin tha', 'vả mặt', 'tát vào mặt', 'bẽ mặt', 'nhục nhã', 'sỉ nhục',
+    'kneel', 'kneels', 'beg for mercy', 'begs for mercy', 'grovel', 'face-slap', 'face slap', 'humiliat',
+]
 SUBSCORE_RX = re.compile(r'(\w[\wÀ-ỹ ]*?)\s*\[?\s*([0-2])\s*\]?\s*/\s*2\b')
 
 
@@ -160,7 +169,7 @@ def audit(path):
     errors, warns, notes = [], [], []
     d = parse(text)
     scenes = d['scenes']
-    has_break = lambda key: re.search(r'BREAK\s*:[^\n]*' + key, text, re.I) is not None
+    has_break = lambda key: re.search(r'BREAK\s*:[^\n]*(?:' + key + ')', text, re.I) is not None
 
     # ---------- structure ----------
     for label, pat in [('PHẦN 1', r'PHẦN 1'), ('PHẦN 3A (Retention Map)', r'PHẦN 3A|RETENTION MAP'),
@@ -414,6 +423,50 @@ def audit(path):
         zeros = [norm(k).lstrip('·').strip() for k, v in SUBSCORE_RX.findall(card_lines[-1]) if v == '0'] if card_lines else []
         if zeros:
             errors.append(f"Engagement Scorecard has criteria at 0: {zeros}")
+
+    # ---------- heart & value (0d-heart-and-value.md) ----------
+    heart_lines = [l for l in text.split('\n') if HEART_SCORE_RX.search(l) and re.search(r'GIÁ TRỊ|HEART|💗', l, re.I)]
+    if not heart_lines:
+        errors.append("No Heart & Value Scorecard ('💗 BẢNG CHẤM GIÁ TRỊ — ... = N/8') — 0d §8, workflow.md §8.4")
+    else:
+        last = heart_lines[-1]
+        htotal = int(HEART_SCORE_RX.findall(last)[-1])
+        if htotal < HEART_PASS:
+            errors.append(f"Heart & Value Scorecard {htotal}/8 below pass mark {HEART_PASS}/8 — strengthen the value, the heart moment or the dignity of the payoff (0d §8)")
+        hzeros = [norm(k).lstrip('·—').strip() for k, v in SUBSCORE_RX.findall(last) if v == '0']
+        if hzeros:
+            errors.append(f"Heart & Value Scorecard has criteria at 0: {hzeros}")
+    for row in ('VALUE', 'HEART', 'TAKEAWAY'):
+        if not re.search(r'^\s*' + row + r'\s*\|', text, re.M):
+            errors.append(f"Value Card row '{row} |' missing from the episode Spine (0d §3)")
+    heart_row = re.search(r'^\s*HEART\s*\|([^\n]*)', text, re.M)
+    if heart_row:
+        hr = heart_row.group(1)
+        pay = re.search(r'(?:Cảnh|Canh|Scene|\bs)\s*\[?\s*(\d{1,2})', hr, re.I)
+        plant_part = re.split(r'cài|plant', hr, flags=re.I)
+        plants = [int(x) for x in re.findall(r'\d{1,2}', plant_part[1])] if len(plant_part) > 1 else []
+        if not pay:
+            warns.append("HEART row names no scene ('Khoảnh khắc chạm: Cảnh NN — ...') — 0d §3")
+        elif not plants:
+            warns.append(f"Heart moment at scene {pay.group(1)} has no plant ('— cài ở Cảnh AA'): unplanted sentiment reads as melodrama (0d §4 H5)")
+        elif any(p >= int(pay.group(1)) for p in plants):
+            warns.append(f"Heart moment at scene {pay.group(1)} planted at {plants} — the plant must come earlier (0d §4 H5)")
+    if scenes and not any('💗' in (s['desc'] + ' '.join(s['fields'])) for s in scenes):
+        warns.append("No scene marked 💗 in the scene list — mark the heart moment(s) so the Director gives them room (0d §3, §10)")
+    hum = [str(t).lower() for t in rules.get('humiliation_terms', DEFAULT_HUMILIATION_TERMS)]
+    shadow = re.search(r'^\s*SHADOW\s*\|\s*([^\n]*)', text, re.M)
+    shadow_set = bool(shadow and shadow.group(1).strip() and not re.match(r'\[|không có|none', shadow.group(1).strip(), re.I))
+    if hum and scenes and not shadow_set and not has_break('dignity|phẩm giá|humiliation'):
+        hum_rx = re.compile('|'.join(re.escape(t) for t in hum), re.I)
+        cut = scenes[0]['n'] + int(len(scenes) * 0.6)
+        late_txt = {s['n']: s['desc'] for s in scenes if s['n'] >= cut}
+        for n, (hdr, body) in d['blocks'].items():
+            if n >= cut:
+                late_txt[n] = late_txt.get(n, '') + ' ' + body
+        flagged = sorted(n for n, t in late_txt.items() if hum_rx.search(t))
+        if flagged:
+            warns.append(f"Scenes {flagged}: humiliation wording near the payoff (kneel / beg / face-slap / bẽ mặt…) with no SHADOW row — "
+                         f"make the payoff dignity restored and truth seen, not the opponent's shame (0d §5), or add the SHADOW row / BREAK")
 
     return errors, warns, notes, len(scenes)
 

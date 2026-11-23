@@ -117,22 +117,121 @@ def fabric(im, seed=1, strength=1.0):
     arr = np.asarray(im).astype(np.float32)
     arr[..., :3] = np.clip(arr[..., :3] * (a * noise)[..., None], 0, 255)
     return Image.fromarray(arr.astype(np.uint8), "RGBA")
-P = dict(butter="#F7D96B", teal="#3FB8AF", lilac="#C9B6E4", navy="#3A4E8C", pink="#F4A6B8", mint="#9ED9B6", coral="#F28B6E", sky="#8FC9F0", white="#F2F2EE", wood="#C99A6B", deep_teal="#2E7D7A")
-P = dict(butter="#F5D66E", teal="#45B5AA", lilac="#B7A3E6", navy="#2F3E63", pink="#F6A6C1", mint="#A8E0C0", coral="#EE6F5E", sky="#8FC9F0", white="#FAFAF7", wood="#B98A5E", deep_teal="#2C7A78", charcoal="#3A3F4A")
-SH = {"me": ("hoodie", P["butter"], "#FFFFFF"), "diddy": ("tee_stripe", P["teal"], "#FAFAF7"), "mom": ("blouse", P["lilac"], "#FFFFFF"),
-      "dad": ("collar", P["navy"], "#FFFFFF"), "may": ("tee_heart", P["pink"], "#EE6F5E"), "mayor": ("suit", P["charcoal"], "#D94848"),
-      "teacher": ("cardigan", P["mint"], "#FAFAF7")}
-CROWD = [P["coral"], P["sky"], P["mint"], P["pink"], P["white"], P["wood"], P["deep_teal"], "#E88FB0", "#8FC1E8", "#F2B66B"]
-CSTY = ["tee", "hoodie", "collar", "tee_stripe"]
-for i, col in enumerate(CROWD): SH["c%d" % (i + 1)] = (CSTY[i % 4], col, "#FAFAF7")
-PA = {"me": ("#3D4A6B", "#F4F4F0"), "diddy": ("#2E3138", "#F4F4F0"), "mom": ("#5A4A7A", "#FAFAF7"), "dad": ("#2B2B33", "#1A1A1E"),
-      "may": ("#8FB3E0", "#EE6F5E"), "mayor": ("#3A3F4A", "#1A1A1E"), "teacher": ("#6B5B4A", "#4A3020")}
-for i, col in enumerate(["#3D4A6B", "#2E3138", "#6B5B4A", "#5A4A7A", "#4A5A4A"]): PA["p%d" % (i + 1)] = (col, "#F4F4F0")
-for i, (k, v) in enumerate(SH.items()): fabric(shirt(v[1], v[0], v[2]), seed=i + 1).save(f"shirt_{k}.png")
-for i, (k, v) in enumerate(PA.items()): fabric(pants(*v), seed=100 + i, strength=0.8).save(f"pants_{k}.png")
-json.dump({"shirts": SH, "pants": PA}, open("looks.json", "w"), indent=1)
-# preview sheet
-prev = Image.new("RGBA", (W * 4, H * 2), (60, 60, 60, 255))
-for n, k in enumerate(["me", "dad", "mayor", "may"]):
-    prev.alpha_composite(Image.open(f"shirt_{k}.png"), (W * n, 0)); prev.alpha_composite(Image.open(f"pants_{k}.png"), (W * n, H))
-prev.convert("RGB").resize((W * 2, H)).save("preview.jpg")
+def make_puffer_jacket(col="#C61618", cuff="#181A20", baffles=5):
+    """High-contrast 585x559 quilted puffer jacket (pairs with shirt_fabric='puffer' Coat+Bump)."""
+    c = hx(col); cf = hx(cuff) + (255,)
+    im = Image.new("RGBA", (W, H), (0, 0, 0, 0)); d = ImageDraw.Draw(im)
+    for (x, y, w, h) in list(TORSO.values()) + list(RLIMB.values()) + list(LLIMB.values()):
+        d.rectangle([x, y, x + w, y + h], fill=c + (255,))
+        if h >= 120:
+            bh = h / float(baffles)
+            for i in range(baffles):
+                by0, by1 = int(y + i * bh), int(y + (i + 1) * bh)
+                span = max(1, by1 - by0)
+                for row in range(by0, by1):
+                    t = (row - by0) / float(span)
+                    if t < 0.14 or t > 0.88:
+                        rc = shade(c, 0.56)
+                    elif t < 0.45:
+                        k = 1.0 - abs(t - 0.32) / 0.22
+                        rc = shade(c, 1.0 + 0.24 * k)
+                    else:
+                        rc = shade(c, 1.0 - 0.26 * ((t - 0.45) / 0.45))
+                    d.line([(x, row), (x + w, row)], fill=rc)
+                d.line([(x, by1 - 1), (x + w, by1 - 1)], fill=shade(c, 0.34), width=1)
+    fx, fy, fw, fh = TORSO["F"]; cx = fx + fw // 2
+    d.rectangle([cx - 2, fy, cx + 2, fy + fh], fill=shade(c, 0.52))
+    d.line([(cx, fy), (cx, fy + fh)], fill=(38, 12, 14, 255), width=1)
+    for limb in (RLIMB, LLIMB):
+        for k in ("F", "B", "L", "R"):
+            x, y, w, h = limb[k]
+            d.rectangle([x, y + h - 9, x + w, y + h], fill=cf)
+    return im
+
+
+def make_cable_knit_sweater(col="#CEB28E", trim="#B21A1C", vest_col="#162E24"):
+    """585x559 ribbed cable-knit wool sweater with bare wrists (pairs with shirt_fabric='wool' Sheen)."""
+    c = hx(col); tr = hx(trim) + (255,); blk = (30, 22, 20, 255)
+    im = Image.new("RGBA", (W, H), (0, 0, 0, 0)); d = ImageDraw.Draw(im)
+    for (x, y, w, h) in TORSO.values():
+        d.rectangle([x, y, x + w, y + h], fill=c + (255,))
+        if h >= 120:
+            for cx in range(x + 8, x + w, 14):
+                d.line([(cx, y), (cx, y + h)], fill=shade(c, 0.80), width=3)
+                d.line([(cx + 4, y), (cx + 4, y + h)], fill=shade(c, 1.12), width=2)
+            d.rectangle([x, y + h - 12, x + w, y + h - 4], fill=tr)
+            d.rectangle([x, y + h - 4, x + w, y + h], fill=blk)
+    fx, fy, fw, fh = TORSO["F"]
+    d.polygon([(fx + 32, fy), (fx + fw - 32, fy), (fx + fw // 2, fy + 44)], fill=(238, 236, 230, 255), outline=tr)
+    if vest_col:
+        vc = hx(vest_col) + (255,)
+        d.rectangle([fx + 18, fy + 56, fx + fw - 18, fy + fh - 12], fill=vc, outline=shade(hx(vest_col), 0.6), width=2)
+    for limb in (RLIMB, LLIMB):
+        for k, (x, y, w, h) in limb.items():
+            if h >= 120:
+                sh = h - 22
+                d.rectangle([x, y, x + w, y + sh], fill=c + (255,))
+                for cx in range(x + 8, x + w, 14):
+                    d.line([(cx, y), (cx, y + sh)], fill=shade(c, 0.80), width=3)
+                    d.line([(cx + 4, y), (cx + 4, y + sh)], fill=shade(c, 1.12), width=2)
+                d.rectangle([x, y + sh - 14, x + w, y + sh - 6], fill=tr)
+                d.rectangle([x, y + sh - 6, x + w, y + sh], fill=blk)
+            elif k == "U":
+                d.rectangle([x, y, x + w, y + h], fill=c + (255,))
+    return im
+
+
+def make_double_breasted_coat(col="#A41218", trim="#140E10"):
+    """585x559 double-breasted winter trench coat with comic ink seams & belt (pairs with shirt_fabric='coat')."""
+    c = hx(col); ink = hx(trim) + (255,)
+    im = Image.new("RGBA", (W, H), (0, 0, 0, 0)); d = ImageDraw.Draw(im)
+    for (x, y, w, h) in list(TORSO.values()) + list(RLIMB.values()) + list(LLIMB.values()):
+        d.rectangle([x, y, x + w, y + h], fill=c + (255,))
+        if h >= 120:
+            d.rectangle([x, y + h - 18, x + w, y + h], fill=ink)
+    fx, fy, fw, fh = TORSO["F"]
+    d.rectangle([fx, fy + fh - 32, fx + fw, fy + fh - 16], fill=ink)
+    d.rectangle([fx + fw // 2 - 12, fy + fh - 35, fx + fw // 2 + 12, fy + fh - 13], fill=(42, 46, 54, 255), outline=ink, width=3)
+    d.line([(fx + 10, fy + 26), (fx + fw - 10, fy + 26)], fill=ink, width=3)
+    d.line([(fx + fw // 2, fy + 16), (fx + fw // 2, fy + fh - 32)], fill=ink, width=3)
+    for bx in (fx + 42, fx + fw - 42):
+        for by in (fy + 46, fy + 74):
+            d.ellipse([bx - 6, by - 6, bx + 6, by + 6], fill=ink)
+    return im
+
+
+def make_pleated_skirt_pants(col="#76523A", shoe="#1C1412", hem_trim="#DABAA0"):
+    """585x559 warm pleated skirt + boots (pairs with pants_fabric='wool')."""
+    c = hx(col); sh = hx(shoe) + (255,); tr = hx(hem_trim) + (255,)
+    im = Image.new("RGBA", (W, H), (0, 0, 0, 0)); d = ImageDraw.Draw(im)
+    for (x, y, w, h) in TORSO.values():
+        d.rectangle([x, y, x + w, y + h], fill=c + (255,))
+    for (x, y, w, h) in list(RLIMB.values()) + list(LLIMB.values()):
+        d.rectangle([x, y, x + w, y + h], fill=c + (255,))
+        if h >= 120:
+            hy = y + int(h * 0.78)
+            for cx in range(x + 8, x + w, 12):
+                d.line([(cx, y), (cx, hy)], fill=shade(c, 0.68), width=3)
+            d.rectangle([x, hy, x + w, hy + 6], fill=tr)
+            d.rectangle([x, hy + 6, x + w, y + h], fill=sh)
+    return im
+
+
+if __name__ == "__main__":
+    P = dict(butter="#F5D66E", teal="#45B5AA", lilac="#B7A3E6", navy="#2F3E63", pink="#F6A6C1", mint="#A8E0C0", coral="#EE6F5E", sky="#8FC9F0", white="#FAFAF7", wood="#B98A5E", deep_teal="#2C7A78", charcoal="#3A3F4A")
+    SH = {"me": ("hoodie", P["butter"], "#FFFFFF"), "diddy": ("tee_stripe", P["teal"], "#FAFAF7"), "mom": ("blouse", P["lilac"], "#FFFFFF"),
+          "dad": ("collar", P["navy"], "#FFFFFF"), "may": ("tee_heart", P["pink"], "#EE6F5E"), "mayor": ("suit", P["charcoal"], "#D94848"),
+          "teacher": ("cardigan", P["mint"], "#FAFAF7")}
+    CROWD = [P["coral"], P["sky"], P["mint"], P["pink"], P["white"], P["wood"], P["deep_teal"], "#E88FB0", "#8FC1E8", "#F2B66B"]
+    CSTY = ["tee", "hoodie", "collar", "tee_stripe"]
+    for i, col in enumerate(CROWD): SH["c%d" % (i + 1)] = (CSTY[i % 4], col, "#FAFAF7")
+    PA = {"me": ("#3D4A6B", "#F4F4F0"), "diddy": ("#2E3138", "#F4F4F0"), "mom": ("#5A4A7A", "#FAFAF7"), "dad": ("#2B2B33", "#1A1A1E"),
+          "may": ("#8FB3E0", "#EE6F5E"), "mayor": ("#3A3F4A", "#1A1A1E"), "teacher": ("#6B5B4A", "#4A3020")}
+    for i, col in enumerate(["#3D4A6B", "#2E3138", "#6B5B4A", "#5A4A7A", "#4A5A4A"]): PA["p%d" % (i + 1)] = (col, "#F4F4F0")
+    for i, (k, v) in enumerate(SH.items()): fabric(shirt(v[1], v[0], v[2]), seed=i + 1).save(f"shirt_{k}.png")
+    for i, (k, v) in enumerate(PA.items()): fabric(pants(*v), seed=100 + i, strength=0.8).save(f"pants_{k}.png")
+    json.dump({"shirts": SH, "pants": PA}, open("looks.json", "w"), indent=1)
+    prev = Image.new("RGBA", (W * 4, H * 2), (60, 60, 60, 255))
+    for n, k in enumerate(["me", "dad", "mayor", "may"]):
+        prev.alpha_composite(Image.open(f"shirt_{k}.png"), (W * n, 0)); prev.alpha_composite(Image.open(f"pants_{k}.png"), (W * n, H))
+    prev.convert("RGB").resize((W * 2, H)).save("preview.jpg")

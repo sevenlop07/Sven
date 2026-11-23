@@ -93,6 +93,8 @@
 | Misunderstanding lifespan | `≤ 1` act |
 | Rotation | hook type, twist code (`TW-xx`) and cliffhanger type (`C1–C7`) never repeat in consecutive episodes |
 | Engagement Scorecard pass mark | `≥ 12 / 16` with no criterion at `0` (`workflow.md` §8.4) |
+| Heart moment (`💗`) | `≥ 1` per episode, planted `≥ 1` scene earlier; never `3` crying / high-sentiment scenes in a row (`0d` §4) |
+| Heart & Value Scorecard pass mark | `≥ 6 / 8` with no criterion at `0`, at `CP0`, `CP1`, `CP3a`, `CP3b`, Roblox `GATE R1–R2` (`0d` §8) |
 
 ## §6 — Cast Sizing
 
@@ -140,4 +142,5 @@ The Pillars are large catalogs written before this table. Where they disagree wi
 | Any file | "`3.5s–4.5s` spoken window", "Zero Tail-Cut = 0 words in the final shot" | `0c` §2: `3.2s–4.5s`; Law D5 Mode 1 or Mode 2 |
 | Any file | "`12–18` scenes per ~3-min episode" as the default | `0c` §4: scene count from the Act Archetype or the locked runtime |
 | Any file | Zero fatality / positive ending as Hard Constraints | `workflow.md` §2.11: Craft Defaults set per project (`ending_mode`, `fatality_policy`); zero gore stays hard |
+| Pillar 1, `microdrama.md`, `fantasy.md`, Roblox `story-structure.md` | "Dopamine face-slap", "beg for mercy", "kneel", "sovereign walk-away" as the payoff | `0d` §5–§6: **dignity reversal** — truth revealed by planted proof, fair self-caused consequence, one act of grace; never humiliation as the reward |
 

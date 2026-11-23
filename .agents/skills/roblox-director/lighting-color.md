@@ -77,6 +77,11 @@ Changes from the team draft, per the critic: night saturation stays at −0.05 (
 
 Delete per-shot lights after the take: `P.clearShotLights()`.
 
+### 5.1 Blender 5.3 Light Linking & Anti-Glare Standard (`Law R-LOOK`)
+- **Isolated Hero Key + Rim (`env.setup_hero_light_linking`)**: Bind a dedicated 40° off-axis soft Area Key (`+30°` elevation) and 142° contrasting-temperature Rim exclusively to the character cast collection(s) via Blender 5.3 `light_linking.receiver_collection`. This sculpts smooth 3D bevel/face shading and separates dark/red coats from cabins or white hair/earmuffs from snow **without blowing out snow or background walls**.
+- **Anti-Glare 2D Face Decal Protection**: Never aim Key/Sun lights head-on (`0°`). `kit.make_head_face_mat()` locks high roughness (`0.74`) and low specular (`0.14`) on drawn face PNG pixels (`Alpha=1`) while keeping bare skin at warm satin (`0.40` + subtle SSS) so cartoon eyes never wash out under bright lights.
+- **Motivated Practical Bounce & Raytraced Reflections**: Every visible lamp/lantern (`env.build_hanging_lantern`) or glowing window casts real warm/colored light onto nearby characters; pair `winter_snow` / wet scenes with `env.make_snow_ice_ground_mat()` or `env.make_wet_mud_puddle_mat()` + `use_raytracing=True` so characters reflect authentically in ice/puddles.
+
 ## 6. Measuring a test capture (zero tokens, local)
 
 1. Record the shots caption-free (captions are added in the edit anyway).

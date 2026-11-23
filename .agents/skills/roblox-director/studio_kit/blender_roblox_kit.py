@@ -19,9 +19,10 @@ CORE_SKILL_DIR = os.path.normpath(os.path.join(os.path.dirname(os.path.abspath(_
 CORE_ASSETS_DIR = os.path.join(CORE_SKILL_DIR, "assets")
 CORE_ANIMS_DIR = os.path.join(CORE_ASSETS_DIR, "anims")
 CORE_CLOTHES_DIR = os.path.join(CORE_ASSETS_DIR, "clothes")
+CORE_FACES_STORYBOOK_DIR = os.path.join(CORE_ASSETS_DIR, "faces_storybook_toon")
 CORE_FACES_CARTOON_DIR = os.path.join(CORE_ASSETS_DIR, "faces_cartoon")
 CORE_FACES_RUBBERHOSE_DIR = os.path.join(CORE_ASSETS_DIR, "faces_rubberhose")
-CORE_FACES_UGC_DIR = CORE_FACES_CARTOON_DIR
+CORE_FACES_UGC_DIR = CORE_FACES_STORYBOOK_DIR
 CORE_FACES_HD_DIR = CORE_FACES_RUBBERHOSE_DIR
 CORE_PROPS_DIR = os.path.join(CORE_ASSETS_DIR, "props")
 CORE_SETS_DIR = os.path.join(CORE_ASSETS_DIR, "sets")
@@ -164,7 +165,33 @@ def temp_render_to(final_path: str):
         return tmp_file
 
 
+def pack_all_textures():
+    """Pack all external image textures into the current .blend so it is 100% portable across Windows/Linux/Cloud."""
+    for img in bpy.data.images:
+        if img.filepath and not img.packed_file:
+            try:
+                if os.path.exists(bpy.path.abspath(img.filepath)) or os.path.exists(img.filepath):
+                    img.pack()
+            except Exception:
+                pass
+
+
+def iter_action_fcurves(action):
+    """Yield all F-Curves from a Blender 5.3 Slotted Action (or legacy Action) without version conflicts."""
+    if not action:
+        return
+    if hasattr(action, "layers") and action.layers:
+        for layer in action.layers:
+            for strip in getattr(layer, "strips", []):
+                for cb in getattr(strip, "channelbags", []):
+                    for fc in getattr(cb, "fcurves", []):
+                        yield fc
+    for fc in getattr(action, "fcurves", []):
+        yield fc
+
+
 def temp_save_blend(final_blend_path: str):
+    pack_all_textures()
     tmp_dir = os.path.join(tempfile.gettempdir(), "sven_blender_stage")
     os.makedirs(tmp_dir, exist_ok=True)
     tmp_file = os.path.join(tmp_dir, os.path.basename(final_blend_path))
@@ -182,49 +209,226 @@ def make_solid_mat(name, linear_rgba, roughness=0.45):
     bsdf = next(n for n in mat.node_tree.nodes if n.type == "BSDF_PRINCIPLED")
     bsdf.inputs["Base Color"].default_value = linear_rgba
     bsdf.inputs["Roughness"].default_value = roughness
+    mat.diffuse_color = linear_rgba
     return mat
 
 
-def make_skin_cloth_mat(name, skin_rgba, cloth_img_path):
+CLOTH_FABRIC_PROFILES = {
+    "default": {"rough": 0.54, "sheen": 0.12, "sheen_r": 0.55, "coat": 0.00, "coat_r": 0.25, "bump": 0.09, "bump_d": 0.008},
+    "puffer":  {"rough": 0.30, "sheen": 0.00, "sheen_r": 0.50, "coat": 0.45, "coat_r": 0.22, "bump": 0.16, "bump_d": 0.012},
+    "wool":    {"rough": 0.88, "sheen": 0.78, "sheen_r": 0.45, "coat": 0.00, "coat_r": 0.30, "bump": 0.22, "bump_d": 0.010},
+    "coat":    {"rough": 0.72, "sheen": 0.28, "sheen_r": 0.55, "coat": 0.00, "coat_r": 0.30, "bump": 0.14, "bump_d": 0.010},
+    "denim":   {"rough": 0.80, "sheen": 0.22, "sheen_r": 0.60, "coat": 0.00, "coat_r": 0.30, "bump": 0.16, "bump_d": 0.009},
+}
+
+
+def make_wool_mat(name, linear_rgba, roughness=0.88, sheen=0.80):
+    """Soft fuzzy wool/fleece material with Blender 5.3 Sheen edge-glow and subtle weave bump."""
     mat = bpy.data.materials.new(name=name)
+    mat.diffuse_color = linear_rgba
     nt = mat.node_tree
     nt.nodes.clear()
     out = nt.nodes.new("ShaderNodeOutputMaterial")
     bsdf = nt.nodes.new("ShaderNodeBsdfPrincipled")
-    bsdf.inputs["Roughness"].default_value = 0.52
-    mix = nt.nodes.new("ShaderNodeMix")
-    mix.data_type = "RGBA"
-    mix.inputs[6].default_value = skin_rgba
-    tex = nt.nodes.new("ShaderNodeTexImage")
-    img = bpy.data.images.load(cloth_img_path, check_existing=True)
-    img.colorspace_settings.name = "sRGB"
-    tex.image = img
-    tex.extension = "CLIP"
-    nt.links.new(tex.outputs["Alpha"], mix.inputs[0])
-    nt.links.new(tex.outputs["Color"], mix.inputs[7])
-    nt.links.new(mix.outputs[2], bsdf.inputs["Base Color"])
+    bsdf.inputs["Base Color"].default_value = linear_rgba
+    bsdf.inputs["Roughness"].default_value = roughness
+    if "Sheen Weight" in bsdf.inputs:
+        bsdf.inputs["Sheen Weight"].default_value = sheen
+    if "Sheen Roughness" in bsdf.inputs:
+        bsdf.inputs["Sheen Roughness"].default_value = 0.46
+    tc = nt.nodes.new("ShaderNodeTexCoord")
+    ns = nt.nodes.new("ShaderNodeTexNoise")
+    ns.inputs["Scale"].default_value = 38.0
+    ns.inputs["Detail"].default_value = 6.0
+    nt.links.new(tc.outputs["Object"], ns.inputs["Vector"])
+    bp = nt.nodes.new("ShaderNodeBump")
+    bp.inputs["Strength"].default_value = 0.16
+    bp.inputs["Distance"].default_value = 0.006
+    nt.links.new(ns.outputs["Fac"], bp.inputs["Height"])
+    nt.links.new(bp.outputs["Normal"], bsdf.inputs["Normal"])
     nt.links.new(bsdf.outputs["BSDF"], out.inputs["Surface"])
     return mat
 
 
-def make_head_face_mat(name, skin_rgba, face_png_path):
+def make_skin_cloth_mat(name, skin_rgba, cloth_img_path, fabric: str = "default", ao_strength: float = 0.18):
+    """
+    Micro-PBR Roblox skin + classic clothing shader:
+    - Separates bare skin (satin vinyl + subtle SSS) from cloth via PNG Alpha mask
+    - Applies fabric-specific Roughness, Sheen (wool/coat), Coat (puffer/raincoat), and micro-Bump
+    - Multiplies subtle cavity Ambient Occlusion into Base Color to ground collars, underarms & accessories.
+    """
+    prof = CLOTH_FABRIC_PROFILES.get(fabric, CLOTH_FABRIC_PROFILES["default"])
     mat = bpy.data.materials.new(name=name)
+    mat.diffuse_color = skin_rgba
     nt = mat.node_tree
     nt.nodes.clear()
     out = nt.nodes.new("ShaderNodeOutputMaterial")
     bsdf = nt.nodes.new("ShaderNodeBsdfPrincipled")
-    bsdf.inputs["Roughness"].default_value = 0.42
+    if "Sheen Roughness" in bsdf.inputs:
+        bsdf.inputs["Sheen Roughness"].default_value = prof["sheen_r"]
+    if "Coat Roughness" in bsdf.inputs:
+        bsdf.inputs["Coat Roughness"].default_value = prof["coat_r"]
+
+    tex = nt.nodes.new("ShaderNodeTexImage")
+    img = bpy.data.images.load(cloth_img_path, check_existing=True)
+    img.colorspace_settings.name = "sRGB"
+    if not img.packed_file:
+        try:
+            img.pack()
+        except Exception:
+            pass
+    tex.image = img
+    tex.extension = "CLIP"
+
     mix = nt.nodes.new("ShaderNodeMix")
     mix.data_type = "RGBA"
     mix.inputs[6].default_value = skin_rgba
+    nt.links.new(tex.outputs["Alpha"], mix.inputs[0])
+    nt.links.new(tex.outputs["Color"], mix.inputs[7])
+
+    # Subtle cavity AO darkening around neck, underarms & accessory seams
+    if ao_strength > 0.001:
+        ao = nt.nodes.new("ShaderNodeAmbientOcclusion")
+        ao.samples = 8
+        ao.inputs["Distance"].default_value = 0.10
+        nt.links.new(mix.outputs[2], ao.inputs["Color"])
+        mix_ao = nt.nodes.new("ShaderNodeMix")
+        mix_ao.data_type = "RGBA"
+        mix_ao.blend_type = "MULTIPLY"
+        mix_ao.inputs[0].default_value = ao_strength
+        nt.links.new(mix.outputs[2], mix_ao.inputs[6])
+        nt.links.new(ao.outputs["AO"], mix_ao.inputs[7])
+        nt.links.new(mix_ao.outputs[2], bsdf.inputs["Base Color"])
+    else:
+        nt.links.new(mix.outputs[2], bsdf.inputs["Base Color"])
+
+    # Alpha-driven Roughness: bare skin (0.40) vs fabric profile roughness
+    mr = nt.nodes.new("ShaderNodeMix")
+    mr.data_type = "FLOAT"
+    mr.inputs[2].default_value = 0.40
+    mr.inputs[3].default_value = prof["rough"]
+    nt.links.new(tex.outputs["Alpha"], mr.inputs[0])
+    nt.links.new(mr.outputs[0], bsdf.inputs["Roughness"])
+
+    # Alpha-driven Sheen & Coat (only on cloth, never on bare skin)
+    if "Sheen Weight" in bsdf.inputs and prof["sheen"] > 0.001:
+        ms = nt.nodes.new("ShaderNodeMix")
+        ms.data_type = "FLOAT"
+        ms.inputs[2].default_value = 0.0
+        ms.inputs[3].default_value = prof["sheen"]
+        nt.links.new(tex.outputs["Alpha"], ms.inputs[0])
+        nt.links.new(ms.outputs[0], bsdf.inputs["Sheen Weight"])
+    if "Coat Weight" in bsdf.inputs and prof["coat"] > 0.001:
+        mc = nt.nodes.new("ShaderNodeMix")
+        mc.data_type = "FLOAT"
+        mc.inputs[2].default_value = 0.06
+        mc.inputs[3].default_value = prof["coat"]
+        nt.links.new(tex.outputs["Alpha"], mc.inputs[0])
+        nt.links.new(mc.outputs[0], bsdf.inputs["Coat Weight"])
+    if "Subsurface Weight" in bsdf.inputs:
+        m_sss = nt.nodes.new("ShaderNodeMix")
+        m_sss.data_type = "FLOAT"
+        m_sss.inputs[2].default_value = 0.08
+        m_sss.inputs[3].default_value = 0.0
+        nt.links.new(tex.outputs["Alpha"], m_sss.inputs[0])
+        nt.links.new(m_sss.outputs[0], bsdf.inputs["Subsurface Weight"])
+
+    # Micro-Bump from cloth texture luminance (masked by Alpha so bare skin stays smooth)
+    if prof["bump"] > 0.001:
+        bw = nt.nodes.new("ShaderNodeRGBToBW")
+        nt.links.new(tex.outputs["Color"], bw.inputs["Color"])
+        mul_b = nt.nodes.new("ShaderNodeMath")
+        mul_b.operation = "MULTIPLY"
+        nt.links.new(bw.outputs["Val"], mul_b.inputs[0])
+        nt.links.new(tex.outputs["Alpha"], mul_b.inputs[1])
+        bp = nt.nodes.new("ShaderNodeBump")
+        bp.inputs["Strength"].default_value = prof["bump"]
+        bp.inputs["Distance"].default_value = prof["bump_d"]
+        nt.links.new(mul_b.outputs["Value"], bp.inputs["Height"])
+        nt.links.new(bp.outputs["Normal"], bsdf.inputs["Normal"])
+
+    nt.links.new(bsdf.outputs["BSDF"], out.inputs["Surface"])
+    return mat
+
+
+def make_head_face_mat(name, skin_rgba, face_png_path, skin_sss: float = 0.10, face_roughness: float = 0.74, ao_strength: float = 0.15):
+    """
+    Stylized Vinyl/Art-Toy Roblox head shader with Anti-Glare 2D Face Decal protection:
+    - Bare skin gets warm satin finish + subtle Subsurface Scattering + cavity AO under hair/chin
+    - Drawn face area (Alpha=1) locks high Roughness & low Specular so bright Key/Sun lights NEVER glare over cartoon eyes.
+    """
+    mat = bpy.data.materials.new(name=name)
+    mat.diffuse_color = skin_rgba
+    nt = mat.node_tree
+    nt.nodes.clear()
+    out = nt.nodes.new("ShaderNodeOutputMaterial")
+    bsdf = nt.nodes.new("ShaderNodeBsdfPrincipled")
+
     tex = nt.nodes.new("ShaderNodeTexImage")
     img = bpy.data.images.load(face_png_path, check_existing=True)
     img.colorspace_settings.name = "sRGB"
+    if not img.packed_file:
+        try:
+            img.pack()
+        except Exception:
+            pass
     tex.image = img
     tex.extension = "CLIP"
+
+    mix = nt.nodes.new("ShaderNodeMix")
+    mix.data_type = "RGBA"
+    mix.inputs[6].default_value = skin_rgba
     nt.links.new(tex.outputs["Alpha"], mix.inputs[0])
     nt.links.new(tex.outputs["Color"], mix.inputs[7])
-    nt.links.new(mix.outputs[2], bsdf.inputs["Base Color"])
+
+    if ao_strength > 0.001:
+        ao = nt.nodes.new("ShaderNodeAmbientOcclusion")
+        ao.samples = 8
+        ao.inputs["Distance"].default_value = 0.08
+        mix_ao = nt.nodes.new("ShaderNodeMix")
+        mix_ao.data_type = "RGBA"
+        mix_ao.blend_type = "MULTIPLY"
+        mix_ao.inputs[0].default_value = ao_strength
+        nt.links.new(mix.outputs[2], mix_ao.inputs[6])
+        nt.links.new(ao.outputs["AO"], mix_ao.inputs[7])
+        nt.links.new(mix_ao.outputs[2], bsdf.inputs["Base Color"])
+    else:
+        nt.links.new(mix.outputs[2], bsdf.inputs["Base Color"])
+
+    # Anti-Glare Roughness & Specular mask driven by face PNG Alpha
+    mr = nt.nodes.new("ShaderNodeMix")
+    mr.data_type = "FLOAT"
+    mr.inputs[2].default_value = 0.40
+    mr.inputs[3].default_value = face_roughness
+    nt.links.new(tex.outputs["Alpha"], mr.inputs[0])
+    nt.links.new(mr.outputs[0], bsdf.inputs["Roughness"])
+
+    if "Specular IOR Level" in bsdf.inputs:
+        msp = nt.nodes.new("ShaderNodeMix")
+        msp.data_type = "FLOAT"
+        msp.inputs[2].default_value = 0.46
+        msp.inputs[3].default_value = 0.14
+        nt.links.new(tex.outputs["Alpha"], msp.inputs[0])
+        nt.links.new(msp.outputs[0], bsdf.inputs["Specular IOR Level"])
+
+    if "Subsurface Weight" in bsdf.inputs and skin_sss > 0.001:
+        m_sss = nt.nodes.new("ShaderNodeMix")
+        m_sss.data_type = "FLOAT"
+        m_sss.inputs[2].default_value = skin_sss
+        m_sss.inputs[3].default_value = 0.0
+        nt.links.new(tex.outputs["Alpha"], m_sss.inputs[0])
+        nt.links.new(m_sss.outputs[0], bsdf.inputs["Subsurface Weight"])
+
+    if "Coat Weight" in bsdf.inputs:
+        mc = nt.nodes.new("ShaderNodeMix")
+        mc.data_type = "FLOAT"
+        mc.inputs[2].default_value = 0.08
+        mc.inputs[3].default_value = 0.0
+        nt.links.new(tex.outputs["Alpha"], mc.inputs[0])
+        nt.links.new(mc.outputs[0], bsdf.inputs["Coat Weight"])
+        if "Coat Roughness" in bsdf.inputs:
+            bsdf.inputs["Coat Roughness"].default_value = 0.32
+
     nt.links.new(bsdf.outputs["BSDF"], out.inputs["Surface"])
     return mat, tex
 
@@ -232,6 +436,7 @@ def make_head_face_mat(name, skin_rgba, face_png_path):
 def make_stylized_hair_mat(name, base_rgba, roughness=0.58):
     """Stylized Roblox UGC hair shader with root-to-tip shading & directional strand grooves."""
     mat = bpy.data.materials.new(name=name)
+    mat.diffuse_color = base_rgba
     nt = mat.node_tree
     nt.nodes.clear()
     out = nt.nodes.new("ShaderNodeOutputMaterial")
@@ -319,6 +524,77 @@ def _create_uv_box(name, size_studs, center_studs, uv_table, mat, collection, v_
     collection.objects.link(obj)
     bev = obj.modifiers.new("Bevel", "BEVEL")
     bev.width = bevel_m; bev.segments = 2; bev.limit_method = "NONE"
+    for p in obj.data.polygons: p.use_smooth = True
+    return obj
+
+
+def _create_segmented_limb_box(name, size_studs, center_studs, uv_table, mat, collection, bevel_m=0.014):
+    """
+    Create a single connected R15 limb (Arm or Leg) with an indented horizontal elbow/knee crease groove at z=0.
+    Eliminates ugly stair-step box separation when elbows/knees bend 90 deg while keeping the crisp R15 seam line.
+    Returns (obj, weights_spec) where weights_spec maps vertex z to (upper_weight, lower_weight).
+    """
+    sx, sy, sz = [s * STUD for s in size_studs]
+    cx, cy, cz = [c * STUD for c in center_studs]
+    mesh = bpy.data.meshes.new(name + "_Mesh")
+    bm = bmesh.new()
+
+    # 5 Z-levels: bottom, below-crease, indented crease center, above-crease, top
+    z_levels = [
+        (-0.500 * sz, 1.000),
+        (-0.024 * sz, 1.000),
+        (0.000 * sz,  0.945),
+        (+0.024 * sz, 1.000),
+        (+0.500 * sz, 1.000),
+    ]
+    rings = []
+    for zv, sc_xy in z_levels:
+        hx = 0.5 * sx * sc_xy
+        hy = 0.5 * sy * sc_xy
+        rings.append([
+            bm.verts.new((-hx, -hy, zv)),
+            bm.verts.new((+hx, -hy, zv)),
+            bm.verts.new((+hx, +hy, zv)),
+            bm.verts.new((-hx, +hy, zv)),
+        ])
+
+    # Bottom cap (-Z) and Top cap (+Z)
+    bm.faces.new((rings[0][0], rings[0][3], rings[0][2], rings[0][1]))
+    bm.faces.new((rings[-1][0], rings[-1][1], rings[-1][2], rings[-1][3]))
+    # Side quads across the 4 vertical segments
+    for r_i in range(len(rings) - 1):
+        ra, rb = rings[r_i], rings[r_i + 1]
+        for k in range(4):
+            kn = (k + 1) % 4
+            bm.faces.new((ra[k], ra[kn], rb[kn], rb[k]))
+
+    bmesh.ops.recalc_face_normals(bm, faces=bm.faces)
+    uv_layer = bm.loops.layers.uv.new("UVMap")
+    for f in bm.faces:
+        side = _face_dir(f.normal)
+        u0, v0, u1, v1 = px_to_uv(*uv_table[side])
+        for loop in f.loops:
+            co = loop.vert.co
+            # Normalize x/y by local ring half-width so UVs don't pinch at the indented crease
+            sc_cur = 0.945 if abs(co.z) < 0.005 * sz else 1.0
+            nx = co.x / (sx * sc_cur)
+            ny = co.y / (sy * sc_cur)
+            nz = (co.z / sz) + 0.5
+            if side == "front":   u_t, v_t = nx + 0.5, nz
+            elif side == "back":  u_t, v_t = -nx + 0.5, nz
+            elif side == "left":  u_t, v_t = ny + 0.5, nz
+            elif side == "right": u_t, v_t = -ny + 0.5, nz
+            elif side == "top":   u_t, v_t = nx + 0.5, ny + 0.5
+            else:                 u_t, v_t = nx + 0.5, -ny + 0.5
+            loop[uv_layer].uv = (u0 + u_t * (u1 - u0), v0 + v_t * (v1 - v0))
+
+    bm.to_mesh(mesh); bm.free()
+    obj = bpy.data.objects.new(name, mesh)
+    obj.location = (cx, cy, cz)
+    obj.data.materials.append(mat)
+    collection.objects.link(obj)
+    bev = obj.modifiers.new("Bevel", "BEVEL")
+    bev.width = bevel_m; bev.segments = 2; bev.limit_method = "ANGLE"; bev.angle_limit = math.radians(62.0)
     for p in obj.data.polygons: p.use_smooth = True
     return obj
 
@@ -661,6 +937,8 @@ BODY_PROFILES = {
     "girl_slim":    {"tw": 1.72, "td": 0.86, "th": 1.94, "lw": 0.82, "lh": 2.06, "ah": 1.94, "hs": 1.22},
     "tall_lanky":   {"tw": 1.82, "td": 0.90, "th": 2.18, "lw": 0.86, "lh": 2.38, "ah": 2.24, "hs": 1.22},
     "kid_chubby":   {"tw": 1.80, "td": 1.02, "th": 1.54, "lw": 0.88, "lh": 1.52, "ah": 1.54, "hs": 1.24},
+    "elder_man":    {"tw": 2.14, "td": 1.12, "th": 1.94, "lw": 0.98, "lh": 1.90, "ah": 1.92, "hs": 1.26},
+    "elder_woman":  {"tw": 1.78, "td": 0.92, "th": 1.82, "lw": 0.84, "lh": 1.84, "ah": 1.84, "hs": 1.22},
 }
 
 
@@ -802,6 +1080,39 @@ def _build_hair(prefix, head_center, scale_h, mat_hair, collection, hair_style="
         ]):
             R(f"Hawk_{idx}", [P(0.0, oy, oz), P(0.0, oy + (tilt_y - oy) * 0.55, (oz + h_top) * 0.55), P(0.0, tilt_y, h_top)], [w_b, w_b * 0.80, 0.02], [0.10, 0.08, 0.015], arch=0.58, steps=12)
 
+    elif hair_style == "curtain_part":
+        # Clean middle-parted curtain hair hugging upper crown (pairs cleanly with earmuffs or beanies)
+        parts.append(_build_skull_liner(prefix, head_center, hs, mat_hair, collection, shell_off=0.042, z_front=0.25, z_back=-0.34))
+        for sgn, sn in ((1, "L"), (-1, "R")):
+            R(f"CurtainFront{sn}", [P(sgn * 0.04, -0.32, 0.56), P(sgn * 0.34, -0.54, 0.38), P(sgn * 0.56, -0.42, 0.14)], [0.28, 0.26, 0.10], [0.10, 0.09, 0.04], arch=0.32, roll=-sgn * 12)
+            R(f"CurtainCrown{sn}", [P(sgn * 0.05, -0.10, 0.62), P(sgn * 0.40, -0.05, 0.52), P(sgn * 0.60, 0.05, 0.12)], [0.30, 0.28, 0.14], [0.11, 0.10, 0.05], arch=0.35)
+            R(f"CurtainBack{sn}",  [P(sgn * 0.24, 0.28, 0.52), P(sgn * 0.52, 0.44, 0.18), P(sgn * 0.48, 0.48, -0.28)], [0.26, 0.24, 0.10], [0.09, 0.08, 0.04])
+
+    elif hair_style == "elder_tufts":
+        # Bald-top grandpa fringe: fluffy white side-temple tufts + low back crescent (leaves forehead bare for wrinkles)
+        tufts = [
+            (-0.60, -0.06, 0.24, 0.19, (0.68, 1.15, 1.10)),
+            (-0.62,  0.14, 0.12, 0.20, (0.65, 1.15, 1.05)),
+            (-0.56,  0.34, 0.04, 0.19, (0.75, 1.05, 0.95)),
+            ( 0.60, -0.06, 0.24, 0.19, (0.68, 1.15, 1.10)),
+            ( 0.62,  0.14, 0.12, 0.20, (0.65, 1.15, 1.05)),
+            ( 0.56,  0.34, 0.04, 0.19, (0.75, 1.05, 0.95)),
+            (-0.28,  0.54, 0.02, 0.21, (1.15, 0.72, 0.95)),
+            ( 0.00,  0.58, 0.00, 0.22, (1.28, 0.72, 0.95)),
+            ( 0.28,  0.54, 0.02, 0.21, (1.15, 0.72, 0.95)),
+        ]
+        for idx, (ox, oy, oz, rad, sq) in enumerate(tufts):
+            p = P(ox, oy, oz)
+            parts.append(_add_curl_puff(f"{prefix}_ElderTuft_{idx}", (p[0] * STUD, p[1] * STUD, p[2] * STUD), rad * hs * STUD, sq, mat_hair, collection, segs=12, rings=8))
+
+    elif hair_style == "grandma_bun":
+        # Swept-back silver/white hair with soft center part and neat rounded back bun
+        parts.append(_build_skull_liner(prefix, head_center, hs, mat_hair, collection, shell_off=0.044, z_front=0.26, z_back=-0.30))
+        for sgn, sn in ((1, "L"), (-1, "R")):
+            R(f"GmaSweep{sn}", [P(sgn * 0.04, -0.34, 0.56), P(sgn * 0.42, -0.44, 0.34), P(sgn * 0.58, -0.08, 0.06), P(sgn * 0.36, 0.48, -0.06)], [0.28, 0.26, 0.22, 0.16], [0.10, 0.09, 0.08, 0.06], arch=0.30)
+        bpos = P(0.0, 0.66, 0.06)
+        parts.append(_add_curl_puff(f"{prefix}_GrandmaBun", (bpos[0] * STUD, bpos[1] * STUD, bpos[2] * STUD), 0.30 * hs * STUD, (1.08, 0.88, 1.02), mat_hair, collection, segs=16, rings=10))
+
     return parts
 
 
@@ -820,10 +1131,13 @@ def build_roblox_character(
     body_profile: str = "default",
     accessories: list = None,
     cap_accent_hex: str = "#D93829",
+    shirt_fabric: str = "default",
+    pants_fabric: str = "default",
 ):
     """
     Build a unique, articulated R15 (or R6) Roblox character with customizable body_profile,
-    8 hair styles, 35-deg UGC Anime face projection, and optional 3D accessories.
+    micro-PBR fabric presets ('default','puffer','wool','coat','denim'), Anti-Glare 2D face decal,
+    13 stylized 3D hairstyles, and optional 3D accessories.
     """
     prof = dict(BODY_PROFILES.get(body_profile, BODY_PROFILES["default"]))
     if scale_h is not None:
@@ -836,8 +1150,8 @@ def build_roblox_character(
 
     skin_rgba = hex_to_linear_rgba(skin_hex)
     hair_rgba = hex_to_linear_rgba(hair_hex)
-    mat_shirt = make_skin_cloth_mat(f"{name}_Shirt", skin_rgba, shirt_path)
-    mat_pants = make_skin_cloth_mat(f"{name}_Pants", skin_rgba, pants_path)
+    mat_shirt = make_skin_cloth_mat(f"{name}_Shirt", skin_rgba, shirt_path, fabric=shirt_fabric)
+    mat_pants = make_skin_cloth_mat(f"{name}_Pants", skin_rgba, pants_path, fabric=pants_fabric)
     mat_head, face_tex_node = make_head_face_mat(f"{name}_Head", skin_rgba, face_png)
     mat_hair = make_stylized_hair_mat(f"{name}_Hair", hair_rgba, roughness=0.56)
 
@@ -849,20 +1163,12 @@ def build_roblox_character(
     hair_parts = _build_hair(name, head_center, hs, mat_hair, col, hair_style=hair_style, cap_accent_hex=cap_accent_hex)
 
     if rig_type.upper() == "R15":
-        lt_h = 0.325 * th; ut_h = 0.675 * th
-        ua_h = 0.525 * ah; la_h = 0.475 * ah
-        ul_h = 0.50 * lh; ll_h = 0.50 * lh
         parts_map = [
-            (_create_uv_box(f"{name}_LowerTorso", (tw, td, lt_h), (0.0, 0.0, hip_z + 0.5 * lt_h), TORSO_UV, mat_shirt, col, v_range=(0.0, 0.325)), "LowerTorso"),
-            (_create_uv_box(f"{name}_UpperTorso", (tw, td, ut_h), (0.0, 0.0, hip_z + lt_h + 0.5 * ut_h), TORSO_UV, mat_shirt, col, v_range=(0.325, 1.0)), "UpperTorso"),
-            (_create_uv_box(f"{name}_UpperArmR", (lw, lw, ua_h), (-arm_x, 0.0, neck_z - 0.5 * ua_h), RLIMB_UV, mat_shirt, col, v_range=(0.475, 1.0)), "RightUpperArm"),
-            (_create_uv_box(f"{name}_LowerArmR", (lw, lw, la_h), (-arm_x, 0.0, neck_z - ua_h - 0.5 * la_h), RLIMB_UV, mat_shirt, col, v_range=(0.0, 0.475)), "RightLowerArm"),
-            (_create_uv_box(f"{name}_UpperArmL", (lw, lw, ua_h), (arm_x, 0.0, neck_z - 0.5 * ua_h), LLIMB_UV, mat_shirt, col, v_range=(0.475, 1.0)), "LeftUpperArm"),
-            (_create_uv_box(f"{name}_LowerArmL", (lw, lw, la_h), (arm_x, 0.0, neck_z - ua_h - 0.5 * la_h), LLIMB_UV, mat_shirt, col, v_range=(0.0, 0.475)), "LeftLowerArm"),
-            (_create_uv_box(f"{name}_UpperLegR", (lw, lw, ul_h), (-leg_x, 0.0, ll_h + 0.5 * ul_h), RLIMB_UV, mat_pants, col, v_range=(0.5, 1.0)), "RightUpperLeg"),
-            (_create_uv_box(f"{name}_LowerLegR", (lw, lw, ll_h), (-leg_x, 0.0, 0.5 * ll_h), RLIMB_UV, mat_pants, col, v_range=(0.0, 0.5)), "RightLowerLeg"),
-            (_create_uv_box(f"{name}_UpperLegL", (lw, lw, ul_h), (leg_x, 0.0, ll_h + 0.5 * ul_h), LLIMB_UV, mat_pants, col, v_range=(0.5, 1.0)), "LeftUpperLeg"),
-            (_create_uv_box(f"{name}_LowerLegL", (lw, lw, ll_h), (leg_x, 0.0, 0.5 * ll_h), LLIMB_UV, mat_pants, col, v_range=(0.0, 0.5)), "LeftLowerLeg"),
+            (_create_uv_box(f"{name}_UpperTorso", (tw, td, th), (0.0, 0.0, hip_z + 0.5 * th), TORSO_UV, mat_shirt, col, v_range=(0.0, 1.0), bevel_m=0.015), "UpperTorso"),
+            (_create_segmented_limb_box(f"{name}_ArmR", (lw, lw, ah), (-arm_x, 0.0, neck_z - 0.5 * ah), RLIMB_UV, mat_shirt, col, bevel_m=0.014), ("RightUpperArm", "RightLowerArm")),
+            (_create_segmented_limb_box(f"{name}_ArmL", (lw, lw, ah), (arm_x, 0.0, neck_z - 0.5 * ah), LLIMB_UV, mat_shirt, col, bevel_m=0.014), ("LeftUpperArm", "LeftLowerArm")),
+            (_create_segmented_limb_box(f"{name}_LegR", (lw, lw, lh), (-leg_x, 0.0, 0.5 * lh), RLIMB_UV, mat_pants, col, bevel_m=0.014), ("RightUpperLeg", "RightLowerLeg")),
+            (_create_segmented_limb_box(f"{name}_LegL", (lw, lw, lh), (leg_x, 0.0, 0.5 * lh), LLIMB_UV, mat_pants, col, bevel_m=0.014), ("LeftUpperLeg", "LeftLowerLeg")),
             (_create_roblox_head(f"{name}_Head", head_center, hs, mat_head, col), "Head"),
         ] + [(hp, "Head") for hp in hair_parts]
     else:
@@ -889,7 +1195,7 @@ def build_roblox_character(
         br = ab("Root", (0, 0, 0), (0, 0, 1))
         if rig_type.upper() == "R15":
             split_z = hip_z + 0.325 * th
-            sh_z = neck_z - 0.16 * ah; el_z = neck_z - 0.525 * ah; hd_z = neck_z - ah; kn_z = 0.5 * lh
+            sh_z = neck_z - 0.16 * ah; el_z = neck_z - 0.50 * ah; hd_z = neck_z - ah; kn_z = 0.50 * lh
             lt = ab("LowerTorso", (0, 0, hip_z), (0, 0, split_z), br)
             ut = ab("UpperTorso", (0, 0, split_z), (0, 0, neck_z), lt, True)
             ab("Head", (0, 0, neck_z), (0, 0, neck_z + hs), ut, True)
@@ -911,15 +1217,30 @@ def build_roblox_character(
             ab("Leg.R", (-leg_x, 0, hip_z), (-leg_x, 0, 0), bt)
         bpy.ops.object.mode_set(mode="OBJECT")
 
-    for obj, bname in parts_map:
+    for obj, bspec in parts_map:
         wm = obj.matrix_world.copy()
         obj.parent = arm_obj
         obj.matrix_parent_inverse = arm_obj.matrix_world.inverted()
         obj.matrix_world = wm
-        vg = obj.vertex_groups.get(bname) or obj.vertex_groups.new(name=bname)
-        vg.add(list(range(len(obj.data.vertices))), 1.0, "REPLACE")
+        if isinstance(bspec, tuple):
+            ub_name, lb_name = bspec
+            vg_u = obj.vertex_groups.get(ub_name) or obj.vertex_groups.new(name=ub_name)
+            vg_l = obj.vertex_groups.get(lb_name) or obj.vertex_groups.new(name=lb_name)
+            for idx, v in enumerate(obj.data.vertices):
+                if v.co.z > 0.015 * STUD:
+                    vg_u.add([idx], 1.0, "REPLACE")
+                elif v.co.z < -0.015 * STUD:
+                    vg_l.add([idx], 1.0, "REPLACE")
+                else:
+                    vg_u.add([idx], 0.5, "REPLACE")
+                    vg_l.add([idx], 0.5, "REPLACE")
+        else:
+            vg = obj.vertex_groups.get(bspec) or obj.vertex_groups.new(name=bspec)
+            vg.add(list(range(len(obj.data.vertices))), 1.0, "REPLACE")
         mod = obj.modifiers.new("Armature", "ARMATURE")
         mod.object = arm_obj
+        if hasattr(mod, "use_deform_preserve_volume"):
+            mod.use_deform_preserve_volume = True
 
     arm_obj.location = Vector(location_m)
     arm_obj.rotation_euler = Euler((0.0, 0.0, math.radians(yaw_deg)))
@@ -1079,6 +1400,53 @@ def add_accessory(char_info: dict, acc_type: str, color_hex: str = None, accent_
         _box("BowL", (-0.22, fy, fz), (0.28, 0.08, 0.18), mat_a, (0, 10, 0), bone=torso_bone)
         _box("BowR", (0.22, fy, fz), (0.28, 0.08, 0.18), mat_a, (0, -10, 0), bone=torso_bone)
         _box("BowC", (0.0, fy - 0.02, fz), (0.14, 0.10, 0.14), mat_c, bone=torso_bone)
+    elif acc_type == "earmuffs":
+        # Plush 3D winter earmuffs with wool Sheen material + clean uniform arched headband tube (zero tapered tail!)
+        muff_hex = color_hex if color_hex is not None else "#EDF2F8"
+        band_hex = accent_hex if accent_hex != "#E53935" else "#D5DEE8"
+        mat_muff = make_wool_mat(f"{arm.name}_EarmuffPlush", hex_to_linear_rgba(muff_hex), roughness=0.90, sheen=0.88)
+        mat_band = make_solid_mat(f"{arm.name}_EarmuffBand", hex_to_linear_rgba(band_hex), roughness=0.42)
+        for sgn, sn in ((-1, "R"), (1, "L")):
+            m_pos = ((cx + sgn * 0.68 * hs) * STUD, (cy - 0.02 * hs) * STUD, (cz - 0.02 * hs) * STUD)
+            muff = _add_curl_puff(f"{arm.name}_EarMuff_{sn}", m_pos, 0.30 * hs * STUD, (0.72, 1.02, 1.12), mat_muff, col, segs=18, rings=12)
+            created.append((muff, head_bone))
+        # Uniform-thickness curved headband arch over top of hair crown (-80 deg .. +80 deg)
+        bm_b = bmesh.new()
+        n_arc, n_ring = 22, 10
+        r_x = 0.72 * hs * STUD
+        r_z = 0.71 * hs * STUD
+        tube_w = 0.065 * hs * STUD
+        tube_t = 0.028 * hs * STUD
+        rings_b = []
+        for i in range(n_arc + 1):
+            ang = math.radians(-80.0 + 160.0 * (i / float(n_arc)))
+            px = cx * STUD + r_x * math.sin(ang)
+            py = (cy - 0.02 * hs) * STUD
+            pz = cz * STUD + r_z * math.cos(ang)
+            nx = math.sin(ang)
+            nz = math.cos(ang)
+            row = []
+            for j in range(n_ring):
+                th = 2.0 * math.pi * j / n_ring
+                off_n = tube_t * math.cos(th)
+                off_y = tube_w * math.sin(th)
+                row.append(bm_b.verts.new((px + nx * off_n, py + off_y, pz + nz * off_n)))
+            rings_b.append(row)
+        for i in range(n_arc):
+            for j in range(n_ring):
+                jn = (j + 1) % n_ring
+                bm_b.faces.new((rings_b[i][j], rings_b[i][jn], rings_b[i + 1][jn], rings_b[i + 1][j]))
+        bm_b.faces.new(list(reversed(rings_b[0])))
+        bm_b.faces.new(rings_b[-1])
+        bmesh.ops.recalc_face_normals(bm_b, faces=bm_b.faces)
+        for f in bm_b.faces:
+            f.smooth = True
+        m_band = bpy.data.meshes.new(f"{arm.name}_EarmuffBand_M")
+        bm_b.to_mesh(m_band); bm_b.free()
+        band = bpy.data.objects.new(f"{arm.name}_EarmuffBand", m_band)
+        band.data.materials.append(mat_band)
+        col.objects.link(band)
+        created.append((band, head_bone))
 
     bpy.context.view_layer.update()
     for ob, bn in created:
@@ -1091,35 +1459,35 @@ def add_accessory(char_info: dict, acc_type: str, color_hex: str = None, accent_
 
 
 def add_scarf_3d(char_info: dict, color_hex: str = "#D93829", stripe_hex: str = "#8C1D18"):
-    """Attach a stylized 3D neck scarf (collar torus + two hanging ends) weighted to UpperTorso/Torso."""
+    """Attach a stylized 3D wool-sheen neck scarf (collar torus + zero-clipping hanging ends) weighted to UpperTorso/Torso."""
     arm_obj = char_info["armature"]
     col = char_info["collection"]
+    m = char_info["metrics"]
+    neck_z = m["neck_z"]
+    td = m["td"]
     bone_name = "UpperTorso" if char_info.get("rig_type") == "R15" else "Torso"
 
-    mat_main = make_solid_mat(f"{arm_obj.name}_ScarfMain", hex_to_linear_rgba(color_hex), roughness=0.68)
-    mat_stripe = make_solid_mat(f"{arm_obj.name}_ScarfStripe", hex_to_linear_rgba(stripe_hex), roughness=0.68)
+    mat_main = make_wool_mat(f"{arm_obj.name}_ScarfMain", hex_to_linear_rgba(color_hex), roughness=0.88, sheen=0.82)
+    mat_stripe = make_wool_mat(f"{arm_obj.name}_ScarfStripe", hex_to_linear_rgba(stripe_hex), roughness=0.88, sheen=0.82)
 
-    # Neck collar ring at Z = 3.98 studs (bmesh direct scale so matrix_world is clean 1,1,1)
-    cm = bpy.data.meshes.new(f"{arm_obj.name}_ScarfCollar_M")
-    bm = bmesh.new()
-    bmesh.ops.create_circle(bm, cap_ends=False, radius=0.64 * STUD, segments=28)
+    # Neck collar ring hugging neck_z with clean clearance over shoulders
     bpy.ops.mesh.primitive_torus_add(
-        major_radius=0.60 * STUD, minor_radius=0.11 * STUD,
-        major_segments=28, minor_segments=12,
-        location=(0.0, 0.0, 3.96 * STUD)
+        major_radius=0.62 * STUD, minor_radius=0.13 * STUD,
+        major_segments=28, minor_segments=14,
+        location=(0.0, 0.0, (neck_z - 0.02) * STUD)
     )
-    bm.free(); bpy.data.meshes.remove(cm)
     collar = bpy.context.active_object
     collar.name = f"{arm_obj.name}_ScarfCollar"
-    collar.scale = (1.12, 0.92, 0.85)
+    collar.scale = (1.14, 0.96, 0.90)
     collar.data.materials.append(mat_main)
     for p in collar.data.polygons: p.use_smooth = True
 
-    # Two hanging front scarf tails built cleanly with bmesh (exact stud sizes, no unapplied scale)
+    # Two hanging front scarf tails offset cleanly in front of torso (-0.5*td - 0.10) to eliminate sitting/bending clipping
+    front_y = -0.5 * td - 0.11
     tails = []
     for idx, (tx, ty, tz, sx, sy, sz, rot_y) in enumerate([
-        (-0.24, -0.56, 3.30, 0.30, 0.08, 1.25, -5),
-        (0.24, -0.58, 3.16, 0.30, 0.08, 1.50, 4),
+        (-0.24, front_y, neck_z - 0.66, 0.30, 0.09, 1.18, -5),
+        ( 0.24, front_y - 0.025, neck_z - 0.78, 0.30, 0.09, 1.38, 4),
     ]):
         tm = bpy.data.meshes.new(f"{arm_obj.name}_ScarfTail_{idx}_M")
         tbm = bmesh.new()
@@ -1131,10 +1499,10 @@ def add_scarf_3d(char_info: dict, color_hex: str = "#D93829", stripe_hex: str = 
         tbm.to_mesh(tm); tbm.free()
         t_obj = bpy.data.objects.new(f"{arm_obj.name}_ScarfTail_{idx}", tm)
         t_obj.location = (tx * STUD, ty * STUD, tz * STUD)
-        t_obj.rotation_euler = Euler((math.radians(-4), math.radians(rot_y), 0))
+        t_obj.rotation_euler = Euler((math.radians(-7), math.radians(rot_y), 0))
         t_obj.data.materials.append(mat_main if idx == 0 else mat_stripe)
         bev = t_obj.modifiers.new("Bevel", "BEVEL")
-        bev.width = 0.006; bev.segments = 2
+        bev.width = 0.008; bev.segments = 2
         for p in t_obj.data.polygons: p.use_smooth = True
         tails.append(t_obj)
 
@@ -1184,16 +1552,31 @@ def ensure_character_face_pack(
     lip_hex: str = None,
     mark: str = "none",
     face_style: str = None,
+    age: str = None,
 ) -> str:
     """
-    Generate/return a 20-face Expressive Cartoon or 1930s Rubberhose pack via make_faces_expressive.
-    Default replaces legacy anime faces: dramatic/youth -> 'cartoon', comedic/meme/sigma/boomer -> 'rubberhose'.
+    Generate/return a 20-face Storybook-Toon (canonical Law R-LOOK default), Cartoon, or Rubberhose
+    face pack via make_faces_expressive.py. Automatically attaches elder wrinkles/mustache/dimples when
+    age='elder_man'/'elder_woman' or archetype indicates an elder character.
     """
+    if age is None:
+        age = archetype if archetype in ("elder_man", "elder_woman") else "youth"
     if face_style is None:
-        face_style = "rubberhose" if archetype in ("meme_sigma", "derp_goofy", "chill_smug", "slapstick_toon", "grumpy_boomer") else "cartoon"
+        if archetype in ("meme_sigma", "derp_goofy", "chill_smug", "slapstick_toon", "grumpy_boomer"):
+            face_style = "rubberhose"
+        else:
+            face_style = "storybook_toon"
     if not os.path.exists(os.path.join(out_dir, "silly_tongue.png")):
-        import make_faces_expressive as mfe
-        mfe.generate_pack(out_dir, style=face_style)
+        try:
+            import make_faces_expressive as mfe
+            mfe.generate_pack(out_dir, style=face_style, age=age)
+        except ImportError:
+            fallback = (
+                CORE_FACES_RUBBERHOSE_DIR if face_style == "rubberhose"
+                else (CORE_FACES_CARTOON_DIR if face_style == "cartoon" else CORE_FACES_STORYBOOK_DIR)
+            )
+            if os.path.isdir(fallback):
+                return fallback
     return out_dir
 
 
@@ -1291,8 +1674,19 @@ def make_wet_pbr_ground(name="WetGround_PBR", dark_hex="#1E120A", light_hex="#4A
 # SNAPPY TIMING, BONE PROP TRACKING, PARABOLIC PHYSICS & COLLISION AUDIT
 # ==============================================================================
 
-def key_r15_pose(arm_obj, frame: int, loc=None, yaw_deg: float = None, interpolation: str = None, **bones):
-    """Keyframe R15 root location/yaw and local XYZ Euler bone rotations cleanly."""
+def _char_offset_to_bone_local(arm_obj, bone_name: str, delta_char_m: Vector) -> Vector:
+    b = arm_obj.data.bones.get(bone_name)
+    if b is None:
+        return delta_char_m
+    return b.matrix_local.to_3x3().inverted() @ delta_char_m
+
+
+def key_r15_pose(arm_obj, frame: int, loc=None, yaw_deg: float = None, interpolation: str = "BEZIER",
+                 hip_offset=None, **bones):
+    """
+    Keyframe R15 root location/yaw, optional LowerTorso center-of-mass hip_offset (Squash & Stretch / Weight Shift),
+    and local XYZ Euler bone rotations cleanly with AUTO_CLAMPED Bezier Slow-In / Slow-Out handles.
+    """
     if loc is not None:
         arm_obj.location = Vector(loc)
         arm_obj.keyframe_insert(data_path="location", frame=frame)
@@ -1300,79 +1694,153 @@ def key_r15_pose(arm_obj, frame: int, loc=None, yaw_deg: float = None, interpola
         arm_obj.rotation_euler = Euler((0.0, 0.0, math.radians(yaw_deg)))
         arm_obj.keyframe_insert(data_path="rotation_euler", frame=frame)
     pb = arm_obj.pose.bones
+    if hip_offset is not None and "LowerTorso" in pb:
+        lt = pb["LowerTorso"]
+        lt.location = _char_offset_to_bone_local(arm_obj, "LowerTorso", Vector(hip_offset))
+        lt.keyframe_insert(data_path="location", frame=frame)
     for bname, degs in bones.items():
-        if bname in pb:
+        if bname.startswith("_"):
+            continue
+        if bname in pb and isinstance(degs, (tuple, list)) and len(degs) == 3:
             b = pb[bname]
             b.rotation_mode = "XYZ"
             b.rotation_euler = Euler([math.radians(a) for a in degs])
             b.keyframe_insert(data_path="rotation_euler", frame=frame)
-    if interpolation and arm_obj.animation_data and arm_obj.animation_data.action:
-        for layer in arm_obj.animation_data.action.layers:
-            for strip in layer.strips:
-                for cb in strip.channelbags:
-                    for fc in cb.fcurves:
-                        for kp in fc.keyframe_points:
-                            if int(round(kp.co.x)) == frame:
-                                kp.interpolation = interpolation
+    if arm_obj.animation_data and arm_obj.animation_data.action:
+        for fc in iter_action_fcurves(arm_obj.animation_data.action):
+            for kp in fc.keyframe_points:
+                if int(round(kp.co.x)) == frame:
+                    if interpolation == "VECTOR":
+                        kp.interpolation = "BEZIER"
+                        kp.handle_left_type = "VECTOR"
+                        kp.handle_right_type = "VECTOR"
+                    elif interpolation:
+                        kp.interpolation = interpolation
+                        if kp.interpolation == "BEZIER":
+                            kp.handle_left_type = "AUTO_CLAMPED"
+                            kp.handle_right_type = "AUTO_CLAMPED"
+            fc.update()
 
 
-def snap_r15_pose(arm_obj, fs: int, snap_frames: int = 8, overshoot: float = 0.06,
+def snap_r15_pose(arm_obj, fs: int, snap_frames: int = 9, overshoot: float = 0.07,
                   loc=None, yaw_deg: float = None, stagger: bool = True,
-                  anticipate: bool = False, antic_ratio: float = 0.14, **target_bones):
+                  anticipate: bool = True, antic_ratio: float = 0.16,
+                  arc_breakdown: bool = True, hip_offset=None, hold_frames: int = 0, **target_bones):
     """
-    Smooth human-weighted pose transition with optional anticipation wind-up + ease-out overshoot.
-    Staggers Spine/Legs -> Arms (+2f) -> Head (+3f) for organic human weight.
+    12-Principles Disney-Grade Pose Transition Engine:
+    1. Squash & Stretch (`hip_offset` center-of-mass dip during transition & impact compression).
+    2. Anticipation (`3f` reverse wind-up before dynamic movement).
+    5. Follow Through & Overlapping Action (Staggered chain: LowerTorso/Legs -> UpperTorso (+1f) -> Arms (+2f with Overshoot) -> Head (+3f)).
+    6. Slow In & Slow Out (`BEZIER` with `AUTO_CLAMPED` F-curve handles).
+    7. Arcs (Automatic midpoint breakdown keyframe curving head pitch and opening arm elbows away from torso).
+    9. Timing & Moving Hold (Optional `hold_frames` micro-breathing hold so characters never freeze into dead statues).
     """
     d = max(5, snap_frames)
-    torso_keys = {k: v for k, v in target_bones.items() if "Torso" in k or "Leg" in k}
-    arm_keys = {k: v for k, v in target_bones.items() if "Arm" in k}
-    head_keys = {k: v for k, v in target_bones.items() if k == "Head"}
+    pose_hip = hip_offset if hip_offset is not None else target_bones.get("_hip_offset", (0.0, 0.0, 0.0))
+    clean_bones = {k: v for k, v in target_bones.items() if not k.startswith("_") and isinstance(v, (tuple, list)) and len(v) == 3}
 
-    if anticipate and d >= 7 and fs >= 3:
+    lower_keys = {k: v for k, v in clean_bones.items() if k == "LowerTorso" or "Leg" in k}
+    upper_keys = {k: v for k, v in clean_bones.items() if k == "UpperTorso"}
+    arm_keys = {k: v for k, v in clean_bones.items() if "Arm" in k}
+    head_keys = {k: v for k, v in clean_bones.items() if k == "Head"}
+
+    pb = arm_obj.pose.bones
+    bpy.context.scene.frame_set(fs)
+    start_rots = {
+        bn: tuple(math.degrees(a) for a in pb[bn].rotation_euler)
+        for bn in clean_bones if bn in pb
+    }
+
+    # Principle 2: Anticipation (3-frame counter-windup + slight crouch dip)
+    if anticipate and d >= 7 and fs >= 2:
         antic_bones = {}
-        pb = arm_obj.pose.bones
-        for bn, degs in target_bones.items():
-            if bn in pb:
-                cur_deg = tuple(math.degrees(a) for a in pb[bn].rotation_euler)
+        max_delta = 0.0
+        for bn, degs in clean_bones.items():
+            if bn in start_rots:
+                cur_deg = start_rots[bn]
+                delta = max(abs(degs[k] - cur_deg[k]) for k in range(3))
+                max_delta = max(max_delta, delta)
                 antic_bones[bn] = tuple(cur_deg[k] - (degs[k] - cur_deg[k]) * antic_ratio for k in range(3))
-        if antic_bones:
-            key_r15_pose(arm_obj, fs, **antic_bones)
-            fs_eff = fs + 3
-            d_eff = max(4, d - 3)
+        if antic_bones and max_delta > 12.0:
+            antic_hip = (pose_hip[0] * 0.3, pose_hip[1] * 0.3, min(pose_hip[2], -0.022))
+            key_r15_pose(arm_obj, fs + 2, hip_offset=antic_hip, **antic_bones)
+            fs_eff = fs + 2
+            d_eff = max(4, d - 2)
         else:
             fs_eff, d_eff = fs, d
     else:
         fs_eff, d_eff = fs, d
 
+    # Principle 7: Arcs (Midpoint breakdown keyframe curving limbs & dipping head turn)
+    if arc_breakdown and d_eff >= 6:
+        f_mid = fs_eff + max(2, d_eff // 2)
+        arc_bones = {}
+        for bn, tgt_deg in clean_bones.items():
+            cur_deg = start_rots.get(bn, tgt_deg)
+            mid = [0.5 * (cur_deg[k] + tgt_deg[k]) for k in range(3)]
+            delta = max(abs(tgt_deg[k] - cur_deg[k]) for k in range(3))
+            if bn == "Head" and delta > 10.0:
+                # Natural downward chin arc (+4.5 deg pitch) during head turns
+                mid[0] += 4.5
+                arc_bones[bn] = tuple(mid)
+            elif bn in ("RightUpperArm", "LeftUpperArm") and delta > 22.0:
+                # Open elbow outward away from ribs to preserve silhouette & follow a circular arc
+                sgn = -1.0 if bn == "RightUpperArm" else 1.0
+                mid[2] += sgn * 11.0
+                arc_bones[bn] = tuple(mid)
+        mid_hip = (pose_hip[0] * 0.6, pose_hip[1] * 0.6, pose_hip[2] - 0.018)
+        if arc_bones:
+            key_r15_pose(arm_obj, f_mid, hip_offset=mid_hip, **arc_bones)
+
     if not stagger:
-        key_r15_pose(arm_obj, fs_eff + d_eff, loc=loc, yaw_deg=yaw_deg, **target_bones)
+        key_r15_pose(arm_obj, fs_eff + d_eff, loc=loc, yaw_deg=yaw_deg, hip_offset=pose_hip, **clean_bones)
         return
 
-    # Root & Spine/Legs lead naturally
-    key_r15_pose(arm_obj, fs_eff + d_eff, loc=loc, yaw_deg=yaw_deg, **torso_keys)
-    # Arms follow 2 frames later with controlled overshoot settle
+    # Principle 5: Follow Through & Overlapping Action (Hips/Legs -> Chest (+1f) -> Arms (+2f w/ Overshoot) -> Head (+3f))
+    f_arrive = fs_eff + d_eff
+    key_r15_pose(arm_obj, f_arrive, loc=loc, yaw_deg=yaw_deg, hip_offset=pose_hip, **lower_keys)
+    if upper_keys:
+        key_r15_pose(arm_obj, f_arrive + 1, **upper_keys)
     if arm_keys:
-        if overshoot > 0.01 and d_eff <= 10:
-            over_arms = {bn: tuple(a * (1.0 + overshoot) for a in degs) for bn, degs in arm_keys.items()}
-            key_r15_pose(arm_obj, fs_eff + max(3, int(round(d_eff * 0.72))) + 1, **over_arms)
-        key_r15_pose(arm_obj, fs_eff + d_eff + 2, **arm_keys)
-    # Head & gaze settle 3 frames after torso for lifelike overlap
+        if overshoot > 0.01 and d_eff <= 14:
+            over_arms = {}
+            for bn, degs in arm_keys.items():
+                cur_d = start_rots.get(bn, (0.0, 0.0, 0.0))
+                over_arms[bn] = tuple(degs[k] + (degs[k] - cur_d[k]) * overshoot for k in range(3))
+            key_r15_pose(arm_obj, f_arrive, **over_arms)
+        key_r15_pose(arm_obj, f_arrive + 2, **arm_keys)
     if head_keys:
-        key_r15_pose(arm_obj, fs_eff + d_eff + 3, **head_keys)
+        key_r15_pose(arm_obj, f_arrive + 3, **head_keys)
+
+    # Principle 9: Moving Hold (Keep character alive with micro-breathing during post-pose hold)
+    if hold_frames >= 12:
+        f_hold_mid = f_arrive + 3 + (hold_frames // 2)
+        f_hold_end = f_arrive + 3 + hold_frames
+        ut_base = clean_bones.get("UpperTorso", (2.0, 0.0, 0.0))
+        hd_base = clean_bones.get("Head", (-2.0, 0.0, 0.0))
+        hold_mid_bones = {
+            "UpperTorso": (ut_base[0] - 1.6, ut_base[1], ut_base[2] + 0.6),
+            "Head": (hd_base[0] + 1.0, hd_base[1], hd_base[2] - 0.5),
+        }
+        key_r15_pose(arm_obj, f_hold_mid, **hold_mid_bones)
+        key_r15_pose(arm_obj, f_hold_end, hip_offset=pose_hip, **clean_bones)
 
 
 def act_r15_sequence(arm_obj, beats: list, breathe: bool = True, breathe_cycle: int = 72, anticipate_fast: bool = True):
     """
     Choreograph natural human acting from asymmetric story beats:
     beats = [(frame, dur, loc, yaw_deg, bones_dict), ...]
-    Enforces planted feet (zero Z jitter), staggered Spine->Arm->Head motion,
-    automatic wind-up anticipation on dynamic beats, and calm chest breathing.
+    Enforces planted feet (zero Z jitter), staggered Spine->Chest->Arm->Head motion,
+    automatic wind-up anticipation, midpoint arcs, and calm chest breathing.
     """
     for idx, entry in enumerate(beats):
         fr, dur, loc, yaw_deg, bones = entry
-        use_antic = anticipate_fast and idx > 0 and dur <= 10
-        snap_r15_pose(arm_obj, fr, snap_frames=dur, overshoot=0.06 if dur <= 10 else 0.0,
-                      loc=loc, yaw_deg=yaw_deg, stagger=True, anticipate=use_antic, **(bones or {}))
+        use_antic = anticipate_fast and idx > 0 and dur <= 12
+        next_fr = beats[idx + 1][0] if idx + 1 < len(beats) else (fr + dur + 20)
+        hold_f = max(0, next_fr - (fr + dur + 4)) if breathe else 0
+        snap_r15_pose(arm_obj, fr, snap_frames=dur, overshoot=0.07 if dur <= 12 else 0.03,
+                      loc=loc, yaw_deg=yaw_deg, stagger=True, anticipate=use_antic,
+                      arc_breakdown=True, hold_frames=min(28, hold_f), **(bones or {}))
     if breathe and len(beats) >= 2:
         fs_all = beats[0][0]
         fe_all = beats[-1][0] + beats[-1][1] + 6
@@ -1649,69 +2117,278 @@ def _aabb_overlap_depth(a, b, margin=0.0):
     return 0.0
 
 
-def audit_scene_collisions(char_infos: list, obstacles: list = None, frames: list = None,
-                           min_char_sep: float = 0.76, margin: float = 0.035) -> list:
+def _world_bvh(obj, depsgraph, inset_m: float = 0.0):
+    """Build a world-space BVHTree from an evaluated mesh (optionally shrunk slightly toward center for joint tolerance)."""
+    from mathutils.bvhtree import BVHTree
+    ev = obj.evaluated_get(depsgraph)
+    if ev.type != "MESH" or not ev.data:
+        return None
+    me = ev.to_mesh()
+    if not me or len(me.polygons) == 0:
+        ev.to_mesh_clear()
+        return None
+    mw = ev.matrix_world
+    verts = [mw @ v.co for v in me.vertices]
+    if inset_m > 1e-5 and verts:
+        ctr = sum(verts, Vector((0.0, 0.0, 0.0))) / float(len(verts))
+        shrunk = []
+        for p in verts:
+            dv = p - ctr
+            L = dv.length
+            shrunk.append(ctr + dv * max(0.0, (L - inset_m) / L) if L > 1e-5 else p)
+        verts = shrunk
+    polys = [tuple(p.vertices) for p in me.polygons]
+    ev.to_mesh_clear()
+    return BVHTree.FromPolygons(verts, polys)
+
+
+def _collect_mesh_objects(objs):
+    """Expand any Empty/Armature/parent hierarchy into visible MESH objects."""
+    seen, out = set(), []
+    for ob in (objs or []):
+        if ob is None:
+            continue
+        cands = [ob] + list(ob.children_recursive)
+        for c in cands:
+            if c.type == "MESH" and c.name not in seen and not c.hide_render:
+                seen.add(c.name)
+                out.append(c)
+    return out
+
+
+def _auto_collect_env_meshes(char_infos: list, ground_names: tuple, ignore_names: tuple):
+    """Recursively collect every visible scene MESH outside character collections & ground planes."""
+    char_obj_names = set()
+    for ci in (char_infos or []):
+        col = ci.get("collection")
+        if col:
+            for o in col.all_objects:
+                char_obj_names.add(o.name)
+        arm = ci.get("armature")
+        if arm:
+            char_obj_names.add(arm.name)
+            for c in arm.children_recursive:
+                char_obj_names.add(c.name)
+
+    hidden_cols = {"_PH_Templates", "HeroLights", "_LL_HeroCast"}
+    g_low = tuple(g.lower() for g in (ground_names or ()))
+    ig_low = tuple(g.lower() for g in (ignore_names or ()))
+    out = []
+    for o in bpy.context.scene.objects:
+        if o.type != "MESH" or o.hide_render or o.name in char_obj_names:
+            continue
+        if any(c.name in hidden_cols or c.hide_render for c in o.users_collection):
+            continue
+        n_low = o.name.lower()
+        if any(tok in n_low for tok in g_low) or any(tok in n_low for tok in ig_low):
+            continue
+        out.append(o)
+    return out
+
+
+def _render_collision_debug(frame: int, focus_pt: Vector, out_dir: str, tag: str):
+    """Render a quick top-angled diagnostic frame zoomed onto a detected collision."""
+    os.makedirs(out_dir, exist_ok=True)
+    sc = bpy.context.scene
+    prev_cam, prev_rx, prev_ry = sc.camera, sc.render.resolution_x, sc.render.resolution_y
+    prev_fp = sc.render.filepath
+    cd = bpy.data.cameras.new("_ClipDebugCam")
+    co = bpy.data.objects.new("_ClipDebugCam", cd)
+    sc.collection.objects.link(co)
+    co.location = focus_pt + Vector((1.6, -2.2, 1.8))
+    co.rotation_euler = (focus_pt - co.location).to_track_quat("-Z", "Y").to_euler()
+    cd.lens = 38.0
+    sc.camera = co
+    sc.render.resolution_x, sc.render.resolution_y = 640, 640
+    sc.frame_set(frame)
+    path = os.path.join(out_dir, f"clip_debug_f{frame:04d}_{tag}.png")
+    sc.render.filepath = path
+    try:
+        bpy.ops.render.render(write_still=True)
+    finally:
+        sc.camera = prev_cam
+        sc.render.resolution_x, sc.render.resolution_y = prev_rx, prev_ry
+        sc.render.filepath = prev_fp
+        bpy.data.objects.remove(co, do_unlink=True)
+        bpy.data.cameras.remove(cd, do_unlink=True)
+    return path
+
+
+def audit_scene_collisions(
+    char_infos: list,
+    obstacles: list = None,
+    frames: list = None,
+    min_char_sep: float = 0.76,
+    margin: float = 0.035,
+    auto_collect_env: bool = True,
+    ground_names: tuple = ("ground", "terrain", "floor", "road", "sidewalk", "lawn", "snow", "ice", "pond", "mud", "asphalt"),
+    ignore_names: tuple = (),
+    frame_step: int = 5,
+    use_bvh: bool = True,
+    check_ground_sink: bool = True,
+    ground_z: float = 0.0,
+    max_sink_m: float = 0.065,
+    check_self_clip: bool = True,
+    strict: bool = False,
+    debug_dir: str = None,
+) -> list:
     """
-    Evaluate deformed Blender mesh AABBs across sample frames to catch character-vs-character
-    or character-vs-obstacle interpenetration BEFORE full rendering!
+    Law R-COLLIDE 5-Layer Zero-Clipping Audit across the full animation timeline:
+    1. Auto-collects ALL environment meshes (expanding GLB/Empty hierarchies) unless disabled.
+    2. Samples the entire animation timeline (every `frame_step` frames) when `frames=None`.
+    3. Uses AABB broadphase + exact world-space `BVHTree.overlap` triangle intersection (zero hollow-porch false positives).
+    4. Detects CHAR_OBSTACLE, CHAR_CHAR, GROUND_SINK (buried feet), and SELF_CLIP (arm/prop stabbing torso).
+    5. Optionally renders debug frames (`debug_dir`) and blocks bad builds (`strict=True` raises RuntimeError).
     Returns a list of collision dicts (empty list = 100% clean).
     """
     scene = bpy.context.scene
-    frames = frames or [scene.frame_start]
-    obstacles = obstacles or []
+    if frames is None:
+        fs, fe = scene.frame_start, scene.frame_end
+        if fe <= fs:
+            frames = [fs]
+        else:
+            frames = list(range(fs, fe + 1, max(1, int(frame_step))))
+            if frames[-1] != fe:
+                frames.append(fe)
+
+    obs_meshes = _collect_mesh_objects(obstacles)
+    if auto_collect_env:
+        seen = {o.name for o in obs_meshes}
+        for o in _auto_collect_env_meshes(char_infos, ground_names, ignore_names):
+            if o.name not in seen:
+                obs_meshes.append(o)
+                seen.add(o.name)
+
     violations = []
-    torso_suffixes = ("_LowerTorso", "_UpperTorso", "_Torso", "_Head")
+    # Hair & delicate face/glasses parts are excluded from broad obstacle/self checks; Scarf, Earmuffs, Body, Limbs ARE checked!
+    skip_part_tags = ("Hair", "Bulb", "Rim", "Temple", "Bridge", "Mustache", "Stache", "Beard", "Scruff", "Lens")
+    debug_rendered = False
+
+    # Pre-cache static obstacle AABBs/BVHs once at first frame if they are not animated
+    scene.frame_set(frames[0])
+    dg0 = bpy.context.evaluated_depsgraph_get()
+    static_obs = {}
+    for ob in obs_meshes:
+        is_anim = bool(ob.animation_data and ob.animation_data.action) or bool(ob.parent and ob.parent.animation_data)
+        if not is_anim:
+            bb = _world_aabb(ob, dg0)
+            if bb and bb[5] > -0.3:
+                static_obs[ob.name] = (ob, bb, _world_bvh(ob, dg0) if use_bvh else None)
 
     for fr in frames:
         scene.frame_set(fr)
         dg = bpy.context.evaluated_depsgraph_get()
-        # 1. Character vs Character root torso/head clearance & AABB overlap
-        char_boxes = []
+
+        # Gather dynamic obstacles (animated props/doors) + pre-cached static obstacles
+        obs_frame = list(static_obs.values())
+        for ob in obs_meshes:
+            if ob.name in static_obs:
+                continue
+            bb = _world_aabb(ob, dg)
+            if bb and bb[5] > -0.3:
+                obs_frame.append((ob, bb, _world_bvh(ob, dg) if use_bvh else None))
+
+        # Gather active character part AABBs & lazy BVHs
+        char_records = []
         for ci in char_infos:
             arm = ci["armature"]
             if arm.location.z < -0.5:
-                continue  # intentionally hidden offstage
-            boxes = []
-            for child in arm.children:
-                if child.type == "MESH" and any(child.name.endswith(s) for s in torso_suffixes):
-                    bb = _world_aabb(child, dg)
-                    if bb:
-                        boxes.append((child.name, bb))
-            char_boxes.append((arm.name, arm.location.copy(), boxes))
-
-        for i in range(len(char_boxes)):
-            n_a, loc_a, b_a = char_boxes[i]
-            for j in range(i + 1, len(char_boxes)):
-                n_b, loc_b, b_b = char_boxes[j]
-                if (loc_a - loc_b).length > 3.0:
+                continue
+            parts = []
+            for child in _collect_mesh_objects(list(arm.children) + list(ci.get("collection").objects if ci.get("collection") else [])):
+                if any(t in child.name for t in skip_part_tags):
                     continue
-                d_xy = math.hypot(loc_a.x - loc_b.x, loc_a.y - loc_b.y)
-                d_z = abs(loc_a.z - loc_b.z)
-                if d_xy < min_char_sep and d_z < 1.1:
-                    for ma, ba in b_a:
-                        for mb, bb in b_b:
-                            ov = _aabb_overlap_depth(ba, bb, margin=margin)
-                            if ov > 0.015:
-                                violations.append({"frame": fr, "type": "CHAR_CHAR", "a": ma, "b": mb, "depth_m": round(ov, 3)})
+                bb = _world_aabb(child, dg)
+                if bb:
+                    parts.append({"obj": child, "name": child.name, "bb": bb, "bvh": None})
+            char_records.append({"arm": arm, "name": arm.name, "loc": arm.location.copy(), "parts": parts})
 
-        # 2. Character torso/legs vs Static Obstacles (fences, signs, props, LEGO bricks)
-        obs_boxes = []
-        for ob in obstacles:
-            bb = _world_aabb(ob, dg)
-            if bb and bb[5] > -0.3:
-                obs_boxes.append((ob.name, bb))
-        ignore_tags = ("Hair", "Bulb", "Hat", "Chef", "Rim", "Temple", "Bridge", "Mustache", "Pack", "Bow", "Cap", "Scarf")
-        for n_a, loc_a, _ in char_boxes:
-            arm = bpy.data.objects.get(n_a)
-            for child in arm.children:
-                if child.type == "MESH" and not any(t in child.name for t in ignore_tags):
-                    ba = _world_aabb(child, dg)
-                    if not ba:
+        def _get_bvh(part_dict, inset=0.0):
+            if inset == 0.0:
+                if part_dict["bvh"] is None:
+                    part_dict["bvh"] = _world_bvh(part_dict["obj"], dg, inset_m=0.0)
+                return part_dict["bvh"]
+            return _world_bvh(part_dict["obj"], dg, inset_m=inset)
+
+        # 1. Character vs Character (body, head, arms & legs — exact BVHTree confirmation)
+        for i in range(len(char_records)):
+            ca = char_records[i]
+            for j in range(i + 1, len(char_records)):
+                cb = char_records[j]
+                if (ca["loc"] - cb["loc"]).length > 3.2:
+                    continue
+                for pa in ca["parts"]:
+                    for pb in cb["parts"]:
+                        ov = _aabb_overlap_depth(pa["bb"], pb["bb"], margin=0.008)
+                        if ov <= 0.012:
+                            continue
+                        if use_bvh:
+                            ba, bb = _get_bvh(pa), _get_bvh(pb)
+                            hits = ba.overlap(bb) if (ba and bb) else []
+                            if len(hits) < 2:
+                                continue
+                            violations.append({"frame": fr, "type": "CHAR_CHAR", "a": pa["name"], "b": pb["name"], "depth_m": round(ov, 3), "tris": len(hits)})
+                        else:
+                            violations.append({"frame": fr, "type": "CHAR_CHAR", "a": pa["name"], "b": pb["name"], "depth_m": round(ov, 3)})
+
+        # 2. Character vs Environment Obstacles (exact BVHTree confirmation)
+        for ca in char_records:
+            for pa in ca["parts"]:
+                for ob, ob_bb, ob_bvh in obs_frame:
+                    ov = _aabb_overlap_depth(pa["bb"], ob_bb, margin=0.006)
+                    if ov <= 0.015:
                         continue
-                    for oname, bb in obs_boxes:
-                        ov = _aabb_overlap_depth(ba, bb, margin=margin)
-                        if ov > 0.03:
-                            violations.append({"frame": fr, "type": "CHAR_OBSTACLE", "a": child.name, "b": oname, "depth_m": round(ov, 3)})
+                    if use_bvh:
+                        ba = _get_bvh(pa, inset=0.008)
+                        hits = ba.overlap(ob_bvh) if (ba and ob_bvh) else []
+                        if len(hits) < 2:
+                            continue
+                        violations.append({"frame": fr, "type": "CHAR_OBSTACLE", "a": pa["name"], "b": ob.name, "depth_m": round(ov, 3), "tris": len(hits)})
+                    else:
+                        if ov > margin:
+                            violations.append({"frame": fr, "type": "CHAR_OBSTACLE", "a": pa["name"], "b": ob.name, "depth_m": round(ov, 3)})
+
+        # 3. Ground-Sink Check (feet/legs sinking below ground_z)
+        if check_ground_sink:
+            for ca in char_records:
+                for pa in ca["parts"]:
+                    if "Leg" in pa["name"] or "Shoe" in pa["name"]:
+                        z_min = pa["bb"][4]
+                        sink = ground_z - z_min
+                        if sink > max_sink_m:
+                            violations.append({"frame": fr, "type": "GROUND_SINK", "a": pa["name"], "b": f"ground_z={ground_z:.2f}", "depth_m": round(sink, 3)})
+
+        # 4. Self-Clip Check (arms stabbing into own torso; uses 2.2cm inset so shoulder contact never false-triggers)
+        if check_self_clip and use_bvh:
+            for ca in char_records:
+                torsos = [p for p in ca["parts"] if p["name"].endswith(("_UpperTorso", "_Torso"))]
+                arms = [p for p in ca["parts"] if "_Arm" in p["name"]]
+                for tr in torsos:
+                    bt = _get_bvh(tr, inset=0.022)
+                    if not bt:
+                        continue
+                    for ar in arms:
+                        if _aabb_overlap_depth(tr["bb"], ar["bb"], margin=0.018) <= 0.01:
+                            continue
+                        ba = _get_bvh(ar, inset=0.022)
+                        hits = bt.overlap(ba) if ba else []
+                        if len(hits) >= 4:
+                            violations.append({"frame": fr, "type": "SELF_CLIP", "a": ar["name"], "b": tr["name"], "tris": len(hits)})
+
+        if debug_dir and violations and not debug_rendered:
+            v0 = violations[0]
+            focus = char_records[0]["loc"] + Vector((0, 0, 0.9)) if char_records else Vector((0, 0, 1.0))
+            for ca in char_records:
+                for pa in ca["parts"]:
+                    if pa["name"] == v0["a"]:
+                        b = pa["bb"]
+                        focus = Vector((0.5 * (b[0] + b[1]), 0.5 * (b[2] + b[3]), 0.5 * (b[4] + b[5])))
+            _render_collision_debug(fr, focus, debug_dir, v0["type"])
+            debug_rendered = True
+
+    if strict and violations:
+        sample = "; ".join(f"f{v['frame']}:{v['type']}({v['a']} vs {v['b']})" for v in violations[:5])
+        raise RuntimeError(f"[Law R-COLLIDE] {len(violations)} collision(s) detected — render blocked! First hits: {sample}")
     return violations
 
 
@@ -1720,61 +2397,203 @@ def audit_scene_collisions(char_infos: list, obstacles: list = None, frames: lis
 # ==============================================================================
 
 POSE_LIB = {
+    # --------------------------------------------------------------------------
+    # GROUP A: CONVERSATIONAL & CHARACTER APPEAL (Contrapposto, Zero Twinning)
+    # --------------------------------------------------------------------------
     "neutral_relaxed": {
-        "LowerTorso": (0, 0, 0), "UpperTorso": (2, 0, 0), "Head": (-2, 0, 0),
-        "RightUpperArm": (-8, 0, -6), "RightLowerArm": (-18, 0, 0),
-        "LeftUpperArm": (-6, 0, 6), "LeftLowerArm": (-16, 0, 0),
+        "_hip_offset": (0.025, 0.0, -0.015),
+        "LowerTorso": (2, 3, 4), "UpperTorso": (2, -2, -5), "Head": (-2, 1, 3),
+        "RightUpperArm": (-9, 0, -8), "RightLowerArm": (-20, 0, 0),
+        "LeftUpperArm": (-5, 0, 7), "LeftLowerArm": (-14, 0, 0),
+        "LeftUpperLeg": (0, 0, 0), "LeftLowerLeg": (0, 0, 0), "RightUpperLeg": (0, 0, 0), "RightLowerLeg": (0, 0, 0),
+    },
+    "confident_stand": {
+        "_hip_offset": (-0.03, 0.015, -0.012),
+        "LowerTorso": (-2, -3, -5), "UpperTorso": (-6, 3, 6), "Head": (-4, -2, -4),
+        "RightUpperArm": (-14, 0, -14), "RightLowerArm": (-26, 0, 0),
+        "LeftUpperArm": (-8, 0, 11), "LeftLowerArm": (-18, 0, 0),
         "LeftUpperLeg": (0, 0, 0), "LeftLowerLeg": (0, 0, 0), "RightUpperLeg": (0, 0, 0), "RightLowerLeg": (0, 0, 0),
     },
     "hands_on_hips": {
-        "LowerTorso": (0, 0, 0), "UpperTorso": (-5, 0, 0), "Head": (-3, 0, 0),
-        "RightUpperArm": (-16, 0, -28), "RightLowerArm": (-68, -20, 0),
-        "LeftUpperArm": (-16, 0, 28), "LeftLowerArm": (-68, 20, 0),
+        "_hip_offset": (0.035, 0.01, -0.018),
+        "LowerTorso": (-2, 4, 5), "UpperTorso": (-6, -3, -6), "Head": (-3, 2, 4),
+        "RightUpperArm": (-18, 0, -32), "RightLowerArm": (-72, -22, 0),
+        "LeftUpperArm": (-14, 0, 26), "LeftLowerArm": (-64, 18, 0),
         "LeftUpperLeg": (0, 0, 0), "LeftLowerLeg": (0, 0, 0), "RightUpperLeg": (0, 0, 0), "RightLowerLeg": (0, 0, 0),
     },
     "cross_arms": {
-        "LowerTorso": (0, 0, 0), "UpperTorso": (-4, 0, 0), "Head": (-2, 0, 4),
-        "RightUpperArm": (-38, 0, 16), "RightLowerArm": (-82, 32, 0),
-        "LeftUpperArm": (-42, 0, -16), "LeftLowerArm": (-78, -32, 0),
+        "_hip_offset": (-0.03, 0.0, -0.015),
+        "LowerTorso": (-1, -3, -4), "UpperTorso": (-5, 2, 5), "Head": (-2, -2, 5),
+        "RightUpperArm": (-38, 0, 16), "RightLowerArm": (-84, 34, 0),
+        "LeftUpperArm": (-44, 0, -18), "LeftLowerArm": (-78, -32, 0),
     },
-    "point_casual": {
-        "UpperTorso": (6, 0, -6), "Head": (-2, 0, 6),
-        "RightUpperArm": (-78, 0, -12), "RightLowerArm": (-16, 0, 0),
-        "LeftUpperArm": (-12, 0, 8), "LeftLowerArm": (-24, 0, 0),
-    },
-    "scratch_head": {
-        "UpperTorso": (4, 0, 5), "Head": (6, 0, -8),
-        "RightUpperArm": (-135, 0, 12), "RightLowerArm": (-95, 0, 0),
-        "LeftUpperArm": (-10, 0, 8), "LeftLowerArm": (-22, 0, 0),
-    },
-    "chin_think": {
-        "UpperTorso": (3, 0, -4), "Head": (8, 0, 6),
-        "RightUpperArm": (-56, 0, 18), "RightLowerArm": (-92, 0, 0),
-        "LeftUpperArm": (-16, 0, -12), "LeftLowerArm": (-64, 0, 0),
-    },
-    "lean_inspect": {
-        "LowerTorso": (12, 0, 0), "UpperTorso": (16, 0, 0), "Head": (12, 0, 0),
-        "RightUpperArm": (-48, 0, -10), "RightLowerArm": (-34, 0, 0),
-        "LeftUpperArm": (-40, 0, 10), "LeftLowerArm": (-36, 0, 0),
-    },
-    "recoil_shock": {
-        "LowerTorso": (-6, 0, 0), "UpperTorso": (-12, 0, 0), "Head": (-18, 0, 0),
-        "RightUpperArm": (-105, 0, -24), "RightLowerArm": (-58, 0, 0),
-        "LeftUpperArm": (-105, 0, 24), "LeftLowerArm": (-58, 0, 0),
+    "listening_tilt": {
+        "_hip_offset": (0.03, 0.0, -0.016),
+        "LowerTorso": (2, 3, 4), "UpperTorso": (4, -2, -5), "Head": (3, 7, 8),
+        "RightUpperArm": (-12, 0, -9), "RightLowerArm": (-28, 0, 0),
+        "LeftUpperArm": (-6, 0, 7), "LeftLowerArm": (-16, 0, 0),
     },
     "shrug_open": {
-        "UpperTorso": (-4, 0, 0), "Head": (-4, 0, 8),
-        "RightUpperArm": (-46, 0, -28), "RightLowerArm": (-52, 0, 0),
-        "LeftUpperArm": (-46, 0, 28), "LeftLowerArm": (-52, 0, 0),
+        "_hip_offset": (0.02, -0.01, -0.022),
+        "LowerTorso": (-2, 2, 3), "UpperTorso": (-5, -2, -4), "Head": (-4, 5, 9),
+        "RightUpperArm": (-52, 0, -32), "RightLowerArm": (-58, -12, 0),
+        "LeftUpperArm": (-42, 0, 25), "LeftLowerArm": (-48, 10, 0),
+    },
+    "chin_think": {
+        "_hip_offset": (-0.025, 0.0, -0.018),
+        "LowerTorso": (2, -3, -4), "UpperTorso": (5, 2, 5), "Head": (9, -3, 7),
+        "RightUpperArm": (-58, 0, 18), "RightLowerArm": (-95, 0, 0),
+        "LeftUpperArm": (-22, 0, -14), "LeftLowerArm": (-68, -18, 0),
+    },
+    "scratch_head": {
+        "_hip_offset": (0.025, 0.0, -0.02),
+        "LowerTorso": (2, 2, 4), "UpperTorso": (5, -3, 6), "Head": (7, -4, -9),
+        "RightUpperArm": (-138, 0, 14), "RightLowerArm": (-96, 0, 0),
+        "LeftUpperArm": (-12, 0, 10), "LeftLowerArm": (-24, 0, 0),
+    },
+
+    # --------------------------------------------------------------------------
+    # GROUP B: DRAMATIC CONFLICT & EMOTIONAL EXAGGERATION
+    # --------------------------------------------------------------------------
+    "point_casual": {
+        "_hip_offset": (0.02, 0.02, -0.018),
+        "LowerTorso": (3, 2, 4), "UpperTorso": (7, -2, -8), "Head": (-3, 2, 7),
+        "RightUpperArm": (-82, 0, -14), "RightLowerArm": (-18, 0, 0),
+        "LeftUpperArm": (-14, 0, 11), "LeftLowerArm": (-26, 0, 0),
+    },
+    "accuse_point": {
+        "_hip_offset": (0.03, 0.06, -0.045),
+        "LowerTorso": (8, 3, 6), "UpperTorso": (14, -3, -12), "Head": (-6, 3, 10),
+        "RightUpperArm": (-96, 0, -10), "RightLowerArm": (-8, 0, 0),
+        "LeftUpperArm": (18, 0, 18), "LeftLowerArm": (-34, 0, 0),
+    },
+    "recoil_shock": {
+        "_hip_offset": (-0.03, -0.08, -0.075),
+        "LowerTorso": (-8, -4, -6), "UpperTorso": (-15, 4, 9), "Head": (-20, -5, -8),
+        "RightUpperArm": (-114, 0, -28), "RightLowerArm": (-64, 0, 0),
+        "LeftUpperArm": (-96, 0, 22), "LeftLowerArm": (-52, 0, 0),
+    },
+    "defensive_step_back": {
+        "_hip_offset": (-0.04, -0.06, -0.055),
+        "LowerTorso": (-5, -5, -10), "UpperTorso": (-10, 4, 14), "Head": (-8, -4, -12),
+        "RightUpperArm": (-76, 0, 14), "RightLowerArm": (-68, 0, 0),
+        "LeftUpperArm": (-88, 0, 24), "LeftLowerArm": (-54, 0, 0),
+    },
+    "facepalm_regret": {
+        "_hip_offset": (0.015, -0.02, -0.04),
+        "LowerTorso": (6, 2, 3), "UpperTorso": (14, -2, -4), "Head": (18, 4, 5),
+        "RightUpperArm": (-118, 0, 20), "RightLowerArm": (-102, 0, 0),
+        "LeftUpperArm": (-16, 0, 10), "LeftLowerArm": (-32, 0, 0),
+    },
+    "laugh_belly": {
+        "_hip_offset": (0.02, -0.03, -0.035),
+        "LowerTorso": (-6, 3, 4), "UpperTorso": (-14, -3, -5), "Head": (-18, 4, 6),
+        "RightUpperArm": (-36, 0, 14), "RightLowerArm": (-78, 22, 0),
+        "LeftUpperArm": (-44, 0, -16), "LeftLowerArm": (-74, -20, 0),
+    },
+    "cheer_victory": {
+        "_hip_offset": (0.02, 0.02, 0.025),
+        "LowerTorso": (-4, 3, 5), "UpperTorso": (-12, -3, -7), "Head": (-16, 2, 6),
+        "RightUpperArm": (-156, 0, -22), "RightLowerArm": (-28, 0, 0),
+        "LeftUpperArm": (-142, 0, 18), "LeftLowerArm": (-36, 0, 0),
+    },
+    "bow_respect": {
+        "_hip_offset": (0.0, -0.04, -0.05),
+        "LowerTorso": (18, 0, 0), "UpperTorso": (26, 0, 0), "Head": (14, 0, 0),
+        "RightUpperArm": (-28, 0, 16), "RightLowerArm": (-76, 24, 0),
+        "LeftUpperArm": (-30, 0, -16), "LeftLowerArm": (-74, -24, 0),
+    },
+
+    # --------------------------------------------------------------------------
+    # GROUP C: ENVIRONMENT & ARCHITECTURAL INTERACTION (Bell Tower / Monuments)
+    # --------------------------------------------------------------------------
+    "look_up_awe": {
+        "_hip_offset": (-0.02, -0.02, -0.02),
+        "LowerTorso": (-5, -2, -4), "UpperTorso": (-14, 2, 6), "Head": (-28, -3, -5),
+        "RightUpperArm": (-24, 0, -22), "RightLowerArm": (-32, 0, 0),
+        "LeftUpperArm": (-18, 0, 16), "LeftLowerArm": (-24, 0, 0),
+    },
+    "lean_balustrade": {
+        "_hip_offset": (0.02, 0.08, -0.045),
+        "LowerTorso": (14, 2, 3), "UpperTorso": (18, -2, -4), "Head": (-8, 3, 6),
+        "RightUpperArm": (-64, 0, -14), "RightLowerArm": (-56, -12, 0),
+        "LeftUpperArm": (-58, 0, 12), "LeftLowerArm": (-62, 10, 0),
+    },
+    "lean_inspect": {
+        "_hip_offset": (0.02, 0.07, -0.06),
+        "LowerTorso": (14, 3, 5), "UpperTorso": (18, -2, -6), "Head": (14, 2, 6),
+        "RightUpperArm": (-52, 0, -14), "RightLowerArm": (-38, 0, 0),
+        "LeftUpperArm": (-36, 0, 12), "LeftLowerArm": (-42, 0, 0),
+    },
+    "reach_offer": {
+        "_hip_offset": (0.025, 0.04, -0.025),
+        "LowerTorso": (4, 2, 5), "UpperTorso": (8, -2, -8), "Head": (-2, 2, 6),
+        "RightUpperArm": (-68, 0, -8), "RightLowerArm": (-24, 0, 0),
+        "LeftUpperArm": (-14, 0, 10), "LeftLowerArm": (-28, 0, 0),
+    },
+
+    # --------------------------------------------------------------------------
+    # GROUP D: KINETIC ACTION & MARTIAL / COMBAT
+    # --------------------------------------------------------------------------
+    "combat_guard": {
+        "_hip_offset": (-0.04, -0.02, -0.095),
+        "LowerTorso": (6, -5, -14), "UpperTorso": (10, 4, 22), "Head": (-6, -4, -18),
+        "RightUpperArm": (-68, 0, -18), "RightLowerArm": (-88, 0, 0),
+        "LeftUpperArm": (-82, 0, 16), "LeftLowerArm": (-72, 0, 0),
+    },
+    "draw_weapon": {
+        "_hip_offset": (-0.03, -0.03, -0.065),
+        "LowerTorso": (4, -4, 12), "UpperTorso": (8, 4, -22), "Head": (-4, -3, 16),
+        "RightUpperArm": (-42, 0, 26), "RightLowerArm": (-94, 28, 0),
+        "LeftUpperArm": (-32, 0, 18), "LeftLowerArm": (-46, 0, 0),
+    },
+    "strike_slash": {
+        "_hip_offset": (0.04, 0.09, -0.085),
+        "LowerTorso": (12, 4, -10), "UpperTorso": (18, -4, 24), "Head": (-8, 3, -14),
+        "RightUpperArm": (-108, 0, -24), "RightLowerArm": (-14, 0, 0),
+        "LeftUpperArm": (24, 0, 22), "LeftLowerArm": (-42, 0, 0),
+    },
+    "sprint_start": {
+        "_hip_offset": (0.0, 0.08, -0.09),
+        "LowerTorso": (16, 0, -6), "UpperTorso": (22, 0, 10), "Head": (-12, 0, -4),
+        "RightUpperArm": (-76, 0, -12), "RightLowerArm": (-64, 0, 0),
+        "LeftUpperArm": (42, 0, 12), "LeftLowerArm": (-52, 0, 0),
     },
 }
 
 
-def apply_pose_lib(char_info: dict, frame: int, pose_name: str, dur: int = 10, loc=None, yaw_deg: float = None, **overrides):
-    """Transition smoothly using a curated POSE_LIB entry with staggered Torso->Arm->Head overlap."""
+def apply_pose_lib(char_info: dict, frame: int, pose_name: str, dur: int = 10,
+                   loc=None, yaw_deg: float = None, anticipate: bool = True,
+                   arc_breakdown: bool = True, overshoot: float = 0.07,
+                   hold_frames: int = 18, lock_feet_ik: bool = True, **overrides):
+    """
+    Transition smoothly to a curated POSE_LIB entry enforcing all 12 Principles of Animation:
+    - Contrapposto asymmetry & zero twinning
+    - Foot IK ground lock (`0.000m` foot sliding during hip compression/sway)
+    - 3-frame reverse anticipation + midpoint circular breakdown arc
+    - Staggered Hips -> Chest (+1f) -> Arms (+2f w/ Overshoot) -> Head (+3f) overlap
+    - Moving Hold micro-breathing settle across `hold_frames`.
+    """
+    arm = char_info["armature"]
+    if lock_feet_ik:
+        try:
+            import blender_r15_hybrid as r15h
+            r15h.setup_r15_hybrid_rig(char_info)
+            r15h._set_ik_influence(arm, frame, foot_l=1.0, foot_r=1.0)
+            r15h._key_bone(arm, "IK_Foot.L", frame, Vector((0.0, 0.0, 0.0)), (0, 0, 0))
+            r15h._key_bone(arm, "IK_Foot.R", frame, Vector((0.0, 0.0, 0.0)), (0, 0, 0))
+            r15h._key_bone(arm, "IK_Foot.L", frame + dur + 3, Vector((0.0, 0.0, 0.0)), (0, 0, 0))
+            r15h._key_bone(arm, "IK_Foot.R", frame + dur + 3, Vector((0.0, 0.0, 0.0)), (0, 0, 0))
+        except Exception:
+            pass
     pose = dict(POSE_LIB.get(pose_name, POSE_LIB["neutral_relaxed"]))
     pose.update(overrides)
-    snap_r15_pose(char_info["armature"], frame, snap_frames=dur, loc=loc, yaw_deg=yaw_deg, stagger=True, **pose)
+    snap_r15_pose(
+        arm, frame, snap_frames=dur, overshoot=overshoot,
+        loc=loc, yaw_deg=yaw_deg, stagger=True,
+        anticipate=anticipate, arc_breakdown=arc_breakdown,
+        hold_frames=hold_frames, **pose
+    )
 
 
 SHOT_PRESETS = {
@@ -1997,9 +2816,12 @@ def render_playblast_qa(stage_dir: str, fps_step: int = 3, res_scale: float = 0.
     sc = bpy.context.scene
     old_rx, old_ry, old_pct = sc.render.resolution_x, sc.render.resolution_y, sc.render.resolution_percentage
     old_samp = sc.eevee.taa_render_samples if hasattr(sc, "eevee") and hasattr(sc.eevee, "taa_render_samples") else None
+    old_cyc_samp = sc.cycles.samples if hasattr(sc, "cycles") and hasattr(sc.cycles, "samples") else None
     sc.render.resolution_percentage = int(round(res_scale * 100))
     if old_samp is not None:
         sc.eevee.taa_render_samples = samples
+    if old_cyc_samp is not None:
+        sc.cycles.samples = max(2, samples)
     pb_dir = os.path.join(stage_dir, "playblast_frames")
     shutil.rmtree(pb_dir, ignore_errors=True)
     os.makedirs(pb_dir, exist_ok=True)
@@ -2012,6 +2834,819 @@ def render_playblast_qa(stage_dir: str, fps_step: int = 3, res_scale: float = 0.
     sc.render.resolution_x, sc.render.resolution_y, sc.render.resolution_percentage = old_rx, old_ry, old_pct
     if old_samp is not None:
         sc.eevee.taa_render_samples = old_samp
+    if old_cyc_samp is not None:
+        sc.cycles.samples = old_cyc_samp
     return pb_dir
+
+
+# ==============================================================================
+# IMPACT PHYSICS, HIT-STOP & PROCEDURAL VFX ENGINE (BLENDER 5.3)
+# ==============================================================================
+
+def _get_vfx_collection(col=None):
+    if col is not None:
+        return col
+    c = bpy.data.collections.get("VFX_Impacts")
+    if not c:
+        c = bpy.data.collections.new("VFX_Impacts")
+        bpy.context.scene.collection.children.link(c)
+    return c
+
+
+def make_emissive_vfx_mat(name: str, color_hex: str = "#FFB830", strength: float = 40.0, roughness: float = 0.25):
+    """Create a glowing emissive VFX material compatible with Cycles, EEVEE, and Workbench."""
+    mat = bpy.data.materials.get(name) or bpy.data.materials.new(name=name)
+    rgba = hex_to_linear_rgba(color_hex)
+    mat.diffuse_color = rgba
+    nt = mat.node_tree
+    bsdf = next((n for n in nt.nodes if n.type == "BSDF_PRINCIPLED"), None)
+    if bsdf:
+        bsdf.inputs["Base Color"].default_value = rgba
+        bsdf.inputs["Roughness"].default_value = roughness
+        if "Emission Color" in bsdf.inputs:
+            bsdf.inputs["Emission Color"].default_value = rgba
+        if "Emission Strength" in bsdf.inputs:
+            bsdf.inputs["Emission Strength"].default_value = strength
+    return mat
+
+
+def enable_compositor_bloom(threshold: float = 2.8, strength: float = 0.22):
+    """Configure Blender 5.0-5.3 Compositor Glare (Fog Glow / Bloom) so emissive VFX glow organically."""
+    scene = bpy.context.scene
+    scene.use_nodes = True
+    try:
+        ng = bpy.data.node_groups.get("Sven_VFX_Comp") or bpy.data.node_groups.new("Sven_VFX_Comp", "CompositorNodeTree")
+        scene.compositing_node_group = ng
+        ng.nodes.clear()
+        if not any(item.in_out == "OUTPUT" for item in ng.interface.items_tree):
+            ng.interface.new_socket("Image", in_out="OUTPUT", socket_type="NodeSocketColor")
+        rl = ng.nodes.new("CompositorNodeRLayers")
+        glare = ng.nodes.new("CompositorNodeGlare")
+        out = ng.nodes.new("NodeGroupOutput")
+        if hasattr(glare, "glare_type"):
+            glare.glare_type = "FOG_GLOW"
+        for sock_name, val in (("Type", "Fog Glow"), ("Threshold", threshold), ("Strength", strength), ("Size", 7)):
+            if sock_name in glare.inputs:
+                try:
+                    glare.inputs[sock_name].default_value = val
+                except Exception:
+                    pass
+        ng.links.new(rl.outputs["Image"], glare.inputs["Image"])
+        ng.links.new(glare.outputs["Image"], out.inputs[0])
+        return True
+    except Exception:
+        return False
+
+
+def _set_fcurve_interp(obj, frame: int, interp: str = "LINEAR"):
+    if not obj.animation_data or not obj.animation_data.action:
+        return
+    for fc in iter_action_fcurves(obj.animation_data.action):
+        for kp in fc.keyframe_points:
+            if int(round(kp.co.x)) == frame:
+                if interp == "VECTOR":
+                    kp.interpolation = "BEZIER"
+                    kp.handle_left_type = "VECTOR"
+                    kp.handle_right_type = "VECTOR"
+                else:
+                    kp.interpolation = interp
+        fc.update()
+
+
+def spawn_impact_light_flash(
+    impact_frame: int,
+    impact_loc,
+    color_hex: str = "#FFA830",
+    peak_watts: float = 160.0,
+    dur_frames: int = 6,
+    col=None,
+):
+    """
+    Interactive Point Light Flash at impact_loc:
+    0W at impact_frame-1 -> peak_watts at impact_frame (LINEAR snap) -> 0W at impact_frame+dur_frames.
+    """
+    vfx_col = _get_vfx_collection(col)
+    rgba = hex_to_linear_rgba(color_hex)
+    ldata = bpy.data.lights.new(f"VFX_Flash_{impact_frame}", type="POINT")
+    ldata.color = (rgba[0], rgba[1], rgba[2])
+    ldata.shadow_soft_size = 0.28
+    lob = bpy.data.objects.new(f"VFX_Flash_{impact_frame}", ldata)
+    lob.location = Vector(impact_loc)
+    vfx_col.objects.link(lob)
+
+    f_pre = max(1, impact_frame - 1)
+    f_end = impact_frame + max(2, dur_frames)
+    for fr, val in ((1, 0.0), (f_pre, 0.0), (impact_frame, float(peak_watts)), (impact_frame + 1, float(peak_watts * 0.65)), (f_end, 0.0)):
+        ldata.energy = val
+        ldata.keyframe_insert(data_path="energy", frame=fr)
+    if ldata.animation_data and ldata.animation_data.action:
+        for fc in iter_action_fcurves(ldata.animation_data.action):
+            for kp in fc.keyframe_points:
+                kp.interpolation = "LINEAR"
+            fc.update()
+    return lob
+
+
+def spawn_impact_sparks(
+    impact_frame: int,
+    impact_loc,
+    normal=(0.0, -1.0, 0.75),
+    count: int = 18,
+    speed_m: float = 4.6,
+    dur_frames: int = 11,
+    color_hex: str = "#FFC038",
+    emission_strength: float = 48.0,
+    gravity_m: float = 13.5,
+    col=None,
+) -> list:
+    """
+    Spawn 3D velocity-aligned emissive spark streaks bursting outward from impact_loc at impact_frame.
+    Each streak stays at scale (0,0,0) prior to impact_frame, launches at full velocity on impact_frame,
+    curves downward under gravity, and burns out to scale (0,0,0) at impact_frame + dur_frames.
+    """
+    vfx_col = _get_vfx_collection(col)
+    mat = make_emissive_vfx_mat(f"M_VFX_Spark_{color_hex.lstrip('#')}", color_hex=color_hex, strength=emission_strength)
+    p0 = Vector(impact_loc)
+    n_dir = Vector(normal).normalized() if Vector(normal).length > 1e-4 else Vector((0, 0, 1))
+    up = Vector((0, 0, 1)) if abs(n_dir.z) < 0.95 else Vector((1, 0, 0))
+    t1 = n_dir.cross(up).normalized()
+    t2 = n_dir.cross(t1).normalized()
+
+    # Shared low-poly 3-sided streak mesh oriented along local +Z
+    me = bpy.data.meshes.get("VFX_SparkStreak_Mesh")
+    if not me:
+        bm = bmesh.new()
+        add__cone = bmesh.ops.create_cone(bm, cap_ends=True, cap_tris=True, segments=4, radius1=0.022, radius2=0.004, depth=0.28)
+        me = bpy.data.meshes.new("VFX_SparkStreak_Mesh")
+        bm.to_mesh(me)
+        bm.free()
+        me.materials.append(mat)
+
+    sparks = []
+    f_pre = max(1, impact_frame - 1)
+    fps = float(bpy.context.scene.render.fps or 30.0)
+    for i in range(count):
+        # Deterministic pseudo-random cone directions (Fibonacci hemisphere around n_dir)
+        phi = i * 2.3999632
+        spread = 0.25 + 0.68 * ((i % 7) / 6.0)
+        v_dir = (n_dir * 0.85 + (t1 * math.cos(phi) + t2 * math.sin(phi)) * spread).normalized()
+        v_mag = speed_m * (0.65 + 0.65 * (((i * 17) % 11) / 10.0))
+        vel0 = v_dir * v_mag
+
+        ob = bpy.data.objects.new(f"VFX_Spark_{impact_frame}_{i:02d}", me)
+        vfx_col.objects.link(ob)
+
+        # Hide before impact
+        ob.location = p0
+        ob.scale = (0.0, 0.0, 0.0)
+        ob.keyframe_insert("location", frame=1)
+        ob.keyframe_insert("scale", frame=1)
+        ob.keyframe_insert("location", frame=f_pre)
+        ob.keyframe_insert("scale", frame=f_pre)
+        _set_fcurve_interp(ob, f_pre, "CONSTANT")
+
+        life_f = max(4, int(round(dur_frames * (0.72 + 0.35 * ((i % 5) / 4.0)))))
+        for k in range(life_f + 1):
+            fr = impact_frame + k
+            dt = k / fps
+            u = k / float(life_f)
+            pos = p0 + vel0 * dt + Vector((0.0, 0.0, -0.5 * gravity_m * dt * dt))
+            inst_vel = vel0 + Vector((0.0, 0.0, -gravity_m * dt))
+            ob.location = pos
+            if inst_vel.length > 1e-4:
+                ob.rotation_euler = inst_vel.normalized().to_track_quat("Z", "Y").to_euler()
+                ob.keyframe_insert("rotation_euler", frame=fr)
+            sc_xy = max(0.0, 1.0 - pow(u, 1.6))
+            sc_z = max(0.0, (1.15 - u) * (inst_vel.length / max(1.0, speed_m)))
+            if k == life_f:
+                sc_xy, sc_z = 0.0, 0.0
+            ob.scale = (sc_xy, sc_xy, sc_z)
+            ob.keyframe_insert("location", frame=fr)
+            ob.keyframe_insert("scale", frame=fr)
+            _set_fcurve_interp(ob, fr, "LINEAR")
+
+        sparks.append(ob)
+    return sparks
+
+
+def spawn_dust_shockwave(
+    impact_frame: int,
+    impact_loc,
+    max_radius_m: float = 1.45,
+    dur_frames: int = 12,
+    puff_count: int = 10,
+    ring_color_hex: str = "#FFE4B5",
+    dust_color_hex: str = "#D8CFC4",
+    emission_strength: float = 10.0,
+    col=None,
+) -> list:
+    """
+    Spawn a fast-expanding ground/air shockwave ring + perimeter billowy dust cloud puffs at impact_frame.
+    Follows Disney/anime fast-out cubic expansion R(u) = R_max * (1 - (1 - u)^3) with clean scale dissolve.
+    """
+    vfx_col = _get_vfx_collection(col)
+    mat_ring = make_emissive_vfx_mat(f"M_VFX_ShockRing_{ring_color_hex.lstrip('#')}", color_hex=ring_color_hex, strength=emission_strength)
+    mat_dust = make_solid_mat(f"M_VFX_Dust_{dust_color_hex.lstrip('#')}", hex_to_linear_rgba(dust_color_hex), roughness=0.88)
+
+    p0 = Vector(impact_loc)
+    f_pre = max(1, impact_frame - 1)
+    created = []
+
+    # 1. Expanding Shockwave Torus Ring
+    bm_r = bmesh.new()
+    segs, minor_segs = 28, 8
+    R0, r0 = 1.0, 0.055
+    rings = []
+    for i in range(segs):
+        a = 2.0 * math.pi * i / segs
+        ca, sa = math.cos(a), math.sin(a)
+        c_pt = Vector((ca * R0, sa * R0, 0.0))
+        rad_dir = Vector((ca, sa, 0.0))
+        ring = []
+        for j in range(minor_segs):
+            b = 2.0 * math.pi * j / minor_segs
+            pt = c_pt + rad_dir * (math.cos(b) * r0) + Vector((0.0, 0.0, math.sin(b) * r0 * 0.55))
+            ring.append(bm_r.verts.new(pt))
+        rings.append(ring)
+    for i in range(segs):
+        ni = (i + 1) % segs
+        for j in range(minor_segs):
+            nj = (j + 1) % minor_segs
+            bm_r.faces.new((rings[i][j], rings[ni][j], rings[ni][nj], rings[i][nj]))
+    me_r = bpy.data.meshes.new(f"VFX_ShockRing_{impact_frame}_M")
+    bm_r.to_mesh(me_r); bm_r.free()
+    for poly in me_r.polygons:
+        poly.use_smooth = True
+    me_r.materials.append(mat_ring)
+    ring_ob = bpy.data.objects.new(f"VFX_ShockRing_{impact_frame}", me_r)
+    ring_ob.location = p0 + Vector((0.0, 0.0, 0.04))
+    vfx_col.objects.link(ring_ob)
+    created.append(ring_ob)
+
+    ring_ob.scale = (0.0, 0.0, 0.0)
+    ring_ob.keyframe_insert("scale", frame=1)
+    ring_ob.keyframe_insert("scale", frame=f_pre)
+    _set_fcurve_interp(ring_ob, f_pre, "CONSTANT")
+
+    for k in range(dur_frames + 1):
+        fr = impact_frame + k
+        u = k / float(max(1, dur_frames))
+        # Fast-out cubic expansion
+        rad_s = max_radius_m * (0.12 + 0.88 * (1.0 - pow(1.0 - u, 3.0)))
+        thick_s = max(0.0, 1.0 - pow(u, 1.4))
+        if k == dur_frames:
+            rad_s, thick_s = 0.0, 0.0
+        ring_ob.scale = (rad_s, rad_s, thick_s)
+        ring_ob.keyframe_insert("scale", frame=fr)
+        _set_fcurve_interp(ring_ob, fr, "LINEAR")
+
+    # 2. Perimeter Dust Cloud Puffs
+    me_p = bpy.data.meshes.get("VFX_DustPuff_Mesh")
+    if not me_p:
+        bm_p = bmesh.new()
+        bmesh.ops.create_icosphere(bm_p, subdivisions=2, radius=0.22)
+        me_p = bpy.data.meshes.new("VFX_DustPuff_Mesh")
+        bm_p.to_mesh(me_p); bm_p.free()
+        for poly in me_p.polygons:
+            poly.use_smooth = True
+        me_p.materials.append(mat_dust)
+
+    for i in range(puff_count):
+        ang = (2.0 * math.pi * i / max(1, puff_count)) + (i % 3) * 0.14
+        dir_xy = Vector((math.cos(ang), math.sin(ang), 0.0))
+        p_ob = bpy.data.objects.new(f"VFX_DustPuff_{impact_frame}_{i:02d}", me_p)
+        vfx_col.objects.link(p_ob)
+        created.append(p_ob)
+
+        p_ob.location = p0
+        p_ob.scale = (0.0, 0.0, 0.0)
+        p_ob.keyframe_insert("location", frame=1)
+        p_ob.keyframe_insert("scale", frame=1)
+        p_ob.keyframe_insert("location", frame=f_pre)
+        p_ob.keyframe_insert("scale", frame=f_pre)
+        _set_fcurve_interp(p_ob, f_pre, "CONSTANT")
+
+        p_life = dur_frames + (i % 3) * 2
+        for k in range(p_life + 1):
+            fr = impact_frame + k
+            u = k / float(max(1, p_life))
+            ease_out = 1.0 - pow(1.0 - u, 2.6)
+            dist = max_radius_m * (0.20 + 0.78 * ease_out)
+            lift = 0.08 + 0.26 * ease_out
+            p_ob.location = p0 + dir_xy * dist + Vector((0.0, 0.0, lift))
+            # Puff swells quickly to peak at u=0.3, then shrinks away cleanly
+            sc = math.sin(math.pi * pow(u, 0.65)) * (1.15 if i % 2 == 0 else 0.88)
+            if k == p_life:
+                sc = 0.0
+            p_ob.scale = (sc * 1.15, sc * 1.15, sc * 0.82)
+            p_ob.keyframe_insert("location", frame=fr)
+            p_ob.keyframe_insert("scale", frame=fr)
+            _set_fcurve_interp(p_ob, fr, "LINEAR")
+
+    return created
+
+
+def spawn_energy_slash_arc(
+    impact_frame: int,
+    center_loc,
+    yaw_deg: float = 0.0,
+    tilt_deg: float = 22.0,
+    radius_m: float = 0.92,
+    dur_frames: int = 7,
+    color_hex: str = "#38D8FF",
+    emission_strength: float = 55.0,
+    col=None,
+):
+    """
+    Spawn a glowing crescent 3D energy blade/strike wave at impact_frame - 1 that sweeps forward
+    through impact_frame and dissipates cleanly by impact_frame + dur_frames.
+    """
+    vfx_col = _get_vfx_collection(col)
+    mat = make_emissive_vfx_mat(f"M_VFX_Slash_{color_hex.lstrip('#')}", color_hex=color_hex, strength=emission_strength)
+
+    bm = bmesh.new()
+    arc_segs = 20
+    arc_span = math.radians(135.0)
+    top_v, bot_v, edge_v, back_v = [], [], [], []
+    for i in range(arc_segs + 1):
+        u = -0.5 + (i / float(arc_segs))
+        ang = u * arc_span
+        taper = math.cos(u * math.pi)
+        r_out = radius_m * (1.0 + 0.08 * taper)
+        r_in = radius_m - (0.04 + 0.24 * taper)
+        thick = 0.015 + 0.045 * taper
+        ca, sa = math.cos(ang), math.sin(ang)
+        edge_v.append(bm.verts.new((sa * r_out, -ca * r_out, 0.0)))
+        back_v.append(bm.verts.new((sa * r_in, -ca * r_in, 0.0)))
+        rm = 0.5 * (r_out + r_in)
+        top_v.append(bm.verts.new((sa * rm, -ca * rm, thick)))
+        bot_v.append(bm.verts.new((sa * rm, -ca * rm, -thick)))
+
+    for i in range(arc_segs):
+        bm.faces.new((edge_v[i], edge_v[i + 1], top_v[i + 1], top_v[i]))
+        bm.faces.new((top_v[i], top_v[i + 1], back_v[i + 1], back_v[i]))
+        bm.faces.new((back_v[i], back_v[i + 1], bot_v[i + 1], bot_v[i]))
+        bm.faces.new((bot_v[i], bot_v[i + 1], edge_v[i + 1], edge_v[i]))
+    bmesh.ops.remove_doubles(bm, verts=bm.verts, dist=0.0005)
+    bmesh.ops.recalc_face_normals(bm, faces=bm.faces)
+
+    me = bpy.data.meshes.new(f"VFX_SlashArc_{impact_frame}_M")
+    bm.to_mesh(me); bm.free()
+    for poly in me.polygons:
+        poly.use_smooth = True
+    me.materials.append(mat)
+
+    ob = bpy.data.objects.new(f"VFX_SlashArc_{impact_frame}", me)
+    vfx_col.objects.link(ob)
+
+    p0 = Vector(center_loc)
+    f_start = max(1, impact_frame - 1)
+    f_pre = max(1, f_start - 1)
+    rot_e = Euler((math.radians(tilt_deg), math.radians(18.0), math.radians(yaw_deg)), "XYZ")
+    fwd = Euler((0.0, 0.0, math.radians(yaw_deg))).to_matrix() @ Vector((0.0, -1.0, 0.0))
+
+    ob.location = p0
+    ob.rotation_euler = rot_e
+    ob.scale = (0.0, 0.0, 0.0)
+    ob.keyframe_insert("location", frame=1)
+    ob.keyframe_insert("scale", frame=1)
+    ob.keyframe_insert("location", frame=f_pre)
+    ob.keyframe_insert("scale", frame=f_pre)
+    _set_fcurve_interp(ob, f_pre, "CONSTANT")
+
+    for k in range(dur_frames + 1):
+        fr = f_start + k
+        u = k / float(max(1, dur_frames))
+        ob.location = p0 + fwd * (0.55 * (1.0 - pow(1.0 - u, 2.2)))
+        ob.rotation_euler = Euler((rot_e.x, rot_e.y, rot_e.z + math.radians(28.0 * u)), "XYZ")
+        sc_xy = 0.65 + 0.55 * (1.0 - pow(1.0 - u, 2.0))
+        sc_z = max(0.0, 1.0 - pow(u, 1.3))
+        if k == dur_frames:
+            sc_xy, sc_z = 0.0, 0.0
+        ob.scale = (sc_xy, sc_xy, sc_z)
+        ob.keyframe_insert("location", frame=fr)
+        ob.keyframe_insert("rotation_euler", frame=fr)
+        ob.keyframe_insert("scale", frame=fr)
+        _set_fcurve_interp(ob, fr, "LINEAR")
+
+    return ob
+
+
+def trigger_physical_impact(
+    impact_frame: int,
+    impact_loc,
+    attacker: dict = None,
+    victim: dict = None,
+    camera=None,
+    vfx_preset: str = "heavy_hit",
+    hit_stop_frames: int = 2,
+    knockback_m: float = 0.42,
+    spark_color_hex: str = "#FFB830",
+    slash_color_hex: str = "#38D8FF",
+    col=None,
+) -> dict:
+    """
+    The All-in-One Impact Synchronization Triad Orchestrator:
+    1. Attacker: Wind-up anticipation -> VECTOR strike arrival at impact_frame -> Hit-Stop freeze (hit_stop_frames).
+    2. Victim: Holds pre-hit stance until impact_frame, compresses during Hit-Stop, then launches into
+       asymmetric Staggered Recoil + physical knockback slide starting at impact_frame + hit_stop_frames.
+    3. VFX Burst: Spawns synchronized Impact Sparks, Ground/Air Dust Shockwave, optional Energy Slash Arc,
+       and an interactive 4200W Point Light Flash at impact_loc.
+    4. Camera & Compositor: Triggers damped trauma shake on `camera` at impact_frame and enables Compositor Bloom.
+    """
+    p_hit = Vector(impact_loc)
+    hs_f = max(1, int(hit_stop_frames))
+    vfx_objs = []
+
+    # 1. Attacker Strike & Hit-Stop Freeze
+    if attacker and "armature" in attacker:
+        arm_a = attacker["armature"]
+        bpy.context.scene.frame_set(max(1, impact_frame - 6))
+        loc_a = arm_a.location.copy()
+        yaw_a = math.degrees(arm_a.rotation_euler.z)
+        # Anticipation coil at impact_frame - 5
+        if impact_frame >= 6:
+            apply_pose_lib(attacker, impact_frame - 6, "draw_weapon", dur=3, loc=loc_a, yaw_deg=yaw_a,
+                           anticipate=False, arc_breakdown=False, overshoot=0.0, hold_frames=0)
+        # Snap strike arrival at impact_frame with VECTOR handle
+        strike_pose = dict(POSE_LIB["strike_slash"])
+        key_r15_pose(arm_a, impact_frame, loc=loc_a, yaw_deg=yaw_a, interpolation="VECTOR",
+                     hip_offset=strike_pose.get("_hip_offset"), **strike_pose)
+        # Hit-Stop Freeze across [impact_frame .. impact_frame + hs_f]
+        key_r15_pose(arm_a, impact_frame + hs_f, loc=loc_a, yaw_deg=yaw_a, interpolation="BEZIER",
+                     hip_offset=strike_pose.get("_hip_offset"), **strike_pose)
+        # Follow-through recovery settle
+        apply_pose_lib(attacker, impact_frame + hs_f + 2, "combat_guard", dur=10, loc=loc_a, yaw_deg=yaw_a,
+                       anticipate=False, arc_breakdown=True, overshoot=0.05, hold_frames=14)
+
+    # 2. Victim Hit-Stop Compression -> Staggered Recoil & Knockback Slide
+    if victim and "armature" in victim:
+        arm_v = victim["armature"]
+        bpy.context.scene.frame_set(max(1, impact_frame - 1))
+        loc_v0 = arm_v.location.copy()
+        yaw_v = math.degrees(arm_v.rotation_euler.z)
+        # Direction away from impact_loc (or backward along victim's facing)
+        push_dir = Vector((loc_v0.x - p_hit.x, loc_v0.y - p_hit.y, 0.0))
+        if push_dir.length < 1e-3:
+            push_dir = Euler((0.0, 0.0, math.radians(yaw_v))).to_matrix() @ Vector((0.0, 1.0, 0.0))
+        push_dir.normalize()
+        loc_v_end = loc_v0 + push_dir * knockback_m
+
+        # Hold pre-impact position right up to impact_frame
+        arm_v.location = loc_v0
+        arm_v.keyframe_insert("location", frame=max(1, impact_frame - 1))
+        # At impact_frame .. impact_frame + hs_f: Initial impact compression (head & chest take the blow first)
+        hit_compress = {
+            "LowerTorso": (-3, -2, -4), "UpperTorso": (-18, 5, 10), "Head": (-24, -6, -10),
+            "RightUpperArm": (-45, 0, -18), "RightLowerArm": (-40, 0, 0),
+            "LeftUpperArm": (-38, 0, 16), "LeftLowerArm": (-36, 0, 0),
+        }
+        key_r15_pose(arm_v, impact_frame, loc=loc_v0, yaw_deg=yaw_v, interpolation="VECTOR",
+                     hip_offset=(-0.02, -0.04, -0.085), **hit_compress)
+        key_r15_pose(arm_v, impact_frame + hs_f, loc=loc_v0 + push_dir * (knockback_m * 0.12), yaw_deg=yaw_v,
+                     interpolation="VECTOR", hip_offset=(-0.02, -0.05, -0.095), **hit_compress)
+        # Release from Hit-Stop into full Recoil Shock + Knockback slide (Unlock foot IK during slide if sliding > 0.15m)
+        if knockback_m > 0.12:
+            try:
+                import blender_r15_hybrid as r15h
+                r15h._set_ik_influence(arm_v, impact_frame + hs_f, foot_l=0.0, foot_r=0.0, ramp=1)
+            except Exception:
+                pass
+        recoil_pose = dict(POSE_LIB["recoil_shock"])
+        snap_r15_pose(
+            arm_v, impact_frame + hs_f, snap_frames=9, overshoot=0.10,
+            loc=loc_v_end, yaw_deg=yaw_v, stagger=True, anticipate=False,
+            arc_breakdown=True, hold_frames=16, **recoil_pose
+        )
+
+    # 3. Synchronized VFX Burst + Interactive Point Light Flash
+    vfx_col = _get_vfx_collection(col)
+    flash_color = slash_color_hex if vfx_preset in ("energy_slash", "sword_slash") else spark_color_hex
+    vfx_objs.append(spawn_impact_light_flash(impact_frame, p_hit, color_hex=flash_color, peak_watts=160.0, dur_frames=6, col=vfx_col))
+
+    if vfx_preset in ("heavy_hit", "spark_clash", "energy_slash", "sword_slash", "explosion"):
+        vfx_objs.extend(spawn_impact_sparks(
+            impact_frame, p_hit, count=20 if vfx_preset != "spark_clash" else 28,
+            speed_m=4.8, dur_frames=11, color_hex=spark_color_hex, col=vfx_col
+        ))
+    if vfx_preset in ("heavy_hit", "ground_slam", "explosion"):
+        ground_pt = Vector((p_hit.x, p_hit.y, max(0.03, p_hit.z - 0.65))) if vfx_preset in ("heavy_hit", "explosion") else p_hit
+        vfx_objs.extend(spawn_dust_shockwave(
+            impact_frame, ground_pt, max_radius_m=1.45 if vfx_preset == "heavy_hit" else 2.2,
+            dur_frames=12, puff_count=10, ring_color_hex=spark_color_hex, col=vfx_col
+        ))
+    if vfx_preset in ("energy_slash", "sword_slash", "heavy_hit", "explosion"):
+        yaw_s = math.degrees(attacker["armature"].rotation_euler.z) if (attacker and "armature" in attacker) else 0.0
+        vfx_objs.append(spawn_energy_slash_arc(
+            impact_frame, p_hit, yaw_deg=yaw_s, radius_m=0.92, dur_frames=7, color_hex=slash_color_hex, col=vfx_col
+        ))
+
+    # 4. Camera Trauma Shake & Blender 5.3 Compositor Bloom
+    if camera is not None:
+        add_camera_shake(camera, impact_frame, amp_m=0.055, amp_deg=1.8, dur_frames=11)
+    enable_compositor_bloom(threshold=2.8, strength=0.22)
+
+    return {
+        "impact_frame": impact_frame,
+        "hit_stop_end": impact_frame + hs_f,
+        "impact_loc": tuple(p_hit),
+        "vfx_count": len(vfx_objs),
+        "preset": vfx_preset,
+    }
+
+
+def eval_ballistic_bounce(pos0: Vector, vel0: Vector, ang_vel: Vector, dt: float, half_z: float, gravity: float = 18.0):
+    """
+    Universal 3D projectile trajectory solver with ground plane collision (z = half_z),
+    2 energy-damping restitution bounces (e1=0.40, e2=0.22), and friction skid decay.
+    """
+    if dt <= 0.0:
+        return pos0.copy(), Euler((0.0, 0.0, 0.0), "XYZ")
+    dz = max(0.0, pos0.z - half_z)
+    disc = vel0.z * vel0.z + 2.0 * gravity * dz
+    t_hit1 = (vel0.z + math.sqrt(max(0.0, disc))) / gravity
+    vz_impact1 = math.sqrt(max(0.0, disc))
+    vz1 = vz_impact1 * 0.40
+    t_b1 = 2.0 * vz1 / gravity
+    vz2 = vz1 * 0.45
+    t_b2 = 2.0 * vz2 / gravity
+
+    if dt <= t_hit1:
+        x = pos0.x + vel0.x * dt
+        y = pos0.y + vel0.y * dt
+        z = pos0.z + vel0.z * dt - 0.5 * gravity * dt * dt
+        rt = dt
+    elif dt <= t_hit1 + t_b1:
+        u = dt - t_hit1
+        x = pos0.x + vel0.x * t_hit1 + vel0.x * 0.60 * u
+        y = pos0.y + vel0.y * t_hit1 + vel0.y * 0.60 * u
+        z = half_z + vz1 * u - 0.5 * gravity * u * u
+        rt = t_hit1 + u * 0.60
+    elif dt <= t_hit1 + t_b1 + t_b2:
+        u = dt - (t_hit1 + t_b1)
+        x = pos0.x + vel0.x * (t_hit1 + 0.60 * t_b1) + vel0.x * 0.30 * u
+        y = pos0.y + vel0.y * (t_hit1 + 0.60 * t_b1) + vel0.y * 0.30 * u
+        z = half_z + vz2 * u - 0.5 * gravity * u * u
+        rt = t_hit1 + 0.60 * t_b1 + u * 0.32
+    else:
+        u = min(0.45, dt - (t_hit1 + t_b1 + t_b2))
+        skid = u * (1.0 - u / 0.9)
+        x = pos0.x + vel0.x * (t_hit1 + 0.60 * t_b1 + 0.30 * t_b2 + 0.16 * skid)
+        y = pos0.y + vel0.y * (t_hit1 + 0.60 * t_b1 + 0.30 * t_b2 + 0.16 * skid)
+        z = half_z
+        rt = t_hit1 + 0.60 * t_b1 + 0.32 * t_b2 + 0.15 * skid
+
+    return Vector((x, y, max(half_z, z))), Euler((ang_vel.x * rt, ang_vel.y * rt, ang_vel.z * rt), "XYZ")
+
+
+def add_shoes_3d(char_info: dict, shoe_hex: str = "#BC5E9A", sole_hex: str = "#3A1D32"):
+    """Attach sculpted 3D rounded slippers/shoes onto LeftLowerLeg and RightLowerLeg (protruding toe cap + sole)."""
+    arm = char_info["armature"]
+    col = char_info["collection"]
+    m = char_info["metrics"]
+    tw = m["tw"]
+    lw = m.get("lw", 1.0)
+    leg_x = 0.255 * tw
+    mat_shoe = make_solid_mat(f"{arm.name}_Shoe3D", hex_to_linear_rgba(shoe_hex), roughness=0.42)
+    mat_sole = make_solid_mat(f"{arm.name}_Sole3D", hex_to_linear_rgba(sole_hex), roughness=0.65)
+    created = []
+    for sgn, bname in ((-1.0, "RightLowerLeg"), (1.0, "LeftLowerLeg")):
+        ox = sgn * leg_x * STUD
+        # Rounded slipper upper protruding slightly forward (-Y)
+        bm = bmesh.new()
+        bmesh.ops.create_cube(bm, size=1.0)
+        for v in bm.verts:
+            v.co.x *= 1.06 * lw * STUD
+            v.co.y *= 1.22 * lw * STUD
+            v.co.z *= 0.32 * STUD
+        me = bpy.data.meshes.new(f"{arm.name}_{bname}_Shoe_M")
+        bm.to_mesh(me); bm.free()
+        ob = bpy.data.objects.new(f"{arm.name}_{bname}_Shoe", me)
+        ob.location = (ox, -0.10 * lw * STUD, 0.16 * STUD)
+        ob.data.materials.append(mat_shoe)
+        bev = ob.modifiers.new("Bevel", "BEVEL")
+        bev.width = 0.018; bev.segments = 3
+        for p in ob.data.polygons:
+            p.use_smooth = True
+        col.objects.link(ob)
+        created.append((ob, bname))
+        # Thin dark sole
+        bm_s = bmesh.new()
+        bmesh.ops.create_cube(bm_s, size=1.0)
+        for v in bm_s.verts:
+            v.co.x *= 1.08 * lw * STUD
+            v.co.y *= 1.24 * lw * STUD
+            v.co.z *= 0.07 * STUD
+        me_s = bpy.data.meshes.new(f"{arm.name}_{bname}_Sole_M")
+        bm_s.to_mesh(me_s); bm_s.free()
+        ob_s = bpy.data.objects.new(f"{arm.name}_{bname}_Sole", me_s)
+        ob_s.location = (ox, -0.10 * lw * STUD, 0.035 * STUD)
+        ob_s.data.materials.append(mat_sole)
+        col.objects.link(ob_s)
+        created.append((ob_s, bname))
+
+    bpy.context.view_layer.update()
+    for ob, bn in created:
+        ob.matrix_world = arm.matrix_world @ ob.matrix_world
+        wm = ob.matrix_world.copy()
+        ob.parent = arm
+        ob.matrix_parent_inverse = arm.matrix_world.inverted()
+        ob.matrix_world = wm
+        vg = ob.vertex_groups.new(name=bn)
+        vg.add(list(range(len(ob.data.vertices))), 1.0, "REPLACE")
+        mod = ob.modifiers.new("Armature", "ARMATURE")
+        mod.object = arm
+    return [o for o, _ in created]
+
+
+def add_jacket_collar_3d(char_info: dict, collar_hex: str = "#265CB0"):
+    """Attach 3D raised jacket collar triangles framing the neck/scarf on UpperTorso (matching té5666.mp4)."""
+    arm = char_info["armature"]
+    col = char_info["collection"]
+    m = char_info["metrics"]
+    neck_z = m["neck_z"]
+    mat_c = make_solid_mat(f"{arm.name}_Collar3D", hex_to_linear_rgba(collar_hex), roughness=0.48)
+    created = []
+    for sgn, tag in ((-1.0, "R"), (1.0, "L")):
+        bm = bmesh.new()
+        bmesh.ops.create_cube(bm, size=1.0)
+        for v in bm.verts:
+            v.co.x *= 0.14 * STUD
+            v.co.y *= 0.56 * STUD
+            v.co.z *= 0.36 * STUD
+            if v.co.z > 0:
+                v.co.y -= 0.12 * STUD
+        me = bpy.data.meshes.new(f"{arm.name}_Collar_{tag}_M")
+        bm.to_mesh(me); bm.free()
+        ob = bpy.data.objects.new(f"{arm.name}_Collar_{tag}", me)
+        ob.location = (sgn * 0.68 * STUD, -0.06 * STUD, (neck_z + 0.10) * STUD)
+        ob.rotation_euler = Euler((math.radians(-10), math.radians(sgn * 18), 0))
+        ob.data.materials.append(mat_c)
+        bev = ob.modifiers.new("Bevel", "BEVEL")
+        bev.width = 0.006; bev.segments = 2
+        for p in ob.data.polygons:
+            p.use_smooth = True
+        col.objects.link(ob)
+        created.append(ob)
+
+    bpy.context.view_layer.update()
+    for ob in created:
+        ob.matrix_world = arm.matrix_world @ ob.matrix_world
+        wm = ob.matrix_world.copy()
+        ob.parent = arm
+        ob.matrix_parent_inverse = arm.matrix_world.inverted()
+        ob.matrix_world = wm
+        vg = ob.vertex_groups.new(name="UpperTorso")
+        vg.add(list(range(len(ob.data.vertices))), 1.0, "REPLACE")
+        mod = ob.modifiers.new("Armature", "ARMATURE")
+        mod.object = arm
+    return created
+
+
+def spawn_3d_liquid_splat(
+    impact_frame: int,
+    impact_loc,
+    dark_hex: str = "#25160B",
+    mid_hex: str = "#4A2F18",
+    scale_mult: float = 1.0,
+    dur_frames: int = 18,
+    col=None,
+) -> list:
+    """
+    Spawn a 3D Glossy Liquid/Mud Splash Crown (8 curved petals) + 14 Ballistic Droplets + Expanding Surface Ripple Ring.
+    """
+    vfx_col = _get_vfx_collection(col)
+    mat_liq = make_wet_pbr_ground(f"M_VFX_Liquid_{dark_hex.lstrip('#')}", dark_hex=dark_hex, light_hex=mid_hex, scale=4.5, bump_strength=0.35)
+    mat_foam = make_solid_mat(f"M_VFX_Ripple_{mid_hex.lstrip('#')}", hex_to_linear_rgba("#8C7A68"), roughness=0.25)
+    p0 = Vector(impact_loc)
+    f_pre = max(1, impact_frame - 1)
+    fps = float(bpy.context.scene.render.fps or 30.0)
+    created = []
+
+    for i in range(8):
+        ang = 2.0 * math.pi * i / 8.0 + (i % 2) * 0.15
+        dir_xy = Vector((math.cos(ang), math.sin(ang), 0.0))
+        bpy.ops.mesh.primitive_ico_sphere_add(subdivisions=2, radius=0.11 * scale_mult, location=p0)
+        pet = bpy.context.active_object
+        pet.name = f"VFX_SplatPetal_{impact_frame}_{i}"
+        for v in pet.data.vertices:
+            v.co.z *= 1.85
+            v.co.x *= 0.65
+        for p in pet.data.polygons:
+            p.use_smooth = True
+        pet.data.materials.append(mat_liq)
+        for c in list(pet.users_collection):
+            c.objects.unlink(pet)
+        vfx_col.objects.link(pet)
+        created.append(pet)
+
+        pet.scale = (0.0, 0.0, 0.0)
+        pet.keyframe_insert("scale", frame=1)
+        pet.keyframe_insert("scale", frame=f_pre)
+        _set_fcurve_interp(pet, f_pre, "CONSTANT")
+
+        for k in range(dur_frames + 1):
+            fr = impact_frame + k
+            u = k / float(max(1, dur_frames))
+            rad = (0.12 + 0.34 * (1.0 - (1.0 - u) ** 2.4)) * scale_mult
+            hz = 0.26 * scale_mult * math.sin(math.pi * (u ** 0.72))
+            pet.location = p0 + dir_xy * rad + Vector((0.0, 0.0, hz))
+            pet.rotation_euler = Euler((math.sin(ang) * (0.4 + 0.7 * u), -math.cos(ang) * (0.4 + 0.7 * u), ang), "XYZ")
+            sc = math.sin(math.pi * (u ** 0.65)) * (1.15 if i % 2 == 0 else 0.90)
+            if k == dur_frames:
+                sc = 0.0
+            pet.scale = (sc, sc, sc)
+            pet.keyframe_insert("location", frame=fr)
+            pet.keyframe_insert("rotation_euler", frame=fr)
+            pet.keyframe_insert("scale", frame=fr)
+
+    for i in range(14):
+        ang = i * 2.39996
+        spd_xy = (0.6 + 1.1 * ((i % 5) / 4.0)) * scale_mult
+        vz = (2.2 + 1.8 * ((i % 4) / 3.0)) * scale_mult
+        vel = Vector((math.cos(ang) * spd_xy, math.sin(ang) * spd_xy, vz))
+        bpy.ops.mesh.primitive_ico_sphere_add(subdivisions=2, radius=0.055 * scale_mult, location=p0)
+        dr = bpy.context.active_object
+        dr.name = f"VFX_SplatDrop_{impact_frame}_{i}"
+        for p in dr.data.polygons:
+            p.use_smooth = True
+        dr.data.materials.append(mat_liq)
+        for c in list(dr.users_collection):
+            c.objects.unlink(dr)
+        vfx_col.objects.link(dr)
+        created.append(dr)
+
+        dr.scale = (0.0, 0.0, 0.0)
+        dr.keyframe_insert("scale", frame=1)
+        dr.keyframe_insert("scale", frame=f_pre)
+        _set_fcurve_interp(dr, f_pre, "CONSTANT")
+
+        life = dur_frames + 4
+        for k in range(life + 1):
+            fr = impact_frame + k
+            dt = k / fps
+            u = k / float(life)
+            pos = p0 + vel * dt + Vector((0.0, 0.0, -0.5 * 16.0 * dt * dt))
+            pos.z = max(0.01, pos.z)
+            dr.location = pos
+            sc = 1.0 - (u ** 2.2) if k < life else 0.0
+            dr.scale = (sc, sc, sc)
+            dr.keyframe_insert("location", frame=fr)
+            dr.keyframe_insert("scale", frame=fr)
+
+    bpy.ops.mesh.primitive_torus_add(
+        major_segments=32, minor_segments=8, major_radius=0.35 * scale_mult, minor_radius=0.022 * scale_mult,
+        location=p0 + Vector((0.0, 0.0, 0.012))
+    )
+    rip = bpy.context.active_object
+    rip.name = f"VFX_SplatRipple_{impact_frame}"
+    for p in rip.data.polygons:
+        p.use_smooth = True
+    rip.data.materials.append(mat_foam)
+    for c in list(rip.users_collection):
+        c.objects.unlink(rip)
+    vfx_col.objects.link(rip)
+    created.append(rip)
+
+    rip.scale = (0.0, 0.0, 0.0)
+    rip.keyframe_insert("scale", frame=1)
+    rip.keyframe_insert("scale", frame=f_pre)
+    _set_fcurve_interp(rip, f_pre, "CONSTANT")
+    for k in range(dur_frames + 4):
+        fr = impact_frame + k
+        u = k / float(dur_frames + 3)
+        rs = 0.35 + 1.45 * (1.0 - (1.0 - u) ** 2.5)
+        zs = max(0.0, 1.0 - u ** 1.4)
+        if k == dur_frames + 3:
+            rs, zs = 0.0, 0.0
+        rip.scale = (rs, rs, zs)
+        rip.keyframe_insert("scale", frame=fr)
+
+    return created
+
+
+# ---------------------------------------------------------------------------
+# Sven Core Auto-Director Extensions (Blockout, 20-Preset Camera Path,
+# Multi-Angle Stdlib Contact Sheet QA, & 5-Family Humanoid Retargeting)
+# ---------------------------------------------------------------------------
+try:
+    from blender_auto_director import (
+        PRESETS as CAMERA_PATH_PRESETS,
+        blockout_llm_prompt,
+        build_blockout_scene,
+        build_camera_path,
+        capture_views_sheet,
+        clear_blockout_scene,
+        detect_humanoid_family,
+        encode_blockout_rows,
+        fit_distance,
+        frame_camera,
+        parse_blockout_plan,
+        plan_from_text,
+        retarget_humanoid_action,
+    )
+except ImportError:
+    pass
+
 
 

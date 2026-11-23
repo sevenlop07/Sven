@@ -24,6 +24,29 @@ The execution model is in `blender-core` (its `references/bpy-patterns.md` has v
 4. **Polish**: offsets/overlap (follow-through on hair, tails, cloth bones), arcs, moving holds (never a perfectly frozen character), and contact stability (feet locked with IK).
 5. **Review**: MCP `look(mode="frames", frame_count=8)` or a Workbench playblast (`blender-rendering`).
 
+## The 12 Principles of Animation (Disney) in Blender 5.3 & Pose-Calling Rules
+Never snap a rig linearly from Pose A to Pose B or leave all bones starting and stopping on the exact same frame (`Dead Stop`). Enforce all 12 principles mathematically (implemented in `roblox-director/studio_kit/blender_roblox_kit.py` `snap_r15_pose` / `apply_pose_lib` / `POSE_LIB` and `blender_r15_hybrid.py`):
+1. **Squash and Stretch (Center-of-Mass Compression)**: When bone scaling is disallowed (Roblox/game rigs), express squash and stretch via vertical hip displacement (`LowerTorso.location.z` `_hip_offset` `-0.02m..-0.28m`) paired with Foot IK knee flexion and spine pitch compression on jump wind-ups, impacts, and recoils.
+2. **Anticipation (`2–4f` Reverse Wind-Up)**: Precede every dynamic gesture, turn, strike, or throw with a `2–4 frame` counter-move (`14%–18%` in the opposite direction + slight hip dip) before launching toward the target pose (`anticipate=True`).
+3. **Staging & Camera-Sightline Corridors**:
+   - **Sightline Clearance**: Never scatter foreground trees, lampposts, or props on a blind grid across the camera-to-subject ray. Reserve clear camera sightline corridors and frame silhouettes cleanly.
+   - **Readable Silhouette**: Open elbows away from the ribs (`Z/roll ±10°..28°`) so arms never merge into the torso silhouette from the active camera angle.
+4. **Pose-to-Pose + Straight Ahead Hybrid**: Use **Pose-to-Pose** (`Key Pose -> Extreme -> Breakdown Arc`) for intentional character acting (`POSE_LIB`), layered with **Straight Ahead** physics/procedural secondary motion (`bake_secondary_overlap` on hair/scarf bones, rigid-body/parabolic prop trajectories).
+5. **Follow Through & Overlapping Action (Mandatory Kinematic Chain Stagger)**:
+   - Never stop all bones on the same frame. Drive motion from the center of mass outward:
+     `LowerTorso / Hips (Frame F)` → `UpperTorso / Chest (F + 1)` → `UpperArm / LowerArm (F + 2, after a +7% Overshoot at F)` → `Head / Gaze (F + 3)` → `Hair / Scarf / Cloth Secondary Bones (F + 3..4 lag)`.
+6. **Slow In and Slow Out (`BEZIER` `AUTO_CLAMPED` Handles)**: Author pose transitions with `BEZIER` interpolation and `AUTO_CLAMPED` F-curve handles so limbs accelerate smoothly out of rest and decelerate into holds. Use `VECTOR` handles only at physical impact/contact frames.
+7. **Arcs (Midpoint Breakdown Injection)**: Linear Euler/Quaternion interpolation between two distant poses cuts along a straight chord and clips through the chest. Always inject a **Midpoint Breakdown Keyframe (`t = 0.5`, `arc_breakdown=True`)**: add a `+4.5°` downward chin dip on head yaw turns and a `±11°` outward elbow abduction on large arm swings.
+8. **Secondary Action (NLA Layered Acting)**: Combine a lower-body locomotion or weight-shift track (`Track 1: Walk IK / Idle Weight Shift`) with an upper-body emotional/conversational overlay (`Track 2: POSE_LIB / speak_emphasis_r15`) and periodic eye blinks (`every 90–105 frames`).
+9. **Timing, Spacing & Moving Holds (`30 fps` Calibration)**:
+   - Fast reflex / flinch / strike: `4–6 frames` (`0.13s–0.20s`).
+   - Natural conversational gesture / turn: `8–12 frames` (`0.27s–0.40s`).
+   - Heavy lift / exhaustion / bow: `18–32 frames` (`0.60s–1.05s`).
+   - **Moving Hold (`hold_frames >= 12`)**: After landing a key pose, never freeze the character at 0 velocity; sustain a subtle `±1.5°` chest/head breathing micro-settle across the hold window.
+10. **Exaggeration**: Push torso tilt, head pitch/yaw, and arm extension `15%–25%` beyond pedestrian angles so emotional intent reads immediately in Medium and Wide shots.
+11. **Solid Posing (Contrapposto & Zero Twinning)**: Strictly ban symmetric mirror posing ("twinning") where left and right arms/legs share identical angles. Enforce **Contrapposto** (`LowerTorso` hip tilt/twist counter-balanced by opposite `UpperTorso` shoulder tilt/twist along an S- or C-curve Line of Action) while locking `IK_Foot.L/R = 1.0` flat to the floor (`0.000m` foot sliding).
+12. **Appeal**: Assign distinct base postures (`confident_stand`, `neutral_relaxed`, `cross_arms`, `look_up_awe`, `lean_balustrade`, `combat_guard` across the 24-pose `POSE_LIB`) and distinct energy/timing scales to each character.
+
 ## Game animation rules
 - **One action per clip**, named `<Rig>_<Clip>` or just `<Clip>`, with a fake user so it survives saving.
 - **Loops**: first and last frames identical. Export frames 1..N and let the engine drop the duplicate, or exclude the last frame (UE/Unity "loop pose" options). An F-curve `CYCLES` modifier helps preview but **doesn't export**, so bake it. Verify with `scripts/loop_check.py -- --object RIG --action Walk [--root-motion root] [--fix]`: it reports pose **pops** (last ≠ first, per bone, in deg/m) and speed **hitches** across the seam, and `--fix` keys the first-frame values on the last frame (root travel is kept).

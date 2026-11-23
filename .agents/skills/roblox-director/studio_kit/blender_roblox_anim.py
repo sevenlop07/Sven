@@ -521,6 +521,97 @@ class RobloxAnimator:
         self.stops.append((float(t), int(frames)))
         return self
 
+    def check_path_clearance(
+        self,
+        obstacles=None,
+        radius_m: float = 0.42,
+        t_start: float = 0.0,
+        t_end: float = None,
+        dt: float = 0.1,
+        z_range=(0.15, 1.55),
+        ground_names=("ground", "terrain", "floor", "road", "sidewalk", "lawn", "snow", "ice", "pond", "mud", "asphalt"),
+        ignore_names=(),
+        strict: bool = False,
+    ) -> list:
+        """
+        Law R-COLLIDE Layer 4 — Proactive Walk/Run Corridor Validator BEFORE baking:
+        Samples root (x, y) every `dt` seconds and tests a `radius_m` cylinder against all
+        environment obstacle 2D footprints intersecting `z_range`.
+        Returns list of path hit dicts (empty = safe corridor).
+        """
+        sc = bpy.context.scene
+        if t_end is None:
+            t_end = max([s[2] for s in self.segs], default=(sc.frame_end - 1) / self.fps)
+            if isinstance(self.root, list) and self.root:
+                t_end = max(t_end, float(self.root[-1][0]))
+
+        dg = bpy.context.evaluated_depsgraph_get()
+        char_col = self.ch.get("collection")
+        char_names = {o.name for o in char_col.all_objects} if char_col else {self.arm.name}
+        hidden_cols = {"_PH_Templates", "HeroLights", "_LL_HeroCast"}
+        g_low = tuple(g.lower() for g in ground_names)
+        ig_low = tuple(g.lower() for g in ignore_names)
+
+        # Collect obstacle meshes (either explicit list expanded recursively or auto-all scene meshes)
+        obs_meshes = []
+        if obstacles is not None:
+            seen = set()
+            for ob in obstacles:
+                for c in [ob] + list(ob.children_recursive):
+                    if c.type == "MESH" and c.name not in seen and not c.hide_render:
+                        seen.add(c.name)
+                        obs_meshes.append(c)
+        else:
+            for o in sc.objects:
+                if o.type != "MESH" or o.hide_render or o.name in char_names:
+                    continue
+                if any(c.name in hidden_cols or c.hide_render for c in o.users_collection):
+                    continue
+                nl = o.name.lower()
+                if any(tok in nl for tok in g_low) or any(tok in nl for tok in ig_low):
+                    continue
+                obs_meshes.append(o)
+
+        footprints = []
+        for ob in obs_meshes:
+            ev = ob.evaluated_get(dg)
+            if not ev.data or len(ev.bound_box) < 8:
+                continue
+            pts = [ev.matrix_world @ Vector(c) for c in ev.bound_box]
+            xs, ys, zs = [p.x for p in pts], [p.y for p in pts], [p.z for p in pts]
+            z0, z1 = min(zs), max(zs)
+            if z1 < z_range[0] or z0 > z_range[1]:
+                continue
+            footprints.append((ob.name, min(xs), max(xs), min(ys), max(ys)))
+
+        hits = []
+        t = float(t_start)
+        while t <= t_end + 1e-6:
+            x, y, _ = self._root_at(t)
+            for oname, x0, x1, y0, y1 in footprints:
+                # Closest point on obstacle XY AABB to character center (x, y)
+                cx = clamp(x, x0, x1)
+                cy = clamp(y, y0, y1)
+                dist = math.hypot(x - cx, y - cy)
+                if dist < radius_m:
+                    hits.append({
+                        "t": round(t, 2),
+                        "x": round(x, 3),
+                        "y": round(y, 3),
+                        "obstacle": oname,
+                        "clearance_m": round(dist - radius_m, 3),
+                    })
+                    break  # one report per timestamp
+            t += max(0.02, dt)
+
+        if strict and hits:
+            h0 = hits[0]
+            raise RuntimeError(
+                f"[Law R-COLLIDE Path] {self.arm.name} enters obstacle '{h0['obstacle']}' at t={h0['t']}s "
+                f"({h0['x']}, {h0['y']}) clearance={h0['clearance_m']}m ({len(hits)} samples blocked)."
+            )
+        return hits
+
     # ---------------- evaluation
     def _world_t(self, f):
         t = (f - 1) / self.fps

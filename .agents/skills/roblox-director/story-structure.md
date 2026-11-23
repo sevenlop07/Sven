@@ -107,8 +107,8 @@ All 3 threads collide at **5 Mandatory Convergence Nodes**:
 - **Rotation log for every genre**: append one row per episode to `templates/rotation-log.md` (hook type, twist family, ending type, reveal %, subject, outcome) and run `script_check.py --log` — rotation is not storytime-only.
 
 ### 2.5 Choose 1 Primary Genre Engine (from Sven `1-narrative` §5.3)
-1. **Engine 1 — Family / Social Pressure-Cooker**: Escalating domestic/community secrets, loyalty vs. truth, karma payoff.
-2. **Engine 2 — High-Dopamine Underdog / Reversal**: Public humiliation/disadvantage turned via clever physical leverage.
+1. **Engine 1 — Family / Social Pressure-Cooker**: Escalating domestic/community secrets, loyalty vs. truth, a fair karma payoff that leaves room to change.
+2. **Engine 2 — Underdog Dignity Reversal**: Public disadvantage or unfair treatment turned via clever physical leverage and planted proof; the payoff is the hero's worth seen, never the bully humiliated (`0d` §5).
 3. **Engine 3 — Survival / World-Rule Gauntlet**: Strict environmental/town rules, escalating hazards, resource/trust tradeoffs.
 4. **Engine 4 — Detective / Mystery Onion-Peel**: Fair-play physical clues (`P1–P3`), misread suspects, checkmate reveal.
 5. **Engine 5 — Episodic Sitcom (Snowball + Reset)**: Comedic premise spirals out of control each episode while keeping a loose B-Plot arc.
@@ -124,7 +124,7 @@ Because `@RobloxDirector` runs **100% First-Person Narration (`1 consistent voic
 2. **Inline Quoted Lines Only**: When another character must speak a sharp line, embed it cleanly inside the single narrator's voice (*`Grandpa didn't look up. He just said, "Don't open that door after midnight."`*) — zero multi-voice speaker switching required.
 3. **100% Clean Copy-Paste TTS Text (Zero Bracketed Tags)**: Never insert bracketed pause, ASMR, or direction tags (`[PAUSE]`, `[ASMR 1.0s]`, `[NGẮT THỞ ...]`) inside Block 2A narration text — they do nothing in TTS and break clean copy-paste flow. Control pacing naturally through sentence length, short punchy lines, and paragraph breaks; any silence or ambience beat is handled at R3/R5 audio editing if needed.
 4. **Zero-Waste Pre-Production Scorecards (Gate Before Recording `.mp3`)**:
-   - **`GATE R1` (Track L Series Lock)**: Score the Series Blueprint on **6 criteria (`0–2` each, max `12`, Pass `≥ 9/12`)**: *(1) 3-Second Visual Hook*, *(2) A1 Wound/Want/Need Depth*, *(3) A2 Coherent Opposition*, *(4) Layered Master Secret (held past Ep 1)*, *(5) Triple-Helix A/B/C Convergence*, *(6) Shared Cast & 5-Vector Set Reusability*. Rewrite any series below `9/12` before approving.
+   - **`GATE R1` (Track L Series Lock)**: Score the Series Blueprint on **6 criteria (`0–2` each, max `12`, Pass `≥ 9/12`)**: *(1) 3-Second Visual Hook*, *(2) A1 Wound/Want/Need Depth*, *(3) A2 Coherent Opposition*, *(4) Layered Master Secret (held past Ep 1)*, *(5) Triple-Helix A/B/C Convergence*, *(6) Shared Cast & 5-Vector Set Reusability*. Rewrite any series below `9/12` before approving. At `GATE R1` (series and each concept) **and** `GATE R2` (each episode) also score the **Heart & Value Scorecard** (`engine/references/0d-heart-and-value.md` §8: value through a costly choice · planted heart moment · dignity & fairness · takeaway & hope; `0–2` each, pass `≥ 6/8`, no `0`): stories for young viewers must move them and model kindness, honesty and repair — wrongdoers meet fair consequences and can change, nobody is humiliated as the reward.
    - **`GATE R2` (Per-Episode Lock — Track S & Track L)**: Score Episode `N`'s script on the **engine's 8 engagement criteria adapted to narration** (`0–2` each, max `16`, Pass `≥ 12/16` with no criterion at `0` — same scale as `workflow.md` §8.4):
      1. **Hook** — a concrete visual anomaly in `0–3 s` and the narrator's personal stake by `6 s`.
      2. **Open loops** — at every beat cut the viewer is waiting for an answer (loop ledger `L1…` opened/paid by beat).

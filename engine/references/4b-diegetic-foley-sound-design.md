@@ -55,14 +55,23 @@ Every Code Block 2 `[Diegetic Foley Soundscape]` must be engineered across **4 a
 
 ---
 
-## 3. Strict Soundscape Prohibitions (Banned Audio)
+## 3. Strict Soundscape Prohibitions & Dual Audio Modes (`Mode S1 Dialogue/Drama` vs. `Mode S2 Pure Close-Mic ASMR`)
 
-1. **Strictly Ban Non-Diegetic Score in Foley Blocks**:
-   - Never write: `sad piano music plays`, `dramatic orchestral swell`, `tense action music kicks in`.
-   - Score is added in post-production. Code Block 2 belongs **100% to diegetic reality** (sounds that exist inside the world of the characters).
-2. **Ban Generic Sound Labels**:
-   - Ban: `crying sounds`, `angry voice`, `loud noise`.
-   - Replace with tangible physics: `muffled throat sob swallowed down`, `harsh dry bark of gravelly voice`, `explosive ceramic shattering on tiled concrete`.
+1. **Strictly Ban Non-Diegetic Score & Background Music Across All Prompts**:
+   - Never write: `sad piano music plays`, `dramatic orchestral swell`, `tense action music kicks in`, `upbeat comedy music`.
+   - Every `[sound]:` block in Code Block 1 belongs **100% to diegetic reality** and must explicitly lock `Strictly zero background music`.
+2. **Mode S1 (Dialogue & Dramatic Scenes) vs. Mode S2 (Pure Close-Mic Culinary / Craft ASMR Scenes)**:
+   - **Mode S1 (`Dialogue / Drama / Confrontation`)**: Combines Layer 1 (Room Tone) + Layer 2 (Tactile Prop Foley) + Layer 3 (Synchronized Paralinguistic Vocal Triggers matching the spoken interjection) + Layer 4 (Spoken Dialogue Resonance).
+   - **Mode S2 (`Pure Close-Mic Culinary / Craft ASMR & Non-Verbal Comedy`)**:
+     * Activated whenever a scene focuses on culinary preparation, artisan craft, or non-verbal ASMR comedy.
+     * **100% Close-Mic Tactile Material & Thermal Foley ONLY**: Focus exclusively on ultra-crisp, high-definition physical sounds of blades slicing ingredients on oak wood, rolling boils, metallic basket shakes, sizzling fat, velvety liquid pours, crisp caramel cracks, and delicate utensil contact against a dead-quiet acoustic bed.
+     * **STRICT BAN ON HUMAN VOCAL SOUNDS & CARTOON SFX IN ASMR MODE**: In `Mode S2`, **completely omit Layer 3 & Layer 4** — strictly ban human breathing, nasal exhales, sighs, whimpers, lip-smacks, grunts, or cartoon sound effects! Close `[sound]:` with:
+       `Pure close-mic culinary ASMR audio only: [chronological tactile food and utensil micro-sounds across Shots 1..N]. Strictly zero background music, zero musical instruments, zero ambient soundtrack, zero human vocal sounds, and zero spoken dialogue.`
+     * Enforce in the Code Block 1 Negative Footer:
+       `Do not generate background music, musical instruments, ambient BGM, soundtrack, singing, human vocal breathing, grunts, or spoken dialogue — render 100% pure close-mic culinary ASMR foley sound effects only.`
+3. **Ban Generic Sound Labels**:
+   - Ban: `crying sounds`, `angry voice`, `loud noise`, `cooking sounds`.
+   - Replace with tangible micro-physics: `ultra-crisp knife blade slicing through tender roasted pork belly on solid oak wood`, `high-definition rolling boil of golden ramen noodles`, `crisp metallic tap of a spoon cracking caramelized sugar crust`.
 
 ---
 

@@ -132,6 +132,9 @@ def draw_eye(
             rr = sr if k % 2 == 0 else sr * 0.30
             spts.append(P(px + rr * math.cos(ang), py + rr * math.sin(ang)))
         ld.polygon(spts, fill=WHITE)
+    elif glint == "solid":
+        # Viral Storybook-Toon high-contrast solid vertical oval pupil (0.2s mobile thumbnail readability)
+        ld.ellipse([P(px - prx * 0.88, py - pry * 1.04), P(px + prx * 0.88, py + pry * 1.04)], fill=pcol)
     else:
         ld.ellipse([P(px - prx, py - pry), P(px + prx, py + pry)], fill=pcol)
         if glint == "dot":
@@ -221,14 +224,35 @@ def draw_heart(d, cx, cy, sz=72, col=HEART_RED, ink=INK_CARTOON):
     taper_stroke(d, pts + [pts[0]], 10, ink, 0.85)
 
 
-def render_face(name: str, style: str = "cartoon") -> Image.Image:
+def _draw_age_overlay(d, age: str, ink):
+    """Add crisp mobile-readable age & cheek-blush details without cluttering eyes or lip-sync."""
+    if age == "elder_man":
+        wrink = (96, 54, 24, 235)
+        for ry0, ry1, span, lw in ((170, 238, 195, 9), (206, 265, 160, 8), (240, 290, 120, 7)):
+            d.arc([P(512 - span, ry0), P(512 + span, ry1)], 200, 340, fill=wrink, width=int(lw * S))
+        # Soft white horseshoe mustache framing mouth + subtle cheek mole
+        d.arc([P(392, MY - 74), P(632, MY + 74)], 195, 345, fill=(248, 250, 255, 240), width=int(15 * S))
+        d.ellipse([P(256, MY + 18), P(280, MY + 42)], fill=(82, 48, 26, 220))
+    elif age == "elder_woman":
+        for sx in (EL - 115, ER + 115):
+            d.ellipse([P(sx - 12, MY - 32), P(sx + 12, MY - 8)], fill=ink)
+
+
+def render_face(name: str, style: str = "storybook_toon", age: str = "youth") -> Image.Image:
     im = _new()
     d = ImageDraw.Draw(im)
     d._image = im
 
-    ink = INK_RETRO if style == "rubberhose" else INK_CARTOON
-    glint = "pie" if style == "rubberhose" else "dot"
-    es = 0.94 if style == "rubberhose" else 1.0
+    ink = INK_RETRO if style in ("rubberhose", "storybook_toon") else INK_CARTOON
+    glint = "solid" if style == "storybook_toon" else ("pie" if style == "rubberhose" else "dot")
+    es = 1.04 if style == "storybook_toon" else (0.94 if style == "rubberhose" else 1.0)
+
+    if style == "storybook_toon":
+        # Subtle warm/cold cheek blush anchors the character in cinema lighting
+        b_col = (232, 114, 108, 72) if age != "elder_man" else (222, 132, 92, 58)
+        for sx in (EL - 98, ER + 98):
+            d.ellipse([P(sx - 56, EY + 116), P(sx + 56, EY + 158)], fill=b_col)
+        _draw_age_overlay(d, age, ink)
 
     def nose():
         if style == "rubberhose":
@@ -429,11 +453,11 @@ ALL_EXPRESSIONS = [
 ]
 
 
-def generate_pack(out_dir: str, style: str = "cartoon"):
+def generate_pack(out_dir: str, style: str = "storybook_toon", age: str = "youth"):
     os.makedirs(out_dir, exist_ok=True)
     thumbs = []
     for name in ALL_EXPRESSIONS:
-        im = render_face(name, style=style)
+        im = render_face(name, style=style, age=age)
         im.save(os.path.join(out_dir, f"{name}.png"))
         thumbs.append((name, im))
 
@@ -450,18 +474,20 @@ def generate_pack(out_dir: str, style: str = "cartoon"):
         ad.rectangle([x0 + 6, y0 + 6, x0 + 18 + len(n) * 7, y0 + 24], fill=(22, 18, 22))
         ad.text((x0 + 10, y0 + 9), n, fill=(254, 224, 60))
     atlas.save(os.path.join(out_dir, "atlas_preview.jpg"), quality=92)
-    print(f"Generated {len(thumbs)} expressive faces [style={style}] -> {out_dir}")
+    print(f"Generated {len(thumbs)} expressive faces [style={style}, age={age}] -> {out_dir}")
 
 
 if __name__ == "__main__":
     base = os.path.join(os.path.normpath(os.path.join(os.path.dirname(os.path.abspath(__file__)), "..")), "assets")
     ap = argparse.ArgumentParser()
-    ap.add_argument("--style", choices=["cartoon", "rubberhose", "both"], default="both")
+    ap.add_argument("--style", choices=["storybook_toon", "cartoon", "rubberhose", "all"], default="all")
+    ap.add_argument("--age", choices=["youth", "elder_man", "elder_woman"], default="youth")
     ap.add_argument("--out-dir", default=None)
     args = ap.parse_args()
-    if args.style == "both":
-        generate_pack(os.path.join(base, "faces_cartoon"), "cartoon")
-        generate_pack(os.path.join(base, "faces_rubberhose"), "rubberhose")
+    if args.style == "all":
+        generate_pack(os.path.join(base, "faces_storybook_toon"), "storybook_toon", args.age)
+        generate_pack(os.path.join(base, "faces_cartoon"), "cartoon", args.age)
+        generate_pack(os.path.join(base, "faces_rubberhose"), "rubberhose", args.age)
     else:
         out = args.out_dir or os.path.join(base, f"faces_{args.style}")
-        generate_pack(out, args.style)
+        generate_pack(out, args.style, args.age)

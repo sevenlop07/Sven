@@ -14,10 +14,10 @@ Repository root: `D:\Project\Sven` (Windows; shells: PowerShell + Git Bash; Blen
 `C:\Program Files\Blender Foundation\Blender 5.3\blender.exe`; GPU RTX 3060).
 
 ## 1. Load the spec before doing anything (every invocation)
-1. Read `.agents/ROBLOX_DIRECTOR.md` lines 1–260 (5-stage pipeline R1–R5 + §4 Law R-ANIM quality core). This file is
+1. Read `.agents/ROBLOX_DIRECTOR.md` lines 1–271 (5-stage pipeline R1–R5 + §4 Law R-ANIM, Law R-LOOK, Law R-COLLIDE, Law R-WORLD & Law R-STORY/VOICE quality core). This file is
    the single source of truth — if anything below disagrees with it, the file wins.
 2. Read only what the current stage needs (JIT):
-   - R1/R2 script: `.agents/skills/roblox-director/script.md`, `pacing.md` (and `town-script.md` only for "In this town…" reels).
+   - R1/R2 script: `.agents/skills/roblox-director/story-structure.md` (Track S Short 6-Beat & Track L Series 5-Archetype/Triple-Helix + `Law R-VOICE` 100% First-Person Narration), `pacing.md`, `script.md` (and `town-script.md` for "In this town…" reels).
    - R3: `.agents/skills/roblox-director/tools/audio_to_srt.py` / `srt_to_director_plan.py` usage headers.
    - R4 Blender: `.agents/skills/roblox-director/SKILL.md`, `studio_kit/blender_roblox_anim.py` (module docstring),
      the reference build `output/test_action20/blender/build_scene.py`.
@@ -35,6 +35,9 @@ Repository root: `D:\Project\Sven` (Windows; shells: PowerShell + Git Bash; Blen
 - **Law R-ANIM**: Blender acting = `studio_kit/blender_roblox_anim.py` (`RobloxAnimator`: root path in metres →
   `add(state, t0, t1, fade, **params)` → `look()` → `face()`/`face_schedule()` → `hit_stop()` → `bake()`).
   NO Mixamo/BVH/FBX mocap for Roblox characters (a PostToolUse hook rejects it). Studio acting = official R15 animation ids.
+- **Law R-LOOK**: Seamless Blocky R15 (`kit.build_roblox_character` with `body_profile`, Micro-PBR `shirt_fabric`/`pants_fabric`, Anti-Glare 2D face mask) + `storybook_toon` (default) / `cartoon` / `rubberhose` faces (`make_faces_expressive.py`, legacy anime faces retired) + zero-clipping 3D accessories + Blender 5.3 Light-Linked Hero Key (40°) & Contrasting Rim (`env.setup_hero_light_linking`) + motivated Practicals + Raytraced ground reflections.
+- **Law R-COLLIDE**: Every GLB spawn uses `target_height_m`; every walking/running `RobloxAnimator` runs `check_path_clearance(strict=True)` before `bake()`; every scene MUST pass `kit.audit_scene_collisions(cast, frames=None, frame_step=5, use_bvh=True, strict=True)` (auto-collects 100% of environment meshes, exact triangle BVHTree overlap across the full timeline, plus `GROUND_SINK` and `SELF_CLIP`) before saving `scene_built.blend` or rendering.
+- **Law R-WORLD**: Build sets with the 5-Vector AI-Core Architecture (`blender_env_lighting.py`: PolyHaven 2K HDRI + 1K PBR ground `make_photoreal_snow_ice_mat` / `make_wet_mud_puddle_mat`, 3-plane storytelling architecture with warm window spills & 180° reverse trees, `build_atmospheric_particles` 3D snow/dust, and `render_location_2x2_grid` 4-angle spatial audit before animating).
 - **Pose QA gate**: `rba.render_pose_qa(armature, key_frames, out_dir)` → open the sheet with your image tool and check
   §4.4 before any EEVEE/Cycles render. Then render keyframe previews at final framing and look at them too.
 - **Blender runs** go through `python .agents/skills/roblox-director/tools/run_roblox_blender.py --slug <slug> <script.py> -- …`

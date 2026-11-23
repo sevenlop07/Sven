@@ -12,6 +12,7 @@ Governed by: Screenwriter (Level 2) & Director (Level 2) under Showrunner (Level
 | **Regime** | 1 — Grounded Real-World Drama |
 | **Genre Engine** | 1 — Pressure-Cooker (villain-free healing / slice-of-life stories use `healing.md`, Engine 6) |
 | **Audience payoff** | Catharsis and earned empathy |
+| **Heart & value payoff** | Reconciliation that costs pride; love, forgiveness and responsibility between generations (`0d` §6) |
 | **Cast topology** (`2b-character-lines.md` §2) | A1 + A2 opposing relative (love pointed the wrong way) + family satellites tied to both sides; chorus = relatives, neighbours |
 | **Default episode shape** | 0c §4 Archetypes; `75:25` |
 | **Preferred hooks** | #6 Body/Expression Detail, #9 Consequence First, #7 Disrupted Order |

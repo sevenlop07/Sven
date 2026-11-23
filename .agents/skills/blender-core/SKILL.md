@@ -42,7 +42,14 @@ metadata:
 | End-to-end playbooks (prop, character, Roblox, product shot) | `blender-workflow-recipes` |
 
 ## Execute
-**Live (blender-mcp `execute_blender_code`)**: work in small steps and print only what you need. To call a skill script, import it:
+**Live (`scenario-blender` Local MCP at `http://127.0.0.1:9876/mcp` via `scripts/blender_mcp_bridge.py` or `execute_python` / `scene_summary` / `camera_path` / `capture_views`)**: work in small steps and print only what you need. To call a skill script or the Sven Core Auto-Director Engine (`blender_auto_director.py`), import it:
+```python
+import sys, importlib; sys.path.insert(0, r"<skills_dir>/roblox-director/studio_kit")
+import blender_auto_director as ad; importlib.reload(ad)
+# Build a 3D Blockout from JSON rows, auto-keyframe a 20-preset Camera Path, or render a multi-angle Contact Sheet:
+print(ad.build_camera_path(description="slow dolly in, 6s, 50mm, hold 1.5s"))
+```
+To call a skill QA script:
 ```python
 import sys, importlib; sys.path.insert(0, r"<skills_dir>/blender-asset-qa/scripts")
 import qa_check; importlib.reload(qa_check); print(qa_check.run(objects=["Chair"]))

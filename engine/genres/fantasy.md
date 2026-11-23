@@ -12,6 +12,7 @@ Governed by: Screenwriter (Level 2), Director (Level 2) & Combat Director (`@Com
 | **Regime** | 3 — Supernatural, Fantasy, Xianxia & Time-Travel |
 | **Genre Engine** | 3 (cultivation / portal) or 1 (court intrigue) as the sub-genre dictates |
 | **Audience payoff** | Wonder + asymmetric knowledge/power paying off against a ticking cost |
+| **Heart & value payoff** | Power used for others; a second chance spent repairing one's own mistakes and protecting loved ones, not only punishing (`0d` §6) |
 | **Cast topology** (`2b-character-lines.md` §2) | A1 with an edge and its price + the world's power holder + the world law; mentor, rival, relic keeper |
 | **Default episode shape** | default sketch `~10` scenes `100–110s`, flex per 0c §4 |
 | **Preferred hooks** | #1 Visual Paradox, #8 Overlapping Time Traces, #3 Strange Object/Sign |
@@ -52,7 +53,7 @@ $$\text{Addictive Fantasy Drama} = \text{Asymmetric Knowledge / Awakened Power A
 
 | Sub-Genre Pillar | Vietnamese Industry Term | Core Narrative Engine | Primary Visual & Action Signature |
 |---|---|---|---|
-| **1. Time-Travel & Rebirth Revenge** | **Xuyên Không Cổ Đại / Trùng Sinh Báo Thù** | Protagonist wakes up at a pivotal past node (`10 years prior` or inside an ancient dynasty) with full memory of how `A2` and `B-Judas` destroyed them, systematically dismantling every trap before it springs. | Razor-sharp tactical reversals (`Option C`), forensic/modern intellect vs. feudal schemes, `TH3` flashback/timeline-jump transitions + `Seedance 10s/15s` assassination/escape chases. |
+| **1. Time-Travel & Rebirth Second Chance** | **Xuyên Không Cổ Đại / Trùng Sinh Làm Lại** | Protagonist wakes up at a pivotal past node (`10 years prior` or inside an ancient dynasty) with full memory of how `A2` and `B-Judas` destroyed them, systematically dismantling every trap before it springs — and spending the second chance on protecting the people they failed and repairing their own mistakes, not only on punishing (`0d` §6). | Razor-sharp tactical reversals (`Option C`), forensic/modern intellect vs. feudal schemes, `TH3` flashback/timeline-jump transitions + `Seedance 10s/15s` assassination/escape chases. |
 | **2. Eastern Fantasy & Xianxia Myth** | **Tiên Hiệp / Huyền Huyễn / Thần Thoại Phương Đông** | Mortal or fallen immortal with a sealed root bone (`Linh Căn / Phong Ấn`) defies sect tyranny and heavenly tribulation to protect a forbidden bond or uncover a cosmic conspiracy. | Flowing silk PBR robes, Tier-1 Soul Weapons/Relics, elemental aura collisions (`fire/frost/lightning qi`), aerial sword flight & `@CombatDirector` `10x` blink-speed duels. |
 | **3. Urban Supernatural & Portal Hunter** | **Đô Thị Dị Năng / Thợ Săn Cổng Không Gian (Dungeon)** | Dimensional rifts/gates open beneath a modern metropolis; an underestimated low-rank hunter or awakened specialist enters a high-tier dungeon anomaly where rules are rewritten. | Neon-lit modern city (`TH2`) contrasting with bioluminescent dungeon ruins (`TH3` portal entry), tactical weapon + aura combos, monster/boss survival pursuits (`Seedance 15s`). |
 | **4. Ancient Artifact & Parallel Realm** | **Linh Vật Xuyên Không / Giao Thoa Hai Thế Giới** | A Tier-1 ancestral artifact (bronze mirror, jade pendant, antique pocket watch) bridges a modern protagonist and an ancient counterpart across time, allowing objects and danger to cross between eras. | Dual-era visual symmetry, `TH3` object/character handoffs across eras, high-concept mystery + emotional bond across centuries. |
@@ -101,7 +102,7 @@ When a character travels between two distinct eras (e.g., Modern City $\leftrigh
 | **05** | **Escalation & Ambush Ignition**: `A2`'s enforcers or realm guardians corner `A1`; peaceful exit is sealed (Wall 3). | `TH2` or `TH1` | `Standard 10.0s` |
 | **06** | **High-Velocity Pursuit / Escape**: Rooftop/forest/dungeon chase with obstacle vaulting and closing threat distance. | `TH1` (Continuous) | **`⚡ Seedance 10.0s / 15.0s`** (`@CombatDirector`) |
 | **07** | **Supernatural / Martial Clash & Reversal**: `1v1` or `1vMany` clash; Tier-1 Relic awakens (`State 0 ➔ State 1`) to turn the tide. | `TH1` or `TH3` | **`⚡ Seedance 10.0s / 15.0s`** (`@CombatDirector`) |
-| **08** | **The Prestige Face-Slap / Truth Unmasking**: `A1` exposes `B-Judas` or shatters `A2`'s scheme in front of witnesses (`Tier C`). | `TH1` (Continuous) | `Standard 10.0s` |
+| **08** | **The Prestige Truth Unmasking (Dignity Reversal)**: `A1` exposes `B-Judas` or `A2`'s scheme in front of witnesses (`Tier C`) with planted proof — dignity restored, no gloating, a door left open (`0d` §5). | `TH1` (Continuous) | `Standard 10.0s` |
 | **09** | **Somatic Aftermath & Intimate Cost**: Quiet emotional breath (`Track A-Locked` or slow push-in); the physical/karmic toll surfaces. | `TH2` or `TH1` | `Standard 10.0s` |
 | **10** | **Cold-Water Cliffhanger (`C1–C7`)**: A deeper butterfly-effect anomaly or higher-realm apex threat (`A2`) appears at `00:08.0`. | `TH1` or `TH3` | `Standard 10.0s` |
 

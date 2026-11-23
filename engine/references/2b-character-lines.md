@@ -65,7 +65,7 @@ Pillar 2 Part II lists five A1 archetypes (A1-01…A1-05), all enduring and virt
 |---|---|---|---|
 | A1-06 | The Schemer | believes control and manipulation keep people safe | drama, thriller, microdrama |
 | A1-07 | The Climber | trades relationships for status | drama, microdrama |
-| A1-08 | The Avenger | revenge before everything, including the people it hurts | microdrama, action, fantasy |
+| A1-08 | The Avenger | revenge before everything, including the people it hurts — the arc must travel from revenge toward justice or mercy and show what revenge costs (`0d` §5) | microdrama, action, fantasy |
 | A1-09 | The Liar | one lie that must be protected with bigger ones | sitcom, romance, drama |
 | A1-10 | The Reluctant Hero | avoids responsibility until it is too late | action, fantasy, sci-fi |
 | A1-11 | The Lovable Fool | overconfidence and a short memory | sitcom, romance |

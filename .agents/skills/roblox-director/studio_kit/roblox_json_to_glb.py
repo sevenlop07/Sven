@@ -16,7 +16,7 @@ KIT_DIR = os.path.dirname(os.path.abspath(__file__))
 sys.path.insert(0, KIT_DIR)
 import blender_roblox_kit as kit  # noqa: E402
 import blender_env_lighting as env_kit  # noqa: E402
-import blender_r15_hybrid as hyb  # noqa: E402
+import blender_roblox_anim as rba  # noqa: E402
 
 STUD = 0.28
 # Rigid +90deg X rotation: (x, y, z)_roblox -> (x, -z, y)_blender (det = +1, keeps winding clean)
@@ -135,6 +135,21 @@ def build_from_json(json_path: str, col):
             elif shape == "Ball" or sm_type == "Sphere":
                 bmesh.ops.create_uvsphere(bm, u_segments=16, v_segments=12, radius=0.5)
                 bmesh.ops.scale(bm, vec=Vector(eff_sz), verts=bm.verts)
+            elif shape == "Wedge" or sm_type == "Wedge":
+                hx, hy, hz = eff_sz[0] * 0.5, eff_sz[1] * 0.5, eff_sz[2] * 0.5
+                # Roblox WedgePart: sloped from (+Y, +Z) down to (-Y, -Z)
+                v0 = bm.verts.new((-hx, -hy, -hz))
+                v1 = bm.verts.new((hx, -hy, -hz))
+                v2 = bm.verts.new((hx, -hy, hz))
+                v3 = bm.verts.new((-hx, -hy, hz))
+                v4 = bm.verts.new((-hx, hy, hz))
+                v5 = bm.verts.new((hx, hy, hz))
+                bm.faces.new((v0, v3, v2, v1))  # Bottom (-Y)
+                bm.faces.new((v3, v4, v5, v2))  # Back (+Z)
+                bm.faces.new((v0, v1, v5, v4))  # Slope
+                bm.faces.new((v0, v4, v3))      # Left (-X)
+                bm.faces.new((v1, v2, v5))      # Right (+X)
+                bmesh.ops.recalc_face_normals(bm, faces=bm.faces)
             else:
                 bmesh.ops.create_cube(bm, size=1.0)
                 bmesh.ops.scale(bm, vec=Vector(eff_sz), verts=bm.verts)
@@ -234,21 +249,21 @@ def main():
 
     sigma = kit.build_roblox_character(
         "Sigma", os.path.join(kit.CORE_CLOTHES_DIR, "shirt_mayor.png"), os.path.join(kit.CORE_CLOTHES_DIR, "pants_mayor.png"),
-        r"d:\Project\Sven\output\roblox_core_showcase\faces_sigma\smirk.png",
+        os.path.join(kit.CORE_FACES_STORYBOOK_DIR, "smirk.png"),
         skin_hex="#ECC094", hair_hex="#1E2028",
         location_m=(-0.15, 0.65, 0.08), yaw_deg=18,
         body_profile="boy_athletic", hair_style="slick_part", accessories=["stubble_scruff"],
     )
     pony = kit.build_roblox_character(
         "Pony", os.path.join(kit.CORE_CLOTHES_DIR, "shirt_c1.png"), os.path.join(kit.CORE_CLOTHES_DIR, "pants_p1.png"),
-        r"d:\Project\Sven\output\roblox_core_showcase\faces_maya\happy.png",
+        os.path.join(kit.CORE_FACES_STORYBOOK_DIR, "happy.png"),
         skin_hex="#F4C7A1", hair_hex="#8B3A2B",
         location_m=(1.05, 0.70, 0.08), yaw_deg=-15,
         body_profile="girl_slim", hair_style="long_ponytail",
         accessories=[{"acc_type": "glasses_round", "color_hex": "#22252A"}],
     )
-    hyb.retarget_mocap_to_r15(sigma, "Waving", target_fs=1, push_nla=True, repeat=4.0)
-    hyb.retarget_mocap_to_r15(pony, "Clapping", target_fs=1, push_nla=True, repeat=2.0)
+    rba.RobloxAnimator(sigma, fps=30).add("wave", 0.0, 2.0).bake(frame_start=1, frame_end=30)
+    rba.RobloxAnimator(pony, fps=30).add("clap", 0.0, 2.0).bake(frame_start=1, frame_end=30)
 
     cam_d = bpy.data.cameras.new("MainCam")
     cam_d.lens = 34.0

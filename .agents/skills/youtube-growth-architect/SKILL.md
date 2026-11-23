@@ -228,7 +228,7 @@ $$\text{Title} = \underbrace{\text{[Part 1: Canonical Root Hook (First 3–5 Wor
 > [!IMPORTANT]
 > **TITLE AND THUMBNAIL MUST NEVER DUPLICATE INFORMATION.**
 > - **Title**: Delivers the **Logic Gap & Context** (high-stakes premise, numbers, unresolved conflict).
-> - **Thumbnail**: Delivers the **Crime Scene of Injustice & Stark Adversity** (emotional shock, power dynamic, physical humiliation).
+> - **Thumbnail**: Delivers the **Crime Scene of Injustice & Stark Adversity** (emotional shock, power dynamic, the wronged person's dignity at stake) — it may hook with injustice, but the promise is the repair and the heart the story really delivers, never humiliation for its own sake (`engine/references/0d-heart-and-value.md` §5.6).
 > - **Combined Effect**: Together they form an unanswered question that compels an instant click.
 
 ### 3.4 🎭 Mandatory Narrative Point of View (POV) Invariance Standard
@@ -299,10 +299,10 @@ $$\text{Title} = \underbrace{\text{[Part 1: Canonical Root Hook (First 3–5 Wor
 * **Dual-Spectrum Chiaroscuro**: Clash between warm golden 2700K key light (on truth/protagonist) and cold slate-blue 6000K edge light (on collapsing antagonist & shadow void).
 
 ### 4.5 The 4 Standard Thumbnail Deliverable Variants
-1. **Thumbnail A — SUSPENDED CRIME / INJUSTICE IN PROGRESS (Moral Outrage Hook)**: Active crime or humiliation mid-shatter.
+1. **Thumbnail A — SUSPENDED CRIME / INJUSTICE IN PROGRESS (Moral Outrage Hook)**: An injustice mid-shatter, framed so the viewer sides with the wronged person's dignity (never a degrading or mocking image of anyone).
 2. **Thumbnail B — SPLIT-REALITY FORENSIC CHECKMATE (Extreme Duality & Proof Revelation)**: Physical match or unmasking where the genuine seal exposes fraud.
-3. **Thumbnail C — SOMATIC EGO DEATH & COLLAPSE (Total Ruin)**: Oppressor's anatomical collapse at point-blank range as truth hits.
-4. **Thumbnail D — SOVEREIGN REDEMPTION & PARADOX (Bittersweet Climax)**: Victor extending unexpected grace or shattering the oppressor's pride.
+3. **Thumbnail C — SOMATIC REALIZATION (The Truth Lands)**: The wrongdoer's face at the instant the truth lands — realization, not ruin or humiliation.
+4. **Thumbnail D — GRACE & HEART (Recommended Default for Drama)**: The hero extending unexpected grace, or the heart moment (recognition, reunion, a hidden kindness revealed) — the image that promises what the viewer will carry home.
 
 ---
 

@@ -12,6 +12,7 @@ Governed by: Screenwriter (Level 2), Director (Level 2) & Combat Director (`@Com
 | **Regime** | 4 — Crime / Detective Thriller (or 3 for folk supernatural suspense) |
 | **Genre Engine** | 4 — Onion-Peel & Checkmate |
 | **Audience payoff** | Intellectual shock and dread with fair-play clues |
+| **Heart & value payoff** | Truth and justice; protecting the vulnerable; the cost of a lie (`0d` §6) |
 | **Cast topology** (`2b-character-lines.md` §2) | A1 investigator + hidden A2 among 2–3 suspects; partner, informant, a trusted face who may turn |
 | **Default episode shape** | default sketch `~10` scenes `100–110s`, flex per 0c §4 |
 | **Preferred hooks** | #3 Strange Object/Sign, #12 Cognitive Silence/Glitch, #9 Consequence First |

@@ -38,7 +38,7 @@ def key_val(obj_or_data, attr: str, frame: int, val, constant: bool = True):
     obj_or_data.keyframe_insert(data_path=attr, frame=frame)
     if constant and obj_or_data.animation_data and obj_or_data.animation_data.action:
         act = obj_or_data.animation_data.action
-        for fc in getattr(act, "fcurves", []):
+        for fc in kit.iter_action_fcurves(act):
             if fc.data_path == attr:
                 for kp in fc.keyframe_points:
                     if int(round(kp.co.x)) == frame:
@@ -56,7 +56,7 @@ def key_emissive_strength(mat, frame: int, strength: float, constant: bool = Tru
     sock.default_value = strength
     sock.keyframe_insert(data_path="default_value", frame=frame)
     if constant and nt.animation_data and nt.animation_data.action:
-        for fc in getattr(nt.animation_data.action, "fcurves", []):
+        for fc in kit.iter_action_fcurves(nt.animation_data.action):
             for kp in fc.keyframe_points:
                 if int(round(kp.co.x)) == frame:
                     kp.interpolation = "CONSTANT"
@@ -981,8 +981,6 @@ def main():
     sc.cycles.glossy_bounces = 2
     sc.cycles.adaptive_threshold = 0.03
     sc.render.use_persistent_data = True
-    if hasattr(sc.cycles, "denoiser"):
-        sc.cycles.denoiser = "OPENIMAGEDENOISE"
     env_refs = build_alley_world(col_env, col_props)
     setup_world_lighting_timeline(env_refs)
     cast = build_cast_and_acting(env_refs, col_props, total_frames)
@@ -1002,6 +1000,7 @@ def main():
     os.makedirs(stage_dir, exist_ok=True)
     with open(os.path.join(stage_dir, "audit_report.json"), "w", encoding="utf-8") as af:
         json.dump({"camera_audit": cam_audit, "collision_violations": len(col_audit), "collision_details": col_audit[:20]}, af, indent=2)
+    kit.pack_all_textures()
     blend_path = os.path.join(stage_dir, "scene_built.blend")
     bpy.ops.wm.save_as_mainfile(filepath=blend_path)
     print(f"[SAVED_BLEND] {blend_path}")
@@ -1056,10 +1055,14 @@ def main():
             out_fp = os.path.join(s_dir, f"frame_{fr:05d}.png")
             if os.path.exists(out_fp) and os.path.getsize(out_fp) > 1000:
                 continue
+            t_fr = time.time()
             sc.frame_set(fr)
             sc.render.filepath = out_fp
             bpy.ops.render.render(write_still=True)
             rendered += 1
+            dt_fr = time.time() - t_fr
+            avg_fr = (time.time() - t0) / max(1, rendered)
+            print(f"[FRAME {fr:04d}/{end_fr:04d}] ({sf}) rendered in {dt_fr:.2f}s (avg {avg_fr:.2f}s/f)", flush=True)
         dt = time.time() - t0
         print(f"[FINAL_RENDER_DONE] rendered={rendered} frames in {dt:.1f}s ({dt/max(1,rendered):.2f}s/frame) -> {shots_dir}")
 

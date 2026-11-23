@@ -156,17 +156,28 @@ def main():
     cmd += ["-filter_complex", af, "-map", "0:v", "-map", "[a]"]
 
     subs_path = res_p(args.subs) if args.subs else ""
+    tmp_sub_name = None
     if subs_path and os.path.exists(subs_path):
-        escaped = subs_path.replace("\\", "/").replace(":", "\\:")
-        vf = f"ass='{escaped}'" if subs_path.lower().endswith(".ass") else f"subtitles='{escaped}'"
+        ext = ".ass" if subs_path.lower().endswith(".ass") else ".srt"
+        tmp_sub_name = f"_tmp_burn{ext}"
+        tmp_sub_full = os.path.join(pdir, tmp_sub_name)
+        if os.path.abspath(subs_path) != os.path.abspath(tmp_sub_full):
+            shutil.copy2(subs_path, tmp_sub_full)
+        vf = f"ass={tmp_sub_name}" if ext == ".ass" else f"subtitles={tmp_sub_name}"
         cmd += ["-vf", vf, "-c:v", "libx264", "-crf", "17", "-preset", "veryfast", "-pix_fmt", "yuv420p"]
     else:
         cmd += ["-c:v", "copy"]
 
     cmd += ["-c:a", "aac", "-b:a", "192k", "-shortest", "-movflags", "+faststart", out_mp4]
-    subprocess.run(cmd, check=True)
-    if os.path.exists(raw_mp4):
-        os.remove(raw_mp4)
+    try:
+        subprocess.run(cmd, cwd=pdir, check=True)
+    finally:
+        if tmp_sub_name:
+            tmp_p = os.path.join(pdir, tmp_sub_name)
+            if os.path.exists(tmp_p):
+                os.remove(tmp_p)
+        if os.path.exists(raw_mp4):
+            os.remove(raw_mp4)
 
     print(json.dumps({"ok": True, "out": out_mp4, "resolution": f"{w}x{h}", "fps": args.fps, "shots": len(shots)}, indent=2))
 

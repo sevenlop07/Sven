@@ -106,7 +106,10 @@ def build_contiguous_shots(segments: list, runtime: float) -> list:
 
 def transcribe_faster_whisper(audio_path: str, model_size: str, script_text: str = None, min_shot_sec: float = 1.4):
     from faster_whisper import WhisperModel
-    model = WhisperModel(model_size, device="cpu", compute_type="int8")
+    try:
+        model = WhisperModel(model_size, device="cuda", compute_type="int8_float16")
+    except Exception:
+        model = WhisperModel(model_size, device="cpu", compute_type="int8")
     segments_gen, info = model.transcribe(audio_path, word_timestamps=True, vad_filter=True)
     words = []
     for seg in segments_gen:

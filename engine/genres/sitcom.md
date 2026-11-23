@@ -12,6 +12,7 @@ Governed by: Screenwriter (Level 2) & Director (Level 2) under Showrunner (Level
 | **Regime** | 1 — Grounded (comic register) |
 | **Genre Engine** | 5 — Snowball Farce & Reset |
 | **Audience payoff** | Laughter from character-flaw collisions |
+| **Heart & value payoff** | Warmth: the group stays a family after the reset; the tag shows a small kindness; jokes punch at flaws, never at the weak (`0d` §6) |
 | **Cast topology** (`2b-character-lines.md` §2) | Ensemble E1–E5 (one fixed flaw + want each, clash grid); no A2 or a recurring rival; 1–2 recurring guests |
 | **Default episode shape** | `6–8` scenes `60–80s`, `90:10` |
 | **Preferred hooks** | #7 Disrupted Order, #2 In Medias Res, #11 Diegetic Acoustic Stimulus |

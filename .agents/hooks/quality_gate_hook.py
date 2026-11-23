@@ -36,9 +36,10 @@ WORKSPACE_ROOT = os.path.dirname(AGENTS_DIR)
 LOG_FILE = os.path.join(SCRIPT_DIR, "last_audit.log")
 
 MOCAP_PAT = re.compile(r"retarget_mocap_to_r15\s*\(|retarget_humanoid_action\s*\(|\bMixamo\b|RoMixamo|assets[/\\]anims[/\\]|\.bvh\b", re.I)
-# files that legitimately mention mocap (the deprecated helpers themselves, docs explaining the ban, this hook)
+LEGACY_FACE_PAT = re.compile(r"\bmake_faces_ugc_anime\b|\bmake_faces_v2\b", re.I)
+# files that legitimately mention mocap or retired generators (the deprecated helpers themselves, docs explaining the ban, this hook)
 MOCAP_ALLOW = ("blender_r15_hybrid.py", "blender_auto_director.py", "blender_roblox_kit.py", "retarget.py",
-               "quality_gate_hook.py", "diag_retarget.py", "probe_clips.py")
+               "quality_gate_hook.py", "diag_retarget.py", "probe_clips.py", "make_faces_ugc_anime.py", "make_faces_v2.py")
 
 
 def log(msg):
@@ -97,16 +98,23 @@ def lint_r_anim(target):
     except OSError:
         return None
     hits = []
+    face_hits = []
     for i, line in enumerate(text.splitlines(), 1):
         s = line.strip()
         if s.startswith(("#", "--")):
             continue
         if MOCAP_PAT.search(line):
             hits.append(f"  line {i}: {s[:120]}")
-    if not hits:
-        return None
-    return ("Law R-ANIM violation (ROBLOX_DIRECTOR.md section 4.1): mocap retargeting is banned for Roblox characters. "
-            "Use studio_kit/blender_roblox_anim.py (RobloxAnimator) and gate with render_pose_qa.\n" + "\n".join(hits[:10]))
+        if LEGACY_FACE_PAT.search(line):
+            face_hits.append(f"  line {i}: {s[:120]}")
+    msgs = []
+    if hits:
+        msgs.append("Law R-ANIM violation (ROBLOX_DIRECTOR.md section 4.1): mocap retargeting is banned for Roblox characters. "
+                    "Use studio_kit/blender_roblox_anim.py (RobloxAnimator) and gate with render_pose_qa.\n" + "\n".join(hits[:10]))
+    if face_hits:
+        msgs.append("Law R-LOOK violation (ROBLOX_DIRECTOR.md section 4.1): legacy anime face generators (make_faces_ugc_anime / make_faces_v2) are retired. "
+                    "Use studio_kit/make_faces_expressive.py (storybook_toon / cartoon / rubberhose) or kit.ensure_character_face_pack().\n" + "\n".join(face_hits[:10]))
+    return "\n\n".join(msgs) if msgs else None
 
 
 def lint_roblox_docs(target):

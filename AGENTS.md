@@ -11,11 +11,12 @@
 ## 1. Zero-Inference Startup Mandate (Turn 1 Hard Lock)
 Before responding to ANY filmmaking, scriptwriting, story concept, character design, scene breakdown, or video prompt request in this workspace (`d:\Project\Sven`), you **MUST** execute the following `read_file` calls on Turn 1 if they are not already loaded in the current turn context:
 
-1. **Read Master Orchestrator**: `read_file(Path="d:/Project/Sven/AGENT.md", StartLine=1, EndLine=88)`
-2. **Read Master Workflow & Gates**: `read_file(Path="d:/Project/Sven/workflow.md", StartLine=1, EndLine=405)`
-2b. **Read Canonical Numbers** (every count, duration, word & motion budget): `read_file(Path="d:/Project/Sven/engine/references/0c-canonical-numbers.md", StartLine=1, EndLine=143)`
+1. **Read Master Orchestrator**: `read_file(Path="d:/Project/Sven/AGENT.md", StartLine=1, EndLine=90)`
+2. **Read Master Workflow & Gates**: `read_file(Path="d:/Project/Sven/workflow.md", StartLine=1, EndLine=409)`
+2b. **Read Canonical Numbers** (every count, duration, word & motion budget): `read_file(Path="d:/Project/Sven/engine/references/0c-canonical-numbers.md", StartLine=1, EndLine=146)`
+2c. **Read the Heart & Value North Star** (what every story is for — moving, positive, valuable to the viewer; Value Card, Dignity Firewall, Heart & Value Scorecard `/8`): `read_file(Path="d:/Project/Sven/engine/references/0d-heart-and-value.md", StartLine=1, EndLine=138)`
 3. **Direct Prompt / Stage 4 Shortcut Lock**: Whenever the user directly requests a scene, video prompt, still image prompt, or storyboard grid prompt (bypassing Stages 0–3), you **MUST ALSO** load the Core Directing & Prompt Compiler slices on Turn 1 before writing a single word:
-   - `read_file(Path="d:/Project/Sven/engine/references/0-creative-doctrine.md", StartLine=1, EndLine=150)`
+   - `read_file(Path="d:/Project/Sven/engine/references/0-creative-doctrine.md", StartLine=1, EndLine=152)`
    - `read_file(Path="d:/Project/Sven/engine/references/0b-temporal-camera-grammar.md", StartLine=1, EndLine=282)`
    - `read_file(Path="d:/Project/Sven/.agents/DIRECTOR.md", StartLine=1, EndLine=452)`
    - `read_file(Path="d:/Project/Sven/engine/references/3c-camera-master-grammar.md", StartLine=1, EndLine=321)` (Camera Master Grammar — Director's 8 Questions, sizes, angles & power, moves, 9:16 composition, genre & scene recipes)
@@ -30,6 +31,7 @@ Before responding to ANY filmmaking, scriptwriting, story concept, character des
      * If Roblox Storytime (`"In this town..."`), Roblox Studio MCP 3D Build/Render, or Roblox GFX (`@RobloxDirector`): also read `d:/Project/Sven/.agents/ROBLOX_DIRECTOR.md` (`StartLine=1, EndLine=271` — includes §4 Law R-ANIM, Law R-LOOK, Law R-COLLIDE & Law R-WORLD: code-rigged Roblox acting, NO mocap, Micro-PBR + Anti-Glare `storybook_toon` faces + Light-Linked Hero Key/Rim, 5-layer BVHTree anti-clipping, 5-Vector AI-Core PBR worlds + 2×2 location grid, pose-QA gate, asset security).
 
 ## 2. Non-Negotiable Core Guardrails
+- **Heart & Value North Star (`0d-heart-and-value.md` — Lõi Giá Trị)**: every film, series, episode, scene, ad and Roblox story exists to **move the viewer and leave them with something good** — an earned heart moment, a positive value shown through a costly choice, and an unspoken takeaway. Engagement is the vehicle, value is the destination: when a retention tool (hook, face-slap, cold water, cliffhanger) collides with the value, change the tool. Obey the **Dignity & Value Firewall** (justice restores, never degrades; no humiliation, cruelty or revenge as the payoff; a door left open for the opponent; every ending leaves a light) and pass the **Heart & Value Scorecard (`≥ 6/8`, no `0`)** beside the Engagement Scorecard at `CP0`, `CP1`, `CP3a`, `CP3b` and Roblox `GATE R1–R2`.
 - **Never skip a checkpoint `✋ CP0`–`✋ CP5`** (Stage 3 has two: `✋ CP3a` structure, `✋ CP3b` prose; Roblox uses `✋ GATE R1–R5`): every stage requires explicit user confirmation before advancing (unless the user explicitly requests a standalone scene/prompt).
 - **Route first (`workflow.md` K2b Request Router)**: decide the agent and pipeline (film Stages 0–5, standalone scene, commercial, keyframe/sheet, storyboard, source-video swap, Roblox R1–R5, growth) before loading anything else.
 - **Scorecards & automated audits**: score concepts (`CP0`), series (`CP1`) and episodes (`CP3a/CP3b`) with the Engagement Scorecards and rewrite below the pass mark; save `output/<slug>/ep-NN-script.md` and pass `engine/screenplay_audit.py` before `CP3b`; save each scene as `output/<slug>/prompts/ep-NN-scene-KK.md` and pass `engine/prompt_audit.py` before presenting it.

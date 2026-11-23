@@ -126,12 +126,18 @@ def run_inside_blender(args):
 
     plan_path = os.path.join(HERE, "director_plan.json")
     srt_path = os.path.join(HERE, "srt_shots.json")
-    plan = json.load(open(plan_path, encoding="utf-8"))
-    srt_shots = json.load(open(srt_path, encoding="utf-8"))["shots"]
-    fps = float(plan.get("fps", 30))
-    total_frames = int(round(plan["runtime"] * fps))
-
     sc = bpy.context.scene
+    has_srt = os.path.isfile(plan_path) and os.path.isfile(srt_path)
+    if has_srt:
+        plan = json.load(open(plan_path, encoding="utf-8"))
+        srt_shots = json.load(open(srt_path, encoding="utf-8"))["shots"]
+        fps = float(plan.get("fps", sc.render.fps or 30))
+        total_frames = int(round(plan["runtime"] * fps))
+    else:
+        srt_shots = []
+        fps = float(sc.render.fps or 30)
+        total_frames = int(sc.frame_end or 300)
+
     if args.engine:
         sc.render.engine = args.engine
 
@@ -163,8 +169,14 @@ def run_inside_blender(args):
         except Exception:
             pass
     else:
-        if hasattr(sc, "eevee") and hasattr(sc.eevee, "taa_render_samples"):
-            sc.eevee.taa_render_samples = int(args.samples)
+        sc.render.use_persistent_data = True
+        if hasattr(sc, "eevee"):
+            if hasattr(sc.eevee, "taa_render_samples"):
+                sc.eevee.taa_render_samples = int(args.samples)
+            if hasattr(sc.eevee, "use_raytracing"):
+                sc.eevee.use_raytracing = True
+            if hasattr(sc.eevee, "use_gtao"):
+                sc.eevee.use_gtao = True
 
     if args.width > 0 and args.height > 0:
         sc.render.resolution_x = args.width
@@ -172,9 +184,13 @@ def run_inside_blender(args):
     sc.render.image_settings.file_format = "PNG"
 
     shots_dir = os.path.join(HERE, "shots")
-    os.makedirs(shots_dir, exist_ok=True)
+    frames_dir = os.path.join(HERE, "frames")
+    if has_srt:
+        os.makedirs(shots_dir, exist_ok=True)
+    else:
+        os.makedirs(frames_dir, exist_ok=True)
 
-    f_start = max(1, int(args.frame_start or 1))
+    f_start = max(1, int(args.frame_start or sc.frame_start or 1))
     f_end = min(total_frames, int(args.frame_end or total_frames))
     if args.frames:
         frame_list = [int(x) for x in args.frames.split(",") if x.strip()]
@@ -185,10 +201,13 @@ def run_inside_blender(args):
     t0 = time.time()
     rendered = 0
     for fr in frame_list:
-        sf = _shot_folder_for_frame(fr, fps, srt_shots)
-        s_dir = os.path.join(shots_dir, sf)
-        os.makedirs(s_dir, exist_ok=True)
-        out_fp = os.path.join(s_dir, f"frame_{fr:05d}.png")
+        if has_srt:
+            sf = _shot_folder_for_frame(fr, fps, srt_shots)
+            s_dir = os.path.join(shots_dir, sf)
+            os.makedirs(s_dir, exist_ok=True)
+            out_fp = os.path.join(s_dir, f"frame_{fr:05d}.png")
+        else:
+            out_fp = os.path.join(frames_dir, f"{fr:05d}.png")
         if not args.force and os.path.isfile(out_fp) and os.path.getsize(out_fp) > 1000:
             print(f"@@SKIP@@ {fr}", flush=True)
             continue
@@ -231,31 +250,33 @@ def run_host_cli(args):
         cmd.append("--force")
     subprocess.run(cmd, check=True)
 
-    if not args.skip_compile and os.path.isfile(os.path.join(HERE, "compile_video.py")):
-        aspect = "9:16"
+    if not args.skip_compile:
         plan_path = os.path.join(HERE, "director_plan.json")
-        if os.path.isfile(plan_path):
+        srt_path = os.path.join(HERE, "srt_shots.json")
+        if os.path.isfile(plan_path) and os.path.isfile(srt_path) and os.path.isfile(os.path.join(HERE, "compile_video.py")):
             plan = json.load(open(plan_path, encoding="utf-8"))
             aspect = plan.get("aspect", "9:16")
-        compile_cmd = [
-            sys.executable,
-            os.path.join(HERE, "compile_video.py"),
-            "--project-dir",
-            HERE,
-            "--voice",
-            "voice.mp3",
-            "--shots",
-            "srt_shots.json",
-            "--frames-dir",
-            "shots",
-            "--subs",
-            "caps.ass",
-            "--aspect",
-            aspect,
-            "--out",
-            "final.mp4",
-        ]
-        subprocess.run(compile_cmd, check=True)
+            compile_cmd = [
+                sys.executable,
+                os.path.join(HERE, "compile_video.py"),
+                "--project-dir",
+                HERE,
+                "--voice",
+                "voice.mp3",
+                "--shots",
+                "srt_shots.json",
+                "--frames-dir",
+                "shots",
+                "--subs",
+                "caps.ass",
+                "--aspect",
+                aspect,
+                "--out",
+                "final.mp4",
+            ]
+            subprocess.run(compile_cmd, check=True)
+        elif os.path.isfile(os.path.join(HERE, "make_video.py")):
+            subprocess.run([sys.executable, os.path.join(HERE, "make_video.py")], check=True)
 
 
 def main():
@@ -324,6 +345,19 @@ def inspect_project_status(slug: str) -> dict:
         total_frames = int(round(plan["runtime"] * fps))
         missing = get_missing_frames(proj_dir, total_frames, fps, srt_shots)
         missing_count = len(missing)
+    else:
+        frames_dir = os.path.join(proj_dir, "frames")
+        done_pngs = [f for f in os.listdir(frames_dir) if f.endswith(".png")] if os.path.isdir(frames_dir) else []
+        build_py = os.path.join(proj_dir, "build_scene.py")
+        if os.path.isfile(build_py):
+            txt = open(build_py, encoding="utf-8", errors="ignore").read()
+            import re
+            m_nf = re.search(r"NF\s*=\s*(\d+),\s*(\d+)", txt) or re.search(r"NF\s*=\s*(\d+)", txt)
+            if m_nf:
+                total_frames = int(m_nf.group(2) if m_nf.lastindex == 2 else m_nf.group(1))
+        if total_frames == 0:
+            total_frames = len(done_pngs)
+        missing_count = max(0, total_frames - len(done_pngs))
 
     return {
         "slug": slug,
@@ -354,9 +388,9 @@ def package_portable_bundle(slug: str, include_existing_shots: bool = False) -> 
         shutil.copy2(compile_src, compile_dst)
 
     bundle_path = os.path.join(proj_dir, f"{slug}_render_bundle.zip")
-    skip_dirs = {"preview", "__pycache__"}
+    skip_dirs = {"preview", "final_picks", "qa", "playblast_frames", "__pycache__"}
     if not include_existing_shots:
-        skip_dirs.add("shots")
+        skip_dirs.update({"shots", "frames"})
 
     allowed_exts = {
         ".blend", ".py", ".json", ".srt", ".ass", ".mp3", ".wav",
@@ -367,7 +401,7 @@ def package_portable_bundle(slug: str, include_existing_shots: bool = False) -> 
         for root, dirs, files in os.walk(proj_dir):
             dirs[:] = [d for d in dirs if d not in skip_dirs]
             for fname in files:
-                if fname.endswith("_render_bundle.zip") or fname.startswith("chk_sheet"):
+                if fname.endswith(("_render_bundle.zip", ".mp4", ".blend1")) or fname.startswith(("chk_sheet", "preview_sheet", "final_sheet")):
                     continue
                 ext = os.path.splitext(fname)[1].lower()
                 if ext not in allowed_exts:
@@ -411,7 +445,7 @@ def run_local_render(slug: str, samples: int = 16, engine: str = "", max_frames:
     # Stage inside %TEMP% for Windows OpenImageIO safety
     stage_dir = os.path.join(tempfile.gettempdir(), f"sven_blender_{slug}")
     os.makedirs(stage_dir, exist_ok=True)
-    for fname in ("scene_built.blend", "director_plan.json", "srt_shots.json"):
+    for fname in ("scene_built.blend", "director_plan.json", "srt_shots.json", "make_video.py"):
         src = os.path.join(proj_dir, fname)
         if os.path.isfile(src):
             shutil.copy2(src, os.path.join(stage_dir, fname))
@@ -420,8 +454,9 @@ def run_local_render(slug: str, samples: int = 16, engine: str = "", max_frames:
     with open(worker_path, "w", encoding="utf-8") as f:
         f.write(UNIVERSAL_WORKER_TEMPLATE)
 
-    if os.path.isdir(os.path.join(proj_dir, "shots")):
-        shutil.copytree(os.path.join(proj_dir, "shots"), os.path.join(stage_dir, "shots"), dirs_exist_ok=True)
+    for dname in ("shots", "frames"):
+        if os.path.isdir(os.path.join(proj_dir, dname)):
+            shutil.copytree(os.path.join(proj_dir, dname), os.path.join(stage_dir, dname), dirs_exist_ok=True)
 
     cmd = [
         blender_exe,
@@ -444,8 +479,9 @@ def run_local_render(slug: str, samples: int = 16, engine: str = "", max_frames:
 
     def _bg_sync():
         while not stop_evt.wait(15.0):
-            if os.path.isdir(os.path.join(stage_dir, "shots")):
-                shutil.copytree(os.path.join(stage_dir, "shots"), os.path.join(proj_dir, "shots"), dirs_exist_ok=True)
+            for dname in ("shots", "frames"):
+                if os.path.isdir(os.path.join(stage_dir, dname)):
+                    shutil.copytree(os.path.join(stage_dir, dname), os.path.join(proj_dir, dname), dirs_exist_ok=True)
 
     t_sync = threading.Thread(target=_bg_sync, daemon=True)
     t_sync.start()
@@ -459,37 +495,42 @@ def run_local_render(slug: str, samples: int = 16, engine: str = "", max_frames:
     stop_evt.set()
     t_sync.join(timeout=2.0)
 
-    if os.path.isdir(os.path.join(stage_dir, "shots")):
-        shutil.copytree(os.path.join(stage_dir, "shots"), os.path.join(proj_dir, "shots"), dirs_exist_ok=True)
+    for dname in ("shots", "frames"):
+        if os.path.isdir(os.path.join(stage_dir, dname)):
+            shutil.copytree(os.path.join(stage_dir, dname), os.path.join(proj_dir, dname), dirs_exist_ok=True)
 
     if ret != 0:
         raise RuntimeError(f"Local Blender render exited with code {ret}")
 
     if not skip_compile and max_frames == 0:
-        plan = json.load(open(os.path.join(proj_dir, "director_plan.json"), encoding="utf-8"))
-        aspect = plan.get("aspect", "9:16")
-        compile_py = os.path.join(HERE, "compile_video.py")
-        subprocess.run(
-            [
-                sys.executable,
-                compile_py,
-                "--project-dir",
-                proj_dir,
-                "--voice",
-                "voice.mp3",
-                "--shots",
-                "srt_shots.json",
-                "--frames-dir",
-                "shots",
-                "--subs",
-                "caps.ass",
-                "--aspect",
-                aspect,
-                "--out",
-                "final.mp4",
-            ],
-            check=True,
-        )
+        plan_path = os.path.join(proj_dir, "director_plan.json")
+        if os.path.isfile(plan_path):
+            plan = json.load(open(plan_path, encoding="utf-8"))
+            aspect = plan.get("aspect", "9:16")
+            compile_py = os.path.join(HERE, "compile_video.py")
+            subprocess.run(
+                [
+                    sys.executable,
+                    compile_py,
+                    "--project-dir",
+                    proj_dir,
+                    "--voice",
+                    "voice.mp3",
+                    "--shots",
+                    "srt_shots.json",
+                    "--frames-dir",
+                    "shots",
+                    "--subs",
+                    "caps.ass",
+                    "--aspect",
+                    aspect,
+                    "--out",
+                    "final.mp4",
+                ],
+                check=True,
+            )
+        elif os.path.isfile(os.path.join(proj_dir, "make_video.py")):
+            subprocess.run([sys.executable, os.path.join(proj_dir, "make_video.py")], check=True)
     return inspect_project_status(slug)
 
 

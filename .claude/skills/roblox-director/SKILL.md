@@ -11,8 +11,8 @@ description: >
 
 This is a thin Claude Code wrapper. The canonical, runtime-neutral spec (shared with Gemini/Antigravity and other agents) is:
 
-- `.agents/ROBLOX_DIRECTOR.md` — read lines 1–260 (pipeline R1–R5 + §4 Law R-ANIM quality core).
-- `.agents/skills/roblox-director/SKILL.md` — detailed stage notes; `studio.md`, `look.md`, `pacing.md`, `script.md` as needed.
+- `.agents/ROBLOX_DIRECTOR.md` — read lines 1–271 (pipeline R1–R5 + §4 Law R-ANIM, Law R-LOOK, Law R-COLLIDE & Law R-WORLD quality core).
+- `.agents/skills/roblox-director/SKILL.md` — detailed stage notes; `story-structure.md` (Track S/L 100% Narration), `studio.md`, `look.md`, `pacing.md`, `script.md` as needed.
 
 ## How to run it in Claude Code
 1. **You (main thread) own the user conversation and every gate** (`GATE R1…R5`): pitch/script approvals, the .mp3 hand-off,

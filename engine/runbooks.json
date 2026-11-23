@@ -89,7 +89,8 @@
         "hook_mandate": "0-3s Disruptive In Medias Res Hook",
         "cliffhanger_mandate": "Mandatory Invariant C1-C7 Closing Cliffhanger",
         "face_slap_reversal": true,
-        "retention_curve": "Asymmetrical 13-Beat Curve (Hook ➔ Escalation ➔ Face-Slap ➔ Cliffhanger)"
+        "retention_curve": "Asymmetrical 13-Beat Curve (Hook ➔ Escalation ➔ Dignity Reversal ➔ Cliffhanger)",
+        "heart_and_value": "0d-heart-and-value.md: dignity reversal by planted proof, fair self-caused consequence, one act of grace; never humiliation as the payoff; Heart & Value Scorecard >= 6/8"
       },
       "camera_and_staging": {
         "track_a_locked_quota": "Strictly 1 scene max per episode (~10%) at emotional boiling point",

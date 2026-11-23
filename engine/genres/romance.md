@@ -12,6 +12,7 @@ Governed by: Screenwriter (Level 2), Director (Level 2) under Showrunner (Level 
 | **Regime** | 1 — Grounded (or 3 when the romance crosses time / fantasy worlds) |
 | **Genre Engine** | 1 — Pressure-Cooker (romantic drama) or 6 — Kishōtenketsu (quiet / healing romance) |
 | **Audience payoff** | The ache of wanting two people together while something real keeps them apart, and the release when one of them risks everything |
+| **Heart & value payoff** | Respect and honesty: two people choosing each other freely — never possessive or controlling love (`0d` §6) |
 | **Cast topology** (`2b-character-lines.md` §2) | Co-leads A1a + A1b, each with a Lie; obstacle = rival / family / contract / secret; confidants |
 | **Default episode shape** | 0c §4 Archetypes; `75:25` `10s:15s` (15s for confessions and near-misses) |
 | **Preferred hooks** | #6 Body/Expression Detail, #5 Atmospheric Contrast, #9 Consequence First |

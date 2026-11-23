@@ -12,6 +12,7 @@ Governed by: Screenwriter (Level 2), Director (Level 2) under Showrunner (Level 
 | **Regime** | 3 — Supernatural (folk / haunted) or 4 — Psychological (no confirmed supernatural) |
 | **Genre Engine** | 4 — Onion-Peel & Checkmate (dread variant) |
 | **Audience payoff** | Sustained dread released in a few earned shocks, and a truth about the characters the haunting exposes |
+| **Heart & value payoff** | Courage and solidarity; the haunting ends because someone tells the truth or makes amends (`0d` §6) |
 | **Cast topology** (`2b-character-lines.md` §2) | A1 (+ companions) + the entity + a human who keeps the secret; believer, sceptic, victim of the past |
 | **Default episode shape** | 0c §4 Archetypes; `65:35` `10s:15s` (long 15s holds build dread) |
 | **Preferred hooks** | #12 Cognitive Silence / Glitch, #11 Diegetic Acoustic Stimulus, #7 Disrupted Order, #3 Strange Object/Sign |
