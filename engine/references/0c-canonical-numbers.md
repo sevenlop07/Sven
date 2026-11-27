@@ -15,7 +15,8 @@
 | Shots per `10.0s` dialogue/drama clip (`@Director`) | `1–4`, chosen by intent (doctrine §0.1.6). `Mode D1-A` = 1 shared fixed-camera header with timed turns. | Default |
 | Shots per `15.0s` dialogue/drama clip (`@Director`) | `1` (`Mode D1-A`) or `3–4` cuts (`Mode D1-B / D1-C / D1-D`). | Default |
 | Shots per action clip (`@CombatDirector`) | Topology by intent: `1–2` inertial long-take · `3–5` asymmetric exchange · `6–9` rapid-cut blitz (`1.5–2.0s` per cut). | Default |
-| Shots per product commercial (`@CommercialDirector`) | `10.0s = 6` · `15.0s = 9`. | HC |
+| Shots per product commercial (`@CommercialDirector` Mode 1) | `10.0s = 6` · `15.0s = 9`. | HC |
+| Product review video (`@CommercialDirector` Mode 2) | `40.0s–60.0s` stitched from `3–4` canonical clips (`40s = 10+15+15` · `45s = 3×15` · `50s = 10+10+15+15` · `55s = 10+3×15` · `60s = 4×15`); **Variable Viral Tempo** — Hook/Proof/Extreme-Test clips: `6–8` high-impact visual cuts per `15s` (`1.5s–2.5s`/cut, `>45°` jumps); Final Relief/CTA clip: `4–5` breathing shots (`2.5s–3.5s`/shot) ending on a `2.0s–2.5s` Hero Packshot; `0` spoken words in video clips. | HC |
 | Visual prose per shot / per timed turn | `1–2` natural sentences, `12–30` words, one state change `A ➔ B`, zero `→` arrows. | HC (Gate 3R) |
 | **Motion density** (primary actions per shot) | dialogue / drama: `≈ duration ÷ 3–4s` (min `1`) · rapid cut `1.5–2.0s`: exactly `1` action + `1` consequence · inertial long take: a causal chain of `≤ 3` linked moves per `~4s` · product cut: `1` product action · keyframe / storyboard panel: `1` frozen instant · source-video swap: exactly the source's actions · Roblox: `1` animation clip per SRT beat + idle loop. Every shot also carries `1` biological reaction and continuous micro-motion. | HC (Motion Density Law, `workflow.md` §2.5) |
 
@@ -33,6 +34,7 @@
 | Clip ending | Law D5: **Mode 1** (default) final `2.0–3.0s` shot has `0` spoken words · **Mode 2** all shots speak, final turn keeps the `0.5–1.0s` (`~0.8s`) closed-lip tail. Both are valid. | HC |
 | Calm checkmate line | `2–6` words — a tool for decisive reversals, not a quota for every confrontation. | Default |
 | Native interjection at line start (Law D2) | On at most **1 in 3** spoken lines of a clip, never the same interjection twice in a row, never on a calm/authority line. | Default |
+| Product review decoupled V.O. (`@CommercialDirector` Mode 2) | `40.0s–60.0s` external off-screen V.O. (no AI lip-sync window applies): VN `~3.0–3.2` syllables/s (`115–190` syllables total, with `0.4–0.8s` Foley/ASMR pauses); EN `~2.4–2.6` words/s (`95–155` words total). | Default |
 
 ## §3 — Stage 3 Rough Prose per Scene
 

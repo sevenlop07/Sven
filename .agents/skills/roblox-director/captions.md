@@ -1,6 +1,7 @@
-# captions.md: word-by-word captions at 1080x1920
+# captions.md: voice-driven captions (`cinema` default for Preset A · `toon` for Preset B)
 
-> **Toon style (the default now): `tools/make_caps_toon.py` (see its header for the spec).** Phrases of 2–4 words, ALL CAPS, about 56 px, one coloured key word, fade-in, made with `tools/make_caps_toon.py`. The one-word spec below is the older moody-ref style.
+> **Preset A (Semi-Real Narrated Roblox CGI Cinema — DEFAULT):** Clean theatrical bottom phrase subtitles via `tools/make_caps.py words.json caps.ass --style cinema --aspect 16:9|2.39:1` (`y = 90%`, subtle 90 ms fade, non-overlapping phrases — or subtitle-free when requested).
+> **Preset B (Roblox Toon Shorts `1080×1920` — Opt-In):** Popped toon captions via `tools/make_caps_toon.py` (2–4 word ALL CAPS phrases, ~56 px, one coloured key word, `y = 70%`). The one-word spec below is the older moody-ref vertical style.
 
 Tags: **REF-RANGE** = measured in the 6 refs (4/6 use one word per caption: bell, memories, monster, train; town and dog use 1-3 word phrases); **HYPOTHESIS** = beat-the-refs bet or an unmeasured platform convention. Machine-readable twin: `templates/caption-preset.json`.
 Limits: no view data. Font names are GUESSES from glyph shapes. The caption-onset lead (-54 to -81 ms) was not independently reproduced (the check was inconclusive), so the timing rule below is a window to aim for, verified by hand on 1-2 words per video.

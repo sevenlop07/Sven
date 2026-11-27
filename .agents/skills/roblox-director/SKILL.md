@@ -9,7 +9,7 @@ description: >
 
 # Roblox Director — stage router
 
-**Spec & laws:** `.agents/ROBLOX_DIRECTOR.md` (read lines 1–271: pipeline R1–R5 + §4 Law R-ANIM, Law R-LOOK, Law R-COLLIDE, Law R-WORLD & Law R-STORY/VOICE quality core).
+**Spec & laws:** `.agents/ROBLOX_DIRECTOR.md` (read lines 1–333: §1 Preset A GibbsonTV Semi-Real Narrated Roblox CGI Cinema [DEFAULT] vs. Preset B Toon Shorts + §4.0 Locked Production Standard + pipeline R1–R5 + §4 Law R-ANIM, Law R-LOOK, Law R-COLLIDE, Law R-WORLD & Law R-STORY/VOICE quality core).
 This file only tells you *what to open and run at each stage*. Stop at every gate for the user's approval.
 Runtime-neutral: "view an image" = use your runtime's image-reading tool; never claim a check you did not do.
 
@@ -26,14 +26,13 @@ Reference implementation of R4–R5 for both engines: `output/test_action20/` (`
 `studio/scene.lua`, `studio/studio_capture.py`, `make_videos.py`).
 
 ## Rules you must not skip (details: `ROBLOX_DIRECTOR.md` §4)
-1. **Acting:** Blender = `RobloxAnimator` (27 states, distance-locked gait, material-baked faces). Studio = official R15
-   animation ids. **No Mixamo/BVH/FBX mocap** (the quality-gate hook flags it).
-2. **QA & Zero-Clipping before render (`Law R-COLLIDE`):** Call `an.check_path_clearance(strict=True)` before `bake()`, pass `target_height_m` to every `env.spawn_core_glb_asset(...)`, run `kit.audit_scene_collisions(cast, frames=None, frame_step=5, use_bvh=True, strict=True)` (auto-collects all env meshes + checks `CHAR_OBSTACLE`, `CHAR_CHAR`, `GROUND_SINK`, `SELF_CLIP` across the full timeline), `kit.audit_camera_plan`, and inspect `rba.render_pose_qa(...)` + keyframe previews. Never launch a full render without the user's render-mode choice.
+1. **Acting:** Blender = `RobloxAnimator` (**34 states** incl. 7 restrained Cinema Acting States, distance-locked gait, material-baked faces + `blink_bridge=True` + `auto_blinks()`). Studio = official R15 animation ids. **No Mixamo/BVH/FBX mocap** (the quality-gate hook flags it).
+2. **QA & Zero-Clipping before render (`Law R-COLLIDE`):** Call `an.check_path_clearance(strict=True)` before `bake()`, pass `target_height_m` to every `env.spawn_core_glb_asset(...)`, run `kit.audit_scene_collisions(cast, frames=None, frame_step=5, use_bvh=True, strict=True)` (auto-collects all env meshes + checks `CHAR_OBSTACLE`, `CHAR_CHAR`, `GROUND_SINK`, `SELF_CLIP` across the full timeline), `kit.audit_camera_plan`, and inspect `rba.render_pose_qa(...)` + Cycles keyframe previews. Never launch a full render without the user's render-mode choice.
 3. **Assets:** core `assets/` first (pick from `assets/catalog.json` + `tools/harvest_assets.py sheet`), official catalog ids second, Creator Store only after stripping scripts/remotes/GUIs; new Blender assets come in through `tools/harvest_assets.py harvest` (licence note in `ROBLOX_DIRECTOR.md` §4.5).
 4. **Studio capture:** bridge in its own console, window visible (minimised = white frames), white-frame guard + resume.
 5. **Budget:** stay inside `pipeline.md` §1 caps; distinct silhouette per character.
-6. **LookDev, Lighting & 5-Vector Worlds (`Law R-LOOK` + `Law R-WORLD`):** Seamless Blocky R15 (`kit.build_roblox_character` with archetype `body_profile`, Micro-PBR `shirt_fabric`/`pants_fabric` in `puffer|wool|coat|denim|default`, Cavity AO, Skin SSS, Anti-Glare 2D Face Mask) + bold high-contrast `storybook_toon` (default) / `cartoon` / `rubberhose` faces (`make_faces_expressive.py`, legacy anime faces retired) + zero-clipping 3D accessories + 5-Vector AI-Core Sets (PolyHaven 2K HDRI + 1K PBR ground, 3-plane architecture with warm window spill & 180° reverse backdrop, `env.build_atmospheric_particles` 3D snow/dust, `env.render_location_2x2_grid` audit) + Blender 5.3 Light-Linked Hero Key (40°) & Contrasting Rim (`env.setup_hero_light_linking`).
-7. **Captions, Audio & Two-Track Narration Story (`Law R-CAP`, `Law R-AUDIO`, `Law R-STORY`, `Law R-VOICE`):** Captions come **100% exclusively from spoken voiceover audio** (`voice.mp3` → `words.json` → `make_caps_toon.py`, zero SFX caption text). Audio layers spoken narration with **natural environmental ASMR ambience** (rain, wind, wet mud/water squelch, footsteps — zero synthetic Python beep/bang fight SFX). Default to **100% First-Person Narration** following `story-structure.md` (`Track S` 6-Beat Short or `Track L` 5-Archetype Triple-Helix Series, passing `Series ≥ 9/12` and `Episode ≥ 12/16` scorecards; zero generic punch/kick brawl filler).
+6. **GibbsonTV Semi-Real Narrated Roblox CGI Cinema (`Preset A [DEFAULT]`, `Law R-LOOK` + `Law R-WORLD`):** Follow `ROBLOX_DIRECTOR.md` §1 & §4.0 (**Preset A — Semi-Real CGI Cinema [`16:9` / `2.39:1`, or `9:16` vertical cinema] is the default**; Preset B `9:16` Toon Shorts is opt-in). Roblox supplies ONLY the character silhouette (`kit.build_roblox_character` R15 + **3D layered outerwear with rigged sleeves** `add_jacket_3d`/`add_belt_3d`/`add_backpack_3d` + **sculpted v2 hair** + **mature `cinema_expressive` faces** + **`blink_bridge`** + **restrained Cinema Acting States**); environments, lighting, weather, and simulations are **100% Semi-Real Blender 5.3 Cycles PBR** (`env.build_semi_real_noir_alley`, `env.build_semi_real_interior_room`, `env.setup_chiaroscuro_lighting`, per-character `env.setup_hero_light_linking(..., tag=...)`, `env.configure_mist_pass`, `env.setup_cinema_compositor`, `env.enable_cinema_motion_blur`, `CinemaCameraRig`, plus the 28 `blender-*` skills).
+7. **Narration-First Storytelling, Captions & Audio (`Mode N1 [DEFAULT]`, `Law R-VOICE`, `Law R-CAP`, `Law R-AUDIO`, `Law R-STORY`):** Prioritize **single-narrator cinematic storytelling (1st-person or literary 3rd-person `voice.mp3` → `.srt` + silent/non-verbal Roblox CGI cinema acting; mouths stay closed during narration)** — multi-character lip-sync dialogue (`Mode N2`) is explicit opt-in only. Follow `story-structure.md` (`Track S` 6-Beat Short or `Track L` 5-Archetype Triple-Helix Series, passing `Series ≥ 9/12` and `Episode ≥ 12/16` scorecards). Captions come **100% exclusively from spoken voiceover audio** (`make_caps.py --style cinema` for Preset A, `make_caps_toon.py` for Preset B, or subtitle-free; zero SFX caption text). Layer voice with **natural environmental ASMR ambience + ducked cinema score** (`compile_video.py --ambience ... --ducking` — zero synthetic Python beep/bang SFX).
 
 ## Doc map
 | File | Use it for |
@@ -46,7 +45,7 @@ Reference implementation of R4–R5 for both engines: `output/test_action20/` (`
 | `audio.md` | voice/TTS settings, music per beat, SFX, mix targets |
 | `captions.md` | caption spec (toon style via `tools/make_caps_toon.py`) |
 | `checklist.md` | final QA score before the user posts |
-| `studio.md` | Studio MCP driving, capture quality, R6/R15 characters, collision rules |
+| `studio.md` | Studio MCP driving, capture quality, R15 characters, collision rules |
 | `script.md`, `town-script.md` | optional "In this world/town…" storytime preset |
 | `templates/` | shot list, script sheet, cue sheet, hero cast, rotation log, MCP setup, lighting presets |
 | `tools/doc_link_check.py` | run after editing any of these docs (0 problems required) |

@@ -10,9 +10,7 @@ for zero-cost, 100% local execution inside the Sven Cinematic Universe (Blender 
    F-curve Bezier smoothing.
 3. Multi-View & Multi-Frame Contact Sheet QA Engine: Pure-stdlib TARGA_RAW -> 5x7 bitmap-labeled PNG
    contact sheet composer (angles: front/back/left/right/top/three_quarter, or timeline frames).
-4. Universal 5-Family Humanoid Retargeter: Auto-detects Mixamo, Meshy, SMPL, Unreal (UE5), and
-   Roblox_R15 skeletons; retargets animations with leg-length scaling, sole-to-floor lift (zero foot
-   sinking/skating), and Blender 5.3 Slotted Actions (channelbags).
+(The humanoid mocap retargeter was removed: Roblox acting is code-rigged — blender_roblox_anim.py, Law R-ANIM.)
 """
 
 from __future__ import annotations
@@ -1538,258 +1536,247 @@ def capture_views_sheet(
 
 
 # ==============================================================================
-# 4. UNIVERSAL 5-FAMILY HUMANOID SKELETON DETECTOR & MOTION RETARGETER
+# 4. CINEMA CAMERA RIG (3c-camera-master-grammar.md -> Blender 5.3)
+#    Supports 16:9, 2.39:1 Cinemascope, 9:16, Telephoto Bokeh (85-105mm),
+#    Automated Rack Focus, Organic Handheld Breathing, Inertial Follow & Foreground Framing.
 # ==============================================================================
 
-HUMANOID_SLOTS = (
-    "hips",
-    "spine",
-    "chest",
-    "neck",
-    "head",
-    "l_arm",
-    "l_forearm",
-    "l_hand",
-    "r_arm",
-    "r_forearm",
-    "r_hand",
-    "l_upleg",
-    "l_leg",
-    "l_foot",
-    "r_upleg",
-    "r_leg",
-    "r_foot",
-)
+CINEMA_ASPECTS = {
+    "16:9": (1920, 1080, "HORIZONTAL"),
+    "2.39:1": (1920, 804, "HORIZONTAL"),
+    "9:16": (1080, 1920, "VERTICAL"),
+}
 
-HUMANOID_FAMILIES = {
-    "roblox_r15": (
-        "Roblox R15",
-        (
-            "LowerTorso",
-            "UpperTorso",
-            "UpperTorso",
-            "Head",
-            "Head",
-            "LeftUpperArm",
-            "LeftLowerArm",
-            "LeftHand",
-            "RightUpperArm",
-            "RightLowerArm",
-            "RightHand",
-            "LeftUpperLeg",
-            "LeftLowerLeg",
-            "LeftFoot",
-            "RightUpperLeg",
-            "RightLowerLeg",
-            "RightFoot",
-        ),
-    ),
-    "mixamo": (
-        "Mixamo",
-        (
-            "Hips",
-            "Spine",
-            "Spine2",
-            "Neck",
-            "Head",
-            "LeftArm",
-            "LeftForeArm",
-            "LeftHand",
-            "RightArm",
-            "RightForeArm",
-            "RightHand",
-            "LeftUpLeg",
-            "LeftLeg",
-            "LeftFoot",
-            "RightUpLeg",
-            "RightLeg",
-            "RightFoot",
-        ),
-    ),
-    "meshy": (
-        "Meshy",
-        (
-            "Hips",
-            "Spine02",
-            "Spine",
-            "neck",
-            "Head",
-            "LeftArm",
-            "LeftForeArm",
-            "LeftHand",
-            "RightArm",
-            "RightForeArm",
-            "RightHand",
-            "LeftUpLeg",
-            "LeftLeg",
-            "LeftFoot",
-            "RightUpLeg",
-            "RightLeg",
-            "RightFoot",
-        ),
-    ),
-    "smpl": (
-        "SMPL",
-        (
-            "Pelvis",
-            "Spine1",
-            "Spine3",
-            "Neck",
-            "Head",
-            "L_Shoulder",
-            "L_Elbow",
-            "L_Wrist",
-            "R_Shoulder",
-            "R_Elbow",
-            "R_Wrist",
-            "L_Hip",
-            "L_Knee",
-            "L_Ankle",
-            "R_Hip",
-            "R_Knee",
-            "R_Ankle",
-        ),
-    ),
-    "unreal": (
-        "Unreal",
-        (
-            "pelvis",
-            "spine_01",
-            "spine_05",
-            "neck_01",
-            "head",
-            "upperarm_l",
-            "lowerarm_l",
-            "hand_l",
-            "upperarm_r",
-            "lowerarm_r",
-            "hand_r",
-            "thigh_l",
-            "calf_l",
-            "foot_l",
-            "thigh_r",
-            "calf_r",
-            "foot_r",
-        ),
-    ),
+CINEMA_LENS_PRESETS = {
+    "wide_24": (24.0, 4.5),
+    "normal_35": (35.0, 2.8),
+    "portrait_50": (50.0, 2.2),
+    "cinema_85": (85.0, 1.8),
+    "tele_105": (105.0, 1.8),
 }
 
 
-def detect_humanoid_family(armature_obj) -> tuple[str, dict] | None:
-    """Detect whether `armature_obj` matches Roblox R15, Mixamo, Meshy, SMPL, or Unreal."""
-    if armature_obj is None or armature_obj.type != "ARMATURE":
-        return None
-    short_map = {}
-    for b in armature_obj.data.bones:
-        short = b.name.rsplit(":", 1)[-1]
-        short_map[short] = b.name
-    for family, (_label, wanted) in HUMANOID_FAMILIES.items():
-        mapping = {slot: short_map.get(bone) for slot, bone in zip(HUMANOID_SLOTS, wanted, strict=False)}
-        if None not in mapping.values():
-            return family, mapping
-    return None
+def _ease_val(u: float, mode: str = "smooth") -> float:
+    u = max(0.0, min(1.0, u))
+    if mode == "linear":
+        return u
+    if mode == "ease_in":
+        return u * u
+    if mode == "ease_out":
+        return 1.0 - (1.0 - u) * (1.0 - u)
+    return u * u * (3.0 - 2.0 * u)
 
 
-def retarget_humanoid_action(
-    source_arm,
-    dest_arm,
-    *,
-    frame_start: int = None,
-    frame_end: int = None,
-    action_name: str = "Retargeted_Action",
-) -> dict:
-    """Retarget an active animation from `source_arm` to `dest_arm` with leg scaling & floor pinning."""
-    if isinstance(source_arm, str):
-        source_arm = bpy.data.objects.get(source_arm)
-    if isinstance(dest_arm, str):
-        dest_arm = bpy.data.objects.get(dest_arm)
-    src_det = detect_humanoid_family(source_arm)
-    dst_det = detect_humanoid_family(dest_arm)
-    if not src_det or not dst_det:
-        raise ValueError(f"Could not detect humanoid rigs: source={src_det}, dest={dst_det}")
+class CinemaCameraRig:
+    """
+    Production camera engine implementing Sven 3c-camera-master-grammar.md directly in Blender 5.3:
+      - Hard cuts between shots (CONSTANT interpolation on cut boundaries)
+      - Telephoto bokeh (`cinema_85` / `tele_105`) with physical DOF
+      - Automated Rack Focus (`focus_a` -> `focus_b` across a shot or dedicated `rack_focus()`)
+      - Organic multi-frequency Handheld Breathing (zero jerky random jitter)
+      - Physical Inertial Follow (`add_inertial_follow`) with damped overshoot & settle
+    """
 
-    src_family, src_map = src_det
-    dst_family, dst_map = dst_det
-    scene = bpy.context.scene
-    f_start = int(frame_start if frame_start is not None else scene.frame_start)
-    f_end = int(frame_end if frame_end is not None else scene.frame_end)
+    def __init__(self, scene=None, aspect: str = "16:9", name: str = "CinemaCam", fps: int = 30):
+        self.sc = scene or bpy.context.scene
+        self.fps = int(fps)
+        self.sc.render.fps = self.fps
+        if aspect not in CINEMA_ASPECTS:
+            raise ValueError(f"Unsupported cinema aspect '{aspect}'; choose from {list(CINEMA_ASPECTS)}")
+        rx, ry, fit = CINEMA_ASPECTS[aspect]
+        self.aspect = aspect
+        self.sc.render.resolution_x = rx
+        self.sc.render.resolution_y = ry
 
-    def _leg_len(arm, bmap):
-        hips = arm.matrix_world @ arm.data.bones[bmap["hips"]].head_local
-        foot_l = arm.matrix_world @ arm.data.bones[bmap["l_foot"]].head_local
-        foot_r = arm.matrix_world @ arm.data.bones[bmap["r_foot"]].head_local
-        return max(0.05, ((hips - foot_l).length + (hips - foot_r).length) / 2.0)
+        self.cam_data = bpy.data.cameras.new(name)
+        self.cam_data.sensor_fit = fit
+        self.cam_data.sensor_width = 36.0
+        self.cam_data.dof.use_dof = True
+        self.cam_data.dof.aperture_blades = 7  # cinematic heptagonal bokeh
+        self.cam = bpy.data.objects.new(name, self.cam_data)
+        self.sc.collection.objects.link(self.cam)
+        self.sc.camera = self.cam
+        self.cut_frames = set()
 
-    leg_ratio = _leg_len(dest_arm, dst_map) / _leg_len(source_arm, src_map)
+    def _handheld_offsets(self, frame: int, amp: float):
+        if amp <= 0.0:
+            return Vector((0.0, 0.0, 0.0)), (0.0, 0.0, 0.0)
+        t = (frame - 1) / float(self.fps)
+        # Layered organic breathing + micro-hand drift (never high-frequency buzz)
+        dx = amp * 0.012 * (math.sin(t * 1.15) * 0.65 + math.sin(t * 2.43 + 1.1) * 0.35)
+        dy = amp * 0.008 * (math.cos(t * 0.92 + 0.4) * 0.7 + math.sin(t * 2.11) * 0.3)
+        dz = amp * 0.014 * (math.sin(t * 1.55 + 0.8) * 0.75 + math.cos(t * 3.05) * 0.25)
+        rx = math.radians(amp * 0.32 * (math.sin(t * 1.35 + 0.5) * 0.7 + math.sin(t * 2.7) * 0.3))
+        ry = math.radians(amp * 0.28 * (math.cos(t * 1.05 + 1.4) * 0.7 + math.cos(t * 2.2) * 0.3))
+        rz = math.radians(amp * 0.22 * math.sin(t * 0.85 + 2.1))
+        return Vector((dx, dy, dz)), (rx, ry, rz)
 
-    # Rest rotation offset per mapped bone in world space
-    rest_offsets = {}
-    used_dst_bones = set()
-    slot_pairs = []
-    for slot in HUMANOID_SLOTS:
-        sb_name = src_map[slot]
-        db_name = dst_map[slot]
-        if db_name in used_dst_bones:
-            continue
-        used_dst_bones.add(db_name)
-        slot_pairs.append((slot, sb_name, db_name))
-        s_rest = (source_arm.matrix_world @ source_arm.data.bones[sb_name].matrix_local).to_quaternion()
-        d_rest = (dest_arm.matrix_world @ dest_arm.data.bones[db_name].matrix_local).to_quaternion()
-        rest_offsets[slot] = s_rest.inverted() @ d_rest
+    def _key_frame(self, f: int, pos: Vector, tgt: Vector, lens: float, fstop: float,
+                   focus_dist: float, roll_deg: float = 0.0, handheld: float = 0.0):
+        hp, hr = self._handheld_offsets(f, handheld)
+        p = pos + hp
+        quat = (tgt - p).to_track_quat("-Z", "Y")
+        if abs(roll_deg) > 1e-4 or handheld > 0.0:
+            roll_q = Quaternion((0.0, 0.0, 1.0), math.radians(roll_deg) + hr[2])
+            pitch_q = Quaternion((1.0, 0.0, 0.0), hr[0])
+            yaw_q = Quaternion((0.0, 1.0, 0.0), hr[1])
+            quat = quat @ yaw_q @ pitch_q @ roll_q
+        self.cam.location = p
+        self.cam.rotation_euler = quat.to_euler()
+        self.cam_data.lens = float(lens)
+        self.cam_data.dof.aperture_fstop = float(fstop)
+        self.cam_data.dof.focus_distance = max(0.25, float(focus_dist))
+        self.cam.keyframe_insert("location", frame=f)
+        self.cam.keyframe_insert("rotation_euler", frame=f)
+        self.cam_data.keyframe_insert("lens", frame=f)
+        self.cam_data.dof.keyframe_insert("aperture_fstop", frame=f)
+        self.cam_data.dof.keyframe_insert("focus_distance", frame=f)
 
-    src_hips_rest = source_arm.matrix_world @ source_arm.data.bones[src_map["hips"]].head_local
-    dst_hips_rest = dest_arm.matrix_world @ dest_arm.data.bones[dst_map["hips"]].head_local
-    dst_world_inv = dest_arm.matrix_world.inverted_safe()
+    def add_shot(
+        self,
+        f_start: int,
+        f_end: int,
+        pos_a,
+        tgt_a,
+        pos_b=None,
+        tgt_b=None,
+        lens: float = 85.0,
+        fstop: float = 2.0,
+        lens_preset: str = None,
+        roll_deg: float = 0.0,
+        handheld: float = 0.18,
+        focus_a=None,
+        focus_b=None,
+        ease: str = "smooth",
+    ):
+        """Author one cinema shot over [f_start..f_end] with optional dolly/pan, rack focus, roll & handheld."""
+        if lens_preset and lens_preset in CINEMA_LENS_PRESETS:
+            lens, fstop = CINEMA_LENS_PRESETS[lens_preset]
+        pa = Vector(pos_a)
+        pb = Vector(pos_b) if pos_b is not None else pa
+        ta = Vector(tgt_a)
+        tb = Vector(tgt_b) if tgt_b is not None else ta
+        fa_pt = Vector(focus_a) if focus_a is not None else None
+        fb_pt = Vector(focus_b) if focus_b is not None else fa_pt
 
-    for f in range(f_start, f_end + 1):
-        scene.frame_set(f)
-        bpy.context.view_layer.update()
-        for slot, sb_name, db_name in slot_pairs:
-            s_pbone = source_arm.pose.bones[sb_name]
-            d_pbone = dest_arm.pose.bones[db_name]
-            s_world_q = (source_arm.matrix_world @ s_pbone.matrix).to_quaternion()
-            target_world_q = s_world_q @ rest_offsets[slot]
-            parent_world = (
-                dest_arm.matrix_world @ d_pbone.parent.matrix
-                if d_pbone.parent
-                else dest_arm.matrix_world
-            )
-            local_rest = (
-                d_pbone.parent.bone.matrix_local.inverted() @ d_pbone.bone.matrix_local
-                if d_pbone.parent
-                else d_pbone.bone.matrix_local
-            )
-            basis_q = (parent_world @ local_rest).to_quaternion().inverted() @ target_world_q
-            if d_pbone.rotation_mode == "QUATERNION":
-                d_pbone.rotation_quaternion = basis_q
-                d_pbone.keyframe_insert("rotation_quaternion", frame=f)
+        self.cut_frames.add(int(f_start))
+        span = max(1, int(f_end) - int(f_start))
+        for f in range(int(f_start), int(f_end) + 1):
+            u = _ease_val((f - f_start) / float(span), ease)
+            p = pa.lerp(pb, u)
+            t = ta.lerp(tb, u)
+            if fa_pt is not None and fb_pt is not None:
+                f_dist = (fa_pt.lerp(fb_pt, u) - p).length
             else:
-                d_pbone.rotation_euler = basis_q.to_euler(d_pbone.rotation_mode)
-                d_pbone.keyframe_insert("rotation_euler", frame=f)
+                f_dist = (t - p).length
+            self._key_frame(f, p, t, lens, fstop, f_dist, roll_deg=roll_deg, handheld=handheld)
+        return self
 
-            if slot == "hips":
-                s_hips_now = (source_arm.matrix_world @ s_pbone.matrix).translation
-                delta_world = (s_hips_now - src_hips_rest) * leg_ratio
-                target_hips_world = dst_hips_rest + delta_world
-                rest_mat = dest_arm.matrix_world @ d_pbone.bone.matrix_local
-                d_pbone.location = rest_mat.inverted_safe() @ target_hips_world
-                d_pbone.keyframe_insert("location", frame=f)
+    def add_inertial_follow(
+        self,
+        f_start: int,
+        f_end: int,
+        target_fn,
+        offset=(1.6, -3.4, 0.9),
+        look_offset=(0.15, 0.0, 1.05),
+        lens: float = 50.0,
+        fstop: float = 2.6,
+        stiffness: float = 0.16,
+        damping: float = 0.72,
+        handheld: float = 0.20,
+    ):
+        """Spring-damped inertial camera follow (0-creative-doctrine §0.1.4): natural lag, overshoot & settle."""
+        self.cut_frames.add(int(f_start))
+        off_v = Vector(offset)
+        look_v = Vector(look_offset)
+        t0 = (f_start - 1) / float(self.fps)
+        init_root = Vector(target_fn(t0))
+        cam_p = init_root + off_v
+        cam_v = Vector((0.0, 0.0, 0.0))
+        tgt_p = init_root + look_v
+        tgt_v = Vector((0.0, 0.0, 0.0))
 
-    if dest_arm.animation_data and dest_arm.animation_data.action:
-        dest_arm.animation_data.action.name = action_name
+        for f in range(int(f_start), int(f_end) + 1):
+            t = (f - 1) / float(self.fps)
+            r = Vector(target_fn(t))
+            des_p = r + off_v
+            des_t = r + look_v
+            cam_v = (cam_v + (des_p - cam_p) * stiffness) * damping
+            cam_p = cam_p + cam_v
+            tgt_v = (tgt_v + (des_t - tgt_p) * (stiffness * 1.4)) * damping
+            tgt_p = tgt_p + tgt_v
+            self._key_frame(f, cam_p, tgt_p, lens, fstop, (tgt_p - cam_p).length, handheld=handheld)
+        return self
 
-    return {
-        "source_family": src_family,
-        "dest_family": dst_family,
-        "leg_ratio": round(leg_ratio, 4),
-        "frame_range": [f_start, f_end],
-        "action": action_name,
-    }
+    def rack_focus(self, f_start: int, f_end: int, target_a, target_b, ease: str = "smooth"):
+        """Dedicated Rack Focus shift over [f_start..f_end] pulling crisp focus from target_a to target_b."""
+        pa, pb = Vector(target_a), Vector(target_b)
+        span = max(1, int(f_end) - int(f_start))
+        for f in range(int(f_start), int(f_end) + 1):
+            self.sc.frame_set(f)
+            u = _ease_val((f - f_start) / float(span), ease)
+            f_pt = pa.lerp(pb, u)
+            self.cam_data.dof.focus_distance = max(0.25, (f_pt - self.cam.location).length)
+            self.cam_data.dof.keyframe_insert("focus_distance", frame=f)
+        return self
+
+    def finalize_cuts(self):
+        """Enforce crisp CONSTANT interpolation on every shot cut boundary (zero stray tweening across cuts)."""
+        if self.cam.animation_data and self.cam.animation_data.action and hasattr(self.cam.animation_data.action, "fcurves"):
+            for fc in self.cam.animation_data.action.fcurves:
+                for kp in fc.keyframe_points:
+                    if int(round(kp.co.x)) in self.cut_frames:
+                        kp.interpolation = "CONSTANT"
+        return self
 
 
-# ==============================================================================
-# 5. CLI & HEADLESS RUNNER ENTRY POINT
-# ==============================================================================
+def place_foreground_frame(
+    col,
+    cam_pos,
+    cam_tgt,
+    kind: str = "door_edge",
+    side: str = "left",
+    dist_m: float = 0.65,
+    name: str = "FG_Frame",
+):
+    """Place a subtle out-of-focus foreground framing element near the lens edge for 3-plane cinematic depth (3c §7)."""
+    cp = Vector(cam_pos)
+    fwd = (Vector(cam_tgt) - cp).normalized()
+    up_ref = Vector((0, 0, 1)) if abs(fwd.z) < 0.9 else Vector((1, 0, 0))
+    right = fwd.cross(up_ref).normalized()
+    up = right.cross(fwd).normalized()
+    sgn = -1.0 if side == "left" else 1.0
+
+    loc = cp + fwd * dist_m + right * (sgn * 0.24)
+    if kind == "bokeh_orb":
+        bpy.ops.mesh.primitive_uv_sphere_add(segments=12, ring_count=8, radius=0.045, location=loc + up * 0.10)
+        obj = bpy.context.active_object
+        mat = bpy.data.materials.new(name + "_BokehMat")
+        nt = mat.node_tree
+        nt.nodes.clear()
+        out = nt.nodes.new("ShaderNodeOutputMaterial")
+        em = nt.nodes.new("ShaderNodeEmission")
+        em.inputs["Color"].default_value = (1.0, 0.72, 0.34, 1.0)
+        em.inputs["Strength"].default_value = 4.5
+        nt.links.new(em.outputs["Emission"], out.inputs["Surface"])
+        obj.data.materials.append(mat)
+    else:
+        bpy.ops.mesh.primitive_cube_add(size=1.0, location=loc)
+        obj = bpy.context.active_object
+        obj.scale = (0.09, 0.09, 0.95) if kind == "door_edge" else (0.14, 0.06, 0.28)
+        bpy.ops.object.transform_apply(scale=True)
+        mat = bpy.data.materials.new(name + "_Mat")
+        bsdf = mat.node_tree.nodes.get("Principled BSDF")
+        bsdf.inputs["Base Color"].default_value = (0.05, 0.04, 0.035, 1.0) if kind == "door_edge" else (0.04, 0.08, 0.05, 1.0)
+        bsdf.inputs["Roughness"].default_value = 0.85
+        obj.data.materials.append(mat)
+
+    obj.name = name
+    obj.visible_shadow = False  # never cast unwanted shadows on actors
+    for c in list(obj.users_collection):
+        c.objects.unlink(obj)
+    col.objects.link(obj)
+    return obj
 
 
 def run(**kwargs) -> dict:
@@ -1822,12 +1809,6 @@ def run(**kwargs) -> dict:
             frame_count=int(kwargs.get("frame_count", 4)),
             max_size=int(kwargs.get("max_size", 1280)),
         )
-    elif action == "retarget":
-        res = retarget_humanoid_action(
-            source_arm=kwargs.get("source"),
-            dest_arm=kwargs.get("dest"),
-            action_name=kwargs.get("action_name", "Retargeted_Action"),
-        )
     else:
         raise ValueError(f"Unknown action: {action}")
 
@@ -1842,7 +1823,7 @@ def run(**kwargs) -> dict:
 def main():
     argv = sys.argv[sys.argv.index("--") + 1 :] if "--" in sys.argv else []
     parser = argparse.ArgumentParser(description="Sven Core Automated Blender 5.3 Director Engine")
-    parser.add_argument("--action", choices=("blockout", "camera_path", "capture_views", "retarget"), default="capture_views")
+    parser.add_argument("--action", choices=("blockout", "camera_path", "capture_views"), default="capture_views")
     parser.add_argument("--plan-file", help="Path to blockout JSON file")
     parser.add_argument("--plan-json", help="Inline blockout JSON array")
     parser.add_argument("--preset", help="Camera move preset (orbit, dolly_in, crane, ...)")
@@ -1852,8 +1833,6 @@ def main():
     parser.add_argument("--mode", choices=("angles", "frames"), default="angles")
     parser.add_argument("--objects", nargs="*", help="Target object names")
     parser.add_argument("--out-png", help="Output PNG path for capture_views")
-    parser.add_argument("--source", help="Source armature name for retarget")
-    parser.add_argument("--dest", help="Destination armature name for retarget")
     parser.add_argument("--save", help="Save .blend file after operation")
     args = parser.parse_args(argv)
     result = run(
@@ -1867,8 +1846,6 @@ def main():
         mode=args.mode,
         objects=args.objects,
         out_png=args.out_png,
-        source=args.source,
-        dest=args.dest,
         save=args.save,
     )
     print("@@JSON@@" + json.dumps(result))

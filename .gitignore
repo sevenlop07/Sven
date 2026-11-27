@@ -36,3 +36,6 @@ Thumbs.db
 .agents/skills/roblox-director/studio_kit/fov.json
 # Asset harvester scratch (raw Studio JSON, search cache, contact sheet; tools/harvest_assets.py)
 output/_asset_harvest/
+
+# PolyHaven CC0 external cache (downloaded on demand via tools/fetch_polyhaven_assets.py)
+.agents/skills/roblox-director/assets/polyhaven/

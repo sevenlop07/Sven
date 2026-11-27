@@ -159,7 +159,9 @@ def run_inside_blender(args):
                 continue
         sc.cycles.device = "GPU" if active_backend != "CPU" else "CPU"
         sc.cycles.samples = int(args.samples)
+        sc.cycles.use_adaptive_sampling = True
         sc.cycles.adaptive_threshold = 0.04
+        sc.cycles.use_denoising = True
         sc.cycles.max_bounces = 3
         sc.cycles.diffuse_bounces = 2
         sc.cycles.glossy_bounces = 2
@@ -283,8 +285,8 @@ def main():
     argv = sys.argv[sys.argv.index("--") + 1 :] if INSIDE_BLENDER and "--" in sys.argv else sys.argv[1:]
     ap = argparse.ArgumentParser(description="Universal Blender 5.3 GPU Render Worker")
     ap.add_argument("--blender", default="", help="Path to blender binary when running from host shell")
-    ap.add_argument("--engine", default="", choices=["", "CYCLES", "BLENDER_EEVEE"])
-    ap.add_argument("--samples", type=int, default=16)
+    ap.add_argument("--engine", default="CYCLES", choices=["", "CYCLES", "BLENDER_EEVEE"])
+    ap.add_argument("--samples", type=int, default=64)
     ap.add_argument("--width", type=int, default=0)
     ap.add_argument("--height", type=int, default=0)
     ap.add_argument("--frame-start", type=int, default=0)
@@ -423,13 +425,13 @@ def package_portable_bundle(slug: str, include_existing_shots: bool = False) -> 
             "bundle_size_mb": round(os.path.getsize(bundle_path) / (1024 * 1024), 2),
             "bundled_files": file_count,
             "worker_script": worker_path,
-            "third_party_cli_command": "python3 universal_render_worker.py --samples 16",
+            "third_party_cli_command": "python3 universal_render_worker.py --engine CYCLES --samples 64",
         }
     )
     return status
 
 
-def run_local_render(slug: str, samples: int = 16, engine: str = "", max_frames: int = 0, skip_compile: bool = False) -> dict:
+def run_local_render(slug: str, samples: int = 64, engine: str = "CYCLES", max_frames: int = 0, skip_compile: bool = False) -> dict:
     """Execute Mode R5-A: Render directly on the local GPU with %TEMP% staging and auto-resume."""
     proj_dir = os.path.join(OUTPUT_ROOT, slug)
     blend_path = os.path.join(proj_dir, "scene_built.blend")
@@ -540,7 +542,8 @@ def run_external_dispatch(
     url: str = "",
     ssh_host: str = "",
     remote_dir: str = "/tmp/sven_render",
-    samples: int = 16,
+    samples: int = 64,
+    engine: str = "CYCLES",
     batch_size: int = 25,
     max_frames: int = 0,
     allow_paid: bool = False,
@@ -589,9 +592,10 @@ def run_external_dispatch(
         bundle_zip = bundle_info["bundle_zip"]
         subprocess.run(["ssh", ssh_host, f"mkdir -p {remote_dir}"], check=True)
         subprocess.run(["scp", bundle_zip, f"{ssh_host}:{remote_dir}/bundle.zip"], check=True)
+        eng_flag = f"--engine {engine} " if engine else ""
         remote_cmd = (
             f"cd {remote_dir} && unzip -o -q bundle.zip && "
-            f"python3 universal_render_worker.py --samples {samples} --skip-compile && "
+            f"python3 universal_render_worker.py {eng_flag}--samples {samples} --skip-compile && "
             f"zip -r -q shots_out.zip shots/"
         )
         subprocess.run(["ssh", ssh_host, remote_cmd], check=True)
@@ -696,8 +700,8 @@ def main():
     ap.add_argument("--url", default="", help="Remote HTTP/Cloudflare tunnel URL for provider=http_tunnel")
     ap.add_argument("--ssh-host", default="", help="SSH host for provider=ssh (e.g. root@1.2.3.4)")
     ap.add_argument("--remote-dir", default="/tmp/sven_render", help="Remote working directory for provider=ssh")
-    ap.add_argument("--engine", default="", choices=["", "CYCLES", "BLENDER_EEVEE"])
-    ap.add_argument("--samples", type=int, default=16)
+    ap.add_argument("--engine", default="CYCLES", choices=["", "CYCLES", "BLENDER_EEVEE"])
+    ap.add_argument("--samples", type=int, default=64)
     ap.add_argument("--batch-size", type=int, default=25)
     ap.add_argument("--max-frames", type=int, default=0)
     ap.add_argument("--allow-paid", action="store_true")
@@ -733,6 +737,7 @@ def main():
             ssh_host=args.ssh_host,
             remote_dir=args.remote_dir,
             samples=args.samples,
+            engine=args.engine,
             batch_size=args.batch_size,
             max_frames=args.max_frames,
             allow_paid=args.allow_paid,

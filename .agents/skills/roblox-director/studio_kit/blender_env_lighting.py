@@ -356,6 +356,236 @@ def make_wet_mud_puddle_mat(name: str = "WetMudPuddles", mud_hex: str = "#3E2816
     return mat
 
 
+def make_liquid_mud_mat(name: str = "LiquidMud", dark_hex: str = "#1E120A", mid_hex: str = "#3A2414",
+                        light_hex: str = "#5A3C22", ripple_scale: float = 9.0, ripple_strength: float = 1.0,
+                        rough_min: float = 0.04, rough_max: float = 0.26, ripple_depth: float = 0.06):
+    """
+    Law R-LOOK wet-mud standard (verified against a reference storytime render, 2026-11-23): the WHOLE ground is
+    opaque liquid mud — warm brown body, broken sky reflections, dense multi-scale ripples. Never lay a mirror water
+    plane over the ground (it reads as clean water / a polished floor). Also used for mud ON characters and props
+    (lower `ripple_strength` / `ripple_depth`). Defaults = the tuned ground look (dark body, ~11 cm ripples 6 cm deep,
+    roughness 0.04–0.26): weaker ripples (depth 0.01) are invisible at storytime camera distances.
+      - Base colour: 3-stop brown ramp driven by a macro noise (darker wet hollows, lighter drying crust).
+      - Roughness 0.10–0.38 broken up by a second noise, so reflections shatter instead of mirroring.
+      - Normal: macro swell + fine ripple layer (Voronoi-distorted noise) — the "crumpled foil" glints of wet mud.
+    """
+    if name in bpy.data.materials:
+        return bpy.data.materials[name]
+    mat = bpy.data.materials.new(name)
+    nt = mat.node_tree
+    nt.nodes.clear()
+    out = nt.nodes.new("ShaderNodeOutputMaterial")
+    bsdf = nt.nodes.new("ShaderNodeBsdfPrincipled")
+    if "Specular IOR Level" in bsdf.inputs:
+        bsdf.inputs["Specular IOR Level"].default_value = 0.55
+    if "Coat Weight" in bsdf.inputs:  # thin wet film on top of the mud body
+        bsdf.inputs["Coat Weight"].default_value = 0.22
+        bsdf.inputs["Coat Roughness"].default_value = 0.12
+
+    tc = nt.nodes.new("ShaderNodeTexCoord")
+    macro = nt.nodes.new("ShaderNodeTexNoise")
+    macro.inputs["Scale"].default_value = 0.9
+    macro.inputs["Detail"].default_value = 5.0
+    nt.links.new(tc.outputs["Object"], macro.inputs["Vector"])
+
+    breakup = nt.nodes.new("ShaderNodeTexNoise")
+    breakup.inputs["Scale"].default_value = 6.5
+    breakup.inputs["Detail"].default_value = 8.0
+    breakup.inputs["Roughness"].default_value = 0.62
+    nt.links.new(tc.outputs["Object"], breakup.inputs["Vector"])
+
+    vor = nt.nodes.new("ShaderNodeTexVoronoi")
+    vor.inputs["Scale"].default_value = ripple_scale * 0.35
+    nt.links.new(tc.outputs["Object"], vor.inputs["Vector"])
+    warp = nt.nodes.new("ShaderNodeVectorMath")
+    warp.operation = "ADD"
+    nt.links.new(tc.outputs["Object"], warp.inputs[0])
+    nt.links.new(vor.outputs["Color"], warp.inputs[1])
+    ripple = nt.nodes.new("ShaderNodeTexNoise")
+    ripple.inputs["Scale"].default_value = ripple_scale
+    ripple.inputs["Detail"].default_value = 6.0
+    ripple.inputs["Roughness"].default_value = 0.55
+    nt.links.new(warp.outputs["Vector"], ripple.inputs["Vector"])
+
+    col_ramp = nt.nodes.new("ShaderNodeValToRGB")
+    els = col_ramp.color_ramp.elements
+    els[0].position, els[0].color = 0.30, _hex_rgba(dark_hex)
+    els[1].position, els[1].color = 0.72, _hex_rgba(light_hex)
+    mid = els.new(0.52)
+    mid.color = _hex_rgba(mid_hex)
+    nt.links.new(macro.outputs["Fac"], col_ramp.inputs["Fac"])
+
+    r_ramp = nt.nodes.new("ShaderNodeValToRGB")
+    r_ramp.color_ramp.elements[0].position = 0.35
+    r_ramp.color_ramp.elements[0].color = (rough_min, rough_min, rough_min, 1.0)
+    r_ramp.color_ramp.elements[1].position = 0.70
+    r_ramp.color_ramp.elements[1].color = (rough_max, rough_max, rough_max, 1.0)
+    nt.links.new(breakup.outputs["Fac"], r_ramp.inputs["Fac"])
+
+    bump_macro = nt.nodes.new("ShaderNodeBump")
+    bump_macro.inputs["Strength"].default_value = 0.30
+    bump_macro.inputs["Distance"].default_value = 0.05
+    nt.links.new(macro.outputs["Fac"], bump_macro.inputs["Height"])
+    bump_ripple = nt.nodes.new("ShaderNodeBump")
+    bump_ripple.inputs["Strength"].default_value = ripple_strength
+    bump_ripple.inputs["Distance"].default_value = ripple_depth
+    nt.links.new(ripple.outputs["Fac"], bump_ripple.inputs["Height"])
+    nt.links.new(bump_macro.outputs["Normal"], bump_ripple.inputs["Normal"])
+
+    nt.links.new(col_ramp.outputs["Color"], bsdf.inputs["Base Color"])
+    nt.links.new(r_ramp.outputs["Color"], bsdf.inputs["Roughness"])
+    nt.links.new(bump_ripple.outputs["Normal"], bsdf.inputs["Normal"])
+    if "Coat Normal" in bsdf.inputs:
+        nt.links.new(bump_ripple.outputs["Normal"], bsdf.inputs["Coat Normal"])
+    nt.links.new(bsdf.outputs["BSDF"], out.inputs["Surface"])
+    return mat
+
+
+def apply_weathering(mat, dirt_hex: str = "#3B2716", rise_m: float = 0.55, streaks: float = 0.7, grime: float = 0.5,
+                     wet_rough: float = 0.32, blotch: float = 0.5, streak_top_m: float = 5.0):
+    """
+    Law R-LOOK "nothing is clean" pass: dirties an existing Principled material in place and returns it.
+      - rising mud/dirt band from the ground up to `rise_m` (world Z), with a noisy broken edge;
+      - vertical drip streaks (stretched noise) fading out towards `streak_top_m`, strength `streaks`;
+      - large soft blotches over the whole surface (stains, damp patches), strength `blotch`;
+      - cavity grime from Ambient Occlusion (Cycles; EEVEE approximates), strength `grime`.
+    Dirt areas also get `wet_rough` roughness when the material's roughness is a constant.
+    Use on every set piece (walls, fences, poles, props); characters get mud decals / liquid mud instead.
+    """
+    nt = mat.node_tree
+    bsdf = next((n for n in nt.nodes if n.type == "BSDF_PRINCIPLED"), None)
+    if bsdf is None or mat.get("sven_weathered"):
+        return mat
+    base_in = bsdf.inputs["Base Color"]
+    if base_in.is_linked:
+        base_src = base_in.links[0].from_socket
+    else:
+        rgb = nt.nodes.new("ShaderNodeRGB")
+        rgb.outputs[0].default_value = tuple(base_in.default_value)
+        base_src = rgb.outputs[0]
+
+    geo = nt.nodes.new("ShaderNodeNewGeometry")
+    sep = nt.nodes.new("ShaderNodeSeparateXYZ")
+    nt.links.new(geo.outputs["Position"], sep.inputs[0])
+
+    edge = nt.nodes.new("ShaderNodeTexNoise")
+    edge.inputs["Scale"].default_value = 3.0
+    edge.inputs["Detail"].default_value = 6.0
+    nt.links.new(geo.outputs["Position"], edge.inputs["Vector"])
+    z_off = nt.nodes.new("ShaderNodeMath")  # noisy height: z - noise*0.5*rise (ragged edge)
+    z_off.operation = "MULTIPLY_ADD"
+    z_off.inputs[1].default_value = -rise_m * 0.5
+    nt.links.new(edge.outputs["Fac"], z_off.inputs[0])
+    nt.links.new(sep.outputs["Z"], z_off.inputs[2])
+    # caked solid up to ~0.6·rise, then a short ragged fade to clean by ~rise (a full-height soft fade left
+    # dark mud at 50–80 % coverage, which read as "clean" on coloured textured props)
+    rise = nt.nodes.new("ShaderNodeMapRange")
+    rise.inputs["From Min"].default_value = rise_m * 0.35
+    rise.inputs["From Max"].default_value = rise_m * 0.75
+    rise.inputs["To Min"].default_value = 1.0
+    rise.inputs["To Max"].default_value = 0.0
+    nt.links.new(z_off.outputs[0], rise.inputs["Value"])
+
+    stretch = nt.nodes.new("ShaderNodeVectorMath")
+    stretch.operation = "MULTIPLY"
+    stretch.inputs[1].default_value = (9.0, 9.0, 0.7)
+    nt.links.new(geo.outputs["Position"], stretch.inputs[0])
+    drip = nt.nodes.new("ShaderNodeTexNoise")
+    drip.inputs["Scale"].default_value = 1.0
+    drip.inputs["Detail"].default_value = 3.0
+    nt.links.new(stretch.outputs["Vector"], drip.inputs["Vector"])
+    drip_r = nt.nodes.new("ShaderNodeMapRange")
+    drip_r.inputs["From Min"].default_value = 0.58
+    drip_r.inputs["From Max"].default_value = 0.72
+    nt.links.new(drip.outputs["Fac"], drip_r.inputs["Value"])
+    fade = nt.nodes.new("ShaderNodeMapRange")
+    fade.inputs["From Min"].default_value = 0.0
+    fade.inputs["From Max"].default_value = streak_top_m
+    fade.inputs["To Min"].default_value = streaks
+    fade.inputs["To Max"].default_value = 0.0
+    nt.links.new(sep.outputs["Z"], fade.inputs["Value"])
+    drip_m = nt.nodes.new("ShaderNodeMath")
+    drip_m.operation = "MULTIPLY"
+    nt.links.new(drip_r.outputs["Result"], drip_m.inputs[0])
+    nt.links.new(fade.outputs["Result"], drip_m.inputs[1])
+
+    ao = nt.nodes.new("ShaderNodeAmbientOcclusion")
+    ao.inputs["Distance"].default_value = 0.35
+    ao_inv = nt.nodes.new("ShaderNodeMapRange")
+    ao_inv.inputs["To Min"].default_value = grime
+    ao_inv.inputs["To Max"].default_value = 0.0
+    nt.links.new(ao.outputs["AO"], ao_inv.inputs["Value"])
+
+    stain = nt.nodes.new("ShaderNodeTexNoise")
+    stain.inputs["Scale"].default_value = 1.6
+    stain.inputs["Detail"].default_value = 7.0
+    stain.inputs["Roughness"].default_value = 0.6
+    nt.links.new(geo.outputs["Position"], stain.inputs["Vector"])
+    stain_r = nt.nodes.new("ShaderNodeMapRange")
+    stain_r.inputs["From Min"].default_value = 0.50
+    stain_r.inputs["From Max"].default_value = 0.72
+    stain_r.inputs["To Max"].default_value = blotch
+    nt.links.new(stain.outputs["Fac"], stain_r.inputs["Value"])
+
+    m0 = nt.nodes.new("ShaderNodeMath")
+    m0.operation = "MAXIMUM"
+    nt.links.new(drip_m.outputs[0], m0.inputs[0])
+    nt.links.new(stain_r.outputs["Result"], m0.inputs[1])
+    m1 = nt.nodes.new("ShaderNodeMath")
+    m1.operation = "MAXIMUM"
+    nt.links.new(rise.outputs["Result"], m1.inputs[0])
+    nt.links.new(m0.outputs[0], m1.inputs[1])
+    m2 = nt.nodes.new("ShaderNodeMath")
+    m2.operation = "MAXIMUM"
+    m2.use_clamp = True
+    nt.links.new(m1.outputs[0], m2.inputs[0])
+    nt.links.new(ao_inv.outputs["Result"], m2.inputs[1])
+
+    mix = nt.nodes.new("ShaderNodeMix")
+    mix.data_type = "RGBA"
+    rgba_in = [s for s in mix.inputs if s.type == "RGBA"]
+    nt.links.new(m2.outputs[0], mix.inputs["Factor"])
+    nt.links.new(base_src, rgba_in[0])
+    rgba_in[1].default_value = _hex_rgba(dirt_hex)
+    rgba_out = next(s for s in mix.outputs if s.type == "RGBA")
+    nt.links.new(rgba_out, base_in)
+
+    r_in = bsdf.inputs["Roughness"]
+    if not r_in.is_linked:
+        rmix = nt.nodes.new("ShaderNodeMapRange")
+        rmix.inputs["From Min"].default_value = 0.0
+        rmix.inputs["From Max"].default_value = 1.0
+        rmix.inputs["To Min"].default_value = r_in.default_value
+        rmix.inputs["To Max"].default_value = wet_rough
+        nt.links.new(m2.outputs[0], rmix.inputs["Value"])
+        nt.links.new(rmix.outputs["Result"], r_in)
+    mat["sven_weathered"] = True
+    return mat
+
+
+def add_aerial_haze(col, density: float = 0.008, color_hex: str = "#C3CCD6", size_m: float = 260.0,
+                    height_m: float = 70.0, anisotropy: float = 0.35):
+    """Law R-WORLD aerial perspective: a low-density Principled Volume box so far planes fade into soft haze.
+    Render-time cost is moderate in Cycles; keep density 0.004–0.015 (higher reads as fog)."""
+    bpy.ops.mesh.primitive_cube_add(size=1.0, location=(0.0, 0.0, height_m * 0.5 - 1.0))
+    box = bpy.context.active_object
+    box.name = "AerialHaze"
+    box.scale = (size_m, size_m, height_m)
+    mat = bpy.data.materials.new("AerialHazeVol")
+    nt = mat.node_tree
+    nt.nodes.clear()
+    out = nt.nodes.new("ShaderNodeOutputMaterial")
+    vol = nt.nodes.new("ShaderNodeVolumePrincipled")
+    vol.inputs["Color"].default_value = _hex_rgba(color_hex)
+    vol.inputs["Density"].default_value = density
+    vol.inputs["Anisotropy"].default_value = anisotropy
+    nt.links.new(vol.outputs["Volume"], out.inputs["Volume"])
+    box.data.materials.append(mat)
+    box.visible_shadow = False
+    _link(box, col)
+    return box
+
+
 def make_snow_ice_ground_mat(
     name: str = "SnowIceGround",
     snow_hex: str = "#DCE7F5",
@@ -885,13 +1115,15 @@ def setup_hero_light_linking(
     practical_color=(1.0, 0.64, 0.24),
     practical_energy: float = 55.0,
     col_lights=None,
+    tag: str = "Hero",
 ):
     """
     Blender 5.3 Light-Linked Character Hero Rig:
-    - Hero_Key_LL (40 deg off camera axis, +30 deg elevation): carves smooth 3D shadow modeling on blocky faces & bevels
+    - <tag>_Key_LL (40 deg off camera axis, +30 deg elevation): carves smooth 3D shadow modeling on blocky faces & bevels
       WITHOUT blowing out bright snow or background walls.
-    - Hero_Rim_LL (142 deg contrasting-temp backlight): paints a crisp rim halo separating shoulders, puffer & hair from dark cabins/snow.
-    - Optional real Warm Practical PointLight (e.g. village lantern) casting warm orange bounce onto earmuffs & jacket.
+    - <tag>_Rim_LL (142 deg contrasting-temp backlight): paints a crisp rim halo separating shoulders, outerwear & hair from dark sets.
+    - Optional real Warm Practical PointLight casting warm orange bounce onto nearby props.
+    - Pass distinct `tag` (e.g. "Fugitive", "Detective") to give multiple characters independent light-linked key/rim rigs.
     """
     sc = bpy.context.scene
     if col_lights is None:
@@ -899,8 +1131,9 @@ def setup_hero_light_linking(
         if col_lights.name not in sc.collection.children:
             sc.collection.children.link(col_lights)
 
-    # Create a dedicated Light-Linking Receiver collection containing all cast collections (not linked to scene tree)
-    ll_col = bpy.data.collections.get("_LL_HeroCast") or bpy.data.collections.new("_LL_HeroCast")
+    # Create a dedicated Light-Linking Receiver collection per tag (not linked to scene tree)
+    ll_name = f"_LL_{tag}Cast"
+    ll_col = bpy.data.collections.get(ll_name) or bpy.data.collections.new(ll_name)
     for c in list(ll_col.children):
         ll_col.children.unlink(c)
     for o in list(ll_col.objects):
@@ -935,15 +1168,15 @@ def setup_hero_light_linking(
 
     # Key at ~40 deg azimuth from front (-Y), elevated +30 deg
     key_pos = tgt + Vector((key_side * 1.95, -2.35, 1.45))
-    created["key"] = _make_ll_area("Hero_Key_LL", key_pos, key_energy, key_color, 1.8, 1.6, spread_deg=78.0)
+    created["key"] = _make_ll_area(f"{tag}_Key_LL", key_pos, key_energy, key_color, 1.8, 1.6, spread_deg=78.0)
 
     # Rim on opposite rear flank (~142 deg) for crisp shoulder/hair separation
     rim_pos = tgt + Vector((-key_side * 1.65, 2.05, 1.35))
-    created["rim"] = _make_ll_area("Hero_Rim_LL", rim_pos, rim_energy, rim_color, 1.4, 1.2, spread_deg=65.0)
+    created["rim"] = _make_ll_area(f"{tag}_Rim_LL", rim_pos, rim_energy, rim_color, 1.4, 1.2, spread_deg=65.0)
 
     # Optional real practical light (lantern/window bounce — illuminates BOTH character & nearby props naturally)
     if practical_loc is not None:
-        pd = bpy.data.lights.new("Practical_WarmBounce", type="POINT")
+        pd = bpy.data.lights.new(f"Practical_{tag}Bounce", type="POINT")
         pd.energy = practical_energy
         pd.color = practical_color
         pd.shadow_soft_size = 0.22
@@ -2084,6 +2317,675 @@ def render_location_2x2_grid(out_path: str, focus_loc=(0.0, 0.5, 1.1), cast_coll
         bpy.data.objects.remove(co, do_unlink=True)
         bpy.data.cameras.remove(cd, do_unlink=True)
     return out_path
+
+
+# ==============================================================================
+# CINEMA MODE ENGINE (Blender 5.3 Motion Blur, Chiaroscuro, Mist Pass & Compositor)
+# ==============================================================================
+
+def enable_cinema_motion_blur(scene=None, shutter: float = 0.5, position: str = "CENTER"):
+    """Enable physical camera/object motion blur (180-deg film shutter = 0.5)."""
+    sc = scene or bpy.context.scene
+    sc.render.use_motion_blur = True
+    sc.render.motion_blur_shutter = float(shutter)
+    try:
+        sc.render.motion_blur_position = position
+    except Exception:
+        pass
+    return sc
+
+
+def configure_mist_pass(scene=None, start: float = 4.0, depth: float = 28.0, falloff: str = "QUADRATIC"):
+    """Enable clean depth Mist pass (3-5x faster & cleaner in Cycles than a 260m global volume box)."""
+    sc = scene or bpy.context.scene
+    for vl in sc.view_layers:
+        vl.use_pass_mist = True
+    if sc.world is None:
+        sc.world = bpy.data.worlds.new("CinemaWorld")
+    ms = sc.world.mist_settings
+    ms.use_mist = True
+    ms.start = float(start)
+    ms.depth = float(depth)
+    ms.falloff = falloff
+    return ms
+
+
+def _set_input_safe(node, name: str, value):
+    sock = node.inputs.get(name)
+    if sock is not None:
+        try:
+            sock.default_value = value
+            return True
+        except Exception:
+            pass
+    return False
+
+
+def setup_cinema_compositor(
+    scene=None,
+    grade: str = "teal_amber",
+    use_mist: bool = True,
+    mist_color=(0.24, 0.31, 0.42),
+    mist_strength: float = 0.32,
+    glare_threshold: float = 1.25,
+    glare_strength: float = 0.38,
+    vignette: float = 0.22,
+    dispersion: float = 0.002,
+    agx_look: str = "AgX - Medium High Contrast",
+):
+    """
+    Build a native Blender 5.3 Cinema Compositor stack (`scene.compositing_node_group`):
+      1. Optional Mist Pass atmospheric depth blend (noise-free, <0.1s/frame in Cycles)
+      2. Physical Fog Glow Glare on motivated practical lights & reflections
+      3. Filmic Lift/Gamma/Gain color grading (`teal_amber`, `warm_film`, `noir_cold`, `neutral_cinema`)
+      4. Soft optical Vignette framing the viewer's eye on the subject
+      5. Subtle lens dispersion (kills sterile CGI edge look)
+    """
+    sc = scene or bpy.context.scene
+    sc.view_settings.view_transform = "AgX"
+    try:
+        sc.view_settings.look = agx_look
+    except Exception:
+        pass
+
+    if use_mist:
+        configure_mist_pass(sc)
+
+    old_ng = bpy.data.node_groups.get("SvenCinemaComp")
+    if old_ng is not None:
+        bpy.data.node_groups.remove(old_ng)
+
+    ng = bpy.data.node_groups.new("SvenCinemaComp", "CompositorNodeTree")
+    ng.interface.new_socket("Image", in_out="OUTPUT", socket_type="NodeSocketColor")
+    sc.compositing_node_group = ng
+    nodes, links = ng.nodes, ng.links
+
+    rl = nodes.new("CompositorNodeRLayers")
+    rl.location = (-800, 0)
+    cur = rl.outputs["Image"]
+
+    # 1. Mist depth atmosphere
+    if use_mist and "Mist" in rl.outputs:
+        m_mul = nodes.new("ShaderNodeMath")
+        m_mul.operation = "MULTIPLY"
+        m_mul.location = (-580, -220)
+        links.new(rl.outputs["Mist"], m_mul.inputs[0])
+        m_mul.inputs[1].default_value = float(mist_strength)
+
+        m_mix = nodes.new("ShaderNodeMix")
+        m_mix.data_type = "RGBA"
+        m_mix.blend_type = "MIX"
+        m_mix.location = (-400, 0)
+        links.new(m_mul.outputs["Value"], m_mix.inputs[0])
+        rgba_in = [s for s in m_mix.inputs if s.type == "RGBA"]
+        links.new(cur, rgba_in[0])
+        rgba_in[1].default_value = (mist_color[0], mist_color[1], mist_color[2], 1.0)
+        cur = next(s for s in m_mix.outputs if s.type == "RGBA")
+
+    # 2. Fog Glow glare on lanterns, windows & wet speculars (Blender 5.3 exact Title-Case menu strings!)
+    glare = nodes.new("CompositorNodeGlare")
+    glare.location = (-180, 0)
+    _set_input_safe(glare, "Type", "Fog Glow")
+    _set_input_safe(glare, "Quality", "Medium")
+    _set_input_safe(glare, "Threshold", float(glare_threshold))
+    _set_input_safe(glare, "Strength", float(glare_strength))
+    _set_input_safe(glare, "Size", 0.72)
+    links.new(cur, glare.inputs["Image"])
+    cur = glare.outputs["Image"]
+
+    # 3. Filmic Color Balance (Lift / Gamma / Gain)
+    grades = {
+        "teal_amber": ((0.94, 0.99, 1.04, 1.0), (1.00, 1.00, 0.99, 1.0), (1.06, 1.01, 0.94, 1.0)),
+        "warm_film": ((0.98, 0.97, 0.96, 1.0), (1.02, 1.00, 0.97, 1.0), (1.07, 1.02, 0.95, 1.0)),
+        "noir_cold": ((0.90, 0.95, 1.04, 1.0), (0.96, 0.99, 1.03, 1.0), (1.00, 1.01, 1.03, 1.0)),
+        "neutral_cinema": ((0.98, 0.99, 1.01, 1.0), (1.00, 1.00, 1.00, 1.0), (1.02, 1.01, 0.99, 1.0)),
+    }
+    lift, gamma, gain = grades.get(grade, grades["teal_amber"])
+    cb = nodes.new("CompositorNodeColorBalance")
+    cb.location = (60, 0)
+    _set_input_safe(cb, "Type", "Lift/Gamma/Gain")
+    _set_input_safe(cb, "Factor", 0.85)
+    rgba_cb = [s for s in cb.inputs if s.type == "RGBA" and s.name != "Image"]
+    if len(rgba_cb) >= 3:
+        rgba_cb[0].default_value = lift
+        rgba_cb[1].default_value = gamma
+        rgba_cb[2].default_value = gain
+    links.new(cur, cb.inputs["Image"])
+    cur = cb.outputs["Image"]
+
+    # 4. Soft optical Vignette (Blender 5.3 uses 2D Vector tuples for Size!)
+    if vignette > 0.001:
+        em = nodes.new("CompositorNodeEllipseMask")
+        em.location = (60, -280)
+        _set_input_safe(em, "Position", (0.5, 0.5))
+        _set_input_safe(em, "Size", (0.94, 0.94))
+        bl = nodes.new("CompositorNodeBlur")
+        bl.location = (240, -280)
+        _set_input_safe(bl, "Size", (340.0, 340.0))
+        links.new(em.outputs["Mask"], bl.inputs["Image"])
+
+        vmix = nodes.new("ShaderNodeMix")
+        vmix.data_type = "RGBA"
+        vmix.blend_type = "MULTIPLY"
+        vmix.location = (380, 0)
+        vmix.inputs[0].default_value = float(vignette)
+        rgba_v = [s for s in vmix.inputs if s.type == "RGBA"]
+        links.new(cur, rgba_v[0])
+        links.new(bl.outputs["Image"], rgba_v[1])
+        cur = next(s for s in vmix.outputs if s.type == "RGBA")
+
+    # 5. Subtle optical dispersion
+    if dispersion > 0.0:
+        ld = nodes.new("CompositorNodeLensdist")
+        ld.location = (600, 0)
+        _set_input_safe(ld, "Dispersion", float(dispersion))
+        _set_input_safe(ld, "Fit", True)
+        links.new(cur, ld.inputs["Image"])
+        cur = ld.outputs["Image"]
+
+    out = nodes.new("NodeGroupOutput")
+    out.location = (820, 0)
+    links.new(cur, out.inputs[0])
+    return ng
+
+
+def setup_chiaroscuro_lighting(
+    col,
+    key_loc,
+    target_loc,
+    key_color=(1.0, 0.72, 0.36),
+    key_energy: float = 240.0,
+    spot_deg: float = 44.0,
+    blend: float = 0.42,
+    radius: float = 0.16,
+    add_gobo_slats: bool = False,
+    add_godray_cone: bool = False,
+    godray_density: float = 0.032,
+    flicker_frames=None,
+    name: str = "CinemaChiaroscuro",
+):
+    """
+    Motivated high-contrast Cinema Key SpotLight (3b 6-Point Lighting Contract):
+      - Cuts dramatic directional chiaroscuro light across dark moody scenes
+      - Optional slatted window Gobo casting crisp shadow bars across subject & floor
+      - Optional lightweight local God-Ray volumetric cone (confined strictly to beam — fast in Cycles!)
+      - Optional living light flicker animation (`flicker_frames=(f_start, f_end)`)
+    """
+    kpos = Vector(key_loc)
+    tpos = Vector(target_loc)
+    aim = (tpos - kpos)
+    dist = max(0.5, aim.length)
+    rot = aim.to_track_quat("-Z", "Y").to_euler()
+
+    ld = bpy.data.lights.new(name + "_Spot", type="SPOT")
+    ld.energy = float(key_energy)
+    ld.color = key_color
+    ld.spot_size = math.radians(float(spot_deg))
+    ld.spot_blend = float(blend)
+    ld.shadow_soft_size = float(radius)
+    lo = bpy.data.objects.new(name + "_Spot", ld)
+    lo.location = kpos
+    lo.rotation_euler = rot
+    col.objects.link(lo)
+
+    created = {"spot": lo}
+
+    # Optional living light micro-flicker (candle / lantern / storm fluctuation)
+    if flicker_frames is not None:
+        fs, fe = int(flicker_frames[0]), int(flicker_frames[1])
+        for f in range(fs, fe + 1, 3):
+            mod = 1.0 + 0.07 * math.sin(f * 0.43) + 0.04 * math.sin(f * 1.17)
+            ld.energy = float(key_energy) * mod
+            ld.keyframe_insert("energy", frame=f)
+
+    # Optional slatted window Gobo blocker 0.45m in front of spotlight
+    if add_gobo_slats:
+        dir_n = aim.normalized()
+        up_ref = Vector((0, 0, 1)) if abs(dir_n.z) < 0.9 else Vector((1, 0, 0))
+        right_v = dir_n.cross(up_ref).normalized()
+        up_v = right_v.cross(dir_n).normalized()
+        gobo_c = kpos + dir_n * 0.45
+        bm = bmesh.new()
+        for k in (-2, -1, 0, 1, 2):
+            off = up_v * (k * 0.065)
+            hw, hh = 0.32, 0.016
+            v0 = bm.verts.new(gobo_c + off - right_v * hw - up_v * hh)
+            v1 = bm.verts.new(gobo_c + off + right_v * hw - up_v * hh)
+            v2 = bm.verts.new(gobo_c + off + right_v * hw + up_v * hh)
+            v3 = bm.verts.new(gobo_c + off - right_v * hw + up_v * hh)
+            bm.faces.new((v0, v1, v2, v3))
+        me = bpy.data.meshes.new(name + "_Gobo_M")
+        bm.to_mesh(me)
+        bm.free()
+        go = bpy.data.objects.new(name + "_Gobo", me)
+        go.visible_camera = False  # casts shadows without cluttering viewport/camera
+        col.objects.link(go)
+        created["gobo"] = go
+
+    # Optional local volumetric God-Ray cone (lightweight local shaft instead of 260m global volume)
+    if add_godray_cone:
+        cone_len = min(dist * 1.15, 7.5)
+        cone_r = cone_len * math.tan(math.radians(spot_deg * 0.48))
+        bpy.ops.mesh.primitive_cone_add(
+            vertices=24, radius1=cone_r, radius2=0.06, depth=cone_len,
+            location=kpos + aim.normalized() * (cone_len * 0.5),
+            rotation=rot,
+        )
+        cone = bpy.context.active_object
+        cone.name = name + "_GodRayVol"
+        for c in list(cone.users_collection):
+            c.objects.unlink(cone)
+        col.objects.link(cone)
+        vm = bpy.data.materials.new(name + "_GodRayMat")
+        nt = vm.node_tree
+        nt.nodes.clear()
+        out = nt.nodes.new("ShaderNodeOutputMaterial")
+        vol = nt.nodes.new("ShaderNodeVolumeScatter")
+        vol.inputs["Color"].default_value = (key_color[0], key_color[1], key_color[2], 1.0)
+        vol.inputs["Density"].default_value = float(godray_density)
+        vol.inputs["Anisotropy"].default_value = 0.62
+        nt.links.new(vol.outputs["Volume"], out.inputs["Volume"])
+        cone.data.materials.append(vm)
+        created["godray"] = cone
+
+    return created
+
+
+# ==============================================================================
+# SEMI-REAL CGI CINEMA ENVIRONMENT BUILDERS (GibbsonTV / Photoreal Blender PBR)
+# ==============================================================================
+
+def make_wet_asphalt_mat(name: str = "WetAsphalt_Noir", puddle_coverage: float = 0.48):
+    """Rain-slicked urban asphalt PBR: mirror puddles (rough 0.025) blended into coarse wet tarmac (rough 0.72)."""
+    mat = bpy.data.materials.new(name)
+    nt = mat.node_tree
+    nt.nodes.clear()
+    out = nt.nodes.new("ShaderNodeOutputMaterial")
+    bsdf = nt.nodes.new("ShaderNodeBsdfPrincipled")
+
+    tc = nt.nodes.new("ShaderNodeTexCoord")
+    # Large puddle mask (0 = dry/damp tarmac, 1 = standing mirror puddle)
+    p_noise = nt.nodes.new("ShaderNodeTexNoise")
+    p_noise.inputs["Scale"].default_value = 0.42
+    p_noise.inputs["Detail"].default_value = 4.5
+    p_noise.inputs["Roughness"].default_value = 0.58
+    nt.links.new(tc.outputs["Object"], p_noise.inputs["Vector"])
+
+    p_ramp = nt.nodes.new("ShaderNodeValToRGB")
+    pe = p_ramp.color_ramp.elements
+    edge = max(0.25, min(0.70, 1.0 - puddle_coverage))
+    pe[0].position, pe[0].color = edge - 0.06, (0.0, 0.0, 0.0, 1.0)
+    pe[1].position, pe[1].color = edge + 0.05, (1.0, 1.0, 1.0, 1.0)
+    nt.links.new(p_noise.outputs["Fac"], p_ramp.inputs["Fac"])
+
+    # Fine tarmac aggregate grain
+    g_noise = nt.nodes.new("ShaderNodeTexNoise")
+    g_noise.inputs["Scale"].default_value = 65.0
+    g_noise.inputs["Detail"].default_value = 10.0
+    g_noise.inputs["Roughness"].default_value = 0.78
+    nt.links.new(tc.outputs["Object"], g_noise.inputs["Vector"])
+
+    # Darker wet base color inside puddles, charcoal aggregate outside
+    col_mix = nt.nodes.new("ShaderNodeMix")
+    col_mix.data_type = "RGBA"
+    rgba_c = [s for s in col_mix.inputs if s.type == "RGBA"]
+    rgba_c[0].default_value = (0.036, 0.038, 0.044, 1.0)
+    rgba_c[1].default_value = (0.012, 0.014, 0.018, 1.0)
+    nt.links.new(p_ramp.outputs["Color"], col_mix.inputs[0])
+    nt.links.new(next(s for s in col_mix.outputs if s.type == "RGBA"), bsdf.inputs["Base Color"])
+
+    # Roughness: 0.68 tarmac -> 0.025 mirror puddle
+    r_map = nt.nodes.new("ShaderNodeMapRange")
+    r_map.inputs["From Min"].default_value = 0.0
+    r_map.inputs["From Max"].default_value = 1.0
+    r_map.inputs["To Min"].default_value = 0.66
+    r_map.inputs["To Max"].default_value = 0.022
+    nt.links.new(p_ramp.outputs["Color"], r_map.inputs["Value"])
+    nt.links.new(r_map.outputs["Result"], bsdf.inputs["Roughness"])
+
+    if "Coat Weight" in bsdf.inputs:
+        nt.links.new(p_ramp.outputs["Color"], bsdf.inputs["Coat Weight"])
+        bsdf.inputs["Coat Roughness"].default_value = 0.02
+
+    # Subtle rain ripple noise on puddles vs aggregate bump on tarmac
+    rip = nt.nodes.new("ShaderNodeTexNoise")
+    rip.inputs["Scale"].default_value = 14.0
+    rip.inputs["Detail"].default_value = 3.0
+    nt.links.new(tc.outputs["Object"], rip.inputs["Vector"])
+
+    b_mix = nt.nodes.new("ShaderNodeMix")
+    b_mix.data_type = "FLOAT"
+    nt.links.new(p_ramp.outputs["Color"], b_mix.inputs[0])
+    nt.links.new(g_noise.outputs["Fac"], b_mix.inputs[2])
+    nt.links.new(rip.outputs["Fac"], b_mix.inputs[3])
+
+    b_str = nt.nodes.new("ShaderNodeMapRange")
+    b_str.inputs["To Min"].default_value = 0.32
+    b_str.inputs["To Max"].default_value = 0.035
+    nt.links.new(p_ramp.outputs["Color"], b_str.inputs["Value"])
+
+    bump = nt.nodes.new("ShaderNodeBump")
+    bump.inputs["Distance"].default_value = 0.015
+    nt.links.new(b_str.outputs["Result"], bump.inputs["Strength"])
+    nt.links.new(b_mix.outputs[0], bump.inputs["Height"])
+    nt.links.new(bump.outputs["Normal"], bsdf.inputs["Normal"])
+
+    nt.links.new(bsdf.outputs["BSDF"], out.inputs["Surface"])
+    return mat
+
+
+def make_weathered_concrete_mat(name: str = "NoirConcrete", base_hex: str = "#2A2E35", damp_rise_m: float = 1.4):
+    """Gritty semi-real urban concrete/brick wall PBR with damp base, vertical rain grime & Cycles AO."""
+    mat = bpy.data.materials.new(name)
+    nt = mat.node_tree
+    nt.nodes.clear()
+    out = nt.nodes.new("ShaderNodeOutputMaterial")
+    bsdf = nt.nodes.new("ShaderNodeBsdfPrincipled")
+
+    h = base_hex.lstrip("#")
+    c = [int(h[i:i + 2], 16) / 255.0 for i in (0, 2, 4)]
+    base = tuple((x / 12.92 if x <= 0.04045 else ((x + 0.055) / 1.055) ** 2.4) for x in c) + (1.0,)
+
+    tc = nt.nodes.new("ShaderNodeTexCoord")
+    sep = nt.nodes.new("ShaderNodeSeparateXYZ")
+    nt.links.new(tc.outputs["Object"], sep.inputs["Vector"])
+
+    # Coarse plaster/concrete blotch + brick/panel grain
+    n1 = nt.nodes.new("ShaderNodeTexNoise")
+    n1.inputs["Scale"].default_value = 2.6
+    n1.inputs["Detail"].default_value = 8.0
+    n1.inputs["Roughness"].default_value = 0.72
+    nt.links.new(tc.outputs["Object"], n1.inputs["Vector"])
+
+    ao = nt.nodes.new("ShaderNodeAmbientOcclusion")
+    ao.samples = 8
+    ao.inputs["Distance"].default_value = 0.45
+
+    # Mix subtle variation + AO grime
+    c_mix = nt.nodes.new("ShaderNodeMix")
+    c_mix.data_type = "RGBA"
+    c_mix.blend_type = "MULTIPLY"
+    c_mix.inputs[0].default_value = 0.50
+    rgba_c = [s for s in c_mix.inputs if s.type == "RGBA"]
+    rgba_c[0].default_value = base
+    nt.links.new(n1.outputs["Color"], rgba_c[1])
+    c_mid = next(s for s in c_mix.outputs if s.type == "RGBA")
+
+    ao_mix = nt.nodes.new("ShaderNodeMix")
+    ao_mix.data_type = "RGBA"
+    ao_mix.blend_type = "MULTIPLY"
+    ao_mix.inputs[0].default_value = 0.55
+    rgba_a = [s for s in ao_mix.inputs if s.type == "RGBA"]
+    nt.links.new(c_mid, rgba_a[0])
+    nt.links.new(ao.outputs["AO"], rgba_a[1])
+    nt.links.new(next(s for s in ao_mix.outputs if s.type == "RGBA"), bsdf.inputs["Base Color"])
+
+    # Roughness: wetter/glossier near damp bottom edge
+    r_map = nt.nodes.new("ShaderNodeMapRange")
+    r_map.inputs["From Min"].default_value = 0.0
+    r_map.inputs["From Max"].default_value = float(damp_rise_m)
+    r_map.inputs["To Min"].default_value = 0.34
+    r_map.inputs["To Max"].default_value = 0.84
+    nt.links.new(sep.outputs["Z"], r_map.inputs["Value"])
+    nt.links.new(r_map.outputs["Result"], bsdf.inputs["Roughness"])
+
+    bump = nt.nodes.new("ShaderNodeBump")
+    bump.inputs["Strength"].default_value = 0.28
+    bump.inputs["Distance"].default_value = 0.02
+    nt.links.new(n1.outputs["Fac"], bump.inputs["Height"])
+    nt.links.new(bump.outputs["Normal"], bsdf.inputs["Normal"])
+
+    nt.links.new(bsdf.outputs["BSDF"], out.inputs["Surface"])
+    return mat
+
+
+def _make_emissive_mat(name: str, hex_col: str, strength: float = 12.0):
+    mat = bpy.data.materials.new(name)
+    nt = mat.node_tree
+    nt.nodes.clear()
+    out = nt.nodes.new("ShaderNodeOutputMaterial")
+    em = nt.nodes.new("ShaderNodeEmission")
+    h = hex_col.lstrip("#")
+    c = [int(h[i:i + 2], 16) / 255.0 for i in (0, 2, 4)]
+    lin = tuple((x / 12.92 if x <= 0.04045 else ((x + 0.055) / 1.055) ** 2.4) for x in c) + (1.0,)
+    em.inputs["Color"].default_value = lin
+    em.inputs["Strength"].default_value = float(strength)
+    nt.links.new(em.outputs["Emission"], out.inputs["Surface"])
+    return mat
+
+
+def build_semi_real_noir_alley(
+    col,
+    length_m: float = 30.0,
+    alley_w: float = 6.2,
+    add_rain_streaks: bool = True,
+    add_godrays: bool = True,
+):
+    """
+    Build a full 3-plane Semi-Real Urban Noir Rainy Alley (GibbsonTV 'Fugitive' CGI standard):
+      - Rain-slicked puddle-mapped wet asphalt + concrete curbs & sidewalks
+      - Multi-story weathered concrete/brick apartment facades on both sides with glowing windows,
+        fire-escape ledges, AC units, drainpipes, neon signboards & overhead cables
+      - Streetlamps with Chiaroscuro SpotLights + local volumetric God-Ray cones
+      - Distant skyline silhouettes & 180-deg reverse urban enclosure (zero horizon void)
+      - Angled high-velocity rain streaks catching backlight (never snowy balls)
+    Center acting corridor: X in [-2.0, +2.0], Y in [-8.0, +10.0], Z = 0.0 (100% clear).
+    """
+    mat_asphalt = make_wet_asphalt_mat("NoirAlley_WetAsphalt", puddle_coverage=0.52)
+    mat_curb = make_weathered_concrete_mat("NoirAlley_Sidewalk", "#363A42", damp_rise_m=0.8)
+    mat_brick_a = make_weathered_concrete_mat("NoirAlley_WallA", "#2A2628", damp_rise_m=2.2)
+    mat_brick_b = make_weathered_concrete_mat("NoirAlley_WallB", "#232A33", damp_rise_m=2.2)
+    mat_metal = make_weathered_concrete_mat("NoirAlley_DarkMetal", "#15181E", damp_rise_m=1.2)
+    bsdf_m = mat_metal.node_tree.nodes.get("Principled BSDF")
+    if bsdf_m and "Metallic" in bsdf_m.inputs:
+        bsdf_m.inputs["Metallic"].default_value = 0.78
+
+    mat_win_warm = _make_emissive_mat("NoirWin_Warm", "#FFAE4A", strength=7.5)
+    mat_win_cool = _make_emissive_mat("NoirWin_Cool", "#58A6D8", strength=5.0)
+    mat_neon_red = _make_emissive_mat("NoirNeon_Red", "#FF2E54", strength=18.0)
+    mat_neon_cyan = _make_emissive_mat("NoirNeon_Cyan", "#1EE0FF", strength=16.0)
+    mat_neon_amber = _make_emissive_mat("NoirNeon_Amber", "#FFB238", strength=15.0)
+
+    def _box(name, loc, sz, mat, rot_d=(0, 0, 0), bevel=0.015):
+        bpy.ops.mesh.primitive_cube_add(size=1.0, location=loc)
+        o = bpy.context.active_object
+        o.name = name
+        o.scale = sz
+        bpy.ops.object.transform_apply(scale=True)
+        o.rotation_euler = Euler([math.radians(a) for a in rot_d])
+        o.data.materials.append(mat)
+        if bevel > 0:
+            bv = o.modifiers.new("Bevel", "BEVEL")
+            bv.width = bevel
+            bv.segments = 2
+        for p in o.data.polygons:
+            p.use_smooth = True
+        for c in list(o.users_collection):
+            c.objects.unlink(o)
+        col.objects.link(o)
+        return o
+
+    # 1. Wet asphalt roadbed (top at Z = 0.0)
+    _box("NoirRoad_Asphalt", (0.0, 2.0, -0.05), (alley_w + 4.0, length_m + 14.0, 0.10), mat_asphalt, bevel=0.0)
+
+    # 2. Raised sidewalks + curbs flanking both sides of the alley
+    hw = alley_w * 0.5
+    for sx, tag in ((-1.0, "L"), (1.0, "R")):
+        _box(f"NoirSidewalk_{tag}", (sx * (hw + 0.95), 2.0, 0.08), (1.9, length_m + 10.0, 0.16), mat_curb, bevel=0.02)
+
+    # 3. Multi-story weathered buildings on both sides + glowing windows + AC boxes + drainpipes
+    b_specs = [
+        (-1, -7.5, 6.2, 8.8, mat_brick_a), (-1, -0.8, 6.6, 11.2, mat_brick_b),
+        (-1, 6.2, 6.8, 9.6, mat_brick_a), (-1, 13.0, 6.4, 12.5, mat_brick_b),
+        (1, -7.5, 6.4, 9.4, mat_brick_b), (1, -0.6, 6.8, 10.6, mat_brick_a),
+        (1, 6.4, 6.4, 11.8, mat_brick_b), (1, 13.2, 6.6, 9.8, mat_brick_a),
+    ]
+    for bi, (sx, by, bd, bh, bmat) in enumerate(b_specs):
+        bx = sx * (hw + 1.85 + 2.6)
+        _box(f"NoirBldg_{bi:02d}", (bx, by, bh * 0.5), (5.2, bd, bh), bmat, bevel=0.03)
+        face_x = sx * (hw + 1.85)
+        # Architectural cornice ledge + vertical drainpipe
+        _box(f"NoirLedge_{bi:02d}", (face_x - sx * 0.12, by, 3.6), (0.28, bd * 0.96, 0.18), mat_curb, bevel=0.01)
+        _box(f"NoirPipe_{bi:02d}", (face_x - sx * 0.08, by - bd * 0.44, bh * 0.45), (0.11, 0.11, bh * 0.9), mat_metal, bevel=0.01)
+        # Recessed apartment windows (mix warm amber & cool cyan glow)
+        for wz in (2.3, 5.2, 7.9):
+            if wz + 1.2 > bh:
+                continue
+            for wy_off in (-1.5, 1.5):
+                is_lit = ((bi + int(wz) + (1 if wy_off > 0 else 0)) % 3) != 0
+                wmat = (mat_win_warm if (bi + int(wz)) % 2 == 0 else mat_win_cool) if is_lit else mat_metal
+                _box(f"NoirWin_{bi}_{int(wz)}_{wy_off:+.0f}", (face_x - sx * 0.03, by + wy_off, wz), (0.08, 1.15, 1.45), wmat, bevel=0.01)
+                _box(f"NoirSill_{bi}_{int(wz)}_{wy_off:+.0f}", (face_x - sx * 0.10, by + wy_off, wz - 0.76), (0.22, 1.32, 0.10), mat_curb, bevel=0.01)
+        # AC compressor unit mounted on facade
+        if bi % 2 == 0:
+            _box(f"NoirAC_{bi:02d}", (face_x - sx * 0.28, by + 0.2, 2.8), (0.52, 0.82, 0.54), mat_metal, bevel=0.015)
+
+    # 4. Iconic Neon Signs casting real colored reflections onto wet puddles!
+    neon_defs = [
+        ("NeonSign_Red", (-hw - 1.35, 3.8, 3.3), (0.14, 1.85, 0.62), mat_neon_red, (1.0, 0.18, 0.34), 85.0),
+        ("NeonSign_Cyan", (hw + 1.35, 6.6, 3.6), (0.14, 1.75, 0.58), mat_neon_cyan, (0.12, 0.85, 1.0), 80.0),
+        ("NeonSign_Amber", (-hw - 1.35, 10.4, 3.9), (0.14, 1.50, 0.55), mat_neon_amber, (1.0, 0.68, 0.22), 70.0),
+    ]
+    for nname, nloc, nsz, nmat, lcol, lpow in neon_defs:
+        _box(nname + "_Frame", (nloc[0], nloc[1], nloc[2]), (nsz[0] + 0.08, nsz[1] + 0.14, nsz[2] + 0.14), mat_metal, bevel=0.01)
+        _box(nname, nloc, nsz, nmat, bevel=0.008)
+        ld = bpy.data.lights.new(nname + "_Light", type="AREA")
+        ld.energy = lpow
+        ld.color = lcol
+        ld.size = 1.4
+        lo = bpy.data.objects.new(nname + "_Light", ld)
+        lo.location = (nloc[0] + (0.45 if nloc[0] < 0 else -0.45), nloc[1], nloc[2] - 0.1)
+        lo.rotation_euler = (Vector((0.0, nloc[1], 0.2)) - lo.location).to_track_quat("-Z", "Y").to_euler()
+        col.objects.link(lo)
+
+    # 5. Streetlamps with Chiaroscuro Spots + Local God-Ray Cones
+    lamp_locs = [(-hw - 0.15, 0.8), (hw + 0.15, 7.6), (-hw - 0.15, 13.5)]
+    for li, (lx, ly) in enumerate(lamp_locs):
+        sgn = 1.0 if lx < 0 else -1.0
+        _box(f"StreetPole_{li}", (lx, ly, 2.55), (0.13, 0.13, 5.10), mat_metal, bevel=0.01)
+        _box(f"StreetArm_{li}", (lx + sgn * 0.65, ly, 4.95), (1.35, 0.10, 0.10), mat_metal, bevel=0.01)
+        head_p = (lx + sgn * 1.20, ly, 4.84)
+        _box(f"StreetHead_{li}", head_p, (0.34, 0.22, 0.12), mat_neon_amber, bevel=0.01)
+        setup_chiaroscuro_lighting(
+            col,
+            key_loc=(head_p[0], head_p[1], head_p[2] - 0.12),
+            target_loc=(head_p[0] + sgn * 0.35, ly, 0.0),
+            key_color=(1.0, 0.74, 0.40),
+            key_energy=320.0 if li == 0 else 260.0,
+            spot_deg=56.0,
+            blend=0.55,
+            radius=0.14,
+            add_godray_cone=(add_godrays and li < 2),
+            godray_density=0.016,
+            name=f"StreetLamp_{li}",
+        )
+
+    # 6. Lived-in street props strictly on sidewalks (outside center corridor [-2..+2])
+    _box("NoirDumpster_L", (-hw - 0.55, 4.8, 0.66), (1.05, 1.85, 1.12), mat_metal, rot_d=(0, 0, 4), bevel=0.02)
+    _box("NoirCrate_R1", (hw + 0.52, 2.4, 0.44), (0.72, 0.78, 0.68), mat_curb, rot_d=(0, 0, -12), bevel=0.015)
+    _box("NoirCrate_R2", (hw + 0.60, 3.25, 0.36), (0.58, 0.62, 0.52), mat_brick_a, rot_d=(0, 0, 18), bevel=0.015)
+
+    # 7. Distant city skyline silhouettes at far +Y end AND 180-deg reverse -Y backdrop
+    for sy_far, tag in ((22.0, "Far"), (-14.5, "Rev")):
+        for si, (sx_o, sw, sh) in enumerate(((-7.5, 6.0, 18.0), (0.0, 7.2, 22.0), (7.5, 6.2, 16.0))):
+            _box(f"Skyline_{tag}_{si}", (sx_o, sy_far, sh * 0.5), (sw, 4.0, sh), mat_brick_b, bevel=0.02)
+            _box(f"SkyWin_{tag}_{si}", (sx_o, sy_far - (2.05 if sy_far > 0 else -2.05), sh * 0.55), (sw * 0.6, 0.08, 0.55), mat_win_warm if si % 2 == 0 else mat_win_cool, bevel=0.0)
+
+    # 8. High-velocity angled rain streaks catching streetlamp & neon backlight
+    if add_rain_streaks:
+        import random
+        rng = random.Random(77)
+        mat_rain = bpy.data.materials.new("NoirRainStreak_M")
+        nt_r = mat_rain.node_tree
+        bsdf_r = nt_r.nodes.get("Principled BSDF")
+        bsdf_r.inputs["Base Color"].default_value = (0.78, 0.88, 1.0, 1.0)
+        bsdf_r.inputs["Roughness"].default_value = 0.08
+        bsdf_r.inputs["Alpha"].default_value = 0.28
+        bm_r = bmesh.new()
+        for _ in range(360):
+            rx = rng.uniform(-hw - 0.5, hw + 0.5)
+            ry = rng.uniform(-5.5, 14.5)
+            rz = rng.uniform(0.25, 5.2)
+            rl = rng.uniform(0.16, 0.32)
+            rw = 0.0028
+            tilt_x = 0.025
+            v0 = bm_r.verts.new((rx - rw, ry, rz))
+            v1 = bm_r.verts.new((rx + rw, ry, rz))
+            v2 = bm_r.verts.new((rx + tilt_x + rw, ry, rz - rl))
+            v3 = bm_r.verts.new((rx + tilt_x - rw, ry, rz - rl))
+            bm_r.faces.new((v0, v1, v2, v3))
+        me_r = bpy.data.meshes.new("NoirRainStreaks_M")
+        bm_r.to_mesh(me_r)
+        bm_r.free()
+        ro = bpy.data.objects.new("NoirRainStreaks", me_r)
+        ro.data.materials.append(mat_rain)
+        ro.visible_shadow = False
+        col.objects.link(ro)
+
+    return {"asphalt": mat_asphalt, "alley_w": alley_w, "lamp_locs": lamp_locs}
+
+
+def build_semi_real_interior_room(col, room_w: float = 6.2, room_d: float = 6.8, room_h: float = 3.2):
+    """
+    Build a moody Semi-Real Noir Apartment/Office Interior with hardwood floor, concrete walls,
+    recessed venetian-blind window casting sharp Chiaroscuro Gobo shafts, and weathered desk + warm lamp.
+    """
+    mat_floor = make_weathered_concrete_mat("IntFloor_Wood", "#2B1E15", damp_rise_m=0.2)
+    mat_wall = make_weathered_concrete_mat("IntWall_Plaster", "#2C3036", damp_rise_m=1.2)
+    mat_desk = make_weathered_concrete_mat("IntDesk_Wood", "#24170F", damp_rise_m=0.3)
+    mat_lamp = _make_emissive_mat("IntLamp_Bulb", "#FFAE46", strength=14.0)
+
+    def _box(name, loc, sz, mat, bevel=0.01):
+        bpy.ops.mesh.primitive_cube_add(size=1.0, location=loc)
+        o = bpy.context.active_object
+        o.name = name
+        o.scale = sz
+        bpy.ops.object.transform_apply(scale=True)
+        o.data.materials.append(mat)
+        if bevel > 0:
+            bv = o.modifiers.new("Bevel", "BEVEL"); bv.width = bevel; bv.segments = 2
+        for c in list(o.users_collection): c.objects.unlink(o)
+        col.objects.link(o)
+        return o
+
+    _box("IntFloor", (0.0, 0.0, -0.05), (room_w, room_d, 0.10), mat_floor, bevel=0.0)
+    _box("IntCeiling", (0.0, 0.0, room_h + 0.05), (room_w, room_d, 0.10), mat_wall, bevel=0.0)
+    _box("IntWall_Back", (0.0, room_d * 0.5, room_h * 0.5), (room_w, 0.16, room_h), mat_wall, bevel=0.0)
+    _box("IntWall_Left", (-room_w * 0.5, 0.0, room_h * 0.5), (0.16, room_d, room_h), mat_wall, bevel=0.0)
+    _box("IntWall_Right", (room_w * 0.5, 0.0, room_h * 0.5), (0.16, room_d, room_h), mat_wall, bevel=0.0)
+
+    # Weathered desk + warm practical banker's lamp
+    _box("IntDeskTop", (0.0, 1.35, 0.78), (1.85, 0.82, 0.08), mat_desk)
+    for sx in (-0.82, 0.82):
+        _box(f"IntDeskLeg_{sx:+.0f}", (sx, 1.35, 0.38), (0.09, 0.72, 0.76), mat_desk)
+    _box("IntDeskLamp", (0.62, 1.42, 0.96), (0.20, 0.20, 0.24), mat_lamp)
+
+    pl_d = bpy.data.lights.new("IntDeskLamp_Pt", type="POINT")
+    pl_d.energy = 65.0
+    pl_d.color = (1.0, 0.72, 0.36)
+    pl_d.shadow_soft_size = 0.15
+    pl = bpy.data.objects.new("IntDeskLamp_Pt", pl_d)
+    pl.location = (0.62, 1.32, 1.05)
+    col.objects.link(pl)
+
+    # Exterior moonlight / streetlamp Chiaroscuro beam with Gobo Venetian Blinds through left wall!
+    setup_chiaroscuro_lighting(
+        col,
+        key_loc=(-room_w * 0.5 + 0.18, 0.6, 2.25),
+        target_loc=(0.4, 0.8, 0.85),
+        key_color=(0.68, 0.82, 1.0),
+        key_energy=260.0,
+        spot_deg=48.0,
+        blend=0.32,
+        radius=0.08,
+        add_gobo_slats=True,
+        add_godray_cone=True,
+        godray_density=0.022,
+        name="IntWindowBlinds",
+    )
+    return {"room_w": room_w, "room_d": room_d, "room_h": room_h}
+
+
 
 
 

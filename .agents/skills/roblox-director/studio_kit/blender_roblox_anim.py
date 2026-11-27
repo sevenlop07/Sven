@@ -464,17 +464,148 @@ def st_pose(u, d, ctx):
     return p
 
 
+# ---------------- CINEMA ACTING STATES (restrained, weighted film acting — zero game emotes)
+def st_tired_walk(u, d, ctx):
+    """Heavy, weighted walk: slumped shoulders, slightly bowed head, tired low arm swing (distance-locked)."""
+    ph = ctx.get("phase", 0.0)
+    amp = ctx.get("amp", 0.85)
+    s, c = math.sin(ph), math.cos(ph)
+    p = zero()
+    A = 24.0 * amp
+    p["LeftUpperLeg"] = [-A * s, 4, 0]
+    p["RightUpperLeg"] = [A * s, 4, 0]
+    p["LeftLowerLeg"] = [max(0.0, 26.0 * amp * (-c)) + 4.0, 0, 0]
+    p["RightLowerLeg"] = [max(0.0, 26.0 * amp * c) + 4.0, 0, 0]
+    # Heavy minimal arm swing (slumped forward)
+    p["LeftUpperArm"] = [10.0 * amp * s - 4.0, 5, 0]
+    p["RightUpperArm"] = [-10.0 * amp * s - 4.0, 5, 0]
+    both(p, "LowerArm", [-14, 0, 0])
+    p["UpperTorso"] = [11.0 + 1.5 * abs(s), 0, -2.5 * s]
+    p["Head"] = [14.0 + 2.0 * math.sin(ph * 0.5), 0, 1.5 * s]
+    p["_bob"] = -0.025 - 0.018 * abs(s)
+    return p
+
+
+def st_hesitate_stop(u, d, ctx):
+    """Inertial braking stop: brief forward momentum carry -> subtle recoil -> tense frozen hold."""
+    p = st_idle(u, d, ctx)
+    brake = smooth(u / 0.22) * (1.0 - 0.55 * smooth((u - 0.28) / 0.35))
+    hold = smooth((u - 0.30) / 0.45)
+    p["UpperTorso"][0] = 9.0 * brake - 2.0 * hold
+    p["Head"][0] = 6.0 * brake + 8.0 * hold
+    p["LeftUpperLeg"] = [-12.0 * brake, 4, 0]
+    p["RightUpperLeg"] = [10.0 * brake, 4, 0]
+    p["LeftLowerLeg"] = [14.0 * brake, 0, 0]
+    both(p, "UpperArm", [-12.0 * brake - 4.0, 7, 0])
+    both(p, "LowerArm", [-22.0 * brake - 10.0, 0, 0])
+    p["_bob"] = -0.022 * brake
+    return p
+
+
+def st_hold_object(u, d, ctx):
+    """Protective two-handed chest hold of a prop/box/lantern with slow heavy breathing."""
+    p = st_idle(u, d, ctx)
+    br = math.sin(2.0 * math.pi * u / 2.6)
+    tight = ctx["params"].get("tight", 1.0)
+    both(p, "UpperArm", [-38.0 * tight + 1.8 * br, 6, 0])
+    both(p, "LowerArm", [-68.0 * tight, 0, 0])
+    p["UpperTorso"][0] = 6.0 + 1.6 * br
+    p["Head"][0] = 10.0 - 1.2 * br
+    p["_bob"] = -0.012
+    return p
+
+
+def st_offer_prop(u, d, ctx):
+    """Restrained, heartfelt forward presentation of a prop (towel, letter, key, lantern)."""
+    p = st_idle(u, d, ctx)
+    side = ctx["params"].get("side", "Both")
+    reach = smooth(u / min(0.55, max(0.25, d * 0.45)))
+    br = math.sin(2.0 * math.pi * u / 3.4)
+    if side == "Both":
+        both(p, "UpperArm", [-62.0 * reach + 1.5 * br, 8, 0])
+        both(p, "LowerArm", [-26.0 * reach, 0, 0])
+    else:
+        p[side + "UpperArm"] = [-66.0 * reach + 1.5 * br, 8, 0]
+        p[side + "LowerArm"] = [-22.0 * reach, 0, 0]
+        other = "Left" if side == "Right" else "Right"
+        p[other + "UpperArm"] = [-6, 6, 0]
+        p[other + "LowerArm"] = [-14, 0, 0]
+    p["UpperTorso"][0] = 7.0 * reach + 0.8 * br
+    p["Head"][0] = 4.0 * reach
+    return p
+
+
+def st_slow_turn(u, d, ctx):
+    """Cinema head-leads-shoulders turn: head rotates first, upper torso follows 0.25 s later."""
+    p = st_idle(u, d, ctx)
+    angle = float(ctx["params"].get("angle", 45.0))
+    head_u = smooth(u / max(0.30, d * 0.55))
+    torso_u = smooth((u - 0.22) / max(0.35, d * 0.65))
+    p["Head"][2] = angle * 0.62 * head_u
+    p["UpperTorso"][2] = angle * 0.38 * torso_u
+    p["Head"][0] = -3.0 * head_u
+    return p
+
+
+def st_exhale_settle(u, d, ctx):
+    """Emotional release beat: slow chest inhale -> deep shoulder drop & quiet grounded stillness."""
+    p = zero()
+    inhale = smooth(u / 0.45) * (1.0 - smooth((u - 0.50) / 0.70))
+    settle = smooth((u - 0.48) / 0.85)
+    micro = math.sin(2.0 * math.pi * u / 4.2) * 0.6
+    p["UpperTorso"][0] = -2.5 * inhale + 5.5 * settle + micro
+    p["Head"][0] = -4.0 * inhale + 9.0 * settle
+    both(p, "UpperArm", [-6.0 + 3.5 * settle, 8.0 - 3.0 * settle, 0])
+    both(p, "LowerArm", [-14.0 + 5.0 * settle, 0, 0])
+    p["_bob"] = 0.010 * inhale - 0.018 * settle
+    return p
+
+
+def st_lean_watch(u, d, ctx):
+    """Quiet observational threshold stance: slight torso cant, calm head angle, subtle breath."""
+    p = st_idle(u, d, ctx)
+    side = 1.0 if ctx["params"].get("side", "Left") == "Left" else -1.0
+    br = math.sin(2.0 * math.pi * u / 3.8)
+    p["UpperTorso"] = [3.0 + 1.0 * br, 5.0 * side, -8.0 * side]
+    p["Head"] = [2.0 - 0.8 * br, -3.0 * side, 12.0 * side]
+    both(p, "UpperArm", [-8, 7, 0])
+    both(p, "LowerArm", [-22, 0, 0])
+    p["_bob"] = -0.01
+    return p
+
+
 STATES = {
     "idle": st_idle, "walk": st_walk, "run": st_run, "sprint": st_sprint, "jump": st_jump, "fall": st_fall,
     "land": st_land, "crouch": st_crouch, "sit": st_sit, "lie": st_lie, "pickup": st_pickup, "cheer": st_cheer,
     "wave": st_wave, "point": st_point, "clap": st_clap, "talk": st_talk, "shock": st_shock, "scared": st_scared,
     "sad": st_sad, "angry": st_angry, "think": st_think, "punch": st_punch, "kick": st_kick, "hit": st_hit,
     "dance": st_dance, "look_around": st_look_around, "pose": st_pose,
+    # Cinema Acting States (Law R-ANIM Cinema Mode)
+    "tired_walk": st_tired_walk, "hesitate_stop": st_hesitate_stop, "hold_object": st_hold_object,
+    "offer_prop": st_offer_prop, "slow_turn": st_slow_turn, "exhale_settle": st_exhale_settle,
+    "lean_watch": st_lean_watch,
 }
-LOCOMOTION = {"walk": ("walk", 32.0, WALK_STUDS), "run": ("run", 55.0, RUN_STUDS), "sprint": ("sprint", 65.0, RUN_STUDS * 1.4)}
+LOCOMOTION = {
+    "walk": ("walk", 32.0, WALK_STUDS),
+    "tired_walk": ("tired_walk", 24.0, WALK_STUDS * 0.72),
+    "run": ("run", 55.0, RUN_STUDS),
+    "sprint": ("sprint", 65.0, RUN_STUDS * 1.4),
+}
 
 
 # ============================================================ ANIMATOR
+def _is_volume_only(o):
+    """True for haze/smoke boxes (materials drive only the Volume output) — never an obstacle."""
+    mats = [m for m in o.data.materials if m] if o.type == "MESH" else []
+    if not mats:
+        return False
+    for m in mats:
+        out = next((n for n in m.node_tree.nodes if n.type == "OUTPUT_MATERIAL"), None) if m.node_tree else None
+        if out is None or out.inputs["Surface"].is_linked or not out.inputs["Volume"].is_linked:
+            return False
+    return True
+
+
 class RobloxAnimator:
     def __init__(self, char_info, fps=30):
         self.ch = char_info
@@ -508,8 +639,23 @@ class RobloxAnimator:
         self.looks.append((float(t0), float(t1), list(yaw), list(pitch)))
         return self
 
-    def face(self, t0, t1, expr):
-        self.faces.append((float(t0), float(t1), expr))
+    def face(self, t0, t1, expr, blink_bridge: bool = False, blink_sec: float = 0.07):
+        """Assign expression over [t0, t1). When blink_bridge=True (Cinema Mode), inserts a crisp 2-frame
+        natural 'blink' right at t0 before the new expression lands so face changes feel alive, never popped."""
+        t0, t1 = float(t0), float(t1)
+        if blink_bridge and t0 > 0.05 and (t1 - t0) > blink_sec * 2.0:
+            self.faces.append((t0, t0 + blink_sec, "blink"))
+            self.faces.append((t0 + blink_sec, t1, expr))
+        else:
+            self.faces.append((t0, t1, expr))
+        return self
+
+    def auto_blinks(self, t0: float, t1: float, interval: float = 3.2, blink_sec: float = 0.07):
+        """Layer subtle natural eye blinks every ~interval seconds over quiet cinema holds."""
+        t = float(t0) + interval * 0.7
+        while t + blink_sec < float(t1):
+            self.faces.append((t, t + blink_sec, "blink"))
+            t += interval
         return self
 
     def face_schedule(self, frames):
@@ -563,8 +709,8 @@ class RobloxAnimator:
                         obs_meshes.append(c)
         else:
             for o in sc.objects:
-                if o.type != "MESH" or o.hide_render or o.name in char_names:
-                    continue
+                if o.type != "MESH" or o.hide_render or o.name in char_names or _is_volume_only(o):
+                    continue  # (volume-only haze/smoke boxes are not obstacles)
                 if any(c.name in hidden_cols or c.hide_render for c in o.users_collection):
                     continue
                 nl = o.name.lower()

@@ -361,7 +361,6 @@ def render_hybrid_showcase(stage_dir: str):
     env.spawn_core_glb_asset(col, "sets/Set_CampingTent_Hybrid.glb", (22.5, 5.2, 0.04), (0, 0, -28), 1.0)
     env.spawn_core_glb_asset(col, "props/Prop_CampfireRing_Hybrid.glb", (20.8, 1.8, 0.02), (0, 0, 0), 1.15)
     env.spawn_core_glb_asset(col, "props/Prop_PicnicTable_CS.glb", (14.2, 5.5, 0.04), (0, 0, 25), 0.95)
-    env.spawn_core_glb_asset(col, "props/Prop_TreasureChest_CS.glb", (19.6, 1.4, 0.03), (0, 0, -35), 1.1)
     env.spawn_core_glb_asset(col, "nature/Nature_QuentyPine_CS.glb", (24.8, 8.8, 0.0), (0, 0, 15), 0.75)
     env.spawn_core_glb_asset(col, "nature/Nature_StylizedPine_Hybrid.glb", (13.2, 8.8, 0.0), (0, 0, 60), 1.3)
 

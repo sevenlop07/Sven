@@ -13,7 +13,10 @@ Commands
           [--max-boxes 0.10]                          (rejects models whose meshes/unions Roblox won't let us read)
                                                       Prop_ props · Set_ sets · Nature_ nature · Pet_ animals · Hair_ hairs
                                                       (end Creator Store names with _CS, e.g. Prop_FoodCart_CS)
-  convert <Name> [<Name> …]                           re-run only the Blender step from output/_asset_harvest/json/<Name>.json
+  harvest <Name>@<workspace model> …                  same, for a model already in the place — e.g. one made with
+                                                      Studio AI (generate_mesh / generate_procedural_model)
+          append ~<metres> to any item to rescale it to a real height (AI meshes come out ~1–2 m whatever they are)
+  convert <Name>[~m] …                                re-run only the Blender step from output/_asset_harvest/json/<Name>.json
   catalog [--previews]                                rescan assets/**.glb → assets/catalog.json (dims, tris, source, licence)
   sheet   [--out <png>]                               contact sheet of every catalog preview (view it before picking)
 
@@ -53,7 +56,7 @@ CATALOG = os.path.join(ASSETS, "catalog.json")
 SEARCH_CACHE = os.path.join(WORK, "search_cache.json")
 LUA_LIB = os.path.join(KIT, "harvest_extract.lua")
 CONVERTER = os.path.join(KIT, "roblox_json_to_glb.py")
-PAGE = 60000          # execute_luau output is capped near 100k chars
+PAGE = 90000          # execute_luau output is capped at 100k chars
 HARVEST_PARENT = "game.ServerStorage._AssetHarvest"
 PREFIX_CAT = {"Prop": "props", "Set": "sets", "Nature": "nature", "Pet": "animals", "Hair": "hairs"}
 GLB_CATS = ("props", "sets", "nature", "animals", "hairs", "asmr_nature")
@@ -61,6 +64,8 @@ LICENCE_NOTE = {
     "roblox_creator_store": "Roblox Creator Store: licensed for use on Roblox. OK for Studio-captured films; "
                             "Blender renders outside Roblox need the user's licence call (ROBLOX_DIRECTOR.md §4.5).",
     "procedural": "Built by Sven code (studio_kit / tools): free to use.",
+    "roblox_ai_generated": "Made with Roblox Studio AI (generate_mesh / generate_procedural_model) on your account: "
+                           "check Roblox's terms for generated content before commercial use outside Roblox.",
     "cc0": "CC0 (e.g. PolyHaven): free to use, credit optional.",
     "unknown": "Origin not recorded: check before commercial use.",
 }
@@ -135,7 +140,23 @@ def cmd_search(a):
     json.dump(cache, open(SEARCH_CACHE, "w", encoding="utf-8"), indent=1, ensure_ascii=False)
 
 
-def extract_one(sid, name, asset_id, textures=True, keep=False):
+def _write_textures(name, textures):
+    """base64 RGB from harvest_extract.lua → PNG files next to the JSON; returns {textureId: {png, w, h}}."""
+    import base64
+    from PIL import Image
+    out = {}
+    tdir = os.path.join(JSON_DIR, f"{name}_tex")
+    for i, (tid, t) in enumerate(sorted(textures.items())):
+        if not isinstance(t, dict) or not t.get("rgb64"):
+            continue
+        os.makedirs(tdir, exist_ok=True)
+        png = os.path.join(tdir, f"tex{i}.png")
+        Image.frombytes("RGB", (t["w"], t["h"]), base64.b64decode(t["rgb64"])).save(png)
+        out[tid] = {"png": png, "w": t["w"], "h": t["h"]}
+    return out
+
+
+def extract_one(sid, name, asset_id, textures=True, keep=False, from_workspace=None):
     folder = HARVEST_PARENT.split(".")[-1]
     path = f"{HARVEST_PARENT}.{name}"
     lua(sid, f"""local ss = game:GetService("ServerStorage")
@@ -143,9 +164,18 @@ local f = ss:FindFirstChild({_lq(folder)}) or Instance.new("Folder")
 f.Name = {_lq(folder)}; f.Parent = ss
 local old = f:FindFirstChild({_lq(name)}); if old then old:Destroy() end
 return "ok" """)
-    ins = call(sid, "insert_asset", {"assetId": str(asset_id), "assetName": name, "assetType": "Model",
-                                     "parentPath": HARVEST_PARENT})
-    print(f"[harvest] insert {name} ({asset_id}): {ins[:140].strip()}")
+    if from_workspace:  # a model already in the place (e.g. made by generate_mesh / generate_procedural_model)
+        moved = lua(sid, f"""local m = workspace:FindFirstChild({_lq(from_workspace[:100])})  -- names cap at 100 chars
+if not m then return "missing" end
+m.Name = {_lq(name)}; m.Parent = game:GetService("ServerStorage")[{_lq(folder)}]
+return "ok" """)
+        if moved.strip() != "ok":
+            raise RuntimeError(f"workspace has no child named {from_workspace!r}")
+        print(f"[harvest] take {name} from workspace.{from_workspace}")
+    else:
+        ins = call(sid, "insert_asset", {"assetId": str(asset_id), "assetName": name, "assetType": "Model",
+                                         "parentPath": HARVEST_PARENT})
+        print(f"[harvest] insert {name} ({asset_id}): {ins[:140].strip()}")
     lib = open(LUA_LIB, encoding="utf-8").read()
     ready = lua(sid, lib)
     if "SvenHarvest ready" not in ready:
@@ -171,6 +201,7 @@ if m then m:Destroy() end return "ok" """)
         raise RuntimeError(f"paged read mismatch: got {len(raw)} of {total} chars")
     data = json.loads(raw)
     os.makedirs(JSON_DIR, exist_ok=True)
+    data["textures"] = _write_textures(name, data.get("textures") or {})
     jp = os.path.join(JSON_DIR, f"{name}.json")
     json.dump(data, open(jp, "w", encoding="utf-8"))
     san = summ.get("sanitized", {})
@@ -214,7 +245,7 @@ def _jpg_preview(png, name):
     return out
 
 
-def convert_one(name):
+def convert_one(name, height_m=None):
     cat = PREFIX_CAT.get(name.split("_")[0])
     if not cat:
         raise RuntimeError(f"name must start with one of {sorted(PREFIX_CAT)}_ (got {name})")
@@ -222,7 +253,8 @@ def convert_one(name):
     stage = os.path.join(tempfile.gettempdir(), "sven_asset_harvest")  # Blender writes to %TEMP% (OIIO-safe)
     os.makedirs(stage, exist_ok=True)
     tmp_glb, tmp_png = os.path.join(stage, f"{name}.glb"), os.path.join(stage, f"{name}.png")
-    info = blender("convert", jp, tmp_glb, "--preview", tmp_png)
+    extra = ["--height", str(height_m)] if height_m else []
+    info = blender("convert", jp, tmp_glb, "--preview", tmp_png, *extra)
     dest = os.path.join(ASSETS, cat, f"{name}.glb")
     os.makedirs(os.path.dirname(dest), exist_ok=True)
     with open(tmp_glb, "rb") as s, open(dest, "wb") as d:
@@ -247,6 +279,8 @@ def save_catalog(cat):
 
 
 def _guess_source(name):
+    if name.endswith("_AI"):
+        return "roblox_ai_generated"
     if name.endswith("_CS") or "_CS_" in name or name.endswith("_RobloxResources"):
         return "roblox_creator_store"
     return "procedural" if name.endswith("_Hybrid") else "unknown"
@@ -276,15 +310,23 @@ def cmd_harvest(a):
     cat = load_catalog()
     ok = 0
     for item in a.items:
-        name, _, aid = item.partition(":")
-        if not aid.isdigit() or name.split("_")[0] not in PREFIX_CAT:
-            print(f"[harvest] skip {item}: use <Prefix>_<Name>:<assetId>, prefix in {sorted(PREFIX_CAT)}")
+        item, _, h = item.partition("~")  # optional ~<real height in metres>
+        height = float(h) if h else None
+        if "@" in item:  # <Name>@<workspace child>: AI-generated / own model already in the place
+            name, _, ws = item.partition("@")
+            aid = ""
+        else:
+            name, _, aid = item.partition(":")
+            ws = None
+        if (not ws and not aid.isdigit()) or name.split("_")[0] not in PREFIX_CAT:
+            print(f"[harvest] skip {item}: use <Prefix>_<Name>:<assetId> or <Prefix>_<Name>@<workspace model>, "
+                  f"prefix in {sorted(PREFIX_CAT)}")
             continue
         if name in cat["assets"] and not a.force:
             print(f"[harvest] skip {name}: already in catalog (use --force to replace)")
             continue
         try:
-            _, summ = extract_one(sid, name, aid, textures=not a.no_textures, keep=a.keep)
+            _, summ = extract_one(sid, name, aid, textures=not a.no_textures, keep=a.keep, from_workspace=ws)
             boxes = summ.get("fallback", 0) + summ.get("unions", 0)
             share = boxes / max(1, summ["parts"])
             if share > a.max_boxes:
@@ -292,13 +334,15 @@ def cmd_harvest(a):
                       f"({share:.0%} > --max-boxes {a.max_boxes:.0%}); meshes owned by other creators cannot be read. "
                       "Pick a part-built model (search text: many parts, few meshes) or capture it in Studio.")
                 continue
-            dest, info = convert_one(name)
+            dest, info = convert_one(name, height)
         except Exception as e:  # keep going with the rest of the batch
             print(f"[harvest] FAILED {name}: {e}")
             continue
-        meta = cache.get(aid, {})
-        catalog_upsert(cat, os.path.relpath(dest, ASSETS), info, source="roblox_creator_store", extra={
-            "asset_id": int(aid), "title": meta.get("title", ""), "creator": meta.get("creator", ""),
+        is_ai = name.endswith("_AI") or not aid  # _AI = made with Studio AI on the user's account (also when re-inserted by id)
+        meta = cache.get(aid, {}) if aid and not is_ai else {"title": ws or "", "creator": "Roblox Studio AI (your account)"}
+        catalog_upsert(cat, os.path.relpath(dest, ASSETS), info,
+                       source="roblox_ai_generated" if is_ai else "roblox_creator_store", extra={
+            "asset_id": int(aid) if aid else None, "title": meta.get("title", ""), "creator": meta.get("creator", ""),
             "extent_studs": summ.get("extentStuds"), "mesh_fail": summ.get("meshFail", 0),
             "texture_fail": summ.get("texFail", 0), "unions_as_boxes": summ.get("unions", 0), "harvested": time.strftime("%Y-%m-%d"),
         })
@@ -309,8 +353,9 @@ def cmd_harvest(a):
 
 def cmd_convert(a):
     cat = load_catalog()
-    for name in a.names:
-        dest, info = convert_one(name)
+    for item in a.names:
+        name, _, h = item.partition("~")
+        dest, info = convert_one(name, float(h) if h else None)
         catalog_upsert(cat, os.path.relpath(dest, ASSETS), info)
     save_catalog(cat)
 

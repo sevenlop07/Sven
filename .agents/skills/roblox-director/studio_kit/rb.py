@@ -8,7 +8,7 @@ HERE = os.path.dirname(os.path.abspath(__file__))
 SID_F = os.path.join(HERE, "studio_id.txt")
 sid = open(SID_F).read().strip() if os.path.exists(SID_F) else ""
 def send(job, timeout=170):
-    name = f"{int(time.time()*1000)}.json"
+    name = f"{int(time.time()*1000)}_{os.getpid()}_{time.perf_counter_ns() % 100000}.json"  # unique across processes
     tmp = os.path.join(HERE, "queue", name + ".tmp")
     json.dump(job, open(tmp, "w")); os.rename(tmp, os.path.join(HERE, "queue", name))
     d = os.path.join(HERE, "done", name); t0 = time.time()

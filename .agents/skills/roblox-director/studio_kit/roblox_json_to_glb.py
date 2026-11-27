@@ -5,7 +5,7 @@ SpecialMesh FileMeshes via EditableMesh, texture colours baked to vertex colours
 for Blender 5.3. Host-side driver: tools/harvest_assets.py (search → insert → sanitize → extract → convert → catalog).
 
 Blender CLI (run through blender -b --factory-startup -P roblox_json_to_glb.py -- …):
-  convert <model.json> <out.glb> [--preview <png>]     one model → .glb (+ 3/4-view preview render)
+  convert <model.json> <out.glb> [--preview <png>] [--height <m>]   one model → .glb (+ preview; optional rescale)
   preview <model.glb> <out.png>                       3/4-view preview of an existing .glb
   measure <out.json> <a.glb> [<b.glb> …]              write {path: {dims_m, tris, materials}} for the catalog
 """
@@ -26,10 +26,13 @@ def _srgb_to_lin(c: float) -> float:
     return c / 12.92 if c <= 0.04045 else ((c + 0.055) / 1.055) ** 2.4
 
 
-def _make_roblox_material(name: str, col_rgb, mat_name: str, tr: float = 0.0, ref: float = 0.0, use_vc: bool = False):
+def _make_roblox_material(name: str, col_rgb, mat_name: str, tr: float = 0.0, ref: float = 0.0, use_vc: bool = False,
+                          tex_path: str = None):
     r, g, b = [c / 255.0 for c in col_rgb]
     lr, lg, lb = _srgb_to_lin(r), _srgb_to_lin(g), _srgb_to_lin(b)
     key = f"RBX_{mat_name}_{col_rgb[0]}_{col_rgb[1]}_{col_rgb[2]}_{int(tr*100)}{'_vc' if use_vc else ''}"
+    if tex_path:
+        key = "RBX_TEX_" + os.path.splitext(os.path.basename(tex_path))[0] + "_" + str(abs(hash(tex_path)) % 100000)
     if key in bpy.data.materials:
         return bpy.data.materials[key]
 
@@ -38,6 +41,12 @@ def _make_roblox_material(name: str, col_rgb, mat_name: str, tr: float = 0.0, re
     nt = mat.node_tree
     bsdf = next(n for n in nt.nodes if n.type == "BSDF_PRINCIPLED")
     bsdf.inputs["Base Color"].default_value = (lr, lg, lb, 1.0)
+    if tex_path:  # the real texture image, UV-mapped (embedded in the .glb by the exporter)
+        img_node = nt.nodes.new("ShaderNodeTexImage")
+        img_node.image = bpy.data.images.load(tex_path, check_existing=True)
+        nt.links.new(img_node.outputs["Color"], bsdf.inputs["Base Color"])
+        bsdf.inputs["Roughness"].default_value = 0.6
+        return mat
     if use_vc:  # texture colours baked per vertex (glTF COLOR_0 multiplies the base colour)
         vc = nt.nodes.new("ShaderNodeVertexColor")
         vc.layer_name = "Col"
@@ -86,6 +95,7 @@ def build_from_json(json_path: str, col):
     data = json.load(open(json_path, encoding="utf-8"))
     model_name = data["name"]
     meshes_dict = data.get("meshes") or {}
+    textures = data.get("textures") or {}  # {textureId: {png, w, h}} written by tools/harvest_assets.py
     parts = data["parts"]
 
     any_vc = any((m or {}).get("c") for m in meshes_dict.values())
@@ -96,6 +106,10 @@ def build_from_json(json_path: str, col):
         mid = p.get("mid")
         mdata = meshes_dict.get(mid) if mid else None
 
+        tex_path = None
+        if mdata and mdata.get("tex"):
+            t = textures.get(mdata["tex"]) or {}
+            tex_path = t.get("png") if t.get("png") and os.path.exists(t["png"]) else None
         if mdata and mdata.get("v") and mdata.get("f"):
             verts_flat = mdata["v"]
             faces_flat = mdata["f"]
@@ -121,13 +135,18 @@ def build_from_json(json_path: str, col):
                 else:
                     bm_verts.append(None)
             bm.verts.ensure_lookup_table()
+            uvs = mdata.get("uv") if tex_path else None
+            uv_layer = bm.loops.layers.uv.new("UVMap") if uvs else None
             for i in range(0, len(faces_flat), 3):
                 v0, v1, v2 = bm_verts[faces_flat[i]], bm_verts[faces_flat[i + 1]], bm_verts[faces_flat[i + 2]]
                 if v0 is not None and v1 is not None and v2 is not None:
                     try:
-                        bm.faces.new((v0, v1, v2))
+                        face = bm.faces.new((v0, v1, v2))
                     except ValueError:
-                        pass
+                        continue
+                    if uv_layer is not None and 2 * i + 5 < len(uvs):
+                        for k, loop in enumerate(face.loops):  # Roblox UV v runs top→bottom, Blender bottom→top
+                            loop[uv_layer].uv = (uvs[2 * (i + k)], 1.0 - uvs[2 * (i + k) + 1])
             bmesh.ops.delete(bm, geom=[v for v in bm.verts if not v.link_faces], context="VERTS")
             bmesh.ops.recalc_face_normals(bm, faces=bm.faces)
         else:
@@ -188,7 +207,8 @@ def build_from_json(json_path: str, col):
             for d in attr.data:
                 d.color = (1.0, 1.0, 1.0, 1.0)
         obj = bpy.data.objects.new(f"{model_name}_{idx}_{p['n'][:18]}", mesh_d)
-        mat = _make_roblox_material(p["n"], p["col"], p["mat"], p.get("tr", 0.0), p.get("ref", 0.0), use_vc=has_vc)
+        mat = _make_roblox_material(p["n"], p["col"], p["mat"], p.get("tr", 0.0), p.get("ref", 0.0),
+                                    use_vc=has_vc and not tex_path, tex_path=tex_path)
         obj.data.materials.append(mat)
         col.objects.link(obj)
         created_objs.append(obj)
@@ -257,7 +277,8 @@ def render_preview(obj, out_png: str, size: int = 512):
     sc.collection.objects.link(cam)
     sc.camera = cam
     ctr = Vector((0, 0, dims.z * 0.5))
-    d = Vector((math.cos(math.radians(-55)), math.sin(math.radians(-55)), 0.55)).normalized()
+    # Harvested Roblox models face +Y here (Roblox front = -Z; Q_R2B maps -Z to +Y), so look from the +Y side.
+    d = Vector((math.cos(math.radians(55)), math.sin(math.radians(55)), 0.55)).normalized()
     cam.location = ctr + d * r * 2.3
     cam.rotation_euler = (ctr - cam.location).to_track_quat("-Z", "Y").to_euler()
     os.makedirs(os.path.dirname(os.path.abspath(out_png)), exist_ok=True)
@@ -292,6 +313,11 @@ def cli(argv):
         if obj is None:
             print("@@JSON@@" + json.dumps({"ok": False, "error": "no visible parts"}))
             return 1
+        if "--height" in argv:  # uniform rescale to a real-world height (AI meshes come out at arbitrary sizes)
+            k = float(argv[argv.index("--height") + 1]) / max(obj.dimensions.z, 1e-6)
+            obj.data.transform(Matrix.Scale(k, 4))
+            obj.data.update()
+            bpy.context.view_layer.update()
         nbytes = export_glb(obj, out_glb)
         info = dict(_mesh_stats([obj]), ok=True, glb=out_glb, bytes=nbytes)
         if preview:

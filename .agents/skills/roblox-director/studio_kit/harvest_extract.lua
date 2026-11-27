@@ -9,11 +9,14 @@ Loaded once per Studio session through execute_luau; it installs _G.SvenHarvest:
 
 JSON written (read by studio_kit/roblox_json_to_glb.py build_from_json):
   { name, meshes = { [key] = { v = {x,y,z,...} (centred on the mesh bounds), f = {a,b,c,...} (0-based),
-                               ext = {sx,sy,sz} (mesh bounds), c = {0xRRGGBB per vertex} | nil } },
+                               ext = {sx,sy,sz} (mesh bounds), c = {0xRRGGBB per vertex} | nil,
+                               uv = {u,v per face corner} | nil, tex = textureId | nil } },
+    textures = { [textureId] = { w, h, rgb64 = base64 RGB rows top→bottom (≤ opts.texSize, default 512) } },
     parts  = { { n, sz, cf (12 numbers, relative to the model pivot), col, mat, tr, ref, shape,
                  mid (mesh key) | nil, ms (SpecialMesh FileMesh scale) | nil, smType, smScale } } }
-Vertex colours are sampled from the part's TextureID / SurfaceAppearance.ColorMap at each vertex UV when Studio lets
-us open the image; otherwise the part keeps its flat Color. Everything is read-only apart from the sanitize step.
+When Studio lets us open the part's TextureID / SurfaceAppearance.ColorMap, the image is exported (base64, downsampled to
+opts.texSize) with per-corner UVs, plus per-vertex colours as a fallback; otherwise the part keeps its flat Color.
+Everything is read-only apart from the sanitize step.
 ]]
 local HttpService = game:GetService("HttpService")
 local AssetService = game:GetService("AssetService")
@@ -91,6 +94,43 @@ local function sample(img, u, v)
 	return r * 65536 + g * 256 + b
 end
 
+-- RGB pixels (nearest-downsampled to ≤ maxSize) → base64 string, rows top→bottom
+local B64 = "ABCDEFGHIJKLMNOPQRSTUVWXYZabcdefghijklmnopqrstuvwxyz0123456789+/"
+local B64B = {}
+for i = 1, 64 do B64B[i - 1] = string.byte(B64, i) end
+local function encodeImage(img, maxSize)
+	local step = 1
+	while img.w / step > maxSize or img.h / step > maxSize do step *= 2 end
+	local w, h = math.floor(img.w / step), math.floor(img.h / step)
+	local n = w * h * 3
+	local raw = buffer.create(n)
+	local o = 0
+	for y = 0, h - 1 do
+		local row = (y * step) * img.w
+		for x = 0, w - 1 do
+			local src = (row + x * step) * 4
+			buffer.writeu8(raw, o, buffer.readu8(img.buf, src))
+			buffer.writeu8(raw, o + 1, buffer.readu8(img.buf, src + 1))
+			buffer.writeu8(raw, o + 2, buffer.readu8(img.buf, src + 2))
+			o += 3
+		end
+	end
+	local out = buffer.create(math.ceil(n / 3) * 4)
+	local q = 0
+	for i = 0, n - 1, 3 do
+		local b0 = buffer.readu8(raw, i)
+		local b1 = i + 1 < n and buffer.readu8(raw, i + 1) or 0
+		local b2 = i + 2 < n and buffer.readu8(raw, i + 2) or 0
+		local t = b0 * 65536 + b1 * 256 + b2
+		buffer.writeu8(out, q, B64B[bit32.extract(t, 18, 6)])
+		buffer.writeu8(out, q + 1, B64B[bit32.extract(t, 12, 6)])
+		buffer.writeu8(out, q + 2, i + 1 < n and B64B[bit32.extract(t, 6, 6)] or 61)
+		buffer.writeu8(out, q + 3, i + 2 < n and B64B[bit32.extract(t, 0, 6)] or 61)
+		q += 4
+	end
+	return { w = w, h = h, rgb64 = buffer.tostring(out) }
+end
+
 local function readMesh(meshId, img)
 	local ok, em = pcall(function()
 		return AssetService:CreateEditableMeshAsync(Content.fromUri(meshId))
@@ -113,8 +153,8 @@ local function readMesh(meshId, img)
 		local q = p - ctr
 		v[#v + 1] = r3(q.X); v[#v + 1] = r3(q.Y); v[#v + 1] = r3(q.Z)
 	end
-	local f, colours = {}, nil
-	if img then colours = table.create(#ids, -1) end
+	local f, colours, uvOut = {}, nil, nil
+	if img then colours = table.create(#ids, -1); uvOut = {} end
 	for _, fid in ipairs(em:GetFaces()) do
 		local fv = em:GetFaceVertices(fid)
 		if #fv == 3 then
@@ -123,12 +163,16 @@ local function readMesh(meshId, img)
 				local okuv, uvs = pcall(function() return em:GetFaceUVs(fid) end)
 				if okuv and uvs and #uvs == 3 then
 					for k = 1, 3 do
+						local uv = em:GetUV(uvs[k])
+						uvOut[#uvOut + 1] = math.floor(uv.X * 10000 + 0.5) / 10000
+						uvOut[#uvOut + 1] = math.floor(uv.Y * 10000 + 0.5) / 10000
 						local vi = index[fv[k]] + 1
 						if colours[vi] == -1 then
-							local uv = em:GetUV(uvs[k])
 							colours[vi] = sample(img, uv.X, uv.Y)
 						end
 					end
+				else
+					for _ = 1, 6 do uvOut[#uvOut + 1] = 0 end -- keep corner indexing aligned with f
 				end
 			end
 		end
@@ -138,7 +182,7 @@ local function readMesh(meshId, img)
 		for i = 1, #colours do if colours[i] == -1 then colours[i] = 0xFFFFFF end end
 	end
 	local ext = mx - mn
-	return { v = v, f = f, ext = { r3(ext.X), r3(ext.Y), r3(ext.Z) }, c = colours }
+	return { v = v, f = f, ext = { r3(ext.X), r3(ext.Y), r3(ext.Z) }, c = colours, uv = uvOut }
 end
 
 function H.prepare(path, opts)
@@ -192,6 +236,7 @@ function H.prepare(path, opts)
 					local img = (opts.textures ~= false) and openImage(tex) or nil
 					if tex ~= "" and not img then texFail += 1 end
 					local md, err = readMesh(meshId, img)
+					if md and img and opts.images ~= false then md.tex = tex end
 					if md then
 						meshes[key] = md
 					else
@@ -210,15 +255,24 @@ function H.prepare(path, opts)
 			parts[#parts + 1] = e
 		end
 	end
-	local outMeshes = {}
-	for k, md in pairs(meshes) do if md then outMeshes[k] = md end end
+	local outMeshes, textures = {}, {}
+	for k, md in pairs(meshes) do
+		if md then
+			outMeshes[k] = md
+			if md.tex and textures[md.tex] == nil then
+				local rec = imgCache[md.tex]
+				textures[md.tex] = rec and encodeImage(rec, opts.texSize or 512) or nil
+			end
+		end
+	end
 	local key = opts.key or m.Name
-	local json = HttpService:JSONEncode({ name = key, meshes = outMeshes, parts = parts })
+	local json = HttpService:JSONEncode({ name = key, meshes = outMeshes, parts = parts, textures = textures })
 	H.buf[key] = json
 	imgCache = {}
 	local nMesh = 0
 	for _ in pairs(outMeshes) do nMesh += 1 end
-	local ext = m:IsA("Model") and m:GetExtentsSize() or m.Size
+	local ext = Vector3.zero -- Accessory / Folder containers have neither GetExtentsSize nor Size
+	if m:IsA("Model") then ext = m:GetExtentsSize() elseif m:IsA("BasePart") then ext = m.Size end
 	return HttpService:JSONEncode({
 		key = key, bytes = #json, parts = #parts, meshes = nMesh, meshFail = meshFail, texFail = texFail, unions = unions, fallback = fallback,
 		failed = failed, sanitized = san, extentStuds = { r3(ext.X), r3(ext.Y), r3(ext.Z) },

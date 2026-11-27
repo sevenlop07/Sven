@@ -75,7 +75,7 @@ def _extract_accents(words: list, ts: float, te: float, fps: int, fs: int, fe: i
     return accents
 
 
-def compile_director_plan(srt_shots: dict, words_data: dict, fps: int = 30, max_beat_sec: float = 3.6, aspect: str = "16:9") -> dict:
+def compile_director_plan(srt_shots: dict, words_data: dict, fps: int = 30, max_beat_sec: float = 3.6, aspect: str = "9:16") -> dict:
     runtime = float(srt_shots["runtime"])
     total_frames = int(round(runtime * fps))
     words = (words_data or {}).get("words", [])
@@ -208,7 +208,7 @@ def main():
     ap.add_argument("--out", default="", help="Output director_plan.json path")
     ap.add_argument("--fps", type=int, default=30)
     ap.add_argument("--max-beat-sec", type=float, default=3.6)
-    ap.add_argument("--aspect", choices=["16:9", "9:16"], default="16:9")
+    ap.add_argument("--aspect", choices=["16:9", "9:16"], default="9:16")  # locked default (ROBLOX_DIRECTOR.md §4.0)
     args = ap.parse_args()
 
     srt_shots = json.load(open(args.srt_shots, encoding="utf-8"))

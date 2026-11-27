@@ -14,11 +14,27 @@ p.add_argument("--color", default="FEDD30"); p.add_argument("--lead", type=float
 p.add_argument("--y", type=int, default=1344); p.add_argument("--fs", type=int, default=104)
 p.add_argument("--outline", type=int, default=12); p.add_argument("--font", default="Montserrat ExtraBold")
 p.add_argument("--sheet"); p.add_argument("--accent-at", default="")
-p.add_argument("--aspect", choices=["9:16", "16:9"], default="9:16")
+p.add_argument("--aspect", choices=["9:16", "16:9", "2.39:1"], default="9:16")
+p.add_argument("--style", choices=["pop", "cinema"], default="pop",
+               help="'pop' = Shorts/TikTok 1-word pop captions; 'cinema' = clean theatrical bottom phrase subtitles (zero bounce)")
 a = p.parse_args()
-res_x, res_y = (1920, 1080) if a.aspect == "16:9" else (1080, 1920)
 if a.aspect == "16:9":
-    if a.y == 1344: a.y = 940
+    res_x, res_y = 1920, 1080
+elif a.aspect == "2.39:1":
+    res_x, res_y = 1920, 804
+else:
+    res_x, res_y = 1080, 1920
+if a.style == "cinema":
+    if a.y == 1344:
+        a.y = int(res_y * 0.90)
+    if a.fs == 104:
+        a.fs = 44 if res_x >= 1920 else 48
+    if a.outline == 12:
+        a.outline = 3
+    if a.font == "Montserrat ExtraBold":
+        a.font = "Segoe UI Semibold"
+elif a.aspect in ("16:9", "2.39:1"):
+    if a.y == 1344: a.y = int(res_y * 0.87)
     if a.fs == 104: a.fs = 76
     if a.outline == 12: a.outline = 8
 d = json.load(open(a.words, encoding="utf-8"))
@@ -72,6 +88,29 @@ Style: Cap,{a.font},{a.fs},&H00FFFFFF&,&H00FFFFFF&,&H00000000&,&H00000000&,0,0,0
 Format: Layer,Start,End,Style,Name,MarginL,MarginR,MarginV,Effect,Text
 """
 ev, n_acc = [], 0
+if a.style == "cinema":
+    # Group words into clean theatrical phrase subtitles (<= 9 words or at sentence punctuation / >0.35s pause)
+    chunks, cur_c = [], []
+    for idx_w, item in enumerate(W):
+        cur_c.append(item)
+        raw_w = item[2]
+        nxt_gap = (W[idx_w + 1][0] - item[1]) if idx_w + 1 < len(W) else 1.0
+        if len(cur_c) >= 9 or re.search(r"[.!?…]$", raw_w) or nxt_gap >= 0.35:
+            chunks.append(cur_c)
+            cur_c = []
+    if cur_c:
+        chunks.append(cur_c)
+    for ci, ch in enumerate(chunks):
+        s = max(0.0, ch[0][0])
+        nxt_s = chunks[ci + 1][0][0] if ci + 1 < len(chunks) else ch[-1][1] + 0.30
+        e = min(ch[-1][1] + 0.15, max(s + 0.15, nxt_s - 0.02))
+        txt = " ".join(w[2] for w in ch)
+        tags = f"{{\\an2\\pos({res_x // 2},{a.y})\\1c&H00F4F4F4&\\bord{a.outline}\\shad2\\blur0.6\\fad(90,90)}}"
+        ev.append(f"Dialogue: 0,{ts(s)},{ts(e)},Cap,,0,0,0,,{tags}{txt}")
+    open(a.out, "w", encoding="utf-8").write(hdr + "\n".join(ev) + "\n")
+    print(f"{len(ev)} cinema subtitle phrases (y={a.y}, fs={a.fs}, clean theatrical fade) -> {a.out}")
+    sys.exit(0)
+
 for i, (s, e, w) in enumerate(W):
     start = max(0.0, s - a.lead)
     nxt = W[i + 1][0] - a.lead if i + 1 < len(W) else e + 0.3

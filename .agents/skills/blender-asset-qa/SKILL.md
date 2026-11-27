@@ -17,8 +17,8 @@ Never assume a generated or edited mesh is correct. Check it with numbers, then 
    Profiles: `game` (default), `render` (lenient), `print` (watertight required), `roblox` (20k tris/mesh, watertight, no n-gons, ≤4 influences).
 2. **Fix every `errors` entry** (table below), then re-run until `"pass": true`. Each warning must be either fixed or explicitly accepted, with the reason reported to the user.
 3. **Visual check, always**:
-   - Live: MCP `look` with `mode="angles"` on the targets, once in `material`/`solid` shading and once in `wireframe`. Use `xray` for internals.
-   - Headless: `scripts/review_shots.py -- --objects ... --mode random` (one color per object, which makes detached pieces obvious), then `--mode wire` for topology. Open the returned PNG.
+   - Live (`mcp-for-blender`): MCP `look` with `mode="angles"` on the targets, once in `material`/`solid`/`rendered` shading and once in `wireframe`. Use `shading="xray"` for rigs/internals and `mode="frames"` for animation strips.
+   - Headless: `scripts/review_shots.py -- --objects ... --mode random` (one color per object, which makes detached pieces obvious), `--mode wire` for topology, `--mode xray` for translucent rig/bone inspection, `--mode rendered --samples 16` for lighting/material verification, and `--frames 1 15 30 45` (or `--frame-count 6`) for animation strips. Open the returned PNG.
 4. Report: tris per object, issues fixed, and remaining accepted warnings.
 
 ## What each finding means → fix

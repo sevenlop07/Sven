@@ -119,11 +119,15 @@ def main():
     ap.add_argument("--voice", required=True, help="Voice .mp3 or .wav path (relative to project-dir or absolute)")
     ap.add_argument("--shots", default="srt_shots.json")
     ap.add_argument("--frames-dir", default="shots")
-    ap.add_argument("--bgm", default=DEFAULT_BGM)
+    ap.add_argument("--bgm", default=DEFAULT_BGM, help="Background music path (pass 'none' to disable)")
     ap.add_argument("--bgm-vol", type=float, default=0.18)
+    ap.add_argument("--ambience", default="", help="Optional looping natural ASMR ambience audio (.ogg/.wav/.mp3)")
+    ap.add_argument("--ambience-vol", type=float, default=0.22)
+    ap.add_argument("--ducking", dest="ducking", action="store_true", default=True, help="Enable sidechain speech ducking on BGM/ambience (default: on)")
+    ap.add_argument("--no-ducking", dest="ducking", action="store_false", help="Disable sidechain speech ducking")
     ap.add_argument("--subs", default="", help="Optional .ass or .srt subtitle file to burn in")
-    ap.add_argument("--aspect", choices=["9:16", "16:9"], default="9:16")
-    ap.add_argument("--uhd", action="store_true", help="Export 4K (2160x3840 or 3840x2160) instead of 1080p")
+    ap.add_argument("--aspect", choices=["9:16", "16:9", "2.39:1"], default="9:16")
+    ap.add_argument("--uhd", action="store_true", help="Export 4K (2160x3840, 3840x2160, or 3840x1608) instead of 1080p")
     ap.add_argument("--fps", type=int, default=30)
     ap.add_argument("--out", default="final_master.mp4")
     args = ap.parse_args()
@@ -139,20 +143,52 @@ def main():
 
     if args.aspect == "16:9":
         w, h = (3840, 2160) if args.uhd else (1920, 1080)
+    elif args.aspect == "2.39:1":
+        w, h = (3840, 1608) if args.uhd else (1920, 804)
     else:
         w, h = (2160, 3840) if args.uhd else (1080, 1920)
 
     shots = load_shots(shots_path)
     build_raw_video(shots, frames_dir, raw_mp4, w, h, args.fps)
 
-    # Audio mix (-14 LUFS, <= -1.0 dBTP) + optional subtitle burn-in
+    # Audio mix (-14 LUFS, <= -1.0 dBTP via -1.5 dBTP ceiling) + ASMR ambience + speech ducking
     cmd = [FFMPEG, "-y", "-v", "error", "-i", raw_mp4, "-i", voice_path]
-    has_bgm = bool(args.bgm and os.path.exists(res_p(args.bgm)))
-    if has_bgm:
-        cmd += ["-stream_loop", "-1", "-i", res_p(args.bgm)]
-        af = f"[2:a]volume={args.bgm_vol}[b];[1:a][b]amix=inputs=2:duration=first:normalize=0,loudnorm=I=-14:TP=-1.0[a]"
+    next_idx = 2
+    bgm_idx = None
+    amb_idx = None
+    if args.bgm and args.bgm.lower() != "none":
+        bgm_fp = res_p(args.bgm)
+        if os.path.exists(bgm_fp):
+            cmd += ["-stream_loop", "-1", "-i", bgm_fp]
+            bgm_idx = next_idx
+            next_idx += 1
+    if args.ambience and args.ambience.lower() != "none":
+        amb_fp = res_p(args.ambience)
+        if os.path.exists(amb_fp):
+            cmd += ["-stream_loop", "-1", "-i", amb_fp]
+            amb_idx = next_idx
+            next_idx += 1
+
+    bed_parts = []
+    if bgm_idx is not None and amb_idx is not None:
+        bed_parts.append(f"[{bgm_idx}:a]volume={args.bgm_vol}[b]")
+        bed_parts.append(f"[{amb_idx}:a]volume={args.ambience_vol}[amb]")
+        bed_parts.append("[b][amb]amix=inputs=2:duration=longest:normalize=0[bed]")
+    elif bgm_idx is not None:
+        bed_parts.append(f"[{bgm_idx}:a]volume={args.bgm_vol}[bed]")
+    elif amb_idx is not None:
+        bed_parts.append(f"[{amb_idx}:a]volume={args.ambience_vol}[bed]")
+
+    if bed_parts:
+        if args.ducking:
+            bed_parts.append("[1:a]asplit=2[v_mix][v_sc]")
+            bed_parts.append("[bed][v_sc]sidechaincompress=threshold=0.05:ratio=3:attack=30:release=300[bed_duck]")
+            bed_parts.append("[v_mix][bed_duck]amix=inputs=2:duration=first:normalize=0,loudnorm=I=-14:TP=-1.5:LRA=7[a]")
+        else:
+            bed_parts.append("[1:a][bed]amix=inputs=2:duration=first:normalize=0,loudnorm=I=-14:TP=-1.5:LRA=7[a]")
+        af = ";".join(bed_parts)
     else:
-        af = "[1:a]loudnorm=I=-14:TP=-1.0[a]"
+        af = "[1:a]loudnorm=I=-14:TP=-1.5:LRA=7[a]"
     cmd += ["-filter_complex", af, "-map", "0:v", "-map", "[a]"]
 
     subs_path = res_p(args.subs) if args.subs else ""

@@ -36,9 +36,14 @@ WORKSPACE_ROOT = os.path.dirname(AGENTS_DIR)
 LOG_FILE = os.path.join(SCRIPT_DIR, "last_audit.log")
 
 MOCAP_PAT = re.compile(r"retarget_mocap_to_r15\s*\(|retarget_humanoid_action\s*\(|\bMixamo\b|RoMixamo|assets[/\\]anims[/\\]|\.bvh\b", re.I)
-LEGACY_FACE_PAT = re.compile(r"\bmake_faces_ugc_anime\b|\bmake_faces_v2\b", re.I)
+LEGACY_FACE_PAT = re.compile(r"\bmake_faces_ugc_anime\b|\bmake_faces_v2\b|\bmake_faces_doodle\b|faces_cartoon|faces_rubberhose"
+                             r"|face_style\s*=\s*[\"'](?:cartoon|rubberhose|doodle)[\"']", re.I)
+# removed features (ROBLOX_DIRECTOR.md section 4.0 "Not used"): R6 rigs, ribbon hair, Creator Store hair GLBs, painted clothes
+REMOVED_PAT = re.compile(r"rig_type\s*=\s*[\"']R6[\"']|\battach_core_hair\b|\b_build_hair\b|\bmake_clothes_painted\b"
+                         r"|\badd_mud_clump\b|hair_style\s*=\s*[\"'](?:spiky|slick_part|messy_curtain|curtain_part|bob_chin"
+                         r"|long_ponytail|curly_fro|cap_hair|twin_buns|mohawk_fade|elder_tufts|grandma_bun)[\"']", re.I)
 # files that legitimately mention mocap or retired generators (the deprecated helpers themselves, docs explaining the ban, this hook)
-MOCAP_ALLOW = ("blender_r15_hybrid.py", "blender_auto_director.py", "blender_roblox_kit.py", "retarget.py",
+MOCAP_ALLOW = ("blender_r15_hybrid.py", "blender_auto_director.py", "blender_roblox_kit.py", "blender_roblox_anim.py", "retarget.py",
                "quality_gate_hook.py", "diag_retarget.py", "probe_clips.py", "make_faces_ugc_anime.py", "make_faces_v2.py")
 
 
@@ -99,6 +104,7 @@ def lint_r_anim(target):
         return None
     hits = []
     face_hits = []
+    removed_hits = []
     for i, line in enumerate(text.splitlines(), 1):
         s = line.strip()
         if s.startswith(("#", "--")):
@@ -107,13 +113,21 @@ def lint_r_anim(target):
             hits.append(f"  line {i}: {s[:120]}")
         if LEGACY_FACE_PAT.search(line):
             face_hits.append(f"  line {i}: {s[:120]}")
+        if REMOVED_PAT.search(line):
+            removed_hits.append(f"  line {i}: {s[:120]}")
     msgs = []
     if hits:
         msgs.append("Law R-ANIM violation (ROBLOX_DIRECTOR.md section 4.1): mocap retargeting is banned for Roblox characters. "
                     "Use studio_kit/blender_roblox_anim.py (RobloxAnimator) and gate with render_pose_qa.\n" + "\n".join(hits[:10]))
     if face_hits:
-        msgs.append("Law R-LOOK violation (ROBLOX_DIRECTOR.md section 4.1): legacy anime face generators (make_faces_ugc_anime / make_faces_v2) are retired. "
-                    "Use studio_kit/make_faces_expressive.py (storybook_toon / cartoon / rubberhose) or kit.ensure_character_face_pack().\n" + "\n".join(face_hits[:10]))
+        msgs.append("Law R-LOOK violation (ROBLOX_DIRECTOR.md section 4.0): only 'cinema_expressive' (default Semi-Real CGI Cinema) and "
+                    "'storybook_toon' (Shorts) face packs exist; legacy anime / cartoon / rubberhose / doodle packs were removed. "
+                    "Use kit.ensure_character_face_pack() or make_faces_expressive.py.\n"
+                    + "\n".join(face_hits[:10]))
+    if removed_hits:
+        msgs.append("Locked standard violation (ROBLOX_DIRECTOR.md section 4.0): R6 rigs, legacy ribbon hair_style names, Creator Store "
+                    "hair GLBs (attach_core_hair), painted clothes and add_mud_clump were removed. Use rig_type='R15' and "
+                    "hair_style='boy'|'boy_part'|'boy_fluffy'|'girl'|'girl_bob'|'girl_ponytail'|'old_man'|'old_woman'|'bald'.\n" + "\n".join(removed_hits[:10]))
     return "\n\n".join(msgs) if msgs else None
 
 

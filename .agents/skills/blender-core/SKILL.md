@@ -42,7 +42,13 @@ metadata:
 | End-to-end playbooks (prop, character, Roblox, product shot) | `blender-workflow-recipes` |
 
 ## Execute
-**Live (`scenario-blender` Local MCP at `http://127.0.0.1:9876/mcp` via `scripts/blender_mcp_bridge.py` or `execute_python` / `scene_summary` / `camera_path` / `capture_views`)**: work in small steps and print only what you need. To call a skill script or the Sven Core Auto-Director Engine (`blender_auto_director.py`), import it:
+**Live MCP (`mcp-for-blender` v2.3+ — primary live session server, TCP port `9876`, `DISABLE_TELEMETRY=true`)**:
+- Use native tools: `get_scene_info` (compact spatial/ground/topology/weights inspection), `look` (`mode="viewport"|"camera"|"angles"|"frames"`, `shading="rendered"|"material"|"solid"|"wireframe"|"xray"`), `search_assets` / `import_asset` (Poly Haven, Poly Pizza, Sketchfab with `target_size`), `generate_3d`, `generate_gaussian_world` (Blender 5.3+), and `execute_blender_code`.
+- **Port conflict rule**: `mcp-for-blender` (raw TCP socket) and legacy `bl_ext.user_default.scenario` (HTTP) both default to port `9876`. Keep `bl_ext.user_default.scenario` disabled when running `mcp-for-blender` (or move `BLENDER_PORT=9877`).
+- **Safe Mode note**: Leave `BLENDER_MCP_SAFE_MODE` off when calling `execute_blender_code` to import Sven internal kits (`sys.path.insert`), because Safe Mode blocks `sys`/`os`.
+- *(Optional fallback)* Legacy `scenario-blender` HTTP bridge remains available via `scripts/blender_mcp_bridge.py` (`--port 9876`).
+
+To call a skill script or the Sven Core Auto-Director Engine (`blender_auto_director.py`) from live `execute_blender_code`:
 ```python
 import sys, importlib; sys.path.insert(0, r"<skills_dir>/roblox-director/studio_kit")
 import blender_auto_director as ad; importlib.reload(ad)
@@ -58,11 +64,12 @@ Each MCP call runs in a **fresh namespace**: re-`import` in every call. That's c
 **Headless (any agent with a shell)**: this prints only the script's JSON (`@@JSON@@` lines):
 ```
 python <skills_dir>/blender-core/scripts/run_in_blender.py --blend in.blend <script.py> -- --objects Chair --save out.blend
+python <skills_dir>/blender-core/scripts/run_in_blender.py --blend in.blend <skills_dir>/blender-core/scripts/scene_inspect.py -- --fields location size ground topology
 python <skills_dir>/blender-core/scripts/run_in_blender.py --expr "import bpy; print(len(bpy.data.objects))"
 ```
 **Windows + Git Bash**: MSYS rewrites `//out.png` to `/out.png` (→ `C:\out.png`). Prefix with `MSYS_NO_PATHCONV=1` and pass skill paths as `$(cygpath -m ~/.claude/skills)/...` (or use PowerShell).
 Raw form: `blender -b in.blend --factory-startup --python-exit-code 1 -P x.py -- args`. Every script here exposes `run(**kw) -> dict` and the same flags after `--`.
-**First call in a session**: `scripts/env_report.py`, which returns the version, engines, GPU, add-ons, units, color management and scene counts.
+**First call in a session**: `scripts/env_report.py` (version, engines, GPU, add-ons, units, color management) and `scripts/scene_inspect.py` (compact per-object placement, `ground` floating/sunk status, topology, and weights).
 
 ## Rules
 - **Data API over operators**: use `bpy.data`, `bmesh`, `mesh.attributes`, and `foreach_get/set` with numpy. Operators depend on context and selection, and many need a 3D View, which background mode doesn't have.

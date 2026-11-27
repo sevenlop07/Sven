@@ -1,58 +1,6 @@
 {
  "version": 1,
  "assets": {
-  "Hair_ClassicSpiky_CS": {
-   "path": "hairs/Hair_ClassicSpiky_CS.glb",
-   "category": "hairs",
-   "dims_m": [
-    0.439,
-    0.413,
-    0.355
-   ],
-   "tris": 2664,
-   "materials": 1,
-   "source": "roblox_creator_store",
-   "preview": "_previews/Hair_ClassicSpiky_CS.jpg"
-  },
-  "Hair_CrazyDev_CS": {
-   "path": "hairs/Hair_CrazyDev_CS.glb",
-   "category": "hairs",
-   "dims_m": [
-    0.481,
-    0.452,
-    0.443
-   ],
-   "tris": 1559,
-   "materials": 1,
-   "source": "roblox_creator_store",
-   "preview": "_previews/Hair_CrazyDev_CS.jpg"
-  },
-  "Hair_PinkBangs_CS": {
-   "path": "hairs/Hair_PinkBangs_CS.glb",
-   "category": "hairs",
-   "dims_m": [
-    0.445,
-    0.614,
-    0.601
-   ],
-   "tris": 2332,
-   "materials": 1,
-   "source": "roblox_creator_store",
-   "preview": "_previews/Hair_PinkBangs_CS.jpg"
-  },
-  "Hair_WildMonk_CS": {
-   "path": "hairs/Hair_WildMonk_CS.glb",
-   "category": "hairs",
-   "dims_m": [
-    0.461,
-    0.473,
-    0.341
-   ],
-   "tris": 2426,
-   "materials": 1,
-   "source": "roblox_creator_store",
-   "preview": "_previews/Hair_WildMonk_CS.jpg"
-  },
   "Nature_BushFlowers": {
    "path": "nature/Nature_BushFlowers.glb",
    "category": "nature",
@@ -65,32 +13,6 @@
    "materials": 6,
    "source": "unknown",
    "preview": "_previews/Nature_BushFlowers.jpg"
-  },
-  "Nature_ClassicTree_CS": {
-   "path": "nature/Nature_ClassicTree_CS.glb",
-   "category": "nature",
-   "dims_m": [
-    3.657,
-    3.286,
-    6.304
-   ],
-   "tris": 132,
-   "materials": 2,
-   "source": "roblox_creator_store",
-   "preview": "_previews/Nature_ClassicTree_CS.jpg"
-  },
-  "Nature_OakPinePack_CS": {
-   "path": "nature/Nature_OakPinePack_CS.glb",
-   "category": "nature",
-   "dims_m": [
-    5.88,
-    7.28,
-    8.12
-   ],
-   "tris": 2288,
-   "materials": 2,
-   "source": "roblox_creator_store",
-   "preview": "_previews/Nature_OakPinePack_CS.jpg"
   },
   "Nature_PottedMonstera": {
    "path": "nature/Nature_PottedMonstera.glb",
@@ -130,19 +52,6 @@
    "materials": 3,
    "source": "unknown",
    "preview": "_previews/Nature_SakuraTree.jpg"
-  },
-  "Nature_SnowyPine_CS": {
-   "path": "nature/Nature_SnowyPine_CS.glb",
-   "category": "nature",
-   "dims_m": [
-    6.749,
-    7.29,
-    16.041
-   ],
-   "tris": 132,
-   "materials": 3,
-   "source": "roblox_creator_store",
-   "preview": "_previews/Nature_SnowyPine_CS.jpg"
   },
   "Nature_StylizedBoulder_Moss": {
    "path": "nature/Nature_StylizedBoulder_Moss.glb",
@@ -222,19 +131,6 @@
    "source": "unknown",
    "preview": "_previews/Pet_Cat_Tuxedo.jpg"
   },
-  "Pet_Dog_CS": {
-   "path": "animals/Pet_Dog_CS.glb",
-   "category": "animals",
-   "dims_m": [
-    0.628,
-    1.351,
-    1.23
-   ],
-   "tris": 776,
-   "materials": 3,
-   "source": "roblox_creator_store",
-   "preview": "_previews/Pet_Dog_CS.jpg"
-  },
   "Pet_Dog_Shiba": {
    "path": "animals/Pet_Dog_Shiba.glb",
    "category": "animals",
@@ -261,6 +157,31 @@
    "source": "unknown",
    "preview": "_previews/Pet_Duck_Yellow.jpg"
   },
+  "Prop_Backpack_AI": {
+   "path": "props/Prop_Backpack_AI.glb",
+   "category": "props",
+   "dims_m": [
+    0.346,
+    0.339,
+    0.45
+   ],
+   "tris": 8992,
+   "materials": 3,
+   "source": "roblox_ai_generated",
+   "preview": "_previews/Prop_Backpack_AI.jpg",
+   "asset_id": 140516704435920,
+   "title": "",
+   "creator": "Roblox Studio AI (your account)",
+   "extent_studs": [
+    1.477,
+    1.92,
+    1.446
+   ],
+   "mesh_fail": 0,
+   "texture_fail": 0,
+   "unions_as_boxes": 0,
+   "harvested": "2026-11-23"
+  },
   "Prop_BankersLamp": {
    "path": "props/Prop_BankersLamp.glb",
    "category": "props",
@@ -274,27 +195,52 @@
    "source": "unknown",
    "preview": "_previews/Prop_BankersLamp.jpg"
   },
-  "Prop_BusStop_CS": {
-   "path": "props/Prop_BusStop_CS.glb",
+  "Prop_Bed_AI": {
+   "path": "props/Prop_Bed_AI.glb",
    "category": "props",
    "dims_m": [
-    5.018,
-    3.377,
-    4.074
+    0.851,
+    1.371,
+    0.75
    ],
-   "tris": 27928,
-   "materials": 6,
-   "source": "roblox_creator_store",
-   "preview": "_previews/Prop_BusStop_CS.jpg",
-   "asset_id": 161094509,
-   "title": "Bus Stop",
-   "creator": "batssz",
+   "tris": 5958,
+   "materials": 3,
+   "source": "roblox_ai_generated",
+   "preview": "_previews/Prop_Bed_AI.jpg",
+   "asset_id": 110555789780256,
+   "title": "",
+   "creator": "Roblox Studio AI (your account)",
    "extent_studs": [
-    17.925,
-    14.55,
-    12.081
+    1.192,
+    1.049,
+    1.919
    ],
-   "mesh_fail": 1,
+   "mesh_fail": 0,
+   "texture_fail": 0,
+   "unions_as_boxes": 0,
+   "harvested": "2026-11-23"
+  },
+  "Prop_Bicycle_AI": {
+   "path": "props/Prop_Bicycle_AI.glb",
+   "category": "props",
+   "dims_m": [
+    0.638,
+    1.324,
+    1.0
+   ],
+   "tris": 9562,
+   "materials": 3,
+   "source": "roblox_ai_generated",
+   "preview": "_previews/Prop_Bicycle_AI.jpg",
+   "asset_id": 70454160764856,
+   "title": "",
+   "creator": "Roblox Studio AI (your account)",
+   "extent_studs": [
+    0.925,
+    1.452,
+    1.921
+   ],
+   "mesh_fail": 0,
    "texture_fail": 0,
    "unions_as_boxes": 0,
    "harvested": "2026-11-23"
@@ -311,19 +257,6 @@
    "materials": 4,
    "source": "procedural",
    "preview": "_previews/Prop_CampfireRing_Hybrid.jpg"
-  },
-  "Prop_Car_RobloxResources": {
-   "path": "props/Prop_Car_RobloxResources.glb",
-   "category": "props",
-   "dims_m": [
-    2.404,
-    5.76,
-    1.741
-   ],
-   "tris": 14654,
-   "materials": 16,
-   "source": "roblox_creator_store",
-   "preview": "_previews/Prop_Car_RobloxResources.jpg"
   },
   "Prop_DiningChair": {
    "path": "props/Prop_DiningChair.glb",
@@ -351,25 +284,100 @@
    "source": "unknown",
    "preview": "_previews/Prop_EntryTable.jpg"
   },
-  "Prop_HotDogCart_CS": {
-   "path": "props/Prop_HotDogCart_CS.glb",
+  "Prop_FoodCartMesh_AI": {
+   "path": "props/Prop_FoodCartMesh_AI.glb",
    "category": "props",
    "dims_m": [
-    3.413,
-    3.874,
-    3.274
+    2.051,
+    1.412,
+    2.3
    ],
-   "tris": 3476,
-   "materials": 7,
-   "source": "roblox_creator_store",
-   "preview": "_previews/Prop_HotDogCart_CS.jpg",
-   "asset_id": 160868943,
-   "title": "Hot Dog Cart",
-   "creator": "avaIanches",
+   "tris": 7988,
+   "materials": 3,
+   "source": "roblox_ai_generated",
+   "preview": "_previews/Prop_FoodCartMesh_AI.jpg",
+   "asset_id": 75368416712777,
+   "title": "",
+   "creator": "Roblox Studio AI (your account)",
    "extent_studs": [
-    12.202,
-    11.701,
-    13.845
+    1.715,
+    1.923,
+    1.179
+   ],
+   "mesh_fail": 0,
+   "texture_fail": 0,
+   "unions_as_boxes": 0,
+   "harvested": "2026-11-23"
+  },
+  "Prop_FoodCartProc_AI": {
+   "path": "props/Prop_FoodCartProc_AI.glb",
+   "category": "props",
+   "dims_m": [
+    2.464,
+    1.638,
+    1.658
+   ],
+   "tris": 7784,
+   "materials": 2,
+   "source": "roblox_ai_generated",
+   "preview": "_previews/Prop_FoodCartProc_AI.jpg",
+   "asset_id": null,
+   "title": "awning",
+   "creator": "Roblox Studio AI (your account)",
+   "extent_studs": [
+    8.8,
+    5.924,
+    5.85
+   ],
+   "mesh_fail": 0,
+   "texture_fail": 0,
+   "unions_as_boxes": 0,
+   "harvested": "2026-11-23"
+  },
+  "Prop_Fridge_AI": {
+   "path": "props/Prop_Fridge_AI.glb",
+   "category": "props",
+   "dims_m": [
+    0.971,
+    0.926,
+    1.8
+   ],
+   "tris": 2302,
+   "materials": 2,
+   "source": "roblox_ai_generated",
+   "preview": "_previews/Prop_Fridge_AI.jpg",
+   "asset_id": 93495465692847,
+   "title": "",
+   "creator": "Roblox Studio AI (your account)",
+   "extent_studs": [
+    1.036,
+    1.92,
+    0.989
+   ],
+   "mesh_fail": 0,
+   "texture_fail": 0,
+   "unions_as_boxes": 0,
+   "harvested": "2026-11-23"
+  },
+  "Prop_HospitalBed_AI": {
+   "path": "props/Prop_HospitalBed_AI.glb",
+   "category": "props",
+   "dims_m": [
+    1.129,
+    2.105,
+    1.0
+   ],
+   "tris": 6878,
+   "materials": 3,
+   "source": "roblox_ai_generated",
+   "preview": "_previews/Prop_HospitalBed_AI.jpg",
+   "asset_id": 109370526611426,
+   "title": "",
+   "creator": "Roblox Studio AI (your account)",
+   "extent_studs": [
+    1.03,
+    0.913,
+    1.919
    ],
    "mesh_fail": 0,
    "texture_fail": 0,
@@ -401,19 +409,6 @@
    "materials": 6,
    "source": "unknown",
    "preview": "_previews/Prop_KitchenSet.jpg"
-  },
-  "Prop_MedicalStation_CS": {
-   "path": "props/Prop_MedicalStation_CS.glb",
-   "category": "props",
-   "dims_m": [
-    1.07,
-    0.639,
-    1.672
-   ],
-   "tris": 852,
-   "materials": 6,
-   "source": "roblox_creator_store",
-   "preview": "_previews/Prop_MedicalStation_CS.jpg"
   },
   "Prop_MudCastle_Hybrid": {
    "path": "props/Prop_MudCastle_Hybrid.glb",
@@ -493,6 +488,31 @@
    "source": "roblox_creator_store",
    "preview": "_previews/Prop_PicnicTable_CS.jpg"
   },
+  "Prop_SchoolBus_AI": {
+   "path": "props/Prop_SchoolBus_AI.glb",
+   "category": "props",
+   "dims_m": [
+    3.145,
+    4.798,
+    3.2
+   ],
+   "tris": 9362,
+   "materials": 3,
+   "source": "roblox_ai_generated",
+   "preview": "_previews/Prop_SchoolBus_AI.jpg",
+   "asset_id": 140188343237338,
+   "title": "",
+   "creator": "Roblox Studio AI (your account)",
+   "extent_studs": [
+    1.26,
+    1.284,
+    1.922
+   ],
+   "mesh_fail": 0,
+   "texture_fail": 0,
+   "unions_as_boxes": 0,
+   "harvested": "2026-11-23"
+  },
   "Prop_SchoolDeskChair": {
    "path": "props/Prop_SchoolDeskChair.glb",
    "category": "props",
@@ -506,18 +526,80 @@
    "source": "unknown",
    "preview": "_previews/Prop_SchoolDeskChair.jpg"
   },
-  "Prop_TreasureChest_CS": {
-   "path": "props/Prop_TreasureChest_CS.glb",
+  "Prop_SchoolLockers_AI": {
+   "path": "props/Prop_SchoolLockers_AI.glb",
    "category": "props",
    "dims_m": [
-    0.496,
-    0.849,
-    0.642
+    1.645,
+    0.845,
+    1.9
    ],
-   "tris": 312,
+   "tris": 3800,
+   "materials": 2,
+   "source": "roblox_ai_generated",
+   "preview": "_previews/Prop_SchoolLockers_AI.jpg",
+   "asset_id": 101117460604048,
+   "title": "",
+   "creator": "Roblox Studio AI (your account)",
+   "extent_studs": [
+    1.663,
+    1.92,
+    0.853
+   ],
+   "mesh_fail": 0,
+   "texture_fail": 0,
+   "unions_as_boxes": 0,
+   "harvested": "2026-11-23"
+  },
+  "Prop_ShopCounter_AI": {
+   "path": "props/Prop_ShopCounter_AI.glb",
+   "category": "props",
+   "dims_m": [
+    1.5,
+    1.166,
+    1.3
+   ],
+   "tris": 8346,
+   "materials": 2,
+   "source": "roblox_ai_generated",
+   "preview": "_previews/Prop_ShopCounter_AI.jpg",
+   "asset_id": 124880788664960,
+   "title": "",
+   "creator": "Roblox Studio AI (your account)",
+   "extent_studs": [
+    1.921,
+    1.666,
+    1.494
+   ],
+   "mesh_fail": 0,
+   "texture_fail": 0,
+   "unions_as_boxes": 0,
+   "harvested": "2026-11-23"
+  },
+  "Prop_VendingMachine_AI": {
+   "path": "props/Prop_VendingMachine_AI.glb",
+   "category": "props",
+   "dims_m": [
+    1.071,
+    1.312,
+    1.85
+   ],
+   "tris": 9022,
    "materials": 3,
-   "source": "roblox_creator_store",
-   "preview": "_previews/Prop_TreasureChest_CS.jpg"
+   "source": "roblox_ai_generated",
+   "preview": "_previews/Prop_VendingMachine_AI.jpg",
+   "asset_id": 112354079441607,
+   "title": "",
+   "creator": "Roblox Studio AI (your account)",
+   "extent_studs": [
+    1.111,
+    1.937,
+    1.362
+   ],
+   "mesh_fail": 0,
+   "texture_fail": 0,
+   "unions_as_boxes": 0,
+   "harvested": "2026-11-23"
   },
   "Prop_WoodenArchBridge_Hybrid": {
    "path": "props/Prop_WoodenArchBridge_Hybrid.glb",
@@ -648,24 +730,12 @@
    "materials": 15,
    "source": "roblox_creator_store",
    "preview": "_previews/Set_WoodCabin_CS.jpg"
-  },
-  "Set_WoodenHut_CS": {
-   "path": "sets/Set_WoodenHut_CS.glb",
-   "category": "sets",
-   "dims_m": [
-    8.198,
-    7.307,
-    4.701
-   ],
-   "tris": 2980,
-   "materials": 9,
-   "source": "roblox_creator_store",
-   "preview": "_previews/Set_WoodenHut_CS.jpg"
   }
  },
  "licence_notes": {
   "roblox_creator_store": "Roblox Creator Store: licensed for use on Roblox. OK for Studio-captured films; Blender renders outside Roblox need the user's licence call (ROBLOX_DIRECTOR.md §4.5).",
   "procedural": "Built by Sven code (studio_kit / tools): free to use.",
+  "roblox_ai_generated": "Made with Roblox Studio AI (generate_mesh / generate_procedural_model) on your account: check Roblox's terms for generated content before commercial use outside Roblox.",
   "cc0": "CC0 (e.g. PolyHaven): free to use, credit optional.",
   "unknown": "Origin not recorded: check before commercial use."
  }

@@ -10,8 +10,8 @@ this file is the practical "how much / in which order / what the engines can do"
 - Headless, resumable, deterministic. Run every script through
   `python .agents/skills/roblox-director/tools/run_roblox_blender.py --slug <slug> <script.py> -- …` (renders stage in
   `%TEMP%\sven_blender_<slug>` and sync back to `output/<slug>/`).
-- EEVEE 1080×1920: **1.7–1.9 s/frame** (MEASURED, 600 frames in 17–19 min). Cycles: plan 5–10× that; offload with R5-B.
-- Acting: `studio_kit/blender_roblox_anim.py` only (Law R-ANIM). Faces switch inside the material (portable `.blend`).
+- EEVEE (previews & playblasts only): **1.7–1.9 s/frame** (MEASURED, 600 frames in 17–19 min). **Cycles master (`64 spp OptiX + OpenImageDenoise + Mist Pass + Cinema Compositor`, locked standard in `ROBLOX_DIRECTOR.md` §4.0):** **9.1–12.6 s/frame** at `1920×804` (`2.39:1`, MEASURED in `output/gibbson_lookdev/`) on RTX 3060; run local (`R5-A`) or offload with `R5-B`.
+- Acting & Narrative Default: `studio_kit/blender_roblox_anim.py` (**34 states** incl. 7 restrained Cinema Acting States + `blink_bridge=True` + `auto_blinks()` — Law R-ANIM). Prioritize **Mode N1 Cinematic Narration** (single narrator `.mp3` → `.srt` + silent physical cinema acting, mouths closed during V.O.); faces switch inside the material (`cinema_expressive` default; portable `.blend`).
 - QA: `rba.render_pose_qa` (pose sheet), `kit.render_playblast_qa` (motion), `kit.audit_scene_collisions`, `kit.audit_camera_plan`.
 
 ### 0.2 Roblox Studio MCP (Engine E1 — only when real Roblox-engine look is the brief)
@@ -24,8 +24,12 @@ this file is the practical "how much / in which order / what the engines can do"
 - `generate_animation` makes R15 clips only (≤ 30 s); prefer the official R15 animation ids (`ROBLOX_DIRECTOR.md` §4.6).
 - Creator Store inserts must be sanitized (`ROBLOX_DIRECTOR.md` §4.5).
 - Asset harvest for Blender: `tools/harvest_assets.py` (search → harvest → catalog → sheet). MEASURED: `execute_luau`
-  returns are capped near 100k chars (the harvester pages at 60k); `_G` persists between calls; `CreateEditableMeshAsync` answers "no permission" for meshes owned by other creators, so only part-built
-  models convert cleanly — older ids (pre-2020) are mostly part-built.
+  returns are capped at 100k chars (the harvester pages at 90k); `_G` persists between calls; `CreateEditableMeshAsync`
+  answers "no permission" for meshes owned by other creators, so only part-built models convert cleanly — older ids
+  (pre-2020) are mostly part-built. Meshes made with `generate_mesh` on the user's account ARE readable, textures
+  included (MEASURED: ≈ 35 s to generate, ≈ 25 s to harvest with 512 px textures, 2–4 MB JSON) — the fastest way to fill
+  a missing prop: `harvest Prop_<Name>_AI@<workspace model name>~<height m>`. 1024 px textures made a 7 MB JSON
+  (110 pages) and the bridge died mid-read: keep `texSize` at 512.
 
 ### 0.3 Capture size vs edit zoom
 The edit-zoom limit in look.md §3 is `output size ÷ render size`: Blender renders at the output size (no headroom — do real
@@ -39,7 +43,7 @@ Fill the build-cost block of the shot list (`templates/shot-list.md`) and stay i
 | Sets (distinct locations) | ≤ 3 (60 s), ≤ 5 (2–5 min) | reuse with relight / `mood@clock` before building a new one |
 | Principal cast rigs | ≤ 4 | crowd = palette-swapped clones, never new builds |
 | Face states per character | ≤ 8 | from the face pack; lip-sync uses 3 mouth states |
-| Custom acting poses (`pose` state) | ≤ 10 | everything else from the 27 `RobloxAnimator` states |
+| Custom acting poses (`pose` state) | ≤ 10 | everything else from the **34 `RobloxAnimator` states** (incl. 7 Cinema Acting States) |
 | Contact poses (two rigs touching) | ≤ 3 | hardest pose work; QA each from 2 angles |
 | Rule-object images (signs, screens, decals) | ≤ 12 | |
 | Special builds (a new system: rain, destruction, vehicle…) | ≤ 1 | reused for free afterwards |

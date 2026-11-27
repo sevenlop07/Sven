@@ -17,13 +17,10 @@ STUD = 0.28
 TEX_W, TEX_H = 585.0, 559.0
 CORE_SKILL_DIR = os.path.normpath(os.path.join(os.path.dirname(os.path.abspath(__file__)), ".."))
 CORE_ASSETS_DIR = os.path.join(CORE_SKILL_DIR, "assets")
-CORE_ANIMS_DIR = os.path.join(CORE_ASSETS_DIR, "anims")
 CORE_CLOTHES_DIR = os.path.join(CORE_ASSETS_DIR, "clothes")
+CORE_FACES_CINEMA_DIR = os.path.join(CORE_ASSETS_DIR, "faces_cinema_expressive")
 CORE_FACES_STORYBOOK_DIR = os.path.join(CORE_ASSETS_DIR, "faces_storybook_toon")
-CORE_FACES_CARTOON_DIR = os.path.join(CORE_ASSETS_DIR, "faces_cartoon")
-CORE_FACES_RUBBERHOSE_DIR = os.path.join(CORE_ASSETS_DIR, "faces_rubberhose")
-CORE_FACES_UGC_DIR = CORE_FACES_STORYBOOK_DIR
-CORE_FACES_HD_DIR = CORE_FACES_RUBBERHOSE_DIR
+CORE_FACES_UGC_DIR = CORE_FACES_CINEMA_DIR  # default alias -> cinema_expressive for CGI Cinema
 CORE_PROPS_DIR = os.path.join(CORE_ASSETS_DIR, "props")
 CORE_SETS_DIR = os.path.join(CORE_ASSETS_DIR, "sets")
 CORE_ANIMALS_DIR = os.path.join(CORE_ASSETS_DIR, "animals")
@@ -75,44 +72,6 @@ def load_core_glb(name_or_path: str, col=None, location_m=(0.0, 0.0, 0.0), yaw_d
         obj.scale = (scale, scale, scale)
     return obj
 
-
-def attach_core_hair(char_info: dict, hair_name_or_glb: str, hair_hex: str = None):
-    """Attach a pre-extracted Roblox Studio hair .glb from Core assets/hairs/ cleanly onto an R15 Head bone."""
-    target = hair_name_or_glb
-    if not os.path.exists(target):
-        for cand in (hair_name_or_glb, f"{hair_name_or_glb}.glb"):
-            p = os.path.join(CORE_HAIRS_DIR, cand)
-            if os.path.exists(p):
-                target = p
-                break
-    arm = char_info["armature"]
-    col = char_info["collection"]
-    m = char_info["metrics"]
-    hs = m["hs"]
-    hx, hy, hz = m["head_center"]
-
-    before = set(bpy.data.objects)
-    bpy.ops.import_scene.gltf(filepath=target)
-    imp = [o for o in bpy.data.objects if o not in before and o.type == "MESH"]
-    obj = imp[0]
-    for c in list(obj.users_collection):
-        c.objects.unlink(obj)
-    col.objects.link(obj)
-
-    obj.parent = arm
-    obj.matrix_parent_inverse = Matrix.Identity(4)
-    obj.scale = (hs, hs, hs)
-    obj.location = Vector((hx, hy, hz)) * STUD
-    obj.rotation_euler = Euler((0.0, 0.0, 0.0))
-    if hair_hex:
-        mat = make_stylized_hair_mat(f"{arm.name}_StudioHair", hex_to_linear_rgba(hair_hex), roughness=0.46)
-        obj.data.materials.clear()
-        obj.data.materials.append(mat)
-    vg = obj.vertex_groups.get("Head") or obj.vertex_groups.new(name="Head")
-    vg.add(list(range(len(obj.data.vertices))), 1.0, "REPLACE")
-    mod = obj.modifiers.new("Armature", "ARMATURE")
-    mod.object = arm
-    return obj
 
 TORSO_UV = {
     "front": (231, 74, 128, 128), "back": (427, 74, 128, 128),
@@ -785,13 +744,6 @@ def _add_hair_ribbon(
     return obj
 
 
-def _add_hair_strand(name, points, radii, mat_hair, collection):
-    """Compatibility wrapper rendering crisp sculpted hair ribbon instead of round pipe."""
-    widths = [max(0.02, r * 1.15) for r in radii]
-    thicks = [max(0.015, r * 0.55) for r in radii]
-    return _add_hair_ribbon(name, points, widths, thicks, mat_hair, collection)
-
-
 def _add_curl_puff(name, center_m, rad_m, squash_xyz, mat_hair, collection, segs=14, rings=10):
     mesh = bpy.data.meshes.new(name + "_M")
     bm = bmesh.new()
@@ -814,75 +766,6 @@ def _add_curl_puff(name, center_m, rad_m, squash_xyz, mat_hair, collection, segs
     o.data.materials.append(mat_hair)
     collection.objects.link(o)
     return o
-
-
-def _build_skull_liner(prefix, head_center, hs, mat_hair, collection, shell_off=0.052, z_front=0.24, z_back=-0.34):
-    """Exact conformal skull/hair cap hugging _create_roblox_head profile with uniform offset (zero skin poke-through)."""
-    cx, cy, cz = [c * STUD for c in head_center]
-    r0 = 0.60 * hs * STUD
-    hh0 = 0.58 * hs * STUD
-    fil0 = 0.36 * r0
-    r_c = r0 - fil0
-    z_c = hh0 - fil0
-    off = shell_off * hs * STUD
-    r_shell = r0 + off
-    fil_shell = fil0 + off
-    top_z = hh0 + off
-
-    n_seg = 40
-    n_lat = 18
-    mesh = bpy.data.meshes.new(prefix + "_HairCap_Mesh")
-    bm = bmesh.new()
-    uv_layer = bm.loops.layers.uv.new("UVMap")
-
-    rings = []
-    # Inner tuck ring at hairline so bottom edge is watertight and cleanly recessed into head
-    in_ring = []
-    for s in range(n_seg):
-        ang = 2.0 * math.pi * s / n_seg
-        front_t = (-math.sin(ang) + 1.0) * 0.5
-        zc_ang = (z_back + (z_front - z_back) * (front_t ** 1.35)) * hs * STUD
-        r_in = 0.56 * hs * STUD if zc_ang <= z_c else max(0.1 * hs * STUD, r_c + math.sqrt(max(0.0, fil0 ** 2 - min(fil0, zc_ang - z_c) ** 2)) - 0.02 * STUD)
-        in_ring.append(bm.verts.new((r_in * math.cos(ang), r_in * math.sin(ang), zc_ang)))
-
-    # Distribute latitude rings denser near the rounded upper fillet so top chords never dip into head skin
-    for li in range(n_lat):
-        tf = (li / float(n_lat)) ** 0.85
-        row = []
-        for s in range(n_seg):
-            ang = 2.0 * math.pi * s / n_seg
-            front_t = (-math.sin(ang) + 1.0) * 0.5
-            zc_ang = (z_back + (z_front - z_back) * (front_t ** 1.35)) * hs * STUD
-            zz = zc_ang + tf * (top_z - zc_ang)
-            if zz <= z_c:
-                rr = r_shell
-            else:
-                dz = min(fil_shell, zz - z_c)
-                rr = r_c + math.sqrt(max(0.0, fil_shell * fil_shell - dz * dz))
-            row.append(bm.verts.new((rr * math.cos(ang), rr * math.sin(ang), zz)))
-        rings.append(row)
-    top_pole = bm.verts.new((0.0, 0.0, top_z))
-
-    for s in range(n_seg):
-        sn = (s + 1) % n_seg
-        bm.faces.new((in_ring[s], in_ring[sn], rings[0][sn], rings[0][s]))
-        bm.faces.new((rings[-1][s], rings[-1][sn], top_pole))
-    for ri in range(len(rings) - 1):
-        for s in range(n_seg):
-            sn = (s + 1) % n_seg
-            bm.faces.new((rings[ri][s], rings[ri][sn], rings[ri + 1][sn], rings[ri + 1][s]))
-
-    bmesh.ops.recalc_face_normals(bm, faces=bm.faces)
-    for f in bm.faces:
-        f.smooth = True
-        for lp in f.loops:
-            lp[uv_layer].uv = (0.5 + lp.vert.co.x * 1.6, 0.5 + lp.vert.co.z * 1.6)
-    bm.to_mesh(mesh); bm.free()
-    cap = bpy.data.objects.new(prefix + "_HairCap", mesh)
-    cap.location = (cx, cy, cz)
-    cap.data.materials.append(mat_hair)
-    collection.objects.link(cap)
-    return cap
 
 
 def _build_curved_visor(prefix, head_center, hs, mat_cap, collection):
@@ -942,203 +825,36 @@ BODY_PROFILES = {
 }
 
 
-def _build_hair(prefix, head_center, scale_h, mat_hair, collection, hair_style="spiky", cap_accent_hex="#D93829"):
-    """Build 1 of 10 stylized 3D Roblox UGC hairstyles with faceted ribbon locks framing outside the 35-deg face arc."""
-    if hair_style == "bald":
-        return []
-    cx, cy, cz = head_center
-    hs = scale_h
-    parts = []
-
-    def P(ox, oy, oz):
-        return (cx + ox * hs, cy + oy * hs, cz + oz * hs)
-
-    def W(vals):
-        return [v * hs for v in vals]
-
-    def R(sname, pts, widths, thicks, arch=0.38, roll=0.0, steps=14):
-        parts.append(
-            _add_hair_ribbon(
-                f"{prefix}_Hair_{sname}", pts, W(widths), W(thicks), mat_hair, collection,
-                head_center_studs=head_center, arch=arch, roll_deg=roll, steps=steps,
-            )
-        )
-
-    if hair_style in ("spiky", "spiky_teen"):
-        parts.append(_build_skull_liner(prefix, head_center, hs, mat_hair, collection, shell_off=0.020, z_front=0.22, z_back=-0.34))
-        # Rich anime bangs sweeping naturally down to upper brow + tall dynamic crown spikes
-        R("BangC",  [P(-0.04, -0.30, 0.52), P(0.02, -0.57, 0.34), P(0.14, -0.62, 0.16)], [0.22, 0.19, 0.02], [0.09, 0.08, 0.015], roll=-10)
-        R("BangL1", [P(0.14, -0.26, 0.52), P(0.32, -0.53, 0.34), P(0.44, -0.58, 0.14)], [0.22, 0.18, 0.02], [0.09, 0.075, 0.015], roll=-18)
-        R("BangL2", [P(0.30, -0.14, 0.50), P(0.52, -0.40, 0.28), P(0.62, -0.44, 0.04)], [0.18, 0.16, 0.02], [0.08, 0.065, 0.015], roll=-22)
-        R("BangR1", [P(-0.18, -0.26, 0.52), P(-0.36, -0.53, 0.34), P(-0.48, -0.58, 0.14)], [0.22, 0.18, 0.02], [0.09, 0.075, 0.015], roll=18)
-        R("BangR2", [P(-0.32, -0.14, 0.50), P(-0.54, -0.40, 0.28), P(-0.64, -0.44, 0.04)], [0.18, 0.16, 0.02], [0.08, 0.065, 0.015], roll=22)
-        # Crown dynamic upward spikes
-        R("SpkTop1", [P(-0.06, 0.06, 0.54), P(-0.22, -0.22, 0.84), P(-0.40, -0.52, 0.94)], [0.26, 0.20, 0.02], [0.11, 0.085, 0.015], arch=0.55)
-        R("SpkTop2", [P(0.14, 0.10, 0.54), P(0.28, -0.14, 0.82), P(0.46, -0.38, 0.90)], [0.24, 0.18, 0.02], [0.10, 0.08, 0.015], arch=0.55)
-        R("SpkTopC", [P(0.02, -0.06, 0.56), P(0.06, -0.36, 0.80), P(0.18, -0.60, 0.76)], [0.22, 0.17, 0.02], [0.10, 0.075, 0.015], arch=0.52)
-        R("SpkBack1", [P(0.0, 0.28, 0.48), P(0.0, 0.64, 0.64), P(0.0, 0.90, 0.50)], [0.30, 0.24, 0.02], [0.12, 0.09, 0.015], arch=0.50)
-        R("SpkBackL", [P(0.32, 0.28, 0.42), P(0.62, 0.54, 0.48), P(0.82, 0.64, 0.28)], [0.22, 0.18, 0.02], [0.09, 0.075, 0.015])
-        R("SpkBackR", [P(-0.32, 0.28, 0.42), P(-0.62, 0.54, 0.48), P(-0.82, 0.64, 0.28)], [0.22, 0.18, 0.02], [0.09, 0.075, 0.015])
-        R("SideL", [P(0.54, 0.02, 0.32), P(0.61, -0.14, 0.04), P(0.58, -0.24, -0.24)], [0.16, 0.13, 0.02], [0.07, 0.06, 0.01])
-        R("SideR", [P(-0.54, 0.02, 0.32), P(-0.61, -0.14, 0.04), P(-0.58, -0.24, -0.24)], [0.16, 0.13, 0.02], [0.07, 0.06, 0.01])
-        R("NapeC", [P(0.0, 0.46, 0.22), P(0.0, 0.64, -0.10), P(0.0, 0.58, -0.44)], [0.34, 0.26, 0.03], [0.12, 0.09, 0.015])
-
-    elif hair_style == "slick_part":
-        # Sharp executive/Sigma quiff: snug hairline skull cap + seamless swept pompadour + tight sideburns!
-        parts.append(_build_skull_liner(prefix, head_center, hs, mat_hair, collection, shell_off=0.018, z_front=0.24, z_back=-0.30))
-        R("QuiffMain", [P(-0.22, -0.48, 0.26), P(-0.04, -0.58, 0.64), P(0.24, -0.16, 0.74), P(0.30, 0.40, 0.50)], [0.32, 0.38, 0.32, 0.12], [0.13, 0.17, 0.14, 0.04], arch=0.52, roll=-8)
-        R("QuiffCrest", [P(-0.04, -0.50, 0.26), P(0.22, -0.48, 0.58), P(0.44, -0.02, 0.58), P(0.42, 0.44, 0.34)], [0.22, 0.26, 0.24, 0.08], [0.10, 0.12, 0.10, 0.03], arch=0.48, roll=-14)
-        R("QuiffSide", [P(-0.32, -0.44, 0.26), P(-0.46, -0.14, 0.54), P(-0.44, 0.28, 0.44), P(-0.28, 0.54, 0.22)], [0.20, 0.22, 0.18, 0.06], [0.09, 0.10, 0.08, 0.03], roll=14)
-        R("SideburnL", [P(0.55, -0.18, 0.24), P(0.56, -0.22, 0.02), P(0.55, -0.20, -0.18)], [0.08, 0.07, 0.02], [0.03, 0.025, 0.01])
-        R("SideburnR", [P(-0.55, -0.18, 0.24), P(-0.56, -0.22, 0.02), P(-0.55, -0.20, -0.18)], [0.08, 0.07, 0.02], [0.03, 0.025, 0.01])
-        R("NapeTaper", [P(0.0, 0.44, 0.30), P(0.0, 0.60, 0.02), P(0.0, 0.56, -0.32)], [0.36, 0.28, 0.10], [0.08, 0.065, 0.02])
-
-    elif hair_style == "messy_curtain":
-        # Trendy K-pop / Roblox fluffy wolf-cut: rich layered comma bangs hugging forehead cleanly!
-        parts.append(_build_skull_liner(prefix, head_center, hs, mat_hair, collection, shell_off=0.020, z_front=0.22, z_back=-0.36))
-        R("CommaL1", [P(0.02, -0.36, 0.52), P(0.24, -0.58, 0.34), P(0.36, -0.56, 0.12)], [0.22, 0.19, 0.02], [0.09, 0.08, 0.015], roll=-14)
-        R("CommaR1", [P(-0.02, -0.36, 0.52), P(-0.24, -0.58, 0.34), P(-0.36, -0.56, 0.12)], [0.22, 0.19, 0.02], [0.09, 0.08, 0.015], roll=14)
-        R("CommaL2", [P(0.14, -0.28, 0.54), P(0.42, -0.50, 0.30), P(0.52, -0.48, 0.02), P(0.44, -0.44, -0.14)], [0.22, 0.20, 0.14, 0.02], [0.09, 0.08, 0.05, 0.01], roll=-18)
-        R("CommaR2", [P(-0.14, -0.28, 0.54), P(-0.42, -0.50, 0.30), P(-0.52, -0.48, 0.02), P(-0.44, -0.44, -0.14)], [0.22, 0.20, 0.14, 0.02], [0.09, 0.08, 0.05, 0.01], roll=18)
-        R("WispL3",  [P(0.28, -0.10, 0.54), P(0.56, -0.34, 0.26), P(0.62, -0.26, -0.10), P(0.56, -0.22, -0.32)], [0.18, 0.18, 0.12, 0.02], [0.08, 0.07, 0.05, 0.01], roll=-20)
-        R("WispR3",  [P(-0.28, -0.10, 0.54), P(-0.56, -0.34, 0.26), P(-0.62, -0.26, -0.10), P(-0.56, -0.22, -0.32)], [0.18, 0.18, 0.12, 0.02], [0.08, 0.07, 0.05, 0.01], roll=20)
-        R("FluffTopL", [P(0.08, -0.12, 0.54), P(0.34, 0.12, 0.70), P(0.52, 0.42, 0.44)], [0.28, 0.26, 0.06], [0.11, 0.10, 0.03], arch=0.50)
-        R("FluffTopR", [P(-0.08, -0.12, 0.54), P(-0.34, 0.12, 0.70), P(-0.52, 0.42, 0.44)], [0.28, 0.26, 0.06], [0.11, 0.10, 0.03], arch=0.50)
-        R("CrownSpk",  [P(0.0, 0.08, 0.54), P(-0.06, 0.26, 0.74), P(0.04, 0.58, 0.50)], [0.26, 0.22, 0.04], [0.10, 0.09, 0.02], arch=0.52)
-        R("WolfNapeC", [P(0.0, 0.40, 0.34), P(0.0, 0.66, -0.04), P(0.0, 0.74, -0.44)], [0.36, 0.30, 0.06], [0.12, 0.10, 0.025])
-        R("WolfNapeL", [P(0.36, 0.34, 0.28), P(0.62, 0.44, -0.10), P(0.72, 0.40, -0.42)], [0.20, 0.18, 0.03], [0.08, 0.07, 0.015])
-        R("WolfNapeR", [P(-0.36, 0.34, 0.28), P(-0.62, 0.44, -0.10), P(-0.72, 0.40, -0.42)], [0.20, 0.18, 0.03], [0.08, 0.07, 0.015])
-
-    elif hair_style == "bob_chin":
-        parts.append(_build_skull_liner(prefix, head_center, hs, mat_hair, collection, shell_off=0.020, z_front=0.22, z_back=-0.38))
-        R("SweepBang", [P(-0.32, -0.36, 0.50), P(0.04, -0.58, 0.36), P(0.44, -0.50, 0.20)], [0.22, 0.19, 0.03], [0.085, 0.075, 0.015], roll=-12)
-        R("SideBangL", [P(0.16, -0.32, 0.52), P(0.50, -0.46, 0.30), P(0.58, -0.34, -0.08)], [0.20, 0.17, 0.03], [0.08, 0.065, 0.015], roll=-15)
-        for sgn, sn in ((1, "L"), (-1, "R")):
-            R(f"BobCheek{sn}", [P(sgn * 0.28, -0.10, 0.50), P(sgn * 0.60, -0.20, 0.12), P(sgn * 0.58, -0.24, -0.36), P(sgn * 0.44, -0.20, -0.50)], [0.25, 0.26, 0.20, 0.04], [0.10, 0.10, 0.08, 0.02])
-            R(f"BobBack{sn}",  [P(sgn * 0.34, 0.24, 0.48), P(sgn * 0.60, 0.46, 0.06), P(sgn * 0.48, 0.52, -0.42)], [0.26, 0.26, 0.08], [0.10, 0.10, 0.03])
-        R("BobBackC", [P(0.0, 0.34, 0.50), P(0.0, 0.66, 0.08), P(0.0, 0.60, -0.46)], [0.38, 0.36, 0.14], [0.12, 0.11, 0.04])
-
-    elif hair_style == "long_ponytail":
-        parts.append(_build_skull_liner(prefix, head_center, hs, mat_hair, collection, shell_off=0.020, z_front=0.22, z_back=-0.34))
-        R("TopCrownL", [P(0.02, -0.32, 0.50), P(0.26, 0.0, 0.61), P(0.14, 0.50, 0.36)], [0.28, 0.30, 0.16], [0.10, 0.11, 0.06], arch=0.45)
-        R("TopCrownR", [P(-0.02, -0.32, 0.50), P(-0.26, 0.0, 0.61), P(-0.14, 0.50, 0.36)], [0.28, 0.30, 0.16], [0.10, 0.11, 0.06], arch=0.45)
-        R("BangC", [P(-0.06, -0.38, 0.50), P(0.02, -0.58, 0.34), P(0.14, -0.58, 0.20)], [0.22, 0.18, 0.02], [0.08, 0.065, 0.01], roll=-8)
-        R("BangL", [P(0.06, -0.34, 0.50), P(0.34, -0.54, 0.34), P(0.52, -0.44, 0.16)], [0.22, 0.18, 0.02], [0.08, 0.065, 0.01], roll=-14)
-        R("BangR", [P(-0.08, -0.34, 0.50), P(-0.36, -0.54, 0.34), P(-0.52, -0.44, 0.16)], [0.22, 0.18, 0.02], [0.08, 0.065, 0.01], roll=14)
-        R("TendrilL", [P(0.48, -0.30, 0.26), P(0.56, -0.38, -0.10), P(0.50, -0.32, -0.50)], [0.11, 0.09, 0.015], [0.05, 0.04, 0.01])
-        R("TendrilR", [P(-0.48, -0.30, 0.26), P(-0.56, -0.38, -0.10), P(-0.50, -0.32, -0.50)], [0.11, 0.09, 0.015], [0.05, 0.04, 0.01])
-        parts.append(_add_curl_puff(f"{prefix}_PonyTie", (cx * STUD, (cy + 0.58 * hs) * STUD, (cz + 0.30 * hs) * STUD), 0.18 * hs * STUD, (1.1, 0.9, 1.1), mat_hair, collection, segs=12, rings=8))
-        R("PonyCore", [P(0.0, 0.58, 0.30), P(0.0, 1.02, 0.12), P(0.0, 1.08, -0.68), P(0.0, 0.90, -1.48)], [0.24, 0.30, 0.22, 0.03], [0.12, 0.14, 0.10, 0.02], arch=0.45, steps=18)
-        R("PonyWingL", [P(0.04, 0.60, 0.28), P(0.28, 0.98, 0.04), P(0.34, 1.00, -0.64), P(0.22, 0.86, -1.26)], [0.16, 0.20, 0.14, 0.02], [0.08, 0.09, 0.06, 0.015], steps=16)
-        R("PonyWingR", [P(-0.04, 0.60, 0.28), P(-0.28, 0.98, 0.04), P(-0.34, 1.00, -0.64), P(-0.22, 0.86, -1.26)], [0.16, 0.20, 0.14, 0.02], [0.08, 0.09, 0.06, 0.015], steps=16)
-
-    elif hair_style == "curly_fro":
-        # Lush Gen-Z broccoli curly crown + fluffy forehead fringe curls + tight skull base
-        parts.append(_build_skull_liner(prefix, head_center, hs, mat_hair, collection, shell_off=0.020, z_front=0.30, z_back=-0.28))
-        curl_spec = [
-            (0.0, -0.02, 0.60, 0.34, (1.20, 1.15, 0.92)),
-            (-0.30, -0.14, 0.56, 0.28, (1.12, 1.05, 0.95)), (0.30, -0.14, 0.56, 0.28, (1.12, 1.05, 0.95)),
-            (-0.48, 0.16, 0.44, 0.27, (1.05, 1.08, 0.95)), (0.48, 0.16, 0.44, 0.27, (1.05, 1.08, 0.95)),
-            (-0.24, 0.34, 0.48, 0.29, (1.08, 1.12, 0.92)), (0.24, 0.34, 0.48, 0.29, (1.08, 1.12, 0.92)),
-            (0.0, 0.48, 0.36, 0.30, (1.20, 0.98, 0.95)),
-            (-0.50, 0.38, 0.22, 0.24, (1.0, 1.05, 1.0)),  (0.50, 0.38, 0.22, 0.24, (1.0, 1.05, 1.0)),
-            (0.0, 0.58, 0.12, 0.26, (1.25, 0.90, 1.0)),
-            # Front lush overlapping curly fringe bobbing cleanly down onto upper forehead (z=0.32..0.38)!
-            (-0.42, -0.44, 0.36, 0.22, (1.05, 1.02, 0.96)), (-0.16, -0.52, 0.38, 0.24, (1.08, 1.02, 0.95)),
-            (0.16, -0.52, 0.39, 0.23, (1.08, 1.02, 0.95)),  (0.42, -0.44, 0.36, 0.22, (1.05, 1.02, 0.96)),
-            (-0.56, -0.22, 0.32, 0.21, (1.0, 1.08, 1.0)),   (0.56, -0.22, 0.32, 0.21, (1.0, 1.08, 1.0)),
-        ]
-        for idx, (ox, oy, oz, rad, sq) in enumerate(curl_spec):
-            parts.append(_add_curl_puff(f"{prefix}_HairCurl_{idx}", (P(ox, oy, oz)[0] * STUD, P(ox, oy, oz)[1] * STUD, P(ox, oy, oz)[2] * STUD), rad * hs * STUD, sq, mat_hair, collection))
-
-    elif hair_style == "cap_hair":
-        mat_cap = make_solid_mat(prefix + "_CapMat", hex_to_linear_rgba(cap_accent_hex), 0.58)
-        parts.append(_build_skull_liner(prefix + "_Cap", head_center, hs, mat_cap, collection, shell_off=0.062, z_front=0.28, z_back=-0.16))
-        parts.append(_add_curl_puff(f"{prefix}_CapBtn", (cx * STUD, (cy + 0.02 * hs) * STUD, (cz + 0.67 * hs) * STUD), 0.08 * hs * STUD, (1.1, 1.1, 0.50), mat_cap, collection, segs=12, rings=6))
-        parts.append(_build_curved_visor(prefix, head_center, hs, mat_cap, collection))
-        # Tufts tucked strictly BELOW visor & temple rim so zero hair pokes through visor top!
-        R("CapTuftL", [P(0.40, -0.28, 0.24), P(0.62, -0.40, 0.14), P(0.66, -0.36, -0.06)], [0.14, 0.12, 0.02], [0.055, 0.045, 0.01], roll=-18)
-        R("CapTuftR", [P(-0.40, -0.28, 0.24), P(-0.62, -0.40, 0.14), P(-0.66, -0.36, -0.06)], [0.14, 0.12, 0.02], [0.055, 0.045, 0.01], roll=18)
-        R("CapBack",  [P(0.0, 0.48, 0.04), P(0.0, 0.66, -0.16), P(0.0, 0.60, -0.40)], [0.34, 0.26, 0.05], [0.09, 0.07, 0.02])
-
-    elif hair_style == "twin_buns":
-        parts.append(_build_skull_liner(prefix, head_center, hs, mat_hair, collection, shell_off=0.020, z_front=0.22, z_back=-0.34))
-        for sgn, sn in ((1, "L"), (-1, "R")):
-            bpos = P(sgn * 0.50, 0.08, 0.58)
-            parts.append(_add_curl_puff(f"{prefix}_Bun_{sn}", (bpos[0] * STUD, bpos[1] * STUD, bpos[2] * STUD), 0.25 * hs * STUD, (0.95, 1.02, 1.05), mat_hair, collection, segs=16, rings=10))
-            R(f"BunBang{sn}", [P(sgn * 0.02, -0.34, 0.50), P(sgn * 0.32, -0.54, 0.34), P(sgn * 0.52, -0.44, 0.14)], [0.19, 0.16, 0.02], [0.075, 0.065, 0.01])
-            R(f"BunLock{sn}", [P(sgn * 0.48, -0.30, 0.26), P(sgn * 0.56, -0.38, -0.08), P(sgn * 0.50, -0.30, -0.48)], [0.11, 0.09, 0.015], [0.05, 0.04, 0.01])
-
-    elif hair_style == "mohawk_fade":
-        for idx, (oy, oz, tilt_y, h_top, w_b) in enumerate([
-            (-0.46, 0.48, -0.70, 0.88, 0.20),
-            (-0.22, 0.56, -0.40, 1.06, 0.24),
-            (0.04,  0.58, -0.10, 1.08, 0.24),
-            (0.28,  0.52,  0.22, 0.98, 0.22),
-            (0.48,  0.34,  0.56, 0.74, 0.19),
-            (0.56,  0.08,  0.76, 0.36, 0.17),
-        ]):
-            R(f"Hawk_{idx}", [P(0.0, oy, oz), P(0.0, oy + (tilt_y - oy) * 0.55, (oz + h_top) * 0.55), P(0.0, tilt_y, h_top)], [w_b, w_b * 0.80, 0.02], [0.10, 0.08, 0.015], arch=0.58, steps=12)
-
-    elif hair_style == "curtain_part":
-        # Clean middle-parted curtain hair hugging upper crown (pairs cleanly with earmuffs or beanies)
-        parts.append(_build_skull_liner(prefix, head_center, hs, mat_hair, collection, shell_off=0.042, z_front=0.25, z_back=-0.34))
-        for sgn, sn in ((1, "L"), (-1, "R")):
-            R(f"CurtainFront{sn}", [P(sgn * 0.04, -0.32, 0.56), P(sgn * 0.34, -0.54, 0.38), P(sgn * 0.56, -0.42, 0.14)], [0.28, 0.26, 0.10], [0.10, 0.09, 0.04], arch=0.32, roll=-sgn * 12)
-            R(f"CurtainCrown{sn}", [P(sgn * 0.05, -0.10, 0.62), P(sgn * 0.40, -0.05, 0.52), P(sgn * 0.60, 0.05, 0.12)], [0.30, 0.28, 0.14], [0.11, 0.10, 0.05], arch=0.35)
-            R(f"CurtainBack{sn}",  [P(sgn * 0.24, 0.28, 0.52), P(sgn * 0.52, 0.44, 0.18), P(sgn * 0.48, 0.48, -0.28)], [0.26, 0.24, 0.10], [0.09, 0.08, 0.04])
-
-    elif hair_style == "elder_tufts":
-        # Bald-top grandpa fringe: fluffy white side-temple tufts + low back crescent (leaves forehead bare for wrinkles)
-        tufts = [
-            (-0.60, -0.06, 0.24, 0.19, (0.68, 1.15, 1.10)),
-            (-0.62,  0.14, 0.12, 0.20, (0.65, 1.15, 1.05)),
-            (-0.56,  0.34, 0.04, 0.19, (0.75, 1.05, 0.95)),
-            ( 0.60, -0.06, 0.24, 0.19, (0.68, 1.15, 1.10)),
-            ( 0.62,  0.14, 0.12, 0.20, (0.65, 1.15, 1.05)),
-            ( 0.56,  0.34, 0.04, 0.19, (0.75, 1.05, 0.95)),
-            (-0.28,  0.54, 0.02, 0.21, (1.15, 0.72, 0.95)),
-            ( 0.00,  0.58, 0.00, 0.22, (1.28, 0.72, 0.95)),
-            ( 0.28,  0.54, 0.02, 0.21, (1.15, 0.72, 0.95)),
-        ]
-        for idx, (ox, oy, oz, rad, sq) in enumerate(tufts):
-            p = P(ox, oy, oz)
-            parts.append(_add_curl_puff(f"{prefix}_ElderTuft_{idx}", (p[0] * STUD, p[1] * STUD, p[2] * STUD), rad * hs * STUD, sq, mat_hair, collection, segs=12, rings=8))
-
-    elif hair_style == "grandma_bun":
-        # Swept-back silver/white hair with soft center part and neat rounded back bun
-        parts.append(_build_skull_liner(prefix, head_center, hs, mat_hair, collection, shell_off=0.044, z_front=0.26, z_back=-0.30))
-        for sgn, sn in ((1, "L"), (-1, "R")):
-            R(f"GmaSweep{sn}", [P(sgn * 0.04, -0.34, 0.56), P(sgn * 0.42, -0.44, 0.34), P(sgn * 0.58, -0.08, 0.06), P(sgn * 0.36, 0.48, -0.06)], [0.28, 0.26, 0.22, 0.16], [0.10, 0.09, 0.08, 0.06], arch=0.30)
-        bpos = P(0.0, 0.66, 0.06)
-        parts.append(_add_curl_puff(f"{prefix}_GrandmaBun", (bpos[0] * STUD, bpos[1] * STUD, bpos[2] * STUD), 0.30 * hs * STUD, (1.08, 0.88, 1.02), mat_hair, collection, segs=16, rings=10))
-
-    return parts
-
-
 def build_roblox_character(
     name: str,
     shirt_path: str,
     pants_path: str,
     face_png: str,
     skin_hex: str = "#F2C296",
-    hair_hex: str = "#2B1B14",
+    hair_hex: str = None,
     location_m=(0.0, 0.0, 0.0),
     yaw_deg: float = 0.0,
     scale_h: float = None,
     rig_type: str = "R15",
-    hair_style: str = "spiky",
+    hair_style: str = "boy",
     body_profile: str = "default",
     accessories: list = None,
-    cap_accent_hex: str = "#D93829",
     shirt_fabric: str = "default",
     pants_fabric: str = "default",
 ):
     """
-    Build a unique, articulated R15 (or R6) Roblox character with customizable body_profile,
-    micro-PBR fabric presets ('default','puffer','wool','coat','denim'), Anti-Glare 2D face decal,
-    13 stylized 3D hairstyles, and optional 3D accessories.
+    Build the locked-standard Roblox character (ROBLOX_DIRECTOR.md §4.0): articulated R15 rig, archetype
+    body_profile, micro-PBR fabric presets ('default','puffer','wool','coat','denim'), anti-glare 2D face decal,
+    sculpted stylized hair (`hair_style` = "boy" | "boy_part" | "boy_fluffy" | "girl" | "girl_bob" | "girl_ponytail" | "old_man" | "old_woman" | "bald", built by
+    blender_hair_locks.py; `hair_hex` None = the style's default colour) and optional 3D accessories.
     """
+    if rig_type.upper() != "R15":
+        raise ValueError("only R15 is supported (ROBLOX_DIRECTOR.md §4.0)")
+    import blender_hair_locks as _hair
+    if hair_style != "bald" and hair_style not in _hair.STYLES:
+        raise ValueError(f"hair_style must be 'bald' or one of {_hair.STYLES}")
+    if hair_hex is None:
+        hair_hex = _hair.DEFAULT_HEX.get(hair_style, "#2B1B14")
     prof = dict(BODY_PROFILES.get(body_profile, BODY_PROFILES["default"]))
     if scale_h is not None:
         prof["hs"] = scale_h
@@ -1160,26 +876,15 @@ def build_roblox_character(
     arm_x = 0.5 * tw + 0.5 * lw + 0.02
     leg_x = 0.255 * tw
     head_center = (0.0, 0.0, neck_z + 0.52 * hs)
-    hair_parts = _build_hair(name, head_center, hs, mat_hair, col, hair_style=hair_style, cap_accent_hex=cap_accent_hex)
 
-    if rig_type.upper() == "R15":
-        parts_map = [
+    parts_map = [   # R15 only
             (_create_uv_box(f"{name}_UpperTorso", (tw, td, th), (0.0, 0.0, hip_z + 0.5 * th), TORSO_UV, mat_shirt, col, v_range=(0.0, 1.0), bevel_m=0.015), "UpperTorso"),
             (_create_segmented_limb_box(f"{name}_ArmR", (lw, lw, ah), (-arm_x, 0.0, neck_z - 0.5 * ah), RLIMB_UV, mat_shirt, col, bevel_m=0.014), ("RightUpperArm", "RightLowerArm")),
             (_create_segmented_limb_box(f"{name}_ArmL", (lw, lw, ah), (arm_x, 0.0, neck_z - 0.5 * ah), LLIMB_UV, mat_shirt, col, bevel_m=0.014), ("LeftUpperArm", "LeftLowerArm")),
             (_create_segmented_limb_box(f"{name}_LegR", (lw, lw, lh), (-leg_x, 0.0, 0.5 * lh), RLIMB_UV, mat_pants, col, bevel_m=0.014), ("RightUpperLeg", "RightLowerLeg")),
             (_create_segmented_limb_box(f"{name}_LegL", (lw, lw, lh), (leg_x, 0.0, 0.5 * lh), LLIMB_UV, mat_pants, col, bevel_m=0.014), ("LeftUpperLeg", "LeftLowerLeg")),
             (_create_roblox_head(f"{name}_Head", head_center, hs, mat_head, col), "Head"),
-        ] + [(hp, "Head") for hp in hair_parts]
-    else:
-        parts_map = [
-            (_create_uv_box(f"{name}_Torso", (tw, td, th), (0, 0, hip_z + 0.5 * th), TORSO_UV, mat_shirt, col), "Torso"),
-            (_create_uv_box(f"{name}_ArmR", (lw, lw, ah), (-arm_x, 0, neck_z - 0.5 * ah), RLIMB_UV, mat_shirt, col), "Arm.R"),
-            (_create_uv_box(f"{name}_ArmL", (lw, lw, ah), (arm_x, 0, neck_z - 0.5 * ah), LLIMB_UV, mat_shirt, col), "Arm.L"),
-            (_create_uv_box(f"{name}_LegR", (lw, lw, lh), (-leg_x, 0, 0.5 * lh), RLIMB_UV, mat_pants, col), "Leg.R"),
-            (_create_uv_box(f"{name}_LegL", (lw, lw, lh), (leg_x, 0, 0.5 * lh), LLIMB_UV, mat_pants, col), "Leg.L"),
-            (_create_roblox_head(f"{name}_Head", head_center, hs, mat_head, col), "Head"),
-        ] + [(hp, "Head") for hp in hair_parts]
+        ]
 
     arm_data = bpy.data.armatures.new(f"RIG_{name}_Data")
     arm_obj = bpy.data.objects.new(f"RIG_{name}", arm_data)
@@ -1193,28 +898,19 @@ def build_roblox_character(
             if p: b.parent = p; b.use_connect = c
             return b
         br = ab("Root", (0, 0, 0), (0, 0, 1))
-        if rig_type.upper() == "R15":
-            split_z = hip_z + 0.325 * th
-            sh_z = neck_z - 0.16 * ah; el_z = neck_z - 0.50 * ah; hd_z = neck_z - ah; kn_z = 0.50 * lh
-            lt = ab("LowerTorso", (0, 0, hip_z), (0, 0, split_z), br)
-            ut = ab("UpperTorso", (0, 0, split_z), (0, 0, neck_z), lt, True)
-            ab("Head", (0, 0, neck_z), (0, 0, neck_z + hs), ut, True)
-            lua = ab("LeftUpperArm", (arm_x, 0, sh_z), (arm_x, 0, el_z), ut)
-            ab("LeftLowerArm", (arm_x, 0, el_z), (arm_x, 0, hd_z), lua, True)
-            rua = ab("RightUpperArm", (-arm_x, 0, sh_z), (-arm_x, 0, el_z), ut)
-            ab("RightLowerArm", (-arm_x, 0, el_z), (-arm_x, 0, hd_z), rua, True)
-            lul = ab("LeftUpperLeg", (leg_x, 0, hip_z), (leg_x, 0, kn_z), lt)
-            ab("LeftLowerLeg", (leg_x, 0, kn_z), (leg_x, 0, 0.0), lul, True)
-            rul = ab("RightUpperLeg", (-leg_x, 0, hip_z), (-leg_x, 0, kn_z), lt)
-            ab("RightLowerLeg", (-leg_x, 0, kn_z), (-leg_x, 0, 0.0), rul, True)
-        else:
-            sh_z = neck_z - 0.175 * ah
-            bt = ab("Torso", (0, 0, hip_z), (0, 0, neck_z), br)
-            ab("Head", (0, 0, neck_z), (0, 0, neck_z + hs), bt, True)
-            ab("Arm.L", (arm_x, 0, sh_z), (arm_x, 0, neck_z - ah), bt)
-            ab("Arm.R", (-arm_x, 0, sh_z), (-arm_x, 0, neck_z - ah), bt)
-            ab("Leg.L", (leg_x, 0, hip_z), (leg_x, 0, 0), bt)
-            ab("Leg.R", (-leg_x, 0, hip_z), (-leg_x, 0, 0), bt)
+        split_z = hip_z + 0.325 * th
+        sh_z = neck_z - 0.16 * ah; el_z = neck_z - 0.50 * ah; hd_z = neck_z - ah; kn_z = 0.50 * lh
+        lt = ab("LowerTorso", (0, 0, hip_z), (0, 0, split_z), br)
+        ut = ab("UpperTorso", (0, 0, split_z), (0, 0, neck_z), lt, True)
+        ab("Head", (0, 0, neck_z), (0, 0, neck_z + hs), ut, True)
+        lua = ab("LeftUpperArm", (arm_x, 0, sh_z), (arm_x, 0, el_z), ut)
+        ab("LeftLowerArm", (arm_x, 0, el_z), (arm_x, 0, hd_z), lua, True)
+        rua = ab("RightUpperArm", (-arm_x, 0, sh_z), (-arm_x, 0, el_z), ut)
+        ab("RightLowerArm", (-arm_x, 0, el_z), (-arm_x, 0, hd_z), rua, True)
+        lul = ab("LeftUpperLeg", (leg_x, 0, hip_z), (leg_x, 0, kn_z), lt)
+        ab("LeftLowerLeg", (leg_x, 0, kn_z), (leg_x, 0, 0.0), lul, True)
+        rul = ab("RightUpperLeg", (-leg_x, 0, hip_z), (-leg_x, 0, kn_z), lt)
+        ab("RightLowerLeg", (-leg_x, 0, kn_z), (-leg_x, 0, 0.0), rul, True)
         bpy.ops.object.mode_set(mode="OBJECT")
 
     for obj, bspec in parts_map:
@@ -1254,6 +950,8 @@ def build_roblox_character(
             "stride_m": 0.58 * (lh / 2.0),
         },
     }
+    if hair_style != "bald":
+        info["hair_obj"] = _hair.build_lock_hair(info, style=hair_style, hair_hex=hair_hex)
     for acc in (accessories or []):
         if isinstance(acc, str):
             add_accessory(info, acc)
@@ -1551,33 +1249,303 @@ def ensure_character_face_pack(
     brow_hex: str = "#18141C",
     lip_hex: str = None,
     mark: str = "none",
-    face_style: str = None,
+    face_style: str = "cinema_expressive",
     age: str = None,
 ) -> str:
     """
-    Generate/return a 20-face Storybook-Toon (canonical Law R-LOOK default), Cartoon, or Rubberhose
-    face pack via make_faces_expressive.py. Automatically attaches elder wrinkles/mustache/dimples when
-    age='elder_man'/'elder_woman' or archetype indicates an elder character.
+    Generate/return a 20-face Roblox pack via make_faces_expressive.py:
+      - 'cinema_expressive' (default for GibbsonTV / Semi-Real Roblox CGI Cinema)
+      - 'storybook_toon' (optional for kids/Shorts reels)
     """
+    style = face_style or "cinema_expressive"
+    if style not in ("cinema_expressive", "storybook_toon"):
+        raise ValueError("supported face_style: 'cinema_expressive' (default Cinema CGI) or 'storybook_toon' (Shorts)")
     if age is None:
         age = archetype if archetype in ("elder_man", "elder_woman") else "youth"
-    if face_style is None:
-        if archetype in ("meme_sigma", "derp_goofy", "chill_smug", "slapstick_toon", "grumpy_boomer"):
-            face_style = "rubberhose"
-        else:
-            face_style = "storybook_toon"
-    if not os.path.exists(os.path.join(out_dir, "silly_tongue.png")):
+    shipped = CORE_FACES_CINEMA_DIR if style == "cinema_expressive" else CORE_FACES_STORYBOOK_DIR
+    if not os.path.exists(os.path.join(out_dir, "neutral.png")):
         try:
             import make_faces_expressive as mfe
-            mfe.generate_pack(out_dir, style=face_style, age=age)
-        except ImportError:
-            fallback = (
-                CORE_FACES_RUBBERHOSE_DIR if face_style == "rubberhose"
-                else (CORE_FACES_CARTOON_DIR if face_style == "cartoon" else CORE_FACES_STORYBOOK_DIR)
-            )
-            if os.path.isdir(fallback):
-                return fallback
+            mfe.generate_pack(out_dir, style=style, age=age)
+        except ImportError:  # Blender's Python has no PIL: fall back to the shipped pack
+            if os.path.isdir(shipped):
+                return shipped
     return out_dir
+
+
+def _make_outerwear_pbr_mat(name: str, color_hex: str, roughness: float = 0.62, sheen: float = 0.45, wetness: float = 0.0):
+    """Semi-real Cycles PBR garment shader: micro-weave bump + AO crevice + optional rain wetness clearcoat."""
+    mat = bpy.data.materials.new(name)
+    nt = mat.node_tree
+    nt.nodes.clear()
+    out = nt.nodes.new("ShaderNodeOutputMaterial")
+    bsdf = nt.nodes.new("ShaderNodeBsdfPrincipled")
+    base = hex_to_linear_rgba(color_hex)
+
+    # Subtle fabric/leather micro-grain + Cycles AO darkening
+    tc = nt.nodes.new("ShaderNodeTexCoord")
+    noise = nt.nodes.new("ShaderNodeTexNoise")
+    noise.inputs["Scale"].default_value = 95.0
+    noise.inputs["Detail"].default_value = 8.0
+    noise.inputs["Roughness"].default_value = 0.65
+    nt.links.new(tc.outputs["Object"], noise.inputs["Vector"])
+
+    ao = nt.nodes.new("ShaderNodeAmbientOcclusion")
+    ao.samples = 8
+    ao.inputs["Distance"].default_value = 0.14
+    ao.inputs["Color"].default_value = base
+
+    mix_ao = nt.nodes.new("ShaderNodeMix")
+    mix_ao.data_type = "RGBA"
+    mix_ao.blend_type = "MULTIPLY"
+    mix_ao.inputs["Factor"].default_value = 0.35
+    rgba_in = [s for s in mix_ao.inputs if s.type == "RGBA"]
+    rgba_in[0].default_value = base
+    nt.links.new(ao.outputs["AO"], rgba_in[1])
+    nt.links.new(next(s for s in mix_ao.outputs if s.type == "RGBA"), bsdf.inputs["Base Color"])
+
+    # Roughness modulated by rain wetness
+    eff_rough = max(0.14, roughness * (1.0 - 0.58 * wetness))
+    r_map = nt.nodes.new("ShaderNodeMapRange")
+    r_map.inputs["From Min"].default_value = 0.25
+    r_map.inputs["From Max"].default_value = 0.75
+    r_map.inputs["To Min"].default_value = max(0.08, eff_rough - 0.12)
+    r_map.inputs["To Max"].default_value = min(0.95, eff_rough + 0.10)
+    nt.links.new(noise.outputs["Fac"], r_map.inputs["Value"])
+    nt.links.new(r_map.outputs["Result"], bsdf.inputs["Roughness"])
+
+    if "Sheen Weight" in bsdf.inputs:
+        bsdf.inputs["Sheen Weight"].default_value = sheen * (1.0 - 0.4 * wetness)
+    if "Coat Weight" in bsdf.inputs:
+        bsdf.inputs["Coat Weight"].default_value = min(0.85, 0.08 + 0.72 * wetness)
+        bsdf.inputs["Coat Roughness"].default_value = max(0.06, 0.24 - 0.16 * wetness)
+
+    bump = nt.nodes.new("ShaderNodeBump")
+    bump.inputs["Strength"].default_value = 0.14
+    bump.inputs["Distance"].default_value = 0.004
+    nt.links.new(noise.outputs["Fac"], bump.inputs["Height"])
+    nt.links.new(bump.outputs["Normal"], bsdf.inputs["Normal"])
+    nt.links.new(bsdf.outputs["BSDF"], out.inputs["Surface"])
+    return mat
+
+
+def _bind_wearable_parts(char_info: dict, items: list):
+    """Parent and armature-weight a list of (obj, bone_name) wearables cleanly to the R15 rig."""
+    arm = char_info["armature"]
+    col = char_info["collection"]
+    bpy.context.view_layer.update()
+    out = []
+    for ob, bn in items:
+        for c in list(ob.users_collection):
+            c.objects.unlink(ob)
+        col.objects.link(ob)
+        bpy.context.view_layer.update()
+        ob.matrix_world = arm.matrix_world @ ob.matrix_world
+        wm = ob.matrix_world.copy()
+        ob.parent = arm
+        ob.matrix_parent_inverse = arm.matrix_world.inverted()
+        ob.matrix_world = wm
+        vg = ob.vertex_groups.get(bn) or ob.vertex_groups.new(name=bn)
+        vg.add(list(range(len(ob.data.vertices))), 1.0, "REPLACE")
+        mod = ob.modifiers.new("Armature", "ARMATURE")
+        mod.object = arm
+        out.append(ob)
+    return out
+
+
+def add_jacket_3d(
+    char_info: dict,
+    style: str = "open_jacket",
+    color_hex: str = "#1C232E",
+    lining_hex: str = "#2C3542",
+    hardware_hex: str = "#B0A899",
+    wetness: float = 0.0,
+):
+    """
+    Attach real 3D layered Semi-Real CGI outerwear to an R15 character (GibbsonTV standard):
+      - 'open_jacket': thick beveled open front panels, sculpted angled lapels, upturned collar, metallic zip strips
+      - 'trench': extended noir trench coat with upturned dramatic collar + lower coattail panels on LowerTorso
+      - 'hoodie': layered zip/pullover jacket + sculpted 3D draped hood behind neck + front drawstrings
+    """
+    arm = char_info["armature"]
+    m = char_info["metrics"]
+    tw, td, th, lh, neck_z = m["tw"], m["td"], m["th"], m["lh"], m["neck_z"]
+    hip_z = lh
+    mid_z = hip_z + 0.50 * th
+    ub = "UpperTorso" if char_info.get("rig_type") == "R15" else "Torso"
+    lb = "LowerTorso" if char_info.get("rig_type") == "R15" else "Torso"
+
+    mat_out = _make_outerwear_pbr_mat(f"{arm.name}_JktOut", color_hex, roughness=0.58, sheen=0.42, wetness=wetness)
+    mat_lin = _make_outerwear_pbr_mat(f"{arm.name}_JktLin", lining_hex, roughness=0.72, sheen=0.55, wetness=wetness * 0.4)
+    mat_hw = make_solid_mat(f"{arm.name}_JktHW", hex_to_linear_rgba(hardware_hex), roughness=0.26)
+    bsdf_hw = next((n for n in mat_hw.node_tree.nodes if n.type == "BSDF_PRINCIPLED"), None)
+    if bsdf_hw and "Metallic" in bsdf_hw.inputs:
+        bsdf_hw.inputs["Metallic"].default_value = 0.85
+
+    created = []
+
+    def _slab(name, loc_s, sz_s, mat, rot_d=(0.0, 0.0, 0.0), bone=ub, bevel=0.008):
+        bm = bmesh.new()
+        bmesh.ops.create_cube(bm, size=1.0)
+        for v in bm.verts:
+            v.co.x *= sz_s[0] * STUD
+            v.co.y *= sz_s[1] * STUD
+            v.co.z *= sz_s[2] * STUD
+        me = bpy.data.meshes.new(f"{arm.name}_{name}_M")
+        bm.to_mesh(me)
+        bm.free()
+        ob = bpy.data.objects.new(f"{arm.name}_{name}", me)
+        ob.location = (loc_s[0] * STUD, loc_s[1] * STUD, loc_s[2] * STUD)
+        ob.rotation_euler = Euler([math.radians(a) for a in rot_d])
+        ob.data.materials.append(mat)
+        bev = ob.modifiers.new("Bevel", "BEVEL")
+        bev.width = bevel
+        bev.segments = 2
+        for p in ob.data.polygons:
+            p.use_smooth = True
+        created.append((ob, bone))
+        return ob
+
+    # Back panel & side wrap panels (slight outward clearance over torso, zero clipping with arms)
+    j_h = th * 1.04
+    _slab("JktBack", (0.0, td * 0.50 + 0.055, mid_z), (tw + 0.14, 0.10, j_h), mat_out)
+    for sx, tag in ((-1.0, "R"), (1.0, "L")):
+        _slab(f"JktSide_{tag}", (sx * (tw * 0.50 + 0.045), 0.02, mid_z), (0.09, td + 0.10, j_h), mat_out)
+        # Front open jacket panel (leaves a real 3D vertical gap showing the inner shirt!)
+        front_w = tw * 0.36
+        front_x = sx * (tw * 0.50 - front_w * 0.44 + 0.03)
+        _slab(f"JktFront_{tag}", (front_x, -td * 0.50 - 0.055, mid_z), (front_w, 0.095, j_h), mat_out)
+        # Sculpted angled lapel fold catching rim & chiaroscuro key light
+        lap_x = sx * (tw * 0.21)
+        _slab(f"JktLapel_{tag}", (lap_x, -td * 0.50 - 0.088, neck_z - 0.42), (0.24, 0.065, 0.72), mat_lin, rot_d=(-6.0, sx * 14.0, sx * -16.0), bevel=0.006)
+        # Metallic zipper track along inner front edge
+        zip_x = sx * (tw * 0.145)
+        _slab(f"JktZip_{tag}", (zip_x, -td * 0.50 - 0.095, mid_z - 0.06), (0.032, 0.024, j_h * 0.86), mat_hw, bevel=0.002)
+        # Sculpted shoulder epaulette/cap seam
+        _slab(f"JktShoulder_{tag}", (sx * (tw * 0.35), 0.0, neck_z + 0.03), (tw * 0.36, td + 0.14, 0.08), mat_out, bevel=0.007)
+
+    # Dramatic upturned collar wrapping neck back & sides
+    col_h = 0.34 if style == "trench" else 0.26
+    _slab("JktCollarBack", (0.0, td * 0.38 + 0.04, neck_z + col_h * 0.42), (tw * 0.74, 0.11, col_h), mat_out, rot_d=(12.0, 0.0, 0.0), bevel=0.007)
+    for sx, tag in ((-1.0, "R"), (1.0, "L")):
+        _slab(f"JktCollarSide_{tag}", (sx * (tw * 0.36), 0.04, neck_z + col_h * 0.38), (0.10, td * 0.74, col_h * 0.92), mat_out, rot_d=(0.0, sx * -12.0, 0.0), bevel=0.007)
+
+    # Full 3D Long Jacket Sleeves wrapping upper & lower arm bones (leaves wrists/hands exposed!)
+    if char_info.get("rig_type") == "R15":
+        lw_s = max(0.75, (m["shoulder_w"] / STUD - tw) * 0.5)
+        arm_x = 0.5 * tw + 0.5 * lw_s + 0.04
+        ah_s = th * 1.00
+        for sx, side_name in ((1.0, "Left"), (-1.0, "Right")):
+            _slab(f"JktSleeveUp_{side_name}", (sx * arm_x, 0.0, neck_z - 0.26 * ah_s), (lw_s + 0.10, td + 0.10, 0.50 * ah_s), mat_out, bone=f"{side_name}UpperArm", bevel=0.010)
+            _slab(f"JktSleeveLo_{side_name}", (sx * arm_x, 0.0, neck_z - 0.68 * ah_s), (lw_s + 0.08, td + 0.08, 0.36 * ah_s), mat_out, bone=f"{side_name}LowerArm", bevel=0.009)
+            _slab(f"JktCuff_{side_name}", (sx * arm_x, 0.0, neck_z - 0.85 * ah_s), (lw_s + 0.11, td + 0.11, 0.09), mat_lin, bone=f"{side_name}LowerArm", bevel=0.005)
+
+    # Trench coat lower coattails (weighted to LowerTorso so walking legs stay readable)
+    if style == "trench":
+        tail_h = lh * 0.52
+        tail_z = hip_z - tail_h * 0.44
+        _slab("TrenchBack", (0.0, td * 0.50 + 0.075, tail_z), (tw + 0.22, 0.10, tail_h), mat_out, rot_d=(6.0, 0.0, 0.0), bone=lb)
+        for sx, tag in ((-1.0, "R"), (1.0, "L")):
+            _slab(f"TrenchFlap_{tag}", (sx * (tw * 0.36), -td * 0.50 - 0.075, tail_z), (tw * 0.38, 0.09, tail_h * 0.95), mat_out, rot_d=(-5.0, 0.0, 0.0), bone=lb)
+            _slab(f"TrenchSide_{tag}", (sx * (tw * 0.50 + 0.065), 0.02, tail_z), (0.09, td + 0.14, tail_h * 0.96), mat_out, rot_d=(0.0, sx * -5.0, 0.0), bone=lb)
+
+    # Draped 3D hoodie hood behind neck + drawstrings
+    if style == "hoodie":
+        bpy.ops.mesh.primitive_torus_add(
+            major_radius=0.56 * STUD, minor_radius=0.17 * STUD,
+            major_segments=24, minor_segments=12,
+            location=(0.0, 0.22 * STUD, (neck_z + 0.06) * STUD),
+            rotation=(math.radians(24.0), 0.0, 0.0),
+        )
+        hood = bpy.context.active_object
+        hood.name = f"{arm.name}_HoodDrape"
+        hood.scale = (1.18, 1.05, 0.85)
+        bpy.ops.object.transform_apply(scale=True)
+        hood.data.materials.append(mat_out)
+        for p in hood.data.polygons:
+            p.use_smooth = True
+        created.append((hood, ub))
+        for sx, tag in ((-1.0, "R"), (1.0, "L")):
+            _slab(f"HoodString_{tag}", (sx * 0.17, -td * 0.50 - 0.105, neck_z - 0.36), (0.032, 0.028, 0.58), mat_hw, rot_d=(-4.0, sx * 4.0, 0.0), bevel=0.002)
+
+    return _bind_wearable_parts(char_info, created)
+
+
+def add_belt_3d(char_info: dict, leather_hex: str = "#1A130E", buckle_hex: str = "#A89F8D", pouch: bool = True):
+    """Attach a 3D weathered leather belt + metallic buckle + optional side utility pouch to LowerTorso."""
+    arm = char_info["armature"]
+    m = char_info["metrics"]
+    tw, td, lh = m["tw"], m["td"], m["lh"]
+    lb = "LowerTorso" if char_info.get("rig_type") == "R15" else "Torso"
+    mat_l = _make_outerwear_pbr_mat(f"{arm.name}_BeltLeather", leather_hex, roughness=0.44, sheen=0.12)
+    mat_b = make_solid_mat(f"{arm.name}_BeltBuckle", hex_to_linear_rgba(buckle_hex), roughness=0.22)
+    bsdf_b = next((n for n in mat_b.node_tree.nodes if n.type == "BSDF_PRINCIPLED"), None)
+    if bsdf_b and "Metallic" in bsdf_b.inputs:
+        bsdf_b.inputs["Metallic"].default_value = 0.90
+
+    created = []
+    def _part(name, loc_s, sz_s, mat, bevel=0.005):
+        bm = bmesh.new()
+        bmesh.ops.create_cube(bm, size=1.0)
+        for v in bm.verts:
+            v.co.x *= sz_s[0] * STUD
+            v.co.y *= sz_s[1] * STUD
+            v.co.z *= sz_s[2] * STUD
+        me = bpy.data.meshes.new(f"{arm.name}_{name}_M")
+        bm.to_mesh(me); bm.free()
+        ob = bpy.data.objects.new(f"{arm.name}_{name}", me)
+        ob.location = (loc_s[0] * STUD, loc_s[1] * STUD, loc_s[2] * STUD)
+        ob.data.materials.append(mat)
+        bev = ob.modifiers.new("Bevel", "BEVEL"); bev.width = bevel; bev.segments = 2
+        for p in ob.data.polygons: p.use_smooth = True
+        created.append((ob, lb))
+        return ob
+
+    bz = lh + 0.08
+    _part("BeltBand", (0.0, 0.0, bz), (tw + 0.16, td + 0.16, 0.22), mat_l)
+    _part("BeltBuckle", (0.0, -td * 0.50 - 0.10, bz), (0.34, 0.07, 0.26), mat_b, bevel=0.003)
+    if pouch:
+        _part("BeltPouch", (tw * 0.50 + 0.13, -0.06, bz - 0.06), (0.18, 0.34, 0.36), mat_l)
+    return _bind_wearable_parts(char_info, created)
+
+
+def add_backpack_3d(char_info: dict, color_hex: str = "#2A3038", strap_hex: str = "#16181D", accent_hex: str = "#5C4735", wetness: float = 0.0):
+    """Attach a 3D contoured weathered canvas/nylon backpack + dual shoulder straps to UpperTorso."""
+    arm = char_info["armature"]
+    m = char_info["metrics"]
+    tw, td, th, lh, neck_z = m["tw"], m["td"], m["th"], m["lh"], m["neck_z"]
+    ub = "UpperTorso" if char_info.get("rig_type") == "R15" else "Torso"
+    mat_p = _make_outerwear_pbr_mat(f"{arm.name}_PackMain", color_hex, roughness=0.68, sheen=0.40, wetness=wetness)
+    mat_s = _make_outerwear_pbr_mat(f"{arm.name}_PackStrap", strap_hex, roughness=0.60, sheen=0.25, wetness=wetness)
+    mat_a = _make_outerwear_pbr_mat(f"{arm.name}_PackAcc", accent_hex, roughness=0.52, sheen=0.20, wetness=wetness)
+
+    created = []
+    def _part(name, loc_s, sz_s, mat, bevel=0.014):
+        bm = bmesh.new()
+        bmesh.ops.create_cube(bm, size=1.0)
+        for v in bm.verts:
+            v.co.x *= sz_s[0] * STUD
+            v.co.y *= sz_s[1] * STUD
+            v.co.z *= sz_s[2] * STUD
+        me = bpy.data.meshes.new(f"{arm.name}_{name}_M")
+        bm.to_mesh(me); bm.free()
+        ob = bpy.data.objects.new(f"{arm.name}_{name}", me)
+        ob.location = (loc_s[0] * STUD, loc_s[1] * STUD, loc_s[2] * STUD)
+        ob.data.materials.append(mat)
+        bev = ob.modifiers.new("Bevel", "BEVEL"); bev.width = bevel; bev.segments = 3
+        for p in ob.data.polygons: p.use_smooth = True
+        created.append((ob, ub))
+        return ob
+
+    pz = lh + th * 0.52
+    py = td * 0.50 + 0.44
+    _part("PackBody", (0.0, py, pz), (tw * 0.78, 0.66, th * 0.84), mat_p, bevel=0.022)
+    _part("PackPocket", (0.0, py + 0.34, pz - 0.22), (tw * 0.62, 0.22, th * 0.42), mat_a, bevel=0.014)
+    _part("PackTopFlap", (0.0, py + 0.04, pz + th * 0.36), (tw * 0.76, 0.70, 0.18), mat_a, bevel=0.012)
+    for sx, tag in ((-1.0, "R"), (1.0, "L")):
+        _part(f"PackStrapFront_{tag}", (sx * (tw * 0.34), -td * 0.50 - 0.105, pz), (0.16, 0.06, th * 0.94), mat_s, bevel=0.004)
+        _part(f"PackStrapTop_{tag}", (sx * (tw * 0.34), 0.04, neck_z + 0.06), (0.16, td + 0.26, 0.06), mat_s, bevel=0.004)
+    return _bind_wearable_parts(char_info, created)
 
 
 def build_lipsync_schedule(
@@ -2156,6 +2124,18 @@ def _collect_mesh_objects(objs):
     return out
 
 
+def _is_volume_only(o):
+    """True for haze/smoke boxes: every material drives only the Volume output (no Surface) — not an obstacle."""
+    mats = [m for m in o.data.materials if m] if o.type == "MESH" else []
+    if not mats:
+        return False
+    for m in mats:
+        out = next((n for n in m.node_tree.nodes if n.type == "OUTPUT_MATERIAL"), None) if m.node_tree else None
+        if out is None or out.inputs["Surface"].is_linked or not out.inputs["Volume"].is_linked:
+            return False
+    return True
+
+
 def _auto_collect_env_meshes(char_infos: list, ground_names: tuple, ignore_names: tuple):
     """Recursively collect every visible scene MESH outside character collections & ground planes."""
     char_obj_names = set()
@@ -2175,7 +2155,7 @@ def _auto_collect_env_meshes(char_infos: list, ground_names: tuple, ignore_names
     ig_low = tuple(g.lower() for g in (ignore_names or ()))
     out = []
     for o in bpy.context.scene.objects:
-        if o.type != "MESH" or o.hide_render or o.name in char_obj_names:
+        if o.type != "MESH" or o.hide_render or o.name in char_obj_names or _is_volume_only(o):
             continue
         if any(c.name in hidden_cols or c.hide_render for c in o.users_collection):
             continue
@@ -2575,17 +2555,8 @@ def apply_pose_lib(char_info: dict, frame: int, pose_name: str, dur: int = 10,
     - Moving Hold micro-breathing settle across `hold_frames`.
     """
     arm = char_info["armature"]
-    if lock_feet_ik:
-        try:
-            import blender_r15_hybrid as r15h
-            r15h.setup_r15_hybrid_rig(char_info)
-            r15h._set_ik_influence(arm, frame, foot_l=1.0, foot_r=1.0)
-            r15h._key_bone(arm, "IK_Foot.L", frame, Vector((0.0, 0.0, 0.0)), (0, 0, 0))
-            r15h._key_bone(arm, "IK_Foot.R", frame, Vector((0.0, 0.0, 0.0)), (0, 0, 0))
-            r15h._key_bone(arm, "IK_Foot.L", frame + dur + 3, Vector((0.0, 0.0, 0.0)), (0, 0, 0))
-            r15h._key_bone(arm, "IK_Foot.R", frame + dur + 3, Vector((0.0, 0.0, 0.0)), (0, 0, 0))
-        except Exception:
-            pass
+    # (lock_feet_ik used the removed mocap/IK hybrid rig; kept as a no-op argument for call compatibility.
+    #  Use RobloxAnimator for acting — it keeps feet planted by construction.)
     pose = dict(POSE_LIB.get(pose_name, POSE_LIB["neutral_relaxed"]))
     pose.update(overrides)
     snap_r15_pose(
@@ -3306,12 +3277,6 @@ def trigger_physical_impact(
         key_r15_pose(arm_v, impact_frame + hs_f, loc=loc_v0 + push_dir * (knockback_m * 0.12), yaw_deg=yaw_v,
                      interpolation="VECTOR", hip_offset=(-0.02, -0.05, -0.095), **hit_compress)
         # Release from Hit-Stop into full Recoil Shock + Knockback slide (Unlock foot IK during slide if sliding > 0.15m)
-        if knockback_m > 0.12:
-            try:
-                import blender_r15_hybrid as r15h
-                r15h._set_ik_influence(arm_v, impact_frame + hs_f, foot_l=0.0, foot_r=0.0, ramp=1)
-            except Exception:
-                pass
         recoil_pose = dict(POSE_LIB["recoil_shock"])
         snap_r15_pose(
             arm_v, impact_frame + hs_f, snap_frames=9, overshoot=0.10,
@@ -3637,13 +3602,11 @@ try:
         build_camera_path,
         capture_views_sheet,
         clear_blockout_scene,
-        detect_humanoid_family,
         encode_blockout_rows,
         fit_distance,
         frame_camera,
         parse_blockout_plan,
         plan_from_text,
-        retarget_humanoid_action,
     )
 except ImportError:
     pass

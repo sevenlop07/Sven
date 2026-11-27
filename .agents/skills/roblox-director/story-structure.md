@@ -1,8 +1,10 @@
-# story-structure.md — 100% First-Person Narration Architecture (`Track S` Short & `Track L` Series)
+# story-structure.md — Cinematic Single-Narrator Architecture (`Track S` Short & `Track L` Series)
 
-> **Purpose:** Distills the Sven Master Screenplay Architecture (`workflow.md` §6 & `engine/references/1-narrative-screenplay-architecture.md` Part I + Part II §5) into a production-ready narrative blueprint for the **Miniature 3D Roblox Animation Studio (`@RobloxDirector`)** running **100% First-Person Narration (`1 single voice track`)**.
+> **Purpose:** Distills the Sven Master Screenplay Architecture (`workflow.md` §6 & `engine/references/1-narrative-screenplay-architecture.md` Part I + Part II §5) into a production-ready narrative blueprint for the **Semi-Real Roblox CGI Cinema Studio (`@RobloxDirector`)** running **Mode N1: Cinematic Narration / Tự sự kể chuyện (`1 single consistent narrator voice track` — 1st-person `"I / Tôi..."` or literary 3rd-person — paired with silent/non-verbal Roblox CGI cinema acting)**.
 >
-> **Scope:** Governs **Stage R1** (concept & series blueprint) and **Stage R2** (episode script before TTS / `.mp3` generation) for ALL genres. For viral `"In this world/town..."` voice cadence & rule-scoring checks, pair with `script.md` and `town-script.md`.
+> **Why Narration-First is the Sovereign Default:** Multi-character lip-synced dialogue movies read stiff on blocky Roblox heads without dedicated multi-actor voice acting & phoneme rigs. Pairing **one expressive narrator voice track** (`voice.mp3` → `audio_to_srt.py`) with **GibbsonTV Semi-Real Cycles visuals, restrained physical acting (`RobloxAnimator` Cinema States), `cinema_expressive` micro-expressions, and Image–Narration Subtext Divergence (*Show, Don't Tell*)** delivers cinema-grade emotion cleanly and reliably. Multi-voice dialogue (`Mode N2`) is opt-in only.
+>
+> **Scope:** Governs **Stage R1** (concept & series blueprint) and **Stage R2** (episode script before TTS / `.mp3` generation) for ALL genres across both **Preset A (Semi-Real CGI Cinema)** and **Preset B (Roblox Toon Shorts)**. For viral `"In this world/town..."` voice cadence & rule-scoring checks, pair with `script.md` and `town-script.md`.
 >
 > **Which file wins (one rule for every Roblox narration):**
 > 1. **Structure** (tracks, beats, archetypes, series tables, scorecards, twist engine) — **this file**, for every genre.
@@ -135,8 +137,12 @@ Because `@RobloxDirector` runs **100% First-Person Narration (`1 consistent voic
      7. **Natural narration** — clean single-narrator ear test (`script.md` §0 / §11), feelings shown through action, zero AI clichés or labelled emotions.
      8. **Ending** — next danger / cliffhanger / bookend, a type different from the last episode, zero preachy moral.
      **Hard requirement (not scored):** 100% filmable in Blender 5.3 or Studio (`≤ 4` named cast per scene, Law R-COLLIDE friendly). Rewrite below `12/16` BEFORE generating `.mp3`, and pass `tools/script_check.py`.
-   - **Block 2B Retention Map** (added to the asset manifest, one block per episode):
+   - **Block 2B Retention & Value Map** (added to the asset manifest, one block per episode — Value Card per `engine/references/0d-heart-and-value.md` §3):
      ```text
+     VALUE       | Positive value affirmed: [...] — embodied by [Name]'s choice in [Beat]: [...] — at the cost of [...]
+     HEART       | Heart moment (💗): Beat [NN] — [specific act / object / recognition] — planted in Beat [AA]
+     TAKEAWAY    | What the viewer carries home (never spoken on screen): "[...]"
+     SHADOW      | What this episode depicts without glorifying and how it is handled: [...] — or "None"
      HOOK 0–3s   | [the first image the viewer sees] ➔ question it opens
      EP QUESTION | [one yes/no question this episode answers or deepens]
      INTENSITY   | B1:[ ] B2:[ ] B3:[ ] B4:[ ] B5:[ ] B6:[ ]  (1–10; one valley 3–4 before the peak 9–10)

@@ -18,15 +18,17 @@ import blender_roblox_kit as kit  # noqa: E402
 import blender_roblox_anim as rba  # noqa: E402
 
 ASSETS = os.path.join(HERE, "..", "assets")
-out = sys.argv[sys.argv.index("--") + 1] if "--" in sys.argv else os.path.join(kit.get_stage_dir("roblox_anim_demo"), "qa")
+_args = sys.argv[sys.argv.index("--") + 1:] if "--" in sys.argv else []
+out = _args[0] if _args else os.path.join(kit.get_stage_dir("roblox_anim_demo"), "qa")
 
 bpy.ops.wm.read_factory_settings(use_empty=True)
 sc = bpy.context.scene
 sc.render.fps = 30
 ch = kit.build_roblox_character("Demo", os.path.join(ASSETS, "clothes", "shirt_me.png"),
                                 os.path.join(ASSETS, "clothes", "pants_me.png"),
-                                os.path.join(ASSETS, "faces_cartoon", "neutral.png"),
-                                rig_type="R15", hair_style="bald", body_profile="boy_athletic", yaw_deg=90)
+                                os.path.join(ASSETS, "faces_storybook_toon", "neutral.png"),
+                                rig_type="R15", hair_style="boy",
+                                body_profile="boy_athletic", yaw_deg=90)
 an = rba.RobloxAnimator(ch, fps=30)
 D = 1.2
 order = ["idle", "walk", "run", "sprint", "jump", "fall", "land", "crouch", "sit", "pickup", "cheer", "wave", "point",

@@ -1,6 +1,8 @@
 #!/usr/bin/env python3
 """
-make_faces_expressive.py — 4K->1024 Supersampled Expressive Cartoon & 1930s Rubberhose Roblox Face Pack.
+make_faces_expressive.py — 4K->1024 supersampled storybook_toon Roblox face pack (the only face style,
+ROBLOX_DIRECTOR.md §4.0; the old cartoon / rubberhose variants were removed — their code paths stay only inside
+render_face and are rejected by generate_pack).
 Replaces legacy stiff faces with tapered calligraphic ink lines, curved eyelids, dimple creases,
 pie-cut / starry / heart / popping eyes, full comedic & dramatic reactions, and lip-sync mouth shapes.
 """
@@ -452,19 +454,254 @@ ALL_EXPRESSIONS = [
     "silly_tongue", "heart_eyes", "exhausted", "dizzy", "blink",
 ]
 
+# ==============================================================================
+# CINEMA EXPRESSIVE FACE ENGINE (GibbsonTV / Semi-Real Roblox CGI Standard)
+# Mature proportions, shaded iris + specular catchlights, heavy brow weight,
+# subtle lower-lip & under-eye tension — zero bubbly kids-cartoon egg eyes.
+# ==============================================================================
+CINEMA_INK = (20, 18, 22, 255)
+CINEMA_BROW = (30, 24, 22, 255)
+CINEMA_SCLERA = (244, 242, 238, 255)
+CINEMA_SCLERA_SHAD = (206, 204, 210, 255)
+CINEMA_IRIS_OUT = (28, 34, 44, 255)
+CINEMA_IRIS_IN = (58, 72, 92, 255)
+CINEMA_SHADOW = (142, 102, 82, 95)
+CINEMA_LIP_SHAD = (138, 92, 76, 130)
 
-def generate_pack(out_dir: str, style: str = "storybook_toon", age: str = "youth"):
+
+def _cinema_eye(im, d, cx, cy, rx=66, ry=56, look=(0.0, 0.0), lid_top=0.14, lid_bot=0.04,
+                lid_tilt=0.0, pupil_scale=0.58, weary_bag=False, tear=False):
+    """Draw one mature semi-real stylized Roblox cinema eye with shaded iris, catchlights & weighted lash."""
+    mask = Image.new("L", (N, N), 0)
+    md = ImageDraw.Draw(mask)
+    md.ellipse([P(cx - rx, cy - ry), P(cx + rx, cy + ry)], fill=255)
+
+    layer = _new()
+    ld = ImageDraw.Draw(layer)
+    # Soft off-white sclera + upper shadow crescent under upper lid
+    ld.ellipse([P(cx - rx, cy - ry), P(cx + rx, cy + ry)], fill=CINEMA_SCLERA)
+    ld.ellipse([P(cx - rx * 1.1, cy - ry * 1.25), P(cx + rx * 1.1, cy - ry * 0.25)], fill=CINEMA_SCLERA_SHAD)
+
+    # Shaded dark iris + deep pupil + crisp specular catchlights
+    px = cx + look[0] * (rx * 0.40)
+    py = cy + look[1] * (ry * 0.34)
+    ir = rx * pupil_scale
+    ld.ellipse([P(px - ir, py - ir), P(px + ir, py + ir)], fill=CINEMA_IRIS_OUT)
+    ld.ellipse([P(px - ir * 0.80, py - ir * 0.72), P(px + ir * 0.80, py + ir * 0.86)], fill=CINEMA_IRIS_IN)
+    pr = ir * 0.56
+    ld.ellipse([P(px - pr, py - pr), P(px + pr, py + pr)], fill=(12, 12, 16, 255))
+    # Dual cinema catchlights (sharp upper-left key + subtle lower-right bounce)
+    g1 = ir * 0.26
+    ld.ellipse([P(px - ir * 0.38 - g1, py - ir * 0.38 - g1), P(px - ir * 0.38 + g1, py - ir * 0.38 + g1)], fill=(255, 255, 255, 245))
+    g2 = ir * 0.11
+    ld.ellipse([P(px + ir * 0.34 - g2, py + ir * 0.34 - g2), P(px + ir * 0.34 + g2, py + ir * 0.34 + g2)], fill=(235, 244, 255, 175))
+
+    # Eyelid clipping mask (transparent top/bottom cut so skin shows cleanly as eyelids!)
+    if lid_top > 0.0:
+        yt = cy - ry + (2.0 * ry) * lid_top
+        dx_t = rx * 1.35
+        dy_t = math.tan(math.radians(lid_tilt)) * dx_t
+        poly_t = [P(cx - dx_t, cy - ry * 1.6), P(cx + dx_t, cy - ry * 1.6), P(cx + dx_t, yt + dy_t), P(cx - dx_t, yt - dy_t)]
+        md.polygon(poly_t, fill=0)
+    if lid_bot > 0.0:
+        yb = cy + ry - (2.0 * ry) * lid_bot
+        dx_b = rx * 1.35
+        poly_b = [P(cx - dx_b, yb), P(cx + dx_b, yb), P(cx + dx_b, cy + ry * 1.6), P(cx - dx_b, cy + ry * 1.6)]
+        md.polygon(poly_b, fill=0)
+
+    im.alpha_composite(Image.composite(layer, _new(), mask))
+
+    # Weighted upper lash line (defining the cinema gaze!)
+    yt = cy - ry + (2.0 * ry) * max(0.02, lid_top)
+    dy_l = math.tan(math.radians(lid_tilt)) * rx
+    p0 = (cx - rx * 1.02, min(cy + ry * 0.4, yt - dy_l + 8))
+    p2 = (cx + rx * 1.02, min(cy + ry * 0.4, yt + dy_l + 8))
+    p1 = (cx, yt - (14 if lid_top < 0.25 else 4))
+    taper_stroke(d, bez2(p0, p1, p2), 16, CINEMA_INK, min_frac=0.28)
+    # Subtle fine lower rim
+    yb = cy + ry - (2.0 * ry) * lid_bot
+    taper_stroke(d, bez2((cx - rx * 0.72, yb - 4), (cx, yb + 5), (cx + rx * 0.72, yb - 4)), 6, (40, 34, 38, 175), min_frac=0.15)
+    # Subtle crease fold above upper eyelid
+    taper_stroke(d, bez2((cx - rx * 0.78, yt - 18 - dy_l * 0.6), (cx, yt - 26), (cx + rx * 0.78, yt - 18 + dy_l * 0.6)), 5, CINEMA_SHADOW, min_frac=0.15)
+
+    if weary_bag:
+        taper_stroke(d, bez2((cx - rx * 0.75, cy + ry + 12), (cx, cy + ry + 26), (cx + rx * 0.75, cy + ry + 10)), 9, CINEMA_SHADOW, min_frac=0.12)
+    if tear:
+        d.ellipse([P(cx - rx * 0.65, yb - 12), P(cx + rx * 0.65, yb + 10)], fill=(190, 228, 255, 165))
+
+
+def render_cinema_face(name: str, age: str = "youth") -> Image.Image:
+    """Render one mature Semi-Real Roblox CGI Cinema expression (1024x1024 RGBA)."""
+    im = _new()
+    d = ImageDraw.Draw(im)
+    el, er, ey, my = 512 - 116, 512 + 116, 454, 676
+    brow_col = (165, 162, 158, 255) if age in ("elder_man", "elder_woman") else CINEMA_BROW
+    brow_w = 22 if age != "elder_woman" else 16
+
+    def lip_shadow(y_off=26, span=56):
+        taper_stroke(d, bez2((512 - span, my + y_off), (512, my + y_off + 7), (512 + span, my + y_off)), 7, CINEMA_LIP_SHAD, 0.15)
+
+    def furrow():
+        taper_stroke(d, bez2((512 - 22, ey - 102), (512 - 18, ey - 72), (512 - 20, ey - 56)), 6, CINEMA_SHADOW, 0.2)
+        taper_stroke(d, bez2((512 + 22, ey - 102), (512 + 18, ey - 72), (512 + 20, ey - 56)), 6, CINEMA_SHADOW, 0.2)
+
+    if name == "neutral":
+        _cinema_eye(im, d, el, ey, lid_top=0.18, lid_bot=0.06)
+        _cinema_eye(im, d, er, ey, lid_top=0.18, lid_bot=0.06)
+        draw_brow(d, el - 4, ey - 84, 118, 10, -2, brow_w, brow_col)
+        draw_brow(d, er + 4, ey - 84, 118, 10, 2, brow_w, brow_col)
+        taper_stroke(d, bez2((456, my + 2), (512, my + 4), (568, my + 2)), 11, CINEMA_INK, 0.22)
+        lip_shadow(22, 42)
+
+    elif name == "happy":
+        _cinema_eye(im, d, el, ey, lid_top=0.14, lid_bot=0.16)
+        _cinema_eye(im, d, er, ey, lid_top=0.14, lid_bot=0.16)
+        draw_brow(d, el - 4, ey - 94, 116, 18, -5, brow_w, brow_col)
+        draw_brow(d, er + 4, ey - 94, 116, 18, 5, brow_w, brow_col)
+        taper_stroke(d, bez2((446, my - 4), (512, my + 26), (578, my - 4)), 12, CINEMA_INK, 0.22)
+        lip_shadow(34, 44)
+
+    elif name == "smile_closed":
+        _cinema_eye(im, d, el, ey, lid_top=0.16, lid_bot=0.12)
+        _cinema_eye(im, d, er, ey, lid_top=0.16, lid_bot=0.12)
+        draw_brow(d, el - 4, ey - 90, 116, 14, -4, brow_w, brow_col)
+        draw_brow(d, er + 4, ey - 90, 116, 14, 4, brow_w, brow_col)
+        taper_stroke(d, bez2((454, my), (512, my + 16), (570, my)), 11, CINEMA_INK, 0.22)
+        lip_shadow(28, 40)
+
+    elif name == "talk_mid":
+        _cinema_eye(im, d, el, ey, lid_top=0.18, lid_bot=0.06)
+        _cinema_eye(im, d, er, ey, lid_top=0.18, lid_bot=0.06)
+        draw_brow(d, el - 4, ey - 88, 118, 14, -3, brow_w, brow_col)
+        draw_brow(d, er + 4, ey - 88, 118, 14, 3, brow_w, brow_col)
+        d.rounded_rectangle([P(464, my - 12), P(560, my + 24)], radius=16 * S, fill=MOUTH_DARK, outline=CINEMA_INK, width=7 * S)
+        d.rectangle([P(474, my - 8), P(550, my + 2)], fill=(238, 236, 232, 255))
+        lip_shadow(36, 40)
+
+    elif name == "talk_open":
+        _cinema_eye(im, d, el, ey, lid_top=0.12, lid_bot=0.04)
+        _cinema_eye(im, d, er, ey, lid_top=0.12, lid_bot=0.04)
+        draw_brow(d, el - 4, ey - 96, 120, 16, -6, brow_w, brow_col)
+        draw_brow(d, er + 4, ey - 96, 120, 16, 6, brow_w, brow_col)
+        d.rounded_rectangle([P(454, my - 16), P(570, my + 44)], radius=22 * S, fill=MOUTH_DARK, outline=CINEMA_INK, width=8 * S)
+        d.rectangle([P(466, my - 11), P(558, my + 2)], fill=(238, 236, 232, 255))
+        d.ellipse([P(480, my + 18), P(544, my + 42)], fill=(176, 74, 72, 255))
+        lip_shadow(56, 44)
+
+    elif name == "laugh":
+        for cx_c in (el, er):
+            taper_stroke(d, bez2((cx_c - 64, ey + 8), (cx_c, ey - 24), (cx_c + 64, ey + 8)), 15, CINEMA_INK, 0.28)
+        draw_brow(d, el - 4, ey - 96, 118, 20, -6, brow_w, brow_col)
+        draw_brow(d, er + 4, ey - 96, 118, 20, 6, brow_w, brow_col)
+        d.rounded_rectangle([P(444, my - 12), P(580, my + 44)], radius=24 * S, fill=MOUTH_DARK, outline=CINEMA_INK, width=8 * S)
+        d.rectangle([P(456, my - 8), P(568, my + 8)], fill=(242, 240, 236, 255))
+        lip_shadow(56, 48)
+
+    elif name == "wink":
+        _cinema_eye(im, d, el, ey, lid_top=0.16, lid_bot=0.12)
+        taper_stroke(d, bez2((er - 62, ey + 4), (er, ey - 16), (er + 62, ey + 8)), 15, CINEMA_INK, 0.25)
+        draw_brow(d, el - 4, ey - 92, 116, 18, -5, brow_w, brow_col)
+        draw_brow(d, er + 4, ey - 80, 116, 12, 8, brow_w, brow_col)
+        taper_stroke(d, bez2((454, my + 4), (516, my + 18), (576, my - 10)), 12, CINEMA_INK, 0.22)
+        lip_shadow(28, 40)
+
+    elif name == "smirk":
+        _cinema_eye(im, d, el, ey, look=(0.15, 0.0), lid_top=0.28, lid_bot=0.10, lid_tilt=4)
+        _cinema_eye(im, d, er, ey, look=(0.15, 0.0), lid_top=0.26, lid_bot=0.10, lid_tilt=-2)
+        draw_brow(d, el - 4, ey - 82, 118, 8, 6, brow_w, brow_col)
+        draw_brow(d, er + 6, ey - 94, 118, 18, -4, brow_w, brow_col)
+        taper_stroke(d, bez2((462, my + 6), (522, my + 10), (578, my - 16)), 12, CINEMA_INK, 0.24)
+        lip_shadow(24, 38)
+
+    elif name in ("angry", "steam_angry"):
+        _cinema_eye(im, d, el, ey, lid_top=0.34, lid_bot=0.14, lid_tilt=14, pupil_scale=0.52, weary_bag=True)
+        _cinema_eye(im, d, er, ey, lid_top=0.34, lid_bot=0.14, lid_tilt=-14, pupil_scale=0.52, weary_bag=True)
+        draw_brow(d, el + 6, ey - 72, 124, -6, 18, brow_w + 4, brow_col)
+        draw_brow(d, er - 6, ey - 72, 124, -6, -18, brow_w + 4, brow_col)
+        furrow()
+        if name == "steam_angry":
+            d.rounded_rectangle([P(448, my - 6), P(576, my + 32)], radius=12 * S, fill=(238, 236, 232, 255), outline=CINEMA_INK, width=8 * S)
+            d.line([P(454, my + 13), P(570, my + 13)], fill=CINEMA_INK, width=5 * S)
+        else:
+            taper_stroke(d, bez2((450, my + 16), (512, my - 6), (574, my + 16)), 13, CINEMA_INK, 0.28)
+        lip_shadow(34, 46)
+
+    elif name in ("shocked", "pop_eyes"):
+        _cinema_eye(im, d, el, ey, rx=68, ry=64, lid_top=0.04, lid_bot=0.02, pupil_scale=0.40)
+        _cinema_eye(im, d, er, ey, rx=68, ry=64, lid_top=0.04, lid_bot=0.02, pupil_scale=0.40)
+        draw_brow(d, el - 6, ey - 108, 118, 20, -10, brow_w, brow_col)
+        draw_brow(d, er + 6, ey - 108, 118, 20, 10, brow_w, brow_col)
+        d.ellipse([P(480, my - 10), P(544, my + 38)], fill=MOUTH_DARK, outline=CINEMA_INK, width=8 * S)
+        lip_shadow(50, 34)
+
+    elif name in ("sad", "cry"):
+        _cinema_eye(im, d, el, ey, look=(0.0, 0.14), lid_top=0.28, lid_bot=0.10, lid_tilt=-12, weary_bag=True, tear=(name == "cry"))
+        _cinema_eye(im, d, er, ey, look=(0.0, 0.14), lid_top=0.28, lid_bot=0.10, lid_tilt=12, weary_bag=True, tear=(name == "cry"))
+        draw_brow(d, el - 4, ey - 84, 118, 12, -18, brow_w - 2, brow_col)
+        draw_brow(d, er + 4, ey - 84, 118, 12, 18, brow_w - 2, brow_col)
+        furrow()
+        taper_stroke(d, bez2((456, my + 16), (512, my - 2), (568, my + 16)), 11, CINEMA_INK, 0.24)
+        lip_shadow(28, 40)
+
+    elif name == "scared":
+        _cinema_eye(im, d, el, ey, look=(0.0, -0.05), rx=68, ry=62, lid_top=0.08, lid_bot=0.06, lid_tilt=-8, pupil_scale=0.38, weary_bag=True)
+        _cinema_eye(im, d, er, ey, look=(0.0, -0.05), rx=68, ry=62, lid_top=0.08, lid_bot=0.06, lid_tilt=8, pupil_scale=0.38, weary_bag=True)
+        draw_brow(d, el - 4, ey - 100, 120, 16, -20, brow_w - 2, brow_col)
+        draw_brow(d, er + 4, ey - 100, 120, 16, 20, brow_w - 2, brow_col)
+        furrow()
+        d.rounded_rectangle([P(464, my - 2), P(560, my + 30)], radius=14 * S, fill=MOUTH_DARK, outline=CINEMA_INK, width=7 * S)
+        lip_shadow(42, 40)
+
+    elif name in ("exhausted", "dizzy"):
+        _cinema_eye(im, d, el, ey, look=(0.0, 0.16), lid_top=0.46, lid_bot=0.12, lid_tilt=-4, weary_bag=True)
+        _cinema_eye(im, d, er, ey, look=(0.0, 0.16), lid_top=0.46, lid_bot=0.12, lid_tilt=4, weary_bag=True)
+        draw_brow(d, el - 4, ey - 76, 118, 6, -10, brow_w - 2, brow_col)
+        draw_brow(d, er + 4, ey - 76, 118, 6, 10, brow_w - 2, brow_col)
+        taper_stroke(d, bez2((458, my + 12), (512, my + 4), (566, my + 12)), 11, CINEMA_INK, 0.24)
+        lip_shadow(26, 38)
+
+    elif name == "blink":
+        for cx_c in (el, er):
+            taper_stroke(d, bez2((cx_c - 64, ey + 6), (cx_c, ey + 18), (cx_c + 64, ey + 6)), 14, CINEMA_INK, 0.26)
+        draw_brow(d, el - 4, ey - 84, 118, 10, -2, brow_w, brow_col)
+        draw_brow(d, er + 4, ey - 84, 118, 10, 2, brow_w, brow_col)
+        taper_stroke(d, bez2((458, my + 2), (512, my + 5), (566, my + 2)), 11, CINEMA_INK, 0.22)
+        lip_shadow(22, 40)
+
+    else:  # silly_tongue / heart_eyes fallback to warm expressive cinema look
+        _cinema_eye(im, d, el, ey, lid_top=0.14, lid_bot=0.14)
+        _cinema_eye(im, d, er, ey, lid_top=0.14, lid_bot=0.14)
+        draw_brow(d, el - 4, ey - 94, 116, 16, -4, brow_w, brow_col)
+        draw_brow(d, er + 4, ey - 94, 116, 16, 4, brow_w, brow_col)
+        taper_stroke(d, bez2((448, my - 2), (512, my + 24), (576, my - 2)), 12, CINEMA_INK, 0.22)
+        lip_shadow(34, 42)
+
+    if age in ("elder_man", "elder_woman"):
+        taper_stroke(d, bez2((el - 96, ey + 10), (el - 74, ey + 16), (el - 58, ey + 24)), 5, CINEMA_SHADOW, 0.15)
+        taper_stroke(d, bez2((er + 96, ey + 10), (er + 74, ey + 16), (er + 58, ey + 24)), 5, CINEMA_SHADOW, 0.15)
+
+    # Bold clean cinema framing (k=1.50 so eyes & brows read sharply in wide shots AND 85mm close-ups)
+    k = 1.50
+    cx_f, cy_f = 512 * S, 548 * S
+    big = im.resize((int(N * k), int(N * k)), Image.Resampling.LANCZOS)
+    ox, oy = int(cx_f * k - 512 * S), int(cy_f * k - 512 * S)
+    im = big.crop((ox, oy, ox + N, oy + N))
+    return im.resize((1024, 1024), Image.Resampling.LANCZOS)
+
+
+def generate_pack(out_dir: str, style: str = "cinema_expressive", age: str = "youth"):
+    if style not in ("cinema_expressive", "storybook_toon"):
+        raise ValueError("supported face styles: 'cinema_expressive' (default Cinema CGI) or 'storybook_toon' (Shorts)")
     os.makedirs(out_dir, exist_ok=True)
     thumbs = []
     for name in ALL_EXPRESSIONS:
-        im = render_face(name, style=style, age=age)
+        im = render_cinema_face(name, age=age) if style == "cinema_expressive" else render_face(name, style=style, age=age)
         im.save(os.path.join(out_dir, f"{name}.png"))
         thumbs.append((name, im))
 
-    # Render clean preview atlas on warm Roblox skin backdrop
     tile = 280
     cols, rows = 5, 4
-    atlas = Image.new("RGB", (cols * tile, rows * tile), (242, 200, 164))
+    atlas = Image.new("RGB", (cols * tile, rows * tile), (236, 198, 168))
     ad = ImageDraw.Draw(atlas)
     for idx, (n, im) in enumerate(thumbs):
         r, c = divmod(idx, cols)
@@ -480,14 +717,9 @@ def generate_pack(out_dir: str, style: str = "storybook_toon", age: str = "youth
 if __name__ == "__main__":
     base = os.path.join(os.path.normpath(os.path.join(os.path.dirname(os.path.abspath(__file__)), "..")), "assets")
     ap = argparse.ArgumentParser()
-    ap.add_argument("--style", choices=["storybook_toon", "cartoon", "rubberhose", "all"], default="all")
+    ap.add_argument("--style", choices=["cinema_expressive", "storybook_toon"], default="cinema_expressive")
     ap.add_argument("--age", choices=["youth", "elder_man", "elder_woman"], default="youth")
     ap.add_argument("--out-dir", default=None)
     args = ap.parse_args()
-    if args.style == "all":
-        generate_pack(os.path.join(base, "faces_storybook_toon"), "storybook_toon", args.age)
-        generate_pack(os.path.join(base, "faces_cartoon"), "cartoon", args.age)
-        generate_pack(os.path.join(base, "faces_rubberhose"), "rubberhose", args.age)
-    else:
-        out = args.out_dir or os.path.join(base, f"faces_{args.style}")
-        generate_pack(out, args.style, args.age)
+    default_sub = "faces_cinema_expressive" if args.style == "cinema_expressive" else "faces_storybook_toon"
+    generate_pack(args.out_dir or os.path.join(base, default_sub), args.style, args.age)

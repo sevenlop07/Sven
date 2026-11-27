@@ -152,14 +152,14 @@ Minimum kit per character (HYPOTHESIS: enough for the refs' range of emotions):
 - **Stiff idle ≤40 % of shots; posed or animated ≥35 %** (L15). Nobody stands frozen in an MS while they talk (bell #10 "Everyone laughed": nobody moves).
 - Everyone not acting gets a breathing idle: torso bob 0.05 studs on a 2–3 s cycle, head turn 5–10° toward the speaker (HYPOTHESIS, craft note).
 - **Acting tools (Law R-ANIM, `ROBLOX_DIRECTOR.md` §4):**
-  - **Blender (default):** `studio_kit/blender_roblox_anim.py` — `RobloxAnimator` with 27 states (walk/run/jump/talk/emotions/combat…), distance-locked gait, crossfades, head-look layer, hit-stop; custom holds via the `pose` state. Check every beat on the `render_pose_qa` sheet.
-  - **Studio:** official R15 animation ids stepped with `TimePosition` + `Animator:StepAnimations(0)`, procedural layers (root path, head turn via `AnimationConstraint.Transform`) on top. The legacy MT R6 kit (`lib*.lua`, `MT.frame`) still works for R6 scenes.
+  - **Blender (default):** `studio_kit/blender_roblox_anim.py` — `RobloxAnimator` with **34 states** (incl. 7 restrained Cinema Acting States: `tired_walk`, `hesitate_stop`, `hold_object`, `offer_prop`, `slow_turn`, `exhale_settle`, `lean_watch`, plus walk/run/jump/talk/emotions/combat…), distance-locked gait, crossfades, head-look layer, `blink_bridge=True` + `auto_blinks()`, hit-stop; custom holds via the `pose` state. Check every beat on the `render_pose_qa` sheet.
+  - **Studio:** official R15 animation ids stepped with `TimePosition` + `Animator:StepAnimations(0)`, procedural layers (root path, head turn via `AnimationConstraint.Transform`) on top. R15 is the only supported rig (`ROBLOX_DIRECTOR.md` §4.0).
   - **Never** human mocap (Mixamo/BVH/FBX/RoMixamo) — it does not read as Roblox. Don't buy paid animation plugins without the user's OK.
 - Starter pose set (HYPOTHESIS): point, think (hand to chin), sad slump, scared cower, shock, hug/hold, kneel (`crouch`), reach-out (`pickup`). Ease in over 6–12 frames (`fade` 0.2–0.4 s) and hold ≥0.4 s on emotional beats.
 - Turn before walking (≥0.3 s, scene-rules). Feet on the floor; held props welded to the hand.
 
 ## 9. Sets and cast
-- **5–8 locations per 60–120 s** (L16), 6–9 for 3 min. One location per scene, a new one on average every ≤10 s.
+- **Set cap (`pipeline.md` §1 & `ROBLOX_DIRECTOR.md` §4.0):** `≤ 3` distinct sets per 60 s (`≤ 5` for 2–5 min). Achieve visual variety across scenes (L16) by staging `2–3` distinct zones per set and relighting with `mood@clock` rather than building 5–8 separate locations.
 - **Dress every free map with 2–3 story props** (signs, labels, the rule object, a UI screen, a handwritten note).
 - **Avoid the shared free school map** (blue-locker hallway, the classroom with the bulletin board and grey lockers): bell and memories both use it. If the story needs a school, use another map and change wall colours, materials and 3 props.
 - **No setup more than twice** (L17): a setup is set + size + angle family. The checker counts repeats.
@@ -220,7 +220,7 @@ Whip intro, mirrored bookend and prop deaths (each at most every other episode),
 | limit | so | tag |
 |---|---|---|
 | No real reflections (no mirror rendering; glass and water show only the sky and lights) | write mirrors, shop windows and puddles so the reflection is never needed, or fake a mirror: the camera sits where the mirror is, behind a thin glass part, and the actor looks into the lens (the one other allowed look into the lens, §7.2) | craft note, HYPOTHESIS until a capture |
-| Roblox limbs are blocks: no fingers, no real feet | no foot inserts ("his shoes on my sneakers"), no finger or hand-detail inserts; show the whole body instead | fact (R6/R15 block rigs) |
+| Roblox limbs are blocks: no fingers, no real feet | no foot inserts ("his shoes on my sneakers"), no finger or hand-detail inserts; show the whole body instead | fact (R15 block rigs) |
 | Contact between two rigs (hand-holding, a hand on a cheek, stepping on feet) is the hardest pose work in the pipeline | ≤3 contact poses per episode (pipeline.md §1 Build budget) | HYPOTHESIS |
 | DOF works off depth; whether a mostly transparent part (Transparency ~0.85) counts as a focus target is UNVERIFIED | rack-focus targets are opaque parts (a toothbrush, a photo frame); test the rack with `screen_capture` before building the twist around it, and keep a dolly-zoom as the fallback | UNVERIFIED |
 | A BillboardGui bubble sits above the head | speech bubbles only on MS or wider; in a CU it is off frame or over the face, so let the narration carry the line | fact |

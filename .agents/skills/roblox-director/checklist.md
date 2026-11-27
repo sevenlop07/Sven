@@ -9,8 +9,8 @@ Each item is tagged **[plan]** (checkable on the script sheet + shot list + cue 
 - Report both: `Script (a) 9.0 / (b) 7`. A self-judged pass on a [read] item (an author or critic who knows the twist "guessing" it) counts as unchecked.
 Numbers come from the tools where possible: `script_check.py` (area 1, pauses, highlights), `plan_timing.py` → `shotlist_check.py` + `pacing_check.py` (areas 2, 5), `measure.py`, `rba.render_pose_qa` + `kit.render_playblast_qa` (motion), ffmpeg loudness (cut).
 
-## 1. Script /10 (script.md)
-HARD [plan]: rule stated in the first sentence, starting ≤0.2 s · no banned phrase (§9.1) · no moral as the last line and no twist told by a side character (§9.2) · the core rotation fields pass (no family, primary or secondary, in the last 5; emotional outcome and subject pair not in the last 3; reveal move not the last episode's) · no copied line shape (refs' included: bell's "never… not once… birthday" ladder), no 5-word overlap, no skeleton sharing ≥5 of 12 slots and no signature move shared with a gold or ref (§9.4)
+## 1. Script /10 (script.md & story-structure.md)
+HARD [plan]: concrete hook (or world rule for `town` mode) stated in the first sentence, starting ≤0.2 s · Heart & Value Scorecard ≥6/8 with no criterion at 0 (`0d-heart-and-value.md` §8) · no banned phrase (§9.1) · no moral as the last line and no twist told by a side character (§9.2) · the core rotation fields pass (no family, primary or secondary, in the last 5; emotional outcome and subject pair not in the last 3; reveal move not the last episode's) · no copied line shape (refs' included: bell's "never… not once… birthday" ladder), no 5-word overlap, no skeleton sharing ≥5 of 12 slots and no signature move shared with a gold or ref (§9.4)
 - (1) [plan] The rule passes the rubric (script.md §1.2), and the brief's tone holds past the reveal and in the last line (§0.2), or a planned shift is in the header
 - (1) [plan] Beats: stake line by 6 s, misread 10–36 %, reveal 49–78 % and ≥10 points from the last episode, climax 69–96 %, last line ≥92 %
 - (1) [plan] Twist is fair: 2–4 twist clues, the setup visible ≥30 s earlier (quote it), the false belief attributed, never stated as the narrator's fact
@@ -24,13 +24,13 @@ HARD [plan]: rule stated in the first sentence, starting ≤0.2 s · no banned p
 - (1) [plan] The narrator's final choice costs him something he now knows the price of (script.md §3.3); the last line lands with no moral, doesn't name the mechanism or restate the final shot, and the extra payoff sits inside the final 15 %
 
 ## 2. Look /10 (look.md, lighting-color.md)
-HARD: custom hero avatar (no noob or classic) [plan] · no Roblox logo [cut] · LightingStyle Realistic, no `Technology` property [plan]
-- (1) [plan] The rule object is readable in shot 1 and in ≥50 % of shots (a mark on the body counts only at MS or tighter, look.md L11)
+HARD: custom R15 hero avatar (no noob or classic) [plan] · no Roblox logo [cut] · Blender default: Cycles 64–128 spp master + AgX + Light Linking (or Studio optional: LightingStyle Realistic, no `Technology` property) [plan]
+- (1) [plan] The signature prop / rule object is readable in shot 1 and in ≥50 % of shots (a mark on the body counts only at MS or tighter, look.md L11)
 - (1) [plan] Close shots ≥25 %; readable face on every key line
 - (1) [plan] Posed or animated body on ≥35 % of shots; nobody frozen in a medium shot while they talk
 - (1) [cut] Face-decal swaps hit the key word (±0.1 s); lip flaps on dialogue
 - (1) [plan] Real in-engine camera move on ≥70 % of shots, no move type on >40 % of shots, ≥3 types; one rack focus or dolly-zoom on the twist line ([cut]: playblast / first-vs-last frame per shot confirms — look.md §15)
-- (1) [plan] 5–8 locations; 2–3 story props per set; no setup (set + size + angle family) used more than twice
+- (1) [plan] ≤3 distinct sets per 60 s (≤5 for 2–5 min, reused with `mood@clock` relight — pipeline.md §1); 2–3 story props per set; no setup (set + size + angle family) used more than twice
 - (1) [plan] A mood per scene with practicals in interiors, a visible lighting or palette shift on the twist cut ([cut]: `measure.py --compare` Δ ≥0.10)
 - (1) [cut] Colour targets: median saturation 0.35–0.50, ≤10 % of shots over 0.6, p99 ≥240 in ≥25 % of shots, p1 10–25
 - (1) [plan] Build scope inside the caps of pipeline.md §1 "Build budget" (sets, rigs, face PNGs, poses, contact poses, special builds, VFX), with the build-cost block filled in the shot list, and nothing on look.md §16's Roblox-limits list
